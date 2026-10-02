@@ -19,6 +19,11 @@
 - Illustration "One Line, Four Futures" (asset `/_blob/bad84659fa9f24b3a7efb7e88696e531`, 2172×724). The glowing cobalt line = the AI guide; reuse it as the progress/path motif.
 - The "Your Copilot lights the way" pill was REMOVED by the designer. Don't bring it back.
 
+## Onboarding layout (approved 2026-10-02)
+- Every onboarding step uses the CR-ONB-001 layout: header (logo left, Log in right), dashed 5-step tracker centred under it ("Step 1 of 5 · Your account"), centred content, illustration at the bottom.
+- NO left side panel. Illustration on EVERY screen (desktop bottom; mobile under the tracker, panned to hero + Creator). Creator path lit, chip text tells the story per step.
+- Shared frame generator: scratchpad gen2.py (re-create from any existing step file if lost).
+
 ## Hard layout rules
 - Desktop must NOT scroll on onboarding screens: must fit 1440×820 and 1280×720 (viewport-based layout, clamp/vh).
 - Fully responsive: breakpoints ~1080 and ~760/860; mobile = stacked layout, 44px+ touch targets.

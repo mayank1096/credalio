@@ -1,1 +1,170 @@
-{"v": 3, "createdOnFiles": {"v": 1, "at": "2026-10-02T16:30:00Z"}, "title": "Credalio Creator Flow", "launch": {"view": "canvas"}, "pages": [], "boards": {"Main.dc.html": {"x": 0, "y": 0, "w": 1440, "h": 820, "title": "CR-ONB-001 · Desktop (responsive source)", "is_interactive": true, "expand": "fill"}, "CR-ONB-001-Laptop.dc.html": {"x": 0, "y": 1040, "w": 1280, "h": 720, "title": "CR-ONB-001 · Small laptop (1280 × 720)", "is_interactive": true}, "CR-ONB-001-Tablet.dc.html": {"x": 1360, "y": 1040, "w": 900, "h": 1000, "title": "CR-ONB-001 · Narrow window (900)", "is_interactive": true}, "CR-ONB-001-Mobile.dc.html": {"x": 1520, "y": 0, "w": 390, "h": 920, "title": "CR-ONB-001 · Mobile (390)", "is_interactive": true}, "CR-ONB-002.dc.html": {"x": 0, "y": 2400, "w": 1440, "h": 820, "title": "CR-ONB-002 · How will you create? · Desktop", "is_interactive": true, "expand": "fill"}, "CR-ONB-002-Mobile.dc.html": {"x": 1520, "y": 2400, "w": 390, "h": 844, "title": "CR-ONB-002 · Mobile", "is_interactive": true}, "CR-ONB-002S.dc.html": {"x": 2070, "y": 2400, "w": 1440, "h": 820, "title": "CR-ONB-002S · Organisations coming soon · Desktop", "is_interactive": true, "expand": "fill"}, "CR-ONB-002S-Mobile.dc.html": {"x": 3590, "y": 2400, "w": 390, "h": 844, "title": "CR-ONB-002S · Mobile", "is_interactive": true}, "CR-ONB-003.dc.html": {"x": 4140, "y": 2400, "w": 1440, "h": 820, "title": "CR-ONB-003 · Create account · Desktop", "is_interactive": true, "expand": "fill"}, "CR-ONB-003-Mobile.dc.html": {"x": 5660, "y": 2400, "w": 390, "h": 844, "title": "CR-ONB-003 · Mobile", "is_interactive": true}, "CR-ONB-003b.dc.html": {"x": 6210, "y": 2400, "w": 1440, "h": 820, "title": "CR-ONB-003b · Check your inbox · Desktop", "is_interactive": true, "expand": "fill"}, "CR-ONB-003b-Mobile.dc.html": {"x": 7730, "y": 2400, "w": 390, "h": 844, "title": "CR-ONB-003b · Mobile", "is_interactive": true}, "CR-ONB-003v.dc.html": {"x": 8280, "y": 2400, "w": 1440, "h": 820, "title": "CR-ONB-003v · Email confirmed · Desktop", "is_interactive": true, "expand": "fill"}, "CR-ONB-003v-Mobile.dc.html": {"x": 9800, "y": 2400, "w": 390, "h": 844, "title": "CR-ONB-003v · Mobile", "is_interactive": true}}, "order": ["Main.dc.html", "CR-ONB-001-Laptop.dc.html", "CR-ONB-001-Tablet.dc.html", "CR-ONB-001-Mobile.dc.html", "CR-ONB-002.dc.html", "CR-ONB-002-Mobile.dc.html", "CR-ONB-002S.dc.html", "CR-ONB-002S-Mobile.dc.html", "CR-ONB-003.dc.html", "CR-ONB-003-Mobile.dc.html", "CR-ONB-003b.dc.html", "CR-ONB-003b-Mobile.dc.html", "CR-ONB-003v.dc.html", "CR-ONB-003v-Mobile.dc.html"], "notes": {"acct": {"x": 0, "y": 2100, "text": "Onboarding · Your account: creator type → account → inbox → confirmed", "kind": "title1", "maxW": 10220}}, "designSystems": []}
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "CR-ONB-001-Laptop.dc.html": {
+      "h": 720,
+      "is_interactive": true,
+      "title": "CR-ONB-001 · Small laptop (1280 × 720)",
+      "w": 1280,
+      "x": 0,
+      "y": 1040
+    },
+    "CR-ONB-001-Mobile.dc.html": {
+      "h": 920,
+      "is_interactive": true,
+      "title": "CR-ONB-001 · Mobile (390)",
+      "w": 390,
+      "x": 1520,
+      "y": 0
+    },
+    "CR-ONB-001-Tablet.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-ONB-001 · Narrow window (900)",
+      "w": 900,
+      "x": 1360,
+      "y": 1040
+    },
+    "CR-ONB-002-9qo9.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-002 · How will you create? · Desktop copy",
+      "w": 1440,
+      "x": -80,
+      "y": 3627
+    },
+    "CR-ONB-002-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "title": "CR-ONB-002 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 2400
+    },
+    "CR-ONB-002.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-002 · How will you create? · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 2400
+    },
+    "CR-ONB-002S-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "title": "CR-ONB-002S · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 2400
+    },
+    "CR-ONB-002S.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-002S · Organisations coming soon · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 2400
+    },
+    "CR-ONB-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-ONB-003 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 2400
+    },
+    "CR-ONB-003.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-003 · Create account · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 2400
+    },
+    "CR-ONB-003b-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-ONB-003b · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 2400
+    },
+    "CR-ONB-003b.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-003b · Check your inbox · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 2400
+    },
+    "CR-ONB-003v-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-ONB-003v · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 2400
+    },
+    "CR-ONB-003v.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-003v · Email confirmed · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 2400
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-001 · Desktop (responsive source)",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-02T16:30:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "acct": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Onboarding · Your account: creator type → account → inbox → confirmed",
+      "w": 240,
+      "x": 0,
+      "y": 2100
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "CR-ONB-001-Laptop.dc.html",
+    "CR-ONB-001-Tablet.dc.html",
+    "CR-ONB-001-Mobile.dc.html",
+    "CR-ONB-002.dc.html",
+    "CR-ONB-002-Mobile.dc.html",
+    "CR-ONB-002S.dc.html",
+    "CR-ONB-002S-Mobile.dc.html",
+    "CR-ONB-003.dc.html",
+    "CR-ONB-003-Mobile.dc.html",
+    "CR-ONB-003b.dc.html",
+    "CR-ONB-003b-Mobile.dc.html",
+    "CR-ONB-003v.dc.html",
+    "CR-ONB-003v-Mobile.dc.html",
+    "CR-ONB-002-9qo9.dc.html"
+  ],
+  "pages": [],
+  "title": "Credalio Creator Flow"
+}

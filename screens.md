@@ -7,12 +7,12 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 
 ## 01. Creator onboarding: sign up → creator type → account → check inbox → email verified → password → about you → expertise → Copilot → ready (12)
 
-- [ ] D [ ] M  `CR-ONB-001` CR-ONB-001 · Choose participation: Create
-- [ ] D [ ] M  `CR-ONB-002` CR-ONB-002 · Creator type
-- [ ] D [ ] M  `CR-ONB-002S` CR-ONB-002S · With an institution / As an organisation: coming soon
-- [ ] D [ ] M  `CR-ONB-003` CR-ONB-003 · Create account: email first, Google & Apple below, no password
-- [ ] D [ ] M  `CR-ONB-003b` CR-ONB-003 · Check your inbox (verification link)
-- [ ] D [ ] M  `CR-ONB-003v` CR-ONB-003V · Email verified → create password
+- [x] D [x] M  `CR-ONB-001` CR-ONB-001 · Choose participation: Create
+- [x] D [x] M  `CR-ONB-002` CR-ONB-002 · Creator type
+- [x] D [x] M  `CR-ONB-002S` CR-ONB-002S · With an institution / As an organisation: coming soon
+- [x] D [x] M  `CR-ONB-003` CR-ONB-003 · Create account: email first, Google & Apple below, no password
+- [x] D [x] M  `CR-ONB-003b` CR-ONB-003 · Check your inbox (verification link)
+- [x] D [x] M  `CR-ONB-003v` CR-ONB-003V · Email verified → create password
 - [ ] D [ ] M  `CR-ONB-003c` CR-ONB-003 · Link clicked → verified email captured, create password
 - [ ] D [ ] M  `CR-ONB-004` CR-ONB-004 · About you
 - [ ] D [ ] M  `CR-ONB-005` CR-ONB-005 · Creator profile & expertise

@@ -1,0 +1,31 @@
+# Credalio — project rules (read before every change)
+
+## Who / what
+- Designer directs, Claude builds everything. Keep chat replies SHORT.
+- Deliverable: developer-ready Figma (later). For now we design screens on the canvas:
+  https://claude.ai/artifact/Xq1VzSNgkrxnjsEeHbpAZq (local copy: `design/canvas/project/`).
+- Client reference (content source, ~98% correct): `reference/project/` (snapshot), screen list: `screens.md`.
+- Order agreed: design a few screens to settle the look → then design system → then Figma.
+
+## Goal (never lose this)
+- Clean, modern, world-class UI/UX. Simple, premium, calm, youthful, intelligent.
+- Theme: "the feeling of becoming". Copy reads like a story, never a forceful/compliance onboarding.
+- Best possible copywriting: warm, short, human, honest. Introduce concepts only when needed.
+
+## Approved direction (CR-ONB-001 "Who will you become next?")
+- White background, Google Sans, navy #0B1433 text, cobalt #1652F0 single accent (hover #0E3BB8).
+- Soft blues #EAF0FF / #F5F8FF; secondary text #3A4566 #4A5578 #5B6582; borders #E6EAF3 #D6DDEE #CBD3E6; success #0F6B45.
+- Pill buttons; primary = cobalt pill with white circle arrow. Cards radius 16–18, 1.5px borders, soft blue ring when selected.
+- Illustration "One Line, Four Futures" (asset `/_blob/bad84659fa9f24b3a7efb7e88696e531`, 2172×724). The glowing cobalt line = the AI guide; reuse it as the progress/path motif.
+- The "Your Copilot lights the way" pill was REMOVED by the designer. Don't bring it back.
+
+## Hard layout rules
+- Desktop must NOT scroll on onboarding screens: must fit 1440×820 and 1280×720 (viewport-based layout, clamp/vh).
+- Fully responsive: breakpoints ~1080 and ~760/860; mobile = stacked layout, 44px+ touch targets.
+- One responsive source file per screen; preview boards (laptop/mobile) only `dc-import` it — never duplicate designs.
+- Animations only play in canvas Play mode (editor disables them) — not a bug.
+- Always re-read live canvas files before editing (designer edits in place); sync them into the repo.
+
+## Workflow
+- 25 screens/day plan in chat history; track progress in `screens.md`.
+- Commit + push to branch `claude/gallant-meitner-290f6y` after each change.

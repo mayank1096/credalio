@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Credalio onboarding: choose your path (mobile)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#1652F0}a:hover{color:#0E3BB8}
+@keyframes cdFade{from{opacity:0}to{opacity:1}}
+@keyframes cdDraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes cdComet{0%{stroke-dashoffset:0.08;opacity:0}10%{opacity:1}85%{opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
+@keyframes cdPulse{0%{transform:scale(.7);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+@keyframes cdChip{from{opacity:0;margin-top:8px}to{opacity:1;margin-top:0}}
+@keyframes cdOrb{0%,100%{opacity:.55}50%{opacity:1}}
+.cd-fade{animation:cdFade .6s ease both}
+.cd-draw{stroke-dasharray:1;animation:cdDraw 1s cubic-bezier(.4,0,.2,1) .35s both}
+.cd-comet{stroke-dasharray:0.07 2;stroke-dashoffset:0.08;animation:cdComet 2.6s ease-in-out 1.3s infinite}
+.cd-pulse{transform-box:fill-box;transform-origin:center;animation:cdPulse 2s ease-out 1.2s infinite}
+.cd-chip{animation:cdChip .5s ease 1s both}
+.cd-orb{animation:cdOrb 2.4s ease-in-out infinite}
+.cd-pan{transition:left .6s cubic-bezier(.4,0,.2,1)}
+.cd-card:active{transform:scale(.985)}
+.cd-card:focus-visible,.cd-cta:focus-visible,.cd-ghost:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.cd-cta{transition:background .2s ease,transform .2s ease}
+.cd-cta:hover{background:#0E3BB8 !important;color:#FFFFFF}
+.cd-cta:active{transform:scale(.98)}
+.cd-ic *{transform-box:fill-box}
+@keyframes cdPop{0%{transform:scale(.6)}55%{transform:scale(1.18)}100%{transform:scale(1)}}
+@keyframes cdBookL{0%{transform:rotateY(0) scaleX(.2)}60%{transform:scaleX(1.1)}100%{transform:scaleX(1)}}
+@keyframes cdPencil{0%{transform:rotate(0)}20%{transform:rotate(-16deg)}45%{transform:rotate(10deg) translateX(1px)}70%{transform:rotate(-6deg)}100%{transform:rotate(0)}}
+@keyframes cdDash{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes cdHop{0%,100%{transform:translateY(0)}40%{transform:translateY(-3px)}}
+.cd-ic{animation:cdPop .5s cubic-bezier(.3,1.4,.5,1) both}
+.cd-book-l{transform-origin:right center;animation:cdBookL .6s ease-out .05s both}
+.cd-book-r{transform-origin:left center;animation:cdBookL .6s ease-out .15s both}
+.cd-pencil{transform-origin:15% 85%;animation:cdPencil .8s ease-in-out .1s both}
+.cd-line{stroke-dasharray:1;animation:cdDash .6s ease .35s both}
+.cd-shield{transform-origin:center;animation:cdPop .5s cubic-bezier(.3,1.4,.5,1) both}
+.cd-check{stroke-dasharray:1;animation:cdDash .45s ease .3s both}
+.cd-p1{animation:cdHop .5s ease .1s 2}
+.cd-p2{animation:cdHop .5s ease .25s 2}
+@media (prefers-reduced-motion: reduce){.cd-ic,.cd-ic *{animation:none !important}.cd-fade,.cd-draw,.cd-comet,.cd-pulse,.cd-chip,.cd-orb{animation:none}.cd-comet{opacity:0}.cd-pan{transition:none}}
+</style>
+</helmet>
+<div style="width: 390px; height: 960px; position: relative; overflow: hidden; background: #FFFFFF; font-family: 'Google Sans', 'Google Sans Text', 'Helvetica Neue', system-ui, sans-serif; color: #0B1433; display: flex; flex-direction: column">
+<header style="height: 64px; flex-shrink: 0; box-sizing: border-box; padding: 0 20px; display: flex; align-items: center; justify-content: space-between">
+<div style="display: flex; align-items: center; gap: 8px">
+<div style="width: 28px; height: 28px; border-radius: 8px; background: #1652F0; display: flex; align-items: center; justify-content: center">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M17.5 7.2A7 7 0 1 0 17.5 16.8"></path></svg>
+</div>
+<span style="font-size: 18px; font-weight: 600; letter-spacing: -0.02em; color: #0B1433">Credalio</span>
+</div>
+<a href="#" class="cd-ghost" style="display: flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #D6DDEE; background: #FFFFFF; color: #0B1433; font-size: 14px; font-weight: 600; text-decoration: none">Log in</a>
+</header>
+<div style="padding: 16px 20px 0 20px; display: flex; flex-direction: column; align-items: center">
+<div style="display: flex; align-items: center; gap: 6px; padding: 5px 12px 5px 9px; border-radius: 999px; background: #EAF0FF; color: #0E3BB8; font-size: 12px; font-weight: 500">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="#1652F0" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg>
+Your Copilot lights the way. You make the call.
+</div>
+<h1 style="margin: 16px 0 0 0; font-size: 38px; line-height: 1.1; font-weight: 600; letter-spacing: -0.035em; color: #0B1433; text-align: center">Who will you become next?</h1>
+</div>
+<div style="position: relative; flex-shrink: 0; margin-top: 12px; width: 390px; height: 220px; overflow: hidden">
+<div class="cd-pan" style="position: absolute; top: 0; left: {{panLeft}}px; width: 660px; height: 220px">
+<img src="/_blob/bad84659fa9f24b3a7efb7e88696e531" alt="A young person steps forward on a glowing line that branches toward four people: a learner, a creator, a validator and a mentor with a group" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; filter: brightness(1.012)">
+<sc-if value="{{is.learn}}" hint-placeholder-val="{{false}}">
+<svg class="cd-fade" viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(12px)"><path d="M-300 -300 H2472 V1024 H-300 Z M880 400 a175 280 0 1 0 350 0 a175 280 0 1 0 -350 0 Z M0 450 a215 240 0 1 0 430 0 a215 240 0 1 0 -430 0 Z" fill="#FFFFFF" fill-opacity="0.66" fill-rule="evenodd"></path></svg>
+<svg class="cd-fade" viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(8px); mix-blend-mode: multiply"><ellipse cx="230" cy="618" rx="190" ry="34" fill="#1652F0" fill-opacity="0.42"></ellipse><ellipse cx="1060" cy="626" rx="150" ry="26" fill="#1652F0" fill-opacity="0.22"></ellipse></svg>
+<svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(3px); opacity: 0.85"><path class="cd-draw" d="M928 620 L880 617 L832 620 L784 627 L736 631 L724 632 L626 634 L578 632 L530 630 L482 626 L434 620 L398 610 L374 598 L350 579 L344 574" pathLength="1" fill="none" stroke="#1652F0" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%">
+<path class="cd-draw" d="M928 620 L880 617 L832 620 L784 627 L736 631 L724 632 L626 634 L578 632 L530 630 L482 626 L434 620 L398 610 L374 598 L350 579 L344 574" pathLength="1" fill="none" stroke="#1652F0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path>
+<path class="cd-comet" d="M928 620 L880 617 L832 620 L784 627 L736 631 L724 632 L626 634 L578 632 L530 630 L482 626 L434 620 L398 610 L374 598 L350 579 L344 574" pathLength="1" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle class="cd-pulse" cx="344" cy="574" r="22" fill="none" stroke="#1652F0" stroke-width="6"></circle>
+<circle cx="344" cy="574" r="17" fill="#1652F0" stroke="#FFFFFF" stroke-width="6"></circle>
+</svg>
+<div class="cd-chip" style="position: absolute; left: 11.51%; top: 36.19%; transform: translate(-30%, -100%); display: flex; align-items: center; gap: 6px; padding: 6px 11px 6px 9px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 4px 14px rgba(11, 20, 51, 0.10), 0 0 0 1px rgba(22, 82, 240, 0.12); font-size: 12px; font-weight: 600; color: #0B1433; white-space: nowrap">
+<span style="width: 6px; height: 6px; border-radius: 50%; background: #1652F0; box-shadow: 0 0 0 3px rgba(22, 82, 240, 0.18)"></span>You start as a Learner
+</div>
+</sc-if>
+<sc-if value="{{is.create}}" hint-placeholder-val="{{false}}">
+<svg class="cd-fade" viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(12px)"><path d="M-300 -300 H2472 V1024 H-300 Z M880 400 a175 280 0 1 0 350 0 a175 280 0 1 0 -350 0 Z M400 390 a190 270 0 1 0 380 0 a190 270 0 1 0 -380 0 Z" fill="#FFFFFF" fill-opacity="0.66" fill-rule="evenodd"></path></svg>
+<svg class="cd-fade" viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(8px); mix-blend-mode: multiply"><ellipse cx="640" cy="594" rx="165" ry="30" fill="#1652F0" fill-opacity="0.42"></ellipse><ellipse cx="1060" cy="626" rx="150" ry="26" fill="#1652F0" fill-opacity="0.22"></ellipse></svg>
+<svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(3px); opacity: 0.85"><path class="cd-draw" d="M928 620 L916 618 L904 604 L880 596 L856 589 L832 584 L808 578 L784 570 L772 563 L760 554 L749 546" pathLength="1" fill="none" stroke="#1652F0" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%">
+<path class="cd-draw" d="M928 620 L916 618 L904 604 L880 596 L856 589 L832 584 L808 578 L784 570 L772 563 L760 554 L749 546" pathLength="1" fill="none" stroke="#1652F0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path>
+<path class="cd-comet" d="M928 620 L916 618 L904 604 L880 596 L856 589 L832 584 L808 578 L784 570 L772 563 L760 554 L749 546" pathLength="1" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle class="cd-pulse" cx="749" cy="545.5" r="22" fill="none" stroke="#1652F0" stroke-width="6"></circle>
+<circle cx="749" cy="545.5" r="17" fill="#1652F0" stroke="#FFFFFF" stroke-width="6"></circle>
+</svg>
+<div class="cd-chip" style="position: absolute; left: 30.16%; top: 22.79%; transform: translate(-50%, -100%); display: flex; align-items: center; gap: 6px; padding: 6px 11px 6px 9px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 4px 14px rgba(11, 20, 51, 0.10), 0 0 0 1px rgba(22, 82, 240, 0.12); font-size: 12px; font-weight: 600; color: #0B1433; white-space: nowrap">
+<span style="width: 6px; height: 6px; border-radius: 50%; background: #1652F0; box-shadow: 0 0 0 3px rgba(22, 82, 240, 0.18)"></span>You start as a Creator
+</div>
+</sc-if>
+<sc-if value="{{is.validate}}" hint-placeholder-val="{{false}}">
+<svg class="cd-fade" viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(12px)"><path d="M-300 -300 H2472 V1024 H-300 Z M880 400 a175 280 0 1 0 350 0 a175 280 0 1 0 -350 0 Z M1310 410 a140 250 0 1 0 280 0 a140 250 0 1 0 -280 0 Z" fill="#FFFFFF" fill-opacity="0.66" fill-rule="evenodd"></path></svg>
+<svg class="cd-fade" viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(8px); mix-blend-mode: multiply"><ellipse cx="1450" cy="606" rx="120" ry="28" fill="#1652F0" fill-opacity="0.42"></ellipse><ellipse cx="1060" cy="626" rx="150" ry="26" fill="#1652F0" fill-opacity="0.22"></ellipse></svg>
+<svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(3px); opacity: 0.85"><path class="cd-draw" d="M1192 620 L1204 605 L1228 595 L1252 588 L1276 581 L1300 574 L1324 564 L1336 555 L1348 538 L1353 543" pathLength="1" fill="none" stroke="#1652F0" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%">
+<path class="cd-draw" d="M1192 620 L1204 605 L1228 595 L1252 588 L1276 581 L1300 574 L1324 564 L1336 555 L1348 538 L1353 543" pathLength="1" fill="none" stroke="#1652F0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path>
+<path class="cd-comet" d="M1192 620 L1204 605 L1228 595 L1252 588 L1276 581 L1300 574 L1324 564 L1336 555 L1348 538 L1353 543" pathLength="1" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle class="cd-pulse" cx="1353" cy="543" r="22" fill="none" stroke="#1652F0" stroke-width="6"></circle>
+<circle cx="1353" cy="543" r="17" fill="#1652F0" stroke="#FFFFFF" stroke-width="6"></circle>
+</svg>
+<div class="cd-chip" style="position: absolute; left: 66.99%; top: 23.76%; transform: translate(-50%, -100%); display: flex; align-items: center; gap: 6px; padding: 6px 11px 6px 9px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 4px 14px rgba(11, 20, 51, 0.10), 0 0 0 1px rgba(22, 82, 240, 0.12); font-size: 12px; font-weight: 600; color: #0B1433; white-space: nowrap">
+<span style="width: 6px; height: 6px; border-radius: 50%; background: #1652F0; box-shadow: 0 0 0 3px rgba(22, 82, 240, 0.18)"></span>You start as a Validator
+</div>
+</sc-if>
+<sc-if value="{{is.institution}}" hint-placeholder-val="{{false}}">
+<svg class="cd-fade" viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(12px)"><path d="M-300 -300 H2472 V1024 H-300 Z M880 400 a175 280 0 1 0 350 0 a175 280 0 1 0 -350 0 Z M1585 400 a275 290 0 1 0 550 0 a275 290 0 1 0 -550 0 Z" fill="#FFFFFF" fill-opacity="0.66" fill-rule="evenodd"></path></svg>
+<svg class="cd-fade" viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(8px); mix-blend-mode: multiply"><ellipse cx="1860" cy="634" rx="250" ry="36" fill="#1652F0" fill-opacity="0.42"></ellipse><ellipse cx="1060" cy="626" rx="150" ry="26" fill="#1652F0" fill-opacity="0.22"></ellipse></svg>
+<svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(3px); opacity: 0.85"><path class="cd-draw" d="M1192 620 L1240 620 L1288 623 L1336 631 L1384 636 L1432 638 L1467 637 L1515 632 L1563 624 L1599 613 L1623 600 L1635 588 L1650 578" pathLength="1" fill="none" stroke="#1652F0" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%">
+<path class="cd-draw" d="M1192 620 L1240 620 L1288 623 L1336 631 L1384 636 L1432 638 L1467 637 L1515 632 L1563 624 L1599 613 L1623 600 L1635 588 L1650 578" pathLength="1" fill="none" stroke="#1652F0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path>
+<path class="cd-comet" d="M1192 620 L1240 620 L1288 623 L1336 631 L1384 636 L1432 638 L1467 637 L1515 632 L1563 624 L1599 613 L1623 600 L1635 588 L1650 578" pathLength="1" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle class="cd-pulse" cx="1650" cy="577.5" r="22" fill="none" stroke="#1652F0" stroke-width="6"></circle>
+<circle cx="1650" cy="577.5" r="17" fill="#1652F0" stroke="#FFFFFF" stroke-width="6"></circle>
+</svg>
+<div class="cd-chip" style="position: absolute; left: 84.48%; top: 16.85%; transform: translate(-70%, -100%); display: flex; align-items: center; gap: 6px; padding: 6px 11px 6px 9px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 4px 14px rgba(11, 20, 51, 0.10), 0 0 0 1px rgba(22, 82, 240, 0.12); font-size: 12px; font-weight: 600; color: #0B1433; white-space: nowrap">
+<span style="width: 6px; height: 6px; border-radius: 50%; background: #1652F0; box-shadow: 0 0 0 3px rgba(22, 82, 240, 0.18)"></span>You start with your institution
+</div>
+</sc-if>
+<svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none">
+<circle class="cd-orb" cx="1060" cy="627" r="14" fill="#1652F0" stroke="#FFFFFF" stroke-width="5"></circle>
+</svg>
+</div>
+</div>
+<div style="padding: 16px 20px 0 20px; display: flex; flex-direction: column; gap: 10px">
+<button type="button" class="cd-card" onClick="{{c.learn.pick}}" aria-pressed="{{c.learn.pressed}}" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px 12px 12px; min-height: 68px; border-radius: 16px; border: 1.5px solid {{c.learn.border}}; background: {{c.learn.bg}}; box-shadow: {{c.learn.shadow}}; cursor: pointer; text-align: left; font-family: inherit; transition: all .25s ease">
+<div style="width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px; background: {{c.learn.iconBg}}; color: {{c.learn.iconFg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease">
+<sc-if value="{{is.learn}}" hint-placeholder-val="{{false}}"><svg class="cd-ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="cd-book-l" d="M2 4.5h6a3 3 0 0 1 3 3V20a2.2 2.2 0 0 0-2.2-2.2H2z"></path><path class="cd-book-r" d="M22 4.5h-6a3 3 0 0 0-3 3V20a2.2 2.2 0 0 1 2.2-2.2H22z"></path></svg></sc-if><sc-if value="{{not.learn}}" hint-placeholder-val="{{true}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4.5h6a3 3 0 0 1 3 3V20a2.2 2.2 0 0 0-2.2-2.2H2z"></path><path d="M22 4.5h-6a3 3 0 0 0-3 3V20a2.2 2.2 0 0 1 2.2-2.2H22z"></path></svg></sc-if>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0">
+<span style="font-size: 16px; font-weight: 600; color: #0B1433; letter-spacing: -0.01em">Learn</span>
+<span style="font-size: 13px; line-height: 1.35; color: #4A5578">Build skills you can prove</span>
+</div>
+<div style="width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid {{c.learn.radioBorder}}; background: {{c.learn.radioBg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity: {{c.learn.checkOpacity}}"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>
+</div>
+</button>
+<button type="button" class="cd-card" onClick="{{c.create.pick}}" aria-pressed="{{c.create.pressed}}" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px 12px 12px; min-height: 68px; border-radius: 16px; border: 1.5px solid {{c.create.border}}; background: {{c.create.bg}}; box-shadow: {{c.create.shadow}}; cursor: pointer; text-align: left; font-family: inherit; transition: all .25s ease">
+<div style="width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px; background: {{c.create.iconBg}}; color: {{c.create.iconFg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease">
+<sc-if value="{{is.create}}" hint-placeholder-val="{{false}}"><svg class="cd-ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="cd-line" pathLength="1" d="M12 20h9"></path><path class="cd-pencil" d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg></sc-if><sc-if value="{{not.create}}" hint-placeholder-val="{{true}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg></sc-if>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0">
+<span style="font-size: 16px; font-weight: 600; color: #0B1433; letter-spacing: -0.01em">Create</span>
+<span style="font-size: 13px; line-height: 1.35; color: #4A5578">Turn what you know into learning</span>
+</div>
+<div style="width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid {{c.create.radioBorder}}; background: {{c.create.radioBg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity: {{c.create.checkOpacity}}"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>
+</div>
+</button>
+<button type="button" class="cd-card" onClick="{{c.validate.pick}}" aria-pressed="{{c.validate.pressed}}" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px 12px 12px; min-height: 68px; border-radius: 16px; border: 1.5px solid {{c.validate.border}}; background: {{c.validate.bg}}; box-shadow: {{c.validate.shadow}}; cursor: pointer; text-align: left; font-family: inherit; transition: all .25s ease">
+<div style="width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px; background: {{c.validate.iconBg}}; color: {{c.validate.iconFg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease">
+<sc-if value="{{is.validate}}" hint-placeholder-val="{{false}}"><svg class="cd-ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="cd-shield" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path class="cd-check" pathLength="1" d="m9 12 2 2 4-4"></path></svg></sc-if><sc-if value="{{not.validate}}" hint-placeholder-val="{{true}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg></sc-if>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0">
+<span style="font-size: 16px; font-weight: 600; color: #0B1433; letter-spacing: -0.01em">Validate</span>
+<span style="font-size: 13px; line-height: 1.35; color: #4A5578">Review work in your field</span>
+</div>
+<div style="width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid {{c.validate.radioBorder}}; background: {{c.validate.radioBg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity: {{c.validate.checkOpacity}}"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>
+</div>
+</button>
+<button type="button" class="cd-card" onClick="{{c.institution.pick}}" aria-pressed="{{c.institution.pressed}}" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px 12px 12px; min-height: 68px; border-radius: 16px; border: 1.5px solid {{c.institution.border}}; background: {{c.institution.bg}}; box-shadow: {{c.institution.shadow}}; cursor: pointer; text-align: left; font-family: inherit; transition: all .25s ease">
+<div style="width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px; background: {{c.institution.iconBg}}; color: {{c.institution.iconFg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease">
+<sc-if value="{{is.institution}}" hint-placeholder-val="{{false}}"><svg class="cd-ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="cd-p1" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle class="cd-p1" cx="9" cy="7" r="4"></circle><path class="cd-p2" d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path class="cd-p2" d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></sc-if><sc-if value="{{not.institution}}" hint-placeholder-val="{{true}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></sc-if>
+</div>
+<div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0">
+<span style="font-size: 16px; font-weight: 600; color: #0B1433; letter-spacing: -0.01em">Institution</span>
+<span style="font-size: 13px; line-height: 1.35; color: #4A5578">Grow with your organisation</span>
+</div>
+<div style="width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid {{c.institution.radioBorder}}; background: {{c.institution.radioBg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity: {{c.institution.checkOpacity}}"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>
+</div>
+</button>
+</div>
+<div style="padding: 24px 20px 32px 20px; display: flex; flex-direction: column; align-items: stretch; gap: 12px">
+<a href="#" class="cd-cta" style="display: flex; align-items: center; justify-content: space-between; height: 56px; padding: 0 6px 0 24px; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-size: 16px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 10px 24px rgba(22, 82, 240, 0.28)">{{ctaLabel}}
+<span style="width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; color: #1652F0; display: flex; align-items: center; justify-content: center">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+</span>
+</a>
+<span style="font-size: 13px; color: #5B6582; text-align: center">You can add other paths anytime.</span>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":960}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { sel: 'create' }; }
+  renderVals() {
+    const sel = this.state.sel;
+    const ctas = {"learn": "Start learning", "create": "Start creating", "validate": "Start validating", "institution": "Find my institution"};
+    const pans = {"learn": 0, "create": -63, "validate": -186, "institution": -270};
+    const ids = ['learn', 'create', 'validate', 'institution'];
+    const c = {};
+    const is = {};
+    const not = {};
+    ids.forEach((id) => {
+      const on = sel === id;
+      is[id] = on;
+      not[id] = !on;
+      c[id] = {
+        pressed: on ? 'true' : 'false',
+        pick: () => this.setState({ sel: id }),
+        border: on ? '#1652F0' : '#E6EAF3',
+        bg: on ? '#F5F8FF' : '#FFFFFF',
+        shadow: on ? '0 0 0 4px rgba(22, 82, 240, 0.12), 0 10px 22px rgba(22, 82, 240, 0.14)' : '0 1px 2px rgba(11, 20, 51, 0.04)',
+        iconBg: on ? '#1652F0' : '#EAF0FF',
+        iconFg: on ? '#FFFFFF' : '#1652F0',
+        radioBorder: on ? '#1652F0' : '#CBD3E6',
+        radioBg: on ? '#1652F0' : '#FFFFFF',
+        checkOpacity: on ? 1 : 0
+      };
+    });
+    return { c, is, not, ctaLabel: ctas[sel], panLeft: pans[sel] };
+  }
+}
+</script>
+</body>
+</html>

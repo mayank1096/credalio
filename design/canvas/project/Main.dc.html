@@ -51,21 +51,39 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .cd-p1{animation:cdHop .5s ease .1s 2}
 .cd-p2{animation:cdHop .5s ease .25s 2}
 @media (prefers-reduced-motion: reduce){.cd-ic,.cd-ic *{animation:none !important}.cd-fade,.cd-draw,.cd-comet,.cd-pulse,.cd-chip,.cd-orb{animation:none}.cd-comet{opacity:0}}
+@media (max-width: 1080px){.cd-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;max-width:720px}}
+@media (max-width: 760px){
+.cd-root{height:auto !important;min-height:100vh !important;display:flex;flex-direction:column}
+.cd-header{position:relative !important;height:64px !important;padding:0 20px !important;flex-shrink:0}
+.cd-logo{width:28px !important;height:28px !important;border-radius:8px !important}
+.cd-brand{font-size:18px !important}
+.cd-hide-sm{display:none}
+.cd-main{display:contents !important}
+.cd-header{order:0}
+.cd-h1{order:1;font-size:38px !important;line-height:1.1 !important;margin:16px 20px 0 20px !important}
+.cd-illus{order:2;position:relative !important;flex-shrink:0;align-self:flex-start;height:240px !important;width:720px !important;margin-top:8px;transform:translateX(calc(-50% + var(--pan))) !important;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.cd-grid{order:3;grid-template-columns:minmax(0,1fr) !important;width:calc(100% - 40px) !important;max-width:520px;align-self:center;gap:10px !important;margin-top:16px !important}
+.cd-card{min-height:68px !important;padding:12px 14px 12px 12px !important;border-radius:16px !important}
+.cd-ctawrap{order:4;align-self:center;width:calc(100% - 40px);max-width:520px;align-items:stretch !important;margin-top:24px !important;padding-bottom:32px}
+.cd-cta{justify-content:space-between;height:56px !important;font-size:16px !important;padding:0 6px 0 24px !important}
+.cd-ctawrap > span{text-align:center}
+.cd-chip{font-size:12px !important;padding:6px 11px 6px 9px !important}
+}
 </style>
 </helmet>
-<div style="width: 100%; height: 100vh; min-height: 680px; position: relative; overflow: hidden; background: #FFFFFF; font-family: 'Google Sans', 'Google Sans Text', 'Helvetica Neue', system-ui, sans-serif; color: #0B1433">
-<header style="position: absolute; left: 0; top: 0; width: 100%; height: 88px; box-sizing: border-box; padding: 0 clamp(24px, 6.67vw, 96px); display: flex; align-items: center; justify-content: space-between">
+<div class="cd-root" style="width: 100%; height: 100vh; min-height: 680px; position: relative; overflow: hidden; background: #FFFFFF; font-family: 'Google Sans', 'Google Sans Text', 'Helvetica Neue', system-ui, sans-serif; color: #0B1433">
+<header class="cd-header" style="position: absolute; left: 0; top: 0; width: 100%; height: 88px; box-sizing: border-box; padding: 0 clamp(24px, 6.67vw, 96px); display: flex; align-items: center; justify-content: space-between">
 <div style="display: flex; align-items: center; gap: 10px">
-<div style="width: 32px; height: 32px; border-radius: 9px; background: #1652F0; display: flex; align-items: center; justify-content: center">
+<div class="cd-logo" style="width: 32px; height: 32px; border-radius: 9px; background: #1652F0; display: flex; align-items: center; justify-content: center">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M17.5 7.2A7 7 0 1 0 17.5 16.8"></path></svg>
 </div>
-<span style="font-size: 21px; font-weight: 600; letter-spacing: -0.02em; color: #0B1433">Credalio</span>
+<span class="cd-brand" style="font-size: 21px; font-weight: 600; letter-spacing: -0.02em; color: #0B1433">Credalio</span>
 </div>
-<div style="display: flex; align-items: center; gap: 14px; font-size: 14px; color: #3A4566">Been here before? <a href="#" class="cd-ghost" style="display: flex; align-items: center; height: 42px; padding: 0 20px; border-radius: 999px; border: 1.5px solid #D6DDEE; background: #FFFFFF; color: #0B1433; font-weight: 600; text-decoration: none">Log in</a></div>
+<div style="display: flex; align-items: center; gap: 14px; font-size: 14px; color: #3A4566"><span class="cd-hide-sm">Been here before?</span> <a href="#" class="cd-ghost" style="display: flex; align-items: center; height: 42px; padding: 0 20px; border-radius: 999px; border: 1.5px solid #D6DDEE; background: #FFFFFF; color: #0B1433; font-weight: 600; text-decoration: none">Log in</a></div>
 </header>
-<main style="position: absolute; z-index: 2; left: 0; top: clamp(92px, 13vh, 140px); width: 100%; display: flex; flex-direction: column; align-items: center">
-<h1 style="margin: 0; font-size: clamp(44px, 7.5vh, 64px); line-height: 1.08; font-weight: 600; letter-spacing: -0.035em; color: #0B1433; text-align: center">Who will you become next?</h1>
-<div style="margin-top: clamp(28px, 4.4vh, 44px); width: min(1120px, calc(100% - 48px)); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+<main class="cd-main" style="position: absolute; z-index: 2; left: 0; top: clamp(92px, 13vh, 140px); width: 100%; display: flex; flex-direction: column; align-items: center">
+<h1 class="cd-h1" style="margin: 0; font-size: clamp(44px, 7.5vh, 64px); line-height: 1.08; font-weight: 600; letter-spacing: -0.035em; color: #0B1433; text-align: center">Who will you become next?</h1>
+<div class="cd-grid" style="margin-top: clamp(28px, 4.4vh, 44px); width: min(1120px, calc(100% - 48px)); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
 <button type="button" class="cd-card" onClick="{{c.learn.pick}}" aria-pressed="{{c.learn.pressed}}" style="display: flex; align-items: center; gap: 14px; padding: 16px 16px 16px 16px; min-height: 84px; border-radius: 18px; border: 1.5px solid {{c.learn.border}}; background: {{c.learn.bg}}; box-shadow: {{c.learn.shadow}}; cursor: pointer; text-align: left; font-family: inherit; transition: all .25s ease">
 <div style="width: 46px; height: 46px; flex-shrink: 0; border-radius: 13px; background: {{c.learn.iconBg}}; color: {{c.learn.iconFg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease">
 <sc-if value="{{is.learn}}" hint-placeholder-val="{{false}}"><svg class="cd-ic cd-ic-learn" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="cd-book-l" d="M2 4.5h6a3 3 0 0 1 3 3V20a2.2 2.2 0 0 0-2.2-2.2H2z"></path><path class="cd-book-r" d="M22 4.5h-6a3 3 0 0 0-3 3V20a2.2 2.2 0 0 1 2.2-2.2H22z"></path></svg></sc-if><sc-if value="{{not.learn}}" hint-placeholder-val="{{true}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4.5h6a3 3 0 0 1 3 3V20a2.2 2.2 0 0 0-2.2-2.2H2z"></path><path d="M22 4.5h-6a3 3 0 0 0-3 3V20a2.2 2.2 0 0 1 2.2-2.2H22z"></path></svg></sc-if>
@@ -115,7 +133,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </div>
 </button>
 </div>
-<div style="margin-top: clamp(24px, 3.6vh, 36px); display: flex; flex-direction: column; align-items: center; gap: 12px">
+<div class="cd-ctawrap" style="margin-top: clamp(24px, 3.6vh, 36px); display: flex; flex-direction: column; align-items: center; gap: 12px">
 <a href="#" class="cd-cta" style="display: flex; align-items: center; gap: 16px; height: 60px; padding: 0 8px 0 30px; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-size: 17px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 12px 28px rgba(22, 82, 240, 0.30)">{{ctaLabel}}
 <span class="cd-cta-arrow" style="width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; color: #1652F0; display: flex; align-items: center; justify-content: center">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
@@ -124,7 +142,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 <span style="font-size: 14px; color: #5B6582">You can add other paths anytime.</span>
 </div>
 </main>
-<div style="position: absolute; left: 50%; bottom: 0; height: min(50vh, 33.33vw); aspect-ratio: 2172 / 724; transform: translateX(-50%); overflow: hidden; z-index: 1">
+<div class="cd-illus" style="position: absolute; left: 50%; bottom: 0; height: min(50vh, 33.33vw); aspect-ratio: 2172 / 724; transform: translateX(-50%); --pan: {{panX}}px; overflow: hidden; z-index: 1">
 <img src="/_blob/bad84659fa9f24b3a7efb7e88696e531" alt="A young person steps forward on a glowing line that branches toward four people: a learner, a creator, a validator and a mentor with a group" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; filter: brightness(1.012)">
 
 <sc-if value="{{is.learn}}" hint-placeholder-val="{{false}}">
@@ -216,7 +234,8 @@ class Component extends DCLogic {
         checkOpacity: on ? 1 : 0
       };
     });
-    return { c, is, not, ctaLabel: ctas[sel] };
+    const pans = {"learn": 146, "create": 78, "validate": -56, "institution": -124};
+    return { c, is, not, ctaLabel: ctas[sel], panX: pans[sel] };
   }
 }
 </script>

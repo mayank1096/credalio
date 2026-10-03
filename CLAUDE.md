@@ -23,7 +23,7 @@
 - Every onboarding step uses the CR-ONB-001 layout: header (logo left, Log in right), dashed 5-step tracker centred under it ("Step 1 of 5 · Your account"), centred content, illustration at the bottom.
 - NO left side panel. Illustration on EVERY screen (desktop bottom; mobile under the tracker, panned to hero + Creator). Creator path lit. NO text tags/chips on the illustration (removed by designer).
 - Some steps have their OWN illustration (designer-supplied, in `design/illustrations/`): 003 create-account, 003v email-confirmed (+ confetti), 002S coming-soon. Others use the main scene.
-- Shared frame generator: scratchpad gen2.py (re-create from any existing step file if lost).
+- Shared frame generator: `design/generator/gen2.py` (+ build2.py / build3.py per batch; copy to scratchpad to run).
 
 ## Hard layout rules
 - Desktop must NOT scroll on onboarding screens: must fit 1440×820 and 1280×720 (viewport-based layout, clamp/vh).

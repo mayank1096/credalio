@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Credalio onboarding: choose a password</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#1652F0}a:hover{color:#0E3BB8}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes cdFade{from{opacity:0}to{opacity:1}}
+@keyframes cdDraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes cdComet{0%{stroke-dashoffset:0.08;opacity:0}10%{opacity:1}85%{opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
+@keyframes cdPulse{0%{transform:scale(.7);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+@keyframes cdChip{from{opacity:0;margin-top:10px}to{opacity:1;margin-top:0}}
+@keyframes cdOrb{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.cd-fade{animation:cdFade .6s ease both}
+.cd-draw{stroke-dasharray:1;animation:cdDraw 1s cubic-bezier(.4,0,.2,1) .2s both}
+.cd-comet{stroke-dasharray:0.07 2;stroke-dashoffset:0.08;animation:cdComet 2.6s ease-in-out 1.2s infinite}
+.cd-pulse{transform-box:fill-box;transform-origin:center;animation:cdPulse 2s ease-out 1.1s infinite}
+.cd-chip{animation:cdChip .5s ease .9s both}
+.cd-orb{animation:cdOrb 2.4s ease-in-out infinite}
+.ob-pulse{animation:cdPulse 2s ease-out infinite}
+.ob-in{animation:obIn .5s ease both}
+.ob-in2{animation:obIn .5s ease .08s both}
+.ob-in3{animation:obIn .5s ease .16s both}
+.ob-btn{transition:background .2s ease,transform .2s ease}
+.ob-btn:hover{background:#0E3BB8 !important;color:#FFFFFF;transform:translateY(-1px)}
+.ob-btn:active{transform:scale(.98)}
+.ob-arrow{transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ob-btn:hover .ob-arrow{transform:translateX(4px)}
+.ob-ghost{transition:border-color .2s ease,background .2s ease}
+.ob-ghost:hover{border-color:#1652F0 !important;background:#F5F8FF !important;color:#0B1433}
+.ob-opt{transition:all .25s ease}
+.ob-opt:hover{transform:translateY(-2px);border-color:#AFC1F5 !important}
+.ob-opt:active{transform:scale(.985)}
+.ob-input:focus{border-color:#1652F0 !important;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.ob-input::placeholder{color:#8A93AD}
+.ob-btn:focus-visible,.ob-opt:focus-visible,.ob-ghost:focus-visible,.ob-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+@media (prefers-reduced-motion: reduce){.cd-fade,.cd-draw,.cd-comet,.cd-pulse,.cd-chip,.cd-orb,.ob-pulse,.ob-in,.ob-in2,.ob-in3{animation:none}.cd-comet{opacity:0}}
+@media (max-height: 760px){.cd-chip{display:none !important}}
+@media (max-width: 960px){
+.ob-root{height:auto !important;min-height:100vh !important;display:flex;flex-direction:column}
+.ob-header{position:relative !important;height:64px !important;padding:0 20px !important;flex-shrink:0;order:0}
+.ob-logo{width:28px !important;height:28px !important;border-radius:8px !important}
+.ob-brand{font-size:18px !important}
+.ob-hide-sm{display:none}
+.ob-track{position:relative !important;top:0 !important;height:auto !important;padding:4px 20px 0 20px !important;justify-content:flex-start !important;gap:12px;flex-shrink:0;order:1}
+.ob-back{position:static !important;width:44px;height:44px !important;padding:0 !important;justify-content:center;flex-shrink:0}
+.ob-back-t{display:none}
+.ob-steps{width:auto !important;flex-grow:1;align-items:flex-start !important}
+.ob-illus{position:relative !important;flex-shrink:0;align-self:flex-start;height:170px !important;width:510px !important;order:2;margin-top:4px;transform:translateX(calc(-50% + var(--pan))) !important}
+.ob-main{order:3;position:relative !important;top:0 !important;padding:8px 20px 32px 20px;box-sizing:border-box}
+.ob-col{width:100% !important}
+.ob-h1{font-size:30px !important}
+.ob-grid3{grid-template-columns:minmax(0,1fr) !important;gap:10px !important}
+.ob-row{flex-direction:column !important;align-items:stretch !important;width:100%}
+.ob-row > a,.ob-row > input{flex:none !important}
+.ob-h1{width:auto !important}
+.ob-btn{justify-content:space-between !important;align-self:stretch !important}
+.ob-wide{align-self:stretch !important}
+.cd-chip{font-size:11.5px !important;padding:5px 10px 5px 8px !important}
+}
+.ob-lab{display:block;font-size:13px;font-weight:600;color:#0B1433;margin:0 0 6px 2px;text-align:left}
+.ob-f{width:100%;height:52px;box-sizing:border-box;padding:0 16px;border-radius:14px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;font-size:15px;color:#0B1433;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.ob-f:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.ob-f::placeholder{color:#8A93AD}
+textarea.ob-f{height:auto;padding:12px 16px;line-height:1.5;resize:none}
+select.ob-f{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:pointer}
+.ob-sel{position:relative}
+.ob-sel svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none}
+.ob-help{display:block;font-size:12.5px;line-height:1.4;color:#5B6582;margin:6px 0 0 2px;text-align:left}
+.ob-chip{transition:all .2s ease}
+.ob-chip:hover{border-color:#AFC1F5 !important}
+.ob-chip:focus-visible,.ob-x:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (max-height: 760px) and (min-width: 961px){.ob-f{height:46px}textarea.ob-f{height:auto}.ob-grid2{row-gap:10px !important}.ob-header{height:72px !important}.ob-track{top:68px !important}.ob-main{top:120px !important}.ob-caps{display:none !important}.ob-help{margin-top:4px}}
+@media (max-width: 960px){.ob-grid2,.ob-two{grid-template-columns:minmax(0,1fr) !important}.ob-grid4{grid-template-columns:minmax(0,1fr) !important}.ob-side{display:none !important}}
+</style>
+</helmet>
+<div class="ob-root" style="width: 100%; height: 100vh; min-height: 680px; position: relative; overflow: hidden; background: #FFFFFF; font-family: 'Google Sans', 'Google Sans Text', 'Helvetica Neue', system-ui, sans-serif; color: #0B1433">
+<header class="ob-header" style="position: absolute; left: 0; top: 0; width: 100%; height: 88px; box-sizing: border-box; padding: 0 clamp(24px, 6.67vw, 96px); display: flex; align-items: center; justify-content: space-between; z-index: 3">
+<div style="display: flex; align-items: center; gap: 10px">
+<div class="ob-logo" style="width: 32px; height: 32px; border-radius: 9px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M17.5 7.2A7 7 0 1 0 17.5 16.8"></path></svg></div>
+<span class="ob-brand" style="font-size: 21px; font-weight: 600; letter-spacing: -0.02em; color: #0B1433">Credalio</span>
+</div>
+<span></span>
+</header>
+<div class="ob-track" style="position: absolute; left: 0; top: 88px; width: 100%; height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 3">
+<a href="CR-ONB-003v.dc.html" class="ob-ghost ob-back" aria-label="Back" style="position: absolute; left: clamp(24px, 6.67vw, 96px); top: 2px; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px 0 12px; box-sizing: border-box; border-radius: 999px; border: 1.5px solid #E6EAF3; background: #FFFFFF; color: #3A4566; font-size: 14px; font-weight: 500; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span class="ob-back-t">Back</span></a>
+<div class="ob-steps" role="group" aria-label="Step 1 of 5: Your account" style="width: 320px; display: flex; flex-direction: column; align-items: center; gap: 8px">
+<div aria-hidden="true" style="width: 100%; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px"><span style="height: 4px; border-radius: 4px; background: #1652F0"></span><span style="height: 4px; border-radius: 4px; background: #E6EAF3"></span><span style="height: 4px; border-radius: 4px; background: #E6EAF3"></span><span style="height: 4px; border-radius: 4px; background: #E6EAF3"></span><span style="height: 4px; border-radius: 4px; background: #E6EAF3"></span></div>
+<span style="font-size: 13px; color: #5B6582">Step 1 of 5 · <span style="color: #0B1433; font-weight: 600">Your account</span></span>
+</div>
+</div>
+<main class="ob-main" style="position: absolute; z-index: 2; left: 0; top: clamp(140px, 19vh, 176px); width: 100%; display: flex; flex-direction: column; align-items: center">
+<div class="ob-col" style="width: min(440px, calc(100% - 48px)); display: flex; flex-direction: column; align-items: center">
+<h1 class="ob-h1 ob-in" style="margin: 0; font-size: clamp(36px, 6vh, 52px); line-height: 1.1; font-weight: 600; letter-spacing: -0.035em; color: #0B1433; text-align: center; width: max-content; max-width: calc(100vw - 48px)">Choose a password.</h1>
+<p class="ob-in2" style="margin: 12px 0 0 0; max-width: 460px; font-size: 16px; line-height: 1.55; color: #4A5578; text-align: center">One last thing to keep your work safe.</p>
+<div class="ob-in3" style="margin-top: clamp(20px, 3.6vh, 32px); width: 100%; display: flex; flex-direction: column; gap: 14px; text-align: left">
+<div><label for="pw" class="ob-lab">Password</label><div style="position: relative"><input id="pw" class="ob-f" type="{{pwType}}" value="{{pw}}" onChange="{{onPw}}" autocomplete="new-password" placeholder="Create a password" style="padding-right: 64px"><button type="button" class="ob-x" onClick="{{toggle}}" aria-label="Show password" style="position: absolute; right: 8px; top: 8px; height: 36px; padding: 0 12px; border: 0; border-radius: 10px; background: #F5F8FF; color: #1652F0; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer">{{showLabel}}</button></div>
+<div aria-hidden="true" style="margin-top: 10px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px"><span style="height: 4px; border-radius: 4px; background: {{s1}}; transition: background .25s ease"></span><span style="height: 4px; border-radius: 4px; background: {{s2}}; transition: background .25s ease"></span><span style="height: 4px; border-radius: 4px; background: {{s3}}; transition: background .25s ease"></span></div>
+<div role="status" style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px">
+<span style="display: flex; align-items: center; gap: 6px; color: {{r1.c}}"><span style="width: 18px; height: 18px; border-radius: 50%; background: {{r1.bg}}; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>8+ characters</span>
+<span style="display: flex; align-items: center; gap: 6px; color: {{r2.c}}"><span style="width: 18px; height: 18px; border-radius: 50%; background: {{r2.bg}}; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>A number</span>
+<span style="display: flex; align-items: center; gap: 6px; color: {{r3.c}}"><span style="width: 18px; height: 18px; border-radius: 50%; background: {{r3.bg}}; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>A symbol</span>
+</div></div>
+<div><label for="pw2" class="ob-lab">Confirm password</label><input id="pw2" class="ob-f" type="{{pwType}}" value="{{pw2}}" onChange="{{onPw2}}" autocomplete="new-password" placeholder="Type it once more"><span class="ob-help" style="color: {{matchColor}}">{{matchText}}</span></div>
+</div>
+<a href="CR-ONB-004.dc.html" class="ob-btn" style="margin-top: clamp(18px, 3vh, 26px); display: flex; align-items: center; gap: 16px; height: 56px; padding: 0 6px 0 28px; box-sizing: border-box; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-size: 16px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; white-space: nowrap; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 12px 28px rgba(22, 82, 240, 0.28)">Create my account<span class="ob-arrow" style="width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; color: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+</div>
+</main>
+<div class="ob-illus" aria-hidden="true" style="position: absolute; left: 50%; bottom: 0; height: clamp(140px, calc((37vh - 58px) / 0.65), min(40vh, 33.33vw)); aspect-ratio: 2172 / 724; transform: translateX(-50%); --pan: 55px; overflow: hidden; z-index: 1">
+<img src="/_blob/bad84659fa9f24b3a7efb7e88696e531" alt="" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; filter: brightness(1.012)">
+<svg class="cd-fade" viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(26px)"><path d="M-300 -300 H2472 V1024 H-300 Z M880 400 a175 280 0 1 0 350 0 a175 280 0 1 0 -350 0 Z M400 390 a190 270 0 1 0 380 0 a190 270 0 1 0 -380 0 Z" fill="#FFFFFF" fill-opacity="0.66" fill-rule="evenodd"></path></svg>
+<svg class="cd-fade" viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(18px); mix-blend-mode: multiply"><ellipse cx="640" cy="594" rx="165" ry="30" fill="#1652F0" fill-opacity="0.42"></ellipse><ellipse cx="1060" cy="626" rx="150" ry="26" fill="#1652F0" fill-opacity="0.22"></ellipse></svg>
+<svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; filter: blur(7px); opacity: 0.85"><path class="cd-draw" d="M928 620 L916 618 L904 604 L892 600 L880 596 L868 592 L856 589 L844 586 L832 584 L820 582 L808 578 L796 574 L784 570 L772 563 L760 554 L749 546" pathLength="1" fill="none" stroke="#1652F0" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%">
+<path class="cd-draw" d="M928 620 L916 618 L904 604 L892 600 L880 596 L868 592 L856 589 L844 586 L832 584 L820 582 L808 578 L796 574 L784 570 L772 563 L760 554 L749 546" pathLength="1" fill="none" stroke="#1652F0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path class="cd-comet" d="M928 620 L916 618 L904 604 L892 600 L880 596 L868 592 L856 589 L844 586 L832 584 L820 582 L808 578 L796 574 L784 570 L772 563 L760 554 L749 546" pathLength="1" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<circle class="cd-pulse" cx="749" cy="545.5" r="12" fill="none" stroke="#1652F0" stroke-width="3"></circle>
+<circle cx="749" cy="545.5" r="9" fill="#1652F0" stroke="#FFFFFF" stroke-width="3"></circle>
+</svg>
+
+<svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none"><circle class="cd-orb" cx="1060" cy="627" r="7" fill="#1652F0" stroke="#FFFFFF" stroke-width="2.5"></circle></svg>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { pw: '', pw2: '', show: false }; }
+  renderVals() {
+    const { pw, pw2, show } = this.state;
+    const r = [pw.length >= 8, /\d/.test(pw), /[^A-Za-z0-9]/.test(pw)];
+    const n = r.filter(Boolean).length;
+    const segC = n === 3 ? '#0F6B45' : '#1652F0';
+    const rule = (ok) => ({ c: ok ? '#0F6B45' : '#5B6582', bg: ok ? '#0F6B45' : '#D6DDEE' });
+    const match = pw2.length === 0 ? '' : (pw2 === pw ? 'Passwords match.' : 'These don’t match yet.');
+    return {
+      pw, pw2, pwType: show ? 'text' : 'password', showLabel: show ? 'Hide' : 'Show',
+      onPw: (e) => this.setState({ pw: e.target.value }), onPw2: (e) => this.setState({ pw2: e.target.value }),
+      toggle: () => this.setState({ show: !show }),
+      s1: n >= 1 ? segC : '#E6EAF3', s2: n >= 2 ? segC : '#E6EAF3', s3: n >= 3 ? segC : '#E6EAF3',
+      r1: rule(r[0]), r2: rule(r[1]), r3: rule(r[2]),
+      matchText: match, matchColor: pw2 === pw ? '#0F6B45' : '#5B6582'
+    };
+  }
+}
+</script>
+</body>
+</html>

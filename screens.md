@@ -13,11 +13,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-ONB-003` CR-ONB-003 · Create account: email first, Google & Apple below, no password
 - [x] D [x] M  `CR-ONB-003b` CR-ONB-003 · Check your inbox (verification link)
 - [x] D [x] M  `CR-ONB-003v` CR-ONB-003V · Email verified → create password
-- [ ] D [ ] M  `CR-ONB-003c` CR-ONB-003 · Link clicked → verified email captured, create password
-- [ ] D [ ] M  `CR-ONB-004` CR-ONB-004 · About you
-- [ ] D [ ] M  `CR-ONB-005` CR-ONB-005 · Creator profile & expertise
-- [ ] D [ ] M  `CR-ONB-006` CR-ONB-006 · Meet & name your Creator Copilot (knows your expertise)
-- [ ] D [ ] M  `CR-ONB-007` CR-ONB-007 · Copilot working style
+- [x] D [x] M  `CR-ONB-003c` CR-ONB-003 · Link clicked → verified email captured, create password
+- [x] D [x] M  `CR-ONB-004` CR-ONB-004 · About you
+- [x] D [x] M  `CR-ONB-005` CR-ONB-005 · Creator profile & expertise
+- [x] D [x] M  `CR-ONB-006` CR-ONB-006 · Meet & name your Creator Copilot (knows your expertise)
+- [x] D [x] M  `CR-ONB-007` CR-ONB-007 · Copilot working style
 - [ ] D [ ] M  `CR-ONB-008` CR-ONB-008 · Creator setup complete → Dashboard (no auto course)
 
 ## 02. Start creating: first dashboard → choose how to start → Copilot or scratch (5)

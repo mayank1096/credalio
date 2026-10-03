@@ -103,6 +103,23 @@
       "x": 6210,
       "y": 2400
     },
+    "CR-ONB-003c-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-ONB-003c · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 4800
+    },
+    "CR-ONB-003c.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-003c · Choose a password · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 4800
+    },
     "CR-ONB-003v-Mobile.dc.html": {
       "h": 844,
       "is_interactive": true,
@@ -120,6 +137,91 @@
       "x": 8280,
       "y": 2400
     },
+    "CR-ONB-004-Mobile.dc.html": {
+      "h": 1080,
+      "is_interactive": true,
+      "title": "CR-ONB-004 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 4800
+    },
+    "CR-ONB-004.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-004 · About you · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 4800
+    },
+    "CR-ONB-005-Mobile.dc.html": {
+      "h": 940,
+      "is_interactive": true,
+      "title": "CR-ONB-005 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 4800
+    },
+    "CR-ONB-005.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-005 · Your field · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 4800
+    },
+    "CR-ONB-005b-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-ONB-005b · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 4800
+    },
+    "CR-ONB-005b.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-005b · What you will teach · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 4800
+    },
+    "CR-ONB-006-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-ONB-006 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 4800
+    },
+    "CR-ONB-006.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-006 · Meet your Copilot · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 4800
+    },
+    "CR-ONB-007-Mobile.dc.html": {
+      "h": 1140,
+      "is_interactive": true,
+      "title": "CR-ONB-007 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 4800
+    },
+    "CR-ONB-007.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-007 · Copilot style · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 4800
+    },
     "Main.dc.html": {
       "expand": "fill",
       "h": 820,
@@ -128,108 +230,6 @@
       "w": 1440,
       "x": 0,
       "y": 0
-    },
-    "CR-ONB-003c.dc.html": {
-      "x": 0,
-      "y": 4800,
-      "w": 1440,
-      "h": 820,
-      "title": "CR-ONB-003c · Choose a password · Desktop",
-      "is_interactive": true,
-      "expand": "fill"
-    },
-    "CR-ONB-003c-Mobile.dc.html": {
-      "x": 1520,
-      "y": 4800,
-      "w": 390,
-      "h": 844,
-      "title": "CR-ONB-003c · Mobile",
-      "is_interactive": true
-    },
-    "CR-ONB-004.dc.html": {
-      "x": 2070,
-      "y": 4800,
-      "w": 1440,
-      "h": 820,
-      "title": "CR-ONB-004 · About you · Desktop",
-      "is_interactive": true,
-      "expand": "fill"
-    },
-    "CR-ONB-004-Mobile.dc.html": {
-      "x": 3590,
-      "y": 4800,
-      "w": 390,
-      "h": 1080,
-      "title": "CR-ONB-004 · Mobile",
-      "is_interactive": true
-    },
-    "CR-ONB-005.dc.html": {
-      "x": 4140,
-      "y": 4800,
-      "w": 1440,
-      "h": 820,
-      "title": "CR-ONB-005 · Your field · Desktop",
-      "is_interactive": true,
-      "expand": "fill"
-    },
-    "CR-ONB-005-Mobile.dc.html": {
-      "x": 5660,
-      "y": 4800,
-      "w": 390,
-      "h": 940,
-      "title": "CR-ONB-005 · Mobile",
-      "is_interactive": true
-    },
-    "CR-ONB-005b.dc.html": {
-      "x": 6210,
-      "y": 4800,
-      "w": 1440,
-      "h": 820,
-      "title": "CR-ONB-005b · What you will teach · Desktop",
-      "is_interactive": true,
-      "expand": "fill"
-    },
-    "CR-ONB-005b-Mobile.dc.html": {
-      "x": 7730,
-      "y": 4800,
-      "w": 390,
-      "h": 900,
-      "title": "CR-ONB-005b · Mobile",
-      "is_interactive": true
-    },
-    "CR-ONB-006.dc.html": {
-      "x": 8280,
-      "y": 4800,
-      "w": 1440,
-      "h": 820,
-      "title": "CR-ONB-006 · Meet your Copilot · Desktop",
-      "is_interactive": true,
-      "expand": "fill"
-    },
-    "CR-ONB-006-Mobile.dc.html": {
-      "x": 9800,
-      "y": 4800,
-      "w": 390,
-      "h": 900,
-      "title": "CR-ONB-006 · Mobile",
-      "is_interactive": true
-    },
-    "CR-ONB-007.dc.html": {
-      "x": 10350,
-      "y": 4800,
-      "w": 1440,
-      "h": 820,
-      "title": "CR-ONB-007 · Copilot style · Desktop",
-      "is_interactive": true,
-      "expand": "fill"
-    },
-    "CR-ONB-007-Mobile.dc.html": {
-      "x": 11870,
-      "y": 4800,
-      "w": 390,
-      "h": 1140,
-      "title": "CR-ONB-007 · Mobile",
-      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -250,11 +250,12 @@
       "y": 2100
     },
     "you": {
-      "x": 0,
-      "y": 4500,
-      "text": "Onboarding · Password → About you → Expertise → Your Copilot",
       "kind": "title1",
-      "maxW": 12000
+      "maxW": 8000,
+      "text": "Onboarding · Password → About you → Expertise → Your Copilot",
+      "w": 240,
+      "x": 0,
+      "y": 4500
     }
   },
   "order": [

@@ -12,8 +12,8 @@ CP_CSS=FORM_CSS+'''@keyframes cpRise{from{opacity:0;transform:translateY(18px)}t
 .cp-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#1652F0;animation:cpDot 1.2s ease-in-out infinite}
 .ob-arrow{flex-shrink:0}
 @media (prefers-reduced-motion: reduce){.cp-char,.cp-line,.cp-pop,.cp-caret,.cp-dot{animation:none}}
-@media (max-width: 960px){.cp-stage{grid-template-columns:72px minmax(0,1fr) !important;gap:10px !important;align-items:start !important}.cp-char{width:72px !important}.cp-stage > div:first-child{align-self:start !important;margin-top:24px}.cp-floor{display:none}.cp-chips{justify-content:flex-start !important}.cp-chat{margin-top:0 !important}.cp-cta-d{display:none !important}.ob-main{padding-top:28px !important}}
-@media (min-width: 961px){.cp-cta-m{display:none !important}}
+@media (max-width: 960px){.cp-stage{grid-template-columns:72px minmax(0,1fr) !important;gap:10px !important;align-items:start !important}.cp-char{width:72px !important}.cp-stage > div:first-child{align-self:start !important;margin-top:24px}.cp-floor{display:none}.cp-chips{justify-content:flex-start !important}.cp-chat{margin-top:0 !important}.cp-cta-d,.cp-d{display:none !important}.cp-chips-m{display:grid !important;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;width:100%;margin-top:16px}.cp-chips-m button{padding:0 !important;width:100%}.ob-main{padding-top:28px !important}}
+@media (min-width: 961px){.cp-cta-m,.cp-chips-m{display:none !important}}
 '''
 IMG='/_blob/bad84659fa9f24b3a7efb7e88696e531'
 c=H1('Meet your Copilot.')+'\n'+SUB('It already knows your expertise, and it will build alongside you.',520)+'\n'
@@ -29,14 +29,15 @@ c+='''<div class="cp-stage" style="margin-top: clamp(16px, 3vh, 28px); width: 10
 <div class="cp-pop" style="max-width: 560px; padding: 16px 18px; border-radius: 20px 20px 20px 6px; background: #F5F8FF; border: 1.5px solid #E6EAF3; font-size: 16px; line-height: 1.55; color: #0B1433; min-height: 52px; box-sizing: border-box"><sc-if value="{{waiting}}" hint-placeholder-val="{{false}}"><span style="display: inline-flex; gap: 5px; padding: 6px 0" aria-label="typing"><span class="cp-dot"></span><span class="cp-dot" style="animation-delay: .15s"></span><span class="cp-dot" style="animation-delay: .3s"></span></span></sc-if><span aria-live="polite">{{typed}}</span><sc-if value="{{typing}}" hint-placeholder-val="{{false}}"><span class="cp-caret" aria-hidden="true"></span></sc-if></div>
 <sc-if value="{{askShown}}" hint-placeholder-val="{{true}}">
 <div class="cp-pop" style="align-self: flex-start; padding: 12px 16px; border-radius: 20px 20px 20px 6px; background: #F5F8FF; border: 1.5px solid #E6EAF3; font-size: 16px; color: #0B1433">What would you like to call me?</div>
-<div class="cp-chips cp-pop" role="radiogroup" aria-label="Name your Copilot" style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px; margin-top: 4px; animation-delay: .15s">
+<div class="cp-chips cp-pop cp-d" role="radiogroup" aria-label="Name your Copilot" style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px; margin-top: 4px; animation-delay: .15s">
 <sc-for list="{{names}}" as="n" hint-placeholder-count="4"><button type="button" role="radio" aria-checked="{{n.on}}" class="ob-chip" onClick="{{n.pick}}" style="height: 44px; padding: 0 16px; border-radius: 999px; border: 1.5px solid {{n.bd}}; background: {{n.bg}}; color: {{n.fg}}; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer">{{n.label}}</button></sc-for>
 </div>
 '''+BTN('CR-ONB-007.dc.html','<span>Continue with {{name}}</span>','10px').replace('class="ob-btn" style="','class="ob-btn cp-pop cp-cta-d" style="align-self: flex-start; animation-delay: .3s; ')+'''
 </sc-if>
 </div>
 </div>
-<sc-if value="{{askShown}}" hint-placeholder-val="{{true}}">'''+BTN('CR-ONB-007.dc.html','<span>Continue with {{name}}</span>','20px').replace('class="ob-btn" style="','class="ob-btn cp-pop cp-cta-m" style="animation-delay: .3s; ')+'''</sc-if>'''
+<sc-if value="{{askShown}}" hint-placeholder-val="{{true}}"><div class="cp-chips-m cp-pop" role="radiogroup" aria-label="Name your Copilot" style="display: none; animation-delay: .15s"><sc-for list="{{names}}" as="n" hint-placeholder-count="4"><button type="button" role="radio" aria-checked="{{n.on}}" class="ob-chip" onClick="{{n.pick}}" style="height: 44px; border-radius: 999px; border: 1.5px solid {{n.bd}}; background: {{n.bg}}; color: {{n.fg}}; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer">{{n.label}}</button></sc-for></div>
+'''+BTN('CR-ONB-007.dc.html','<span>Continue with {{name}}</span>','20px').replace('class="ob-btn" style="','class="ob-btn cp-pop cp-cta-m" style="animation-delay: .3s; ')+'''</sc-if>'''
 S='''class Component extends DCLogic {
   constructor(props) { super(props); this.state = { names: ['Nova', 'Maya', 'Alex', 'Sage'], sel: 'Nova', i: 0, phase: 'wait' }; }
   componentDidMount() {

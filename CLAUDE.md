@@ -32,6 +32,12 @@
 - Animations only play in canvas Play mode (editor disables them) — not a bug.
 - Always re-read live canvas files before editing (designer edits in place); sync them into the repo.
 
+## Figma (started 2026-10-03)
+- File: https://www.figma.com/design/bUBmVNm3WWd5eCl5JxX2sz (Team1, Pro). Pages: Cover, Foundations, Components, Onboarding · Desktop, Onboarding · Mobile.
+- Font in Figma: Google Sans Flex (closest available to Google Sans).
+- Variables: Primitives / Color (semantic, Light) / Spacing / Radius; 16 text styles; 4 effect styles. Components use variables + styles.
+- Figma can't render WebP image fills: always upload PNG. State ledger: `design/figma-state.json`.
+
 ## Workflow
 - 25 screens/day plan in chat history; track progress in `screens.md`.
 - Commit + push to branch `claude/gallant-meitner-290f6y` after each change.

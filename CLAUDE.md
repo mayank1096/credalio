@@ -21,7 +21,7 @@
 
 ## Onboarding layout (approved 2026-10-02)
 - Every onboarding step uses the CR-ONB-001 layout: header (logo left, Log in right), dashed 5-step tracker centred under it ("Step 1 of 5 · Your account"), centred content, illustration at the bottom.
-- NO left side panel. Illustration on EVERY screen (desktop bottom; mobile under the tracker, panned to hero + Creator). Creator path lit, chip text tells the story per step.
+- NO left side panel. Illustration on EVERY screen (desktop bottom; mobile under the tracker, panned to hero + Creator). Creator path lit. NO text tags/chips on the illustration (removed by designer).
 - Shared frame generator: scratchpad gen2.py (re-create from any existing step file if lost).
 
 ## Hard layout rules

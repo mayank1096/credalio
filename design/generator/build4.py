@@ -30,13 +30,13 @@ c+='''<div class="cp-stage" style="margin-top: clamp(16px, 3vh, 28px); width: 10
 <sc-if value="{{askShown}}" hint-placeholder-val="{{true}}">
 <div class="cp-pop" style="align-self: flex-start; padding: 12px 16px; border-radius: 20px 20px 20px 6px; background: #F5F8FF; border: 1.5px solid #E6EAF3; font-size: 16px; color: #0B1433">What would you like to call me?</div>
 <div class="cp-chips cp-pop cp-d" role="radiogroup" aria-label="Name your Copilot" style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px; margin-top: 4px; animation-delay: .15s">
-<sc-for list="{{names}}" as="n" hint-placeholder-count="4"><button type="button" role="radio" aria-checked="{{n.on}}" class="ob-chip" onClick="{{n.pick}}" style="height: 44px; padding: 0 16px; border-radius: 999px; border: 1.5px solid {{n.bd}}; background: {{n.bg}}; color: {{n.fg}}; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer">{{n.label}}</button></sc-for>
+<sc-for list="{{names}}" as="n" hint-placeholder-count="4"><button type="button" role="radio" aria-checked="{{n.on}}" class="ob-chip" onClick="{{n.pick}}" style="height: 44px; padding: 0 16px; border-radius: 14px; border: 1.5px solid {{n.bd}}; background: {{n.bg}}; color: {{n.fg}}; box-shadow: {{n.sh}}; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 7px"><span aria-hidden="true" style="display: {{n.ckd}}; width: 16px; height: 16px; border-radius: 50%; background: #1652F0; color: #FFFFFF; align-items: center; justify-content: center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>{{n.label}}</button></sc-for>
 </div>
 '''+BTN('CR-ONB-007.dc.html','<span>Continue with {{name}}</span>','10px').replace('class="ob-btn" style="','class="ob-btn cp-pop cp-cta-d" style="align-self: flex-start; animation-delay: .3s; ')+'''
 </sc-if>
 </div>
 </div>
-<sc-if value="{{askShown}}" hint-placeholder-val="{{true}}"><div class="cp-chips-m cp-pop" role="radiogroup" aria-label="Name your Copilot" style="display: none; animation-delay: .15s"><sc-for list="{{names}}" as="n" hint-placeholder-count="4"><button type="button" role="radio" aria-checked="{{n.on}}" class="ob-chip" onClick="{{n.pick}}" style="height: 44px; border-radius: 999px; border: 1.5px solid {{n.bd}}; background: {{n.bg}}; color: {{n.fg}}; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer">{{n.label}}</button></sc-for></div>
+<sc-if value="{{askShown}}" hint-placeholder-val="{{true}}"><div class="cp-chips-m cp-pop" role="radiogroup" aria-label="Name your Copilot" style="display: none; animation-delay: .15s"><sc-for list="{{names}}" as="n" hint-placeholder-count="4"><button type="button" role="radio" aria-checked="{{n.on}}" class="ob-chip" onClick="{{n.pick}}" style="height: 44px; border-radius: 14px; border: 1.5px solid {{n.bd}}; background: {{n.bg}}; color: {{n.fg}}; box-shadow: {{n.sh}}; font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px"><span aria-hidden="true" style="display: {{n.ckd}}; width: 16px; height: 16px; border-radius: 50%; background: #1652F0; color: #FFFFFF; align-items: center; justify-content: center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>{{n.label}}</button></sc-for></div>
 '''+BTN('CR-ONB-007.dc.html','<span>Continue with {{name}}</span>','20px').replace('class="ob-btn" style="','class="ob-btn cp-pop cp-cta-m" style="animation-delay: .3s; ')+'''</sc-if>'''
 S='''class Component extends DCLogic {
   constructor(props) { super(props); this.state = { names: ['Nova', 'Maya', 'Alex', 'Sage'], sel: 'Nova', i: 0, phase: 'wait' }; }
@@ -62,7 +62,7 @@ S='''class Component extends DCLogic {
       name: this.name(),
       typed: phase === 'wait' ? '' : (phase === 'done' ? full : full.slice(0, i)),
       waiting: phase === 'wait', typing: phase === 'typing', askShown: phase === 'done',
-      names: names.map((label) => { const on = sel === label; return { label, on: on ? 'true' : 'false', pick: () => this.setState({ sel: label }), bd: on ? '#1652F0' : '#D6DDEE', bg: on ? '#1652F0' : '#FFFFFF', fg: on ? '#FFFFFF' : '#0B1433' }; })
+      names: names.map((label) => { const on = sel === label; return { label, on: on ? 'true' : 'false', pick: () => this.setState({ sel: label }), bd: on ? '#1652F0' : '#D6DDEE', bg: on ? '#F5F8FF' : '#FFFFFF', fg: on ? '#0E3BB8' : '#0B1433', sh: on ? '0 0 0 4px rgba(22, 82, 240, 0.12)' : 'none', ckd: on ? 'inline-flex' : 'none' }; })
     };
   }
 }'''

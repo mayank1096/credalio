@@ -36,6 +36,7 @@
 - File: https://www.figma.com/design/bUBmVNm3WWd5eCl5JxX2sz (Team1, Pro). Pages: Cover, Foundations, Components, Onboarding · Desktop, Onboarding · Mobile.
 - Font in Figma: Google Sans Flex (closest available to Google Sans).
 - Variables: Primitives / Color (semantic, Light) / Spacing / Radius; 16 text styles; 4 effect styles. Components use variables + styles.
+- In Figma ALWAYS set clipsContent=false on inner frames/auto-layouts/components (only screen roots + illustration crops clip) — otherwise shadows get cropped.
 - Figma can't render WebP image fills: always upload PNG. State ledger: `design/figma-state.json`.
 
 ## Workflow

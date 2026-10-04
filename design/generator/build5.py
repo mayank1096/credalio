@@ -18,11 +18,11 @@ c+='''<div class="cp-stage" style="margin-top: clamp(16px, 3vh, 28px); width: 10
 <span class="cp-pop cp-label" style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B6582"><span style="width: 8px; height: 8px; border-radius: 50%; background: #0F6B45; box-shadow: 0 0 0 3px rgba(15, 107, 69, 0.15)"></span><span style="font-weight: 600; color: #0B1433">Nova</span> · your Creator Copilot</span>
 <div class="cp-pop" style="max-width: 560px; padding: 16px 18px; border-radius: 20px 20px 20px 6px; background: #F5F8FF; border: 1.5px solid #E6EAF3; font-size: 16px; line-height: 1.55; color: #0B1433; min-height: 104px; box-sizing: border-box"><sc-if value="{{waiting}}" hint-placeholder-val="{{false}}"><span style="display: inline-flex; gap: 5px; padding: 6px 0" aria-label="typing"><span class="cp-dot"></span><span class="cp-dot" style="animation-delay: .15s"></span><span class="cp-dot" style="animation-delay: .3s"></span></span></sc-if><span aria-live="polite">{{typed}}</span><sc-if value="{{typing}}" hint-placeholder-val="{{false}}"><span class="cp-caret" aria-hidden="true"></span></sc-if></div>
 '''+cards('cp-d','max-width: 560px; margin-top: 6px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px')+'''
-'''+BTN('#','<span>Continue</span>','10px').replace('class="ob-btn" style="','class="ob-btn cp-pop cp-cta-d" style="align-self: flex-start; animation-delay: .3s; ')+'''
+'''+BTN('CR-ONB-008.dc.html','<span>Continue</span>','10px').replace('class="ob-btn" style="','class="ob-btn cp-pop cp-cta-d" style="align-self: flex-start; animation-delay: .3s; ')+'''
 </div>
 </div>
 '''+cards('cp-opts-m','display: none')+'''
-'''+BTN('#','<span>Continue</span>','20px').replace('class="ob-btn" style="','class="ob-btn cp-pop cp-cta-m" style="animation-delay: .3s; ')
+'''+BTN('CR-ONB-008.dc.html','<span>Continue</span>','20px').replace('class="ob-btn" style="','class="ob-btn cp-pop cp-cta-m" style="animation-delay: .3s; ')
 S007='''class Component extends DCLogic {
   constructor(props) { super(props); this.state = { sel: 'concise', i: 0, phase: 'wait' }; }
   componentDidMount() {

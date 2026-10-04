@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Credalio · Create with Nova</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes cpPop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes cpDot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+@keyframes dsRing{from{stroke-dashoffset:1}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}.ob-in3{animation:obIn .5s ease .16s both}.ob-in4{animation:obIn .5s ease .24s both}
+.cp-pop{animation:cpPop .4s ease both}
+.cp-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#1652F0;animation:cpDot 1.2s ease-in-out infinite}
+.ds-root{display:grid;grid-template-columns:264px minmax(0,1fr);min-height:100vh;background:#F7F9FD;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.ds-side{position:sticky;top:0;height:100vh;overflow-y:auto;box-sizing:border-box;padding:22px 14px 24px 14px;background:#FFFFFF;border-right:1.5px solid #E6EAF3;display:flex;flex-direction:column;gap:2px;z-index:20}
+.ds-glab{display:block;margin:16px 12px 6px 12px;font-size:12px;font-weight:600;color:#8A93AD}
+.ds-item{display:flex;align-items:center;gap:12px;min-height:40px;padding:0 12px;border-radius:12px;color:#3A4566;font-size:14.5px;font-weight:500;text-decoration:none;transition:background .2s ease,color .2s ease}
+.ds-item svg{flex-shrink:0;color:#5B6582}
+.ds-item:hover{background:#F5F8FF;color:#0B1433}
+.ds-on{background:#EAF0FF !important;color:#0E3BB8 !important;font-weight:600}
+.ds-on svg{color:#1652F0}
+.ds-badge{min-width:22px;height:22px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.ds-top{position:sticky;top:0;z-index:10;height:72px;box-sizing:border-box;padding:0 clamp(20px,3vw,40px);display:flex;align-items:center;gap:12px;background:rgba(247,249,253,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.ds-search{flex:1 1 auto;max-width:440px;height:44px;box-sizing:border-box;display:flex;align-items:center;gap:10px;padding:0 16px;border-radius:999px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#8A93AD;font-size:14px}
+.ds-search input{border:0;outline:none;background:transparent;font-family:inherit;font-size:14px;color:#0B1433;flex-grow:1;min-width:0}
+.ds-search input::placeholder{color:#8A93AD}
+.ds-icon-btn{width:44px;height:44px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#3A4566;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;text-decoration:none}
+.ds-icon-btn:hover{border-color:#AFC1F5}
+.ds-tok{height:44px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:8px;padding:0 16px 0 6px;border-radius:999px;background:#FFFFFF;border:1.5px solid #E6EAF3;font-size:14px;font-weight:600;color:#0B1433;text-decoration:none}
+.ds-main{box-sizing:border-box;width:100%;max-width:1200px;padding:12px clamp(20px,3vw,40px) 56px clamp(20px,3vw,40px)}
+.ds-h1{margin:0;font-size:clamp(28px,2.5vw,36px);line-height:1.15;font-weight:600;letter-spacing:-0.03em;color:#0B1433}
+.ds-sub{margin:8px 0 0 0;font-size:16px;line-height:1.55;color:#4A5578}
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-weight:600;font-size:14.5px;text-decoration:none}
+.ds-link:hover{color:#0E3BB8}
+.ds-back{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px 0 10px;border-radius:999px;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none;margin-left:-10px}
+.ds-back:hover{background:#FFFFFF;color:#0B1433}
+.ds-chip{display:inline-flex;align-items:center;height:40px;padding:0 16px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-chip:hover{border-color:#1652F0;background:#F5F8FF}
+.ds-menu,.ds-scrim,.ds-mlogo,.ds-close{display:none}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-chip:focus-visible,.ds-item:focus-visible,.ds-icon-btn:focus-visible,.ds-opt:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2,.ob-in3,.ob-in4,.cp-pop,.cp-dot{animation:none}}
+@media (max-width: 440px){.ds-mlogo .ds-brand{display:none}}
+@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}}
+@media (max-width: 960px){
+.ds-root{grid-template-columns:minmax(0,1fr)}
+.ds-side{position:fixed;left:0;top:0;width:288px;max-width:86vw;transform:translateX(-102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 64px rgba(11,20,51,.18)}
+.ds-side.ds-open{transform:none}
+.ds-scrim.ds-open{display:block;position:fixed;inset:0;background:rgba(11,20,51,.32);z-index:15}
+.ds-menu,.ds-mlogo{display:flex}
+.ds-close{display:flex;position:absolute;right:12px;top:16px}
+.ds-top{height:64px;padding:0 16px;gap:8px}
+.ds-search,.ds-hide-sm{display:none !important}
+.ds-tok{padding:0 12px 0 6px}
+.ds-root{overflow-x:hidden}
+.ds-main{padding:8px 20px 40px 20px}
+.ds-btn{justify-content:space-between}
+}
+.ds-opt:hover{border-color:#1652F0 !important}
+@media (max-width: 1080px){.c2-grid{grid-template-columns:minmax(0,1fr) !important}}
+@media (max-width: 860px){.pr-row{grid-template-columns:minmax(0,1fr) !important;gap:8px !important;padding:16px 18px !important}.pr-opts{display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:6px}.pr-foot{flex-direction:column;align-items:stretch !important}.pr-foot .ds-btn{justify-content:space-between}.c2-head > div:last-child{align-items:flex-start !important}}
+@media (max-width: 960px){section.ds-card > div[aria-live]{padding:18px !important}}
+</style>
+</helmet>
+<div class="ds-root">
+<div class="ds-scrim {{navCls}}" onClick="{{toggleNav}}"></div>
+<nav class="ds-side {{navCls}}" aria-label="Main">
+<div style="padding: 0 6px 14px 6px"><a href="CR-DASH-NEW.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+<span style="width: 32px; height: 32px; border-radius: 9px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M17.5 7.2A7 7 0 1 0 17.5 16.8"></path></svg></span>
+<span class="ds-brand" style="font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: #0B1433">Credalio</span></a></div>
+<button type="button" class="ds-icon-btn ds-close" onClick="{{toggleNav}}" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<a href="CR-DASH-NEW.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2"></rect></svg><span style="flex-grow: 1; min-width: 0">Dashboard</span></a><span class="ds-glab">Create</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6.5A2.5 2.5 0 0 1 4 18.5"></path><path d="M8 7h8"></path></svg><span style="flex-grow: 1; min-width: 0">My learning experiences</span></a><a href="CR-CREATE-001.dc.html" class="ds-item ds-on" aria-current="page"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg><span style="flex-grow: 1; min-width: 0">Create new</span></a><span class="ds-glab">Work</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 3.5h6v3H9zM9 12h6M9 16h4"></path></svg><span style="flex-grow: 1; min-width: 0">Assigned to me</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg><span style="flex-grow: 1; min-width: 0">Validation Centre</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span style="flex-grow: 1; min-width: 0">Discussions</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3.5"></circle><path d="m5.6 5.6 3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"></path></svg><span style="flex-grow: 1; min-width: 0">Learner support</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span style="flex-grow: 1; min-width: 0">Calendar</span></a><span class="ds-glab">Insights</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span style="flex-grow: 1; min-width: 0">Learners</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M6.5 16v-5M11.5 16V6M16.5 16v-8"></path></svg><span style="flex-grow: 1; min-width: 0">Analytics</span></a><span class="ds-glab">Economy</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg><span style="flex-grow: 1; min-width: 0">Earnings & payouts</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg><span style="flex-grow: 1; min-width: 0">Credit Wallet</span></a><span class="ds-glab">Creator</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z" fill="currentColor" stroke="none"></path></svg><span style="flex-grow: 1; min-width: 0">Nova · your Copilot</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path></svg><span style="flex-grow: 1; min-width: 0">Creator Centre</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span style="flex-grow: 1; min-width: 0">Creator profile</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.3 1.7 2.9-.1.9 2.7 2.3 1.7-.9 2.7.9 2.7-2.3 1.7-.9 2.7-2.9-.1L12 21l-2.3-1.7-2.9.1-.9-2.7L3.6 15l.9-2.7-.9-2.7 2.3-1.7.9-2.7 2.9.1z"></path><path d="m9 12 2 2 4-4"></path></svg><span style="flex-grow: 1; min-width: 0">Verification & readiness</span><span class="ds-badge" aria-label="4 to do">4</span></a><span class="ds-glab">Account</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg><span style="flex-grow: 1; min-width: 0">Settings</span></a>
+</nav>
+<div style="min-width: 0; display: flex; flex-direction: column">
+<header class="ds-top">
+<button type="button" class="ds-icon-btn ds-menu" onClick="{{toggleNav}}" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<span class="ds-mlogo" style="flex-grow: 1"><a href="CR-DASH-NEW.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+<span style="width: 32px; height: 32px; border-radius: 9px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M17.5 7.2A7 7 0 1 0 17.5 16.8"></path></svg></span>
+<span class="ds-brand" style="font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: #0B1433">Credalio</span></a></span>
+<label class="ds-search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span class="sr-only">Search</span><input placeholder="Search your learning experiences, learners, discussions…"></label>
+<span class="ds-hide-sm" style="flex-grow: 1"></span>
+<a href="#" class="ds-tok" aria-label="Nova has 20,000 AI Tokens"><span aria-hidden="true" style="position: relative; flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; overflow: hidden; background: #EAF0FF; display: block"><img src="/_blob/bad84659fa9f24b3a7efb7e88696e531" alt="" style="position: absolute; left: -1114%; top: -142%; width: 1737.6%; max-width: none; height: auto; mix-blend-mode: multiply"></span><span class="ds-hide-sm">Nova</span><span style="color: #5B6582; font-weight: 500">20K</span></a>
+<a href="#" class="ds-icon-btn ds-hide-sm" aria-label="Help"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"></path></svg></a>
+<a href="#" class="ds-icon-btn" aria-label="Notifications, 1 new"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16z"></path><path d="M10 21h4"></path></svg><span style="position: absolute; right: 10px; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: #E5484D; box-shadow: 0 0 0 2px #FFFFFF"></span></a>
+<a href="#" aria-label="Your account" style="position: relative; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: #0B1433; color: #FFFFFF; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">AO<span style="position: absolute; right: 0; bottom: 1px; width: 11px; height: 11px; border-radius: 50%; background: #0F6B45; border: 2px solid #F7F9FD"></span></a>
+</header>
+<main class="ds-main">
+<a href="CR-CREATE-001.dc.html" class="ds-back ob-in" style="margin-top: 4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg>Back</a>
+<div class="c2-head ob-in" style="margin-top: 10px; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap">
+<div><h1 class="ds-h1">Create with Nova</h1><p class="ds-sub" style="max-width: 600px">A short conversation, then a draft for you to review. Nothing enters the Studio until you accept it.</p></div>
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px"><span style="font-size: 13.5px; color: #5B6582">{{progress}}</span><div aria-hidden="true" style="display: grid; grid-template-columns: repeat(5, 28px); gap: 5px"><sc-for list="{{segs}}" as="s" hint-placeholder-count="5"><span style="height: 4px; border-radius: 4px; background: {{s.c}}"></span></sc-for></div></div>
+</div>
+<div class="c2-grid ob-in2" style="margin-top: 24px; display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 18px; align-items: start">
+<section class="ds-card" aria-label="Conversation with Nova" style="display: flex; flex-direction: column; overflow: hidden">
+<div aria-live="polite" style="padding: 24px; display: flex; flex-direction: column; gap: 14px; min-height: 300px">
+<sc-for list="{{msgs}}" as="m" hint-placeholder-count="2"><div class="cp-pop" style="display: {{m.nd}}; align-items: flex-end; gap: 10px"><span aria-hidden="true" style="position: relative; flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; background: #EAF0FF; display: block"><img src="/_blob/bad84659fa9f24b3a7efb7e88696e531" alt="" style="position: absolute; left: -1114%; top: -142%; width: 1737.6%; max-width: none; height: auto; mix-blend-mode: multiply"></span><div style="max-width: min(560px, 82%); padding: 12px 16px; border-radius: 18px 18px 18px 6px; background: #F5F8FF; border: 1.5px solid #E6EAF3; font-size: 15.5px; line-height: 1.55; color: #0B1433">{{m.text}}</div></div><div class="cp-pop" style="display: {{m.md}}; justify-content: flex-end"><div style="max-width: min(520px, 82%); padding: 12px 16px; border-radius: 18px 18px 6px 18px; background: #0B1433; font-size: 15.5px; line-height: 1.55; color: #FFFFFF">{{m.text}}</div></div><div style="display: {{m.dd}}; align-items: flex-end; gap: 10px"><span aria-hidden="true" style="position: relative; flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; background: #EAF0FF; display: block"><img src="/_blob/bad84659fa9f24b3a7efb7e88696e531" alt="" style="position: absolute; left: -1114%; top: -142%; width: 1737.6%; max-width: none; height: auto; mix-blend-mode: multiply"></span><div aria-label="Nova is typing" style="padding: 16px 18px; border-radius: 18px 18px 18px 6px; background: #F5F8FF; border: 1.5px solid #E6EAF3; display: inline-flex; gap: 5px"><span class="cp-dot"></span><span class="cp-dot" style="animation-delay: .15s"></span><span class="cp-dot" style="animation-delay: .3s"></span></div></div></sc-for>
+</div>
+<sc-if value="{{composerShown}}" hint-placeholder-val="{{true}}"><div style="padding: 16px 20px 20px 20px; border-top: 1.5px solid #E6EAF3; background: #FFFFFF">
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px"><sc-for list="{{chips}}" as="ch" hint-placeholder-count="3"><button type="button" class="ds-chip cp-pop" onClick="{{ch.pick}}">{{ch.label}}</button></sc-for></div>
+<div style="display: flex; align-items: center; gap: 8px; height: 52px; box-sizing: border-box; padding: 0 6px 0 18px; border-radius: 999px; border: 1.5px solid #D6DDEE; background: #FFFFFF"><label class="sr-only" for="c2-in">Your answer</label><input id="c2-in" value="{{text}}" onChange="{{onText}}" onKeyDown="{{onKey}}" placeholder="Type your answer" autocomplete="off" style="flex-grow: 1; min-width: 0; border: 0; outline: none; background: transparent; font-family: inherit; font-size: 15px; color: #0B1433"><button type="button" onClick="{{sendText}}" aria-label="Send" style="width: 40px; height: 40px; flex-shrink: 0; border: 0; border-radius: 50%; background: {{sendBg}}; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background .2s ease"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></button></div>
+</div></sc-if>
+<sc-if value="{{readyShown}}" hint-placeholder-val="{{false}}"><div class="cp-pop" style="padding: 18px 20px 20px 20px; border-top: 1.5px solid #E6EAF3; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap"><span style="font-size: 14px; color: #4A5578">All five answers are in. You can still change them in the draft.</span><button type="button" class="ds-btn" onClick="{{draft}}"><span style="display: inline-flex; align-items: center; gap: 8px"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg>Draft my course</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div></sc-if>
+</section>
+<aside class="ds-card" aria-label="What Nova has so far" style="padding: 22px">
+<h2 style="margin: 0; font-size: 15px; font-weight: 600">What Nova has so far</h2>
+<ul style="list-style: none; margin: 12px 0 0 0; padding: 0"><sc-for list="{{facts}}" as="f" hint-placeholder-count="5"><li style="display: flex; gap: 10px; padding: 11px 0; border-top: 1px solid #E6EAF3"><span style="width: 20px; height: 20px; margin-top: 1px; flex-shrink: 0; box-sizing: border-box; border-radius: 50%; border: 2px solid {{f.bd}}; background: {{f.bg}}; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 12.5px; color: #5B6582">{{f.label}}</span><span style="font-size: 14px; line-height: 1.45; color: {{f.fg}}">{{f.value}}</span></span></li></sc-for></ul>
+</aside>
+</div>
+<sc-if value="{{propShown}}" hint-placeholder-val="{{false}}"><section id="c2-prop" class="ds-card cp-pop" aria-labelledby="c2-prop-t" style="margin-top: 18px; overflow: hidden; border-color: #AFC1F5; box-shadow: 0 0 0 4px rgba(22, 82, 240, 0.07), 0 18px 40px rgba(11, 20, 51, 0.06)">
+<div style="padding: 22px 24px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; background: #FFFFFF url(/_blob/d268046654a4206d2a726e62005bcc59) center top / 100% auto no-repeat"><span aria-hidden="true" style="position: relative; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; overflow: hidden; background: #EAF0FF; box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 4.5px #D6DDEE; display: block"><img src="/_blob/bad84659fa9f24b3a7efb7e88696e531" alt="" style="position: absolute; left: -1114%; top: -142%; width: 1737.6%; max-width: none; height: auto; mix-blend-mode: multiply"></span><div style="flex: 1 1 260px; min-width: 0"><h2 id="c2-prop-t" style="margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.015em">Nova’s first draft</h2><p style="margin: 3px 0 0 0; font-size: 14px; color: #4A5578">Review each part. Nothing enters the Studio until you accept it.</p></div><button type="button" class="ds-ghost" onClick="{{acceptAll}}" style="height: 44px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Accept all</button></div>
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="7"><div class="pr-row" style="display: grid; grid-template-columns: 170px minmax(0, 1fr) auto; gap: 20px; align-items: start; padding: 18px 24px; border-top: 1.5px solid #E6EAF3; background: {{r.rowBg}}; transition: background .2s ease"><span style="font-size: 13.5px; font-weight: 600; color: #5B6582; padding-top: 2px">{{r.label}}</span><span style="font-size: 15px; line-height: 1.6; color: {{r.fg}}; white-space: pre-line; text-decoration: {{r.td}}">{{r.value}}</span><div class="pr-opts" role="group" aria-label="Decision for {{r.label}}" style="display: flex; gap: 6px"><button type="button" class="ds-opt" onClick="{{r.a.pick}}" aria-pressed="{{r.a.on}}" style="height: 36px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 1.5px solid {{r.a.bd}}; background: {{r.a.bg}}; color: {{r.a.fg}}; font-family: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap; transition: all .2s ease"><span style="display: {{r.a.ckd}}; color: #1652F0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>{{r.a.label}}</button><button type="button" class="ds-opt" onClick="{{r.e.pick}}" aria-pressed="{{r.e.on}}" style="height: 36px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 1.5px solid {{r.e.bd}}; background: {{r.e.bg}}; color: {{r.e.fg}}; font-family: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap; transition: all .2s ease"><span style="display: {{r.e.ckd}}; color: #1652F0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>{{r.e.label}}</button><button type="button" class="ds-opt" onClick="{{r.x.pick}}" aria-pressed="{{r.x.on}}" style="height: 36px; padding: 0 12px; box-sizing: border-box; border-radius: 12px; border: 1.5px solid {{r.x.bd}}; background: {{r.x.bg}}; color: {{r.x.fg}}; font-family: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap; transition: all .2s ease"><span style="display: {{r.x.ckd}}; color: #1652F0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>{{r.x.label}}</button></div></div></sc-for>
+<div class="pr-foot" style="padding: 18px 24px; border-top: 1.5px solid #E6EAF3; background: #F7F9FD; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 8px; min-width: 200px"><span style="font-size: 14px; color: #3A4566"><span style="font-weight: 600; color: #0B1433">{{reviewed}} of 7</span> reviewed</span><span style="display: block; width: 220px; max-width: 100%; height: 6px; border-radius: 6px; background: #E6EAF3; overflow: hidden"><span style="display: block; height: 100%; width: {{pct}}; border-radius: 6px; background: #1652F0; transition: width .3s ease"></span></span><sc-if value="{{errShown}}" hint-placeholder-val="{{false}}"><span role="alert" style="font-size: 13.5px; color: #B42318">Review every part first: accept, edit later or reject.</span></sc-if></div>
+<button type="button" class="ds-btn" onClick="{{open}}" aria-disabled="{{openDis}}" style="background: {{openBg}}; box-shadow: {{openSh}}"><span>Open Course Studio</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button>
+</div>
+</section></sc-if>
+<sc-if value="{{doneShown}}" hint-placeholder-val="{{false}}"><section id="c2-done" class="ds-card cp-pop" style="margin-top: 18px; padding: 36px 24px; display: flex; flex-direction: column; align-items: center; text-align: center">
+<span style="width: 56px; height: 56px; border-radius: 50%; background: #E7F5EE; color: #0F6B45; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>
+<h2 style="margin: 16px 0 0 0; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">Your course draft is ready.</h2>
+<p style="margin: 8px 0 0 0; max-width: 460px; font-size: 15px; line-height: 1.55; color: #4A5578">{{doneText}}</p>
+<a href="#" class="ds-btn" style="margin-top: 20px"><span>Open Course Studio</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+</section></sc-if>
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.Q = [
+      { q: 'What do you want someone to be able to do after learning from you?', k: 'Learners will be able to', chips: ['Analyse business data with SQL', 'Build dashboards managers use', 'Clean and prepare messy data'], demo: 'Analyse business data with SQL and present clear recommendations to managers.' },
+      { q: 'Who is this course for?', k: 'Audience', chips: ['Early-career analysts', 'Career switchers', 'Managers who use data'], demo: 'Early-career analysts and career switchers' },
+      { q: 'What experience should they already have?', k: 'Starting level', chips: ['Comfortable with spreadsheets', 'Some SQL', 'None yet'], demo: 'Comfortable with spreadsheets; no SQL yet' },
+      { q: 'Which skills do you want them to develop?', k: 'Skills', chips: ['SQL', 'Data cleaning', 'Data storytelling'], demo: 'SQL, data cleaning, data storytelling' },
+      { q: 'Which subject or domain does it sit in?', k: 'Domain', chips: ['Data & Analytics', 'Business', 'Technology'], demo: 'Data & Analytics' }
+    ];
+    this.P = [
+      { k: 'title', label: 'Course title', value: 'SQL for Business Analysis' },
+      { k: 'desc', label: 'Description', value: 'Learn to query, clean and analyse business data with SQL, and present clear recommendations managers can act on.' },
+      { k: 'aud', label: 'Audience', value: 'Early-career analysts and career switchers\nComfortable with spreadsheets; no SQL yet' },
+      { k: 'pre', label: 'Prerequisites', value: 'Comfortable with spreadsheets (recommended)' },
+      { k: 'skills', label: 'Skills', value: 'SQL · Beginner → Intermediate\nData cleaning · Beginner → Intermediate\nData storytelling · Beginner → Intermediate' },
+      { k: 'out', label: 'Learning outcomes', value: 'Write SQL queries to retrieve, filter and aggregate business data.\nClean and join tables to prepare data for analysis.\nPresent findings and recommendations to non-technical stakeholders.' },
+      { k: 'cur', label: 'First curriculum', value: '1. Why data and SQL matter\n2. Querying with SELECT and WHERE\n3. Joining and cleaning data\n4. Aggregating for business questions\n5. Presenting findings' }
+    ];
+    const full = (props || {}).variant === 'proposal';
+    this.state = { nav: false, answers: full ? this.Q.map((x) => x.demo) : [], text: '', typing: false, phase: full ? 'proposal' : 'chat', dec: full ? { title: 'accept', desc: 'accept', aud: 'accept', pre: 'edit' } : {}, err: false };
+  }
+  componentWillUnmount() { clearTimeout(this.t); }
+  send(v) {
+    const t = (v || '').trim();
+    if (!t || this.state.typing || this.state.answers.length >= 5) return;
+    this.setState({ answers: [...this.state.answers, t], text: '', typing: true });
+    this.t = setTimeout(() => this.setState({ typing: false }), 750);
+  }
+  draft() {
+    this.setState({ phase: 'drafting' });
+    this.t = setTimeout(() => { this.setState({ phase: 'proposal' }); setTimeout(() => { const el = document.getElementById('c2-prop'); if (el && el.scrollIntoView) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 60); }, 1400);
+  }
+  renderVals() {
+    const { answers, typing, phase, dec, err, text } = this.state;
+    const n = answers.length;
+    const msgs = [{ who: 'n', text: 'Great, let’s shape your course. I’ll ask a few questions, then draft a structure for you to review.' }];
+    for (let i = 0; i < 5; i++) {
+      if (i < n) { msgs.push({ who: 'n', text: this.Q[i].q }); msgs.push({ who: 'm', text: answers[i] }); }
+      else { msgs.push(typing ? { who: 'd', text: '' } : { who: 'n', text: this.Q[i].q }); break; }
+    }
+    if (n === 5) {
+      if (typing) msgs.push({ who: 'd', text: '' });
+      else {
+        msgs.push({ who: 'n', text: 'Thanks, that’s everything I need. Ready for a draft?' });
+        if (phase === 'drafting') msgs.push({ who: 'd', text: '' });
+        if (phase === 'proposal' || phase === 'done') msgs.push({ who: 'n', text: 'Here’s a first draft. Accept, edit later or reject each part below. Nothing goes into the Studio until you do.' });
+      }
+    }
+    const reviewed = this.P.filter((p) => dec[p.k]).length;
+    const opt = (k, v, label) => { const on = dec[k] === v; return { label, on: on ? 'true' : 'false', pick: () => this.setState({ dec: { ...this.state.dec, [k]: on ? undefined : v }, err: false }), bd: on ? '#1652F0' : '#D6DDEE', bg: on ? '#EAF0FF' : '#FFFFFF', fg: on ? '#0E3BB8' : '#3A4566', ckd: on ? 'inline-flex' : 'none' }; };
+    const accepted = this.P.filter((p) => dec[p.k] === 'accept').length;
+    const later = this.P.filter((p) => dec[p.k] === 'edit').length;
+    return {
+      navCls: this.state.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !this.state.nav }),
+      progress: n < 5 ? 'Question ' + (n + 1) + ' of 5' : 'All 5 answered',
+      segs: [0, 1, 2, 3, 4].map((i) => ({ c: i < n ? '#1652F0' : (i === n ? '#AFC1F5' : '#E6EAF3') })),
+      msgs: msgs.map((m) => ({ text: m.text, nd: m.who === 'n' ? 'flex' : 'none', md: m.who === 'm' ? 'flex' : 'none', dd: m.who === 'd' ? 'flex' : 'none' })),
+      composerShown: n < 5, readyShown: n === 5 && !typing && phase === 'chat',
+      chips: (n < 5 && !typing) ? this.Q[n].chips.map((label) => ({ label, pick: () => this.send(label) })) : [],
+      text, onText: (e) => this.setState({ text: e.target.value }),
+      onKey: (e) => { if (e.key === 'Enter') { e.preventDefault(); this.send(this.state.text); } },
+      sendText: () => this.send(this.state.text), sendBg: text.trim() ? '#1652F0' : '#CBD3E6',
+      draft: () => this.draft(),
+      facts: this.Q.map((q, i) => ({ label: q.k, value: answers[i] || 'Not yet', fg: answers[i] ? '#0B1433' : '#8A93AD', bd: answers[i] ? '#0F6B45' : '#CBD3E6', bg: answers[i] ? '#0F6B45' : '#FFFFFF' })),
+      propShown: phase === 'proposal', doneShown: phase === 'done',
+      rows: this.P.map((p) => ({ label: p.label, value: p.value, fg: dec[p.k] === 'reject' ? '#8A93AD' : '#0B1433', td: dec[p.k] === 'reject' ? 'line-through' : 'none', rowBg: dec[p.k] === 'accept' ? '#FBFCFF' : '#FFFFFF', a: opt(p.k, 'accept', 'Accept'), e: opt(p.k, 'edit', 'Edit later'), x: opt(p.k, 'reject', 'Reject') })),
+      reviewed, pct: Math.round(reviewed / 7 * 100) + '%', errShown: err,
+      acceptAll: () => { const d = {}; this.P.forEach((p) => { d[p.k] = 'accept'; }); this.setState({ dec: d, err: false }); },
+      openBg: reviewed === 7 ? '#1652F0' : '#AFC1F5', openSh: reviewed === 7 ? '0 1px 0 rgba(255,255,255,.25) inset, 0 10px 24px rgba(22,82,240,.24)' : 'none', openDis: reviewed === 7 ? 'false' : 'true',
+      open: () => { if (reviewed < 7) this.setState({ err: true }); else this.setState({ phase: 'done' }); },
+      doneText: accepted + ' accepted ' + (accepted === 1 ? 'part is' : 'parts are') + ' now in your new course draft.' + (later ? ' The ' + later + ' marked “edit later” ' + (later === 1 ? 'is' : 'are') + ' flagged for you in the Studio.' : '')
+    };
+  }
+}
+</script>
+</body>
+</html>

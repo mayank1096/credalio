@@ -37,6 +37,7 @@
 - Nova avatar = head crop of the Nova character (NOVA_AV). No emojis, no screen-ID eyebrows, no rainbow colours.
 - MOBILE = efficiency first: smaller type (H1 24, body 14–15), compact rows, no tall decorative blocks, primary CTA visible without scrolling where possible, secondary info collapsible (toggle) or hidden; horizontal-scroll chip rows.
 - AI Tokens are always shown GOLD (incl. top-bar pill: coin + "20K AI Tokens") (coin, #FFF1CF→#FFFAEB bg, #F4D98E border, brown text). 008 = "Ada, you’re a Creator." reveal (no step tracker); profile card hangs on a lanyard and sways (pendulum).
+- Creation flows (002A/002Ab) use FOCUS MODE (no sidebar): slim top bar (close, title, progress, gold tokens). Chat = centred column, messages bottom-anchored, composer docked at bottom with suggestion chips; blueprint as right pane (mobile: bottom sheet). Review = the course rendered as a real page with per-part icon tools + sticky review rail (mobile: fixed bottom bar). Generator `build9.py`.
 - Variant screens use one source + prop (e.g. 002Ab = `dc-import CR-CREATE-002A variant="proposal"`).
 
 ## Hard layout rules

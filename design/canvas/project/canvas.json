@@ -2,6 +2,73 @@
   "v": 3,
   "attachments": {},
   "boards": {
+    "CR-CREATE-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREATE-001 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 7300
+    },
+    "CR-CREATE-001.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREATE-001 · How would you like to build it? · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 7300
+    },
+    "CR-CREATE-002A-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREATE-002A · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 7300
+    },
+    "CR-CREATE-002A.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREATE-002A · New course with Nova (chat) · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 7300
+    },
+    "CR-CREATE-002Ab-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREATE-002Ab · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 7300
+    },
+    "CR-CREATE-002Ab.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREATE-002Ab · Review Nova’s draft · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 7300
+    },
+    "CR-DASH-NEW-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "title": "CR-DASH-NEW · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 7300
+    },
+    "CR-DASH-NEW.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DASH-NEW · Creator Studio launchpad · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 7300
+    },
     "CR-ONB-001-Laptop.dc.html": {
       "h": 720,
       "is_interactive": true,
@@ -222,6 +289,23 @@
       "x": 10350,
       "y": 4800
     },
+    "CR-ONB-008-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-ONB-008 · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 4800
+    },
+    "CR-ONB-008.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-008 · You’re a Creator · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 4800
+    },
     "Main.dc.html": {
       "expand": "fill",
       "h": 820,
@@ -230,90 +314,6 @@
       "w": 1440,
       "x": 0,
       "y": 0
-    },
-    "CR-ONB-008.dc.html": {
-      "x": 12420,
-      "y": 4800,
-      "w": 1440,
-      "h": 820,
-      "title": "CR-ONB-008 · You’re a Creator · Desktop",
-      "is_interactive": true,
-      "expand": "fill"
-    },
-    "CR-ONB-008-Mobile.dc.html": {
-      "x": 13940,
-      "y": 4800,
-      "w": 390,
-      "h": 844,
-      "title": "CR-ONB-008 · Mobile",
-      "is_interactive": true
-    },
-    "CR-DASH-NEW.dc.html": {
-      "x": 0,
-      "y": 7300,
-      "w": 1440,
-      "h": 820,
-      "title": "CR-DASH-NEW · Creator Studio launchpad · Desktop",
-      "is_interactive": true,
-      "expand": "fill"
-    },
-    "CR-DASH-NEW-Mobile.dc.html": {
-      "x": 1520,
-      "y": 7300,
-      "w": 390,
-      "h": 980,
-      "title": "CR-DASH-NEW · Mobile",
-      "is_interactive": true
-    },
-    "CR-CREATE-001.dc.html": {
-      "x": 2070,
-      "y": 7300,
-      "w": 1440,
-      "h": 820,
-      "title": "CR-CREATE-001 · How would you like to build it? · Desktop",
-      "is_interactive": true,
-      "expand": "fill"
-    },
-    "CR-CREATE-001-Mobile.dc.html": {
-      "x": 3590,
-      "y": 7300,
-      "w": 390,
-      "h": 844,
-      "title": "CR-CREATE-001 · Mobile",
-      "is_interactive": true
-    },
-    "CR-CREATE-002A.dc.html": {
-      "x": 4140,
-      "y": 7300,
-      "w": 1440,
-      "h": 820,
-      "title": "CR-CREATE-002A · Sketch your course with Nova · Desktop",
-      "is_interactive": true,
-      "expand": "fill"
-    },
-    "CR-CREATE-002A-Mobile.dc.html": {
-      "x": 5660,
-      "y": 7300,
-      "w": 390,
-      "h": 844,
-      "title": "CR-CREATE-002A · Mobile",
-      "is_interactive": true
-    },
-    "CR-CREATE-002Ab.dc.html": {
-      "x": 6210,
-      "y": 7300,
-      "w": 1440,
-      "h": 1720,
-      "title": "CR-CREATE-002Ab · Review your course · Desktop",
-      "is_interactive": true
-    },
-    "CR-CREATE-002Ab-Mobile.dc.html": {
-      "x": 7730,
-      "y": 7300,
-      "w": 390,
-      "h": 2130,
-      "title": "CR-CREATE-002Ab · Mobile",
-      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -333,6 +333,14 @@
       "x": 0,
       "y": 2100
     },
+    "start": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Start creating: Creator Studio → how to start → create with Nova → review the draft",
+      "w": 240,
+      "x": 0,
+      "y": 7000
+    },
     "you": {
       "kind": "title1",
       "maxW": 8000,
@@ -340,14 +348,6 @@
       "w": 240,
       "x": 0,
       "y": 4500
-    },
-    "start": {
-      "kind": "title1",
-      "maxW": 8000,
-      "w": 240,
-      "x": 0,
-      "y": 7000,
-      "text": "Start creating: Creator Studio → how to start → create with Nova → review the draft"
     }
   },
   "order": [

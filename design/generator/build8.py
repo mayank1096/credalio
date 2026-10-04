@@ -266,10 +266,10 @@ C1_CSS='''.c1-prev{position:relative;height:200px;border-radius:14px;overflow:hi
 S_C1='class Component extends DCLogic {\n  constructor(props) { super(props); this.state = { nav: false }; }\n  renderVals() { return { NAVJS }; }\n}'.replace('NAVJS',NAV_JS)
 open(P+'CR-CREATE-001.dc.html','w').write(SHELL('Create new',c,'Credalio · How would you like to build it?',S_C1,C1_CSS,820))
 print('CREATE-001 built')
-exec(open('build8b.py').read())
+exec(open('build9.py').read())
 # ---------- preview wrappers (v2 sizes)
-WRAP('CR-CREATE-002Ab.dc.html','CR-CREATE-002A',1440,1720,'Credalio · Review your course',' variant="proposal"')
-WRAP('CR-CREATE-002Ab-Mobile.dc.html','CR-CREATE-002A',390,2130,'Credalio · Review your course (mobile)',' variant="proposal"')
+WRAP('CR-CREATE-002Ab.dc.html','CR-CREATE-002A',1440,820,'Credalio · Review your course',' variant="proposal"')
+WRAP('CR-CREATE-002Ab-Mobile.dc.html','CR-CREATE-002A',390,844,'Credalio · Review your course (mobile)',' variant="proposal"')
 for n,h in [('CR-DASH-NEW',980),('CR-CREATE-001',844),('CR-CREATE-002A',844)]:
     WRAP(n+'-Mobile.dc.html',n,390,h,n+' mobile preview')
 WRAP('CR-ONB-008-Mobile.dc.html','CR-ONB-008',390,844,'CR-ONB-008 mobile preview')

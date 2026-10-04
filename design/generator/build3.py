@@ -104,11 +104,10 @@ c+='''<div class="ob-two ob-in3" style="margin-top: clamp(18px, 3.2vh, 28px); wi
 </div>
 <aside class="ob-side" aria-label="Profile preview" style="display: flex; flex-direction: column; gap: 10px">
 <span style="display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 500; color: #5B6582"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>Learners will see</span>
-<div style="border-radius: 18px; background: #FFFFFF; border: 1.5px solid #E6EAF3; box-shadow: 0 1px 2px rgba(11, 20, 51, 0.04), 0 18px 40px rgba(11, 20, 51, 0.06); overflow: hidden">
-<div aria-hidden="true" style="height: 42px; background: linear-gradient(180deg, #F5F8FF, #EAF0FF)"><svg viewBox="0 0 340 42" preserveAspectRatio="none" style="display: block; width: 100%; height: 42px"><path d="M-4 38 C 90 37, 170 32, 250 18 S 330 6, 344 4" fill="none" stroke="#1652F0" stroke-opacity="0.18" stroke-width="10" stroke-linecap="round"></path><path d="M-4 38 C 90 37, 170 32, 250 18 S 330 6, 344 4" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round"></path><circle cx="300" cy="8.5" r="4.5" fill="#1652F0" stroke="#FFFFFF" stroke-width="2"></circle></svg></div>
-<div style="padding: 0 18px 16px 18px">
-<span style="margin-top: -24px; width: 50px; height: 50px; border-radius: 50%; background: #0B1433; border: 3px solid #FFFFFF; box-sizing: border-box; color: #FFFFFF; font-size: 16px; font-weight: 600; letter-spacing: 0.02em; display: flex; align-items: center; justify-content: center">AO</span>
-<span style="display: block; margin-top: 8px; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: #0B1433">Ada Ononuju</span>
+<div style="border-radius: 18px; background: #FFFFFF url(/_blob/d268046654a4206d2a726e62005bcc59) center top / 100% auto no-repeat; border: 1.5px solid #E6EAF3; box-shadow: 0 1px 2px rgba(11, 20, 51, 0.04), 0 18px 40px rgba(11, 20, 51, 0.06); overflow: hidden">
+<div style="padding: 18px 18px 16px 18px">
+<span style="width: 50px; height: 50px; border-radius: 50%; background: #0B1433; border: 3px solid #FFFFFF; box-shadow: 0 6px 16px rgba(11, 20, 51, 0.12); box-sizing: border-box; color: #FFFFFF; font-size: 16px; font-weight: 600; letter-spacing: 0.02em; display: flex; align-items: center; justify-content: center">AO</span>
+<span style="display: block; margin-top: 12px; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: #0B1433">Ada Ononuju</span>
 <span style="display: block; margin-top: 2px; font-size: 13px; color: #5B6582">Data &amp; Analytics · 8+ years</span>
 <p style="margin: 10px 0 0 0; font-size: 14px; line-height: 1.5; color: #0B1433">{{bioShown}}</p>
 <div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #E6EAF3; font-size: 13px; line-height: 1.45; color: #5B6582">Teaches <span style="font-weight: 600; color: #0B1433">{{topicsLine}}</span></div>

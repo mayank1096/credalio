@@ -3,7 +3,7 @@ def strip_illus(n):
     p=P+n; s=open(p).read()
     a=s.index('<div class="ob-illus"'); b=s.index('</div>\n</x-dc>',a)
     s=s[:a]+s[b:]; open(p,'w').write(s)
-strip_illus('CR-ONB-003c.dc.html'); strip_illus('CR-ONB-005.dc.html')
+strip_illus('CR-ONB-003c.dc.html'); strip_illus('CR-ONB-005.dc.html'); strip_illus('CR-ONB-005b.dc.html')
 # 004: waving hand
 WAVE='/_blob/e0846c8b6889064bed3e0b948cd9888a'
 p=P+'CR-ONB-004.dc.html'; s=open(p).read()

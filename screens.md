@@ -18,14 +18,14 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-ONB-005` CR-ONB-005 · Creator profile & expertise
 - [x] D [x] M  `CR-ONB-006` CR-ONB-006 · Meet & name your Creator Copilot (knows your expertise)
 - [x] D [x] M  `CR-ONB-007` CR-ONB-007 · Copilot working style
-- [ ] D [ ] M  `CR-ONB-008` CR-ONB-008 · Creator setup complete → Dashboard (no auto course)
+- [x] D [x] M  `CR-ONB-008` CR-ONB-008 · Creator setup complete → Dashboard (no auto course)
 
 ## 02. Start creating: first dashboard → choose how to start → Copilot or scratch (5)
 
-- [ ] D [ ] M  `CR-DASH-NEW` Creator Dashboard entry: choose what to create (full dashboard next batch)
-- [ ] D [ ] M  `CR-CREATE-001` CR-CREATE-001 · Start with your Copilot or from scratch
-- [ ] D [ ] M  `CR-CREATE-002A` CR-CREATE-002A · Start with Copilot: the outcome question lives here
-- [ ] D [ ] M  `CR-CREATE-002Ab` CR-CREATE-002A · Copilot proposal: review & accept before the Studio
+- [x] D [x] M  `CR-DASH-NEW` Creator Dashboard entry: choose what to create (full dashboard next batch)
+- [x] D [x] M  `CR-CREATE-001` CR-CREATE-001 · Start with your Copilot or from scratch
+- [x] D [x] M  `CR-CREATE-002A` CR-CREATE-002A · Start with Copilot: the outcome question lives here
+- [x] D [x] M  `CR-CREATE-002Ab` CR-CREATE-002A · Copilot proposal: review & accept before the Studio
 - [ ] D [ ] M  `CR-CREATE-002B` CR-CREATE-002B · Build from scratch → existing setup flow
 
 ## 03. Readiness, Creator Centre & Orientation (10)

@@ -29,6 +29,12 @@
 - Some steps have their OWN illustration (designer-supplied, in `design/illustrations/`): 003 create-account, 003v email-confirmed (+ confetti), 002S coming-soon. Others use the main scene.
 - Shared frame generator: `design/generator/gen2.py` (+ build2.py / build3.py per batch; copy to scratchpad to run).
 
+## Creator Studio (dashboard) shell (2026-10-04)
+- Generator `design/generator/dash.py` (SHELL/WRAP/NOVA_AV/icons) + `build7.py`. Sidebar 264px white (sentence-case group labels, line icons, active = soft blue), sticky top bar (search, Nova token pill, help, bell, avatar), content bg #F7F9FD, white cards r20.
+- Mobile ≤960: sidebar becomes drawer (hamburger), search hidden. Dashboard pages MAY scroll (no-scroll rule is onboarding only).
+- Nova avatar = head crop of the Nova character (NOVA_AV). No emojis, no screen-ID eyebrows, no rainbow colours.
+- Variant screens use one source + prop (e.g. 002Ab = `dc-import CR-CREATE-002A variant="proposal"`).
+
 ## Hard layout rules
 - Desktop must NOT scroll on onboarding screens: must fit 1440×820 and 1280×720 (viewport-based layout, clamp/vh).
 - Fully responsive: breakpoints ~1080 and ~760/860; mobile = stacked layout, 44px+ touch targets.

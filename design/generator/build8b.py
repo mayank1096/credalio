@@ -46,8 +46,8 @@ MODS=''.join(f'<li style="display: flex; align-items: center; gap: 12px; padding
 USERS='<circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path>'
 BARS='<path d="M5 20v-4M10 20v-8M15 20V8M20 20V4"></path>'
 DOC=''.join([
- BLOCK('title','Course title','<p style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; color: #0B1433">SQL for Business Analysis</p>'),
- BLOCK('desc','Description','<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #0B1433">Learn to query, clean and analyse business data with SQL, and present clear recommendations managers can act on.</p>'),
+ BLOCK('title','Course title','<p class="c3-t" style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; color: #0B1433">SQL for Business Analysis</p>'),
+ BLOCK('desc','Description','<p class="c3-d" style="margin: 0; font-size: 16px; line-height: 1.6; color: #0B1433">Learn to query, clean and analyse business data with SQL, and present clear recommendations managers can act on.</p>'),
  BLOCK('aud','Audience',f'<div style="display: flex; flex-direction: column; gap: 8px; font-size: 15px; color: #0B1433"><span style="display: flex; align-items: center; gap: 10px"><span style="color: #1652F0; display: flex">{ICON(USERS,18)}</span>Early-career analysts and career switchers</span><span style="display: flex; align-items: center; gap: 10px"><span style="color: #1652F0; display: flex">{ICON(BARS,18)}</span>Comfortable with spreadsheets; no SQL yet</span></div>'),
  BLOCK('pre','Prerequisites','<p style="margin: 0; font-size: 15px; color: #0B1433">Comfortable with spreadsheets <span style="color: #5B6582">(recommended)</span></p>'),
  BLOCK('skills','Skills',f'<ul style="list-style: none; margin: 0; padding: 0" class="c3-first">{LVL("SQL")}{LVL("Data cleaning")}{LVL("Data storytelling")}</ul>'),
@@ -58,17 +58,18 @@ NOTES=''.join(f'<li style="display: flex; gap: 10px; padding: 10px 0; border-top
 REVIEW=f'''<sc-if value="{{{{reviewView}}}}" hint-placeholder-val="{{{{false}}}}">
 <button type="button" class="ds-back ob-in" onClick="{{{{backToChat}}}}" style="margin-top: 4px; border: 0; background: none; cursor: pointer; font-family: inherit">{ICON(I["back"],16,2.2)}Back to questions</button>
 <div class="ob-in" style="margin-top: 8px"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: #4A5578">{NOVA_AV(26, False)}Nova’s first draft · from your 5 answers</span><h1 class="ds-h1" style="margin-top: 8px">Review your course</h1><p class="ds-sub">Accept, edit later or reject each part. Nothing enters the Studio until you say so.</p></div>
+<button type="button" class="c3-why" onClick="{{{{toggleNotes}}}}" aria-expanded="{{{{notesOpen}}}}">{NOVA_AV(26, False)}<span style="flex-grow: 1; text-align: left">Why Nova drafted it this way</span><span style="display: flex; transform: {{{{notesRot}}}}; transition: transform .2s ease"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span></button>
 <div class="c3-grid ob-in2" style="margin-top: 22px; display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 20px; align-items: start">
 <section id="c2-prop" class="ds-card" aria-label="Draft course" style="padding: 8px; display: flex; flex-direction: column; gap: 6px">{DOC}</section>
-<aside class="c3-rail" style="position: sticky; top: 88px; display: flex; flex-direction: column; gap: 14px">
+<aside class="c3-rail {{{{notesCls}}}}" style="position: sticky; top: 88px; display: flex; flex-direction: column; gap: 14px">
 <div class="ds-card" style="padding: 20px; background: #FFFFFF url({BG}) center top / 100% auto no-repeat"><div style="display: flex; align-items: center; gap: 10px">{NOVA_AV(36)}<span style="font-size: 15px; font-weight: 600">Why it looks like this</span></div><ul style="list-style: none; margin: 12px 0 0 0; padding: 0">{NOTES}</ul>
 <div style="margin-top: 12px; display: flex; align-items: center; gap: 6px; height: 46px; box-sizing: border-box; padding: 0 5px 0 14px; border-radius: 999px; border: 1.5px solid #D6DDEE; background: #FFFFFF"><label class="sr-only" for="c3-ask">Ask Nova to change something</label><input id="c3-ask" placeholder="Ask Nova to change something" style="flex-grow: 1; min-width: 0; border: 0; outline: none; background: transparent; font-family: inherit; font-size: 14px; color: #0B1433"><button type="button" aria-label="Send" style="width: 36px; height: 36px; flex-shrink: 0; border: 0; border-radius: 50%; background: #1652F0; color: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer">{ICON(I["send"],16,2.4)}</button></div></div>
 </aside>
 </div>
 <div class="c3-bar" role="region" aria-label="Review progress">
-<div style="display: flex; flex-direction: column; gap: 7px; min-width: 170px"><span style="font-size: 14px; color: #3A4566"><span style="font-weight: 600; color: #0B1433">{{{{reviewed}}}} of 7</span> reviewed</span><span style="display: block; width: 180px; height: 6px; border-radius: 6px; background: #E6EAF3; overflow: hidden"><span style="display: block; height: 100%; width: {{{{pct}}}}; border-radius: 6px; background: #1652F0; transition: width .3s ease"></span></span></div>
+<div class="c3-prog" style="display: flex; flex-direction: column; gap: 7px; min-width: 170px"><span style="font-size: 14px; color: #3A4566"><span style="font-weight: 600; color: #0B1433">{{{{reviewed}}}} of 7</span> reviewed</span><span class="c3-pbar" style="display: block; width: 180px; height: 6px; border-radius: 6px; background: #E6EAF3; overflow: hidden"><span style="display: block; height: 100%; width: {{{{pct}}}}; border-radius: 6px; background: #1652F0; transition: width .3s ease"></span></span></div>
 <sc-if value="{{{{errShown}}}}" hint-placeholder-val="{{{{false}}}}"><span role="alert" style="font-size: 13.5px; color: #B42318">Review every part first.</span></sc-if>
-<span style="flex-grow: 1"></span>
+<span class="c3-sp" style="flex-grow: 1"></span>
 <button type="button" class="ds-ghost c3-rest" onClick="{{{{acceptRest}}}}">Accept the rest</button>
 <button type="button" class="ds-btn" onClick="{{{{open}}}}" aria-disabled="{{{{openDis}}}}" style="background: {{{{openBg}}}}; box-shadow: {{{{openSh}}}}"><span>Open Course Studio</span><span class="ob-arrow">{ICON(I["arrow"],18,2.4)}</span></button>
 </div>
@@ -97,11 +98,41 @@ C2_CSS='''@keyframes c2Shim{0%{background-position:-200px 0}100%{background-posi
 .c3-opt:hover{color:#0B1433 !important}
 .c3-opt:focus-visible,.c2-edit:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
 .c3-first > li:first-child{border-top:0 !important}
+.c3-why{display:none}
 .c3-bar{position:sticky;bottom:16px;z-index:5;margin-top:18px;display:flex;align-items:center;flex-wrap:wrap;gap:12px 16px;padding:12px 12px 12px 22px;border-radius:22px;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1.5px solid #E6EAF3;box-shadow:0 18px 40px rgba(11,20,51,.12)}
 @media (prefers-reduced-motion: reduce){.c2-shim,.c2-new,.c2-live,.c2-h{animation:none}}
 @media (max-width: 1180px){.c3-grid{grid-template-columns:minmax(0,1fr) !important}.c3-rail{position:static !important}}
 @media (max-width: 1080px){.c2-grid{grid-template-columns:minmax(0,1fr) !important}.c2-bp{position:static !important}}
-@media (max-width: 860px){.c2-conv{padding:20px !important;min-height:0 !important}.c2-ans{padding-left:0 !important}.c3-head{flex-direction:column;align-items:stretch !important}.c3-seg{display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr))}.c3-opt{justify-content:center}.c3-blk{padding:16px !important}.c3-bar{padding:12px !important;bottom:10px}.c3-bar .ds-btn{flex-grow:1;justify-content:space-between}.c3-rest{flex-grow:1}}
+@media (max-width: 860px){
+.c2-grid,.c3-grid{margin-top:14px !important}
+.c2-conv{padding:16px !important}
+.c2-bp{display:none !important}
+.c2-ans{padding-left:0 !important;margin-top:14px !important}
+.c2-q{font-size:19px !important;margin-top:4px !important}
+.c2-h{padding:8px 10px !important;border-radius:12px !important}
+.c2-h span span:first-child{font-size:12px !important}
+.c2-h span span:last-child{font-size:13.5px !important}
+.c2-edit{width:32px;height:32px}
+.c2-in{height:48px !important;padding:0 5px 0 14px !important}
+.c3-why{display:flex;align-items:center;gap:10px;width:100%;margin-top:14px;height:48px;padding:0 14px 0 8px;box-sizing:border-box;border-radius:14px;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.c3-rail{display:none !important;order:-1}
+.c3-rail.c3-open{display:flex !important}
+.c3-head{flex-direction:column;align-items:stretch !important;gap:8px !important}
+.c3-seg{display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr))}
+.c3-opt{justify-content:center;height:34px}
+.c3-blk{padding:14px 12px !important}
+.c3-t{font-size:19px !important}
+.c3-d{font-size:15px !important}
+.c3-blk li{font-size:14px !important}
+.c3-first li > span:last-child > span[aria-hidden]{display:none !important}
+.c3-bar{display:grid !important;grid-template-columns:minmax(0,1fr) auto;gap:10px !important;padding:12px !important;bottom:8px;border-radius:18px !important}
+.c3-sp{display:none}
+.c3-prog{min-width:0 !important}
+.c3-pbar{width:100% !important}
+.c3-rest{height:36px !important;font-size:13.5px !important;padding:0 12px !important}
+.c3-bar .ds-btn{grid-column:1/-1;justify-content:space-between}
+.c3-bar [role=alert]{grid-column:1/-1}
+}
 '''
 S_C2='''class Component extends DCLogic {
   constructor(props) {
@@ -158,6 +189,7 @@ S_C2='''class Component extends DCLogic {
       bpState: phase === 'drafting' ? 'Drafting' : 'Taking shape',
       facts: this.Q.map((q, i) => ({ label: q.k, value: answers[i] || '', vd: answers[i] ? 'block' : 'none', sd: answers[i] ? 'none' : 'block', w: widths[i] })),
       backToChat: () => this.setState({ phase: 'chat' }),
+      notesCls: this.state.notes ? 'c3-open' : '', notesOpen: this.state.notes ? 'true' : 'false', notesRot: this.state.notes ? 'rotate(180deg)' : 'none', toggleNotes: () => this.setState({ notes: !this.state.notes }),
       d, reviewed, pct: Math.round(reviewed / 7 * 100) + '%', errShown: err,
       acceptRest: () => { const nd = { ...this.state.dec }; this.K.forEach((k) => { if (!nd[k]) nd[k] = 'a'; }); this.setState({ dec: nd, err: false }); },
       openBg: reviewed === 7 ? '#1652F0' : '#AFC1F5', openSh: reviewed === 7 ? '0 1px 0 rgba(255,255,255,.25) inset, 0 10px 24px rgba(22,82,240,.24)' : 'none', openDis: reviewed === 7 ? 'false' : 'true',

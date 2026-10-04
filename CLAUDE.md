@@ -34,7 +34,8 @@
 - Generator `design/generator/dash.py` (SHELL/WRAP/NOVA_AV/icons) + `build8.py`/`build8b.py` (v2 designs; build7 = superseded v1). Sidebar 264px white (sentence-case group labels, line icons, active = soft blue), sticky top bar (search, Nova token pill, help, bell, avatar), content bg #F7F9FD, white cards r20.
 - Mobile ≤960: sidebar becomes drawer (hamburger), search hidden. Dashboard pages MAY scroll (no-scroll rule is onboarding only).
 - Nova avatar = head crop of the Nova character (NOVA_AV). No emojis, no screen-ID eyebrows, no rainbow colours.
-- AI Tokens are always shown GOLD (coin, #FFF1CF→#FFFAEB bg, #F4D98E border, brown text). 008 = "Ada, you’re a Creator." reveal (no step tracker).
+- MOBILE = efficiency first: smaller type (H1 24, body 14–15), compact rows, no tall decorative blocks, primary CTA visible without scrolling where possible, secondary info collapsible (toggle) or hidden; horizontal-scroll chip rows.
+- AI Tokens are always shown GOLD (incl. top-bar pill: coin + "20K AI Tokens") (coin, #FFF1CF→#FFFAEB bg, #F4D98E border, brown text). 008 = "Ada, you’re a Creator." reveal (no step tracker); profile card hangs on a lanyard and sways (pendulum).
 - Variant screens use one source + prop (e.g. 002Ab = `dc-import CR-CREATE-002A variant="proposal"`).
 
 ## Hard layout rules

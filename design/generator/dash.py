@@ -91,7 +91,8 @@ a{color:#1652F0}
 .ds-search input::placeholder{color:#8A93AD}
 .ds-icon-btn{width:44px;height:44px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#3A4566;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;text-decoration:none}
 .ds-icon-btn:hover{border-color:#AFC1F5}
-.ds-tok{height:44px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:8px;padding:0 16px 0 6px;border-radius:999px;background:#FFFFFF;border:1.5px solid #E6EAF3;font-size:14px;font-weight:600;color:#0B1433;text-decoration:none}
+.ds-tok{height:44px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:7px;padding:0 14px 0 7px;border-radius:999px;background:linear-gradient(135deg,#FFFAEB,#FFF1CF);border:1.5px solid #F4D98E;font-size:14.5px;font-weight:600;color:#4A3300;text-decoration:none;box-shadow:0 6px 16px rgba(214,150,30,.12);transition:box-shadow .2s ease}
+.ds-tok:hover{box-shadow:0 8px 20px rgba(214,150,30,.24)}
 .ds-main{box-sizing:border-box;width:100%;max-width:1200px;padding:12px clamp(20px,3vw,40px) 56px clamp(20px,3vw,40px)}
 .ds-h1{margin:0;font-size:clamp(28px,2.5vw,36px);line-height:1.15;font-weight:600;letter-spacing:-0.03em;color:#0B1433}
 .ds-sub{margin:8px 0 0 0;font-size:16px;line-height:1.55;color:#4A5578}
@@ -122,12 +123,24 @@ a{color:#1652F0}
 .ds-close{display:flex;position:absolute;right:12px;top:16px}
 .ds-top{height:64px;padding:0 16px;gap:8px}
 .ds-search,.ds-hide-sm{display:none !important}
-.ds-tok{padding:0 12px 0 6px}
+.ds-tok{padding:0 12px 0 6px;height:40px}
+.ds-icon-btn{width:40px;height:40px}
+.ds-h1{font-size:24px !important;line-height:1.2}
+.ds-sub{font-size:14.5px;margin-top:6px}
+.ds-back{height:36px;font-size:13.5px}
+.ds-chip{height:36px;font-size:13.5px;padding:0 14px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
 .ds-root{overflow-x:hidden}
-.ds-main{padding:8px 20px 40px 20px}
+.ds-main{padding:4px 16px 32px 16px}
 .ds-btn{justify-content:space-between}
 }
 '''
+
+def COIN(uid, size=52):
+    return f'''<svg width="{size}" height="{size}" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0; display: block"><defs><linearGradient id="{uid}a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9A3"></stop><stop offset="0.45" stop-color="#F6C343"></stop><stop offset="1" stop-color="#D08A12"></stop></linearGradient><linearGradient id="{uid}b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9CF5A"></stop><stop offset="1" stop-color="#E2A024"></stop></linearGradient></defs><circle cx="32" cy="34" r="29" fill="#B8740A" opacity="0.35"></circle><circle cx="32" cy="32" r="29" fill="url(#{uid}a)"></circle><circle cx="32" cy="32" r="22" fill="url(#{uid}b)" stroke="#FFF1C2" stroke-opacity="0.7" stroke-width="1.5"></circle><path d="M32 18l2.9 9.3 9.3 2.9-9.3 2.9L32 42.4l-2.9-9.3-9.3-2.9 9.3-2.9z" fill="#FFF8DF"></path><ellipse cx="23" cy="19" rx="9" ry="5" fill="#FFFFFF" opacity="0.35" transform="rotate(-30 23 19)"></ellipse></svg>'''
+
 
 def SHELL(active, content, title, script, extra_css='', preview_h=900):
     top = f'''<header class="ds-top">
@@ -135,7 +148,7 @@ def SHELL(active, content, title, script, extra_css='', preview_h=900):
 <span class="ds-mlogo" style="flex-grow: 1">{LOGO}</span>
 <label class="ds-search">{ICON(I["search"],18)}<span class="sr-only">Search</span><input placeholder="Search your learning experiences, learners, discussions…"></label>
 <span class="ds-hide-sm" style="flex-grow: 1"></span>
-<a href="#" class="ds-tok" aria-label="Nova has 20,000 AI Tokens">{NOVA_AV(30, False)}<span class="ds-hide-sm">Nova</span><span style="color: #5B6582; font-weight: 500">20K</span></a>
+<a href="#" class="ds-tok" aria-label="20,000 AI Tokens">{COIN('tp',28)}<span>20K</span><span class="ds-hide-sm" style="font-weight: 500; color: #6B4E16">AI Tokens</span></a>
 <a href="#" class="ds-icon-btn ds-hide-sm" aria-label="Help">{ICON(I["help"],19)}</a>
 <a href="#" class="ds-icon-btn" aria-label="Notifications, 1 new">{ICON(I["bell"],19)}<span style="position: absolute; right: 10px; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: #E5484D; box-shadow: 0 0 0 2px #FFFFFF"></span></a>
 <a href="#" aria-label="Your account" style="position: relative; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: #0B1433; color: #FFFFFF; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">AO<span style="position: absolute; right: 0; bottom: 1px; width: 11px; height: 11px; border-radius: 50%; background: #0F6B45; border: 2px solid #F7F9FD"></span></a>

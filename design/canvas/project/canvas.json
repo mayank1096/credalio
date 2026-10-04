@@ -244,7 +244,7 @@
       "x": 13940,
       "y": 4800,
       "w": 390,
-      "h": 1070,
+      "h": 844,
       "title": "CR-ONB-008 · Mobile",
       "is_interactive": true
     },
@@ -252,7 +252,7 @@
       "x": 0,
       "y": 7300,
       "w": 1440,
-      "h": 960,
+      "h": 820,
       "title": "CR-DASH-NEW · Creator Studio launchpad · Desktop",
       "is_interactive": true,
       "expand": "fill"
@@ -261,7 +261,7 @@
       "x": 1520,
       "y": 7300,
       "w": 390,
-      "h": 1600,
+      "h": 980,
       "title": "CR-DASH-NEW · Mobile",
       "is_interactive": true
     },
@@ -278,7 +278,7 @@
       "x": 3590,
       "y": 7300,
       "w": 390,
-      "h": 1260,
+      "h": 844,
       "title": "CR-CREATE-001 · Mobile",
       "is_interactive": true
     },
@@ -295,7 +295,7 @@
       "x": 5660,
       "y": 7300,
       "w": 390,
-      "h": 1230,
+      "h": 844,
       "title": "CR-CREATE-002A · Mobile",
       "is_interactive": true
     },
@@ -311,7 +311,7 @@
       "x": 7730,
       "y": 7300,
       "w": 390,
-      "h": 2650,
+      "h": 2130,
       "title": "CR-CREATE-002Ab · Mobile",
       "is_interactive": true
     }

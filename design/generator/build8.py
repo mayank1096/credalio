@@ -35,7 +35,7 @@ RC_CSS='''body{margin:0;background:#FFFFFF}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @keyframes obIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes rcDrop{0%{opacity:0;transform:translateY(-70px) rotate(10deg)}30%{opacity:1;transform:translateY(0) rotate(-7deg)}48%{transform:rotate(4.6deg)}64%{transform:rotate(-2.8deg)}78%{transform:rotate(1.5deg)}90%{transform:rotate(-.6deg)}100%{opacity:1;transform:rotate(0deg)}}
-@keyframes rcSway{0%{transform:rotate(0deg)}25%{transform:rotate(1.4deg)}75%{transform:rotate(-1.4deg)}100%{transform:rotate(0deg)}}
+@keyframes rcSway{0%{transform:rotate(0deg)}25%{transform:rotate(4deg)}75%{transform:rotate(-4deg)}100%{transform:rotate(0deg)}}
 @keyframes rcShine{0%{transform:translateX(-120%) skewX(-18deg)}100%{transform:translateX(320%) skewX(-18deg)}}
 @keyframes rcDraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 @keyframes rcPop{0%{opacity:0;transform:scale(.3)}70%{opacity:1;transform:scale(1.15)}100%{opacity:1;transform:scale(1)}}
@@ -43,7 +43,7 @@ RC_CSS='''body{margin:0;background:#FFFFFF}
 @keyframes rcCoin{0%{opacity:0;transform:translateY(-14px) rotate(-30deg) scale(.6)}60%{opacity:1;transform:translateY(3px) rotate(8deg) scale(1.05)}100%{opacity:1;transform:none}}
 .rc-in{animation:obIn .6s ease both}.rc-in2{animation:obIn .6s ease .1s both}.rc-in3{animation:obIn .6s ease .2s both}.rc-in4{animation:obIn .6s ease .3s both}.rc-in5{animation:obIn .6s ease .4s both}
 .rc-hang{transform-origin:50% -150px;animation:rcDrop 2.6s cubic-bezier(.33,.66,.4,1) .2s both}
-.rc-sway{transform-origin:50% -150px;animation:rcSway 7s ease-in-out 2.8s infinite}
+.rc-sway{transform-origin:50% -150px;animation:rcSway 5.2s ease-in-out 2.8s infinite}
 .rc-shine{position:absolute;top:0;left:0;width:40%;height:100%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.55),rgba(255,255,255,0));animation:rcShine 1.4s ease 1.2s both;pointer-events:none}
 .rc-line{stroke-dasharray:1;animation:rcDraw 1.4s cubic-bezier(.4,0,.2,1) .2s both}
 .rc-node{transform-box:fill-box;transform-origin:center;animation:rcPop .45s ease both}
@@ -110,7 +110,7 @@ CARD=f'''<div class="rc-cardwrap" style="position: absolute; left: 150px; top: 9
 PTS=[(14,546,'0.35'),(64,520,'0.55'),(108,470,'0.75'),(140,398,'0.95')]
 nodes=''.join(f'<g class="rc-node" style="animation-delay: {d}s"><circle cx="{x}" cy="{y}" r="11" fill="#1652F0" stroke="#FFFFFF" stroke-width="3"></circle><path d="M{x-4.5} {y+0.5} l3 3 l6 -6" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></g>' for x,y,d in PTS)
 PATH=f'''<svg class="rc-path" aria-hidden="true" viewBox="0 0 520 580" style="position: absolute; left: 0; top: 0; width: 520px; height: 580px; overflow: visible"><path d="M14 546 Q 130 520 162 300" fill="none" stroke="#1652F0" stroke-opacity="0.16" stroke-width="14" stroke-linecap="round"></path><path class="rc-line" pathLength="1" d="M14 546 Q 130 520 162 300" fill="none" stroke="#1652F0" stroke-width="3" stroke-linecap="round"></path>{nodes}</svg>'''
-STAGE=f'<div class="rc-stage" style="position: relative; width: 520px; height: 580px; justify-self: center">{PATH}{CARD}</div>'
+STAGE=f'<div class="rc-stage" style="position: relative; width: 520px; height: 580px; justify-self: center">{CARD}</div>'
 LEFT=f'''<section class="rc-left" style="display: flex; flex-direction: column; align-items: flex-start; max-width: 520px">
 <span class="rc-in" style="height: 32px; padding: 0 14px 0 10px; border-radius: 999px; background: #E7F5EE; color: #0F6B45; font-size: 13.5px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px"><span style="width: 18px; height: 18px; border-radius: 50%; background: #0F6B45; color: #FFFFFF; display: flex; align-items: center; justify-content: center">{ICON(I["check"],11,3.4)}</span>Setup complete</span>
 <h1 class="rc-h1 rc-in2" style="margin: 18px 0 0 0; font-size: clamp(44px, 6.4vh, 60px); line-height: 1.06; font-weight: 600; letter-spacing: -0.04em; color: #0B1433">Ada, you’re a <span style="color: #1652F0">Creator</span>.</h1>

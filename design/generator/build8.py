@@ -68,7 +68,7 @@ RC_CSS='''body{margin:0;background:#FFFFFF}
 .rc-lan{top:-64px !important;height:70px !important}
 .rc-stage{padding:0 0 6px 0 !important}
 .rc-hang,.rc-sway{transform-origin:50% -64px}
-.rc-tok{padding:10px 14px 10px 10px !important;gap:12px !important;margin-top:16px !important;border-radius:16px !important}
+.rc-tok{width:100% !important;padding:10px 14px 10px 10px !important;gap:12px !important;margin-top:16px !important;border-radius:16px !important}
 .rc-tokc svg{width:38px;height:38px}
 .rc-tokt{font-size:16px !important}
 .rc-toks{font-size:12.5px !important}
@@ -80,7 +80,8 @@ RC_CSS='''body{margin:0;background:#FFFFFF}
 .rc-btn{margin-top:18px !important;height:54px !important}
 .rc-coin{right:-6px !important;top:-18px !important}
 .rc-h1{font-size:30px !important}
-.rc-left{align-items:stretch}
+.rc-left{align-items:stretch !important;max-width:none !important}
+.rc-btn{align-self:stretch !important;width:100% !important}
 .rc-btn{justify-content:space-between}
 }
 '''

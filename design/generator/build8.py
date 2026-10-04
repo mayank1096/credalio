@@ -102,7 +102,7 @@ CARD=f'''<div class="rc-cardwrap" style="position: absolute; left: 150px; top: 9
 <div style="margin-top: 18px; padding-top: 16px; border-top: 1px solid #E6EAF3; display: flex; align-items: center; gap: 12px">{NOVA_AV(38)}<span style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1; min-width: 0"><span style="font-size: 14.5px; font-weight: 600; color: #0B1433">Nova</span><span style="font-size: 12.5px; color: #5B6582">Your Copilot · Collaborative</span></span><span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: #0F6B45"><span style="width: 8px; height: 8px; border-radius: 50%; background: #0F6B45; box-shadow: 0 0 0 3px rgba(15, 107, 69, 0.15)"></span>Ready</span></div>
 </div>
 </article>
-<span class="rc-coin" aria-hidden="true" style="position: absolute; right: -26px; top: -22px; filter: drop-shadow(0 10px 16px rgba(208, 138, 18, 0.35))">{COIN('cc',64)}</span>
+
 </div></div>
 {STAR('-34px','120px',14,'#1652F0',0.2)}{STAR('360px','190px',12,'#F6C343',0.9)}{STAR('300px','-30px',10,'#1652F0',1.5)}{STAR('-12px','430px',10,'#F6C343',0.6)}
 </div>'''

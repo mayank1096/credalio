@@ -8,6 +8,7 @@
 - Order agreed: design a few screens to settle the look → then design system → then Figma.
 
 ## Goal (never lose this)
+- DESIGN, DON'T COPY (designer, 2026-10-04): the client reference is a CONTENT source only. For every screen think as a world-class product designer: understand the job of the screen and invent the clearest, most efficient, unique layout. Never reuse the client's layout.
 - Clean, modern, world-class UI/UX. Simple, premium, calm, youthful, intelligent.
 - Theme: "the feeling of becoming". Copy reads like a story, never a forceful/compliance onboarding.
 - Best possible copywriting: warm, short, human, honest. Introduce concepts only when needed.
@@ -30,9 +31,10 @@
 - Shared frame generator: `design/generator/gen2.py` (+ build2.py / build3.py per batch; copy to scratchpad to run).
 
 ## Creator Studio (dashboard) shell (2026-10-04)
-- Generator `design/generator/dash.py` (SHELL/WRAP/NOVA_AV/icons) + `build7.py`. Sidebar 264px white (sentence-case group labels, line icons, active = soft blue), sticky top bar (search, Nova token pill, help, bell, avatar), content bg #F7F9FD, white cards r20.
+- Generator `design/generator/dash.py` (SHELL/WRAP/NOVA_AV/icons) + `build8.py`/`build8b.py` (v2 designs; build7 = superseded v1). Sidebar 264px white (sentence-case group labels, line icons, active = soft blue), sticky top bar (search, Nova token pill, help, bell, avatar), content bg #F7F9FD, white cards r20.
 - Mobile ≤960: sidebar becomes drawer (hamburger), search hidden. Dashboard pages MAY scroll (no-scroll rule is onboarding only).
 - Nova avatar = head crop of the Nova character (NOVA_AV). No emojis, no screen-ID eyebrows, no rainbow colours.
+- AI Tokens are always shown GOLD (coin, #FFF1CF→#FFFAEB bg, #F4D98E border, brown text). 008 = "Ada, you’re a Creator." reveal (no step tracker).
 - Variant screens use one source + prop (e.g. 002Ab = `dc-import CR-CREATE-002A variant="proposal"`).
 
 ## Hard layout rules

@@ -236,7 +236,7 @@
       "y": 4800,
       "w": 1440,
       "h": 820,
-      "title": "CR-ONB-008 · Ready to create · Desktop",
+      "title": "CR-ONB-008 · You’re a Creator · Desktop",
       "is_interactive": true,
       "expand": "fill"
     },
@@ -244,7 +244,7 @@
       "x": 13940,
       "y": 4800,
       "w": 390,
-      "h": 1000,
+      "h": 1070,
       "title": "CR-ONB-008 · Mobile",
       "is_interactive": true
     },
@@ -252,8 +252,8 @@
       "x": 0,
       "y": 7300,
       "w": 1440,
-      "h": 1020,
-      "title": "Creator Studio · first visit · Desktop",
+      "h": 960,
+      "title": "CR-DASH-NEW · Creator Studio launchpad · Desktop",
       "is_interactive": true,
       "expand": "fill"
     },
@@ -261,7 +261,7 @@
       "x": 1520,
       "y": 7300,
       "w": 390,
-      "h": 1860,
+      "h": 1600,
       "title": "CR-DASH-NEW · Mobile",
       "is_interactive": true
     },
@@ -270,7 +270,7 @@
       "y": 7300,
       "w": 1440,
       "h": 820,
-      "title": "CR-CREATE-001 · How would you like to create? · Desktop",
+      "title": "CR-CREATE-001 · How would you like to build it? · Desktop",
       "is_interactive": true,
       "expand": "fill"
     },
@@ -278,7 +278,7 @@
       "x": 3590,
       "y": 7300,
       "w": 390,
-      "h": 1090,
+      "h": 1260,
       "title": "CR-CREATE-001 · Mobile",
       "is_interactive": true
     },
@@ -286,8 +286,8 @@
       "x": 4140,
       "y": 7300,
       "w": 1440,
-      "h": 860,
-      "title": "CR-CREATE-002A · Create with Nova (chat) · Desktop",
+      "h": 820,
+      "title": "CR-CREATE-002A · Sketch your course with Nova · Desktop",
       "is_interactive": true,
       "expand": "fill"
     },
@@ -295,7 +295,7 @@
       "x": 5660,
       "y": 7300,
       "w": 390,
-      "h": 1340,
+      "h": 1230,
       "title": "CR-CREATE-002A · Mobile",
       "is_interactive": true
     },
@@ -303,15 +303,15 @@
       "x": 6210,
       "y": 7300,
       "w": 1440,
-      "h": 2160,
-      "title": "CR-CREATE-002Ab · Nova’s first draft (review) · Desktop",
+      "h": 1720,
+      "title": "CR-CREATE-002Ab · Review your course · Desktop",
       "is_interactive": true
     },
     "CR-CREATE-002Ab-Mobile.dc.html": {
       "x": 7730,
       "y": 7300,
       "w": 390,
-      "h": 3880,
+      "h": 2650,
       "title": "CR-CREATE-002Ab · Mobile",
       "is_interactive": true
     }

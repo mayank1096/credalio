@@ -58,31 +58,27 @@ RC_CSS='''body{margin:0;background:#FFFFFF}
 @media (max-height: 760px) and (min-width: 961px){.rc-h1{font-size:46px !important}.rc-stage{transform:scale(.88);transform-origin:center}.rc-hdr{height:72px !important}.rc-main{top:72px !important}}
 @media (max-width: 1100px) and (min-width: 961px){.rc-stage{transform:scale(.86);transform-origin:center}}
 @media (max-width: 960px){
-.rc-root{height:auto !important;min-height:100vh}
-.rc-hdr{position:relative !important;height:64px !important;padding:0 20px !important}
-.rc-main{position:relative !important;top:0 !important;display:flex !important;flex-direction:column-reverse;gap:4px !important;padding:0 20px 28px 20px !important}
-.rc-stage{width:100% !important;height:auto !important;display:flex;justify-content:center;padding:8px 0 4px 0}
-.rc-path{display:none}
-.rc-cardwrap{position:relative !important;left:auto !important;top:auto !important;width:min(300px,86%) !important;margin-top:64px}
-.rc-mh{display:none !important}
-.rc-lan{top:-64px !important;height:70px !important}
-.rc-stage{padding:0 0 6px 0 !important}
-.rc-hang,.rc-sway{transform-origin:50% -64px}
-.rc-tok{width:100% !important;padding:10px 14px 10px 10px !important;gap:12px !important;margin-top:16px !important;border-radius:16px !important}
-.rc-tokc svg{width:38px;height:38px}
-.rc-tokt{font-size:16px !important}
-.rc-toks{font-size:12.5px !important}
-.rc-in{display:none !important}
-.rc-h1{margin-top:4px !important}
-.rc-left p{font-size:15px !important}
-.rc-left p.rc-note{font-size:12.5px !important;margin-top:12px !important}
-.rc-coin svg{width:52px;height:52px}
-.rc-btn{margin-top:18px !important;height:54px !important}
-.rc-coin{right:-6px !important;top:-18px !important}
-.rc-h1{font-size:30px !important}
-.rc-left{align-items:stretch !important;max-width:none !important}
-.rc-btn{align-self:stretch !important;width:100% !important}
-.rc-btn{justify-content:space-between}
+.rc-root{height:auto !important;min-height:100vh !important;display:flex;flex-direction:column}
+.rc-hdr{position:relative !important;height:60px !important;padding:0 20px !important;flex-shrink:0}
+.rc-main{position:relative !important;top:0 !important;flex-grow:1;display:flex !important;flex-direction:column-reverse;justify-content:flex-end;gap:0 !important;padding:0 24px 24px 24px !important;max-width:none !important;width:100%}
+.rc-stage{width:100% !important;height:auto !important;display:flex;justify-content:center;padding:0 !important;transform:none !important}
+.rc-cardwrap{position:relative !important;left:auto !important;top:auto !important;width:min(280px,80%) !important;margin-top:52px}
+.rc-mh,.rc-tw,.rc-in{display:none !important}
+.rc-lan{top:-56px !important;height:62px !important}
+.rc-hang,.rc-sway{transform-origin:50% -56px}
+.rc-cardwrap article > div{padding:18px 20px 16px 20px !important}
+.rc-cardwrap h2{font-size:21px !important;margin-top:12px !important}
+.rc-av{width:60px !important;height:60px !important;font-size:20px !important}
+.rc-av .rc-node{width:22px !important;height:22px !important;border-width:2px !important;right:-5px !important;bottom:-3px !important}
+.rc-left{flex-grow:1;align-items:center !important;text-align:center;max-width:none !important;margin-top:36px}
+.rc-h1{font-size:28px !important;margin-top:0 !important}
+.rc-left p.rc-in3{font-size:15px !important;margin-top:10px !important;max-width:320px}
+.rc-tok{margin:20px 0 32px 0 !important;width:auto !important;padding:6px 14px 6px 6px !important;gap:10px !important;border-radius:999px !important;box-shadow:none !important}
+.rc-tokc svg{width:30px;height:30px}
+.rc-tokt{font-size:14.5px !important}
+.rc-toks{display:none !important}
+.rc-btn{margin-top:auto !important;align-self:stretch !important;width:100% !important;height:54px !important;justify-content:space-between}
+.rc-left p.rc-note{font-size:12px !important;margin-top:12px !important;max-width:320px}
 }
 '''
 tags=''.join(f'<span style="height: 28px; padding: 0 11px; border-radius: 999px; background: #F5F8FF; border: 1px solid #E6EAF3; color: #3A4566; font-size: 12.5px; font-weight: 500; display: inline-flex; align-items: center">{t}</span>' for t in ['Data Analysis','SQL','Business Intelligence'])
@@ -93,7 +89,7 @@ CARD=f'''<div class="rc-cardwrap" style="position: absolute; left: 150px; top: 9
 <div class="rc-shine" aria-hidden="true"></div><span aria-hidden="true" style="position: absolute; left: 50%; top: 9px; width: 40px; height: 7px; transform: translateX(-50%); border-radius: 4px; background: rgba(11, 20, 51, 0.16)"></span>
 <div style="padding: 22px 24px 20px 24px">
 <div style="display: flex; align-items: flex-start; justify-content: space-between">
-<span style="position: relative; width: 76px; height: 76px; border-radius: 50%; background: #0B1433; border: 4px solid #FFFFFF; box-sizing: border-box; box-shadow: 0 10px 24px rgba(11, 20, 51, 0.18); color: #FFFFFF; font-size: 24px; font-weight: 600; letter-spacing: 0.02em; display: flex; align-items: center; justify-content: center">AO<span class="rc-node" title="Creator" style="position: absolute; right: -6px; bottom: -4px; width: 28px; height: 28px; border-radius: 50%; background: #1652F0; border: 3px solid #FFFFFF; color: #FFFFFF; display: flex; align-items: center; justify-content: center; animation-delay: 1.1s"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg></span></span>
+<span class="rc-av" style="position: relative; width: 76px; height: 76px; border-radius: 50%; background: #0B1433; border: 4px solid #FFFFFF; box-sizing: border-box; box-shadow: 0 10px 24px rgba(11, 20, 51, 0.18); color: #FFFFFF; font-size: 24px; font-weight: 600; letter-spacing: 0.02em; display: flex; align-items: center; justify-content: center">AO<span class="rc-node" title="Creator" style="position: absolute; right: -6px; bottom: -4px; width: 28px; height: 28px; border-radius: 50%; background: #1652F0; border: 3px solid #FFFFFF; color: #FFFFFF; display: flex; align-items: center; justify-content: center; animation-delay: 1.1s"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg></span></span>
 <span class="rc-mh" style="height: 28px; padding: 0 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.85); color: #0E3BB8; font-size: 12.5px; font-weight: 600; display: inline-flex; align-items: center">Creator since today</span>
 </div>
 <h2 style="margin: 16px 0 0 0; font-size: 24px; font-weight: 600; letter-spacing: -0.02em; color: #0B1433">Ada Ononuju</h2>
@@ -228,13 +224,13 @@ print('DASH-NEW built')
 # =============== CREATE-001 · choose how ===============
 mini_lines=''.join(f'<span class="c1-l" style="display: block; height: 7px; border-radius: 4px; background: {c}; width: {w}; margin-top: 9px; animation-delay: {d}s"></span>' for c,w,d in [('#C9D6FA','86%',1.0),('#C9D6FA','70%',1.25),('#C9D6FA','78%',1.5),('#C9D6FA','56%',1.75)])
 PREV_NOVA=f'''<div class="c1-prev" aria-hidden="true" style="background: #FFFFFF url({BG}) center top / cover no-repeat">
-<div style="display: flex; flex-direction: column; gap: 8px; width: 46%">
+<div class="c1-chat" style="display: flex; flex-direction: column; gap: 8px; width: 46%">
 <span class="c1-b" style="display: flex; align-items: flex-end; gap: 6px; animation-delay: .2s">{NOVA_AV(22, False)}<span style="padding: 7px 10px; border-radius: 12px 12px 12px 4px; background: #FFFFFF; border: 1px solid #E6EAF3; font-size: 11.5px; line-height: 1.35; color: #0B1433">Who is it for?</span></span>
 <span class="c1-b" style="align-self: flex-end; padding: 7px 10px; border-radius: 12px 12px 4px 12px; background: #0B1433; font-size: 11.5px; line-height: 1.35; color: #FFFFFF; animation-delay: .5s">Career switchers</span>
-<span class="c1-b" style="display: flex; align-items: flex-end; gap: 6px; animation-delay: .8s">{NOVA_AV(22, False)}<span style="padding: 7px 10px; border-radius: 12px 12px 12px 4px; background: #FFFFFF; border: 1px solid #E6EAF3; font-size: 11.5px; line-height: 1.35; color: #0B1433">Drafting your course…</span></span>
+<span class="c1-b c1-b3" style="display: flex; align-items: flex-end; gap: 6px; animation-delay: .8s">{NOVA_AV(22, False)}<span style="padding: 7px 10px; border-radius: 12px 12px 12px 4px; background: #FFFFFF; border: 1px solid #E6EAF3; font-size: 11.5px; line-height: 1.35; color: #0B1433">Drafting your course…</span></span>
 </div>
 <span style="color: #1652F0; display: flex; flex-shrink: 0">{ICON(I["arrow"],18,2.2)}</span>
-<div style="width: 40%; padding: 14px; box-sizing: border-box; border-radius: 12px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 10px 24px rgba(22, 82, 240, 0.12)"><span style="display: block; height: 9px; width: 64%; border-radius: 5px; background: #1652F0"></span>{mini_lines}<span style="display: flex; gap: 5px; margin-top: 12px"><span style="height: 16px; width: 34%; border-radius: 8px; background: #EAF0FF"></span><span style="height: 16px; width: 26%; border-radius: 8px; background: #EAF0FF"></span></span></div>
+<div class="c1-doc" style="width: 40%; padding: 14px; box-sizing: border-box; border-radius: 12px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 10px 24px rgba(22, 82, 240, 0.12)"><span style="display: block; height: 9px; width: 64%; border-radius: 5px; background: #1652F0"></span>{mini_lines}<span style="display: flex; gap: 5px; margin-top: 12px"><span style="height: 16px; width: 34%; border-radius: 8px; background: #EAF0FF"></span><span style="height: 16px; width: 26%; border-radius: 8px; background: #EAF0FF"></span></span></div>
 </div>'''
 slots=''.join(f'<span style="display: flex; align-items: center; gap: 8px; height: 30px; padding: 0 10px; margin-top: 8px; border-radius: 9px; border: 1.5px dashed #CBD3E6; font-size: 11.5px; color: #8A93AD">{t}</span>' for t in ['+ Add a learning outcome','+ Add a module','+ Add an assessment'])
 PREV_SCR=f'''<div class="c1-prev c1-prev-s" aria-hidden="true" style="background: #F7F9FD; justify-content: center">
@@ -265,7 +261,7 @@ C1_CSS='''.c1-prev{position:relative;height:200px;border-radius:14px;overflow:hi
 .c1-card{transition:transform .25s ease,box-shadow .25s ease}
 .c1-card:hover{transform:translateY(-2px)}
 @media (prefers-reduced-motion: reduce){.c1-b,.c1-l,.c1-caret{animation:none}}
-@media (max-width: 860px){.c1-grid{grid-template-columns:minmax(0,1fr) !important;gap:12px !important;margin-top:18px !important}.c1-card{padding:10px !important}.c1-card > div{padding:14px 8px 8px 8px !important}.c1-card h2{font-size:19px !important}.c1-card p{font-size:14.5px !important;margin-top:6px !important}.c1-card .ds-btn,.c1-card .ds-ghost{align-self:stretch !important}.c1-card .ds-btn{justify-content:space-between}.c1-prev{height:132px;padding:12px}.c1-prev-s,.c1-meta{display:none !important}.c1-wrap .ds-h1{font-size:22px !important}.c1-card > div > span[style*="flex-grow"]{min-height:14px !important}}
+@media (max-width: 860px){.c1-grid{grid-template-columns:minmax(0,1fr) !important;gap:12px !important;margin-top:18px !important}.c1-card{padding:10px !important}.c1-card > div{padding:14px 8px 8px 8px !important}.c1-card h2{font-size:19px !important}.c1-card p{font-size:14.5px !important;margin-top:6px !important}.c1-card .ds-btn,.c1-card .ds-ghost{align-self:stretch !important}.c1-card .ds-btn{justify-content:space-between}.c1-prev{height:128px;padding:16px 14px;gap:12px}.c1-b3{display:none !important}.c1-chat{width:auto !important;flex:1 1 auto;gap:12px !important}.c1-doc{width:96px !important;flex-shrink:0;padding:12px !important}.c1-doc .c1-l{margin-top:7px !important}.c1-doc > span:last-child{display:none !important}.c1-wrap .ds-h1{text-wrap:balance}.c1-prev-s,.c1-meta{display:none !important}.c1-wrap .ds-h1{font-size:22px !important}.c1-card > div > span[style*="flex-grow"]{min-height:14px !important}}
 '''
 S_C1='class Component extends DCLogic {\n  constructor(props) { super(props); this.state = { nav: false }; }\n  renderVals() { return { NAVJS }; }\n}'.replace('NAVJS',NAV_JS)
 open(P+'CR-CREATE-001.dc.html','w').write(SHELL('Create new',c,'Credalio · How would you like to build it?',S_C1,C1_CSS,820))

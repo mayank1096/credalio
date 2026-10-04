@@ -46,7 +46,7 @@ BP='''<aside class="fx-bp {{bpCls}}" aria-label="Course blueprint">
 CHAT='''<sc-if value="{{chatView}}" hint-placeholder-val="{{true}}">
 <div class="fx-body">
 <section class="fx-chat" aria-label="Conversation with Nova">
-<div class="fx-scroll"><div class="fx-col fx-msgs" aria-live="polite" style="justify-content: {{msgJust}}">
+<div class="fx-scroll"><div class="fx-col fx-msgs" aria-live="polite">
 <div class="fx-hello">'''+NOVA_AV(56)+'''<h1>Let’s sketch your course</h1><p>Five quick questions. Then I’ll draft it, and you decide what stays.</p></div>
 '''+MSG+'''
 </div></div>
@@ -129,7 +129,7 @@ CSS='''body{margin:0;background:#F7F9FD}
 .fx-scroll{flex-grow:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column}
 .fx-col{width:100%;max-width:720px;margin:0 auto;box-sizing:border-box;padding:0 32px}
 .fx-msgs{flex-grow:1;display:flex;flex-direction:column;justify-content:flex-end;gap:20px;padding-top:32px;padding-bottom:12px}
-.fx-hello{display:flex;flex-direction:column;align-items:center;text-align:center;padding:8px 0 20px 0}
+.fx-hello{display:flex;flex-direction:column;align-items:center;text-align:center;padding:8px 0 20px 0;margin:auto 0}
 .fx-hello h1{margin:14px 0 0 0;font-size:26px;font-weight:600;letter-spacing:-0.02em}
 .fx-hello p{margin:6px 0 0 0;font-size:15px;color:#5B6582}
 .fx-msg{display:flex;gap:12px;align-items:flex-start}
@@ -361,7 +361,7 @@ S='''class Component extends DCLogic {
       onKey: (e) => { if (e.key === 'Enter') { e.preventDefault(); this.send(this.state.text); } },
       sendText: () => this.send(this.state.text), sendBg: text.trim() ? '#1652F0' : '#CBD3E6',
       draft: () => { this.setState({ phase: 'drafting' }); this.t = setTimeout(() => this.setState({ phase: 'proposal' }), 1600); },
-      bpBtnV: (phase === 'chat' || phase === 'drafting') ? 'visible' : 'hidden', msgJust: n === 0 && !typing ? 'center' : 'flex-end', bpState: phase === 'drafting' ? 'Drafting' : 'Taking shape', bpCount: n + '/5',
+      bpBtnV: (phase === 'chat' || phase === 'drafting') ? 'visible' : 'hidden', bpState: phase === 'drafting' ? 'Drafting' : 'Taking shape', bpCount: n + '/5',
       bpCls: bp ? 'fx-open' : '', bpOpen: bp ? 'true' : 'false', toggleBp: () => this.setState({ bp: !this.state.bp }),
       facts: this.Q.map((q, i) => ({ label: q.k, value: answers[i] || '', vd: answers[i] ? 'block' : 'none', sd: answers[i] ? 'none' : 'block', w: widths[i], dot: answers[i] ? '#0F6B45' : '#FFFFFF', dbd: answers[i] ? '#0F6B45' : '#CBD3E6' })),
       backToChat: () => this.setState({ phase: 'chat' }),

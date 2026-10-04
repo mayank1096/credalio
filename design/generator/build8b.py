@@ -36,7 +36,7 @@ def OPT(k,v,label):
     return f'<button type="button" class="c3-opt" onClick="{{{{d.{k}.{v}.pick}}}}" aria-pressed="{{{{d.{k}.{v}.on}}}}" style="border-color: {{{{d.{k}.{v}.bd}}}}; background: {{{{d.{k}.{v}.bg}}}}; color: {{{{d.{k}.{v}.fg}}}}"><span style="display: {{{{d.{k}.{v}.ckd}}}}">{ICON(I["check"],12,3.2)}</span>{label}</button>'
 def BLOCK(k,label,content):
     return f'''<div class="c3-blk" style="border-left-color: {{{{d.{k}.bar}}}}; background: {{{{d.{k}.bg}}}}">
-<div class="c3-head"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: #4A5578">{label}<span style="display: {{{{d.{k}.sd}}}}; height: 22px; padding: 0 8px; border-radius: 999px; background: {{{{d.{k}.sb}}}}; color: {{{{d.{k}.sc}}}}; font-size: 11.5px; font-weight: 600; align-items: center">{{{{d.{k}.st}}}}</span></span><div class="c3-seg" role="group" aria-label="Decision for {label}">{OPT(k,"a","Accept")}{OPT(k,"e","Edit later")}{OPT(k,"x","Reject")}</div></div>
+<div class="c3-head"><span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: #4A5578">{label}<span style="display: {{{{d.{k}.sd}}}}; height: 22px; padding: 0 8px; border-radius: 999px; background: {{{{d.{k}.sb}}}}; color: {{{{d.{k}.sc}}}}; font-size: 11.5px; font-weight: 500; align-items: center">{{{{d.{k}.st}}}}</span></span><div class="c3-seg" role="group" aria-label="Decision for {label}">{OPT(k,"a","Accept")}{OPT(k,"e","Edit later")}{OPT(k,"x","Reject")}</div></div>
 <div style="margin-top: 10px; opacity: {{{{d.{k}.op}}}}; text-decoration: {{{{d.{k}.td}}}}; transition: opacity .2s ease">{content}</div>
 </div>'''
 def LVL(name):

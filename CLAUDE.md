@@ -26,6 +26,7 @@
 - NO illustration (designer removed): 003c password, 005 your field, 005b what you teach, 006 + 007 Copilot (Nova character instead).
 - 004 H1 uses the animated waving hand (Noto animated emoji, CC BY 4.0, `design/illustrations/wave.webp`, blob `/_blob/e0846c8b6889064bed3e0b948cd9888a`).
 - 005b profile card bg = designer image `design/illustrations/profile-bg.webp` (blob `/_blob/d268046654a4206d2a726e62005bcc59`). Nova (006/007) has NO blue floor line.
+- Tags, chips and pills use MEDIUM weight (500), never bold. Bold (600) is for buttons, headings and key values only.
 - Selected chips/options must never look like the primary button: soft blue fill + cobalt border + check, radius 14 (buttons are solid cobalt pills).
 - Some steps have their OWN illustration (designer-supplied, in `design/illustrations/`): 003 create-account, 003v email-confirmed (+ confetti), 002S coming-soon. Others use the main scene.
 - Shared frame generator: `design/generator/gen2.py` (+ build2.py / build3.py per batch; copy to scratchpad to run).

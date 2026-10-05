@@ -1,6 +1,7 @@
 exec(open('build4.py').read())
 # ---------- 007 Copilot style, same stage as 006
 CHAR=c[c.index('<div style="position: relative; align-self: start">'):c.index('</svg>\n</div>',c.index('class="cp-floor"'))+len('</svg>\n</div>')]
+CHAR=CHAR.replace('<sc-for list="{{avs}}" as="a" hint-placeholder-count="1">','').replace('left: {{a.l}};','left: -50.67%;').replace('opacity: {{a.op}};','opacity: 1;').replace('</sc-for></div>','</div>',1)
 ST_CSS=CP_CSS+'''@media (max-width: 960px){.cp-opts-m{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%;margin-top:16px}.cp-opts-m .ob-opt{flex-direction:column;align-items:flex-start !important;gap:10px !important;padding:14px !important}}
 '''
 def cards(cls,style):

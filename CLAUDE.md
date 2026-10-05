@@ -25,6 +25,7 @@
 - NO left side panel. Illustration on EVERY screen (desktop bottom; mobile under the tracker, panned to hero + Creator). Creator path lit. NO text tags/chips on the illustration (removed by designer).
 - NO illustration (designer removed): 003c password, 005 your field, 005b what you teach, 006 + 007 Copilot (Nova character instead).
 - 004 H1 uses the animated waving hand (Noto animated emoji, CC BY 4.0, `design/illustrations/wave.webp`, blob `/_blob/e0846c8b6889064bed3e0b948cd9888a`).
+- Copilot avatars (designer image `design/illustrations/copilot-avatars.webp`, blob `/_blob/e0db3d6b432cb0163b68251e13c33358`, 2000×667, 4 characters L→R = Nova, Maya, Alex, Sage). 006 swaps the figure by selected name + head avatars in chips; 007 shows Nova.
 - 005b profile card bg = designer image `design/illustrations/profile-bg.webp` (blob `/_blob/d268046654a4206d2a726e62005bcc59`). Nova (006/007) has NO blue floor line.
 - Tags, chips and pills use MEDIUM weight (500), never bold. Bold (600) is for buttons, headings and key values only.
 - Selected chips/options must never look like the primary button: soft blue fill + cobalt border + check, radius 14 (buttons are solid cobalt pills).

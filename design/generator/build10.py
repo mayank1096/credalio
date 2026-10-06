@@ -147,7 +147,7 @@ RD_CSS=COMMON_CSS+'''.rd-head{margin-top:8px}
 .rd-sc b{font-size:15.5px}.rd-sc span{font-size:13px}
 .rd-unl{margin-top:20px;padding:22px 0 0 0;border-left:0;border-top:1.5px solid #F0F2F8}
 .rd-unl .sec-h{display:none}
-.rd-gates{margin:0;grid-template-columns:minmax(0,1fr);gap:18px}
+.rd-gates{margin:0;grid-template-columns:minmax(0,1fr);gap:28px}
 .rd-gates::before{left:15px;right:auto;top:18px;bottom:18px;width:3px;height:auto;background:linear-gradient(180deg,#1652F0 0%,#1652F0 30%,#E6EAF3 30%)}
 .rd-gate{flex-direction:row;align-items:center;gap:12px}
 .rd-gn{width:32px;height:32px}
@@ -161,6 +161,8 @@ RD_CSS=COMMON_CSS+'''.rd-head{margin-top:8px}
 .rd-ic svg{width:18px;height:18px}
 .rd-tx{grid-area:t}.rd-st{grid-area:s}
 .rd-cta,.rd-cta-sp{grid-area:a;align-self:center}
+.rd-cta-sp{height:36px}
+.rd-row{min-height:89px;box-sizing:border-box;align-content:center}
 .rd-tx b{font-size:14.5px}
 .rd-d{display:none}
 .rd-note{font-size:12.5px}
@@ -551,9 +553,9 @@ open(P+'CR-CREATE-002B.dc.html','w').write(f'''<!doctype html>
 
 # ---------------- preview wrappers ----------------
 WRAP('CR-CREATE-002B-Mobile.dc.html','CR-CREATE-002B',390,844,'CR-CREATE-002B mobile preview')
-WRAP('CR-RDY-001-Mobile.dc.html','CR-RDY-001',390,1470,'CR-RDY-001 mobile preview')
+WRAP('CR-RDY-001-Mobile.dc.html','CR-RDY-001',390,1520,'CR-RDY-001 mobile preview')
 WRAP('CR-RDY-001s.dc.html','CR-RDY-001',1440,1080,'Credalio · Your readiness (new creator)',' variant="new"')
-WRAP('CR-RDY-001s-Mobile.dc.html','CR-RDY-001',390,1350,'CR-RDY-001s mobile preview',' variant="new"')
+WRAP('CR-RDY-001s-Mobile.dc.html','CR-RDY-001',390,1450,'CR-RDY-001s mobile preview',' variant="new"')
 WRAP('CR-CTR-001-Mobile.dc.html','CR-CTR-001',390,1290,'CR-CTR-001 mobile preview')
 WRAP('CR-ORI-001-Mobile.dc.html','CR-ORI-001',390,1080,'CR-ORI-001 mobile preview')
 print('build10 done')

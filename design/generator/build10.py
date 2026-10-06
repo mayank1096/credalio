@@ -75,7 +75,7 @@ def rdy(state):
         nt=f'<span class="rd-note{" rd-warn" if k=="action" else ""}">{note}</span>' if note else ''
         tone=' rd-done' if k=='complete' else (' rd-act' if k=='action' else '')
         act=f'<a href="{href}" class="rd-cta{" rd-cta-p" if k=="action" else ""}">{cta}{ik(CHEV_I,15,2.4)}</a>' if cta else '<span class="rd-cta-sp"></span>'
-        return f'''<li class="rd-row{tone}"><span class="rd-ic">{icn}</span><span class="rd-tx"><b>{t}</b><span class="rd-d">{d}</span>{nt}{prog}</span><span class="rd-st">{pill(k)}</span>{act}</li>'''
+        return f'''<li class="rd-row{tone}"><span class="rd-ic">{icn}</span><span class="rd-tx"><b>{t}</b><span class="rd-d">{d}</span></span><span class="rd-st">{pill(k)}{nt}{prog}</span>{act}</li>'''
     lst=''.join(row(r) for r in rows)
     later=row(('wallet','Payout setup','Only needed the first time you have earnings to withdraw.','todo',None,'Set up','#'))
     if mid:
@@ -119,7 +119,7 @@ RD_CSS=COMMON_CSS+'''.rd-head{margin-top:8px}
 .rd-grid{margin-top:26px;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:start}
 .rd-sh{margin:0 0 10px 4px}
 .rd-list{list-style:none;margin:0;padding:6px 0}
-.rd-row{display:grid;grid-template-columns:44px minmax(0,1fr) 150px 112px;align-items:center;gap:16px;padding:16px 22px}
+.rd-row{display:grid;grid-template-columns:44px minmax(0,1fr) 220px 112px;align-items:center;gap:16px;padding:16px 22px}
 .rd-row + .rd-row{border-top:1.5px solid #F0F2F8}
 .rd-ic{width:44px;height:44px;border-radius:14px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
 .rd-done .rd-ic{background:#E7F5EE;color:#0F6B45}
@@ -127,11 +127,11 @@ RD_CSS=COMMON_CSS+'''.rd-head{margin-top:8px}
 .rd-tx{display:flex;flex-direction:column;gap:3px;min-width:0}
 .rd-tx b{font-size:15px;font-weight:600}
 .rd-d{font-size:13.5px;line-height:1.45;color:#5B6582}
-.rd-note{font-size:13px;color:#3A4566;margin-top:2px}
-.rd-warn{color:#8A5300;font-weight:500;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rd-mini{display:block;width:160px;height:5px;border-radius:5px;background:#E6EAF3;margin-top:6px;overflow:hidden}
+.rd-note{font-size:12.5px;line-height:1.4;color:#5B6582}
+.rd-warn{color:#8A5300;font-weight:500}
+.rd-mini{display:block;width:140px;height:5px;border-radius:5px;background:#E6EAF3;margin-top:2px;overflow:hidden}
 .rd-mini span{display:block;height:100%;border-radius:5px;background:#1652F0}
-.rd-st{display:flex;justify-content:flex-start}
+.rd-st{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0}
 .rd-cta{justify-self:end;display:inline-flex;align-items:center;gap:4px;height:38px;padding:0 10px 0 14px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:border-color .2s ease,background .2s ease}
 .rd-cta:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
 .rd-cta-p{background:#1652F0;border-color:#1652F0;color:#FFFFFF}
@@ -166,7 +166,7 @@ RD_CSS=COMMON_CSS+'''.rd-head{margin-top:8px}
 .rd-tx b{font-size:14.5px}
 .rd-d{display:none}
 .rd-note{font-size:12.5px}
-.rd-warn{font-size:11.5px}
+
 .rd-mini{width:120px;margin-top:4px}
 .rd-cta{height:36px;padding:0 8px 0 12px;font-size:13.5px}
 .st-pill{height:24px;font-size:12px;padding:0 9px}

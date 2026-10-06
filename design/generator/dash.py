@@ -133,7 +133,7 @@ a{color:#1652F0}
 .ds-btn .ob-arrow{width:36px;height:36px}
 .ds-ghost{height:44px;font-size:14.5px}
 .ds-root{overflow-x:hidden}
-.ds-main{padding:4px 16px 32px 16px}
+.ds-main{padding:12px 16px 32px 16px}
 .ds-btn{justify-content:space-between}
 }
 '''

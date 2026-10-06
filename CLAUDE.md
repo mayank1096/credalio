@@ -44,6 +44,7 @@
 ## Designer feedback log (ALWAYS apply to every new screen)
 - Never copy the client layout; rethink each screen's job and make it efficient, unique and clean.
 - Mobile: no card-inside-card heroes (content runs edge to edge on the page bg), breathing room under bars/trackers (≥28px), full-width primary buttons, compact type, one primary CTA per view (no duplicate CTAs), swipeable chip/pill rows instead of wrapped 2-line boxes, collapsible lists (accordion) for secondary content.
+- Mobile space under the top bar: dashboard pages ds-main padding-top 12px; focus/player/task screens ≥30–40px. Never let content stick to the bar.
 - Desktop: use space well (no needless line breaks, no half-empty rows); one clear primary action per screen.
 - Tags/chips/pills/status pills = weight 500. Selected ≠ primary button. Tokens always gold. No emojis, no screen-ID eyebrows, no rainbow colours (status: green complete, cobalt in progress/review, amber action required, grey not started).
 - Characters: use the designer's Copilot images (Nova etc.), never the old main-scene crops for people. Chat-like screens: messages bottom-anchored, composer at the bottom; a soft blue gradient flowing sideways across the top (fxFlow) is the "Nova is here" ambient motif.

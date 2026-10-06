@@ -201,7 +201,7 @@ K1_CSS='''.k1{flex-grow:1;width:min(1120px,100%);box-sizing:border-box;margin:0 
 .k1-go.lp-off .ob-arrow{color:#9AA8CC}
 .k1-later{font-size:13px;color:#5B6582;text-align:center;margin-top:-4px}
 @media (max-width: 960px){
-.k1{grid-template-columns:minmax(0,1fr);gap:22px;padding:24px 16px 32px 16px;align-content:start}
+.k1{grid-template-columns:minmax(0,1fr);gap:22px;padding:36px 16px 32px 16px;align-content:start}
 .k1-sub{font-size:15px;margin-top:10px}
 .k1-sh{margin:22px 0 10px 2px}
 .k1-need{grid-template-columns:minmax(0,1fr);gap:0;border:1.5px solid #EEF1F7;border-radius:18px;background:#F7F9FD;overflow:hidden}
@@ -341,7 +341,7 @@ K2_CSS=FORM_CSS_LITE='''.ob-lab{display:block;font-size:13px;font-weight:600;col
 @media (prefers-reduced-motion: reduce){.k2-oval::before{animation:none}}
 @media (max-width: 960px){
 .k2{grid-template-columns:minmax(0,1fr);gap:0;padding:0 0 0 0}
-.k2-side{position:static;padding:20px 16px 0 16px}
+.k2-side{position:static;padding:30px 16px 0 16px}
 .k2-h{font-size:24px;margin-top:6px}
 .k2-sp,.k2-tl,.k2-tips{display:none}
 .k2-panel{border:0;box-shadow:none;border-radius:0;padding:16px 16px 0 16px;min-height:calc(100vh - 140px);box-sizing:border-box}

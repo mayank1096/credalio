@@ -140,12 +140,12 @@ RD_CSS=COMMON_CSS+'''.rd-head{margin-top:8px}
 @media (max-width: 1180px){.rd-grid{grid-template-columns:minmax(0,1fr)}.rd-rail{position:static;margin-top:0;display:grid;grid-template-columns:1fr 1fr}.rd-row{grid-template-columns:44px minmax(0,1fr) auto auto}}
 @media (max-width: 960px){
 .rd-head .ds-sub{font-size:14px}
-.rd-hero{margin-top:24px;padding:0;grid-template-columns:minmax(0,1fr);gap:22px;border:0;border-radius:0;background:transparent;box-shadow:none}
+.rd-hero{margin-top:24px;padding:20px 18px 22px 18px;grid-template-columns:minmax(0,1fr);gap:0;border-radius:18px}
 .rd-score{gap:14px}
 .rd-score .rg,.rd-score .rg svg{width:68px !important;height:68px !important}
 .rd-pct{font-size:19px}.rd-pl{display:none}
 .rd-sc b{font-size:15.5px}.rd-sc span{font-size:13px}
-.rd-unl{padding:18px 16px;border-left:0;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3}
+.rd-unl{margin-top:20px;padding:22px 0 0 0;border-left:0;border-top:1.5px solid #F0F2F8}
 .rd-unl .sec-h{display:none}
 .rd-gates{margin:0;grid-template-columns:minmax(0,1fr);gap:18px}
 .rd-gates::before{left:15px;right:auto;top:18px;bottom:18px;width:3px;height:auto;background:linear-gradient(180deg,#1652F0 0%,#1652F0 30%,#E6EAF3 30%)}
@@ -551,9 +551,9 @@ open(P+'CR-CREATE-002B.dc.html','w').write(f'''<!doctype html>
 
 # ---------------- preview wrappers ----------------
 WRAP('CR-CREATE-002B-Mobile.dc.html','CR-CREATE-002B',390,844,'CR-CREATE-002B mobile preview')
-WRAP('CR-RDY-001-Mobile.dc.html','CR-RDY-001',390,1430,'CR-RDY-001 mobile preview')
+WRAP('CR-RDY-001-Mobile.dc.html','CR-RDY-001',390,1470,'CR-RDY-001 mobile preview')
 WRAP('CR-RDY-001s.dc.html','CR-RDY-001',1440,1080,'Credalio · Your readiness (new creator)',' variant="new"')
-WRAP('CR-RDY-001s-Mobile.dc.html','CR-RDY-001',390,1310,'CR-RDY-001s mobile preview',' variant="new"')
+WRAP('CR-RDY-001s-Mobile.dc.html','CR-RDY-001',390,1350,'CR-RDY-001s mobile preview',' variant="new"')
 WRAP('CR-CTR-001-Mobile.dc.html','CR-CTR-001',390,1290,'CR-CTR-001 mobile preview')
 WRAP('CR-ORI-001-Mobile.dc.html','CR-ORI-001',390,1080,'CR-ORI-001 mobile preview')
 print('build10 done')

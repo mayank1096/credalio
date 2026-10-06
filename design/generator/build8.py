@@ -140,7 +140,7 @@ for i,(l,st,kind,act) in enumerate(MS):
     else: dot='<span class="dn-dot" style="background: #FFFFFF; border-color: #CBD3E6"></span>'
     a_=f'<a href="#" class="ds-link dn-act">{act}</a>' if act else '<span></span>'
     ms+=f'<li class="dn-ms">{dot}<span style="display: flex; flex-direction: column; min-width: 0"><span class="dn-msl">{l}</span><span class="dn-mss" style="color: {"#0F6B45" if kind=="done" else "#5B6582"}">{st}</span></span>{a_}</li>'
-HERO_CHAR=f'<div class="dn-char" aria-hidden="true" style="position: absolute; right: 36px; bottom: -48px; width: 176px; aspect-ratio: 200 / 450; mix-blend-mode: multiply"><div style="position: absolute; inset: 0; overflow: hidden; -webkit-mask-image: linear-gradient(to bottom, #000 76%, transparent); mask-image: linear-gradient(to bottom, #000 76%, transparent)"><img src="{IMG}" alt="" style="position: absolute; left: -672.5%; top: -37.78%; width: 1086%; max-width: none; height: auto"></div></div>'
+HERO_CHAR=f'<div class="dn-char" aria-hidden="true" style="position: absolute; right: 36px; bottom: -40px; width: 176px; aspect-ratio: 200 / 450; mix-blend-mode: multiply"><div style="position: absolute; inset: 0; overflow: hidden; -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent), linear-gradient(to right, transparent, #000 18%, #000 82%, transparent); -webkit-mask-composite: source-in; mask-image: linear-gradient(to bottom, #000 80%, transparent), linear-gradient(to right, transparent, #000 18%, #000 82%, transparent); mask-composite: intersect"><img src="/_blob/b8f0756720795e1bd3b02e9c2655cb25" alt="" style="position: absolute; left: -21.88%; top: -10.42%; width: 147.03%; max-width: none; height: auto"></div></div>'
 c=f'''<section class="dn-hero ob-in" aria-labelledby="dn-h" style="position: relative; overflow: hidden; margin-top: 8px; border-radius: 24px; border: 1.5px solid #E6EAF3; background: #FFFFFF url({BG}) center top / cover no-repeat; padding: 30px 36px 28px 36px">
 {HERO_CHAR}
 <div class="dn-in" style="position: relative; max-width: calc(100% - 210px)">
@@ -155,6 +155,7 @@ c=f'''<section class="dn-hero ob-in" aria-labelledby="dn-h" style="position: rel
 </div>
 </div>
 <div class="dn-ideas" style="margin-top: 12px; display: flex; align-items: center; gap: 8px"><span class="dn-lab">From your expertise</span><sc-for list="{{{{ideas}}}}" as="t" hint-placeholder-count="3"><button type="button" class="ds-chip dn-idea" onClick="{{{{t.pick}}}}">{{{{t.label}}}}</button></sc-for></div>
+{BTNA("CR-CREATE-002A.dc.html","Start with Nova","ds-btn dn-cta-m")}
 <div style="margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(203, 211, 230, 0.7)">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; max-width: 760px"><span class="dn-lab">Or start from a format</span><button type="button" class="ds-link dn-why" onClick="{{{{toggleAsk}}}}" aria-expanded="{{{{askOpen}}}}">Not sure which fits?</button></div>
 <div class="dn-fmts" style="margin-top: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px">{fmts}</div>
@@ -183,22 +184,27 @@ DN_CSS='''.dn-comp:focus-within{border-color:#1652F0 !important;box-shadow:0 0 0
 .dn-next{animation:dnPulse 2s ease-out infinite}
 .dn-rail{position:absolute;left:14px;right:calc(20% - 14px);top:12px;height:4px;border-radius:3px;background:#E6EAF3;z-index:0;display:block}
 @media (max-width: 1180px){.dn-char{display:none}.dn-in{max-width:none !important}}
+@media (min-width: 961px){.dn-cta-m{display:none !important}}
 @media (max-width: 960px){
-.dn-hero{padding:18px 16px 16px 16px !important;border-radius:20px !important;margin-top:4px !important}
-.dn-wel{font-size:13.5px !important}
-.dn-hero .ds-h1{font-size:24px !important}
-.dn-comp{margin-top:14px !important;padding:12px 12px 12px 14px !important;border-radius:16px !important}
-.dn-comp textarea{font-size:15px !important;min-height:66px}
-.dn-help{display:none !important}
-.dn-comp-foot .ds-btn{flex-grow:1;justify-content:space-between}
-.dn-ideas{overflow-x:auto;margin-left:-16px !important;margin-right:-16px;padding:0 16px;scrollbar-width:none}
+.dn-hero{padding:12px 0 0 0 !important;border:0 !important;border-radius:0 !important;margin-top:0 !important;background:transparent !important;overflow:visible !important}
+.dn-wel{font-size:13.5px !important;color:#5B6582 !important}
+.dn-hero .ds-h1{font-size:24px !important;margin-top:2px !important;line-height:1.2}
+.dn-comp{margin-top:16px !important;padding:14px 16px !important;border-radius:18px !important;box-shadow:0 10px 26px rgba(22,82,240,.08) !important}
+.dn-comp textarea{font-size:15px !important;min-height:72px}
+.dn-comp-foot{display:none !important}
+.dn-ideas{margin-top:12px !important;overflow-x:auto;margin-left:-16px !important;margin-right:-16px;padding:0 16px;scrollbar-width:none}
 .dn-ideas::-webkit-scrollbar{display:none}
-.dn-ideas .dn-lab{display:none}
-.dn-hero > .dn-in > div:last-child{margin-top:16px !important;padding-top:14px !important}
-.dn-fmts{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px !important}
-.dn-fmt{height:44px;font-size:13.5px;padding:0 10px;gap:7px;white-space:normal;line-height:1.2;border-radius:14px}
+.dn-ideas .dn-lab{font-size:13px !important;color:#5B6582}
+.dn-idea{height:34px !important;font-size:13px !important}
+.dn-cta-m{display:flex !important;margin-top:16px;width:100%;box-sizing:border-box;justify-content:space-between}
+.dn-hero > .dn-in > div:last-child{margin-top:24px !important;padding-top:0 !important;border-top:0 !important}
+.dn-lab{font-size:13px}
+.dn-why{font-size:13px !important}
+.dn-fmts{flex-wrap:nowrap !important;overflow-x:auto;margin:10px -16px 0 -16px !important;padding:0 16px 2px 16px;scrollbar-width:none}
+.dn-fmts::-webkit-scrollbar{display:none}
+.dn-fmt{height:40px;font-size:13.5px;padding:0 14px 0 12px;gap:7px;white-space:nowrap;flex-shrink:0}
 
-.dn-path{padding:16px !important;margin-top:14px !important}
+.dn-path{padding:16px !important;margin-top:28px !important}
 .dn-psub{display:none}
 .dn-track{grid-template-columns:minmax(0,1fr) !important;gap:0 !important;margin-top:10px !important}
 .dn-ms{display:grid !important;grid-template-columns:28px minmax(0,1fr) auto;align-items:center;gap:12px !important;padding:9px 0}

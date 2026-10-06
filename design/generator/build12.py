@@ -13,52 +13,96 @@ PHONE_I='<rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M11
 
 _t=open('build11.py').read(); _a=_t.index("DN_CSS2='''"); _b=_t.index("'''\n",_a+12)+3; exec(_t[_a:_b])
 # ---------------- CR-ORI-007 · Orientation complete ----------------
-nodes=''.join(f'<span class="dn-n dn-d">{ic("check",12,3.2)}</span>' for i in range(7))
+import random
+random.seed(7)
+conf=''
+cols=['#1652F0','#6E96FF','#AFC1F5','#F6C343','#0F6B45','#1652F0']
+for i in range(26):
+    x=random.randint(2,98); d=round(random.uniform(0,1.6),2); dur=round(random.uniform(2.6,4.2),2); r=random.randint(-60,60); w=random.choice([6,7,8,10]); h=random.choice([10,12,14,6]); c_=random.choice(cols)
+    conf+=f'<i style="left: {x}%; width: {w}px; height: {h}px; background: {c_}; animation-delay: {d}s; animation-duration: {dur}s; --r: {r}deg"></i>'
+MEDAL=f'''<div class="oc-medal ob-in" aria-hidden="true">
+<span class="oc-rays"></span>
+<svg class="oc-rib" viewBox="0 0 120 70" width="120" height="70"><path d="M34 0 L18 64 L34 54 L46 66 L58 6 Z" fill="#0E3BB8"></path><path d="M86 0 L102 64 L86 54 L74 66 L62 6 Z" fill="#1652F0"></path></svg>
+<span class="oc-coin"><span class="oc-ring"></span><span class="oc-ic">{ik(CAP_I,44,1.8)}</span><span class="oc-shine"></span></span>
+</div>'''
 c=f'''<div class="oc">
-<div class="dn-badge ob-in" aria-hidden="true"><span class="dn-ring"></span><span class="dn-core">{ik(CAP_I,32,2)}</span></div>
-<span class="lp-eb ob-in2" style="justify-content: center">Creator Orientation</span>
-<h1 class="lp-h1 dn-h ob-in2">You’ve finished Orientation.</h1>
-<p class="dn-sub ob-in2">Seven modules, about 70 minutes, done on 1 October 2026. You know how trusted learning works here.</p>
-<div class="dn-path ob-in3" aria-label="All 7 modules complete" style="--full: 1">{nodes}</div>
+<div class="oc-conf" aria-hidden="true">{conf}</div>
+{MEDAL}
+<span class="oc-chip ob-in2">{SPK}Milestone unlocked</span>
+<h1 class="lp-h1 oc-h ob-in2">You’ve finished Orientation.</h1>
+<p class="oc-sub ob-in2">Seven modules, about 70 minutes. You now know what trusted learning looks like on Credalio.</p>
 <div class="oc-grid ob-in3">
-<section class="oc-rd" aria-label="Readiness updated">
-{ring(60,84,10,'oc','<b style="font-size: 18px">60%</b>')}
-<span class="oc-rt"><span class="oc-rl">Readiness, updated automatically</span><b>3 of 5 done</b><span class="oc-ch">{ic('check',12,3)}Orientation ticked off</span></span>
+<section class="oc-cred" aria-label="Earned: Creator Orientation">
+<span class="oc-cl">Now on your Creator profile</span>
+<div class="oc-ct"><span class="oc-ci">{ik(CAP_I,22,1.9)}</span><span><b>Creator Orientation</b><span>Ada Ononuju · 1 October 2026</span></span></div>
+<div class="oc-rd"><span class="oc-rl">Readiness</span><span class="oc-bar"><span class="oc-was"></span><span class="oc-now"></span></span><span class="oc-rv"><b>60%</b><em>+20%</em></span></div>
 </section>
 <section class="oc-next" aria-label="Next for you">
 <span class="oc-nl">Next for you</span>
 <b>Credentials &amp; expertise</b>
-<span class="oc-nd">Your MSc certificate scan is unreadable. Upload a clearer copy and it’s done.</span>
+<span class="oc-nd">Your MSc scan is unreadable. Upload a clearer copy and it’s done.</span>
 <a href="#" class="ds-btn sm oc-go"><span>Fix my credentials</span><span class="ob-arrow">{ic('arrow',16,2.4)}</span></a>
 </section>
 </div>
 <div class="oc-links ob-in4"><a href="CR-RDY-001.dc.html">View readiness</a><span aria-hidden="true">·</span><a href="CR-DASH-NEW.dc.html">Back to my Studio</a></div>
 </div>'''
-OC_CSS=DN_CSS2.replace('.dn{','.dn,.oc{').replace('.lp-body:has(.dn)','.lp-body:has(.oc)')+'''.oc{width:min(820px,100%);margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center}
-.oc .lp-eb{margin-top:14px}
-.dn-path[style]::before{background:#1652F0}
-.oc-grid{margin-top:30px;width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:14px;text-align:left}
-.oc-rd{display:flex;align-items:center;gap:18px;padding:20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3}
-.oc-rt{display:flex;flex-direction:column;gap:3px}
-.oc-rl{font-size:12.5px;font-weight:500;color:#5B6582}
-.oc-rt b{font-size:18px;font-weight:600}
-.oc-ch{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:#0F6B45}
-.oc-next{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:20px;border-radius:20px;background:#F5F8FF;border:1.5px solid #CBD7F5}
-.oc-nl{font-size:12.5px;font-weight:500;color:#1652F0}
+OC_CSS='''.lp-body:has(.oc){padding-bottom:48px;position:relative;overflow:hidden;background:radial-gradient(60% 50% at 50% 0%,rgba(22,82,240,.10),rgba(22,82,240,0) 70%),#FFFFFF}
+.oc{position:relative;width:min(860px,100%);margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center}
+.oc-conf{position:absolute;left:-10%;right:-10%;top:-40px;height:420px;pointer-events:none;overflow:hidden}
+.oc-conf i{position:absolute;top:-20px;border-radius:2px;opacity:0;animation:ocFall 3.2s cubic-bezier(.3,.6,.4,1) both}
+@keyframes ocFall{0%{opacity:0;transform:translateY(0) rotate(0)}10%{opacity:1}100%{opacity:0;transform:translateY(400px) rotate(calc(var(--r) * 6))}}
+.oc-medal{position:relative;width:170px;height:170px;display:flex;align-items:flex-start;justify-content:center;margin-top:4px}
+.oc-rays{position:absolute;left:50%;top:50%;width:300px;height:300px;margin:-160px 0 0 -150px;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(22,82,240,.10) 0deg 8deg,rgba(22,82,240,0) 8deg 22deg);-webkit-mask-image:radial-gradient(closest-side,#000 30%,transparent 100%);mask-image:radial-gradient(closest-side,#000 30%,transparent 100%);animation:ocSpin 24s linear infinite}
+@keyframes ocSpin{to{transform:rotate(360deg)}}
+.oc-rib{position:absolute;left:50%;top:84px;margin-left:-60px}
+.oc-coin{position:relative;width:118px;height:118px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#4D7BFF 0%,#1652F0 45%,#0B2E99 100%);box-shadow:0 18px 40px rgba(22,82,240,.40),inset 0 2px 0 rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;color:#FFFFFF;overflow:hidden;animation:ocPop .8s cubic-bezier(.3,1.5,.5,1) .1s both}
+.oc-ring{position:absolute;inset:8px;border-radius:50%;border:2px dashed rgba(255,255,255,.45)}
+.oc-ic{position:relative;display:flex}
+.oc-shine{position:absolute;top:0;left:0;width:45%;height:100%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,0));animation:ocShine 3.2s ease-in-out 1s infinite}
+@keyframes ocShine{0%{transform:translateX(-140%) skewX(-18deg)}40%,100%{transform:translateX(320%) skewX(-18deg)}}
+@keyframes ocPop{from{transform:scale(.3) rotate(-20deg);opacity:0}to{transform:none;opacity:1}}
+.oc-chip{margin-top:18px;display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 14px;border-radius:999px;background:#EAF0FF;color:#0E3BB8;font-size:13.5px;font-weight:500}
+.oc-h{margin-top:12px;font-size:clamp(34px,5.4vh,46px)}
+.oc-sub{margin:10px 0 0 0;font-size:17px;line-height:1.55;color:#4A5578;max-width:560px}
+.oc-grid{margin-top:28px;width:100%;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px;text-align:left}
+.oc-cred{position:relative;padding:20px;border-radius:20px;background:#FFFFFF url('''+BGI+''') center top / cover no-repeat;border:1.5px solid #CBD7F5;box-shadow:0 18px 40px rgba(22,82,240,.10);display:flex;flex-direction:column;gap:14px}
+.oc-cl{font-size:12.5px;font-weight:500;color:#1652F0}
+.oc-ct{display:flex;align-items:center;gap:12px}
+.oc-ci{width:44px;height:44px;flex-shrink:0;border-radius:14px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(22,82,240,.3)}
+.oc-ct > span:last-child{display:flex;flex-direction:column;gap:2px}
+.oc-ct b{font-size:17px;font-weight:600}
+.oc-ct > span:last-child > span{font-size:13px;color:#5B6582}
+.oc-rd{display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1.5px solid rgba(203,211,230,.6)}
+.oc-rl{font-size:13px;color:#5B6582}
+.oc-bar{position:relative;flex-grow:1;height:8px;border-radius:8px;background:#E6EAF3;overflow:hidden}
+.oc-was,.oc-now{position:absolute;left:0;top:0;bottom:0;border-radius:8px}
+.oc-was{width:40%;background:#1652F0}
+.oc-now{left:40%;width:20%;background:#6E96FF;transform-origin:left;animation:ocGrow 1s cubic-bezier(.3,.8,.3,1) .9s both}
+@keyframes ocGrow{from{transform:scaleX(0)}to{transform:none}}
+.oc-rv{display:flex;align-items:baseline;gap:6px}
+.oc-rv b{font-size:16px;font-weight:600}
+.oc-rv em{font-style:normal;font-size:12.5px;font-weight:500;color:#0F6B45;background:#E7F5EE;border-radius:999px;padding:2px 8px}
+.oc-next{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3}
+.oc-nl{font-size:12.5px;font-weight:500;color:#5B6582}
 .oc-next b{font-size:17px;font-weight:600}
 .oc-nd{font-size:14px;line-height:1.5;color:#3A4566}
-.oc-go{margin-top:12px}
+.oc-go{margin-top:auto;padding-top:0}
+.oc-next .oc-go{margin-top:14px}
 .oc-links{margin-top:22px;display:flex;align-items:center;gap:10px;font-size:14.5px;color:#8A93AD}
 .oc-links a{font-weight:600;text-decoration:none;color:#3A4566}
 .oc-links a:hover{color:#1652F0}
+@media (prefers-reduced-motion: reduce){.oc-conf,.oc-shine{display:none}.oc-rays,.oc-coin,.oc-now{animation:none}}
 @media (max-width: 960px){
-.oc-grid{grid-template-columns:minmax(0,1fr);gap:10px;margin-top:22px}
-.oc-rd{padding:14px 16px;gap:14px;border-radius:18px}
-.oc-rd .rg,.oc-rd .rg svg{width:60px !important;height:60px !important}
-.oc-rd .rg-in b{font-size:14px !important}
-.oc-rt b{font-size:16px}
-.oc-next{padding:16px;border-radius:18px}
-.oc-next b{font-size:16px}
+.oc-medal{width:130px;height:118px}
+.oc-rays{width:230px;height:230px;margin:-125px 0 0 -115px}
+.oc-coin{width:92px;height:92px}.oc-coin svg{width:36px;height:36px}
+.oc-rib{top:62px;transform:scale(.8);transform-origin:top center}
+.oc-chip{margin-top:12px;height:30px;font-size:13px}
+.oc-h{font-size:26px;margin-top:10px}
+.oc-sub{font-size:14.5px;margin-top:8px}
+.oc-grid{grid-template-columns:minmax(0,1fr);gap:10px;margin-top:20px}
+.oc-cred,.oc-next{padding:16px;border-radius:18px}
+.oc-ct b,.oc-next b{font-size:16px}
 .oc-go{width:100%;justify-content:space-between}
 .oc-links{margin-top:18px;font-size:14px}
 }

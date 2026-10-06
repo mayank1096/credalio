@@ -98,7 +98,7 @@ LP_CSS='''body{background:#FFFFFF}
 .lp-stepn{font-size:13.5px;color:#5B6582}
 .lp-next.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}
 .lp-next.lp-off .ob-arrow{color:#9AA8CC}
-.lp-ask{margin-top:28px;display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 16px 0 6px;border-radius:999px;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none}
+.lp-ask{margin-top:28px;display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 16px 0 6px;border-radius:999px;border:1.5px solid #CBD7F5;background:#FFFFFF url('''+BGI+''') center / cover no-repeat;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none}
 .lp-ask:hover{border-color:#AFC1F5;color:#0B1433}
 .lp-call{margin-top:24px;padding:16px 18px;border-radius:16px;background:#F5F8FF;border:1.5px solid #E6EAF3;border-left:4px solid #1652F0}
 .lp-call b{display:block;font-size:12.5px;font-weight:600;color:#1652F0;margin-bottom:4px}
@@ -220,47 +220,61 @@ MO_CSS='''.mo2{width:min(1000px,100%)}
 PLAYER('CR-ORI-002.dc.html','Credalio · Orientation module','Module 4 · Understanding validation',st(M4,1),None,c,outline=False,bottom=False,extra_css=MO_CSS)
 
 # ---------------- CR-ORI-003 · Lesson (Module 4, lesson 2) ----------------
-REQ=[('Clarification','A question about your work'),('Evidence','Proof behind a claim'),('Meeting','A short call to talk it through'),('Findings','Issues to fix before a decision')]
+REQ=[('Clarification','A question'),('Evidence','Proof of a claim'),('Meeting','A short call'),('Findings','Fix before a decision')]
 req=''.join(f'<li><b>{a}</b><span>{b}</span></li>' for a,b in REQ)
-c=f'''<span class="lp-eb ob-in">Lesson 2 of 3 · about 4 min read</span>
+c=f'''<div class="ls-top">
+<div>
+<span class="lp-eb ob-in">Lesson 2 of 3 · about 4 min read</span>
 <h1 class="lp-h1 ob-in">The validation case</h1>
 <p class="lp-p ob-in2">One learning experience has one validation case. Validators may ask for clarification or evidence, propose a meeting, or raise findings. All of it happens in the Validation Workspace.</p>
-<figure class="vc ob-in3" aria-label="How a validation case works">
-<div class="vc-flow">
-<div class="vc-n"><span class="vc-i">{ic('course',20,1.9)}</span><b>Your course</b><span>One learning experience</span></div>
-<span class="vc-l" aria-hidden="true"></span>
-<div class="vc-n vc-hub"><span class="vc-i">{ic('valid',20,1.9)}</span><b>One validation case</b><span>Reviewed by independent experts</span></div>
 </div>
-<div class="vc-ws"><span class="vc-wl">{ik(DOC_I,15,2)}Validation Workspace · everything lands here</span><ul class="vc-req">{req}</ul></div>
+<aside class="ls-note ob-in3"><span class="ls-av" aria-hidden="true"><span>M</span><span>A</span></span><b>With several creators</b><span>If a request is about a chapter Mary wrote, it goes to Mary. The Lead Creator can see it too.</span></aside>
+</div>
+<figure class="vc2 ob-in3" aria-label="How a validation case works">
+<div class="vc2-n"><span class="vc-i">{ic('course',20,1.9)}</span><b>Your course</b><span>One learning experience</span></div>
+<span class="vc2-l" aria-hidden="true"></span>
+<div class="vc2-n vc2-hub"><span class="vc-i">{ic('valid',20,1.9)}</span><b>One validation case</b><span>Independent experts review it</span></div>
+<span class="vc2-l" aria-hidden="true"></span>
+<div class="vc2-n vc2-ws"><span class="vc2-wl">{ik(DOC_I,15,2)}Validation Workspace</span><ul class="vc2-req">{req}</ul></div>
 </figure>
-<div class="lp-call ob-in3"><b>With several creators</b><span>If a request is about a chapter Mary wrote, it goes to Mary. The Lead Creator can see it too.</span></div>
 <a href="#" class="lp-ask ob-in4">{NOVA_AV(30,False)}Ask Nova about this lesson</a>'''
-VC_CSS='''.vc{margin:28px 0 0 0;padding:22px;border-radius:22px;background:#F7F9FD;border:1.5px solid #E6EAF3}
-.vc-flow{display:flex;align-items:stretch}
-.vc-n{flex:1 1 0;display:flex;flex-direction:column;gap:3px;padding:16px;border-radius:16px;background:#FFFFFF;border:1.5px solid #E6EAF3}
+VC_CSS='''.lp-main:has(.ls-top){width:min(880px,100%)}
+.ls-top{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:32px;align-items:end}
+.ls-top .lp-p{margin-top:16px}
+.ls-note{padding:16px 18px;border-radius:18px;background:#F5F8FF;border:1.5px solid #E6EAF3;display:flex;flex-direction:column;gap:4px}
+.ls-av{display:flex;margin-bottom:6px}
+.ls-av span{width:28px;height:28px;border-radius:50%;border:2px solid #FFFFFF;background:#0B1433;color:#FFFFFF;font-size:11.5px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.ls-av span + span{margin-left:-8px;background:#1652F0}
+.ls-note b{font-size:14px;font-weight:600}
+.ls-note > span:last-child{font-size:13.5px;line-height:1.5;color:#3A4566}
+.vc2{margin:28px 0 0 0;padding:20px;border-radius:22px;background:#F7F9FD;border:1.5px solid #E6EAF3;display:grid;grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr) 36px minmax(0,1.5fr);align-items:stretch}
+.vc2-n{display:flex;flex-direction:column;gap:3px;padding:16px;border-radius:16px;background:#FFFFFF;border:1.5px solid #E6EAF3}
 .vc-i{width:40px;height:40px;border-radius:12px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
-.vc-n b{font-size:15.5px;font-weight:600}
-.vc-n span:last-child{font-size:13.5px;color:#5B6582}
-.vc-hub{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.08)}
-.vc-hub .vc-i{background:#1652F0;color:#FFFFFF}
-.vc-l{flex:0 0 48px;align-self:center;height:3px;border-radius:3px;background:#1652F0;position:relative}
-.vc-l::after{content:'';position:absolute;right:-1px;top:-4px;border:5.5px solid transparent;border-left:7px solid #1652F0;border-right:0}
-.vc-ws{margin-top:16px;padding-top:16px;border-top:1.5px dashed #CBD3E6}
-.vc-wl{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:#1652F0}
-.vc-req{list-style:none;margin:12px 0 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
-.vc-req li{display:flex;flex-direction:column;gap:2px;padding:12px;border-radius:14px;background:#FFFFFF;border:1.5px solid #E6EAF3}
-.vc-req b{font-size:14px;font-weight:600}
-.vc-req span{font-size:12.5px;line-height:1.4;color:#5B6582}
+.vc2-n b{font-size:15px;font-weight:600}
+.vc2-n > span:last-child{font-size:13px;line-height:1.4;color:#5B6582}
+.vc2-hub{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.08)}
+.vc2-hub .vc-i{background:#1652F0;color:#FFFFFF}
+.vc2-l{align-self:center;height:3px;margin:0 4px;border-radius:3px;background:#1652F0;position:relative}
+.vc2-l::after{content:'';position:absolute;right:-2px;top:-4px;border:5.5px solid transparent;border-left:7px solid #1652F0;border-right:0}
+.vc2-ws{padding:14px}
+.vc2-wl{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#1652F0}
+.vc2-req{list-style:none;margin:10px 0 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.vc2-req li{display:flex;flex-direction:column;gap:1px;padding:8px 10px;border-radius:12px;background:#F5F8FF}
+.vc2-req b{font-size:13px;font-weight:600}
+.vc2-req span{font-size:11.5px;line-height:1.35;color:#5B6582}
+.lp-ask{margin-top:22px}
 @media (max-width: 960px){
-.vc{padding:14px;border-radius:18px;margin-top:20px}
-.vc-flow{flex-direction:column}
-.vc-l{flex:0 0 22px;width:3px;height:auto;align-self:flex-start;margin-left:34px}
-.vc-l::after{right:-4px;top:auto;bottom:-1px;border:5.5px solid transparent;border-top:7px solid #1652F0;border-bottom:0}
-.vc-n{flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:12px;padding:12px}
+.ls-top{grid-template-columns:minmax(0,1fr);gap:18px}
+.vc2{grid-template-columns:minmax(0,1fr);padding:14px;gap:0;border-radius:18px;margin-top:20px}
+.vc2-l{width:3px;height:18px;margin:0 0 0 30px;align-self:flex-start}
+.vc2-l::after{right:-4px;top:auto;bottom:-2px;border:5.5px solid transparent;border-top:7px solid #1652F0;border-bottom:0}
+.vc2-n{flex-direction:row;flex-wrap:wrap;align-items:center;column-gap:12px;padding:12px}
 .vc-i{margin:0;width:36px;height:36px}
-.vc-n b{font-size:14.5px;flex:1 1 60%}
-.vc-n span:last-child{flex-basis:100%;padding-left:48px;margin-top:-6px}
-.vc-req{grid-template-columns:repeat(2,minmax(0,1fr))}
+.vc2-n b{flex:1 1 60%;font-size:14.5px}
+.vc2-n > span:last-child{flex-basis:100%;padding-left:48px;margin-top:-6px}
+.vc2-ws{display:block}
+.vc2-ws .vc2-req{margin-top:10px}
+.ls-note{order:2}
 }
 '''
 PLAYER('CR-ORI-003.dc.html','Credalio · Orientation lesson','Module 4 · Understanding validation',st(M4,1),1,c,prev=('What validators look at','CR-ORI-002.dc.html'),nxt=('Next: Tiers and revalidation','CR-ORI-004.dc.html'),extra_css=VC_CSS)

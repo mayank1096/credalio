@@ -41,7 +41,7 @@ I={
 
 def NOVA_AV(d, ring=True):
     sh = 'box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 4.5px #D6DDEE; ' if ring else ''
-    return f'<span aria-hidden="true" style="position: relative; flex-shrink: 0; width: {d}px; height: {d}px; border-radius: 50%; overflow: hidden; background: #EAF0FF; {sh}display: block"><img src="{IMG}" alt="" style="position: absolute; left: -1114%; top: -142%; width: 1737.6%; max-width: none; height: auto; mix-blend-mode: multiply"></span>'
+    return f'<span aria-hidden="true" style="position: relative; flex-shrink: 0; width: {d}px; height: {d}px; border-radius: 50%; overflow: hidden; background: #EAF0FF; {sh}display: block"><img src="/_blob/b8f0756720795e1bd3b02e9c2655cb25" alt="" style="position: absolute; left: -87.50%; top: -57.81%; width: 294.06%; max-width: none; height: auto; mix-blend-mode: multiply"></span>'
 
 NAV=[('Dashboard',[('dash','Dashboard','CR-DASH-NEW.dc.html',None)]),
  ('Create',[('exp','My learning experiences','#',None),('new','Create new','CR-CREATE-001.dc.html',None)]),

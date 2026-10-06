@@ -111,7 +111,7 @@ LP_CSS='''body{background:#FFFFFF}
 .lp-segs{position:absolute;left:16px;right:16px;bottom:-1px;margin:0;gap:3px}
 .lp-seg{flex:1 1 0;width:auto;height:3px}
 .lp-tn{display:none}
-.lp-body{padding:28px 16px 112px 16px}
+.lp-body{padding:40px 16px 112px 16px}
 .lp-h1{font-size:25px}
 .lp-meta{font-size:13px;margin-top:6px}
 .lp-p{font-size:16px;line-height:1.65;margin-top:16px}
@@ -297,7 +297,7 @@ KC_GRID='''.kc-grid{margin-top:26px;display:grid;grid-template-columns:repeat(2,
 .kc-grid .kc{margin-top:0}
 .kc-two{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr))}
 .lp-body:has(.kc-grid){align-items:flex-start;padding-top:40px;padding-bottom:120px}
-@media (max-width: 960px){.kc-grid{grid-template-columns:minmax(0,1fr);gap:14px;margin-top:18px}.lp-body:has(.kc-grid){padding-top:28px;padding-bottom:112px}}
+@media (max-width: 960px){.kc-grid{grid-template-columns:minmax(0,1fr);gap:14px;margin-top:18px}.lp-body:has(.kc-grid){padding-top:40px;padding-bottom:112px}}
 '''
 NEXT4='<a href="CR-ORI-005.dc.html" class="ds-btn lp-next {{nextCls}}" aria-disabled="{{nextDis}}"><span>{{nextLabel}}</span><span class="ob-arrow">'+ic('arrow',18,2.4)+'</span></a>'
 S_KC='''class Component extends DCLogic {
@@ -431,6 +431,6 @@ DN_CSS2='''.lp-body:has(.dn){padding-bottom:56px}
 '''
 PLAYER('CR-ORI-006.dc.html','Credalio · Module complete','Module 5 · AI & responsible creation',[(l,k,'done') for l,k in M5],None,c,outline=False,bottom=False,extra_css=DN_CSS2)
 
-for n,h in [('CR-ORI-002',930),('CR-ORI-003',844),('CR-ORI-004',900),('CR-ORI-005',844),('CR-ORI-006',844)]:
+for n,h in [('CR-ORI-002',950),('CR-ORI-003',844),('CR-ORI-004',900),('CR-ORI-005',844),('CR-ORI-006',844)]:
     WRAP(n+'-Mobile.dc.html',n,390,h,n+' mobile preview'); s=open(P+n+'-Mobile.dc.html').read().replace('background: #F7F9FD','background: #FFFFFF'); open(P+n+'-Mobile.dc.html','w').write(s)
 print('build11 done')

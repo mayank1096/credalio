@@ -503,7 +503,7 @@ XB_CSS=COMMON_CSS+'''body{background:#FFFFFF}
 @media (max-width: 960px){
 .xb-top{height:56px;padding:0 12px 0 6px;gap:8px}
 .xb-t2{display:none}
-.xb-main{padding:22px 16px 24px 16px}
+.xb-main{padding:33px 16px 24px 16px}
 .xb-col{align-items:stretch;text-align:left}
 .xb-h1{font-size:26px}
 .xb-sub{font-size:14.5px;margin-top:8px}

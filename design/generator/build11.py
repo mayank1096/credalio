@@ -152,7 +152,12 @@ c=f'''<div class="mo2">
 </div>
 </div>'''
 MO_CSS='''.mo2{width:min(1000px,100%)}
-.lp-body:has(.mo2){padding-bottom:56px}
+.lp-body:has(.mo2){align-items:flex-start;padding-top:48px;padding-bottom:48px;background:radial-gradient(70% 60% at 50% 0%,rgba(22,82,240,.08),rgba(22,82,240,0) 70%),#FFFFFF}
+.mo2 .mo-r{min-height:72px}
+.mo2 .mo-ll li{min-height:72px}
+.mo2 .mo-card,.mo2 .mo-lc{padding:24px 26px}
+.mo2 .lp-h1{font-size:clamp(34px,5.4vh,46px)}
+.mo2-cols{margin-top:32px}
 .mo2-top{display:flex;align-items:flex-end;justify-content:space-between;gap:48px}
 .mo2-h{min-width:0}
 .mo2-act{width:340px;flex-shrink:0;padding-bottom:4px}
@@ -196,7 +201,7 @@ MO_CSS='''.mo2{width:min(1000px,100%)}
 .mo-go{margin-top:18px;width:100%;justify-content:space-between}
 @media (max-width: 960px){
 .mo-grid{display:flex;flex-direction:column;align-items:stretch;gap:0;padding-top:0}
-.mo2{display:flex;flex-direction:column}.mo2-top,.mo2-cols{display:contents}
+.mo2{display:flex;flex-direction:column}.mo2 .mo-r{min-height:52px}.mo2 .mo-ll li{min-height:48px}.mo2 .mo-card{padding:16px}.mo2 .lp-h1{font-size:25px}.lp-body:has(.mo2){padding-top:40px;background:#FFFFFF}.mo2-top,.mo2-cols{display:contents}
 .mo2-h{order:1}.mo2 .mo-card{order:2;margin-top:20px}.mo2-act{order:3;width:auto;margin-top:16px;padding:0}.mo-lc{order:4;margin-top:16px;padding:16px;border-radius:18px}.mo-ll li{font-size:14.5px;min-height:48px;padding:6px 0}.mo2 .mo-go{margin-top:14px}
 .mo-card{margin-top:20px}
 .mo-desc{font-size:15.5px;margin-top:10px}
@@ -431,6 +436,6 @@ DN_CSS2='''.lp-body:has(.dn){padding-bottom:56px}
 '''
 PLAYER('CR-ORI-006.dc.html','Credalio · Module complete','Module 5 · AI & responsible creation',[(l,k,'done') for l,k in M5],None,c,outline=False,bottom=False,extra_css=DN_CSS2)
 
-for n,h in [('CR-ORI-002',950),('CR-ORI-003',844),('CR-ORI-004',900),('CR-ORI-005',844),('CR-ORI-006',844)]:
+for n,h in [('CR-ORI-002',990),('CR-ORI-003',844),('CR-ORI-004',900),('CR-ORI-005',844),('CR-ORI-006',844)]:
     WRAP(n+'-Mobile.dc.html',n,390,h,n+' mobile preview'); s=open(P+n+'-Mobile.dc.html').read().replace('background: #F7F9FD','background: #FFFFFF'); open(P+n+'-Mobile.dc.html','w').write(s)
 print('build11 done')

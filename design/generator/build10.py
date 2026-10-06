@@ -264,7 +264,7 @@ CT_CSS=COMMON_CSS+'''.ct-hero{margin-top:8px;padding:30px 32px 26px 32px;border-
 .ct-ha{display:flex;align-items:center;gap:18px;flex-shrink:0}
 @media (max-width: 1180px){.ct-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ct-path{display:none}}
 @media (max-width: 960px){
-.ct-hero{margin-top:4px;padding:12px 0 0 0;border:0;border-radius:0;background:transparent}
+.ct-hero{margin-top:4px;padding:22px 16px 18px 16px;border-radius:20px;overflow:hidden}
 .ct-hero .ds-sub{font-size:14px}
 .ct-search{margin-top:14px;height:50px;padding:0 16px}
 .ct-search input{font-size:15px}
@@ -579,6 +579,6 @@ WRAP('CR-CREATE-002B-Mobile.dc.html','CR-CREATE-002B',390,844,'CR-CREATE-002B mo
 WRAP('CR-RDY-001-Mobile.dc.html','CR-RDY-001',390,1520,'CR-RDY-001 mobile preview')
 WRAP('CR-RDY-001s.dc.html','CR-RDY-001',1440,1080,'Credalio · Your readiness (new creator)',' variant="new"')
 WRAP('CR-RDY-001s-Mobile.dc.html','CR-RDY-001',390,1450,'CR-RDY-001s mobile preview',' variant="new"')
-WRAP('CR-CTR-001-Mobile.dc.html','CR-CTR-001',390,1340,'CR-CTR-001 mobile preview')
+WRAP('CR-CTR-001-Mobile.dc.html','CR-CTR-001',390,1360,'CR-CTR-001 mobile preview')
 WRAP('CR-ORI-001-Mobile.dc.html','CR-ORI-001',390,880,'CR-ORI-001 mobile preview')
 print('build10 done')

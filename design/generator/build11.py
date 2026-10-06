@@ -136,22 +136,37 @@ for i,(l,k) in enumerate(M4):
     tag = '<span class="mo-up">Up next</span>' if s=='next' else ''
     rows+=f'<li class="mo-r mo-{s}"><span class="mo-m">{mark}</span><span class="mo-t"><b>{l}</b><span>{KIND[k][0]}{" · done" if s=="done" else ""}</span></span>{tag}</li>'
 learn=''.join(f'<li>{ic("check",14,2.6)}<span>{t}</span></li>' for t in ['Validators are independent and criteria-based','One learning experience has one validation case','Material changes may need revalidation'])
-c=f'''<div class="mo-grid">
-<section class="mo-left">
+c=f'''<div class="mo2">
+<div class="mo2-top">
+<div class="mo2-h">
 <span class="lp-eb ob-in">Module 4 of 7</span>
 <h1 class="lp-h1 ob-in">Understanding validation</h1>
 <p class="mo-desc ob-in2">What validators look at, how a case runs, and what tiers mean.</p>
 <div class="mo-facts ob-in2"><span>{ik(CLOCK_I,15,2.2)}About 12 minutes</span><span>{ik(LES_I,15,2.2)}3 lessons</span><span>{ik(Q_I,15,2.2)}Quick check</span></div>
-<div class="mo-learn ob-in3"><span class="sec-h">You’ll come away knowing</span><ul>{learn}</ul></div>
-</section>
-<section class="ds-card mo-card ob-in2" aria-label="Steps in this module">
-<div class="mo-ch"><span class="sec-h">Your progress</span><span class="mo-pc">1 of 4 steps</span></div>
-<span class="mo-bar"><span style="width: 25%"></span></span>
-<ol class="mo-list">{rows}</ol>
-<a href="CR-ORI-003.dc.html" class="ds-btn mo-go"><span>Continue module</span><span class="ob-arrow">{ic('arrow',18,2.4)}</span></a>
-</section>
+</div>
+<div class="mo2-act ob-in2"><div class="mo-ch"><span class="sec-h">Your progress</span><span class="mo-pc">1 of 4 steps</span></div><span class="mo-bar"><span style="width: 25%"></span></span><a href="CR-ORI-003.dc.html" class="ds-btn mo-go"><span>Continue module</span><span class="ob-arrow">{ic('arrow',18,2.4)}</span></a></div>
+</div>
+<div class="mo2-cols">
+<section class="ds-card mo-card ob-in3" aria-label="Steps in this module"><span class="sec-h">Steps</span><ol class="mo-list">{rows}</ol></section>
+<section class="mo-lc ob-in3"><span class="sec-h">You’ll come away knowing</span><ul class="mo-ll">{learn}</ul></section>
+</div>
 </div>'''
-MO_CSS='''.mo-grid{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:56px;align-items:start;padding-top:clamp(0px,4vh,40px)}
+MO_CSS='''.mo2{width:min(1000px,100%)}
+.lp-body:has(.mo2){padding-bottom:56px}
+.mo2-top{display:flex;align-items:flex-end;justify-content:space-between;gap:48px}
+.mo2-h{min-width:0}
+.mo2-act{width:340px;flex-shrink:0;padding-bottom:4px}
+.mo2-cols{margin-top:28px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px;align-items:stretch}
+.mo-lc{padding:22px;border-radius:22px;background:#F5F8FF;border:1.5px solid #E6EAF3}
+.mo-ll{list-style:none;margin:8px 0 0 0;padding:0;display:flex;flex-direction:column}
+.mo-ll li{display:flex;align-items:center;gap:12px;min-height:60px;font-size:15.5px;line-height:1.45;color:#0B1433}
+.mo-ll li + li{border-top:1.5px solid #E6EAF3}
+.mo2 .mo-desc{max-width:none}
+.mo-ll li svg{color:#0F6B45;flex-shrink:0}
+.mo2 .mo-card{box-shadow:none}
+.mo2 .mo-list{margin-top:8px}
+.mo2 .mo-go{margin-top:16px}
+.mo-grid{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:56px;align-items:start;padding-top:clamp(0px,4vh,40px)}
 .lp-body:has(.mo-grid){padding-bottom:64px}
 .mo-grid{width:min(1100px,100%)}
 .mo-desc{margin:14px 0 0 0;font-size:18px;line-height:1.6;color:#3A4566;max-width:520px}
@@ -181,6 +196,8 @@ MO_CSS='''.mo-grid{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:56
 .mo-go{margin-top:18px;width:100%;justify-content:space-between}
 @media (max-width: 960px){
 .mo-grid{display:flex;flex-direction:column;align-items:stretch;gap:0;padding-top:0}
+.mo2{display:flex;flex-direction:column}.mo2-top,.mo2-cols{display:contents}
+.mo2-h{order:1}.mo2 .mo-card{order:2;margin-top:20px}.mo2-act{order:3;width:auto;margin-top:16px;padding:0}.mo-lc{order:4;margin-top:16px;padding:16px;border-radius:18px}.mo-ll li{font-size:14.5px;min-height:48px;padding:6px 0}.mo2 .mo-go{margin-top:14px}
 .mo-card{margin-top:20px}
 .mo-desc{font-size:15.5px;margin-top:10px}
 .mo-facts{margin-top:14px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-left:-16px;margin-right:-16px;padding:0 16px}
@@ -247,12 +264,12 @@ PLAYER('CR-ORI-003.dc.html','Credalio · Orientation lesson','Module 4 · Unders
 c='''<span class="lp-eb ob-in">Quick knowledge check</span>
 <h1 class="lp-h1 ob-in">Two quick questions</h1>
 <p class="lp-meta ob-in2">Not an exam. You’ll see why straight away, and you can try again as often as you like.</p>
-<sc-for list="{{qs}}" as="q" hint-placeholder-count="2"><section class="kc ob-in3" aria-label="{{q.n}}">
+<div class="kc-grid"><sc-for list="{{qs}}" as="q" hint-placeholder-count="2"><section class="kc ob-in3" aria-label="{{q.n}}">
 <span class="kc-n">{{q.n}} · {{q.kind}}</span>
 <h2 class="kc-q">{{q.text}}</h2>
-<div class="kc-opts" role="radiogroup" aria-label="{{q.text}}"><sc-for list="{{q.opts}}" as="o" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{o.on}}" class="kc-o {{o.cls}}" onClick="{{o.pick}}"><span class="kc-r"><span class="kc-ok">'''+ic('check',11,3.2)+'''</span><span class="kc-no">'''+ic('close',10,3.2)+'''</span></span><span>{{o.label}}</span></button></sc-for></div>
+<div class="kc-opts {{q.oc}}" role="radiogroup" aria-label="{{q.text}}"><sc-for list="{{q.opts}}" as="o" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{o.on}}" class="kc-o {{o.cls}}" onClick="{{o.pick}}"><span class="kc-r"><span class="kc-ok">'''+ic('check',11,3.2)+'''</span><span class="kc-no">'''+ic('close',10,3.2)+'''</span></span><span>{{o.label}}</span></button></sc-for></div>
 <sc-if value="{{q.fbShown}}" hint-placeholder-val="{{false}}"><div class="kc-fb {{q.fbCls}} cp-pop" role="status"><b>{{q.fbHead}}</b><span>{{q.fbText}}</span></div></sc-if>
-</section></sc-for>'''
+</section></sc-for></div>'''
 KC_CSS='''.kc{margin-top:26px;padding:22px 22px 20px 22px;border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3}
 .kc-n{font-size:12.5px;font-weight:500;color:#8A93AD}
 .kc-q{margin:6px 0 0 0;font-size:19px;line-height:1.4;font-weight:600;letter-spacing:-0.01em}
@@ -276,6 +293,12 @@ KC_CSS='''.kc{margin-top:26px;padding:22px 22px 20px 22px;border-radius:22px;bac
 .kc-o{font-size:14.5px;min-height:48px}
 }
 '''
+KC_GRID='''.kc-grid{margin-top:26px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.kc-grid .kc{margin-top:0}
+.kc-two{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr))}
+.lp-body:has(.kc-grid){align-items:flex-start;padding-top:40px;padding-bottom:120px}
+@media (max-width: 960px){.kc-grid{grid-template-columns:minmax(0,1fr);gap:14px;margin-top:18px}.lp-body:has(.kc-grid){padding-top:28px;padding-bottom:112px}}
+'''
 NEXT4='<a href="CR-ORI-005.dc.html" class="ds-btn lp-next {{nextCls}}" aria-disabled="{{nextDis}}"><span>{{nextLabel}}</span><span class="ob-arrow">'+ic('arrow',18,2.4)+'</span></a>'
 S_KC='''class Component extends DCLogic {
   constructor(props) { super(props); this.state = { a: [1, -1] }; }
@@ -288,7 +311,7 @@ S_KC='''class Component extends DCLogic {
     const qs = Q.map((q, qi) => {
       const pick = a[qi], ok = pick === q[3];
       return {
-        n: 'Question ' + (qi + 1) + ' of ' + Q.length, kind: q[0], text: q[1],
+        n: 'Question ' + (qi + 1) + ' of ' + Q.length, kind: q[0], text: q[1], oc: q[2].length === 2 ? 'kc-two' : '',
         opts: q[2].map((label, oi) => ({ label, on: pick === oi ? 'true' : 'false', cls: pick === oi ? (oi === q[3] ? 'kc-right' : 'kc-wrong') : '', pick: () => { if (ok) return; const n = a.slice(); n[qi] = oi; this.setState({ a: n }); } })),
         fbShown: pick >= 0, fbCls: ok ? 'kc-fb-ok' : 'kc-fb-no', fbHead: ok ? 'Correct.' : 'Not quite.', fbText: ok ? q[4] : 'Have another look and try again.'
       };
@@ -297,7 +320,7 @@ S_KC='''class Component extends DCLogic {
     return { qs, nextCls: all ? '' : 'lp-off', nextDis: all ? 'false' : 'true', nextLabel: all ? 'Complete module' : 'Answer both to finish' };
   }
 }'''
-PLAYER('CR-ORI-004.dc.html','Credalio · Quick knowledge check','Module 4 · Understanding validation',st(M4,3),3,c,prev=('Tiers and revalidation','CR-ORI-003.dc.html'),script=S_KC,extra_css=KC_CSS,nxt_hole=NEXT4)
+PLAYER('CR-ORI-004.dc.html','Credalio · Quick knowledge check','Module 4 · Understanding validation',st(M4,3),3,c,prev=('Tiers and revalidation','CR-ORI-003.dc.html'),script=S_KC,extra_css=KC_CSS+KC_GRID,nxt_hole=NEXT4,outline=False)
 
 # ---------------- CR-ORI-005 · Scenario (Module 5, AI-generated lesson) ----------------
 c='''<span class="lp-eb ob-in">'''+ik(SCEN_I,14,2.2)+'''Scenario</span>
@@ -408,6 +431,6 @@ DN_CSS2='''.lp-body:has(.dn){padding-bottom:56px}
 '''
 PLAYER('CR-ORI-006.dc.html','Credalio · Module complete','Module 5 · AI & responsible creation',[(l,k,'done') for l,k in M5],None,c,outline=False,bottom=False,extra_css=DN_CSS2)
 
-for n,h in [('CR-ORI-002',900),('CR-ORI-003',844),('CR-ORI-004',844),('CR-ORI-005',844),('CR-ORI-006',844)]:
+for n,h in [('CR-ORI-002',930),('CR-ORI-003',844),('CR-ORI-004',900),('CR-ORI-005',844),('CR-ORI-006',844)]:
     WRAP(n+'-Mobile.dc.html',n,390,h,n+' mobile preview'); s=open(P+n+'-Mobile.dc.html').read().replace('background: #F7F9FD','background: #FFFFFF'); open(P+n+'-Mobile.dc.html','w').write(s)
 print('build11 done')

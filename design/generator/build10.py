@@ -204,8 +204,8 @@ nodes=''.join(f'<span class="ct-n {"ct-nd" if i<3 else ("ct-nc" if i==3 else "")
 c=f'''<section class="ct-hero ob-in" aria-labelledby="ct-h">
 <h1 id="ct-h" class="ds-h1">Creator Centre</h1>
 <p class="ds-sub">Guides, policies and help for creating on Credalio. Look anything up, whenever you need it.</p>
-<div class="ct-row"><label class="ct-search">{ic('search',20,2)}<span class="sr-only">Search the Creator Centre</span><input placeholder="Search guides, policies, help…"></label>
-<div class="ct-pop"><span>Popular</span><a href="#" class="ds-chip ct-chip">Writing observable outcomes</a><a href="#" class="ds-chip ct-chip">What validators look for</a><a href="#" class="ds-chip ct-chip">Credit Wallet vs Earnings</a></div></div>
+<div class="ct-row"><div class="ct-search"><label class="ct-sl">{ic('search',20,2)}<span class="sr-only">Search the Creator Centre</span><input placeholder="Search guides, policies, help…"></label>
+<div class="ct-pop"><span>Popular</span><a href="#" class="ct-chip">Writing observable outcomes</a><a href="#" class="ct-chip">What validators look for</a><a href="#" class="ct-chip">Credit Wallet vs Earnings</a></div></div></div>
 </section>
 <a href="CR-ORI-001.dc.html" class="ds-card ct-ori ob-in2">
 <span class="ct-oi">{ring(43,64,10,'co','<b style="font-size: 15px">3/7</b>')}</span>
@@ -225,12 +225,15 @@ CT_CSS=COMMON_CSS+'''.ct-hero{margin-top:8px;padding:30px 32px 26px 32px;border-
 .ct-search input{flex-grow:1;min-width:0;border:0;outline:none;background:transparent;font-family:inherit;font-size:16px;color:#0B1433}
 .ct-search input::placeholder{color:#8A93AD}
 .ct-row{margin-top:20px;display:flex;align-items:center;gap:20px}
-.ct-row .ct-search{margin-top:0;flex:1 1 auto;min-width:360px}
+.ct-row .ct-search{margin-top:0;flex:1 1 auto;min-width:0;padding:0 8px 0 20px}
+.ct-sl{display:flex;align-items:center;gap:12px;flex:1 1 auto;min-width:200px;cursor:text}
 @media (max-width: 1380px){.ct-pop .ct-chip:nth-of-type(3){display:none}}
-.ct-pop{margin-top:0;display:flex;align-items:center;gap:8px;flex-wrap:nowrap;flex-shrink:0}
+.ct-pop{margin-top:0;display:flex;align-items:center;gap:6px;flex-wrap:nowrap;flex-shrink:0}
+.ct-pop > span{display:inline !important;font-size:12.5px;color:#8A93AD;margin-right:4px}
 .ct-pop .ct-chip{white-space:nowrap}
 .ct-pop > span{display:none}
-.ct-chip{height:34px;font-size:13.5px;padding:0 14px;text-decoration:none;background:rgba(255,255,255,.9)}
+.ct-chip{display:inline-flex;align-items:center;height:36px;font-size:13px;font-weight:500;padding:0 13px;border-radius:999px;text-decoration:none;color:#0E3BB8;background:#F5F8FF;white-space:nowrap;transition:background .2s ease}
+.ct-chip:hover{background:#EAF0FF}
 .ct-ori{margin-top:16px;padding:18px 22px;display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:20px;align-items:center;text-decoration:none;color:#0B1433;transition:border-color .2s ease,box-shadow .2s ease}
 .ct-ori:hover{border-color:#AFC1F5;box-shadow:0 12px 30px rgba(22,82,240,.08)}
 .ct-ot{display:flex;flex-direction:column;gap:3px;min-width:0}
@@ -269,6 +272,8 @@ CT_CSS=COMMON_CSS+'''.ct-hero{margin-top:8px;padding:30px 32px 26px 32px;border-
 .ct-search{margin-top:14px;height:50px;padding:0 16px}
 .ct-search input{font-size:15px}
 .ct-row{display:block;margin-top:14px}
+.ct-pop{display:none !important}
+.ct-row .ct-search{padding:0 16px}
 .ct-row .ct-search{margin-top:0;min-width:0}
 .ct-pop{flex-wrap:nowrap;overflow-x:auto;margin:12px -16px 0 -16px;padding:0 16px;scrollbar-width:none}
 .ct-pop::-webkit-scrollbar{display:none}

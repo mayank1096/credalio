@@ -209,7 +209,7 @@ c=f'''<section class="ct-hero ob-in" aria-labelledby="ct-h">
 </section>
 <a href="CR-ORI-001.dc.html" class="ds-card ct-ori ob-in2">
 <span class="ct-oi">{ring(43,64,10,'co','<b style="font-size: 15px">3/7</b>')}</span>
-<span class="ct-ot"><span class="ct-ol">Creator Orientation</span><b>Pick up at module 4 · Understanding validation</b><span class="ct-os">3 of 7 modules done · about 70 minutes in total</span></span>
+<span class="ct-ot"><span class="ct-ol">Orientation · up next</span><b>Understanding validation</b><span class="ct-os">Module 4 of 7 · about 12 min</span></span>
 <span class="ct-path" aria-hidden="true">{nodes}</span>
 <span class="ds-btn sm ct-ob"><span>Continue</span><span class="ob-arrow">{ic('arrow',16,2.4)}</span></span>
 </a>

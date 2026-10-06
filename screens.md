@@ -34,11 +34,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-RDY-001s` CR-RDY-001 · Readiness Centre: new creator
 - [x] D [x] M  `CR-CTR-001` Creator Centre (orientation is one part)
 - [x] D [x] M  `CR-ORI-001` CR-ORI-001 · Creator Orientation home
-- [ ] D [ ] M  `CR-ORI-002` CR-ORI-002 · Orientation module
-- [ ] D [ ] M  `CR-ORI-003` CR-ORI-003 · Orientation lesson
-- [ ] D [ ] M  `CR-ORI-004` CR-ORI-004 · Quick knowledge check (immediate feedback)
-- [ ] D [ ] M  `CR-ORI-005` CR-ORI-005 · Scenario exercise: AI-generated lesson
-- [ ] D [ ] M  `CR-ORI-006` CR-ORI-006 · Module complete
+- [x] D [x] M  `CR-ORI-002` CR-ORI-002 · Orientation module
+- [x] D [x] M  `CR-ORI-003` CR-ORI-003 · Orientation lesson
+- [x] D [x] M  `CR-ORI-004` CR-ORI-004 · Quick knowledge check (immediate feedback)
+- [x] D [x] M  `CR-ORI-005` CR-ORI-005 · Scenario exercise: AI-generated lesson
+- [x] D [x] M  `CR-ORI-006` CR-ORI-006 · Module complete
 - [ ] D [ ] M  `CR-ORI-007` CR-ORI-007 · Orientation complete → Readiness updated
 
 ## 04. Readiness task 1 · KYC: verify identity with Sumsub → next task (9)

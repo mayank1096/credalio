@@ -398,6 +398,91 @@
       "w": 390,
       "x": 7730,
       "y": 8700
+    },
+    "CR-ORI-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-002 · Module overview · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 10500,
+      "expand": "fill"
+    },
+    "CR-ORI-002-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-ORI-002 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 10500
+    },
+    "CR-ORI-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-003 · Lesson · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 10500,
+      "expand": "fill"
+    },
+    "CR-ORI-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-ORI-003 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 10500
+    },
+    "CR-ORI-004.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-004 · Quick knowledge check · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 10500,
+      "expand": "fill"
+    },
+    "CR-ORI-004-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-ORI-004 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 10500
+    },
+    "CR-ORI-005.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-005 · Scenario: AI-drafted lesson · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 10500,
+      "expand": "fill"
+    },
+    "CR-ORI-005-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-ORI-005 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 10500
+    },
+    "CR-ORI-006.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-006 · Module complete · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 10500,
+      "expand": "fill"
+    },
+    "CR-ORI-006-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-ORI-006 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 10500
     }
   },
   "createdOnFiles": {
@@ -440,6 +525,14 @@
       "w": 240,
       "x": 0,
       "y": 8400
+    },
+    "ori": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Creator Orientation · learning player (focus mode)",
+      "w": 240,
+      "x": 0,
+      "y": 10200
     }
   },
   "order": [
@@ -489,7 +582,17 @@
     "CR-CTR-001.dc.html",
     "CR-CTR-001-Mobile.dc.html",
     "CR-ORI-001.dc.html",
-    "CR-ORI-001-Mobile.dc.html"
+    "CR-ORI-001-Mobile.dc.html",
+    "CR-ORI-002.dc.html",
+    "CR-ORI-002-Mobile.dc.html",
+    "CR-ORI-003.dc.html",
+    "CR-ORI-003-Mobile.dc.html",
+    "CR-ORI-004.dc.html",
+    "CR-ORI-004-Mobile.dc.html",
+    "CR-ORI-005.dc.html",
+    "CR-ORI-005-Mobile.dc.html",
+    "CR-ORI-006.dc.html",
+    "CR-ORI-006-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

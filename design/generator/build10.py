@@ -329,7 +329,7 @@ c=f'''<a href="CR-CTR-001.dc.html" class="ds-back ob-in">{ic('back',16,2.2)}Crea
 <aside class="or-rail">
 <div class="ds-card or-next ob-in2">
 <div class="or-nt">{ring(44,88,9,'or','<b style="font-size: 20px; letter-spacing: -0.02em">44%</b>')}<span style="display: flex; flex-direction: column; gap: 3px; min-width: 0"><span class="or-lab">Up next</span><b class="or-nb">The validation case</b><span class="or-ns">Module 4 · lesson 2 of 3</span></span></div>
-<a href="#" class="ds-btn or-cta"><span>Continue Orientation</span><span class="ob-arrow">{ic('arrow',18,2.4)}</span></a>
+<a href="CR-ORI-003.dc.html" class="ds-btn or-cta"><span>Continue Orientation</span><span class="ob-arrow">{ic('arrow',18,2.4)}</span></a>
 <dl class="or-stats"><div><dt>Modules</dt><dd>3 of 7</dd></div><div><dt>Time left</dt><dd>~37 min</dd></div><div><dt>Total</dt><dd>~70 min</dd></div></dl>
 </div>
 <div class="know ob-in3 or-know"><b>Never blocks your drafting</b>Orientation is one of the steps that unlock submitting for validation. <a href="CR-RDY-001.dc.html" class="ds-link" style="font-size: 13.5px">See your readiness</a></div>

@@ -127,7 +127,7 @@ RD_CSS=COMMON_CSS+'''.rd-head{margin-top:8px}
 .rd-tx{display:flex;flex-direction:column;gap:3px;min-width:0}
 .rd-tx b{font-size:15px;font-weight:600}
 .rd-d{font-size:13.5px;line-height:1.45;color:#5B6582}
-.rd-note{font-size:12.5px;line-height:1.4;color:#5B6582}
+.rd-note{font-size:11.5px;line-height:1.4;color:#5B6582}
 .rd-warn{color:#8A5300;font-weight:500}
 .rd-mini{display:block;width:140px;height:5px;border-radius:5px;background:#E6EAF3;margin-top:2px;overflow:hidden}
 .rd-mini span{display:block;height:100%;border-radius:5px;background:#1652F0}
@@ -165,7 +165,7 @@ RD_CSS=COMMON_CSS+'''.rd-head{margin-top:8px}
 .rd-row{min-height:89px;box-sizing:border-box;align-content:center}
 .rd-tx b{font-size:14.5px}
 .rd-d{display:none}
-.rd-note{font-size:12.5px}
+.rd-note{font-size:11.5px}
 
 .rd-mini{width:120px;margin-top:4px}
 .rd-cta{height:36px;padding:0 8px 0 12px;font-size:13.5px}

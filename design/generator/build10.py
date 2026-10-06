@@ -435,7 +435,6 @@ c='''<div class="xb-root">
 <ol class="xb-steps">
 <sc-for list="{{steps}}" as="s" hint-placeholder-count="8"><li class="xb-s {{s.cls}}"><span class="xb-sn">{{s.n}}</span><span class="xb-sl">{{s.label}}</span></li></sc-for>
 </ol>
-<p class="xb-desc">{{desc}}</p>
 </section>
 <div class="xb-acts ob-in4">
 <a href="#" class="ds-btn xb-go"><span>Start {{lower}} setup</span><span class="ob-arrow">'''+ic('arrow',18,2.4)+'''</span></a>
@@ -470,7 +469,7 @@ XB_CSS=COMMON_CSS+'''body{background:#FFFFFF}
 .xb-route{margin-top:28px;width:100%;box-sizing:border-box;padding:22px 26px 20px 26px;border-radius:22px;background:rgba(255,255,255,.92);border:1.5px solid #E6EAF3;box-shadow:0 18px 44px rgba(22,82,240,.08);text-align:left}
 .xb-rh{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
 .xb-rn{font-size:13px;color:#5B6582}
-.xb-steps{list-style:none;margin:20px 0 0 0;padding:0;display:flex;position:relative}
+.xb-steps{list-style:none;margin:22px 0 4px 0;padding:0;display:flex;position:relative}
 .xb-steps::before{content:'';position:absolute;left:16px;right:16px;top:15px;height:3px;border-radius:3px;background:linear-gradient(90deg,#1652F0,#AFC1F5 30%,#E6EAF3 60%)}
 .xb-s{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;position:relative}
 .xb-s:first-child{align-items:flex-start;text-align:left}

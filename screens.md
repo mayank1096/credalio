@@ -39,14 +39,14 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-ORI-004` CR-ORI-004 · Quick knowledge check (immediate feedback)
 - [x] D [x] M  `CR-ORI-005` CR-ORI-005 · Scenario exercise: AI-generated lesson
 - [x] D [x] M  `CR-ORI-006` CR-ORI-006 · Module complete
-- [ ] D [ ] M  `CR-ORI-007` CR-ORI-007 · Orientation complete → Readiness updated
+- [x] D [x] M  `CR-ORI-007` CR-ORI-007 · Orientation complete → Readiness updated
 
 ## 04. Readiness task 1 · KYC: verify identity with Sumsub → next task (9)
 
-- [ ] D [ ] M  `CR-KYC-001` KYC-001 · Verify identity: before you start (Sumsub)
-- [ ] D [ ] M  `CR-KYC-002` KYC-002 · Sumsub WebSDK: choose document
-- [ ] D [ ] M  `CR-KYC-002b` KYC-002 · Sumsub WebSDK: upload photos
-- [ ] D [ ] M  `CR-KYC-002c` KYC-002 · Sumsub WebSDK: liveness check
+- [x] D [x] M  `CR-KYC-001` KYC-001 · Verify identity: before you start (Sumsub)
+- [x] D [x] M  `CR-KYC-002` KYC-002 · Sumsub WebSDK: choose document
+- [x] D [x] M  `CR-KYC-002b` KYC-002 · Sumsub WebSDK: upload photos
+- [x] D [x] M  `CR-KYC-002c` KYC-002 · Sumsub WebSDK: liveness check
 - [ ] D [ ] M  `CR-KYC-002d` KYC-002 · Sumsub WebSDK: review & submit
 - [ ] D [ ] M  `CR-KYC-003` KYC-003 · In review → next task
 - [ ] D [ ] M  `CR-KYC-004` KYC-004 · Verified → next task

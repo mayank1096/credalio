@@ -42,7 +42,13 @@ body{margin:0;background:#F7F9FD}
 .fx-scroll{flex-grow:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column}
 .fx-col{width:100%;max-width:720px;margin:0 auto;box-sizing:border-box;padding:0 32px}
 .fx-msgs{flex-grow:1;display:flex;flex-direction:column;justify-content:flex-end;gap:20px;padding-top:32px;padding-bottom:12px}
-.fx-hello{display:flex;flex-direction:column;align-items:center;text-align:center;padding:8px 0 20px 0;margin:auto 0}
+.fx-hello{display:flex;flex-direction:column;align-items:center;text-align:center;padding:8px 0 20px 0;margin:auto 0;position:relative;isolation:isolate}
+.fx-hello::before,.fx-hello::after{content:'';position:absolute;z-index:-1;left:50%;top:50%;width:360px;height:260px;margin:-130px 0 0 -180px;pointer-events:none}
+.fx-hello::before{background:radial-gradient(closest-side,rgba(22,82,240,.26),rgba(22,82,240,0));animation:fxAuraA 11s ease-in-out infinite}
+.fx-hello::after{background:radial-gradient(closest-side,rgba(120,160,255,.34),rgba(120,160,255,0));animation:fxAuraB 13s ease-in-out infinite}
+@keyframes fxAuraA{0%,100%{transform:translate(-90px,-10px) scale(1)}33%{transform:translate(40px,-40px) scale(1.15)}66%{transform:translate(80px,30px) scale(.95)}}
+@keyframes fxAuraB{0%,100%{transform:translate(90px,20px) scale(1.1)}33%{transform:translate(-60px,35px) scale(.9)}66%{transform:translate(-30px,-35px) scale(1.2)}}
+@media (prefers-reduced-motion: reduce){.fx-hello::before,.fx-hello::after{animation:none}}
 .fx-hello h1{margin:14px 0 0 0;font-size:26px;font-weight:600;letter-spacing:-0.02em}
 .fx-hello p{margin:6px 0 0 0;font-size:15px;color:#5B6582}
 .fx-msg{display:flex;gap:12px;align-items:flex-start}

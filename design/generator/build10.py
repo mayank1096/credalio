@@ -220,7 +220,7 @@ c=f'''<section class="ct-hero ob-in" aria-labelledby="ct-h">
 <span class="ct-ha"><a href="#" class="ds-ghost">Contact support</a><a href="#" class="ds-link">My requests</a></span>
 </section>'''
 CT_CSS=COMMON_CSS+'''.ct-hero{margin-top:8px;padding:30px 32px 26px 32px;border-radius:24px;border:1.5px solid #E6EAF3;background:#FFFFFF url('''+BGI+''') center top / cover no-repeat}
-.ct-search{margin-top:20px;max-width:640px;height:56px;box-sizing:border-box;display:flex;align-items:center;gap:12px;padding:0 20px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE;color:#5B6582;box-shadow:0 12px 30px rgba(22,82,240,.08);transition:border-color .2s ease,box-shadow .2s ease}
+.ct-search{margin-top:20px;max-width:none;width:100%;height:56px;box-sizing:border-box;display:flex;align-items:center;gap:12px;padding:0 20px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE;color:#5B6582;box-shadow:0 12px 30px rgba(22,82,240,.08);transition:border-color .2s ease,box-shadow .2s ease}
 .ct-search:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12),0 12px 30px rgba(22,82,240,.08)}
 .ct-search input{flex-grow:1;min-width:0;border:0;outline:none;background:transparent;font-family:inherit;font-size:16px;color:#0B1433}
 .ct-search input::placeholder{color:#8A93AD}

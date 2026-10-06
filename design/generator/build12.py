@@ -83,7 +83,7 @@ OC_CSS='''.lp-body:has(.oc){padding-bottom:48px;position:relative;overflow:hidde
 .oc-rv b{font-size:16px;font-weight:600}
 .oc-rv em{font-style:normal;font-size:12.5px;font-weight:500;color:#0F6B45;background:#E7F5EE;border-radius:999px;padding:2px 8px}
 .oc-next{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3}
-.oc-nl{font-size:12.5px;font-weight:500;color:#5B6582}
+.oc-nl{font-size:12.5px;font-weight:500;color:#8A93AD}
 .oc-next b{font-size:17px;font-weight:600}
 .oc-nd{font-size:14px;line-height:1.5;color:#3A4566}
 .oc-go{margin-top:auto;padding-top:0}

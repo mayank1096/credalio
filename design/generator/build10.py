@@ -35,7 +35,7 @@ COMMON_CSS='''.st-pill{display:inline-flex;align-items:center;gap:5px;height:26p
 .rg-arc{animation:rgIn 1.1s cubic-bezier(.3,.8,.3,1) .2s both}
 @keyframes rgIn{from{stroke-dasharray:0 100}}
 @keyframes ndPulse{0%{box-shadow:0 0 0 0 rgba(22,82,240,.35)}100%{box-shadow:0 0 0 10px rgba(22,82,240,0)}}
-.sec-h{margin:0;font-size:13.5px;font-weight:600;color:#5B6582}
+.sec-h{margin:0;font-size:13.5px;font-weight:600;color:#8A93AD}
 .nova-card{padding:18px;border-radius:18px;background:#FFFFFF url('''+BGI+''') center top / 100% auto no-repeat;border:1.5px solid #E6EAF3}
 .nova-card p{margin:10px 0 0 0;font-size:14.5px;line-height:1.55;color:#0B1433}
 .know{padding:16px 18px;border-radius:18px;background:#F5F8FF;border:1.5px solid #E6EAF3;font-size:13.5px;line-height:1.55;color:#3A4566}

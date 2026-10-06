@@ -1,0 +1,64 @@
+Main.dc.html:1440x820	CR-ONB-001 · Desktop (responsive source)
+CR-ONB-001-Mobile.dc.html:390x920	CR-ONB-001 · Mobile (390)
+CR-ONB-002.dc.html:1440x820	CR-ONB-002 · How will you create? · Desktop
+CR-ONB-002-Mobile.dc.html:390x980	CR-ONB-002 · Mobile
+CR-ONB-002S.dc.html:1440x820	CR-ONB-002S · Organisations coming soon · Desktop
+CR-ONB-002S-Mobile.dc.html:390x980	CR-ONB-002S · Mobile
+CR-ONB-003.dc.html:1440x820	CR-ONB-003 · Create account · Desktop
+CR-ONB-003-Mobile.dc.html:390x980	CR-ONB-003 · Mobile
+CR-ONB-003b.dc.html:1440x820	CR-ONB-003b · Check your inbox · Desktop
+CR-ONB-003b-Mobile.dc.html:390x844	CR-ONB-003b · Mobile
+CR-ONB-003v.dc.html:1440x820	CR-ONB-003v · Email confirmed · Desktop
+CR-ONB-003v-Mobile.dc.html:390x844	CR-ONB-003v · Mobile
+CR-ONB-003c.dc.html:1440x820	CR-ONB-003c · Choose a password · Desktop
+CR-ONB-003c-Mobile.dc.html:390x844	CR-ONB-003c · Mobile
+CR-ONB-004.dc.html:1440x820	CR-ONB-004 · About you · Desktop
+CR-ONB-004-Mobile.dc.html:390x1080	CR-ONB-004 · Mobile
+CR-ONB-005.dc.html:1440x820	CR-ONB-005 · Your field · Desktop
+CR-ONB-005-Mobile.dc.html:390x940	CR-ONB-005 · Mobile
+CR-ONB-005b.dc.html:1440x820	CR-ONB-005b · What you will teach · Desktop
+CR-ONB-005b-Mobile.dc.html:390x900	CR-ONB-005b · Mobile
+CR-ONB-006.dc.html:1440x820	CR-ONB-006 · Meet your Copilot · Desktop
+CR-ONB-006-Mobile.dc.html:390x900	CR-ONB-006 · Mobile
+CR-ONB-007.dc.html:1440x820	CR-ONB-007 · Copilot style · Desktop
+CR-ONB-007-Mobile.dc.html:390x900	CR-ONB-007 · Mobile
+CR-ONB-008.dc.html:1440x820	CR-ONB-008 · You’re a Creator · Desktop
+CR-ONB-008-Mobile.dc.html:390x844	CR-ONB-008 · Mobile
+CR-DASH-NEW.dc.html:1440x820	CR-DASH-NEW · Creator Studio launchpad · Desktop
+CR-DASH-NEW-Mobile.dc.html:390x980	CR-DASH-NEW · Mobile
+CR-CREATE-001.dc.html:1440x820	CR-CREATE-001 · How would you like to build it? · Desktop
+CR-CREATE-001-Mobile.dc.html:390x844	CR-CREATE-001 · Mobile
+CR-CREATE-002A.dc.html:1440x820	CR-CREATE-002A · New course with Nova (chat) · Desktop
+CR-CREATE-002A-Mobile.dc.html:390x844	CR-CREATE-002A · Mobile
+CR-CREATE-002Ab.dc.html:1440x820	CR-CREATE-002Ab · Review Nova’s draft · Desktop
+CR-CREATE-002Ab-Mobile.dc.html:390x844	CR-CREATE-002Ab · Mobile
+CR-CREATE-002B.dc.html:1440x820	CR-CREATE-002B · Build from scratch · Desktop
+CR-CREATE-002B-Mobile.dc.html:390x844	CR-CREATE-002B · Mobile
+CR-RDY-001.dc.html:1440x1160	CR-RDY-001 · Your readiness (in progress) · Desktop
+CR-RDY-001-Mobile.dc.html:390x1520	CR-RDY-001 · Mobile
+CR-RDY-001s.dc.html:1440x1080	CR-RDY-001s · Your readiness (new creator) · Desktop
+CR-RDY-001s-Mobile.dc.html:390x1450	CR-RDY-001s · Mobile
+CR-CTR-001.dc.html:1440x1230	CR-CTR-001 · Creator Centre · Desktop
+CR-CTR-001-Mobile.dc.html:390x1360	CR-CTR-001 · Mobile
+CR-ORI-001.dc.html:1440x1050	CR-ORI-001 · Creator Orientation · Desktop
+CR-ORI-001-Mobile.dc.html:390x880	CR-ORI-001 · Mobile
+CR-ORI-002.dc.html:1440x820	CR-ORI-002 · Module overview · Desktop
+CR-ORI-002-Mobile.dc.html:390x990	CR-ORI-002 · Mobile
+CR-ORI-003.dc.html:1440x820	CR-ORI-003 · Lesson · Desktop
+CR-ORI-003-Mobile.dc.html:390x844	CR-ORI-003 · Mobile
+CR-ORI-004.dc.html:1440x820	CR-ORI-004 · Quick knowledge check · Desktop
+CR-ORI-004-Mobile.dc.html:390x900	CR-ORI-004 · Mobile
+CR-ORI-005.dc.html:1440x820	CR-ORI-005 · Scenario: AI-drafted lesson · Desktop
+CR-ORI-005-Mobile.dc.html:390x844	CR-ORI-005 · Mobile
+CR-ORI-006.dc.html:1440x820	CR-ORI-006 · Module complete · Desktop
+CR-ORI-006-Mobile.dc.html:390x844	CR-ORI-006 · Mobile
+CR-ORI-007.dc.html:1440x820	CR-ORI-007 · Orientation complete · Desktop
+CR-ORI-007-Mobile.dc.html:390x844	CR-ORI-007 · Mobile
+CR-KYC-001.dc.html:1440x820	CR-KYC-001 · Verify identity: before you start · Desktop
+CR-KYC-001-Mobile.dc.html:390x844	CR-KYC-001 · Mobile
+CR-KYC-002.dc.html:1440x820	CR-KYC-002 · Sumsub: choose document · Desktop
+CR-KYC-002-Mobile.dc.html:390x844	CR-KYC-002 · Mobile
+CR-KYC-002b.dc.html:1440x820	CR-KYC-002b · Sumsub: photos · Desktop
+CR-KYC-002b-Mobile.dc.html:390x844	CR-KYC-002b · Mobile
+CR-KYC-002c.dc.html:1440x820	CR-KYC-002c · Sumsub: liveness check · Desktop
+CR-KYC-002c-Mobile.dc.html:390x844	CR-KYC-002c · Mobile

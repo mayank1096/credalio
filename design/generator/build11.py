@@ -254,7 +254,7 @@ c='''<span class="lp-eb ob-in">Quick knowledge check</span>
 <sc-if value="{{q.fbShown}}" hint-placeholder-val="{{false}}"><div class="kc-fb {{q.fbCls}} cp-pop" role="status"><b>{{q.fbHead}}</b><span>{{q.fbText}}</span></div></sc-if>
 </section></sc-for>'''
 KC_CSS='''.kc{margin-top:26px;padding:22px 22px 20px 22px;border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3}
-.kc-n{font-size:12.5px;font-weight:500;color:#5B6582}
+.kc-n{font-size:12.5px;font-weight:500;color:#8A93AD}
 .kc-q{margin:6px 0 0 0;font-size:19px;line-height:1.4;font-weight:600;letter-spacing:-0.01em}
 .kc-opts{margin-top:16px;display:flex;flex-direction:column;gap:8px}
 .kc-o{display:flex;align-items:center;gap:12px;min-height:52px;padding:10px 16px 10px 14px;box-sizing:border-box;border-radius:14px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15.5px;font-weight:500;text-align:left;cursor:pointer;transition:border-color .2s ease,background .2s ease}

@@ -49,6 +49,7 @@
 - Characters: use the designer's Copilot images (Nova etc.), never the old main-scene crops for people. Chat-like screens: messages bottom-anchored, composer at the bottom; a soft blue gradient flowing sideways across the top (fxFlow) is the "Nova is here" ambient motif.
 - Cobalt line/path = progress motif (readiness gates, orientation journey, setup route).
 - Orientation flow (ORI-002…007) = LEARNING PLAYER in focus mode (`design/generator/build11.py` PLAYER): slim top bar (close, module, step segments), left step outline (desktop), reading column 720, fixed bottom bar (Previous / Next). Checks give instant feedback (green correct / amber not quite), Next stays disabled until all correct.
+- Readiness TASKS (KYC, credentials, policies…) = focus-mode TASK shell (`build12.py` TASK): close → readiness, "Readiness · task n of 5", green "Secure · encrypted" pill. KYC SDK screens = one source CR-KYC-002 (variant photos / liveness) with a left tips column + our-styled Sumsub panel (stepper Document → Photos → Liveness → Submit); mobile: panel full-bleed, sticky Back/Continue bar.
 - Readiness/Orientation/Creator Centre/002B generator: `design/generator/build10.py` (RDY-001s = `dc-import CR-RDY-001 variant="new"`).
 
 ## Hard layout rules

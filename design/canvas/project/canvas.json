@@ -483,6 +483,89 @@
       "w": 390,
       "x": 9800,
       "y": 10500
+    },
+    "CR-ORI-007.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-007 · Orientation complete · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 10500,
+      "expand": "fill"
+    },
+    "CR-ORI-007-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-ORI-007 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 10500
+    },
+    "CR-KYC-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-KYC-001 · Verify identity: before you start · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 12000,
+      "expand": "fill"
+    },
+    "CR-KYC-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-KYC-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 12000
+    },
+    "CR-KYC-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-KYC-002 · Sumsub: choose document · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 12000,
+      "expand": "fill"
+    },
+    "CR-KYC-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-KYC-002 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 12000
+    },
+    "CR-KYC-002b.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-KYC-002b · Sumsub: photos · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 12000
+    },
+    "CR-KYC-002b-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-KYC-002b · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 12000
+    },
+    "CR-KYC-002c.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-KYC-002c · Sumsub: liveness check · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 12000
+    },
+    "CR-KYC-002c-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-KYC-002c · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 12000
     }
   },
   "createdOnFiles": {
@@ -533,6 +616,14 @@
       "w": 240,
       "x": 0,
       "y": 10200
+    },
+    "kyc": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Readiness task 1 · Verify your identity (Sumsub)",
+      "w": 240,
+      "x": 0,
+      "y": 11700
     }
   },
   "order": [
@@ -592,7 +683,17 @@
     "CR-ORI-005.dc.html",
     "CR-ORI-005-Mobile.dc.html",
     "CR-ORI-006.dc.html",
-    "CR-ORI-006-Mobile.dc.html"
+    "CR-ORI-006-Mobile.dc.html",
+    "CR-ORI-007.dc.html",
+    "CR-ORI-007-Mobile.dc.html",
+    "CR-KYC-001.dc.html",
+    "CR-KYC-001-Mobile.dc.html",
+    "CR-KYC-002.dc.html",
+    "CR-KYC-002-Mobile.dc.html",
+    "CR-KYC-002b.dc.html",
+    "CR-KYC-002b-Mobile.dc.html",
+    "CR-KYC-002c.dc.html",
+    "CR-KYC-002c-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

@@ -63,7 +63,7 @@ def rdy(state):
 <div class="rd-unl"><span class="sec-h">What you can do</span><ol class="rd-gates">{g}</ol></div>
 </section>'''
     rows=[('profile','Creator profile','Completed during setup.','complete',None,None,None),
-          (ID_I,'Verify your identity','A government ID and a quick selfie check, through Sumsub.','review' if mid else 'todo','Usually reviewed within 1 business day.' if mid else None,None if mid else 'Start','#'),
+          (ID_I,'Verify your identity','A government ID and a quick selfie check, through Sumsub.','review' if mid else 'todo','Usually reviewed within 1 business day.' if mid else None,None if mid else 'Start','CR-KYC-001.dc.html'),
           ('cert','Credentials & expertise','Degrees, certifications like AWS, licences, experience and other evidence.','action' if mid else 'todo','Your MSc certificate scan is unreadable. Upload a clearer copy.' if mid else None,'Fix now' if mid else 'Start','#'),
           ('centre','Creator Orientation','Seven short modules on creating trusted learning.','progress' if mid else 'todo',None,'Continue' if mid else 'Start','CR-ORI-001.dc.html'),
           (DOC_I,'Creator policies','The creator terms, content and AI policies.','complete' if mid else 'todo',None,None if mid else 'Review','#')]
@@ -85,7 +85,7 @@ def rdy(state):
         nova='Start with your identity. It’s reviewed within a business day, so it runs in the background while you draft your first course.'
         nb='Verify my identity'
     rail=f'''<aside class="rd-rail">
-<div class="nova-card ob-in3"><span style="display: flex; align-items: center; gap: 10px">{NOVA_AV(34)}<span style="display: flex; flex-direction: column"><b style="font-size: 14.5px">Nova suggests</b><span style="font-size: 12.5px; color: #5B6582">Your fastest route to submitting</span></span></span><p>{nova}</p><a href="#" class="ds-link" style="margin-top: 12px; font-size: 14px">{nb}{ik(I['arrow'],15,2.4)}</a></div>
+<div class="nova-card ob-in3"><span style="display: flex; align-items: center; gap: 10px">{NOVA_AV(34)}<span style="display: flex; flex-direction: column"><b style="font-size: 14.5px">Nova suggests</b><span style="font-size: 12.5px; color: #5B6582">Your fastest route to submitting</span></span></span><p>{nova}</p><a href="{"#" if mid else "CR-KYC-001.dc.html"}" class="ds-link" style="margin-top: 12px; font-size: 14px">{nb}{ik(I['arrow'],15,2.4)}</a></div>
 <div class="know ob-in4 rd-know"><b>Drafting is never blocked</b>Readiness only unlocks the trusted steps. Your Studio stays open the whole time.</div>
 </aside>'''
     return f'''<div class="rd-head ob-in"><h1 class="ds-h1">Your readiness</h1><p class="ds-sub">Draft freely. These steps unlock submitting for validation, publishing and getting paid.</p></div>

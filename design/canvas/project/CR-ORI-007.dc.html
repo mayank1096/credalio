@@ -160,69 +160,63 @@ body{background:#FFFFFF}
 .lp-next > span:first-child{overflow:hidden;text-overflow:ellipsis}
 .lp-call span{font-size:15px}
 }
-.lp-body:has(.oc){padding-bottom:56px}
-.dn,.oc{width:min(760px,100%);margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:clamp(0px,2vh,20px)}
-.dn-badge{position:relative;width:96px;height:96px;display:flex;align-items:center;justify-content:center}
-.dn-ring{position:absolute;inset:0;border-radius:50%;background:radial-gradient(closest-side,rgba(22,82,240,.18),rgba(22,82,240,0));animation:dnGlow 2.6s ease-in-out infinite}
-.dn-core{position:relative;width:68px;height:68px;border-radius:50%;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(22,82,240,.35);animation:dnPop .6s cubic-bezier(.3,1.5,.5,1) .1s both}
-@keyframes dnPop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
-@keyframes dnGlow{0%,100%{transform:scale(.9);opacity:.7}50%{transform:scale(1.15);opacity:1}}
-.dn .lp-eb{margin-top:14px}
-.dn-h{margin-top:6px}
-.dn-sub{margin:10px 0 0 0;font-size:17px;color:#4A5578}
-.dn-path{margin-top:24px;display:flex;gap:18px;position:relative}
-.dn-path::before{content:'';position:absolute;left:13px;right:13px;top:13px;height:3px;border-radius:3px;background:linear-gradient(90deg,#1652F0 0%,#1652F0 66.6%,#E6EAF3 66.6%)}
-.dn-n{position:relative;width:28px;height:28px;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;background:#FFFFFF;color:#8A93AD;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
-.dn-d{background:#1652F0;border-color:#1652F0;color:#FFFFFF}
-.dn-just{animation:ndPulse 2s ease-out 3}
-.dn-cards{margin-top:30px;width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;text-align:left}
-.dn-c{padding:20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3}
-.dn-c2{background:#F5F8FF}
-.dn-l{list-style:none;margin:12px 0 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
-.dn-l li{display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.5}
-.dn-l li svg{color:#0F6B45;margin-top:3px;flex-shrink:0}
-.dn-dot{width:7px;height:7px;border-radius:50%;background:#1652F0;margin-top:8px;flex-shrink:0}
-.dn-acts{margin-top:28px;display:flex;align-items:center;gap:20px}
-.dn-back{font-size:15px;font-weight:600;text-decoration:none;color:#3A4566}
-.dn-back:hover{color:#1652F0}
-@media (prefers-reduced-motion: reduce){.dn-ring,.dn-core,.dn-just{animation:none}}
-@media (max-width: 960px){
-.dn-badge{width:76px;height:76px}.dn-core{width:56px;height:56px}.dn-core svg{width:28px;height:28px}
-.dn-sub{font-size:15px}
-.dn-path{gap:10px;margin-top:18px}
-.dn-n{width:26px;height:26px}
-.dn-cards{grid-template-columns:minmax(0,1fr);margin-top:22px;gap:10px}
-.dn-c{padding:16px;border-radius:18px}
-.dn-l li{font-size:14.5px}
-.dn-acts{flex-direction:column;align-items:stretch;width:100%;gap:14px;margin-top:22px}
-.dn-go{justify-content:space-between}
-.dn-back{text-align:center;font-size:14.5px}
-}
-.oc{width:min(820px,100%);margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center}
-.oc .lp-eb{margin-top:14px}
-.dn-path[style]::before{background:#1652F0}
-.oc-grid{margin-top:30px;width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:14px;text-align:left}
-.oc-rd{display:flex;align-items:center;gap:18px;padding:20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3}
-.oc-rt{display:flex;flex-direction:column;gap:3px}
-.oc-rl{font-size:12.5px;font-weight:500;color:#5B6582}
-.oc-rt b{font-size:18px;font-weight:600}
-.oc-ch{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:#0F6B45}
-.oc-next{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:20px;border-radius:20px;background:#F5F8FF;border:1.5px solid #CBD7F5}
-.oc-nl{font-size:12.5px;font-weight:500;color:#1652F0}
+.lp-body:has(.oc){padding-bottom:48px;position:relative;overflow:hidden;background:radial-gradient(60% 50% at 50% 0%,rgba(22,82,240,.10),rgba(22,82,240,0) 70%),#FFFFFF}
+.oc{position:relative;width:min(860px,100%);margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center}
+.oc-conf{position:absolute;left:-10%;right:-10%;top:-40px;height:420px;pointer-events:none;overflow:hidden}
+.oc-conf i{position:absolute;top:-20px;border-radius:2px;opacity:0;animation:ocFall 3.2s cubic-bezier(.3,.6,.4,1) both}
+@keyframes ocFall{0%{opacity:0;transform:translateY(0) rotate(0)}10%{opacity:1}100%{opacity:0;transform:translateY(400px) rotate(calc(var(--r) * 6))}}
+.oc-medal{position:relative;width:170px;height:170px;display:flex;align-items:flex-start;justify-content:center;margin-top:4px}
+.oc-rays{position:absolute;left:50%;top:50%;width:300px;height:300px;margin:-160px 0 0 -150px;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(22,82,240,.10) 0deg 8deg,rgba(22,82,240,0) 8deg 22deg);-webkit-mask-image:radial-gradient(closest-side,#000 30%,transparent 100%);mask-image:radial-gradient(closest-side,#000 30%,transparent 100%);animation:ocSpin 24s linear infinite}
+@keyframes ocSpin{to{transform:rotate(360deg)}}
+.oc-rib{position:absolute;left:50%;top:84px;margin-left:-60px}
+.oc-coin{position:relative;width:118px;height:118px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#4D7BFF 0%,#1652F0 45%,#0B2E99 100%);box-shadow:0 18px 40px rgba(22,82,240,.40),inset 0 2px 0 rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;color:#FFFFFF;overflow:hidden;animation:ocPop .8s cubic-bezier(.3,1.5,.5,1) .1s both}
+.oc-ring{position:absolute;inset:8px;border-radius:50%;border:2px dashed rgba(255,255,255,.45)}
+.oc-ic{position:relative;display:flex}
+.oc-shine{position:absolute;top:0;left:0;width:45%;height:100%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,0));animation:ocShine 3.2s ease-in-out 1s infinite}
+@keyframes ocShine{0%{transform:translateX(-140%) skewX(-18deg)}40%,100%{transform:translateX(320%) skewX(-18deg)}}
+@keyframes ocPop{from{transform:scale(.3) rotate(-20deg);opacity:0}to{transform:none;opacity:1}}
+.oc-chip{margin-top:18px;display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 14px;border-radius:999px;background:#EAF0FF;color:#0E3BB8;font-size:13.5px;font-weight:500}
+.oc-h{margin-top:12px;font-size:clamp(34px,5.4vh,46px)}
+.oc-sub{margin:10px 0 0 0;font-size:17px;line-height:1.55;color:#4A5578;max-width:560px}
+.oc-grid{margin-top:28px;width:100%;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px;text-align:left}
+.oc-cred{position:relative;padding:20px;border-radius:20px;background:#FFFFFF url(/_blob/d268046654a4206d2a726e62005bcc59) center top / cover no-repeat;border:1.5px solid #CBD7F5;box-shadow:0 18px 40px rgba(22,82,240,.10);display:flex;flex-direction:column;gap:14px}
+.oc-cl{font-size:12.5px;font-weight:500;color:#1652F0}
+.oc-ct{display:flex;align-items:center;gap:12px}
+.oc-ci{width:44px;height:44px;flex-shrink:0;border-radius:14px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(22,82,240,.3)}
+.oc-ct > span:last-child{display:flex;flex-direction:column;gap:2px}
+.oc-ct b{font-size:17px;font-weight:600}
+.oc-ct > span:last-child > span{font-size:13px;color:#5B6582}
+.oc-rd{display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1.5px solid rgba(203,211,230,.6)}
+.oc-rl{font-size:13px;color:#5B6582}
+.oc-bar{position:relative;flex-grow:1;height:8px;border-radius:8px;background:#E6EAF3;overflow:hidden}
+.oc-was,.oc-now{position:absolute;left:0;top:0;bottom:0;border-radius:8px}
+.oc-was{width:40%;background:#1652F0}
+.oc-now{left:40%;width:20%;background:#6E96FF;transform-origin:left;animation:ocGrow 1s cubic-bezier(.3,.8,.3,1) .9s both}
+@keyframes ocGrow{from{transform:scaleX(0)}to{transform:none}}
+.oc-rv{display:flex;align-items:baseline;gap:6px}
+.oc-rv b{font-size:16px;font-weight:600}
+.oc-rv em{font-style:normal;font-size:12.5px;font-weight:500;color:#0F6B45;background:#E7F5EE;border-radius:999px;padding:2px 8px}
+.oc-next{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3}
+.oc-nl{font-size:12.5px;font-weight:500;color:#5B6582}
 .oc-next b{font-size:17px;font-weight:600}
 .oc-nd{font-size:14px;line-height:1.5;color:#3A4566}
-.oc-go{margin-top:12px}
+.oc-go{margin-top:auto;padding-top:0}
+.oc-next .oc-go{margin-top:14px}
 .oc-links{margin-top:22px;display:flex;align-items:center;gap:10px;font-size:14.5px;color:#8A93AD}
 .oc-links a{font-weight:600;text-decoration:none;color:#3A4566}
 .oc-links a:hover{color:#1652F0}
+@media (prefers-reduced-motion: reduce){.oc-conf,.oc-shine{display:none}.oc-rays,.oc-coin,.oc-now{animation:none}}
 @media (max-width: 960px){
-.oc-grid{grid-template-columns:minmax(0,1fr);gap:10px;margin-top:22px}
-.oc-rd{padding:14px 16px;gap:14px;border-radius:18px}
-.oc-rd .rg,.oc-rd .rg svg{width:60px !important;height:60px !important}
-.oc-rd .rg-in b{font-size:14px !important}
-.oc-rt b{font-size:16px}
-.oc-next{padding:16px;border-radius:18px}
-.oc-next b{font-size:16px}
+.oc-medal{width:130px;height:118px}
+.oc-rays{width:230px;height:230px;margin:-125px 0 0 -115px}
+.oc-coin{width:92px;height:92px}.oc-coin svg{width:36px;height:36px}
+.oc-rib{top:62px;transform:scale(.8);transform-origin:top center}
+.oc-chip{margin-top:12px;height:30px;font-size:13px}
+.oc-h{font-size:26px;margin-top:10px}
+.oc-sub{font-size:14.5px;margin-top:8px}
+.oc-grid{grid-template-columns:minmax(0,1fr);gap:10px;margin-top:20px}
+.oc-cred,.oc-next{padding:16px;border-radius:18px}
+.oc-ct b,.oc-next b{font-size:16px}
 .oc-go{width:100%;justify-content:space-between}
 .oc-links{margin-top:18px;font-size:14px}
 }
@@ -238,20 +232,25 @@ body{background:#FFFFFF}
 <div class="lp-body">
 
 <main class="lp-main lp-wide"><div class="oc">
-<div class="dn-badge ob-in" aria-hidden="true"><span class="dn-ring"></span><span class="dn-core"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path><path d="M22 9v5"></path></svg></span></div>
-<span class="lp-eb ob-in2" style="justify-content: center">Creator Orientation</span>
-<h1 class="lp-h1 dn-h ob-in2">You’ve finished Orientation.</h1>
-<p class="dn-sub ob-in2">Seven modules, about 70 minutes, done on 1 October 2026. You know how trusted learning works here.</p>
-<div class="dn-path ob-in3" aria-label="All 7 modules complete" style="--full: 1"><span class="dn-n dn-d"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="dn-n dn-d"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="dn-n dn-d"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="dn-n dn-d"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="dn-n dn-d"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="dn-n dn-d"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="dn-n dn-d"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></div>
+<div class="oc-conf" aria-hidden="true"><i style="left: 43%; width: 6px; height: 10px; background: #AFC1F5; animation-delay: 1.52s; animation-duration: 3.23s; --r: -54deg"></i><i style="left: 76%; width: 6px; height: 6px; background: #F6C343; animation-delay: 0.09s; animation-duration: 3.41s; --r: -56deg"></i><i style="left: 10%; width: 6px; height: 12px; background: #1652F0; animation-delay: 0.39s; animation-duration: 3.48s; --r: -53deg"></i><i style="left: 82%; width: 10px; height: 10px; background: #6E96FF; animation-delay: 0.93s; animation-duration: 2.7s; --r: 14deg"></i><i style="left: 7%; width: 7px; height: 10px; background: #0F6B45; animation-delay: 0.89s; animation-duration: 2.81s; --r: -7deg"></i><i style="left: 41%; width: 7px; height: 14px; background: #1652F0; animation-delay: 0.9s; animation-duration: 3.69s; --r: -47deg"></i><i style="left: 72%; width: 7px; height: 6px; background: #1652F0; animation-delay: 1.14s; animation-duration: 3.5s; --r: 19deg"></i><i style="left: 70%; width: 10px; height: 14px; background: #AFC1F5; animation-delay: 0.68s; animation-duration: 3.1s; --r: 14deg"></i><i style="left: 33%; width: 6px; height: 14px; background: #0F6B45; animation-delay: 1.27s; animation-duration: 3.72s; --r: -29deg"></i><i style="left: 65%; width: 6px; height: 10px; background: #0F6B45; animation-delay: 1.4s; animation-duration: 3.77s; --r: -24deg"></i><i style="left: 55%; width: 10px; height: 6px; background: #1652F0; animation-delay: 0.26s; animation-duration: 3.15s; --r: 59deg"></i><i style="left: 87%; width: 8px; height: 14px; background: #1652F0; animation-delay: 0.12s; animation-duration: 3.49s; --r: 41deg"></i><i style="left: 46%; width: 6px; height: 10px; background: #AFC1F5; animation-delay: 0.95s; animation-duration: 3.53s; --r: -2deg"></i><i style="left: 62%; width: 8px; height: 6px; background: #AFC1F5; animation-delay: 1.12s; animation-duration: 2.7s; --r: 33deg"></i><i style="left: 93%; width: 10px; height: 14px; background: #6E96FF; animation-delay: 0.62s; animation-duration: 3.67s; --r: -58deg"></i><i style="left: 80%; width: 8px; height: 12px; background: #1652F0; animation-delay: 0.19s; animation-duration: 2.69s; --r: 38deg"></i><i style="left: 33%; width: 6px; height: 12px; background: #F6C343; animation-delay: 0.64s; animation-duration: 4.07s; --r: 3deg"></i><i style="left: 53%; width: 10px; height: 14px; background: #1652F0; animation-delay: 0.88s; animation-duration: 4.01s; --r: 44deg"></i><i style="left: 55%; width: 7px; height: 12px; background: #1652F0; animation-delay: 1.58s; animation-duration: 3.69s; --r: -12deg"></i><i style="left: 24%; width: 10px; height: 12px; background: #AFC1F5; animation-delay: 0.24s; animation-duration: 3.65s; --r: -59deg"></i><i style="left: 38%; width: 8px; height: 12px; background: #1652F0; animation-delay: 0.01s; animation-duration: 3.27s; --r: -13deg"></i><i style="left: 67%; width: 6px; height: 6px; background: #1652F0; animation-delay: 1.52s; animation-duration: 3.65s; --r: 34deg"></i><i style="left: 73%; width: 10px; height: 6px; background: #1652F0; animation-delay: 0.63s; animation-duration: 3.24s; --r: -47deg"></i><i style="left: 26%; width: 6px; height: 14px; background: #0F6B45; animation-delay: 0.11s; animation-duration: 2.93s; --r: -40deg"></i><i style="left: 8%; width: 6px; height: 14px; background: #0F6B45; animation-delay: 0.16s; animation-duration: 3.51s; --r: 8deg"></i><i style="left: 5%; width: 7px; height: 14px; background: #AFC1F5; animation-delay: 0.11s; animation-duration: 2.93s; --r: -12deg"></i></div>
+<div class="oc-medal ob-in" aria-hidden="true">
+<span class="oc-rays"></span>
+<svg class="oc-rib" viewBox="0 0 120 70" width="120" height="70"><path d="M34 0 L18 64 L34 54 L46 66 L58 6 Z" fill="#0E3BB8"></path><path d="M86 0 L102 64 L86 54 L74 66 L62 6 Z" fill="#1652F0"></path></svg>
+<span class="oc-coin"><span class="oc-ring"></span><span class="oc-ic"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path><path d="M22 9v5"></path></svg></span><span class="oc-shine"></span></span>
+</div>
+<span class="oc-chip ob-in2"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg>Milestone unlocked</span>
+<h1 class="lp-h1 oc-h ob-in2">You’ve finished Orientation.</h1>
+<p class="oc-sub ob-in2">Seven modules, about 70 minutes. You now know what trusted learning looks like on Credalio.</p>
 <div class="oc-grid ob-in3">
-<section class="oc-rd" aria-label="Readiness updated">
-<span class="rg" style="width: 84px; height: 84px"><svg viewBox="0 0 100 100" width="84" height="84" aria-hidden="true"><circle cx="50" cy="50" r="45.0" fill="none" stroke="#E6EAF3" stroke-width="10"></circle><circle class="rg-arc" cx="50" cy="50" r="45.0" fill="none" stroke="#1652F0" stroke-width="10" stroke-linecap="round" pathLength="100" stroke-dasharray="60 100" transform="rotate(-90 50 50)"></circle></svg><span class="rg-in"><b style="font-size: 18px">60%</b></span></span>
-<span class="oc-rt"><span class="oc-rl">Readiness, updated automatically</span><b>3 of 5 done</b><span class="oc-ch"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Orientation ticked off</span></span>
+<section class="oc-cred" aria-label="Earned: Creator Orientation">
+<span class="oc-cl">Now on your Creator profile</span>
+<div class="oc-ct"><span class="oc-ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path><path d="M22 9v5"></path></svg></span><span><b>Creator Orientation</b><span>Ada Ononuju · 1 October 2026</span></span></div>
+<div class="oc-rd"><span class="oc-rl">Readiness</span><span class="oc-bar"><span class="oc-was"></span><span class="oc-now"></span></span><span class="oc-rv"><b>60%</b><em>+20%</em></span></div>
 </section>
 <section class="oc-next" aria-label="Next for you">
 <span class="oc-nl">Next for you</span>
 <b>Credentials &amp; expertise</b>
-<span class="oc-nd">Your MSc certificate scan is unreadable. Upload a clearer copy and it’s done.</span>
+<span class="oc-nd">Your MSc scan is unreadable. Upload a clearer copy and it’s done.</span>
 <a href="#" class="ds-btn sm oc-go"><span>Fix my credentials</span><span class="ob-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
 </section>
 </div>

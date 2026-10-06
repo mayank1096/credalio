@@ -395,7 +395,7 @@ nodes=''.join(f'<span class="dn-n {"dn-d" if i<5 else ""}{" dn-just" if i==4 els
 learned=''.join(f'<li>{ic("check",14,2.6)}<span>{t}</span></li>' for t in ['Nova can explain, suggest and prepare changes','You confirm anything consequential','You own AI-assisted content'])
 resp=''.join(f'<li><span class="dn-dot"></span><span>{t}</span></li>' for t in ['Review everything before you approve it','Disclose AI assistance where required'])
 c=f'''<div class="dn">
-<div class="dn-badge ob-in" aria-hidden="true"><span class="dn-ring"></span><span class="dn-core">{ic('check',34,2.6)}</span></div>
+<div class="dn-badge ob-in" aria-hidden="true"><span class="dn-ring"></span><span class="dn-wave"></span><span class="dn-wave dn-w2"></span><span class="dn-core"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="dn-tick" pathLength="1" d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></div>
 <span class="lp-eb ob-in2" style="justify-content: center">Module 5 complete</span>
 <h1 class="lp-h1 dn-h ob-in2">AI &amp; responsible creation</h1>
 <p class="dn-sub ob-in2">Five of seven done. You’re well past halfway.</p>
@@ -415,6 +415,11 @@ DN_CSS2='''.lp-body:has(.dn){padding-bottom:56px}
 .dn-ring{position:absolute;inset:0;border-radius:50%;background:radial-gradient(closest-side,rgba(22,82,240,.18),rgba(22,82,240,0));animation:dnGlow 2.6s ease-in-out infinite}
 .dn-core{position:relative;width:68px;height:68px;border-radius:50%;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(22,82,240,.35);animation:dnPop .6s cubic-bezier(.3,1.5,.5,1) .1s both}
 @keyframes dnPop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+.dn-tick{stroke-dasharray:1;stroke-dashoffset:1;animation:dnTick .5s cubic-bezier(.65,0,.35,1) .55s forwards}
+@keyframes dnTick{to{stroke-dashoffset:0}}
+.dn-wave{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;border:2px solid rgba(22,82,240,.45);opacity:0;animation:dnWave 1.6s ease-out .9s 2}
+.dn-w2{animation-delay:1.3s}
+@keyframes dnWave{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.9);opacity:0}}
 @keyframes dnGlow{0%,100%{transform:scale(.9);opacity:.7}50%{transform:scale(1.15);opacity:1}}
 .dn .lp-eb{margin-top:14px}
 .dn-h{margin-top:6px}
@@ -434,7 +439,7 @@ DN_CSS2='''.lp-body:has(.dn){padding-bottom:56px}
 .dn-acts{margin-top:28px;display:flex;align-items:center;gap:20px}
 .dn-back{font-size:15px;font-weight:600;text-decoration:none;color:#3A4566}
 .dn-back:hover{color:#1652F0}
-@media (prefers-reduced-motion: reduce){.dn-ring,.dn-core,.dn-just{animation:none}}
+@media (prefers-reduced-motion: reduce){.dn-ring,.dn-core,.dn-just,.dn-wave{animation:none}.dn-tick{animation:none;stroke-dashoffset:0}}
 @media (max-width: 960px){
 .dn-badge{width:76px;height:76px}.dn-core{width:56px;height:56px}.dn-core svg{width:28px;height:28px}
 .dn-sub{font-size:15px}

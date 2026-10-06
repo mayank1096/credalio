@@ -59,8 +59,8 @@ def rdy(state):
         on=k=='open'
         g+=f'''<li class="rd-gate{' rd-on' if on else ''}"><span class="rd-gn">{icn if on else ik(LOCK_I,16,2.2)}</span><span class="rd-gt"><b>{t}</b><span>{d}</span></span></li>'''
     hero=f'''<section class="ds-card rd-hero ob-in2" aria-label="Your readiness">
-<div class="rd-score">{ring(pct,132,9,'r1','<b class="rd-pct">'+str(pct)+'%</b><span class="rd-pl">ready</span>')}<span class="rd-sc"><b>{done} of 5 done</b><span>{'3 to go before you can submit' if mid else '4 to go before you can submit'}</span></span></div>
-<div class="rd-unl"><span class="sec-h">What you can do</span><ol class="rd-gates">{g}</ol></div>
+<div class="rd-score">{ring(pct,92,9,'r1','<b class="rd-pct">'+str(pct)+'%</b><span class="rd-pl">ready</span>')}<span class="rd-sc"><b>{done} of 5 done</b><span>{'3 to go before you can submit' if mid else '4 to go before you can submit'}</span></span></div>
+<div class="rd-unl"><ol class="rd-gates">{g}</ol></div>
 </section>'''
     rows=[('profile','Creator profile','Completed during setup.','complete',None,None,None),
           (ID_I,'Verify your identity','A government ID and a quick selfie check, through Sumsub.','review' if mid else 'todo','Usually reviewed within 1 business day.' if mid else None,None if mid else 'Start','CR-KYC-001.dc.html'),
@@ -99,15 +99,15 @@ def rdy(state):
 </div>'''
 
 RD_CSS=COMMON_CSS+'''.rd-head{margin-top:8px}
-.rd-hero{margin-top:22px;padding:26px 30px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:40px;align-items:center}
+.rd-hero{margin-top:22px;padding:20px 28px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:40px;align-items:center}
 .rd-score{display:flex;align-items:center;gap:20px}
-.rd-pct{font-size:30px;font-weight:600;letter-spacing:-0.03em;line-height:1}
-.rd-pl{font-size:12.5px;color:#5B6582;margin-top:4px}
+.rd-pct{font-size:22px;font-weight:600;letter-spacing:-0.03em;line-height:1}
+.rd-pl{font-size:11px;color:#5B6582;margin-top:2px}
 .rd-sc{display:flex;flex-direction:column;gap:4px}
 .rd-sc b{font-size:17px;font-weight:600}
 .rd-sc span{font-size:14px;color:#5B6582}
 .rd-unl{min-width:0;padding-left:36px;border-left:1.5px solid #EEF1F7}
-.rd-gates{list-style:none;margin:14px 0 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;position:relative}
+.rd-gates{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;position:relative}
 .rd-gates::before{content:'';position:absolute;left:20px;right:calc(33.33% - 6px);top:19px;height:3px;border-radius:3px;background:linear-gradient(90deg,#1652F0 0%,#1652F0 34%,#E6EAF3 34%)}
 .rd-gate{position:relative;display:flex;flex-direction:column;gap:10px}
 .rd-gn{flex-shrink:0;width:40px;height:40px;border-radius:50%;box-sizing:border-box;border:2px solid #D6DDEE;background:#FFFFFF;color:#8A93AD;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}

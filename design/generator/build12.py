@@ -216,7 +216,11 @@ K1_CSS='''.k1{flex-grow:1;width:min(1120px,100%);box-sizing:border-box;margin:0 
 .k1-n:nth-child(n+3){border-top:1.5px solid #EEF1F7 !important}
 .k1-n:nth-child(even){border-left:1.5px solid #EEF1F7}
 .k1-how{display:none}
-.k1-card{position:static;padding:0;border:0;box-shadow:none;border-radius:0;gap:14px}
+.k1-card{position:static;padding:0;border:0;box-shadow:none;border-radius:0;gap:20px !important;margin-top:10px}
+.k1-ptn{display:none !important}
+.k1-priv{font-size:13.5px;align-items:flex-start}
+.k1-priv svg{margin-top:2px}
+.tk-check{font-size:13.5px}
 .k1-how{font-size:14px}
 }
 '''

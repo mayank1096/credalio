@@ -2,7 +2,9 @@ exec(open('build5.py').read())
 def strip_illus(n):
     p=P+n; s=open(p).read()
     a=s.index('<div class="ob-illus"'); b=s.index('</div>\n</x-dc>',a)
-    s=s[:a]+s[b:]; open(p,'w').write(s)
+    s=s[:a]+s[b:]
+    s=s.replace('</style>','@media (max-width: 960px){.ob-main{padding-top:28px !important}}\n</style>',1)
+    open(p,'w').write(s)
 strip_illus('CR-ONB-003c.dc.html'); strip_illus('CR-ONB-005.dc.html'); strip_illus('CR-ONB-005b.dc.html')
 # 004: waving hand
 WAVE='/_blob/e0846c8b6889064bed3e0b948cd9888a'

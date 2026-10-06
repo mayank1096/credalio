@@ -316,15 +316,15 @@ ml=''
 for i,(t,meta) in enumerate(MODS):
     n=i+1
     if i<3:
-        ml+=f'''<li class="or-m or-done"><span class="or-n">{ic('check',14,3)}</span><span class="or-mt"><b>Module {n} · {t}</b><span>{meta}</span></span>{pill('complete','Done')}<a href="#" class="or-rv">Review</a></li>'''
+        ml+=f'''<li class="or-m or-done"><span class="or-n">{ic('check',14,3)}</span><span class="or-mt"><b><span class="or-mn">Module {n} · </span>{t}</b><span>{meta}</span></span>{pill('complete','Done')}<a href="#" class="or-rv">Review</a><span class="or-chev">{ik(CHEV_I,16,2.2)}</span></li>'''
     elif i==3:
         st=''
         for (lt,k) in M4:
             mk = ic('check',11,3.2) if k=='done' else ''
             st+=f'<li class="or-s or-s-{k}"><span class="or-sd">{mk}</span><span>{lt}</span>{"<em>Up next</em>" if k=="next" else ""}</li>'
-        ml+=f'''<li class="or-m or-cur"><span class="or-n">{n}</span><div class="or-cb"><span class="or-mt"><b>Module {n} · {t}</b><span>{meta} · 1 of 4 steps done</span></span><p class="or-desc">What validators look at, how a case runs, and what tiers mean.</p><ol class="or-steps">{st}</ol></div>{pill('progress')}</li>'''
+        ml+=f'''<li class="or-m or-cur"><span class="or-n">{n}</span><div class="or-cb"><span class="or-mt"><b><span class="or-mn">Module {n} · </span>{t}</b><span>{meta} · 1 of 4 steps done</span></span><p class="or-desc">What validators look at, how a case runs, and what tiers mean.</p><ol class="or-steps">{st}</ol></div>{pill('progress')}</li>'''
     else:
-        ml+=f'''<li class="or-m"><span class="or-n">{n}</span><span class="or-mt"><b>Module {n} · {t}</b><span>{meta}</span></span><span class="or-lock">{ik(CLOCK_I,13,2.2)}{meta.split(" · ")[-1]}</span></li>'''
+        ml+=f'''<li class="or-m"><span class="or-n">{n}</span><span class="or-mt"><b><span class="or-mn">Module {n} · </span>{t}</b><span>{meta}</span></span><span class="or-lock">{ik(CLOCK_I,13,2.2)}{meta.split(" · ")[-1]}</span></li>'''
 c=f'''<a href="CR-CTR-001.dc.html" class="ds-back ob-in">{ic('back',16,2.2)}Creator Centre</a>
 <div class="or-head ob-in"><h1 class="ds-h1">Creator Orientation</h1><p class="ds-sub">Seven short modules on creating trusted learning, with quick checks and real scenarios.</p></div>
 <div class="or-grid">
@@ -352,9 +352,11 @@ OR_CSS=COMMON_CSS+'''.or-head{margin-top:6px}
 .or-mt b{font-size:15.5px;font-weight:600}
 .or-mt span{font-size:13px;color:#5B6582}
 .or-done .or-mt b{color:#3A4566}
+.or-chev{display:none}
 .or-rv{font-size:14px;font-weight:600;text-decoration:none;padding:0 4px}
 .or-lock{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:#8A93AD;white-space:nowrap}
-.or-m:not(.or-done):not(.or-cur) .or-mt span{display:none}
+.or-m:not(.or-done):not(.or-cur) .or-mt > span{display:none}
+.or-mt b .or-mn{display:inline;font:inherit;color:inherit;margin:0}
 .or-cb{grid-column:2 / -1;padding:18px 20px 20px 20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #CBD7F5;box-shadow:0 0 0 4px rgba(22,82,240,.06),0 14px 34px rgba(22,82,240,.08)}
 .or-cb .or-mt{padding-right:110px}
 .or-desc{margin:10px 0 0 0;font-size:14.5px;line-height:1.55;color:#3A4566}
@@ -402,10 +404,18 @@ OR_CSS=COMMON_CSS+'''.or-head{margin-top:6px}
 .or-cb{grid-column:2 / -1;padding:14px;border-radius:16px}
 .or-cb .or-mt{padding-right:0}
 .or-desc{display:none}
-.or-steps{margin-top:8px}
-.or-s{font-size:13.5px;min-height:34px}
-.or-go{width:100%;justify-content:space-between}
-.or-lock{font-size:12px}
+.or-steps,.or-lock,.or-rv,.or-mt b .or-mn{display:none}
+.or-chev{display:flex;color:#AFC1F5}
+.or-m:not(.or-done):not(.or-cur) .or-mt > span{display:block}
+.or-mt{gap:2px}
+.or-mt b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.or-list{margin-top:4px}
+.or-list::before{top:26px;bottom:26px}
+.or-m{padding:12px 0}
+.or-done .or-mt b{font-weight:600}
+.or-cur{align-items:center}
+.or-cur .or-n{margin-top:0}
+.or-cb{grid-column:2 / -1;padding:12px 14px;border-radius:16px;box-shadow:0 0 0 3px rgba(22,82,240,.06)}
 }
 '''
 S_OR='''class Component extends DCLogic {
@@ -557,5 +567,5 @@ WRAP('CR-RDY-001-Mobile.dc.html','CR-RDY-001',390,1520,'CR-RDY-001 mobile previe
 WRAP('CR-RDY-001s.dc.html','CR-RDY-001',1440,1080,'Credalio · Your readiness (new creator)',' variant="new"')
 WRAP('CR-RDY-001s-Mobile.dc.html','CR-RDY-001',390,1450,'CR-RDY-001s mobile preview',' variant="new"')
 WRAP('CR-CTR-001-Mobile.dc.html','CR-CTR-001',390,1290,'CR-CTR-001 mobile preview')
-WRAP('CR-ORI-001-Mobile.dc.html','CR-ORI-001',390,1080,'CR-ORI-001 mobile preview')
+WRAP('CR-ORI-001-Mobile.dc.html','CR-ORI-001',390,880,'CR-ORI-001 mobile preview')
 print('build10 done')

@@ -115,24 +115,20 @@ TK_CSS='''.tk-root{min-height:100vh;display:flex;flex-direction:column;backgroun
 '''
 
 # ---------------- CR-KYC-001 · Before you start ----------------
-NEED=[(CARD_I,'A valid government ID','Passport, national ID card, driver’s licence or residence permit. Not expired.'),
-      (FACE_I,'You, for a quick selfie','A short liveness check confirms it’s really you.'),
-      (CAM_I,'A camera','Your webcam works. Or switch to your phone with a QR code.'),
-      (SUN_I,'Good light','No glare on the document, no shadows on your face.')]
-nd=''.join(f'<li class="k1-n"><span class="k1-ni">{ik(i,20,1.9)}</span><span class="k1-nt"><b>{t}</b><span>{d}</span></span></li>' for i,t,d in NEED)
+NEED=[(CARD_I,'A valid ID'),(FACE_I,'A selfie'),(CAM_I,'A camera'),(SUN_I,'Good light')]
+nd=''.join(f'<li class="k1-n"><span class="k1-ni">{ik(i,20,1.9)}</span><b>{t}</b></li>' for i,t in NEED)
 c=f'''<main class="k1">
 <section class="k1-l">
 <span class="lp-eb ob-in">{ik(CLOCK_I,14,2.2)}About 3 to 5 minutes</span>
 <h1 class="lp-h1 ob-in">Let’s confirm it’s you.</h1>
-<p class="k1-sub ob-in2">Every creator is verified before their work goes to validation. It’s how learners know real experts stand behind what they learn.</p>
-<span class="sec-h k1-sh ob-in2">What you’ll need</span>
+<p class="k1-sub ob-in2">Verified creators are how learners know real experts stand behind what they learn.</p>
+<span class="sec-h k1-sh ob-in2">You’ll need</span>
 <ul class="k1-need ob-in3">{nd}</ul>
 </section>
 <aside class="k1-card ob-in2">
-<span class="k1-ptn"><span class="k1-logo">S</span><span><b>Verified by Sumsub</b><span>Our identity verification partner</span></span></span>
-<p class="k1-how">Sumsub checks your document and selfie, then tells us the result. You come straight back here when it’s done.</p>
-<p class="k1-priv">{ik(LOCK_I,15,2.2)}<span>Your document images stay with Sumsub under its privacy terms. Learners, validators and other creators never see them.</span></p>
-<label class="tk-check {H('ckCls')}" onClick="{H('toggle')}"><span class="tk-box">{ic('check',12,3.2)}</span><span>I agree to Sumsub processing my identity document and biometric data to verify my identity for Credalio. <a href="#">Privacy notice</a></span></label>
+<span class="k1-ptn"><span class="k1-logo">S</span><span><b>Verified by Sumsub</b><span>Our identity partner</span></span></span>
+<p class="k1-priv">{ik(LOCK_I,15,2.2)}<span>Your ID images stay with Sumsub. No one on Credalio sees them.</span></p>
+<label class="tk-check {H('ckCls')}" onClick="{H('toggle')}"><span class="tk-box">{ic('check',12,3.2)}</span><span>I agree to Sumsub processing my ID and biometric data to verify me. <a href="#">Privacy notice</a></span></label>
 <a href="CR-KYC-002.dc.html" class="ds-btn k1-go {H('goCls')}"><span>Start verification</span><span class="ob-arrow">{ic('arrow',18,2.4)}</span></a>
 <span class="k1-later">You can keep drafting while we verify.</span>
 </aside>
@@ -140,21 +136,22 @@ c=f'''<main class="k1">
 K1_CSS='''.k1{flex-grow:1;width:min(1120px,100%);box-sizing:border-box;margin:0 auto;padding:clamp(28px,6vh,64px) 32px 48px 32px;display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:64px;align-items:start}
 .k1-sub{margin:14px 0 0 0;font-size:17.5px;line-height:1.6;color:#3A4566;max-width:560px}
 .k1-sh{display:block;margin:32px 0 12px 2px}
-.k1-need{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.k1-n{display:flex;gap:14px;padding:16px;border-radius:18px;background:#F7F9FD;border:1.5px solid #EEF1F7}
+.k1-need{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:620px}
+.k1-n{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:16px;border-radius:18px;background:#F7F9FD;border:1.5px solid #EEF1F7}
+.k1-n b{font-size:14.5px;font-weight:600;line-height:1.3}
 .k1-ni{width:42px;height:42px;flex-shrink:0;border-radius:13px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(11,20,51,.05)}
 .k1-nt{display:flex;flex-direction:column;gap:3px}
 .k1-nt b{font-size:15px;font-weight:600}
 .k1-nt span{font-size:13.5px;line-height:1.45;color:#5B6582}
-.k1-card{padding:24px;border-radius:24px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 18px 44px rgba(22,82,240,.08);display:flex;flex-direction:column;gap:16px;position:sticky;top:96px}
+.k1-card{padding:24px;gap:18px !important;border-radius:24px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 18px 44px rgba(22,82,240,.08);display:flex;flex-direction:column;gap:16px;position:sticky;top:96px}
 .k1-ptn{display:flex;align-items:center;gap:12px}
 .k1-ptn > span:last-child{display:flex;flex-direction:column;gap:1px}
 .k1-ptn b{font-size:15px;font-weight:600}
 .k1-ptn > span:last-child > span{font-size:12.5px;color:#5B6582}
 .k1-logo{width:40px;height:40px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:18px;font-weight:600;display:flex;align-items:center;justify-content:center}
 .k1-how{margin:0;font-size:14.5px;line-height:1.55;color:#0B1433}
-.k1-priv{margin:0;padding:12px 14px;border-radius:14px;background:#F5F8FF;display:flex;gap:10px;font-size:13px;line-height:1.5;color:#3A4566}
-.k1-priv svg{color:#1652F0;flex-shrink:0;margin-top:2px}
+.k1-priv{margin:0;display:flex;align-items:center;gap:8px;font-size:13.5px;line-height:1.5;color:#3A4566}
+.k1-priv svg{color:#0F6B45;flex-shrink:0}
 .k1-go{width:100%;justify-content:space-between}
 .k1-go.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}
 .k1-go.lp-off .ob-arrow{color:#9AA8CC}
@@ -164,7 +161,8 @@ K1_CSS='''.k1{flex-grow:1;width:min(1120px,100%);box-sizing:border-box;margin:0 
 .k1-sub{font-size:15px;margin-top:10px}
 .k1-sh{margin:22px 0 10px 2px}
 .k1-need{grid-template-columns:minmax(0,1fr);gap:0;border:1.5px solid #EEF1F7;border-radius:18px;background:#F7F9FD;overflow:hidden}
-.k1-n{border:0;border-radius:0;background:transparent;padding:12px 14px;gap:12px;align-items:center}
+.k1-n{flex-direction:row;border:0;border-radius:0;background:transparent;padding:12px 14px;gap:12px;align-items:center}
+.k1-n b{font-size:14px}
 .k1-n + .k1-n{border-top:1.5px solid #EEF1F7}
 .k1-ni{width:36px;height:36px;border-radius:11px}
 .k1-ni svg{width:18px;height:18px}

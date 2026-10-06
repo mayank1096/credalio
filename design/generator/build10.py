@@ -64,7 +64,7 @@ def rdy(state):
 </section>'''
     rows=[('profile','Creator profile','Completed during setup.','complete',None,None,None),
           (ID_I,'Verify your identity','A government ID and a quick selfie check, through Sumsub.','review' if mid else 'todo','Usually reviewed within 1 business day.' if mid else None,None if mid else 'Start','CR-KYC-001.dc.html'),
-          ('cert','Credentials & expertise','Degrees, certifications like AWS, licences, experience and other evidence.','action' if mid else 'todo','Your MSc certificate scan is unreadable. Upload a clearer copy.' if mid else None,'Fix now' if mid else 'Start','#'),
+          ('cert','Credentials & expertise','Degrees, certifications like AWS, licences, experience and other evidence.','action' if mid else 'todo','MSc scan unreadable. Upload a clearer copy.' if mid else None,'Fix now' if mid else 'Start','#'),
           ('centre','Creator Orientation','Seven short modules on creating trusted learning.','progress' if mid else 'todo',None,'Continue' if mid else 'Start','CR-ORI-001.dc.html'),
           (DOC_I,'Creator policies','The creator terms, content and AI policies.','complete' if mid else 'todo',None,None if mid else 'Review','#')]
     def row(r, extra=''):
@@ -128,7 +128,7 @@ RD_CSS=COMMON_CSS+'''.rd-head{margin-top:8px}
 .rd-tx b{font-size:15px;font-weight:600}
 .rd-d{font-size:13.5px;line-height:1.45;color:#5B6582}
 .rd-note{font-size:13px;color:#3A4566;margin-top:2px}
-.rd-warn{color:#8A5300;font-weight:500}
+.rd-warn{color:#8A5300;font-weight:500;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rd-mini{display:block;width:160px;height:5px;border-radius:5px;background:#E6EAF3;margin-top:6px;overflow:hidden}
 .rd-mini span{display:block;height:100%;border-radius:5px;background:#1652F0}
 .rd-st{display:flex;justify-content:flex-start}
@@ -156,14 +156,15 @@ RD_CSS=COMMON_CSS+'''.rd-head{margin-top:8px}
 .rd-grid{margin-top:28px;gap:28px}
 .rd-sh{margin-left:2px;font-size:13px}
 .rd-list{padding:2px 0;border-radius:18px}
-.rd-row{grid-template-columns:36px minmax(0,1fr) auto;grid-template-areas:"i t a" "i s a";row-gap:6px;column-gap:12px;padding:13px 14px}
+.rd-row{grid-template-columns:36px minmax(0,1fr) auto;grid-template-areas:"i t t" "i s a";row-gap:8px;column-gap:12px;padding:13px 14px}
 .rd-ic{grid-area:i;align-self:start;width:36px;height:36px;border-radius:11px}
 .rd-ic svg{width:18px;height:18px}
 .rd-tx{grid-area:t}.rd-st{grid-area:s}
-.rd-cta,.rd-cta-sp{grid-area:a}
+.rd-cta,.rd-cta-sp{grid-area:a;align-self:center}
 .rd-tx b{font-size:14.5px}
 .rd-d{display:none}
 .rd-note{font-size:12.5px}
+.rd-warn{font-size:11.5px}
 .rd-mini{width:120px;margin-top:4px}
 .rd-cta{height:36px;padding:0 8px 0 12px;font-size:13.5px}
 .st-pill{height:24px;font-size:12px;padding:0 9px}

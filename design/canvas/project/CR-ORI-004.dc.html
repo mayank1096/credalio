@@ -182,6 +182,11 @@ body{background:#FFFFFF}
 .kc-q{font-size:17px}
 .kc-o{font-size:14.5px;min-height:48px}
 }
+.kc-grid{margin-top:26px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.kc-grid .kc{margin-top:0}
+.kc-two{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr))}
+.lp-body:has(.kc-grid){align-items:flex-start;padding-top:40px;padding-bottom:120px}
+@media (max-width: 960px){.kc-grid{grid-template-columns:minmax(0,1fr);gap:14px;margin-top:18px}.lp-body:has(.kc-grid){padding-top:28px;padding-bottom:112px}}
 </style>
 </helmet>
 <div class="lp-root">
@@ -191,17 +196,17 @@ body{background:#FFFFFF}
 <div class="lp-segs" aria-hidden="true"><span class="lp-seg lp-seg-done"></span><span class="lp-seg lp-seg-done"></span><span class="lp-seg lp-seg-done"></span><span class="lp-seg lp-seg-cur"></span></div>
 <span class="lp-tn">Step 4 of 4</span>
 </header>
-<div class="lp-body lp-has-rail">
-<aside class="lp-rail" aria-label="Module steps"><span class="lp-rl">Module 4 · Understanding validation</span><ol class="lp-ol"><li class="lp-o lp-o-done"><span class="lp-om"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="lp-ot"><b>What validators look at</b><span>Lesson</span></span></li><li class="lp-o lp-o-done"><span class="lp-om"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="lp-ot"><b>The validation case</b><span>Lesson</span></span></li><li class="lp-o lp-o-done"><span class="lp-om"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="lp-ot"><b>Tiers and revalidation</b><span>Lesson</span></span></li><li class="lp-o lp-o-cur"><span class="lp-om"></span><span class="lp-ot"><b>Quick knowledge check</b><span>Check</span></span></li></ol></aside>
-<main class="lp-main"><span class="lp-eb ob-in">Quick knowledge check</span>
+<div class="lp-body">
+
+<main class="lp-main lp-wide"><span class="lp-eb ob-in">Quick knowledge check</span>
 <h1 class="lp-h1 ob-in">Two quick questions</h1>
 <p class="lp-meta ob-in2">Not an exam. You’ll see why straight away, and you can try again as often as you like.</p>
-<sc-for list="{{qs}}" as="q" hint-placeholder-count="2"><section class="kc ob-in3" aria-label="{{q.n}}">
+<div class="kc-grid"><sc-for list="{{qs}}" as="q" hint-placeholder-count="2"><section class="kc ob-in3" aria-label="{{q.n}}">
 <span class="kc-n">{{q.n}} · {{q.kind}}</span>
 <h2 class="kc-q">{{q.text}}</h2>
-<div class="kc-opts" role="radiogroup" aria-label="{{q.text}}"><sc-for list="{{q.opts}}" as="o" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{o.on}}" class="kc-o {{o.cls}}" onClick="{{o.pick}}"><span class="kc-r"><span class="kc-ok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="kc-no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></span><span>{{o.label}}</span></button></sc-for></div>
+<div class="kc-opts {{q.oc}}" role="radiogroup" aria-label="{{q.text}}"><sc-for list="{{q.opts}}" as="o" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{o.on}}" class="kc-o {{o.cls}}" onClick="{{o.pick}}"><span class="kc-r"><span class="kc-ok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="kc-no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></span><span>{{o.label}}</span></button></sc-for></div>
 <sc-if value="{{q.fbShown}}" hint-placeholder-val="{{false}}"><div class="kc-fb {{q.fbCls}} cp-pop" role="status"><b>{{q.fbHead}}</b><span>{{q.fbText}}</span></div></sc-if>
-</section></sc-for></main>
+</section></sc-for></div></main>
 </div>
 <footer class="lp-bar"><div class="lp-barin"><a href="CR-ORI-003.dc.html" class="lp-prev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span class="lp-hide-sm">Tiers and revalidation</span></a><span class="lp-stepn">Step 4 of 4</span><a href="CR-ORI-005.dc.html" class="ds-btn lp-next {{nextCls}}" aria-disabled="{{nextDis}}"><span>{{nextLabel}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></footer>
 </div>
@@ -218,7 +223,7 @@ class Component extends DCLogic {
     const qs = Q.map((q, qi) => {
       const pick = a[qi], ok = pick === q[3];
       return {
-        n: 'Question ' + (qi + 1) + ' of ' + Q.length, kind: q[0], text: q[1],
+        n: 'Question ' + (qi + 1) + ' of ' + Q.length, kind: q[0], text: q[1], oc: q[2].length === 2 ? 'kc-two' : '',
         opts: q[2].map((label, oi) => ({ label, on: pick === oi ? 'true' : 'false', cls: pick === oi ? (oi === q[3] ? 'kc-right' : 'kc-wrong') : '', pick: () => { if (ok) return; const n = a.slice(); n[qi] = oi; this.setState({ a: n }); } })),
         fbShown: pick >= 0, fbCls: ok ? 'kc-fb-ok' : 'kc-fb-no', fbHead: ok ? 'Correct.' : 'Not quite.', fbText: ok ? q[4] : 'Have another look and try again.'
       };

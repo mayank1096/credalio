@@ -252,7 +252,8 @@ CT_CSS=COMMON_CSS+'''.ct-hero{margin-top:8px;padding:30px 32px 26px 32px;border-
 .ct-art svg{color:#8A93AD;flex-shrink:0;transition:transform .2s ease,color .2s ease}
 .ct-art:hover{color:#1652F0}.ct-art:hover svg{color:#1652F0;transform:translateX(2px)}
 .ct-all{margin-top:12px;align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;text-decoration:none}
-.ct-help{margin-top:16px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.ct-help{margin-top:16px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;background:#FFFFFF url('''+BGI+''') center top / cover no-repeat}
+.ct-help .ds-ghost{background:rgba(255,255,255,.9)}
 .ct-ht{display:flex;flex-direction:column;gap:3px;min-width:0}
 .ct-ht b{font-size:15.5px;font-weight:600}
 .ct-ht span{font-size:13.5px;color:#5B6582}
@@ -267,10 +268,12 @@ CT_CSS=COMMON_CSS+'''.ct-hero{margin-top:8px;padding:30px 32px 26px 32px;border-
 .ct-pop::-webkit-scrollbar{display:none}
 .ct-pop > span{display:none}
 .ct-chip{flex-shrink:0;white-space:nowrap;height:34px !important;font-size:13px !important}
-.ct-ori{margin-top:18px;padding:14px;grid-template-columns:auto minmax(0,1fr);gap:12px;border-radius:18px}
+.ct-ori{margin-top:22px;padding:22px 18px 18px 18px;grid-template-columns:auto minmax(0,1fr);gap:16px 14px;border-radius:20px;align-items:center}
+.ct-ot{gap:5px}
+.ct-ob{margin-top:6px}
 .ct-oi .rg,.ct-oi svg{width:52px !important;height:52px !important}
 .ct-oi b{font-size:13px !important}
-.ct-ot b{font-size:14.5px}.ct-os{font-size:12.5px}
+.ct-ot b{font-size:15px;line-height:1.35}.ct-os{font-size:12.5px;line-height:1.45}
 .ct-ob{grid-column:1 / -1;width:100%;justify-content:space-between}
 .ct-gh2{margin:24px 0 10px 2px}
 .ct-grid{grid-template-columns:minmax(0,1fr);gap:0;border:1.5px solid #E6EAF3;border-radius:18px;background:#FFFFFF;overflow:hidden}
@@ -566,6 +569,6 @@ WRAP('CR-CREATE-002B-Mobile.dc.html','CR-CREATE-002B',390,844,'CR-CREATE-002B mo
 WRAP('CR-RDY-001-Mobile.dc.html','CR-RDY-001',390,1520,'CR-RDY-001 mobile preview')
 WRAP('CR-RDY-001s.dc.html','CR-RDY-001',1440,1080,'Credalio · Your readiness (new creator)',' variant="new"')
 WRAP('CR-RDY-001s-Mobile.dc.html','CR-RDY-001',390,1450,'CR-RDY-001s mobile preview',' variant="new"')
-WRAP('CR-CTR-001-Mobile.dc.html','CR-CTR-001',390,1290,'CR-CTR-001 mobile preview')
+WRAP('CR-CTR-001-Mobile.dc.html','CR-CTR-001',390,1340,'CR-CTR-001 mobile preview')
 WRAP('CR-ORI-001-Mobile.dc.html','CR-ORI-001',390,880,'CR-ORI-001 mobile preview')
 print('build10 done')

@@ -254,7 +254,7 @@ c=f'''<a href="CR-DASH-NEW.dc.html" class="ds-back ob-in" style="margin-top: 4px
 </div>
 <div class="c1-grid ob-in2" style="margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
 {MODE('c1-rec',PREV_NOVA,'Build it with Nova','Answer five short questions. Nova sketches a first draft, and you decide what stays.',['5 questions','You approve every part'],BTNA("CR-CREATE-002A.dc.html","Start with Nova",extra='style="align-self: flex-start"'),'border-color: #1652F0; box-shadow: 0 0 0 4px rgba(22, 82, 240, 0.10), 0 18px 40px rgba(22, 82, 240, 0.10)')}
-{MODE('',PREV_SCR,'Start from a blank page','Set up every part yourself, step by step. Nova is one click away whenever you want a hand.',['Full control','Help on every screen'],'<a href="#" class="ds-ghost" style="align-self: flex-start">Start from scratch</a>')}
+{MODE('',PREV_SCR,'Start from a blank page','Set up every part yourself, step by step. Nova is one click away whenever you want a hand.',['Full control','Help on every screen'],'<a href="CR-CREATE-002B.dc.html" class="ds-ghost" style="align-self: flex-start">Start from scratch</a>')}
 </div>
 </div>'''
 C1_CSS='''.c1-prev{position:relative;height:200px;border-radius:14px;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:18px;box-sizing:border-box}

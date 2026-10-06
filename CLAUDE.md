@@ -41,6 +41,15 @@
 - Creation flows (002A/002Ab) use FOCUS MODE (no sidebar): slim top bar (close, title, progress, gold tokens). Chat = centred column, messages bottom-anchored, composer docked at bottom with suggestion chips; blueprint as right pane (mobile: bottom sheet). Review = the course rendered as a real page with per-part icon tools + sticky review rail (mobile: fixed bottom bar). Generator `build9.py`.
 - Variant screens use one source + prop (e.g. 002Ab = `dc-import CR-CREATE-002A variant="proposal"`).
 
+## Designer feedback log (ALWAYS apply to every new screen)
+- Never copy the client layout; rethink each screen's job and make it efficient, unique and clean.
+- Mobile: no card-inside-card heroes (content runs edge to edge on the page bg), breathing room under bars/trackers (≥28px), full-width primary buttons, compact type, one primary CTA per view (no duplicate CTAs), swipeable chip/pill rows instead of wrapped 2-line boxes, collapsible lists (accordion) for secondary content.
+- Desktop: use space well (no needless line breaks, no half-empty rows); one clear primary action per screen.
+- Tags/chips/pills/status pills = weight 500. Selected ≠ primary button. Tokens always gold. No emojis, no screen-ID eyebrows, no rainbow colours (status: green complete, cobalt in progress/review, amber action required, grey not started).
+- Characters: use the designer's Copilot images (Nova etc.), never the old main-scene crops for people. Chat-like screens: messages bottom-anchored, composer at the bottom; a soft blue gradient flowing sideways across the top (fxFlow) is the "Nova is here" ambient motif.
+- Cobalt line/path = progress motif (readiness gates, orientation journey, setup route).
+- Readiness/Orientation/Creator Centre/002B generator: `design/generator/build10.py` (RDY-001s = `dc-import CR-RDY-001 variant="new"`).
+
 ## Hard layout rules
 - Desktop must NOT scroll on onboarding screens: must fit 1440×820 and 1280×720 (viewport-based layout, clamp/vh).
 - Fully responsive: breakpoints ~1080 and ~760/860; mobile = stacked layout, 44px+ touch targets.

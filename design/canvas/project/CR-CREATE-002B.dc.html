@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Credalio · Build from scratch</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes cpPop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes cpDot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+@keyframes dsRing{from{stroke-dashoffset:1}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}.ob-in3{animation:obIn .5s ease .16s both}.ob-in4{animation:obIn .5s ease .24s both}
+.cp-pop{animation:cpPop .4s ease both}
+.cp-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#1652F0;animation:cpDot 1.2s ease-in-out infinite}
+.ds-root{display:grid;grid-template-columns:264px minmax(0,1fr);min-height:100vh;background:#F7F9FD;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.ds-side{position:sticky;top:0;height:100vh;overflow-y:auto;box-sizing:border-box;padding:22px 14px 24px 14px;background:#FFFFFF;border-right:1.5px solid #E6EAF3;display:flex;flex-direction:column;gap:2px;z-index:20}
+.ds-glab{display:block;margin:16px 12px 6px 12px;font-size:12px;font-weight:600;color:#8A93AD}
+.ds-item{display:flex;align-items:center;gap:12px;min-height:40px;padding:0 12px;border-radius:12px;color:#3A4566;font-size:14.5px;font-weight:500;text-decoration:none;transition:background .2s ease,color .2s ease}
+.ds-item svg{flex-shrink:0;color:#5B6582}
+.ds-item:hover{background:#F5F8FF;color:#0B1433}
+.ds-on{background:#EAF0FF !important;color:#0E3BB8 !important;font-weight:600}
+.ds-on svg{color:#1652F0}
+.ds-badge{min-width:22px;height:22px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.ds-top{position:sticky;top:0;z-index:10;height:72px;box-sizing:border-box;padding:0 clamp(20px,3vw,40px);display:flex;align-items:center;gap:12px;background:rgba(247,249,253,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.ds-search{flex:1 1 auto;max-width:440px;height:44px;box-sizing:border-box;display:flex;align-items:center;gap:10px;padding:0 16px;border-radius:999px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#8A93AD;font-size:14px}
+.ds-search input{border:0;outline:none;background:transparent;font-family:inherit;font-size:14px;color:#0B1433;flex-grow:1;min-width:0}
+.ds-search input::placeholder{color:#8A93AD}
+.ds-icon-btn{width:44px;height:44px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#3A4566;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;text-decoration:none}
+.ds-icon-btn:hover{border-color:#AFC1F5}
+.ds-tok{height:44px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:7px;padding:0 14px 0 7px;border-radius:999px;background:linear-gradient(135deg,#FFFAEB,#FFF1CF);border:1.5px solid #F4D98E;font-size:14.5px;font-weight:600;color:#4A3300;text-decoration:none;box-shadow:0 6px 16px rgba(214,150,30,.12);transition:box-shadow .2s ease}
+.ds-tok:hover{box-shadow:0 8px 20px rgba(214,150,30,.24)}
+.ds-main{box-sizing:border-box;width:100%;max-width:1200px;padding:12px clamp(20px,3vw,40px) 56px clamp(20px,3vw,40px)}
+.ds-h1{margin:0;font-size:clamp(28px,2.5vw,36px);line-height:1.15;font-weight:600;letter-spacing:-0.03em;color:#0B1433}
+.ds-sub{margin:8px 0 0 0;font-size:16px;line-height:1.55;color:#4A5578}
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-weight:600;font-size:14.5px;text-decoration:none}
+.ds-link:hover{color:#0E3BB8}
+.ds-back{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px 0 10px;border-radius:999px;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none;margin-left:-10px}
+.ds-back:hover{background:#FFFFFF;color:#0B1433}
+.ds-chip{display:inline-flex;align-items:center;height:40px;padding:0 16px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-chip:hover{border-color:#1652F0;background:#F5F8FF}
+.ds-menu,.ds-scrim,.ds-mlogo,.ds-close{display:none}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-chip:focus-visible,.ds-item:focus-visible,.ds-icon-btn:focus-visible,.ds-opt:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2,.ob-in3,.ob-in4,.cp-pop,.cp-dot{animation:none}}
+@media (max-width: 440px){.ds-mlogo .ds-brand{display:none}}
+@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}}
+@media (max-width: 960px){
+.ds-root{grid-template-columns:minmax(0,1fr)}
+.ds-side{position:fixed;left:0;top:0;width:288px;max-width:86vw;transform:translateX(-102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 64px rgba(11,20,51,.18)}
+.ds-side.ds-open{transform:none}
+.ds-scrim.ds-open{display:block;position:fixed;inset:0;background:rgba(11,20,51,.32);z-index:15}
+.ds-menu,.ds-mlogo{display:flex}
+.ds-close{display:flex;position:absolute;right:12px;top:16px}
+.ds-top{height:64px;padding:0 16px;gap:8px}
+.ds-search,.ds-hide-sm{display:none !important}
+.ds-tok{padding:0 12px 0 6px;height:40px}
+.ds-icon-btn{width:40px;height:40px}
+.ds-h1{font-size:24px !important;line-height:1.2}
+.ds-sub{font-size:14.5px;margin-top:6px}
+.ds-back{height:36px;font-size:13.5px}
+.ds-chip{height:36px;font-size:13.5px;padding:0 14px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
+.ds-root{overflow-x:hidden}
+.ds-main{padding:4px 16px 32px 16px}
+.ds-btn{justify-content:space-between}
+}
+.st-pill{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 10px;border-radius:999px;font-size:12.5px;font-weight:500;white-space:nowrap}
+.rg{position:relative;display:inline-flex;flex-shrink:0}
+.rg svg{display:block}
+.rg-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.rg-arc{animation:rgIn 1.1s cubic-bezier(.3,.8,.3,1) .2s both}
+@keyframes rgIn{from{stroke-dasharray:0 100}}
+@keyframes ndPulse{0%{box-shadow:0 0 0 0 rgba(22,82,240,.35)}100%{box-shadow:0 0 0 10px rgba(22,82,240,0)}}
+.sec-h{margin:0;font-size:13.5px;font-weight:600;color:#5B6582}
+.nova-card{padding:18px;border-radius:18px;background:#FFFFFF url(/_blob/d268046654a4206d2a726e62005bcc59) center top / 100% auto no-repeat;border:1.5px solid #E6EAF3}
+.nova-card p{margin:10px 0 0 0;font-size:14.5px;line-height:1.55;color:#0B1433}
+.know{padding:16px 18px;border-radius:18px;background:#F5F8FF;border:1.5px solid #E6EAF3;font-size:13.5px;line-height:1.55;color:#3A4566}
+.know b{display:block;font-size:13px;font-weight:600;color:#0B1433;margin-bottom:4px}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+@media (prefers-reduced-motion: reduce){.rg-arc{animation:none}}
+body{background:#FFFFFF}
+.xb-root{min-height:100vh;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433;position:relative;isolation:isolate}
+.xb-root::before{content:'';position:absolute;z-index:-1;left:0;right:0;top:64px;height:320px;pointer-events:none;background:linear-gradient(90deg,rgba(22,82,240,0) 0%,rgba(22,82,240,.14) 18%,rgba(140,175,255,.22) 34%,rgba(22,82,240,0) 50%,rgba(22,82,240,.14) 68%,rgba(140,175,255,.22) 84%,rgba(22,82,240,0) 100%);background-size:200% 100%;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.4) 50%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.4) 50%,transparent 100%);animation:fxFlow 12s linear infinite}
+@keyframes fxFlow{from{background-position:0% 0}to{background-position:-200% 0}}
+.xb-top{height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1.5px solid #EEF1F7;background:#FFFFFF}
+.xb-x{width:40px;height:40px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3A4566;text-decoration:none}
+.xb-x:hover{background:#F5F8FF;color:#0B1433}
+.xb-title{display:flex;align-items:baseline;gap:8px;min-width:0}
+.xb-t1{font-size:16px;font-weight:600;white-space:nowrap}
+.xb-t2{font-size:14px;color:#5B6582;white-space:nowrap}
+.xb-main{flex-grow:1;display:flex;justify-content:center;align-items:center;padding:clamp(32px,7vh,72px) 24px 48px 24px}
+.xb-col{width:min(860px,100%);display:flex;flex-direction:column;align-items:center;text-align:center}
+.xb-h1{margin:0;font-size:clamp(34px,5.4vh,46px);line-height:1.1;font-weight:600;letter-spacing:-0.035em}
+.xb-sub{margin:12px 0 0 0;max-width:560px;font-size:16.5px;line-height:1.55;color:#4A5578}
+.xb-fmts{margin-top:28px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.xb-f{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 14px 0 8px;box-sizing:border-box;border-radius:14px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14.5px;font-weight:500;cursor:pointer;transition:border-color .2s ease,background .2s ease,box-shadow .2s ease}
+.xb-f:hover{border-color:#AFC1F5}
+.xb-fi{width:30px;height:30px;border-radius:9px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.xb-ck{display:none;width:16px;height:16px;border-radius:50%;background:#1652F0;color:#FFFFFF;align-items:center;justify-content:center}
+.xb-on{border-color:#1652F0;background:#F5F8FF;color:#0E3BB8;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.xb-on .xb-fi{background:#FFFFFF}
+.xb-on .xb-ck{display:inline-flex}
+.xb-f:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.xb-route{margin-top:28px;width:100%;box-sizing:border-box;padding:22px 26px 20px 26px;border-radius:22px;background:rgba(255,255,255,.92);border:1.5px solid #E6EAF3;box-shadow:0 18px 44px rgba(22,82,240,.08);text-align:left}
+.xb-rh{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.xb-rn{font-size:13px;color:#5B6582}
+.xb-steps{list-style:none;margin:20px 0 0 0;padding:0;display:flex;position:relative}
+.xb-steps::before{content:'';position:absolute;left:16px;right:16px;top:15px;height:3px;border-radius:3px;background:linear-gradient(90deg,#1652F0,#AFC1F5 30%,#E6EAF3 60%)}
+.xb-s{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;position:relative}
+.xb-s:first-child{align-items:flex-start;text-align:left}
+.xb-s:last-child{align-items:flex-end;text-align:right}
+.xb-sn{position:relative;z-index:1;width:32px;height:32px;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;background:#FFFFFF;color:#5B6582;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.xb-sl{font-size:13px;line-height:1.3;color:#3A4566;padding:0 2px}
+.xb-first .xb-sn{background:#1652F0;border-color:#1652F0;color:#FFFFFF;animation:ndPulse 2s ease-out infinite}
+.xb-first .xb-sl{color:#0B1433;font-weight:600}
+.xb-desc{margin:18px 0 0 0;padding-top:14px;border-top:1.5px solid #F0F2F8;font-size:14px;line-height:1.5;color:#4A5578}
+.xb-acts{margin-top:28px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.xb-alt{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:500;color:#3A4566;text-decoration:none}
+.xb-alt svg{color:#1652F0}
+.xb-alt:hover{color:#1652F0}
+@media (prefers-reduced-motion: reduce){.xb-root::before{animation:none}}
+@media (max-width: 960px){
+.xb-top{height:56px;padding:0 12px 0 6px;gap:8px}
+.xb-t2{display:none}
+.xb-main{padding:22px 16px 24px 16px}
+.xb-col{align-items:stretch;text-align:left}
+.xb-h1{font-size:26px}
+.xb-sub{font-size:14.5px;margin-top:8px}
+.xb-fmts{margin:18px -16px 0 -16px;padding:0 16px;flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;scrollbar-width:none}
+.xb-fmts::-webkit-scrollbar{display:none}
+.xb-f{flex-shrink:0;height:42px;font-size:13.5px}
+.xb-route{margin-top:18px;padding:16px;border-radius:18px}
+.xb-rn{font-size:12px}
+.xb-steps{flex-direction:column;margin-top:14px;gap:0}
+.xb-steps::before{left:13px;right:auto;top:14px;bottom:14px;width:3px;height:auto;background:linear-gradient(180deg,#1652F0,#AFC1F5 30%,#E6EAF3 60%)}
+.xb-s,.xb-s:first-child,.xb-s:last-child{flex-direction:row;align-items:center;text-align:left;gap:12px;min-height:34px}
+.xb-sn{width:28px;height:28px;font-size:12px}
+.xb-sl{font-size:14px}
+.xb-desc{display:none}
+.xb-acts{margin-top:18px;align-items:stretch}
+.xb-go{justify-content:space-between}
+.xb-alt{justify-content:center;font-size:14px}
+}
+</style>
+</helmet>
+<div class="xb-root">
+<header class="xb-top">
+<a href="CR-CREATE-001.dc.html" class="xb-x" aria-label="Close and go back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
+<div class="xb-title"><span class="xb-t1">{{newTitle}}</span><span class="xb-t2">From scratch</span></div>
+<span style="flex-grow: 1"></span>
+<a href="#" class="ds-tok xb-tok" aria-label="20,000 AI Tokens"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0; display: block"><defs><linearGradient id="xbca" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9A3"></stop><stop offset="0.45" stop-color="#F6C343"></stop><stop offset="1" stop-color="#D08A12"></stop></linearGradient><linearGradient id="xbcb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9CF5A"></stop><stop offset="1" stop-color="#E2A024"></stop></linearGradient></defs><circle cx="32" cy="34" r="29" fill="#B8740A" opacity="0.35"></circle><circle cx="32" cy="32" r="29" fill="url(#xbca)"></circle><circle cx="32" cy="32" r="22" fill="url(#xbcb)" stroke="#FFF1C2" stroke-opacity="0.7" stroke-width="1.5"></circle><path d="M32 18l2.9 9.3 9.3 2.9-9.3 2.9L32 42.4l-2.9-9.3-9.3-2.9 9.3-2.9z" fill="#FFF8DF"></path><ellipse cx="23" cy="19" rx="9" ry="5" fill="#FFFFFF" opacity="0.35" transform="rotate(-30 23 19)"></ellipse></svg><span>20K</span></a>
+</header>
+<main class="xb-main">
+<div class="xb-col">
+<h1 class="xb-h1 ob-in">Build it your way.</h1>
+<p class="xb-sub ob-in2">You lead every step of {{lower}} setup. Nova is one tap away on every screen, if you want a hand.</p>
+<div class="xb-fmts ob-in2" role="radiogroup" aria-label="What are you building?"><button type="button" role="radio" class="xb-f {{c0}}" aria-checked="{{a0}}" onClick="{{p0}}"><span class="xb-fi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><span>Course</span><span class="xb-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" role="radio" class="xb-f {{c1}}" aria-checked="{{a1}}" onClick="{{p1}}"><span class="xb-fi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg></span><span>Professional certification</span><span class="xb-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" role="radio" class="xb-f {{c2}}" aria-checked="{{a2}}" onClick="{{p2}}"><span class="xb-fi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2.5"></circle><circle cx="18" cy="5" r="2.5"></circle><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"></path></svg></span><span>Career path</span><span class="xb-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" role="radio" class="xb-f {{c3}}" aria-checked="{{a3}}" onClick="{{p3}}"><span class="xb-fi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M7.5 14h3M7.5 17h6"></path></svg></span><span>Learning program</span><span class="xb-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div>
+<section class="xb-route ob-in3" aria-label="Your route">
+<div class="xb-rh"><span class="sec-h">Your route</span><span class="xb-rn">{{count}} steps · save and come back anytime</span></div>
+<ol class="xb-steps">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="8"><li class="xb-s {{s.cls}}"><span class="xb-sn">{{s.n}}</span><span class="xb-sl">{{s.label}}</span></li></sc-for>
+</ol>
+<p class="xb-desc">{{desc}}</p>
+</section>
+<div class="xb-acts ob-in4">
+<a href="#" class="ds-btn xb-go"><span>Start {{lower}} setup</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+<a href="CR-CREATE-002A.dc.html" class="xb-alt"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg>Rather sketch it with Nova first?</a>
+</div>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { f: 0 }; }
+  renderVals() {
+    const F = [
+      ['Course', 'course', 'Build a structured learning experience around a subject or skill.', ['Course setup', 'Delivery', 'Collaboration', 'Basics', 'Audience', 'Skills', 'Outcomes', 'Curriculum']],
+      ['Professional certification', 'certification', 'Assess and verify professional competencies.', ['Certification setup', 'Purpose', 'Authority', 'Collaboration', 'Standard', 'Competencies', 'Assessment blueprint']],
+      ['Career path', 'career path', 'Create a structured journey toward a career outcome.', ['Path setup', 'Starting point', 'Destination', 'Collaboration', 'Competency map', 'Journey builder']],
+      ['Learning program', 'program', 'Deliver coordinated learning over a structured period.', ['Program setup', 'Delivery', 'Duration', 'Collaboration', 'Design', 'Program builder', 'Cohorts']]
+    ];
+    const f = this.state.f, cur = F[f];
+    const v = {
+      newTitle: 'New ' + cur[1], lower: cur[1], desc: cur[2], count: cur[3].length,
+      steps: cur[3].map((label, i) => ({ label, n: i + 1, cls: i === 0 ? 'xb-first' : '' }))
+    };
+    for (let i = 0; i < 4; i++) { v['c' + i] = i === f ? 'xb-on' : ''; v['a' + i] = i === f ? 'true' : 'false'; v['p' + i] = () => this.setState({ f: i }); }
+    return v;
+  }
+}
+</script>
+</body>
+</html>

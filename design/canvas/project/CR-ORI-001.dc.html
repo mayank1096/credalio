@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Credalio · Creator Orientation</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes cpPop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes cpDot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+@keyframes dsRing{from{stroke-dashoffset:1}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}.ob-in3{animation:obIn .5s ease .16s both}.ob-in4{animation:obIn .5s ease .24s both}
+.cp-pop{animation:cpPop .4s ease both}
+.cp-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#1652F0;animation:cpDot 1.2s ease-in-out infinite}
+.ds-root{display:grid;grid-template-columns:264px minmax(0,1fr);min-height:100vh;background:#F7F9FD;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.ds-side{position:sticky;top:0;height:100vh;overflow-y:auto;box-sizing:border-box;padding:22px 14px 24px 14px;background:#FFFFFF;border-right:1.5px solid #E6EAF3;display:flex;flex-direction:column;gap:2px;z-index:20}
+.ds-glab{display:block;margin:16px 12px 6px 12px;font-size:12px;font-weight:600;color:#8A93AD}
+.ds-item{display:flex;align-items:center;gap:12px;min-height:40px;padding:0 12px;border-radius:12px;color:#3A4566;font-size:14.5px;font-weight:500;text-decoration:none;transition:background .2s ease,color .2s ease}
+.ds-item svg{flex-shrink:0;color:#5B6582}
+.ds-item:hover{background:#F5F8FF;color:#0B1433}
+.ds-on{background:#EAF0FF !important;color:#0E3BB8 !important;font-weight:600}
+.ds-on svg{color:#1652F0}
+.ds-badge{min-width:22px;height:22px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.ds-top{position:sticky;top:0;z-index:10;height:72px;box-sizing:border-box;padding:0 clamp(20px,3vw,40px);display:flex;align-items:center;gap:12px;background:rgba(247,249,253,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.ds-search{flex:1 1 auto;max-width:440px;height:44px;box-sizing:border-box;display:flex;align-items:center;gap:10px;padding:0 16px;border-radius:999px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#8A93AD;font-size:14px}
+.ds-search input{border:0;outline:none;background:transparent;font-family:inherit;font-size:14px;color:#0B1433;flex-grow:1;min-width:0}
+.ds-search input::placeholder{color:#8A93AD}
+.ds-icon-btn{width:44px;height:44px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#3A4566;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;text-decoration:none}
+.ds-icon-btn:hover{border-color:#AFC1F5}
+.ds-tok{height:44px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:7px;padding:0 14px 0 7px;border-radius:999px;background:linear-gradient(135deg,#FFFAEB,#FFF1CF);border:1.5px solid #F4D98E;font-size:14.5px;font-weight:600;color:#4A3300;text-decoration:none;box-shadow:0 6px 16px rgba(214,150,30,.12);transition:box-shadow .2s ease}
+.ds-tok:hover{box-shadow:0 8px 20px rgba(214,150,30,.24)}
+.ds-main{box-sizing:border-box;width:100%;max-width:1200px;padding:12px clamp(20px,3vw,40px) 56px clamp(20px,3vw,40px)}
+.ds-h1{margin:0;font-size:clamp(28px,2.5vw,36px);line-height:1.15;font-weight:600;letter-spacing:-0.03em;color:#0B1433}
+.ds-sub{margin:8px 0 0 0;font-size:16px;line-height:1.55;color:#4A5578}
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-weight:600;font-size:14.5px;text-decoration:none}
+.ds-link:hover{color:#0E3BB8}
+.ds-back{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px 0 10px;border-radius:999px;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none;margin-left:-10px}
+.ds-back:hover{background:#FFFFFF;color:#0B1433}
+.ds-chip{display:inline-flex;align-items:center;height:40px;padding:0 16px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-chip:hover{border-color:#1652F0;background:#F5F8FF}
+.ds-menu,.ds-scrim,.ds-mlogo,.ds-close{display:none}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-chip:focus-visible,.ds-item:focus-visible,.ds-icon-btn:focus-visible,.ds-opt:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2,.ob-in3,.ob-in4,.cp-pop,.cp-dot{animation:none}}
+@media (max-width: 440px){.ds-mlogo .ds-brand{display:none}}
+@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}}
+@media (max-width: 960px){
+.ds-root{grid-template-columns:minmax(0,1fr)}
+.ds-side{position:fixed;left:0;top:0;width:288px;max-width:86vw;transform:translateX(-102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 64px rgba(11,20,51,.18)}
+.ds-side.ds-open{transform:none}
+.ds-scrim.ds-open{display:block;position:fixed;inset:0;background:rgba(11,20,51,.32);z-index:15}
+.ds-menu,.ds-mlogo{display:flex}
+.ds-close{display:flex;position:absolute;right:12px;top:16px}
+.ds-top{height:64px;padding:0 16px;gap:8px}
+.ds-search,.ds-hide-sm{display:none !important}
+.ds-tok{padding:0 12px 0 6px;height:40px}
+.ds-icon-btn{width:40px;height:40px}
+.ds-h1{font-size:24px !important;line-height:1.2}
+.ds-sub{font-size:14.5px;margin-top:6px}
+.ds-back{height:36px;font-size:13.5px}
+.ds-chip{height:36px;font-size:13.5px;padding:0 14px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
+.ds-root{overflow-x:hidden}
+.ds-main{padding:4px 16px 32px 16px}
+.ds-btn{justify-content:space-between}
+}
+.st-pill{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 10px;border-radius:999px;font-size:12.5px;font-weight:500;white-space:nowrap}
+.rg{position:relative;display:inline-flex;flex-shrink:0}
+.rg svg{display:block}
+.rg-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.rg-arc{animation:rgIn 1.1s cubic-bezier(.3,.8,.3,1) .2s both}
+@keyframes rgIn{from{stroke-dasharray:0 100}}
+@keyframes ndPulse{0%{box-shadow:0 0 0 0 rgba(22,82,240,.35)}100%{box-shadow:0 0 0 10px rgba(22,82,240,0)}}
+.sec-h{margin:0;font-size:13.5px;font-weight:600;color:#5B6582}
+.nova-card{padding:18px;border-radius:18px;background:#FFFFFF url(/_blob/d268046654a4206d2a726e62005bcc59) center top / 100% auto no-repeat;border:1.5px solid #E6EAF3}
+.nova-card p{margin:10px 0 0 0;font-size:14.5px;line-height:1.55;color:#0B1433}
+.know{padding:16px 18px;border-radius:18px;background:#F5F8FF;border:1.5px solid #E6EAF3;font-size:13.5px;line-height:1.55;color:#3A4566}
+.know b{display:block;font-size:13px;font-weight:600;color:#0B1433;margin-bottom:4px}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+@media (prefers-reduced-motion: reduce){.rg-arc{animation:none}}
+.or-head{margin-top:6px}
+.or-grid{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}
+.or-list{list-style:none;margin:0;padding:0;position:relative}
+.or-list::before{content:'';position:absolute;left:21px;top:30px;bottom:30px;width:3px;border-radius:3px;background:linear-gradient(180deg,#1652F0 0%,#1652F0 47%,#E6EAF3 47%)}
+.or-m{position:relative;display:grid;grid-template-columns:44px minmax(0,1fr) auto auto;align-items:center;gap:16px;padding:12px 0}
+.or-n{position:relative;z-index:1;width:44px;height:44px;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;background:#F7F9FD;color:#8A93AD;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.or-done .or-n{background:#1652F0;border-color:#1652F0;color:#FFFFFF}
+.or-cur{align-items:start}
+.or-cur .or-n{background:#FFFFFF;border-color:#1652F0;color:#1652F0;animation:ndPulse 2s ease-out infinite;margin-top:18px}
+.or-cur > .st-pill{position:absolute;right:20px;top:30px}
+.or-mt{display:flex;flex-direction:column;gap:3px;min-width:0}
+.or-mt b{font-size:15.5px;font-weight:600}
+.or-mt span{font-size:13px;color:#5B6582}
+.or-done .or-mt b{color:#3A4566}
+.or-rv{font-size:14px;font-weight:600;text-decoration:none;padding:0 4px}
+.or-lock{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:#8A93AD;white-space:nowrap}
+.or-m:not(.or-done):not(.or-cur) .or-mt span{display:none}
+.or-cb{grid-column:2 / -1;padding:18px 20px 20px 20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #CBD7F5;box-shadow:0 0 0 4px rgba(22,82,240,.06),0 14px 34px rgba(22,82,240,.08)}
+.or-cb .or-mt{padding-right:110px}
+.or-desc{margin:10px 0 0 0;font-size:14.5px;line-height:1.55;color:#3A4566}
+.or-steps{list-style:none;margin:14px 0 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+.or-s{display:flex;align-items:center;gap:10px;min-height:36px;font-size:14px;color:#3A4566}
+.or-s em{font-style:normal;font-size:12px;font-weight:500;color:#1652F0;background:#EAF0FF;border-radius:999px;padding:3px 9px}
+.or-sd{width:20px;height:20px;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.or-s-done{color:#5B6582}
+.or-s-done .or-sd{background:#0F6B45;border-color:#0F6B45;color:#FFFFFF}
+.or-s-next{color:#0B1433;font-weight:600}
+.or-s-next .or-sd{border-color:#1652F0;border-width:6px}
+.or-go{margin-top:14px}
+.or-rail{position:sticky;top:88px;display:flex;flex-direction:column;gap:14px}
+.or-next{padding:20px}
+.or-nt{display:flex;align-items:center;gap:16px}
+.or-lab{font-size:12.5px;font-weight:500;color:#1652F0}
+.or-nb{font-size:17px;font-weight:600;letter-spacing:-0.01em}
+.or-ns{font-size:13.5px;color:#5B6582}
+.or-cta{margin-top:18px;width:100%;justify-content:space-between}
+.or-stats{margin:16px 0 0 0;padding-top:14px;border-top:1.5px solid #F0F2F8;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.or-stats div{display:flex;flex-direction:column;gap:2px}
+.or-stats dt{font-size:12px;color:#5B6582}
+.or-stats dd{margin:0;font-size:14px;font-weight:600}
+@media (max-width: 1180px){.or-grid{grid-template-columns:minmax(0,1fr) 300px}}
+@media (max-width: 960px){
+.or-head .ds-sub{font-size:14px}
+.or-grid{margin-top:16px;display:flex;flex-direction:column-reverse;gap:20px}
+.or-rail{position:static;width:100%}
+.or-know{display:none}
+.or-next{padding:14px 16px;border-radius:18px}
+.or-nt{gap:12px}
+.or-nt .rg,.or-nt svg{width:60px !important;height:60px !important}
+.or-nt .rg-in b{font-size:14px !important}
+.or-nb{font-size:15.5px}.or-ns{font-size:12.5px}
+.or-cta{margin-top:14px}
+.or-stats{display:none}
+.or-list::before{left:15px;top:22px;bottom:22px}
+.or-m{grid-template-columns:32px minmax(0,1fr) auto;gap:12px;padding:9px 0}
+.or-n{width:32px;height:32px;font-size:13px}
+.or-n svg{width:12px;height:12px}
+.or-mt b{font-size:14.5px}.or-mt span{font-size:12.5px}
+.or-done > .st-pill{display:none}
+.or-cur .or-n{margin-top:14px}
+.or-cur > .st-pill{display:none}
+.or-cb{grid-column:2 / -1;padding:14px;border-radius:16px}
+.or-cb .or-mt{padding-right:0}
+.or-desc{display:none}
+.or-steps{margin-top:8px}
+.or-s{font-size:13.5px;min-height:34px}
+.or-go{width:100%;justify-content:space-between}
+.or-lock{font-size:12px}
+}
+</style>
+</helmet>
+<div class="ds-root">
+<div class="ds-scrim {{navCls}}" onClick="{{toggleNav}}"></div>
+<nav class="ds-side {{navCls}}" aria-label="Main">
+<div style="padding: 0 6px 14px 6px"><a href="CR-DASH-NEW.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+<span style="width: 32px; height: 32px; border-radius: 9px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M17.5 7.2A7 7 0 1 0 17.5 16.8"></path></svg></span>
+<span class="ds-brand" style="font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: #0B1433">Credalio</span></a></div>
+<button type="button" class="ds-icon-btn ds-close" onClick="{{toggleNav}}" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<a href="CR-DASH-NEW.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2"></rect></svg><span style="flex-grow: 1; min-width: 0">Dashboard</span></a><span class="ds-glab">Create</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6.5A2.5 2.5 0 0 1 4 18.5"></path><path d="M8 7h8"></path></svg><span style="flex-grow: 1; min-width: 0">My learning experiences</span></a><a href="CR-CREATE-001.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg><span style="flex-grow: 1; min-width: 0">Create new</span></a><span class="ds-glab">Work</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 3.5h6v3H9zM9 12h6M9 16h4"></path></svg><span style="flex-grow: 1; min-width: 0">Assigned to me</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg><span style="flex-grow: 1; min-width: 0">Validation Centre</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span style="flex-grow: 1; min-width: 0">Discussions</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3.5"></circle><path d="m5.6 5.6 3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"></path></svg><span style="flex-grow: 1; min-width: 0">Learner support</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span style="flex-grow: 1; min-width: 0">Calendar</span></a><span class="ds-glab">Insights</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span style="flex-grow: 1; min-width: 0">Learners</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M6.5 16v-5M11.5 16V6M16.5 16v-8"></path></svg><span style="flex-grow: 1; min-width: 0">Analytics</span></a><span class="ds-glab">Economy</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg><span style="flex-grow: 1; min-width: 0">Earnings & payouts</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg><span style="flex-grow: 1; min-width: 0">Credit Wallet</span></a><span class="ds-glab">Creator</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z" fill="currentColor" stroke="none"></path></svg><span style="flex-grow: 1; min-width: 0">Nova · your Copilot</span></a><a href="CR-CTR-001.dc.html" class="ds-item ds-on" aria-current="page"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path></svg><span style="flex-grow: 1; min-width: 0">Creator Centre</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span style="flex-grow: 1; min-width: 0">Creator profile</span></a><a href="CR-RDY-001.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.3 1.7 2.9-.1.9 2.7 2.3 1.7-.9 2.7.9 2.7-2.3 1.7-.9 2.7-2.9-.1L12 21l-2.3-1.7-2.9.1-.9-2.7L3.6 15l.9-2.7-.9-2.7 2.3-1.7.9-2.7 2.9.1z"></path><path d="m9 12 2 2 4-4"></path></svg><span style="flex-grow: 1; min-width: 0">Verification & readiness</span><span class="ds-badge" aria-label="3 to do">3</span></a><span class="ds-glab">Account</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg><span style="flex-grow: 1; min-width: 0">Settings</span></a>
+</nav>
+<div style="min-width: 0; display: flex; flex-direction: column">
+<header class="ds-top">
+<button type="button" class="ds-icon-btn ds-menu" onClick="{{toggleNav}}" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<span class="ds-mlogo" style="flex-grow: 1"><a href="CR-DASH-NEW.dc.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+<span style="width: 32px; height: 32px; border-radius: 9px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M17.5 7.2A7 7 0 1 0 17.5 16.8"></path></svg></span>
+<span class="ds-brand" style="font-size: 20px; font-weight: 600; letter-spacing: -0.02em; color: #0B1433">Credalio</span></a></span>
+<label class="ds-search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span class="sr-only">Search</span><input placeholder="Search your learning experiences, learners, discussions…"></label>
+<span class="ds-hide-sm" style="flex-grow: 1"></span>
+<a href="#" class="ds-tok" aria-label="20,000 AI Tokens"><svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0; display: block"><defs><linearGradient id="tpa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9A3"></stop><stop offset="0.45" stop-color="#F6C343"></stop><stop offset="1" stop-color="#D08A12"></stop></linearGradient><linearGradient id="tpb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9CF5A"></stop><stop offset="1" stop-color="#E2A024"></stop></linearGradient></defs><circle cx="32" cy="34" r="29" fill="#B8740A" opacity="0.35"></circle><circle cx="32" cy="32" r="29" fill="url(#tpa)"></circle><circle cx="32" cy="32" r="22" fill="url(#tpb)" stroke="#FFF1C2" stroke-opacity="0.7" stroke-width="1.5"></circle><path d="M32 18l2.9 9.3 9.3 2.9-9.3 2.9L32 42.4l-2.9-9.3-9.3-2.9 9.3-2.9z" fill="#FFF8DF"></path><ellipse cx="23" cy="19" rx="9" ry="5" fill="#FFFFFF" opacity="0.35" transform="rotate(-30 23 19)"></ellipse></svg><span>20K</span><span class="ds-hide-sm" style="font-weight: 500; color: #6B4E16">AI Tokens</span></a>
+<a href="#" class="ds-icon-btn ds-hide-sm" aria-label="Help"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"></path></svg></a>
+<a href="#" class="ds-icon-btn" aria-label="Notifications, 1 new"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16z"></path><path d="M10 21h4"></path></svg><span style="position: absolute; right: 10px; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: #E5484D; box-shadow: 0 0 0 2px #FFFFFF"></span></a>
+<a href="#" aria-label="Your account" style="position: relative; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: #0B1433; color: #FFFFFF; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">AO<span style="position: absolute; right: 0; bottom: 1px; width: 11px; height: 11px; border-radius: 50%; background: #0F6B45; border: 2px solid #F7F9FD"></span></a>
+</header>
+<main class="ds-main">
+<a href="CR-CTR-001.dc.html" class="ds-back ob-in"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg>Creator Centre</a>
+<div class="or-head ob-in"><h1 class="ds-h1">Creator Orientation</h1><p class="ds-sub">Seven short modules on creating trusted learning, with quick checks and real scenarios.</p></div>
+<div class="or-grid">
+<section class="or-col ob-in2" aria-label="Modules"><ol class="or-list"><li class="or-m or-done"><span class="or-n"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="or-mt"><b>Module 1 · Welcome to Credalio</b><span>2 lessons · check · 8 min</span></span><span class="st-pill" style="background: #E7F5EE; color: #0F6B45"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Done</span><a href="#" class="or-rv">Review</a></li><li class="or-m or-done"><span class="or-n"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="or-mt"><b>Module 2 · Creating trusted learning</b><span>2 lessons · check · 10 min</span></span><span class="st-pill" style="background: #E7F5EE; color: #0F6B45"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Done</span><a href="#" class="or-rv">Review</a></li><li class="or-m or-done"><span class="or-n"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="or-mt"><b>Module 3 · Outcomes, skills & evidence</b><span>3 lessons · check · 12 min</span></span><span class="st-pill" style="background: #E7F5EE; color: #0F6B45"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Done</span><a href="#" class="or-rv">Review</a></li><li class="or-m or-cur"><span class="or-n">4</span><div class="or-cb"><span class="or-mt"><b>Module 4 · Understanding validation</b><span>3 lessons · check · 12 min · 1 of 4 steps done</span></span><p class="or-desc">What validators look at, how a case runs, and what tiers mean.</p><ol class="or-steps"><li class="or-s or-s-done"><span class="or-sd"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>What validators look at</span></li><li class="or-s or-s-next"><span class="or-sd"></span><span>The validation case</span><em>Up next</em></li><li class="or-s or-s-todo"><span class="or-sd"></span><span>Tiers and revalidation</span></li><li class="or-s or-s-todo"><span class="or-sd"></span><span>Quick knowledge check</span></li></ol></div><span class="st-pill" style="background: #EAF0FF; color: #1652F0">In progress</span></li><li class="or-m"><span class="or-n">5</span><span class="or-mt"><b>Module 5 · AI & responsible creation</b><span>2 lessons · check · scenario · 10 min</span></span><span class="or-lock"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5V12l3 2"></path></svg>10 min</span></li><li class="or-m"><span class="or-n">6</span><span class="or-mt"><b>Module 6 · Creator economy</b><span>2 lessons · check · 10 min</span></span><span class="or-lock"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5V12l3 2"></path></svg>10 min</span></li><li class="or-m"><span class="or-n">7</span><span class="or-mt"><b>Module 7 · Creator responsibilities</b><span>2 lessons · check · scenario · 8 min</span></span><span class="or-lock"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5V12l3 2"></path></svg>8 min</span></li></ol></section>
+<aside class="or-rail">
+<div class="ds-card or-next ob-in2">
+<div class="or-nt"><span class="rg" style="width: 88px; height: 88px"><svg viewBox="0 0 100 100" width="88" height="88" aria-hidden="true"><circle cx="50" cy="50" r="45.5" fill="none" stroke="#E6EAF3" stroke-width="9"></circle><circle class="rg-arc" cx="50" cy="50" r="45.5" fill="none" stroke="#1652F0" stroke-width="9" stroke-linecap="round" pathLength="100" stroke-dasharray="44 100" transform="rotate(-90 50 50)"></circle></svg><span class="rg-in"><b style="font-size: 20px; letter-spacing: -0.02em">44%</b></span></span><span style="display: flex; flex-direction: column; gap: 3px; min-width: 0"><span class="or-lab">Up next</span><b class="or-nb">The validation case</b><span class="or-ns">Module 4 · lesson 2 of 3</span></span></div>
+<a href="#" class="ds-btn or-cta"><span>Continue Orientation</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+<dl class="or-stats"><div><dt>Modules</dt><dd>3 of 7</dd></div><div><dt>Time left</dt><dd>~37 min</dd></div><div><dt>Total</dt><dd>~70 min</dd></div></dl>
+</div>
+<div class="know ob-in3 or-know"><b>Never blocks your drafting</b>Orientation is one of the steps that unlock submitting for validation. <a href="CR-RDY-001.dc.html" class="ds-link" style="font-size: 13.5px">See your readiness</a></div>
+</aside>
+</div>
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { nav: false }; }
+  renderVals() { return { navCls: this.state.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !this.state.nav }) }; }
+}
+</script>
+</body>
+</html>

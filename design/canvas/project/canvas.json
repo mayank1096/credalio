@@ -314,6 +314,90 @@
       "w": 1440,
       "x": 0,
       "y": 0
+    },
+    "CR-CREATE-002B.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREATE-002B · Build from scratch · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 7300,
+      "expand": "fill"
+    },
+    "CR-CREATE-002B-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREATE-002B · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 7300
+    },
+    "CR-RDY-001.dc.html": {
+      "h": 1160,
+      "is_interactive": true,
+      "title": "CR-RDY-001 · Your readiness (in progress) · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 8700,
+      "expand": "fill"
+    },
+    "CR-RDY-001-Mobile.dc.html": {
+      "h": 1380,
+      "is_interactive": true,
+      "title": "CR-RDY-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 8700
+    },
+    "CR-RDY-001s.dc.html": {
+      "h": 1080,
+      "is_interactive": true,
+      "title": "CR-RDY-001s · Your readiness (new creator) · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 8700
+    },
+    "CR-RDY-001s-Mobile.dc.html": {
+      "h": 1260,
+      "is_interactive": true,
+      "title": "CR-RDY-001s · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 8700
+    },
+    "CR-CTR-001.dc.html": {
+      "h": 1230,
+      "is_interactive": true,
+      "title": "CR-CTR-001 · Creator Centre · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 8700,
+      "expand": "fill"
+    },
+    "CR-CTR-001-Mobile.dc.html": {
+      "h": 1290,
+      "is_interactive": true,
+      "title": "CR-CTR-001 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 8700
+    },
+    "CR-ORI-001.dc.html": {
+      "h": 1050,
+      "is_interactive": true,
+      "title": "CR-ORI-001 · Creator Orientation · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 8700,
+      "expand": "fill"
+    },
+    "CR-ORI-001-Mobile.dc.html": {
+      "h": 1080,
+      "is_interactive": true,
+      "title": "CR-ORI-001 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 8700
     }
   },
   "createdOnFiles": {
@@ -336,7 +420,7 @@
     "start": {
       "kind": "title1",
       "maxW": 8000,
-      "text": "Start creating: Creator Studio → how to start → create with Nova → review the draft",
+      "text": "Start creating: Creator Studio → how to start → create with Nova → review the draft → or build from scratch",
       "w": 240,
       "x": 0,
       "y": 7000
@@ -348,6 +432,14 @@
       "w": 240,
       "x": 0,
       "y": 4500
+    },
+    "ready": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Readiness, Creator Centre & Orientation",
+      "w": 240,
+      "x": 0,
+      "y": 8400
     }
   },
   "order": [
@@ -387,7 +479,17 @@
     "CR-CREATE-002A.dc.html",
     "CR-CREATE-002A-Mobile.dc.html",
     "CR-CREATE-002Ab.dc.html",
-    "CR-CREATE-002Ab-Mobile.dc.html"
+    "CR-CREATE-002Ab-Mobile.dc.html",
+    "CR-CREATE-002B.dc.html",
+    "CR-CREATE-002B-Mobile.dc.html",
+    "CR-RDY-001.dc.html",
+    "CR-RDY-001-Mobile.dc.html",
+    "CR-RDY-001s.dc.html",
+    "CR-RDY-001s-Mobile.dc.html",
+    "CR-CTR-001.dc.html",
+    "CR-CTR-001-Mobile.dc.html",
+    "CR-ORI-001.dc.html",
+    "CR-ORI-001-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

@@ -48,7 +48,7 @@ NAV=[('Dashboard',[('dash','Dashboard','CR-DASH-NEW.dc.html',None)]),
  ('Work',[('assigned','Assigned to me','#',None),('valid','Validation Centre','#',None),('disc','Discussions','#',None),('support','Learner support','#',None),('cal','Calendar','#',None)]),
  ('Insights',[('learners','Learners','#',None),('analytics','Analytics','#',None)]),
  ('Economy',[('earn','Earnings & payouts','#',None),('wallet','Credit Wallet','#',None)]),
- ('Creator',[('nova','Nova · your Copilot','#',None),('centre','Creator Centre','#',None),('profile','Creator profile','#',None),('ready','Verification & readiness','#','4')]),
+ ('Creator',[('nova','Nova · your Copilot','#',None),('centre','Creator Centre','CR-CTR-001.dc.html',None),('profile','Creator profile','#',None),('ready','Verification & readiness','CR-RDY-001.dc.html','3')]),
  ('Account',[('settings','Settings','#',None)])]
 
 def SIDEBAR(active):

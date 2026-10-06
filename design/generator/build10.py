@@ -386,7 +386,8 @@ OR_CSS=COMMON_CSS+'''.or-head{margin-top:6px}
 @media (max-width: 1180px){.or-grid{grid-template-columns:minmax(0,1fr) 300px}}
 @media (max-width: 960px){
 .or-head .ds-sub{font-size:14px}
-.or-grid{margin-top:16px;display:flex;flex-direction:column-reverse;gap:20px}
+.or-grid{margin-top:16px;display:flex;flex-direction:column-reverse;align-items:stretch;gap:20px}
+.or-col{width:100%}
 .or-rail{position:static;width:100%}
 .or-know{display:none}
 .or-next{padding:14px 16px;border-radius:18px}
@@ -418,7 +419,10 @@ OR_CSS=COMMON_CSS+'''.or-head{margin-top:6px}
 .or-done .or-mt b{font-weight:600}
 .or-cur{align-items:center}
 .or-cur .or-n{margin-top:0}
-.or-cb{grid-column:2 / -1;padding:12px 14px;border-radius:16px;box-shadow:0 0 0 3px rgba(22,82,240,.06)}
+.or-list{padding-left:8px !important}
+.or-list::before{left:23px !important}
+.or-cur{margin:4px 0 4px -8px;width:calc(100% + 8px);box-sizing:border-box;padding:12px 10px 12px 8px;border-radius:16px;background:#FFFFFF;border:1.5px solid #CBD7F5;box-shadow:0 0 0 4px rgba(22,82,240,.06),0 10px 24px rgba(22,82,240,.08)}
+.or-cb{grid-column:2 / -1;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
 }
 '''
 S_OR='''class Component extends DCLogic {

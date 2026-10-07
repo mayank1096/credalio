@@ -5,7 +5,8 @@ D, PG, X, Y, NAME = sys.argv[1], sys.argv[2], float(sys.argv[3]), float(sys.argv
 KEY = os.path.basename(D.rstrip('/'))
 B = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'builder.js')).read()
 tree = json.load(open(os.path.join(D, 'c.json')))
-BUDGET = int(os.environ.get('BUDGET', 40000))
+BUDGET = int(os.environ.get('BUDGET', 38000))
+INLINE = int(os.environ.get('INLINE', 6000))
 WS = {300: 'Light', 400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold', 800: 'ExtraBold'}
 def sty(w, i):
     s = WS.get(w) or ('Bold' if w >= 650 else 'SemiBold' if w >= 550 else 'Medium' if w >= 450 else 'Regular')
@@ -56,7 +57,17 @@ for i, jb in enumerate(jobs):
     for n in ([jb['root']] if 'root' in jb else jb['nodes']): walk(n)
     ws = {int(w) for w in __import__('re').findall(r'"w":(\d+)', J(jb))} | {400}
     fonts = sorted({sty(w, 0) for w in ws} | ({sty(w, 1) for w in ws} if '"i":1' in J(jb) else set()))
-    head = f"const PG={J(PG)},NAME={J(NAME)},KEY={J(KEY)},POS={J([X,Y])},FONTS={J(fonts)};\nconst SV={J(svs)};\nconst JOB={J(jb)};\n"
+    import base64
+    ims = {}
+    for cid in set(__import__('re').findall(r'"(?:i|si)":\[?"(c\d+)"', J(jb))):
+        fp = os.path.join(D, 'img', cid + '.png')
+        if os.path.exists(fp) and os.path.getsize(fp) <= INLINE:
+            ims[cid] = base64.b64encode(open(fp, 'rb').read()).decode()
+    head = f"const PG={J(PG)},NAME={J(NAME)},KEY={J(KEY)},POS={J([X,Y])},FONTS={J(fonts)};\nconst SV={J(svs)};\nconst IM={J(ims)};\nconst JOB={J(jb)};\n"
     code = head + B
+    while len(code) > 49000 and ims:
+        big = max(ims, key=lambda k: len(ims[k])); del ims[big]
+        head = f"const PG={J(PG)},NAME={J(NAME)},KEY={J(KEY)},POS={J([X,Y])},FONTS={J(fonts)};\nconst SV={J(svs)};\nconst IM={J(ims)};\nconst JOB={J(jb)};\n"
+        code = head + B
     p = os.path.join(D, f'job_{i}.js'); open(p, 'w').write(code); out.append((p, len(code)))
 for p, l in out: print(p, l)

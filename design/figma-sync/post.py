@@ -73,6 +73,8 @@ def prep(n):
             if c['k'] == 'F' and c['n'] in GENERIC and n['n'] not in GENERIC:
                 c['n'] = n['n']
             c['_wrapbox'] = n['box']
+            if c['k'] == 'T' and not c.get('ml') and n['box'][2] > c['box'][2] + 2:
+                c['box'] = [n['box'][0], c['box'][1], n['box'][2], c['box'][3]]; c['fw'] = 1
             return c
     return n
 
@@ -178,6 +180,8 @@ def emit(n, origin, parent_al=None, idx=None):
         if n.get('lh'): t['lh'] = n['lh']
         if n['al'] != 'L': t['al'] = n['al']
         if n.get('ml'): t['ml'] = 1
+        if n.get('fw'): t['fw'] = 1
+        if n.get('nw'): t['nw'] = n['nw']
         if n.get('runs'):
             rr = []
             for s, e, dd in n['runs']:

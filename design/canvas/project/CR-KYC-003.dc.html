@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Credalio · Identity check in review</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes cpPop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes cpDot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+@keyframes dsRing{from{stroke-dashoffset:1}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}.ob-in3{animation:obIn .5s ease .16s both}.ob-in4{animation:obIn .5s ease .24s both}
+.cp-pop{animation:cpPop .4s ease both}
+.cp-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#1652F0;animation:cpDot 1.2s ease-in-out infinite}
+.ds-root{display:grid;grid-template-columns:264px minmax(0,1fr);min-height:100vh;background:#F7F9FD;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.ds-side{position:sticky;top:0;height:100vh;overflow-y:auto;box-sizing:border-box;padding:22px 14px 24px 14px;background:#FFFFFF;border-right:1.5px solid #E6EAF3;display:flex;flex-direction:column;gap:2px;z-index:20}
+.ds-glab{display:block;margin:16px 12px 6px 12px;font-size:12px;font-weight:600;color:#8A93AD}
+.ds-item{display:flex;align-items:center;gap:12px;min-height:40px;padding:0 12px;border-radius:12px;color:#3A4566;font-size:14.5px;font-weight:500;text-decoration:none;transition:background .2s ease,color .2s ease}
+.ds-item svg{flex-shrink:0;color:#5B6582}
+.ds-item:hover{background:#F5F8FF;color:#0B1433}
+.ds-on{background:#EAF0FF !important;color:#0E3BB8 !important;font-weight:600}
+.ds-on svg{color:#1652F0}
+.ds-badge{min-width:22px;height:22px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.ds-top{position:sticky;top:0;z-index:10;height:72px;box-sizing:border-box;padding:0 clamp(20px,3vw,40px);display:flex;align-items:center;gap:12px;background:rgba(247,249,253,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.ds-search{flex:1 1 auto;max-width:440px;height:44px;box-sizing:border-box;display:flex;align-items:center;gap:10px;padding:0 16px;border-radius:999px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#8A93AD;font-size:14px}
+.ds-search input{border:0;outline:none;background:transparent;font-family:inherit;font-size:14px;color:#0B1433;flex-grow:1;min-width:0}
+.ds-search input::placeholder{color:#8A93AD}
+.ds-icon-btn{width:44px;height:44px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#3A4566;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;text-decoration:none}
+.ds-icon-btn:hover{border-color:#AFC1F5}
+.ds-tok{height:44px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:7px;padding:0 14px 0 7px;border-radius:999px;background:linear-gradient(135deg,#FFFAEB,#FFF1CF);border:1.5px solid #F4D98E;font-size:14.5px;font-weight:600;color:#4A3300;text-decoration:none;box-shadow:0 6px 16px rgba(214,150,30,.12);transition:box-shadow .2s ease}
+.ds-tok:hover{box-shadow:0 8px 20px rgba(214,150,30,.24)}
+.ds-main{box-sizing:border-box;width:100%;max-width:1200px;padding:12px clamp(20px,3vw,40px) 56px clamp(20px,3vw,40px)}
+.ds-h1{margin:0;font-size:clamp(28px,2.5vw,36px);line-height:1.15;font-weight:600;letter-spacing:-0.03em;color:#0B1433}
+.ds-sub{margin:8px 0 0 0;font-size:16px;line-height:1.55;color:#4A5578}
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-weight:600;font-size:14.5px;text-decoration:none}
+.ds-link:hover{color:#0E3BB8}
+.ds-back{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px 0 10px;border-radius:999px;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none;margin-left:-10px}
+.ds-back:hover{background:#FFFFFF;color:#0B1433}
+.ds-chip{display:inline-flex;align-items:center;height:40px;padding:0 16px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-chip:hover{border-color:#1652F0;background:#F5F8FF}
+.ds-menu,.ds-scrim,.ds-mlogo,.ds-close{display:none}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-chip:focus-visible,.ds-item:focus-visible,.ds-icon-btn:focus-visible,.ds-opt:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2,.ob-in3,.ob-in4,.cp-pop,.cp-dot{animation:none}}
+@media (max-width: 440px){.ds-mlogo .ds-brand{display:none}}
+@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}}
+@media (max-width: 960px){
+.ds-root{grid-template-columns:minmax(0,1fr)}
+.ds-side{position:fixed;left:0;top:0;width:288px;max-width:86vw;transform:translateX(-102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 64px rgba(11,20,51,.18)}
+.ds-side.ds-open{transform:none}
+.ds-scrim.ds-open{display:block;position:fixed;inset:0;background:rgba(11,20,51,.32);z-index:15}
+.ds-menu,.ds-mlogo{display:flex}
+.ds-close{display:flex;position:absolute;right:12px;top:16px}
+.ds-top{height:64px;padding:0 16px;gap:8px}
+.ds-search,.ds-hide-sm{display:none !important}
+.ds-tok{padding:0 12px 0 6px;height:40px}
+.ds-icon-btn{width:40px;height:40px}
+.ds-h1{font-size:24px !important;line-height:1.2}
+.ds-sub{font-size:14.5px;margin-top:6px}
+.ds-back{height:36px;font-size:13.5px}
+.ds-chip{height:36px;font-size:13.5px;padding:0 14px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
+.ds-root{overflow-x:hidden}
+.ds-main{padding:12px 16px 32px 16px}
+.ds-btn{justify-content:space-between}
+}
+.st-pill{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 10px;border-radius:999px;font-size:12.5px;font-weight:500;white-space:nowrap}
+.rg{position:relative;display:inline-flex;flex-shrink:0}
+.rg svg{display:block}
+.rg-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.rg-arc{animation:rgIn 1.1s cubic-bezier(.3,.8,.3,1) .2s both}
+@keyframes rgIn{from{stroke-dasharray:0 100}}
+@keyframes ndPulse{0%{box-shadow:0 0 0 0 rgba(22,82,240,.35)}100%{box-shadow:0 0 0 10px rgba(22,82,240,0)}}
+.sec-h{margin:0;font-size:13.5px;font-weight:600;color:#8A93AD}
+.nova-card{padding:18px;border-radius:18px;background:#FFFFFF url(/_blob/d268046654a4206d2a726e62005bcc59) center top / 100% auto no-repeat;border:1.5px solid #E6EAF3}
+.nova-card p{margin:10px 0 0 0;font-size:14.5px;line-height:1.55;color:#0B1433}
+.know{padding:16px 18px;border-radius:18px;background:#F5F8FF;border:1.5px solid #E6EAF3;font-size:13.5px;line-height:1.55;color:#3A4566}
+.know b{display:block;font-size:13px;font-weight:600;color:#0B1433;margin-bottom:4px}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+@media (prefers-reduced-motion: reduce){.rg-arc{animation:none}}
+body{background:#FFFFFF}
+.lp-root{min-height:100vh;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.lp-top{position:sticky;top:0;z-index:5;height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1.5px solid #EEF1F7;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.lp-x{width:40px;height:40px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3A4566;text-decoration:none}
+.lp-x:hover{background:#F5F8FF;color:#0B1433}
+.lp-title{display:flex;align-items:baseline;gap:8px;min-width:0}
+.lp-t1{font-size:16px;font-weight:600;white-space:nowrap}
+.lp-t2{font-size:14px;color:#5B6582;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lp-segs{display:flex;gap:4px;margin-left:auto}
+.lp-seg{width:34px;height:4px;border-radius:4px;background:#E6EAF3}
+.lp-seg-done{background:#1652F0}
+.lp-seg-cur{background:linear-gradient(90deg,#1652F0 50%,#E6EAF3 50%)}
+.lp-tn{font-size:13px;color:#5B6582;white-space:nowrap;min-width:84px;text-align:right}
+.lp-body{flex-grow:1;display:flex;justify-content:center;gap:56px;padding:40px 32px 120px 32px}
+.lp-rail{width:240px;flex-shrink:0;position:sticky;top:104px;align-self:flex-start}
+.lp-rl{display:block;font-size:13px;font-weight:600;color:#5B6582;margin:0 0 12px 2px}
+.lp-ol{list-style:none;margin:0;padding:0;position:relative}
+.lp-ol::before{content:'';position:absolute;left:11px;top:16px;bottom:16px;width:2px;background:#E6EAF3}
+.lp-o{position:relative;display:flex;align-items:center;gap:12px;min-height:52px}
+.lp-om{position:relative;z-index:1;width:24px;height:24px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;background:#FFFFFF;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.lp-o-done .lp-om{background:#1652F0;border-color:#1652F0}
+.lp-o-cur .lp-om{border:7px solid #1652F0}
+.lp-ot{display:flex;flex-direction:column;gap:1px;min-width:0}
+.lp-ot b{font-size:14px;font-weight:500;color:#3A4566}
+.lp-ot span{font-size:12px;color:#8A93AD}
+.lp-o-cur .lp-ot b{font-weight:600;color:#0B1433}
+.lp-main{width:min(720px,100%);min-width:0}
+.lp-wide{width:min(1100px,100%)}
+.lp-body:has(.lp-wide){align-items:center;padding-bottom:64px}
+.lp-eb{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#1652F0}
+.lp-h1{margin:10px 0 0 0;font-size:clamp(30px,4.6vh,40px);line-height:1.12;font-weight:600;letter-spacing:-0.03em}
+.lp-meta{margin:10px 0 0 0;font-size:14px;color:#5B6582}
+.lp-p{margin:22px 0 0 0;font-size:17.5px;line-height:1.7;color:#1F2A4D}
+.lp-bar{position:fixed;left:0;right:0;bottom:0;z-index:5;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1.5px solid #EEF1F7}
+.lp-barin{max-width:1100px;margin:0 auto;height:76px;box-sizing:border-box;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.lp-prev{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 18px 0 14px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:14.5px;font-weight:600;text-decoration:none;white-space:nowrap;max-width:300px;overflow:hidden;text-overflow:ellipsis}
+.lp-prev:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.lp-dis{opacity:.45;pointer-events:none}
+.lp-stepn{font-size:13.5px;color:#5B6582}
+.lp-next.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}
+.lp-next.lp-off .ob-arrow{color:#9AA8CC}
+.lp-ask{margin-top:28px;display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 16px 0 6px;border-radius:999px;border:1.5px solid #CBD7F5;background:#FFFFFF url(/_blob/d268046654a4206d2a726e62005bcc59) center / cover no-repeat;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none}
+.lp-ask:hover{border-color:#AFC1F5;color:#0B1433}
+.lp-call{margin-top:24px;padding:16px 18px;border-radius:16px;background:#F5F8FF;border:1.5px solid #E6EAF3;border-left:4px solid #1652F0}
+.lp-call b{display:block;font-size:12.5px;font-weight:600;color:#1652F0;margin-bottom:4px}
+.lp-call span{font-size:15.5px;line-height:1.6;color:#0B1433}
+@media (max-width: 1100px){.lp-rail{display:none}.lp-body{gap:0}}
+@media (max-width: 960px){
+.lp-top{height:56px;padding:0 12px 0 6px;gap:8px;flex-wrap:wrap}
+.lp-t1{display:none}
+.lp-t2{font-size:14.5px;font-weight:600;color:#0B1433}
+.lp-segs{position:absolute;left:16px;right:16px;bottom:-1px;margin:0;gap:3px}
+.lp-seg{flex:1 1 0;width:auto;height:3px}
+.lp-tn{display:none}
+.lp-body{padding:40px 16px 112px 16px}
+.lp-h1{font-size:25px}
+.lp-meta{font-size:13px;margin-top:6px}
+.lp-p{font-size:16px;line-height:1.65;margin-top:16px}
+.lp-barin{height:72px;padding:0 16px;gap:10px}
+.lp-hide-sm,.lp-stepn{display:none}
+.lp-prev{width:48px;padding:0;justify-content:center;flex-shrink:0}
+.lp-next{flex:1 1 auto;min-width:0;justify-content:space-between}
+.lp-next > span:first-child{overflow:hidden;text-overflow:ellipsis}
+.lp-call span{font-size:15px}
+}
+.tk-root{min-height:100vh;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.tk-top{position:sticky;top:0;z-index:5;height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1.5px solid #EEF1F7;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tk-sec{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px 0 11px;border-radius:999px;background:#E7F5EE;color:#0F6B45;font-size:13px;font-weight:500;white-space:nowrap}
+.tk-check{display:flex;align-items:flex-start;gap:12px;font-size:14px;line-height:1.5;color:#3A4566;cursor:pointer}
+.tk-box{width:22px;height:22px;flex-shrink:0;box-sizing:border-box;border-radius:7px;border:2px solid #CBD3E6;background:#FFFFFF;color:#FFFFFF;display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all .2s ease}
+.tk-on .tk-box{background:#1652F0;border-color:#1652F0}
+@media (max-width: 960px){
+.tk-top{height:56px;padding:0 12px 0 6px;gap:8px}
+.tk-top .lp-t1{display:block;font-size:15px}
+.tk-top .lp-t2{display:none}
+.tk-sec span{display:none}
+.tk-sec{width:34px;padding:0;justify-content:center}
+}
+.ko{flex-grow:1;width:min(700px,100%);box-sizing:border-box;margin:0 auto;padding:clamp(20px,3.6vh,40px) 24px 32px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;--k:#1652F0;--kb:#EAF0FF}
+.tk-root:has(.ko){background:radial-gradient(55% 40% at 50% 0%,rgba(22,82,240,.08),rgba(22,82,240,0) 70%),#FFFFFF}
+.ko-v{--k:#0F6B45;--kb:#E7F5EE}.ko-a{--k:#B26A00;--kb:#FFF3DC}.ko-f{--k:#3A4566;--kb:#EEF1F7}
+.ko-emb{position:relative;width:84px;height:84px;display:flex;align-items:center;justify-content:center}
+.ko-halo{position:absolute;inset:0;border-radius:50%;background:var(--kb)}
+.ko-r .ko-halo::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid transparent;border-top-color:#1652F0;animation:koSpin 1.4s linear infinite}
+@keyframes koSpin{to{transform:rotate(360deg)}}
+.ko-disc{position:relative;width:58px;height:58px;border-radius:50%;background:var(--k);color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(11,20,51,.16)}
+.ko-tick path{stroke-dasharray:1;stroke-dashoffset:1;animation:koDraw .6s ease .3s forwards}
+@keyframes koDraw{to{stroke-dashoffset:0}}
+.ko-pill{margin-top:14px;display:inline-flex;align-items:center;height:30px;padding:0 13px;border-radius:999px;background:var(--kb);color:var(--k);font-size:13px;font-weight:500}
+.ko-h{margin-top:10px;font-size:clamp(28px,4.4vh,38px)}
+.ko-sub{margin:10px 0 0 0;font-size:16.5px;line-height:1.55;color:#4A5578;max-width:520px}
+.ko-card{margin-top:22px;width:100%;box-sizing:border-box;padding:18px 20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;text-align:left}
+.ko-path{list-style:none;margin:12px 0 0 0;padding:0;display:flex;flex-direction:column}
+.ko-path li{position:relative;display:flex;align-items:flex-start;gap:12px;padding-bottom:12px}
+.ko-path li:last-child{padding-bottom:0}
+.ko-path li:not(:last-child)::before{content:'';position:absolute;left:10px;top:24px;bottom:2px;width:2px;border-radius:2px;background:#E6EAF3}
+.ko-path li.ko-done::before{background:#1652F0}
+.ko-dot{width:22px;height:22px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;background:#FFFFFF;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.ko-done .ko-dot{background:#1652F0;border-color:#1652F0}
+.ko-now .ko-dot{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.14)}
+.ko-now .ko-dot::after{content:'';width:8px;height:8px;border-radius:50%;background:#1652F0;animation:koBlink 1.6s ease-in-out infinite}
+@keyframes koBlink{50%{opacity:.3}}
+.ko-path li > span:last-child{display:flex;flex-direction:column;gap:2px;padding-top:1px}
+.ko-path b{font-size:15px;font-weight:600}
+.ko-path li > span:last-child > span{font-size:13.5px;color:#5B6582}
+.ko-path li:not(.ko-done):not(.ko-now) b{color:#5B6582;font-weight:500}
+.ko-next{margin-top:12px;width:100%;box-sizing:border-box;display:flex;align-items:center;gap:14px;padding:16px 16px 16px 18px;border-radius:20px;background:#F7F9FD;border:1.5px solid #E6EAF3;text-align:left}
+.ko-ni{width:44px;height:44px;flex-shrink:0;border-radius:14px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;border:1.5px solid #E6EAF3}
+.ko-nt{flex-grow:1;display:flex;flex-direction:column;gap:2px}
+.ko-nl{font-size:12.5px;font-weight:500;color:#8A93AD}
+.ko-nt b{font-size:16px;font-weight:600}
+.ko-nt > span:last-child{font-size:13.5px;line-height:1.45;color:#3A4566}
+.ko-go{flex-shrink:0}
+.ko-idc{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px 14px;background:#FFFFFF url(/_blob/d268046654a4206d2a726e62005bcc59) center top / cover no-repeat;border-color:#CBD7F5;box-shadow:0 18px 40px rgba(22,82,240,.08)}
+.ko-ii{width:44px;height:44px;border-radius:14px;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.ko-it{display:flex;flex-direction:column;gap:2px}
+.ko-it b{font-size:17px;font-weight:600}
+.ko-it span{font-size:13.5px;color:#3A4566}
+.ko-vb{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px 0 9px;border-radius:999px;background:#E7F5EE;color:#0F6B45;font-size:13px;font-weight:500}
+.ko-rd{grid-column:1 / -1;display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1.5px solid rgba(203,211,230,.6)}
+.ko-rl{font-size:13px;color:#5B6582}
+.ko-bar{position:relative;flex-grow:1;height:8px;border-radius:8px;background:#E6EAF3;overflow:hidden}
+.ko-was,.ko-up{position:absolute;top:0;bottom:0;border-radius:8px}
+.ko-was{left:0;width:20%;background:#1652F0}
+.ko-up{left:20%;width:20%;background:#6E96FF;transform-origin:left;animation:koGrow 1s cubic-bezier(.3,.8,.3,1) .7s both}
+@keyframes koGrow{from{transform:scaleX(0)}to{transform:none}}
+.ko-rv{display:flex;align-items:baseline;gap:6px}
+.ko-rv b{font-size:16px;font-weight:600}
+.ko-rv em{font-style:normal;font-size:12.5px;font-weight:500;color:#0F6B45;background:#E7F5EE;border-radius:999px;padding:2px 8px}
+.ko-fix{list-style:none;margin:12px 0 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ko-fix li{display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 12px;box-sizing:border-box;border-radius:14px;background:#F7F9FD}
+.ko-fix li.ko-bad{background:#FFF8EC;border:1.5px solid #F4D98E}
+.ko-th{width:56px;height:38px;flex-shrink:0;border-radius:7px;background:linear-gradient(135deg,#DCE4F5,#C7D3EE);overflow:hidden;display:flex;align-items:center;justify-content:center;filter:blur(1.2px)}
+.ko-th span{width:30px;height:4px;border-radius:2px;background:#9AA8CC;box-shadow:0 8px 0 #9AA8CC,0 -8px 0 #AFBBD8}
+.ko-ok{width:24px;height:24px;margin:0 16px;flex-shrink:0;border-radius:50%;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.ko-ft{flex-grow:1;display:flex;flex-direction:column;gap:2px}
+.ko-ft b{font-size:15px;font-weight:600}
+.ko-ft span{font-size:13.5px;color:#5B6582}
+.ko-bad .ko-ft span{color:#8A5300}
+.ko-tag{flex-shrink:0;display:inline-flex;align-items:center;height:28px;padding:0 11px;border-radius:999px;background:#FFE9BF;color:#8A5300;font-size:12.5px;font-weight:500}
+.ko-tip{margin:12px 0 0 0;display:flex;align-items:flex-start;gap:8px;font-size:13.5px;line-height:1.5;color:#3A4566}
+.ko-tip svg{flex-shrink:0;margin-top:2px;color:#1652F0}
+.ko-opts{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.ko-opt{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#0B1433;text-decoration:none;transition:all .2s ease}
+.ko-opt:hover{border-color:#AFC1F5;background:#F5F8FF;color:#0B1433}
+.ko-opt > span:nth-child(2){flex-grow:1;display:flex;flex-direction:column;gap:2px}
+.ko-opt b{font-size:15px;font-weight:600}
+.ko-opt > span:nth-child(2) > span{font-size:13.5px;line-height:1.45;color:#5B6582}
+.ko-opt > svg{flex-shrink:0;color:#8A93AD}
+.ko-oi{width:40px;height:40px;flex-shrink:0;border-radius:12px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.ko-cta{margin-top:20px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.ko-cn{font-size:13.5px;color:#5B6582}
+.ko-links{margin-top:18px;display:flex;align-items:center;gap:10px;font-size:14.5px;color:#8A93AD}
+.ko-links a{font-weight:600;text-decoration:none;color:#3A4566}
+.ko-links a:hover{color:#1652F0}
+@media (prefers-reduced-motion: reduce){.ko-r .ko-halo::after,.ko-now .ko-dot::after,.ko-up{animation:none}.ko-tick path{animation:none;stroke-dashoffset:0}}
+@media (max-width: 960px){
+.ko{padding:36px 16px 32px 16px;align-items:stretch;text-align:left}
+.ko-emb{width:72px;height:72px;align-self:flex-start}
+.ko-disc{width:48px;height:48px}.ko-disc svg{width:24px;height:24px}
+.ko-pill{align-self:flex-start;margin-top:14px}
+.ko-h{font-size:24px;margin-top:10px}
+.ko-sub{font-size:14.5px;margin-top:8px}
+.ko-card{margin-top:20px;padding:14px 16px;border-radius:18px}
+.ko-next{flex-wrap:wrap;padding:14px 16px;border-radius:18px}
+.ko-ni{display:none}
+.ko-go{width:100%;justify-content:space-between}
+.ko-idc{grid-template-columns:auto minmax(0,1fr)}
+.ko-vb{grid-column:1 / -1;justify-self:start}
+.ko-cta{position:sticky;bottom:0;margin:20px -16px 0 -16px;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7;align-items:stretch}
+.ko-cta .ds-btn{justify-content:space-between}
+.ko-cn{text-align:center;font-size:13px}
+.ko-links{justify-content:center;font-size:14px}
+}
+</style>
+</helmet>
+<div class="tk-root">
+<header class="tk-top">
+<a href="CR-RDY-001.dc.html" class="lp-x" aria-label="Close and go back to readiness"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
+<div class="lp-title"><span class="lp-t1">Verify your identity</span><span class="lp-t2">Readiness · task 1 of 5</span></div>
+<span style="flex-grow: 1"></span>
+<span class="tk-sec"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span>Secure · encrypted</span></span>
+</header>
+<main class="ko {{koCls}}">
+<div class="ko-emb ob-in" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc">
+<sc-if value="{{r}}" hint-placeholder-val="{{true}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10M7 21h10"></path><path d="M8 3c0 5 8 5 8 9s-8 4-8 9"></path><path d="M16 3c0 5-8 5-8 9s8 4 8 9"></path></svg></sc-if>
+<sc-if value="{{v}}" hint-placeholder-val="{{false}}"><svg class="ko-tick" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" pathLength="1"></path></svg></sc-if>
+<sc-if value="{{a}}" hint-placeholder-val="{{false}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"></rect><path d="M8.5 7 10 4.5h4L15.5 7"></path><circle cx="12" cy="13.5" r="3.5"></circle></svg></sc-if>
+<sc-if value="{{f}}" hint-placeholder-val="{{false}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.5h.01"></path></svg></sc-if>
+</span></div>
+<span class="ko-pill ob-in2">{{pill}}</span>
+<h1 class="lp-h1 ko-h ob-in2">{{h1}}</h1>
+<p class="ko-sub ob-in2">{{sub}}</p>
+
+<sc-if value="{{r}}" hint-placeholder-val="{{true}}">
+<section class="ko-card ob-in3" aria-label="What happens next">
+<span class="sec-h">What happens next</span>
+<ol class="ko-path">
+<li class="ko-done"><span class="ko-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Submitted to Sumsub</b><span>Today, 10:42</span></span></li>
+<li class="ko-now"><span class="ko-dot"></span><span><b>Sumsub checks your ID</b><span>Usually a few minutes, at most one business day</span></span></li>
+<li><span class="ko-dot"></span><span><b>We let you know</b><span>By email and here in your Studio</span></span></li>
+</ol>
+</section>
+<section class="ko-next ob-in4" aria-label="Next for you">
+<span class="ko-ni"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"></circle><path d="m8.5 13.2-1.5 7.8 5-2.6 5 2.6-1.5-7.8"></path></svg></span>
+<span class="ko-nt"><span class="ko-nl">Meanwhile, next for you</span><b>Credentials &amp; expertise</b><span>Add a degree or certificate. It doesn’t need to wait for this check.</span></span>
+<a href="#" class="ds-btn sm ko-go"><span>Add credentials</span><span class="ob-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+</section>
+</sc-if>
+
+<sc-if value="{{v}}" hint-placeholder-val="{{false}}">
+<section class="ko-card ko-idc ob-in3" aria-label="Verified identity">
+<span class="ko-ii"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><circle cx="9" cy="11" r="2.2"></circle><path d="M5.8 16a3.4 3.4 0 0 1 6.4 0M14.5 10h4M14.5 13.5h3"></path></svg></span>
+<span class="ko-it"><b>Ada Ononuju</b><span>National ID card · Nigeria · verified 7 October 2026</span></span>
+<span class="ko-vb"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Verified</span></span>
+<div class="ko-rd"><span class="ko-rl">Readiness</span><span class="ko-bar"><span class="ko-was"></span><span class="ko-up"></span></span><span class="ko-rv"><b>40%</b><em>+20%</em></span></div>
+</section>
+<section class="ko-next ob-in4" aria-label="Next for you">
+<span class="ko-ni"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"></circle><path d="m8.5 13.2-1.5 7.8 5-2.6 5 2.6-1.5-7.8"></path></svg></span>
+<span class="ko-nt"><span class="ko-nl">Next for you</span><b>Credentials &amp; expertise</b><span>Show learners what you know. About 5 minutes.</span></span>
+<a href="#" class="ds-btn sm ko-go"><span>Add credentials</span><span class="ob-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+</section>
+</sc-if>
+
+<sc-if value="{{a}}" hint-placeholder-val="{{false}}">
+<section class="ko-card ob-in3" aria-label="What to fix">
+<span class="sec-h">What to fix</span>
+<ul class="ko-fix">
+<li class="ko-bad"><span class="ko-th" aria-hidden="true"><span></span></span><span class="ko-ft"><b>Front of your ID</b><span>Too blurry to read the name and date of birth.</span></span><span class="ko-tag">Retake</span></li>
+<li><span class="ko-ok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="ko-ft"><b>Back of your ID</b><span>Clear and readable</span></span></li>
+<li><span class="ko-ok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="ko-ft"><b>Liveness check</b><span>Passed</span></span></li>
+</ul>
+<p class="ko-tip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"></path></svg><span>Lay the card flat in good light and hold still until it focuses.</span></p>
+</section>
+<div class="ko-cta ob-in4"><a href="CR-KYC-002b.dc.html" class="ds-btn"><span>Retake front photo</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><span class="ko-cn">About 2 minutes. Everything else is kept.</span></div>
+</sc-if>
+
+<sc-if value="{{f}}" hint-placeholder-val="{{false}}">
+<section class="ko-card ob-in3" aria-label="What you can do">
+<span class="sec-h">What you can do</span>
+<div class="ko-opts">
+<a href="CR-KYC-002.dc.html" class="ko-opt"><span class="ko-oi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"></path><path d="M3 21v-5h5"></path></svg></span><span><b>Try again with another ID</b><span>A passport or driver’s licence often works best. 1 attempt left.</span></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
+<a href="#" class="ko-opt"><span class="ko-oi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"></path></svg></span><span><b>Talk to our team</b><span>A person reviews your case and helps you finish. Usually within a day.</span></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
+</div>
+</section>
+<div class="ko-cta ob-in4"><a href="#" class="ds-btn"><span>Contact support</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><span class="ko-cn">You can keep drafting while this is sorted.</span></div>
+</sc-if>
+
+<div class="ko-links ob-in4"><a href="CR-RDY-001.dc.html">View readiness</a><span aria-hidden="true">·</span><a href="CR-DASH-NEW.dc.html">Back to my Studio</a></div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.v = (props || {}).variant || 'review';
+  }
+  renderVals() {
+    const v = this.v;
+    const T = {
+      review: ['ko-r', 'In review', 'Thanks, Ada. We’re checking your ID.', 'Sumsub is comparing your photos and selfie with your ID. You can keep building while it runs.'],
+      verified: ['ko-v', 'Verified', 'You’re verified, Ada.', 'Your identity is confirmed. Learners and validators will see you’re a real, verified creator.'],
+      action: ['ko-a', 'Action needed', 'One photo needs a retake.', 'Almost there. The front of your ID was hard to read, so Sumsub couldn’t finish the check.'],
+      failed: ['ko-f', 'Not verified', 'We couldn’t verify your ID this time.', 'Your selfie didn’t match the photo on your ID clearly enough. This happens, and it’s fixable.']
+    }[v];
+    return { koCls: T[0], pill: T[1], h1: T[2], sub: T[3], r: v === 'review', v: v === 'verified', a: v === 'action', f: v === 'failed' };
+  }
+}
+</script>
+</body>
+</html>

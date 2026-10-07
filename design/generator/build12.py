@@ -268,6 +268,15 @@ c='''<main class="k2">
 <p class="k2-pp">Look at the camera and follow the prompts. It confirms you’re a real person and matches you to your document.</p>
 <div class="k2-face {{lvCls}}"><span class="k2-oval"><span class="k2-sil">'''+ik(FACE_I,64,1.4)+'''</span><span class="k2-ok">'''+ic('check',34,2.6)+'''</span></span><span class="k2-fl">{{lvLabel}}</span></div>
 </sc-if>
+<sc-if value="{{s3}}" hint-placeholder-val="{{false}}">
+<h2 class="k2-ph">Check and submit</h2>
+<p class="k2-pp">Sumsub compares your photos and selfie with your ID. Most checks finish within minutes.</p>
+<ul class="k2-rv">
+<li><span class="k2-ri">'''+ik(CARD_I,20,1.9)+'''</span><span class="k2-rt"><b>National ID card</b><span>Issued in Nigeria</span></span><button type="button" class="k2-ed" onClick="{{to0}}">Edit</button></li>
+<li><span class="k2-ri">'''+ik(CAM_I,20,1.9)+'''</span><span class="k2-rt"><b>Front and back photos</b><span>Both clear and readable</span></span><button type="button" class="k2-ed" onClick="{{to1}}">Edit</button></li>
+<li><span class="k2-ri">'''+ik(FACE_I,20,1.9)+'''</span><span class="k2-rt"><b>Liveness check</b><span>Passed</span></span><span class="k2-ok2">'''+ic('check',12,3.2)+'''</span></li>
+</ul>
+</sc-if>
 </div>
 <footer class="k2-foot"><button type="button" class="ds-ghost k2-back" onClick="{{back}}">'''+ic('back',16,2.2)+'''<span>Back</span></button><button type="button" class="ds-btn k2-go {{goCls}}" onClick="{{go}}"><span>{{goLabel}}</span><span class="ob-arrow">'''+ic('arrow',18,2.4)+'''</span></button></footer>
 <span class="k2-pw">'''+ik(LOCK_I,12,2.4)+'''Powered by Sumsub · secure and encrypted</span>
@@ -333,6 +342,15 @@ K2_CSS=FORM_CSS_LITE='''.ob-lab{display:block;font-size:13px;font-weight:600;col
 .k2-pass .k2-oval::before{border-style:solid;border-color:#0F6B45;animation:none}
 .k2-pass .k2-sil{display:none}.k2-pass .k2-ok{display:flex}
 .k2-pass .k2-fl{color:#0F6B45;font-weight:600}
+.k2-rv{list-style:none;margin:16px 0 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.k2-rv li{display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 12px;box-sizing:border-box;border-radius:16px;border:1.5px solid #E6EAF3}
+.k2-ri{width:40px;height:40px;flex-shrink:0;border-radius:12px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.k2-rt{flex-grow:1;display:flex;flex-direction:column;gap:2px}
+.k2-rt b{font-size:15px;font-weight:600}
+.k2-rt span{font-size:13px;color:#0F6B45}
+.k2-ed{height:36px;padding:0 14px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
+.k2-ed:hover{border-color:#1652F0;background:#F5F8FF}
+.k2-ok2{width:24px;height:24px;margin-right:6px;border-radius:50%;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .k2-foot{margin-top:14px;padding-top:14px;border-top:1.5px solid #F0F2F8;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .k2-back{height:48px}
 .k2-go.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}
@@ -371,8 +389,8 @@ S_K2='''class Component extends DCLogic {
   constructor(props) {
     super(props);
     const v = (props || {}).variant;
-    const step = v === 'liveness' ? 2 : (v === 'photos' ? 1 : 0);
-    this.state = { step, doc: step > 0 ? 1 : -1, f: step > 0, b: step > 1, live: false };
+    const step = v === 'review' ? 3 : (v === 'liveness' ? 2 : (v === 'photos' ? 1 : 0));
+    this.state = { step, doc: step > 0 ? 1 : -1, f: step > 0, b: step > 1, live: step > 2 };
   }
   renderVals() {
     const { step, doc, f, b, live } = this.state;
@@ -380,20 +398,21 @@ S_K2='''class Component extends DCLogic {
     const TIPS = [
       ['Use an ID that isn’t expired', 'The name must match your Credalio account', 'Any of the four types works'],
       ['All four corners visible', 'No glare or reflections', 'Not a photocopy or a screenshot'],
-      ['Good, even light on your face', 'Look straight at the camera', 'Follow the prompts as they appear']
+      ['Good, even light on your face', 'Look straight at the camera', 'Follow the prompts as they appear'],
+      ['You can edit anything before you submit', 'Most checks finish within minutes', 'We’ll let you know as soon as it’s done']
     ];
-    const SH = ['Pick the ID you’ll use', 'Take clear photos', 'A quick selfie check'];
-    const ok = step === 0 ? doc >= 0 : (step === 1 ? (f && b) : live);
+    const SH = ['Pick the ID you’ll use', 'Take clear photos', 'A quick selfie check', 'Check and submit'];
+    const ok = step === 0 ? doc >= 0 : (step === 1 ? (f && b) : (step === 2 ? live : true));
     const v = {
       stepN: step + 1, sideH: SH[step], tips: TIPS[step],
       steps: L.map((label, i) => ({ label, n: i + 1, cls: i < step ? 'k2-done' : (i === step ? 'k2-cur' : '') })),
-      s0: step === 0, s1: step === 1, s2: step === 2,
+      s0: step === 0, s1: step === 1, s2: step === 2, s3: step === 3, to0: () => this.setState({ step: 0 }), to1: () => this.setState({ step: 1 }),
       fCls: f ? 'k2-upd' : '', fIcon: '', fHead: f ? 'Front added' : 'Front', fSub: f ? 'nin-front.jpg' : 'Click to upload or take a photo', addF: () => this.setState({ f: true }),
       bCls: b ? 'k2-upd' : '', bIcon: '', bHead: b ? 'Back added' : 'Back', bSub: b ? 'nin-back.jpg' : 'Click to upload or take a photo', addB: () => this.setState({ b: true }),
       lvCls: live ? 'k2-pass' : '', lvLabel: live ? 'Liveness check passed' : 'Ready when you are',
       goCls: (ok || (step === 2 && !live)) ? '' : 'lp-off',
-      goLabel: step === 2 ? (live ? 'Continue' : 'Start liveness check') : 'Continue',
-      go: () => { if (step === 2 && !live) { this.setState({ live: true }); return; } if (ok && step < 2) this.setState({ step: step + 1 }); },
+      goLabel: step === 3 ? 'Submit for review' : (step === 2 ? (live ? 'Continue' : 'Start liveness check') : 'Continue'),
+      go: () => { if (step === 2 && !live) { this.setState({ live: true }); return; } if (step === 3) { window.location.href = 'CR-KYC-003.dc.html'; return; } if (ok && step < 3) this.setState({ step: step + 1 }); },
       back: () => { if (step > 0) this.setState({ step: step - 1 }); }
     };
     for (let i = 0; i < 4; i++) { v['d' + i] = doc === i ? 'xb-on' : ''; v['da' + i] = doc === i ? 'true' : 'false'; v['dp' + i] = () => this.setState({ doc: i }); }

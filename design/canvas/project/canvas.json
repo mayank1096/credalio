@@ -566,6 +566,87 @@
       "w": 390,
       "x": 7730,
       "y": 12000
+    },
+    "CR-KYC-002d.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-KYC-002d · Sumsub: review & submit · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 12000
+    },
+    "CR-KYC-002d-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-KYC-002d · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 12000
+    },
+    "CR-KYC-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-KYC-003 · Identity in review · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 12000,
+      "expand": "fill"
+    },
+    "CR-KYC-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-KYC-003 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 12000
+    },
+    "CR-KYC-004.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-KYC-004 · Identity verified · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 13300
+    },
+    "CR-KYC-004-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-KYC-004 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 13300
+    },
+    "CR-KYC-005.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-KYC-005 · Identity: action needed (retake) · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 13300
+    },
+    "CR-KYC-005-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-KYC-005 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 13300
+    },
+    "CR-KYC-006.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-KYC-006 · Identity not verified · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 13300
+    },
+    "CR-KYC-006-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-KYC-006 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 13300
     }
   },
   "createdOnFiles": {
@@ -620,7 +701,7 @@
     "kyc": {
       "kind": "title1",
       "maxW": 8000,
-      "text": "Readiness task 1 · Verify your identity (Sumsub)",
+      "text": "Readiness task 1 · Verify your identity (Sumsub) → review & submit → outcomes: in review · verified · retake · not verified",
       "w": 240,
       "x": 0,
       "y": 11700
@@ -693,7 +774,17 @@
     "CR-KYC-002b.dc.html",
     "CR-KYC-002b-Mobile.dc.html",
     "CR-KYC-002c.dc.html",
-    "CR-KYC-002c-Mobile.dc.html"
+    "CR-KYC-002c-Mobile.dc.html",
+    "CR-KYC-002d.dc.html",
+    "CR-KYC-002d-Mobile.dc.html",
+    "CR-KYC-003.dc.html",
+    "CR-KYC-003-Mobile.dc.html",
+    "CR-KYC-004.dc.html",
+    "CR-KYC-004-Mobile.dc.html",
+    "CR-KYC-005.dc.html",
+    "CR-KYC-005-Mobile.dc.html",
+    "CR-KYC-006.dc.html",
+    "CR-KYC-006-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

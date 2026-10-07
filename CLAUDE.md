@@ -54,6 +54,8 @@
 - Orientation flow (ORI-002…007) = LEARNING PLAYER in focus mode (`design/generator/build11.py` PLAYER): slim top bar (close, module, step segments), left step outline (desktop), reading column 720, fixed bottom bar (Previous / Next). Checks give instant feedback (green correct / amber not quite), Next stays disabled until all correct.
 - Readiness TASKS (KYC, credentials, policies…) = focus-mode TASK shell (`build12.py` TASK): close → readiness, "Readiness · task n of 5", green "Secure · encrypted" pill. KYC SDK screens = one source CR-KYC-002 (variant photos / liveness) with a left tips column + our-styled Sumsub panel (stepper Document → Photos → Liveness → Submit); mobile: panel full-bleed, sticky Back/Continue bar.
 - Readiness/Orientation/Creator Centre/002B generator: `design/generator/build10.py` (RDY-001s = `dc-import CR-RDY-001 variant="new"`).
+- KYC outcomes: `build13.py` — CR-KYC-003 one source, variants review / verified / action / failed (= 003 / 004 / 005 / 006); KYC-002d = CR-KYC-002 variant "review". build13 only writes its own files.
+- LOGO (2026-10-07): new Credalio wordmark (`design/illustrations/credalio-wordmark.png`, mark-only `credalio-mark.png`, blue #1E4497) was swapped into the canvas files by a regex post-process, NOT in the older generators. If you re-run gen2/build8/build10 etc., re-apply the logo swap (classes `lg-word` / `lg-mark`).
 
 ## Hard layout rules
 - Desktop must NOT scroll on onboarding screens: must fit 1440×820 and 1280×720 (viewport-based layout, clamp/vh).

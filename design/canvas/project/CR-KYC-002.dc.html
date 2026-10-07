@@ -136,7 +136,7 @@ body{background:#FFFFFF}
 .lp-stepn{font-size:13.5px;color:#5B6582}
 .lp-next.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}
 .lp-next.lp-off .ob-arrow{color:#9AA8CC}
-.lp-ask{margin-top:28px;display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 16px 0 6px;border-radius:999px;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none}
+.lp-ask{margin-top:28px;display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 16px 0 6px;border-radius:999px;border:1.5px solid #CBD7F5;background:#FFFFFF url(/_blob/d268046654a4206d2a726e62005bcc59) center / cover no-repeat;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none}
 .lp-ask:hover{border-color:#AFC1F5;color:#0B1433}
 .lp-call{margin-top:24px;padding:16px 18px;border-radius:16px;background:#F5F8FF;border:1.5px solid #E6EAF3;border-left:4px solid #1652F0}
 .lp-call b{display:block;font-size:12.5px;font-weight:600;color:#1652F0;margin-bottom:4px}
@@ -233,6 +233,15 @@ body{background:#FFFFFF}
 .k2-pass .k2-oval::before{border-style:solid;border-color:#0F6B45;animation:none}
 .k2-pass .k2-sil{display:none}.k2-pass .k2-ok{display:flex}
 .k2-pass .k2-fl{color:#0F6B45;font-weight:600}
+.k2-rv{list-style:none;margin:16px 0 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.k2-rv li{display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 12px;box-sizing:border-box;border-radius:16px;border:1.5px solid #E6EAF3}
+.k2-ri{width:40px;height:40px;flex-shrink:0;border-radius:12px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.k2-rt{flex-grow:1;display:flex;flex-direction:column;gap:2px}
+.k2-rt b{font-size:15px;font-weight:600}
+.k2-rt span{font-size:13px;color:#0F6B45}
+.k2-ed{height:36px;padding:0 14px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
+.k2-ed:hover{border-color:#1652F0;background:#F5F8FF}
+.k2-ok2{width:24px;height:24px;margin-right:6px;border-radius:50%;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .k2-foot{margin-top:14px;padding-top:14px;border-top:1.5px solid #F0F2F8;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .k2-back{height:48px}
 .k2-go.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}
@@ -306,6 +315,15 @@ body{background:#FFFFFF}
 <p class="k2-pp">Look at the camera and follow the prompts. It confirms you’re a real person and matches you to your document.</p>
 <div class="k2-face {{lvCls}}"><span class="k2-oval"><span class="k2-sil"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="4"></circle><path d="M4.5 20a7.5 7.5 0 0 1 15 0"></path></svg></span><span class="k2-ok"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></span><span class="k2-fl">{{lvLabel}}</span></div>
 </sc-if>
+<sc-if value="{{s3}}" hint-placeholder-val="{{false}}">
+<h2 class="k2-ph">Check and submit</h2>
+<p class="k2-pp">Sumsub compares your photos and selfie with your ID. Most checks finish within minutes.</p>
+<ul class="k2-rv">
+<li><span class="k2-ri"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><circle cx="9" cy="11" r="2.2"></circle><path d="M5.8 16a3.4 3.4 0 0 1 6.4 0M14.5 10h4M14.5 13.5h3"></path></svg></span><span class="k2-rt"><b>National ID card</b><span>Issued in Nigeria</span></span><button type="button" class="k2-ed" onClick="{{to0}}">Edit</button></li>
+<li><span class="k2-ri"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"></rect><path d="M8.5 7 10 4.5h4L15.5 7"></path><circle cx="12" cy="13.5" r="3.5"></circle></svg></span><span class="k2-rt"><b>Front and back photos</b><span>Both clear and readable</span></span><button type="button" class="k2-ed" onClick="{{to1}}">Edit</button></li>
+<li><span class="k2-ri"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="4"></circle><path d="M4.5 20a7.5 7.5 0 0 1 15 0"></path></svg></span><span class="k2-rt"><b>Liveness check</b><span>Passed</span></span><span class="k2-ok2"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></li>
+</ul>
+</sc-if>
 </div>
 <footer class="k2-foot"><button type="button" class="ds-ghost k2-back" onClick="{{back}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></button><button type="button" class="ds-btn k2-go {{goCls}}" onClick="{{go}}"><span>{{goLabel}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></footer>
 <span class="k2-pw"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Powered by Sumsub · secure and encrypted</span>
@@ -318,8 +336,8 @@ class Component extends DCLogic {
   constructor(props) {
     super(props);
     const v = (props || {}).variant;
-    const step = v === 'liveness' ? 2 : (v === 'photos' ? 1 : 0);
-    this.state = { step, doc: step > 0 ? 1 : -1, f: step > 0, b: step > 1, live: false };
+    const step = v === 'review' ? 3 : (v === 'liveness' ? 2 : (v === 'photos' ? 1 : 0));
+    this.state = { step, doc: step > 0 ? 1 : -1, f: step > 0, b: step > 1, live: step > 2 };
   }
   renderVals() {
     const { step, doc, f, b, live } = this.state;
@@ -327,20 +345,21 @@ class Component extends DCLogic {
     const TIPS = [
       ['Use an ID that isn’t expired', 'The name must match your Credalio account', 'Any of the four types works'],
       ['All four corners visible', 'No glare or reflections', 'Not a photocopy or a screenshot'],
-      ['Good, even light on your face', 'Look straight at the camera', 'Follow the prompts as they appear']
+      ['Good, even light on your face', 'Look straight at the camera', 'Follow the prompts as they appear'],
+      ['You can edit anything before you submit', 'Most checks finish within minutes', 'We’ll let you know as soon as it’s done']
     ];
-    const SH = ['Pick the ID you’ll use', 'Take clear photos', 'A quick selfie check'];
-    const ok = step === 0 ? doc >= 0 : (step === 1 ? (f && b) : live);
+    const SH = ['Pick the ID you’ll use', 'Take clear photos', 'A quick selfie check', 'Check and submit'];
+    const ok = step === 0 ? doc >= 0 : (step === 1 ? (f && b) : (step === 2 ? live : true));
     const v = {
       stepN: step + 1, sideH: SH[step], tips: TIPS[step],
       steps: L.map((label, i) => ({ label, n: i + 1, cls: i < step ? 'k2-done' : (i === step ? 'k2-cur' : '') })),
-      s0: step === 0, s1: step === 1, s2: step === 2,
+      s0: step === 0, s1: step === 1, s2: step === 2, s3: step === 3, to0: () => this.setState({ step: 0 }), to1: () => this.setState({ step: 1 }),
       fCls: f ? 'k2-upd' : '', fIcon: '', fHead: f ? 'Front added' : 'Front', fSub: f ? 'nin-front.jpg' : 'Click to upload or take a photo', addF: () => this.setState({ f: true }),
       bCls: b ? 'k2-upd' : '', bIcon: '', bHead: b ? 'Back added' : 'Back', bSub: b ? 'nin-back.jpg' : 'Click to upload or take a photo', addB: () => this.setState({ b: true }),
       lvCls: live ? 'k2-pass' : '', lvLabel: live ? 'Liveness check passed' : 'Ready when you are',
       goCls: (ok || (step === 2 && !live)) ? '' : 'lp-off',
-      goLabel: step === 2 ? (live ? 'Continue' : 'Start liveness check') : 'Continue',
-      go: () => { if (step === 2 && !live) { this.setState({ live: true }); return; } if (ok && step < 2) this.setState({ step: step + 1 }); },
+      goLabel: step === 3 ? 'Submit for review' : (step === 2 ? (live ? 'Continue' : 'Start liveness check') : 'Continue'),
+      go: () => { if (step === 2 && !live) { this.setState({ live: true }); return; } if (step === 3) { window.location.href = 'CR-KYC-003.dc.html'; return; } if (ok && step < 3) this.setState({ step: step + 1 }); },
       back: () => { if (step > 0) this.setState({ step: step - 1 }); }
     };
     for (let i = 0; i < 4; i++) { v['d' + i] = doc === i ? 'xb-on' : ''; v['da' + i] = doc === i ? 'true' : 'false'; v['dp' + i] = () => this.setState({ doc: i }); }

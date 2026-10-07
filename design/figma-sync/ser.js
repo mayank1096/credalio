@@ -125,7 +125,21 @@
     const extra = runs.filter(r => JSON.stringify(r[2]) !== baseK).map(r => { const d = {}; for (const k in r[2]) if (JSON.stringify(r[2][k]) !== JSON.stringify(base[k])) d[k] = r[2][k]; return [r[0], r[1], d]; }).filter(r => r[1] > r[0]);
     if (extra.length) T.runs = extra;
     T.n = chars.slice(0, 40).replace(/\n/g, ' ');
+    T.nw = nwOf(chars, base, T.runs);
     return T;
+  }
+  const __cv = document.createElement('canvas').getContext('2d');
+  function nwOf(chars, base, runs) {
+    const st = new Array(chars.length).fill(base);
+    for (const [a, b, d] of (runs || [])) for (let i = a; i < b; i++) st[i] = Object.assign({}, base, d);
+    let best = 0, cur = 0, i = 0;
+    while (i < chars.length) {
+      if (chars[i] === '\n') { best = Math.max(best, cur); cur = 0; i++; continue; }
+      let j = i; while (j < chars.length && chars[j] !== '\n' && st[j] === st[i]) j++;
+      const f = st[i]; __cv.font = `${f.it ? 'italic ' : ''}${f.wt} ${f.sz}px "Google Sans"`;
+      cur += __cv.measureText(chars.slice(i, j)).width + (f.ls || 0) * (j - i); i = j;
+    }
+    return R(Math.max(best, cur));
   }
   function svgSer(el, cs) {
     if (el.querySelector('foreignObject,text,filter,image,mask,pattern,animate,animateTransform')) return null;
@@ -141,6 +155,7 @@
         for (const [a, k] of props) d.removeAttribute(a);
         for (const [a, k] of props) { let v = st[k]; if (a === 'fill' && v.startsWith('url')) { v = s.getAttribute('fill') || 'none'; } if (a === 'stroke-width') v = v.replace('px', '');
           const pv = ps ? (k === 'strokeWidth' ? ps[k].replace('px', '') : ps[k]) : ({ fill: 'rgb(0, 0, 0)', stroke: 'none', 'stroke-width': '1', 'stroke-linecap': 'butt', 'stroke-linejoin': 'miter', 'stroke-dasharray': 'none', 'fill-opacity': '1', 'stroke-opacity': '1' })[a];
+          if (a === 'stroke-dasharray' && s.getAttribute('pathLength')) continue;
           if (v !== pv) d.setAttribute(a, v); }
         if (+st.opacity !== 1) d.setAttribute('opacity', st.opacity);
       }
@@ -165,25 +180,30 @@
     if (cs.clip && cs.clip !== 'auto' && /rect\(0/.test(cs.clip)) return null;
     const abs = cs.position === 'absolute' || cs.position === 'fixed';
     const tag = el.tagName;
+    const zz = (cs.position !== 'static' && cs.zIndex !== 'auto') ? +cs.zIndex : 0; const oo = +cs.order || 0;
+    if ((el instanceof SVGSVGElement) && needTreeRaster(el, cs)) return { k: 'I', n: nameOf(el), img: capture(el, 'tree'), box: [r.left, r.top, r.width, r.height], abs, bm: cs.mixBlendMode !== 'normal' ? cs.mixBlendMode : 0, z: zz, o2: oo };
     if (tag === 'svg' || tag === 'SVG' || el instanceof SVGSVGElement) {
-      const s = svgSer(el, cs); if (s) return { k: 'S', n: nameOf(el) === 'svg' ? 'icon' : nameOf(el), box: [r.left, r.top, r.width, r.height], svg: s, abs };
-      return { k: 'I', n: 'graphic', img: capture(el, 'tree'), box: [r.left, r.top, r.width, r.height], abs };
+      const s = svgSer(el, cs); if (s) return { k: 'S', n: nameOf(el) === 'svg' ? 'icon' : nameOf(el), box: [r.left, r.top, r.width, r.height], svg: s, abs, z: zz, o2: oo };
+      return { k: 'I', n: 'graphic', img: capture(el, 'tree'), box: [r.left, r.top, r.width, r.height], abs, z: zz, o2: oo };
     }
-    if (needTreeRaster(el, cs)) return { k: 'I', n: tag === 'IMG' ? (el.getAttribute('alt') || nameOf(el)) : nameOf(el), img: capture(el, 'tree'), box: [r.left, r.top, r.width, r.height], abs, bm: cs.mixBlendMode !== 'normal' ? cs.mixBlendMode : (el.parentElement && getComputedStyle(el.parentElement).mixBlendMode !== 'normal' ? getComputedStyle(el.parentElement).mixBlendMode : 0) };
-    const N = { k: 'F', n: nameOf(el), box: [r.left, r.top, r.width, r.height], abs };
+    if (needTreeRaster(el, cs)) return { z: zz, o2: oo, k: 'I', n: tag === 'IMG' ? (el.getAttribute('alt') || nameOf(el)) : nameOf(el), img: capture(el, 'tree'), box: [r.left, r.top, r.width, r.height], abs, bm: cs.mixBlendMode !== 'normal' ? cs.mixBlendMode : (el.parentElement && getComputedStyle(el.parentElement).mixBlendMode !== 'normal' ? getComputedStyle(el.parentElement).mixBlendMode : 0) };
+    const N = { k: 'F', n: nameOf(el), box: [r.left, r.top, r.width, r.height], abs, z: zz, o2: oo };
     if (needSelfRaster(el, cs)) { N.self = capture(el, 'self'); const v = visuals(el, cs, r.width, r.height); if (v.r) N.r = v.r; }
     else Object.assign(N, visuals(el, cs, r.width, r.height));
     if (+cs.opacity < 1) N.op = R(+cs.opacity);
     if (cs.overflow !== 'visible' || cs.overflowX !== 'visible') N.clip = 1;
     N.css = { disp: cs.display, dir: cs.flexDirection, jc: cs.justifyContent, ai: cs.alignItems, wrap: cs.flexWrap, pad: [cs.paddingTop, cs.paddingRight, cs.paddingBottom, cs.paddingLeft].map(px), bw: [cs.borderTopWidth, cs.borderRightWidth, cs.borderBottomWidth, cs.borderLeftWidth].map(px) };
     N.grow = +cs.flexGrow > 0 ? 1 : 0;
-    N.ch = kids(el, r);
+    N.ch = tag === 'SELECT' ? [] : kids(el, r);
     // form controls: placeholder / value text
-    if ((tag === 'INPUT' || tag === 'TEXTAREA') && !N.ch.length) {
-      const val = el.value || el.getAttribute('placeholder') || ''; if (val && el.type !== 'checkbox' && el.type !== 'radio') {
+    if ((tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') && !N.ch.length) {
+      const val = tag === 'SELECT' ? ((el.options[el.selectedIndex] || {}).text || '') : (el.value || el.getAttribute('placeholder') || ''); if (val && el.type !== 'checkbox' && el.type !== 'radio') {
         const pcs = getComputedStyle(el, el.value ? null : '::placeholder'); const st = styleOf(el.value ? cs : pcs);
-        const lh = R(st.sz * 1.27); const cx = r.left + px(cs.paddingLeft) + px(cs.borderLeftWidth); const ch = r.height;
-        N.ch.push({ k: 'T', s: val, f: st, lh: null, al: 'L', ml: 0, box: [cx, r.top + (ch - lh) / 2, r.width - px(cs.paddingLeft) - px(cs.paddingRight), lh], n: val.slice(0, 40) });
+        const cx = r.left + px(cs.paddingLeft) + px(cs.borderLeftWidth); const ch = r.height; const cw = r.width - px(cs.paddingLeft) - px(cs.paddingRight) - px(cs.borderLeftWidth) - px(cs.borderRightWidth);
+        if (tag === 'TEXTAREA') { const lh = cs.lineHeight === 'normal' ? R(st.sz * 1.27) : R(px(cs.lineHeight)); const top = r.top + px(cs.paddingTop) + px(cs.borderTopWidth);
+          N.ch.push({ k: 'T', s: val, f: st, lh, al: 'L', ml: 1, box: [cx, top, cw, r.height - px(cs.paddingTop) - px(cs.paddingBottom) - px(cs.borderTopWidth) - px(cs.borderBottomWidth)], n: val.slice(0, 40), nw: nwOf(val, st) }); }
+        else { const lh = R(st.sz * 1.27);
+          N.ch.push({ k: 'T', s: val, f: st, lh, al: 'L', ml: 0, box: [cx, r.top + (ch - lh) / 2, cw, lh], n: val.slice(0, 40), nw: nwOf(val, st) }); }
       }
     }
     return N;
@@ -199,6 +219,9 @@
       flush(); const c = visit(n, pr); if (c) { if (c.k === 'C') out.push(...c.ch); else out.push(c); }
     }
     flush();
+    const ecs = getComputedStyle(el); const flex = /flex|grid/.test(ecs.display);
+    out.forEach((c, i) => c._i = i);
+    out.sort((a, b) => ((a.z || 0) - (b.z || 0)) || (flex ? ((a.o2 || 0) - (b.o2 || 0)) : 0) || (a._i - b._i));
     // text nodes inside flex/grid containers that are positioned absolutely? fine
     return out;
   }

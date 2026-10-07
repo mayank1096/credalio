@@ -6,7 +6,7 @@ KEY = os.path.basename(D.rstrip('/'))
 B = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'builder.js')).read()
 tree = json.load(open(os.path.join(D, 'c.json')))
 BUDGET = int(os.environ.get('BUDGET', 38000))
-INLINE = int(os.environ.get('INLINE', 6000))
+INLINE = int(os.environ.get('INLINE', 0))
 WS = {300: 'Light', 400: 'Regular', 500: 'Medium', 600: 'SemiBold', 700: 'Bold', 800: 'ExtraBold'}
 def sty(w, i):
     s = WS.get(w) or ('Bold' if w >= 650 else 'SemiBold' if w >= 550 else 'Medium' if w >= 450 else 'Regular')

@@ -28,7 +28,7 @@ if(t.al)n.textAlignHorizontal=t.al==='C'?'CENTER':t.al==='R'?'RIGHT':'JUSTIFIED'
 if(t.r)for(const[s,e,x2]of t.r){if(e<=s)continue;if(x2.w||x2.i!==undefined)n.setRangeFontName(s,e,{family:FAM,style:sty(x2.w||t.w,x2.i!==undefined?x2.i:t.i)});if(x2.c)n.setRangeFills(s,e,[paint(x2.c)]);if(x2.z)n.setRangeFontSize(s,e,x2.z);if(x2.d)n.setRangeTextDecoration(s,e,x2.d===1?'UNDERLINE':'STRIKETHROUGH')}
 n.name=name;
 n.textAutoResize='WIDTH_AND_HEIGHT';if(t.nw){const L=t.s.split('\n').reduce((m,l)=>Math.max(m,l.length),1);const d=(t.nw-n.width)/Math.max(1,L-1);if(Math.abs(d)>0.005){const ls=(t.ls||0)+d;n.letterSpacing={unit:'PIXELS',value:Math.round(ls*1000)/1000}}}
-if(t.ml||t.fw){n.resize(Math.max(1,w),Math.max(1,h));n.textAutoResize='HEIGHT'}
+if(t.ml||t.fw){n.resize(Math.max(1,w+(t.ml?2:0)),Math.max(1,h));n.textAutoResize='HEIGHT'}
 let xx=x;if(!t.ml&&!t.fw&&!inAL){if(t.al==='C')xx=x+(w-n.width)/2;else if(t.al==='R')xx=x+w-n.width}
 place(n,p,pr,xx,y,inAL);sizing(n,p,pr,k);return n}
 if(k==='S'){const s=typeof pr.v==='number'?svgs[pr.v]:pr.v;try{n=figma.createNodeFromSvg(s)}catch(e){n=figma.createFrame();n.fills=[]}n.name=name;n.clipsContent=false;n.resize(Math.max(.01,w),Math.max(.01,h));place(n,p,pr,x,y,inAL);return n}
@@ -36,12 +36,14 @@ if(k==='I'){n=figma.createRectangle();n.name=name;n.resize(Math.max(.01,w),Math.
 n=figma.createFrame();n.name=name;n.fills=pr.b?pr.b.map(f=>fill(f,w,h)):[];n.clipsContent=!!pr.c;
 if(pr.r!=null){if(Array.isArray(pr.r)){n.topLeftRadius=pr.r[0];n.topRightRadius=pr.r[1];n.bottomRightRadius=pr.r[2];n.bottomLeftRadius=pr.r[3]}else n.cornerRadius=pr.r}
 if(pr.s){const[c,sw,ds]=pr.s;n.strokes=[paint(c)];n.strokeAlign='INSIDE';if(Array.isArray(sw)){n.strokeTopWeight=sw[0];n.strokeRightWeight=sw[1];n.strokeBottomWeight=sw[2];n.strokeLeftWeight=sw[3]}else n.strokeWeight=sw;if(ds)n.dashPattern=ds===1?[5,4]:[1.5,3]}
+let bars=[];if(pr.e&&!(pr.b&&pr.b.length)){pr.e=pr.e.filter(e=>{if(e[0]&&!e[3]&&!e[4]&&(!e[1]||!e[2])){bars.push(e);return false}return true})}
 if(pr.e)n.effects=pr.e.map(([i,ex,ey,bl,sp,c])=>({type:i?'INNER_SHADOW':'DROP_SHADOW',color:{...rgb(c),a:al(c)},offset:{x:ex,y:ey},radius:bl,spread:sp,visible:true,blendMode:'NORMAL'}));
 if(pr.o)n.opacity=pr.o;
 if(pr.l){const[d,g,pd,pa,ca]=pr.l;n.layoutMode=d==='H'?'HORIZONTAL':'VERTICAL';n.primaryAxisSizingMode='FIXED';n.counterAxisSizingMode='FIXED';n.itemSpacing=g;n.paddingTop=pd[0];n.paddingRight=pd[1];n.paddingBottom=pd[2];n.paddingLeft=pd[3];n.primaryAxisAlignItems=pa==='SB'?'SPACE_BETWEEN':pa;n.counterAxisAlignItems=ca}
 n.resize(Math.max(.01,w),Math.max(.01,h));
 if(p)place(n,p,pr,x,y,inAL);if(p)sizing(n,p,pr,k);
 if(pr.si){const[id,sx,sy,sw2,sh]=pr.si;const r=figma.createRectangle();r.name='background';r.resize(Math.max(.01,sw2),Math.max(.01,sh));r.fills=imf(id);if(r.fills[0].type!=='IMAGE'){r.setSharedPluginData('crd','img',KEY+'/'+id);imgs[id]=r.id};n.appendChild(r);if(pr.l)r.layoutPositioning='ABSOLUTE';r.x=sx;r.y=sy;r.locked=false}
+for(const[,ex,ey,,,c]of bars){const r=figma.createRectangle();r.name='accent';r.fills=[paint(c)];const bw=Math.abs(ex),bh=Math.abs(ey);r.resize(bw||w,bh||h);n.appendChild(r);if(pr.l)r.layoutPositioning='ABSOLUTE';r.x=ex<0?w-bw:0;r.y=ey<0?h-bh:0}
 if(ch)for(const c of ch)mk(n,c);
 return n}
 let target;

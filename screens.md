@@ -47,11 +47,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-KYC-002` KYC-002 · Sumsub WebSDK: choose document
 - [x] D [x] M  `CR-KYC-002b` KYC-002 · Sumsub WebSDK: upload photos
 - [x] D [x] M  `CR-KYC-002c` KYC-002 · Sumsub WebSDK: liveness check
-- [ ] D [ ] M  `CR-KYC-002d` KYC-002 · Sumsub WebSDK: review & submit
-- [ ] D [ ] M  `CR-KYC-003` KYC-003 · In review → next task
-- [ ] D [ ] M  `CR-KYC-004` KYC-004 · Verified → next task
-- [ ] D [ ] M  `CR-KYC-005` KYC-005 · Action required: retake photos
-- [ ] D [ ] M  `CR-KYC-006` KYC-006 · Not verified: contact support
+- [x] D [x] M  `CR-KYC-002d` KYC-002 · Sumsub WebSDK: review & submit
+- [x] D [x] M  `CR-KYC-003` KYC-003 · In review → next task
+- [x] D [x] M  `CR-KYC-004` KYC-004 · Verified → next task
+- [x] D [x] M  `CR-KYC-005` KYC-005 · Action required: retake photos
+- [x] D [x] M  `CR-KYC-006` KYC-006 · Not verified: contact support
 
 ## 05. Readiness task 2 · Credentials & expertise: upload or verify online (AWS, Microsoft, Credly…) → next task (10)
 

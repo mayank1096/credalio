@@ -21,14 +21,14 @@ function place(n,p,pr,x,y,inAL){p.appendChild(n);if(inAL){if(pr.a){n.layoutPosit
 function sizing(n,p,pr,k){if(!p.layoutMode||p.layoutMode==='NONE'||pr.a)return;const H=p.layoutMode==='HORIZONTAL';
 if(pr.fc){if(H)n.layoutSizingVertical='FILL';else n.layoutSizingHorizontal='FILL'}
 if(pr.fm){if(H)n.layoutSizingHorizontal='FILL';else n.layoutSizingVertical='FILL'}}
-function mk(p,N){const[k,name,x,y,w,h,pr,ch]=N;const inAL=!!(p&&p.layoutMode&&p.layoutMode!=='NONE');let n;
+function mk(p,N){let[k,name,x,y,w,h,pr,ch]=N;const inAL=!!(p&&p.layoutMode&&p.layoutMode!=='NONE');let n;
 if(k==='T'){const t=pr.t;n=figma.createText();n.fontName={family:FAM,style:sty(t.w,t.i)};n.characters=t.s;n.fontSize=t.z;n.fills=[paint(t.c)];
 if(t.lh)n.lineHeight={unit:'PIXELS',value:t.lh};if(t.ls)n.letterSpacing={unit:'PIXELS',value:t.ls};
 if(t.al)n.textAlignHorizontal=t.al==='C'?'CENTER':t.al==='R'?'RIGHT':'JUSTIFIED';if(t.d)n.textDecoration=t.d===1?'UNDERLINE':'STRIKETHROUGH';
 if(t.r)for(const[s,e,x2]of t.r){if(e<=s)continue;if(x2.w||x2.i!==undefined)n.setRangeFontName(s,e,{family:FAM,style:sty(x2.w||t.w,x2.i!==undefined?x2.i:t.i)});if(x2.c)n.setRangeFills(s,e,[paint(x2.c)]);if(x2.z)n.setRangeFontSize(s,e,x2.z);if(x2.d)n.setRangeTextDecoration(s,e,x2.d===1?'UNDERLINE':'STRIKETHROUGH')}
 n.name=name;
 n.textAutoResize='WIDTH_AND_HEIGHT';if(t.nw){const L=t.s.split('\n').reduce((m,l)=>Math.max(m,l.length),1);const d=(t.nw-n.width)/Math.max(1,L-1);if(Math.abs(d)>0.005){const ls=(t.ls||0)+d;n.letterSpacing={unit:'PIXELS',value:Math.round(ls*1000)/1000}}}
-if(t.ml||t.fw){n.resize(Math.max(1,w+(t.ml?2:0)),Math.max(1,h));n.textAutoResize='HEIGHT'}
+if(t.ml||t.fw){const sl=t.ml?8:0;n.resize(Math.max(1,w+sl),Math.max(1,h));n.textAutoResize='HEIGHT';if(sl&&!inAL&&t.al==='C')x-=sl/2;else if(sl&&!inAL&&t.al==='R')x-=sl}
 let xx=x;if(!t.ml&&!t.fw&&!inAL){if(t.al==='C')xx=x+(w-n.width)/2;else if(t.al==='R')xx=x+w-n.width}
 place(n,p,pr,xx,y,inAL);sizing(n,p,pr,k);return n}
 if(k==='S'){const s=typeof pr.v==='number'?svgs[pr.v]:pr.v;try{n=figma.createNodeFromSvg(s)}catch(e){n=figma.createFrame();n.fills=[]}n.name=name;n.clipsContent=false;n.resize(Math.max(.01,w),Math.max(.01,h));place(n,p,pr,x,y,inAL);return n}

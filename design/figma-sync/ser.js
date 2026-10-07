@@ -115,6 +115,13 @@
     const baseK = Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a])[0]; const base = JSON.parse(baseK);
     const lhRaw = ccs.lineHeight; const lh = lhRaw === 'normal' ? R(rects[0].height) : R(px(lhRaw));
     const ml = tops.size > 1 || chars.includes('\n');
+    if (tops.size > 1) {
+      const wtops = []; const tw = document.createTreeWalker(nodes.length === 1 && nodes[0].nodeType === 1 ? nodes[0] : container, NodeFilter.SHOW_TEXT);
+      const inGroup = n => nodes.some(g => g === n || (g.nodeType === 1 && g.contains(n)));
+      let tn; while ((tn = tw.nextNode())) { if (!inGroup(tn)) continue; const re = /\S+/g; let m; while ((m = re.exec(tn.nodeValue))) { const rg = document.createRange(); rg.setStart(tn, m.index); rg.setEnd(tn, m.index + 1); const rr = rg.getClientRects()[0]; if (rr) wtops.push(rr.top); } }
+      const words = []; const rw = /\S+/g; let mm; while ((mm = rw.exec(chars))) words.push(mm.index);
+      if (wtops.length === words.length) { const arr = chars.split(''); for (let i = 1; i < words.length; i++) if (wtops[i] > wtops[i - 1] + 2 && arr[words[i] - 1] === ' ') arr[words[i] - 1] = '\n'; chars = arr.join(''); }
+    }
     const lineH = lh || R(base.sz * 1.27);
     const firstH = rects[0].height; const yAdj = (lineH - firstH) / 2;
     const al = ccs.textAlign === 'center' ? 'C' : (ccs.textAlign === 'right' || ccs.textAlign === 'end' ? 'R' : (ccs.textAlign === 'justify' ? 'J' : 'L'));

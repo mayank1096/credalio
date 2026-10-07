@@ -155,7 +155,7 @@
         for (const [a, k] of props) d.removeAttribute(a);
         for (const [a, k] of props) { let v = st[k]; if (a === 'fill' && v.startsWith('url')) { v = s.getAttribute('fill') || 'none'; } if (a === 'stroke-width') v = v.replace('px', '');
           const pv = ps ? (k === 'strokeWidth' ? ps[k].replace('px', '') : ps[k]) : ({ fill: 'rgb(0, 0, 0)', stroke: 'none', 'stroke-width': '1', 'stroke-linecap': 'butt', 'stroke-linejoin': 'miter', 'stroke-dasharray': 'none', 'fill-opacity': '1', 'stroke-opacity': '1' })[a];
-          if (a === 'stroke-dasharray' && s.getAttribute('pathLength')) continue;
+          if (a === 'stroke-dasharray' && s.getAttribute('pathLength')) { const pl = +s.getAttribute('pathLength'); const da = (st.strokeDasharray || 'none').split(/[ ,]+/).map(parseFloat); if (st.strokeDasharray === 'none' || da[0] >= pl - 0.01) continue; return null; }
           if (v !== pv) d.setAttribute(a, v); }
         if (+st.opacity !== 1) d.setAttribute('opacity', st.opacity);
       }

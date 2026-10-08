@@ -10,7 +10,8 @@
   "Creator Studio": "25:12",
   "Readiness & Centre": "25:13",
   "Orientation": "25:14",
-  "Identity (KYC)": "25:15"
+  "Identity (KYC)": "25:15",
+  "Credentials": "343:12"
  },
  "completed": [
   "foundations",
@@ -72,14 +73,6 @@
   "CR-ONB-002 \u00b7 How will you create? \u00b7 Mobile": {
    "page": "2:5",
    "x": 470
-  },
-  "CR-ONB-002S \u00b7 Organisations coming soon \u00b7 Desktop": {
-   "page": "2:4",
-   "x": 3200
-  },
-  "CR-ONB-002S \u00b7 Organisations coming soon \u00b7 Mobile": {
-   "page": "2:5",
-   "x": 940
   },
   "CR-ONB-003 \u00b7 Create account \u00b7 Desktop": {
    "page": "2:4",
@@ -312,6 +305,64 @@
   "CR-KYC-002c \u00b7 Sumsub: liveness check \u00b7 Mobile": {
    "page": "25:15",
    "x": 7520
+  },
+  "CR-ONB-002S \u00b7 Institution coming soon \u00b7 Desktop": {
+   "page": "2:4",
+   "x": 3200
+  },
+  "CR-ONB-002S \u00b7 Institution coming soon \u00b7 Mobile": {
+   "page": "2:5",
+   "x": 940
+  },
+  "CR-CRED-001 \u00b7 Your credentials & expertise \u00b7 Desktop": {
+   "page": "343:12",
+   "x": 0,
+   "id": "348:12"
+  },
+  "CR-CRED-001 \u00b7 Your credentials & expertise \u00b7 Mobile": {
+   "page": "343:12",
+   "x": 1520,
+   "id": "348:100"
+  },
+  "CR-CRED-002 \u00b7 Add a credential: choose type \u00b7 Desktop": {
+   "page": "343:12",
+   "x": 2070,
+   "id": "349:12"
+  },
+  "CR-CRED-002 \u00b7 Add a credential: choose type \u00b7 Mobile": {
+   "page": "343:12",
+   "x": 3590,
+   "id": "349:118"
+  },
+  "CR-CRED-002a \u00b7 Degree or diploma \u00b7 Desktop": {
+   "page": "343:12",
+   "x": 4140,
+   "id": "350:12"
+  },
+  "CR-CRED-002a \u00b7 Degree or diploma \u00b7 Mobile": {
+   "page": "343:12",
+   "x": 5660,
+   "id": "350:119"
+  },
+  "CR-CRED-002b \u00b7 Certification by credential ID \u00b7 Desktop": {
+   "page": "343:12",
+   "x": 6210,
+   "id": "351:12"
+  },
+  "CR-CRED-002b \u00b7 Certification by credential ID \u00b7 Mobile": {
+   "page": "343:12",
+   "x": 7730,
+   "id": "351:117"
+  },
+  "CR-CRED-002c \u00b7 Certification by badge link \u00b7 Desktop": {
+   "page": "343:12",
+   "x": 8280,
+   "id": "352:12"
+  },
+  "CR-CRED-002c \u00b7 Certification by badge link \u00b7 Mobile": {
+   "page": "343:12",
+   "x": 9800,
+   "id": "352:121"
   }
  },
  "kycOutcomes2026_10_08": {
@@ -339,5 +390,6 @@
    }
   },
   "imagesUploaded": 32
- }
+ },
+ "builderStored": "figma.root sharedPluginData crd/builder (use new AsyncFunction to run jobs)"
 }

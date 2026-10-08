@@ -102,13 +102,15 @@ CR_CSS = FORM_CSS_LITE + '''.cr{flex-grow:1;width:min(1120px,100%);box-sizing:bo
 .cr-up{display:flex;align-items:center;gap:12px;min-height:64px;box-sizing:border-box;padding:10px 14px;border-radius:14px;border:1.5px dashed #CBD3E6;background:#FBFCFF;font-family:inherit;text-align:left;cursor:pointer;color:#0B1433}
 .cr-up:hover{border-color:#1652F0}
 .cr-up .cr-ri{width:36px;height:36px;border-radius:10px;flex-shrink:0}
-.cr-up b{display:block;font-size:14px;font-weight:600}
+.cr-up > span:not(.cr-ri){flex:1 1 auto;min-width:0}
+.cr-up b{display:block;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cr-up em{flex-shrink:0}
 .cr-up > span > span{display:block;font-size:12.5px;color:#5B6582;margin-top:2px}
 .cr-up.done{border-style:solid;border-color:#CFEADD;background:#F2FAF6}
 .cr-up.done .cr-ri{background:#0F6B45;color:#FFFFFF}
 .cr-up.done em{margin-left:auto;font-style:normal;font-size:13px;font-weight:600;color:#1652F0}
 .cr-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;padding-top:16px;border-top:1.5px solid #F0F2F8}
-.cr-foot > span{font-size:13px;color:#5B6582}
+.cr-foot > span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;font-size:13px;color:#5B6582}
 @media (max-width: 1080px){
 .cr{grid-template-columns:minmax(0,1fr) 500px;gap:40px}
 }
@@ -273,7 +275,7 @@ S_CR2 = '''class Component extends DCLogic {
       back: () => { if (f) this.setState({ t: 'types' }); else window.location.href = 'CR-CRED-001.dc.html'; },
       fTitle: t === 'degree' ? 'Degree or diploma' : 'Professional certification',
       issuer: t === 'badge' ? 'Credly' : 'Amazon Web Services',
-      footNote: cert ? 'Usually checked within a minute' : 'Reviewed in 1 to 3 business days',
+      footNote: cert ? 'Usually checked within a minute' : 'Reviewed in 1 to 3 days',
       goL: cert ? 'Verify now' : 'Submit for review',
       idOn: t === 'aws' ? 'true' : 'false', idCls: t === 'aws' ? 'on' : '', toId: go('aws'),
       lkOn: t === 'badge' ? 'true' : 'false', lkCls: t === 'badge' ? 'on' : '', toLink: go('badge'),

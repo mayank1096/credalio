@@ -57,6 +57,7 @@
 - Readiness/Orientation/Creator Centre/002B generator: `design/generator/build10.py` (RDY-001s = `dc-import CR-RDY-001 variant="new"`).
 - KYC outcomes: `build13.py` — CR-KYC-003 one source, variants review / verified / action / failed (= 003 / 004 / 005 / 006); KYC-002d = CR-KYC-002 variant "review". build13 only writes its own files.
 - Credentials task (CRED-001…002c): `build14.py` — focus-mode TASK shell ("task 2 of 5"), left side + right panel; CR-CRED-002 one source, variants types / degree / aws / badge (= 002 / 002a / 002b / 002c). build14 only writes its own files.
+- Client update 2026-10-08 (edited in canvas files directly, NOT in gen2): ONB-001 roles = Learner / Creator / Validator / Organisation (4th = set up an organisation); ONB-002 = 2 options Independently / Join an institution (+ "join later from My Organisations"); 002S = institution coming soon.
 - LOGO (2026-10-07): new Credalio wordmark (`design/illustrations/credalio-wordmark.png`, mark-only `credalio-mark.png`, blue #1E4497) was swapped into the canvas files by a regex post-process, NOT in the older generators. If you re-run gen2/build8/build10 etc., re-apply the logo swap (classes `lg-word` / `lg-mark`).
 
 ## Hard layout rules

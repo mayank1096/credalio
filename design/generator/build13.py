@@ -31,6 +31,7 @@ c = '''<main class="ko {{koCls}}">
 <p class="ko-sub ob-in2">{{sub}}</p>
 
 <sc-if value="{{r}}" hint-placeholder-val="{{true}}">
+<div class="ko-row">
 <section class="ko-card ob-in3" aria-label="What happens next">
 <span class="sec-h">What happens next</span>
 <ol class="ko-path">
@@ -44,9 +45,11 @@ c = '''<main class="ko {{koCls}}">
 <span class="ko-nt"><span class="ko-nl">Meanwhile, next for you</span><b>Credentials &amp; expertise</b><span>Add a degree or certificate. It doesn’t need to wait for this check.</span></span>
 <a href="#" class="ds-btn sm ko-go"><span>Add credentials</span><span class="ob-arrow">''' + ic('arrow', 16, 2.4) + '''</span></a>
 </section>
+</div>
 </sc-if>
 
 <sc-if value="{{v}}" hint-placeholder-val="{{false}}">
+<div class="ko-row">
 <section class="ko-card ko-idc ob-in3" aria-label="Verified identity">
 <span class="ko-ii">''' + ik(ID_I, 22, 1.9) + '''</span>
 <span class="ko-it"><b>Ada Ononuju</b><span>National ID card · Nigeria · verified 7 October 2026</span></span>
@@ -58,6 +61,7 @@ c = '''<main class="ko {{koCls}}">
 <span class="ko-nt"><span class="ko-nl">Next for you</span><b>Credentials &amp; expertise</b><span>Show learners what you know. About 5 minutes.</span></span>
 <a href="#" class="ds-btn sm ko-go"><span>Add credentials</span><span class="ob-arrow">''' + ic('arrow', 16, 2.4) + '''</span></a>
 </section>
+</div>
 </sc-if>
 
 <sc-if value="{{a}}" hint-placeholder-val="{{false}}">
@@ -87,7 +91,7 @@ c = '''<main class="ko {{koCls}}">
 <div class="ko-links ob-in4"><a href="CR-RDY-001.dc.html">View readiness</a><span aria-hidden="true">·</span><a href="CR-DASH-NEW.dc.html">Back to my Studio</a></div>
 </main>'''
 
-KO_CSS = '''.ko{flex-grow:1;width:min(700px,100%);box-sizing:border-box;margin:0 auto;padding:clamp(20px,3.6vh,40px) 24px 32px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;--k:#1652F0;--kb:#EAF0FF}
+KO_CSS = '''.ko{flex-grow:1;width:min(920px,100%);box-sizing:border-box;margin:0 auto;padding:clamp(20px,3.6vh,40px) 24px 32px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;--k:#1652F0;--kb:#EAF0FF}
 .tk-root:has(.ko){background:radial-gradient(55% 40% at 50% 0%,rgba(22,82,240,.08),rgba(22,82,240,0) 70%),#FFFFFF}
 .ko-v{--k:#0F6B45;--kb:#E7F5EE}.ko-a{--k:#B26A00;--kb:#FFF3DC}.ko-f{--k:#3A4566;--kb:#EEF1F7}
 .ko-emb{position:relative;width:84px;height:84px;display:flex;align-items:center;justify-content:center}
@@ -161,6 +165,20 @@ KO_CSS = '''.ko{flex-grow:1;width:min(700px,100%);box-sizing:border-box;margin:0
 .ko-oi{width:40px;height:40px;flex-shrink:0;border-radius:12px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
 .ko-cta{margin-top:20px;display:flex;flex-direction:column;align-items:center;gap:10px}
 .ko-cn{font-size:13.5px;color:#5B6582}
+.ko-row{margin-top:24px;width:100%;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:14px;align-items:stretch}
+.ko-row .ko-card,.ko-row .ko-next{margin-top:0}
+.ko-row .ko-next{flex-direction:column;align-items:flex-start;gap:10px;padding:18px 20px}
+.ko-row .ko-go{margin-top:auto}
+.ko-row .ko-idc{align-content:start}
+.ko-sub{max-width:600px}
+.ko-card:not(.ko-row .ko-card){max-width:640px}
+.ko-opts{display:grid !important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.ko-a .ko-card{max-width:none}
+.ko-a .ko-fix{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:10px}
+.ko-a .ko-fix li{flex-direction:column;align-items:flex-start;gap:10px;padding:14px;min-height:0}
+.ko-a .ko-ok{margin:0}
+.ko-a .ko-tag{position:absolute;top:12px;right:12px}
+.ko-a .ko-fix li.ko-bad{position:relative}
 .ko-links{margin-top:18px;display:flex;align-items:center;gap:10px;font-size:14.5px;color:#8A93AD}
 .ko-links a{font-weight:600;text-decoration:none;color:#3A4566}
 .ko-links a:hover{color:#1652F0}
@@ -173,6 +191,13 @@ KO_CSS = '''.ko{flex-grow:1;width:min(700px,100%);box-sizing:border-box;margin:0
 .ko-h{font-size:24px;margin-top:10px}
 .ko-sub{font-size:14.5px;margin-top:8px}
 .ko-card{margin-top:20px;padding:14px 16px;border-radius:18px}
+.ko-row{grid-template-columns:minmax(0,1fr);gap:10px;margin-top:20px}
+.ko-opts{grid-template-columns:minmax(0,1fr) !important}
+.ko-a .ko-fix{grid-template-columns:minmax(0,1fr)}
+.ko-a .ko-fix li{flex-direction:row;align-items:center;padding:8px 12px}
+.ko-a .ko-ok{margin:0 16px}
+.ko-a .ko-tag{position:static}
+.ko-card:not(.ko-row .ko-card){max-width:none}
 .ko-next{flex-wrap:wrap;padding:14px 16px;border-radius:18px}
 .ko-ni{display:none}
 .ko-go{width:100%;justify-content:space-between}

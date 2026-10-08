@@ -73,7 +73,7 @@
 - Variables: Primitives / Color (semantic, Light) / Spacing / Radius; 16 text styles; 4 effect styles. Components use variables + styles.
 - In Figma ALWAYS set clipsContent=false on inner frames/auto-layouts/components (only screen roots + illustration crops clip) — otherwise shadows get cropped.
 - Figma can't render WebP image fills: always upload PNG. State ledger: `design/figma-state.json`.
-- Screens are generated from the canvas with `design/figma-sync/` (DOM → auto-layout frames, colour variables bound, images as PNG). Re-sync a screen after canvas edits by re-running its job (replaces the frame by name). Pages: Onboarding · Desktop/Mobile, Creator Studio, Readiness & Centre, Orientation, Identity (KYC).
+- Screens are generated from the canvas with `design/figma-sync/` (DOM → auto-layout frames, colour variables bound, images as PNG). Re-sync a screen after canvas edits by re-running its job (replaces the frame by name). Pages: Onboarding · Desktop/Mobile, Creator Studio, Readiness & Centre, Orientation, Identity (KYC), Credentials. Builder source is stored in the file (root sharedPluginData crd/builder) so jobs only send data; combine jobs with `design/figma-sync/comb.py`.
 
 ## Workflow
 - 25 screens/day plan in chat history; track progress in `screens.md`.

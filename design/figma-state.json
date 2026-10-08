@@ -5,8 +5,8 @@
   "Cover": "0:1",
   "Foundations": "2:2",
   "Components": "2:3",
-  "Onboarding · Desktop": "2:4",
-  "Onboarding · Mobile": "2:5",
+  "Onboarding \u00b7 Desktop": "2:4",
+  "Onboarding \u00b7 Mobile": "2:5",
   "Creator Studio": "25:12",
   "Readiness & Centre": "25:13",
   "Orientation": "25:14",
@@ -57,261 +57,287 @@
   "Illustration/Coming soon": "5:193"
  },
  "screens": {
-  "CR-ONB-001 · Who will you become next? · Desktop": {
+  "CR-ONB-001 \u00b7 Who will you become next? \u00b7 Desktop": {
    "page": "2:4",
    "x": 0
   },
-  "CR-ONB-001 · Who will you become next? · Mobile": {
+  "CR-ONB-001 \u00b7 Who will you become next? \u00b7 Mobile": {
    "page": "2:5",
    "x": 0
   },
-  "CR-ONB-002 · How will you create? · Desktop": {
+  "CR-ONB-002 \u00b7 How will you create? \u00b7 Desktop": {
    "page": "2:4",
    "x": 1600
   },
-  "CR-ONB-002 · How will you create? · Mobile": {
+  "CR-ONB-002 \u00b7 How will you create? \u00b7 Mobile": {
    "page": "2:5",
    "x": 470
   },
-  "CR-ONB-002S · Organisations coming soon · Desktop": {
+  "CR-ONB-002S \u00b7 Organisations coming soon \u00b7 Desktop": {
    "page": "2:4",
    "x": 3200
   },
-  "CR-ONB-002S · Organisations coming soon · Mobile": {
+  "CR-ONB-002S \u00b7 Organisations coming soon \u00b7 Mobile": {
    "page": "2:5",
    "x": 940
   },
-  "CR-ONB-003 · Create account · Desktop": {
+  "CR-ONB-003 \u00b7 Create account \u00b7 Desktop": {
    "page": "2:4",
    "x": 4800
   },
-  "CR-ONB-003 · Create account · Mobile": {
+  "CR-ONB-003 \u00b7 Create account \u00b7 Mobile": {
    "page": "2:5",
    "x": 1410
   },
-  "CR-ONB-003b · Check your inbox · Desktop": {
+  "CR-ONB-003b \u00b7 Check your inbox \u00b7 Desktop": {
    "page": "2:4",
    "x": 6400
   },
-  "CR-ONB-003b · Check your inbox · Mobile": {
+  "CR-ONB-003b \u00b7 Check your inbox \u00b7 Mobile": {
    "page": "2:5",
    "x": 1880
   },
-  "CR-ONB-003v · Email confirmed · Desktop": {
+  "CR-ONB-003v \u00b7 Email confirmed \u00b7 Desktop": {
    "page": "2:4",
    "x": 8000
   },
-  "CR-ONB-003v · Email confirmed · Mobile": {
+  "CR-ONB-003v \u00b7 Email confirmed \u00b7 Mobile": {
    "page": "2:5",
    "x": 2350
   },
-  "CR-ONB-003c · Choose a password · Desktop": {
+  "CR-ONB-003c \u00b7 Choose a password \u00b7 Desktop": {
    "page": "2:4",
    "x": 9600
   },
-  "CR-ONB-003c · Choose a password · Mobile": {
+  "CR-ONB-003c \u00b7 Choose a password \u00b7 Mobile": {
    "page": "2:5",
    "x": 2820
   },
-  "CR-ONB-004 · About you · Desktop": {
+  "CR-ONB-004 \u00b7 About you \u00b7 Desktop": {
    "page": "2:4",
    "x": 11200
   },
-  "CR-ONB-004 · About you · Mobile": {
+  "CR-ONB-004 \u00b7 About you \u00b7 Mobile": {
    "page": "2:5",
    "x": 3290
   },
-  "CR-ONB-005 · Your field · Desktop": {
+  "CR-ONB-005 \u00b7 Your field \u00b7 Desktop": {
    "page": "2:4",
    "x": 12800
   },
-  "CR-ONB-005 · Your field · Mobile": {
+  "CR-ONB-005 \u00b7 Your field \u00b7 Mobile": {
    "page": "2:5",
    "x": 3760
   },
-  "CR-ONB-005b · What you will teach · Desktop": {
+  "CR-ONB-005b \u00b7 What you will teach \u00b7 Desktop": {
    "page": "2:4",
    "x": 14400
   },
-  "CR-ONB-005b · What you will teach · Mobile": {
+  "CR-ONB-005b \u00b7 What you will teach \u00b7 Mobile": {
    "page": "2:5",
    "x": 4230
   },
-  "CR-ONB-006 · Meet your Copilot · Desktop": {
+  "CR-ONB-006 \u00b7 Meet your Copilot \u00b7 Desktop": {
    "page": "2:4",
    "x": 16000
   },
-  "CR-ONB-006 · Meet your Copilot · Mobile": {
+  "CR-ONB-006 \u00b7 Meet your Copilot \u00b7 Mobile": {
    "page": "2:5",
    "x": 4700
   },
-  "CR-ONB-007 · Copilot style · Desktop": {
+  "CR-ONB-007 \u00b7 Copilot style \u00b7 Desktop": {
    "page": "2:4",
    "x": 17600
   },
-  "CR-ONB-007 · Copilot style · Mobile": {
+  "CR-ONB-007 \u00b7 Copilot style \u00b7 Mobile": {
    "page": "2:5",
    "x": 5170
   },
-  "CR-ONB-008 · You’re a Creator · Desktop": {
+  "CR-ONB-008 \u00b7 You\u2019re a Creator \u00b7 Desktop": {
    "page": "2:4",
    "x": 19200
   },
-  "CR-ONB-008 · You’re a Creator · Mobile": {
+  "CR-ONB-008 \u00b7 You\u2019re a Creator \u00b7 Mobile": {
    "page": "2:5",
    "x": 5640
   },
-  "CR-DASH-NEW · Creator Studio launchpad · Desktop": {
+  "CR-DASH-NEW \u00b7 Creator Studio launchpad \u00b7 Desktop": {
    "page": "25:12",
    "x": 0
   },
-  "CR-DASH-NEW · Creator Studio launchpad · Mobile": {
+  "CR-DASH-NEW \u00b7 Creator Studio launchpad \u00b7 Mobile": {
    "page": "25:12",
    "x": 1520
   },
-  "CR-CREATE-001 · How would you like to build it? · Desktop": {
+  "CR-CREATE-001 \u00b7 How would you like to build it? \u00b7 Desktop": {
    "page": "25:12",
    "x": 2000
   },
-  "CR-CREATE-001 · How would you like to build it? · Mobile": {
+  "CR-CREATE-001 \u00b7 How would you like to build it? \u00b7 Mobile": {
    "page": "25:12",
    "x": 3520
   },
-  "CR-CREATE-002A · New course with Nova (chat) · Desktop": {
+  "CR-CREATE-002A \u00b7 New course with Nova (chat) \u00b7 Desktop": {
    "page": "25:12",
    "x": 4000
   },
-  "CR-CREATE-002A · New course with Nova (chat) · Mobile": {
+  "CR-CREATE-002A \u00b7 New course with Nova (chat) \u00b7 Mobile": {
    "page": "25:12",
    "x": 5520
   },
-  "CR-CREATE-002Ab · Review Nova’s draft · Desktop": {
+  "CR-CREATE-002Ab \u00b7 Review Nova\u2019s draft \u00b7 Desktop": {
    "page": "25:12",
    "x": 6000
   },
-  "CR-CREATE-002Ab · Review Nova’s draft · Mobile": {
+  "CR-CREATE-002Ab \u00b7 Review Nova\u2019s draft \u00b7 Mobile": {
    "page": "25:12",
    "x": 7520
   },
-  "CR-CREATE-002B · Build from scratch · Desktop": {
+  "CR-CREATE-002B \u00b7 Build from scratch \u00b7 Desktop": {
    "page": "25:12",
    "x": 8000
   },
-  "CR-CREATE-002B · Build from scratch · Mobile": {
+  "CR-CREATE-002B \u00b7 Build from scratch \u00b7 Mobile": {
    "page": "25:12",
    "x": 9520
   },
-  "CR-RDY-001 · Your readiness (in progress) · Desktop": {
+  "CR-RDY-001 \u00b7 Your readiness (in progress) \u00b7 Desktop": {
    "page": "25:13",
    "x": 0
   },
-  "CR-RDY-001 · Your readiness (in progress) · Mobile": {
+  "CR-RDY-001 \u00b7 Your readiness (in progress) \u00b7 Mobile": {
    "page": "25:13",
    "x": 1520
   },
-  "CR-RDY-001s · Your readiness (new creator) · Desktop": {
+  "CR-RDY-001s \u00b7 Your readiness (new creator) \u00b7 Desktop": {
    "page": "25:13",
    "x": 2000
   },
-  "CR-RDY-001s · Your readiness (new creator) · Mobile": {
+  "CR-RDY-001s \u00b7 Your readiness (new creator) \u00b7 Mobile": {
    "page": "25:13",
    "x": 3520
   },
-  "CR-CTR-001 · Creator Centre · Desktop": {
+  "CR-CTR-001 \u00b7 Creator Centre \u00b7 Desktop": {
    "page": "25:13",
    "x": 4000
   },
-  "CR-CTR-001 · Creator Centre · Mobile": {
+  "CR-CTR-001 \u00b7 Creator Centre \u00b7 Mobile": {
    "page": "25:13",
    "x": 5520
   },
-  "CR-ORI-001 · Creator Orientation · Desktop": {
+  "CR-ORI-001 \u00b7 Creator Orientation \u00b7 Desktop": {
    "page": "25:14",
    "x": 0
   },
-  "CR-ORI-001 · Creator Orientation · Mobile": {
+  "CR-ORI-001 \u00b7 Creator Orientation \u00b7 Mobile": {
    "page": "25:14",
    "x": 1520
   },
-  "CR-ORI-002 · Module overview · Desktop": {
+  "CR-ORI-002 \u00b7 Module overview \u00b7 Desktop": {
    "page": "25:14",
    "x": 2000
   },
-  "CR-ORI-002 · Module overview · Mobile": {
+  "CR-ORI-002 \u00b7 Module overview \u00b7 Mobile": {
    "page": "25:14",
    "x": 3520
   },
-  "CR-ORI-003 · Lesson · Desktop": {
+  "CR-ORI-003 \u00b7 Lesson \u00b7 Desktop": {
    "page": "25:14",
    "x": 4000
   },
-  "CR-ORI-003 · Lesson · Mobile": {
+  "CR-ORI-003 \u00b7 Lesson \u00b7 Mobile": {
    "page": "25:14",
    "x": 5520
   },
-  "CR-ORI-004 · Quick knowledge check · Desktop": {
+  "CR-ORI-004 \u00b7 Quick knowledge check \u00b7 Desktop": {
    "page": "25:14",
    "x": 6000
   },
-  "CR-ORI-004 · Quick knowledge check · Mobile": {
+  "CR-ORI-004 \u00b7 Quick knowledge check \u00b7 Mobile": {
    "page": "25:14",
    "x": 7520
   },
-  "CR-ORI-005 · Scenario: AI-drafted lesson · Desktop": {
+  "CR-ORI-005 \u00b7 Scenario: AI-drafted lesson \u00b7 Desktop": {
    "page": "25:14",
    "x": 8000
   },
-  "CR-ORI-005 · Scenario: AI-drafted lesson · Mobile": {
+  "CR-ORI-005 \u00b7 Scenario: AI-drafted lesson \u00b7 Mobile": {
    "page": "25:14",
    "x": 9520
   },
-  "CR-ORI-006 · Module complete · Desktop": {
+  "CR-ORI-006 \u00b7 Module complete \u00b7 Desktop": {
    "page": "25:14",
    "x": 10000
   },
-  "CR-ORI-006 · Module complete · Mobile": {
+  "CR-ORI-006 \u00b7 Module complete \u00b7 Mobile": {
    "page": "25:14",
    "x": 11520
   },
-  "CR-ORI-007 · Orientation complete · Desktop": {
+  "CR-ORI-007 \u00b7 Orientation complete \u00b7 Desktop": {
    "page": "25:14",
    "x": 12000
   },
-  "CR-ORI-007 · Orientation complete · Mobile": {
+  "CR-ORI-007 \u00b7 Orientation complete \u00b7 Mobile": {
    "page": "25:14",
    "x": 13520
   },
-  "CR-KYC-001 · Verify identity: before you start · Desktop": {
+  "CR-KYC-001 \u00b7 Verify identity: before you start \u00b7 Desktop": {
    "page": "25:15",
    "x": 0
   },
-  "CR-KYC-001 · Verify identity: before you start · Mobile": {
+  "CR-KYC-001 \u00b7 Verify identity: before you start \u00b7 Mobile": {
    "page": "25:15",
    "x": 1520
   },
-  "CR-KYC-002 · Sumsub: choose document · Desktop": {
+  "CR-KYC-002 \u00b7 Sumsub: choose document \u00b7 Desktop": {
    "page": "25:15",
    "x": 2000
   },
-  "CR-KYC-002 · Sumsub: choose document · Mobile": {
+  "CR-KYC-002 \u00b7 Sumsub: choose document \u00b7 Mobile": {
    "page": "25:15",
    "x": 3520
   },
-  "CR-KYC-002b · Sumsub: photos · Desktop": {
+  "CR-KYC-002b \u00b7 Sumsub: photos \u00b7 Desktop": {
    "page": "25:15",
    "x": 4000
   },
-  "CR-KYC-002b · Sumsub: photos · Mobile": {
+  "CR-KYC-002b \u00b7 Sumsub: photos \u00b7 Mobile": {
    "page": "25:15",
    "x": 5520
   },
-  "CR-KYC-002c · Sumsub: liveness check · Desktop": {
+  "CR-KYC-002c \u00b7 Sumsub: liveness check \u00b7 Desktop": {
    "page": "25:15",
    "x": 6000
   },
-  "CR-KYC-002c · Sumsub: liveness check · Mobile": {
+  "CR-KYC-002c \u00b7 Sumsub: liveness check \u00b7 Mobile": {
    "page": "25:15",
    "x": 7520
   }
+ },
+ "kycOutcomes2026_10_08": {
+  "page": "25:15",
+  "frames": {
+   "CR-KYC-002d": {
+    "desktop": "273:12",
+    "mobile": "273:125"
+   },
+   "CR-KYC-003": {
+    "desktop": "261:12",
+    "mobile": "261:84"
+   },
+   "CR-KYC-004": {
+    "desktop": "265:12",
+    "mobile": "265:82"
+   },
+   "CR-KYC-005": {
+    "desktop": "270:12",
+    "mobile": "270:82"
+   },
+   "CR-KYC-006": {
+    "desktop": "272:12",
+    "mobile": "272:79"
+   }
+  },
+  "imagesUploaded": 32
  }
 }

@@ -184,10 +184,10 @@ KO_CSS = '''.ko{flex-grow:1;width:min(920px,100%);box-sizing:border-box;margin:0
 .ko-links a:hover{color:#1652F0}
 @media (prefers-reduced-motion: reduce){.ko-r .ko-halo::after,.ko-now .ko-dot::after,.ko-up{animation:none}.ko-tick path{animation:none;stroke-dashoffset:0}}
 @media (max-width: 960px){
-.ko{padding:36px 16px 32px 16px;align-items:stretch;text-align:left}
-.ko-emb{width:72px;height:72px;align-self:flex-start}
+.ko{padding:36px 16px 32px 16px;align-items:stretch;text-align:center}
+.ko-emb{width:72px;height:72px;align-self:center}
 .ko-disc{width:48px;height:48px}.ko-disc svg{width:24px;height:24px}
-.ko-pill{align-self:flex-start;margin-top:14px}
+.ko-pill{align-self:center;margin-top:14px}
 .ko-h{font-size:24px;margin-top:10px}
 .ko-sub{font-size:14.5px;margin-top:8px}
 .ko-card{margin-top:20px;padding:14px 16px;border-radius:18px}

@@ -55,11 +55,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 
 ## 05. Readiness task 2 · Credentials & expertise: upload or verify online (AWS, Microsoft, Credly…) → next task (10)
 
-- [ ] D [ ] M  `CR-CRED-001` CRED-001 · Your credentials & expertise
-- [ ] D [ ] M  `CR-CRED-002` CRED-002 · Add a credential: choose type
-- [ ] D [ ] M  `CR-CRED-002a` CRED-002 · Degree or diploma (upload)
-- [ ] D [ ] M  `CR-CRED-002b` CRED-002 · AWS certification by credential ID (checked online)
-- [ ] D [ ] M  `CR-CRED-002c` CRED-002 · Certification by badge link (Credly)
+- [x] D [x] M  `CR-CRED-001` CRED-001 · Your credentials & expertise
+- [x] D [x] M  `CR-CRED-002` CRED-002 · Add a credential: choose type
+- [x] D [x] M  `CR-CRED-002a` CRED-002 · Degree or diploma (upload)
+- [x] D [x] M  `CR-CRED-002b` CRED-002 · AWS certification by credential ID (checked online)
+- [x] D [x] M  `CR-CRED-002c` CRED-002 · Certification by badge link (Credly)
 - [ ] D [ ] M  `CR-CRED-002d` CRED-002 · Licence or membership
 - [ ] D [ ] M  `CR-CRED-002e` CRED-002 · Work experience
 - [ ] D [ ] M  `CR-CRED-002f` CRED-002 · Other evidence (portfolio, publications)

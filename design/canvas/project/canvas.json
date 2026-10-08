@@ -647,6 +647,86 @@
       "w": 390,
       "x": 5660,
       "y": 13300
+    },
+    "CR-CRED-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CRED-001 · Your credentials & expertise · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 14600
+    },
+    "CR-CRED-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CRED-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 14600
+    },
+    "CR-CRED-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CRED-002 · Add a credential: choose type · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 14600
+    },
+    "CR-CRED-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CRED-002 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 14600
+    },
+    "CR-CRED-002a.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CRED-002a · Degree or diploma · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 14600
+    },
+    "CR-CRED-002a-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CRED-002a · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 14600
+    },
+    "CR-CRED-002b.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CRED-002b · Certification by credential ID (AWS) · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 14600
+    },
+    "CR-CRED-002b-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CRED-002b · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 14600
+    },
+    "CR-CRED-002c.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CRED-002c · Certification by badge link (Credly) · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 14600
+    },
+    "CR-CRED-002c-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CRED-002c · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 14600
     }
   },
   "createdOnFiles": {
@@ -705,6 +785,14 @@
       "w": 240,
       "x": 0,
       "y": 11700
+    },
+    "cred": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Readiness task 2 · Credentials & expertise → add a credential → degree · certification by ID · by badge link",
+      "w": 240,
+      "x": 0,
+      "y": 14300
     }
   },
   "order": [
@@ -784,7 +872,17 @@
     "CR-KYC-005.dc.html",
     "CR-KYC-005-Mobile.dc.html",
     "CR-KYC-006.dc.html",
-    "CR-KYC-006-Mobile.dc.html"
+    "CR-KYC-006-Mobile.dc.html",
+    "CR-CRED-001.dc.html",
+    "CR-CRED-001-Mobile.dc.html",
+    "CR-CRED-002.dc.html",
+    "CR-CRED-002-Mobile.dc.html",
+    "CR-CRED-002a.dc.html",
+    "CR-CRED-002a-Mobile.dc.html",
+    "CR-CRED-002b.dc.html",
+    "CR-CRED-002b-Mobile.dc.html",
+    "CR-CRED-002c.dc.html",
+    "CR-CRED-002c-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

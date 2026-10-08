@@ -323,8 +323,8 @@ body{background:#FFFFFF}
 </section>
 <section class="ko-next ob-in4" aria-label="Next for you">
 <span class="ko-ni"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"></circle><path d="m8.5 13.2-1.5 7.8 5-2.6 5 2.6-1.5-7.8"></path></svg></span>
-<span class="ko-nt"><span class="ko-nl">Meanwhile, next for you</span><b>Credentials &amp; expertise</b><span>Add a degree or certificate. It doesn’t need to wait for this check.</span></span>
-<a href="#" class="ds-btn sm ko-go"><span>Add credentials</span><span class="ob-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+<span class="ko-nt"><span class="ko-nl">Next task</span><b>Credentials &amp; expertise</b><span>Your MSc certificate scan is unreadable. Upload a clearer copy.</span></span>
+<a href="#" class="ds-btn sm ko-go"><span>Fix my credentials</span><span class="ob-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
 </section>
 </div>
 </sc-if>
@@ -339,8 +339,8 @@ body{background:#FFFFFF}
 </section>
 <section class="ko-next ob-in4" aria-label="Next for you">
 <span class="ko-ni"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"></circle><path d="m8.5 13.2-1.5 7.8 5-2.6 5 2.6-1.5-7.8"></path></svg></span>
-<span class="ko-nt"><span class="ko-nl">Next for you</span><b>Credentials &amp; expertise</b><span>Show learners what you know. About 5 minutes.</span></span>
-<a href="#" class="ds-btn sm ko-go"><span>Add credentials</span><span class="ob-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+<span class="ko-nt"><span class="ko-nl">Next task</span><b>Credentials &amp; expertise</b><span>Your MSc certificate scan is unreadable. Upload a clearer copy.</span></span>
+<a href="#" class="ds-btn sm ko-go"><span>Fix my credentials</span><span class="ob-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
 </section>
 </div>
 </sc-if>
@@ -355,7 +355,7 @@ body{background:#FFFFFF}
 </ul>
 <p class="ko-tip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"></path></svg><span>Lay the card flat in good light and hold still until it focuses.</span></p>
 </section>
-<div class="ko-cta ob-in4"><a href="CR-KYC-002b.dc.html" class="ds-btn"><span>Retake front photo</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><span class="ko-cn">About 2 minutes. Everything else is kept.</span></div>
+<div class="ko-cta ob-in4"><a href="CR-KYC-002b.dc.html" class="ds-btn"><span>Try again</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><span class="ko-cn">About 2 minutes. Everything else is kept.</span></div>
 </sc-if>
 
 <sc-if value="{{f}}" hint-placeholder-val="{{false}}">
@@ -382,10 +382,10 @@ class Component extends DCLogic {
   renderVals() {
     const v = this.v;
     const T = {
-      review: ['ko-r', 'In review', 'Thanks, Ada. We’re checking your ID.', 'Sumsub is comparing your photos and selfie with your ID. You can keep building while it runs.'],
-      verified: ['ko-v', 'Verified', 'You’re verified, Ada.', 'Your identity is confirmed. Learners and validators will see you’re a real, verified creator.'],
-      action: ['ko-a', 'Action needed', 'One photo needs a retake.', 'Almost there. The front of your ID was hard to read, so Sumsub couldn’t finish the check.'],
-      failed: ['ko-f', 'Not verified', 'We couldn’t verify your ID this time.', 'Your selfie didn’t match the photo on your ID clearly enough. This happens, and it’s fixable.']
+      review: ['ko-r', 'In review', 'Thanks, your verification is with Sumsub', 'We’ll notify you when it’s done. You can carry on with your other readiness tasks meanwhile.'],
+      verified: ['ko-v', 'Verified', 'Identity verified', 'Ada Ononuju · Nigeria · verified by Sumsub on 1 Oct 2026. Your identity badge now shows on your Creator Profile.'],
+      action: ['ko-a', 'Action required', 'We need a clearer photo of your document', 'Sumsub couldn’t read your document. Take new photos and submit again; it only takes a minute.'],
+      failed: ['ko-f', 'Not verified', 'We couldn’t verify your identity', 'Your verification wasn’t approved. You can keep drafting, but you can’t submit for validation until your identity is verified. Our support team can help you sort this out.']
     }[v];
     return { koCls: T[0], pill: T[1], h1: T[2], sub: T[3], r: v === 'review', v: v === 'verified', a: v === 'action', f: v === 'failed' };
   }

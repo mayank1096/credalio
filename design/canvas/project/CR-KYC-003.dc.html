@@ -174,7 +174,8 @@ body{background:#FFFFFF}
 .tk-sec{width:34px;padding:0;justify-content:center}
 }
 .ko{flex-grow:1;width:min(920px,100%);box-sizing:border-box;margin:0 auto;padding:clamp(20px,3.6vh,40px) 24px 32px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;--k:#1652F0;--kb:#EAF0FF}
-.tk-root:has(.ko){background:radial-gradient(55% 40% at 50% 0%,rgba(22,82,240,.08),rgba(22,82,240,0) 70%),#FFFFFF}
+.tk-root:has(.ko){--glow:22,82,240;background:radial-gradient(55% 40% at 50% 0%,rgba(var(--glow),.12),rgba(var(--glow),0) 70%),#FFFFFF}
+.tk-root:has(.ko-v){--glow:15,107,69}.tk-root:has(.ko-a){--glow:214,140,20}.tk-root:has(.ko-f){--glow:91,101,130}
 .ko-v{--k:#0F6B45;--kb:#E7F5EE}.ko-a{--k:#B26A00;--kb:#FFF3DC}.ko-f{--k:#3A4566;--kb:#EEF1F7}
 .ko-emb{position:relative;width:84px;height:84px;display:flex;align-items:center;justify-content:center}
 .ko-halo{position:absolute;inset:0;border-radius:50%;background:var(--kb)}

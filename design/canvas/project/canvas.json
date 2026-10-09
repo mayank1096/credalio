@@ -794,42 +794,6 @@
       "x": 0,
       "y": 14300
     },
-    "sug01": {
-      "x": 0,
-      "y": 844,
-      "w": 1440,
-      "maxH": 170,
-      "text": "The card descriptions now run to three lines, which makes the cards feel heavy. Could we shorten them?\n“Build the skills to become who you want to be.” → “Build skills you can prove.”\n“Turn your expertise into learning that helps others grow.” → “Turn your expertise into learning.”\nAlso, “Set Up an Organization” is a bit long next to the one-word titles. Maybe just “Organization”?",
-      "fill": "orange",
-      "size": "s"
-    },
-    "sug02": {
-      "x": 0,
-      "y": 3244,
-      "w": 1440,
-      "maxH": 300,
-      "text": "I’d drop the line “When you’re ready to publish, we’ll ask you to confirm it’s you. Not before.” It’s a lot to take in this early, and we explain it later in Readiness anyway.",
-      "fill": "orange",
-      "size": "s"
-    },
-    "sug03": {
-      "x": 2070,
-      "y": 5644,
-      "w": 1440,
-      "maxH": 300,
-      "text": "Small one: “This is how learners will see you.” under Display name says the same thing as the line under the heading. Happy to remove it?",
-      "fill": "orange",
-      "size": "s"
-    },
-    "sug04": {
-      "x": 0,
-      "y": 9884,
-      "w": 1440,
-      "maxH": 280,
-      "text": "Two things here:\n1. The Nova card has two labels, “Your next step” and “What to do next”. I’d keep just “Your next step”.\n2. The footer “Keep building while checks run. Your drafts stay available…” repeats the line under the page title, so I’d remove it.",
-      "fill": "orange",
-      "size": "s"
-    },
     "sug05": {
       "x": 6210,
       "y": 9774,

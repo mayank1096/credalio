@@ -395,6 +395,18 @@ body{background:#FFFFFF}
 .cr-mbar small{display:block;text-align:center;margin-top:8px;font-size:12.5px;color:#5B6582}
 }
 @media (min-width: 961px){.cr-mbar{display:none}}
+
+.cr{grid-template-columns:minmax(0,760px) !important;justify-content:center;gap:24px !important}
+.cr-side{position:static !important;padding-top:0}
+.cr-sub{max-width:640px}
+.cr-panel{box-shadow:none}
+.cr-end{display:flex;align-items:center;gap:20px;padding:16px 16px 16px 18px;border-radius:18px;background:#F2FAF6;border:1.5px solid #CFEADD}
+.cr-end .cr-gate{margin:0;padding:0;border:0;background:none;max-width:none;flex:1 1 auto}
+.cr-end .ds-btn{flex-shrink:0}
+@media (max-width: 960px){
+.cr-end{margin:16px 16px 0 16px;flex-direction:column;align-items:stretch;padding:12px 14px}
+.cr-end .ds-btn{display:none}
+}
 </style>
 </helmet>
 <div class="tk-root">
@@ -406,17 +418,15 @@ body{background:#FFFFFF}
 </header>
 <main class="cr">
 <aside class="cr-side">
-<span class="lp-eb ob-in">Credentials &amp; expertise</span>
 <h1 class="lp-h1 ob-in">Your credentials &amp; expertise</h1>
 <p class="cr-sub ob-in2">Add evidence of your qualifications and experience: degrees, professional certifications such as AWS or Microsoft, licences, work experience or other proof. Submitted credentials show as verified only after they’re checked.</p>
-<div class="cr-gate ob-in3"><span class="cr-gk"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><b>Task complete</b><span>You have at least one verified credential, so this task is complete. Credentials still in review will be added to your profile when they’re verified.</span></div>
-<div class="cr-next ob-in4"><span class="cr-nt"><span class="cr-nl">Next task</span><b>Creator Orientation</b><span>Seven short modules on creating trusted learning.</span></span><a href="CR-ORI-001.dc.html" class="ds-btn sm"><span>Continue Orientation</span><span class="ob-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
 </aside>
 <section class="cr-panel ob-in2" aria-label="Your credentials">
 <div class="cr-ph"><span class="sec-h">Your credentials</span><span class="cr-cnt">1 verified · 1 in review · 1 to fix</span></div>
 <ul class="cr-list"><li class="cr-row"><span class="cr-ri"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path><path d="M22 9v5"></path></svg></span><span class="cr-rt"><b>MSc Data Science</b><span>Degree · University of Lagos · 2017</span></span><span class="cr-pill cr-pv"><i></i>Verified</span></li><li class="cr-row"><span class="cr-ri"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"></circle><path d="m8.5 13.2-1.5 7.8 5-2.6 5 2.6-1.5-7.8"></path></svg></span><span class="cr-rt"><b>Microsoft Certified: Power BI Data Analyst Associate</b><span>Certification · Microsoft · checked online</span></span><span class="cr-pill cr-pr"><i></i>In review</span></li><li class="cr-row"><span class="cr-ri"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"></circle><path d="m8.5 13.2-1.5 7.8 5-2.6 5 2.6-1.5-7.8"></path></svg></span><span class="cr-rt"><b>Google Data Analytics Certificate</b><span>Certification · Google · 2021</span></span><span class="cr-pill cr-pa"><i></i>Needs more information</span><div class="cr-fix"><span>The certificate scan is unreadable. Upload a clearer copy or add the credential ID.</span><a href="CR-CRED-002b.dc.html" class="ds-ghost">Fix</a></div></li></ul>
 <a href="CR-CRED-002.dc.html" class="cr-add"><span class="cr-ri"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span><span class="cr-rt"><b>Add credential</b><span>Degree, certification, licence, work or other evidence</span></span></a>
 </section>
+<div class="cr-end ob-in3"><div class="cr-gate"><span class="cr-gk"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><b>Task complete</b><span>You have at least one verified credential, so this task is complete. Credentials still in review will be added to your profile when they’re verified.</span></div><a href="CR-ORI-001.dc.html" class="ds-btn sm"><span>Continue Orientation</span><span class="ob-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
 <div class="cr-mbar"><a href="CR-ORI-001.dc.html" class="ds-btn"><span>Continue Orientation</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><small>About 25 minutes · you can come back to add more</small></div>
 </main>
 </div>

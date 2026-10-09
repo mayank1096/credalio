@@ -844,7 +844,7 @@
       "y": 15444,
       "w": 1440,
       "maxH": 360,
-      "text": "“Credentials & expertise” shows up three times at the top (top bar, small label and heading), so I’d remove the small label.\nThe intro runs to four lines. Maybe: “Add degrees, certifications, licences or work experience. They show as verified once checked.”\nThe green box could also be shorter: “One verified credential completes this task. Others join your profile once verified.”",
+      "text": "I’ve simplified this page: one column, and the “task complete” box and the next step are now one bar at the bottom.\nThe intro still runs to four lines though. Maybe: “Add degrees, certifications, licences or work experience. They show as verified once checked.”\nAnd the green text could be: “One verified credential completes this task. Others join your profile once verified.”",
       "fill": "orange",
       "size": "s"
     },

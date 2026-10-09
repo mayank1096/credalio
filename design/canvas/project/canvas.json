@@ -799,7 +799,7 @@
       "y": 844,
       "w": 1440,
       "maxH": 170,
-      "text": "SUGGESTION FOR CLIENT REVIEW (Claude)\nONB-001 · Cards. WHY: client descriptions now wrap to 3 lines, and “Set Up an Organization” breaks the one-word title pattern. CHANGE: title “Set Up an Organization” → “Organization”; “Build the skills to become who you want to be.” → “Build skills you can prove.”; “Turn your expertise into learning that helps others grow.” → “Turn your expertise into learning.”",
+      "text": "The card descriptions now run to three lines, which makes the cards feel heavy. Could we shorten them?\n“Build the skills to become who you want to be.” → “Build skills you can prove.”\n“Turn your expertise into learning that helps others grow.” → “Turn your expertise into learning.”\nAlso, “Set Up an Organization” is a bit long next to the one-word titles. Maybe just “Organization”?",
       "fill": "orange",
       "size": "s"
     },
@@ -808,7 +808,7 @@
       "y": 3244,
       "w": 1440,
       "maxH": 300,
-      "text": "SUGGESTION FOR CLIENT REVIEW (Claude)\nONB-002 · Note under the options. WHY: a verification note at this step adds weight the user doesn’t need yet; it’s covered later in Readiness. CHANGE: remove “When you’re ready to publish, we’ll ask you to confirm it’s you. Not before.”",
+      "text": "I’d drop the line “When you’re ready to publish, we’ll ask you to confirm it’s you. Not before.” It’s a lot to take in this early, and we explain it later in Readiness anyway.",
       "fill": "orange",
       "size": "s"
     },
@@ -817,7 +817,7 @@
       "y": 5644,
       "w": 1440,
       "maxH": 300,
-      "text": "SUGGESTION FOR CLIENT REVIEW (Claude)\nONB-004 · Display name hint. WHY: repeats the sub-line (“…choose the name learners will see”). CHANGE: remove “This is how learners will see you.” under Display name.",
+      "text": "Small one: “This is how learners will see you.” under Display name says the same thing as the line under the heading. Happy to remove it?",
       "fill": "orange",
       "size": "s"
     },
@@ -826,7 +826,7 @@
       "y": 9884,
       "w": 1440,
       "maxH": 280,
-      "text": "SUGGESTION FOR CLIENT REVIEW (Claude)\nRDY-001 · Two repeats. WHY: the Nova card has two labels for one message, and the footer repeats the page sub-line. CHANGE: Nova card keep “Your next step”, remove “What to do next”. Remove the footer “Keep building while checks run. Your drafts stay available while checks are under way.”",
+      "text": "Two things here:\n1. The Nova card has two labels, “Your next step” and “What to do next”. I’d keep just “Your next step”.\n2. The footer “Keep building while checks run. Your drafts stay available…” repeats the line under the page title, so I’d remove it.",
       "fill": "orange",
       "size": "s"
     },
@@ -835,7 +835,7 @@
       "y": 9774,
       "w": 1440,
       "maxH": 300,
-      "text": "SUGGESTION FOR CLIENT REVIEW (Claude)\nORI-001 · Footer. WHY: repeats what the Readiness page explains; the page’s job is to continue the module. CHANGE: remove “Keep building as you learn · Orientation is one of the steps that unlock submitting for validation. See your readiness”.",
+      "text": "I’d remove the footer “Keep building as you learn… See your readiness”. The Readiness page already covers this, and this page is really about getting back into the module.",
       "fill": "orange",
       "size": "s"
     },
@@ -844,7 +844,7 @@
       "y": 12844,
       "w": 1440,
       "maxH": 140,
-      "text": "SUGGESTION FOR CLIENT REVIEW (Claude)\nKYC-002 (all 4 steps) · Side text. WHY: sub-line + 3 tips + “Powered by Sumsub” on every step is heavy; the tips carry the useful info. CHANGE: remove the sub-line “Follow the identity steps, then return to your readiness checklist.” on all steps.",
+      "text": "On all four ID steps, the line “Follow the identity steps, then return to your readiness checklist.” feels like extra reading on top of the tips. I’d remove it and let the tips do the work.",
       "fill": "orange",
       "size": "s"
     },
@@ -853,7 +853,7 @@
       "y": 12844,
       "w": 1440,
       "maxH": 140,
-      "text": "SUGGESTION FOR CLIENT REVIEW (Claude)\nKYC-003 · Repeat. WHY: the “What happens next” steps and the sub-line say the same thing. CHANGE: keep the sub-line “We’ll notify you when it’s done…” and remove the “What happens next” 3-step card (or keep the card and shorten the sub-line to “We’ll notify you when it’s done.”).",
+      "text": "The “What happens next” card and the line under the heading say pretty much the same thing. Shall we keep just one? I’d lean towards the card, with the line shortened to “We’ll notify you when it’s done.”",
       "fill": "orange",
       "size": "s"
     },
@@ -862,7 +862,7 @@
       "y": 14144,
       "w": 1440,
       "maxH": 140,
-      "text": "SUGGESTION FOR CLIENT REVIEW (Claude)\nKYC-004 · Date mismatch + repeat. WHY: sub-line says “verified … 1 Oct 2026”, card says “verified 7 October 2026”; name/country/date already show on the card. CHANGE: sub-line → “Your identity badge now shows on your Creator Profile.” and use one date.",
+      "text": "Two dates here: the line under the heading says 1 Oct 2026, but the card says 7 October 2026. Which one is right?\nThe name, country and date already sit on the card, so the line could simply be: “Your identity badge now shows on your Creator Profile.”",
       "fill": "orange",
       "size": "s"
     },
@@ -871,7 +871,7 @@
       "y": 14144,
       "w": 1440,
       "maxH": 140,
-      "text": "SUGGESTION FOR CLIENT REVIEW (Claude)\nKYC-006 · Long sub-line (32 words) + repeat. CHANGE: “Your verification wasn’t approved. You can keep drafting, but you can’t submit for validation until your identity is verified. Our support team can help you sort this out.” → “Your verification wasn’t approved. You can keep drafting. Support can help you finish.” Remove “You can keep drafting while this is sorted.” under the button (now repeated).",
+      "text": "This message is quite long for the space. Could we try:\n“Your verification wasn’t approved. You can keep drafting. Support can help you finish.”\nThen “You can keep drafting while this is sorted.” under the button wouldn’t be needed.",
       "fill": "orange",
       "size": "s"
     },
@@ -880,7 +880,7 @@
       "y": 15444,
       "w": 1440,
       "maxH": 360,
-      "text": "SUGGESTION FOR CLIENT REVIEW (Claude)\nCRED-001 · Heading repeats + long copy. WHY: “Credentials & expertise” shows in the top bar, the small label and the heading; sub-line wraps to 4 lines; “Task complete” box and “Next task” card compete. CHANGE: remove the small label above the heading. Sub-line → “Add degrees, certifications, licences or work experience. They show as verified once checked.” Task-complete text → “One verified credential completes this task. Others join your profile once verified.”",
+      "text": "“Credentials & expertise” shows up three times at the top (top bar, small label and heading), so I’d remove the small label.\nThe intro runs to four lines. Maybe: “Add degrees, certifications, licences or work experience. They show as verified once checked.”\nThe green box could also be shorter: “One verified credential completes this task. Others join your profile once verified.”",
       "fill": "orange",
       "size": "s"
     },
@@ -889,7 +889,7 @@
       "y": 15444,
       "w": 1440,
       "maxH": 360,
-      "text": "SUGGESTION FOR CLIENT REVIEW (Claude)\nCRED-002 · Repeats. WHY: small label “Add a credential” sits right above the heading “Add a credential”; the two side cards (Checked online / Reviewed) repeat the tags on each row. CHANGE: remove the small label; remove the two side cards (the row tags already say it).",
+      "text": "The small label “Add a credential” sits right on top of the heading that says the same thing, so I’d remove it.\nThe two boxes on the left (Checked online / Reviewed) also repeat the tags on each option. Could we drop them to keep the page lighter?",
       "fill": "orange",
       "size": "s"
     },
@@ -898,7 +898,7 @@
       "y": 15444,
       "w": 1440,
       "maxH": 360,
-      "text": "SUGGESTION FOR CLIENT REVIEW (Claude)\nCRED-002a · Repeats. WHY: side note “Reviewed by the Credalio Trust team…” and footer “Reviewed in 1 to 3 days” say the same; heading “Your degree or diploma” repeats the form title “Degree or diploma”. CHANGE: remove the side note (keep footer line); remove the form’s inner title row (keep “Change” link next to the heading).",
+      "text": "The note on the left and the line next to the button both say it’s reviewed by our team, so I’d keep just the one by the button.\n“Degree or diploma” is also repeated inside the form under the heading. We could keep just the “Change” link up top.",
       "fill": "orange",
       "size": "s"
     },
@@ -907,7 +907,7 @@
       "y": 15444,
       "w": 1440,
       "maxH": 360,
-      "text": "SUGGESTION FOR CLIENT REVIEW (Claude)\nCRED-002b · Option label + repeat. WHY: “Verification link or digital badge” is too long for a 3-option row; side note and footer repeat. CHANGE: option → “Link or badge”; remove the side note (keep footer “Usually checked within a minute”).",
+      "text": "“Verification link or digital badge” is too long for the three options in a row. Could it be “Link or badge”?\nThe note on the left also repeats the line next to the button, so I’d remove it.",
       "fill": "orange",
       "size": "s"
     },
@@ -916,7 +916,7 @@
       "y": 15444,
       "w": 1440,
       "maxH": 360,
-      "text": "SUGGESTION FOR CLIENT REVIEW (Claude)\nCRED-002c · Same as 002b. CHANGE: option “Verification link or digital badge” → “Link or badge”; remove the side note (footer already says it).",
+      "text": "Same as the screen before: “Link or badge” instead of “Verification link or digital badge”, and I’d remove the note on the left since the line next to the button already says it.",
       "fill": "orange",
       "size": "s"
     }

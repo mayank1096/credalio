@@ -42,11 +42,11 @@ review = ('<sc-if value="{{vReview}}" hint-placeholder-val="{{true}}"><section c
           '<span class="cl-sv"><em>Role</em><b>Co-Creator</b></span><span class="cl-sv"><em>Revenue share</em><b>20%</b></span><span class="cl-sv"><em>Reply by</em><b>in 6 days</b></span></div>'
           '<span class="cl-lab">What you’ll do</span><ul class="cl-do">'
           + ''.join(f'<li>{CHK}<span>{t}</span></li>' for t in ['Build your chapter and respond to comments and validator requests on it', 'Declare your own contribution before validation'])
-          + '</ul><div class="cl-perm"><span class="cl-pl">You can</span><span class="cl-pr">'
+          + '</ul><div class="cl-perm"><div class="cl-pb ok"><span class="cl-pl">You can</span>'
           + ''.join(f'<span class="cl-p ok">{CHK}{t}</span>' for t in ['Edit your chapter', 'Comment anywhere', 'Use Team chat'])
-          + '</span><span class="cl-pl">Lead Creator keeps</span><span class="cl-pr">'
+          + '</div><div class="cl-pb"><span class="cl-pl">Lead Creator keeps</span>'
           + ''.join(f'<span class="cl-p">{NO}{t}</span>' for t in ['Publishing', 'Pricing', 'Other chapters'])
-          + '</span></div>'
+          + '</div></div>'
           '<sc-if value="{{asking}}" hint-placeholder-val="{{false}}"><div class="cl-box"><label for="cl-q" class="cl-lab">Your question to Dr. Bola Ade</label><textarea id="cl-q" rows="3" placeholder="For example: can I add a case study to Chapter 3?"></textarea><div class="cl-bf"><span>The reply appears with this invitation.</span><button type="button" class="ds-ghost cl-sm" onClick="{{send}}">Send question</button></div></div></sc-if>'
           '<sc-if value="{{sent}}" hint-placeholder-val="{{false}}"><div class="cl-note" role="status">' + CHAT + '<span>Question sent. Dr. Bola Ade’s reply will appear here.</span></div></sc-if>'
           '<sc-if value="{{declining}}" hint-placeholder-val="{{false}}"><div class="cl-box"><label for="cl-d" class="cl-lab">Reason (optional, shared with Dr. Bola Ade)</label><textarea id="cl-d" rows="2"></textarea><div class="cl-bf"><span>You can’t undo this.</span><button type="button" class="ds-ghost cl-sm cl-red" onClick="{{confirmDecline}}">Decline invitation</button></div></div></sc-if>'
@@ -110,7 +110,7 @@ CSS = '''
 .cl-ch > span:last-child{display:flex;flex-direction:column;gap:2px}
 .cl-ch b{font-size:15px;font-weight:600}.cl-ch > span:last-child span{font-size:13px;color:#5B6582}
 .cl-lab{display:block;margin:16px 0 8px 0;font-size:12.5px;font-weight:500;color:#8A93AD}
-.cl-do{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.cl-do{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
 .cl-do li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;line-height:1.5}
 .cl-do svg{color:#1652F0;flex-shrink:0;margin-top:3px}
 .cl-sum{margin-top:14px;display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;align-items:center;gap:22px;padding:12px 18px 12px 12px;border-radius:16px;background:#F5F8FF}
@@ -119,9 +119,10 @@ CSS = '''
 .cl-sc b{font-size:15px;font-weight:600;white-space:nowrap}.cl-sc > span:last-child span{font-size:13px;color:#5B6582}
 .cl-sv{display:flex;flex-direction:column;gap:2px}
 .cl-sv em{font-style:normal;font-size:12.5px;color:#8A93AD}.cl-sv b{font-size:15px;font-weight:600;white-space:nowrap}
-.cl-perm{margin-top:16px;padding-top:14px;border-top:1.5px solid #F0F2F8;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 16px;align-items:center}
-.cl-pl{font-size:12.5px;font-weight:500;color:#8A93AD}
-.cl-pr{display:flex;flex-wrap:wrap;gap:6px 14px}
+.cl-perm{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cl-pb{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:16px 18px;border-radius:16px;border:1.5px solid #E6EAF3}
+.cl-pb.ok{background:#F3FAF6;border-color:#D5EEDF}
+.cl-pl{font-size:12.5px;font-weight:500;color:#8A93AD;margin-bottom:2px}
 .cl-p{display:inline-flex;align-items:center;gap:7px;font-size:14px;color:#5B6582}
 .cl-p svg{color:#8A93AD}
 .cl-p.ok{color:#0B1433}.cl-p.ok svg{color:#0F6B45}
@@ -142,13 +143,14 @@ CSS = '''
 .cl-go.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}.cl-go.lp-off .ob-arrow{color:#9AA8CC}
 .cl-bk{height:52px;width:52px;padding:0}.cl-bk span{display:none}
 .cl-cnt{margin-left:auto;font-size:14px;color:#5B6582}
-.cl-cks{margin-top:18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.cl-ck{display:flex;align-items:flex-start;gap:12px;padding:14px;border-radius:16px;border:1.5px solid #E6EAF3;background:#FFFFFF;font-family:inherit;text-align:left;cursor:pointer;color:#0B1433;transition:border-color .2s ease,background .2s ease}
-.cl-ck:hover{border-color:#AFC1F5}
+.cl-cks{margin-top:18px;display:flex;flex-direction:column;border:1.5px solid #E6EAF3;border-radius:18px;overflow:hidden}
+.cl-ck{display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border:0;border-top:1.5px solid #F0F2F8;background:#FFFFFF;font-family:inherit;text-align:left;cursor:pointer;color:#0B1433;transition:border-color .2s ease,background .2s ease}
+.cl-ck:first-child{border-top:0}
+.cl-ck:hover{background:#F7F9FD}
 .cl-ck > span:last-child{display:flex;flex-direction:column;gap:2px}
 .cl-ck b{font-size:14.5px;font-weight:500;line-height:1.4}
 .cl-ck > span:last-child span{font-size:13px;line-height:1.45;color:#5B6582}
-.cl-ck.tk-on{border-color:#1652F0;background:#F5F8FF}
+.cl-ck.tk-on b{color:#0B1433}
 .cl-done{align-items:flex-start}
 .cl-ok{width:60px;height:60px;border-radius:50%;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px #E7F5EE}
 .cl-big{margin-top:22px;font-size:26px;letter-spacing:-0.02em}
@@ -173,10 +175,8 @@ CSS = '''
 .cl-sum{margin-top:16px;grid-template-columns:repeat(3,auto);justify-content:space-between;gap:18px 12px;padding:16px}
 .cl-lab{margin:28px 0 12px 0}
 .cl-do{gap:12px}
-.cl-sc{grid-column:1 / -1}
-.cl-cks{grid-template-columns:minmax(0,1fr)}
-.cl-perm{grid-template-columns:minmax(0,1fr);gap:10px;margin-top:24px;padding-top:20px}
-.cl-pr{margin-bottom:10px;gap:10px 16px}
+.cl-sc{grid-column:1 / -1;padding-bottom:16px;border-bottom:1.5px solid #DDE5F7}
+.cl-perm{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:28px}
 .cl-foot{position:sticky;bottom:0;z-index:4;margin:28px -16px 0 -16px;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7}
 .cl-tx{margin-right:0;padding:0 4px;font-size:14.5px}
 .cl-ask{width:52px;padding:0;flex-shrink:0}.cl-ask span{display:none}

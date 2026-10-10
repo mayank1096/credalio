@@ -1207,6 +1207,102 @@
       "w": 390,
       "x": 9800,
       "y": 21800
+    },
+    "CR-VAL-MC-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-VAL-MC-001 · Validation Centre · cases · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 23100
+    },
+    "CR-VAL-MC-001-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-VAL-MC-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 23100
+    },
+    "CR-VAL-WS-lead.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-VAL-WS-lead · Workspace in Course Studio · Lead sees every request · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 23100
+    },
+    "CR-VAL-WS-lead-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-VAL-WS-lead · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 23100
+    },
+    "CR-VAL-WS-mary.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-VAL-WS-mary · Workspace · Mary sees only hers · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 23100
+    },
+    "CR-VAL-WS-mary-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-VAL-WS-mary · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 23100
+    },
+    "CR-VAL-MC-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-VAL-MC-002 · Request routed to Mary · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 23100
+    },
+    "CR-VAL-MC-002-Mobile.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-VAL-MC-002 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 23100
+    },
+    "CR-VAL-MC-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-VAL-MC-003 · Mary responds with evidence · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 23100
+    },
+    "CR-VAL-MC-003-Mobile.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-VAL-MC-003 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 23100
+    },
+    "CR-VAL-MC-002L.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-VAL-MC-002L · Lead views Mary’s request (read-only) · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 23100
+    },
+    "CR-VAL-MC-002L-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-VAL-MC-002L · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 23100
     }
   },
   "createdOnFiles": {
@@ -1403,6 +1499,14 @@
       "w": 240,
       "x": 0,
       "y": 21500
+    },
+    "val": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Validation · Validation Centre → workspace inside the Course Studio (Lead sees all, Mary sees hers) → Mary’s request → she responds with evidence → Lead follows read-only",
+      "w": 240,
+      "x": 0,
+      "y": 22800
     }
   },
   "order": [
@@ -1552,7 +1656,19 @@
     "CR-DEC-003.dc.html",
     "CR-DEC-003-Mobile.dc.html",
     "CR-DEC-004.dc.html",
-    "CR-DEC-004-Mobile.dc.html"
+    "CR-DEC-004-Mobile.dc.html",
+    "CR-VAL-MC-001.dc.html",
+    "CR-VAL-MC-001-Mobile.dc.html",
+    "CR-VAL-WS-lead.dc.html",
+    "CR-VAL-WS-lead-Mobile.dc.html",
+    "CR-VAL-WS-mary.dc.html",
+    "CR-VAL-WS-mary-Mobile.dc.html",
+    "CR-VAL-MC-002.dc.html",
+    "CR-VAL-MC-002-Mobile.dc.html",
+    "CR-VAL-MC-003.dc.html",
+    "CR-VAL-MC-003-Mobile.dc.html",
+    "CR-VAL-MC-002L.dc.html",
+    "CR-VAL-MC-002L-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

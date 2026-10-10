@@ -106,12 +106,12 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 
 ## 10. Validation: Validation Centre lists cases; each workspace opens inside the Studio (6)
 
-- [ ] D [ ] M  `CR-VAL-MC-001` CR-VAL-MC-001 · Validation Centre: list of cases (each opens in its Studio)
-- [ ] D [ ] M  `CR-VAL-WS-lead` Validation Workspace inside Course Studio · Lead Creator sees every request
-- [ ] D [ ] M  `CR-VAL-WS-mary` Validation Workspace inside Course Studio · Mary sees only hers
-- [ ] D [ ] M  `CR-VAL-MC-002` CR-VAL-MC-002 · Routed request assigned to Mary (in the Studio)
-- [ ] D [ ] M  `CR-VAL-MC-003` CR-VAL-MC-003 · Mary responds with evidence (in the Studio)
-- [ ] D [ ] M  `CR-VAL-MC-002L` Lead Creator views Mary’s request (read-only, in the Studio)
+- [x] D [x] M  `CR-VAL-MC-001` CR-VAL-MC-001 · Validation Centre: list of cases (each opens in its Studio)
+- [x] D [x] M  `CR-VAL-WS-lead` Validation Workspace inside Course Studio · Lead Creator sees every request
+- [x] D [x] M  `CR-VAL-WS-mary` Validation Workspace inside Course Studio · Mary sees only hers
+- [x] D [x] M  `CR-VAL-MC-002` CR-VAL-MC-002 · Routed request assigned to Mary (in the Studio)
+- [x] D [x] M  `CR-VAL-MC-003` CR-VAL-MC-003 · Mary responds with evidence (in the Studio)
+- [x] D [x] M  `CR-VAL-MC-002L` Lead Creator views Mary’s request (read-only, in the Studio)
 
 ## 11. Credit Wallet (8)
 

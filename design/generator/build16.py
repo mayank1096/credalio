@@ -223,12 +223,15 @@ ATT_DEC = ('<section class="ds-card st-att st-amb ob-in2" aria-label="Needs your
            '<span class="st-at"><b>Your contributor declaration is needed</b><span>Financial Modelling Basics can’t be submitted for validation until you declare your contribution.</span></span>'
            + ghost('#', 'Review') + '</div></section>')
 ASG = (f'<section class="ds-card st-asg st-hero ob-in2" aria-labelledby="st-g"><div class="st-sh"><div><span class="st-lab">My assigned work</span><h2 id="st-g">Financial Modelling Basics</h2>'
-       '<span class="st-meta">Co-Creator · Chapter 3, Revenue models · Lead: Dr. Bola Ade</span></div><a href="#" class="ds-link">Assigned to me</a></div>'
-       '<div class="st-ab"><div class="st-up"><span class="st-ul">Up next · due Friday</span>'
-       '<b>Lesson 3.2 · Building a revenue model</b><span class="st-bar sm" aria-hidden="true"><span style="width: 40%"></span></span><span class="st-meta">In progress · 40% drafted</span>'
-       + btn('#', 'Resume') + '</div>'
-       '<ul class="st-rows"><li><span class="st-dot"></span><span class="st-rt"><b>Lesson 3.3 · Scenario analysis</b><span>Video lesson · due next Wednesday</span></span><a href="#" class="st-rb">Start</a></li>'
-       '<li><span class="st-dot"></span><span class="st-rt"><b>Quiz 3 · Revenue models</b><span>Assessment · due in 2 weeks</span></span><a href="#" class="st-rb">Start</a></li></ul></div>'
+       '<span class="st-meta">Co-Creator · Chapter 3, Revenue models<span class="st-mnx"> · Lead: Dr. Bola Ade</span></span></div><a href="#" class="ds-link">Assigned to me</a></div>'
+       '<ul class="st-tl">'
+       '<li class="hl"><span class="st-ring now" aria-hidden="true"></span><span class="st-tt"><b>Lesson 3.2 · Building a revenue model</b>'
+       '<span class="st-tm"><span class="st-bar sm" aria-hidden="true"><span style="width: 40%"></span></span><span>40% drafted<i> · due Friday</i></span></span></span>'
+       '<span class="st-due">Due Friday</span>' + btn('#', 'Resume') + '</li>'
+       '<li><span class="st-ring" aria-hidden="true"></span><span class="st-tt"><b>Lesson 3.3 · Scenario analysis</b><span class="st-tm"><span>Video lesson<i> · due next Wednesday</i></span></span></span>'
+       '<span class="st-due">Due next Wednesday</span><a href="#" class="st-rb">Start</a></li>'
+       '<li><span class="st-ring" aria-hidden="true"></span><span class="st-tt"><b>Quiz 3 · Revenue models</b><span class="st-tm"><span>Assessment<i> · due in 2 weeks</i></span></span></span>'
+       '<span class="st-due">Due in 2 weeks</span><a href="#" class="st-rb">Start</a></li></ul>'
        + NBAND + '</section>')
 PATHW = ('<div class="st-pw ob-in2"><a href="CR-RDY-001.dc.html" class="st-pt"><span class="st-lab">Path to publishing</span><b>1 of 5 done</b></a>'
          '<span class="st-segs" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span>'
@@ -369,6 +372,35 @@ CSS3 = """
 .st-up .st-btn{width:100%;justify-content:space-between}
 .st-rows li:first-child{border-top:1.5px solid #F0F2F8;padding-top:14px}
 .st-sh .ds-link{display:none}
+}
+/* assigned work list v2 */
+.st-tl{list-style:none;margin:18px 0 0 0;padding:0;display:flex;flex-direction:column}
+.st-tl li{display:grid;grid-template-columns:22px minmax(0,1fr) 170px auto;align-items:center;column-gap:16px;padding:14px 16px;border-top:1.5px solid #F0F2F8}
+.st-tl li.hl{border:1.5px solid #E1E9FF;border-radius:16px;background:#F5F8FF;padding:16px}
+.st-tl li.hl + li{border-top:0}
+.st-ring{width:18px;height:18px;border-radius:50%;border:2px solid #CBD3E6;box-sizing:border-box}
+.st-ring.now{border-color:#1652F0;background:conic-gradient(#1652F0 0 40%,#FFFFFF 40% 100%)}
+.st-tt{display:flex;flex-direction:column;gap:4px;min-width:0}
+.st-tt b{font-size:15.5px;font-weight:600}
+.hl .st-tt b{font-size:16.5px}
+.st-tm{display:flex;align-items:center;gap:10px;font-size:13.5px;color:#5B6582}
+.st-tm i{font-style:normal;display:none}
+.st-tm .st-bar.sm{margin:0;width:140px;flex-shrink:0}
+.st-due{font-size:13.5px;color:#5B6582}
+.hl .st-due{color:#0E3BB8;font-weight:500}
+.st-tl .st-rb{justify-self:end}
+@media (max-width: 960px){
+.st-tl{margin-top:14px}
+.st-tl li{grid-template-columns:18px minmax(0,1fr) auto;column-gap:12px;padding:14px 0}
+.st-tl li.hl{padding:14px 0;margin:0;row-gap:14px;background:none;border:0;border-radius:0}
+.hl .st-tt b{font-size:15.5px}
+.st-asg .st-mnx{display:none}
+.st-due{display:none}
+.st-tm i{display:inline}
+.st-tm{flex-direction:column;align-items:flex-start;gap:6px}
+.st-tm .st-bar.sm{width:100%;max-width:none}
+.st-tl li.hl .st-btn{grid-column:1 / -1;width:100%;justify-content:space-between}
+.st-tl .st-rb{height:36px;padding:0 14px;font-size:13.5px}
 }
 /* mobile: same chapter track as desktop, swipeable; roomier card */
 @media (max-width: 960px){

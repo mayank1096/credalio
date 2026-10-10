@@ -85,11 +85,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-DASH-S07` STATE-07 · Validation action required rises to top
 - [x] D [x] M  `CR-DASH-S08` STATE-08 · Published: learners, discussions, earnings appear
 - [x] D [x] M  `CR-DASH-S09` STATE-09 · Established creator
-- [ ] D [ ] M  `CR-NOT-001` CR-NOT-001 · Notification Centre (categories, deep links)
-- [ ] D [ ] M  `CR-NOT-bell` Notification bell dropdown
-- [ ] D [ ] M  `CR-HOME-EXP` CREATE · My Learning Experiences
-- [ ] D [ ] M  `CR-HOME-NEW` CREATE · Create New
-- [ ] D [ ] M  `CR-HOME-SET` Settings · AI preferences (Copilot name & style)
+- [x] D [x] M  `CR-NOT-001` CR-NOT-001 · Notification Centre (categories, deep links)
+- [x] D [x] M  `CR-NOT-bell` Notification bell dropdown
+- [x] D [x] M  `CR-HOME-EXP` CREATE · My Learning Experiences
+- [x] D [x] M  `CR-HOME-NEW` CREATE · Create New
+- [x] D [x] M  `CR-HOME-SET` Settings · AI preferences (Copilot name & style)
 - [ ] D [ ] M  `CR-HOME-SOON` Not-yet-built destination (example: Validation Centre)
 
 ## 09. Collaboration, assigned work & contributor declarations (9)

@@ -90,14 +90,14 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-HOME-EXP` CREATE · My Learning Experiences
 - [x] D [x] M  `CR-HOME-NEW` CREATE · Create New
 - [x] D [x] M  `CR-HOME-SET` Settings · AI preferences (Copilot name & style)
-- [ ] D [ ] M  `CR-HOME-SOON` Not-yet-built destination (example: Validation Centre)
+- [x] D [x] M  `CR-HOME-SOON` Not-yet-built destination (example: Validation Centre)
 
 ## 09. Collaboration, assigned work & contributor declarations (9)
 
-- [ ] D [ ] M  `CR-COL-001` CR-COL-001 · Invitation notification
-- [ ] D [ ] M  `CR-COL-002` CR-COL-002 · Review invitation (Accept / Decline / Ask)
-- [ ] D [ ] M  `CR-COL-003` CR-COL-003 · Collaboration consent (not the validation declaration)
-- [ ] D [ ] M  `CR-COL-004` CR-COL-004 · Invitation accepted
+- [x] D [x] M  `CR-COL-001` CR-COL-001 · Invitation notification
+- [x] D [x] M  `CR-COL-002` CR-COL-002 · Review invitation (Accept / Decline / Ask)
+- [x] D [x] M  `CR-COL-003` CR-COL-003 · Collaboration consent (not the validation declaration)
+- [x] D [x] M  `CR-COL-004` CR-COL-004 · Invitation accepted
 - [ ] D [ ] M  `CR-ASG-001` WORK · Assigned to Me (across experiences)
 - [ ] D [ ] M  `CR-DEC-001` CR-DEC-001 · Contributor declaration request (Mary)
 - [ ] D [ ] M  `CR-DEC-002` CR-DEC-002 · Contributor declaration (Mary signs her own)

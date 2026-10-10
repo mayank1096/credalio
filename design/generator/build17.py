@@ -122,7 +122,7 @@ main_not = '''<main class="ds-main hp">
 <div class="nt-acts"><label class="nt-un"><button type="button" class="hp-sw {{unCls}}" role="switch" aria-checked="{{unAria}}" onClick="{{toggleUnread}}" aria-label="Unread only"></button><span>Unread only</span></label><button type="button" class="hp-rb" onClick="{{markAll}}">Mark all as read</button></div></div>
 <div class="hp-tabs ob-in2" role="tablist" aria-label="Categories"><sc-for list="{{cats}}" as="c" hint-placeholder-count="9"><button type="button" role="tab" aria-selected="{{c.sel}}" class="hp-tab {{c.cls}}" onClick="{{c.pick}}">{{c.t}}</button></sc-for></div>
 <sc-for list="{{groups}}" as="g" hint-placeholder-count="3"><section class="nt-g ob-in3" aria-label="{{g.t}}"><span class="hp-lab">{{g.t}}</span><ul class="ds-card nt-l"><sc-for list="{{g.rows}}" as="r" hint-placeholder-count="4">
-<li class="nt-r {{r.cls}}"><span class="hp-ic {{r.tone}}">''' + ICON_IFS + '''</span><span class="nt-t"><b>{{r.t}}</b><span>{{r.ctx}}</span></span><span class="nt-m"><span>{{r.cat}}</span><span>{{r.when}}</span></span><a href="#" class="hp-rb" onClick="{{r.open}}">{{r.cta}}</a><i class="nt-dot" aria-label="Unread"></i></li>
+<li class="nt-r {{r.cls}}"><span class="hp-ic {{r.tone}}">''' + ICON_IFS + '''</span><span class="nt-t"><b>{{r.t}}</b><span>{{r.ctx}}</span></span><span class="nt-m"><span>{{r.cat}}</span><span>{{r.when}}</span></span><a href="#" class="hp-rb" onClick="{{r.open}}">{{r.cta}}</a><i class="nt-dot" aria-label="Unread"></i><sc-if value="{{r.exp}}" hint-placeholder-val="{{false}}"><div class="nt-x"><span class="nt-xf"><span><em>Your role</em>Co-Creator</span><span><em>Your part</em>Chapter 3 · Revenue models</span><span><em>Revenue share</em>20%</span><span><em>Expires</em>in 6 days</span></span><a href="CR-COL-002.dc.html" class="ds-btn nt-xb"><span>Review invitation</span><span class="ob-arrow">''' + ARR + '''</span></a></div></sc-if></li>
 </sc-for></ul></section></sc-for>
 <sc-if value="{{empty}}" hint-placeholder-val="{{false}}"><div class="ds-card nt-empty"><b>You’re all caught up</b><span>Nothing unread in this category.</span></div></sc-if>
 <a href="CR-HOME-SET.dc.html" class="ds-link nt-pref">Notification settings</a>
@@ -132,7 +132,7 @@ js_not = f'''    {NOT_JS}
     const read = (r) => !r[9] || S.read[r[0]];
     const vis = N.filter((r) => (S.cat === 'All' || r[1] === S.cat) && (!S.unread || !read(r)));
     const groups = ['Today', 'Yesterday', 'Earlier'].map((g) => ({{ t: g, rows: vis.filter((r) => r[2] === g).map((r) => ({{
-      ['i_' + r[3]]: true, tone: r[4], t: r[5], ctx: r[6], cat: r[1], when: r[7], cta: r[8], cls: read(r) ? '' : 'un',
+      ['i_' + r[3]]: true, exp: S.exp === r[0], tone: r[4], t: r[5], ctx: r[6], cat: r[1], when: r[7], cta: r[8], cls: (read(r) ? '' : 'un') + (S.exp === r[0] ? ' ex' : ''),
       open: () => this.setState({{ read: Object.assign({{}}, S.read, {{ [r[0]]: true }}) }}) }})) }})).filter((g) => g.rows.length);
     const n = N.filter((r) => !read(r)).length;
     return {{ navCls: S.nav ? 'ds-open' : '', toggleNav: () => this.setState({{ nav: !S.nav }}),
@@ -158,6 +158,14 @@ css_not = '''
 .nt-r.un .nt-dot{display:block}
 .nt-empty{margin-top:22px;padding:28px;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:14px;color:#5B6582}.nt-empty b{font-size:16px;color:#0B1433}
 .nt-pref{margin:20px 0 0 4px;font-size:14px}
+.nt-r.ex{padding-bottom:18px;align-items:start}
+.nt-r.ex .nt-dot{top:34px}
+.nt-r.ex > .hp-rb{visibility:hidden}
+.nt-x{grid-column:2 / -1;margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 14px 14px 18px;border-radius:16px;background:#F5F8FF;border:1.5px solid #E1E9FF}
+.nt-xf{display:flex;gap:28px;flex-wrap:wrap}
+.nt-xf > span{display:flex;flex-direction:column;gap:2px;font-size:14.5px;font-weight:600;color:#0B1433}
+.nt-xf em{font-style:normal;font-size:12.5px;font-weight:500;color:#8A93AD}
+.nt-xb{height:46px;font-size:14.5px;padding:0 5px 0 18px;flex-shrink:0}.nt-xb .ob-arrow{width:36px;height:36px}
 @media (max-width: 960px){
 .hp-head .nt-acts{justify-content:space-between}
 .nt-l{padding:2px 14px}
@@ -170,9 +178,13 @@ css_not = '''
 .nt-t b{font-size:14.5px}
 .nt-t > span{white-space:normal;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
 .nt-dot{left:-9px}
+.nt-r.ex > .hp-rb{display:none}
+.nt-x{grid-column:1 / -1;flex-direction:column;align-items:stretch;gap:14px;padding:14px}
+.nt-xf{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
+.nt-xb{justify-content:space-between}
 }
 '''
-page('CR-NOT-001', None, main_not, js_not, css_not, 'Credalio · Notifications', "{ nav: false, cat: 'All', unread: false, read: {} }")
+page('CR-NOT-001', None, main_not, js_not, css_not, 'Credalio · Notifications', "{ nav: false, cat: props && props.variant === 'col' ? 'Collaboration' : 'All', exp: props && props.variant === 'col' ? 'n2' : '', unread: false, read: {} }")
 
 # ======================= CR-HOME-EXP · My learning experiences =======================
 EXP = [
@@ -438,3 +450,53 @@ t = wm.replace('<dc-import name="CR-CRED-002" variant="badge"', '<dc-import name
 t = re.sub(r'<title>.*?</title>', '<title>CR-NOT-bell mobile preview</title>', t)
 wr('CR-NOT-bell-Mobile.dc.html', t)
 print('bell ok')
+
+# ======================= CR-HOME-SOON · not-yet-built destination (example: Validation Centre) =======================
+UNTIL = [('val', 'Your open case lives in its Studio', 'Data Analysis with SQL · Case VAL-00928', 'Open'),
+         ('bell', 'Requests reach you as notifications', '1 clarification waiting for you', 'View'),
+         ('book', 'How validation works', 'Creator Centre guide · 6 min read', 'Read')]
+until = ''.join(f'<li class="so-r"><span class="hp-ic">{ic(I[i], 20)}</span><span class="so-t"><b>{t}</b><span>{d}</span></span><a href="#" class="hp-rb">{a}</a></li>' for i, t, d, a in UNTIL)
+main_soon = ('<main class="ds-main hp so-main">\n<div class="so-scene" aria-hidden="true"></div><div class="hp-head ob-in"><div><h1 class="ds-h1">Validation Centre</h1></div></div>'
+             '<section class="ds-card so ob-in2" aria-label="Coming soon"><div class="so-l"><span class="so-ic">' + ic(I['val'], 28, 1.7) + '</span>'
+             '<span class="so-pill">Coming soon</span><h2>All your validation cases in one place</h2>'
+             '<p>Case status, requests routed to you, meetings, findings and decisions, across every learning experience.</p></div>'
+             '<div class="so-r0"><span class="hp-lab">Until then</span><ul class="so-l2">' + until + '</ul></div></section>\n</main>')
+css_soon = '''
+.so{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;padding:36px 36px 32px 40px;align-items:center;background:linear-gradient(120deg,#EEF3FF 0%,#FFFFFF 55%)}
+.so-main{position:relative;isolation:isolate;min-height:calc(100vh - 72px);box-sizing:border-box}
+.so-scene{position:absolute;left:0;right:0;bottom:0;height:min(44vh,34vw);background:url(/_blob/6acc9dd1cd600c17d2fd6381a3069aaa) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 35%);mask-image:linear-gradient(to bottom,transparent 0,#000 35%)}
+.so-l{display:flex;flex-direction:column;align-items:flex-start}
+.so-ic{width:60px;height:60px;border-radius:18px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(22,82,240,.12)}
+.so-pill{margin-top:22px;display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:999px;background:#F1F3F8;color:#4A5578;font-size:12.5px;font-weight:500}
+.so h2{margin:12px 0 0 0;font-size:26px;line-height:1.2;font-weight:600;letter-spacing:-0.02em}
+.so p{margin:10px 0 0 0;font-size:15.5px;line-height:1.6;color:#3A4566;max-width:460px}
+.so-l2{list-style:none;margin:10px 0 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.so-r{display:flex;align-items:center;gap:14px;padding:12px 12px 12px 14px;border-radius:16px;border:1.5px solid #E6EAF3;background:#FFFFFF}
+.so-t{flex-grow:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.so-t b{font-size:15px;font-weight:600}.so-t span{font-size:13.5px;color:#5B6582}
+@media (max-width: 960px){
+.so{grid-template-columns:minmax(0,1fr);gap:26px;padding:0;border:0;box-shadow:none;background:none}
+.so-ic{width:52px;height:52px;border-radius:16px}
+.so-main{min-height:calc(100vh - 64px);padding-bottom:240px}
+.so-scene{height:240px;background-size:250% auto;background-position:52% 100%}
+.so-pill{margin-top:18px}
+.so h2{font-size:21px}
+.so p{font-size:14.5px}
+.so-r{padding:12px}
+.so-r .hp-rb{height:34px;padding:0 13px;font-size:13px}
+}
+'''
+page('CR-HOME-SOON', 'Validation Centre', main_soon, js_new, css_soon, 'Credalio · Validation Centre')
+
+# ---------- wrappers: HOME-SOON mobile, COL-001 (= NOT-001 variant col) desktop + mobile ----------
+t = wm.replace('<dc-import name="CR-CRED-002" variant="badge"', '<dc-import name="CR-HOME-SOON"')
+t = re.sub(r'<title>.*?</title>', '<title>CR-HOME-SOON mobile preview</title>', t)
+wr('CR-HOME-SOON-Mobile.dc.html', t)
+wd = rd('CR-DASH-S03.dc.html')
+t = wd.replace('<dc-import name="CR-DASH-ST" variant="s03"', '<dc-import name="CR-NOT-001" variant="col"')
+t = re.sub(r'<title>.*?</title>', '<title>CR-COL-001 preview</title>', t)
+wr('CR-COL-001.dc.html', t)
+t = wm.replace('<dc-import name="CR-CRED-002" variant="badge"', '<dc-import name="CR-NOT-001" variant="col"')
+t = re.sub(r'<title>.*?</title>', '<title>CR-COL-001 mobile preview</title>', t)
+wr('CR-COL-001-Mobile.dc.html', t)
+print('soon + col1 ok')

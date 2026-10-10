@@ -1047,6 +1047,86 @@
       "w": 390,
       "x": 9800,
       "y": 18900
+    },
+    "CR-HOME-SOON.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-HOME-SOON · Not-yet-built destination (Validation Centre) · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 20500
+    },
+    "CR-HOME-SOON-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-HOME-SOON · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 20500
+    },
+    "CR-COL-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-COL-001 · Invitation notification · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 20500
+    },
+    "CR-COL-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-COL-001 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 20500
+    },
+    "CR-COL-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-COL-002 · Review invitation · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 20500
+    },
+    "CR-COL-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-COL-002 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 20500
+    },
+    "CR-COL-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-COL-003 · Collaboration consent · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 20500
+    },
+    "CR-COL-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-COL-003 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 20500
+    },
+    "CR-COL-004.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-COL-004 · Invitation accepted · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 20500
+    },
+    "CR-COL-004-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-COL-004 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 20500
     }
   },
   "createdOnFiles": {
@@ -1227,6 +1307,14 @@
       "w": 240,
       "x": 0,
       "y": 18600
+    },
+    "col": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Coming soon · Collaboration invitation: notification → review (accept / ask / decline) → consent → joined",
+      "w": 240,
+      "x": 0,
+      "y": 20200
     }
   },
   "order": [
@@ -1356,7 +1444,17 @@
     "CR-HOME-NEW.dc.html",
     "CR-HOME-NEW-Mobile.dc.html",
     "CR-HOME-SET.dc.html",
-    "CR-HOME-SET-Mobile.dc.html"
+    "CR-HOME-SET-Mobile.dc.html",
+    "CR-HOME-SOON.dc.html",
+    "CR-HOME-SOON-Mobile.dc.html",
+    "CR-COL-001.dc.html",
+    "CR-COL-001-Mobile.dc.html",
+    "CR-COL-002.dc.html",
+    "CR-COL-002-Mobile.dc.html",
+    "CR-COL-003.dc.html",
+    "CR-COL-003-Mobile.dc.html",
+    "CR-COL-004.dc.html",
+    "CR-COL-004-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

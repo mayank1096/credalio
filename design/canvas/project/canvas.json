@@ -967,6 +967,86 @@
       "w": 390,
       "x": 16010,
       "y": 17400
+    },
+    "CR-NOT-001.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "title": "CR-NOT-001 · Notification Centre · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 18900
+    },
+    "CR-NOT-001-Mobile.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "title": "CR-NOT-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 18900
+    },
+    "CR-NOT-bell.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-NOT-bell · Bell dropdown · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 18900
+    },
+    "CR-NOT-bell-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-NOT-bell · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 18900
+    },
+    "CR-HOME-EXP.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-HOME-EXP · My learning experiences · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 18900
+    },
+    "CR-HOME-EXP-Mobile.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-HOME-EXP · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 18900
+    },
+    "CR-HOME-NEW.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-HOME-NEW · Create new · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 18900
+    },
+    "CR-HOME-NEW-Mobile.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-HOME-NEW · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 18900
+    },
+    "CR-HOME-SET.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-HOME-SET · Settings · AI preferences · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 18900
+    },
+    "CR-HOME-SET-Mobile.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-HOME-SET · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 18900
     }
   },
   "createdOnFiles": {
@@ -1139,6 +1219,14 @@
       "w": 240,
       "x": 0,
       "y": 17100
+    },
+    "hom": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Studio pages · Notifications (centre + bell) · My learning experiences · Create new · Settings · AI preferences",
+      "w": 240,
+      "x": 0,
+      "y": 18600
     }
   },
   "order": [
@@ -1258,7 +1346,17 @@
     "CR-DASH-S08.dc.html",
     "CR-DASH-S08-Mobile.dc.html",
     "CR-DASH-S09.dc.html",
-    "CR-DASH-S09-Mobile.dc.html"
+    "CR-DASH-S09-Mobile.dc.html",
+    "CR-NOT-001.dc.html",
+    "CR-NOT-001-Mobile.dc.html",
+    "CR-NOT-bell.dc.html",
+    "CR-NOT-bell-Mobile.dc.html",
+    "CR-HOME-EXP.dc.html",
+    "CR-HOME-EXP-Mobile.dc.html",
+    "CR-HOME-NEW.dc.html",
+    "CR-HOME-NEW-Mobile.dc.html",
+    "CR-HOME-SET.dc.html",
+    "CR-HOME-SET-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

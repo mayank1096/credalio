@@ -58,8 +58,8 @@ review = ('<sc-if value="{{vReview}}" hint-placeholder-val="{{true}}"><section c
 checks = ''.join(f'<button type="button" role="checkbox" aria-checked="{{{{c{i}.on}}}}" class="cl-ck {{{{c{i}.cls}}}}" onClick="{{{{c{i}.pick}}}}"><span class="tk-box">{CHK}</span><span><b>{t}</b>' + (f'<span>{d}</span>' if d else '') + '</span></button>' for i, (t, d) in enumerate(CONS))
 consent = ('<sc-if value="{{vConsent}}" hint-placeholder-val="{{false}}"><section class="cl-panel ob-in2" aria-labelledby="cl-ch2">'
            '<h2 id="cl-ch2" class="cl-ph">Before you join</h2><p class="cl-pp">Confirm how you’re taking part. This isn’t the validation declaration; that comes later, for your own work.</p>'
-           '<div class="cl-cks">' + checks + '</div>'
-           '<div class="cl-foot"><a href="CR-COL-002.dc.html" class="ds-ghost cl-bk" aria-label="Back to the invitation">' + BACK + '<span>Back</span></a><span class="cl-cnt">{{nOn}} of 6 confirmed</span>'
+           '<div class="cl-ckw"><div class="cl-ckh"><span>Tick each statement to join</span><b>{{nOn}} of 6 ticked</b></div><div class="cl-cks">' + checks + '</div></div>'
+           '<div class="cl-foot"><a href="CR-COL-002.dc.html" class="ds-ghost cl-bk" aria-label="Back to the invitation">' + BACK + '<span>Back</span></a>'
            '<a href="CR-COL-004.dc.html" class="ds-btn cl-go {{joinOff}}"><span>Accept and join</span><span class="ob-arrow">' + ARR + '</span></a></div>'
            '</section></sc-if>')
 
@@ -141,12 +141,17 @@ CSS = '''
 .cl-ask{height:52px}
 .cl-go{margin-left:0}
 .cl-go.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}.cl-go.lp-off .ob-arrow{color:#9AA8CC}
-.cl-bk{height:52px;width:52px;padding:0}.cl-bk span{display:none}
+.cl-bk{height:52px;width:52px;padding:0}
+.cl-bk + .cl-go{margin-left:auto}.cl-bk span{display:none}
 .cl-cnt{margin-left:auto;font-size:14px;color:#5B6582}
-.cl-cks{margin-top:18px;display:flex;flex-direction:column;border:1.5px solid #E6EAF3;border-radius:18px;overflow:hidden}
-.cl-ck{display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border:0;border-top:1.5px solid #F0F2F8;background:#FFFFFF;font-family:inherit;text-align:left;cursor:pointer;color:#0B1433;transition:border-color .2s ease,background .2s ease}
+.cl-ckw{margin-top:18px;border:1.5px solid #E6EAF3;border-radius:18px;overflow:hidden}
+.cl-ckh{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 18px;background:#F5F8FF;border-bottom:1.5px solid #E6EAF3;font-size:13px;font-weight:500;color:#4A5578}
+.cl-ckh b{font-size:13px;font-weight:600;color:#1652F0}
+.cl-cks{display:flex;flex-direction:column;max-height:296px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#CBD3E6 transparent;background:linear-gradient(#FFF 30%,rgba(255,255,255,0)) center top / 100% 40px no-repeat local,linear-gradient(rgba(255,255,255,0),#FFF 70%) center bottom / 100% 40px no-repeat local,radial-gradient(farthest-side at 50% 0,rgba(11,20,51,.14),transparent) center top / 100% 12px no-repeat scroll,radial-gradient(farthest-side at 50% 100%,rgba(11,20,51,.14),transparent) center bottom / 100% 12px no-repeat scroll}
+.cl-ck{display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border:0;border-top:1.5px solid #F0F2F8;background:transparent;font-family:inherit;text-align:left;cursor:pointer;color:#0B1433;transition:border-color .2s ease,background .2s ease}
 .cl-ck:first-child{border-top:0}
 .cl-ck:hover{background:#F7F9FD}
+.cl-ck:hover .tk-box{border-color:#1652F0}
 .cl-ck > span:last-child{display:flex;flex-direction:column;gap:2px}
 .cl-ck b{font-size:14.5px;font-weight:500;line-height:1.4}
 .cl-ck > span:last-child span{font-size:13px;line-height:1.45;color:#5B6582}
@@ -184,6 +189,7 @@ CSS = '''
 .cl-done .cl-foot{width:auto;align-self:stretch}
 .cl-go{flex-grow:1;justify-content:space-between}
 .cl-cnt{display:none}
+.cl-cks{max-height:none;overflow:visible}
 .cl-big{font-size:22px;margin-top:18px}
 .cl-ok{width:52px;height:52px}
 }

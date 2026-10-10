@@ -64,21 +64,25 @@ css_vc = AV_CSS + '''
 .vc-sm .vc-t b{font-size:16px}
 .vc-mt{font-size:13.5px;color:#5B6582;margin:0 8px}
 @media (max-width: 960px){
-.vc{padding:16px}
-.vc-h{flex-wrap:wrap;gap:12px}
+.vc{padding:20px 18px}
+.vc-h{flex-wrap:wrap;gap:14px 12px}
 .vc-cv{width:42px;height:42px;border-radius:12px}
 .vc-t{flex-basis:calc(100% - 56px)}
 .vc-t b{font-size:16px}
 .vc-h > .vp{margin-left:54px}
-.vc-tr{margin-top:18px}
-.vc-tr span{font-size:11.5px}
-.vc-g{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);margin-top:16px}
-.vc-c{padding:12px 0 0 16px;border-top:1.5px solid #F0F2F8;margin-top:12px}
+.vc-tr{margin-top:26px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.vc-tr span{font-size:12.5px;white-space:nowrap}
+.vc-tr li:not(.on) span{visibility:hidden}
+.vc-g{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);margin-top:20px}
+.vc-c{padding:18px 0 0 18px;border-top:1.5px solid #F0F2F8;margin-top:20px;gap:8px}
 .vc-c:first-child{grid-column:1 / -1;border-top:0;padding:0;margin-top:0}
 .vc-c:nth-child(2){padding-left:0;border-left:0}
 .vc-big{font-size:20px !important}
 .vc-c b{font-size:14.5px}
-.vc-f{flex-direction:column;align-items:stretch}
+.vc-f{flex-direction:column;align-items:stretch;margin-top:24px;padding-top:0;border-top:0}
+.vc-note{display:none}
+.vc + .vc{margin-top:16px}
+.vc-sm{padding:16px 18px}
 .vc-f .hp-btn{width:100%;justify-content:space-between}
 .vc-sm .vc-mt{display:none}
 .vc-sm .hp-rb{margin-left:auto}

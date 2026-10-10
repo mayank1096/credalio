@@ -1303,6 +1303,86 @@
       "w": 390,
       "x": 11870,
       "y": 23100
+    },
+    "CR-WAL-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-WAL-001 · Credit Wallet · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 24600
+    },
+    "CR-WAL-001-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "title": "CR-WAL-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 24600
+    },
+    "CR-WAL-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-WAL-002 · Add Credits · amount · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 24600
+    },
+    "CR-WAL-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-WAL-002 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 24600
+    },
+    "CR-WAL-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-WAL-003 · Add Credits · payment method · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 24600
+    },
+    "CR-WAL-003-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-WAL-003 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 24600
+    },
+    "CR-WAL-004.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-WAL-004 · Add Credits · review and pay · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 24600
+    },
+    "CR-WAL-004-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-WAL-004 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 24600
+    },
+    "CR-WAL-005.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-WAL-005 · Add Credits · processing · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 24600
+    },
+    "CR-WAL-005-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-WAL-005 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 24600
     }
   },
   "createdOnFiles": {
@@ -1507,6 +1587,14 @@
       "w": 240,
       "x": 0,
       "y": 22800
+    },
+    "wal": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Credit Wallet · Add Credits: amount → payment method → review and pay → processing (never charged twice)",
+      "w": 240,
+      "x": 0,
+      "y": 24300
     }
   },
   "order": [
@@ -1668,7 +1756,17 @@
     "CR-VAL-MC-003.dc.html",
     "CR-VAL-MC-003-Mobile.dc.html",
     "CR-VAL-MC-002L.dc.html",
-    "CR-VAL-MC-002L-Mobile.dc.html"
+    "CR-VAL-MC-002L-Mobile.dc.html",
+    "CR-WAL-001.dc.html",
+    "CR-WAL-001-Mobile.dc.html",
+    "CR-WAL-002.dc.html",
+    "CR-WAL-002-Mobile.dc.html",
+    "CR-WAL-003.dc.html",
+    "CR-WAL-003-Mobile.dc.html",
+    "CR-WAL-004.dc.html",
+    "CR-WAL-004-Mobile.dc.html",
+    "CR-WAL-005.dc.html",
+    "CR-WAL-005-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

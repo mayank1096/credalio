@@ -727,6 +727,86 @@
       "w": 390,
       "x": 9800,
       "y": 14600
+    },
+    "CR-CRED-002d.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CRED-002d · Licence or membership · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 14600
+    },
+    "CR-CRED-002d-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CRED-002d · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 14600
+    },
+    "CR-CRED-002e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CRED-002e · Work experience · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 14600
+    },
+    "CR-CRED-002e-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CRED-002e · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 14600
+    },
+    "CR-CRED-002f.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CRED-002f · Other evidence (portfolio, publications) · Desktop",
+      "w": 1440,
+      "x": 14490,
+      "y": 14600
+    },
+    "CR-CRED-002f-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CRED-002f · Mobile",
+      "w": 390,
+      "x": 16010,
+      "y": 14600
+    },
+    "CR-CRED-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CRED-003 · Verified online · Desktop",
+      "w": 1440,
+      "x": 16560,
+      "y": 14600
+    },
+    "CR-CRED-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CRED-003 · Mobile",
+      "w": 390,
+      "x": 18080,
+      "y": 14600
+    },
+    "CR-CRED-003b.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CRED-003b · Submitted for manual review · Desktop",
+      "w": 1440,
+      "x": 18630,
+      "y": 14600
+    },
+    "CR-CRED-003b-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CRED-003b · Mobile",
+      "w": 390,
+      "x": 20150,
+      "y": 14600
     }
   },
   "createdOnFiles": {
@@ -972,7 +1052,17 @@
     "CR-CRED-002b.dc.html",
     "CR-CRED-002b-Mobile.dc.html",
     "CR-CRED-002c.dc.html",
-    "CR-CRED-002c-Mobile.dc.html"
+    "CR-CRED-002c-Mobile.dc.html",
+    "CR-CRED-002d.dc.html",
+    "CR-CRED-002d-Mobile.dc.html",
+    "CR-CRED-002e.dc.html",
+    "CR-CRED-002e-Mobile.dc.html",
+    "CR-CRED-002f.dc.html",
+    "CR-CRED-002f-Mobile.dc.html",
+    "CR-CRED-003.dc.html",
+    "CR-CRED-003-Mobile.dc.html",
+    "CR-CRED-003b.dc.html",
+    "CR-CRED-003b-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

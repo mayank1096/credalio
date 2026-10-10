@@ -38,15 +38,15 @@ side = ('<aside class="cl-side ob-in">'
 
 review = ('<sc-if value="{{vReview}}" hint-placeholder-val="{{true}}"><section class="cl-panel ob-in2" aria-labelledby="cl-ph">'
           '<h2 id="cl-ph" class="cl-ph">Your part</h2>'
-          '<div class="cl-stats"><span><em>Role</em><b>Co-Creator</b></span><span><em>Revenue share</em><b>20%</b><i>of creator revenue</i></span><span><em>Reply by</em><b>in 6 days</b></span></div>'
-          f'<div class="cl-ch"><span class="cl-chi">{BOOK}</span><span><b>Chapter 3 · Revenue models</b><span>3 lessons and Quiz 3</span></span></div>'
+          '<div class="cl-sum"><span class="cl-sc"><span class="cl-chi">' + BOOK + '</span><span><b>Chapter 3 · Revenue models</b><span>3 lessons and Quiz 3</span></span></span>'
+          '<span class="cl-sv"><em>Role</em><b>Co-Creator</b></span><span class="cl-sv"><em>Revenue share</em><b>20%</b></span><span class="cl-sv"><em>Reply by</em><b>in 6 days</b></span></div>'
           '<span class="cl-lab">What you’ll do</span><ul class="cl-do">'
-          + ''.join(f'<li>{CHK}<span>{t}</span></li>' for t in ['Build Chapter 3: three lessons and a quiz', 'Respond to comments and validator requests on your chapter', 'Declare your own contribution before validation'])
-          + '</ul><div class="cl-perm"><div><span class="cl-lab">You can</span>'
+          + ''.join(f'<li>{CHK}<span>{t}</span></li>' for t in ['Build your chapter and respond to comments and validator requests on it', 'Declare your own contribution before validation'])
+          + '</ul><div class="cl-perm"><span class="cl-pl">You can</span><span class="cl-pr">'
           + ''.join(f'<span class="cl-p ok">{CHK}{t}</span>' for t in ['Edit your chapter', 'Comment anywhere', 'Use Team chat'])
-          + '</div><div><span class="cl-lab">Stays with the Lead Creator</span>'
-          + ''.join(f'<span class="cl-p">{NO}{t}</span>' for t in ['Publishing', 'Pricing', 'Editing other chapters'])
-          + '</div></div>'
+          + '</span><span class="cl-pl">Lead Creator keeps</span><span class="cl-pr">'
+          + ''.join(f'<span class="cl-p">{NO}{t}</span>' for t in ['Publishing', 'Pricing', 'Other chapters'])
+          + '</span></div>'
           '<sc-if value="{{asking}}" hint-placeholder-val="{{false}}"><div class="cl-box"><label for="cl-q" class="cl-lab">Your question to Dr. Bola Ade</label><textarea id="cl-q" rows="3" placeholder="For example: can I add a case study to Chapter 3?"></textarea><div class="cl-bf"><span>The reply appears with this invitation.</span><button type="button" class="ds-ghost cl-sm" onClick="{{send}}">Send question</button></div></div></sc-if>'
           '<sc-if value="{{sent}}" hint-placeholder-val="{{false}}"><div class="cl-note" role="status">' + CHAT + '<span>Question sent. Dr. Bola Ade’s reply will appear here.</span></div></sc-if>'
           '<sc-if value="{{declining}}" hint-placeholder-val="{{false}}"><div class="cl-box"><label for="cl-d" class="cl-lab">Reason (optional, shared with Dr. Bola Ade)</label><textarea id="cl-d" rows="2"></textarea><div class="cl-bf"><span>You can’t undo this.</span><button type="button" class="ds-ghost cl-sm cl-red" onClick="{{confirmDecline}}">Decline invitation</button></div></div></sc-if>'
@@ -77,7 +77,7 @@ body = ('<div class="tk-root cl-root {{rootCls}}">\n<div class="tk-scene" aria-h
 
 CSS = '''
 /* build18 collaboration */
-.cl{flex-grow:1;width:min(1160px,100%);box-sizing:border-box;margin:0 auto;padding:clamp(24px,5vh,52px) 32px 64px 32px;display:grid;grid-template-columns:minmax(0,1fr) 600px;gap:64px;align-items:start;align-content:start}
+.cl{flex-grow:1;width:min(1160px,100%);box-sizing:border-box;margin:0 auto;padding:clamp(24px,5vh,52px) 32px 64px 32px;display:grid;grid-template-columns:minmax(0,1fr) 640px;gap:56px;align-items:start;align-content:start}
 .cl-side{position:sticky;top:104px;display:flex;flex-direction:column;align-items:flex-start}
 .cl-from{display:flex;align-items:center;gap:12px}
 .cl-from > span:last-child{display:flex;flex-direction:column;gap:1px}
@@ -109,12 +109,19 @@ CSS = '''
 .cl-chi{width:40px;height:40px;flex-shrink:0;border-radius:12px;background:linear-gradient(135deg,#1652F0,#6E96FF);color:#FFFFFF;display:flex;align-items:center;justify-content:center}
 .cl-ch > span:last-child{display:flex;flex-direction:column;gap:2px}
 .cl-ch b{font-size:15px;font-weight:600}.cl-ch > span:last-child span{font-size:13px;color:#5B6582}
-.cl-lab{display:block;margin:20px 0 8px 0;font-size:12.5px;font-weight:500;color:#8A93AD}
+.cl-lab{display:block;margin:16px 0 8px 0;font-size:12.5px;font-weight:500;color:#8A93AD}
 .cl-do{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
 .cl-do li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;line-height:1.5}
 .cl-do svg{color:#1652F0;flex-shrink:0;margin-top:3px}
-.cl-perm{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
-.cl-perm > div{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.cl-sum{margin-top:14px;display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;align-items:center;gap:22px;padding:12px 18px 12px 12px;border-radius:16px;background:#F5F8FF}
+.cl-sc{display:flex;align-items:center;gap:12px;min-width:0}
+.cl-sc > span:last-child{display:flex;flex-direction:column;gap:2px;min-width:0}
+.cl-sc b{font-size:15px;font-weight:600;white-space:nowrap}.cl-sc > span:last-child span{font-size:13px;color:#5B6582}
+.cl-sv{display:flex;flex-direction:column;gap:2px}
+.cl-sv em{font-style:normal;font-size:12.5px;color:#8A93AD}.cl-sv b{font-size:15px;font-weight:600;white-space:nowrap}
+.cl-perm{margin-top:16px;padding-top:14px;border-top:1.5px solid #F0F2F8;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 16px;align-items:center}
+.cl-pl{font-size:12.5px;font-weight:500;color:#8A93AD}
+.cl-pr{display:flex;flex-wrap:wrap;gap:6px 14px}
 .cl-p{display:inline-flex;align-items:center;gap:7px;font-size:14px;color:#5B6582}
 .cl-p svg{color:#8A93AD}
 .cl-p.ok{color:#0B1433}.cl-p.ok svg{color:#0F6B45}
@@ -163,7 +170,10 @@ CSS = '''
 .cl-stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:12px 14px}
 .cl-stats b{font-size:15px}.cl-stats i{display:none}
 .cl-done .cl-stats{grid-template-columns:auto minmax(0,1fr);gap:10px 24px}
-.cl-perm{grid-template-columns:minmax(0,1fr);gap:4px}
+.cl-sum{grid-template-columns:repeat(3,auto);justify-content:space-between;gap:12px;padding:12px 14px}
+.cl-sc{grid-column:1 / -1}
+.cl-perm{grid-template-columns:minmax(0,1fr);gap:6px}
+.cl-pr{margin-bottom:6px}
 .cl-foot{position:sticky;bottom:0;z-index:4;margin:20px -16px 0 -16px;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7}
 .cl-tx{margin-right:0;padding:0 4px;font-size:14.5px}
 .cl-ask{width:52px;padding:0;flex-shrink:0}.cl-ask span{display:none}

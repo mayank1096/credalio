@@ -62,7 +62,7 @@ items = ''.join(
     f'<span class="pl-ic">{ic(icn)}</span><span class="pl-tx"><b>{t}</b><span>{v} · {sub}</span></span>'
     f'<sc-if value="{{{{p{i}.acc}}}}" hint-placeholder-val="{{{{false}}}}"><span class="pl-ok">{CHK}<span>Accepted</span></span></sc-if>'
     f'<sc-if value="{{{{p{i}.todo}}}}" hint-placeholder-val="{{{{true}}}}"><span class="pl-chev">{CHEV}</span></sc-if></button>'
-    f'<sc-if value="{{{{p{i}.open}}}}" hint-placeholder-val="{{{{false}}}}"><div class="pl-bd"><span class="pl-kl">Key points</span><ul class="pl-kp">'
+    f'<sc-if value="{{{{p{i}.open}}}}" hint-placeholder-val="{{{{false}}}}"><div class="pl-bd"><ul class="pl-kp">'
     + ''.join(f'<li>{x}</li>' for x in pts) +
     f'</ul><div class="pl-ft"><a href="#" class="pl-full">Read the full policy{EXT}</a>'
     f'<button type="button" class="ds-btn pl-go" onClick="{{{{p{i}.accept}}}}"><span>I have read and accept</span><span class="ob-arrow">{ARR}</span></button></div></div></sc-if></div>'
@@ -166,7 +166,7 @@ k = k[:r0] + k[r1:]
 k = k.replace('<sc-if value="{{r}}" hint-placeholder-val="{{true}}">', '<sc-if value="{{r}}" hint-placeholder-val="{{false}}">')
 pol_list = '<ul class="pa-l">' + ''.join(f'<li><span class="pa-c">{CHK}</span>{t}</li>' for (_, _, t, _, _, _) in POLS) + '</ul>'
 v0 = k.index('<section class="ko-card ko-idc ob-in3"'); v1 = k.index('</section>', v0) + 10
-card = (f'<section class="ko-card ko-idc pa-card ob-in3" aria-label="Accepted policies"><span class="pa-h"><b>6 of 6 accepted</b><span>Today · versions saved to your account</span></span>{pol_list}'
+card = (f'<section class="ko-card ko-idc pa-card ob-in3" aria-label="Accepted policies">{pol_list}'
         '<div class="ko-rd"><span class="ko-rl">Readiness</span><span class="ko-bar"><span class="ko-was"></span><span class="ko-up"></span></span><span class="ko-rv"><b>40%</b><em>+20%</em></span></div></section>')
 k = k[:v0] + card + k[v1:]
 k = re.sub(r'<span class="ko-ni"><svg.*?</svg></span>', '<span class="ko-ni">' + ic(I_ID, 22) + '</span>', k, flags=re.S)
@@ -174,7 +174,7 @@ k = k.replace('<b>Creator Orientation</b><span>3 of 7 modules done. Pick up at T
               '<b>Verify your identity</b><span>A government ID and a quick selfie check, through Sumsub.</span>')
 k = k.replace('<a href="#" class="ds-btn sm ko-go"><span>Resume Orientation</span>', '<a href="CR-KYC-001.dc.html" class="ds-btn sm ko-go"><span>Verify my identity</span>')
 k = k.replace('<a href="CR-CRED-001.dc.html">Your credentials</a>', '<a href="CR-RDY-001.dc.html">View readiness</a>')
-k = re.sub(r"const T = \{.*?\}\[v\];", "const T = ['ko-v', 'Complete', 'All policies accepted', 'Thank you. You can read the full text of each policy any time in Creator Centre.'];", k, flags=re.S)
+k = re.sub(r"const T = \{.*?\}\[v\];", "const T = ['ko-v', 'Complete', 'All policies accepted', 'You can read them again any time in Creator Centre.'];", k, flags=re.S)
 k = k.replace("this.v = (props || {}).variant || 'verified';", "this.v = 'verified';")
 k = re.sub(r'<title>.*?</title>', '<title>Credalio · Creator policies accepted</title>', k)
 CSS2 = '''
@@ -211,7 +211,7 @@ NBAND = (f'<div class="st-nb">{NOVA36}<span class="st-nt"><span class="st-lab">N
 def cont_body(primary):
     act = (btn('CR-CREATE-002B.dc.html', 'Continue building') if primary else ghost('CR-CREATE-002B.dc.html', 'Resume'))
     return (f'<section class="ds-card st-cont {"st-hero" if primary else "st-mini"} ob-in2" aria-labelledby="st-c"><div class="st-ct">{COVER}<div class="st-cx">'
-            '<span class="st-lab">Continue your work</span><h2 id="st-c">Data Analysis with SQL</h2><span class="st-meta">Course · Build phase · edited yesterday'
+            + ('' if primary else '<span class="st-lab">Continue your work</span>') + '<h2 id="st-c">Data Analysis with SQL</h2><span class="st-meta">Course · Build phase · edited yesterday'
             + ('' if primary else '<span class="st-mnx"> · next: add an assessment to Chapter 4</span>') + '</span></div>'
             '<span class="st-pct"><b>68%</b><span>built</span></span>' + act + '</div>'
             + (CHS + NBAND if primary else '<div class="st-bar" aria-hidden="true"><span style="width: 68%"></span></div>') + '</section>')
@@ -437,7 +437,7 @@ def STRIP(lab, val, segs_on, nlab, nval, act):
     return ('<div class="st-pw ob-in2' + (' st-keep' if segs_on is None else '') + '"><a href="CR-RDY-001.dc.html" class="st-pt"><span class="st-lab">' + lab + '</span><b>' + val + '</b></a>'
             + (f'<span class="st-segs" aria-hidden="true">{segs}</span>' if segs else '')
             + f'<span class="st-pnx"><span class="st-lab">{nlab}</span><b>{nval}</b></span>' + act + '</div>')
-PATH5 = STRIP('Path to publishing', '4 of 5 done', 4, 'Next', 'Verify your identity', '<a href="CR-KYC-001.dc.html" class="st-rb">Start</a>')
+PATH5 = ('<div class="st-pw ob-in2"><a href="CR-RDY-001.dc.html" class="st-pt" style="display:flex"><span class="st-lab">Path to publishing</span><b>4 of 5 done</b></a><span class="st-segs" style="position:static;opacity:1" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>')
 READY = ('<div class="st-pw st-ok ob-in2"><span class="st-okc" aria-hidden="true">' + CHK + '</span><span class="st-pnx" style="border:0;padding:0"><span class="st-lab">Path to publishing</span><b>All 5 checks complete</b></span>'
          '<a href="CR-RDY-001.dc.html" class="st-rb">View</a></div>')
 EARN = STRIP('Earnings', '$84 available', None, 'Pending', '$212', '<a href="#" class="st-rb">View</a>')
@@ -447,25 +447,24 @@ VSTEPS6 = [('Submitted', '14 Sep', 'ok'), ('Assigned', '3 validators', 'ok'), ('
 VSTEPS7 = [('Submitted', '14 Sep', 'ok'), ('Assigned', '3 validators', 'ok'), ('Review', 'Waiting on you', 'amb'), ('Decision', 'After your reply', ''), ('Publish', 'After a pass', '')]
 def VALCARD(focus, steps, pill, note, act):
     return (f'<section class="ds-card st-cont {"st-hero" if focus else "st-mini st-vm"} ob-in2" aria-label="Validation"><div class="st-ct"><span class="st-cov" aria-hidden="true">{ic(I_VAL2, 26, 1.8)}</span><div class="st-cx">'
-            '<span class="st-lab">In validation · case VAL-00928</span><h2>Data Analysis with SQL</h2><span class="st-meta">' + note + '</span></div>' + pill + act + '</div>'
+            '<span class="st-lab">Case VAL-00928</span><h2>Data Analysis with SQL</h2><span class="st-meta">' + note + '</span></div>' + pill + act + '</div>'
             + TRACK(steps) + (NBAND if focus else '') + '</section>')
-S6_FOCUS = VALCARD(True, VSTEPS6, PILL('Review in progress', 'cb'), 'Educational, Subject Matter and Assessment validators are reviewing.', btn('#', 'Open workspace'))
+S6_FOCUS = VALCARD(True, VSTEPS6, '', 'Educational, Subject Matter and Assessment validators', btn('#', 'Open workspace'))
 S6_ATT = ('<section class="ds-card st-att st-mini ob-in2" aria-label="Needs your attention"><div class="st-ar" style="margin-top:0"><span class="st-ai cb" aria-hidden="true">' + ic(I_CAL, 20) + '</span>'
           '<span class="st-at"><b>Validation meeting proposed: Thu 10:00</b><span>Subject Matter Validator · 30 minutes</span></span>' + ghost('#', 'Accept or propose') + '</div></section>')
 S7_FOCUS = ('<section class="ds-card st-att st-hero st-ambh ob-in2" aria-label="Needs your attention"><div class="st-ar" style="margin-top:0"><span class="st-ai" aria-hidden="true">' + ic(I_VAL2, 22) + '</span>'
             '<span class="st-at"><span class="st-lab amb">Validator request · due in 3 days</span><b>Clarification required: Chapter 3 → Lesson 4</b><span>Data Analysis with SQL · case VAL-00928 · Subject Matter Validator</span></span>'
             + btn('#', 'Respond to the validator') + '</div>' + NBAND + '</section>')
-S7_VAL = VALCARD(False, VSTEPS7, PILL('Your response needed', 'am'), 'One open request is assigned to you. The case continues once you respond.', ghost('#', 'Open workspace'))
+S7_VAL = VALCARD(False, VSTEPS7, '', 'Educational, Subject Matter and Assessment validators', ghost('#', 'Open workspace'))
 S5_FOCUS = ('<section class="ds-card st-att st-hero st-ambh ob-in2" aria-label="Needs your attention"><div class="st-ar" style="margin-top:0"><span class="st-ai" aria-hidden="true">' + ic(I_ID, 22) + '</span>'
-            '<span class="st-at"><span class="st-lab amb">Required to submit</span><b>Verify your identity to submit Data Analysis with SQL</b><span>Your course is ready for validation. This is the only thing left. Usually a few minutes.</span></span>'
+            '<span class="st-at"><b>Verify your identity to submit Data Analysis with SQL</b><span>It’s the last step. Usually a few minutes.</span></span>'
             + btn('CR-KYC-001.dc.html', 'Verify my identity') + '</div>' + NBAND + '</section>')
-S5_COURSE = ('<section class="ds-card st-cont st-mini ob-in2" aria-label="Your course"><div class="st-ct">' + COVER + '<div class="st-cx"><span class="st-lab">Ready for validation</span><h2>Data Analysis with SQL</h2>'
-             '<span class="st-meta">Course · 6 of 6 chapters built<span class="st-mnx"> · submit once your identity is verified</span></span></div><span class="st-pct"><b>100%</b><span>built</span></span>' + ghost('CR-CREATE-002B.dc.html', 'Open') + '</div>'
-             '<div class="st-bar" aria-hidden="true"><span style="width: 100%"></span></div></section>')
+S5_COURSE = ('<section class="ds-card st-cont st-mini ob-in2" aria-label="Your course"><div class="st-ct">' + COVER + '<div class="st-cx"><h2>Data Analysis with SQL</h2>'
+             '<span class="st-meta">Course · all 6 chapters built</span></div>' + ghost('CR-CREATE-002B.dc.html', 'Open') + '</div></section>')
 STAT = lambda v, k, sub='': f'<div class="st-st"><b>{v}</b><span>{k}</span>' + (f'<em>{sub}</em>' if sub else '') + '</div>'
-S8_FOCUS = ('<section class="ds-card st-cont st-hero ob-in2" aria-label="Your published course"><div class="st-ct">' + COVER + '<div class="st-cx"><span class="st-lab">Live for learners</span><h2>Data Analysis with SQL</h2>'
+S8_FOCUS = ('<section class="ds-card st-cont st-hero ob-in2" aria-label="Your published course"><div class="st-ct">' + COVER + '<div class="st-cx"><h2>Data Analysis with SQL</h2>'
             '<span class="st-meta">Course · published 2 Oct</span></div>' + PILL('Gold validated', 'gr') + '</div>'
-            '<div class="st-stats">' + STAT('46', 'Learners', '+46 this week') + STAT('3', 'Verified completions') + STAT('4.8', 'Average rating') + STAT('3', 'Open questions') + '</div>'
+            '<div class="st-stats">' + STAT('46', 'Learners', '+46 this week') + STAT('3', 'Verified completions') + STAT('4.8', 'Average rating') + '</div>'
             '<div class="st-ar st-in"><span class="st-ai cb" aria-hidden="true">' + ic(I_CHAT, 20) + '</span><span class="st-at"><b>3 learner questions are waiting</b><span>Chapter 4 has the most. Fast answers in the first weeks lift completion.</span></span>'
             + btn('#', 'Open discussions') + '</div>' + NBAND + '</section>')
 S8_TODAY = ('<section class="ds-card st-att st-mini ob-in2" aria-label="Today"><div class="st-ar" style="margin-top:0"><span class="st-ai cb" aria-hidden="true">' + ic(I_CAL, 20) + '</span>'
@@ -473,7 +472,7 @@ S8_TODAY = ('<section class="ds-card st-att st-mini ob-in2" aria-label="Today"><
 NEXT8 = ('<section class="ds-card st-att st-mini ob-in2" aria-label="Create next"><div class="st-ar" style="margin-top:0"><span class="st-ai cb" aria-hidden="true">' + ic(I_AI, 20) + '</span>'
          '<span class="st-at"><b>Ready for your next one?</b><span>Learners keep asking about window functions. That could be a follow-on course.</span></span>' + ghost('CR-CREATE-001.dc.html', 'Start something new') + '</div></section>')
 def ALROW(icn, tone, t, m, act): return f'<li><span class="st-ai {tone}" aria-hidden="true">{ic(icn, 20)}</span><span class="st-at"><b>{t}</b><span>{m}</span></span>{act}</li>'
-S9_FOCUS = ('<section class="ds-card st-att st-hero ob-in2" aria-label="Needs you today"><div class="st-sh"><span class="st-lab">Needs you today</span><a href="#" class="ds-link">Notifications</a></div><ul class="st-al">'
+S9_FOCUS = ('<section class="ds-card st-att st-hero ob-in2" aria-label="Needs you today"><ul class="st-al">'
             + ALROW(I_VAL2, '', 'Evidence requested: Data Analyst Career Path', 'Career/Industry Validator · due Friday', btn('#', 'Respond'))
             + ALROW(I_CARD, '', 'Your payout method needs attention', 'Re-verify your bank details before the next payout.', '<a href="#" class="st-rb">Fix now</a>')
             + ALROW(I_CHAT, 'cb', '7 learner questions are waiting', 'Data Analysis with SQL · Chapter 4 has the most', '<a href="#" class="st-rb">Review</a>')
@@ -505,13 +504,13 @@ CSS_X = """
 .st-ok .st-okc{width:30px;height:30px;border-radius:50%;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .st-vm .st-tr{margin-top:14px}
 .st-chs{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}
-.st-stats{margin-top:20px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.st-stats{margin-top:20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .st-st{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border-radius:14px;background:#F7F9FD;border:1.5px solid #EEF1F7}
 .st-st b{font-size:24px;font-weight:600;letter-spacing:-0.02em}
 .st-st span{font-size:13px;color:#5B6582}
 .st-st em{font-style:normal;font-size:12.5px;font-weight:500;color:#0F6B45}
 .st-in{margin-top:16px;padding:14px 16px;border-radius:16px;background:#F5F8FF;border:1.5px solid #E1E9FF}
-.st-al{list-style:none;margin:10px 0 0 0;padding:0}
+.st-al{list-style:none;margin:0;padding:0}
 .st-al li{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1.5px solid #F0F2F8}
 .st-al li:first-child{border-top:0;padding-top:6px}
 .st-al li:first-child .st-ai{background:#FFF1CF;color:#8A5300}
@@ -524,7 +523,7 @@ CSS_X = """
 .st-pn2{display:flex;flex-direction:column;gap:2px;min-width:0}.st-pn2 b{font-weight:600}.st-pn2 span{font-size:12.5px;color:#5B6582}
 .st-tr2{font-size:13.5px;font-weight:500}.st-tr2.up{color:#0F6B45}.st-tr2.dn{color:#8A5300}
 @media (max-width: 960px){
-.st-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
+.st-stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px}
 .st-st{padding:12px}
 .st-st b{font-size:20px}
 .st-pill{order:2}
@@ -564,7 +563,7 @@ class Component extends DCLogic {
       s05: ['Almost there, Ada.', 'One step from validation.', 'While you verify, I can run a pre-check', 'I’ll check outcomes, assessments and sources so validators see a ready course.', ['Run a pre-check', 'What happens in validation?']],
       s06: ['Welcome back, Ada.', 'Your course is with validators.', 'Get ready for Thursday’s meeting', 'I can pull together the questions validators usually ask about SQL courses.', ['Prepare for the meeting', 'How validation works']],
       s07: ['Welcome back, Ada.', 'A validator needs your answer.', 'I can draft a reply from Lesson 3.4', 'You stay in control: review it, edit it, then send it from the workspace.', ['Draft a reply', 'Show the full request']],
-      s08: ['Congratulations, Ada.', 'Your course is live.', 'Your first 46 learners are in', 'Most are early-career analysts, as you designed for. I can draft answers to the open questions.', ['Draft answers', 'See who joined']],
+      s08: ['Congratulations, Ada.', 'Your course is live.', 'Your first 46 learners are in', 'Most are early-career analysts, as you designed for.', ['Draft answers', 'See who joined']],
       s09: ['Good morning, Ada.', 'Four things need you today.', 'Learners drop off at Lesson 4.3', '38% stop at window functions in Advanced SQL. A short practice task before it may help.', ['Review the chapter', 'Draft a practice task']]
     }[v];
     return { navCls: this.state.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !this.state.nav }),

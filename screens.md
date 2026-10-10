@@ -77,14 +77,14 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-DASH-S02` STATE-02 · Draft started: Continue dominates (no start choice again)
 - [x] D [x] M  `CR-DASH-S03` STATE-03 · Collaboration invitation in Needs Your Attention
 - [x] D [x] M  `CR-DASH-S04` STATE-04 · Assigned contributor: My Assigned Work prominent
-- [ ] D [ ] M  `CR-DASH-S05` STATE-05 · Readiness required: exact blocking requirement
+- [x] D [x] M  `CR-DASH-S05` STATE-05 · Readiness required: exact blocking requirement
 
 ## 08. Dashboard states, notifications & navigation (10)
 
-- [ ] D [ ] M  `CR-DASH-S06` STATE-06 · In validation: case status
-- [ ] D [ ] M  `CR-DASH-S07` STATE-07 · Validation action required rises to top
-- [ ] D [ ] M  `CR-DASH-S08` STATE-08 · Published: learners, discussions, earnings appear
-- [ ] D [ ] M  `CR-DASH-S09` STATE-09 · Established creator
+- [x] D [x] M  `CR-DASH-S06` STATE-06 · In validation: case status
+- [x] D [x] M  `CR-DASH-S07` STATE-07 · Validation action required rises to top
+- [x] D [x] M  `CR-DASH-S08` STATE-08 · Published: learners, discussions, earnings appear
+- [x] D [x] M  `CR-DASH-S09` STATE-09 · Established creator
 - [ ] D [ ] M  `CR-NOT-001` CR-NOT-001 · Notification Centre (categories, deep links)
 - [ ] D [ ] M  `CR-NOT-bell` Notification bell dropdown
 - [ ] D [ ] M  `CR-HOME-EXP` CREATE · My Learning Experiences

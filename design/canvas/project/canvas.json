@@ -887,6 +887,86 @@
       "w": 390,
       "x": 5660,
       "y": 17400
+    },
+    "CR-DASH-S05.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DASH-S05 · Readiness blocks submission · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 17400
+    },
+    "CR-DASH-S05-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "title": "CR-DASH-S05 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 17400
+    },
+    "CR-DASH-S06.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DASH-S06 · In validation · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 17400
+    },
+    "CR-DASH-S06-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "title": "CR-DASH-S06 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 17400
+    },
+    "CR-DASH-S07.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DASH-S07 · Validation needs your response · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 17400
+    },
+    "CR-DASH-S07-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "title": "CR-DASH-S07 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 17400
+    },
+    "CR-DASH-S08.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DASH-S08 · Published · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 17400
+    },
+    "CR-DASH-S08-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "title": "CR-DASH-S08 · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 17400
+    },
+    "CR-DASH-S09.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-DASH-S09 · Established creator · Desktop",
+      "w": 1440,
+      "x": 14490,
+      "y": 17400
+    },
+    "CR-DASH-S09-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "title": "CR-DASH-S09 · Mobile",
+      "w": 390,
+      "x": 16010,
+      "y": 17400
     }
   },
   "createdOnFiles": {
@@ -1055,7 +1135,7 @@
     "dst": {
       "kind": "title1",
       "maxW": 8000,
-      "text": "Studio dashboard states · S01 = CR-DASH-NEW (new creator) · S02 draft started · S03 collaboration invitation · S04 assigned contributor",
+      "text": "Studio dashboard states · S01 = CR-DASH-NEW · S02 draft · S03 invitation · S04 assigned · S05 readiness blocks submit · S06 in validation · S07 validator request · S08 published · S09 established",
       "w": 240,
       "x": 0,
       "y": 17100
@@ -1168,7 +1248,17 @@
     "CR-DASH-S03.dc.html",
     "CR-DASH-S03-Mobile.dc.html",
     "CR-DASH-S04.dc.html",
-    "CR-DASH-S04-Mobile.dc.html"
+    "CR-DASH-S04-Mobile.dc.html",
+    "CR-DASH-S05.dc.html",
+    "CR-DASH-S05-Mobile.dc.html",
+    "CR-DASH-S06.dc.html",
+    "CR-DASH-S06-Mobile.dc.html",
+    "CR-DASH-S07.dc.html",
+    "CR-DASH-S07-Mobile.dc.html",
+    "CR-DASH-S08.dc.html",
+    "CR-DASH-S08-Mobile.dc.html",
+    "CR-DASH-S09.dc.html",
+    "CR-DASH-S09-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

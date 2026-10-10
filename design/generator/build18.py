@@ -73,7 +73,7 @@ joined = ('<sc-if value="{{vJoined}}" hint-placeholder-val="{{false}}"><section 
 body = ('<div class="tk-root cl-root {{rootCls}}">\n<div class="tk-scene" aria-hidden="true"></div><div class="cl-glow" aria-hidden="true"></div>\n'
         '<header class="tk-top">\n<a href="CR-NOT-001.dc.html" class="lp-x" aria-label="Close and go back to notifications">' + X + '</a>\n'
         '<div class="lp-title"><span class="lp-t1" style="display: block">Collaboration invitation</span></div>\n<span style="flex-grow: 1"></span>\n</header>\n'
-        '<main class="cl">\n' + side + '\n<div class="cl-main">' + review + consent + joined + '</div>\n</main>\n</div>\n</x-dc>\n')
+        '<main class="cl">\n' + side + '\n<div class="cl-main">' + review + consent + '</div>\n</main>\n</div>\n</x-dc>\n')
 
 CSS = '''
 /* build18 collaboration */
@@ -222,7 +222,7 @@ wr('CR-COL-002.dc.html', s + body + SCRIPT)
 
 # wrappers: COL-003 / COL-004 (desktop + mobile), COL-002 mobile
 wd, wm = rd('CR-DASH-S03.dc.html'), rd('CR-CRED-002c-Mobile.dc.html')
-for n, var in [('CR-COL-002', None), ('CR-COL-003', 'consent'), ('CR-COL-004', 'joined')]:
+for n, var in [('CR-COL-002', None), ('CR-COL-003', 'consent')]:
     imp = f'<dc-import name="CR-COL-002"' + (f' variant="{var}"' if var else '')
     if var:
         t = wd.replace('<dc-import name="CR-DASH-ST" variant="s03"', imp)
@@ -230,3 +230,35 @@ for n, var in [('CR-COL-002', None), ('CR-COL-003', 'consent'), ('CR-COL-004', '
     t = wm.replace('<dc-import name="CR-CRED-002" variant="badge"', imp)
     wr(n + '-Mobile.dc.html', re.sub(r'<title>.*?</title>', f'<title>{n} mobile preview</title>', t))
 print('ok')
+
+# ======================= CR-COL-004 · joined = standard success layout (from LIVE CR-POL-002) =======================
+p2 = rd('CR-POL-002.dc.html')
+p2 = p2.replace('<a href="CR-RDY-001.dc.html" class="lp-x" aria-label="Close and go back to readiness">', '<a href="CR-DASH-NEW.dc.html" class="lp-x" aria-label="Close and go back to your Studio">', 1)
+p2 = re.sub(r'<div class="lp-title">.*?</div>', '<div class="lp-title"><span class="lp-t1" style="display: block">Collaboration invitation</span></div>', p2, count=1, flags=re.S)
+a = p2.index('<div class="ko-row">'); b = p2.index('</div>\n</sc-if>', a) + 6
+card = ('<div class="ko-row">\n<section class="ko-card ko-idc cj-card ob-in3" aria-label="Your collaboration">'
+        '<span class="cj-av">BA</span><span class="ko-it"><b>Financial Modelling Basics</b><span>Dr. Bola Ade · Lead Creator, ABC Institute</span></span><span class="cj-role">Co-Creator</span>'
+        '<div class="ko-rd cj-rd"><span class="cj-chi">' + BOOK + '</span><span class="cj-ct"><b>Chapter 3 · Revenue models</b><span>Your part · 3 lessons and Quiz 3</span></span></div></section>\n'
+        '<section class="ko-next ob-in4" aria-label="Next for you"><span class="ko-ni">' + ic('<path d="M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z"></path>', 20) + '</span>'
+        '<span class="ko-nt"><span class="ko-nl">Next for you</span><b>Start Chapter 3</b><span>Lesson 3.1 is ready to draft. Nova can sketch it with you.</span></span>'
+        '<a href="#" class="ds-btn sm ko-go"><span>Open Course Studio</span><span class="ob-arrow">' + ARR + '</span></a></section>\n</div>')
+p2 = p2[:a] + card + p2[b:]
+p2 = re.sub(r'<div class="ko-links ob-in4">.*?</div>', '<div class="ko-links ob-in4"><a href="#">Assigned to me</a><span aria-hidden="true">·</span><a href="CR-DASH-NEW.dc.html">Back to my Studio</a></div>', p2, count=1, flags=re.S)
+p2 = p2.replace("const T = ['ko-v', 'Complete', 'All policies accepted', 'You can read them again any time in Creator Centre.'];",
+                "const T = ['ko-v', 'Joined', 'You’re now a collaborator', 'Chapter 3 is waiting in Assigned to me, and the team knows you’ve joined.'];")
+assert 'You’re now a collaborator' in p2
+p2 = p2.replace('</style>', '''
+/* build18 COL-004 */
+.cj-av{width:44px;height:44px;border-radius:50%;background:#0B1433;color:#FFFFFF;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.cj-role{display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:999px;background:#EAF0FF;color:#0E3BB8;font-size:13px;font-weight:500}
+.cj-rd{gap:12px}
+.cj-chi{width:40px;height:40px;flex-shrink:0;border-radius:12px;background:linear-gradient(135deg,#1652F0,#6E96FF);color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.cj-ct{display:flex;flex-direction:column;gap:2px}
+.cj-ct b{font-size:15px;font-weight:600}.cj-ct span{font-size:13px;color:#5B6582}
+@media (max-width: 960px){.cj-role{grid-column:2;justify-self:start}}
+</style>''', 1)
+p2 = re.sub(r'<title>.*?</title>', '<title>Credalio · You’re now a collaborator</title>', p2)
+wr('CR-COL-004.dc.html', p2)
+t = wm.replace('<dc-import name="CR-CRED-002" variant="badge"', '<dc-import name="CR-COL-004"')
+wr('CR-COL-004-Mobile.dc.html', re.sub(r'<title>.*?</title>', '<title>CR-COL-004 mobile preview</title>', t))
+print('col4 ok')

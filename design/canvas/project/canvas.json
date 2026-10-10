@@ -807,6 +807,86 @@
       "w": 390,
       "x": 20150,
       "y": 14600
+    },
+    "CR-POL-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-POL-001 · Creator policies · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 16100
+    },
+    "CR-POL-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-POL-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 16100
+    },
+    "CR-POL-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-POL-002 · All policies accepted · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 16100
+    },
+    "CR-POL-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-POL-002 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 16100
+    },
+    "CR-DASH-S02.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DASH-S02 · Draft started · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 17400
+    },
+    "CR-DASH-S02-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "title": "CR-DASH-S02 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 17400
+    },
+    "CR-DASH-S03.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DASH-S03 · Collaboration invitation · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 17400
+    },
+    "CR-DASH-S03-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "title": "CR-DASH-S03 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 17400
+    },
+    "CR-DASH-S04.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DASH-S04 · Assigned contributor · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 17400
+    },
+    "CR-DASH-S04-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "title": "CR-DASH-S04 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 17400
     }
   },
   "createdOnFiles": {
@@ -963,6 +1043,22 @@
       "text": "Same as the screen before: “Link or badge” instead of “Verification link or digital badge”, and I’d remove the note on the left since the line next to the button already says it.",
       "fill": "orange",
       "size": "s"
+    },
+    "pol": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Readiness task 4 · Creator policies → read and accept each → all accepted → next task",
+      "w": 240,
+      "x": 0,
+      "y": 15800
+    },
+    "dst": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Studio dashboard states · S01 = CR-DASH-NEW (new creator) · S02 draft started · S03 collaboration invitation · S04 assigned contributor",
+      "w": 240,
+      "x": 0,
+      "y": 17100
     }
   },
   "order": [
@@ -1062,7 +1158,17 @@
     "CR-CRED-003.dc.html",
     "CR-CRED-003-Mobile.dc.html",
     "CR-CRED-003b.dc.html",
-    "CR-CRED-003b-Mobile.dc.html"
+    "CR-CRED-003b-Mobile.dc.html",
+    "CR-POL-001.dc.html",
+    "CR-POL-001-Mobile.dc.html",
+    "CR-POL-002.dc.html",
+    "CR-POL-002-Mobile.dc.html",
+    "CR-DASH-S02.dc.html",
+    "CR-DASH-S02-Mobile.dc.html",
+    "CR-DASH-S03.dc.html",
+    "CR-DASH-S03-Mobile.dc.html",
+    "CR-DASH-S04.dc.html",
+    "CR-DASH-S04-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

@@ -68,15 +68,15 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 
 ## 06. Readiness task 4 · Creator Policies: read and accept → next task (2)
 
-- [ ] D [ ] M  `CR-POL-001` POL-001 · Creator Policies: read and accept each
-- [ ] D [ ] M  `CR-POL-002` POL-002 · All policies accepted → next task
+- [x] D [x] M  `CR-POL-001` POL-001 · Creator Policies: read and accept each
+- [x] D [x] M  `CR-POL-002` POL-002 · All policies accepted → next task
 
 ## 07. Dashboard states (priority order) (5)
 
-- [ ] D [ ] M  `CR-DASH-S01` STATE-01 · New creator: create, readiness, Copilot
-- [ ] D [ ] M  `CR-DASH-S02` STATE-02 · Draft started: Continue dominates (no start choice again)
-- [ ] D [ ] M  `CR-DASH-S03` STATE-03 · Collaboration invitation in Needs Your Attention
-- [ ] D [ ] M  `CR-DASH-S04` STATE-04 · Assigned contributor: My Assigned Work prominent
+- [x] D [x] M  `CR-DASH-S01` STATE-01 · New creator: create, readiness, Copilot (= CR-DASH-NEW)
+- [x] D [x] M  `CR-DASH-S02` STATE-02 · Draft started: Continue dominates (no start choice again)
+- [x] D [x] M  `CR-DASH-S03` STATE-03 · Collaboration invitation in Needs Your Attention
+- [x] D [x] M  `CR-DASH-S04` STATE-04 · Assigned contributor: My Assigned Work prominent
 - [ ] D [ ] M  `CR-DASH-S05` STATE-05 · Readiness required: exact blocking requirement
 
 ## 08. Dashboard states, notifications & navigation (10)

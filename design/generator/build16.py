@@ -212,7 +212,7 @@ def cont_body(primary):
     act = (btn('CR-CREATE-002B.dc.html', 'Continue building') if primary else ghost('CR-CREATE-002B.dc.html', 'Resume'))
     return (f'<section class="ds-card st-cont {"st-hero" if primary else "st-mini"} ob-in2" aria-labelledby="st-c"><div class="st-ct">{COVER}<div class="st-cx">'
             '<span class="st-lab">Continue your work</span><h2 id="st-c">Data Analysis with SQL</h2><span class="st-meta">Course · Build phase · edited yesterday'
-            + ('' if primary else ' · next: add an assessment to Chapter 4') + '</span></div>'
+            + ('' if primary else '<span class="st-mnx"> · next: add an assessment to Chapter 4</span>') + '</span></div>'
             '<span class="st-pct"><b>68%</b><span>built</span></span>' + act + '</div>'
             + (CHS + NBAND if primary else '<div class="st-bar" aria-hidden="true"><span style="width: 68%"></span></div>') + '</section>')
 ATT_INV = (f'<section class="ds-card st-att st-hero ob-in2" aria-labelledby="st-a"><div class="st-sh"><span class="st-lab" id="st-a">Needs your attention</span><a href="#" class="ds-link">Notifications</a></div>'
@@ -277,7 +277,7 @@ CSS3 = """
 .st-bar{display:block;margin-top:18px;height:8px;border-radius:8px;background:#E6EAF3;overflow:hidden}
 .st-mini .st-bar{margin-top:14px;height:6px}
 .st-bar span{display:block;height:100%;border-radius:8px;background:linear-gradient(90deg,#1652F0,#6E96FF)}
-.st-bar.sm{margin:10px 0 6px 0;height:6px;max-width:320px}
+.st-bar.sm{margin:10px 0 6px 0;height:6px;width:100%;max-width:320px}
 .st-chs .ok .st-cl b{font-size:13.5px;font-weight:600;line-height:1.3;color:#0B1433}
 .st-cl span{font-size:12.5px;color:#5B6582;line-height:1.3}
 .st-chs .amb .st-cl span{color:#8A5300}
@@ -381,6 +381,13 @@ CSS3 = """
 .st-chips{grid-column:1 / -1;width:auto;margin:0 -16px;padding:0 16px}
 .st-att.st-hero .st-sh{display:none}
 .st-att.st-hero .st-ar{margin-top:0}
+.st-mini{padding:16px}
+.st-mini .st-ct{flex-wrap:nowrap;gap:12px}
+.st-mini .st-cov,.st-mini .st-pct,.st-mini .st-mnx{display:none}
+.st-mini .st-cx{flex-basis:auto}
+.st-mini h2{font-size:16px}
+.st-mini .st-ct .st-gh{order:0;width:auto;height:40px;padding:0 18px}
+.st-mini .st-bar{margin-top:14px}
 .st-att.st-hero .st-ar{flex-direction:column;align-items:center;text-align:center;gap:12px}
 }
 """

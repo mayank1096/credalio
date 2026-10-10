@@ -28,8 +28,9 @@ main_vc = ('<main class="ds-main hp">\n<div class="hp-head ob-in"><div><h1 class
            '<section class="ds-card vc ob-in2" aria-label="Data Analysis with SQL"><div class="vc-h"><span class="vc-cv">' + ic(I['book'], 22) + '</span>'
            '<span class="vc-t"><b>Data Analysis with SQL</b><span>Case VAL-00928 · you’re the Lead Creator</span></span><span class="vp cb">Review in progress</span></div>'
            + track(2) +
-           '<div class="vc-g"><div><span class="hp-lab">Validators</span><div class="vc-vs">' + vals + '</div></div>'
-           '<div class="vc-rq"><span class="hp-lab">Requests</span><b>3 open</b><span class="vc-am">1 needs you · meeting by Thu 8 Oct</span></div></div>'
+           '<div class="vc-g"><div class="vc-c"><span class="hp-lab">Validators</span><div class="vc-vv"><span class="vc-st">' + ''.join(f'<span class="va {c}">{a}</span>' for a, c, n, r in VALS) + '</span><b>3 assigned</b></div><span class="vc-s">Educational · Subject matter · Assessment</span></div>'
+           '<div class="vc-c"><span class="hp-lab">Open requests</span><b class="vc-big">3</b><span class="vc-s vc-am"><i></i>1 needs you</span></div>'
+           '<div class="vc-c"><span class="hp-lab">Next</span><b>Meeting with Dr. Amina Bello</b><span class="vc-s">Pick a time by Thu 8 Oct</span></div></div>'
            '<div class="vc-f"><span class="vc-note">' + EYE + 'Requests go to whoever made the affected content. You see all of them.</span>'
            '<a href="CR-VAL-WS-lead.dc.html" class="ds-btn hp-btn"><span>Open workspace</span><span class="ob-arrow">' + ARR + '</span></a></div></section>'
            '<section class="ds-card vc vc-sm ob-in3" aria-label="Data Analyst Career Path"><div class="vc-h"><span class="vc-cv">' + ic(I['path'], 22) + '</span>'
@@ -47,14 +48,15 @@ css_vc = AV_CSS + '''
 .vc-tr i{height:4px;border-radius:4px;background:#E6EAF3}
 .vc-tr .dn{color:#3A4566}.vc-tr .dn i{background:#1652F0}
 .vc-tr .on{color:#0B1433}.vc-tr .on i{background:linear-gradient(90deg,#1652F0 50%,#E6EAF3 50%)}
-.vc-g{margin-top:22px;display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:24px;align-items:start}
-.vc-vs{margin-top:10px;display:flex;flex-wrap:wrap;gap:10px 22px}
-.vc-v{display:flex;align-items:center;gap:10px}
-.vc-v > span:last-child{display:flex;flex-direction:column;gap:1px}
-.vc-v b{font-size:14.5px;font-weight:600}.vc-v > span:last-child span{font-size:12.5px;color:#5B6582}
-.vc-rq{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border-radius:16px;background:#FFF8EC}
-.vc-rq b{font-size:20px;font-weight:600}
-.vc-am{font-size:13px;font-weight:500;color:#8A5300}
+.vc-g{margin-top:22px;display:grid;grid-template-columns:1.3fr 1fr 1.2fr}
+.vc-c{display:flex;flex-direction:column;gap:6px;padding:2px 24px;border-left:1.5px solid #F0F2F8;min-width:0}
+.vc-c:first-child{padding-left:0;border-left:0}
+.vc-c b{font-size:15.5px;font-weight:600}
+.vc-big{font-size:24px !important;line-height:1}
+.vc-vv{display:flex;align-items:center;gap:10px}
+.vc-st{display:flex}.vc-st .va{width:30px;height:30px;font-size:11px;border:2px solid #FFFFFF}.vc-st .va + .va{margin-left:-8px}
+.vc-s{font-size:13px;color:#5B6582}
+.vc-am{display:inline-flex;align-items:center;gap:7px;color:#8A5300;font-weight:500}.vc-am i{width:7px;height:7px;border-radius:50%;background:#D68C14}
 .vc-f{margin-top:20px;padding-top:18px;border-top:1.5px solid #F0F2F8;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .vc-note{display:flex;align-items:center;gap:8px;font-size:13.5px;color:#5B6582}
 .vc-sm{padding:16px 20px}
@@ -70,8 +72,12 @@ css_vc = AV_CSS + '''
 .vc-h > .vp{margin-left:54px}
 .vc-tr{margin-top:18px}
 .vc-tr span{font-size:11.5px}
-.vc-g{grid-template-columns:minmax(0,1fr);gap:16px;margin-top:18px}
-.vc-vs{flex-direction:column}
+.vc-g{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);margin-top:16px}
+.vc-c{padding:12px 0 0 16px;border-top:1.5px solid #F0F2F8;margin-top:12px}
+.vc-c:first-child{grid-column:1 / -1;border-top:0;padding:0;margin-top:0}
+.vc-c:nth-child(2){padding-left:0;border-left:0}
+.vc-big{font-size:20px !important}
+.vc-c b{font-size:14.5px}
 .vc-f{flex-direction:column;align-items:stretch}
 .vc-f .hp-btn{width:100%;justify-content:space-between}
 .vc-sm .vc-mt{display:none}

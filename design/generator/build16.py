@@ -205,7 +205,7 @@ CHS = ('<div class="st-tr"><ol class="st-chs" aria-label="Chapters">' + ''.join(
     f'<li class="{c}"><span class="st-seg"></span><span class="st-cl"><b>{n} · {t}</b><span>{st}</span></span></li>'
     for n, t, st, c in [(1, 'Why SQL', 'Done', 'ok'), (2, 'Selecting data', 'Done', 'ok'), (3, 'Filtering and sorting', 'Done', 'ok'),
                         (4, 'Joins', 'Needs an assessment', 'amb'), (5, 'Aggregation', 'Drafting', 'now'), (6, 'Window functions', 'Not started', '')])
-    + '</ol><p class="st-trm"><b>3 of 6</b> done · <span>Chapter 4 needs an assessment</span></p></div>')
+    + '</ol></div>')
 NBAND = (f'<div class="st-nb">{NOVA36}<span class="st-nt"><span class="st-lab">Nova suggests</span><b>{{{{nT}}}}</b><span>{{{{nD}}}}</span></span>'
          '<div class="st-chips"><sc-for list="{{nChips}}" as="c" hint-placeholder-count="2"><a href="CR-CREATE-002A.dc.html" class="ds-chip st-chip">{{c}}</a></sc-for></div></div>')
 def cont_body(primary):
@@ -341,15 +341,6 @@ CSS3 = """
 .st-chs li:not(.ok):not(.amb):not(.now) .st-cl b{color:#5B6582;font-weight:500}
 .st-trm{display:none;margin:10px 0 0 0;font-size:13.5px;color:#5B6582}
 .st-trm b{color:#0B1433;font-weight:600}.st-trm span{color:#8A5300;font-weight:500}
-@media (max-width: 960px){
-.st-tr{margin-top:16px}
-.st-chs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;margin:0;padding:0;overflow:visible}
-.st-chs li{flex:none}
-.st-cl{display:none}
-.st-trm{display:block}
-.st-nb{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:12px;row-gap:12px;align-items:start}
-.st-chips{grid-column:1 / -1}
-}
 
 @media (max-width: 960px){
 .st-head{flex-direction:column;align-items:stretch;gap:14px;padding:20px 0 14px 0}
@@ -378,6 +369,16 @@ CSS3 = """
 .st-up .st-btn{width:100%;justify-content:space-between}
 .st-rows li:first-child{border-top:1.5px solid #F0F2F8;padding-top:14px}
 .st-sh .ds-link{display:none}
+}
+/* mobile: same chapter track as desktop, swipeable; roomier card */
+@media (max-width: 960px){
+.st-ct{row-gap:16px}
+.st-ct .st-btn{margin-top:4px}
+.st-tr{margin:22px -16px 0 -16px}
+.st-chs{display:flex;gap:6px;overflow-x:auto;padding:0 16px 4px 16px;scroll-snap-type:x proximity;scroll-padding:0 16px;scrollbar-width:none}
+.st-chs li{flex:0 0 136px;scroll-snap-align:start;gap:10px}
+.st-nb{margin:22px -16px 0 -16px;padding:18px 16px 16px 16px;display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:12px;row-gap:14px;align-items:start}
+.st-chips{grid-column:1 / -1;width:auto;margin:0 -16px;padding:0 16px}
 }
 """
 SCRIPT3 = '''<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>

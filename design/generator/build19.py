@@ -88,7 +88,7 @@ side_m = ('<sc-if value="{{asMary}}" hint-placeholder-val="{{true}}"><aside clas
           '<div class="cl-meta"><span>Course</span><span>Due Mon 5 Oct</span></div>'
           + steps(['Review', 'Declare', 'Done']) + '</aside></sc-if>')
 side_a = ('<sc-if value="{{asAda}}" hint-placeholder-val="{{false}}"><aside class="cl-side ob-in">'
-          '<span class="cl-eb dc-eb0">Submit for validation</span><h1 class="cl-h1">Data Analysis with SQL</h1>'
+          '<h1 class="cl-h1 dc-h0">Data Analysis with SQL</h1>'
           '<p class="cl-sub">Before validation, every contributor declares their own work, and you sign last for the whole course.</p>'
           '<div class="cl-meta"><span>Course</span><span>Draft · ready to submit</span></div>'
           '<div class="cl-team"><span class="cl-avs"><span class="cl-av sm">AO</span><span class="cl-av sm t2">JA</span><span class="cl-av sm t3">MO</span></span><span>You, John Adeyemi and Mary Okafor</span></div>'
@@ -98,13 +98,12 @@ ROWS = [('book', 'Chapter 4 · Aggregating for business questions', '4 lessons �
 request = ('<sc-if value="{{vRequest}}" hint-placeholder-val="{{true}}"><section class="cl-panel ob-in2" aria-labelledby="dc-h1">'
            '<h2 id="dc-h1" class="cl-ph">Your contribution</h2><p class="cl-pp">You declare only for what you made. Take a last look before you sign.</p>'
            '<ul class="dc-l">' + ''.join(f'<li><span class="cl-chi">{ic(I[i], 20)}</span><span class="dc-t"><b>{t}</b><span>{d}</span></span><a href="#" class="hp-rb">Review</a></li>' for i, t, d in ROWS) + '</ul>'
-           '<div class="cl-note gy dc-n">' + ic(I['cal'], 18) + '<span>Requested by Ada Ononuju · due Mon 5 Oct</span></div>'
            '<div class="cl-foot"><a href="CR-DEC-002.dc.html" class="ds-btn cl-go dc-go"><span>Review and declare</span><span class="ob-arrow">' + ARR + '</span></a></div>'
            '</section></sc-if>')
 
 checks = ''.join(f'<button type="button" role="checkbox" aria-checked="{{{{c{i}.on}}}}" class="cl-ck {{{{c{i}.cls}}}}" onClick="{{{{c{i}.pick}}}}"><span class="tk-box">{CHK}</span><span><b>{t}</b></span></button>' for i, t in enumerate(DECL))
 declare = ('<sc-if value="{{vDeclare}}" hint-placeholder-val="{{false}}"><section class="cl-panel ob-in2" aria-labelledby="dc-h2">'
-           '<h2 id="dc-h2" class="cl-ph">Contributor declaration</h2><p class="cl-pp">For Chapter 4 and the Final assessment only.</p>'
+           '<h2 id="dc-h2" class="cl-ph">Your declaration</h2><p class="cl-pp">For Chapter 4 and the Final assessment only.</p>'
            '<div class="cl-ckw"><div class="cl-ckh"><span>Tick each statement</span><b>{{nOn}} of 5 ticked</b></div><div class="cl-cks dc-cks">' + checks + '</div></div>'
            '<label class="dc-sig"><span>Type your full name to sign</span><input value="{{name}}" onChange="{{onName}}" placeholder="Mary Okafor">' + PEN + '</label>'
            '<div class="cl-foot"><a href="CR-DEC-001.dc.html" class="ds-ghost cl-bk" aria-label="Back">' + BACK + '<span>Back</span></a>'
@@ -118,7 +117,7 @@ for av, t, n, r, st in PPL:
     act = '<button type="button" class="hp-rb dc-rm" onClick="{{remind}}">' + BELL + '<span>{{remLbl}}</span></button>' if st == 'wait' else ''
     ppl += f'<li class="dc-p dc-s-{st}"><span class="cl-av {t}">{av}</span><span class="dc-t"><b>{n}</b><span>{r}</span></span>{pill}{act}</li>'
 status = ('<sc-if value="{{vStatus}}" hint-placeholder-val="{{false}}"><section class="cl-panel ob-in2" aria-labelledby="dc-h3">'
-          '<h2 id="dc-h3" class="cl-ph">Contributor declarations</h2><p class="cl-pp">Each person declares their own work. 1 of 2 done.</p>'
+          '<h2 id="dc-h3" class="cl-ph">Contributor declarations</h2><p class="cl-pp">1 of 2 contributors have declared.</p>'
           '<ul class="dc-l dc-pl">' + ppl + '</ul>'
           '<div class="cl-note dc-amb">' + ic('<circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 16.5v.01"></path>', 18, 2.2) + '<span>Submission is waiting on Mary’s declaration. She was asked on Mon 28 Sep.</span></div>'
           '<div class="cl-foot"><a href="CR-DEC-004.dc.html" class="ds-btn cl-go dc-go lp-off"><span>Continue to your declaration</span><span class="ob-arrow">' + ARR + '</span></a></div>'
@@ -127,7 +126,7 @@ status = ('<sc-if value="{{vStatus}}" hint-placeholder-val="{{false}}"><section 
 lchecks = ''.join(f'<button type="button" role="checkbox" aria-checked="{{{{l{i}.on}}}}" class="cl-ck {{{{l{i}.cls}}}}" onClick="{{{{l{i}.pick}}}}"><span class="tk-box">{CHK}</span><span><b>{t}</b></span></button>'
                   for i, t in enumerate(['I’m authorised to submit this course for validation, and every required contributor declaration is complete.', 'My own contribution is accurate, and AI-assisted content I added has been reviewed.']))
 lead = ('<sc-if value="{{vLead}}" hint-placeholder-val="{{false}}"><section class="cl-panel ob-in2" aria-labelledby="dc-h4">'
-        '<h2 id="dc-h4" class="cl-ph">Your submission declaration</h2><p class="cl-pp">The last step before the validation quote.</p>'
+        '<h2 id="dc-h4" class="cl-ph">Your submission declaration</h2>'
         '<div class="cl-sum dc-sum"><span class="cl-sv"><em>Contributor declarations</em><b class="dc-ok">' + CHK + '2 of 2 complete</b></span><span class="cl-sv"><em>Next</em><b>Quote → payment → case opens</b></span></div>'
         '<div class="cl-ckw"><div class="cl-cks dc-cks">' + lchecks + '</div></div>'
         '<label class="dc-sig"><span>Type your full name to sign</span><input value="{{name}}" onChange="{{onName}}" placeholder="Ada Ononuju">' + PEN + '</label>'
@@ -142,7 +141,8 @@ body = ('<div class="tk-root cl-root {{rootCls}}">\n<div class="tk-scene" aria-h
 
 CSS = '''
 /* build19 declarations */
-.dc-eb0{margin-top:0}
+.dc-h0{margin-top:0}
+.dc-sum{margin-top:16px}
 .dc-l{list-style:none;margin:18px 0 0 0;padding:0;border:1.5px solid #E6EAF3;border-radius:18px}
 .dc-l li{display:flex;align-items:center;gap:14px;padding:14px 16px;border-top:1.5px solid #F0F2F8}
 .dc-l li:first-child{border-top:0}

@@ -351,7 +351,6 @@ CSS3 = """
 .st-pt{display:none}
 .st-segs{position:absolute;opacity:0}
 .st-pnx{flex-grow:1;padding-left:0;border-left:0}
-.st-pnx .st-lab::after{content:' · 1 of 5 done'}
 .st-hero{padding:18px 16px 0 16px}
 .st-mini{padding:16px}
 .st-ct{flex-wrap:wrap;gap:12px}
@@ -423,6 +422,136 @@ CSS3 = """
 .st-att.st-hero .st-ar{flex-direction:column;align-items:center;text-align:center;gap:12px}
 }
 """
+# ---------- states S05–S09 (2026-10-10) ----------
+I_VAL2 = '<path d="M12 3v18M5 21h14M6 7h12"></path><path d="m6 7-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"></path>'
+I_CHAT = '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path>'
+I_CARD = '<rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path>'
+I_CAL = '<rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path>'
+I_Q = '<circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"></path>'
+def TRACK(items):
+    return ('<div class="st-tr"><ol class="st-chs">' + ''.join(
+        f'<li class="{c}"><span class="st-seg"></span><span class="st-cl"><b>{t}</b><span>{st}</span></span></li>' for t, st, c in items) + '</ol></div>')
+def PILL(t, c): return f'<span class="st-pill {c}">{t}</span>'
+def STRIP(lab, val, segs_on, nlab, nval, act):
+    segs = ''.join('<i class="on"></i>' if i < segs_on else '<i></i>' for i in range(5)) if segs_on is not None else ''
+    return ('<div class="st-pw ob-in2' + (' st-keep' if segs_on is None else '') + '"><a href="CR-RDY-001.dc.html" class="st-pt"><span class="st-lab">' + lab + '</span><b>' + val + '</b></a>'
+            + (f'<span class="st-segs" aria-hidden="true">{segs}</span>' if segs else '')
+            + f'<span class="st-pnx"><span class="st-lab">{nlab}</span><b>{nval}</b></span>' + act + '</div>')
+PATH5 = STRIP('Path to publishing', '4 of 5 done', 4, 'Next', 'Verify your identity', '<a href="CR-KYC-001.dc.html" class="st-rb">Start</a>')
+READY = ('<div class="st-pw st-ok ob-in2"><span class="st-okc" aria-hidden="true">' + CHK + '</span><span class="st-pnx" style="border:0;padding:0"><span class="st-lab">Path to publishing</span><b>All 5 checks complete</b></span>'
+         '<a href="CR-RDY-001.dc.html" class="st-rb">View</a></div>')
+EARN = STRIP('Earnings', '$84 available', None, 'Pending', '$212', '<a href="#" class="st-rb">View</a>')
+TODAY = STRIP('Today', '4 events', None, 'Next · 10:00', 'Validation meeting', '<a href="#" class="st-rb">Join</a>')
+
+VSTEPS6 = [('Submitted', '14 Sep', 'ok'), ('Assigned', '3 validators', 'ok'), ('Review', 'In progress', 'now'), ('Decision', 'Usually 7 to 10 days', ''), ('Publish', 'After a pass', '')]
+VSTEPS7 = [('Submitted', '14 Sep', 'ok'), ('Assigned', '3 validators', 'ok'), ('Review', 'Waiting on you', 'amb'), ('Decision', 'After your reply', ''), ('Publish', 'After a pass', '')]
+def VALCARD(focus, steps, pill, note, act):
+    return (f'<section class="ds-card st-cont {"st-hero" if focus else "st-mini st-vm"} ob-in2" aria-label="Validation"><div class="st-ct"><span class="st-cov" aria-hidden="true">{ic(I_VAL2, 26, 1.8)}</span><div class="st-cx">'
+            '<span class="st-lab">In validation · case VAL-00928</span><h2>Data Analysis with SQL</h2><span class="st-meta">' + note + '</span></div>' + pill + act + '</div>'
+            + TRACK(steps) + (NBAND if focus else '') + '</section>')
+S6_FOCUS = VALCARD(True, VSTEPS6, PILL('Review in progress', 'cb'), 'Educational, Subject Matter and Assessment validators are reviewing.', btn('#', 'Open workspace'))
+S6_ATT = ('<section class="ds-card st-att st-mini ob-in2" aria-label="Needs your attention"><div class="st-ar" style="margin-top:0"><span class="st-ai cb" aria-hidden="true">' + ic(I_CAL, 20) + '</span>'
+          '<span class="st-at"><b>Validation meeting proposed: Thu 10:00</b><span>Subject Matter Validator · 30 minutes</span></span>' + ghost('#', 'Accept or propose') + '</div></section>')
+S7_FOCUS = ('<section class="ds-card st-att st-hero st-ambh ob-in2" aria-label="Needs your attention"><div class="st-ar" style="margin-top:0"><span class="st-ai" aria-hidden="true">' + ic(I_VAL2, 22) + '</span>'
+            '<span class="st-at"><span class="st-lab amb">Validator request · due in 3 days</span><b>Clarification required: Chapter 3 → Lesson 4</b><span>Data Analysis with SQL · case VAL-00928 · Subject Matter Validator</span></span>'
+            + btn('#', 'Respond to the validator') + '</div>' + NBAND + '</section>')
+S7_VAL = VALCARD(False, VSTEPS7, PILL('Your response needed', 'am'), 'One open request is assigned to you. The case continues once you respond.', ghost('#', 'Open workspace'))
+S5_FOCUS = ('<section class="ds-card st-att st-hero st-ambh ob-in2" aria-label="Needs your attention"><div class="st-ar" style="margin-top:0"><span class="st-ai" aria-hidden="true">' + ic(I_ID, 22) + '</span>'
+            '<span class="st-at"><span class="st-lab amb">Required to submit</span><b>Verify your identity to submit Data Analysis with SQL</b><span>Your course is ready for validation. This is the only thing left. Usually a few minutes.</span></span>'
+            + btn('CR-KYC-001.dc.html', 'Verify my identity') + '</div>' + NBAND + '</section>')
+S5_COURSE = ('<section class="ds-card st-cont st-mini ob-in2" aria-label="Your course"><div class="st-ct">' + COVER + '<div class="st-cx"><span class="st-lab">Ready for validation</span><h2>Data Analysis with SQL</h2>'
+             '<span class="st-meta">Course · 6 of 6 chapters built<span class="st-mnx"> · submit once your identity is verified</span></span></div><span class="st-pct"><b>100%</b><span>built</span></span>' + ghost('CR-CREATE-002B.dc.html', 'Open') + '</div>'
+             '<div class="st-bar" aria-hidden="true"><span style="width: 100%"></span></div></section>')
+STAT = lambda v, k, sub='': f'<div class="st-st"><b>{v}</b><span>{k}</span>' + (f'<em>{sub}</em>' if sub else '') + '</div>'
+S8_FOCUS = ('<section class="ds-card st-cont st-hero ob-in2" aria-label="Your published course"><div class="st-ct">' + COVER + '<div class="st-cx"><span class="st-lab">Live for learners</span><h2>Data Analysis with SQL</h2>'
+            '<span class="st-meta">Course · published 2 Oct</span></div>' + PILL('Gold validated', 'gr') + '</div>'
+            '<div class="st-stats">' + STAT('46', 'Learners', '+46 this week') + STAT('3', 'Verified completions') + STAT('4.8', 'Average rating') + STAT('3', 'Open questions') + '</div>'
+            '<div class="st-ar st-in"><span class="st-ai cb" aria-hidden="true">' + ic(I_CHAT, 20) + '</span><span class="st-at"><b>3 learner questions are waiting</b><span>Chapter 4 has the most. Fast answers in the first weeks lift completion.</span></span>'
+            + btn('#', 'Open discussions') + '</div>' + NBAND + '</section>')
+S8_TODAY = ('<section class="ds-card st-att st-mini ob-in2" aria-label="Today"><div class="st-ar" style="margin-top:0"><span class="st-ai cb" aria-hidden="true">' + ic(I_CAL, 20) + '</span>'
+            '<span class="st-at"><b>16:00 · Office hours</b><span>Data Analysis with SQL · 3 questions queued</span></span>' + ghost('#', 'Open calendar') + '</div></section>')
+NEXT8 = ('<section class="ds-card st-att st-mini ob-in2" aria-label="Create next"><div class="st-ar" style="margin-top:0"><span class="st-ai cb" aria-hidden="true">' + ic(I_AI, 20) + '</span>'
+         '<span class="st-at"><b>Ready for your next one?</b><span>Learners keep asking about window functions. That could be a follow-on course.</span></span>' + ghost('CR-CREATE-001.dc.html', 'Start something new') + '</div></section>')
+def ALROW(icn, tone, t, m, act): return f'<li><span class="st-ai {tone}" aria-hidden="true">{ic(icn, 20)}</span><span class="st-at"><b>{t}</b><span>{m}</span></span>{act}</li>'
+S9_FOCUS = ('<section class="ds-card st-att st-hero ob-in2" aria-label="Needs you today"><div class="st-sh"><span class="st-lab">Needs you today</span><a href="#" class="ds-link">Notifications</a></div><ul class="st-al">'
+            + ALROW(I_VAL2, '', 'Evidence requested: Data Analyst Career Path', 'Career/Industry Validator · due Friday', btn('#', 'Respond'))
+            + ALROW(I_CARD, '', 'Your payout method needs attention', 'Re-verify your bank details before the next payout.', '<a href="#" class="st-rb">Fix now</a>')
+            + ALROW(I_CHAT, 'cb', '7 learner questions are waiting', 'Data Analysis with SQL · Chapter 4 has the most', '<a href="#" class="st-rb">Review</a>')
+            + ALROW(I_CAL, 'gy', 'Cohort A capstone deadline in 5 days', 'Applied AI Program · 12 of 30 teams have submitted', '<a href="#" class="st-rb">Review</a>')
+            + '</ul>' + NBAND + '</section>')
+PERF = [('Data Analysis with SQL', 'Course · Gold', '1,240', '71%', '4.8', 'Up 12%', 'up'), ('Advanced SQL for Analysts', 'Course · Silver', '512', '58%', '4.6', 'Drop-off in Ch. 4', 'dn'),
+        ('Certified Data Analyst', 'Professional Certification', '138', '64% pass', '4.7', 'Up 5%', 'up'), ('Applied AI Program', 'Learning Program', '30', 'Week 9 of 12', '4.9', 'On track', 'up')]
+S9_PERF = ('<section class="ds-card st-att st-mini st-pf ob-in3" aria-label="Performance"><div class="st-sh"><span class="st-lab">Performance · last 30 days</span><a href="#" class="ds-link">Analytics</a></div>'
+           '<div class="st-ph"><span>Learning experience</span><span>Learners</span><span>Completion</span><span>Rating</span><span>Trend</span></div><ul class="st-pt2">'
+           + ''.join(f'<li><span class="st-pn2"><b>{t}</b><span>{k}</span></span><span data-l="Learners">{l}</span><span data-l="Completion">{c}</span><span data-l="Rating">{r}</span><span class="st-tr2 {cl}">{tr}</span></li>' for t, k, l, c, r, tr, cl in PERF)
+           + '</ul></section>')
+G6 = GUIDES([('What validators look for', 'Guide · 5 min read'), ('Validation tiers explained', 'Guide · 4 min read'), ('Responding to a validator request', 'Guide · 3 min read')])
+G7 = GUIDES([('Responding to a validator request', 'Guide · 3 min read'), ('Validation tiers explained', 'Guide · 4 min read'), ('When revalidation is needed', 'Guide · 3 min read')])
+G5 = GUIDES([('How identity checks work', 'Guide · 3 min read'), ('What validators look for', 'Guide · 5 min read'), ('Validation tiers explained', 'Guide · 4 min read')])
+MAIN_D = ('<main class="ds-main st">\n<div class="st-head"><div class="ob-in"><p class="st-wel">{{wel}}</p><h1 class="ds-h1">{{h1}}</h1></div>'
+          + sif('pw', PATHW, 'true') + sif('s5', PATH5) + sif('rdy', READY) + sif('s8', EARN) + sif('s9', TODAY) + '</div>\n'
+          '<div class="st-col">' + sif('s3', ATT_INV) + sif('s4', ATT_DEC) + sif('s4', ASG) + sif('s2', cont_body(True), 'true') + sif('s3', cont_body(False)) + sif('s4', cont_body(False))
+          + sif('s5', S5_FOCUS) + sif('s5', S5_COURSE) + sif('s6', S6_FOCUS) + sif('s6', S6_ATT) + sif('s7', S7_FOCUS) + sif('s7', S7_VAL)
+          + sif('s8', S8_FOCUS) + sif('s8', S8_TODAY) + sif('s8', NEXT8) + sif('s9', S9_FOCUS) + sif('s9', S9_PERF)
+          + sif('s2', G2, 'true') + sif('s3', G3) + sif('s5', G5) + sif('s6', G6) + sif('s7', G7) + '</div>\n</main>')
+CSS_X = """
+/* states S05-S09 */
+.st-pill{display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:500;white-space:nowrap;flex-shrink:0;margin-right:6px}
+.st-pill.cb{background:#EAF0FF;color:#0E3BB8}.st-pill.am{background:#FFF1CF;color:#8A5300}.st-pill.gr{background:#E7F5EE;color:#0F6B45}
+.st-lab.amb{color:#8A5300}
+.st-ambh{border-color:#F4D98E;box-shadow:0 18px 44px rgba(214,150,30,.10)}
+.st-ambh .st-ai{width:52px;height:52px;border-radius:16px}
+.st-ai.cb{background:#EAF0FF;color:#1652F0}.st-ai.gy{background:#F1F3F8;color:#5B6582}
+.st-ok .st-okc{width:30px;height:30px;border-radius:50%;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.st-vm .st-tr{margin-top:14px}
+.st-chs{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr)}
+.st-stats{margin-top:20px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.st-st{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border-radius:14px;background:#F7F9FD;border:1.5px solid #EEF1F7}
+.st-st b{font-size:24px;font-weight:600;letter-spacing:-0.02em}
+.st-st span{font-size:13px;color:#5B6582}
+.st-st em{font-style:normal;font-size:12.5px;font-weight:500;color:#0F6B45}
+.st-in{margin-top:16px;padding:14px 16px;border-radius:16px;background:#F5F8FF;border:1.5px solid #E1E9FF}
+.st-al{list-style:none;margin:10px 0 0 0;padding:0}
+.st-al li{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1.5px solid #F0F2F8}
+.st-al li:first-child{border-top:0;padding-top:6px}
+.st-al li:first-child .st-ai{background:#FFF1CF;color:#8A5300}
+.st-al li:nth-child(2) .st-ai{background:#FFF1CF;color:#8A5300}
+.st-pf{padding:18px 22px}
+.st-ph{margin-top:14px;display:grid;grid-template-columns:minmax(0,2.2fr) repeat(3,minmax(0,1fr)) minmax(0,1.3fr);gap:12px;padding:0 0 8px 0;font-size:12.5px;color:#8A93AD;border-bottom:1.5px solid #F0F2F8}
+.st-pt2{list-style:none;margin:0;padding:0}
+.st-pt2 li{display:grid;grid-template-columns:minmax(0,2.2fr) repeat(3,minmax(0,1fr)) minmax(0,1.3fr);gap:12px;align-items:center;padding:12px 0;border-top:1.5px solid #F0F2F8;font-size:14.5px}
+.st-pt2 li:first-child{border-top:0}
+.st-pn2{display:flex;flex-direction:column;gap:2px;min-width:0}.st-pn2 b{font-weight:600}.st-pn2 span{font-size:12.5px;color:#5B6582}
+.st-tr2{font-size:13.5px;font-weight:500}.st-tr2.up{color:#0F6B45}.st-tr2.dn{color:#8A5300}
+@media (max-width: 960px){
+.st-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
+.st-st{padding:12px}
+.st-st b{font-size:20px}
+.st-pill{order:2}
+.st-ph{display:none}
+.st-pt2 li{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:6px;padding:14px 0}
+.st-pn2{grid-column:1 / -1}
+.st-pt2 li > span[data-l]::before{content:attr(data-l);display:block;font-size:12px;color:#8A93AD}
+.st-tr2{grid-column:1 / -1}
+.st-al li{flex-wrap:wrap}
+.st-al li .st-at{flex:1 1 calc(100% - 60px)}
+.st-al li .st-btn{width:100%;justify-content:space-between}
+.st-al li .st-rb{margin-left:58px}
+.st-in{flex-wrap:wrap}
+.st-in .st-btn{width:100%;justify-content:space-between}
+.st-ok .st-pnx{flex-grow:1}
+.st-keep .st-pt{display:flex}
+.st-keep .st-pnx{flex-grow:1;padding-left:14px;border-left:1.5px solid #EEF1F7}
+.st-mini.st-vm .st-ct{flex-wrap:wrap}
+.st-mini.st-vm .st-cx{flex-basis:100%}
+.st-mini.st-vm .st-ct .st-gh{order:4;width:auto;margin-left:auto}
+.st-mini.st-vm .st-pill{order:3;margin:0}
+.st-al li:not(:first-child){flex-wrap:nowrap}
+.st-al li:not(:first-child) .st-at{flex:1 1 auto}
+.st-al li:not(:first-child) .st-rb{margin-left:0;height:36px;padding:0 14px;font-size:13.5px}
+}
+"""
+CSS3 = CSS3.replace('/* mobile: same chapter track as desktop', CSS_X + '/* mobile: same chapter track as desktop', 1)
 SCRIPT3 = '''<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { nav: false }; this.v = (props || {}).variant || 's02'; }
@@ -431,10 +560,15 @@ class Component extends DCLogic {
     const T = {
       s02: ['Welcome back, Ada.', 'Pick up where you left off.', 'Chapter 4 has no assessment yet', 'I can draft five questions from your lessons for you to review and edit.', ['Draft the questions', 'Suggest a project instead']],
       s03: ['Welcome back, Ada.', 'You have an invitation waiting.', 'Want a quick read of the invitation?', 'I can summarise the role, the chapter and the revenue share before you decide.', ['Summarise the invitation', 'What does a Co-Creator do?']],
-      s04: ['Good to see you, Ada.', 'Your chapter is taking shape.', 'Lesson 3.2 needs one worked example', 'I can turn your revenue table into a step-by-step example learners can follow.', ['Draft the example', 'Check my lesson']]
+      s04: ['Good to see you, Ada.', 'Your chapter is taking shape.', 'Lesson 3.2 needs one worked example', 'I can turn your revenue table into a step-by-step example learners can follow.', ['Draft the example', 'Check my lesson']],
+      s05: ['Almost there, Ada.', 'One step from validation.', 'While you verify, I can run a pre-check', 'I’ll check outcomes, assessments and sources so validators see a ready course.', ['Run a pre-check', 'What happens in validation?']],
+      s06: ['Welcome back, Ada.', 'Your course is with validators.', 'Get ready for Thursday’s meeting', 'I can pull together the questions validators usually ask about SQL courses.', ['Prepare for the meeting', 'How validation works']],
+      s07: ['Welcome back, Ada.', 'A validator needs your answer.', 'I can draft a reply from Lesson 3.4', 'You stay in control: review it, edit it, then send it from the workspace.', ['Draft a reply', 'Show the full request']],
+      s08: ['Congratulations, Ada.', 'Your course is live.', 'Your first 46 learners are in', 'Most are early-career analysts, as you designed for. I can draft answers to the open questions.', ['Draft answers', 'See who joined']],
+      s09: ['Good morning, Ada.', 'Four things need you today.', 'Learners drop off at Lesson 4.3', '38% stop at window functions in Advanced SQL. A short practice task before it may help.', ['Review the chapter', 'Draft a practice task']]
     }[v];
     return { navCls: this.state.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !this.state.nav }),
-      s2: v === 's02', s3: v === 's03', s4: v === 's04', wel: T[0], h1: T[1], nT: T[2], nD: T[3], nChips: T[4] };
+      s2: v === 's02', s3: v === 's03', s4: v === 's04', s5: v === 's05', s6: v === 's06', s7: v === 's07', s8: v === 's08', s9: v === 's09', pw: ['s02','s03','s04'].includes(v), rdy: v === 's06' || v === 's07', wel: T[0], h1: T[1], nT: T[2], nD: T[3], nChips: T[4] };
   }
 }
 </script>'''
@@ -458,7 +592,7 @@ def wrap(name, src, var, title, w, h, mob):
     wr(name + '.dc.html', t)
 wrap('CR-POL-001-Mobile', 'CR-POL-001', '', 'CR-POL-001 mobile preview', 390, 844, True)
 wrap('CR-POL-002-Mobile', 'CR-POL-002', '', 'CR-POL-002 mobile preview', 390, 844, True)
-for n, v in [('S02', 's02'), ('S03', 's03'), ('S04', 's04')]:
-    wrap('CR-DASH-' + n, 'CR-DASH-ST', v, 'Credalio · Studio state ' + n, 1440, 820, False)
+for n, v in [('S02', 's02'), ('S03', 's03'), ('S04', 's04'), ('S05', 's05'), ('S06', 's06'), ('S07', 's07'), ('S08', 's08'), ('S09', 's09')]:
+    wrap('CR-DASH-' + n, 'CR-DASH-ST', v, 'Credalio · Studio state ' + n, 1440, 1100 if n == 'S09' else 820, False)
     wrap('CR-DASH-' + n + '-Mobile', 'CR-DASH-ST', v, 'CR-DASH-' + n + ' mobile preview', 390, 980, True)
 print('ok')

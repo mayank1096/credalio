@@ -201,10 +201,11 @@ sif = lambda v, body, d='false': f'<sc-if value="{{{{{v}}}}}" hint-placeholder-v
 btn = lambda href, label, cls='': f'<a href="{href}" class="ds-btn st-btn {cls}"><span>{label}</span><span class="ob-arrow">{ARR}</span></a>'
 ghost = lambda href, label: f'<a href="{href}" class="ds-ghost st-gh">{label}</a>'
 COVER = f'<span class="st-cov" aria-hidden="true">{ic(I_BOOK, 26, 1.8)}</span>'
-CHS = ('<ol class="st-chs" aria-label="Chapters">' + ''.join(
-    f'<li class="{c}"><span class="st-cn">{n}</span><span class="st-cl"><b>{t}</b><span>{st}</span></span></li>'
+CHS = ('<div class="st-tr"><ol class="st-chs" aria-label="Chapters">' + ''.join(
+    f'<li class="{c}"><span class="st-seg"></span><span class="st-cl"><b>{n} · {t}</b><span>{st}</span></span></li>'
     for n, t, st, c in [(1, 'Why SQL', 'Done', 'ok'), (2, 'Selecting data', 'Done', 'ok'), (3, 'Filtering and sorting', 'Done', 'ok'),
-                        (4, 'Joins', 'Needs an assessment', 'amb'), (5, 'Aggregation', 'Drafting', 'now'), (6, 'Window functions', 'Not started', '')]) + '</ol>')
+                        (4, 'Joins', 'Needs an assessment', 'amb'), (5, 'Aggregation', 'Drafting', 'now'), (6, 'Window functions', 'Not started', '')])
+    + '</ol><p class="st-trm"><b>3 of 6</b> done · <span>Chapter 4 needs an assessment</span></p></div>')
 NBAND = (f'<div class="st-nb">{NOVA36}<span class="st-nt"><span class="st-lab">Nova suggests</span><b>{{{{nT}}}}</b><span>{{{{nD}}}}</span></span>'
          '<div class="st-chips"><sc-for list="{{nChips}}" as="c" hint-placeholder-count="2"><a href="CR-CREATE-002A.dc.html" class="ds-chip st-chip">{{c}}</a></sc-for></div></div>')
 def cont_body(primary):
@@ -213,8 +214,7 @@ def cont_body(primary):
             '<span class="st-lab">Continue your work</span><h2 id="st-c">Data Analysis with SQL</h2><span class="st-meta">Course · Build phase · edited yesterday'
             + ('' if primary else ' · next: add an assessment to Chapter 4') + '</span></div>'
             '<span class="st-pct"><b>68%</b><span>built</span></span>' + act + '</div>'
-            '<div class="st-bar" aria-hidden="true"><span style="width: 68%"></span></div>'
-            + (CHS + NBAND if primary else '') + '</section>')
+            + (CHS + NBAND if primary else '<div class="st-bar" aria-hidden="true"><span style="width: 68%"></span></div>') + '</section>')
 ATT_INV = (f'<section class="ds-card st-att st-hero ob-in2" aria-labelledby="st-a"><div class="st-sh"><span class="st-lab" id="st-a">Needs your attention</span><a href="#" class="ds-link">Notifications</a></div>'
            '<div class="st-ar"><span class="st-av" aria-hidden="true">BA</span><span class="st-at"><b>Dr. Bola Ade invited you to co-create “Financial Modelling Basics”</b>'
            '<span>Co-Creator · ABC Institute · 20% revenue share · expires in 6 days</span></span>'
@@ -278,14 +278,7 @@ CSS3 = """
 .st-mini .st-bar{margin-top:14px;height:6px}
 .st-bar span{display:block;height:100%;border-radius:8px;background:linear-gradient(90deg,#1652F0,#6E96FF)}
 .st-bar.sm{margin:10px 0 6px 0;height:6px;max-width:320px}
-.st-chs{list-style:none;margin:16px 0 0 0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
-.st-chs li{display:flex;align-items:flex-start;gap:9px;padding:11px 12px;border-radius:12px;background:#F7F9FD;border:1.5px solid #EEF1F7;min-width:0}
-.st-cn{width:22px;height:22px;flex-shrink:0;border-radius:50%;background:#E6EAF3;color:#5B6582;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
-.st-chs .ok .st-cn{background:#0F6B45;color:#FFFFFF}
-.st-chs .amb{background:#FFFBF2;border-color:#F4D98E}.st-chs .amb .st-cn{background:#F6C343;color:#4A3300}
-.st-chs .now .st-cn{background:#1652F0;color:#FFFFFF}
-.st-cl{display:flex;flex-direction:column;gap:1px;min-width:0}
-.st-cl b{font-size:13.5px;font-weight:600;line-height:1.3;color:#0B1433}
+.st-chs .ok .st-cl b{font-size:13.5px;font-weight:600;line-height:1.3;color:#0B1433}
 .st-cl span{font-size:12.5px;color:#5B6582;line-height:1.3}
 .st-chs .amb .st-cl span{color:#8A5300}
 /* Nova band at the foot of the focus card */
@@ -332,7 +325,32 @@ CSS3 = """
 .st-gc b{font-size:14.5px;font-weight:600}
 .st-gc > span:last-child > span{font-size:12.5px;color:#5B6582}
 @media (max-width: 960px){.st-gl{display:flex;overflow-x:auto;margin:10px -16px 0 -16px;padding:0 16px;scrollbar-width:none}.st-gc{flex:0 0 240px}}
-@media (max-width: 1180px){.st-chs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+/* chapter track v2: the progress bar IS the chapter list */
+.st-tr{margin-top:20px}
+.st-chs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.st-chs li{display:flex;flex-direction:column;gap:10px;min-width:0;padding:0;background:none;border:0;border-radius:0}
+.st-seg{display:block;height:8px;border-radius:8px;background:#E6EAF3}
+.st-chs .ok .st-seg{background:#1652F0}
+.st-chs .now .st-seg{background:linear-gradient(90deg,#1652F0 0 45%,#C9D8FF 45% 100%)}
+.st-chs .amb .st-seg{background:#F6C343}
+.st-cl{display:flex;flex-direction:column;gap:2px;min-width:0;padding-right:6px}
+.st-cl b{font-size:13.5px;font-weight:600;line-height:1.3;color:#0B1433;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st-cl span{font-size:12.5px;line-height:1.3;color:#5B6582}
+.st-chs .amb .st-cl span{color:#8A5300;font-weight:500}
+.st-chs .now .st-cl span{color:#1652F0}
+.st-chs li:not(.ok):not(.amb):not(.now) .st-cl b{color:#5B6582;font-weight:500}
+.st-trm{display:none;margin:10px 0 0 0;font-size:13.5px;color:#5B6582}
+.st-trm b{color:#0B1433;font-weight:600}.st-trm span{color:#8A5300;font-weight:500}
+@media (max-width: 960px){
+.st-tr{margin-top:16px}
+.st-chs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;margin:0;padding:0;overflow:visible}
+.st-chs li{flex:none}
+.st-cl{display:none}
+.st-trm{display:block}
+.st-nb{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:12px;row-gap:12px;align-items:start}
+.st-chips{grid-column:1 / -1}
+}
+
 @media (max-width: 960px){
 .st-head{flex-direction:column;align-items:stretch;gap:14px;padding:20px 0 14px 0}
 .st-pw{gap:12px;padding:12px 12px 12px 14px}
@@ -349,8 +367,6 @@ CSS3 = """
 .st-pct b{font-size:20px}
 .st-ct .st-btn,.st-ct .st-gh{order:9;width:100%;justify-content:space-between}
 .st-ct .st-gh{justify-content:center}
-.st-chs{display:flex;overflow-x:auto;margin:14px -16px 0 -16px;padding:0 16px 2px 16px;scrollbar-width:none}
-.st-chs li{flex:0 0 150px}
 .st-nb{margin:18px -16px 0 -16px;padding:14px 16px;flex-wrap:wrap}
 .st-chips{width:100%;overflow-x:auto;margin:2px -16px 0 -16px;padding:0 16px;scrollbar-width:none}
 .st-ar{flex-wrap:wrap}

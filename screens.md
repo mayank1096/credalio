@@ -98,11 +98,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-COL-002` CR-COL-002 · Review invitation (Accept / Decline / Ask)
 - [x] D [x] M  `CR-COL-003` CR-COL-003 · Collaboration consent (not the validation declaration)
 - [x] D [x] M  `CR-COL-004` CR-COL-004 · Invitation accepted
-- [ ] D [ ] M  `CR-ASG-001` WORK · Assigned to Me (across experiences)
-- [ ] D [ ] M  `CR-DEC-001` CR-DEC-001 · Contributor declaration request (Mary)
-- [ ] D [ ] M  `CR-DEC-002` CR-DEC-002 · Contributor declaration (Mary signs her own)
-- [ ] D [ ] M  `CR-DEC-003` CR-DEC-003 · Declaration status: blocked while pending
-- [ ] D [ ] M  `CR-DEC-004` CR-DEC-004 · Lead Creator submission declaration
+- [x] D [x] M  `CR-ASG-001` WORK · Assigned to Me (across experiences)
+- [x] D [x] M  `CR-DEC-001` CR-DEC-001 · Contributor declaration request (Mary)
+- [x] D [x] M  `CR-DEC-002` CR-DEC-002 · Contributor declaration (Mary signs her own)
+- [x] D [x] M  `CR-DEC-003` CR-DEC-003 · Declaration status: blocked while pending
+- [x] D [x] M  `CR-DEC-004` CR-DEC-004 · Lead Creator submission declaration
 
 ## 10. Validation: Validation Centre lists cases; each workspace opens inside the Studio (6)
 

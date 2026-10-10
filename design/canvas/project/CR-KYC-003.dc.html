@@ -294,9 +294,15 @@ body{background:#FFFFFF}
 
 .tk-sec.tk-sum{background:#F1F3F8;color:#4A5578;padding:0 13px}
 @media (max-width: 960px){.tk-sec.tk-sum{width:auto;padding:0 12px;font-size:12px;height:30px}.tk-sec.tk-sum span{display:inline}}
+
+/* 2026-10-10 designer campus scene at the bottom of readiness task pages */
+.tk-root{position:relative;isolation:isolate}
+.tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/6acc9dd1cd600c17d2fd6381a3069aaa) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
+@media (max-width: 760px){.tk-scene{height:240px;background-size:250% auto;background-position:52% 100%}}
 </style>
 </helmet>
 <div class="tk-root">
+<div class="tk-scene" aria-hidden="true"></div>
 <header class="tk-top">
 <a href="CR-RDY-001.dc.html" class="lp-x" aria-label="Close and go back to readiness"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
 <div class="lp-title"><span class="lp-t1">Verify your identity</span><span class="lp-t2">Readiness · task 1 of 5</span></div>

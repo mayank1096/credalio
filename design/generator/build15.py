@@ -46,7 +46,7 @@ LIC = (SEL('Professional body', 'Nigeria Computer Society (NCS)', 's4', 'lb')
        + LNK('Public register link (optional)', 'ncs.org.ng/members/verify', 's2', 'lr', 'If your body has an online register, the review is quicker.')
        + IN('Member since', '2019', 's1 s1m', 'l1') + IN('Valid until (optional)', 'Dec 2026', 's1 s1m', 'l2')
        + UP('Proof of membership', True, 'ncs-membership.pdf', 'PDF · 840 KB'))
-WORK = (IN('Job title', 'Lead Data Scientist', 's2', 'wt') + IN('Organisation', 'Paystack', 's2', 'wo')
+WORK = (IN('Job title', 'Lead Data Scientist', 's2', 'wt') + IN('Organization', 'Paystack', 's2', 'wo')
         + IN('From', 'Mar 2020', 's1 s1m', 'w1') + IN('To', 'Present', 's1 s1m', 'w2')
         + IN('Referee email (optional)', 'tunde.bello@paystack.com', 's2', 'wr', 'We only contact them if something needs confirming.')
         + TA('What did you do?', 'Led a team of four building fraud models that screen 40 million payments a month.', 's4', 'wd')
@@ -67,7 +67,7 @@ old_ic = re.search(r'<div class="cr-fh"><span class="cr-ri">.*?</span><b>', s, f
 ic = ''.join(f'<sc-if value="{{{{{v}}}}}" hint-placeholder-val="{{{{false}}}}">{TI[k]}</sc-if>' for v, k in [('tD', 0), ('tC', 1), ('tL', 2), ('tW', 3), ('tO', 4)])
 s = s.replace(old_ic, f'<div class="cr-fh"><span class="cr-ri">{ic}</span><b>')
 
-# "Reviewed by the Credalio Trust team" box: all manual types, text per type
+# "Reviewed by the Credalio team" box: all manual types, text per type
 REV_OLD = '<sc-if value="{{tD}}" hint-placeholder-val="{{false}}"><div class="cr-v"><span class="cr-vi">'
 assert s.count(REV_OLD) == 2
 s = s.replace(REV_OLD, '<sc-if value="{{tM}}" hint-placeholder-val="{{false}}"><div class="cr-v"><span class="cr-vi">')
@@ -127,7 +127,7 @@ k = re.sub(r'<sc-if value="\{\{f\}\}" hint-placeholder-val="\{\{false\}\}"><svg.
 # review path
 k = k.replace('<b>Submitted to Sumsub</b><span>Today, 10:42</span>', '<b>Submitted</b><span>Today, 10:42</span>')
 k = k.replace('<b>Sumsub checks your ID</b><span>Usually a few minutes, at most one business day</span>',
-              '<b>Our Trust team reviews it</b><span>Usually 1 to 3 business days</span>')
+              '<b>The Credalio team reviews it</b><span>Usually 1 to 3 business days</span>')
 # verified card: credential instead of identity
 CAP = TI[1].replace('width="20" height="20"', 'width="22" height="22"')
 k = re.sub(r'<span class="ko-ii"><svg.*?</svg></span>', '<span class="ko-ii">' + CAP + '</span>', k, count=1, flags=re.S)
@@ -144,7 +144,7 @@ k = k.replace('<span>Fix my credentials</span>', '<span>Resume Orientation</span
 k = k.replace('<a href="CR-RDY-001.dc.html">View readiness</a>', '<a href="CR-CRED-001.dc.html">Your credentials</a>')
 k = k.replace("this.v = (props || {}).variant || 'review';", "this.v = (props || {}).variant || 'verified';")
 k = re.sub(r"const T = \{.*?\}\[v\];", """const T = {
-      review: ['ko-r', 'In review', 'Thanks, your credential is with our Trust team', 'We’ll let you know when it’s checked. Carry on with Orientation meanwhile.'],
+      review: ['ko-r', 'In review', 'Thanks, your credential is with the Credalio team', 'We’ll let you know when it’s checked. Carry on with Orientation meanwhile.'],
       verified: ['ko-v', 'Verified', 'Credential verified', 'Amazon Web Services confirmed your certification. It now shows on your Creator Profile.']
     }[v];""", k, flags=re.S)
 k = k.replace(", a: v === 'action', f: v === 'failed' }", ' }')

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Credalio onboarding: what you will teach</title>
+<title>Credalio onboarding: your topics</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -120,7 +120,7 @@ select.ob-f{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:po
 <span style="display: block; margin-top: 12px; font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: #0B1433">Ada Ononuju</span>
 <span style="display: block; margin-top: 2px; font-size: 13px; color: #5B6582">Data &amp; Analytics · 8+ years</span>
 <p style="margin: 10px 0 0 0; font-size: 14px; line-height: 1.5; color: #0B1433">{{bioShown}}</p>
-<div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #E6EAF3; font-size: 13px; line-height: 1.45; color: #5B6582">Teaches <span style="font-weight: 600; color: #0B1433">{{topicsLine}}</span></div>
+<div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #E6EAF3; font-size: 13px; line-height: 1.45; color: #5B6582">Topics <span style="font-weight: 600; color: #0B1433">{{topicsLine}}</span></div>
 </div>
 </div>
 </aside>
@@ -132,7 +132,7 @@ select.ob-f{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:po
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { tags: ['Data Analysis', 'SQL', 'Business Intelligence'], draft: '', bio: 'I help professionals turn messy data into decisions. Analyst, SQL teacher and BI lead.' }; }
+  constructor(props) { super(props); this.state = { tags: ['Data Analysis', 'SQL', 'Business Intelligence'], draft: '', bio: 'I help professionals turn messy data into decisions. Analyst, SQL trainer and BI lead.' }; }
   renderVals() {
     const { tags, draft, bio } = this.state;
     const add = () => { const v = draft.trim(); if (v && !tags.includes(v)) this.setState({ tags: [...tags, v], draft: '' }); else this.setState({ draft: '' }); };

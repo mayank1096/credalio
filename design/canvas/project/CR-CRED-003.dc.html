@@ -291,6 +291,8 @@ body{background:#FFFFFF}
 .ko-cn{text-align:center;font-size:13px}
 .ko-links{justify-content:center;font-size:14px}
 }
+
+.ko-sub:empty{display:none}
 </style>
 </helmet>
 <div class="tk-root">
@@ -315,7 +317,7 @@ body{background:#FFFFFF}
 <span class="sec-h">What happens next</span>
 <ol class="ko-path">
 <li class="ko-done"><span class="ko-dot"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Submitted</b><span>Today, 10:42</span></span></li>
-<li class="ko-now"><span class="ko-dot"></span><span><b>The Credalio team reviews it</b><span>Usually 1 to 3 business days</span></span></li>
+<li class="ko-now"><span class="ko-dot"></span><span><b>We check your evidence</b><span>Usually 1 to 3 business days</span></span></li>
 <li><span class="ko-dot"></span><span><b>We let you know</b><span>By email and here in your Studio</span></span></li>
 </ol>
 </section>
@@ -332,7 +334,7 @@ body{background:#FFFFFF}
 <section class="ko-card ko-idc ob-in3" aria-label="Verified credential">
 <span class="ko-ii"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5"></circle><path d="m8.5 13.2-1.5 7.8 5-2.6 5 2.6-1.5-7.8"></path></svg></span>
 <span class="ko-it"><b>AWS Certified Data Engineer – Associate</b><span>Amazon Web Services · checked online · 10 October 2026</span></span>
-<span class="ko-vb"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Verified</span></span>
+
 <div class="ko-rd"><span class="ko-rl">Readiness</span><span class="ko-bar"><span class="ko-was"></span><span class="ko-up"></span></span><span class="ko-rv"><b>60%</b><em>+20%</em></span></div>
 </section>
 <section class="ko-next ob-in4" aria-label="Next for you">
@@ -356,7 +358,7 @@ class Component extends DCLogic {
   renderVals() {
     const v = this.v;
     const T = {
-      review: ['ko-r', 'In review', 'Thanks, your credential is with the Credalio team', 'We’ll let you know when it’s checked. Carry on with Orientation meanwhile.'],
+      review: ['ko-r', 'In review', 'Thanks, your credential is with the Credalio team', ''],
       verified: ['ko-v', 'Verified', 'Credential verified', 'Amazon Web Services confirmed your certification. It now shows on your Creator Profile.']
     }[v];
     return { koCls: T[0], pill: T[1], h1: T[2], sub: T[3], r: v === 'review', v: v === 'verified' };

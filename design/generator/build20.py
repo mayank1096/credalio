@@ -24,9 +24,9 @@ AV_CSS = '''
 # ======================= CR-VAL-MC-001 · Validation Centre =======================
 track = lambda n: '<ol class="vc-tr">' + ''.join(f'<li class="{"dn" if i < n else ("on" if i == n else "")}"><i></i><span>{t}</span></li>' for i, t in enumerate(['Submitted', 'Validators assigned', 'Review', 'Decision'])) + '</ol>'
 vals = ''.join(f'<span class="vc-v"><span class="va {c}">{a}</span><span><b>{n}</b><span>{r} validator</span></span></span>' for a, c, n, r in VALS)
-main_vc = ('<main class="ds-main hp">\n<div class="hp-head ob-in"><div><h1 class="ds-h1">Validation Centre</h1><p class="hp-sub">2 cases · each workspace opens inside its course Studio</p></div></div>'
+main_vc = ('<main class="ds-main hp">\n<div class="hp-head ob-in"><div><h1 class="ds-h1">Validation Centre</h1><p class="hp-sub">2 cases where you’re the Lead Creator</p></div></div>'
            '<section class="ds-card vc ob-in2" aria-label="Data Analysis with SQL"><div class="vc-h"><span class="vc-cv">' + ic(I['book'], 22) + '</span>'
-           '<span class="vc-t"><b>Data Analysis with SQL</b><span>Case VAL-00928 · you’re the Lead Creator</span></span><span class="vp cb">Review in progress</span></div>'
+           '<span class="vc-t"><b>Data Analysis with SQL</b><span>Case VAL-00928</span></span><span class="vp cb">Review in progress</span></div>'
            + track(2) +
            '<div class="vc-g"><div class="vc-c"><span class="hp-lab">Validators</span><div class="vc-vv"><span class="vc-st">' + ''.join(f'<span class="va {c}">{a}</span>' for a, c, n, r in VALS) + '</span><b>3 assigned</b></div><span class="vc-s">Educational · Subject matter · Assessment</span></div>'
            '<div class="vc-c"><span class="hp-lab">Open requests</span><b class="vc-big">3</b><span class="vc-s vc-am"><i></i>1 needs you</span></div>'
@@ -34,7 +34,7 @@ main_vc = ('<main class="ds-main hp">\n<div class="hp-head ob-in"><div><h1 class
            '<div class="vc-f"><span class="vc-note">' + EYE + 'Requests go to whoever made the affected content. You see all of them.</span>'
            '<a href="CR-VAL-WS-lead.dc.html" class="ds-btn hp-btn"><span>Open workspace</span><span class="ob-arrow">' + ARR + '</span></a></div></section>'
            '<section class="ds-card vc vc-sm ob-in3" aria-label="Data Analyst Career Path"><div class="vc-h"><span class="vc-cv">' + ic(I['path'], 22) + '</span>'
-           '<span class="vc-t"><b>Data Analyst Career Path</b><span>Case VAL-01102 · you’re the Lead Creator</span></span><span class="vp cb">Validators assigned</span>'
+           '<span class="vc-t"><b>Data Analyst Career Path</b><span>Case VAL-01102</span></span><span class="vp cb">Validators assigned</span>'
            '<span class="vc-mt">No open requests</span><a href="#" class="hp-rb">Open</a></div></section>\n</main>')
 css_vc = AV_CSS + '''
 .vc{padding:22px 24px;margin-top:4px}
@@ -100,7 +100,7 @@ X = X[X.index('<svg'):X.index('</a>')]
 REQ = [(16, 'Meeting request', 'Whole course', 'ada', 'You', 'me', 'Thu 8 Oct', 'Sequencing of Chapters 3–5', '', 'AB', 'Needs you', 'am'),
        (14, 'Clarification', 'Chapter 4 · Lesson 3', 'mary', 'Mary Okafor', 'mo', 'Sun 4 Oct', 'ROW_NUMBER vs RANK with ties', '', 'KA', 'Waiting on Mary', 'gy'),
        (15, 'Evidence', 'Chapter 2 · Lesson 2', 'john', 'John Adeyemi', 'ja', 'Tue 6 Oct', 'Source for an indexing claim', '', 'KA', 'Waiting on John', 'gy'),
-       (12, 'Clarification', 'Chapter 1 · Lesson 1', 'ada', 'You', 'me', 'Done', 'Course prerequisites', '', 'AB', 'Ready for review', 'cb')]
+       (12, 'Clarification', 'Chapter 1 · Lesson 1', 'ada', 'You', 'me', '—', 'Course prerequisites', '', 'AB', 'Ready for review', 'cb')]
 def rows(mary):
     o = ''
     for n, ty, aff, who, wn, av, due, t, _, _, st, tone in REQ:
@@ -115,11 +115,11 @@ def rows(mary):
 ws_list = lambda mary: ('<div class="ws-hd"><span>Request</span><span>Assigned to</span><span>Due</span><span>Status</span></div><div class="ws-l">' + rows(mary) + '</div>')
 WTABS = '<div class="ws-tabs" role="tablist"><span class="on">Requests <em>{{nReq}}</em></span><span>Findings</span><span>Meetings</span><span>Decision</span></div>'
 
-lead_v = ('<sc-if value="{{vLead}}" hint-placeholder-val="{{true}}"><div class="ws-head ob-in"><div><span class="ws-eb">Validation · Case VAL-00928</span><h1 class="ws-h1">Requests</h1>'
-          '<p class="ws-sub">You see every request. Each one goes to whoever made the affected content.</p></div><span class="ws-as">' + EYE + 'Viewing as Lead Creator</span></div>'
+lead_v = ('<sc-if value="{{vLead}}" hint-placeholder-val="{{true}}"><div class="ws-head ob-in"><div><span class="ws-eb">Case VAL-00928 · you’re the Lead Creator</span><h1 class="ws-h1">Validation</h1>'
+          '<p class="ws-sub">You see every request. Each one goes to whoever made the affected content.</p></div></div>'
           + WTABS + '<section class="ws-card ob-in2" aria-label="Requests">' + ws_list(False) + '</section></sc-if>')
-mary_v = ('<sc-if value="{{vMary}}" hint-placeholder-val="{{false}}"><div class="ws-head ob-in"><div><span class="ws-eb">Validation · Case VAL-00928</span><h1 class="ws-h1">Requests</h1>'
-          '<p class="ws-sub">Requests about your part of the course: Chapter 4 and the Final assessment.</p></div><span class="ws-as">' + EYE + 'Viewing as Contributor</span></div>'
+mary_v = ('<sc-if value="{{vMary}}" hint-placeholder-val="{{false}}"><div class="ws-head ob-in"><div><span class="ws-eb">Case VAL-00928 · you’re a contributor</span><h1 class="ws-h1">Validation</h1>'
+          '<p class="ws-sub">Requests about your part: Chapter 4 and the Final assessment.</p></div></div>'
           + WTABS + '<section class="ws-card ob-in2" aria-label="Requests">' + ws_list(True) + '<div class="ws-hid">3 other requests on this case are with other creators. Ada, the Lead Creator, sees all of them.</div></section></sc-if>')
 
 # request detail (Mary: req / resp; Lead read-only: leadreq)
@@ -127,10 +127,9 @@ KA_MSG = 'Lesson 4.3 says ROW_NUMBER and RANK return the same result when values
 MARY_MSG = 'Corrected: ROW_NUMBER gives unique numbers; RANK gives tied rows the same rank and skips the next. The practice task now includes a tie.'
 meta = lambda who_txt: ('<aside class="rq-side ob-in3"><section class="ws-card rq-meta"><dl>'
                         '<div><dt>Affected</dt><dd>Chapter 4 · Lesson 3</dd></div>'
-                        f'<div><dt>Assigned to</dt><dd>{who_txt}</dd></div>'
-                        '<div><dt>Raised by</dt><dd>Prof. Kunle Ade · Subject matter</dd></div>'
+                        '<sc-if value="{{showWho}}" hint-placeholder-val="{{false}}"><div><dt>Assigned to</dt><dd>Mary Okafor · Contributor</dd></div></sc-if>'
                         '<div><dt>Due</dt><dd class="rq-due">Sun 4 Oct</dd></div>'
-                        '<div><dt>Visible to</dt><dd>You, Ada (Lead Creator) and the validators</dd></div></dl></section>')
+                        '<div><dt>Visible to</dt><dd>{{visTxt}}</dd></div></dl></section>')
 detail = ('<sc-if value="{{vDetail}}" hint-placeholder-val="{{false}}"><a href="{{backHref}}" class="rq-back">' + ic('<path d="M19 12H5"></path><path d="m11 6-6 6 6 6"></path>', 16, 2.2) + '<span>All requests</span></a>'
           '<div class="rq ob-in"><div class="rq-main">'
           '<section class="ws-card rq-top"><div class="rq-tl"><span class="vp gy">Clarification #14</span><span class="vp {{stTone}}">{{stTxt}}</span></div>'
@@ -149,7 +148,7 @@ detail = ('<sc-if value="{{vDetail}}" hint-placeholder-val="{{false}}"><a href="
           '<sc-if value="{{readOnly}}" hint-placeholder-val="{{false}}"><div class="rq-ro">' + EYE + '<span>Assigned to Mary. You can follow along here; Mary responds.</span><a href="#" class="hp-rb">Message Mary</a></div></sc-if>'
           '</section></div>'
           + meta('{{whoTxt}}') +
-          '<sc-if value="{{canRespond}}" hint-placeholder-val="{{true}}"><section class="ws-card rq-ready"><b>Done responding?</b><span>Mark it ready and the validator is told your response is complete.</span>'
+          '<sc-if value="{{canRespond}}" hint-placeholder-val="{{true}}"><section class="ws-card rq-ready"><span>When your response is complete, let the validator know.</span>'
           '<button type="button" class="ds-ghost rq-rb {{readyOff}}">' + CHK + '<span>Mark ready for review</span></button></section></sc-if></aside></div></sc-if>')
 
 body = ('<div class="tk-root ws-root">\n'
@@ -279,7 +278,7 @@ class Component extends DCLogic {
       meIni: mary ? 'MO' : 'AO', meCls: mary ? 'mo' : 'me', nReq: mary ? 1 : 4, navBadge: mary ? 1 : 1,
       backHref: mary ? 'CR-VAL-WS-mary.dc.html' : 'CR-VAL-WS-lead.dc.html',
       canRespond: respond && !S.posted, readOnly: v === 'leadreq', posted: S.posted,
-      whoTxt: v === 'leadreq' ? 'Mary Okafor · Contributor' : 'You (Mary Okafor)',
+      showWho: v === 'leadreq', visTxt: v === 'leadreq' ? 'Mary, you and the validators' : 'You, Ada (Lead Creator) and the validators',
       stTxt: S.posted ? 'Responded' : (v === 'leadreq' ? 'Waiting on Mary' : 'Needs your response'), stTone: S.posted ? 'cb' : (v === 'leadreq' ? 'gy' : 'am'),
       draft: S.draft, onDraft: (e) => this.setState({ draft: e.target.value }), hasAtt: v === 'resp',
       sendOff: S.draft.trim() ? '' : 'lp-off', send: () => this.setState({ posted: true }),

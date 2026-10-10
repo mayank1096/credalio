@@ -379,6 +379,8 @@ CSS3 = """
 .st-chs li{flex:0 0 136px;scroll-snap-align:start;gap:10px}
 .st-nb{margin:22px -16px 0 -16px;padding:18px 16px 16px 16px;display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:12px;row-gap:14px;align-items:start}
 .st-chips{grid-column:1 / -1;width:auto;margin:0 -16px;padding:0 16px}
+.st-att.st-hero .st-sh{justify-content:center}
+.st-att.st-hero .st-ar{flex-direction:column;align-items:center;text-align:center;gap:12px}
 }
 """
 SCRIPT3 = '''<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>

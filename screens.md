@@ -115,11 +115,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 
 ## 11. Credit Wallet (8)
 
-- [ ] D [ ] M  `CR-WAL-001` CR-WAL-001 · Credit Wallet
-- [ ] D [ ] M  `CR-WAL-002` CR-WAL-002 · Fund Wallet: choose Credits
-- [ ] D [ ] M  `CR-WAL-003` CR-WAL-003 · Payment method (supported rails)
-- [ ] D [ ] M  `CR-WAL-004` CR-WAL-004 · Payment summary
-- [ ] D [ ] M  `CR-WAL-005` CR-WAL-005 · Processing (no duplicate payment)
+- [x] D [x] M  `CR-WAL-001` CR-WAL-001 · Credit Wallet
+- [x] D [x] M  `CR-WAL-002` CR-WAL-002 · Fund Wallet: choose Credits
+- [x] D [x] M  `CR-WAL-003` CR-WAL-003 · Payment method (supported rails)
+- [x] D [x] M  `CR-WAL-004` CR-WAL-004 · Payment summary
+- [x] D [x] M  `CR-WAL-005` CR-WAL-005 · Processing (no duplicate payment)
 - [ ] D [ ] M  `CR-WAL-005f` CR-WAL-005 · Payment failed, not charged
 - [ ] D [ ] M  `CR-WAL-006` CR-WAL-006 · Wallet funded
 - [ ] D [ ] M  `CR-WAL-007` CR-WAL-007 · Transaction history (filters)

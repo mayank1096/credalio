@@ -17,7 +17,7 @@
 - White background, Google Sans, navy #0B1433 text, cobalt #1652F0 single accent (hover #0E3BB8).
 - Soft blues #EAF0FF / #F5F8FF; secondary text #3A4566 #4A5578 #5B6582; borders #E6EAF3 #D6DDEE #CBD3E6; success #0F6B45.
 - Pill buttons; primary = cobalt pill with white circle arrow. Cards radius 16–18, 1.5px borders, soft blue ring when selected.
-- Illustration "One Line, Four Futures" (asset `/_blob/bad84659fa9f24b3a7efb7e88696e531`, 2172×724). The glowing cobalt line = the AI guide; reuse it as the progress/path motif.
+- Illustration "One Line, Four Futures" (designer v2 2026-10-10: `design/illustrations/main-scene-v2.webp`, blob `/_blob/877e6d93c070677634b4956192180989`, 2000×667, same layout as v1 so all path/fade overlays still align; old v1 blob `/_blob/bad84659fa9f24b3a7efb7e88696e531` must not be used — older generators still reference it). The glowing cobalt line = the AI guide; reuse it as the progress/path motif.
 - The "Your Copilot lights the way" pill was REMOVED by the designer. Don't bring it back.
 
 ## Onboarding layout (approved 2026-10-02)

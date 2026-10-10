@@ -60,11 +60,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-CRED-002a` CRED-002 · Degree or diploma (upload)
 - [x] D [x] M  `CR-CRED-002b` CRED-002 · AWS certification by credential ID (checked online)
 - [x] D [x] M  `CR-CRED-002c` CRED-002 · Certification by badge link (Credly)
-- [ ] D [ ] M  `CR-CRED-002d` CRED-002 · Licence or membership
-- [ ] D [ ] M  `CR-CRED-002e` CRED-002 · Work experience
-- [ ] D [ ] M  `CR-CRED-002f` CRED-002 · Other evidence (portfolio, publications)
-- [ ] D [ ] M  `CR-CRED-003` CRED-003 · Verified online instantly → next task
-- [ ] D [ ] M  `CR-CRED-003b` CRED-003 · Submitted for manual review → next task
+- [x] D [x] M  `CR-CRED-002d` CRED-002 · Licence or membership
+- [x] D [x] M  `CR-CRED-002e` CRED-002 · Work experience
+- [x] D [x] M  `CR-CRED-002f` CRED-002 · Other evidence (portfolio, publications)
+- [x] D [x] M  `CR-CRED-003` CRED-003 · Verified online instantly → next task
+- [x] D [x] M  `CR-CRED-003b` CRED-003 · Submitted for manual review → next task
 
 ## 06. Readiness task 4 · Creator Policies: read and accept → next task (2)
 

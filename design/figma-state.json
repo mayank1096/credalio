@@ -347,7 +347,7 @@
   "CR-CRED-002b \u00b7 Certification by credential ID \u00b7 Desktop": {
    "page": "343:12",
    "x": 6210,
-   "id": "351:12"
+   "id": "457:12"
   },
   "CR-CRED-002b \u00b7 Certification by credential ID \u00b7 Mobile": {
    "page": "343:12",
@@ -357,7 +357,7 @@
   "CR-CRED-002c \u00b7 Certification by badge link \u00b7 Desktop": {
    "page": "343:12",
    "x": 8280,
-   "id": "352:12"
+   "id": "457:120"
   },
   "CR-CRED-002c \u00b7 Certification by badge link \u00b7 Mobile": {
    "page": "343:12",

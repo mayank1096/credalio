@@ -205,44 +205,47 @@ CHS = ('<ol class="st-chs" aria-label="Chapters">' + ''.join(
     f'<li class="{c}"><span class="st-cn">{n}</span><span class="st-cl"><b>{t}</b><span>{st}</span></span></li>'
     for n, t, st, c in [(1, 'Why SQL', 'Done', 'ok'), (2, 'Selecting data', 'Done', 'ok'), (3, 'Filtering and sorting', 'Done', 'ok'),
                         (4, 'Joins', 'Needs an assessment', 'amb'), (5, 'Aggregation', 'Drafting', 'now'), (6, 'Window functions', 'Not started', '')]) + '</ol>')
-cont_body = lambda primary: (
-    f'<section class="ds-card st-cont {"st-hero" if primary else ""} ob-in2" aria-labelledby="st-c"><div class="st-ct">{COVER}<div class="st-cx">'
-    '<span class="st-lab">Continue your work</span><h2 id="st-c">Data Analysis with SQL</h2><span class="st-meta">Course · Build phase · edited yesterday</span></div>'
-    '<span class="st-pct"><b>68%</b><span>built</span></span></div>'
-    '<div class="st-bar" aria-hidden="true"><span style="width: 68%"></span></div>'
-    + (CHS if primary else '') +
-    f'<div class="st-cf"><span class="st-next">{NOVA}<span><b>Next:</b> add an assessment to Chapter 4</span></span>'
-    + (btn('CR-CREATE-002B.dc.html', 'Continue building') if primary else ghost('CR-CREATE-002B.dc.html', 'Resume')) + '</div></section>')
-ATT_INV = (f'<section class="ds-card st-att ob-in2" aria-labelledby="st-a"><div class="st-sh"><h2 id="st-a">Needs your attention</h2><a href="#" class="ds-link">Notifications</a></div>'
+NBAND = (f'<div class="st-nb">{NOVA36}<span class="st-nt"><span class="st-lab">Nova suggests</span><b>{{{{nT}}}}</b><span>{{{{nD}}}}</span></span>'
+         '<div class="st-chips"><sc-for list="{{nChips}}" as="c" hint-placeholder-count="2"><a href="CR-CREATE-002A.dc.html" class="ds-chip st-chip">{{c}}</a></sc-for></div></div>')
+def cont_body(primary):
+    act = (btn('CR-CREATE-002B.dc.html', 'Continue building') if primary else ghost('CR-CREATE-002B.dc.html', 'Resume'))
+    return (f'<section class="ds-card st-cont {"st-hero" if primary else "st-mini"} ob-in2" aria-labelledby="st-c"><div class="st-ct">{COVER}<div class="st-cx">'
+            '<span class="st-lab">Continue your work</span><h2 id="st-c">Data Analysis with SQL</h2><span class="st-meta">Course · Build phase · edited yesterday'
+            + ('' if primary else ' · next: add an assessment to Chapter 4') + '</span></div>'
+            '<span class="st-pct"><b>68%</b><span>built</span></span>' + act + '</div>'
+            '<div class="st-bar" aria-hidden="true"><span style="width: 68%"></span></div>'
+            + (CHS + NBAND if primary else '') + '</section>')
+ATT_INV = (f'<section class="ds-card st-att st-hero ob-in2" aria-labelledby="st-a"><div class="st-sh"><span class="st-lab" id="st-a">Needs your attention</span><a href="#" class="ds-link">Notifications</a></div>'
            '<div class="st-ar"><span class="st-av" aria-hidden="true">BA</span><span class="st-at"><b>Dr. Bola Ade invited you to co-create “Financial Modelling Basics”</b>'
            '<span>Co-Creator · ABC Institute · 20% revenue share · expires in 6 days</span></span>'
-           + btn('#', 'Review invitation') + '</div></section>')
-ATT_DEC = ('<section class="ds-card st-att st-amb ob-in2" aria-labelledby="st-a"><div class="st-ar"><span class="st-ai" aria-hidden="true">' + ic(I_DOC, 20) + '</span>'
+           + btn('#', 'Review invitation') + '</div>' + NBAND + '</section>')
+ATT_DEC = ('<section class="ds-card st-att st-amb ob-in2" aria-label="Needs your attention"><div class="st-ar"><span class="st-ai" aria-hidden="true">' + ic(I_DOC, 20) + '</span>'
            '<span class="st-at"><b>Your contributor declaration is needed</b><span>Financial Modelling Basics can’t be submitted for validation until you declare your contribution.</span></span>'
            + ghost('#', 'Review') + '</div></section>')
 ASG = (f'<section class="ds-card st-asg st-hero ob-in2" aria-labelledby="st-g"><div class="st-sh"><div><span class="st-lab">My assigned work</span><h2 id="st-g">Financial Modelling Basics</h2>'
        '<span class="st-meta">Co-Creator · Chapter 3, Revenue models · Lead: Dr. Bola Ade</span></div><a href="#" class="ds-link">Assigned to me</a></div>'
-       '<div class="st-up"><span class="st-ui" aria-hidden="true">' + ic(I_BOOK, 22) + '</span><span class="st-ut"><span class="st-ul">Up next · due Friday</span>'
-       '<b>Lesson 3.2 · Building a revenue model</b><span class="st-bar sm" aria-hidden="true"><span style="width: 40%"></span></span><span class="st-meta">In progress · 40% drafted</span></span>'
+       '<div class="st-ab"><div class="st-up"><span class="st-ul">Up next · due Friday</span>'
+       '<b>Lesson 3.2 · Building a revenue model</b><span class="st-bar sm" aria-hidden="true"><span style="width: 40%"></span></span><span class="st-meta">In progress · 40% drafted</span>'
        + btn('#', 'Resume') + '</div>'
        '<ul class="st-rows"><li><span class="st-dot"></span><span class="st-rt"><b>Lesson 3.3 · Scenario analysis</b><span>Video lesson · due next Wednesday</span></span><a href="#" class="st-rb">Start</a></li>'
-       '<li><span class="st-dot"></span><span class="st-rt"><b>Quiz 3 · Revenue models</b><span>Assessment · due in 2 weeks</span></span><a href="#" class="st-rb">Start</a></li></ul></section>')
-NOVA_CARD = (f'<section class="st-nova nova-card ob-in3" aria-label="Nova suggests"><div class="st-nh">{NOVA36}<span><span class="st-lab">Nova suggests</span><b>{{{{nT}}}}</b></span></div>'
-             '<p>{{nD}}</p><div class="st-chips"><sc-for list="{{nChips}}" as="c" hint-placeholder-count="2"><a href="CR-CREATE-002A.dc.html" class="ds-chip st-chip">{{c}}</a></sc-for></div></section>')
-PATH = ('<section class="ds-card st-path ob-in3" aria-labelledby="st-p"><div class="st-sh"><h2 id="st-p">Your path to publishing</h2><span class="st-cnt">1 of 5 done</span></div>'
-        '<span class="st-segs" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span>'
-        '<div class="st-pn"><span><span class="st-ul">Next</span><b>Verify your identity</b></span><a href="CR-KYC-001.dc.html" class="st-rb">Start</a></div>'
-        '<a href="CR-RDY-001.dc.html" class="ds-link st-all">View readiness</a></section>')
-MAIN_D = ('<main class="ds-main st">\n<div class="st-head ob-in"><p class="st-wel">{{wel}}</p><h1 class="ds-h1">{{h1}}</h1></div>\n'
-          '<div class="st-grid"><div class="st-col">'
-          + sif('s3', ATT_INV) + sif('s4', ATT_DEC) + sif('s4', ASG) + sif('s2', cont_body(True), 'true') + sif('s3', cont_body(False)) + sif('s4', cont_body(False)) +
-          '</div><aside class="st-col st-aside">' + NOVA_CARD + PATH + '</aside></div>\n</main>')
-CSS3 = '''
-/* build16 dashboard states */
+       '<li><span class="st-dot"></span><span class="st-rt"><b>Quiz 3 · Revenue models</b><span>Assessment · due in 2 weeks</span></span><a href="#" class="st-rb">Start</a></li></ul></div>'
+       + NBAND + '</section>')
+PATHW = ('<div class="st-pw ob-in2"><a href="CR-RDY-001.dc.html" class="st-pt"><span class="st-lab">Path to publishing</span><b>1 of 5 done</b></a>'
+         '<span class="st-segs" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></span>'
+         '<span class="st-pnx"><span class="st-lab">Next</span><b>Verify your identity</b></span><a href="CR-KYC-001.dc.html" class="st-rb">Start</a></div>')
+I_READ = '<path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2z"></path><path d="M22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"></path>'
+GUIDES = lambda items: ('<section class="st-gd ob-in3" aria-labelledby="st-gh"><div class="st-sh"><span class="st-lab" id="st-gh">Helpful right now</span><a href="CR-CTR-001.dc.html" class="ds-link">Creator Centre</a></div><div class="st-gl">'
+    + ''.join(f'<a href="CR-CTR-001.dc.html" class="st-gc"><span class="st-gi">{ic(I_READ, 18)}</span><span><b>{t}</b><span>{d}</span></span></a>' for t, d in items) + '</div></section>')
+G2 = GUIDES([('Writing good assessment questions', 'Guide · 6 min read'), ('What validators look for', 'Guide · 5 min read'), ('Using real datasets in lessons', 'Guide · 4 min read')])
+G3 = GUIDES([('Co-creating on Credalio', 'Guide · 5 min read'), ('How revenue shares work', 'Guide · 4 min read'), ('Contributor declarations', 'Guide · 3 min read')])
+MAIN_D = ('<main class="ds-main st">\n<div class="st-head"><div class="ob-in"><p class="st-wel">{{wel}}</p><h1 class="ds-h1">{{h1}}</h1></div>' + PATHW + '</div>\n'
+          '<div class="st-col">' + sif('s3', ATT_INV) + sif('s4', ATT_DEC) + sif('s4', ASG) + sif('s2', cont_body(True), 'true') + sif('s3', cont_body(False)) + sif('s4', cont_body(False)) + sif('s2', G2, 'true') + sif('s3', G3) +
+          '</div>\n</main>')
+CSS3 = """
+/* build16 dashboard states v2: full-width focus card, Nova band inside, path strip in the header */
 .st{max-width:1240px}
-.st-head{padding:22px 0 18px 0}
+.st-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:22px 0 20px 0}
 .st-wel{margin:0 0 4px 0;font-size:15px;color:#3A4566}
-.st-grid{display:grid;grid-template-columns:minmax(0,1fr) 352px;gap:20px;align-items:start}
 .st-col{display:flex;flex-direction:column;gap:16px;min-width:0}
 .st h2{margin:0;font-size:17px;font-weight:600;letter-spacing:-0.01em;color:#0B1433}
 .st-lab{display:block;font-size:12.5px;font-weight:500;color:#8A93AD}
@@ -251,102 +254,116 @@ CSS3 = '''
 .st-btn{height:48px;font-size:15px;padding:0 5px 0 20px;flex-shrink:0}
 .st-btn .ob-arrow{width:38px;height:38px}
 .st-gh{height:44px;padding:0 20px;font-size:14.5px;flex-shrink:0}
-.st-cont{padding:22px 24px}
-.st-hero{border-color:#CBD7F5;box-shadow:0 18px 44px rgba(22,82,240,.08)}
+.st-rb{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:14px;font-weight:600;text-decoration:none;flex-shrink:0}
+/* path strip */
+.st-pw{display:flex;align-items:center;gap:18px;padding:12px 12px 12px 18px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;flex-shrink:0}
+.st-pt{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:#0B1433}
+.st-pt b,.st-pnx b{font-size:14.5px;font-weight:600;white-space:nowrap}
+.st-segs{display:grid;grid-template-columns:repeat(5,22px);gap:4px}
+.st-segs i{height:6px;border-radius:6px;background:#E6EAF3}.st-segs i.on{background:#0F6B45}
+.st-pnx{display:flex;flex-direction:column;gap:2px;padding-left:18px;border-left:1.5px solid #EEF1F7}
+/* focus cards */
+.st-hero{padding:24px 26px 0 26px;border-color:#CBD7F5;box-shadow:0 18px 44px rgba(22,82,240,.08);overflow:hidden}
+.st-mini{padding:18px 22px}
 .st-ct{display:flex;align-items:center;gap:16px}
 .st-cov{width:60px;height:60px;flex-shrink:0;border-radius:16px;background:linear-gradient(135deg,#1652F0,#6E96FF);color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(22,82,240,.22)}
+.st-mini .st-cov{width:46px;height:46px;border-radius:13px;box-shadow:none}
 .st-cx{flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:3px}
-.st-cont h2{font-size:22px;letter-spacing:-0.02em}
-.st-cont:not(.st-hero) h2{font-size:17px}
-.st-cont:not(.st-hero) .st-cov{width:46px;height:46px;border-radius:13px}
-.st-pct{display:flex;flex-direction:column;align-items:flex-end}
+.st-hero h2{font-size:24px;letter-spacing:-0.02em}
+.st-pct{display:flex;flex-direction:column;align-items:flex-end;margin-right:8px}
 .st-pct b{font-size:26px;font-weight:600;letter-spacing:-0.02em;color:#1652F0}
 .st-pct span{font-size:12.5px;color:#5B6582}
-.st-cont:not(.st-hero) .st-pct b{font-size:19px}
-.st-bar{display:block;margin-top:16px;height:8px;border-radius:8px;background:#E6EAF3;overflow:hidden}
+.st-mini .st-pct b{font-size:19px}
+.st-bar{display:block;margin-top:18px;height:8px;border-radius:8px;background:#E6EAF3;overflow:hidden}
+.st-mini .st-bar{margin-top:14px;height:6px}
 .st-bar span{display:block;height:100%;border-radius:8px;background:linear-gradient(90deg,#1652F0,#6E96FF)}
-.st-bar.sm{margin:8px 0 6px 0;height:6px;max-width:260px}
-.st-cf{margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.st-next{display:flex;align-items:center;gap:10px;font-size:14.5px;color:#0B1433}
-.st-next b{font-weight:600}
-.st-att{padding:18px 22px}
-.st-ar{display:flex;align-items:center;gap:14px;margin-top:14px}
-.st-amb .st-ar{margin-top:0}
-.st-att.st-amb{background:#FFFBF2;border-color:#F4D98E}
-.st-av{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:#0F6B45;color:#FFFFFF;font-size:14.5px;font-weight:600;display:flex;align-items:center;justify-content:center}
-.st-ai{width:44px;height:44px;flex-shrink:0;border-radius:14px;background:#FFF1CF;color:#8A5300;display:flex;align-items:center;justify-content:center}
-.st-at{flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:3px}
-.st-at b{font-size:15.5px;font-weight:600;line-height:1.35}
-.st-at > span{font-size:13.5px;color:#5B6582;line-height:1.45}
-.st-amb .st-at > span{color:#8A5300}
-.st-asg{padding:22px 24px}
-.st-asg h2{font-size:22px;letter-spacing:-0.02em;margin-top:2px}
-.st-up{margin-top:18px;display:flex;align-items:center;gap:16px;padding:16px 16px 16px 18px;border-radius:16px;background:#F5F8FF;border:1.5px solid #E1E9FF}
-.st-ui{width:48px;height:48px;flex-shrink:0;border-radius:14px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;border:1.5px solid #E1E9FF}
-.st-ut{flex-grow:1;min-width:0;display:flex;flex-direction:column}
-.st-ut b{font-size:16px;font-weight:600;margin-top:2px}
-.st-ul{font-size:12.5px;font-weight:500;color:#8A93AD}
-.st-rows{list-style:none;margin:6px 0 0 0;padding:0}
-.st-rows li{display:flex;align-items:center;gap:14px;padding:14px 4px 14px 6px;border-top:1.5px solid #F0F2F8}
-.st-rows li:first-child{border-top:0}
-.st-dot{width:10px;height:10px;flex-shrink:0;border-radius:50%;border:2px solid #CBD3E6;margin:0 14px 0 13px}
-.st-rt{flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px}
-.st-rt b{font-size:15px;font-weight:600}
-.st-rt span{font-size:13.5px;color:#5B6582}
-.st-rb{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:14px;font-weight:600;text-decoration:none;flex-shrink:0}
-.st-nova{padding:20px 20px 18px 20px;border-radius:20px;border:1.5px solid #E1E9FF;background:#F5F8FF url(/_blob/d268046654a4206d2a726e62005bcc59) center / cover no-repeat}
-.st-nh{display:flex;align-items:center;gap:12px}
-.st-nh > span:last-child{display:flex;flex-direction:column;gap:2px}
-.st-nh b{font-size:15.5px;font-weight:600;line-height:1.35}
-.st-nova p{margin:10px 0 0 0;font-size:14px;line-height:1.55;color:#3A4566}
-.st-chips{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
-.st-chip{text-decoration:none}
-.st-path{padding:18px 20px}
-.st-cnt{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:999px;background:#EAF0FF;color:#0E3BB8;font-size:12.5px;font-weight:500;white-space:nowrap}
-.st-segs{margin-top:14px;display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
-.st-segs i{height:6px;border-radius:6px;background:#E6EAF3}.st-segs i.on{background:#0F6B45}
-.st-pn{margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.st-pn > span{display:flex;flex-direction:column;gap:2px}.st-pn b{font-size:15px;font-weight:600}
-.st-all{margin-top:12px;font-size:14px}
-.st-chs{list-style:none;margin:18px 0 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.st-chs li{display:flex;align-items:flex-start;gap:8px;padding:10px;border-radius:12px;background:#F7F9FD;border:1.5px solid #EEF1F7;min-width:0}
+.st-bar.sm{margin:10px 0 6px 0;height:6px;max-width:320px}
+.st-chs{list-style:none;margin:16px 0 0 0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.st-chs li{display:flex;align-items:flex-start;gap:9px;padding:11px 12px;border-radius:12px;background:#F7F9FD;border:1.5px solid #EEF1F7;min-width:0}
 .st-cn{width:22px;height:22px;flex-shrink:0;border-radius:50%;background:#E6EAF3;color:#5B6582;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
 .st-chs .ok .st-cn{background:#0F6B45;color:#FFFFFF}
 .st-chs .amb{background:#FFFBF2;border-color:#F4D98E}.st-chs .amb .st-cn{background:#F6C343;color:#4A3300}
 .st-chs .now .st-cn{background:#1652F0;color:#FFFFFF}
 .st-cl{display:flex;flex-direction:column;gap:1px;min-width:0}
-.st-cl b{font-size:13px;font-weight:600;line-height:1.3;color:#0B1433}
-.st-cl span{font-size:12px;color:#5B6582;line-height:1.3}
+.st-cl b{font-size:13.5px;font-weight:600;line-height:1.3;color:#0B1433}
+.st-cl span{font-size:12.5px;color:#5B6582;line-height:1.3}
 .st-chs .amb .st-cl span{color:#8A5300}
+/* Nova band at the foot of the focus card */
+.st-nb{margin:22px -26px 0 -26px;padding:16px 26px;display:flex;align-items:center;gap:14px;background:#F5F8FF url(/_blob/d268046654a4206d2a726e62005bcc59) center / cover no-repeat;border-top:1.5px solid #E1E9FF}
+.st-nt{flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.st-nt b{font-size:15px;font-weight:600}
+.st-nt > span:last-child{font-size:13.5px;color:#3A4566;line-height:1.45}
+.st-chips{display:flex;gap:8px;flex-shrink:0}
+.st-chip{text-decoration:none;white-space:nowrap;background:#FFFFFF}
+/* attention */
+.st-att.st-hero{padding-top:18px}
+.st-ar{display:flex;align-items:center;gap:14px;margin-top:12px}
+.st-amb{padding:16px 20px}
+.st-amb .st-ar{margin-top:0}
+.st-att.st-amb{background:#FFFBF2;border-color:#F4D98E}
+.st-av{width:48px;height:48px;flex-shrink:0;border-radius:50%;background:#0F6B45;color:#FFFFFF;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.st-ai{width:44px;height:44px;flex-shrink:0;border-radius:14px;background:#FFF1CF;color:#8A5300;display:flex;align-items:center;justify-content:center}
+.st-at{flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.st-at b{font-size:17px;font-weight:600;line-height:1.35}
+.st-amb .st-at b{font-size:15.5px}
+.st-at > span{font-size:13.5px;color:#5B6582;line-height:1.45}
+.st-amb .st-at > span{color:#8A5300}
+/* assigned work */
+.st-asg h2{margin-top:2px}
+.st-ab{margin-top:18px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:start}
+.st-up{display:flex;flex-direction:column;align-items:flex-start;padding:18px 20px;border-radius:16px;background:#F5F8FF;border:1.5px solid #E1E9FF}
+.st-up b{font-size:17px;font-weight:600;margin-top:3px}
+.st-up .st-btn{margin-top:14px}
+.st-ul{font-size:12.5px;font-weight:500;color:#8A93AD}
+.st-rows{list-style:none;margin:0;padding:0}
+.st-rows li{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1.5px solid #F0F2F8}
+.st-rows li:first-child{border-top:0;padding-top:6px}
+.st-dot{width:10px;height:10px;flex-shrink:0;border-radius:50%;border:2px solid #CBD3E6}
+.st-rt{flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.st-rt b{font-size:15px;font-weight:600}
+.st-rt span{font-size:13.5px;color:#5B6582}
+/* guides row */
+.st-gd{margin-top:8px}
+.st-gl{margin-top:10px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.st-gc{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;background:#FFFFFF;border:1.5px solid #E6EAF3;text-decoration:none;color:#0B1433;transition:border-color .2s ease}
+.st-gc:hover{border-color:#CBD7F5}
+.st-gi{width:38px;height:38px;flex-shrink:0;border-radius:12px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.st-gc > span:last-child{display:flex;flex-direction:column;gap:2px;min-width:0}
+.st-gc b{font-size:14.5px;font-weight:600}
+.st-gc > span:last-child > span{font-size:12.5px;color:#5B6582}
+@media (max-width: 960px){.st-gl{display:flex;overflow-x:auto;margin:10px -16px 0 -16px;padding:0 16px;scrollbar-width:none}.st-gc{flex:0 0 240px}}
+@media (max-width: 1180px){.st-chs{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width: 960px){
-.st-chs{display:flex;overflow-x:auto;margin:16px -16px 0 -16px;padding:0 16px 2px 16px;scrollbar-width:none}
-.st-chs li{flex:0 0 150px}
-.st-chips{flex-wrap:nowrap;overflow-x:auto;margin:14px -20px 0 -20px;padding:0 20px;scrollbar-width:none}
-.st-chip{flex-shrink:0}
-.st-up{background:none;border:0;border-top:1.5px solid #F0F2F8;border-radius:0;padding:16px 0 4px 0}
-.st-ui{display:none}
-}
-@media (max-width: 1100px){.st-grid{grid-template-columns:minmax(0,1fr) 300px}}
-@media (max-width: 960px){
-.st-head{padding:20px 0 14px 0}
-.st-grid{grid-template-columns:minmax(0,1fr);gap:14px}
-.st-col{gap:14px}
-.st-cont,.st-asg{padding:18px 16px}
-.st-att{padding:16px}
-.st-cont h2,.st-asg h2{font-size:19px}
+.st-head{flex-direction:column;align-items:stretch;gap:14px;padding:20px 0 14px 0}
+.st-pw{gap:12px;padding:12px 12px 12px 14px}
+.st-pt{display:none}
+.st-segs{position:absolute;opacity:0}
+.st-pnx{flex-grow:1;padding-left:0;border-left:0}
+.st-pnx .st-lab::after{content:' · 1 of 5 done'}
+.st-hero{padding:18px 16px 0 16px}
+.st-mini{padding:16px}
+.st-ct{flex-wrap:wrap;gap:12px}
 .st-cov{width:48px;height:48px;border-radius:14px}
+.st-cx{flex-basis:calc(100% - 140px)}
+.st-hero h2{font-size:19px}
 .st-pct b{font-size:20px}
-.st-cf{flex-direction:column;align-items:stretch;gap:14px}
-.st-btn{width:100%;justify-content:space-between}
+.st-ct .st-btn,.st-ct .st-gh{order:9;width:100%;justify-content:space-between}
+.st-ct .st-gh{justify-content:center}
+.st-chs{display:flex;overflow-x:auto;margin:14px -16px 0 -16px;padding:0 16px 2px 16px;scrollbar-width:none}
+.st-chs li{flex:0 0 150px}
+.st-nb{margin:18px -16px 0 -16px;padding:14px 16px;flex-wrap:wrap}
+.st-chips{width:100%;overflow-x:auto;margin:2px -16px 0 -16px;padding:0 16px;scrollbar-width:none}
 .st-ar{flex-wrap:wrap}
 .st-ar .st-btn,.st-ar .st-gh{width:100%}
-.st-up{flex-wrap:wrap;padding:14px}
-.st-up .st-btn{width:100%}
-.st-rows li{padding:12px 0}
-.st-dot{margin:0 6px 0 6px}
+.st-ar .st-btn{justify-content:space-between}
+.st-at b{font-size:15.5px}
+.st-ab{grid-template-columns:minmax(0,1fr);gap:8px;margin-top:14px}
+.st-up{background:none;border:0;padding:0 0 6px 0}
+.st-up .st-btn{width:100%;justify-content:space-between}
+.st-rows li:first-child{border-top:1.5px solid #F0F2F8;padding-top:14px}
 .st-sh .ds-link{display:none}
 }
-'''
+"""
 SCRIPT3 = '''<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { nav: false }; this.v = (props || {}).variant || 's02'; }

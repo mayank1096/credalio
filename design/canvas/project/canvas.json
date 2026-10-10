@@ -1127,6 +1127,86 @@
       "w": 390,
       "x": 9800,
       "y": 20500
+    },
+    "CR-ASG-001.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-ASG-001 · Assigned to me · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 21800
+    },
+    "CR-ASG-001-Mobile.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-ASG-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 21800
+    },
+    "CR-DEC-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DEC-001 · Contributor declaration request (Mary) · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 21800
+    },
+    "CR-DEC-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-DEC-001 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 21800
+    },
+    "CR-DEC-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DEC-002 · Contributor declaration (Mary signs) · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 21800
+    },
+    "CR-DEC-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-DEC-002 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 21800
+    },
+    "CR-DEC-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DEC-003 · Declaration status · blocked while pending · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 21800
+    },
+    "CR-DEC-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-DEC-003 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 21800
+    },
+    "CR-DEC-004.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DEC-004 · Lead Creator submission declaration · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 21800
+    },
+    "CR-DEC-004-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-DEC-004 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 21800
     }
   },
   "createdOnFiles": {
@@ -1315,6 +1395,14 @@
       "w": 240,
       "x": 0,
       "y": 20200
+    },
+    "dec": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Assigned to me · Contributor declarations: request → Mary declares → Lead sees status (blocked while pending) → Lead signs and submits",
+      "w": 240,
+      "x": 0,
+      "y": 21500
     }
   },
   "order": [
@@ -1454,7 +1542,17 @@
     "CR-COL-003.dc.html",
     "CR-COL-003-Mobile.dc.html",
     "CR-COL-004.dc.html",
-    "CR-COL-004-Mobile.dc.html"
+    "CR-COL-004-Mobile.dc.html",
+    "CR-ASG-001.dc.html",
+    "CR-ASG-001-Mobile.dc.html",
+    "CR-DEC-001.dc.html",
+    "CR-DEC-001-Mobile.dc.html",
+    "CR-DEC-002.dc.html",
+    "CR-DEC-002-Mobile.dc.html",
+    "CR-DEC-003.dc.html",
+    "CR-DEC-003-Mobile.dc.html",
+    "CR-DEC-004.dc.html",
+    "CR-DEC-004-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

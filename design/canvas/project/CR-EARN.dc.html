@@ -151,33 +151,50 @@ a{color:#1652F0}
 .hp-tabs{margin:0 -16px;padding:0 16px}
 }
 
-.er-hero{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:40px;padding:32px 36px;align-items:center}
-.er-big{display:block;margin-top:10px;font-size:44px;font-weight:600;letter-spacing:-0.03em;line-height:1.05}
+.er-g{display:grid;grid-template-columns:minmax(0,1fr) 340px;grid-template-rows:auto 1fr;gap:20px;align-items:start}
+.er-hero{grid-row:span 2;align-self:stretch;padding:32px 36px 20px 36px}
+.er-big{display:block;margin-top:10px;font-size:48px;font-weight:600;letter-spacing:-0.03em;line-height:1.05}
 .er-big em{font-style:normal;font-size:20px;font-weight:500;color:#8A93AD;letter-spacing:0}
-.er-l p{margin:14px 0 0 0;font-size:15px;line-height:1.55;color:#4A5578;max-width:440px}
-.er-bar{display:block;margin-top:18px;height:8px;max-width:440px;border-radius:8px;background:#E6EAF3;overflow:hidden}
+.er-p{margin:12px 0 0 0;font-size:15px;line-height:1.55;color:#4A5578}
+.er-src{margin-top:32px;padding-top:28px;border-top:1.5px solid #F0F2F8}
+.er-seg{margin-top:12px;display:flex;gap:4px;height:10px}
+.er-seg i{border-radius:6px;background:#1652F0}
+.er-seg i:nth-child(2){background:#5B85F5}.er-seg i:nth-child(3){background:#9DB6F8}.er-seg i:nth-child(4){background:#CFDBFB}
+.er-bar{display:block;margin-top:12px;height:10px;border-radius:8px;background:#E6EAF3;overflow:hidden}
 .er-bar i{display:block;width:74%;height:100%;border-radius:8px;background:#1652F0}
-.er-to{display:flex;flex-direction:column;gap:4px;padding-left:40px;border-left:1.5px solid #F0F2F8}
-.er-to b{margin-top:6px;font-size:16px;font-weight:600}.er-to > span:not(.hp-lab){font-size:14px;color:#5B6582}
-.er-to .ds-link{margin-top:10px;font-size:14px;font-weight:600}
-.er-k{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 4px}
-.er-k > div{display:flex;flex-direction:column;gap:6px}
-.er-k b{font-size:22px;font-weight:600;letter-spacing:-0.01em}
-.er-tx{margin-top:28px;padding:22px 28px 10px 28px}
-.er-tx h2{margin:0;font-size:17px;font-weight:600}
-.er-l2{list-style:none;margin:10px 0 0 0;padding:0}
-.er-l2 li{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;border-top:1.5px solid #F0F2F8;font-size:15px}
+.er-l2{list-style:none;margin:14px 0 0 0;padding:0}
+.er-l2 li{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1.5px solid #F0F2F8;font-size:15px}
 .er-l2 li:first-child{border-top:0}
+.er-l2 li > span{flex:1;min-width:0}
 .er-l2 b{font-weight:600;font-variant-numeric:tabular-nums}
+.er-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0;background:#1652F0}
+.er-dot.c1{background:#5B85F5}.er-dot.c2{background:#9DB6F8}.er-dot.c3{background:#CFDBFB}
+.er-to{padding:24px 26px}
+.er-pm{margin-top:14px;display:flex;align-items:center;gap:14px}
+.er-pm img{width:40px;height:40px;padding:7px;box-sizing:border-box;border-radius:12px;border:1.5px solid #E6EAF3;background:#FFFFFF}
+.er-pm > span{display:flex;flex-direction:column;gap:2px;min-width:0}
+.er-pm b{font-size:16px;font-weight:600}.er-pm > span > span{font-size:14px;color:#5B6582;overflow:hidden;text-overflow:ellipsis}
+.er-to .ds-link{display:inline-block;margin-top:18px;font-size:14px;font-weight:600}
+.er-k{padding:10px 26px}
+.er-k > div{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;border-top:1.5px solid #F0F2F8}
+.er-k > div:first-child{border-top:0}
+.er-k span{font-size:14px;color:#5B6582}
+.er-k b{font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+@media (max-width: 1080px){
+.er-g{grid-template-columns:minmax(0,1fr)}
+.er-hero{grid-row:auto}
+}
 @media (max-width: 960px){
 .hp-head .hp-rb{display:none}
-.er-hero{grid-template-columns:minmax(0,1fr);gap:24px;padding:24px 20px}
+.er-g{gap:14px}
+.er-hero{padding:22px 20px 10px 20px}
 .er-big{font-size:36px}
-.er-to{padding:20px 0 0 0;border-left:0;border-top:1.5px solid #F0F2F8}
-.er-k{margin-top:24px;gap:12px}
-.er-k b{font-size:17px}
-.er-tx{margin-top:24px;padding:18px 18px 6px 18px}
-.er-l2 li{font-size:14.5px;padding:14px 0}
+.er-p{font-size:14.5px}
+.er-src{margin-top:22px;padding-top:20px}
+.er-l2 li{font-size:14.5px;padding:13px 0}
+.er-to{padding:20px}
+.er-k{padding:4px 20px}
+.er-k > div{padding:14px 0}
 }
 </style>
 </helmet>
@@ -202,7 +219,7 @@ a{color:#1652F0}
 <a href="#" aria-label="Your account" style="position: relative; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: #0B1433; color: #FFFFFF; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">AO<span style="position: absolute; right: 0; bottom: 1px; width: 11px; height: 11px; border-radius: 50%; background: #0F6B45; border: 2px solid #F7F9FD"></span></a>
 </header>
 <main class="ds-main hp">
-<div class="hp-head ob-in"><div><h1 class="ds-h1">Earnings</h1><p class="hp-sub">What you’ve earned from your learning experiences.</p></div><a href="#" class="hp-rb">Payout history</a></div><section class="ds-card er-hero ob-in2" aria-label="Next payout"><div class="er-l"><span class="hp-lab">Next payout</span><sc-if value="{{paid}}" hint-placeholder-val="{{true}}"><b class="er-big">$2,850.00</b><p>Paid automatically in early November. Nothing to request.</p></sc-if><sc-if value="{{below}}" hint-placeholder-val="{{false}}"><b class="er-big">$18.40 <em>of $25</em></b><span class="er-bar"><i></i></span><p>Payouts start at $25. Until then, your earnings carry over to the next month.</p></sc-if></div><div class="er-to"><span class="hp-lab">Paid to</span><b>PayPal</b><span>ada.ononuju@example.com</span><a href="CR-PAYO-001.dc.html" class="ds-link">Change</a></div></section><div class="er-k ob-in3"><div><span class="hp-lab">Pending</span><b>{{pend}}</b></div><div><span class="hp-lab">Last payout</span><b>{{last}}</b></div><div><span class="hp-lab">Lifetime</span><b>{{life}}</b></div></div><section class="ds-card er-tx ob-in3" aria-labelledby="er-h"><h2 id="er-h">This month</h2><ul class="er-l2"><sc-for list="{{rows}}" as="r" hint-placeholder-count="4"><li><span>{{r.t}}</span><b>{{r.v}}</b></li></sc-for></ul></section>
+<div class="hp-head ob-in"><div><h1 class="ds-h1">Earnings</h1><p class="hp-sub">What you’ve earned from your learning experiences.</p></div><a href="#" class="hp-rb">Payout history</a></div><div class="er-g"><section class="ds-card er-hero ob-in2" aria-label="Next payout"><span class="hp-lab">Next payout</span><sc-if value="{{paid}}" hint-placeholder-val="{{true}}"><b class="er-big">$2,850.00</b><p class="er-p">Arrives in early November, automatically.</p><div class="er-src"><span class="hp-lab">Where it comes from</span><span class="er-seg"><i style="flex:1410"></i><i style="flex:780"></i><i style="flex:430"></i><i style="flex:230"></i></span></div></sc-if><sc-if value="{{below}}" hint-placeholder-val="{{false}}"><b class="er-big">$18.40 <em>of $25</em></b><p class="er-p">Payouts start at $25. Until then, earnings carry over to next month.</p><div class="er-src"><span class="hp-lab">$6.60 to go</span><span class="er-bar"><i></i></span></div></sc-if><ul class="er-l2"><sc-for list="{{rows}}" as="r" hint-placeholder-count="4"><li><i class="er-dot {{r.c}}"></i><span>{{r.t}}</span><b>{{r.v}}</b></li></sc-for></ul></section><section class="ds-card er-to ob-in3" aria-label="Paid to"><span class="hp-lab">Paid to</span><div class="er-pm"><img src="/_blob/27435c5526a86beb998393f8bb53a00c" alt="" width="40" height="40"><span><b>PayPal</b><span>ada.ononuju@example.com</span></span></div><a href="CR-PAYO-001.dc.html" class="ds-link">Change method</a></section><section class="ds-card er-k ob-in3" aria-label="Totals"><div><span>Pending</span><b>{{pend}}</b></div><div><span>Last payout</span><b>{{last}}</b></div><div><span>Lifetime</span><b>{{life}}</b></div></section></div>
 </main>
 </div>
 </div>
@@ -215,8 +232,8 @@ class Component extends DCLogic {
     const props = this.props0; const below = props && props.variant === 'below';
     const R = below ? [['Data Analysis with SQL', '$18.40']] : [['Data Analysis with SQL', '$1,410.00'], ['Certified Data Analyst', '$780.00'], ['Advanced SQL for Analysts', '$430.00'], ['Applied AI Program', '$230.00']];
     return { navCls: S.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !S.nav }), paid: !below, below,
-      pend: below ? '$6.20' : '$1,120.00', last: below ? 'None yet' : '$3,400.00', life: below ? '$18.40' : '$18,400.00',
-      rows: R.map((r) => ({ t: r[0], v: r[1] })) };
+      pend: below ? '$6.20' : '$1,120.00', last: below ? 'None yet' : '$3,400.00 · 1 Oct', life: below ? '$18.40' : '$18,400.00',
+      rows: R.map((r, i) => ({ t: r[0], v: r[1], c: 'c' + i })) };
   }
 }
 </script>

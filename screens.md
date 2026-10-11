@@ -143,11 +143,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-PAYO-001` CR-PAYO-001 · Payout method: choose PayPal, Payoneer, Tipalti or Direct Deposit
 - [x] D [x] M  `CR-PAYO-001a` CR-PAYO-001 · PayPal: connect
 - [x] D [x] M  `CR-PAYO-001b` CR-PAYO-001 · PayPal: log in & approve (handoff)
-- [ ] D [ ] M  `CR-PAYO-001c` CR-PAYO-001 · Payoneer: bank or prepaid Mastercard (handoff)
-- [ ] D [ ] M  `CR-PAYO-001d` CR-PAYO-001 · Tipalti: secure bank & tax form (handoff)
-- [ ] D [ ] M  `CR-PAYO-001e` CR-PAYO-001 · Direct Deposit (ACH): U.S. bank details
-- [ ] D [ ] M  `CR-PAYO-001g` CR-PAYO-001 · PayPal connected & verified
-- [ ] D [ ] M  `CR-PAYO-001p` CR-PAYO-001 · Payoneer linked: verification pending
+- [x] D [x] M  `CR-PAYO-001c` CR-PAYO-001 · Payoneer: bank or prepaid Mastercard (handoff)
+- [x] D [x] M  `CR-PAYO-001d` CR-PAYO-001 · Tipalti: secure bank & tax form (handoff)
+- [x] D [x] M  `CR-PAYO-001e` CR-PAYO-001 · Direct Deposit (ACH): U.S. bank details
+- [x] D [x] M  `CR-PAYO-001g` CR-PAYO-001 · PayPal connected & verified
+- [x] D [x] M  `CR-PAYO-001p` CR-PAYO-001 · Payoneer linked: verification pending
 - [ ] D [ ] M  `CR-PAYO-005` CR-PAYO-005 · Monthly payout status: Scheduled → Processing → Paid
 - [ ] D [ ] M  `CR-PAYO-005a` CR-PAYO-005 · Payout status: action required
 - [ ] D [ ] M  `CR-PAYO-006` CR-PAYO-006 · Payout history

@@ -23,20 +23,22 @@ txr = ''.join(f'<li class="wl-r"><span class="wl-d">{d}</span><span class="hp-ic
               f'<span class="wl-t"><b>{t}</b><span>{s}</span></span><b class="wl-a {k}">{a}</b></li>' for d, t, s, a, st, tone, k in TX)
 main_wl = ('<main class="ds-main hp">\n<div class="hp-head ob-in"><div><h1 class="ds-h1">Credit Wallet</h1><p class="hp-sub">Credits pay for validation and other Credalio services. They’re separate from your earnings.</p></div></div>'
            '<section class="ds-card wl-bal ob-in2" aria-label="Balance"><div class="wl-b"><span class="hp-lab">Available</span><b>' + CRED + '1,150 <em>Credits</em></b><span>≈ $115.00 · 1 Credit = $0.10</span></div>'
-           '<div class="wl-k"><span class="hp-lab">Pending</span><b>0</b></div>'
+           '<div class="wl-k"><span class="hp-lab">Pending</span><b>0</b><span>Nothing waiting to clear</span></div>'
            '<div class="wl-k"><span class="hp-lab">Next validation</span><b>~1,250</b><span>Data Analysis with SQL</span></div>'
            '<a href="CR-WAL-002.dc.html" class="ds-btn hp-btn wl-go"><span>Add Credits</span><span class="ob-arrow">' + PLUS + '</span></a></section>'
            '<section class="ds-card wl-tx ob-in3" aria-labelledby="wl-h"><div class="wl-th"><h2 id="wl-h">Recent activity</h2><a href="#" class="ds-link">View all</a></div><ul class="wl-l">' + txr + '</ul></section>'
            '<div class="wl-pm ob-in3"><span class="hp-lab">Payment methods</span><span class="wl-m">' + ic(I['card'], 18) + 'Visa •••• 4417<em>Default</em></span><span class="wl-m">' + ic(BANK, 18) + 'Bank transfer</span><a href="#" class="ds-link">Manage</a></div>\n</main>')
 css_wl = '''
 .cr-ic{display:inline-flex;width:30px;height:30px;border-radius:50%;background:#EAF0FF;color:#1652F0;align-items:center;justify-content:center;flex-shrink:0}
-.wl-bal{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr) minmax(0,1fr) auto;align-items:center;gap:28px;padding:24px 28px}
+.wl-bal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;align-items:stretch;gap:0;padding:24px 28px}
+.wl-b,.wl-k{justify-content:flex-start;padding:0 28px;border-left:1.5px solid #F0F2F8}
+.wl-b{padding-left:0;border-left:0}
+.wl-go{align-self:center;margin-left:28px}
 .wl-b,.wl-k{display:flex;flex-direction:column;gap:6px}
-.wl-k{padding-left:28px;border-left:1.5px solid #F0F2F8}
 .wl-b b{display:flex;align-items:center;gap:10px;font-size:34px;font-weight:600;letter-spacing:-0.02em;line-height:1.1}
 .wl-b b em{font-style:normal;font-size:16px;font-weight:500;color:#5B6582;letter-spacing:0}
 .wl-b > span:last-child,.wl-k > span:last-child{font-size:13px;color:#5B6582}
-.wl-k b{font-size:22px;font-weight:600}
+.wl-k b{font-size:22px;font-weight:600;line-height:1.1;min-height:38px;display:flex;align-items:center}
 .wl-go .ob-arrow svg{width:16px;height:16px}
 .wl-tx{margin-top:16px;padding:8px 24px 6px 24px}
 .wl-th{display:flex;align-items:center;justify-content:space-between;padding:12px 0 8px 0}
@@ -53,14 +55,15 @@ css_wl = '''
 .wl-m svg{color:#5B6582}
 .wl-m em{font-style:normal;font-size:12px;font-weight:500;color:#0E3BB8;background:#EAF0FF;border-radius:999px;padding:2px 8px;margin-left:2px}
 .wl-pm .ds-link{margin-left:auto;font-size:14px}
-@media (max-width: 1180px){.wl-bal{grid-template-columns:minmax(0,1fr) auto auto;}.wl-bal .wl-k:nth-of-type(3){display:none}}
+@media (max-width: 1180px){.wl-bal{grid-template-columns:repeat(2,minmax(0,1fr)) auto}.wl-bal .wl-k:nth-of-type(3){display:none}}
 @media (max-width: 960px){
 .wl-bal{grid-template-columns:1fr 1fr;gap:18px 16px;padding:20px 18px}
 .wl-b{grid-column:1 / -1}
 .wl-b b{font-size:30px}
-.wl-k{padding-left:0;border-left:0}
+.wl-k{padding:0;border-left:0}
+.wl-go{margin-left:0}
 .wl-bal .wl-k:nth-of-type(3){display:flex}
-.wl-k b{font-size:19px}
+.wl-k b{font-size:19px;min-height:0}
 .wl-go{grid-column:1 / -1;width:100%;justify-content:space-between}
 .wl-tx{padding:4px 16px}
 .wl-r{grid-template-columns:36px minmax(0,1fr) auto;row-gap:2px;column-gap:12px}

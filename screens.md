@@ -120,16 +120,16 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-WAL-003` CR-WAL-003 · Payment method (supported rails)
 - [x] D [x] M  `CR-WAL-004` CR-WAL-004 · Payment summary
 - [x] D [x] M  `CR-WAL-005` CR-WAL-005 · Processing (no duplicate payment)
-- [ ] D [ ] M  `CR-WAL-005f` CR-WAL-005 · Payment failed, not charged
-- [ ] D [ ] M  `CR-WAL-006` CR-WAL-006 · Wallet funded
-- [ ] D [ ] M  `CR-WAL-007` CR-WAL-007 · Transaction history (filters)
+- [x] D [x] M  `CR-WAL-005f` CR-WAL-005 · Payment failed, not charged
+- [x] D [x] M  `CR-WAL-006` CR-WAL-006 · Wallet funded
+- [x] D [x] M  `CR-WAL-007` CR-WAL-007 · Transaction history (filters)
 
 ## 12. Payments & revalidation (9)
 
-- [ ] D [ ] M  `CR-PAY-001` CR-PAY-001 · Validation quote (reusable)
-- [ ] D [ ] M  `CR-PAY-002` CR-PAY-002 · Balance check: Additional Credits Required
-- [ ] D [ ] M  `CR-PAY-002b` CR-PAY-002 · Balance check: enough Credits
-- [ ] D [ ] M  `CR-PAY-002f` Fund Wallet from the payment (shortfall covered)
+- [x] D [x] M  `CR-PAY-001` CR-PAY-001 · Validation quote (reusable)
+- [x] D [x] M  `CR-PAY-002` CR-PAY-002 · Balance check: Additional Credits Required
+- [x] D [x] M  `CR-PAY-002b` CR-PAY-002 · Balance check: enough Credits
+- [x] D [x] M  `CR-PAY-002f` Fund Wallet from the payment (shortfall covered)
 - [ ] D [ ] M  `CR-PAY-002r` Wallet funded → Return to Validation Payment
 - [ ] D [ ] M  `CR-PAY-003` CR-PAY-003 · Payment confirmation (returned automatically)
 - [ ] D [ ] M  `CR-PAY-003s` CR-PAY-003 · Payment successful → Validation case created

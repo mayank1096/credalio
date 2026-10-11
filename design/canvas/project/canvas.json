@@ -1495,6 +1495,86 @@
       "w": 390,
       "x": 13940,
       "y": 25900
+    },
+    "CR-PAY-002r.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAY-002r · Wallet funded → return to validation payment · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 27300
+    },
+    "CR-PAY-002r-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-PAY-002r · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 27300
+    },
+    "CR-PAY-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAY-003 · Confirm payment · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 27300
+    },
+    "CR-PAY-003-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-PAY-003 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 27300
+    },
+    "CR-PAY-003s.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAY-003s · Paid → validation case open · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 27300
+    },
+    "CR-PAY-003s-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-PAY-003s · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 27300
+    },
+    "CR-REVAL-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-REVAL-001 · Revalidation · what changed · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 27300
+    },
+    "CR-REVAL-001-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-REVAL-001 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 27300
+    },
+    "CR-REVAL-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-REVAL-002 · Revalidation quote · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 27300
+    },
+    "CR-REVAL-002-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-REVAL-002 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 27300
     }
   },
   "createdOnFiles": {
@@ -1715,6 +1795,14 @@
       "w": 240,
       "x": 0,
       "y": 25600
+    },
+    "pay2": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Validation payment, end of flow + revalidation: funded → return · confirm · paid (case open) · revalidation changes → quote",
+      "w": 240,
+      "x": 0,
+      "y": 27000
     }
   },
   "order": [
@@ -1900,7 +1988,17 @@
     "CR-PAY-002b.dc.html",
     "CR-PAY-002b-Mobile.dc.html",
     "CR-PAY-002f.dc.html",
-    "CR-PAY-002f-Mobile.dc.html"
+    "CR-PAY-002f-Mobile.dc.html",
+    "CR-PAY-002r.dc.html",
+    "CR-PAY-002r-Mobile.dc.html",
+    "CR-PAY-003.dc.html",
+    "CR-PAY-003-Mobile.dc.html",
+    "CR-PAY-003s.dc.html",
+    "CR-PAY-003s-Mobile.dc.html",
+    "CR-REVAL-001.dc.html",
+    "CR-REVAL-001-Mobile.dc.html",
+    "CR-REVAL-002.dc.html",
+    "CR-REVAL-002-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

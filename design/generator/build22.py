@@ -119,14 +119,15 @@ col = rd('CR-COL-002.dc.html')
 head = col[:col.index('<div class="tk-root')]
 X = col[col.index('class="lp-x"'):]
 X = X[X.index('<svg'):X.index('</a>')]
-STEPS = '<ol class="cl-steps" aria-label="Steps"><li class="{{s0}}"><i></i><span>Quote</span></li><li class="{{s1}}"><i></i><span>Credits</span></li><li class="{{s2}}"><i></i><span>Confirm</span></li></ol>'
+STEPS = '<ol class="cl-steps" aria-label="Steps"><li class="{{s0}}"><i></i><span>{{st0}}</span></li><li class="{{s1}}"><i></i><span>{{st1}}</span></li><li class="{{s2}}"><i></i><span>Confirm</span></li></ol>'
 side = ('<aside class="cl-side ob-in"><h1 class="cl-h1 py-h">Data Analysis with SQL</h1>'
-        '<p class="cl-sub">Course validation · 6 chapters, 31 items and 3 assessments. Validators review it together.</p>'
-        '<div class="cl-meta"><span>Course</span><span>All declarations signed</span></div>' + STEPS + '</aside>')
+        '<p class="cl-sub">{{sideSub}}</p>'
+        '<div class="cl-meta"><span>Course</span><span>{{sideMeta}}</span></div>' + STEPS + '</aside>')
 LINES = [('Educational validator', '400'), ('Subject matter validator · case lead', '500'), ('Assessment validator', '300'), ('Credalio service fee (5%)', '60')]
-quote = ('<sc-if value="{{vQuote}}" hint-placeholder-val="{{true}}"><section class="cl-panel py-p ob-in2" aria-labelledby="py-h1">' + '<span class="py-chip">' + CRED + '<span>Balance</span><b>{{balTxt}}</b></span>' + '<h2 id="py-h1" class="cl-ph">Your validation quote</h2>'
-         '<dl class="py-dl">' + ''.join(f'<div><dt>{k}</dt><dd>{v}</dd></div>' for k, v in LINES) + '<div class="py-tot"><dt>Total</dt><dd>' + CRED + '1,260 Credits</dd></div></dl>'
-         '<div class="cl-foot"><a href="CR-PAY-002.dc.html" class="ds-btn cl-go py-go"><span>Pay with Credits</span><span class="ob-arrow">' + ARR + '</span></a></div></section></sc-if>')
+quote = ('<sc-if value="{{vQuote}}" hint-placeholder-val="{{true}}"><section class="cl-panel py-p ob-in2" aria-labelledby="py-h1">' + '<span class="py-chip">' + CRED + '<span>Balance</span><b>{{balTxt}}</b></span>' + '<h2 id="py-h1" class="cl-ph">{{qH}}</h2>'
+         '<sc-if value="{{isVal}}" hint-placeholder-val="{{true}}"><dl class="py-dl">' + ''.join(f'<div><dt>{k}</dt><dd>{v}</dd></div>' for k, v in LINES) + '<div class="py-tot"><dt>Total</dt><dd>' + CRED + '1,260 Credits</dd></div></dl></sc-if>'
+         '<sc-if value="{{isReval}}" hint-placeholder-val="{{false}}"><dl class="py-dl">' + ''.join(f'<div><dt>{k}</dt><dd>{v}</dd></div>' for k, v in [('Subject matter validator · changed content', '360'), ('Assessment validator · final assessment', '240'), ('Credalio service fee (5%)', '30')]) + '<div class="py-tot"><dt>Total</dt><dd>' + CRED + '630 Credits</dd></div></dl><p class="py-note">Only the changed parts are reviewed. You have enough Credits.</p></sc-if>'
+         '<div class="cl-foot"><a href="{{qHref}}" class="ds-btn cl-go py-go"><span>{{qCta}}</span><span class="ob-arrow">' + ARR + '</span></a></div></section></sc-if>')
 def check(ok, rows, note, cta, href):
     return ((('<div class="py-chk ' + ('ok' if ok else 'short') + '">' + ''.join(f'<div class="{c}"><span>{k}</span><b>{v}</b></div>' for k, v, c in rows) + '</div>') if rows else '')
             + (f'<p class="py-note">{note}</p>' if note else '')
@@ -137,11 +138,21 @@ short = ('<sc-if value="{{vShort}}" hint-placeholder-val="{{false}}"><section cl
          + check(False, [], '', 'Add Credits', 'CR-WAL-002.dc.html') + '</section></sc-if>')
 enough = ('<sc-if value="{{vEnough}}" hint-placeholder-val="{{false}}"><section class="cl-panel py-p ob-in2" aria-labelledby="py-h3">' + '<span class="py-chip">' + CRED + '<span>Balance</span><b>{{balTxt}}</b></span>' + '<span class="py-ic gr">' + ic('<path d="m5 12.5 4.5 4.5L19 7.5"></path>', 22, 2.6) + '</span>'
           '<h2 id="py-h3" class="cl-ph">{{enoughH}}</h2><p class="cl-pp">{{enoughP}}</p>'
-          + check(True, [], '', 'Confirm and pay 1,260 Credits', '#') + '</section></sc-if>')
+          + check(True, [], '', 'Continue', 'CR-PAY-003.dc.html') + '</section></sc-if>')
+confirm = ('<sc-if value="{{vConfirm}}" hint-placeholder-val="{{false}}"><section class="cl-panel py-p ob-in2" aria-labelledby="py-h4">' + '<span class="py-chip">' + CRED + '<span>Balance</span><b>{{balTxt}}</b></span>' + '<h2 id="py-h4" class="cl-ph">Confirm payment</h2>'
+           '<dl class="py-dl"><div class="tx"><dt>Service</dt><dd>Course validation</dd></div><div class="tx"><dt>Learning experience</dt><dd>Data Analysis with SQL</dd></div><div><dt>Balance after paying</dt><dd>2,390</dd></div>'
+           '<div class="py-tot"><dt>You pay</dt><dd>' + CRED + '1,260 Credits</dd></div></dl><p class="py-note">The validation case opens as soon as you pay.</p>'
+           '<div class="cl-foot"><a href="CR-PAY-002b.dc.html" class="ds-ghost cl-bk" aria-label="Back">' + ic('<path d="M19 12H5"></path><path d="m11 6-6 6 6 6"></path>', 18, 2.2) + '<span>Back</span></a><a href="CR-PAY-003s.dc.html" class="ds-btn cl-go py-go"><span>Pay 1,260 Credits</span><span class="ob-arrow">' + ARR + '</span></a></div></section></sc-if>')
+CHG = [('Chapter 4 · rewritten', '4 lessons', 'Standard', 'am'), ('Final assessment', '12 questions replaced', 'Standard', 'am'), ('Course description', 'Reworded', 'Minor', 'cb'), ('Chapter 2', 'Typo fixes', 'No review', 'gy')]
+assess = ('<sc-if value="{{vAssess}}" hint-placeholder-val="{{false}}"><section class="cl-panel py-p ob-in2" aria-labelledby="py-h5"><h2 id="py-h5" class="cl-ph">What changed</h2>'
+          '<ul class="rv-l">' + ''.join(f'<li><span class="rv-t"><b>{t}</b><span>{d}</span></span><span class="rv-p {c}">{l}</span></li>' for t, d, l, c in CHG) + '</ul>'
+          '<div class="rv-lv"><span class="hp-lab">Revalidation needed</span><div class="rv-seg" aria-label="Level"><span>None</span><span>Minor</span><span class="on">Standard</span><span>Major</span></div>'
+          '<p class="rv-x">Chapter 4 and the final assessment changed, so the subject matter and assessment validators review those parts again. Your current version stays live until they decide.</p></div>'
+          '<div class="cl-foot"><a href="CR-REVAL-002.dc.html" class="ds-btn cl-go py-go"><span>See the quote</span><span class="ob-arrow">' + ARR + '</span></a></div></section></sc-if>')
 body = ('<div class="tk-root cl-root {{rootCls}}">\n<div class="tk-scene" aria-hidden="true"></div><div class="cl-glow" aria-hidden="true"></div>\n'
         '<header class="tk-top">\n<a href="CR-DEC-004.dc.html" class="lp-x" aria-label="Close">' + X + '</a>\n'
-        '<div class="lp-title"><span class="lp-t1" style="display: block">Submit for validation</span></div>\n<span style="flex-grow: 1"></span>\n</header>\n'
-        '<main class="cl">\n' + side + '\n<div class="cl-main">' + quote + short + enough + '</div>\n</main>\n</div>\n</x-dc>\n')
+        '<div class="lp-title"><span class="lp-t1" style="display: block">{{barTitle}}</span></div>\n<span style="flex-grow: 1"></span>\n</header>\n'
+        '<main class="cl">\n' + side + '\n<div class="cl-main">' + quote + short + enough + confirm + assess + '</div>\n</main>\n</div>\n</x-dc>\n')
 CSS = '''
 /* build22 validation payment */
 .cr-ic{display:inline-flex;width:28px;height:28px;border-radius:50%;background:#EAF0FF;color:#1652F0;align-items:center;justify-content:center;flex-shrink:0}
@@ -151,7 +162,7 @@ CSS = '''
 .py-dl > div:first-child{border-top:0}
 .py-dl dt{font-size:14.5px;color:#3A4566}
 .py-dl dd{margin:0;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
-.py-dl > div:not(.py-tot) dd::after{content:' Cr';font-size:12.5px;font-weight:500;color:#8A93AD}
+.py-dl > div:not(.py-tot):not(.tx) dd::after{content:' Cr';font-size:12.5px;font-weight:500;color:#8A93AD}
 .py-tot{border-top:2px solid #0B1433 !important}
 .py-tot dt{font-size:16px;font-weight:600;color:#0B1433}.py-tot dd{font-size:21px}
 .py-p{position:relative}
@@ -160,6 +171,17 @@ CSS = '''
 .py-chip b{font-size:14.5px;font-weight:600;color:#0B1433}
 .py-chip b::after{content:' Cr';font-size:12px;font-weight:500;color:#8A93AD}
 .py-go{margin-left:auto}
+.py-note{margin:12px 0 0 0;font-size:13.5px;color:#5B6582}
+.rv-l{list-style:none;margin:16px 0 0 0;padding:0 18px;border:1.5px solid #E6EAF3;border-radius:18px}
+.rv-l li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-top:1.5px solid #F0F2F8}
+.rv-l li:first-child{border-top:0}
+.rv-t{display:flex;flex-direction:column;gap:2px}.rv-t b{font-size:15px;font-weight:600}.rv-t span{font-size:13px;color:#5B6582}
+.rv-p{display:inline-flex;align-items:center;height:28px;padding:0 11px;border-radius:999px;font-size:12.5px;font-weight:500;white-space:nowrap}.rv-p.am{background:#FFF3DC;color:#8A5300}.rv-p.cb{background:#EAF0FF;color:#0E3BB8}.rv-p.gy{background:#F1F3F8;color:#4A5578}
+.rv-lv{margin-top:20px}.hp-lab{display:block;font-size:12.5px;font-weight:500;color:#8A93AD}
+.rv-seg{margin-top:8px;display:grid;grid-template-columns:repeat(4,1fr);padding:4px;gap:4px;border-radius:14px;background:#F1F3F8}
+.rv-seg span{height:36px;display:flex;align-items:center;justify-content:center;border-radius:11px;font-size:13.5px;font-weight:500;color:#8A93AD}
+.rv-seg .on{background:#FFFFFF;color:#8A5300;box-shadow:0 1px 3px rgba(11,20,51,.1);font-weight:600}
+.rv-x{margin:12px 0 0 0;font-size:14px;line-height:1.55;color:#3A4566}
 .py-ic{width:48px;height:48px;border-radius:50%;color:#FFFFFF;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
 .py-ic.am{background:#B26A00;box-shadow:0 0 0 7px #FFF3DC}.py-ic.gr{background:#0F6B45;box-shadow:0 0 0 7px #E7F5EE}
 .py-chk{margin-top:18px;display:grid;grid-template-columns:repeat(2,1fr);border:1.5px solid #E6EAF3;border-radius:18px;overflow:hidden}
@@ -185,13 +207,20 @@ SCRIPT = '''<script type="text/x-dc" data-dc-script data-props='{"$preview":{"wi
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { v: (props && props.variant) || 'quote' }; }
   renderVals() {
-    const v = this.state.v, cov = v === 'covered';
+    const v = this.state.v, cov = v === 'covered', rv = v === 'assess' || v === 'requote';
+    const step = { quote: 0, short: 1, enough: 1, covered: 1, confirm: 2, assess: 0, requote: 1 }[v];
     return {
-      vQuote: v === 'quote', vShort: v === 'short', vEnough: v === 'enough' || cov,
-      s0: v === 'quote' ? 'on' : 'dn', s1: v === 'quote' ? '' : 'on', s2: '',
-      rootCls: v === 'short' ? 'is-wait' : (v === 'quote' ? '' : 'is-ok'),
+      vQuote: v === 'quote' || v === 'requote', vShort: v === 'short', vEnough: v === 'enough' || cov, vConfirm: v === 'confirm', vAssess: v === 'assess',
+      s0: step > 0 ? 'dn' : 'on', s1: step > 1 ? 'dn' : (step === 1 ? 'on' : ''), s2: step === 2 ? 'on' : '',
+      st0: rv ? 'Changes' : 'Quote', st1: rv ? 'Quote' : 'Credits',
+      rootCls: v === 'short' ? 'is-wait' : (v === 'enough' || cov ? 'is-ok' : ''),
+      barTitle: rv ? 'Revalidation' : 'Submit for validation',
+      sideSub: rv ? 'You updated the course after it was validated. Credalio checked what changed and how much needs a second look.' : 'Course validation · 6 chapters, 31 items and 3 assessments. Validators review it together.',
+      sideMeta: rv ? 'Gold validated · live' : 'All declarations signed',
+      isVal: !rv, isReval: rv, qH: rv ? 'Your revalidation quote' : 'Your validation quote',
+      qHref: rv ? '#' : 'CR-PAY-002.dc.html', qCta: rv ? 'Continue' : 'Pay with Credits',
       enoughH: cov ? 'Credits added. You’re covered' : 'You have enough Credits', enoughP: cov ? 'You’re back where you left off. 1,260 Credits come from your balance, leaving 2,390.' : '1,260 Credits come from your balance, leaving 2,390. Paying opens the validation case.',
-      balTxt: v === 'quote' || v === 'short' ? '1,150' : '3,650', leftTxt: '2,390'
+      balTxt: v === 'quote' || v === 'short' ? '1,150' : (rv ? '2,390' : '3,650'), leftTxt: '2,390'
     };
   }
 }
@@ -202,7 +231,7 @@ class Component extends DCLogic {
 s = head.replace('</style>', CSS + '</style>', 1)
 s = re.sub(r'<title>.*?</title>', '<title>Credalio · Validation payment</title>', s)
 wr('CR-PAY.dc.html', s + body + SCRIPT)
-for n, var, hm in [('CR-PAY-001', 'quote', 900), ('CR-PAY-002', 'short', 844), ('CR-PAY-002b', 'enough', 844), ('CR-PAY-002f', 'covered', 844)]:
+for n, var, hm in [('CR-PAY-001', 'quote', 900), ('CR-PAY-002', 'short', 844), ('CR-PAY-002b', 'enough', 844), ('CR-PAY-002f', 'covered', 844), ('CR-PAY-003', 'confirm', 900), ('CR-REVAL-001', 'assess', 1000), ('CR-REVAL-002', 'requote', 900)]:
     imp = f'<dc-import name="CR-PAY" variant="{var}"'
     t = wd.replace('<dc-import name="CR-DASH-ST" variant="s03"', imp)
     wr(n + '.dc.html', re.sub(r'<title>.*?</title>', f'<title>{n} preview</title>', t))

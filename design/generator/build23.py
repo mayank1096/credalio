@@ -17,8 +17,8 @@ CHEV = ic('<path d="m9 6 6 6-6 6"></path>', 16, 2.2)
 
 k = rd('CR-KYC-003.dc.html')
 # header: wallet, no Sumsub pill
-k = k.replace('<a href="CR-RDY-001.dc.html" class="lp-x" aria-label="Close and go back to readiness">', '<a href="CR-WAL-001.dc.html" class="lp-x" aria-label="Close and go back to your wallet">', 1)
-k = re.sub(r'<div class="lp-title">.*?</div>', '<div class="lp-title"><span class="lp-t1" style="display: block">Credit Wallet</span></div>', k, count=1, flags=re.S)
+k = k.replace('<a href="CR-RDY-001.dc.html" class="lp-x" aria-label="Close and go back to readiness">', '<a href="{{closeHref}}" class="lp-x" aria-label="Close">', 1)
+k = re.sub(r'<div class="lp-title">.*?</div>', '<div class="lp-title"><span class="lp-t1" style="display: block">{{bar}}</span></div>', k, count=1, flags=re.S)
 k = re.sub(r'<span class="tk-sec tk-sum">.*?</span></span>\n', '', k, count=1, flags=re.S)
 # emblem "a" icon: card instead of camera
 k = re.sub(r'(<sc-if value="\{\{a\}\}" hint-placeholder-val="\{\{false\}\}">)<svg.*?</svg>(</sc-if>)', lambda m: m.group(1) + ic(CARD, 28, 2) + m.group(2), k, count=1, flags=re.S)
@@ -37,14 +37,17 @@ body = (
  '<a href="CR-WAL-003.dc.html" class="ko-opt"><span class="ko-oi">' + ic(CARD, 18) + '</span><span><b>A different card</b><span>Or a local payment provider.</span></span>' + CHEV + '</a></div></section>\n'
  '<div class="ko-cta ob-in4"><a href="CR-WAL-004.dc.html" class="ds-btn"><span>Try this card again</span><span class="ob-arrow">' + ARR + '</span></a><span class="ko-cn">Nothing was taken. Your balance is still 1,150 Credits.</span></div>\n</sc-if>\n'
  '<sc-if value="{{v}}" hint-placeholder-val="{{false}}">\n<div class="ko-row">\n'
- '<section class="ko-card ko-idc ob-in3" aria-label="New balance"><span class="ko-ii wo-coin">' + ic(COIN, 22, 2.2) + '</span>'
+ '<sc-if value="{{pd}}" hint-placeholder-val="{{false}}"><section class="ko-card ko-idc ob-in3" aria-label="Validation case"><span class="ko-ii wo-coin">' + ic(VAL, 22, 2) + '</span>'
+ '<span class="ko-it"><b>Case VAL-00928</b><span>Data Analysis with SQL · course validation</span></span>'
+ '<div class="ko-rd wo-rd"><span class="ko-rl">1,260 Credits paid · balance now 2,390</span><a href="CR-WAL-007.dc.html" class="ds-link">Transactions</a></div></section></sc-if>'
+ '<sc-if value="{{fd}}" hint-placeholder-val="{{false}}"><section class="ko-card ko-idc ob-in3" aria-label="New balance"><span class="ko-ii wo-coin">' + ic(COIN, 22, 2.2) + '</span>'
  '<span class="ko-it"><b>3,650 Credits</b><span>New balance</span></span><span class="ko-vb wo-add">+2,500</span>'
- '<div class="ko-rd wo-rd"><span class="ko-rl">$253.75 · Visa •••• 4417 · TX-88531</span><a href="#" class="ds-link">Download receipt</a></div></section>\n'
+ '<div class="ko-rd wo-rd"><span class="ko-rl">$253.75 · Visa •••• 4417 · TX-88531</span><a href="#" class="ds-link">Download receipt</a></div></section></sc-if>\n'
  '<section class="ko-next ob-in4" aria-label="Next for you"><span class="ko-ni">' + ic(VAL, 20) + '</span>'
- '<span class="ko-nt"><span class="ko-nl">Next for you</span><b>Pay for validation</b><span>Data Analysis with SQL needs 1,260 Credits. You have enough now.</span></span>'
- '<a href="CR-PAY-002b.dc.html" class="ds-btn sm ko-go"><span>Continue</span><span class="ob-arrow">' + ARR + '</span></a></section>\n</div>\n</sc-if>\n\n')
+ '<span class="ko-nt"><span class="ko-nl">Next for you</span><b>{{nxH}}</b><span>{{nxP}}</span></span>'
+ '<a href="{{nxHref}}" class="ds-btn sm ko-go"><span>{{nxCta}}</span><span class="ob-arrow">' + ARR + '</span></a></section>\n</div>\n</sc-if>\n\n')
 k = k[:a] + body + k[b:]
-k = re.sub(r'<div class="ko-links ob-in4">.*?</div>', '<div class="ko-links ob-in4"><a href="CR-WAL-001.dc.html">Back to wallet</a><span aria-hidden="true">·</span><a href="CR-WAL-007.dc.html">Transactions</a></div>', k, count=1, flags=re.S)
+k = re.sub(r'<div class="ko-links ob-in4">.*?</div>', '<div class="ko-links ob-in4"><a href="{{l1h}}">{{l1}}</a><span aria-hidden="true">·</span><a href="{{l2h}}">{{l2}}</a></div>', k, count=1, flags=re.S)
 k = k.replace('</style>', '''
 /* build23 wallet outcomes */
 .wo-one{max-width:560px}
@@ -67,9 +70,17 @@ class Component extends DCLogic {
     const T = {
       processing: ['ko-r', 'Processing', 'Processing your payment', 'We’re waiting for your bank to confirm. You can leave this page; we’ll let you know.'],
       failed: ['ko-a', 'Not charged', 'Your payment didn’t go through', 'Your bank declined $253.75 by Visa •••• 4417.'],
-      funded: ['ko-v', 'Funded', '2,500 Credits added', 'They’re in your wallet and ready to use.']
+      funded: ['ko-v', 'Funded', '2,500 Credits added', 'They’re in your wallet and ready to use.'],
+      ret: ['ko-v', 'Funded', '2,500 Credits added', 'They’re in your wallet and ready to use.'],
+      paid: ['ko-v', 'Paid', 'Your validation case is open', 'Validators are usually assigned within 2 business days. We’ll let you know.']
     }[v];
-    return { koCls: T[0], pill: T[1], h1: T[2], sub: T[3], r: v === 'processing', v: v === 'funded', a: v === 'failed', f: false };
+    const pay = v === 'paid', ret = v === 'ret';
+    return { koCls: T[0], pill: T[1], h1: T[2], sub: T[3], r: v === 'processing', v: v === 'funded' || ret || pay, a: v === 'failed', f: false, pd: pay, fd: !pay,
+      bar: pay ? 'Submit for validation' : 'Credit Wallet', closeHref: pay ? 'CR-VAL-MC-001.dc.html' : 'CR-WAL-001.dc.html',
+      nxH: pay ? 'Follow the case' : (ret ? 'Back to your validation payment' : 'Pay for validation'),
+      nxP: pay ? 'Requests and decisions show up in the Validation Centre.' : (ret ? '1,260 Credits for Data Analysis with SQL. You’re covered now.' : 'Data Analysis with SQL needs 1,260 Credits. You have enough now.'),
+      nxCta: pay ? 'Open Validation Centre' : (ret ? 'Return to payment' : 'Continue'), nxHref: pay ? 'CR-VAL-MC-001.dc.html' : (ret ? 'CR-PAY-002f.dc.html' : 'CR-PAY-002b.dc.html'),
+      l1: pay ? 'Credit Wallet' : 'Back to wallet', l1h: 'CR-WAL-001.dc.html', l2: pay ? 'Back to my Studio' : 'Transactions', l2h: pay ? 'CR-DASH-NEW.dc.html' : 'CR-WAL-007.dc.html' };
   }
 }
 </script>''' + k[s1:]
@@ -77,7 +88,7 @@ k = re.sub(r'<title>.*?</title>', '<title>Credalio · Credit Wallet</title>', k)
 wr('CR-WAL-OUT.dc.html', k)
 
 wd, wm = rd('CR-DASH-S03.dc.html'), rd('CR-CRED-002c-Mobile.dc.html')
-for n, var in [('CR-WAL-005', 'processing'), ('CR-WAL-005f', 'failed'), ('CR-WAL-006', 'funded')]:
+for n, var in [('CR-WAL-005', 'processing'), ('CR-WAL-005f', 'failed'), ('CR-WAL-006', 'funded'), ('CR-PAY-002r', 'ret'), ('CR-PAY-003s', 'paid')]:
     imp = f'<dc-import name="CR-WAL-OUT" variant="{var}"'
     t = wd.replace('<dc-import name="CR-DASH-ST" variant="s03"', imp)
     wr(n + '.dc.html', re.sub(r'<title>.*?</title>', f'<title>{n} preview</title>', t))

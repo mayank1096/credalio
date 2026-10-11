@@ -212,7 +212,7 @@ D = [('TA', 'Why does my GROUP BY return duplicates?', 'Data Analysis with SQL �
 js_rows = ', '.join("{av:'%s',t:'%s',c:'%s',by:'%s',n:%d,tm:'%s',ok:%s}" % (a, t.replace("'", "\\'"), c, b, n, tm, 'true' if ok else 'false') for a, t, c, b, n, tm, ok in D)
 main = ('<main class="ds-main hp">\n<div class="hp-head ob-in"><div><h1 class="ds-h1">Discussions</h1></div><button type="button" class="hp-rb ds-crs">All learning experiences' + ic('<path d="m6 9 6 6 6-6"></path>', 15, 2.2) + '</button></div>'
         '<div class="hp-tabs ds-tb ob-in2" role="tablist"><sc-for list="{{tabs}}" as="t" hint-placeholder-count="3"><button type="button" role="tab" class="hp-tab {{t.cls}}" onClick="{{t.pick}}">{{t.l}}<sc-if value="{{t.hasN}}" hint-placeholder-val="{{true}}"><em class="ds-n">{{t.n}}</em></sc-if></button></sc-for></div>'
-        '<section class="ds-card dl-card ob-in3" aria-label="Threads"><ul class="dl-l"><sc-for list="{{rows}}" as="r" hint-placeholder-count="6"><li><a href="CR-DISC-002.dc.html" class="dl-r {{r.unCls}}">'
+        '<section class="ds-card dl-card ob-in3" aria-label="Threads"><ul class="dl-l {{lCls}}"><sc-for list="{{rows}}" as="r" hint-placeholder-count="6"><li><a href="CR-DISC-002.dc.html" class="dl-r {{r.unCls}}">'
         '<span class="av">{{r.av}}</span><span class="dl-t"><b>{{r.t}}</b><span>{{r.c}} · {{r.by}} · {{r.tm}}</span></span>'
         '<sc-if value="{{r.un}}" hint-placeholder-val="{{false}}"><span class="st am">Unanswered</span></sc-if>'
         '<span class="dl-n">' + REPLY + '{{r.n}}</span></a></li></sc-for></ul></section>\n</main>')
@@ -222,7 +222,7 @@ js = '''    const D = [''' + js_rows + '''];
     const T = [['all', 'All', ''], ['unanswered', 'Unanswered', String(D.filter((d) => !d.ok).length)], ['answered', 'Answered', '']];
     return { navCls: S.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !S.nav }),
       tabs: T.map((t) => ({ l: t[1], n: t[2], hasN: !!t[2], cls: f === t[0] ? 'on' : '', pick: () => this.setState({ f: t[0] }) })),
-      rows: list.map((d) => Object.assign({}, d, { un: !d.ok, unCls: d.ok ? '' : 'un' })) };'''
+      lCls: f === 'unanswered' ? 'only-un' : '', rows: list.map((d) => Object.assign({}, d, { un: !d.ok, unCls: d.ok ? '' : 'un' })) };'''
 css = COMMON + '''
 .ds-crs{gap:8px}.ds-crs svg{color:#5B6582}
 .ds-tb{margin-bottom:18px}
@@ -237,6 +237,8 @@ css = COMMON + '''
 .dl-t > span{font-size:13.5px;color:#5B6582;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .dl-n{display:inline-flex;align-items:center;gap:6px;min-width:44px;justify-content:flex-end;font-size:14px;font-weight:500;color:#5B6582;font-variant-numeric:tabular-nums}
 .dl-n svg{color:#8A93AD}
+.only-un .st{display:none}
+.only-un .dl-r.un .dl-t b::before{display:none !important}
 @media (max-width: 960px){
 .hp-head{flex-direction:row;align-items:center}
 .ds-crs{display:inline-flex !important;height:34px;padding:0 12px;font-size:13px}

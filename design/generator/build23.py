@@ -2,6 +2,7 @@
 # CR-WAL-OUT one source, variants processing / failed / funded (= CR-WAL-005 / 005f / 006). Replaces the older panel-style
 # processing/failed (build21) and the POL-based WAL-006 (build22). Only writes its own files. usage: python3 build23.py <canvas project dir>
 import re, sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 P = sys.argv[1]
 rd = lambda f: open(os.path.join(P, f), encoding='utf-8').read()
 def wr(f, s): open(os.path.join(P, f), 'w', encoding='utf-8').write(s)
@@ -41,13 +42,13 @@ body = (
  '<span class="ko-it"><b>Case VAL-00928</b><span>Data Analysis with SQL · course validation</span></span>'
  '<div class="ko-rd wo-rd"><span class="ko-rl">1,260 Credits paid · balance now 2,390</span><a href="CR-WAL-007.dc.html" class="ds-link">Transactions</a></div></section></sc-if>'
  '<sc-if value="{{fd}}" hint-placeholder-val="{{false}}"><section class="ko-card ko-idc ob-in3" aria-label="New balance"><span class="ko-ii wo-coin">' + ic(COIN, 22, 2.2) + '</span>'
- '<span class="ko-it"><b>3,650 Credits</b><span>New balance</span></span><span class="ko-vb wo-add">+2,500</span>'
- '<div class="ko-rd wo-rd"><span class="ko-rl">$253.75 · Visa •••• 4417 · TX-88531</span><a href="#" class="ds-link">Download receipt</a></div></section></sc-if>\n'
+ '<span class="ko-it"><b>3,650 Credits</b><span>New balance</span></span>'
+ '<div class="ko-rd wo-rd"><span class="ko-rl">$253.75 · Visa •••• 4417</span><a href="#" class="ds-link">Download receipt</a></div></section></sc-if>\n'
  '<section class="ko-next ob-in4" aria-label="Next for you"><span class="ko-ni">' + ic(VAL, 20) + '</span>'
  '<span class="ko-nt"><span class="ko-nl">Next for you</span><b>{{nxH}}</b><span>{{nxP}}</span></span>'
  '<a href="{{nxHref}}" class="ds-btn sm ko-go"><span>{{nxCta}}</span><span class="ob-arrow">' + ARR + '</span></a></section>\n</div>\n</sc-if>\n\n')
 k = k[:a] + body + k[b:]
-k = re.sub(r'<div class="ko-links ob-in4">.*?</div>', '<div class="ko-links ob-in4"><a href="{{l1h}}">{{l1}}</a><span aria-hidden="true">·</span><a href="{{l2h}}">{{l2}}</a></div>', k, count=1, flags=re.S)
+k = re.sub(r'<div class="ko-links ob-in4">.*?</div>', '<div class="ko-links ob-in4"><a href="{{l1h}}">{{l1}}</a><sc-if value="{{hasL2}}" hint-placeholder-val="{{true}}"><span aria-hidden="true">·</span><a href="{{l2h}}">{{l2}}</a></sc-if></div>', k, count=1, flags=re.S)
 k = k.replace('</style>', '''
 /* build23 wallet outcomes */
 .wo-one{max-width:560px}
@@ -80,7 +81,7 @@ class Component extends DCLogic {
       nxH: pay ? 'Follow the case' : (ret ? 'Back to your validation payment' : 'Pay for validation'),
       nxP: pay ? 'Requests and decisions show up in the Validation Centre.' : (ret ? '1,260 Credits for Data Analysis with SQL. You’re covered now.' : 'Data Analysis with SQL needs 1,260 Credits. You have enough now.'),
       nxCta: pay ? 'Open Validation Centre' : (ret ? 'Return to payment' : 'Continue'), nxHref: pay ? 'CR-VAL-MC-001.dc.html' : (ret ? 'CR-PAY-002f.dc.html' : 'CR-PAY-002b.dc.html'),
-      l1: pay ? 'Credit Wallet' : 'Back to wallet', l1h: 'CR-WAL-001.dc.html', l2: pay ? 'Back to my Studio' : 'Transactions', l2h: pay ? 'CR-DASH-NEW.dc.html' : 'CR-WAL-007.dc.html' };
+      l1: pay ? 'Back to my Studio' : 'Back to wallet', l1h: pay ? 'CR-DASH-NEW.dc.html' : 'CR-WAL-001.dc.html', hasL2: !pay && !ret, l2: pay ? 'Back to my Studio' : 'Transactions', l2h: pay ? 'CR-DASH-NEW.dc.html' : 'CR-WAL-007.dc.html' };
   }
 }
 </script>''' + k[s1:]

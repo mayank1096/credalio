@@ -48,6 +48,7 @@
 - Desktop: use space well (no needless line breaks, no half-empty rows); one clear primary action per screen.
 - Tags/chips/pills/status pills = weight 500. Selected ≠ primary button. Tokens always gold. No emojis, no screen-ID eyebrows, no rainbow colours (status: green complete, cobalt in progress/review, amber action required, grey not started).
 - Characters: use the designer's Copilot images (Nova etc.), never the old main-scene crops for people. Chat-like screens: messages bottom-anchored, composer at the bottom; a soft blue gradient flowing sideways across the top (fxFlow) is the "Nova is here" ambient motif.
+- Explanations/reasons go in an info TOOLTIP (`design/generator/tipx.py`: navy bubble on hover/focus, ⓘ next to the label) instead of extra paragraphs; never repeat what the H1/left side already says (no "Course" chip, no repeated course/service rows, no "+amount" chip when the H1 says it, one bottom link when there is a Next-for-you CTA).
 - Small labels/eyebrows above headings (section labels, "Next for you", "Question 1 of 2") use faded #8A93AD (or cobalt) so they never match the sub-heading colour.
 - Any Nova card/band (suggestions, help, "Ask Nova") ALWAYS uses the profile-bg gradient background (`/_blob/d268046654a4206d2a726e62005bcc59`, `.nova-card`).
 - Top ambient glow (radial fade under the bar) is status-coloured: green = success, amber/brown = error/action needed, cobalt = normal/in progress, grey = declined.

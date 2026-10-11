@@ -124,21 +124,20 @@ side = ('<aside class="cl-side ob-in"><h1 class="cl-h1 py-h">Data Analysis with 
         '<p class="cl-sub">Course validation · 6 chapters, 31 items and 3 assessments. Validators review it together.</p>'
         '<div class="cl-meta"><span>Course</span><span>All declarations signed</span></div>' + STEPS + '</aside>')
 LINES = [('Educational validator', '400'), ('Subject matter validator · case lead', '500'), ('Assessment validator', '300'), ('Credalio service fee (5%)', '60')]
-quote = ('<sc-if value="{{vQuote}}" hint-placeholder-val="{{true}}"><section class="cl-panel ob-in2" aria-labelledby="py-h1"><h2 id="py-h1" class="cl-ph">Your validation quote</h2>'
+quote = ('<sc-if value="{{vQuote}}" hint-placeholder-val="{{true}}"><section class="cl-panel py-p ob-in2" aria-labelledby="py-h1">' + '<span class="py-chip">' + CRED + '<span>Balance</span><b>{{balTxt}}</b></span>' + '<h2 id="py-h1" class="cl-ph">Your validation quote</h2>'
          '<dl class="py-dl">' + ''.join(f'<div><dt>{k}</dt><dd>{v}</dd></div>' for k, v in LINES) + '<div class="py-tot"><dt>Total</dt><dd>' + CRED + '1,260 Credits</dd></div></dl>'
-         '<div class="py-bal"><span>Your wallet</span><b>1,150 Credits</b></div>'
          '<div class="cl-foot"><a href="CR-PAY-002.dc.html" class="ds-btn cl-go py-go"><span>Pay with Credits</span><span class="ob-arrow">' + ARR + '</span></a></div></section></sc-if>')
 def check(ok, rows, note, cta, href):
     return ('<div class="py-chk ' + ('ok' if ok else 'short') + '">' + ''.join(f'<div class="{c}"><span>{k}</span><b>{v}</b></div>' for k, v, c in rows) + '</div>'
             + (f'<p class="py-note">{note}</p>' if note else '')
             + f'<div class="cl-foot"><a href="CR-PAY-001.dc.html" class="ds-ghost cl-bk" aria-label="Back">' + ic('<path d="M19 12H5"></path><path d="m11 6-6 6 6 6"></path>', 18, 2.2) + '<span>Back</span></a>'
             + f'<a href="{href}" class="ds-btn cl-go py-go"><span>{cta}</span><span class="ob-arrow">{ARR}</span></a></div>')
-short = ('<sc-if value="{{vShort}}" hint-placeholder-val="{{false}}"><section class="cl-panel ob-in2" aria-labelledby="py-h2"><span class="py-ic am">' + ic('<path d="M12 7v6M12 16.5v.01"></path>', 22, 2.6) + '</span>'
+short = ('<sc-if value="{{vShort}}" hint-placeholder-val="{{false}}"><section class="cl-panel py-p ob-in2" aria-labelledby="py-h2">' + '<span class="py-chip">' + CRED + '<span>Balance</span><b>{{balTxt}}</b></span>' + '<span class="py-ic am">' + ic('<path d="M12 7v6M12 16.5v.01"></path>', 22, 2.6) + '</span>'
          '<h2 id="py-h2" class="cl-ph">You need 110 more Credits</h2><p class="cl-pp">Add them now and you’ll come straight back here to finish.</p>'
-         + check(False, [('Your wallet', '1,150', ''), ('This validation', '1,260', ''), ('Still needed', '110', 'need')], '', 'Add Credits', 'CR-WAL-002.dc.html') + '</section></sc-if>')
-enough = ('<sc-if value="{{vEnough}}" hint-placeholder-val="{{false}}"><section class="cl-panel ob-in2" aria-labelledby="py-h3"><span class="py-ic gr">' + ic('<path d="m5 12.5 4.5 4.5L19 7.5"></path>', 22, 2.6) + '</span>'
+         + check(False, [('This validation', '1,260', ''), ('Still needed', '110', 'need')], '', 'Add Credits', 'CR-WAL-002.dc.html') + '</section></sc-if>')
+enough = ('<sc-if value="{{vEnough}}" hint-placeholder-val="{{false}}"><section class="cl-panel py-p ob-in2" aria-labelledby="py-h3">' + '<span class="py-chip">' + CRED + '<span>Balance</span><b>{{balTxt}}</b></span>' + '<span class="py-ic gr">' + ic('<path d="m5 12.5 4.5 4.5L19 7.5"></path>', 22, 2.6) + '</span>'
           '<h2 id="py-h3" class="cl-ph">{{enoughH}}</h2><p class="cl-pp">{{enoughP}}</p>'
-          + check(True, [('Your wallet', '{{walTxt}}', ''), ('This validation', '1,260', ''), ('Left after paying', '{{leftTxt}}', 'left')], '', 'Confirm and pay 1,260 Credits', '#') + '</section></sc-if>')
+          + check(True, [('This validation', '1,260', ''), ('Left after paying', '{{leftTxt}}', 'left')], '', 'Confirm and pay 1,260 Credits', '#') + '</section></sc-if>')
 body = ('<div class="tk-root cl-root {{rootCls}}">\n<div class="tk-scene" aria-hidden="true"></div><div class="cl-glow" aria-hidden="true"></div>\n'
         '<header class="tk-top">\n<a href="CR-DEC-004.dc.html" class="lp-x" aria-label="Close">' + X + '</a>\n'
         '<div class="lp-title"><span class="lp-t1" style="display: block">Submit for validation</span></div>\n<span style="flex-grow: 1"></span>\n</header>\n'
@@ -155,12 +154,15 @@ CSS = '''
 .py-dl > div:not(.py-tot) dd::after{content:' Cr';font-size:12.5px;font-weight:500;color:#8A93AD}
 .py-tot{border-top:2px solid #0B1433 !important}
 .py-tot dt{font-size:16px;font-weight:600;color:#0B1433}.py-tot dd{font-size:21px}
-.py-bal{margin-top:12px;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-radius:14px;background:#F5F8FF;font-size:14px;color:#3A4566}
-.py-bal b{font-size:15px;color:#0B1433}
+.py-p{position:relative}
+.py-chip{position:absolute;top:20px;right:22px;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px 0 5px;border-radius:999px;background:#F5F8FF;border:1.5px solid #E1E9FF;font-size:13px;color:#5B6582}
+.py-chip .cr-ic{width:28px;height:28px}
+.py-chip b{font-size:14.5px;font-weight:600;color:#0B1433}
+.py-chip b::after{content:' Cr';font-size:12px;font-weight:500;color:#8A93AD}
 .py-go{margin-left:auto}
 .py-ic{width:48px;height:48px;border-radius:50%;color:#FFFFFF;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
 .py-ic.am{background:#B26A00;box-shadow:0 0 0 7px #FFF3DC}.py-ic.gr{background:#0F6B45;box-shadow:0 0 0 7px #E7F5EE}
-.py-chk{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid #E6EAF3;border-radius:18px;overflow:hidden}
+.py-chk{margin-top:18px;display:grid;grid-template-columns:repeat(2,1fr);border:1.5px solid #E6EAF3;border-radius:18px;overflow:hidden}
 .py-chk > div{display:flex;flex-direction:column;gap:4px;padding:16px 18px;border-left:1.5px solid #F0F2F8}
 .py-chk > div:first-child{border-left:0}
 .py-chk > div > span{font-size:13px;color:#5B6582}
@@ -171,6 +173,7 @@ CSS = '''
 .is-wait .cl-glow{background:radial-gradient(60% 100% at 50% 0,rgba(214,140,20,.10),transparent 70%)}
 .is-ok .cl-glow{background:radial-gradient(60% 100% at 50% 0,rgba(15,107,69,.10),transparent 70%)}
 @media (max-width: 960px){
+.py-chip{top:-2px;right:0;height:34px;padding:0 12px 0 4px}.py-chip .cr-ic{width:26px;height:26px}
 .py-dl{padding:2px 16px}
 .py-dl dt{font-size:14px}
 .py-chk > div{padding:14px 12px}
@@ -188,7 +191,7 @@ class Component extends DCLogic {
       s0: v === 'quote' ? 'on' : 'dn', s1: v === 'quote' ? '' : 'on', s2: '',
       rootCls: v === 'short' ? 'is-wait' : (v === 'quote' ? '' : 'is-ok'),
       enoughH: cov ? 'Credits added. You’re covered' : 'You have enough Credits', enoughP: cov ? 'You’re back where you left off. Confirm to pay and open the case.' : 'Confirm to pay and open the validation case.',
-      walTxt: cov ? '3,650' : '3,650', leftTxt: '2,390'
+      balTxt: v === 'quote' || v === 'short' ? '1,150' : '3,650', leftTxt: '2,390'
     };
   }
 }

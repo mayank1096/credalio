@@ -92,7 +92,7 @@ pm_opts = ''.join(f'<button type="button" role="radio" aria-checked="{{{{m_{k}.o
 STEPS = '<ol class="cl-steps" aria-label="Steps"><li class="{{s0}}"><i></i><span>Amount</span></li><li class="{{s1}}"><i></i><span>Payment</span></li><li class="{{s2}}"><i></i><span>Review</span></li></ol>'
 side = ('<aside class="cl-side ob-in"><h1 class="cl-h1 wf-h">Add Credits</h1>'
         '<p class="cl-sub">Credits pay for validation, revalidation and other Credalio services.</p>'
-        '<div class="wf-bal">' + CRED + '<span><span class="hp-lab">Current balance</span><b>1,150 Credits</b></span></div>' + STEPS + '</aside>')
+        '<sc-if value="{{showBal}}" hint-placeholder-val="{{true}}">' + '<div class="wf-bal">' + CRED + '<span><span class="hp-lab">Current balance</span><b>1,150 Credits</b></span></div>' + '</sc-if>' + STEPS + '</aside>')
 foot = lambda back, nxt, label, off='': (f'<div class="cl-foot">' + (f'<a href="{back}" class="ds-ghost cl-bk" aria-label="Back">' + ic('<path d="M19 12H5"></path><path d="m11 6-6 6 6 6"></path>', 18, 2.2) + '<span>Back</span></a>' if back else '')
                                          + f'<a href="{nxt}" class="ds-btn cl-go wf-go {off}"><span>{label}</span><span class="ob-arrow">{ARR}</span></a></div>')
 p_amount = ('<sc-if value="{{vAmount}}" hint-placeholder-val="{{true}}"><section class="cl-panel ob-in2" aria-labelledby="wf-h1"><h2 id="wf-h1" class="cl-ph">How many Credits?</h2>'
@@ -190,7 +190,7 @@ class Component extends DCLogic {
     const n = S.amt === 'c' ? (parseInt(String(S.custom).replace(/\\D/g, ''), 10) || 0) : S.amt;
     const step = { amount: 0, method: 1, summary: 2, processing: 3, failed: 2 }[v];
     return Object.assign(out, {
-      vAmount: v === 'amount', vMethod: v === 'method', vSummary: v === 'summary', vProc: v === 'processing', vFail: v === 'failed', rootCls: v === 'failed' ? 'is-wait' : '',
+      vAmount: v === 'amount', vMethod: v === 'method', vSummary: v === 'summary', vProc: v === 'processing', vFail: v === 'failed', showBal: v !== 'failed', rootCls: v === 'failed' ? 'is-wait' : '',
       s0: step > 0 ? 'dn' : 'on', s1: step > 1 ? 'dn' : (step === 1 ? 'on' : ''), s2: step > 2 ? 'dn' : (step === 2 ? 'on' : ''),
       isCustom: S.amt === 'c', custom: S.custom, onCustom: (e) => this.setState({ custom: e.target.value }),
       amtTxt: n.toLocaleString('en-US') + ' Credits', usdTxt: '$' + (n / 10).toLocaleString('en-US', { minimumFractionDigits: 2 })

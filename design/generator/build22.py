@@ -128,16 +128,16 @@ quote = ('<sc-if value="{{vQuote}}" hint-placeholder-val="{{true}}"><section cla
          '<dl class="py-dl">' + ''.join(f'<div><dt>{k}</dt><dd>{v}</dd></div>' for k, v in LINES) + '<div class="py-tot"><dt>Total</dt><dd>' + CRED + '1,260 Credits</dd></div></dl>'
          '<div class="cl-foot"><a href="CR-PAY-002.dc.html" class="ds-btn cl-go py-go"><span>Pay with Credits</span><span class="ob-arrow">' + ARR + '</span></a></div></section></sc-if>')
 def check(ok, rows, note, cta, href):
-    return ('<div class="py-chk ' + ('ok' if ok else 'short') + '">' + ''.join(f'<div class="{c}"><span>{k}</span><b>{v}</b></div>' for k, v, c in rows) + '</div>'
+    return ((('<div class="py-chk ' + ('ok' if ok else 'short') + '">' + ''.join(f'<div class="{c}"><span>{k}</span><b>{v}</b></div>' for k, v, c in rows) + '</div>') if rows else '')
             + (f'<p class="py-note">{note}</p>' if note else '')
             + f'<div class="cl-foot"><a href="CR-PAY-001.dc.html" class="ds-ghost cl-bk" aria-label="Back">' + ic('<path d="M19 12H5"></path><path d="m11 6-6 6 6 6"></path>', 18, 2.2) + '<span>Back</span></a>'
             + f'<a href="{href}" class="ds-btn cl-go py-go"><span>{cta}</span><span class="ob-arrow">{ARR}</span></a></div>')
 short = ('<sc-if value="{{vShort}}" hint-placeholder-val="{{false}}"><section class="cl-panel py-p ob-in2" aria-labelledby="py-h2">' + '<span class="py-chip">' + CRED + '<span>Balance</span><b>{{balTxt}}</b></span>' + '<span class="py-ic am">' + ic('<path d="M12 7v6M12 16.5v.01"></path>', 22, 2.6) + '</span>'
-         '<h2 id="py-h2" class="cl-ph">You need 110 more Credits</h2><p class="cl-pp">Add them now and you’ll come straight back here to finish.</p>'
-         + check(False, [('This validation', '1,260', ''), ('Still needed', '110', 'need')], '', 'Add Credits', 'CR-WAL-002.dc.html') + '</section></sc-if>')
+         '<h2 id="py-h2" class="cl-ph">You need 110 more Credits</h2><p class="cl-pp">This validation costs 1,260 Credits and you have 1,150. Add the difference and you’ll come straight back here to finish.</p>'
+         + check(False, [], '', 'Add Credits', 'CR-WAL-002.dc.html') + '</section></sc-if>')
 enough = ('<sc-if value="{{vEnough}}" hint-placeholder-val="{{false}}"><section class="cl-panel py-p ob-in2" aria-labelledby="py-h3">' + '<span class="py-chip">' + CRED + '<span>Balance</span><b>{{balTxt}}</b></span>' + '<span class="py-ic gr">' + ic('<path d="m5 12.5 4.5 4.5L19 7.5"></path>', 22, 2.6) + '</span>'
           '<h2 id="py-h3" class="cl-ph">{{enoughH}}</h2><p class="cl-pp">{{enoughP}}</p>'
-          + check(True, [('This validation', '1,260', ''), ('Left after paying', '{{leftTxt}}', 'left')], '', 'Confirm and pay 1,260 Credits', '#') + '</section></sc-if>')
+          + check(True, [], '', 'Confirm and pay 1,260 Credits', '#') + '</section></sc-if>')
 body = ('<div class="tk-root cl-root {{rootCls}}">\n<div class="tk-scene" aria-hidden="true"></div><div class="cl-glow" aria-hidden="true"></div>\n'
         '<header class="tk-top">\n<a href="CR-DEC-004.dc.html" class="lp-x" aria-label="Close">' + X + '</a>\n'
         '<div class="lp-title"><span class="lp-t1" style="display: block">Submit for validation</span></div>\n<span style="flex-grow: 1"></span>\n</header>\n'
@@ -190,7 +190,7 @@ class Component extends DCLogic {
       vQuote: v === 'quote', vShort: v === 'short', vEnough: v === 'enough' || cov,
       s0: v === 'quote' ? 'on' : 'dn', s1: v === 'quote' ? '' : 'on', s2: '',
       rootCls: v === 'short' ? 'is-wait' : (v === 'quote' ? '' : 'is-ok'),
-      enoughH: cov ? 'Credits added. You’re covered' : 'You have enough Credits', enoughP: cov ? 'You’re back where you left off. Confirm to pay and open the case.' : 'Confirm to pay and open the validation case.',
+      enoughH: cov ? 'Credits added. You’re covered' : 'You have enough Credits', enoughP: cov ? 'You’re back where you left off. 1,260 Credits come from your balance, leaving 2,390.' : '1,260 Credits come from your balance, leaving 2,390. Paying opens the validation case.',
       balTxt: v === 'quote' || v === 'short' ? '1,150' : '3,650', leftTxt: '2,390'
     };
   }

@@ -19,27 +19,30 @@ p2 = rd('CR-POL-002.dc.html')
 p2 = p2.replace('<a href="CR-RDY-001.dc.html" class="lp-x" aria-label="Close and go back to readiness">', '<a href="CR-WAL-001.dc.html" class="lp-x" aria-label="Close and go back to your wallet">', 1)
 p2 = re.sub(r'<div class="lp-title">.*?</div>', '<div class="lp-title"><span class="lp-t1" style="display: block">Credit Wallet</span></div>', p2, count=1, flags=re.S)
 a = p2.index('<div class="ko-row">'); b = p2.index('</div>\n</sc-if>', a) + 6
-card = ('<div class="ko-row">\n<section class="ko-card wd-card ob-in3" aria-label="Receipt"><dl class="wd-dl">'
-        '<div><dt>New balance</dt><dd class="wd-big">' + CRED + '3,650 Credits</dd></div>'
-        '<div><dt>Paid</dt><dd>$253.75 · Visa •••• 4417</dd></div><div><dt>Transaction</dt><dd>TX-88531</dd></div></dl></section>\n'
+card = ('<div class="ko-row">\n<section class="ko-card wd-card ob-in3" aria-label="New balance">'
+        '<span class="ko-nl">New balance</span><b class="wd-big">' + CRED + '3,650<em>Credits</em></b>'
+        '<div class="wd-ft"><span>$253.75 · Visa •••• 4417 · TX-88531</span><a href="#" class="ds-link">Download receipt</a></div></section>\n'
         '<section class="ko-next ob-in4" aria-label="Next for you"><span class="ko-ni">' + ic(I['val'], 20) + '</span>'
         '<span class="ko-nt"><span class="ko-nl">Next for you</span><b>Pay for validation</b><span>Data Analysis with SQL needs 1,260 Credits. You have enough now.</span></span>'
         '<a href="CR-PAY-002b.dc.html" class="ds-btn sm ko-go"><span>Continue</span><span class="ob-arrow">' + ARR + '</span></a></section>\n</div>')
 p2 = p2[:a] + card + p2[b:]
-p2 = re.sub(r'<div class="ko-links ob-in4">.*?</div>', '<div class="ko-links ob-in4"><a href="#">Download receipt</a><span aria-hidden="true">·</span><a href="CR-WAL-001.dc.html">Back to wallet</a></div>', p2, count=1, flags=re.S)
+p2 = re.sub(r'<div class="ko-links ob-in4">.*?</div>', '<div class="ko-links ob-in4"><a href="CR-WAL-001.dc.html">Back to wallet</a></div>', p2, count=1, flags=re.S)
 p2 = p2.replace("const T = ['ko-v', 'Complete', 'All policies accepted', 'You can read them again any time in Creator Centre.'];",
                 "const T = ['ko-v', 'Funded', '2,500 Credits added', 'They’re in your wallet and ready to use.'];")
 assert '2,500 Credits added' in p2
 p2 = p2.replace('</style>', '''
 /* build22 WAL-006 */
 .cr-ic{display:inline-flex;width:32px;height:32px;border-radius:50%;background:#EAF0FF;color:#1652F0;align-items:center;justify-content:center;flex-shrink:0}
-.wd-card{padding:6px 22px}
-.wd-dl{margin:0}
-.wd-dl > div{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;border-top:1.5px solid #F0F2F8}
-.wd-dl > div:first-child{border-top:0}
-.wd-dl dt{font-size:14px;color:#5B6582}
-.wd-dl dd{margin:0;display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;text-align:right}
-.wd-big{font-size:20px !important}
+.ko-row{grid-template-columns:minmax(0,1fr);max-width:600px;margin-left:auto;margin-right:auto;gap:12px}
+.wd-card{display:flex;flex-direction:column;padding:18px 22px}
+.ko-row .ko-next{flex-direction:row;align-items:center;gap:14px;padding:16px 16px 16px 18px}
+.ko-links{display:none}
+.wd-big{margin-top:8px;display:flex;align-items:center;gap:12px;font-size:34px;font-weight:600;letter-spacing:-0.02em;line-height:1.1}
+.wd-big em{font-style:normal;font-size:16px;font-weight:500;color:#5B6582;letter-spacing:0;margin-left:-4px;align-self:flex-end;padding-bottom:4px}
+.wd-big .cr-ic{width:36px;height:36px}
+.wd-ft{margin-top:16px;padding-top:14px;border-top:1.5px solid #F0F2F8;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13.5px;color:#5B6582}
+.wd-ft .ds-link{font-size:13.5px;font-weight:600;white-space:nowrap}
+@media (max-width: 960px){.ko-row .ko-next{flex-wrap:wrap}.ko-row .ko-next .ko-go{width:100%;justify-content:space-between}.wd-card{gap:0}.wd-ft{margin-top:16px;flex-direction:column;align-items:flex-start;gap:6px}.wd-big{font-size:30px}}
 </style>''', 1)
 p2 = re.sub(r'<title>.*?</title>', '<title>Credalio · Wallet funded</title>', p2)
 wr('CR-WAL-006.dc.html', p2)

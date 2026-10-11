@@ -130,11 +130,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-PAY-002` CR-PAY-002 · Balance check: Additional Credits Required
 - [x] D [x] M  `CR-PAY-002b` CR-PAY-002 · Balance check: enough Credits
 - [x] D [x] M  `CR-PAY-002f` Fund Wallet from the payment (shortfall covered)
-- [ ] D [ ] M  `CR-PAY-002r` Wallet funded → Return to Validation Payment
-- [ ] D [ ] M  `CR-PAY-003` CR-PAY-003 · Payment confirmation (returned automatically)
-- [ ] D [ ] M  `CR-PAY-003s` CR-PAY-003 · Payment successful → Validation case created
-- [ ] D [ ] M  `CR-REVAL-001` Revalidation: content update → assessment (Standard)
-- [ ] D [ ] M  `CR-REVAL-002` Revalidation quote: same wallet & payment
+- [x] D [x] M  `CR-PAY-002r` Wallet funded → Return to Validation Payment
+- [x] D [x] M  `CR-PAY-003` CR-PAY-003 · Payment confirmation (returned automatically)
+- [x] D [x] M  `CR-PAY-003s` CR-PAY-003 · Payment successful → Validation case created
+- [x] D [x] M  `CR-REVAL-001` Revalidation: content update → assessment (Standard)
+- [x] D [x] M  `CR-REVAL-002` Revalidation quote: same wallet & payment
 
 ## 13. Earnings & payouts: PayPal, Payoneer, Tipalti or Direct Deposit · paid automatically each month once the balance reaches $25 (13)
 

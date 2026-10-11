@@ -109,13 +109,15 @@ side = ('<aside class="cl-side ob-in"><h1 class="cl-h1 po-h">How you get paid</h
         '<ol class="cl-steps" aria-label="Steps"><li class="{{s0}}"><i></i><span>Choose</span></li><li class="{{s1}}"><i></i><span>Connect</span></li><li class="{{s2}}"><i></i><span>Done</span></li></ol></aside>')
 choose = ('<sc-if value="{{vChoose}}" hint-placeholder-val="{{true}}"><section class="cl-panel ob-in2" aria-labelledby="po-h1"><h2 id="po-h1" class="cl-ph">Choose a payout method</h2>'
           '<div class="po-l" role="radiogroup" aria-label="Payout method">' + opts + '</div>'
-          '<sc-if value="{{isPaypal}}" hint-placeholder-val="{{false}}"><div class="po-x"><ol><li>Log in to PayPal</li><li>Approve Credalio to send you payouts</li><li>Come back here, connected</li></ol>'
-          '<p>' + LOCK + 'We only receive your PayPal email and account status.</p></div></sc-if>'
-          '<div class="cl-foot"><a href="CR-PAYO-001b.dc.html" class="ds-btn cl-go po-go {{goOff}}"><span>{{goTxt}}</span><span class="ob-arrow">' + ARR + '</span></a></div></section></sc-if>')
+          '<div class="cl-foot"><sc-if value="{{isPaypal}}" hint-placeholder-val="{{false}}"><span class="po-tip" tabindex="0">' + ic('<circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path>', 16, 2.2) + 'How connecting works<span class="po-tt" role="tooltip"><ol><li>Log in to PayPal</li><li>Approve Credalio to send you payouts</li><li>Come back here, connected</li></ol><p>' + LOCK + 'We only receive your PayPal email and account status.</p></span></span></sc-if><a href="CR-PAYO-001b.dc.html" class="ds-btn cl-go po-go {{goOff}}"><span>{{goTxt}}</span><span class="ob-arrow">' + ARR + '</span></a></div></section></sc-if>')
+MARK = re.search(r'\.lg-mark\{display:none;width:30px;height:30px;background:(url\(data:[^)]*\))', rd('CR-DASH-NEW.dc.html')).group(1)
 handoff = ('<sc-if value="{{vHand}}" hint-placeholder-val="{{false}}"><section class="po-ext ob-in2" aria-label="PayPal window"><div class="po-eh"><span class="po-lg sm">' + LG['paypal'] + '</span><b>PayPal</b><span class="po-sec">' + LOCK + 'Secure window</span></div>'
-           '<div class="po-eb"><h2 class="cl-ph">Allow Credalio to pay you</h2><p class="cl-pp">Logged in as ada.ononuju@example.com</p>'
-           '<ul class="po-perm"><li>' + CHK + 'Send payouts to this PayPal account</li><li>' + CHK + 'See your account name and status</li></ul>'
-           '<div class="po-ef"><a href="CR-PAYO-001a.dc.html" class="ds-ghost">Cancel</a><a href="#" class="ds-btn cl-go"><span>Agree and connect</span><span class="ob-arrow">' + ARR + '</span></a></div></div>'
+           '<div class="po-eb"><div class="po-pair" aria-hidden="true"><span class="po-bd po-cr"></span><i></i><span class="po-bd">' + LG['paypal'] + '</span></div>'
+           '<h2 class="po-eh2">Allow Credalio to pay you</h2>'
+           '<div class="po-acct"><span class="po-av">AO</span><span><b>Ada Ononuju</b><span>ada.ononuju@example.com</span></span><a href="#" class="ds-link">Not you?</a></div>'
+           '<span class="hp-lab po-ph">Credalio will be able to</span><ul class="po-perm"><li>' + CHK + 'Send payouts to this PayPal account</li><li>' + CHK + 'See your account name and status</li></ul>'
+           '<a href="#" class="ds-btn cl-go po-agree"><span>Agree and connect</span><span class="ob-arrow">' + ARR + '</span></a>'
+           '<a href="CR-PAYO-001a.dc.html" class="po-cancel">Cancel</a></div>'
            '<p class="po-note">This step happens on PayPal. You’ll come straight back to Credalio.</p></section></sc-if>')
 body = ('<div class="tk-root cl-root">\n<div class="tk-scene" aria-hidden="true"></div><div class="cl-glow" aria-hidden="true"></div>\n'
         '<header class="tk-top">\n<a href="CR-EARN-001.dc.html" class="lp-x" aria-label="Close">' + X + '</a>\n'
@@ -140,29 +142,50 @@ CSS = '''
 .xb-on .xb-ck{display:inline-flex}
 .xb-on .po-lg{background:#FFFFFF}
 .po-o.dis{opacity:.5;pointer-events:none}
-.po-x{margin-top:18px;padding:18px 20px;border-radius:16px;background:#F7F9FD}
-.po-x ol{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:8px;font-size:14.5px;color:#0B1433}
-.po-x p{margin:14px 0 0 0;display:flex;align-items:center;gap:8px;font-size:13.5px;color:#5B6582}
 .po-go{margin-left:auto}
+.po-tip{position:relative;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#4A5578;cursor:default;outline:none}
+.po-tip svg{color:#8A93AD}
+.po-tip:hover,.po-tip:focus-visible{color:#0B1433}
+.po-tt{position:absolute;left:-8px;bottom:calc(100% + 12px);width:300px;padding:16px 18px;border-radius:14px;background:#0B1433;color:#FFFFFF;box-shadow:0 18px 40px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .18s ease,transform .18s ease,visibility .18s;z-index:10}
+.po-tip:hover .po-tt,.po-tip:focus .po-tt{opacity:1;visibility:visible;transform:none}
+.po-tt ol{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.4}
+.po-tt p{margin:14px 0 0 0;padding-top:12px;border-top:1px solid rgba(255,255,255,.14);display:flex;gap:8px;font-size:12.5px;line-height:1.45;color:#C9D3EC}
+.po-tt p svg{flex-shrink:0;color:#C9D3EC;margin-top:1px}
+.po-ext{max-width:460px;margin:0 auto;border-radius:24px;border:1.5px solid #D6DDEE;background:#FFFFFF;box-shadow:0 24px 60px rgba(11,20,51,.12);overflow:hidden}
+.po-eb{padding:32px 36px 24px 36px;display:flex;flex-direction:column}
+.po-pair{display:flex;align-items:center;justify-content:center;gap:10px}
+.po-bd{width:56px;height:56px;border-radius:18px;border:1.5px solid #E6EAF3;background:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(11,20,51,.06)}
+.po-bd img{width:30px;height:30px;object-fit:contain}
+.po-cr{background:#FFFFFF ''' + MARK + ''' center/30px no-repeat}
+.po-pair i{width:44px;border-top:2px dashed #CBD3E6}
+.po-eh2{margin:22px 0 0 0;text-align:center;font-size:22px;font-weight:600;letter-spacing:-0.01em}
+.po-acct{margin-top:22px;display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:#F7F9FD}
+.po-av{width:36px;height:36px;border-radius:50%;background:#0B1433;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0}
+.po-acct > span:not(.po-av){flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.po-acct b{font-size:14.5px;font-weight:600}.po-acct > span > span{font-size:13px;color:#5B6582;overflow:hidden;text-overflow:ellipsis}
+.po-acct .ds-link{font-size:13px;font-weight:600;white-space:nowrap}
+.po-ph{margin-top:24px}
+.po-perm{list-style:none;margin:12px 0 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.po-perm li{display:flex;align-items:center;gap:12px;font-size:15px}
+.po-perm svg{flex-shrink:0;width:22px;height:22px;padding:5px;box-sizing:border-box;border-radius:50%;background:#E7F5EE;color:#0F6B45}
+.po-agree{margin-top:28px;justify-content:space-between}
+.po-cancel{margin-top:10px;align-self:center;padding:10px 16px;font-size:14.5px;font-weight:600;color:#4A5578;text-decoration:none}
+.po-cancel:hover{color:#0B1433}
+.po-note{margin:0;padding:14px 28px;border-top:1.5px solid #F0F2F8;font-size:13px;color:#5B6582;text-align:center}
 .po-go.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}.po-go.lp-off .ob-arrow{color:#9AA8CC}
-.po-ext{border-radius:24px;border:1.5px solid #D6DDEE;background:#FFFFFF;box-shadow:0 24px 60px rgba(11,20,51,.12);overflow:hidden}
 .po-eh{display:flex;align-items:center;gap:10px;padding:14px 20px;background:#F7F9FD;border-bottom:1.5px solid #E6EAF3;font-size:15px}
 .po-eh b{font-weight:600}
 .po-sec{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#5B6582}
-.po-eb{padding:28px 28px 24px 28px}
-.po-perm{list-style:none;margin:20px 0 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
-.po-perm li{display:flex;align-items:center;gap:10px;font-size:15px}
-.po-perm svg{color:#0F6B45}
-.po-ef{margin-top:28px;display:flex;justify-content:flex-end;gap:10px}
-.po-note{margin:0;padding:14px 28px;border-top:1.5px solid #F0F2F8;font-size:13px;color:#5B6582}
 @media (max-width: 960px){
 .po-c{margin-top:16px}
 .po-o{padding:14px 48px 14px 14px;gap:14px}
 .po-lg{width:40px;height:40px}
 .po-ext{margin:0 -4px}
-.po-eb{padding:22px 18px 20px 18px}
-.po-ef{flex-direction:column-reverse}.po-ef .cl-go{justify-content:space-between}
-.po-note{padding:12px 18px}
+.po-eb{padding:24px 20px 20px 20px}
+.po-ext{max-width:none}
+.cl-foot:has(.po-tip){flex-wrap:wrap;justify-content:center}
+.po-tip{order:2;padding:4px 0}
+.po-tt{left:50%;margin-left:-150px}
 }
 '''
 SCRIPT = '''<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
@@ -186,7 +209,7 @@ class Component extends DCLogic {
 s = head.replace('</style>', CSS + '</style>', 1)
 s = re.sub(r'<title>.*?</title>', '<title>Credalio · Payout method</title>', s)
 wr('CR-PAYO.dc.html', s + body + SCRIPT)
-for n, var, hm in [('CR-PAYO-001', 'choose', 900), ('CR-PAYO-001a', 'paypal', 1000), ('CR-PAYO-001b', 'handoff', 844)]:
+for n, var, hm in [('CR-PAYO-001', 'choose', 900), ('CR-PAYO-001a', 'paypal', 900), ('CR-PAYO-001b', 'handoff', 900)]:
     imp = f'<dc-import name="CR-PAYO" variant="{var}"'
     t = wd.replace('<dc-import name="CR-DASH-ST" variant="s03"', imp)
     wr(n + '.dc.html', re.sub(r'<title>.*?</title>', f'<title>{n} preview</title>', t))

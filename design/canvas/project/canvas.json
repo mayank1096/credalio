@@ -1655,6 +1655,86 @@
       "w": 390,
       "x": 9800,
       "y": 28700
+    },
+    "CR-PAYO-001c.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-001c · Payoneer window · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 30000
+    },
+    "CR-PAYO-001c-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-PAYO-001c · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 30000
+    },
+    "CR-PAYO-001d.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-001d · Tipalti bank details · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 30000
+    },
+    "CR-PAYO-001d-Mobile.dc.html": {
+      "h": 1040,
+      "is_interactive": true,
+      "title": "CR-PAYO-001d · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 30000
+    },
+    "CR-PAYO-001e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-001e · Direct deposit (U.S.) · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 30000
+    },
+    "CR-PAYO-001e-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-PAYO-001e · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 30000
+    },
+    "CR-PAYO-001g.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-001g · PayPal connected · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 30000
+    },
+    "CR-PAYO-001g-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-PAYO-001g · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 30000
+    },
+    "CR-PAYO-001p.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-001p · Payoneer verification pending · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 30000
+    },
+    "CR-PAYO-001p-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-PAYO-001p · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 30000
     }
   },
   "createdOnFiles": {
@@ -1891,6 +1971,14 @@
       "w": 240,
       "x": 0,
       "y": 28400
+    },
+    "payo2": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Payout method, other providers + outcomes: Payoneer · Tipalti · Direct deposit · PayPal connected · Payoneer pending",
+      "w": 240,
+      "x": 0,
+      "y": 29700
     }
   },
   "order": [
@@ -2096,7 +2184,17 @@
     "CR-PAYO-001a.dc.html",
     "CR-PAYO-001a-Mobile.dc.html",
     "CR-PAYO-001b.dc.html",
-    "CR-PAYO-001b-Mobile.dc.html"
+    "CR-PAYO-001b-Mobile.dc.html",
+    "CR-PAYO-001c.dc.html",
+    "CR-PAYO-001c-Mobile.dc.html",
+    "CR-PAYO-001d.dc.html",
+    "CR-PAYO-001d-Mobile.dc.html",
+    "CR-PAYO-001e.dc.html",
+    "CR-PAYO-001e-Mobile.dc.html",
+    "CR-PAYO-001g.dc.html",
+    "CR-PAYO-001g-Mobile.dc.html",
+    "CR-PAYO-001p.dc.html",
+    "CR-PAYO-001p-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

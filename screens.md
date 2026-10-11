@@ -138,11 +138,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 
 ## 13. Earnings & payouts: PayPal, Payoneer, Tipalti or Direct Deposit · paid automatically each month once the balance reaches $25 (13)
 
-- [ ] D [ ] M  `CR-EARN-001` CR-EARN-001 · Earnings & next automatic payout
-- [ ] D [ ] M  `CR-EARN-001b` CR-EARN-001 · Below the $25 minimum (carries over)
-- [ ] D [ ] M  `CR-PAYO-001` CR-PAYO-001 · Payout method: choose PayPal, Payoneer, Tipalti or Direct Deposit
-- [ ] D [ ] M  `CR-PAYO-001a` CR-PAYO-001 · PayPal: connect
-- [ ] D [ ] M  `CR-PAYO-001b` CR-PAYO-001 · PayPal: log in & approve (handoff)
+- [x] D [x] M  `CR-EARN-001` CR-EARN-001 · Earnings & next automatic payout
+- [x] D [x] M  `CR-EARN-001b` CR-EARN-001 · Below the $25 minimum (carries over)
+- [x] D [x] M  `CR-PAYO-001` CR-PAYO-001 · Payout method: choose PayPal, Payoneer, Tipalti or Direct Deposit
+- [x] D [x] M  `CR-PAYO-001a` CR-PAYO-001 · PayPal: connect
+- [x] D [x] M  `CR-PAYO-001b` CR-PAYO-001 · PayPal: log in & approve (handoff)
 - [ ] D [ ] M  `CR-PAYO-001c` CR-PAYO-001 · Payoneer: bank or prepaid Mastercard (handoff)
 - [ ] D [ ] M  `CR-PAYO-001d` CR-PAYO-001 · Tipalti: secure bank & tax form (handoff)
 - [ ] D [ ] M  `CR-PAYO-001e` CR-PAYO-001 · Direct Deposit (ACH): U.S. bank details

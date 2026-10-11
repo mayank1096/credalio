@@ -1575,6 +1575,86 @@
       "w": 390,
       "x": 9800,
       "y": 27300
+    },
+    "CR-EARN-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-EARN-001 · Earnings · payout on its way · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 28700
+    },
+    "CR-EARN-001-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-EARN-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 28700
+    },
+    "CR-EARN-001b.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-EARN-001b · Earnings · below payout minimum · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 28700
+    },
+    "CR-EARN-001b-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-EARN-001b · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 28700
+    },
+    "CR-PAYO-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · Payout method · choose · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 28700
+    },
+    "CR-PAYO-001-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 28700
+    },
+    "CR-PAYO-001a.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-001a · Payout method · PayPal · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 28700
+    },
+    "CR-PAYO-001a-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAYO-001a · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 28700
+    },
+    "CR-PAYO-001b.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-001b · Payout method · PayPal handoff · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 28700
+    },
+    "CR-PAYO-001b-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-PAYO-001b · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 28700
     }
   },
   "createdOnFiles": {
@@ -1803,6 +1883,14 @@
       "w": 240,
       "x": 0,
       "y": 27000
+    },
+    "earn1": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Earnings + payout method: next payout · below minimum · choose method · PayPal · PayPal handoff",
+      "w": 240,
+      "x": 0,
+      "y": 28400
     }
   },
   "order": [
@@ -1998,7 +2086,17 @@
     "CR-REVAL-001.dc.html",
     "CR-REVAL-001-Mobile.dc.html",
     "CR-REVAL-002.dc.html",
-    "CR-REVAL-002-Mobile.dc.html"
+    "CR-REVAL-002-Mobile.dc.html",
+    "CR-EARN-001.dc.html",
+    "CR-EARN-001-Mobile.dc.html",
+    "CR-EARN-001b.dc.html",
+    "CR-EARN-001b-Mobile.dc.html",
+    "CR-PAYO-001.dc.html",
+    "CR-PAYO-001-Mobile.dc.html",
+    "CR-PAYO-001a.dc.html",
+    "CR-PAYO-001a-Mobile.dc.html",
+    "CR-PAYO-001b.dc.html",
+    "CR-PAYO-001b-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

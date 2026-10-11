@@ -156,14 +156,14 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 
 - [x] D [x] M  `CR-COURSE-OV-001` CR-COURSE-OV-001 · Course Overview (canonical creator summary)
 - [x] D [x] M  `CR-DISC-001` CR-DISC-001 · Discussions
-- [ ] D [ ] M  `CR-DISC-001u` CR-DISC-001 · Discussions: Unanswered
-- [ ] D [ ] M  `CR-DISC-002` CR-DISC-002 · Discussion thread (Creator badge, answer)
-- [ ] D [ ] M  `CR-DISC-002b` CR-DISC-002 · Unanswered question → reply
-- [ ] D [ ] M  `CR-DISC-003` CR-DISC-003 · Discussion notification → deep link
+- [x] D [x] M  `CR-DISC-001u` CR-DISC-001 · Discussions: Unanswered
+- [x] D [x] M  `CR-DISC-002` CR-DISC-002 · Discussion thread (Creator badge, answer)
+- [x] D [x] M  `CR-DISC-002b` CR-DISC-002 · Unanswered question → reply
+- [x] D [x] M  `CR-DISC-003` CR-DISC-003 · Discussion notification → deep link
 
 ## 15. Calendar, availability & presence (8)
 
-- [ ] D [ ] M  `CR-CAL-001` CR-CAL-001 · Calendar: month
+- [x] D [x] M  `CR-CAL-001` CR-CAL-001 · Calendar: month
 - [ ] D [ ] M  `CR-CAL-001w` CR-CAL-001 · Calendar: week (unavailable hours shaded)
 - [ ] D [ ] M  `CR-CAL-002` CR-CAL-002 · Event detail (role-based actions)
 - [ ] D [ ] M  `CR-CAL-001d` CR-CAL-001 · Calendar: day

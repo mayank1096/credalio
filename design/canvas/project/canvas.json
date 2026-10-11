@@ -1815,6 +1815,86 @@
       "w": 390,
       "x": 9800,
       "y": 31300
+    },
+    "CR-DISC-001u.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DISC-001u · Discussions · unanswered · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 32700
+    },
+    "CR-DISC-001u-Mobile.dc.html": {
+      "h": 760,
+      "is_interactive": true,
+      "title": "CR-DISC-001u · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 32700
+    },
+    "CR-DISC-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DISC-002 · Discussion thread · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 32700
+    },
+    "CR-DISC-002-Mobile.dc.html": {
+      "h": 1240,
+      "is_interactive": true,
+      "title": "CR-DISC-002 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 32700
+    },
+    "CR-DISC-002b.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DISC-002b · Answer an unanswered question · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 32700
+    },
+    "CR-DISC-002b-Mobile.dc.html": {
+      "h": 860,
+      "is_interactive": true,
+      "title": "CR-DISC-002b · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 32700
+    },
+    "CR-DISC-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DISC-003 · From a notification · new reply · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 32700
+    },
+    "CR-DISC-003-Mobile.dc.html": {
+      "h": 1260,
+      "is_interactive": true,
+      "title": "CR-DISC-003 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 32700
+    },
+    "CR-CAL-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CAL-001 · Calendar · month · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 32700
+    },
+    "CR-CAL-001-Mobile.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CAL-001 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 32700
     }
   },
   "createdOnFiles": {
@@ -2067,6 +2147,14 @@
       "w": 240,
       "x": 0,
       "y": 31000
+    },
+    "disc2": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Discussions (unanswered · thread · answer · from notification) + calendar month",
+      "w": 240,
+      "x": 0,
+      "y": 32400
     }
   },
   "order": [
@@ -2292,7 +2380,17 @@
     "CR-COURSE-OV-001.dc.html",
     "CR-COURSE-OV-001-Mobile.dc.html",
     "CR-DISC-001.dc.html",
-    "CR-DISC-001-Mobile.dc.html"
+    "CR-DISC-001-Mobile.dc.html",
+    "CR-DISC-001u.dc.html",
+    "CR-DISC-001u-Mobile.dc.html",
+    "CR-DISC-002.dc.html",
+    "CR-DISC-002-Mobile.dc.html",
+    "CR-DISC-002b.dc.html",
+    "CR-DISC-002b-Mobile.dc.html",
+    "CR-DISC-003.dc.html",
+    "CR-DISC-003-Mobile.dc.html",
+    "CR-CAL-001.dc.html",
+    "CR-CAL-001-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

@@ -211,7 +211,7 @@ def mob(t, h):
     t = re.sub(r'hint-size="[^"]*"', f'hint-size="390px,{h}px"', t)
     t = re.sub(r'width: \d+px; height: \d+px;', f'width: 390px; height: {h}px;', t, count=1)
     return re.sub(r'"\$preview":\{"width":\d+,"height":\d+\}', f'"$preview":{{"width":390,"height":{h}}}', t)
-for n, var, hm in [('CR-WAL-002', 'amount', 844), ('CR-WAL-003', 'method', 900), ('CR-WAL-004', 'summary', 900), ('CR-WAL-005', 'processing', 844), ('CR-WAL-005f', 'failed', 844)]:
+for n, var, hm in [('CR-WAL-002', 'amount', 844), ('CR-WAL-003', 'method', 900), ('CR-WAL-004', 'summary', 900)]  # WAL-005 / 005f wrappers now come from build23 (CR-WAL-OUT):
     imp = f'<dc-import name="CR-WAL-FUND" variant="{var}"'
     t = wd.replace('<dc-import name="CR-DASH-ST" variant="s03"', imp)
     wr(n + '.dc.html', re.sub(r'<title>.*?</title>', f'<title>{n} preview</title>', t))

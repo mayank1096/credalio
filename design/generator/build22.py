@@ -45,9 +45,9 @@ p2 = p2.replace('</style>', '''
 @media (max-width: 960px){.ko-row .ko-next{flex-wrap:wrap}.ko-row .ko-next .ko-go{width:100%;justify-content:space-between}.wd-card{gap:0}.wd-ft{margin-top:16px;flex-direction:column;align-items:flex-start;gap:6px}.wd-big{font-size:30px}}
 </style>''', 1)
 p2 = re.sub(r'<title>.*?</title>', '<title>Credalio · Wallet funded</title>', p2)
-wr('CR-WAL-006.dc.html', p2)
+pass  # superseded by build23 (CR-WAL-OUT): wr("CR-WAL-006.dc.html", p2)
 t = wm.replace('<dc-import name="CR-CRED-002" variant="badge"', '<dc-import name="CR-WAL-006"')
-wr('CR-WAL-006-Mobile.dc.html', re.sub(r'<title>.*?</title>', '<title>CR-WAL-006 mobile preview</title>', t))
+pass  # superseded by build23 (CR-WAL-OUT): wr("CR-WAL-006-Mobile.dc.html"
 
 # ======================= CR-WAL-007 · transactions =======================
 # (month, date, type key, title, sub, credits, status, ref)

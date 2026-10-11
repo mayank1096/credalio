@@ -148,14 +148,14 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-PAYO-001e` CR-PAYO-001 · Direct Deposit (ACH): U.S. bank details
 - [x] D [x] M  `CR-PAYO-001g` CR-PAYO-001 · PayPal connected & verified
 - [x] D [x] M  `CR-PAYO-001p` CR-PAYO-001 · Payoneer linked: verification pending
-- [ ] D [ ] M  `CR-PAYO-005` CR-PAYO-005 · Monthly payout status: Scheduled → Processing → Paid
-- [ ] D [ ] M  `CR-PAYO-005a` CR-PAYO-005 · Payout status: action required
-- [ ] D [ ] M  `CR-PAYO-006` CR-PAYO-006 · Payout history
+- [x] D [x] M  `CR-PAYO-005` CR-PAYO-005 · Monthly payout status: Scheduled → Processing → Paid
+- [x] D [x] M  `CR-PAYO-005a` CR-PAYO-005 · Payout status: action required
+- [x] D [x] M  `CR-PAYO-006` CR-PAYO-006 · Payout history
 
 ## 14. Course Overview & Discussions (6)
 
-- [ ] D [ ] M  `CR-COURSE-OV-001` CR-COURSE-OV-001 · Course Overview (canonical creator summary)
-- [ ] D [ ] M  `CR-DISC-001` CR-DISC-001 · Discussions
+- [x] D [x] M  `CR-COURSE-OV-001` CR-COURSE-OV-001 · Course Overview (canonical creator summary)
+- [x] D [x] M  `CR-DISC-001` CR-DISC-001 · Discussions
 - [ ] D [ ] M  `CR-DISC-001u` CR-DISC-001 · Discussions: Unanswered
 - [ ] D [ ] M  `CR-DISC-002` CR-DISC-002 · Discussion thread (Creator badge, answer)
 - [ ] D [ ] M  `CR-DISC-002b` CR-DISC-002 · Unanswered question → reply

@@ -1735,6 +1735,86 @@
       "w": 390,
       "x": 9800,
       "y": 30000
+    },
+    "CR-PAYO-005.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-005 · Payout status · processing · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 31300
+    },
+    "CR-PAYO-005-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-PAYO-005 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 31300
+    },
+    "CR-PAYO-005a.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-005a · Payout status · action required · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 31300
+    },
+    "CR-PAYO-005a-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAYO-005a · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 31300
+    },
+    "CR-PAYO-006.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-006 · Payout history · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 31300
+    },
+    "CR-PAYO-006-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAYO-006 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 31300
+    },
+    "CR-COURSE-OV-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-COURSE-OV-001 · Course overview · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 31300
+    },
+    "CR-COURSE-OV-001-Mobile.dc.html": {
+      "h": 1260,
+      "is_interactive": true,
+      "title": "CR-COURSE-OV-001 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 31300
+    },
+    "CR-DISC-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-DISC-001 · Discussions · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 31300
+    },
+    "CR-DISC-001-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-DISC-001 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 31300
     }
   },
   "createdOnFiles": {
@@ -1979,6 +2059,14 @@
       "w": 240,
       "x": 0,
       "y": 29700
+    },
+    "payst": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Payout status + history, course overview, discussions",
+      "w": 240,
+      "x": 0,
+      "y": 31000
     }
   },
   "order": [
@@ -2194,7 +2282,17 @@
     "CR-PAYO-001g.dc.html",
     "CR-PAYO-001g-Mobile.dc.html",
     "CR-PAYO-001p.dc.html",
-    "CR-PAYO-001p-Mobile.dc.html"
+    "CR-PAYO-001p-Mobile.dc.html",
+    "CR-PAYO-005.dc.html",
+    "CR-PAYO-005-Mobile.dc.html",
+    "CR-PAYO-005a.dc.html",
+    "CR-PAYO-005a-Mobile.dc.html",
+    "CR-PAYO-006.dc.html",
+    "CR-PAYO-006-Mobile.dc.html",
+    "CR-COURSE-OV-001.dc.html",
+    "CR-COURSE-OV-001-Mobile.dc.html",
+    "CR-DISC-001.dc.html",
+    "CR-DISC-001-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

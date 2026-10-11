@@ -1895,6 +1895,86 @@
       "w": 390,
       "x": 9800,
       "y": 32700
+    },
+    "CR-CAL-001w.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CAL-001w · Calendar · week · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 34100
+    },
+    "CR-CAL-001w-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-CAL-001w · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 34100
+    },
+    "CR-CAL-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CAL-002 · Event detail · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 34100
+    },
+    "CR-CAL-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CAL-002 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 34100
+    },
+    "CR-CAL-001d.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CAL-001d · Calendar · day · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 34100
+    },
+    "CR-CAL-001d-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-CAL-001d · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 34100
+    },
+    "CR-CAL-001a.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CAL-001a · Calendar · agenda · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 34100
+    },
+    "CR-CAL-001a-Mobile.dc.html": {
+      "h": 1060,
+      "is_interactive": true,
+      "title": "CR-CAL-001a · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 34100
+    },
+    "CR-CAL-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CAL-003 · Weekly availability · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 34100
+    },
+    "CR-CAL-003-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-CAL-003 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 34100
     }
   },
   "createdOnFiles": {
@@ -2155,6 +2235,14 @@
       "w": 240,
       "x": 0,
       "y": 32400
+    },
+    "cal2": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Calendar: week · event detail · day · agenda · weekly availability",
+      "w": 240,
+      "x": 0,
+      "y": 33800
     }
   },
   "order": [
@@ -2390,7 +2478,17 @@
     "CR-DISC-003.dc.html",
     "CR-DISC-003-Mobile.dc.html",
     "CR-CAL-001.dc.html",
-    "CR-CAL-001-Mobile.dc.html"
+    "CR-CAL-001-Mobile.dc.html",
+    "CR-CAL-001w.dc.html",
+    "CR-CAL-001w-Mobile.dc.html",
+    "CR-CAL-002.dc.html",
+    "CR-CAL-002-Mobile.dc.html",
+    "CR-CAL-001d.dc.html",
+    "CR-CAL-001d-Mobile.dc.html",
+    "CR-CAL-001a.dc.html",
+    "CR-CAL-001a-Mobile.dc.html",
+    "CR-CAL-003.dc.html",
+    "CR-CAL-003-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

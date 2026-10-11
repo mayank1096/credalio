@@ -164,11 +164,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 ## 15. Calendar, availability & presence (8)
 
 - [x] D [x] M  `CR-CAL-001` CR-CAL-001 · Calendar: month
-- [ ] D [ ] M  `CR-CAL-001w` CR-CAL-001 · Calendar: week (unavailable hours shaded)
-- [ ] D [ ] M  `CR-CAL-002` CR-CAL-002 · Event detail (role-based actions)
-- [ ] D [ ] M  `CR-CAL-001d` CR-CAL-001 · Calendar: day
-- [ ] D [ ] M  `CR-CAL-001a` CR-CAL-001 · Calendar: agenda
-- [ ] D [ ] M  `CR-CAL-003` CR-CAL-003 · Weekly availability (multiple windows)
+- [x] D [x] M  `CR-CAL-001w` CR-CAL-001 · Calendar: week (unavailable hours shaded)
+- [x] D [x] M  `CR-CAL-002` CR-CAL-002 · Event detail (role-based actions)
+- [x] D [x] M  `CR-CAL-001d` CR-CAL-001 · Calendar: day
+- [x] D [x] M  `CR-CAL-001a` CR-CAL-001 · Calendar: agenda
+- [x] D [x] M  `CR-CAL-003` CR-CAL-003 · Weekly availability (multiple windows)
 - [ ] D [ ] M  `CR-CAL-004` CR-CAL-004 · Availability exceptions
 - [ ] D [ ] M  `CR-CAL-005` CR-CAL-005 · Presence & visibility
 

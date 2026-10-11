@@ -85,7 +85,7 @@ css = COMMON + '''
 .ps-card{padding:22px 20px 16px 20px}
 .ps-top{flex-direction:column;align-items:flex-start;gap:20px}
 .ps-big{font-size:36px}
-.ps-trk{margin-top:28px;grid-template-columns:1fr;gap:0}
+.ps-trk{margin-top:24px;padding-top:24px;border-top:1.5px solid #F0F2F8;grid-template-columns:1fr;gap:0}
 .ps-trk li{padding:0 0 22px 38px;min-height:24px}
 .ps-trk li::before{top:24px;bottom:0;left:10px;right:auto;width:3px;height:auto}
 .ps-trk li:last-child::before{display:none}

@@ -1,6 +1,7 @@
 # build22: CR-WAL-006 (wallet funded, standard success layout from LIVE CR-POL-002), CR-WAL-007 (transactions, Studio page),
 # validation payment CR-PAY one source, variants quote / short / enough / covered (= PAY-001 / 002 / 002b / 002f) on the COL focus shell.
 # Credits are cobalt, never gold. Imports build17 for page(). Only writes its own files. usage: python3 build22.py <canvas project dir>
+from tipx import tip, TIP_CSS
 import re, sys, os, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import build17 as B
@@ -122,11 +123,11 @@ X = X[X.index('<svg'):X.index('</a>')]
 STEPS = '<ol class="cl-steps" aria-label="Steps"><li class="{{s0}}"><i></i><span>{{st0}}</span></li><li class="{{s1}}"><i></i><span>{{st1}}</span></li><li class="{{s2}}"><i></i><span>Confirm</span></li></ol>'
 side = ('<aside class="cl-side ob-in"><h1 class="cl-h1 py-h">Data Analysis with SQL</h1>'
         '<p class="cl-sub">{{sideSub}}</p>'
-        '<div class="cl-meta"><span>Course</span><span>{{sideMeta}}</span></div>' + STEPS + '</aside>')
+        '<div class="cl-meta"><span>{{sideMeta}}</span></div>' + STEPS + '</aside>')
 LINES = [('Educational validator', '400'), ('Subject matter validator · case lead', '500'), ('Assessment validator', '300'), ('Credalio service fee (5%)', '60')]
 quote = ('<sc-if value="{{vQuote}}" hint-placeholder-val="{{true}}"><section class="cl-panel py-p ob-in2" aria-labelledby="py-h1">' + '<span class="py-chip">' + CRED + '<span>Balance</span><b>{{balTxt}}</b></span>' + '<h2 id="py-h1" class="cl-ph">{{qH}}</h2>'
          '<sc-if value="{{isVal}}" hint-placeholder-val="{{true}}"><dl class="py-dl">' + ''.join(f'<div><dt>{k}</dt><dd>{v}</dd></div>' for k, v in LINES) + '<div class="py-tot"><dt>Total</dt><dd>' + CRED + '1,260 Credits</dd></div></dl></sc-if>'
-         '<sc-if value="{{isReval}}" hint-placeholder-val="{{false}}"><dl class="py-dl">' + ''.join(f'<div><dt>{k}</dt><dd>{v}</dd></div>' for k, v in [('Subject matter validator · changed content', '360'), ('Assessment validator · final assessment', '240'), ('Credalio service fee (5%)', '30')]) + '<div class="py-tot"><dt>Total</dt><dd>' + CRED + '630 Credits</dd></div></dl><p class="py-note">Only the changed parts are reviewed. You have enough Credits.</p></sc-if>'
+         '<sc-if value="{{isReval}}" hint-placeholder-val="{{false}}"><dl class="py-dl">' + ''.join(f'<div><dt>{k}</dt><dd>{v}</dd></div>' for k, v in [('Subject matter validator · changed content', '360'), ('Assessment validator · final assessment', '240'), ('Credalio service fee (5%)', '30')]) + '<div class="py-tot"><dt>Total' + tip('Only the changed parts are reviewed, so you pay less than a full validation.') + '</dt><dd>' + CRED + '630 Credits</dd></div></dl></sc-if>'
          '<div class="cl-foot"><a href="{{qHref}}" class="ds-btn cl-go py-go"><span>{{qCta}}</span><span class="ob-arrow">' + ARR + '</span></a></div></section></sc-if>')
 def check(ok, rows, note, cta, href):
     return ((('<div class="py-chk ' + ('ok' if ok else 'short') + '">' + ''.join(f'<div class="{c}"><span>{k}</span><b>{v}</b></div>' for k, v, c in rows) + '</div>') if rows else '')
@@ -140,20 +141,20 @@ enough = ('<sc-if value="{{vEnough}}" hint-placeholder-val="{{false}}"><section 
           '<h2 id="py-h3" class="cl-ph">{{enoughH}}</h2><p class="cl-pp">{{enoughP}}</p>'
           + check(True, [], '', 'Continue', 'CR-PAY-003.dc.html') + '</section></sc-if>')
 confirm = ('<sc-if value="{{vConfirm}}" hint-placeholder-val="{{false}}"><section class="cl-panel py-p ob-in2" aria-labelledby="py-h4">' + '<span class="py-chip">' + CRED + '<span>Balance</span><b>{{balTxt}}</b></span>' + '<h2 id="py-h4" class="cl-ph">Confirm payment</h2>'
-           '<dl class="py-dl"><div class="tx"><dt>Service</dt><dd>Course validation</dd></div><div class="tx"><dt>Learning experience</dt><dd>Data Analysis with SQL</dd></div><div><dt>Balance after paying</dt><dd>2,390</dd></div>'
+           '<dl class="py-dl"><div><dt>Balance after paying</dt><dd>2,390</dd></div>'
            '<div class="py-tot"><dt>You pay</dt><dd>' + CRED + '1,260 Credits</dd></div></dl><p class="py-note">The validation case opens as soon as you pay.</p>'
            '<div class="cl-foot"><a href="CR-PAY-002b.dc.html" class="ds-ghost cl-bk" aria-label="Back">' + ic('<path d="M19 12H5"></path><path d="m11 6-6 6 6 6"></path>', 18, 2.2) + '<span>Back</span></a><a href="CR-PAY-003s.dc.html" class="ds-btn cl-go py-go"><span>Pay 1,260 Credits</span><span class="ob-arrow">' + ARR + '</span></a></div></section></sc-if>')
 CHG = [('Chapter 4 · rewritten', '4 lessons', 'Standard', 'am'), ('Final assessment', '12 questions replaced', 'Standard', 'am'), ('Course description', 'Reworded', 'Minor', 'cb'), ('Chapter 2', 'Typo fixes', 'No review', 'gy')]
 assess = ('<sc-if value="{{vAssess}}" hint-placeholder-val="{{false}}"><section class="cl-panel py-p ob-in2" aria-labelledby="py-h5"><h2 id="py-h5" class="cl-ph">What changed</h2>'
           '<ul class="rv-l">' + ''.join(f'<li><span class="rv-t"><b>{t}</b><span>{d}</span></span><span class="rv-p {c}">{l}</span></li>' for t, d, l, c in CHG) + '</ul>'
-          '<div class="rv-lv"><span class="hp-lab">Revalidation needed</span><div class="rv-seg" aria-label="Level"><span>None</span><span>Minor</span><span class="on">Standard</span><span>Major</span></div>'
-          '<p class="rv-x">Chapter 4 and the final assessment changed, so the subject matter and assessment validators review those parts again. Your current version stays live until they decide.</p></div>'
+          '<div class="rv-lv"><span class="hp-lab">Revalidation needed' + tip('Chapter 4 and the final assessment changed, so the subject matter and assessment validators review those parts again.') + '</span><div class="rv-seg" aria-label="Level"><span>None</span><span>Minor</span><span class="on">Standard</span><span>Major</span></div>'
+          '<p class="rv-x">Your current version stays live until they decide.</p></div>'
           '<div class="cl-foot"><a href="CR-REVAL-002.dc.html" class="ds-btn cl-go py-go"><span>See the quote</span><span class="ob-arrow">' + ARR + '</span></a></div></section></sc-if>')
 body = ('<div class="tk-root cl-root {{rootCls}}">\n<div class="tk-scene" aria-hidden="true"></div><div class="cl-glow" aria-hidden="true"></div>\n'
         '<header class="tk-top">\n<a href="CR-DEC-004.dc.html" class="lp-x" aria-label="Close">' + X + '</a>\n'
         '<div class="lp-title"><span class="lp-t1" style="display: block">{{barTitle}}</span></div>\n<span style="flex-grow: 1"></span>\n</header>\n'
         '<main class="cl">\n' + side + '\n<div class="cl-main">' + quote + short + enough + confirm + assess + '</div>\n</main>\n</div>\n</x-dc>\n')
-CSS = '''
+CSS = TIP_CSS + '''
 /* build22 validation payment */
 .cr-ic{display:inline-flex;width:28px;height:28px;border-radius:50%;background:#EAF0FF;color:#1652F0;align-items:center;justify-content:center;flex-shrink:0}
 .py-h{margin-top:0}
@@ -216,7 +217,7 @@ class Component extends DCLogic {
       st0: rv ? 'Changes' : 'Quote', st1: rv ? 'Quote' : 'Credits',
       rootCls: v === 'short' ? 'is-wait' : (v === 'enough' || cov ? 'is-ok' : ''),
       barTitle: rv ? 'Revalidation' : 'Submit for validation',
-      sideSub: rv ? 'You updated the course after it was validated. Credalio checked what changed and how much needs a second look.' : 'Course validation · 6 chapters, 31 items and 3 assessments. Validators review it together.',
+      sideSub: rv ? 'You updated the course after it was validated. Credalio checked what changed and how much needs a second look.' : 'Course validation · 6 chapters, 31 items and 3 assessments.',
       sideMeta: rv ? 'Gold validated · live' : 'All declarations signed',
       isVal: !rv, isReval: rv, qH: rv ? 'Your revalidation quote' : 'Your validation quote',
       qHref: rv ? '#' : 'CR-PAY-002.dc.html', qCta: rv ? 'Continue' : 'Pay with Credits',

@@ -117,7 +117,7 @@ p_fail = ('<sc-if value="{{vFail}}" hint-placeholder-val="{{false}}"><section cl
 body = ('<div class="tk-root cl-root {{rootCls}}">\n<div class="tk-scene" aria-hidden="true"></div><div class="cl-glow" aria-hidden="true"></div>\n'
         '<header class="tk-top">\n<a href="CR-WAL-001.dc.html" class="lp-x" aria-label="Close and go back to your wallet">' + X + '</a>\n'
         '<div class="lp-title"><span class="lp-t1" style="display: block">Credit Wallet</span></div>\n<span style="flex-grow: 1"></span>\n</header>\n'
-        '<main class="cl">\n' + side + '\n<div class="cl-main">' + p_amount + p_method + p_sum + p_proc + p_fail + '</div>\n</main>\n</div>\n</x-dc>\n')
+        '<main class="cl {{mainCls}}">\n<sc-if value="{{showSide}}" hint-placeholder-val="{{true}}">' + side + '</sc-if>\n<div class="cl-main">' + p_amount + p_method + p_sum + p_proc + p_fail + '</div>\n</main>\n</div>\n</x-dc>\n')
 CSS = '''
 /* build21 add credits */
 .cr-ic{display:inline-flex;width:36px;height:36px;border-radius:50%;background:#EAF0FF;color:#1652F0;align-items:center;justify-content:center;flex-shrink:0}
@@ -167,6 +167,7 @@ CSS = '''
 .wf-safe{margin-top:22px;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:#F5F8FF;font-size:13.5px;font-weight:500;color:#0E3BB8;text-align:left}
 .wf-x{width:60px;height:60px;border-radius:50%;background:#B26A00;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px #FFF3DC;margin-bottom:22px}
 .wf-fa{margin-top:24px;display:flex;gap:10px;justify-content:center}
+.wf-solo{grid-template-columns:minmax(0,600px);justify-content:center;padding-top:clamp(40px,9vh,96px)}
 .is-wait .cl-glow{background:radial-gradient(60% 100% at 50% 0,rgba(214,140,20,.10),transparent 70%)}
 @media (max-width: 960px){
 .wf-fa{flex-direction:column-reverse;width:100%}.wf-fa .cl-go{justify-content:space-between}
@@ -190,7 +191,7 @@ class Component extends DCLogic {
     const n = S.amt === 'c' ? (parseInt(String(S.custom).replace(/\\D/g, ''), 10) || 0) : S.amt;
     const step = { amount: 0, method: 1, summary: 2, processing: 3, failed: 2 }[v];
     return Object.assign(out, {
-      vAmount: v === 'amount', vMethod: v === 'method', vSummary: v === 'summary', vProc: v === 'processing', vFail: v === 'failed', showBal: v !== 'failed', rootCls: v === 'failed' ? 'is-wait' : '',
+      vAmount: v === 'amount', vMethod: v === 'method', vSummary: v === 'summary', vProc: v === 'processing', vFail: v === 'failed', showBal: v !== 'failed', showSide: v !== 'failed', mainCls: v === 'failed' ? 'wf-solo' : '', rootCls: v === 'failed' ? 'is-wait' : '',
       s0: step > 0 ? 'dn' : 'on', s1: step > 1 ? 'dn' : (step === 1 ? 'on' : ''), s2: step > 2 ? 'dn' : (step === 2 ? 'on' : ''),
       isCustom: S.amt === 'c', custom: S.custom, onCustom: (e) => this.setState({ custom: e.target.value }),
       amtTxt: n.toLocaleString('en-US') + ' Credits', usdTxt: '$' + (n / 10).toLocaleString('en-US', { minimumFractionDigits: 2 })

@@ -1383,6 +1383,118 @@
       "w": 390,
       "x": 9800,
       "y": 24600
+    },
+    "CR-WAL-005f.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-WAL-005f · Payment failed, not charged · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 25900
+    },
+    "CR-WAL-005f-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-WAL-005f · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 25900
+    },
+    "CR-WAL-006.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-WAL-006 · Wallet funded · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 25900
+    },
+    "CR-WAL-006-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-WAL-006 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 25900
+    },
+    "CR-WAL-007.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-WAL-007 · Transaction history · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 25900
+    },
+    "CR-WAL-007-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-WAL-007 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 25900
+    },
+    "CR-PAY-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAY-001 · Validation quote · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 25900
+    },
+    "CR-PAY-001-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-PAY-001 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 25900
+    },
+    "CR-PAY-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAY-002 · Balance check · more Credits needed · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 25900
+    },
+    "CR-PAY-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-PAY-002 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 25900
+    },
+    "CR-PAY-002b.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAY-002b · Balance check · enough Credits · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 25900
+    },
+    "CR-PAY-002b-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-PAY-002b · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 25900
+    },
+    "CR-PAY-002f.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAY-002f · Back from funding · shortfall covered · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 25900
+    },
+    "CR-PAY-002f-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-PAY-002f · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 25900
     }
   },
   "createdOnFiles": {
@@ -1595,6 +1707,14 @@
       "w": 240,
       "x": 0,
       "y": 24300
+    },
+    "pay": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Wallet outcomes + validation payment: failed (not charged) · funded · transactions · quote → balance check (short / enough) → back from funding",
+      "w": 240,
+      "x": 0,
+      "y": 25600
     }
   },
   "order": [
@@ -1766,7 +1886,21 @@
     "CR-WAL-004.dc.html",
     "CR-WAL-004-Mobile.dc.html",
     "CR-WAL-005.dc.html",
-    "CR-WAL-005-Mobile.dc.html"
+    "CR-WAL-005-Mobile.dc.html",
+    "CR-WAL-005f.dc.html",
+    "CR-WAL-005f-Mobile.dc.html",
+    "CR-WAL-006.dc.html",
+    "CR-WAL-006-Mobile.dc.html",
+    "CR-WAL-007.dc.html",
+    "CR-WAL-007-Mobile.dc.html",
+    "CR-PAY-001.dc.html",
+    "CR-PAY-001-Mobile.dc.html",
+    "CR-PAY-002.dc.html",
+    "CR-PAY-002-Mobile.dc.html",
+    "CR-PAY-002b.dc.html",
+    "CR-PAY-002b-Mobile.dc.html",
+    "CR-PAY-002f.dc.html",
+    "CR-PAY-002f-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

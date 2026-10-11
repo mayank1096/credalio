@@ -111,10 +111,13 @@ p_sum = ('<sc-if value="{{vSummary}}" hint-placeholder-val="{{false}}"><section 
 p_proc = ('<sc-if value="{{vProc}}" hint-placeholder-val="{{false}}"><section class="cl-panel wf-proc ob-in2" aria-live="polite"><span class="wf-spin" aria-hidden="true"></span>'
           '<h2 class="cl-ph">Processing your payment</h2><p class="cl-pp">$253.75 by Visa •••• 4417. We’re waiting for your bank to confirm. This page updates on its own.</p>'
           '<div class="wf-safe">' + CHK + '<span>You won’t be charged twice. Paying again is paused until this finishes.</span></div></section></sc-if>')
-body = ('<div class="tk-root cl-root">\n<div class="tk-scene" aria-hidden="true"></div><div class="cl-glow" aria-hidden="true"></div>\n'
+p_fail = ('<sc-if value="{{vFail}}" hint-placeholder-val="{{false}}"><section class="cl-panel wf-proc wf-fail ob-in2" role="alert"><span class="wf-x" aria-hidden="true">' + ic('<path d="M12 7v6M12 16.5v.01"></path>', 26, 2.6) + '</span>'
+          '<h2 class="cl-ph">Your payment didn’t go through</h2><p class="cl-pp">Your bank declined $253.75 by Visa •••• 4417. You haven’t been charged, and your balance is still 1,150 Credits.</p>'
+          '<div class="wf-fa"><a href="CR-WAL-004.dc.html" class="ds-ghost">Try again</a><a href="CR-WAL-003.dc.html" class="ds-btn cl-go"><span>Use another method</span><span class="ob-arrow">' + ARR + '</span></a></div></section></sc-if>')
+body = ('<div class="tk-root cl-root {{rootCls}}">\n<div class="tk-scene" aria-hidden="true"></div><div class="cl-glow" aria-hidden="true"></div>\n'
         '<header class="tk-top">\n<a href="CR-WAL-001.dc.html" class="lp-x" aria-label="Close and go back to your wallet">' + X + '</a>\n'
         '<div class="lp-title"><span class="lp-t1" style="display: block">Credit Wallet</span></div>\n<span style="flex-grow: 1"></span>\n</header>\n'
-        '<main class="cl">\n' + side + '\n<div class="cl-main">' + p_amount + p_method + p_sum + p_proc + '</div>\n</main>\n</div>\n</x-dc>\n')
+        '<main class="cl">\n' + side + '\n<div class="cl-main">' + p_amount + p_method + p_sum + p_proc + p_fail + '</div>\n</main>\n</div>\n</x-dc>\n')
 CSS = '''
 /* build21 add credits */
 .cr-ic{display:inline-flex;width:36px;height:36px;border-radius:50%;background:#EAF0FF;color:#1652F0;align-items:center;justify-content:center;flex-shrink:0}
@@ -162,7 +165,11 @@ CSS = '''
 @keyframes koSpin{to{transform:rotate(360deg)}}
 .wf-proc .cl-pp{max-width:420px}
 .wf-safe{margin-top:22px;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:#F5F8FF;font-size:13.5px;font-weight:500;color:#0E3BB8;text-align:left}
+.wf-x{width:60px;height:60px;border-radius:50%;background:#B26A00;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px #FFF3DC;margin-bottom:22px}
+.wf-fa{margin-top:24px;display:flex;gap:10px;justify-content:center}
+.is-wait .cl-glow{background:radial-gradient(60% 100% at 50% 0,rgba(214,140,20,.10),transparent 70%)}
 @media (max-width: 960px){
+.wf-fa{flex-direction:column-reverse;width:100%}.wf-fa .cl-go{justify-content:space-between}
 .wf-bal{margin-top:16px}
 .wf-g{grid-template-columns:1fr 1fr}
 .wf-m{padding:12px 44px 12px 12px}
@@ -181,9 +188,9 @@ class Component extends DCLogic {
     out.aC = { on: S.amt === 'c' ? 'true' : 'false', cls: S.amt === 'c' ? 'xb-on' : '', pick: () => this.setState({ amt: 'c' }) };
     ['card', 'bank', 'local', 'mforge'].forEach((k) => { const on = S.pm === k; out['m_' + k] = { on: on ? 'true' : 'false', cls: on ? 'xb-on' : '', pick: () => this.setState({ pm: k }) }; });
     const n = S.amt === 'c' ? (parseInt(String(S.custom).replace(/\\D/g, ''), 10) || 0) : S.amt;
-    const step = { amount: 0, method: 1, summary: 2, processing: 3 }[v];
+    const step = { amount: 0, method: 1, summary: 2, processing: 3, failed: 2 }[v];
     return Object.assign(out, {
-      vAmount: v === 'amount', vMethod: v === 'method', vSummary: v === 'summary', vProc: v === 'processing',
+      vAmount: v === 'amount', vMethod: v === 'method', vSummary: v === 'summary', vProc: v === 'processing', vFail: v === 'failed', rootCls: v === 'failed' ? 'is-wait' : '',
       s0: step > 0 ? 'dn' : 'on', s1: step > 1 ? 'dn' : (step === 1 ? 'on' : ''), s2: step > 2 ? 'dn' : (step === 2 ? 'on' : ''),
       isCustom: S.amt === 'c', custom: S.custom, onCustom: (e) => this.setState({ custom: e.target.value }),
       amtTxt: n.toLocaleString('en-US') + ' Credits', usdTxt: '$' + (n / 10).toLocaleString('en-US', { minimumFractionDigits: 2 })
@@ -203,7 +210,7 @@ def mob(t, h):
     t = re.sub(r'hint-size="[^"]*"', f'hint-size="390px,{h}px"', t)
     t = re.sub(r'width: \d+px; height: \d+px;', f'width: 390px; height: {h}px;', t, count=1)
     return re.sub(r'"\$preview":\{"width":\d+,"height":\d+\}', f'"$preview":{{"width":390,"height":{h}}}', t)
-for n, var, hm in [('CR-WAL-002', 'amount', 844), ('CR-WAL-003', 'method', 900), ('CR-WAL-004', 'summary', 900), ('CR-WAL-005', 'processing', 844)]:
+for n, var, hm in [('CR-WAL-002', 'amount', 844), ('CR-WAL-003', 'method', 900), ('CR-WAL-004', 'summary', 900), ('CR-WAL-005', 'processing', 844), ('CR-WAL-005f', 'failed', 844)]:
     imp = f'<dc-import name="CR-WAL-FUND" variant="{var}"'
     t = wd.replace('<dc-import name="CR-DASH-ST" variant="s03"', imp)
     wr(n + '.dc.html', re.sub(r'<title>.*?</title>', f'<title>{n} preview</title>', t))

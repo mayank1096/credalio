@@ -123,7 +123,7 @@ CSS = '''
 .cr-ic{display:inline-flex;width:36px;height:36px;border-radius:50%;background:#EAF0FF;color:#1652F0;align-items:center;justify-content:center;flex-shrink:0}
 .hp-lab{display:block;font-size:12.5px;font-weight:500;color:#8A93AD}
 .wf-h{margin-top:0}
-.wf-bal{margin-top:22px;display:flex;align-items:center;gap:12px}
+.wf-bal{margin-top:20px;display:flex;align-items:center;gap:12px}
 .wf-bal b{display:block;margin-top:2px;font-size:17px;font-weight:600}
 .wf-g{margin-top:18px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
 .wf-g .wf-o:last-child{grid-column:1 / -1;flex-direction:row;align-items:baseline;gap:10px;padding:14px 16px}

@@ -232,6 +232,15 @@ body{background:#FFFFFF}
 .lp-scene ~ .lp-body{background-color:transparent !important}
 .lp-scene{position:absolute;left:0;right:0;bottom:0;height:min(44vh,38vw);background:url(/_blob/6acc9dd1cd600c17d2fd6381a3069aaa) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
 @media (max-width: 960px){.lp-scene{height:220px;background-size:250% auto;background-position:52% 100%}}
+
+/* lesson breathing room (designer: too stuffed vertically) */
+@media (min-width: 961px){
+.ls-top .lp-p{margin-top:20px}
+.ls-top + .ls-roles,.ls-top + .vc2,.ls-top + .ls-cmp,.ls-top + .ls-vid{margin-top:40px}
+.ls-roles li{padding:20px}
+.ls-roles{gap:16px}
+.lp-main .lp-ask{margin-top:40px}
+}
 </style>
 </helmet>
 <div class="lp-root"><div class="lp-scene" aria-hidden="true"></div>

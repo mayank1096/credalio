@@ -137,7 +137,7 @@ wr('CR-SET.dc.html', s); OUT.append('CR-SET.dc.html')
 
 # wrappers (same templates as build32)
 wd, wm = rd('CR-SET-001.dc.html'), rd('CR-SET-001-Mobile.dc.html')
-for n, var, hm in [('CR-SET-004', 'notif', 1050), ('CR-SET-005', 'privacy', 860), ('CR-SET-006', 'lang', 844), ('CR-SET-008', 'signin', 844)]:
+for n, var, hm in [('CR-SET-004', 'notif', 1180), ('CR-SET-005', 'privacy', 860), ('CR-SET-006', 'lang', 844), ('CR-SET-008', 'signin', 844)]:
     for tpl, suf in [(wd, ''), (wm, '-Mobile')]:
         t = tpl.replace('variant="account"', f'variant="{var}"').replace('CR-SET-001', n)
         if suf:

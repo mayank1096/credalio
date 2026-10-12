@@ -2215,6 +2215,86 @@
       "w": 390,
       "x": 9800,
       "y": 38300
+    },
+    "CR-PROF-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PROF-002 · Public creator profile · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 39700
+    },
+    "CR-PROF-002-Mobile.dc.html": {
+      "h": 1220,
+      "is_interactive": true,
+      "title": "CR-PROF-002 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 39700
+    },
+    "CR-ORG-SOON.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORG-SOON · My organizations · coming soon · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 39700
+    },
+    "CR-ORG-SOON-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-ORG-SOON · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 39700
+    },
+    "CR-SET-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-SET-001 · Settings · Account · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 39700
+    },
+    "CR-SET-001-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "title": "CR-SET-001 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 39700
+    },
+    "CR-SET-002d.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-SET-002d · Delete account · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 39700
+    },
+    "CR-SET-002d-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-SET-002d · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 39700
+    },
+    "CR-SET-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-SET-003 · Settings · Security · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 39700
+    },
+    "CR-SET-003-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-SET-003 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 39700
     }
   },
   "createdOnFiles": {
@@ -2507,6 +2587,14 @@
       "w": 240,
       "x": 0,
       "y": 38000
+    },
+    "set1": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Public profile · My organizations · Settings (account, delete, security)",
+      "w": 240,
+      "x": 0,
+      "y": 39400
     }
   },
   "order": [
@@ -2782,7 +2870,17 @@
     "CR-PROF-001c.dc.html",
     "CR-PROF-001c-Mobile.dc.html",
     "CR-PROF-001v.dc.html",
-    "CR-PROF-001v-Mobile.dc.html"
+    "CR-PROF-001v-Mobile.dc.html",
+    "CR-PROF-002.dc.html",
+    "CR-PROF-002-Mobile.dc.html",
+    "CR-ORG-SOON.dc.html",
+    "CR-ORG-SOON-Mobile.dc.html",
+    "CR-SET-001.dc.html",
+    "CR-SET-001-Mobile.dc.html",
+    "CR-SET-002d.dc.html",
+    "CR-SET-002d-Mobile.dc.html",
+    "CR-SET-003.dc.html",
+    "CR-SET-003-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

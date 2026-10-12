@@ -190,14 +190,14 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-PROF-001` PROF-001 · Creator Profile management
 - [x] D [x] M  `CR-PROF-001c` PROF-001 · Credentials (verification status)
 - [x] D [x] M  `CR-PROF-001v` PROF-001 · Public profile preview
-- [ ] D [ ] M  `CR-PROF-002` PROF-002 · Public Creator Profile
-- [ ] D [ ] M  `CR-ORG-SOON` My Organizations: coming soon
+- [x] D [x] M  `CR-PROF-002` PROF-002 · Public Creator Profile
+- [x] D [x] M  `CR-ORG-SOON` My Organizations: coming soon
 
 ## 18. Settings (8)
 
-- [ ] D [ ] M  `CR-SET-001` SET-001/002 · Settings: Account
-- [ ] D [ ] M  `CR-SET-002d` SET-002 · Delete account: obligations first
-- [ ] D [ ] M  `CR-SET-003` SET-003 · Security
+- [x] D [x] M  `CR-SET-001` SET-001/002 · Settings: Account
+- [x] D [x] M  `CR-SET-002d` SET-002 · Delete account: obligations first
+- [x] D [x] M  `CR-SET-003` SET-003 · Security
 - [ ] D [ ] M  `CR-SET-004` SET-004 · Notification preferences (matrix)
 - [ ] D [ ] M  `CR-SET-005` SET-005 · Privacy
 - [ ] D [ ] M  `CR-SET-006` SET-006 · Language & Region

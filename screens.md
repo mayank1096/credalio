@@ -169,14 +169,14 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-CAL-001d` CR-CAL-001 · Calendar: day
 - [x] D [x] M  `CR-CAL-001a` CR-CAL-001 · Calendar: agenda
 - [x] D [x] M  `CR-CAL-003` CR-CAL-003 · Weekly availability (multiple windows)
-- [ ] D [ ] M  `CR-CAL-004` CR-CAL-004 · Availability exceptions
-- [ ] D [ ] M  `CR-CAL-005` CR-CAL-005 · Presence & visibility
+- [x] D [x] M  `CR-CAL-004` CR-CAL-004 · Availability exceptions
+- [x] D [x] M  `CR-CAL-005` CR-CAL-005 · Presence & visibility
 
 ## 16. Learner Support, Learners & Analytics (10)
 
-- [ ] D [ ] M  `CR-SUP-001` WORK · Learner Support inbox
-- [ ] D [ ] M  `CR-SUP-002` Learner Support conversation (escalated from AI Coach)
-- [ ] D [ ] M  `CR-LRN-001` LRN-001 · Learners
+- [x] D [x] M  `CR-SUP-001` WORK · Learner Support inbox
+- [x] D [x] M  `CR-SUP-002` Learner Support conversation (escalated from AI Coach)
+- [x] D [x] M  `CR-LRN-001` LRN-001 · Learners
 - [ ] D [ ] M  `CR-LRN-002` LRN-002 · Learner detail (need-to-know)
 - [ ] D [ ] M  `CR-ANA-001` ANA-001 · Analytics overview
 - [ ] D [ ] M  `CR-ANA-004` ANA-004 · Export report (CSV)

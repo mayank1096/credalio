@@ -99,6 +99,7 @@ def lesson(tpl, mod, mname, steps, cur, mins, h1, lead, note, figure, prev, nxt,
     s = _foot(s, prev[0], prev[1], cur + 1, len(steps), nxt[0], nxt[1])
     i = s.rfind('</style>', 0, s.find('</helmet>')); s = s[:i] + LESSON_CSS + s[i:]
     if scene: s = add_scene(s)
+    s = trim(s)
     return re.sub(r'<title>.*?</title>', f'<title>{title}</title>', s)
 def note(head, text, icon='info'):
     return f'<aside class="ls-gk ob-in3"><i>{svg(icon, 16, 2.2)}</i><b>{head}</b><span>{text}</span></aside>'
@@ -124,6 +125,7 @@ def check(tpl, mod, mname, steps, Q, prev, done_href, title):
     s = s.replace('{{q.n}} · {{q.kind}}', '{{q.n}}')
     s = _foot(s, prev[0], prev[1], n, n, done_href, '', dyn=True)
     s = add_scene(s)
+    s = trim(s)
     return re.sub(r'<title>.*?</title>', f'<title>{title}</title>', s)
 
 # ---------- module overview (template LIVE CR-ORI-M1-00) / module complete (template LIVE CR-ORI-006) / compare figure ----------
@@ -225,3 +227,12 @@ def links(rows):
         chips = ''.join(f'<span class="ln-c">{svg("check", 13, 2.4)}{e}</span>' for e in ev) if ev else f'<span class="ln-c">{svg("info", 13, 2.4)}No evidence yet</span>'
         out += f'<li class="{"" if ev else "ln-miss"}"><span class="ln-o"><span>Outcome {i + 1}</span><b>{o}</b></span><span class="ln-e">{chips}</span></li>'
     return out + '</ul>'
+
+# ---------- cleanup 5 (designer 2026-10-12): no rail module title (top bar has it), no Lesson/Check under rail steps,
+# no "Step n of N" in the bottom bar (top bar has it), no "Quick knowledge check" eyebrow over "Two quick questions" ----------
+def trim(s):
+    s = re.sub(r'<span class="lp-rl">[^<]*</span>', '', s, count=1)
+    s = re.sub(r'(<span class="lp-ot"><b>[^<]*</b>)<span>[^<]*</span>', r'\1', s)
+    s = re.sub(r'<span class="lp-stepn">[^<]*</span>', '', s, count=1)
+    s = re.sub(r'<span class="lp-eb ob-in">Quick knowledge check</span>', '', s, count=1)
+    return s

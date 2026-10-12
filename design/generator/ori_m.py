@@ -14,6 +14,12 @@ ICO = {
 def svg(k, w=20, sw=1.9): return f'<svg width="{w}" height="{w}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{ICO[k]}</svg>'
 CHK = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>'
 LESSON_CSS = """
+/* rail breathing room (designer: too stuffed vertically) */
+.lp-rail{width:264px}
+.lp-rl{margin-bottom:20px}
+.lp-o{min-height:68px}
+.lp-ot{gap:4px}
+.lp-ol::before{top:22px;bottom:22px}
 /* ori_m lesson blocks */
 @media (min-width: 961px){.vc3{grid-template-columns:minmax(0,1fr) 36px minmax(0,1fr) 36px minmax(0,1fr)}}
 .ls-gk{padding:16px 18px;border-radius:18px;background:#F5F8FF;border:1.5px solid #E6EAF3;display:flex;flex-direction:column;gap:4px}

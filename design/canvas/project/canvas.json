@@ -2375,6 +2375,86 @@
       "w": 390,
       "x": 9800,
       "y": 41300
+    },
+    "CR-AI-001a.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-AI-001a · Nova · apply changes · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 42900
+    },
+    "CR-AI-001a-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-AI-001a · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 42900
+    },
+    "CR-AI-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-AI-003 · Nova · past conversations · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 42900
+    },
+    "CR-AI-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-AI-003 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 42900
+    },
+    "CR-SEARCH-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-SEARCH-002 · Search results · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 42900
+    },
+    "CR-SEARCH-002-Mobile.dc.html": {
+      "h": 1060,
+      "is_interactive": true,
+      "title": "CR-SEARCH-002 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 42900
+    },
+    "CR-HELP-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-HELP-001 · Help · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 42900
+    },
+    "CR-HELP-001-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-HELP-001 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 42900
+    },
+    "CR-HELP-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-HELP-002 · Help article · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 42900
+    },
+    "CR-HELP-002-Mobile.dc.html": {
+      "h": 1240,
+      "is_interactive": true,
+      "title": "CR-HELP-002 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 42900
     }
   },
   "createdOnFiles": {
@@ -2683,6 +2763,14 @@
       "w": 240,
       "x": 0,
       "y": 41000
+    },
+    "help1": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Nova (apply changes, past conversations) · Search · Help",
+      "w": 240,
+      "x": 0,
+      "y": 42600
     }
   },
   "order": [
@@ -2978,7 +3066,17 @@
     "CR-SET-008.dc.html",
     "CR-SET-008-Mobile.dc.html",
     "CR-AI-001.dc.html",
-    "CR-AI-001-Mobile.dc.html"
+    "CR-AI-001-Mobile.dc.html",
+    "CR-AI-001a.dc.html",
+    "CR-AI-001a-Mobile.dc.html",
+    "CR-AI-003.dc.html",
+    "CR-AI-003-Mobile.dc.html",
+    "CR-SEARCH-002.dc.html",
+    "CR-SEARCH-002-Mobile.dc.html",
+    "CR-HELP-001.dc.html",
+    "CR-HELP-001-Mobile.dc.html",
+    "CR-HELP-002.dc.html",
+    "CR-HELP-002-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

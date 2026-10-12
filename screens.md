@@ -207,11 +207,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 ## 19. Copilot panel (CP-001 to CP-003), Search and Help & Support (10)
 
 - [x] D [x] M  `CR-AI-001` CP-001/002 · Copilot panel, context-aware (shows AI Token balance)
-- [ ] D [ ] M  `CR-AI-001a` CP-001 · Level 3 Act: Apply Changes / consequential action guided
-- [ ] D [ ] M  `CR-AI-003` CP-003 · Copilot history
-- [ ] D [ ] M  `CR-SEARCH-002` SEARCH-001/002 · Global search results for "SQL"
-- [ ] D [ ] M  `CR-HELP-001` HELP-001 · Help & Support home
-- [ ] D [ ] M  `CR-HELP-002` HELP-002 · Help article
+- [x] D [x] M  `CR-AI-001a` CP-001 · Level 3 Act: Apply Changes / consequential action guided
+- [x] D [x] M  `CR-AI-003` CP-003 · Copilot history
+- [x] D [x] M  `CR-SEARCH-002` SEARCH-001/002 · Global search results for "SQL"
+- [x] D [x] M  `CR-HELP-001` HELP-001 · Help & Support home
+- [x] D [x] M  `CR-HELP-002` HELP-002 · Help article
 - [ ] D [ ] M  `CR-HELP-003` HELP-003 · Contact Support
 - [ ] D [ ] M  `CR-HELP-004` HELP-004 · Support ticket created
 - [ ] D [ ] M  `CR-HELP-005` HELP-005 · My support requests

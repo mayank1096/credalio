@@ -2615,6 +2615,86 @@
       "w": 390,
       "x": 9800,
       "y": 46000
+    },
+    "CR-CREIO-006.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-006 · Not enough Credits · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 47400
+    },
+    "CR-CREIO-006-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-006 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 47400
+    },
+    "CR-CREIO-006b.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-006b · Add Credits from Nova · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 47400
+    },
+    "CR-CREIO-006b-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-006b · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 47400
+    },
+    "CR-CREIO-006c.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-006c · Credits added · return · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 47400
+    },
+    "CR-CREIO-006c-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-006c · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 47400
+    },
+    "CR-CREIO-006d.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-006d · Back at purchase · covered · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 47400
+    },
+    "CR-CREIO-006d-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-006d · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 47400
+    },
+    "CR-CREIO-USE.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-USE · Creio usage · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 47400
+    },
+    "CR-CREIO-USE-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-USE · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 47400
     }
   },
   "createdOnFiles": {
@@ -2947,6 +3027,14 @@
       "w": 240,
       "x": 0,
       "y": 45700
+    },
+    "creio2": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Creio: not enough Credits → Add Credits → back to purchase · usage",
+      "w": 240,
+      "x": 0,
+      "y": 47100
     }
   },
   "order": [
@@ -3272,7 +3360,17 @@
     "CR-CREIO-004.dc.html",
     "CR-CREIO-004-Mobile.dc.html",
     "CR-CREIO-005.dc.html",
-    "CR-CREIO-005-Mobile.dc.html"
+    "CR-CREIO-005-Mobile.dc.html",
+    "CR-CREIO-006.dc.html",
+    "CR-CREIO-006-Mobile.dc.html",
+    "CR-CREIO-006b.dc.html",
+    "CR-CREIO-006b-Mobile.dc.html",
+    "CR-CREIO-006c.dc.html",
+    "CR-CREIO-006c-Mobile.dc.html",
+    "CR-CREIO-006d.dc.html",
+    "CR-CREIO-006d-Mobile.dc.html",
+    "CR-CREIO-USE.dc.html",
+    "CR-CREIO-USE-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

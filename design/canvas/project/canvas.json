@@ -3382,7 +3382,7 @@
       "page": "p1"
     },
     "CR-RDY-001d.dc.html": {
-      "h": 1160,
+      "h": 820,
       "is_interactive": true,
       "title": "CR-RDY-001d · Readiness: all complete · Desktop",
       "w": 1440,
@@ -3391,7 +3391,7 @@
       "page": "p1"
     },
     "CR-RDY-001d-Mobile.dc.html": {
-      "h": 1400,
+      "h": 1000,
       "is_interactive": true,
       "title": "CR-RDY-001d · Mobile",
       "w": 390,
@@ -4372,7 +4372,7 @@
     "new-CR-RDY-001d": {
       "text": "NEW · just made · CR-RDY-001d",
       "x": 4140,
-      "y": 5500,
+      "y": 5100,
       "w": 1910,
       "fill": "red",
       "page": "p1"

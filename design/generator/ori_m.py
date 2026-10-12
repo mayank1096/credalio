@@ -56,7 +56,18 @@ def _foot(s, prev_href, prev_label, n, total, next_href, next_label, dyn=False):
     f = re.sub(r'(<a href=")[^"]*(" class="ds-btn lp-next)', rf'\g<1>{next_href}\g<2>', f, count=1)
     if not dyn: f = re.sub(r'(class="ds-btn lp-next[^"]*"[^>]*><span>)[^<]*(</span>)', rf'\g<1>{next_label}\g<2>', f, count=1)
     return s[:a0] + f + s[a1:]
-def lesson(tpl, mod, mname, steps, cur, mins, h1, lead, note, figure, prev, nxt, title):
+SCENE_CSS = """
+/* campus scene filler at the bottom (designer 2026-10-12) */
+.lp-root{position:relative;isolation:isolate}
+.lp-scene ~ .lp-body{background-color:transparent !important}
+.lp-scene{position:absolute;left:0;right:0;bottom:0;height:min(44vh,38vw);background:url(/_blob/6acc9dd1cd600c17d2fd6381a3069aaa) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
+@media (max-width: 960px){.lp-scene{height:220px;background-size:250% auto;background-position:52% 100%}}
+"""
+def add_scene(s):
+    if 'lp-scene' in s: return s
+    s = s.replace('<div class="lp-root">', '<div class="lp-root"><div class="lp-scene" aria-hidden="true"></div>', 1)
+    i = s.rfind('</style>', 0, s.find('</helmet>')); return s[:i] + SCENE_CSS + s[i:]
+def lesson(tpl, mod, mname, steps, cur, mins, h1, lead, note, figure, prev, nxt, title, scene=False):
     s = _head(tpl, mod, mname, steps, cur, f'Step {cur + 1} of {len(steps)}')
     rows = ''
     for i, (t, k) in enumerate(steps):
@@ -69,6 +80,7 @@ def lesson(tpl, mod, mname, steps, cur, mins, h1, lead, note, figure, prev, nxt,
     s = s[:m0] + top + figure + s[m1:]
     s = _foot(s, prev[0], prev[1], cur + 1, len(steps), nxt[0], nxt[1])
     i = s.rfind('</style>', 0, s.find('</helmet>')); s = s[:i] + LESSON_CSS + s[i:]
+    if scene: s = add_scene(s)
     return re.sub(r'<title>.*?</title>', f'<title>{title}</title>', s)
 def note(head, text, icon='info'):
     return f'<aside class="ls-gk ob-in3"><i>{svg(icon, 16, 2.2)}</i><b>{head}</b><span>{text}</span></aside>'
@@ -92,4 +104,5 @@ def check(tpl, mod, mname, steps, Q, prev, done_href, title):
     assert "props.variant" in s
     s = re.sub(r'<p class="lp-meta ob-in2">[^<]*</p>', '', s, count=1)
     s = _foot(s, prev[0], prev[1], n, n, done_href, '', dyn=True)
+    s = add_scene(s)
     return re.sub(r'<title>.*?</title>', f'<title>{title}</title>', s)

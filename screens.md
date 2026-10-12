@@ -271,7 +271,7 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 
 ## Link 2 · Orientation lessons (D3YR4Ee6ZP53iSMf3v6LQT, 52 screens)
 
-- [ ] D [ ] M  `ORI-M1-00` M1 · Welcome to Credalio: module overview
+- [x] D [x] M  `ORI-M1-00` M1 · Welcome to Credalio: module overview
 - [ ] D [ ] M  `ORI-M1-L1` M1 · Lesson 1: What Credalio is for
 - [ ] D [ ] M  `ORI-M1-L2` M1 · Lesson 2: How creating on Credalio works
 - [ ] D [ ] M  `ORI-M1-K1` M1 · Knowledge check: unanswered
@@ -331,3 +331,7 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `ONB-003ce` Create password: too weak (CR-ONB-003c variant weak)
 - [x] D [x] M  `ONB-004e` About you: missing display name (CR-ONB-004 variant err)
 - [x] D [x] M  `ONB-005e` Expertise: missing required fields (CR-ONB-005 variant err)
+- [x] D [x] M  `ONB-007p` Copilot style: Proactive selected (CR-ONB-007 variant proactive)
+- [x] D [x] M  `RDY-001d` Readiness: all tasks complete (CR-RDY-001 variant done)
+- [x] D [x] M  `ORI-001n` Orientation home: not started (CR-ORI-001 variant start)
+- [x] D [x] M  `ORI-001c` Orientation home: all modules complete (CR-ORI-001 variant done)

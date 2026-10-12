@@ -163,7 +163,7 @@ select.ob-f{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:po
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { sel: 'concise', i: 0, phase: 'wait' }; }
+  constructor(props) { super(props); this.state = { sel: (props && props.variant === 'proactive') ? 'proactive' : 'concise', i: 0, phase: 'wait' }; } /* build40 */
   componentDidMount() {
     this.reduce = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (this.reduce) { this.setState({ phase: 'done' }); return; }

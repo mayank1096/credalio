@@ -2535,6 +2535,86 @@
       "w": 390,
       "x": 9800,
       "y": 44600
+    },
+    "CR-CREIO-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-002 · Creio history · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 46000
+    },
+    "CR-CREIO-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-002 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 46000
+    },
+    "CR-CREIO-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-003 · Get more Creio · packages · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 46000
+    },
+    "CR-CREIO-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-003 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 46000
+    },
+    "CR-CREIO-003c.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-003c · Get more Creio · custom · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 46000
+    },
+    "CR-CREIO-003c-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-CREIO-003c · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 46000
+    },
+    "CR-CREIO-004.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-004 · Get more Creio · review · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 46000
+    },
+    "CR-CREIO-004-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-004 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 46000
+    },
+    "CR-CREIO-005.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-005 · Creio added · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 46000
+    },
+    "CR-CREIO-005-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-005 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 46000
     }
   },
   "createdOnFiles": {
@@ -2859,6 +2939,14 @@
       "w": 240,
       "x": 0,
       "y": 44300
+    },
+    "creio1": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Creio: history · get more (packages, custom, review) · added",
+      "w": 240,
+      "x": 0,
+      "y": 45700
     }
   },
   "order": [
@@ -3174,7 +3262,17 @@
     "CR-HELP-006.dc.html",
     "CR-HELP-006-Mobile.dc.html",
     "CR-NOVA-001.dc.html",
-    "CR-NOVA-001-Mobile.dc.html"
+    "CR-NOVA-001-Mobile.dc.html",
+    "CR-CREIO-002.dc.html",
+    "CR-CREIO-002-Mobile.dc.html",
+    "CR-CREIO-003.dc.html",
+    "CR-CREIO-003-Mobile.dc.html",
+    "CR-CREIO-003c.dc.html",
+    "CR-CREIO-003c-Mobile.dc.html",
+    "CR-CREIO-004.dc.html",
+    "CR-CREIO-004-Mobile.dc.html",
+    "CR-CREIO-005.dc.html",
+    "CR-CREIO-005-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

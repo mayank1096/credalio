@@ -3362,6 +3362,96 @@
       "x": 28430,
       "y": 320,
       "page": "p1"
+    },
+    "CR-ONB-007p.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-007p · Copilot style: Proactive · Desktop",
+      "w": 1440,
+      "x": 33120,
+      "y": 320,
+      "page": "p1"
+    },
+    "CR-ONB-007p-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-ONB-007p · Mobile",
+      "w": 390,
+      "x": 34640,
+      "y": 320,
+      "page": "p1"
+    },
+    "CR-RDY-001d.dc.html": {
+      "h": 1160,
+      "is_interactive": true,
+      "title": "CR-RDY-001d · Readiness: all complete · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 4060,
+      "page": "p1"
+    },
+    "CR-RDY-001d-Mobile.dc.html": {
+      "h": 1400,
+      "is_interactive": true,
+      "title": "CR-RDY-001d · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 4060,
+      "page": "p1"
+    },
+    "CR-ORI-001n.dc.html": {
+      "h": 1050,
+      "is_interactive": true,
+      "title": "CR-ORI-001n · Orientation: not started · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 6420,
+      "page": "p1"
+    },
+    "CR-ORI-001n-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-ORI-001n · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 6420,
+      "page": "p1"
+    },
+    "CR-ORI-001c.dc.html": {
+      "h": 1050,
+      "is_interactive": true,
+      "title": "CR-ORI-001c · Orientation: complete · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 6420,
+      "page": "p1"
+    },
+    "CR-ORI-001c-Mobile.dc.html": {
+      "h": 880,
+      "is_interactive": true,
+      "title": "CR-ORI-001c · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 6420,
+      "page": "p1"
+    },
+    "CR-ORI-M1-00.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M1-00 · Module 1 overview · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 8310,
+      "page": "p1"
+    },
+    "CR-ORI-M1-00-Mobile.dc.html": {
+      "h": 990,
+      "is_interactive": true,
+      "title": "CR-ORI-M1-00 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 8310,
+      "page": "p1"
     }
   },
   "createdOnFiles": {
@@ -3382,13 +3472,6 @@
       "y": 0,
       "page": "p1"
     },
-    "l1m-CR-ONB-007p": {
-      "text": "Not done yet\nCR-ONB-007p · CR-ONB-007 · Copilot style: Proactive selected (different sample)",
-      "x": 33120,
-      "y": 320,
-      "w": 1440,
-      "page": "p1"
-    },
     "l1s2": {
       "kind": "title1",
       "maxW": 8000,
@@ -3407,13 +3490,6 @@
       "y": 3740,
       "page": "p1"
     },
-    "l1m-CR-RDY-001d": {
-      "text": "Not done yet\nCR-RDY-001d · CR-RDY-001 · Readiness: all tasks complete",
-      "x": 4140,
-      "y": 4060,
-      "w": 1440,
-      "page": "p1"
-    },
     "l1s5": {
       "kind": "title1",
       "maxW": 8000,
@@ -3423,20 +3499,6 @@
       "y": 6100,
       "page": "p1"
     },
-    "l1m-CR-ORI-001n": {
-      "text": "Not done yet\nCR-ORI-001n · CR-ORI-001 · Orientation home: not started",
-      "x": 0,
-      "y": 6420,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-001c": {
-      "text": "Not done yet\nCR-ORI-001c · CR-ORI-001 · Orientation home: all modules complete",
-      "x": 4140,
-      "y": 6420,
-      "w": 1440,
-      "page": "p1"
-    },
     "l1s6": {
       "kind": "title1",
       "maxW": 8000,
@@ -3444,13 +3506,6 @@
       "w": 240,
       "x": 0,
       "y": 7990,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-M1-00": {
-      "text": "Not done yet\nCR-ORI-M1-00 · M1 · Welcome to Credalio: module overview",
-      "x": 0,
-      "y": 8310,
-      "w": 1440,
       "page": "p1"
     },
     "l1m-CR-ORI-M1-L1": {
@@ -4306,44 +4361,44 @@
       "y": 22732,
       "page": "p1"
     },
-    "new-CR-ONB-003e": {
-      "text": "NEW · just made · CR-ONB-003e",
-      "x": 8280,
-      "y": 1370,
+    "new-CR-ONB-007p": {
+      "text": "NEW · just made · CR-ONB-007p",
+      "x": 33120,
+      "y": 1260,
       "w": 1910,
-      "fill": "purple",
+      "fill": "red",
       "page": "p1"
     },
-    "new-CR-ONB-003d": {
-      "text": "NEW · just made · CR-ONB-003d",
-      "x": 12420,
-      "y": 1340,
+    "new-CR-RDY-001d": {
+      "text": "NEW · just made · CR-RDY-001d",
+      "x": 4140,
+      "y": 5500,
       "w": 1910,
-      "fill": "purple",
+      "fill": "red",
       "page": "p1"
     },
-    "new-CR-ONB-003ce": {
-      "text": "NEW · just made · CR-ONB-003ce",
-      "x": 18630,
-      "y": 1240,
+    "new-CR-ORI-001n": {
+      "text": "NEW · just made · CR-ORI-001n",
+      "x": 0,
+      "y": 7510,
       "w": 1910,
-      "fill": "purple",
+      "fill": "red",
       "page": "p1"
     },
-    "new-CR-ONB-004e": {
-      "text": "NEW · just made · CR-ONB-004e",
-      "x": 22770,
-      "y": 1470,
+    "new-CR-ORI-001c": {
+      "text": "NEW · just made · CR-ORI-001c",
+      "x": 4140,
+      "y": 7510,
       "w": 1910,
-      "fill": "purple",
+      "fill": "red",
       "page": "p1"
     },
-    "new-CR-ONB-005e": {
-      "text": "NEW · just made · CR-ONB-005e",
-      "x": 26910,
-      "y": 1350,
+    "new-CR-ORI-M1-00": {
+      "text": "NEW · just made · CR-ORI-M1-00",
+      "x": 0,
+      "y": 9340,
       "w": 1910,
-      "fill": "purple",
+      "fill": "red",
       "page": "p1"
     }
   },
@@ -4722,7 +4777,17 @@
     "CR-ONB-004e.dc.html",
     "CR-ONB-004e-Mobile.dc.html",
     "CR-ONB-005e.dc.html",
-    "CR-ONB-005e-Mobile.dc.html"
+    "CR-ONB-005e-Mobile.dc.html",
+    "CR-ONB-007p.dc.html",
+    "CR-ONB-007p-Mobile.dc.html",
+    "CR-RDY-001d.dc.html",
+    "CR-RDY-001d-Mobile.dc.html",
+    "CR-ORI-001n.dc.html",
+    "CR-ORI-001n-Mobile.dc.html",
+    "CR-ORI-001c.dc.html",
+    "CR-ORI-001c-Mobile.dc.html",
+    "CR-ORI-M1-00.dc.html",
+    "CR-ORI-M1-00-Mobile.dc.html"
   ],
   "pages": [
     {

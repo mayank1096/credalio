@@ -198,15 +198,15 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-SET-001` SET-001/002 · Settings: Account
 - [x] D [x] M  `CR-SET-002d` SET-002 · Delete account: obligations first
 - [x] D [x] M  `CR-SET-003` SET-003 · Security
-- [ ] D [ ] M  `CR-SET-004` SET-004 · Notification preferences (matrix)
-- [ ] D [ ] M  `CR-SET-005` SET-005 · Privacy
-- [ ] D [ ] M  `CR-SET-006` SET-006 · Language & Region
-- [ ] D [ ] M  `CR-SET-007` SET-007 · AI Preferences
-- [ ] D [ ] M  `CR-SET-008` Sign-in methods
+- [x] D [x] M  `CR-SET-004` SET-004 · Notification preferences (matrix)
+- [x] D [x] M  `CR-SET-005` SET-005 · Privacy
+- [x] D [x] M  `CR-SET-006` SET-006 · Language & Region
+- [x] D [x] M  `CR-SET-007` SET-007 · AI Preferences (= CR-HOME-SET)
+- [x] D [x] M  `CR-SET-008` Sign-in methods
 
 ## 19. Copilot panel (CP-001 to CP-003), Search and Help & Support (10)
 
-- [ ] D [ ] M  `CR-AI-001` CP-001/002 · Copilot panel, context-aware (shows AI Token balance)
+- [x] D [x] M  `CR-AI-001` CP-001/002 · Copilot panel, context-aware (shows AI Token balance)
 - [ ] D [ ] M  `CR-AI-001a` CP-001 · Level 3 Act: Apply Changes / consequential action guided
 - [ ] D [ ] M  `CR-AI-003` CP-003 · Copilot history
 - [ ] D [ ] M  `CR-SEARCH-002` SEARCH-001/002 · Global search results for "SQL"

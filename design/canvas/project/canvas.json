@@ -2295,6 +2295,86 @@
       "w": 390,
       "x": 9800,
       "y": 39700
+    },
+    "CR-SET-004.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-SET-004 · Settings · Notifications · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 41300
+    },
+    "CR-SET-004-Mobile.dc.html": {
+      "h": 1050,
+      "is_interactive": true,
+      "title": "CR-SET-004 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 41300
+    },
+    "CR-SET-005.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-SET-005 · Settings · Privacy · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 41300
+    },
+    "CR-SET-005-Mobile.dc.html": {
+      "h": 860,
+      "is_interactive": true,
+      "title": "CR-SET-005 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 41300
+    },
+    "CR-SET-006.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-SET-006 · Settings · Language & region · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 41300
+    },
+    "CR-SET-006-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-SET-006 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 41300
+    },
+    "CR-SET-008.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-SET-008 · Settings · Sign-in methods · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 41300
+    },
+    "CR-SET-008-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-SET-008 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 41300
+    },
+    "CR-AI-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-AI-001 · Nova Copilot panel · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 41300
+    },
+    "CR-AI-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-AI-001 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 41300
     }
   },
   "createdOnFiles": {
@@ -2595,6 +2675,14 @@
       "w": 240,
       "x": 0,
       "y": 39400
+    },
+    "set2": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Settings (notifications, privacy, language, sign-in methods; AI preferences = CR-HOME-SET) · Nova Copilot panel",
+      "w": 240,
+      "x": 0,
+      "y": 41000
     }
   },
   "order": [
@@ -2880,7 +2968,17 @@
     "CR-SET-002d.dc.html",
     "CR-SET-002d-Mobile.dc.html",
     "CR-SET-003.dc.html",
-    "CR-SET-003-Mobile.dc.html"
+    "CR-SET-003-Mobile.dc.html",
+    "CR-SET-004.dc.html",
+    "CR-SET-004-Mobile.dc.html",
+    "CR-SET-005.dc.html",
+    "CR-SET-005-Mobile.dc.html",
+    "CR-SET-006.dc.html",
+    "CR-SET-006-Mobile.dc.html",
+    "CR-SET-008.dc.html",
+    "CR-SET-008-Mobile.dc.html",
+    "CR-AI-001.dc.html",
+    "CR-AI-001-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

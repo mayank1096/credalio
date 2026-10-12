@@ -268,3 +268,58 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - Shared components (each board shows its default screen; the boards above use them) (3)
 - Retired: old onboarding component (replaced by the Creator onboarding row at the top) (1)
 - Moved to the Organizations canvas (safe to delete these cards) (11)
+
+## Link 2 · Orientation lessons (D3YR4Ee6ZP53iSMf3v6LQT, 52 screens)
+
+- [ ] D [ ] M  `ORI-M1-00` M1 · Welcome to Credalio: module overview
+- [ ] D [ ] M  `ORI-M1-L1` M1 · Lesson 1: What Credalio is for
+- [ ] D [ ] M  `ORI-M1-L2` M1 · Lesson 2: How creating on Credalio works
+- [ ] D [ ] M  `ORI-M1-K1` M1 · Knowledge check: unanswered
+- [ ] D [ ] M  `ORI-M1-K2` M1 · Knowledge check: correct answers
+- [ ] D [ ] M  `ORI-M1-K3` M1 · Knowledge check: incorrect answer (try again)
+- [ ] D [ ] M  `ORI-M1-DONE` M1 · Module complete
+- [ ] D [ ] M  `ORI-M2-00` M2 · Creating Trusted Learning: module overview
+- [ ] D [ ] M  `ORI-M2-L1` M2 · Lesson 1: What makes learning trustworthy
+- [ ] D [ ] M  `ORI-M2-L2` M2 · Lesson 2: Evidence of learning
+- [ ] D [ ] M  `ORI-M2-K1` M2 · Knowledge check: unanswered
+- [ ] D [ ] M  `ORI-M2-K2` M2 · Knowledge check: correct answers
+- [ ] D [ ] M  `ORI-M2-K3` M2 · Knowledge check: incorrect answer (try again)
+- [ ] D [ ] M  `ORI-M2-DONE` M2 · Module complete
+- [ ] D [ ] M  `ORI-M3-00` M3 · Outcomes, Skills & Evidence: module overview
+- [ ] D [ ] M  `ORI-M3-L2` M3 · Lesson 2: Skills and proficiency
+- [ ] D [ ] M  `ORI-M3-L3` M3 · Lesson 3: Linking evidence
+- [ ] D [ ] M  `ORI-M3-K1` M3 · Knowledge check: unanswered
+- [ ] D [ ] M  `ORI-M3-K2` M3 · Knowledge check: correct answers
+- [ ] D [ ] M  `ORI-M3-K3` M3 · Knowledge check: incorrect answer (try again)
+- [ ] D [ ] M  `ORI-M4-L1` M4 · Lesson 1: What validators look at
+- [ ] D [ ] M  `ORI-M4-L2` M4 · Lesson 2: The validation case
+- [ ] D [ ] M  `ORI-M4-L3` M4 · Lesson 3: Tiers and revalidation
+- [ ] D [ ] M  `ORI-M4-K1` M4 · Knowledge check: unanswered
+- [ ] D [ ] M  `ORI-M4-K2` M4 · Knowledge check: correct answers
+- [ ] D [ ] M  `ORI-M4-K3` M4 · Knowledge check: incorrect answer (try again)
+- [ ] D [ ] M  `ORI-M4-DONE` M4 · Module complete
+- [ ] D [ ] M  `ORI-M5-00` M5 · AI & Responsible Creation: module overview
+- [ ] D [ ] M  `ORI-M5-L1` M5 · Lesson 1: Using your Copilot well
+- [ ] D [ ] M  `ORI-M5-L2` M5 · Lesson 2: Review, disclose, own
+- [ ] D [ ] M  `ORI-M5-K1` M5 · Knowledge check: unanswered
+- [ ] D [ ] M  `ORI-M5-K3` M5 · Knowledge check: incorrect answer (try again)
+- [ ] D [ ] M  `ORI-M5-S1` M5 · Scenario exercise: unanswered
+- [ ] D [ ] M  `ORI-M5-S3` M5 · Scenario exercise: incorrect response
+- [ ] D [ ] M  `ORI-M5-DONE` M5 · Module complete
+- [ ] D [ ] M  `ORI-M6-00` M6 · Creator Economy: module overview
+- [ ] D [ ] M  `ORI-M6-L1` M6 · Lesson 1: DLP and Credits
+- [ ] D [ ] M  `ORI-M6-L2` M6 · Lesson 2: Credit Wallet vs Earnings
+- [ ] D [ ] M  `ORI-M6-K1` M6 · Knowledge check: unanswered
+- [ ] D [ ] M  `ORI-M6-K2` M6 · Knowledge check: correct answers
+- [ ] D [ ] M  `ORI-M6-K3` M6 · Knowledge check: incorrect answer (try again)
+- [ ] D [ ] M  `ORI-M6-DONE` M6 · Module complete
+- [ ] D [ ] M  `ORI-M7-00` M7 · Creator Responsibilities: module overview
+- [ ] D [ ] M  `ORI-M7-L1` M7 · Lesson 1: Your obligations to learners
+- [ ] D [ ] M  `ORI-M7-L2` M7 · Lesson 2: Declarations and changes
+- [ ] D [ ] M  `ORI-M7-K1` M7 · Knowledge check: unanswered
+- [ ] D [ ] M  `ORI-M7-K2` M7 · Knowledge check: correct answers
+- [ ] D [ ] M  `ORI-M7-K3` M7 · Knowledge check: incorrect answer (try again)
+- [ ] D [ ] M  `ORI-M7-S1` M7 · Scenario exercise: unanswered
+- [ ] D [ ] M  `ORI-M7-S2` M7 · Scenario exercise: correct response
+- [ ] D [ ] M  `ORI-M7-S3` M7 · Scenario exercise: incorrect response
+- [ ] D [ ] M  `ORI-M7-DONE` M7 · Module complete

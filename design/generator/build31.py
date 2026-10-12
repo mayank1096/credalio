@@ -280,7 +280,11 @@ css = COMMON + """
 @media (max-width: 960px){
 .pb-bar{margin-top:12px;font-size:13px;padding:8px 8px 8px 14px}
 .pp-g{margin-top:16px;gap:28px}
-.pp-id{padding:22px 18px;border-radius:20px;background-size:100% 150px}
+.pp-id{padding:26px 20px 28px 20px;border-radius:20px;background-size:100% 150px}
+.pp-n{margin-top:22px !important}.pp-f{margin-top:8px}.pp-loc{margin-top:6px}
+.pp-hl{margin-top:22px !important}.pp-tp{margin-top:18px}
+.pp-st{margin-top:26px;padding:20px 0}
+.pp-lab{margin-top:26px}.pp-cr{margin-top:14px;gap:18px}
 .pp-av{width:76px;height:76px;font-size:22px}
 .pp-n{font-size:24px;margin-top:18px}
 .pp-hl{font-size:15.5px}
@@ -295,5 +299,5 @@ css = COMMON + """
 """
 B.page('CR-PUB', 'Creator profile', main, js, css, 'Credalio · Ada Ononuju', "{ nav: false }")
 props_patch('CR-PUB')
-wrap('CR-PUB', [('CR-PROF-001v', 'preview', 1230)])
+wrap('CR-PUB', [('CR-PROF-001v', 'preview', 1320)])
 print('build31 ok')

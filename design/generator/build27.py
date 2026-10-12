@@ -54,10 +54,10 @@ main = ('<main class="ds-main hp">\n<a href="CR-DISC-001.dc.html" class="pg-back
         '<sc-if value="{{r.isNew}}" hint-placeholder-val="{{false}}"><span class="dt-new">New</span></sc-if>'
         '<div class="dt-by"><span class="av {{r.avc}}">{{r.av}}</span><span><b>{{r.by}}<sc-if value="{{r.cr}}" hint-placeholder-val="{{false}}"><em class="dt-cr">Creator</em></sc-if></b><span>{{r.tm}}</span></span></div>'
         '<p class="dt-p">{{r.tx}}</p></li></sc-for></ol></sc-if>'
-        '<sc-if value="{{isReply}}" hint-placeholder-val="{{false}}"><div class="ds-card dt-cmp ob-in3"><div class="dt-by"><span class="av me">AO</span><span><b>Your answer</b></span></div>'
+        '<sc-if value="{{isReply}}" hint-placeholder-val="{{false}}"><div class="ds-card dt-cmp ob-in3">'
         '<div class="dt-ta">Add <code>city</code> to the GROUP BY as well. Every column in the SELECT that isn’t inside SUM, COUNT and so on has to be grouped, or the database can’t decide which city to show for each customer.<i></i></div>'
         '<div class="dt-cf"><button type="button" class="dt-tool" aria-label="Insert code">' + CODE + '</button><button type="button" class="dt-nova">' + ic(I['ai'], 15, 2) + 'Polish with Nova</button>'
-        '<span style="flex:1"></span><label class="dt-mk"><span class="dt-box on">' + CHK + '</span>Mark as answer</label><a href="CR-DISC-002.dc.html" class="ds-btn hp-btn"><span>Post answer</span><span class="ob-arrow">' + ARR + '</span></a></div></div></sc-if>'
+        '<span style="flex:1"></span><label class="dt-mk"><span class="dt-box on">' + CHK + '</span>Mark as answer' + tip('Pins your reply to the top for anyone who asks this later.', 'r') + '</label><a href="CR-DISC-002.dc.html" class="ds-btn hp-btn"><span>Post answer</span><span class="ob-arrow">' + ARR + '</span></a></div></div></sc-if>'
         '<sc-if value="{{isQuick}}" hint-placeholder-val="{{true}}"><a href="CR-DISC-002b.dc.html" class="dt-qr ob-in3"><span class="av me">AO</span><span>Write a reply…</span></a></sc-if>'
         '</div>'
         '<aside class="ds-card dt-side ob-in2" aria-label="Asked in"><span class="hp-lab">Asked in</span><b>{{course}}</b><span>{{lesson}}</span>'
@@ -106,7 +106,7 @@ main .hp-head:has(.dt-h1){align-items:center}
 .dt-qr .av{width:30px;height:30px;font-size:11px}
 .dt-cmp{margin-top:20px;padding:22px 24px 18px 24px;border-color:#AFC1F5;box-shadow:0 0 0 4px rgba(22,82,240,.08)}
 .dt-cmp .dt-by .av{width:30px;height:30px;font-size:11px}
-.dt-ta{position:relative;margin-top:14px;font-size:15px;line-height:1.6;color:#0B1433;min-height:96px}
+.dt-ta{position:relative;margin-top:0;font-size:15px;line-height:1.6;color:#0B1433;min-height:96px}
 .dt-ta code{padding:1px 6px;border-radius:6px;background:#F1F3F8;font-size:13.5px}
 .dt-ta i{display:inline-block;width:2px;height:18px;margin-left:2px;vertical-align:-3px;background:#1652F0;animation:dtBlink 1s steps(1) infinite}
 @keyframes dtBlink{50%{opacity:0}}

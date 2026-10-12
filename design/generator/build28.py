@@ -78,7 +78,7 @@ HOURS = ''.join(f'<span style="top:calc({h - H0} * var(--h))">{h:02d}:00</span>'
 LINES = ''.join(f'<i style="top:calc({h - H0} * var(--h))"></i>' for h in range(H0 + 1, H1))
 def grid(days, detail=False, sel=False):
     head = ''.join(f'<span class="{"today" if d == 1 else ""}"><em>{DAYS[d]}</em><b>{12 + d}</b></span>' for d in days)
-    return (f'<div class="tg" style="--n:{len(days)}"><div class="tg-hd"><span class="tg-tz">WAT</span>{head}</div>'
+    return (f'<div class="tg" style="--n:{len(days)}"><div class="tg-hd"><span class="tg-tz">WAT' + tip('West Africa Time (UTC+1). Change it in Weekly availability.', 'dn') + f'</span>{head}</div>'
             f'<div class="tg-bd"><div class="tg-hr">{HOURS}</div><div class="tg-cols"><div class="tg-ln">{LINES}</div>' + ''.join(col(d, detail, sel) for d in days) + '</div></div></div>')
 STRIP = '<div class="tg-strip">' + ''.join(f'<span class="{"on" if d == 1 else ""}"><em>{DAYS[d][0]}</em><b>{12 + d}</b>' + ('<i></i>' if any(e[0] == d for e in EVW) else '') + '</span>' for d in range(7)) + '</div>'
 
@@ -91,10 +91,10 @@ AGENDA = ''.join(f'<section class="ag-g"><span class="hp-lab">{g}</span><ul>' + 
     f'<li><span class="ag-t">{a}<em>{b}</em></span><i class="ag-k {k}"></i><span class="ag-x"><b>{t}</b><span>{s}</span></span>'
     + (f'<a href="CR-CAL-002.dc.html" class="ds-btn hp-btn ag-go"><span>{c}</span><span class="ob-arrow">{ARR}</span></a>' if c else '') + '</li>' for a, b, k, t, s, c in rows) + '</ul></section>' for g, rows in AG)
 
-PANEL = ('<aside class="ev-p" aria-label="Event"><div class="ev-ph"><span class="st cb">Meeting</span><a href="CR-CAL-001w.dc.html" class="ev-x" aria-label="Close">' + X + '</a></div>'
+PANEL = ('<aside class="ev-p" aria-label="Event"><div class="ev-ph"><a href="CR-CAL-001w.dc.html" class="ev-x" aria-label="Close">' + X + '</a></div>'
          '<h2 class="ev-h">Validation call · Chapter 4</h2>'
          '<ul class="ev-rows"><li>' + CLOCK + '<span><b>Tue 13 Oct · 10:00 – 11:00</b><span>Starts in 8 min</span></span></li>'
-         '<li>' + VID + '<span><b>Video call</b><span>Link opens 10 min before' + tip('Only invited people can join. Validators may record notes, never video.') + '</span></span></li></ul>'
+         '<li>' + VID + '<span><b>Video call</b><span>Ready to join' + tip('Only invited people can join. Validators may take notes, never record video.') + '</span></span></li></ul>'
          '<span class="hp-lab ev-lab">With</span><ul class="ev-ppl"><li><span class="av">BO</span><span><b>Dr. Bola O.</b><span>Lead validator</span></span></li>'
          '<li><span class="av">MO</span><span><b>Mary Okafor</b><span>Contributor</span></span></li></ul>'
          '<span class="hp-lab ev-lab">About</span><a href="CR-VAL-MC-001.dc.html" class="ev-ab">Data Analysis with SQL · Chapter 4 review' + ic('<path d="m9 6 6 6-6 6"></path>', 15, 2.2) + '</a>'
@@ -116,7 +116,7 @@ main = ('<main class="ds-main hp">\n' + head +
         '<section class="tg-m ob-in2" aria-label="Tuesday">' + STRIP + '<div class="ds-card tg-card">' + grid([1], True) + '</div></section></sc-if>'
         '<sc-if value="{{vDay}}" hint-placeholder-val="{{false}}"><div class="cd-g"><section class="ds-card tg-card cd-tl ob-in2" aria-label="Tuesday">' + grid([1], True) + '</section>'
         '<aside class="cd-side ob-in3"><section class="ds-card cl-card mini" aria-label="October">' + MONTH + '</section>'
-        '<section class="ds-card cd-next"><span class="hp-lab">Next up</span><b>Validation call · Chapter 4</b><span>10:00 · starts in 8 min</span><a href="CR-CAL-002.dc.html" class="ds-link">Details</a></section></aside></div>'
+        '</aside></div>'
         '<section class="tg-m ob-in2" aria-label="Tuesday">' + STRIP + '<div class="ds-card tg-card">' + grid([1], True) + '</div></section></sc-if>'
         '<sc-if value="{{vAgenda}}" hint-placeholder-val="{{false}}"><div class="ag ob-in2">' + AGENDA + '</div></sc-if>'
         '<sc-if value="{{vEvent}}" hint-placeholder-val="{{false}}"><div class="ev-sheet"><div class="ev-dim"></div>' + PANEL + '</div></sc-if>'
@@ -191,8 +191,10 @@ i.cb{background:#1652F0}i.ol{background:#FFFFFF;border:2px solid #1652F0;box-siz
 .cw-g.has-ev .tg-hd > span:not(.tg-tz){padding:12px 8px}
 /* event panel */
 .ev-p{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;padding:22px 24px;box-shadow:0 18px 44px rgba(11,20,51,.08)}
-.ev-ph{display:flex;align-items:center;justify-content:space-between}
-.ev-x{width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#5B6582;margin-right:-6px}
+.ev-p{position:relative}
+.ev-ph{position:absolute;top:16px;right:16px}
+.ev-ph + .ev-h{margin-top:0;padding-right:36px}
+.ev-x{width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#5B6582}
 .ev-h{margin:14px 0 0 0;font-size:20px;font-weight:600;letter-spacing:-0.01em;line-height:1.3}
 .ev-rows{list-style:none;margin:18px 0 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
 .ev-rows li{display:flex;gap:12px;align-items:flex-start}.ev-rows svg{color:#5B6582;margin-top:2px;flex-shrink:0}

@@ -148,8 +148,8 @@ wrap('CR-ANA-003', [('CR-ANA-003', '', 800)])
 # ======================= CR-PROF · profile management =======================
 TOP = ['Data Analysis', 'SQL', 'Business Intelligence']
 CRED = [('MSc Data Science', 'University of Lagos · 2017', 'Verified', 'gr', True), ('AWS Certified Data Analytics', 'Amazon Web Services · 2023', 'Verified', 'gr', True),
-        ('Google Data Analytics Certificate', 'The file couldn’t be read', 'Upload again', 'am', False), ('Senior Data Analyst', 'Flutterwave · 2019 – now', 'In review', 'cb', False)]
-creds = ''.join(f'<li><span class="pc-t"><b>{t}</b><span>{d}</span></span><span class="st {c}">' + (CHK if c == 'gr' else '') + f'{s}</span>'
+        ('Google Data Analytics Certificate', 'Google · 2024', 'Couldn’t read', 'am', False), ('Senior Data Analyst', 'Flutterwave · 2019 – now', 'In review', 'cb', False)]
+creds = ''.join(f'<li><span class="pc-t"><b>{t}</b><span>{d}</span></span><span class="st {c}">' + (CHK if c == 'gr' else '') + f'{s}' + (tip('Upload a clearer copy and we’ll verify it again.', 'r') if c == 'am' else '') + '</span>'
                 + f'<button type="button" class="hp-sw {"on" if on else ""}" aria-pressed="{"true" if on else "false"}" aria-label="Show {t} on profile" ' + ('' if c == 'gr' else 'disabled') + '></button></li>' for t, d, s, c, on in CRED)
 tabs = '<div class="hp-tabs pf-tb ob-in2" role="tablist"><a href="CR-PROF-001.dc.html" class="hp-tab {{tP}}">Profile</a><a href="CR-PROF-001c.dc.html" class="hp-tab {{tC}}">Credentials</a></div>'
 prof = ('<sc-if value="{{vProf}}" hint-placeholder-val="{{true}}"><div class="pf-g">'
@@ -242,8 +242,8 @@ main = ('<main class="ds-main hp">\n<sc-if value="{{isPrev}}" hint-placeholder-v
 js = """    const v = props.variant || 'preview';
     return { navCls: S.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !S.nav }), isPrev: v === 'preview' };"""
 css = COMMON + """
-.pb-bar{margin-top:20px;display:flex;align-items:center;gap:10px;padding:10px 10px 10px 18px;border-radius:999px;background:#0B1433;color:#FFFFFF;font-size:14px;font-weight:500}
-.pb-bar svg{color:#AFC1F5}.pb-bar span{flex:1}.pb-bar .hp-rb{height:34px;background:#FFFFFF;border:0}
+.pb-bar{margin-top:18px;display:flex;align-items:center;gap:8px;padding:0 4px;font-size:13.5px;font-weight:500;color:#5B6582}
+.pb-bar svg{color:#8A93AD}.pb-bar span{flex:1}.pb-bar .hp-rb{height:auto;padding:0;border:0;background:transparent;color:#1652F0;font-size:13.5px;font-weight:600}
 .pp-g{margin-top:24px;display:grid;grid-template-columns:360px minmax(0,1fr);gap:28px;align-items:start}
 .pp-id{position:relative;padding:28px 28px 26px 28px;border-radius:24px;background:#FFFFFF url(""" + "'" + PBG + "'" + """) top center/100% 180px no-repeat;border:1.5px solid #E6EAF3;display:flex;flex-direction:column;align-items:flex-start}
 .pp-top{width:100%;display:flex;align-items:flex-start;justify-content:space-between}
@@ -278,7 +278,7 @@ css = COMMON + """
 @media (max-width: 1180px){.pp-g{grid-template-columns:320px minmax(0,1fr)}}
 @media (max-width: 1080px){.pp-g{grid-template-columns:minmax(0,1fr)}}
 @media (max-width: 960px){
-.pb-bar{margin-top:12px;font-size:13px;padding:8px 8px 8px 14px}
+.pb-bar{margin-top:12px;font-size:13px}.pb-bar .hp-rb{display:inline-flex !important;font-size:13px}
 .pp-g{margin-top:16px;gap:28px}
 .pp-id{padding:26px 20px 28px 20px;border-radius:20px;background-size:100% 150px}
 .pp-n{margin-top:22px !important}.pp-f{margin-top:8px}.pp-loc{margin-top:6px}

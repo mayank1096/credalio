@@ -148,7 +148,7 @@ overview = ('<div class="hp-head ob-in"><div><h1 class="ds-h1">Analytics</h1></d
             '<div><span class="hp-lab">Completion</span><b>64%<em>+2 pts</em></b></div>'
             '<div><span class="hp-lab">Rating</span><b>4.7</b></div>'
             '<div><span class="hp-lab">Earned</span><b>$2,850<em>+19%</em></b></div></section>'
-            '<section class="ds-card an-chart ob-in3" aria-labelledby="an-h1"><div class="an-ch"><h2 id="an-h1" class="h2c">Active learners</h2><span class="an-tbl">Table view</span></div>' + CHART + '</section>'
+            '<section class="ds-card an-chart ob-in3" aria-labelledby="an-h1"><div class="an-ch"><h2 id="an-h1" class="h2c">Active learners</h2></div>' + CHART + '</section>'
             '<section class="nova-card an-nova ob-in3"><span class="an-nl">' + ic(I['ai'], 15, 2) + 'Nova noticed</span><p><b>Chapter 4 of Data Analysis with SQL loses more learners than any other.</b> A short practice before Lesson 4.2 usually helps.</p><a href="CR-ANA-002.dc.html" class="hp-rb">See where</a></section>'
             '<section class="ds-card ae ob-in3" aria-labelledby="an-h2"><div class="ae-hd"><h2 id="an-h2" class="h2c">By learning experience</h2></div>'
             '<div class="ae-th"><span>Learning experience</span><span>Learners</span><span>Completion</span><span>Rating</span><span>Earned</span><span></span></div><ul class="ae-l">' + erows + '</ul></section>')

@@ -203,3 +203,25 @@ def levels(items):
     return ('<ol class="ls-lv ob-in3" aria-label="Proficiency levels">' + ''.join(
         f'<li class="{"lv-on" if on else ""}"><span class="lv-n">{n}</span><b>{b}</b><span class="lv-d">{d}</span>' + (f'<span class="lv-t">{t}</span>' if t else '') + '</li>'
         for n, b, d, t, on in items) + '</ol>')
+
+LINKS_CSS = """
+/* ori_m evidence links */
+.ls-ln{list-style:none;margin:28px 0 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.ls-ln li{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;padding:18px 20px;border-radius:18px;border:1.5px solid #E6EAF3;background:#FFFFFF}
+.ls-ln .ln-o{display:flex;flex-direction:column;gap:3px;min-width:0}
+.ls-ln .ln-o span{font-size:12.5px;font-weight:500;color:#8A93AD}
+.ls-ln .ln-o b{font-size:15px;font-weight:600;line-height:1.4}
+.ls-ln .ln-e{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.ls-ln .ln-c{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;background:#E7F5EE;color:#0F6B45;font-size:13px;font-weight:500}
+.ls-ln .ln-miss{border-color:#F0C774;background:#FFFBF2}
+.ls-ln .ln-miss .ln-c{background:#FFF3DC;color:#8A5300}
+@media (min-width: 961px){.ls-top + .ls-ln{margin-top:40px}}
+@media (max-width: 960px){.ls-ln{margin-top:28px}.ls-ln li{grid-template-columns:minmax(0,1fr);gap:12px;padding:16px}.ls-ln .ln-e{justify-content:flex-start}}
+"""
+def links(rows):
+    # rows: (outcome, [evidence chips]) ; empty list = missing evidence
+    out = '<ul class="ls-ln ob-in3" aria-label="Outcomes and their evidence">'
+    for i, (o, ev) in enumerate(rows):
+        chips = ''.join(f'<span class="ln-c">{svg("check", 13, 2.4)}{e}</span>' for e in ev) if ev else f'<span class="ln-c">{svg("info", 13, 2.4)}No evidence yet</span>'
+        out += f'<li class="{"" if ev else "ln-miss"}"><span class="ln-o"><span>Outcome {i + 1}</span><b>{o}</b></span><span class="ln-e">{chips}</span></li>'
+    return out + '</ul>'

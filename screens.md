@@ -177,11 +177,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-SUP-001` WORK · Learner Support inbox
 - [x] D [x] M  `CR-SUP-002` Learner Support conversation (escalated from AI Coach)
 - [x] D [x] M  `CR-LRN-001` LRN-001 · Learners
-- [ ] D [ ] M  `CR-LRN-002` LRN-002 · Learner detail (need-to-know)
-- [ ] D [ ] M  `CR-ANA-001` ANA-001 · Analytics overview
-- [ ] D [ ] M  `CR-ANA-004` ANA-004 · Export report (CSV)
-- [ ] D [ ] M  `CR-ANA-002` ANA-002 · Experience analytics: Course
-- [ ] D [ ] M  `CR-ANA-002c` ANA-002 · Experience analytics: Certification
+- [x] D [x] M  `CR-LRN-002` LRN-002 · Learner detail (need-to-know)
+- [x] D [x] M  `CR-ANA-001` ANA-001 · Analytics overview
+- [x] D [x] M  `CR-ANA-004` ANA-004 · Export report (CSV)
+- [x] D [x] M  `CR-ANA-002` ANA-002 · Experience analytics: Course
+- [x] D [x] M  `CR-ANA-002c` ANA-002 · Experience analytics: Certification
 - [ ] D [ ] M  `CR-ANA-002p` ANA-002 · Experience analytics: Learning Program
 - [ ] D [ ] M  `CR-ANA-003` ANA-003 · Compare courses
 

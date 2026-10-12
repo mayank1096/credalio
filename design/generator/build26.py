@@ -215,14 +215,14 @@ main = ('<main class="ds-main hp">\n<div class="hp-head ob-in"><div><h1 class="d
         '<section class="ds-card dl-card ob-in3" aria-label="Threads"><ul class="dl-l {{lCls}}"><sc-for list="{{rows}}" as="r" hint-placeholder-count="6"><li><a href="CR-DISC-002.dc.html" class="dl-r {{r.unCls}}">'
         '<span class="av">{{r.av}}</span><span class="dl-t"><b>{{r.t}}</b><span>{{r.c}} · {{r.by}} · {{r.tm}}</span></span>'
         '<sc-if value="{{r.un}}" hint-placeholder-val="{{false}}"><span class="st am">Unanswered</span></sc-if>'
-        '<span class="dl-n">' + REPLY + '{{r.n}}</span></a></li></sc-for></ul></section>\n</main>')
+        '<sc-if value="{{r.hasN}}" hint-placeholder-val="{{true}}"><span class="dl-n">' + REPLY + '{{r.n}}</span></sc-if></a></li></sc-for></ul></section>\n</main>')
 js = '''    const D = [''' + js_rows + '''];
     const f = S.f || props.variant || 'all';
     const list = D.filter((d) => f === 'all' || (f === 'unanswered' ? !d.ok : d.ok));
     const T = [['all', 'All', ''], ['unanswered', 'Unanswered', String(D.filter((d) => !d.ok).length)], ['answered', 'Answered', '']];
     return { navCls: S.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !S.nav }),
       tabs: T.map((t) => ({ l: t[1], n: t[2], hasN: !!t[2], cls: f === t[0] ? 'on' : '', pick: () => this.setState({ f: t[0] }) })),
-      lCls: f === 'unanswered' ? 'only-un' : '', rows: list.map((d) => Object.assign({}, d, { un: !d.ok, unCls: d.ok ? '' : 'un' })) };'''
+      lCls: f === 'unanswered' ? 'only-un' : '', rows: list.map((d) => Object.assign({}, d, { hasN: d.n > 0, un: !d.ok, unCls: d.ok ? '' : 'un' })) };'''
 css = COMMON + '''
 .ds-crs{gap:8px}.ds-crs svg{color:#5B6582}
 .ds-tb{margin-bottom:18px}

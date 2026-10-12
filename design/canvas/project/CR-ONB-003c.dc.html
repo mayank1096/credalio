@@ -88,6 +88,12 @@ select.ob-f{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:po
 .ob-root{isolation:isolate}
 .ob-scene{position:absolute;left:0;right:0;bottom:0;height:min(50vh,46vw);background:url(/_blob/6acc9dd1cd600c17d2fd6381a3069aaa) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
 @media (max-width: 760px){.ob-scene{height:240px;background-size:250% auto;background-position:52% 100%}}
+
+/* build39 field errors */
+.ob-bad,.ob-bad:focus{border-color:#D92D20 !important;box-shadow:0 0 0 4px rgba(217,45,32,.08) !important}
+.ob-err{display:flex;align-items:center;gap:6px;margin:8px 0 0 2px;font-size:13.5px;line-height:1.4;color:#B42318;text-align:left}
+.ob-err svg{flex-shrink:0}
+.ob-grid2 .ob-err{margin-top:6px;font-size:13px}
 </style>
 </helmet>
 <div class="ob-root" style="width: 100%; height: 100vh; min-height: 680px; position: relative; overflow: hidden; background: #FFFFFF; font-family: 'Google Sans', 'Google Sans Text', 'Helvetica Neue', system-ui, sans-serif; color: #0B1433">
@@ -110,13 +116,13 @@ select.ob-f{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:po
 <h1 class="ob-h1 ob-in" style="margin: 0; font-size: clamp(36px, 6vh, 52px); line-height: 1.1; font-weight: 600; letter-spacing: -0.035em; color: #0B1433; text-align: center; width: max-content; max-width: calc(100vw - 48px)">Choose a password.</h1>
 <p class="ob-in2" style="margin: 12px 0 0 0; max-width: 460px; font-size: 16px; line-height: 1.55; color: #4A5578; text-align: center">Create a password to protect your account.</p>
 <div class="ob-in3" style="margin-top: clamp(20px, 3.6vh, 32px); width: 100%; display: flex; flex-direction: column; gap: 14px; text-align: left">
-<div><label for="pw" class="ob-lab">Password</label><div style="position: relative"><input id="pw" class="ob-f" type="{{pwType}}" value="{{pw}}" onChange="{{onPw}}" autocomplete="new-password" placeholder="Create a password" style="padding-right: 64px"><button type="button" class="ob-x" onClick="{{toggle}}" aria-label="Show password" style="position: absolute; right: 8px; top: 8px; height: 36px; padding: 0 12px; border: 0; border-radius: 10px; background: #F5F8FF; color: #1652F0; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer">{{showLabel}}</button></div>
+<div><label for="pw" class="ob-lab">Password</label><div style="position: relative"><input id="pw" class="ob-f {{pwCls}}" type="{{pwType}}" value="{{pw}}" onChange="{{onPw}}" autocomplete="new-password" placeholder="Create a password" style="padding-right: 64px"><button type="button" class="ob-x" onClick="{{toggle}}" aria-label="Show password" style="position: absolute; right: 8px; top: 8px; height: 36px; padding: 0 12px; border: 0; border-radius: 10px; background: #F5F8FF; color: #1652F0; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer">{{showLabel}}</button></div>
 <div aria-hidden="true" style="margin-top: 10px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px"><span style="height: 4px; border-radius: 4px; background: {{s1}}; transition: background .25s ease"></span><span style="height: 4px; border-radius: 4px; background: {{s2}}; transition: background .25s ease"></span><span style="height: 4px; border-radius: 4px; background: {{s3}}; transition: background .25s ease"></span></div>
 <div role="status" style="margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px">
 <span style="display: flex; align-items: center; gap: 6px; color: {{r1.c}}"><span style="width: 18px; height: 18px; border-radius: 50%; background: {{r1.bg}}; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>8+ characters</span>
 <span style="display: flex; align-items: center; gap: 6px; color: {{r2.c}}"><span style="width: 18px; height: 18px; border-radius: 50%; background: {{r2.bg}}; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>A number</span>
 <span style="display: flex; align-items: center; gap: 6px; color: {{r3.c}}"><span style="width: 18px; height: 18px; border-radius: 50%; background: {{r3.bg}}; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>A symbol</span>
-</div></div>
+</div><sc-if value="{{weak}}" hint-placeholder-val="{{false}}"><span class="ob-err" role="alert"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5v5.5"></path><path d="M12 16.4v.2"></path></svg>Add a number and a symbol to make it stronger.</span></sc-if></div>
 <div><label for="pw2" class="ob-lab">Confirm password</label><input id="pw2" class="ob-f" type="{{pwType}}" value="{{pw2}}" onChange="{{onPw2}}" autocomplete="new-password" placeholder="Type it once more"><span class="ob-help" style="color: {{matchColor}}">{{matchText}}</span></div>
 </div>
 <a href="CR-ONB-004.dc.html" class="ob-btn" style="margin-top: clamp(18px, 3vh, 26px); display: flex; align-items: center; gap: 16px; height: 56px; padding: 0 6px 0 28px; box-sizing: border-box; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-size: 16px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; white-space: nowrap; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 12px 28px rgba(22, 82, 240, 0.28)">Create my account<span class="ob-arrow" style="width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; color: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
@@ -126,13 +132,14 @@ select.ob-f{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:po
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { pw: '', pw2: '', show: false }; }
+  constructor(props) { super(props); this.weak = !!(props && props.variant === 'weak'); this.state = { pw: this.weak ? 'sunshine' : '', pw2: '', show: false }; }
   renderVals() {
     const { pw, pw2, show } = this.state;
     const r = [pw.length >= 8, /\d/.test(pw), /[^A-Za-z0-9]/.test(pw)];
     const n = r.filter(Boolean).length;
-    const segC = n === 3 ? '#0F6B45' : '#1652F0';
-    const rule = (ok) => ({ c: ok ? '#0F6B45' : '#5B6582', bg: ok ? '#0F6B45' : '#D6DDEE' });
+    const segC = n === 3 ? '#0F6B45' : (this.weak ? '#D92D20' : '#1652F0');
+    const W = this.weak && n < 3;
+    const rule = (ok) => ({ c: ok ? '#0F6B45' : (W ? '#B42318' : '#5B6582'), bg: ok ? '#0F6B45' : (W ? '#D92D20' : '#D6DDEE') });
     const match = pw2.length === 0 ? '' : (pw2 === pw ? 'Passwords match.' : 'These don’t match yet.');
     return {
       pw, pw2, pwType: show ? 'text' : 'password', showLabel: show ? 'Hide' : 'Show',
@@ -140,7 +147,7 @@ class Component extends DCLogic {
       toggle: () => this.setState({ show: !show }),
       s1: n >= 1 ? segC : '#E6EAF3', s2: n >= 2 ? segC : '#E6EAF3', s3: n >= 3 ? segC : '#E6EAF3',
       r1: rule(r[0]), r2: rule(r[1]), r3: rule(r[2]),
-      matchText: match, matchColor: pw2 === pw ? '#0F6B45' : '#5B6582'
+      matchText: match, pwCls: W ? 'ob-bad' : '', weak: W, matchColor: pw2 === pw ? '#0F6B45' : '#5B6582'
     };
   }
 }

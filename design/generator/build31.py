@@ -223,70 +223,77 @@ props_patch('CR-PROF')
 wrap('CR-PROF', [('CR-PROF-001', 'profile', 820), ('CR-PROF-001c', 'creds', 844)])
 
 # ======================= CR-PUB · public profile (preview) =======================
-EXPS = [('Data Analysis with SQL', 'Course · Gold validated', '4.8', '1,284'), ('Certified Data Analyst', 'Certification', '4.6', '312'),
-        ('Advanced SQL for Analysts', 'Course', '4.7', '428'), ('Applied AI Program', 'Learning Program · with Samuel E.', '4.5', '186')]
-exps = ''.join(f'<li><span class="pb-th">{ic(I["book"], 20, 1.9)}</span><span class="pb-t"><b>{t}</b><span>{k}</span></span><span class="pb-m">{ic(I["star"], 14, 2)}{r}<em>· {l} learners</em></span></li>' for t, k, r, l in EXPS)
+EXPS = [('Data Analysis with SQL', 'Course', 'Gold validated', '4.8', '1,284', 'c1'), ('Certified Data Analyst', 'Certification', '', '4.6', '312', 'c2'),
+        ('Advanced SQL for Analysts', 'Course', '', '4.7', '428', 'c3'), ('Applied AI Program', 'Learning Program', 'with Samuel E.', '4.5', '186', 'c4')]
+def ecard(t, k, x, r, l, c):
+    return (f'<a href="#" class="pe {c}"><span class="pe-cv"><span class="pe-k">{k}</span>{ic(I["book"], 26, 1.7)}</span><span class="pe-b"><b>{t}</b>'
+            + (f'<span class="pe-x">{x}</span>' if x else '') + f'<span class="pe-m">{ic(I["star"], 14, 2)}<b>{r}</b><em>{l} learners</em></span></span></a>')
+CRS = [('MSc Data Science', 'University of Lagos'), ('AWS Certified Data Analytics', 'Amazon Web Services'), ('Senior Data Analyst', 'Flutterwave')]
 main = ('<main class="ds-main hp">\n<sc-if value="{{isPrev}}" hint-placeholder-val="{{true}}"><div class="pb-bar ob-in">' + EYE + '<span>Preview · this is what learners see</span><a href="CR-PROF-001.dc.html" class="hp-rb">Edit profile</a></div></sc-if>'
-        '<section class="pb-hero ob-in2"><div class="pb-ban"></div><div class="pb-hg"><div class="pb-main"><div class="pb-id"><span class="pb-av">AO</span><div class="pb-nm"><h1 class="ds-h1">Ada Ononuju<span class="pb-badge">' + SHIELD + 'Identity verified</span></h1>'
-        '<span class="pb-f">Data &amp; Analytics · 8+ years · ' + PIN + 'Lagos, Nigeria</span></div></div>'
-        '<p class="pb-hl">I help professionals turn messy data into decisions.</p>'
-        '<div class="pb-tp"><i>Data Analysis</i><i>SQL</i><i>Business Intelligence</i></div>'
-        '<div class="pb-st"><div><b>2,210</b><span>learners</span></div><div><b>4.7</b><span>average rating</span></div><div><b>4</b><span>learning experiences</span></div></div></div>'
-        '<aside class="pb-cr" aria-label="Verified credentials"><span class="hp-lab">Verified credentials</span><ul class="pb-c">'
-        '<li>' + SHIELD + '<span><b>MSc Data Science</b><span>University of Lagos</span></span></li><li>' + SHIELD + '<span><b>AWS Certified Data Analytics</b><span>Amazon Web Services</span></span></li>'
-        '<li>' + SHIELD + '<span><b>Senior Data Analyst</b><span>Flutterwave</span></span></li></ul></aside>' + '</div></section>'
-        '<div class="pb-g"><section class="ob-in3" aria-labelledby="pb-h1"><h2 id="pb-h1" class="hp-lab pb-lab">Learning experiences</h2><ul class="ds-card pb-l">' + exps + '</ul></section>'
+        '<div class="pp-g">'
+        '<aside class="pp-id ob-in2" aria-label="About Ada"><div class="pp-top"><span class="pp-av">AO</span><span class="pb-badge">' + SHIELD + 'Identity verified</span></div>'
+        '<h1 class="pp-n">Ada Ononuju</h1><span class="pp-f">Data &amp; Analytics · 8+ years</span><span class="pp-loc">' + PIN + 'Lagos, Nigeria</span>'
+        '<p class="pp-hl">I help professionals turn messy data into decisions.</p>'
+        '<div class="pp-tp"><i>Data Analysis</i><i>SQL</i><i>Business Intelligence</i></div>'
+        '<div class="pp-st"><div><b>2,210</b><span>learners</span></div><div><b>4.7</b><span>rating</span></div></div>'
+        '<span class="hp-lab pp-lab">Verified credentials</span><ul class="pp-cr">' + ''.join(f'<li>{SHIELD}<span><b>{t}</b><span>{o}</span></span></li>' for t, o in CRS) + '</ul></aside>'
+        '<section class="pp-ex ob-in3" aria-labelledby="pp-h"><h2 id="pp-h" class="pp-h">Learning experiences <em>4</em></h2><div class="pp-cards">' + ''.join(ecard(*e) for e in EXPS) + '</div></section>'
         '</div>\n</main>')
-js = '''    const v = props.variant || 'preview';
-    return { navCls: S.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !S.nav }), isPrev: v === 'preview' };'''
-css = COMMON + '''
+js = """    const v = props.variant || 'preview';
+    return { navCls: S.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !S.nav }), isPrev: v === 'preview' };"""
+css = COMMON + """
 .pb-bar{margin-top:20px;display:flex;align-items:center;gap:10px;padding:10px 10px 10px 18px;border-radius:999px;background:#0B1433;color:#FFFFFF;font-size:14px;font-weight:500}
 .pb-bar svg{color:#AFC1F5}.pb-bar span{flex:1}.pb-bar .hp-rb{height:34px;background:#FFFFFF;border:0}
-.pb-hero{margin-top:20px;padding:0 32px 28px 32px;border-radius:24px;background:#FFFFFF;border:1.5px solid #E6EAF3;overflow:hidden}
-.pb-ban{margin:0 -32px;height:116px;background:#EAF0FF url(''' + PBG + ''') center/cover no-repeat}
-.pb-id{display:flex;align-items:flex-end;gap:20px;margin-top:-44px}
-.pb-av{width:104px;height:104px;border-radius:50%;border:5px solid #FFFFFF;background:#0B1433;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font-size:30px;font-weight:600;flex-shrink:0}
-.pb-nm{padding-bottom:6px}
-.pb-nm .ds-h1{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
-.pb-badge{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 11px;border-radius:999px;background:#E7F5EE;color:#0F6B45;font-size:13px;font-weight:500;letter-spacing:0}
-.pb-f{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:14.5px;color:#5B6582}.pb-f svg{color:#8A93AD;margin-left:4px}
-.pb-hl{margin:22px 0 0 0;font-size:19px;line-height:1.45;font-weight:500;color:#1E2742;max-width:680px}
-.pb-tp{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}.pb-tp i{font-style:normal;height:32px;padding:0 14px;border-radius:999px;background:#F1F3F8;font-size:13.5px;font-weight:500;display:inline-flex;align-items:center;color:#3A4566}
-.pb-st{margin-top:26px;padding-top:22px;border-top:1.5px solid #F0F2F8;display:flex;gap:48px}
-.pb-st div{display:flex;align-items:baseline;gap:8px}.pb-st b{font-size:22px;font-weight:600;letter-spacing:-0.01em}.pb-st span{font-size:14px;color:#5B6582}
-.pb-g{margin-top:28px}
-.pb-hg{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:40px}
-.pb-main{min-width:0}
-.pb-cr{margin-top:28px;padding-left:32px;border-left:1.5px solid #F0F2F8;align-self:start}
-.pb-cr .hp-lab{margin-bottom:4px}
-.pb-cr .pb-c{padding:0}
-.pb-l{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
-.pb-l li:nth-child(2){border-top:0}
-.pb-lab{margin:0 0 10px 4px}
-.pb-l,.pb-c{list-style:none;margin:0;padding:4px 22px}
-.pb-l li,.pb-c li{display:flex;align-items:center;gap:14px;padding:16px 0;border-top:1.5px solid #F0F2F8}
-.pb-l li:first-child,.pb-c li:first-child{border-top:0}
-.pb-th{width:44px;height:44px;border-radius:12px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.pb-t{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}.pb-t b{font-size:15px;font-weight:600}.pb-t span{font-size:13.5px;color:#5B6582}
-.pb-m{display:inline-flex;align-items:center;gap:5px;font-size:14px;font-weight:600;white-space:nowrap}.pb-m svg{color:#0B1433}.pb-m em{font-style:normal;font-weight:400;color:#5B6582}
-.pb-c svg{color:#0F6B45;flex-shrink:0}
-.pb-c li > span{display:flex;flex-direction:column;gap:2px}.pb-c b{font-size:14.5px;font-weight:600}.pb-c li > span > span{font-size:13px;color:#5B6582}
-@media (max-width: 1080px){.pb-hg{grid-template-columns:minmax(0,1fr);gap:0}.pb-cr{padding-left:0;border-left:0;margin-top:24px;padding-top:20px;border-top:1.5px solid #F0F2F8}.pb-l{grid-template-columns:1fr}.pb-l li:nth-child(2){border-top:1.5px solid #F0F2F8}}
+.pp-g{margin-top:24px;display:grid;grid-template-columns:360px minmax(0,1fr);gap:28px;align-items:start}
+.pp-id{position:relative;padding:28px 28px 26px 28px;border-radius:24px;background:#FFFFFF url(""" + "'" + PBG + "'" + """) top center/100% 180px no-repeat;border:1.5px solid #E6EAF3;display:flex;flex-direction:column;align-items:flex-start}
+.pp-top{width:100%;display:flex;align-items:flex-start;justify-content:space-between}
+.pp-av{width:88px;height:88px;border-radius:50%;border:4px solid #FFFFFF;background:#0B1433;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font-size:26px;font-weight:600;box-shadow:0 10px 24px rgba(11,20,51,.12)}
+.pb-badge{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 11px;border-radius:999px;background:#FFFFFF;color:#0F6B45;font-size:12.5px;font-weight:500}
+.pp-n{margin:16px 0 0 0;font-size:28px;font-weight:600;letter-spacing:-0.02em;line-height:1.15}
+.pp-f{margin-top:6px;font-size:14.5px;color:#3A4566}
+.pp-loc{margin-top:4px;display:inline-flex;align-items:center;gap:6px;font-size:13.5px;color:#5B6582}.pp-loc svg{color:#8A93AD}
+.pp-hl{margin:18px 0 0 0;font-size:16.5px;line-height:1.5;font-weight:500;color:#0B1433}
+.pp-tp{margin-top:14px;display:flex;flex-wrap:wrap;gap:6px}.pp-tp i{font-style:normal;height:30px;padding:0 12px;border-radius:999px;background:#F1F3F8;font-size:13px;font-weight:500;display:inline-flex;align-items:center;color:#3A4566}
+.pp-st{margin-top:18px;width:100%;display:flex;gap:32px;padding:14px 0;border-top:1.5px solid #F0F2F8;border-bottom:1.5px solid #F0F2F8}
+.pp-st div{display:flex;align-items:baseline;gap:8px}.pp-st b{font-size:22px;font-weight:600;letter-spacing:-0.01em}.pp-st span{font-size:13.5px;color:#5B6582}
+.pp-lab{margin-top:16px}
+.pp-cr{list-style:none;margin:10px 0 0 0;padding:0;display:flex;flex-direction:column;gap:12px;width:100%}
+.pp-cr li{display:flex;align-items:flex-start;gap:10px}.pp-cr svg{color:#0F6B45;flex-shrink:0;margin-top:2px}
+.pp-cr li > span{display:flex;flex-direction:column;gap:1px}.pp-cr b{font-size:14px;font-weight:600}.pp-cr li > span > span{font-size:12.5px;color:#5B6582}
+.pp-h{margin:4px 0 16px 2px;display:flex;align-items:center;gap:10px;font-size:20px;font-weight:600;letter-spacing:-0.01em}
+.pp-h em{font-style:normal;height:24px;min-width:24px;padding:0 8px;border-radius:999px;background:#EAF0FF;color:#0E3BB8;font-size:13px;font-weight:500;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box}
+.pp-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pe{display:flex;flex-direction:column;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;overflow:hidden;color:#0B1433;text-decoration:none;transition:box-shadow .2s ease,transform .2s ease}
+.pe:hover{box-shadow:0 14px 34px rgba(11,20,51,.10);transform:translateY(-2px)}
+.pe-cv{position:relative;height:112px;display:flex;align-items:flex-end;justify-content:flex-end;padding:16px 18px;color:rgba(255,255,255,.85)}
+.pe.c1 .pe-cv{background:linear-gradient(135deg,#0E3BB8,#1652F0 60%,#5B85F5)}
+.pe.c2 .pe-cv{background:linear-gradient(135deg,#0B1433,#1E3A8A)}
+.pe.c3 .pe-cv{background:linear-gradient(135deg,#1652F0,#7FA0F7)}
+.pe.c4 .pe-cv{background:linear-gradient(135deg,#1E3A8A,#4C6FE0)}
+.pe-k{position:absolute;top:14px;left:16px;height:26px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.18);color:#FFFFFF;font-size:12px;font-weight:500;display:inline-flex;align-items:center;backdrop-filter:blur(4px)}
+.pe-b{padding:16px 18px 18px 18px;display:flex;flex-direction:column;gap:4px}
+.pe-b > b{font-size:16px;font-weight:600;line-height:1.3}
+.pe-x{font-size:13px;color:#5B6582}
+.pe-m{margin-top:10px;display:inline-flex;align-items:center;gap:6px;font-size:13.5px}.pe-m b{font-weight:600}.pe-m em{font-style:normal;color:#5B6582;margin-left:4px}
+@media (max-width: 1180px){.pp-g{grid-template-columns:320px minmax(0,1fr)}}
+@media (max-width: 1080px){.pp-g{grid-template-columns:minmax(0,1fr)}}
 @media (max-width: 960px){
 .pb-bar{margin-top:12px;font-size:13px;padding:8px 8px 8px 14px}
-.pb-hero{padding:0 18px 22px 18px;border-radius:20px}
-.pb-ban{margin:0 -18px;height:100px}
-.pb-id{flex-direction:column;align-items:flex-start;gap:12px;margin-top:-40px}
-.pb-av{width:80px;height:80px;font-size:24px;border-width:4px}
-.pb-f{flex-wrap:wrap;font-size:13.5px}
-.pb-hl{font-size:16px;margin-top:16px}
-.pb-st{gap:20px;flex-wrap:wrap}.pb-st div{flex-direction:column;gap:0}.pb-st b{font-size:19px}.pb-st span{font-size:12.5px}
-.pb-g{gap:24px;margin-top:24px}
-.pb-l,.pb-c{padding:2px 16px}
-.pb-l li{flex-wrap:wrap;row-gap:6px}.pb-t{flex-basis:calc(100% - 58px)}.pb-m{margin-left:58px;font-size:13px}
+.pp-g{margin-top:16px;gap:28px}
+.pp-id{padding:22px 18px;border-radius:20px;background-size:100% 150px}
+.pp-av{width:76px;height:76px;font-size:22px}
+.pp-n{font-size:24px;margin-top:18px}
+.pp-hl{font-size:15.5px}
+.pp-cards{grid-template-columns:1fr;gap:12px}
+.pe{flex-direction:row}
+.pe-cv{width:92px;height:auto;flex-shrink:0;padding:12px;justify-content:center;align-items:center}
+.pe-k{display:none}
+.pe-b{padding:14px 16px}
+.pe-b > b{font-size:15px}
+.pe-m{margin-top:6px}
 }
-'''
+"""
 B.page('CR-PUB', 'Creator profile', main, js, css, 'Credalio · Ada Ononuju', "{ nav: false }")
 props_patch('CR-PUB')
-wrap('CR-PUB', [('CR-PROF-001v', 'preview', 1400)])
+wrap('CR-PUB', [('CR-PROF-001v', 'preview', 1230)])
 print('build31 ok')

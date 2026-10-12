@@ -323,3 +323,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [ ] D [ ] M  `ORI-M7-S2` M7 · Scenario exercise: correct response
 - [ ] D [ ] M  `ORI-M7-S3` M7 · Scenario exercise: incorrect response
 - [ ] D [ ] M  `ORI-M7-DONE` M7 · Module complete
+
+## Link 1 · states & errors (D3YR4Ee6ZP53iSMf3v6LQT)
+
+- [x] D [x] M  `ONB-003e` Account: invalid email (CR-ONB-003 variant invalid)
+- [x] D [x] M  `ONB-003d` Change your email → new verification link (CR-ONB-003 variant change)
+- [x] D [x] M  `ONB-003ce` Create password: too weak (CR-ONB-003c variant weak)
+- [x] D [x] M  `ONB-004e` About you: missing display name (CR-ONB-004 variant err)
+- [x] D [x] M  `ONB-005e` Expertise: missing required fields (CR-ONB-005 variant err)

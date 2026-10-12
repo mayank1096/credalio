@@ -3272,6 +3272,96 @@
       "x": 0,
       "y": 320,
       "page": "p1"
+    },
+    "CR-ONB-003e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-003e · Invalid email · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 320,
+      "page": "p1"
+    },
+    "CR-ONB-003e-Mobile.dc.html": {
+      "h": 1010,
+      "is_interactive": true,
+      "title": "CR-ONB-003e · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 320,
+      "page": "p1"
+    },
+    "CR-ONB-003d.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-003d · Change your email · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 320,
+      "page": "p1"
+    },
+    "CR-ONB-003d-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "title": "CR-ONB-003d · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 320,
+      "page": "p1"
+    },
+    "CR-ONB-003ce.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-003ce · Password too weak · Desktop",
+      "w": 1440,
+      "x": 18630,
+      "y": 320,
+      "page": "p1"
+    },
+    "CR-ONB-003ce-Mobile.dc.html": {
+      "h": 880,
+      "is_interactive": true,
+      "title": "CR-ONB-003ce · Mobile",
+      "w": 390,
+      "x": 20150,
+      "y": 320,
+      "page": "p1"
+    },
+    "CR-ONB-004e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-004e · Missing display name · Desktop",
+      "w": 1440,
+      "x": 22770,
+      "y": 320,
+      "page": "p1"
+    },
+    "CR-ONB-004e-Mobile.dc.html": {
+      "h": 1110,
+      "is_interactive": true,
+      "title": "CR-ONB-004e · Mobile",
+      "w": 390,
+      "x": 24290,
+      "y": 320,
+      "page": "p1"
+    },
+    "CR-ONB-005e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ONB-005e · Missing required fields · Desktop",
+      "w": 1440,
+      "x": 26910,
+      "y": 320,
+      "page": "p1"
+    },
+    "CR-ONB-005e-Mobile.dc.html": {
+      "h": 990,
+      "is_interactive": true,
+      "title": "CR-ONB-005e · Mobile",
+      "w": 390,
+      "x": 28430,
+      "y": 320,
+      "page": "p1"
     }
   },
   "createdOnFiles": {
@@ -3290,41 +3380,6 @@
       "w": 240,
       "x": 0,
       "y": 0,
-      "page": "p1"
-    },
-    "l1m-CR-ONB-003e": {
-      "text": "Not done yet\nCR-ONB-003e · CR-ONB-003 · Account: invalid email (error)",
-      "x": 8280,
-      "y": 320,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ONB-003d": {
-      "text": "Not done yet\nCR-ONB-003d · CR-ONB-003D · “This isn’t my email” → Change your email → new verification link",
-      "x": 12420,
-      "y": 320,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ONB-003ce": {
-      "text": "Not done yet\nCR-ONB-003ce · CR-ONB-003C · Create password: too weak (error)",
-      "x": 18630,
-      "y": 320,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ONB-004e": {
-      "text": "Not done yet\nCR-ONB-004e · CR-ONB-004 · About you: missing display name (error)",
-      "x": 22770,
-      "y": 320,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ONB-005e": {
-      "text": "Not done yet\nCR-ONB-005e · CR-ONB-005 · Expertise: missing required fields (error)",
-      "x": 26910,
-      "y": 320,
-      "w": 1440,
       "page": "p1"
     },
     "l1m-CR-ONB-007p": {
@@ -4617,7 +4672,17 @@
     "CR-SUP.dc.html",
     "CR-VAL-WS.dc.html",
     "CR-WAL-FUND.dc.html",
-    "CR-WAL-OUT.dc.html"
+    "CR-WAL-OUT.dc.html",
+    "CR-ONB-003e.dc.html",
+    "CR-ONB-003e-Mobile.dc.html",
+    "CR-ONB-003d.dc.html",
+    "CR-ONB-003d-Mobile.dc.html",
+    "CR-ONB-003ce.dc.html",
+    "CR-ONB-003ce-Mobile.dc.html",
+    "CR-ONB-004e.dc.html",
+    "CR-ONB-004e-Mobile.dc.html",
+    "CR-ONB-005e.dc.html",
+    "CR-ONB-005e-Mobile.dc.html"
   ],
   "pages": [
     {

@@ -368,7 +368,7 @@
     "CR-CTR-001.dc.html": {
       "h": 1230,
       "is_interactive": true,
-      "title": "CR-CTR-001 · Creator Centre · Desktop",
+      "title": "CR-CTR-001 · Creator Center · Desktop",
       "w": 1440,
       "x": 4140,
       "y": 8700,
@@ -731,7 +731,7 @@
     "CR-CRED-002d.dc.html": {
       "h": 820,
       "is_interactive": true,
-      "title": "CR-CRED-002d · Licence or membership · Desktop",
+      "title": "CR-CRED-002d · License or membership · Desktop",
       "w": 1440,
       "x": 10350,
       "y": 14600
@@ -971,7 +971,7 @@
     "CR-NOT-001.dc.html": {
       "h": 1200,
       "is_interactive": true,
-      "title": "CR-NOT-001 · Notification Centre · Desktop",
+      "title": "CR-NOT-001 · Notification Center · Desktop",
       "w": 1440,
       "x": 0,
       "y": 18900
@@ -1051,7 +1051,7 @@
     "CR-HOME-SOON.dc.html": {
       "h": 820,
       "is_interactive": true,
-      "title": "CR-HOME-SOON · Not-yet-built destination (Validation Centre) · Desktop",
+      "title": "CR-HOME-SOON · Not-yet-built destination (Validation Center) · Desktop",
       "w": 1440,
       "x": 0,
       "y": 20500
@@ -1211,7 +1211,7 @@
     "CR-VAL-MC-001.dc.html": {
       "h": 820,
       "is_interactive": true,
-      "title": "CR-VAL-MC-001 · Validation Centre · cases · Desktop",
+      "title": "CR-VAL-MC-001 · Validation Center · cases · Desktop",
       "w": 1440,
       "x": 0,
       "y": 23100
@@ -2253,7 +2253,7 @@
     "ready": {
       "kind": "title1",
       "maxW": 8000,
-      "text": "Readiness, Creator Centre & Orientation",
+      "text": "Readiness, Creator Center & Orientation",
       "w": 240,
       "x": 0,
       "y": 8400
@@ -2332,7 +2332,7 @@
       "y": 15444,
       "w": 1440,
       "maxH": 360,
-      "text": "I’ve simplified this page: one column, and the “task complete” box and the next step are now one bar at the bottom.\nThe intro still runs to four lines though. Maybe: “Add degrees, certifications, licences or work experience. They show as verified once checked.”\nAnd the green text could be: “One verified credential completes this task. Others join your profile once verified.”",
+      "text": "I’ve simplified this page: one column, and the “task complete” box and the next step are now one bar at the bottom.\nThe intro still runs to four lines though. Maybe: “Add degrees, certifications, licenses or work experience. They show as verified once checked.”\nAnd the green text could be: “One verified credential completes this task. Others join your profile once verified.”",
       "fill": "orange",
       "size": "s"
     },
@@ -2415,7 +2415,7 @@
     "val": {
       "kind": "title1",
       "maxW": 8000,
-      "text": "Validation · Validation Centre → workspace inside the Course Studio (Lead sees all, Mary sees hers) → Mary’s request → she responds with evidence → Lead follows read-only",
+      "text": "Validation · Validation Center → workspace inside the Course Studio (Lead sees all, Mary sees hers) → Mary’s request → she responds with evidence → Lead follows read-only",
       "w": 240,
       "x": 0,
       "y": 22800

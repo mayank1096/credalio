@@ -366,8 +366,8 @@ class Component extends DCLogic {
     return { koCls: T[0], pill: T[1], h1: T[2], sub: T[3], r: v === 'processing', v: v === 'funded' || ret || pay, a: v === 'failed', f: false, pd: pay, fd: !pay,
       bar: pay ? 'Submit for validation' : 'Credit Wallet', closeHref: pay ? 'CR-VAL-MC-001.dc.html' : 'CR-WAL-001.dc.html',
       nxH: pay ? 'Follow the case' : (ret ? 'Back to your validation payment' : 'Pay for validation'),
-      nxP: pay ? 'Requests and decisions show up in the Validation Center.' : (ret ? '1,260 Credits for Data Analysis with SQL. You’re covered now.' : 'Data Analysis with SQL needs 1,260 Credits. You have enough now.'),
-      nxCta: pay ? 'Open Validation Center' : (ret ? 'Return to payment' : 'Continue'), nxHref: pay ? 'CR-VAL-MC-001.dc.html' : (ret ? 'CR-PAY-002f.dc.html' : 'CR-PAY-002b.dc.html'),
+      nxP: pay ? 'Requests and decisions show up in the Validation Centre.' : (ret ? '1,260 Credits for Data Analysis with SQL. You’re covered now.' : 'Data Analysis with SQL needs 1,260 Credits. You have enough now.'),
+      nxCta: pay ? 'Open Validation Centre' : (ret ? 'Return to payment' : 'Continue'), nxHref: pay ? 'CR-VAL-MC-001.dc.html' : (ret ? 'CR-PAY-002f.dc.html' : 'CR-PAY-002b.dc.html'),
       l1: pay ? 'Back to my Studio' : 'Back to wallet', l1h: pay ? 'CR-DASH-NEW.dc.html' : 'CR-WAL-001.dc.html', hasL2: !pay && !ret, l2: pay ? 'Back to my Studio' : 'Transactions', l2h: pay ? 'CR-DASH-NEW.dc.html' : 'CR-WAL-007.dc.html' };
   }
 }

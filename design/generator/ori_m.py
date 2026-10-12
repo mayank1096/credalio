@@ -14,6 +14,16 @@ ICO = {
 def svg(k, w=20, sw=1.9): return f'<svg width="{w}" height="{w}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="{sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{ICO[k]}</svg>'
 CHK = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>'
 LESSON_CSS = """
+/* lesson mobile breathing room (designer: too stuffed vertically) */
+@media (max-width: 960px){
+.ls-top .lp-p{margin-top:14px}
+.ls-top + .ls-roles,.ls-top + .vc2,.ls-top + .ls-cmp,.ls-top + .ls-vid{margin-top:32px !important}
+.ls-roles{gap:12px !important}
+.ls-roles li{padding:16px !important;row-gap:3px !important}
+.ls-vid + .ls-roles{margin-top:16px !important}
+.lp-main .lp-ask{margin-top:32px !important}
+.ls-gk{margin-top:24px}
+}
 /* lesson breathing room (designer: too stuffed vertically) */
 @media (min-width: 961px){
 .ls-top .lp-p{margin-top:20px}

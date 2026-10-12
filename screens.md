@@ -228,14 +228,14 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 
 ## 21. AI Tokens · Not enough Credits → existing Fund Wallet flow → back to purchase (4)
 
-- [ ] D [ ] M  `AI-006` AI-006 · Insufficient Credits → Fund Credit Wallet
-- [ ] D [ ] M  `AI-006b` AI-006 · Fund Wallet in AI context (existing flow)
-- [ ] D [ ] M  `AI-006c` AI-006 · Funded → Return to AI Token Purchase
-- [ ] D [ ] M  `AI-006d` AI-006 · Back at purchase: “Wallet funded. You’re back where you left off.”
+- [x] D [x] M  `AI-006` AI-006 · Insufficient Credits → Fund Credit Wallet
+- [x] D [x] M  `AI-006b` AI-006 · Fund Wallet in AI context (existing flow)
+- [x] D [x] M  `AI-006c` AI-006 · Funded → Return to AI Token Purchase
+- [x] D [x] M  `AI-006d` AI-006 · Back at purchase: “Wallet funded. You’re back where you left off.”
 
 ## 22. AI Tokens · Usage, preferences, low and depleted states, top-bar chip, estimates (8)
 
-- [ ] D [ ] M  `AI-007` AI-007 / AI-008 · AI Usage with filters & usage detail
+- [x] D [x] M  `AI-007` AI-007 / AI-008 · AI Usage with filters & usage detail
 - [ ] D [ ] M  `AI-012` AI-012 · Copilot Preferences
 - [ ] D [ ] M  `AI-TOP` Top-bar AI Token chip & popover: Nova ✦ 72.4K
 - [ ] D [ ] M  `AI-010` AI-010 · Low AI Token balance (Copilot page)

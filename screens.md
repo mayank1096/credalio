@@ -220,11 +220,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 ## 20. AI Tokens · Nova, Your Creator Copilot: overview, balance, buy (packages or custom amount), confirm, success (6)
 
 - [x] D [x] M  `AI-001` AI-001 · Nova: Your Creator Copilot · Overview (= CR-NOVA-001)
-- [ ] D [ ] M  `AI-002` AI-002 / AI-009 · AI Tokens: balance & purchase history (detail)
-- [ ] D [ ] M  `AI-003` AI-003 · Buy AI Tokens (packages)
-- [ ] D [ ] M  `AI-003c` AI-003 · Custom amount (enter AI Tokens, Credits update live)
-- [ ] D [ ] M  `AI-004` AI-004 · Confirm AI Token purchase
-- [ ] D [ ] M  `AI-005` AI-005 · Purchase successful
+- [x] D [x] M  `AI-002` AI-002 / AI-009 · AI Tokens: balance & purchase history (detail)
+- [x] D [x] M  `AI-003` AI-003 · Buy AI Tokens (packages)
+- [x] D [x] M  `AI-003c` AI-003 · Custom amount (enter AI Tokens, Credits update live)
+- [x] D [x] M  `AI-004` AI-004 · Confirm AI Token purchase
+- [x] D [x] M  `AI-005` AI-005 · Purchase successful
 
 ## 21. AI Tokens · Not enough Credits → existing Fund Wallet flow → back to purchase (4)
 

@@ -113,9 +113,11 @@ def video(caption):
     return f'<figure class="ls-vid ob-in3" aria-label="{caption}"><span class="ls-play">{svg("play", 24, 0)}</span><figcaption class="ls-cap">{caption}</figcaption></figure>'
 def roles(items):
     return '<ul class="ls-roles ob-in3">' + ''.join(f'<li><span class="vc-i">{svg(ic)}</span><b>{b}</b><span>{t}</span></li>' for ic, b, t in items) + '</ul>'
-def check(tpl, mod, mname, steps, Q, prev, done_href, title):
+def check(tpl, mod, mname, steps, Q, prev, done_href, title, cur=None):
     n = len(steps)
-    s = _head(tpl, mod, mname, steps, n - 1, f'Step {n} of {n}')
+    cur = n - 1 if cur is None else cur
+    s = _head(tpl, mod, mname, steps, cur, f'Step {cur + 1} of {n}')
+    if cur < n - 1: s = s.replace("'Complete module' : 'Answer both to finish'", "'Next' : 'Answer both to continue'", 1)
     q = ',\n      '.join("[" + ", ".join(repr(x) if not isinstance(x, list) else "[" + ", ".join(repr(y) for y in x) + "]" for x in qq) + "]" for qq in Q)
     s = re.sub(r'const Q = \[.*?\n    \];', 'const Q = [\n      ' + q + '\n    ];', s, count=1, flags=re.S)
     s = s.replace("constructor(props) { super(props); this.state = { a: [1, -1] }; }",
@@ -123,7 +125,7 @@ def check(tpl, mod, mname, steps, Q, prev, done_href, title):
     assert "props.variant" in s
     s = re.sub(r'<p class="lp-meta ob-in2">[^<]*</p>', '', s, count=1)
     s = s.replace('{{q.n}} · {{q.kind}}', '{{q.n}}')
-    s = _foot(s, prev[0], prev[1], n, n, done_href, '', dyn=True)
+    s = _foot(s, prev[0], prev[1], cur + 1, n, done_href, '', dyn=True)
     s = add_scene(s)
     s = trim(s)
     return re.sub(r'<title>.*?</title>', f'<title>{title}</title>', s)

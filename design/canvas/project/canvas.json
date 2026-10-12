@@ -3920,6 +3920,96 @@
    "x": 16010,
    "y": 13314,
    "page": "p1"
+  },
+  "CR-ORI-M5-00.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M5-00 · Module 5 overview · Desktop",
+   "w": 1440,
+   "x": 0,
+   "y": 15144,
+   "page": "p1"
+  },
+  "CR-ORI-M5-00-Mobile.dc.html": {
+   "h": 1200,
+   "is_interactive": true,
+   "title": "CR-ORI-M5-00 · Mobile",
+   "w": 390,
+   "x": 1520,
+   "y": 15144,
+   "page": "p1"
+  },
+  "CR-ORI-M5-L1.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M5-L1 · Lesson 1: Using your Copilot well · Desktop",
+   "w": 1440,
+   "x": 2070,
+   "y": 15144,
+   "page": "p1"
+  },
+  "CR-ORI-M5-L1-Mobile.dc.html": {
+   "h": 900,
+   "is_interactive": true,
+   "title": "CR-ORI-M5-L1 · Mobile",
+   "w": 390,
+   "x": 3590,
+   "y": 15144,
+   "page": "p1"
+  },
+  "CR-ORI-M5-L2.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M5-L2 · Lesson 2: Review, disclose, own · Desktop",
+   "w": 1440,
+   "x": 4140,
+   "y": 15144,
+   "page": "p1"
+  },
+  "CR-ORI-M5-L2-Mobile.dc.html": {
+   "h": 960,
+   "is_interactive": true,
+   "title": "CR-ORI-M5-L2 · Mobile",
+   "w": 390,
+   "x": 5660,
+   "y": 15144,
+   "page": "p1"
+  },
+  "CR-ORI-M5-K1.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M5-K1 · Knowledge check: unanswered · Desktop",
+   "w": 1440,
+   "x": 6210,
+   "y": 15144,
+   "page": "p1"
+  },
+  "CR-ORI-M5-K1-Mobile.dc.html": {
+   "h": 1000,
+   "is_interactive": true,
+   "title": "CR-ORI-M5-K1 · Mobile",
+   "w": 390,
+   "x": 7730,
+   "y": 15144,
+   "page": "p1"
+  },
+  "CR-ORI-M5-K3.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M5-K3 · Knowledge check: try again · Desktop",
+   "w": 1440,
+   "x": 10350,
+   "y": 15144,
+   "page": "p1"
+  },
+  "CR-ORI-M5-K3-Mobile.dc.html": {
+   "h": 1000,
+   "is_interactive": true,
+   "title": "CR-ORI-M5-K3 · Mobile",
+   "w": 390,
+   "x": 11870,
+   "y": 15144,
+   "page": "p1"
   }
  },
  "createdOnFiles": {
@@ -4017,41 +4107,6 @@
    "w": 240,
    "x": 0,
    "y": 14824,
-   "page": "p1"
-  },
-  "l1m-CR-ORI-M5-00": {
-   "text": "Not done yet\nCR-ORI-M5-00 · M5 · AI & Responsible Creation: module overview",
-   "x": 0,
-   "y": 15144,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-ORI-M5-L1": {
-   "text": "Not done yet\nCR-ORI-M5-L1 · M5 · Lesson 1: Using your Copilot well",
-   "x": 2070,
-   "y": 15144,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-ORI-M5-L2": {
-   "text": "Not done yet\nCR-ORI-M5-L2 · M5 · Lesson 2: Review, disclose, own",
-   "x": 4140,
-   "y": 15144,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-ORI-M5-K1": {
-   "text": "Not done yet\nCR-ORI-M5-K1 · M5 · Knowledge check: unanswered",
-   "x": 6210,
-   "y": 15144,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-ORI-M5-K3": {
-   "text": "Not done yet\nCR-ORI-M5-K3 · M5 · Knowledge check: incorrect answer (try again)",
-   "x": 10350,
-   "y": 15144,
-   "w": 1440,
    "page": "p1"
   },
   "l1m-CR-ORI-M5-S1": {
@@ -4654,42 +4709,42 @@
    "y": 22732,
    "page": "p1"
   },
-  "new-CR-ORI-M4-L3": {
-   "text": "NEW · just made · CR-ORI-M4-L3",
+  "new-CR-ORI-M5-00": {
+   "text": "NEW · just made · CR-ORI-M5-00",
+   "x": 0,
+   "y": 16384,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
+  },
+  "new-CR-ORI-M5-L1": {
+   "text": "NEW · just made · CR-ORI-M5-L1",
+   "x": 2070,
+   "y": 16084,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
+  },
+  "new-CR-ORI-M5-L2": {
+   "text": "NEW · just made · CR-ORI-M5-L2",
+   "x": 4140,
+   "y": 16144,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
+  },
+  "new-CR-ORI-M5-K1": {
+   "text": "NEW · just made · CR-ORI-M5-K1",
    "x": 6210,
-   "y": 14314,
+   "y": 16184,
    "w": 1910,
    "fill": "blue",
    "page": "p1"
   },
-  "new-CR-ORI-M4-K1": {
-   "text": "NEW · just made · CR-ORI-M4-K1",
-   "x": 8280,
-   "y": 14354,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-ORI-M4-K2": {
-   "text": "NEW · just made · CR-ORI-M4-K2",
+  "new-CR-ORI-M5-K3": {
+   "text": "NEW · just made · CR-ORI-M5-K3",
    "x": 10350,
-   "y": 14354,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-ORI-M4-K3": {
-   "text": "NEW · just made · CR-ORI-M4-K3",
-   "x": 12420,
-   "y": 14354,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-ORI-M4-DONE": {
-   "text": "NEW · just made · CR-ORI-M4-DONE",
-   "x": 14490,
-   "y": 14254,
+   "y": 16184,
    "w": 1910,
    "fill": "blue",
    "page": "p1"
@@ -5132,7 +5187,17 @@
   "CR-ORI-M4-K3.dc.html",
   "CR-ORI-M4-K3-Mobile.dc.html",
   "CR-ORI-M4-DONE.dc.html",
-  "CR-ORI-M4-DONE-Mobile.dc.html"
+  "CR-ORI-M4-DONE-Mobile.dc.html",
+  "CR-ORI-M5-00.dc.html",
+  "CR-ORI-M5-00-Mobile.dc.html",
+  "CR-ORI-M5-L1.dc.html",
+  "CR-ORI-M5-L1-Mobile.dc.html",
+  "CR-ORI-M5-L2.dc.html",
+  "CR-ORI-M5-L2-Mobile.dc.html",
+  "CR-ORI-M5-K1.dc.html",
+  "CR-ORI-M5-K1-Mobile.dc.html",
+  "CR-ORI-M5-K3.dc.html",
+  "CR-ORI-M5-K3-Mobile.dc.html"
  ],
  "pages": [
   {

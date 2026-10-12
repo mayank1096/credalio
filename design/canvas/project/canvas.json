@@ -3115,6 +3115,41 @@
       "w": 240,
       "x": 0,
       "y": 47100
+    },
+    "creio3": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Creio: balance pop-over · low · used up · not enough for this action",
+      "w": 240,
+      "x": 0,
+      "y": 48500
+    },
+    "div-l1": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "▲ End of Link 1 (main reference, 2 Oct)",
+      "w": 240,
+      "x": 0,
+      "y": 49820
+    },
+    "div-line": {
+      "kind": "line",
+      "x": -200,
+      "y": 50000,
+      "x2": 12000,
+      "y2": 50000,
+      "color": "blue",
+      "css": {
+        "stroke-width": "8"
+      }
+    },
+    "div-l2": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "▼ Link 2 (5 Oct): new screens start here",
+      "w": 240,
+      "x": 0,
+      "y": 50060
     }
   },
   "order": [

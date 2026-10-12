@@ -2695,6 +2695,86 @@
       "w": 390,
       "x": 9800,
       "y": 47400
+    },
+    "CR-CREIO-TOP.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-TOP · Creio popover · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 48800
+    },
+    "CR-CREIO-TOP-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-TOP · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 48800
+    },
+    "CR-CREIO-010b.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-010b · Creio popover · low · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 48800
+    },
+    "CR-CREIO-010b-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-010b · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 48800
+    },
+    "CR-CREIO-010.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-010 · Nova · low balance · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 48800
+    },
+    "CR-CREIO-010-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-010 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 48800
+    },
+    "CR-CREIO-011.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-011 · Nova · Creio used up · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 48800
+    },
+    "CR-CREIO-011-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-011 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 48800
+    },
+    "CR-CREIO-011b.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-011b · Copilot · not enough Creio · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 48800
+    },
+    "CR-CREIO-011b-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-011b · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 48800
     }
   },
   "createdOnFiles": {
@@ -3370,7 +3450,17 @@
     "CR-CREIO-006d.dc.html",
     "CR-CREIO-006d-Mobile.dc.html",
     "CR-CREIO-USE.dc.html",
-    "CR-CREIO-USE-Mobile.dc.html"
+    "CR-CREIO-USE-Mobile.dc.html",
+    "CR-CREIO-TOP.dc.html",
+    "CR-CREIO-TOP-Mobile.dc.html",
+    "CR-CREIO-010b.dc.html",
+    "CR-CREIO-010b-Mobile.dc.html",
+    "CR-CREIO-010.dc.html",
+    "CR-CREIO-010-Mobile.dc.html",
+    "CR-CREIO-011.dc.html",
+    "CR-CREIO-011-Mobile.dc.html",
+    "CR-CREIO-011b.dc.html",
+    "CR-CREIO-011b-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

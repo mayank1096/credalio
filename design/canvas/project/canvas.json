@@ -3542,6 +3542,96 @@
       "x": 11870,
       "y": 8310,
       "page": "p1"
+    },
+    "CR-ORI-M1-DONE.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M1-DONE · Module 1 complete · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 8310,
+      "page": "p1"
+    },
+    "CR-ORI-M1-DONE-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "title": "CR-ORI-M1-DONE · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 8310,
+      "page": "p1"
+    },
+    "CR-ORI-M2-00.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M2-00 · Module 2 overview · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 9970,
+      "page": "p1"
+    },
+    "CR-ORI-M2-00-Mobile.dc.html": {
+      "h": 990,
+      "is_interactive": true,
+      "title": "CR-ORI-M2-00 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 9970,
+      "page": "p1"
+    },
+    "CR-ORI-M2-L1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M2-L1 · Lesson 1: What makes learning trustworthy · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 9970,
+      "page": "p1"
+    },
+    "CR-ORI-M2-L1-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-ORI-M2-L1 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 9970,
+      "page": "p1"
+    },
+    "CR-ORI-M2-L2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M2-L2 · Lesson 2: Evidence of learning · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 9970,
+      "page": "p1"
+    },
+    "CR-ORI-M2-L2-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-ORI-M2-L2 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 9970,
+      "page": "p1"
+    },
+    "CR-ORI-M2-K1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M2-K1 · Check: unanswered · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 9970,
+      "page": "p1"
+    },
+    "CR-ORI-M2-K1-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "title": "CR-ORI-M2-K1 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 9970,
+      "page": "p1"
     }
   },
   "createdOnFiles": {
@@ -3598,13 +3688,6 @@
       "y": 7990,
       "page": "p1"
     },
-    "l1m-CR-ORI-M1-DONE": {
-      "text": "Not done yet\nCR-ORI-M1-DONE · M1 · Module complete",
-      "x": 12420,
-      "y": 8310,
-      "w": 1440,
-      "page": "p1"
-    },
     "l1s7": {
       "kind": "title1",
       "maxW": 8000,
@@ -3612,34 +3695,6 @@
       "w": 240,
       "x": 0,
       "y": 9650,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-M2-00": {
-      "text": "Not done yet\nCR-ORI-M2-00 · M2 · Creating Trusted Learning: module overview",
-      "x": 0,
-      "y": 9970,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-M2-L1": {
-      "text": "Not done yet\nCR-ORI-M2-L1 · M2 · Lesson 1: What makes learning trustworthy",
-      "x": 2070,
-      "y": 9970,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-M2-L2": {
-      "text": "Not done yet\nCR-ORI-M2-L2 · M2 · Lesson 2: Evidence of learning",
-      "x": 4140,
-      "y": 9970,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-M2-K1": {
-      "text": "Not done yet\nCR-ORI-M2-K1 · M2 · Knowledge check: unanswered",
-      "x": 6210,
-      "y": 9970,
-      "w": 1440,
       "page": "p1"
     },
     "l1m-CR-ORI-M2-K2": {
@@ -4416,44 +4471,44 @@
       "y": 22732,
       "page": "p1"
     },
-    "new-CR-ORI-M1-L1": {
-      "text": "NEW · just made · CR-ORI-M1-L1",
+    "new-CR-ORI-M1-DONE": {
+      "text": "NEW · just made · CR-ORI-M1-DONE",
+      "x": 12420,
+      "y": 9310,
+      "w": 1910,
+      "fill": "blue",
+      "page": "p1"
+    },
+    "new-CR-ORI-M2-00": {
+      "text": "NEW · just made · CR-ORI-M2-00",
+      "x": 0,
+      "y": 11000,
+      "w": 1910,
+      "fill": "blue",
+      "page": "p1"
+    },
+    "new-CR-ORI-M2-L1": {
+      "text": "NEW · just made · CR-ORI-M2-L1",
       "x": 2070,
-      "y": 9350,
+      "y": 10910,
       "w": 1910,
-      "fill": "pink",
+      "fill": "blue",
       "page": "p1"
     },
-    "new-CR-ORI-M1-L2": {
-      "text": "NEW · just made · CR-ORI-M1-L2",
+    "new-CR-ORI-M2-L2": {
+      "text": "NEW · just made · CR-ORI-M2-L2",
       "x": 4140,
-      "y": 9250,
+      "y": 10910,
       "w": 1910,
-      "fill": "pink",
+      "fill": "blue",
       "page": "p1"
     },
-    "new-CR-ORI-M1-K1": {
-      "text": "NEW · just made · CR-ORI-M1-K1",
+    "new-CR-ORI-M2-K1": {
+      "text": "NEW · just made · CR-ORI-M2-K1",
       "x": 6210,
-      "y": 9310,
+      "y": 10970,
       "w": 1910,
-      "fill": "pink",
-      "page": "p1"
-    },
-    "new-CR-ORI-M1-K2": {
-      "text": "NEW · just made · CR-ORI-M1-K2",
-      "x": 8280,
-      "y": 9310,
-      "w": 1910,
-      "fill": "pink",
-      "page": "p1"
-    },
-    "new-CR-ORI-M1-K3": {
-      "text": "NEW · just made · CR-ORI-M1-K3",
-      "x": 10350,
-      "y": 9310,
-      "w": 1910,
-      "fill": "pink",
+      "fill": "blue",
       "page": "p1"
     }
   },
@@ -4852,7 +4907,17 @@
     "CR-ORI-M1-K2.dc.html",
     "CR-ORI-M1-K2-Mobile.dc.html",
     "CR-ORI-M1-K3.dc.html",
-    "CR-ORI-M1-K3-Mobile.dc.html"
+    "CR-ORI-M1-K3-Mobile.dc.html",
+    "CR-ORI-M1-DONE.dc.html",
+    "CR-ORI-M1-DONE-Mobile.dc.html",
+    "CR-ORI-M2-00.dc.html",
+    "CR-ORI-M2-00-Mobile.dc.html",
+    "CR-ORI-M2-L1.dc.html",
+    "CR-ORI-M2-L1-Mobile.dc.html",
+    "CR-ORI-M2-L2.dc.html",
+    "CR-ORI-M2-L2-Mobile.dc.html",
+    "CR-ORI-M2-K1.dc.html",
+    "CR-ORI-M2-K1-Mobile.dc.html"
   ],
   "pages": [
     {

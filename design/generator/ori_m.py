@@ -182,3 +182,22 @@ def compare(weak, strong):
             f'<div class="cmp-ok"><span class="cmp-h"><i>{svg("check", 14, 2.2)}</i>Strong</span><p>{strong}</p></div></figure>')
 def with_css(s, css):
     i = s.rfind('</style>', 0, s.find('</helmet>')); return s[:i] + css + s[i:]
+
+LEVELS_CSS = """
+/* ori_m levels */
+.ls-lv{list-style:none;margin:28px 0 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ls-lv li{position:relative;display:flex;flex-direction:column;gap:4px;padding:20px;border-radius:18px;border:1.5px solid #E6EAF3;background:#FFFFFF}
+.ls-lv .lv-n{width:32px;height:32px;border-radius:50%;background:#F5F8FF;color:#1652F0;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+.ls-lv b{font-size:15px;font-weight:600}.ls-lv span.lv-d{font-size:13.5px;line-height:1.45;color:#5B6582}
+.ls-lv .lv-t{position:absolute;right:14px;top:14px;height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:500;display:inline-flex;align-items:center;background:#F1F3F8;color:#5B6582}
+.ls-lv .lv-on{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.08)}
+.ls-lv .lv-on .lv-n{background:#1652F0;color:#FFFFFF}
+.ls-lv .lv-on .lv-t{background:#EAF0FF;color:#0E3BB8}
+@media (min-width: 961px){.ls-top + .ls-lv{margin-top:40px}}
+@media (max-width: 960px){.ls-lv{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:28px}.ls-lv li{padding:16px}}
+"""
+def levels(items):
+    # items: (n, name, desc, tag or None, on)
+    return ('<ol class="ls-lv ob-in3" aria-label="Proficiency levels">' + ''.join(
+        f'<li class="{"lv-on" if on else ""}"><span class="lv-n">{n}</span><b>{b}</b><span class="lv-d">{d}</span>' + (f'<span class="lv-t">{t}</span>' if t else '') + '</li>'
+        for n, b, d, t, on in items) + '</ol>')

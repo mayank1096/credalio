@@ -282,11 +282,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `ORI-M2-L1` M2 · Lesson 1: What makes learning trustworthy
 - [x] D [x] M  `ORI-M2-L2` M2 · Lesson 2: Evidence of learning
 - [x] D [x] M  `ORI-M2-K1` M2 · Knowledge check: unanswered
-- [ ] D [ ] M  `ORI-M2-K2` M2 · Knowledge check: correct answers
-- [ ] D [ ] M  `ORI-M2-K3` M2 · Knowledge check: incorrect answer (try again)
-- [ ] D [ ] M  `ORI-M2-DONE` M2 · Module complete
-- [ ] D [ ] M  `ORI-M3-00` M3 · Outcomes, Skills & Evidence: module overview
-- [ ] D [ ] M  `ORI-M3-L2` M3 · Lesson 2: Skills and proficiency
+- [x] D [x] M  `ORI-M2-K2` M2 · Knowledge check: correct answers
+- [x] D [x] M  `ORI-M2-K3` M2 · Knowledge check: incorrect answer (try again)
+- [x] D [x] M  `ORI-M2-DONE` M2 · Module complete
+- [x] D [x] M  `ORI-M3-00` M3 · Outcomes, Skills & Evidence: module overview
+- [x] D [x] M  `ORI-M3-L2` M3 · Lesson 2: Skills and proficiency
 - [ ] D [ ] M  `ORI-M3-L3` M3 · Lesson 3: Linking evidence
 - [ ] D [ ] M  `ORI-M3-K1` M3 · Knowledge check: unanswered
 - [ ] D [ ] M  `ORI-M3-K2` M3 · Knowledge check: correct answers

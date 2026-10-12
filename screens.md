@@ -272,11 +272,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 ## Link 2 · Orientation lessons (D3YR4Ee6ZP53iSMf3v6LQT, 52 screens)
 
 - [x] D [x] M  `ORI-M1-00` M1 · Welcome to Credalio: module overview
-- [ ] D [ ] M  `ORI-M1-L1` M1 · Lesson 1: What Credalio is for
-- [ ] D [ ] M  `ORI-M1-L2` M1 · Lesson 2: How creating on Credalio works
-- [ ] D [ ] M  `ORI-M1-K1` M1 · Knowledge check: unanswered
-- [ ] D [ ] M  `ORI-M1-K2` M1 · Knowledge check: correct answers
-- [ ] D [ ] M  `ORI-M1-K3` M1 · Knowledge check: incorrect answer (try again)
+- [x] D [x] M  `ORI-M1-L1` M1 · Lesson 1: What Credalio is for
+- [x] D [x] M  `ORI-M1-L2` M1 · Lesson 2: How creating on Credalio works
+- [x] D [x] M  `ORI-M1-K1` M1 · Knowledge check: unanswered
+- [x] D [x] M  `ORI-M1-K2` M1 · Knowledge check: correct answers
+- [x] D [x] M  `ORI-M1-K3` M1 · Knowledge check: incorrect answer (try again)
 - [ ] D [ ] M  `ORI-M1-DONE` M1 · Module complete
 - [ ] D [ ] M  `ORI-M2-00` M2 · Creating Trusted Learning: module overview
 - [ ] D [ ] M  `ORI-M2-L1` M2 · Lesson 1: What makes learning trustworthy

@@ -3452,6 +3452,96 @@
       "x": 1520,
       "y": 8310,
       "page": "p1"
+    },
+    "CR-ORI-M1-L1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M1-L1 · Lesson 1: What Credalio is for · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 8310,
+      "page": "p1"
+    },
+    "CR-ORI-M1-L1-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-ORI-M1-L1 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 8310,
+      "page": "p1"
+    },
+    "CR-ORI-M1-L2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M1-L2 · Lesson 2: How creating works · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 8310,
+      "page": "p1"
+    },
+    "CR-ORI-M1-L2-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-ORI-M1-L2 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 8310,
+      "page": "p1"
+    },
+    "CR-ORI-M1-K1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M1-K1 · Check: unanswered · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 8310,
+      "page": "p1"
+    },
+    "CR-ORI-M1-K1-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "title": "CR-ORI-M1-K1 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 8310,
+      "page": "p1"
+    },
+    "CR-ORI-M1-K2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M1-K2 · Check: correct · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 8310,
+      "page": "p1"
+    },
+    "CR-ORI-M1-K2-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "title": "CR-ORI-M1-K2 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 8310,
+      "page": "p1"
+    },
+    "CR-ORI-M1-K3.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M1-K3 · Check: try again · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 8310,
+      "page": "p1"
+    },
+    "CR-ORI-M1-K3-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "title": "CR-ORI-M1-K3 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 8310,
+      "page": "p1"
     }
   },
   "createdOnFiles": {
@@ -3506,41 +3596,6 @@
       "w": 240,
       "x": 0,
       "y": 7990,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-M1-L1": {
-      "text": "Not done yet\nCR-ORI-M1-L1 · M1 · Lesson 1: What Credalio is for",
-      "x": 2070,
-      "y": 8310,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-M1-L2": {
-      "text": "Not done yet\nCR-ORI-M1-L2 · M1 · Lesson 2: How creating on Credalio works",
-      "x": 4140,
-      "y": 8310,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-M1-K1": {
-      "text": "Not done yet\nCR-ORI-M1-K1 · M1 · Knowledge check: unanswered",
-      "x": 6210,
-      "y": 8310,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-M1-K2": {
-      "text": "Not done yet\nCR-ORI-M1-K2 · M1 · Knowledge check: correct answers",
-      "x": 8280,
-      "y": 8310,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-M1-K3": {
-      "text": "Not done yet\nCR-ORI-M1-K3 · M1 · Knowledge check: incorrect answer (try again)",
-      "x": 10350,
-      "y": 8310,
-      "w": 1440,
       "page": "p1"
     },
     "l1m-CR-ORI-M1-DONE": {
@@ -4361,44 +4416,44 @@
       "y": 22732,
       "page": "p1"
     },
-    "new-CR-ONB-007p": {
-      "text": "NEW · just made · CR-ONB-007p",
-      "x": 33120,
-      "y": 1260,
+    "new-CR-ORI-M1-L1": {
+      "text": "NEW · just made · CR-ORI-M1-L1",
+      "x": 2070,
+      "y": 9350,
       "w": 1910,
-      "fill": "red",
+      "fill": "pink",
       "page": "p1"
     },
-    "new-CR-RDY-001d": {
-      "text": "NEW · just made · CR-RDY-001d",
+    "new-CR-ORI-M1-L2": {
+      "text": "NEW · just made · CR-ORI-M1-L2",
       "x": 4140,
-      "y": 5100,
+      "y": 9250,
       "w": 1910,
-      "fill": "red",
+      "fill": "pink",
       "page": "p1"
     },
-    "new-CR-ORI-001n": {
-      "text": "NEW · just made · CR-ORI-001n",
-      "x": 0,
-      "y": 7510,
+    "new-CR-ORI-M1-K1": {
+      "text": "NEW · just made · CR-ORI-M1-K1",
+      "x": 6210,
+      "y": 9310,
       "w": 1910,
-      "fill": "red",
+      "fill": "pink",
       "page": "p1"
     },
-    "new-CR-ORI-001c": {
-      "text": "NEW · just made · CR-ORI-001c",
-      "x": 4140,
-      "y": 7510,
+    "new-CR-ORI-M1-K2": {
+      "text": "NEW · just made · CR-ORI-M1-K2",
+      "x": 8280,
+      "y": 9310,
       "w": 1910,
-      "fill": "red",
+      "fill": "pink",
       "page": "p1"
     },
-    "new-CR-ORI-M1-00": {
-      "text": "NEW · just made · CR-ORI-M1-00",
-      "x": 0,
-      "y": 9340,
+    "new-CR-ORI-M1-K3": {
+      "text": "NEW · just made · CR-ORI-M1-K3",
+      "x": 10350,
+      "y": 9310,
       "w": 1910,
-      "fill": "red",
+      "fill": "pink",
       "page": "p1"
     }
   },
@@ -4787,7 +4842,17 @@
     "CR-ORI-001c.dc.html",
     "CR-ORI-001c-Mobile.dc.html",
     "CR-ORI-M1-00.dc.html",
-    "CR-ORI-M1-00-Mobile.dc.html"
+    "CR-ORI-M1-00-Mobile.dc.html",
+    "CR-ORI-M1-L1.dc.html",
+    "CR-ORI-M1-L1-Mobile.dc.html",
+    "CR-ORI-M1-L2.dc.html",
+    "CR-ORI-M1-L2-Mobile.dc.html",
+    "CR-ORI-M1-K1.dc.html",
+    "CR-ORI-M1-K1-Mobile.dc.html",
+    "CR-ORI-M1-K2.dc.html",
+    "CR-ORI-M1-K2-Mobile.dc.html",
+    "CR-ORI-M1-K3.dc.html",
+    "CR-ORI-M1-K3-Mobile.dc.html"
   ],
   "pages": [
     {

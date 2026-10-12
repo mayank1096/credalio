@@ -61,7 +61,7 @@ COMMON = TIP_CSS + '''
 
 # ======================= CR-LRN-002 · learner detail =======================
 CH = [('Getting started', 'dn'), ('Selecting data', 'dn'), ('Joining tables', 'dn'), ('Grouping & aggregates', 'now'), ('Window functions', ''), ('Capstone', '')]
-chs = ''.join(f'<li class="{c}"><i>' + (CHK if c == 'dn' else '') + f'</i><span>{t}</span></li>' for t, c in CH)
+chs = ''.join(f'<li class="{c}" title="Chapter {i + 1} · {t}"><i></i><span>' + (f'<b>{i + 1}</b>' if c == 'now' else f'{i + 1}') + '</span></li>' for i, (t, c) in enumerate(CH))
 AS = [('Quiz 1 · Selecting data', '92%', 'gr'), ('Quiz 2 · Joins', '78%', 'gr'), ('Final assessment', 'Not started', 'gy')]
 ass = ''.join(f'<li><span>{t}</span><span class="st {c}">{s}</span></li>' for t, s, c in AS)
 main = ('<main class="ds-main hp">\n<a href="CR-LRN-001.dc.html" class="pg-back">' + BACK + 'Learners</a>'
@@ -70,8 +70,7 @@ main = ('<main class="ds-main hp">\n<a href="CR-LRN-001.dc.html" class="pg-back"
         '<a href="CR-SUP-002.dc.html" class="ds-btn hp-btn"><span>Message Mary</span><span class="ob-arrow">' + ARR + '</span></a></div>'
         '<div class="ld-g">'
         '<section class="ds-card ld-card ob-in2" aria-labelledby="ld-h1"><div class="ld-ch"><div><h2 id="ld-h1" class="h2c">Data Analysis with SQL</h2><span class="ld-cs">Now on Lesson 4.2 · Grouping</span></div><b class="ld-pc">62%</b></div>'
-        '<span class="bar ld-bar"><i style="width:62%"></i></span>'
-        '<ol class="ld-path">' + chs + '</ol>'
+        '<ol class="ld-path" aria-label="Chapters">' + chs + '</ol>'
         '<h3 class="hp-lab ld-lab">Assessments</h3><ul class="ld-as">' + ass + '</ul></section>'
         '<aside class="ld-side ob-in3">'
         '<section class="ds-card ld-mini"><span class="hp-lab">With you</span>'
@@ -88,12 +87,15 @@ css = COMMON + '''
 .ld-ch{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
 .ld-cs{display:block;margin-top:6px;font-size:14px;color:#5B6582}
 .ld-pc{font-size:28px;font-weight:600;letter-spacing:-0.02em}
-.ld-bar{margin-top:14px;height:8px}
-.ld-path{list-style:none;margin:26px 0 0 0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
-.ld-path li{display:flex;flex-direction:column;gap:10px;font-size:13px;color:#5B6582;line-height:1.35}
-.ld-path i{width:22px;height:22px;border-radius:50%;border:2px solid #CBD3E6;box-sizing:border-box;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
-.ld-path li.dn i{background:#1652F0;border-color:#1652F0}.ld-path li.dn span{color:#0B1433}
-.ld-path li.now i{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.14)}.ld-path li.now span{color:#0B1433;font-weight:600}
+.ld-path{list-style:none;margin:22px 0 0 0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.ld-path li{display:flex;flex-direction:column;gap:10px;min-width:0}
+.ld-path i{display:block;height:10px;border-radius:5px;background:#E6EAF3}
+.ld-path li.dn i{background:#1652F0}
+.ld-path li.now i{background:linear-gradient(90deg,#1652F0 0 40%,#E6EAF3 40%)}
+.ld-path span{font-size:12.5px;color:#8A93AD;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ld-path li.dn span{color:#5B6582}
+.ld-path li.now span{color:#0B1433;font-weight:500;overflow:visible}
+.ld-path li.now b{font-weight:600;color:#1652F0}
 .ld-lab{margin:30px 0 6px 0}
 .ld-as{list-style:none;margin:0;padding:0}
 .ld-as li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-top:1.5px solid #F0F2F8;font-size:14.5px}
@@ -110,8 +112,7 @@ css = COMMON + '''
 .ld-head .hp-btn{width:100%;justify-content:space-between}
 .ld-card{padding:20px 18px}
 .ld-pc{font-size:22px}
-.ld-path{grid-template-columns:1fr;gap:12px}
-.ld-path li{flex-direction:row;align-items:center;gap:12px;font-size:14px}
+.ld-path li.now span{white-space:normal}
 }
 '''
 B.page('CR-LRN-002', 'Learners', main, NAVJS, css, 'Credalio · Mary E.', "{ nav: false }")

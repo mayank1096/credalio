@@ -2455,6 +2455,86 @@
       "w": 390,
       "x": 9800,
       "y": 42900
+    },
+    "CR-HELP-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-HELP-003 · Contact support · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 44600
+    },
+    "CR-HELP-003-Mobile.dc.html": {
+      "h": 830,
+      "is_interactive": true,
+      "title": "CR-HELP-003 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 44600
+    },
+    "CR-HELP-004.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-HELP-004 · Request sent · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 44600
+    },
+    "CR-HELP-004-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-HELP-004 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 44600
+    },
+    "CR-HELP-005.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-HELP-005 · My support requests · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 44600
+    },
+    "CR-HELP-005-Mobile.dc.html": {
+      "h": 620,
+      "is_interactive": true,
+      "title": "CR-HELP-005 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 44600
+    },
+    "CR-HELP-006.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-HELP-006 · Support conversation · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 44600
+    },
+    "CR-HELP-006-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-HELP-006 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 44600
+    },
+    "CR-NOVA-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-NOVA-001 · Nova · Creio overview · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 44600
+    },
+    "CR-NOVA-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-NOVA-001 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 44600
     }
   },
   "createdOnFiles": {
@@ -2771,6 +2851,14 @@
       "w": 240,
       "x": 0,
       "y": 42600
+    },
+    "help2": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Support requests (contact, sent, list, conversation) · Nova overview",
+      "w": 240,
+      "x": 0,
+      "y": 44300
     }
   },
   "order": [
@@ -3076,7 +3164,17 @@
     "CR-HELP-001.dc.html",
     "CR-HELP-001-Mobile.dc.html",
     "CR-HELP-002.dc.html",
-    "CR-HELP-002-Mobile.dc.html"
+    "CR-HELP-002-Mobile.dc.html",
+    "CR-HELP-003.dc.html",
+    "CR-HELP-003-Mobile.dc.html",
+    "CR-HELP-004.dc.html",
+    "CR-HELP-004-Mobile.dc.html",
+    "CR-HELP-005.dc.html",
+    "CR-HELP-005-Mobile.dc.html",
+    "CR-HELP-006.dc.html",
+    "CR-HELP-006-Mobile.dc.html",
+    "CR-NOVA-001.dc.html",
+    "CR-NOVA-001-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

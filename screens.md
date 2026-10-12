@@ -212,14 +212,14 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-SEARCH-002` SEARCH-001/002 · Global search results for "SQL"
 - [x] D [x] M  `CR-HELP-001` HELP-001 · Help & Support home
 - [x] D [x] M  `CR-HELP-002` HELP-002 · Help article
-- [ ] D [ ] M  `CR-HELP-003` HELP-003 · Contact Support
-- [ ] D [ ] M  `CR-HELP-004` HELP-004 · Support ticket created
-- [ ] D [ ] M  `CR-HELP-005` HELP-005 · My support requests
-- [ ] D [ ] M  `CR-HELP-006` HELP-006 · Support conversation (ticket is the record)
+- [x] D [x] M  `CR-HELP-003` HELP-003 · Contact Support
+- [x] D [x] M  `CR-HELP-004` HELP-004 · Support ticket created
+- [x] D [x] M  `CR-HELP-005` HELP-005 · My support requests
+- [x] D [x] M  `CR-HELP-006` HELP-006 · Support conversation (ticket is the record)
 
 ## 20. AI Tokens · Nova, Your Creator Copilot: overview, balance, buy (packages or custom amount), confirm, success (6)
 
-- [ ] D [ ] M  `AI-001` AI-001 · Nova: Your Creator Copilot · Overview
+- [x] D [x] M  `AI-001` AI-001 · Nova: Your Creator Copilot · Overview (= CR-NOVA-001)
 - [ ] D [ ] M  `AI-002` AI-002 / AI-009 · AI Tokens: balance & purchase history (detail)
 - [ ] D [ ] M  `AI-003` AI-003 · Buy AI Tokens (packages)
 - [ ] D [ ] M  `AI-003c` AI-003 · Custom amount (enter AI Tokens, Credits update live)

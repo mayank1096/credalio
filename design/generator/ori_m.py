@@ -121,6 +121,7 @@ def check(tpl, mod, mname, steps, Q, prev, done_href, title):
                   "constructor(props) { super(props); const v = (props && props.variant) || 'none'; this.state = { a: v === 'right' ? [" + str(Q[0][3]) + ", " + str(Q[1][3]) + "] : (v === 'wrong' ? [" + str((Q[0][3] + 1) % len(Q[0][2])) + ", -1] : [-1, -1]) }; }", 1)
     assert "props.variant" in s
     s = re.sub(r'<p class="lp-meta ob-in2">[^<]*</p>', '', s, count=1)
+    s = s.replace('{{q.n}} · {{q.kind}}', '{{q.n}}')
     s = _foot(s, prev[0], prev[1], n, n, done_href, '', dyn=True)
     s = add_scene(s)
     return re.sub(r'<title>.*?</title>', f'<title>{title}</title>', s)
@@ -160,9 +161,10 @@ def done(tpl, mod, mname, nsteps, sub, learned, duties, next_href, title):
     dd = re.search(r'<span class="dn-n dn-d">(<svg.*?</svg>)</span>', s, re.S).group(1)
     path = ''.join(f'<span class="dn-n dn-d{" dn-just" if i == mod else ""}">{dd}</span>' if i <= mod else f'<span class="dn-n ">{i}</span>' for i in range(1, 8))
     s = re.sub(r'<div class="dn-path ob-in3" aria-label="[^"]*">.*?</div>', f'<div class="dn-path ob-in3" aria-label="{mod} of 7 modules complete">{path}</div>', s, count=1, flags=re.S)
-    s = re.sub(r'<ul class="dn-l">.*?</ul>', '<ul class="dn-l">' + ''.join(f'<li>{TICK14}<span>{t}</span></li>' for t in learned) + '</ul>', s, count=1, flags=re.S)
     s = re.sub(r'<ul class="dn-l dn-l2">.*?</ul>', '<ul class="dn-l dn-l2">' + ''.join(f'<li><span class="dn-dot"></span><span>{t}</span></li>' for t in duties) + '</ul>', s, count=1, flags=re.S)
     s = re.sub(r'<a href="[^"]*" class="ds-btn dn-go">', f'<a href="{next_href}" class="ds-btn dn-go">', s, count=1)
+    x = round((mod - 1) / 6 * 100, 1)
+    s = with_css(s, f'\n.dn-path::before{{background:linear-gradient(90deg,#1652F0 0%,#1652F0 {x}%,#E6EAF3 {x}%)}}\n')
     return re.sub(r'<title>.*?</title>', f'<title>{title}</title>', s)
 COMPARE_CSS = """
 /* ori_m compare */

@@ -299,11 +299,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `ORI-M4-K2` M4 · Knowledge check: correct answers
 - [x] D [x] M  `ORI-M4-K3` M4 · Knowledge check: incorrect answer (try again)
 - [x] D [x] M  `ORI-M4-DONE` M4 · Module complete
-- [ ] D [ ] M  `ORI-M5-00` M5 · AI & Responsible Creation: module overview
-- [ ] D [ ] M  `ORI-M5-L1` M5 · Lesson 1: Using your Copilot well
-- [ ] D [ ] M  `ORI-M5-L2` M5 · Lesson 2: Review, disclose, own
-- [ ] D [ ] M  `ORI-M5-K1` M5 · Knowledge check: unanswered
-- [ ] D [ ] M  `ORI-M5-K3` M5 · Knowledge check: incorrect answer (try again)
+- [x] D [x] M  `ORI-M5-00` M5 · AI & Responsible Creation: module overview
+- [x] D [x] M  `ORI-M5-L1` M5 · Lesson 1: Using your Copilot well
+- [x] D [x] M  `ORI-M5-L2` M5 · Lesson 2: Review, disclose, own
+- [x] D [x] M  `ORI-M5-K1` M5 · Knowledge check: unanswered
+- [x] D [x] M  `ORI-M5-K3` M5 · Knowledge check: incorrect answer (try again)
 - [ ] D [ ] M  `ORI-M5-S1` M5 · Scenario exercise: unanswered
 - [ ] D [ ] M  `ORI-M5-S3` M5 · Scenario exercise: incorrect response
 - [ ] D [ ] M  `ORI-M5-DONE` M5 · Module complete

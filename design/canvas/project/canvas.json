@@ -1975,6 +1975,86 @@
       "w": 390,
       "x": 9800,
       "y": 34100
+    },
+    "CR-CAL-004.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CAL-004 · Days off & exceptions · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 35500
+    },
+    "CR-CAL-004-Mobile.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-CAL-004 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 35500
+    },
+    "CR-CAL-005.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CAL-005 · Presence & visibility · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 35500
+    },
+    "CR-CAL-005-Mobile.dc.html": {
+      "h": 780,
+      "is_interactive": true,
+      "title": "CR-CAL-005 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 35500
+    },
+    "CR-SUP-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-SUP-001 · Learner Support inbox · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 35500
+    },
+    "CR-SUP-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-SUP-001 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 35500
+    },
+    "CR-SUP-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-SUP-002 · Support conversation · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 35500
+    },
+    "CR-SUP-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-SUP-002 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 35500
+    },
+    "CR-LRN-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-LRN-001 · Learners · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 35500
+    },
+    "CR-LRN-001-Mobile.dc.html": {
+      "h": 940,
+      "is_interactive": true,
+      "title": "CR-LRN-001 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 35500
     }
   },
   "createdOnFiles": {
@@ -2243,6 +2323,14 @@
       "w": 240,
       "x": 0,
       "y": 33800
+    },
+    "sup1": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Days off & exceptions · presence & visibility · Learner Support inbox + conversation · Learners",
+      "w": 240,
+      "x": 0,
+      "y": 35200
     }
   },
   "order": [
@@ -2488,7 +2576,17 @@
     "CR-CAL-001a.dc.html",
     "CR-CAL-001a-Mobile.dc.html",
     "CR-CAL-003.dc.html",
-    "CR-CAL-003-Mobile.dc.html"
+    "CR-CAL-003-Mobile.dc.html",
+    "CR-CAL-004.dc.html",
+    "CR-CAL-004-Mobile.dc.html",
+    "CR-CAL-005.dc.html",
+    "CR-CAL-005-Mobile.dc.html",
+    "CR-SUP-001.dc.html",
+    "CR-SUP-001-Mobile.dc.html",
+    "CR-SUP-002.dc.html",
+    "CR-SUP-002-Mobile.dc.html",
+    "CR-LRN-001.dc.html",
+    "CR-LRN-001-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

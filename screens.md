@@ -236,12 +236,12 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 ## 22. AI Tokens · Usage, preferences, low and depleted states, top-bar chip, estimates (8)
 
 - [x] D [x] M  `AI-007` AI-007 / AI-008 · AI Usage with filters & usage detail
-- [ ] D [ ] M  `AI-012` AI-012 · Copilot Preferences
-- [ ] D [ ] M  `AI-TOP` Top-bar AI Token chip & popover: Nova ✦ 72.4K
-- [ ] D [ ] M  `AI-010` AI-010 · Low AI Token balance (Copilot page)
-- [ ] D [ ] M  `AI-010b` AI-010 · Low balance in the top bar: Nova ✦ 8.2K · Low
-- [ ] D [ ] M  `AI-011` AI-011 · AI Tokens depleted (manual creation still works)
-- [ ] D [ ] M  `AI-011b` AI-011 · Copilot: not enough AI Tokens for this action
+- [x] D [x] M  `AI-012` AI-012 · Copilot Preferences
+- [x] D [x] M  `AI-TOP` Top-bar AI Token chip & popover: Nova ✦ 72.4K
+- [x] D [x] M  `AI-010` AI-010 · Low AI Token balance (Copilot page)
+- [x] D [x] M  `AI-010b` AI-010 · Low balance in the top bar: Nova ✦ 8.2K · Low
+- [x] D [x] M  `AI-011` AI-011 · AI Tokens depleted (manual creation still works)
+- [x] D [x] M  `AI-011b` AI-011 · Copilot: not enough AI Tokens for this action
 - [ ] D [ ] M  `AI-EST` Large AI action: estimate before running (full course review)
 
 ## 23. Account menu (avatar): status, profile, switch role between the roles you have, settings, sign out (3)

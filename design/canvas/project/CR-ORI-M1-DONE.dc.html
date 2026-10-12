@@ -227,6 +227,11 @@ body{background:#FFFFFF}
 .dn-h{font-size:26px}
 .dn-sub{font-size:15px}
 }
+
+/* cleanup: path shows the count, overview already listed what you learn */
+.dn-cards{grid-template-columns:minmax(0,1fr);max-width:460px;margin-left:auto;margin-right:auto}
+
+.dn-path::before{background:linear-gradient(90deg,#1652F0 0%,#1652F0 0.0%,#E6EAF3 0.0%)}
 </style>
 </helmet>
 <div class="lp-root">
@@ -242,10 +247,10 @@ body{background:#FFFFFF}
 <div class="dn-badge ob-in" aria-hidden="true"><span class="dn-ring"></span><span class="dn-wave"></span><span class="dn-wave dn-w2"></span><span class="dn-core"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="dn-tick" pathLength="1" d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></div>
 <span class="lp-eb ob-in2" style="justify-content: center">Module 1 complete</span>
 <h1 class="lp-h1 dn-h ob-in2">Welcome to Credalio</h1>
-<p class="dn-sub ob-in2">One of seven done. A good start.</p>
+<p class="dn-sub ob-in2">A good start.</p>
 <div class="dn-path ob-in3" aria-label="1 of 7 modules complete"><span class="dn-n dn-d dn-just"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="dn-n ">2</span><span class="dn-n ">3</span><span class="dn-n ">4</span><span class="dn-n ">5</span><span class="dn-n ">6</span><span class="dn-n ">7</span></div>
 <div class="dn-cards ob-in3">
-<section class="dn-c"><span class="sec-h">What you learned</span><ul class="dn-l"><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Credalio is built on validated, verifiable learning</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>The path is create, validate, publish</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Readiness gates submitting, never drafting</span></li></ul></section>
+
 <section class="dn-c dn-c2"><span class="sec-h">Your responsibilities</span><ul class="dn-l dn-l2"><li><span class="dn-dot"></span><span>Create in good faith for real learners</span></li><li><span class="dn-dot"></span><span>Finish readiness before you submit</span></li></ul></section>
 </div>
 <div class="dn-acts ob-in4">

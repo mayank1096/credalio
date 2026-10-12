@@ -208,7 +208,7 @@ body{background:#FFFFFF}
 <h1 class="lp-h1 ob-in">Two quick questions</h1>
 
 <div class="kc-grid"><sc-for list="{{qs}}" as="q" hint-placeholder-count="2"><section class="kc ob-in3" aria-label="{{q.n}}">
-<span class="kc-n">{{q.n}} · {{q.kind}}</span>
+<span class="kc-n">{{q.n}}</span>
 <h2 class="kc-q">{{q.text}}</h2>
 <div class="kc-opts {{q.oc}}" role="radiogroup" aria-label="{{q.text}}"><sc-for list="{{q.opts}}" as="o" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{o.on}}" class="kc-o {{o.cls}}" onClick="{{o.pick}}"><span class="kc-r"><span class="kc-ok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="kc-no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></span><span>{{o.label}}</span></button></sc-for></div>
 <sc-if value="{{q.fbShown}}" hint-placeholder-val="{{false}}"><div class="kc-fb {{q.fbCls}} cp-pop" role="status"><b>{{q.fbHead}}</b><span>{{q.fbText}}</span></div></sc-if>

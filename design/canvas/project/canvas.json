@@ -3632,6 +3632,96 @@
       "x": 7730,
       "y": 9970,
       "page": "p1"
+    },
+    "CR-ORI-M2-K2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M2-K2 · Check: correct · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 9970,
+      "page": "p1"
+    },
+    "CR-ORI-M2-K2-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "title": "CR-ORI-M2-K2 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 9970,
+      "page": "p1"
+    },
+    "CR-ORI-M2-K3.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M2-K3 · Check: try again · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 9970,
+      "page": "p1"
+    },
+    "CR-ORI-M2-K3-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "title": "CR-ORI-M2-K3 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 9970,
+      "page": "p1"
+    },
+    "CR-ORI-M2-DONE.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M2-DONE · Module 2 complete · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 9970,
+      "page": "p1"
+    },
+    "CR-ORI-M2-DONE-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "title": "CR-ORI-M2-DONE · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 9970,
+      "page": "p1"
+    },
+    "CR-ORI-M3-00.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M3-00 · Module 3 overview · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 11630,
+      "page": "p1"
+    },
+    "CR-ORI-M3-00-Mobile.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "title": "CR-ORI-M3-00 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 11630,
+      "page": "p1"
+    },
+    "CR-ORI-M3-L2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ORI-M3-L2 · Lesson 2: Skills and proficiency · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 11630,
+      "page": "p1"
+    },
+    "CR-ORI-M3-L2-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-ORI-M3-L2 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 11630,
+      "page": "p1"
     }
   },
   "createdOnFiles": {
@@ -3697,27 +3787,6 @@
       "y": 9650,
       "page": "p1"
     },
-    "l1m-CR-ORI-M2-K2": {
-      "text": "Not done yet\nCR-ORI-M2-K2 · M2 · Knowledge check: correct answers",
-      "x": 8280,
-      "y": 9970,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-M2-K3": {
-      "text": "Not done yet\nCR-ORI-M2-K3 · M2 · Knowledge check: incorrect answer (try again)",
-      "x": 10350,
-      "y": 9970,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-M2-DONE": {
-      "text": "Not done yet\nCR-ORI-M2-DONE · M2 · Module complete",
-      "x": 12420,
-      "y": 9970,
-      "w": 1440,
-      "page": "p1"
-    },
     "l1s8": {
       "kind": "title1",
       "maxW": 8000,
@@ -3725,20 +3794,6 @@
       "w": 240,
       "x": 0,
       "y": 11310,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-M3-00": {
-      "text": "Not done yet\nCR-ORI-M3-00 · M3 · Outcomes, Skills & Evidence: module overview",
-      "x": 0,
-      "y": 11630,
-      "w": 1440,
-      "page": "p1"
-    },
-    "l1m-CR-ORI-M3-L2": {
-      "text": "Not done yet\nCR-ORI-M3-L2 · M3 · Lesson 2: Skills and proficiency",
-      "x": 4140,
-      "y": 11630,
-      "w": 1440,
       "page": "p1"
     },
     "l1m-CR-ORI-M3-L3": {
@@ -4471,42 +4526,42 @@
       "y": 22732,
       "page": "p1"
     },
-    "new-CR-ORI-M1-DONE": {
-      "text": "NEW · just made · CR-ORI-M1-DONE",
-      "x": 12420,
-      "y": 9310,
-      "w": 1910,
-      "fill": "blue",
-      "page": "p1"
-    },
-    "new-CR-ORI-M2-00": {
-      "text": "NEW · just made · CR-ORI-M2-00",
-      "x": 0,
-      "y": 11090,
-      "w": 1910,
-      "fill": "blue",
-      "page": "p1"
-    },
-    "new-CR-ORI-M2-L1": {
-      "text": "NEW · just made · CR-ORI-M2-L1",
-      "x": 2070,
-      "y": 10910,
-      "w": 1910,
-      "fill": "blue",
-      "page": "p1"
-    },
-    "new-CR-ORI-M2-L2": {
-      "text": "NEW · just made · CR-ORI-M2-L2",
-      "x": 4140,
-      "y": 10910,
-      "w": 1910,
-      "fill": "blue",
-      "page": "p1"
-    },
-    "new-CR-ORI-M2-K1": {
-      "text": "NEW · just made · CR-ORI-M2-K1",
-      "x": 6210,
+    "new-CR-ORI-M2-K2": {
+      "text": "NEW · just made · CR-ORI-M2-K2",
+      "x": 8280,
       "y": 10970,
+      "w": 1910,
+      "fill": "blue",
+      "page": "p1"
+    },
+    "new-CR-ORI-M2-K3": {
+      "text": "NEW · just made · CR-ORI-M2-K3",
+      "x": 10350,
+      "y": 10970,
+      "w": 1910,
+      "fill": "blue",
+      "page": "p1"
+    },
+    "new-CR-ORI-M2-DONE": {
+      "text": "NEW · just made · CR-ORI-M2-DONE",
+      "x": 12420,
+      "y": 10970,
+      "w": 1910,
+      "fill": "blue",
+      "page": "p1"
+    },
+    "new-CR-ORI-M3-00": {
+      "text": "NEW · just made · CR-ORI-M3-00",
+      "x": 0,
+      "y": 12870,
+      "w": 1910,
+      "fill": "blue",
+      "page": "p1"
+    },
+    "new-CR-ORI-M3-L2": {
+      "text": "NEW · just made · CR-ORI-M3-L2",
+      "x": 4140,
+      "y": 12570,
       "w": 1910,
       "fill": "blue",
       "page": "p1"
@@ -4917,7 +4972,17 @@
     "CR-ORI-M2-L2.dc.html",
     "CR-ORI-M2-L2-Mobile.dc.html",
     "CR-ORI-M2-K1.dc.html",
-    "CR-ORI-M2-K1-Mobile.dc.html"
+    "CR-ORI-M2-K1-Mobile.dc.html",
+    "CR-ORI-M2-K2.dc.html",
+    "CR-ORI-M2-K2-Mobile.dc.html",
+    "CR-ORI-M2-K3.dc.html",
+    "CR-ORI-M2-K3-Mobile.dc.html",
+    "CR-ORI-M2-DONE.dc.html",
+    "CR-ORI-M2-DONE-Mobile.dc.html",
+    "CR-ORI-M3-00.dc.html",
+    "CR-ORI-M3-00-Mobile.dc.html",
+    "CR-ORI-M3-L2.dc.html",
+    "CR-ORI-M3-L2-Mobile.dc.html"
   ],
   "pages": [
     {

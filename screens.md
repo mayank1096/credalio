@@ -277,11 +277,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `ORI-M1-K1` M1 · Knowledge check: unanswered
 - [x] D [x] M  `ORI-M1-K2` M1 · Knowledge check: correct answers
 - [x] D [x] M  `ORI-M1-K3` M1 · Knowledge check: incorrect answer (try again)
-- [ ] D [ ] M  `ORI-M1-DONE` M1 · Module complete
-- [ ] D [ ] M  `ORI-M2-00` M2 · Creating Trusted Learning: module overview
-- [ ] D [ ] M  `ORI-M2-L1` M2 · Lesson 1: What makes learning trustworthy
-- [ ] D [ ] M  `ORI-M2-L2` M2 · Lesson 2: Evidence of learning
-- [ ] D [ ] M  `ORI-M2-K1` M2 · Knowledge check: unanswered
+- [x] D [x] M  `ORI-M1-DONE` M1 · Module complete
+- [x] D [x] M  `ORI-M2-00` M2 · Creating Trusted Learning: module overview
+- [x] D [x] M  `ORI-M2-L1` M2 · Lesson 1: What makes learning trustworthy
+- [x] D [x] M  `ORI-M2-L2` M2 · Lesson 2: Evidence of learning
+- [x] D [x] M  `ORI-M2-K1` M2 · Knowledge check: unanswered
 - [ ] D [ ] M  `ORI-M2-K2` M2 · Knowledge check: correct answers
 - [ ] D [ ] M  `ORI-M2-K3` M2 · Knowledge check: incorrect answer (try again)
 - [ ] D [ ] M  `ORI-M2-DONE` M2 · Module complete

@@ -106,3 +106,61 @@ def check(tpl, mod, mname, steps, Q, prev, done_href, title):
     s = _foot(s, prev[0], prev[1], n, n, done_href, '', dyn=True)
     s = add_scene(s)
     return re.sub(r'<title>.*?</title>', f'<title>{title}</title>', s)
+
+# ---------- module overview (template LIVE CR-ORI-M1-00) / module complete (template LIVE CR-ORI-006) / compare figure ----------
+ICO.update({
+ 'target': '<circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="4.5"></circle><circle cx="12" cy="12" r="1" fill="currentColor"></circle>',
+ 'check': '<circle cx="12" cy="12" r="9"></circle><path d="m8 12.5 3 3 5-6"></path>',
+ 'doc': '<path d="M7 3h7l5 5v13H7z"></path><path d="M14 3v5h5"></path><path d="M10 13h6M10 17h4"></path>',
+ 'x': '<path d="M7 7l10 10M17 7 7 17"></path>',
+})
+TICK14 = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>'
+def overview(tpl, mod, mname, steps, mins, desc, hi, takeaways, start_href, title):
+    s = _head(tpl, mod, mname, steps, 0, f'{len(steps)} steps')
+    s = re.sub(r'<span class="lp-eb ob-in">Module \d+ of 7</span>', f'<span class="lp-eb ob-in">Module {mod} of 7</span>', s, count=1)
+    s = re.sub(r'<h1 class="lp-h1 ob-in">[^<]*</h1>', f'<h1 class="lp-h1 ob-in">{mname}</h1>', s, count=1)
+    s = re.sub(r'<p class="mo-desc ob-in2">[^<]*</p>', f'<p class="mo-desc ob-in2">{desc}</p>', s, count=1)
+    s = re.sub(r'About \d+ minutes</span>', f'About {mins} minutes</span>', s, count=1)
+    s = re.sub(r'<span class="mo-hi-b">[^<]*</span>', f'<span class="mo-hi-b">{hi}</span>', s, count=1)
+    s = re.sub(r'<a href="[^"]*" class="ds-btn mo-go mo-go-new', f'<a href="{start_href}" class="ds-btn mo-go mo-go-new', s, count=1)
+    l0 = s.index('<ol class="mo-list">'); l1 = s.index('</ol>', l0) + 5
+    nx = re.search(r'<li class="mo-r mo-next">.*?</li>', s[l0:l1], re.S).group(0); td = re.search(r'<li class="mo-r mo-todo">.*?</li>', s[l0:l1], re.S).group(0)
+    def li(t, k, tpl_li, old):
+        return re.sub(r'<b>[^<]*</b><span>[^<]*</span>', f'<b>{t}</b><span>{k}</span>', tpl_li, count=1)
+    s = s[:l0] + '<ol class="mo-list">' + ''.join(li(t, k, nx if i == 0 else td, None) for i, (t, k) in enumerate(steps)) + '</ol>' + s[l1:]
+    u0 = s.index('<ul class="mo-ll">'); u1 = s.index('</ul>', u0) + 5
+    tick = re.search(r'<li>(<svg.*?</svg>)', s[u0:u1], re.S).group(1)
+    s = s[:u0] + '<ul class="mo-ll">' + ''.join(f'<li>{tick}<span>{t}</span></li>' for t in takeaways) + '</ul>' + s[u1:]
+    return re.sub(r'<title>.*?</title>', f'<title>{title}</title>', s)
+def done(tpl, mod, mname, nsteps, sub, learned, duties, next_href, title):
+    s = re.sub(r'<span class="lp-t2">Module \d+ · [^<]*</span>', f'<span class="lp-t2">Module {mod} · {mname}</span>', tpl, count=1)
+    s = re.sub(r'<div class="lp-segs" aria-hidden="true">.*?</div>', '<div class="lp-segs" aria-hidden="true">' + '<span class="lp-seg lp-seg-done"></span>' * nsteps + '</div>', s, count=1, flags=re.S)
+    s = re.sub(r'<span class="lp-tn">[^<]*</span>', f'<span class="lp-tn">{nsteps} steps</span>', s, count=1)
+    s = re.sub(r'>Module \d+ complete</span>', f'>Module {mod} complete</span>', s, count=1)
+    s = re.sub(r'<h1 class="lp-h1 dn-h ob-in2">[^<]*</h1>', f'<h1 class="lp-h1 dn-h ob-in2">{mname}</h1>', s, count=1)
+    s = re.sub(r'<p class="dn-sub ob-in2">[^<]*</p>', f'<p class="dn-sub ob-in2">{sub}</p>', s, count=1)
+    dd = re.search(r'<span class="dn-n dn-d">(<svg.*?</svg>)</span>', s, re.S).group(1)
+    path = ''.join(f'<span class="dn-n dn-d{" dn-just" if i == mod else ""}">{dd}</span>' if i <= mod else f'<span class="dn-n ">{i}</span>' for i in range(1, 8))
+    s = re.sub(r'<div class="dn-path ob-in3" aria-label="[^"]*">.*?</div>', f'<div class="dn-path ob-in3" aria-label="{mod} of 7 modules complete">{path}</div>', s, count=1, flags=re.S)
+    s = re.sub(r'<ul class="dn-l">.*?</ul>', '<ul class="dn-l">' + ''.join(f'<li>{TICK14}<span>{t}</span></li>' for t in learned) + '</ul>', s, count=1, flags=re.S)
+    s = re.sub(r'<ul class="dn-l dn-l2">.*?</ul>', '<ul class="dn-l dn-l2">' + ''.join(f'<li><span class="dn-dot"></span><span>{t}</span></li>' for t in duties) + '</ul>', s, count=1, flags=re.S)
+    s = re.sub(r'<a href="[^"]*" class="ds-btn dn-go">', f'<a href="{next_href}" class="ds-btn dn-go">', s, count=1)
+    return re.sub(r'<title>.*?</title>', f'<title>{title}</title>', s)
+COMPARE_CSS = """
+/* ori_m compare */
+.ls-cmp{margin:28px 0 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.ls-cmp > div{display:flex;flex-direction:column;gap:10px;padding:20px;border-radius:18px;border:1.5px solid #E6EAF3;background:#FFFFFF}
+.ls-cmp .cmp-h{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#5B6582}
+.ls-cmp .cmp-h i{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#F1F3F8;color:#8A93AD}
+.ls-cmp .cmp-ok{border-color:#BFE3CF;background:#F3FBF6}
+.ls-cmp .cmp-ok .cmp-h{color:#0F6B45}.ls-cmp .cmp-ok .cmp-h i{background:#0F6B45;color:#FFFFFF}
+.ls-cmp p{margin:0;font-size:16px;line-height:1.55;color:#1F2A4D}
+.ls-cmp .cmp-no p{color:#5B6582}
+@media (max-width: 960px){.ls-cmp{grid-template-columns:minmax(0,1fr);gap:10px;margin-top:20px}.ls-cmp > div{padding:16px}.ls-cmp p{font-size:15px}}
+"""
+def compare(weak, strong):
+    return ('<figure class="ls-cmp ob-in3" aria-label="Weak and strong example">'
+            f'<div class="cmp-no"><span class="cmp-h"><i>{svg("x", 13, 2.6)}</i>Weak</span><p>{weak}</p></div>'
+            f'<div class="cmp-ok"><span class="cmp-h"><i>{svg("check", 14, 2.2)}</i>Strong</span><p>{strong}</p></div></figure>')
+def with_css(s, css):
+    i = s.rfind('</style>', 0, s.find('</helmet>')); return s[:i] + css + s[i:]

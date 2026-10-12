@@ -29,10 +29,10 @@ s = O.lesson(L, MOD, MN, STEPS, 0, 3, 'What Credalio is for',
 wr('CR-ORI-M1-L1.dc.html', s); OUT.append('CR-ORI-M1-L1.dc.html'); mob('CR-ORI-003', 'CR-ORI-M1-L1', 'CR-ORI-M1-L1', h=1000)
 
 s = O.lesson(L, MOD, MN, STEPS, 1, 3, 'How creating on Credalio works',
-             'You build in your Studio, independent validators review it, then you publish. Three stages, always in this order.',
+             'You build in your Studio, independent validators review it, then you publish.',
              O.note('Good to know', 'Readiness never stops you drafting. It only gates submitting and publishing.'),
              O.flow([('pen', 'Create', 'Build in your Studio, with Nova.'), ('shield', 'Validate', 'Independent experts review the work.'), ('rocket', 'Publish', 'Set a price and welcome learners.')]),
-             ('CR-ORI-M1-L1.dc.html', 'What Credalio is for'), ('CR-ORI-M1-K1.dc.html', 'Next'), 'Credalio · Orientation · How creating works')
+             ('CR-ORI-M1-L1.dc.html', 'What Credalio is for'), ('CR-ORI-M1-K1.dc.html', 'Next'), 'Credalio · Orientation · How creating works', scene=True)
 wr('CR-ORI-M1-L2.dc.html', s); OUT.append('CR-ORI-M1-L2.dc.html'); mob('CR-ORI-003', 'CR-ORI-M1-L2', 'CR-ORI-M1-L2', h=900)
 
 Q = [['Multiple choice', 'Who checks a learning experience before learners rely on it?', ['The creator', 'Independent validators', 'Other learners'], 1, 'Independent experts validate it, not the creator or learner ratings.'],

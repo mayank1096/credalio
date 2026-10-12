@@ -227,22 +227,23 @@ EXPS = [('Data Analysis with SQL', 'Course · Gold validated', '4.8', '1,284'), 
         ('Advanced SQL for Analysts', 'Course', '4.7', '428'), ('Applied AI Program', 'Learning Program · with Samuel E.', '4.5', '186')]
 exps = ''.join(f'<li><span class="pb-th">{ic(I["book"], 20, 1.9)}</span><span class="pb-t"><b>{t}</b><span>{k}</span></span><span class="pb-m">{ic(I["star"], 14, 2)}{r}<em>· {l} learners</em></span></li>' for t, k, r, l in EXPS)
 main = ('<main class="ds-main hp">\n<sc-if value="{{isPrev}}" hint-placeholder-val="{{true}}"><div class="pb-bar ob-in">' + EYE + '<span>Preview · this is what learners see</span><a href="CR-PROF-001.dc.html" class="hp-rb">Edit profile</a></div></sc-if>'
-        '<section class="pb-hero ob-in2"><div class="pb-ban"></div><div class="pb-id"><span class="pb-av">AO</span><div class="pb-nm"><h1 class="ds-h1">Ada Ononuju<span class="pb-badge">' + SHIELD + 'Identity verified</span></h1>'
+        '<section class="pb-hero ob-in2"><div class="pb-ban"></div><div class="pb-hg"><div class="pb-main"><div class="pb-id"><span class="pb-av">AO</span><div class="pb-nm"><h1 class="ds-h1">Ada Ononuju<span class="pb-badge">' + SHIELD + 'Identity verified</span></h1>'
         '<span class="pb-f">Data &amp; Analytics · 8+ years · ' + PIN + 'Lagos, Nigeria</span></div></div>'
         '<p class="pb-hl">I help professionals turn messy data into decisions.</p>'
         '<div class="pb-tp"><i>Data Analysis</i><i>SQL</i><i>Business Intelligence</i></div>'
-        '<div class="pb-st"><div><b>2,210</b><span>learners</span></div><div><b>4.7</b><span>average rating</span></div><div><b>3</b><span>verified credentials</span></div></div></section>'
-        '<div class="pb-g"><section class="ob-in3" aria-labelledby="pb-h1"><h2 id="pb-h1" class="hp-lab pb-lab">Learning experiences</h2><ul class="ds-card pb-l">' + exps + '</ul></section>'
-        '<section class="ob-in3" aria-labelledby="pb-h2"><h2 id="pb-h2" class="hp-lab pb-lab">Credentials</h2><ul class="ds-card pb-c">'
+        '<div class="pb-st"><div><b>2,210</b><span>learners</span></div><div><b>4.7</b><span>average rating</span></div><div><b>4</b><span>learning experiences</span></div></div></div>'
+        '<aside class="pb-cr" aria-label="Verified credentials"><span class="hp-lab">Verified credentials</span><ul class="pb-c">'
         '<li>' + SHIELD + '<span><b>MSc Data Science</b><span>University of Lagos</span></span></li><li>' + SHIELD + '<span><b>AWS Certified Data Analytics</b><span>Amazon Web Services</span></span></li>'
-        '<li>' + SHIELD + '<span><b>Senior Data Analyst</b><span>Flutterwave</span></span></li></ul></section></div>\n</main>')
+        '<li>' + SHIELD + '<span><b>Senior Data Analyst</b><span>Flutterwave</span></span></li></ul></aside>' + '</div></section>'
+        '<div class="pb-g"><section class="ob-in3" aria-labelledby="pb-h1"><h2 id="pb-h1" class="hp-lab pb-lab">Learning experiences</h2><ul class="ds-card pb-l">' + exps + '</ul></section>'
+        '</div>\n</main>')
 js = '''    const v = props.variant || 'preview';
     return { navCls: S.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !S.nav }), isPrev: v === 'preview' };'''
 css = COMMON + '''
 .pb-bar{margin-top:20px;display:flex;align-items:center;gap:10px;padding:10px 10px 10px 18px;border-radius:999px;background:#0B1433;color:#FFFFFF;font-size:14px;font-weight:500}
 .pb-bar svg{color:#AFC1F5}.pb-bar span{flex:1}.pb-bar .hp-rb{height:34px;background:#FFFFFF;border:0}
 .pb-hero{margin-top:20px;padding:0 32px 28px 32px;border-radius:24px;background:#FFFFFF;border:1.5px solid #E6EAF3;overflow:hidden}
-.pb-ban{margin:0 -32px;height:140px;background:#EAF0FF url(''' + PBG + ''') center/cover no-repeat}
+.pb-ban{margin:0 -32px;height:116px;background:#EAF0FF url(''' + PBG + ''') center/cover no-repeat}
 .pb-id{display:flex;align-items:flex-end;gap:20px;margin-top:-44px}
 .pb-av{width:104px;height:104px;border-radius:50%;border:5px solid #FFFFFF;background:#0B1433;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font-size:30px;font-weight:600;flex-shrink:0}
 .pb-nm{padding-bottom:6px}
@@ -253,7 +254,14 @@ css = COMMON + '''
 .pb-tp{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}.pb-tp i{font-style:normal;height:32px;padding:0 14px;border-radius:999px;background:#F1F3F8;font-size:13.5px;font-weight:500;display:inline-flex;align-items:center;color:#3A4566}
 .pb-st{margin-top:26px;padding-top:22px;border-top:1.5px solid #F0F2F8;display:flex;gap:48px}
 .pb-st div{display:flex;align-items:baseline;gap:8px}.pb-st b{font-size:22px;font-weight:600;letter-spacing:-0.01em}.pb-st span{font-size:14px;color:#5B6582}
-.pb-g{margin-top:28px;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:24px;align-items:start}
+.pb-g{margin-top:28px}
+.pb-hg{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:40px}
+.pb-main{min-width:0}
+.pb-cr{margin-top:28px;padding-left:32px;border-left:1.5px solid #F0F2F8;align-self:start}
+.pb-cr .hp-lab{margin-bottom:4px}
+.pb-cr .pb-c{padding:0}
+.pb-l{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}
+.pb-l li:nth-child(2){border-top:0}
 .pb-lab{margin:0 0 10px 4px}
 .pb-l,.pb-c{list-style:none;margin:0;padding:4px 22px}
 .pb-l li,.pb-c li{display:flex;align-items:center;gap:14px;padding:16px 0;border-top:1.5px solid #F0F2F8}
@@ -263,7 +271,7 @@ css = COMMON + '''
 .pb-m{display:inline-flex;align-items:center;gap:5px;font-size:14px;font-weight:600;white-space:nowrap}.pb-m svg{color:#0B1433}.pb-m em{font-style:normal;font-weight:400;color:#5B6582}
 .pb-c svg{color:#0F6B45;flex-shrink:0}
 .pb-c li > span{display:flex;flex-direction:column;gap:2px}.pb-c b{font-size:14.5px;font-weight:600}.pb-c li > span > span{font-size:13px;color:#5B6582}
-@media (max-width: 1080px){.pb-g{grid-template-columns:minmax(0,1fr)}}
+@media (max-width: 1080px){.pb-hg{grid-template-columns:minmax(0,1fr);gap:0}.pb-cr{padding-left:0;border-left:0;margin-top:24px;padding-top:20px;border-top:1.5px solid #F0F2F8}.pb-l{grid-template-columns:1fr}.pb-l li:nth-child(2){border-top:1.5px solid #F0F2F8}}
 @media (max-width: 960px){
 .pb-bar{margin-top:12px;font-size:13px;padding:8px 8px 8px 14px}
 .pb-hero{padding:0 18px 22px 18px;border-radius:20px}

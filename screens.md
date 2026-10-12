@@ -294,11 +294,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `ORI-M4-L1` M4 · Lesson 1: What validators look at
 - [x] D [x] M  `ORI-M3-DONE` M3 · Module complete (extra, no Link 1 slot; placed after CR-ORI-006)
 - [ ] D [ ] M  `ORI-M4-L2` M4 · Lesson 2: The validation case
-- [ ] D [ ] M  `ORI-M4-L3` M4 · Lesson 3: Tiers and revalidation
-- [ ] D [ ] M  `ORI-M4-K1` M4 · Knowledge check: unanswered
-- [ ] D [ ] M  `ORI-M4-K2` M4 · Knowledge check: correct answers
-- [ ] D [ ] M  `ORI-M4-K3` M4 · Knowledge check: incorrect answer (try again)
-- [ ] D [ ] M  `ORI-M4-DONE` M4 · Module complete
+- [x] D [x] M  `ORI-M4-L3` M4 · Lesson 3: Tiers and revalidation
+- [x] D [x] M  `ORI-M4-K1` M4 · Knowledge check: unanswered
+- [x] D [x] M  `ORI-M4-K2` M4 · Knowledge check: correct answers
+- [x] D [x] M  `ORI-M4-K3` M4 · Knowledge check: incorrect answer (try again)
+- [x] D [x] M  `ORI-M4-DONE` M4 · Module complete
 - [ ] D [ ] M  `ORI-M5-00` M5 · AI & Responsible Creation: module overview
 - [ ] D [ ] M  `ORI-M5-L1` M5 · Lesson 1: Using your Copilot well
 - [ ] D [ ] M  `ORI-M5-L2` M5 · Lesson 2: Review, disclose, own

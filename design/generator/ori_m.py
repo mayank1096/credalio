@@ -58,7 +58,7 @@ def lesson(tpl, mod, mname, steps, cur, mins, h1, lead, note, figure, prev, nxt,
         rows += f'<li class="lp-o lp-o-{st}"><span class="lp-om">{CHK if st == "done" else ""}</span><span class="lp-ot"><b>{t}</b><span>{k}</span></span></li>'
     s = re.sub(r'<aside class="lp-rail" aria-label="Module steps">.*?</aside>', f'<aside class="lp-rail" aria-label="Module steps"><span class="lp-rl">Module {mod} · {mname}</span><ol class="lp-ol">{rows}</ol></aside>', s, count=1, flags=re.S)
     m0 = s.index('<main class="lp-main">') + len('<main class="lp-main">'); m1 = s.index('<a href="#" class="lp-ask', m0)
-    top = (f'<div class="ls-top"><div><span class="lp-eb ob-in">Step {cur + 1} of {len(steps)} · about {mins} min read</span>'
+    top = (f'<div class="ls-top"><div><span class="lp-eb ob-in">About {mins} min read</span>'
            f'<h1 class="lp-h1 ob-in">{h1}</h1><p class="lp-p ob-in2">{lead}</p></div>' + (note or '') + '</div>')
     s = s[:m0] + top + figure + s[m1:]
     s = _foot(s, prev[0], prev[1], cur + 1, len(steps), nxt[0], nxt[1])
@@ -84,5 +84,6 @@ def check(tpl, mod, mname, steps, Q, prev, done_href, title):
     s = s.replace("constructor(props) { super(props); this.state = { a: [1, -1] }; }",
                   "constructor(props) { super(props); const v = (props && props.variant) || 'none'; this.state = { a: v === 'right' ? [" + str(Q[0][3]) + ", " + str(Q[1][3]) + "] : (v === 'wrong' ? [" + str((Q[0][3] + 1) % len(Q[0][2])) + ", -1] : [-1, -1]) }; }", 1)
     assert "props.variant" in s
+    s = re.sub(r'<p class="lp-meta ob-in2">[^<]*</p>', '', s, count=1)
     s = _foot(s, prev[0], prev[1], n, n, done_href, '', dyn=True)
     return re.sub(r'<title>.*?</title>', f'<title>{title}</title>', s)

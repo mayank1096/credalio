@@ -2135,6 +2135,86 @@
       "w": 390,
       "x": 9800,
       "y": 36900
+    },
+    "CR-ANA-002p.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ANA-002p · Program analytics · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 38300
+    },
+    "CR-ANA-002p-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-ANA-002p · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 38300
+    },
+    "CR-ANA-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ANA-003 · Compare · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 38300
+    },
+    "CR-ANA-003-Mobile.dc.html": {
+      "h": 800,
+      "is_interactive": true,
+      "title": "CR-ANA-003 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 38300
+    },
+    "CR-PROF-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PROF-001 · Creator profile · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 38300
+    },
+    "CR-PROF-001-Mobile.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PROF-001 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 38300
+    },
+    "CR-PROF-001c.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PROF-001c · Profile credentials · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 38300
+    },
+    "CR-PROF-001c-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-PROF-001c · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 38300
+    },
+    "CR-PROF-001v.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PROF-001v · Public profile preview · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 38300
+    },
+    "CR-PROF-001v-Mobile.dc.html": {
+      "h": 1400,
+      "is_interactive": true,
+      "title": "CR-PROF-001v · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 38300
     }
   },
   "createdOnFiles": {
@@ -2419,6 +2499,14 @@
       "w": 240,
       "x": 0,
       "y": 36600
+    },
+    "prof1": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Program analytics · Compare · Creator profile (edit, credentials, public preview)",
+      "w": 240,
+      "x": 0,
+      "y": 38000
     }
   },
   "order": [
@@ -2684,7 +2772,17 @@
     "CR-ANA-002.dc.html",
     "CR-ANA-002-Mobile.dc.html",
     "CR-ANA-002c.dc.html",
-    "CR-ANA-002c-Mobile.dc.html"
+    "CR-ANA-002c-Mobile.dc.html",
+    "CR-ANA-002p.dc.html",
+    "CR-ANA-002p-Mobile.dc.html",
+    "CR-ANA-003.dc.html",
+    "CR-ANA-003-Mobile.dc.html",
+    "CR-PROF-001.dc.html",
+    "CR-PROF-001-Mobile.dc.html",
+    "CR-PROF-001c.dc.html",
+    "CR-PROF-001c-Mobile.dc.html",
+    "CR-PROF-001v.dc.html",
+    "CR-PROF-001v-Mobile.dc.html"
   ],
   "pages": [],
   "title": "Credalio Creator Flow"

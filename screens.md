@@ -182,14 +182,14 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-ANA-004` ANA-004 · Export report (CSV)
 - [x] D [x] M  `CR-ANA-002` ANA-002 · Experience analytics: Course
 - [x] D [x] M  `CR-ANA-002c` ANA-002 · Experience analytics: Certification
-- [ ] D [ ] M  `CR-ANA-002p` ANA-002 · Experience analytics: Learning Program
-- [ ] D [ ] M  `CR-ANA-003` ANA-003 · Compare courses
+- [x] D [x] M  `CR-ANA-002p` ANA-002 · Experience analytics: Learning Program
+- [x] D [x] M  `CR-ANA-003` ANA-003 · Compare courses
 
 ## 17. Creator Profile · My Organizations (coming soon) (5)
 
-- [ ] D [ ] M  `CR-PROF-001` PROF-001 · Creator Profile management
-- [ ] D [ ] M  `CR-PROF-001c` PROF-001 · Credentials (verification status)
-- [ ] D [ ] M  `CR-PROF-001v` PROF-001 · Public profile preview
+- [x] D [x] M  `CR-PROF-001` PROF-001 · Creator Profile management
+- [x] D [x] M  `CR-PROF-001c` PROF-001 · Credentials (verification status)
+- [x] D [x] M  `CR-PROF-001v` PROF-001 · Public profile preview
 - [ ] D [ ] M  `CR-PROF-002` PROF-002 · Public Creator Profile
 - [ ] D [ ] M  `CR-ORG-SOON` My Organizations: coming soon
 

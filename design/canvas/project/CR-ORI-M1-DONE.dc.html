@@ -203,6 +203,30 @@ body{background:#FFFFFF}
 .dn-go{justify-content:space-between}
 .dn-back{text-align:center;font-size:14.5px}
 }
+
+/* module complete = standard success outcome (designer: same tick, spacing, green glow as other success screens) */
+.lp-root:has(.dn){background:radial-gradient(55% 40% at 50% 0%,rgba(15,107,69,.12),rgba(15,107,69,0) 70%),#FFFFFF}
+.lp-body:has(.dn){background:transparent;padding-top:12px}
+.dn{padding-top:clamp(12px,2.4vh,24px)}
+.dn-badge{width:84px;height:84px}
+.dn-ring{background:#E7F5EE;animation:none}
+.dn-wave{display:none}
+.dn-core{width:58px;height:58px;background:#0F6B45;box-shadow:0 12px 28px rgba(11,20,51,.16)}
+.dn-core svg{width:28px;height:28px}
+.dn .lp-eb{margin-top:14px;height:30px;padding:0 13px;border-radius:999px;background:#E7F5EE;color:#0F6B45;font-size:13px;font-weight:500}
+.dn-h{margin-top:10px;font-size:clamp(28px,4.4vh,38px)}
+.dn-sub{margin-top:10px;font-size:16.5px;line-height:1.55}
+.dn-path{margin-top:22px}
+.dn-cards{margin-top:22px}
+.dn-c{padding:18px 20px;border-radius:20px}
+.dn-acts{margin-top:24px}
+@media (max-width: 960px){
+.dn{padding-top:36px}
+.dn-badge{width:84px;height:84px}
+.dn-core{width:58px;height:58px}
+.dn-h{font-size:26px}
+.dn-sub{font-size:15px}
+}
 </style>
 </helmet>
 <div class="lp-root">

@@ -2754,6 +2754,42 @@
    "x": 9800,
    "y": 29216,
    "page": "p1"
+  },
+  "CR-COL-003d.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-COL-003d · Consent: all accepted · Desktop",
+   "w": 1440,
+   "x": 12420,
+   "y": 29216,
+   "page": "p1"
+  },
+  "CR-COL-003d-Mobile.dc.html": {
+   "h": 1250,
+   "is_interactive": true,
+   "title": "CR-COL-003d · Mobile",
+   "w": 390,
+   "x": 13940,
+   "y": 29216,
+   "page": "p1"
+  },
+  "CR-DEC-004f.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-DEC-004f · Lead declaration signed · Desktop",
+   "w": 1440,
+   "x": 26910,
+   "y": 29216,
+   "page": "p1"
+  },
+  "CR-DEC-004f-Mobile.dc.html": {
+   "h": 900,
+   "is_interactive": true,
+   "title": "CR-DEC-004f · Mobile",
+   "w": 390,
+   "x": 28430,
+   "y": 29216,
+   "page": "p1"
   }
  },
  "createdOnFiles": {
@@ -2925,20 +2961,6 @@
    "y": 28896,
    "page": "p1"
   },
-  "l1m-CR-COL-003d": {
-   "text": "Not done yet\nCR-COL-003d · CR-COL-003 · Consent: all items accepted",
-   "x": 12420,
-   "y": 29216,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-DEC-004f": {
-   "text": "Not done yet\nCR-DEC-004f · CR-DEC-004 · Lead declaration completed and signed",
-   "x": 26910,
-   "y": 29216,
-   "w": 1440,
-   "page": "p1"
-  },
   "l1s19": {
    "kind": "title1",
    "maxW": 8000,
@@ -3064,42 +3086,18 @@
    "fill": "blue",
    "page": "p2"
   },
-  "new-CR-CRED-002x": {
-   "text": "NEW · just made · CR-CRED-002x",
-   "x": 22770,
-   "y": 22928,
+  "new-CR-COL-003d": {
+   "text": "NEW · just made · CR-COL-003d",
+   "x": 12420,
+   "y": 30506,
    "w": 1910,
    "fill": "blue",
    "page": "p1"
   },
-  "new-CR-POL-000": {
-   "text": "NEW · just made · CR-POL-000",
-   "x": 0,
-   "y": 24512,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-COL-002a": {
-   "text": "NEW · just made · CR-COL-002a",
-   "x": 4140,
-   "y": 30556,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-COL-002d": {
-   "text": "NEW · just made · CR-COL-002d",
-   "x": 6210,
-   "y": 30556,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-COL-002x": {
-   "text": "NEW · just made · CR-COL-002x",
-   "x": 8280,
-   "y": 30100,
+  "new-CR-DEC-004f": {
+   "text": "NEW · just made · CR-DEC-004f",
+   "x": 26910,
+   "y": 30156,
    "w": 1910,
    "fill": "blue",
    "page": "p1"
@@ -3408,7 +3406,11 @@
   "CR-COL-002d.dc.html",
   "CR-COL-002d-Mobile.dc.html",
   "CR-COL-002x.dc.html",
-  "CR-COL-002x-Mobile.dc.html"
+  "CR-COL-002x-Mobile.dc.html",
+  "CR-COL-003d.dc.html",
+  "CR-COL-003d-Mobile.dc.html",
+  "CR-DEC-004f.dc.html",
+  "CR-DEC-004f-Mobile.dc.html"
  ],
  "pages": [
   {

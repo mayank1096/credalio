@@ -643,7 +643,7 @@ body{background:#FFFFFF}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); const v = (props && props.variant) || 'request'; this.state = { v, ck: v === 'declare' ? { 0: 1, 1: 1 } : {}, lk: {}, name: '', rem: false }; }
+  constructor(props) { super(props); const v0 = (props && props.variant) || 'request', done = v0 === 'leaddone', v = done ? 'lead' : v0; this.state = { v, ck: v === 'declare' ? { 0: 1, 1: 1 } : {}, lk: done ? { 0: 1, 1: 1 } : {}, name: done ? 'Ada Ononuju' : '', rem: false }; }
   renderVals() {
     const S = this.state, v = S.v, out = {}, mary = v === 'request' || v === 'declare';
     const tick = (key, n, pre) => { for (let i = 0; i < n; i++) { const on = !!S[key][i]; out[pre + i] = { on: on ? 'true' : 'false', cls: on ? 'tk-on' : '', pick: () => this.setState({ [key]: Object.assign({}, S[key], { [i]: !on }) }) }; } return Object.keys(S[key]).filter((k) => S[key][k]).length; };

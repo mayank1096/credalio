@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Credalio · Request sent</title>
+<title>Credalio · Payout method</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -88,7 +88,7 @@ a{color:#1652F0}
 @keyframes rgIn{from{stroke-dasharray:0 100}}
 @keyframes ndPulse{0%{box-shadow:0 0 0 0 rgba(22,82,240,.35)}100%{box-shadow:0 0 0 10px rgba(22,82,240,0)}}
 .sec-h{margin:0;font-size:13.5px;font-weight:600;color:#8A93AD}
-.nova-card{padding:18px;border-radius:18px;background:#FFFFFF url(/_blob/d268046654a4206d2a726e62005bcc59) center top / 100% auto no-repeat;border:1.5px solid #E6EAF3}
+.nova-card{padding:18px;border-radius:18px;background:#FFFFFF url(/_blob/81b8d64e5a0d9ce807d39f47ffca572c) center top / 100% auto no-repeat;border:1.5px solid #E6EAF3}
 .nova-card p{margin:10px 0 0 0;font-size:14.5px;line-height:1.55;color:#0B1433}
 .know{padding:16px 18px;border-radius:18px;background:#F5F8FF;border:1.5px solid #E6EAF3;font-size:13.5px;line-height:1.55;color:#3A4566}
 .know b{display:block;font-size:13px;font-weight:600;color:#0B1433;margin-bottom:4px}
@@ -136,7 +136,7 @@ body{background:#FFFFFF}
 .lp-stepn{font-size:13.5px;color:#5B6582}
 .lp-next.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}
 .lp-next.lp-off .ob-arrow{color:#9AA8CC}
-.lp-ask{margin-top:28px;display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 16px 0 6px;border-radius:999px;border:1.5px solid #CBD7F5;background:#FFFFFF url(/_blob/d268046654a4206d2a726e62005bcc59) center / cover no-repeat;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none}
+.lp-ask{margin-top:28px;display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 16px 0 6px;border-radius:999px;border:1.5px solid #CBD7F5;background:#FFFFFF url(/_blob/81b8d64e5a0d9ce807d39f47ffca572c) center / cover no-repeat;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none}
 .lp-ask:hover{border-color:#AFC1F5;color:#0B1433}
 .lp-call{margin-top:24px;padding:16px 18px;border-radius:16px;background:#F5F8FF;border:1.5px solid #E6EAF3;border-left:4px solid #1652F0}
 .lp-call b{display:block;font-size:12.5px;font-weight:600;color:#1652F0;margin-bottom:4px}
@@ -209,7 +209,7 @@ body{background:#FFFFFF}
 .ko-nt b{font-size:16px;font-weight:600}
 .ko-nt > span:last-child{font-size:13.5px;line-height:1.45;color:#3A4566}
 .ko-go{flex-shrink:0}
-.ko-idc{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px 14px;background:#FFFFFF url(/_blob/d268046654a4206d2a726e62005bcc59) center top / cover no-repeat;border-color:#CBD7F5;box-shadow:0 18px 40px rgba(22,82,240,.08)}
+.ko-idc{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px 14px;background:#FFFFFF url(/_blob/81b8d64e5a0d9ce807d39f47ffca572c) center top / cover no-repeat;border-color:#CBD7F5;box-shadow:0 18px 40px rgba(22,82,240,.08)}
 .ko-ii{width:44px;height:44px;border-radius:14px;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
 .ko-it{display:flex;flex-direction:column;gap:2px}
 .ko-it b{font-size:17px;font-weight:600}
@@ -297,19 +297,27 @@ body{background:#FFFFFF}
 
 /* 2026-10-10 designer campus scene at the bottom of readiness task pages */
 .tk-root{position:relative;isolation:isolate}
-.tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/6acc9dd1cd600c17d2fd6381a3069aaa) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
+.tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/8bde69a3fbce17def55d28680fd3fa0a) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
 @media (max-width: 760px){.tk-scene{height:240px;background-size:250% auto;background-position:52% 100%}}
 
-/* build23 wallet outcomes */
-.wo-one{max-width:560px}
-.wo-coin{background:#1652F0 !important}
-.wo-add{background:#E7F5EE;color:#0F6B45}
-.wo-rd{justify-content:space-between}
-.ko-row .ko-idc:has(.wo-rd){align-content:space-between}
-.wo-rd .ds-link{font-size:13.5px;font-weight:600;white-space:nowrap}
-.ko-cta:not(:has(.ds-btn)){margin-top:14px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .16s ease,transform .16s ease,visibility .16s;z-index:20;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip-b.dn{bottom:auto;top:calc(100% + 10px)}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
 
-.hs-c{max-width:440px;width:100%;box-sizing:border-box;justify-content:flex-start}
+/* build25 payout outcomes */
+.po-one{max-width:520px}
+.po-who{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:6px;border-bottom:1.5px solid #F0F2F8}
+.po-who img{width:40px;height:40px;padding:7px;box-sizing:border-box;border-radius:12px;border:1.5px solid #E6EAF3;background:#FFFFFF}
+.po-who > span{display:flex;flex-direction:column;gap:2px;text-align:left}.po-who b{font-size:15px;font-weight:600}.po-who > span > span{font-size:13.5px;color:#5B6582}
+.po-lgi{background:#FFFFFF !important;border:1.5px solid #E6EAF3}
+.po-lgi img{width:24px;height:24px;object-fit:contain}
+.po-rd{justify-content:space-between}
+.ko-row .ko-idc:has(.po-rd){align-content:space-between}
+.po-rd .ko-rl{display:inline-flex;align-items:center}
+.po-rd .ds-link{font-size:13.5px;font-weight:600}
 
 /* confetti.py success burst */
 .cf{position:absolute;left:50%;top:50%;width:0;height:0;pointer-events:none;z-index:0;--k:1}
@@ -333,25 +341,43 @@ body{background:#FFFFFF}
 <div class="tk-root">
 <div class="tk-scene" aria-hidden="true"></div>
 <header class="tk-top">
-<a href="{{closeHref}}" class="lp-x" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
-<div class="lp-title"><span class="lp-t1" style="display: block">{{bar}}</span></div>
+<a href="CR-EARN-001.dc.html" class="lp-x" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
+<div class="lp-title"><span class="lp-t1" style="display: block">Payout method</span></div>
 <span style="flex-grow: 1"></span>
 </header>
 <main class="ko {{koCls}}">
 <div class="ko-emb ob-in" aria-hidden="true"><sc-if value="{{v}}" hint-placeholder-val="{{false}}"><span class="cf" aria-hidden="true"><i style="--x:271;--y:-84;--f:438;--d:2.82s;--dl:0.34s;--sw:12px;--sd:0.81s;--fd:0.62s;--rx:-0.39;--r:-57deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:61;--y:-94;--f:453;--d:3.38s;--dl:0.38s;--sw:14px;--sd:0.48s;--fd:0.58s;--rx:0.76;--r:73deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:177;--y:-104;--f:399;--d:2.88s;--dl:0.27s;--sw:6px;--sd:0.49s;--fd:1.04s;--rx:-0.19;--r:61deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:132;--y:-105;--f:408;--d:2.68s;--dl:0.43s;--sw:10px;--sd:0.83s;--fd:0.84s;--rx:0.92;--r:-80deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-185;--y:-22;--f:478;--d:3.08s;--dl:0.20s;--sw:12px;--sd:0.80s;--fd:0.75s;--rx:-0.83;--r:5deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:297;--y:-43;--f:404;--d:2.72s;--dl:0.20s;--sw:13px;--sd:0.53s;--fd:0.97s;--rx:-0.11;--r:-32deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#AFC1F5"></s></b></i><i style="--x:-67;--y:-11;--f:466;--d:3.77s;--dl:0.37s;--sw:15px;--sd:0.46s;--fd:0.69s;--rx:0.99;--r:74deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-293;--y:-129;--f:380;--d:3.33s;--dl:0.45s;--sw:9px;--sd:0.48s;--fd:0.71s;--rx:0.27;--r:-77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-82;--y:-86;--f:428;--d:3.29s;--dl:0.46s;--sw:7px;--sd:0.52s;--fd:1.23s;--rx:0.64;--r:-17deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-218;--y:-61;--f:448;--d:3.07s;--dl:0.33s;--sw:6px;--sd:0.47s;--fd:0.63s;--rx:0.02;--r:-15deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:153;--y:-95;--f:470;--d:3.19s;--dl:0.35s;--sw:15px;--sd:0.89s;--fd:0.64s;--rx:-0.04;--r:77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-140;--y:-21;--f:381;--d:2.92s;--dl:0.32s;--sw:6px;--sd:0.53s;--fd:0.83s;--rx:0.14;--r:-47deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-88;--y:-25;--f:445;--d:3.43s;--dl:0.37s;--sw:7px;--sd:0.47s;--fd:0.56s;--rx:0.82;--r:-1deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-306;--y:-60;--f:453;--d:2.98s;--dl:0.50s;--sw:6px;--sd:0.70s;--fd:1.10s;--rx:0.80;--r:-47deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-94;--y:-54;--f:467;--d:3.10s;--dl:0.43s;--sw:14px;--sd:0.71s;--fd:1.02s;--rx:-0.24;--r:69deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:69;--y:-138;--f:479;--d:3.66s;--dl:0.41s;--sw:9px;--sd:0.78s;--fd:0.99s;--rx:-0.12;--r:58deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-121;--y:-137;--f:475;--d:2.74s;--dl:0.43s;--sw:12px;--sd:0.67s;--fd:1.22s;--rx:-0.26;--r:-44deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-100;--y:-19;--f:404;--d:3.09s;--dl:0.26s;--sw:12px;--sd:0.81s;--fd:1.12s;--rx:-0.60;--r:-26deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-179;--y:-21;--f:393;--d:3.02s;--dl:0.47s;--sw:6px;--sd:0.48s;--fd:1.29s;--rx:0.64;--r:-52deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:211;--y:-96;--f:447;--d:3.46s;--dl:0.45s;--sw:12px;--sd:0.59s;--fd:1.17s;--rx:-0.44;--r:75deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:114;--y:-110;--f:444;--d:3.28s;--dl:0.39s;--sw:10px;--sd:0.54s;--fd:1.13s;--rx:-0.47;--r:-44deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:309;--y:-133;--f:433;--d:3.37s;--dl:0.30s;--sw:6px;--sd:0.54s;--fd:1.17s;--rx:-0.49;--r:-78deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-175;--y:-40;--f:474;--d:3.20s;--dl:0.50s;--sw:7px;--sd:0.83s;--fd:1.07s;--rx:-0.55;--r:25deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-236;--y:-86;--f:470;--d:3.05s;--dl:0.36s;--sw:14px;--sd:0.81s;--fd:1.26s;--rx:-0.07;--r:-28deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:142;--y:-35;--f:451;--d:2.86s;--dl:0.47s;--sw:15px;--sd:0.89s;--fd:0.95s;--rx:0.58;--r:2deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#0F6B45"></s></b></i><i style="--x:262;--y:-30;--f:388;--d:3.13s;--dl:0.36s;--sw:13px;--sd:0.67s;--fd:0.57s;--rx:0.62;--r:-64deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:191;--y:-125;--f:458;--d:2.77s;--dl:0.23s;--sw:11px;--sd:0.78s;--fd:1.18s;--rx:0.38;--r:46deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:165;--y:-88;--f:463;--d:3.27s;--dl:0.23s;--sw:11px;--sd:0.86s;--fd:0.74s;--rx:0.34;--r:76deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-125;--y:-130;--f:407;--d:3.20s;--dl:0.31s;--sw:7px;--sd:0.45s;--fd:0.83s;--rx:0.08;--r:-69deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-241;--y:-136;--f:473;--d:3.15s;--dl:0.47s;--sw:14px;--sd:0.63s;--fd:0.73s;--rx:-0.01;--r:6deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#1652F0"></s></b></i><i style="--x:256;--y:-19;--f:432;--d:2.73s;--dl:0.31s;--sw:6px;--sd:0.57s;--fd:1.08s;--rx:0.95;--r:-71deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-220;--y:-148;--f:452;--d:2.89s;--dl:0.34s;--sw:10px;--sd:0.71s;--fd:1.19s;--rx:0.25;--r:-30deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-305;--y:-61;--f:441;--d:3.25s;--dl:0.46s;--sw:11px;--sd:0.55s;--fd:0.71s;--rx:0.09;--r:70deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#AFC1F5"></s></b></i><i style="--x:-171;--y:-46;--f:470;--d:2.98s;--dl:0.28s;--sw:15px;--sd:0.55s;--fd:1.30s;--rx:0.78;--r:-46deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i></span></sc-if><span class="ko-halo"></span><span class="ko-disc">
 <sc-if value="{{r}}" hint-placeholder-val="{{true}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10M7 21h10"></path><path d="M8 3c0 5 8 5 8 9s-8 4-8 9"></path><path d="M16 3c0 5-8 5-8 9s8 4 8 9"></path></svg></sc-if>
 <sc-if value="{{v}}" hint-placeholder-val="{{false}}"><svg class="ko-tick" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" pathLength="1"></path></svg></sc-if>
-<sc-if value="{{a}}" hint-placeholder-val="{{false}}"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg></sc-if>
+<sc-if value="{{a}}" hint-placeholder-val="{{false}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"></rect><path d="M8.5 7 10 4.5h4L15.5 7"></path><circle cx="12" cy="13.5" r="3.5"></circle></svg></sc-if>
 <sc-if value="{{f}}" hint-placeholder-val="{{false}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.5h.01"></path></svg></sc-if>
 </span></div>
-<span class="ko-pill ob-in2">Sent</span><h1 class="lp-h1 ko-h ob-in2">Your request is with our team</h1><p class="ko-sub ob-in2">We usually reply within a day, by email and here in Credalio.</p><section class="ko-card ko-idc ob-in3 hs-c" aria-label="Your request"><span class="ko-it"><b>Video upload stops at 99%</b><span>SUP-00431 · Technical issue</span></span></section><div class="ko-cta ob-in4"><a href="CR-HELP-006.dc.html" class="ds-btn"><span>View request</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div><div class="ko-links ob-in4"><a href="CR-HELP-001.dc.html">Back to Help</a><span aria-hidden="true">·</span><a href="CR-DASH-NEW.dc.html">Back to my Studio</a></div>
+<span class="ko-pill ob-in2">{{pill}}</span>
+<h1 class="lp-h1 ko-h ob-in2">{{h1}}</h1>
+<p class="ko-sub ob-in2">{{sub}}</p>
+
+<sc-if value="{{r}}" hint-placeholder-val="{{false}}">
+<section class="ko-card po-one ob-in3" aria-label="What happens next"><div class="po-who"><img src="/_blob/a10968ece1d72c0bc99bfa7d3405d9b1" alt=""><span><b>Payoneer</b><span>Local bank account · NGN •••• 2219</span></span></div><ol class="ko-path"><li class="ko-done"><span class="ko-dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Account linked</b><span>Just now</span></span></li><li class="ko-now"><span class="ko-dot"></span><span><b>Payoneer verifies it</b><span>Usually 1–3 business days</span></span></li><li><span class="ko-dot"></span><span><b>Payouts start</b><span>Your November payout goes here</span></span></li></ol></section>
+</sc-if>
+<sc-if value="{{v}}" hint-placeholder-val="{{true}}">
+<div class="ko-row">
+<section class="ko-card ko-idc ob-in3" aria-label="Payout method"><span class="ko-ii po-lgi"><img src="/_blob/2304d2cd7c945eeea685d9ca3396cd4b" alt=""></span><span class="ko-it"><b>PayPal</b><span>ada.ononuju@example.com</span></span><div class="ko-rd po-rd"><span class="ko-rl">Verified in your name<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b l" role="tooltip">Payouts only go to an account in your own verified name.</span></span></span><a href="CR-PAYO-001.dc.html" class="ds-link">Change</a></div></section>
+<section class="ko-next ob-in4" aria-label="Next for you"><span class="ko-ni"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M14.8 9.2c-.6-.9-1.6-1.4-2.8-1.4-1.6 0-2.7.8-2.7 2 0 2.9 5.7 1.5 5.7 4.4 0 1.2-1.2 2.1-2.9 2.1-1.4 0-2.5-.6-3-1.5M12 6v1.8M12 16.2V18"></path></svg></span><span class="ko-nt"><span class="ko-nl">Next for you</span><b>$2,850.00 on its way</b><span>Your next payout arrives in early November.</span></span><a href="CR-EARN-001.dc.html" class="ds-btn sm ko-go"><span>View earnings</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></section>
+</div>
+</sc-if>
+
+<div class="ko-links ob-in4"><a href="{{lh}}">{{lt}}</a></div>
 </main>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
 class Component extends DCLogic {
+  constructor(props) { super(props); this.v = (props || {}).variant || 'verified'; }
   renderVals() {
-    return { koCls: 'ko-v', r: false, v: true, a: false, f: false, bar: 'Contact support', closeHref: 'CR-HELP-001.dc.html' };
+    const p = this.v === 'pending';
+    return { koCls: p ? 'ko-r' : 'ko-v', pill: p ? 'Verification pending' : 'Connected', h1: p ? 'Payoneer is linked' : 'PayPal is connected',
+      sub: p ? 'Payoneer is checking your account. We’ll let you know when it’s done.' : 'Your earnings go here automatically each month.',
+      r: p, v: !p, a: false, f: false, lt: p ? 'Back to earnings' : 'Back to my Studio', lh: p ? 'CR-EARN-001.dc.html' : 'CR-DASH-NEW.dc.html' };
   }
 }
 </script>

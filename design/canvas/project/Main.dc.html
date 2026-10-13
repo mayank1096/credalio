@@ -134,11 +134,15 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </button>
 </div>
 <div class="cd-ctawrap" style="margin-top: clamp(24px, 3.6vh, 36px); display: flex; flex-direction: column; align-items: center; gap: 12px">
-<a href="CR-ONB-002.dc.html" class="cd-cta" style="display: flex; align-items: center; gap: 16px; height: 60px; padding: 0 8px 0 30px; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-size: 17px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 12px 28px rgba(22, 82, 240, 0.30)">{{ctaLabel}}
+<sc-if value="{{err}}" hint-placeholder-val="{{false}}"><p class="cd-err" role="alert" style="margin: 0; display: flex; align-items: flex-start; gap: 7px; max-width: 520px; font-size: 14px; line-height: 1.45; color: #B42318; text-align: left"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg><span>{{err}}</span></p></sc-if><sc-if value="{{ctaGo}}" hint-placeholder-val="{{true}}"><a href="{{ctaHref}}" class="cd-cta" style="display: flex; align-items: center; gap: 16px; height: 60px; padding: 0 8px 0 30px; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-size: 17px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 12px 28px rgba(22, 82, 240, 0.30)">{{ctaLabel}}
 <span class="cd-cta-arrow" style="width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; color: #1652F0; display: flex; align-items: center; justify-content: center">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
 </span>
-</a>
+</a></sc-if><sc-if value="{{ctaStop}}" hint-placeholder-val="{{false}}"><button type="button" class="cd-cta" onClick="{{showErr}}" style="display: flex; align-items: center; gap: 16px; height: 60px; padding: 0 8px 0 30px; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-size: 17px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 12px 28px rgba(22, 82, 240, 0.30); border: 0; cursor: pointer; font-family: inherit">{{ctaLabel}}
+<span class="cd-cta-arrow" style="width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; color: #1652F0; display: flex; align-items: center; justify-content: center">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+</span>
+</button></sc-if>
 <span style="font-size: 14px; color: #5B6582">Add other roles anytime.</span>
 </div>
 </main>
@@ -153,7 +157,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { sel: 'create' }; try { sessionStorage.setItem('crRole', 'create'); } catch (e) {} }
+  constructor(props) { super(props); this.state = { sel: 'create', err: '' }; try { sessionStorage.setItem('crRole', 'create'); } catch (e) {} }
   renderVals() {
     const sel = this.state.sel;
     const ctas = {"learn": "Continue", "create": "Continue", "validate": "Continue", "institution": "Continue"};
@@ -167,7 +171,7 @@ class Component extends DCLogic {
       not[id] = !on;
       c[id] = {
         pressed: on ? 'true' : 'false',
-        pick: () => { try { sessionStorage.setItem('crRole', id); } catch (e) {} this.setState({ sel: id }); },
+        pick: () => { try { sessionStorage.setItem('crRole', id); } catch (e) {} this.setState({ sel: id, err: '' }); },
         border: on ? '#1652F0' : '#E6EAF3',
         bg: on ? '#F5F8FF' : '#FFFFFF',
         shadow: on ? '0 0 0 4px rgba(22, 82, 240, 0.12), 0 12px 28px rgba(22, 82, 240, 0.16)' : '0 1px 2px rgba(11, 20, 51, 0.04)',
@@ -179,7 +183,11 @@ class Component extends DCLogic {
       };
     });
     const pans = {"learn": 147, "create": 83, "validate": -37, "institution": -122};
-    return { c, is, not, ctaLabel: ctas[sel], panX: pans[sel] };
+    /* route1013: per-role Continue, as in the client flow */
+    const hrefs = { create: 'CR-ONB-002.dc.html', institution: 'CR-ONB-002S.dc.html' };
+    const stop = !hrefs[sel];
+    return { c, is, not, ctaLabel: ctas[sel], panX: pans[sel], ctaGo: !stop, ctaStop: stop, ctaHref: hrefs[sel] || '#', err: this.state.err,
+      showErr: () => this.setState({ err: 'Learner and Validator sign-up are designed separately. Choose Creator or Set Up an Organization.' }) };
   }
 }
 </script>

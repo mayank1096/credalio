@@ -180,7 +180,7 @@ class Component extends DCLogic {
     });
     const pans = {"learn": 147, "create": 83, "validate": -37, "institution": -122};
     /* org1013: Organization skips ONB-002 → coming soon (client flow); other roles → ONB-002 */
-    return { c, is, not, ctaLabel: ctas[sel], panX: pans[sel], ctaHref: sel === 'institution' ? 'CR-ONB-002S.dc.html' : 'CR-ONB-002.dc.html' };
+    return { c, is, not, ctaLabel: ctas[sel], panX: pans[sel], ctaHref: { learn: 'CR-ONB-002L.dc.html', create: 'CR-ONB-002.dc.html', validate: 'CR-ONB-002V.dc.html', institution: 'CR-ONB-002S.dc.html' }[sel] };
   }
 }
 </script>

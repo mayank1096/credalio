@@ -116,9 +116,9 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+<script type="text/x-dc" data-dc-script data-props='{"role":{"editor":"enum","options":["learn","create","validate"],"default":"create"},"$preview":{"width":1440,"height":820}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); let role = 'create'; try { role = sessionStorage.getItem('crRole') || 'create'; } catch (e) {} this.state = { sel: 'ind', role }; }
+  constructor(props) { super(props); this.state = { sel: 'ind' }; }
   renderVals() {
     const sel = this.state.sel;
     const notes = {
@@ -141,7 +141,7 @@ class Component extends DCLogic {
         check: on ? 1 : 0
       };
     });
-    const role = ['learn', 'create', 'validate', 'institution'].includes(this.state.role) ? this.state.role : 'create';
+    const role = ['learn', 'create', 'validate'].includes(this.props.role) ? this.props.role : 'create';
     const rl = {}; ['learn', 'create', 'validate', 'institution'].forEach((r) => { rl[r] = r === role; });
     const imgs = {'learn': '/_blob/e068872cdedaf033aa3b84af3a149173', 'create': '/_blob/303efabd2ddabb7edfb4cda677ac03d8', 'validate': '/_blob/9c4c8b4c538fc972644e2f47e62afe9c'};
     return { roleImg: imgs[role] || imgs.create, rl, rolePan: 0, o, note: notes[sel], hasNote: !!notes[sel], isInd: sel === 'ind', notInd: sel !== 'ind' };

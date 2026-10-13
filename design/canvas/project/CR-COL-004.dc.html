@@ -320,10 +320,15 @@ body{background:#FFFFFF}
 
 /* confetti.py success burst */
 .cf{position:absolute;left:50%;top:50%;width:0;height:0;pointer-events:none;z-index:0;--k:1}
-.cf i{position:absolute;left:0;top:0;display:block;transform:translate(calc(var(--x) * var(--k) * 1px - 50%),calc(var(--y) * 1px - 50%)) rotate(var(--r));animation:cfPop 1.1s cubic-bezier(.16,.84,.32,1) both}
-@keyframes cfPop{0%{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(0)}18%{opacity:1}}
+.cf i{position:absolute;left:0;top:0;display:block;opacity:0;animation:cfFall 2.8s cubic-bezier(.2,.7,.4,1) both}
+@keyframes cfFall{
+0%{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(0)}
+8%{opacity:1}
+22%{opacity:1;transform:translate(calc(var(--x) * var(--k) * 1px - 50%),calc(var(--y) * 1px - 50%)) rotate(var(--r))}
+75%{opacity:.9}
+100%{opacity:0;transform:translate(calc(var(--x) * var(--k) * 1.12px - 50%),calc(var(--y) * 1px + 340px)) rotate(calc(var(--r) + 260deg))}}
 @media (max-width: 960px){.cf{--k:.56}}
-@media (prefers-reduced-motion: reduce){.cf i{animation:none}}
+@media (prefers-reduced-motion: reduce){.cf{display:none}}
 
 .ko-halo,.ko-disc{z-index:1}
 </style>

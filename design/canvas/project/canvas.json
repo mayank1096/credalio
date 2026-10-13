@@ -2574,6 +2574,96 @@
    "x": 5660,
    "y": 13314,
    "page": "p1"
+  },
+  "CR-KYC-001e.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-KYC-001e · Consent not given · Desktop",
+   "w": 1440,
+   "x": 2070,
+   "y": 20204,
+   "page": "p1"
+  },
+  "CR-KYC-001e-Mobile.dc.html": {
+   "h": 844,
+   "is_interactive": true,
+   "title": "CR-KYC-001e · Mobile",
+   "w": 390,
+   "x": 3590,
+   "y": 20204,
+   "page": "p1"
+  },
+  "CR-KYC-002e.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-KYC-002e · Photo missing · Desktop",
+   "w": 1440,
+   "x": 8280,
+   "y": 20204,
+   "page": "p1"
+  },
+  "CR-KYC-002e-Mobile.dc.html": {
+   "h": 844,
+   "is_interactive": true,
+   "title": "CR-KYC-002e · Mobile",
+   "w": 390,
+   "x": 9800,
+   "y": 20204,
+   "page": "p1"
+  },
+  "CR-CRED-001r.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-CRED-001r · Fix a credential · Desktop",
+   "w": 1440,
+   "x": 2070,
+   "y": 21888,
+   "page": "p1"
+  },
+  "CR-CRED-001r-Mobile.dc.html": {
+   "h": 1000,
+   "is_interactive": true,
+   "title": "CR-CRED-001r · Mobile",
+   "w": 390,
+   "x": 3590,
+   "y": 21888,
+   "page": "p1"
+  },
+  "CR-CRED-002g.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-CRED-002g · Certification by upload · Desktop",
+   "w": 1440,
+   "x": 12420,
+   "y": 21888,
+   "page": "p1"
+  },
+  "CR-CRED-002g-Mobile.dc.html": {
+   "h": 1000,
+   "is_interactive": true,
+   "title": "CR-CRED-002g · Mobile",
+   "w": 390,
+   "x": 13940,
+   "y": 21888,
+   "page": "p1"
+  },
+  "CR-CRED-002h.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-CRED-002h · Work experience with referee · Desktop",
+   "w": 1440,
+   "x": 18630,
+   "y": 21888,
+   "page": "p1"
+  },
+  "CR-CRED-002h-Mobile.dc.html": {
+   "h": 1000,
+   "is_interactive": true,
+   "title": "CR-CRED-002h · Mobile",
+   "w": 390,
+   "x": 20150,
+   "y": 21888,
+   "page": "p1"
   }
  },
  "createdOnFiles": {
@@ -2693,20 +2783,6 @@
    "y": 19884,
    "page": "p1"
   },
-  "l1m-CR-KYC-001e": {
-   "text": "Not done yet\nCR-KYC-001e · KYC-001 · Consent not given (error)",
-   "x": 2070,
-   "y": 20204,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-KYC-002e": {
-   "text": "Not done yet\nCR-KYC-002e · KYC-002 · Sumsub: photos missing (error)",
-   "x": 8280,
-   "y": 20204,
-   "w": 1440,
-   "page": "p1"
-  },
   "l1s14": {
    "kind": "title1",
    "maxW": 8000,
@@ -2714,27 +2790,6 @@
    "w": 240,
    "x": 0,
    "y": 21568,
-   "page": "p1"
-  },
-  "l1m-CR-CRED-001r": {
-   "text": "Not done yet\nCR-CRED-001r · CRED-002 · Fix a credential that needs more information",
-   "x": 2070,
-   "y": 21888,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-CRED-002g": {
-   "text": "Not done yet\nCR-CRED-002g · CRED-002 · Certification by certificate upload (manual review)",
-   "x": 12420,
-   "y": 21888,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-CRED-002h": {
-   "text": "Not done yet\nCR-CRED-002h · CRED-002 · Work experience with referee contact",
-   "x": 18630,
-   "y": 21888,
-   "w": 1440,
    "page": "p1"
   },
   "l1m-CR-CRED-002x": {
@@ -2946,46 +3001,6 @@
    "y": 22732,
    "page": "p1"
   },
-  "new-CR-ORI-M7-S1": {
-   "text": "NEW · just made · CR-ORI-M7-S1",
-   "x": 12420,
-   "y": 19544,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-ORI-M7-S2": {
-   "text": "NEW · just made · CR-ORI-M7-S2",
-   "x": 14490,
-   "y": 19544,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-ORI-M7-S3": {
-   "text": "NEW · just made · CR-ORI-M7-S3",
-   "x": 16560,
-   "y": 19544,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-ORI-M7-DONE": {
-   "text": "NEW · just made · CR-ORI-M7-DONE",
-   "x": 18630,
-   "y": 19484,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-ORI-M4-L2": {
-   "text": "NEW · just made · CR-ORI-M4-L2",
-   "x": 4140,
-   "y": 14254,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
   "p2-moved": {
    "text": "Studio screens (Link 2) moved to their own canvas:\nhttps://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9\n\nThese two sources stay here because Link 1 screens import them.",
    "x": 0,
@@ -2993,6 +3008,46 @@
    "w": 1440,
    "fill": "blue",
    "page": "p2"
+  },
+  "new-CR-KYC-001e": {
+   "text": "NEW · just made · CR-KYC-001e",
+   "x": 2070,
+   "y": 21088,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
+  },
+  "new-CR-KYC-002e": {
+   "text": "NEW · just made · CR-KYC-002e",
+   "x": 8280,
+   "y": 21088,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
+  },
+  "new-CR-CRED-001r": {
+   "text": "NEW · just made · CR-CRED-001r",
+   "x": 2070,
+   "y": 22928,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
+  },
+  "new-CR-CRED-002g": {
+   "text": "NEW · just made · CR-CRED-002g",
+   "x": 12420,
+   "y": 22928,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
+  },
+  "new-CR-CRED-002h": {
+   "text": "NEW · just made · CR-CRED-002h",
+   "x": 18630,
+   "y": 22928,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
   }
  },
  "order": [
@@ -3278,7 +3333,17 @@
   "CR-ORI-M7-DONE.dc.html",
   "CR-ORI-M7-DONE-Mobile.dc.html",
   "CR-ORI-M4-L2.dc.html",
-  "CR-ORI-M4-L2-Mobile.dc.html"
+  "CR-ORI-M4-L2-Mobile.dc.html",
+  "CR-KYC-001e.dc.html",
+  "CR-KYC-001e-Mobile.dc.html",
+  "CR-KYC-002e.dc.html",
+  "CR-KYC-002e-Mobile.dc.html",
+  "CR-CRED-001r.dc.html",
+  "CR-CRED-001r-Mobile.dc.html",
+  "CR-CRED-002g.dc.html",
+  "CR-CRED-002g-Mobile.dc.html",
+  "CR-CRED-002h.dc.html",
+  "CR-CRED-002h-Mobile.dc.html"
  ],
  "pages": [
   {

@@ -1,3474 +1,3530 @@
 {
- "v": 3,
- "attachments": {},
- "boards": {
-  "CR-ASG-001-Mobile.dc.html": {
-   "h": 1100,
-   "is_interactive": true,
-   "title": "CR-ASG-001 · Mobile",
-   "w": 390,
-   "x": 18080,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-ASG-001.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ASG-001 · Assigned to me · Desktop",
-   "w": 1440,
-   "x": 16560,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-001-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-COL-001 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-001.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-COL-001 · Invitation notification · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-002-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-COL-002 · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-002.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-COL-002 · Review invitation · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-003-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-COL-003 · Mobile",
-   "w": 390,
-   "x": 11870,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-003.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-COL-003 · Collaboration consent · Desktop",
-   "w": 1440,
-   "x": 10350,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-004-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-COL-004 · Mobile",
-   "w": 390,
-   "x": 16010,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-004.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-COL-004 · Invitation accepted · Desktop",
-   "w": 1440,
-   "x": 14490,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-CREATE-001-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-CREATE-001 · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 2240,
-   "page": "p1"
-  },
-  "CR-CREATE-001.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CREATE-001 · How would you like to build it? · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 2240,
-   "page": "p1"
-  },
-  "CR-CREATE-002A-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-CREATE-002A · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 2240,
-   "page": "p1"
-  },
-  "CR-CREATE-002A.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CREATE-002A · New course with Nova (chat) · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 2240,
-   "page": "p1"
-  },
-  "CR-CREATE-002Ab-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-CREATE-002Ab · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 2240,
-   "page": "p1"
-  },
-  "CR-CREATE-002Ab.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CREATE-002Ab · Review Nova’s draft · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 2240,
-   "page": "p1"
-  },
-  "CR-CREATE-002B-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-CREATE-002B · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 2240,
-   "page": "p1"
-  },
-  "CR-CREATE-002B.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CREATE-002B · Build from scratch · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 2240,
-   "page": "p1"
-  },
-  "CR-CRED-001-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-CRED-001 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-001.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CRED-001 · Your credentials & expertise · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-CRED-002 · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CRED-002 · Add a credential: choose type · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002a-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-CRED-002a · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002a.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CRED-002a · Degree or diploma · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002b-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-CRED-002b · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002b.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CRED-002b · Certification by credential ID (AWS) · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002c-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-CRED-002c · Mobile",
-   "w": 390,
-   "x": 11870,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002c.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CRED-002c · Certification by badge link (Credly) · Desktop",
-   "w": 1440,
-   "x": 10350,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002d-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-CRED-002d · Mobile",
-   "w": 390,
-   "x": 16010,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002d.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CRED-002d · Licence or membership · Desktop",
-   "w": 1440,
-   "x": 14490,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002e-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-CRED-002e · Mobile",
-   "w": 390,
-   "x": 18080,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002e.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CRED-002e · Work experience · Desktop",
-   "w": 1440,
-   "x": 16560,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002f-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-CRED-002f · Mobile",
-   "w": 390,
-   "x": 22220,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002f.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CRED-002f · Other evidence (portfolio, publications) · Desktop",
-   "w": 1440,
-   "x": 20700,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-003-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-CRED-003 · Mobile",
-   "w": 390,
-   "x": 26360,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-003.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CRED-003 · Verified online · Desktop",
-   "w": 1440,
-   "x": 24840,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-003b-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-CRED-003b · Mobile",
-   "w": 390,
-   "x": 28430,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-003b.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CRED-003b · Submitted for manual review · Desktop",
-   "w": 1440,
-   "x": 26910,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CTR-001-Mobile.dc.html": {
-   "h": 1360,
-   "is_interactive": true,
-   "title": "CR-CTR-001 · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 4060,
-   "page": "p1"
-  },
-  "CR-CTR-001.dc.html": {
-   "expand": "fill",
-   "h": 1230,
-   "is_interactive": true,
-   "title": "CR-CTR-001 · Creator Centre · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 4060,
-   "page": "p1"
-  },
-  "CR-DASH-NEW-Mobile.dc.html": {
-   "h": 980,
-   "is_interactive": true,
-   "title": "CR-DASH-NEW · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 2240,
-   "page": "p1"
-  },
-  "CR-DASH-NEW.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-DASH-NEW · Creator Studio launchpad · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 2240,
-   "page": "p1"
-  },
-  "CR-DASH-S02-Mobile.dc.html": {
-   "h": 980,
-   "is_interactive": true,
-   "title": "CR-DASH-S02 · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 25256,
-   "page": "p1"
-  },
-  "CR-DASH-S02.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-DASH-S02 · Draft started · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 25256,
-   "page": "p1"
-  },
-  "CR-DASH-S03-Mobile.dc.html": {
-   "h": 980,
-   "is_interactive": true,
-   "title": "CR-DASH-S03 · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 25256,
-   "page": "p1"
-  },
-  "CR-DASH-S03.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-DASH-S03 · Collaboration invitation · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 25256,
-   "page": "p1"
-  },
-  "CR-DASH-S04-Mobile.dc.html": {
-   "h": 980,
-   "is_interactive": true,
-   "title": "CR-DASH-S04 · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 25256,
-   "page": "p1"
-  },
-  "CR-DASH-S04.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-DASH-S04 · Assigned contributor · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 25256,
-   "page": "p1"
-  },
-  "CR-DASH-S05-Mobile.dc.html": {
-   "h": 980,
-   "is_interactive": true,
-   "title": "CR-DASH-S05 · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 25256,
-   "page": "p1"
-  },
-  "CR-DASH-S05.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-DASH-S05 · Readiness blocks submission · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 25256,
-   "page": "p1"
-  },
-  "CR-DASH-S06-Mobile.dc.html": {
-   "h": 980,
-   "is_interactive": true,
-   "title": "CR-DASH-S06 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-DASH-S06.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-DASH-S06 · In validation · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-DASH-S07-Mobile.dc.html": {
-   "h": 980,
-   "is_interactive": true,
-   "title": "CR-DASH-S07 · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-DASH-S07.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-DASH-S07 · Validation needs your response · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-DASH-S08-Mobile.dc.html": {
-   "h": 980,
-   "is_interactive": true,
-   "title": "CR-DASH-S08 · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-DASH-S08.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-DASH-S08 · Published · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-DASH-S09-Mobile.dc.html": {
-   "h": 980,
-   "is_interactive": true,
-   "title": "CR-DASH-S09 · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-DASH-S09.dc.html": {
-   "h": 1100,
-   "is_interactive": true,
-   "title": "CR-DASH-S09 · Established creator · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-DASH-ST.dc.html": {
-   "h": 820,
-   "w": 1440,
-   "x": 0,
-   "y": 600,
-   "page": "p2"
-  },
-  "CR-DEC-001-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-DEC-001 · Mobile",
-   "w": 390,
-   "x": 20150,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-DEC-001.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-DEC-001 · Contributor declaration request (Mary) · Desktop",
-   "w": 1440,
-   "x": 18630,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-DEC-002-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-DEC-002 · Mobile",
-   "w": 390,
-   "x": 22220,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-DEC-002.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-DEC-002 · Contributor declaration (Mary signs) · Desktop",
-   "w": 1440,
-   "x": 20700,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-DEC-003-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-DEC-003 · Mobile",
-   "w": 390,
-   "x": 24290,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-DEC-003.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-DEC-003 · Declaration status · blocked while pending · Desktop",
-   "w": 1440,
-   "x": 22770,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-DEC-004-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-DEC-004 · Mobile",
-   "w": 390,
-   "x": 26360,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-DEC-004.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-DEC-004 · Lead Creator submission declaration · Desktop",
-   "w": 1440,
-   "x": 24840,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-HOME-EXP-Mobile.dc.html": {
-   "h": 1100,
-   "is_interactive": true,
-   "title": "CR-HOME-EXP · Mobile",
-   "w": 390,
-   "x": 13940,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-HOME-EXP.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-HOME-EXP · My learning experiences · Desktop",
-   "w": 1440,
-   "x": 12420,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-HOME-NEW-Mobile.dc.html": {
-   "h": 1100,
-   "is_interactive": true,
-   "title": "CR-HOME-NEW · Mobile",
-   "w": 390,
-   "x": 16010,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-HOME-NEW.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-HOME-NEW · Create new · Desktop",
-   "w": 1440,
-   "x": 14490,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-HOME-SET-Mobile.dc.html": {
-   "h": 1300,
-   "is_interactive": true,
-   "title": "CR-HOME-SET · Mobile",
-   "w": 390,
-   "x": 18080,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-HOME-SET.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-HOME-SET · Settings · AI preferences · Desktop",
-   "w": 1440,
-   "x": 16560,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-HOME-SOON-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-HOME-SOON · Mobile",
-   "w": 390,
-   "x": 20150,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-HOME-SOON.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-HOME-SOON · Not-yet-built destination (Validation Centre) · Desktop",
-   "w": 1440,
-   "x": 18630,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-KYC-001-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-KYC-001 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-001.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-KYC-001 · Verify identity: before you start · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-002-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-KYC-002 · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-002.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-KYC-002 · Sumsub: choose document · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-002b-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-KYC-002b · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-002b.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-KYC-002b · Sumsub: photos · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-002c-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-KYC-002c · Mobile",
-   "w": 390,
-   "x": 11870,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-002c.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-KYC-002c · Sumsub: liveness check · Desktop",
-   "w": 1440,
-   "x": 10350,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-002d-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-KYC-002d · Mobile",
-   "w": 390,
-   "x": 13940,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-002d.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-KYC-002d · Sumsub: review & submit · Desktop",
-   "w": 1440,
-   "x": 12420,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-003-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-KYC-003 · Mobile",
-   "w": 390,
-   "x": 16010,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-003.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-KYC-003 · Identity in review · Desktop",
-   "w": 1440,
-   "x": 14490,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-004-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-KYC-004 · Mobile",
-   "w": 390,
-   "x": 18080,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-004.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-KYC-004 · Identity verified · Desktop",
-   "w": 1440,
-   "x": 16560,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-005-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-KYC-005 · Mobile",
-   "w": 390,
-   "x": 20150,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-005.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-KYC-005 · Identity: action needed (retake) · Desktop",
-   "w": 1440,
-   "x": 18630,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-006-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-KYC-006 · Mobile",
-   "w": 390,
-   "x": 22220,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-006.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-KYC-006 · Identity not verified · Desktop",
-   "w": 1440,
-   "x": 20700,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-NOT-001-Mobile.dc.html": {
-   "h": 1200,
-   "is_interactive": true,
-   "title": "CR-NOT-001 · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-NOT-001.dc.html": {
-   "h": 1200,
-   "is_interactive": true,
-   "title": "CR-NOT-001 · Notification Centre · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-NOT-bell-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-NOT-bell · Mobile",
-   "w": 390,
-   "x": 11870,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-NOT-bell.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-NOT-bell · Bell dropdown · Desktop",
-   "w": 1440,
-   "x": 10350,
-   "y": 27076,
-   "page": "p1"
-  },
-  "CR-ONB-001-Laptop.dc.html": {
-   "h": 720,
-   "is_interactive": true,
-   "title": "CR-ONB-001 · Small laptop (1280 × 720)",
-   "w": 1280,
-   "x": 1990,
-   "y": 33096,
-   "page": "p1"
-  },
-  "CR-ONB-001-Mobile.dc.html": {
-   "h": 920,
-   "is_interactive": true,
-   "title": "CR-ONB-001 · Mobile (390)",
-   "w": 390,
-   "x": 1520,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-001-Tablet.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ONB-001 · Narrow window (900)",
-   "w": 900,
-   "x": 3350,
-   "y": 33096,
-   "page": "p1"
-  },
-  "CR-ONB-002-9qo9.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-002 · How will you create? · Desktop copy",
-   "w": 1440,
-   "x": 4330,
-   "y": 33096,
-   "page": "p1"
-  },
-  "CR-ONB-002-Mobile.dc.html": {
-   "h": 980,
-   "is_interactive": true,
-   "title": "CR-ONB-002 · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-002.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-002 · How will you create? · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-002S-Mobile.dc.html": {
-   "h": 980,
-   "is_interactive": true,
-   "title": "CR-ONB-002S · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-002S.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-002S · Organisations coming soon · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-003-Mobile.dc.html": {
-   "h": 980,
-   "is_interactive": true,
-   "title": "CR-ONB-003 · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-003.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-003 · Create account · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-003b-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-ONB-003b · Mobile",
-   "w": 390,
-   "x": 11870,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-003b.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-003b · Check your inbox · Desktop",
-   "w": 1440,
-   "x": 10350,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-003c-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-ONB-003c · Mobile",
-   "w": 390,
-   "x": 18080,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-003c.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-003c · Choose a password · Desktop",
-   "w": 1440,
-   "x": 16560,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-003v-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-ONB-003v · Mobile",
-   "w": 390,
-   "x": 16010,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-003v.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-003v · Email confirmed · Desktop",
-   "w": 1440,
-   "x": 14490,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-004-Mobile.dc.html": {
-   "h": 1080,
-   "is_interactive": true,
-   "title": "CR-ONB-004 · Mobile",
-   "w": 390,
-   "x": 22220,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-004.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-004 · About you · Desktop",
-   "w": 1440,
-   "x": 20700,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-005-Mobile.dc.html": {
-   "h": 940,
-   "is_interactive": true,
-   "title": "CR-ONB-005 · Mobile",
-   "w": 390,
-   "x": 26360,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-005.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-005 · Your field · Desktop",
-   "w": 1440,
-   "x": 24840,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-005b-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ONB-005b · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 33096,
-   "page": "p1"
-  },
-  "CR-ONB-005b.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-005b · What you will teach · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 33096,
-   "page": "p1"
-  },
-  "CR-ONB-006-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ONB-006 · Mobile",
-   "w": 390,
-   "x": 30500,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-006.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-006 · Meet your Copilot · Desktop",
-   "w": 1440,
-   "x": 28980,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-007-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ONB-007 · Mobile",
-   "w": 390,
-   "x": 32570,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-007.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-007 · Copilot style · Desktop",
-   "w": 1440,
-   "x": 31050,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-008-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-ONB-008 · Mobile",
-   "w": 390,
-   "x": 36710,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-008.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-008 · You’re a Creator · Desktop",
-   "w": 1440,
-   "x": 35190,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ORI-001-Mobile.dc.html": {
-   "h": 880,
-   "is_interactive": true,
-   "title": "CR-ORI-001 · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 6420,
-   "page": "p1"
-  },
-  "CR-ORI-001.dc.html": {
-   "expand": "fill",
-   "h": 1050,
-   "is_interactive": true,
-   "title": "CR-ORI-001 · Creator Orientation · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 6420,
-   "page": "p1"
-  },
-  "CR-ORI-002-Mobile.dc.html": {
-   "h": 990,
-   "is_interactive": true,
-   "title": "CR-ORI-002 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-002.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-002 · Module overview · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-003-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-ORI-003 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 2800,
-   "page": "p2"
-  },
-  "CR-ORI-003.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-003 · Lesson template (all orientation lessons are built from it)",
-   "w": 1440,
-   "x": 0,
-   "y": 2800,
-   "page": "p2"
-  },
-  "CR-ORI-004-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-004 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 3900,
-   "page": "p2"
-  },
-  "CR-ORI-004.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-004 · Check template (all orientation checks are built from it)",
-   "w": 1440,
-   "x": 0,
-   "y": 3900,
-   "page": "p2"
-  },
-  "CR-ORI-005-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-ORI-005 · Mobile",
-   "w": 390,
-   "x": 16010,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-005.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-005 · Scenario: AI-drafted lesson · Desktop",
-   "w": 1440,
-   "x": 14490,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-006-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-006 · Mobile",
-   "w": 390,
-   "x": 20150,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-006.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-006 · Module 5 complete · Desktop",
-   "w": 1440,
-   "x": 18630,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-007-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-ORI-007 · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 6420,
-   "page": "p1"
-  },
-  "CR-ORI-007.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-007 · Orientation complete · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 6420,
-   "page": "p1"
-  },
-  "CR-POL-001-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-POL-001 · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 23572,
-   "page": "p1"
-  },
-  "CR-POL-001.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-POL-001 · Creator policies · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 23572,
-   "page": "p1"
-  },
-  "CR-POL-002-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-POL-002 · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 23572,
-   "page": "p1"
-  },
-  "CR-POL-002.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-POL-002 · All policies accepted · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 23572,
-   "page": "p1"
-  },
-  "CR-RDY-001-Mobile.dc.html": {
-   "h": 1520,
-   "is_interactive": true,
-   "title": "CR-RDY-001 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 4060,
-   "page": "p1"
-  },
-  "CR-RDY-001.dc.html": {
-   "expand": "fill",
-   "h": 1160,
-   "is_interactive": true,
-   "title": "CR-RDY-001 · Your readiness (in progress) · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 4060,
-   "page": "p1"
-  },
-  "CR-RDY-001s-Mobile.dc.html": {
-   "h": 1450,
-   "is_interactive": true,
-   "title": "CR-RDY-001s · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 4060,
-   "page": "p1"
-  },
-  "CR-RDY-001s.dc.html": {
-   "h": 1080,
-   "is_interactive": true,
-   "title": "CR-RDY-001s · Your readiness (new creator) · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 4060,
-   "page": "p1"
-  },
-  "CR-VAL-MC-001-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-VAL-MC-001 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 31156,
-   "page": "p1"
-  },
-  "CR-VAL-MC-001.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-VAL-MC-001 · Validation Centre · cases · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 31156,
-   "page": "p1"
-  },
-  "CR-VAL-MC-002-Mobile.dc.html": {
-   "h": 1100,
-   "is_interactive": true,
-   "title": "CR-VAL-MC-002 · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 31156,
-   "page": "p1"
-  },
-  "CR-VAL-MC-002.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-VAL-MC-002 · Request routed to Mary · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 31156,
-   "page": "p1"
-  },
-  "CR-VAL-MC-002L-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-VAL-MC-002L · Mobile",
-   "w": 390,
-   "x": 11870,
-   "y": 31156,
-   "page": "p1"
-  },
-  "CR-VAL-MC-002L.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-VAL-MC-002L · Lead views Mary’s request (read-only) · Desktop",
-   "w": 1440,
-   "x": 10350,
-   "y": 31156,
-   "page": "p1"
-  },
-  "CR-VAL-MC-003-Mobile.dc.html": {
-   "h": 1100,
-   "is_interactive": true,
-   "title": "CR-VAL-MC-003 · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 31156,
-   "page": "p1"
-  },
-  "CR-VAL-MC-003.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-VAL-MC-003 · Mary responds with evidence · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 31156,
-   "page": "p1"
-  },
-  "CR-VAL-WS-lead-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-VAL-WS-lead · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 31156,
-   "page": "p1"
-  },
-  "CR-VAL-WS-lead.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-VAL-WS-lead · Workspace in Course Studio · Lead sees every request · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 31156,
-   "page": "p1"
-  },
-  "CR-VAL-WS-mary-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-VAL-WS-mary · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 31156,
-   "page": "p1"
-  },
-  "CR-VAL-WS-mary.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-VAL-WS-mary · Workspace · Mary sees only hers · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 31156,
-   "page": "p1"
-  },
-  "CR-VAL-WS.dc.html": {
-   "h": 820,
-   "w": 1440,
-   "x": 0,
-   "y": 1600,
-   "page": "p2"
-  },
-  "Main.dc.html": {
-   "expand": "fill",
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-001 · Desktop (responsive source)",
-   "w": 1440,
-   "x": 0,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-003e.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-003e · Invalid email · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-003e-Mobile.dc.html": {
-   "h": 1010,
-   "is_interactive": true,
-   "title": "CR-ONB-003e · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-003d.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-003d · Change your email · Desktop",
-   "w": 1440,
-   "x": 12420,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-003d-Mobile.dc.html": {
-   "h": 980,
-   "is_interactive": true,
-   "title": "CR-ONB-003d · Mobile",
-   "w": 390,
-   "x": 13940,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-003ce.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-003ce · Password too weak · Desktop",
-   "w": 1440,
-   "x": 18630,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-003ce-Mobile.dc.html": {
-   "h": 880,
-   "is_interactive": true,
-   "title": "CR-ONB-003ce · Mobile",
-   "w": 390,
-   "x": 20150,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-004e.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-004e · Missing display name · Desktop",
-   "w": 1440,
-   "x": 22770,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-004e-Mobile.dc.html": {
-   "h": 1110,
-   "is_interactive": true,
-   "title": "CR-ONB-004e · Mobile",
-   "w": 390,
-   "x": 24290,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-005e.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-005e · Missing required fields · Desktop",
-   "w": 1440,
-   "x": 26910,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-005e-Mobile.dc.html": {
-   "h": 990,
-   "is_interactive": true,
-   "title": "CR-ONB-005e · Mobile",
-   "w": 390,
-   "x": 28430,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-007p.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ONB-007p · Copilot style: Proactive · Desktop",
-   "w": 1440,
-   "x": 33120,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-ONB-007p-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ONB-007p · Mobile",
-   "w": 390,
-   "x": 34640,
-   "y": 320,
-   "page": "p1"
-  },
-  "CR-RDY-001d.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-RDY-001d · Readiness: all complete · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 4060,
-   "page": "p1"
-  },
-  "CR-RDY-001d-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-RDY-001d · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 4060,
-   "page": "p1"
-  },
-  "CR-ORI-001n.dc.html": {
-   "h": 1050,
-   "is_interactive": true,
-   "title": "CR-ORI-001n · Orientation: not started · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 6420,
-   "page": "p1"
-  },
-  "CR-ORI-001n-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-001n · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 6420,
-   "page": "p1"
-  },
-  "CR-ORI-001c.dc.html": {
-   "h": 1050,
-   "is_interactive": true,
-   "title": "CR-ORI-001c · Orientation: complete · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 6420,
-   "page": "p1"
-  },
-  "CR-ORI-001c-Mobile.dc.html": {
-   "h": 880,
-   "is_interactive": true,
-   "title": "CR-ORI-001c · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 6420,
-   "page": "p1"
-  },
-  "CR-ORI-M1-00.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M1-00 · Module 1 overview · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 8310,
-   "page": "p1"
-  },
-  "CR-ORI-M1-00-Mobile.dc.html": {
-   "h": 1080,
-   "is_interactive": true,
-   "title": "CR-ORI-M1-00 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 8310,
-   "page": "p1"
-  },
-  "CR-ORI-M1-L1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M1-L1 · Lesson 1: What Credalio is for · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 8310,
-   "page": "p1"
-  },
-  "CR-ORI-M1-L1-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M1-L1 · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 8310,
-   "page": "p1"
-  },
-  "CR-ORI-M1-L2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M1-L2 · Lesson 2: How creating works · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 8310,
-   "page": "p1"
-  },
-  "CR-ORI-M1-L2-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M1-L2 · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 8310,
-   "page": "p1"
-  },
-  "CR-ORI-M1-K1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M1-K1 · Check: unanswered · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 8310,
-   "page": "p1"
-  },
-  "CR-ORI-M1-K1-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M1-K1 · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 8310,
-   "page": "p1"
-  },
-  "CR-ORI-M1-K2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M1-K2 · Check: correct · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 8310,
-   "page": "p1"
-  },
-  "CR-ORI-M1-K2-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M1-K2 · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 8310,
-   "page": "p1"
-  },
-  "CR-ORI-M1-K3.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M1-K3 · Check: try again · Desktop",
-   "w": 1440,
-   "x": 10350,
-   "y": 8310,
-   "page": "p1"
-  },
-  "CR-ORI-M1-K3-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M1-K3 · Mobile",
-   "w": 390,
-   "x": 11870,
-   "y": 8310,
-   "page": "p1"
-  },
-  "CR-ORI-M1-DONE.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M1-DONE · Module 1 complete · Desktop",
-   "w": 1440,
-   "x": 12420,
-   "y": 8310,
-   "page": "p1"
-  },
-  "CR-ORI-M1-DONE-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M1-DONE · Mobile",
-   "w": 390,
-   "x": 13940,
-   "y": 8310,
-   "page": "p1"
-  },
-  "CR-ORI-M2-00.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M2-00 · Module 2 overview · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 9970,
-   "page": "p1"
-  },
-  "CR-ORI-M2-00-Mobile.dc.html": {
-   "h": 1080,
-   "is_interactive": true,
-   "title": "CR-ORI-M2-00 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 9970,
-   "page": "p1"
-  },
-  "CR-ORI-M2-L1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M2-L1 · Lesson 1: What makes learning trustworthy · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 9970,
-   "page": "p1"
-  },
-  "CR-ORI-M2-L1-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M2-L1 · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 9970,
-   "page": "p1"
-  },
-  "CR-ORI-M2-L2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M2-L2 · Lesson 2: Evidence of learning · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 9970,
-   "page": "p1"
-  },
-  "CR-ORI-M2-L2-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M2-L2 · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 9970,
-   "page": "p1"
-  },
-  "CR-ORI-M2-K1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M2-K1 · Check: unanswered · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 9970,
-   "page": "p1"
-  },
-  "CR-ORI-M2-K1-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M2-K1 · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 9970,
-   "page": "p1"
-  },
-  "CR-ORI-M2-K2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M2-K2 · Check: correct · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 9970,
-   "page": "p1"
-  },
-  "CR-ORI-M2-K2-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M2-K2 · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 9970,
-   "page": "p1"
-  },
-  "CR-ORI-M2-K3.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M2-K3 · Check: try again · Desktop",
-   "w": 1440,
-   "x": 10350,
-   "y": 9970,
-   "page": "p1"
-  },
-  "CR-ORI-M2-K3-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M2-K3 · Mobile",
-   "w": 390,
-   "x": 11870,
-   "y": 9970,
-   "page": "p1"
-  },
-  "CR-ORI-M2-DONE.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M2-DONE · Module 2 complete · Desktop",
-   "w": 1440,
-   "x": 12420,
-   "y": 9970,
-   "page": "p1"
-  },
-  "CR-ORI-M2-DONE-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M2-DONE · Mobile",
-   "w": 390,
-   "x": 13940,
-   "y": 9970,
-   "page": "p1"
-  },
-  "CR-ORI-M3-00.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-00 · Module 3 overview · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M3-00-Mobile.dc.html": {
-   "h": 1200,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-00 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M3-L2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-L2 · Lesson 2: Skills and proficiency · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M3-L2-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-L2 · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M3-L3.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-L3 · Lesson 3: Linking evidence · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M3-L3-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-L3 · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M3-K1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-K1 · Knowledge check: unanswered · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M3-K1-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-K1 · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M3-K2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-K2 · Knowledge check: correct answers · Desktop",
-   "w": 1440,
-   "x": 10350,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M3-K2-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-K2 · Mobile",
-   "w": 390,
-   "x": 11870,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M3-K3.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-K3 · Knowledge check: try again · Desktop",
-   "w": 1440,
-   "x": 12420,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M3-K3-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-K3 · Mobile",
-   "w": 390,
-   "x": 13940,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M4-L1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M4-L1 · Lesson 1: What validators look at · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-M4-L1-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M4-L1 · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-M3-DONE.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-DONE · Module 3 complete · Desktop",
-   "w": 1440,
-   "x": 16560,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M3-DONE-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-DONE · Mobile",
-   "w": 390,
-   "x": 18080,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M4-L3.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M4-L3 · Lesson 3: Tiers and revalidation · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-M4-L3-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M4-L3 · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-M4-K1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M4-K1 · Knowledge check: unanswered · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-M4-K1-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M4-K1 · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-M4-K2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M4-K2 · Knowledge check: correct answers · Desktop",
-   "w": 1440,
-   "x": 10350,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-M4-K2-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M4-K2 · Mobile",
-   "w": 390,
-   "x": 11870,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-M4-K3.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M4-K3 · Knowledge check: try again · Desktop",
-   "w": 1440,
-   "x": 12420,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-M4-K3-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M4-K3 · Mobile",
-   "w": 390,
-   "x": 13940,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-M4-DONE.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M4-DONE · Module 4 complete · Desktop",
-   "w": 1440,
-   "x": 14490,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-M4-DONE-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M4-DONE · Mobile",
-   "w": 390,
-   "x": 16010,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-M5-00.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-00 · Module 5 overview · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-00-Mobile.dc.html": {
-   "h": 1200,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-00 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-L1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-L1 · Lesson 1: Using your Copilot well · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-L1-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-L1 · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-L2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-L2 · Lesson 2: Review, disclose, own · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-L2-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-L2 · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-K1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-K1 · Knowledge check: unanswered · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-K1-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-K1 · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-K3.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-K3 · Knowledge check: try again · Desktop",
-   "w": 1440,
-   "x": 10350,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-K3-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-K3 · Mobile",
-   "w": 390,
-   "x": 11870,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-S1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-S1 · Scenario exercise: unanswered · Desktop",
-   "w": 1440,
-   "x": 12420,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-S1-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-S1 · Mobile",
-   "w": 390,
-   "x": 13940,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-S3.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-S3 · Scenario exercise: try again · Desktop",
-   "w": 1440,
-   "x": 16560,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-S3-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-S3 · Mobile",
-   "w": 390,
-   "x": 18080,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M6-00.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M6-00 · Module 6 overview · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 16884,
-   "page": "p1"
-  },
-  "CR-ORI-M6-00-Mobile.dc.html": {
-   "h": 1140,
-   "is_interactive": true,
-   "title": "CR-ORI-M6-00 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 16884,
-   "page": "p1"
-  },
-  "CR-ORI-M6-L1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M6-L1 · Lesson 1: Setting your price · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 16884,
-   "page": "p1"
-  },
-  "CR-ORI-M6-L1-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M6-L1 · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 16884,
-   "page": "p1"
-  },
-  "CR-ORI-M6-L2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M6-L2 · Lesson 2: Credit Wallet vs Earnings · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 16884,
-   "page": "p1"
-  },
-  "CR-ORI-M6-L2-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M6-L2 · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 16884,
-   "page": "p1"
-  },
-  "CR-ORI-M6-K1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M6-K1 · Knowledge check: unanswered · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 16884,
-   "page": "p1"
-  },
-  "CR-ORI-M6-K1-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M6-K1 · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 16884,
-   "page": "p1"
-  },
-  "CR-ORI-M6-K2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M6-K2 · Knowledge check: correct answers · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 16884,
-   "page": "p1"
-  },
-  "CR-ORI-M6-K2-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M6-K2 · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 16884,
-   "page": "p1"
-  },
-  "CR-ORI-M6-K3.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M6-K3 · Knowledge check: try again · Desktop",
-   "w": 1440,
-   "x": 10350,
-   "y": 16884,
-   "page": "p1"
-  },
-  "CR-ORI-M6-K3-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M6-K3 · Mobile",
-   "w": 390,
-   "x": 11870,
-   "y": 16884,
-   "page": "p1"
-  },
-  "CR-ORI-M6-DONE.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M6-DONE · Module 6 complete · Desktop",
-   "w": 1440,
-   "x": 12420,
-   "y": 16884,
-   "page": "p1"
-  },
-  "CR-ORI-M6-DONE-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M6-DONE · Mobile",
-   "w": 390,
-   "x": 13940,
-   "y": 16884,
-   "page": "p1"
-  },
-  "CR-ORI-M7-00.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-00 · Module 7 overview · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-00-Mobile.dc.html": {
-   "h": 1200,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-00 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-L1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-L1 · Lesson 1: Your obligations to learners · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-L1-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-L1 · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-L2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-L2 · Lesson 2: Declarations and changes · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-L2-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-L2 · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-K1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-K1 · Knowledge check: unanswered · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-K1-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-K1 · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-K2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-K2 · Knowledge check: correct answers · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-K2-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-K2 · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-K3.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-K3 · Knowledge check: try again · Desktop",
-   "w": 1440,
-   "x": 10350,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-K3-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-K3 · Mobile",
-   "w": 390,
-   "x": 11870,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-S1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-S1 · Scenario exercise: unanswered · Desktop",
-   "w": 1440,
-   "x": 12420,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-S1-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-S1 · Mobile",
-   "w": 390,
-   "x": 13940,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-S2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-S2 · Scenario exercise: correct · Desktop",
-   "w": 1440,
-   "x": 14490,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-S2-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-S2 · Mobile",
-   "w": 390,
-   "x": 16010,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-S3.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-S3 · Scenario exercise: try again · Desktop",
-   "w": 1440,
-   "x": 16560,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-S3-Mobile.dc.html": {
-   "h": 960,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-S3 · Mobile",
-   "w": 390,
-   "x": 18080,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-DONE.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-DONE · Module 7 complete · Desktop",
-   "w": 1440,
-   "x": 18630,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M7-DONE-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M7-DONE · Mobile",
-   "w": 390,
-   "x": 20150,
-   "y": 18544,
-   "page": "p1"
-  },
-  "CR-ORI-M4-L2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M4-L2 · Lesson 2: The validation case · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-ORI-M4-L2-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M4-L2 · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 13314,
-   "page": "p1"
-  },
-  "CR-KYC-001e.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-KYC-001e · Consent not given · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-001e-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-KYC-001e · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-002e.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-KYC-002e · Photo missing · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-KYC-002e-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-KYC-002e · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 20204,
-   "page": "p1"
-  },
-  "CR-CRED-001r.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CRED-001r · Fix a credential · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-001r-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-CRED-001r · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002g.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CRED-002g · Certification by upload · Desktop",
-   "w": 1440,
-   "x": 12420,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002g-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-CRED-002g · Mobile",
-   "w": 390,
-   "x": 13940,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002h.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CRED-002h · Work experience with referee · Desktop",
-   "w": 1440,
-   "x": 18630,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002h-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-CRED-002h · Mobile",
-   "w": 390,
-   "x": 20150,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002x.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-CRED-002x · Missing required fields · Desktop",
-   "w": 1440,
-   "x": 22770,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-CRED-002x-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-CRED-002x · Mobile",
-   "w": 390,
-   "x": 24290,
-   "y": 21888,
-   "page": "p1"
-  },
-  "CR-POL-000.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-POL-000 · None accepted yet · Desktop",
-   "w": 1440,
-   "x": 0,
-   "y": 23572,
-   "page": "p1"
-  },
-  "CR-POL-000-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-POL-000 · Mobile",
-   "w": 390,
-   "x": 1520,
-   "y": 23572,
-   "page": "p1"
-  },
-  "CR-COL-002a.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-COL-002a · Ask a question · Desktop",
-   "w": 1440,
-   "x": 4140,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-002a-Mobile.dc.html": {
-   "h": 1300,
-   "is_interactive": true,
-   "title": "CR-COL-002a · Mobile",
-   "w": 390,
-   "x": 5660,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-002d.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-COL-002d · Confirm decline · Desktop",
-   "w": 1440,
-   "x": 6210,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-002d-Mobile.dc.html": {
-   "h": 1300,
-   "is_interactive": true,
-   "title": "CR-COL-002d · Mobile",
-   "w": 390,
-   "x": 7730,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-002x.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-COL-002x · Invitation declined · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-002x-Mobile.dc.html": {
-   "h": 844,
-   "is_interactive": true,
-   "title": "CR-COL-002x · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-003d.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-COL-003d · Consent: all accepted · Desktop",
-   "w": 1440,
-   "x": 12420,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-COL-003d-Mobile.dc.html": {
-   "h": 1250,
-   "is_interactive": true,
-   "title": "CR-COL-003d · Mobile",
-   "w": 390,
-   "x": 13940,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-DEC-004f.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-DEC-004f · Lead declaration signed · Desktop",
-   "w": 1440,
-   "x": 26910,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-DEC-004f-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-DEC-004f · Mobile",
-   "w": 390,
-   "x": 28430,
-   "y": 29216,
-   "page": "p1"
-  },
-  "CR-ORI-M3-L1.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-L1 · Lesson 1: Writing observable outcomes · Desktop",
-   "w": 1440,
-   "x": 2070,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M3-L1-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M3-L1 · Mobile",
-   "w": 390,
-   "x": 3590,
-   "y": 11630,
-   "page": "p1"
-  },
-  "CR-ORI-M5-K2.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-K2 · Knowledge check: correct answers · Desktop",
-   "w": 1440,
-   "x": 8280,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-K2-Mobile.dc.html": {
-   "h": 1000,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-K2 · Mobile",
-   "w": 390,
-   "x": 9800,
-   "y": 15144,
-   "page": "p1"
-  }
- },
- "createdOnFiles": {
-  "at": "2026-10-02T16:30:00Z",
-  "v": 1
- },
- "designSystems": [],
- "launch": {
-  "view": "canvas"
- },
- "notes": {
-  "l1s1": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Creator onboarding: sign up → how would you like to create → account → check inbox → email verified → password → about you → expertise → Copilot → ready",
-   "w": 240,
-   "x": 0,
-   "y": 0,
-   "page": "p1"
-  },
-  "l1s2": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Start creating: first dashboard → choose how to start → Copilot or scratch",
-   "w": 240,
-   "x": 0,
-   "y": 1920,
-   "page": "p1"
-  },
-  "l1s4": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Readiness & Creator Centre",
-   "w": 240,
-   "x": 0,
-   "y": 3740,
-   "page": "p1"
-  },
-  "l1s5": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Creator Orientation · home (not started, in progress, complete) and orientation complete",
-   "w": 240,
-   "x": 0,
-   "y": 6100,
-   "page": "p1"
-  },
-  "l1s6": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Orientation · Module 1: Welcome to Credalio (7 screens)",
-   "w": 240,
-   "x": 0,
-   "y": 7990,
-   "page": "p1"
-  },
-  "l1s7": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Orientation · Module 2: Creating Trusted Learning (7 screens)",
-   "w": 240,
-   "x": 0,
-   "y": 9650,
-   "page": "p1"
-  },
-  "l1s8": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Orientation · Module 3: Outcomes, Skills & Evidence (8 screens)",
-   "w": 240,
-   "x": 0,
-   "y": 11310,
-   "page": "p1"
-  },
-  "l1s9": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Orientation · Module 4: Understanding Validation (8 screens)",
-   "w": 240,
-   "x": 0,
-   "y": 12994,
-   "page": "p1"
-  },
-  "l1s10": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Orientation · Module 5: AI & Responsible Creation (10 screens)",
-   "w": 240,
-   "x": 0,
-   "y": 14824,
-   "page": "p1"
-  },
-  "l1s11": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Orientation · Module 6: Creator Economy (7 screens)",
-   "w": 240,
-   "x": 0,
-   "y": 16564,
-   "page": "p1"
-  },
-  "l1s12": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Orientation · Module 7: Creator Responsibilities (10 screens)",
-   "w": 240,
-   "x": 0,
-   "y": 18224,
-   "page": "p1"
-  },
-  "l1s13": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Readiness task 1 · KYC: verify identity with Sumsub → next task",
-   "w": 240,
-   "x": 0,
-   "y": 19884,
-   "page": "p1"
-  },
-  "l1s14": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Readiness task 2 · Credentials & expertise: upload or verify online (AWS, Microsoft, Credly…) → next task",
-   "w": 240,
-   "x": 0,
-   "y": 21568,
-   "page": "p1"
-  },
-  "l1s15": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Readiness task 4 · Creator Policies: read and accept → next task",
-   "w": 240,
-   "x": 0,
-   "y": 23252,
-   "page": "p1"
-  },
-  "l1s16": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Dashboard states (priority order)",
-   "w": 240,
-   "x": 0,
-   "y": 24936,
-   "page": "p1"
-  },
-  "l1m-CR-DASH-S01": {
-   "text": "Same screen as CR-DASH-NEW\nCR-DASH-S01 · STATE-01 · New creator: create, readiness, Copilot",
-   "x": 0,
-   "y": 25256,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1s17": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Dashboard states, notifications & navigation",
-   "w": 240,
-   "x": 0,
-   "y": 26756,
-   "page": "p1"
-  },
-  "l1s18": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Collaboration, assigned work & contributor declarations",
-   "w": 240,
-   "x": 0,
-   "y": 28896,
-   "page": "p1"
-  },
-  "l1s19": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Link 1 · Validation: Validation Centre lists cases; each workspace opens inside the Studio",
-   "w": 240,
-   "x": 0,
-   "y": 30836,
-   "page": "p1"
-  },
-  "l1x": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "Not in Link 1: ONB-005b topics (ours) · extra previews (ONB-001 small laptop / narrow window, ONB-002 copy)",
-   "w": 240,
-   "x": 0,
-   "y": 32776,
-   "page": "p1"
-  },
-  "div-l1": {
-   "kind": "title1",
-   "maxW": 8000,
-   "text": "▲ End of Link 1 (client D3Y)",
-   "w": 240,
-   "x": 0,
-   "y": 34616,
-   "page": "p1"
-  },
-  "sug05": {
-   "fill": "orange",
-   "maxH": 300,
-   "text": "I’d remove the footer “Keep building as you learn… See your readiness”. The Readiness page already covers this, and this page is really about getting back into the module.",
-   "w": 1440,
-   "x": 2070,
-   "y": 7494,
-   "page": "p1"
-  },
-  "sug06": {
-   "fill": "orange",
-   "maxH": 140,
-   "text": "On all four ID steps, the line “Follow the identity steps, then return to your readiness checklist.” feels like extra reading on top of the tips. I’d remove it and let the tips do the work.",
-   "w": 1440,
-   "x": 4140,
-   "y": 21048,
-   "page": "p1"
-  },
-  "sug07": {
-   "fill": "orange",
-   "maxH": 140,
-   "text": "The “What happens next” card and the line under the heading say pretty much the same thing. Shall we keep just one? I’d lean towards the card, with the line shortened to “We’ll notify you when it’s done.”",
-   "w": 1440,
-   "x": 14490,
-   "y": 21048,
-   "page": "p1"
-  },
-  "sug08": {
-   "fill": "orange",
-   "maxH": 140,
-   "text": "Two dates here: the line under the heading says 1 Oct 2026, but the card says 7 October 2026. Which one is right?\nThe name, country and date already sit on the card, so the line could simply be: “Your identity badge now shows on your Creator Profile.”",
-   "w": 1440,
-   "x": 16560,
-   "y": 21048,
-   "page": "p1"
-  },
-  "sug09": {
-   "fill": "orange",
-   "maxH": 140,
-   "text": "This message is quite long for the space. Could we try:\n“Your verification wasn’t approved. You can keep drafting. Support can help you finish.”\nThen “You can keep drafting while this is sorted.” under the button wouldn’t be needed.",
-   "w": 1440,
-   "x": 20700,
-   "y": 21048,
-   "page": "p1"
-  },
-  "sug10": {
-   "fill": "orange",
-   "maxH": 360,
-   "text": "I’ve simplified this page: one column, and the “task complete” box and the next step are now one bar at the bottom.\nThe intro still runs to four lines though. Maybe: “Add degrees, certifications, licences or work experience. They show as verified once checked.”\nAnd the green text could be: “One verified credential completes this task. Others join your profile once verified.”",
-   "w": 1440,
-   "x": 0,
-   "y": 22732,
-   "page": "p1"
-  },
-  "sug11": {
-   "fill": "orange",
-   "maxH": 360,
-   "text": "The small label “Add a credential” sits right on top of the heading that says the same thing, so I’d remove it.\nThe two boxes on the left (Checked online / Reviewed) also repeat the tags on each option. Could we drop them to keep the page lighter?",
-   "w": 1440,
-   "x": 4140,
-   "y": 22732,
-   "page": "p1"
-  },
-  "sug12": {
-   "fill": "orange",
-   "maxH": 360,
-   "text": "The note on the left and the line next to the button both say it’s reviewed by our team, so I’d keep just the one by the button.\n“Degree or diploma” is also repeated inside the form under the heading. We could keep just the “Change” link up top.",
-   "w": 1440,
-   "x": 6210,
-   "y": 22732,
-   "page": "p1"
-  },
-  "sug13": {
-   "fill": "orange",
-   "maxH": 360,
-   "text": "“Verification link or digital badge” is too long for the three options in a row. Could it be “Link or badge”?\nThe note on the left also repeats the line next to the button, so I’d remove it.",
-   "w": 1440,
-   "x": 8280,
-   "y": 22732,
-   "page": "p1"
-  },
-  "sug14": {
-   "fill": "orange",
-   "maxH": 360,
-   "text": "Same as the screen before: “Link or badge” instead of “Verification link or digital badge”, and I’d remove the note on the left since the line next to the button already says it.",
-   "w": 1440,
-   "x": 10350,
-   "y": 22732,
-   "page": "p1"
-  },
-  "p2-moved": {
-   "text": "Studio screens (Link 2) moved to their own canvas:\nhttps://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9\n\nThese two sources stay here because Link 1 screens import them.",
-   "x": 0,
-   "y": 0,
-   "w": 1440,
-   "fill": "blue",
-   "page": "p2"
-  },
-  "new-CR-ORI-M3-L1": {
-   "text": "NEW · just made · CR-ORI-M3-L1",
-   "x": 2070,
-   "y": 12570,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-ORI-M5-K2": {
-   "text": "NEW · just made · CR-ORI-M5-K2",
-   "x": 8280,
-   "y": 16184,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "p2-tpl": {
-   "text": "Orientation templates: not screens in the flow. Every lesson and check is generated from these two.",
-   "x": 0,
-   "y": 2600,
-   "w": 1910,
-   "fill": "gray",
-   "page": "p2"
-  }
- },
- "order": [
-  "Main.dc.html",
-  "CR-ONB-001-Laptop.dc.html",
-  "CR-ONB-001-Tablet.dc.html",
-  "CR-ONB-001-Mobile.dc.html",
-  "CR-ONB-002.dc.html",
-  "CR-ONB-002-Mobile.dc.html",
-  "CR-ONB-002S.dc.html",
-  "CR-ONB-002S-Mobile.dc.html",
-  "CR-ONB-003.dc.html",
-  "CR-ONB-003-Mobile.dc.html",
-  "CR-ONB-003b.dc.html",
-  "CR-ONB-003b-Mobile.dc.html",
-  "CR-ONB-003v.dc.html",
-  "CR-ONB-003v-Mobile.dc.html",
-  "CR-ONB-002-9qo9.dc.html",
-  "CR-ONB-003c.dc.html",
-  "CR-ONB-003c-Mobile.dc.html",
-  "CR-ONB-004.dc.html",
-  "CR-ONB-004-Mobile.dc.html",
-  "CR-ONB-005.dc.html",
-  "CR-ONB-005-Mobile.dc.html",
-  "CR-ONB-005b.dc.html",
-  "CR-ONB-005b-Mobile.dc.html",
-  "CR-ONB-006.dc.html",
-  "CR-ONB-006-Mobile.dc.html",
-  "CR-ONB-007.dc.html",
-  "CR-ONB-007-Mobile.dc.html",
-  "CR-ONB-008.dc.html",
-  "CR-ONB-008-Mobile.dc.html",
-  "CR-DASH-NEW.dc.html",
-  "CR-DASH-NEW-Mobile.dc.html",
-  "CR-CREATE-001.dc.html",
-  "CR-CREATE-001-Mobile.dc.html",
-  "CR-CREATE-002A.dc.html",
-  "CR-CREATE-002A-Mobile.dc.html",
-  "CR-CREATE-002Ab.dc.html",
-  "CR-CREATE-002Ab-Mobile.dc.html",
-  "CR-CREATE-002B.dc.html",
-  "CR-CREATE-002B-Mobile.dc.html",
-  "CR-RDY-001.dc.html",
-  "CR-RDY-001-Mobile.dc.html",
-  "CR-RDY-001s.dc.html",
-  "CR-RDY-001s-Mobile.dc.html",
-  "CR-CTR-001.dc.html",
-  "CR-CTR-001-Mobile.dc.html",
-  "CR-ORI-001.dc.html",
-  "CR-ORI-001-Mobile.dc.html",
-  "CR-ORI-002.dc.html",
-  "CR-ORI-002-Mobile.dc.html",
-  "CR-ORI-003.dc.html",
-  "CR-ORI-003-Mobile.dc.html",
-  "CR-ORI-004.dc.html",
-  "CR-ORI-004-Mobile.dc.html",
-  "CR-ORI-005.dc.html",
-  "CR-ORI-005-Mobile.dc.html",
-  "CR-ORI-006.dc.html",
-  "CR-ORI-006-Mobile.dc.html",
-  "CR-ORI-007.dc.html",
-  "CR-ORI-007-Mobile.dc.html",
-  "CR-KYC-001.dc.html",
-  "CR-KYC-001-Mobile.dc.html",
-  "CR-KYC-002.dc.html",
-  "CR-KYC-002-Mobile.dc.html",
-  "CR-KYC-002b.dc.html",
-  "CR-KYC-002b-Mobile.dc.html",
-  "CR-KYC-002c.dc.html",
-  "CR-KYC-002c-Mobile.dc.html",
-  "CR-KYC-002d.dc.html",
-  "CR-KYC-002d-Mobile.dc.html",
-  "CR-KYC-003.dc.html",
-  "CR-KYC-003-Mobile.dc.html",
-  "CR-KYC-004.dc.html",
-  "CR-KYC-004-Mobile.dc.html",
-  "CR-KYC-005.dc.html",
-  "CR-KYC-005-Mobile.dc.html",
-  "CR-KYC-006.dc.html",
-  "CR-KYC-006-Mobile.dc.html",
-  "CR-CRED-001.dc.html",
-  "CR-CRED-001-Mobile.dc.html",
-  "CR-CRED-002.dc.html",
-  "CR-CRED-002-Mobile.dc.html",
-  "CR-CRED-002a.dc.html",
-  "CR-CRED-002a-Mobile.dc.html",
-  "CR-CRED-002b.dc.html",
-  "CR-CRED-002b-Mobile.dc.html",
-  "CR-CRED-002c.dc.html",
-  "CR-CRED-002c-Mobile.dc.html",
-  "CR-CRED-002d.dc.html",
-  "CR-CRED-002d-Mobile.dc.html",
-  "CR-CRED-002e.dc.html",
-  "CR-CRED-002e-Mobile.dc.html",
-  "CR-CRED-002f.dc.html",
-  "CR-CRED-002f-Mobile.dc.html",
-  "CR-CRED-003.dc.html",
-  "CR-CRED-003-Mobile.dc.html",
-  "CR-CRED-003b.dc.html",
-  "CR-CRED-003b-Mobile.dc.html",
-  "CR-POL-001.dc.html",
-  "CR-POL-001-Mobile.dc.html",
-  "CR-POL-002.dc.html",
-  "CR-POL-002-Mobile.dc.html",
-  "CR-DASH-S02.dc.html",
-  "CR-DASH-S02-Mobile.dc.html",
-  "CR-DASH-S03.dc.html",
-  "CR-DASH-S03-Mobile.dc.html",
-  "CR-DASH-S04.dc.html",
-  "CR-DASH-S04-Mobile.dc.html",
-  "CR-DASH-S05.dc.html",
-  "CR-DASH-S05-Mobile.dc.html",
-  "CR-DASH-S06.dc.html",
-  "CR-DASH-S06-Mobile.dc.html",
-  "CR-DASH-S07.dc.html",
-  "CR-DASH-S07-Mobile.dc.html",
-  "CR-DASH-S08.dc.html",
-  "CR-DASH-S08-Mobile.dc.html",
-  "CR-DASH-S09.dc.html",
-  "CR-DASH-S09-Mobile.dc.html",
-  "CR-NOT-001.dc.html",
-  "CR-NOT-001-Mobile.dc.html",
-  "CR-NOT-bell.dc.html",
-  "CR-NOT-bell-Mobile.dc.html",
-  "CR-HOME-EXP.dc.html",
-  "CR-HOME-EXP-Mobile.dc.html",
-  "CR-HOME-NEW.dc.html",
-  "CR-HOME-NEW-Mobile.dc.html",
-  "CR-HOME-SET.dc.html",
-  "CR-HOME-SET-Mobile.dc.html",
-  "CR-HOME-SOON.dc.html",
-  "CR-HOME-SOON-Mobile.dc.html",
-  "CR-COL-001.dc.html",
-  "CR-COL-001-Mobile.dc.html",
-  "CR-COL-002.dc.html",
-  "CR-COL-002-Mobile.dc.html",
-  "CR-COL-003.dc.html",
-  "CR-COL-003-Mobile.dc.html",
-  "CR-COL-004.dc.html",
-  "CR-COL-004-Mobile.dc.html",
-  "CR-ASG-001.dc.html",
-  "CR-ASG-001-Mobile.dc.html",
-  "CR-DEC-001.dc.html",
-  "CR-DEC-001-Mobile.dc.html",
-  "CR-DEC-002.dc.html",
-  "CR-DEC-002-Mobile.dc.html",
-  "CR-DEC-003.dc.html",
-  "CR-DEC-003-Mobile.dc.html",
-  "CR-DEC-004.dc.html",
-  "CR-DEC-004-Mobile.dc.html",
-  "CR-VAL-MC-001.dc.html",
-  "CR-VAL-MC-001-Mobile.dc.html",
-  "CR-VAL-WS-lead.dc.html",
-  "CR-VAL-WS-lead-Mobile.dc.html",
-  "CR-VAL-WS-mary.dc.html",
-  "CR-VAL-WS-mary-Mobile.dc.html",
-  "CR-VAL-MC-002.dc.html",
-  "CR-VAL-MC-002-Mobile.dc.html",
-  "CR-VAL-MC-003.dc.html",
-  "CR-VAL-MC-003-Mobile.dc.html",
-  "CR-VAL-MC-002L.dc.html",
-  "CR-VAL-MC-002L-Mobile.dc.html",
-  "CR-DASH-ST.dc.html",
-  "CR-VAL-WS.dc.html",
-  "CR-ONB-003e.dc.html",
-  "CR-ONB-003e-Mobile.dc.html",
-  "CR-ONB-003d.dc.html",
-  "CR-ONB-003d-Mobile.dc.html",
-  "CR-ONB-003ce.dc.html",
-  "CR-ONB-003ce-Mobile.dc.html",
-  "CR-ONB-004e.dc.html",
-  "CR-ONB-004e-Mobile.dc.html",
-  "CR-ONB-005e.dc.html",
-  "CR-ONB-005e-Mobile.dc.html",
-  "CR-ONB-007p.dc.html",
-  "CR-ONB-007p-Mobile.dc.html",
-  "CR-RDY-001d.dc.html",
-  "CR-RDY-001d-Mobile.dc.html",
-  "CR-ORI-001n.dc.html",
-  "CR-ORI-001n-Mobile.dc.html",
-  "CR-ORI-001c.dc.html",
-  "CR-ORI-001c-Mobile.dc.html",
-  "CR-ORI-M1-00.dc.html",
-  "CR-ORI-M1-00-Mobile.dc.html",
-  "CR-ORI-M1-L1.dc.html",
-  "CR-ORI-M1-L1-Mobile.dc.html",
-  "CR-ORI-M1-L2.dc.html",
-  "CR-ORI-M1-L2-Mobile.dc.html",
-  "CR-ORI-M1-K1.dc.html",
-  "CR-ORI-M1-K1-Mobile.dc.html",
-  "CR-ORI-M1-K2.dc.html",
-  "CR-ORI-M1-K2-Mobile.dc.html",
-  "CR-ORI-M1-K3.dc.html",
-  "CR-ORI-M1-K3-Mobile.dc.html",
-  "CR-ORI-M1-DONE.dc.html",
-  "CR-ORI-M1-DONE-Mobile.dc.html",
-  "CR-ORI-M2-00.dc.html",
-  "CR-ORI-M2-00-Mobile.dc.html",
-  "CR-ORI-M2-L1.dc.html",
-  "CR-ORI-M2-L1-Mobile.dc.html",
-  "CR-ORI-M2-L2.dc.html",
-  "CR-ORI-M2-L2-Mobile.dc.html",
-  "CR-ORI-M2-K1.dc.html",
-  "CR-ORI-M2-K1-Mobile.dc.html",
-  "CR-ORI-M2-K2.dc.html",
-  "CR-ORI-M2-K2-Mobile.dc.html",
-  "CR-ORI-M2-K3.dc.html",
-  "CR-ORI-M2-K3-Mobile.dc.html",
-  "CR-ORI-M2-DONE.dc.html",
-  "CR-ORI-M2-DONE-Mobile.dc.html",
-  "CR-ORI-M3-00.dc.html",
-  "CR-ORI-M3-00-Mobile.dc.html",
-  "CR-ORI-M3-L2.dc.html",
-  "CR-ORI-M3-L2-Mobile.dc.html",
-  "CR-ORI-M3-L3.dc.html",
-  "CR-ORI-M3-L3-Mobile.dc.html",
-  "CR-ORI-M3-K1.dc.html",
-  "CR-ORI-M3-K1-Mobile.dc.html",
-  "CR-ORI-M3-K2.dc.html",
-  "CR-ORI-M3-K2-Mobile.dc.html",
-  "CR-ORI-M3-K3.dc.html",
-  "CR-ORI-M3-K3-Mobile.dc.html",
-  "CR-ORI-M4-L1.dc.html",
-  "CR-ORI-M4-L1-Mobile.dc.html",
-  "CR-ORI-M3-DONE.dc.html",
-  "CR-ORI-M3-DONE-Mobile.dc.html",
-  "CR-ORI-M4-L3.dc.html",
-  "CR-ORI-M4-L3-Mobile.dc.html",
-  "CR-ORI-M4-K1.dc.html",
-  "CR-ORI-M4-K1-Mobile.dc.html",
-  "CR-ORI-M4-K2.dc.html",
-  "CR-ORI-M4-K2-Mobile.dc.html",
-  "CR-ORI-M4-K3.dc.html",
-  "CR-ORI-M4-K3-Mobile.dc.html",
-  "CR-ORI-M4-DONE.dc.html",
-  "CR-ORI-M4-DONE-Mobile.dc.html",
-  "CR-ORI-M5-00.dc.html",
-  "CR-ORI-M5-00-Mobile.dc.html",
-  "CR-ORI-M5-L1.dc.html",
-  "CR-ORI-M5-L1-Mobile.dc.html",
-  "CR-ORI-M5-L2.dc.html",
-  "CR-ORI-M5-L2-Mobile.dc.html",
-  "CR-ORI-M5-K1.dc.html",
-  "CR-ORI-M5-K1-Mobile.dc.html",
-  "CR-ORI-M5-K3.dc.html",
-  "CR-ORI-M5-K3-Mobile.dc.html",
-  "CR-ORI-M5-S1.dc.html",
-  "CR-ORI-M5-S1-Mobile.dc.html",
-  "CR-ORI-M5-S3.dc.html",
-  "CR-ORI-M5-S3-Mobile.dc.html",
-  "CR-ORI-M6-00.dc.html",
-  "CR-ORI-M6-00-Mobile.dc.html",
-  "CR-ORI-M6-L1.dc.html",
-  "CR-ORI-M6-L1-Mobile.dc.html",
-  "CR-ORI-M6-L2.dc.html",
-  "CR-ORI-M6-L2-Mobile.dc.html",
-  "CR-ORI-M6-K1.dc.html",
-  "CR-ORI-M6-K1-Mobile.dc.html",
-  "CR-ORI-M6-K2.dc.html",
-  "CR-ORI-M6-K2-Mobile.dc.html",
-  "CR-ORI-M6-K3.dc.html",
-  "CR-ORI-M6-K3-Mobile.dc.html",
-  "CR-ORI-M6-DONE.dc.html",
-  "CR-ORI-M6-DONE-Mobile.dc.html",
-  "CR-ORI-M7-00.dc.html",
-  "CR-ORI-M7-00-Mobile.dc.html",
-  "CR-ORI-M7-L1.dc.html",
-  "CR-ORI-M7-L1-Mobile.dc.html",
-  "CR-ORI-M7-L2.dc.html",
-  "CR-ORI-M7-L2-Mobile.dc.html",
-  "CR-ORI-M7-K1.dc.html",
-  "CR-ORI-M7-K1-Mobile.dc.html",
-  "CR-ORI-M7-K2.dc.html",
-  "CR-ORI-M7-K2-Mobile.dc.html",
-  "CR-ORI-M7-K3.dc.html",
-  "CR-ORI-M7-K3-Mobile.dc.html",
-  "CR-ORI-M7-S1.dc.html",
-  "CR-ORI-M7-S1-Mobile.dc.html",
-  "CR-ORI-M7-S2.dc.html",
-  "CR-ORI-M7-S2-Mobile.dc.html",
-  "CR-ORI-M7-S3.dc.html",
-  "CR-ORI-M7-S3-Mobile.dc.html",
-  "CR-ORI-M7-DONE.dc.html",
-  "CR-ORI-M7-DONE-Mobile.dc.html",
-  "CR-ORI-M4-L2.dc.html",
-  "CR-ORI-M4-L2-Mobile.dc.html",
-  "CR-KYC-001e.dc.html",
-  "CR-KYC-001e-Mobile.dc.html",
-  "CR-KYC-002e.dc.html",
-  "CR-KYC-002e-Mobile.dc.html",
-  "CR-CRED-001r.dc.html",
-  "CR-CRED-001r-Mobile.dc.html",
-  "CR-CRED-002g.dc.html",
-  "CR-CRED-002g-Mobile.dc.html",
-  "CR-CRED-002h.dc.html",
-  "CR-CRED-002h-Mobile.dc.html",
-  "CR-CRED-002x.dc.html",
-  "CR-CRED-002x-Mobile.dc.html",
-  "CR-POL-000.dc.html",
-  "CR-POL-000-Mobile.dc.html",
-  "CR-COL-002a.dc.html",
-  "CR-COL-002a-Mobile.dc.html",
-  "CR-COL-002d.dc.html",
-  "CR-COL-002d-Mobile.dc.html",
-  "CR-COL-002x.dc.html",
-  "CR-COL-002x-Mobile.dc.html",
-  "CR-COL-003d.dc.html",
-  "CR-COL-003d-Mobile.dc.html",
-  "CR-DEC-004f.dc.html",
-  "CR-DEC-004f-Mobile.dc.html",
-  "CR-ORI-M3-L1.dc.html",
-  "CR-ORI-M3-L1-Mobile.dc.html",
-  "CR-ORI-M5-K2.dc.html",
-  "CR-ORI-M5-K2-Mobile.dc.html"
- ],
- "pages": [
-  {
-   "id": "p1",
-   "name": "Link 1 (client D3Y)"
-  },
-  {
-   "id": "p2",
-   "name": "Page 2 · shared sources (Studio moved)"
-  }
- ],
- "title": "Credalio Creator Flow"
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "CR-ASG-001-Mobile.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ASG-001 · Mobile",
+      "w": 390,
+      "x": 18080,
+      "y": 29216
+    },
+    "CR-ASG-001.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ASG-001 · Assigned to me · Desktop",
+      "w": 1440,
+      "x": 16560,
+      "y": 29216
+    },
+    "CR-COL-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 29216
+    },
+    "CR-COL-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-001 · Invitation notification · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 29216
+    },
+    "CR-COL-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-002 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 29216
+    },
+    "CR-COL-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-002 · Review invitation · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 29216
+    },
+    "CR-COL-002a-Mobile.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-002a · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 29216
+    },
+    "CR-COL-002a.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-002a · Ask a question · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 29216
+    },
+    "CR-COL-002d-Mobile.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-002d · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 29216
+    },
+    "CR-COL-002d.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-002d · Confirm decline · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 29216
+    },
+    "CR-COL-002x-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-002x · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 29216
+    },
+    "CR-COL-002x.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-002x · Invitation declined · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 29216
+    },
+    "CR-COL-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-003 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 29216
+    },
+    "CR-COL-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-003 · Collaboration consent · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 29216
+    },
+    "CR-COL-003d-Mobile.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-003d · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 29216
+    },
+    "CR-COL-003d.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-003d · Consent: all accepted · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 29216
+    },
+    "CR-COL-004-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-004 · Mobile",
+      "w": 390,
+      "x": 16010,
+      "y": 29216
+    },
+    "CR-COL-004.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-COL-004 · Invitation accepted · Desktop",
+      "w": 1440,
+      "x": 14490,
+      "y": 29216
+    },
+    "CR-CREATE-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CREATE-001 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 2240
+    },
+    "CR-CREATE-001.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CREATE-001 · How would you like to build it? · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 2240
+    },
+    "CR-CREATE-002A-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CREATE-002A · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 2240
+    },
+    "CR-CREATE-002A.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CREATE-002A · New course with Nova (chat) · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 2240
+    },
+    "CR-CREATE-002Ab-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CREATE-002Ab · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 2240
+    },
+    "CR-CREATE-002Ab.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CREATE-002Ab · Review Nova’s draft · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 2240
+    },
+    "CR-CREATE-002B-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CREATE-002B · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 2240
+    },
+    "CR-CREATE-002B.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CREATE-002B · Build from scratch · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 2240
+    },
+    "CR-CRED-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 21888
+    },
+    "CR-CRED-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-001 · Your credentials & expertise · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 21888
+    },
+    "CR-CRED-001r-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-001r · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 21888
+    },
+    "CR-CRED-001r.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-001r · Fix a credential · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 21888
+    },
+    "CR-CRED-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 21888
+    },
+    "CR-CRED-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002 · Add a credential: choose type · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 21888
+    },
+    "CR-CRED-002a-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002a · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 21888
+    },
+    "CR-CRED-002a.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002a · Degree or diploma · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 21888
+    },
+    "CR-CRED-002b-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002b · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 21888
+    },
+    "CR-CRED-002b.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002b · Certification by credential ID (AWS) · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 21888
+    },
+    "CR-CRED-002c-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002c · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 21888
+    },
+    "CR-CRED-002c.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002c · Certification by badge link (Credly) · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 21888
+    },
+    "CR-CRED-002d-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002d · Mobile",
+      "w": 390,
+      "x": 16010,
+      "y": 21888
+    },
+    "CR-CRED-002d.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002d · Licence or membership · Desktop",
+      "w": 1440,
+      "x": 14490,
+      "y": 21888
+    },
+    "CR-CRED-002e-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002e · Mobile",
+      "w": 390,
+      "x": 18080,
+      "y": 21888
+    },
+    "CR-CRED-002e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002e · Work experience · Desktop",
+      "w": 1440,
+      "x": 16560,
+      "y": 21888
+    },
+    "CR-CRED-002f-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002f · Mobile",
+      "w": 390,
+      "x": 22220,
+      "y": 21888
+    },
+    "CR-CRED-002f.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002f · Other evidence (portfolio, publications) · Desktop",
+      "w": 1440,
+      "x": 20700,
+      "y": 21888
+    },
+    "CR-CRED-002g-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002g · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 21888
+    },
+    "CR-CRED-002g.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002g · Certification by upload · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 21888
+    },
+    "CR-CRED-002h-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002h · Mobile",
+      "w": 390,
+      "x": 20150,
+      "y": 21888
+    },
+    "CR-CRED-002h.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002h · Work experience with referee · Desktop",
+      "w": 1440,
+      "x": 18630,
+      "y": 21888
+    },
+    "CR-CRED-002x-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002x · Mobile",
+      "w": 390,
+      "x": 24290,
+      "y": 21888
+    },
+    "CR-CRED-002x.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-002x · Missing required fields · Desktop",
+      "w": 1440,
+      "x": 22770,
+      "y": 21888
+    },
+    "CR-CRED-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-003 · Mobile",
+      "w": 390,
+      "x": 26360,
+      "y": 21888
+    },
+    "CR-CRED-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-003 · Verified online · Desktop",
+      "w": 1440,
+      "x": 24840,
+      "y": 21888
+    },
+    "CR-CRED-003b-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-003b · Mobile",
+      "w": 390,
+      "x": 28430,
+      "y": 21888
+    },
+    "CR-CRED-003b.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CRED-003b · Submitted for manual review · Desktop",
+      "w": 1440,
+      "x": 26910,
+      "y": 21888
+    },
+    "CR-CTR-001-Mobile.dc.html": {
+      "h": 1360,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CTR-001 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 4060
+    },
+    "CR-CTR-001.dc.html": {
+      "expand": "fill",
+      "h": 1230,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CTR-001 · Creator Centre · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 4060
+    },
+    "CR-DASH-NEW-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-NEW · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 2240
+    },
+    "CR-DASH-NEW.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-NEW · Creator Studio launchpad · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 2240
+    },
+    "CR-DASH-S02-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S02 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 25256
+    },
+    "CR-DASH-S02.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S02 · Draft started · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 25256
+    },
+    "CR-DASH-S03-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S03 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 25256
+    },
+    "CR-DASH-S03.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S03 · Collaboration invitation · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 25256
+    },
+    "CR-DASH-S04-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S04 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 25256
+    },
+    "CR-DASH-S04.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S04 · Assigned contributor · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 25256
+    },
+    "CR-DASH-S05-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S05 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 25256
+    },
+    "CR-DASH-S05.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S05 · Readiness blocks submission · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 25256
+    },
+    "CR-DASH-S06-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S06 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 27076
+    },
+    "CR-DASH-S06.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S06 · In validation · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 27076
+    },
+    "CR-DASH-S07-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S07 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 27076
+    },
+    "CR-DASH-S07.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S07 · Validation needs your response · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 27076
+    },
+    "CR-DASH-S08-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S08 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 27076
+    },
+    "CR-DASH-S08.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S08 · Published · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 27076
+    },
+    "CR-DASH-S09-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S09 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 27076
+    },
+    "CR-DASH-S09.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DASH-S09 · Established creator · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 27076
+    },
+    "CR-DASH-ST.dc.html": {
+      "h": 820,
+      "page": "p2",
+      "w": 1440,
+      "x": 0,
+      "y": 600
+    },
+    "CR-DEC-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DEC-001 · Mobile",
+      "w": 390,
+      "x": 20150,
+      "y": 29216
+    },
+    "CR-DEC-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DEC-001 · Contributor declaration request (Mary) · Desktop",
+      "w": 1440,
+      "x": 18630,
+      "y": 29216
+    },
+    "CR-DEC-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DEC-002 · Mobile",
+      "w": 390,
+      "x": 22220,
+      "y": 29216
+    },
+    "CR-DEC-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DEC-002 · Contributor declaration (Mary signs) · Desktop",
+      "w": 1440,
+      "x": 20700,
+      "y": 29216
+    },
+    "CR-DEC-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DEC-003 · Mobile",
+      "w": 390,
+      "x": 24290,
+      "y": 29216
+    },
+    "CR-DEC-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DEC-003 · Declaration status · blocked while pending · Desktop",
+      "w": 1440,
+      "x": 22770,
+      "y": 29216
+    },
+    "CR-DEC-004-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DEC-004 · Mobile",
+      "w": 390,
+      "x": 26360,
+      "y": 29216
+    },
+    "CR-DEC-004.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DEC-004 · Lead Creator submission declaration · Desktop",
+      "w": 1440,
+      "x": 24840,
+      "y": 29216
+    },
+    "CR-DEC-004f-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DEC-004f · Mobile",
+      "w": 390,
+      "x": 28430,
+      "y": 29216
+    },
+    "CR-DEC-004f.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-DEC-004f · Lead declaration signed · Desktop",
+      "w": 1440,
+      "x": 26910,
+      "y": 29216
+    },
+    "CR-HOME-EXP-Mobile.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-HOME-EXP · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 27076
+    },
+    "CR-HOME-EXP.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-HOME-EXP · My learning experiences · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 27076
+    },
+    "CR-HOME-NEW-Mobile.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-HOME-NEW · Mobile",
+      "w": 390,
+      "x": 16010,
+      "y": 27076
+    },
+    "CR-HOME-NEW.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-HOME-NEW · Create new · Desktop",
+      "w": 1440,
+      "x": 14490,
+      "y": 27076
+    },
+    "CR-HOME-SET-Mobile.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-HOME-SET · Mobile",
+      "w": 390,
+      "x": 18080,
+      "y": 27076
+    },
+    "CR-HOME-SET.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-HOME-SET · Settings · AI preferences · Desktop",
+      "w": 1440,
+      "x": 16560,
+      "y": 27076
+    },
+    "CR-HOME-SOON-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-HOME-SOON · Mobile",
+      "w": 390,
+      "x": 20150,
+      "y": 27076
+    },
+    "CR-HOME-SOON.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-HOME-SOON · Not-yet-built destination (Validation Centre) · Desktop",
+      "w": 1440,
+      "x": 18630,
+      "y": 27076
+    },
+    "CR-KYC-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 20204
+    },
+    "CR-KYC-001.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-001 · Verify identity: before you start · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 20204
+    },
+    "CR-KYC-001e-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-001e · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 20204
+    },
+    "CR-KYC-001e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-001e · Consent not given · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 20204
+    },
+    "CR-KYC-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-002 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 20204
+    },
+    "CR-KYC-002.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-002 · Sumsub: choose document · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 20204
+    },
+    "CR-KYC-002b-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-002b · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 20204
+    },
+    "CR-KYC-002b.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-002b · Sumsub: photos · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 20204
+    },
+    "CR-KYC-002c-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-002c · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 20204
+    },
+    "CR-KYC-002c.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-002c · Sumsub: liveness check · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 20204
+    },
+    "CR-KYC-002d-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-002d · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 20204
+    },
+    "CR-KYC-002d.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-002d · Sumsub: review & submit · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 20204
+    },
+    "CR-KYC-002e-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-002e · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 20204
+    },
+    "CR-KYC-002e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-002e · Photo missing · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 20204
+    },
+    "CR-KYC-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-003 · Mobile",
+      "w": 390,
+      "x": 16010,
+      "y": 20204
+    },
+    "CR-KYC-003.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-003 · Identity in review · Desktop",
+      "w": 1440,
+      "x": 14490,
+      "y": 20204
+    },
+    "CR-KYC-004-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-004 · Mobile",
+      "w": 390,
+      "x": 18080,
+      "y": 20204
+    },
+    "CR-KYC-004.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-004 · Identity verified · Desktop",
+      "w": 1440,
+      "x": 16560,
+      "y": 20204
+    },
+    "CR-KYC-005-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-005 · Mobile",
+      "w": 390,
+      "x": 20150,
+      "y": 20204
+    },
+    "CR-KYC-005.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-005 · Identity: action needed (retake) · Desktop",
+      "w": 1440,
+      "x": 18630,
+      "y": 20204
+    },
+    "CR-KYC-006-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-006 · Mobile",
+      "w": 390,
+      "x": 22220,
+      "y": 20204
+    },
+    "CR-KYC-006.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-KYC-006 · Identity not verified · Desktop",
+      "w": 1440,
+      "x": 20700,
+      "y": 20204
+    },
+    "CR-NOT-001-Mobile.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-NOT-001 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 27076
+    },
+    "CR-NOT-001.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-NOT-001 · Notification Centre · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 27076
+    },
+    "CR-NOT-bell-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-NOT-bell · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 27076
+    },
+    "CR-NOT-bell.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-NOT-bell · Bell dropdown · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 27076
+    },
+    "CR-ONB-001-Laptop.dc.html": {
+      "h": 720,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-001 · Small laptop (1280 × 720)",
+      "w": 1280,
+      "x": 1990,
+      "y": 33096
+    },
+    "CR-ONB-001-Mobile.dc.html": {
+      "h": 920,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-001 · Mobile (390)",
+      "w": 390,
+      "x": 1520,
+      "y": 320
+    },
+    "CR-ONB-001-Tablet.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-001 · Narrow window (900)",
+      "w": 900,
+      "x": 3350,
+      "y": 33096
+    },
+    "CR-ONB-002-9qo9.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-002 · How will you create? · Desktop copy",
+      "w": 1440,
+      "x": 4330,
+      "y": 33096
+    },
+    "CR-ONB-002-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-002 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 320
+    },
+    "CR-ONB-002.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-002 · How will you create? · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 320
+    },
+    "CR-ONB-002S-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-002S · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 320
+    },
+    "CR-ONB-002S.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-002S · Organisations coming soon · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 320
+    },
+    "CR-ONB-003-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-003 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 320
+    },
+    "CR-ONB-003.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-003 · Create account · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 320
+    },
+    "CR-ONB-003b-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-003b · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 320
+    },
+    "CR-ONB-003b.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-003b · Check your inbox · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 320
+    },
+    "CR-ONB-003c-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-003c · Mobile",
+      "w": 390,
+      "x": 18080,
+      "y": 320
+    },
+    "CR-ONB-003c.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-003c · Choose a password · Desktop",
+      "w": 1440,
+      "x": 16560,
+      "y": 320
+    },
+    "CR-ONB-003ce-Mobile.dc.html": {
+      "h": 880,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-003ce · Mobile",
+      "w": 390,
+      "x": 20150,
+      "y": 320
+    },
+    "CR-ONB-003ce.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-003ce · Password too weak · Desktop",
+      "w": 1440,
+      "x": 18630,
+      "y": 320
+    },
+    "CR-ONB-003d-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-003d · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 320
+    },
+    "CR-ONB-003d.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-003d · Change your email · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 320
+    },
+    "CR-ONB-003e-Mobile.dc.html": {
+      "h": 1010,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-003e · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 320
+    },
+    "CR-ONB-003e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-003e · Invalid email · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 320
+    },
+    "CR-ONB-003v-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-003v · Mobile",
+      "w": 390,
+      "x": 16010,
+      "y": 320
+    },
+    "CR-ONB-003v.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-003v · Email confirmed · Desktop",
+      "w": 1440,
+      "x": 14490,
+      "y": 320
+    },
+    "CR-ONB-004-Mobile.dc.html": {
+      "h": 1080,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-004 · Mobile",
+      "w": 390,
+      "x": 22220,
+      "y": 320
+    },
+    "CR-ONB-004.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-004 · About you · Desktop",
+      "w": 1440,
+      "x": 20700,
+      "y": 320
+    },
+    "CR-ONB-004e-Mobile.dc.html": {
+      "h": 1110,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-004e · Mobile",
+      "w": 390,
+      "x": 24290,
+      "y": 320
+    },
+    "CR-ONB-004e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-004e · Missing display name · Desktop",
+      "w": 1440,
+      "x": 22770,
+      "y": 320
+    },
+    "CR-ONB-005-Mobile.dc.html": {
+      "h": 940,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-005 · Mobile",
+      "w": 390,
+      "x": 26360,
+      "y": 320
+    },
+    "CR-ONB-005.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-005 · Your field · Desktop",
+      "w": 1440,
+      "x": 24840,
+      "y": 320
+    },
+    "CR-ONB-005b-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-005b · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 33096
+    },
+    "CR-ONB-005b.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-005b · What you will teach · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 33096
+    },
+    "CR-ONB-005e-Mobile.dc.html": {
+      "h": 990,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-005e · Mobile",
+      "w": 390,
+      "x": 28430,
+      "y": 320
+    },
+    "CR-ONB-005e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-005e · Missing required fields · Desktop",
+      "w": 1440,
+      "x": 26910,
+      "y": 320
+    },
+    "CR-ONB-006-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-006 · Mobile",
+      "w": 390,
+      "x": 30500,
+      "y": 320
+    },
+    "CR-ONB-006.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-006 · Meet your Copilot · Desktop",
+      "w": 1440,
+      "x": 28980,
+      "y": 320
+    },
+    "CR-ONB-007-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-007 · Mobile",
+      "w": 390,
+      "x": 32570,
+      "y": 320
+    },
+    "CR-ONB-007.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-007 · Copilot style · Desktop",
+      "w": 1440,
+      "x": 31050,
+      "y": 320
+    },
+    "CR-ONB-007p-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-007p · Mobile",
+      "w": 390,
+      "x": 34640,
+      "y": 320
+    },
+    "CR-ONB-007p.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-007p · Copilot style: Proactive · Desktop",
+      "w": 1440,
+      "x": 33120,
+      "y": 320
+    },
+    "CR-ONB-008-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-008 · Mobile",
+      "w": 390,
+      "x": 36710,
+      "y": 320
+    },
+    "CR-ONB-008.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-008 · You’re a Creator · Desktop",
+      "w": 1440,
+      "x": 35190,
+      "y": 320
+    },
+    "CR-ORI-001-Mobile.dc.html": {
+      "h": 880,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-001 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 6420
+    },
+    "CR-ORI-001.dc.html": {
+      "expand": "fill",
+      "h": 1050,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-001 · Creator Orientation · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 6420
+    },
+    "CR-ORI-001c-Mobile.dc.html": {
+      "h": 880,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-001c · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 6420
+    },
+    "CR-ORI-001c.dc.html": {
+      "h": 1050,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-001c · Orientation: complete · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 6420
+    },
+    "CR-ORI-001n-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-001n · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 6420
+    },
+    "CR-ORI-001n.dc.html": {
+      "h": 1050,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-001n · Orientation: not started · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 6420
+    },
+    "CR-ORI-002-Mobile.dc.html": {
+      "h": 990,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-002 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 13314
+    },
+    "CR-ORI-002.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-002 · Module overview · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 13314
+    },
+    "CR-ORI-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p2",
+      "title": "CR-ORI-003 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 2800
+    },
+    "CR-ORI-003.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p2",
+      "title": "CR-ORI-003 · Lesson template (all orientation lessons are built from it)",
+      "w": 1440,
+      "x": 0,
+      "y": 2800
+    },
+    "CR-ORI-004-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p2",
+      "title": "CR-ORI-004 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 3900
+    },
+    "CR-ORI-004.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p2",
+      "title": "CR-ORI-004 · Check template (all orientation checks are built from it)",
+      "w": 1440,
+      "x": 0,
+      "y": 3900
+    },
+    "CR-ORI-005-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-005 · Mobile",
+      "w": 390,
+      "x": 16010,
+      "y": 15144
+    },
+    "CR-ORI-005.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-005 · Scenario: AI-drafted lesson · Desktop",
+      "w": 1440,
+      "x": 14490,
+      "y": 15144
+    },
+    "CR-ORI-006-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-006 · Mobile",
+      "w": 390,
+      "x": 20150,
+      "y": 15144
+    },
+    "CR-ORI-006.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-006 · Module 5 complete · Desktop",
+      "w": 1440,
+      "x": 18630,
+      "y": 15144
+    },
+    "CR-ORI-007-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-007 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 6420
+    },
+    "CR-ORI-007.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-007 · Orientation complete · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 6420
+    },
+    "CR-ORI-M1-00-Mobile.dc.html": {
+      "h": 1080,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M1-00 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 8310
+    },
+    "CR-ORI-M1-00.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M1-00 · Module 1 overview · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 8310
+    },
+    "CR-ORI-M1-DONE-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M1-DONE · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 8310
+    },
+    "CR-ORI-M1-DONE.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M1-DONE · Module 1 complete · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 8310
+    },
+    "CR-ORI-M1-K.dc.html": {
+      "h": 820,
+      "w": 1440,
+      "x": 37180,
+      "y": 320
+    },
+    "CR-ORI-M1-K1-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M1-K1 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 8310
+    },
+    "CR-ORI-M1-K1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M1-K1 · Check: unanswered · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 8310
+    },
+    "CR-ORI-M1-K2-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M1-K2 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 8310
+    },
+    "CR-ORI-M1-K2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M1-K2 · Check: correct · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 8310
+    },
+    "CR-ORI-M1-K3-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M1-K3 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 8310
+    },
+    "CR-ORI-M1-K3.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M1-K3 · Check: try again · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 8310
+    },
+    "CR-ORI-M1-L1-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M1-L1 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 8310
+    },
+    "CR-ORI-M1-L1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M1-L1 · Lesson 1: What Credalio is for · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 8310
+    },
+    "CR-ORI-M1-L2-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M1-L2 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 8310
+    },
+    "CR-ORI-M1-L2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M1-L2 · Lesson 2: How creating works · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 8310
+    },
+    "CR-ORI-M2-00-Mobile.dc.html": {
+      "h": 1080,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M2-00 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 9970
+    },
+    "CR-ORI-M2-00.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M2-00 · Module 2 overview · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 9970
+    },
+    "CR-ORI-M2-DONE-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M2-DONE · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 9970
+    },
+    "CR-ORI-M2-DONE.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M2-DONE · Module 2 complete · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 9970
+    },
+    "CR-ORI-M2-K.dc.html": {
+      "h": 820,
+      "w": 1440,
+      "x": 38700,
+      "y": 320
+    },
+    "CR-ORI-M2-K1-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M2-K1 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 9970
+    },
+    "CR-ORI-M2-K1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M2-K1 · Check: unanswered · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 9970
+    },
+    "CR-ORI-M2-K2-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M2-K2 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 9970
+    },
+    "CR-ORI-M2-K2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M2-K2 · Check: correct · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 9970
+    },
+    "CR-ORI-M2-K3-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M2-K3 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 9970
+    },
+    "CR-ORI-M2-K3.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M2-K3 · Check: try again · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 9970
+    },
+    "CR-ORI-M2-L1-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M2-L1 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 9970
+    },
+    "CR-ORI-M2-L1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M2-L1 · Lesson 1: What makes learning trustworthy · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 9970
+    },
+    "CR-ORI-M2-L2-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M2-L2 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 9970
+    },
+    "CR-ORI-M2-L2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M2-L2 · Lesson 2: Evidence of learning · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 9970
+    },
+    "CR-ORI-M3-00-Mobile.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-00 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 11630
+    },
+    "CR-ORI-M3-00.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-00 · Module 3 overview · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 11630
+    },
+    "CR-ORI-M3-DONE-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-DONE · Mobile",
+      "w": 390,
+      "x": 18080,
+      "y": 11630
+    },
+    "CR-ORI-M3-DONE.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-DONE · Module 3 complete · Desktop",
+      "w": 1440,
+      "x": 16560,
+      "y": 11630
+    },
+    "CR-ORI-M3-K.dc.html": {
+      "h": 820,
+      "w": 1440,
+      "x": 40220,
+      "y": 320
+    },
+    "CR-ORI-M3-K1-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-K1 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 11630
+    },
+    "CR-ORI-M3-K1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-K1 · Knowledge check: unanswered · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 11630
+    },
+    "CR-ORI-M3-K2-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-K2 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 11630
+    },
+    "CR-ORI-M3-K2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-K2 · Knowledge check: correct answers · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 11630
+    },
+    "CR-ORI-M3-K3-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-K3 · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 11630
+    },
+    "CR-ORI-M3-K3.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-K3 · Knowledge check: try again · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 11630
+    },
+    "CR-ORI-M3-L1-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-L1 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 11630
+    },
+    "CR-ORI-M3-L1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-L1 · Lesson 1: Writing observable outcomes · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 11630
+    },
+    "CR-ORI-M3-L2-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-L2 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 11630
+    },
+    "CR-ORI-M3-L2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-L2 · Lesson 2: Skills and proficiency · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 11630
+    },
+    "CR-ORI-M3-L3-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-L3 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 11630
+    },
+    "CR-ORI-M3-L3.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M3-L3 · Lesson 3: Linking evidence · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 11630
+    },
+    "CR-ORI-M4-DONE-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M4-DONE · Mobile",
+      "w": 390,
+      "x": 16010,
+      "y": 13314
+    },
+    "CR-ORI-M4-DONE.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M4-DONE · Module 4 complete · Desktop",
+      "w": 1440,
+      "x": 14490,
+      "y": 13314
+    },
+    "CR-ORI-M4-K.dc.html": {
+      "h": 820,
+      "w": 1440,
+      "x": 41740,
+      "y": 320
+    },
+    "CR-ORI-M4-K1-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M4-K1 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 13314
+    },
+    "CR-ORI-M4-K1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M4-K1 · Knowledge check: unanswered · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 13314
+    },
+    "CR-ORI-M4-K2-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M4-K2 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 13314
+    },
+    "CR-ORI-M4-K2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M4-K2 · Knowledge check: correct answers · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 13314
+    },
+    "CR-ORI-M4-K3-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M4-K3 · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 13314
+    },
+    "CR-ORI-M4-K3.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M4-K3 · Knowledge check: try again · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 13314
+    },
+    "CR-ORI-M4-L1-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M4-L1 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 13314
+    },
+    "CR-ORI-M4-L1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M4-L1 · Lesson 1: What validators look at · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 13314
+    },
+    "CR-ORI-M4-L2-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M4-L2 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 13314
+    },
+    "CR-ORI-M4-L2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M4-L2 · Lesson 2: The validation case · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 13314
+    },
+    "CR-ORI-M4-L3-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M4-L3 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 13314
+    },
+    "CR-ORI-M4-L3.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M4-L3 · Lesson 3: Tiers and revalidation · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 13314
+    },
+    "CR-ORI-M5-00-Mobile.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-00 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 15144
+    },
+    "CR-ORI-M5-00.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-00 · Module 5 overview · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 15144
+    },
+    "CR-ORI-M5-K.dc.html": {
+      "h": 820,
+      "w": 1440,
+      "x": 43260,
+      "y": 320
+    },
+    "CR-ORI-M5-K1-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-K1 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 15144
+    },
+    "CR-ORI-M5-K1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-K1 · Knowledge check: unanswered · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 15144
+    },
+    "CR-ORI-M5-K2-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-K2 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 15144
+    },
+    "CR-ORI-M5-K2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-K2 · Knowledge check: correct answers · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 15144
+    },
+    "CR-ORI-M5-K3-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-K3 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 15144
+    },
+    "CR-ORI-M5-K3.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-K3 · Knowledge check: try again · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 15144
+    },
+    "CR-ORI-M5-L1-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-L1 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 15144
+    },
+    "CR-ORI-M5-L1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-L1 · Lesson 1: Using your Copilot well · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 15144
+    },
+    "CR-ORI-M5-L2-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-L2 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 15144
+    },
+    "CR-ORI-M5-L2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-L2 · Lesson 2: Review, disclose, own · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 15144
+    },
+    "CR-ORI-M5-S1-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-S1 · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 15144
+    },
+    "CR-ORI-M5-S1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-S1 · Scenario exercise: unanswered · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 15144
+    },
+    "CR-ORI-M5-S3-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-S3 · Mobile",
+      "w": 390,
+      "x": 18080,
+      "y": 15144
+    },
+    "CR-ORI-M5-S3.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M5-S3 · Scenario exercise: try again · Desktop",
+      "w": 1440,
+      "x": 16560,
+      "y": 15144
+    },
+    "CR-ORI-M6-00-Mobile.dc.html": {
+      "h": 1140,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M6-00 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 16884
+    },
+    "CR-ORI-M6-00.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M6-00 · Module 6 overview · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 16884
+    },
+    "CR-ORI-M6-DONE-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M6-DONE · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 16884
+    },
+    "CR-ORI-M6-DONE.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M6-DONE · Module 6 complete · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 16884
+    },
+    "CR-ORI-M6-K.dc.html": {
+      "h": 820,
+      "w": 1440,
+      "x": 44780,
+      "y": 320
+    },
+    "CR-ORI-M6-K1-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M6-K1 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 16884
+    },
+    "CR-ORI-M6-K1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M6-K1 · Knowledge check: unanswered · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 16884
+    },
+    "CR-ORI-M6-K2-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M6-K2 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 16884
+    },
+    "CR-ORI-M6-K2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M6-K2 · Knowledge check: correct answers · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 16884
+    },
+    "CR-ORI-M6-K3-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M6-K3 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 16884
+    },
+    "CR-ORI-M6-K3.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M6-K3 · Knowledge check: try again · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 16884
+    },
+    "CR-ORI-M6-L1-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M6-L1 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 16884
+    },
+    "CR-ORI-M6-L1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M6-L1 · Lesson 1: Setting your price · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 16884
+    },
+    "CR-ORI-M6-L2-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M6-L2 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 16884
+    },
+    "CR-ORI-M6-L2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M6-L2 · Lesson 2: Credit Wallet vs Earnings · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 16884
+    },
+    "CR-ORI-M7-00-Mobile.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-00 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 18544
+    },
+    "CR-ORI-M7-00.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-00 · Module 7 overview · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 18544
+    },
+    "CR-ORI-M7-DONE-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-DONE · Mobile",
+      "w": 390,
+      "x": 20150,
+      "y": 18544
+    },
+    "CR-ORI-M7-DONE.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-DONE · Module 7 complete · Desktop",
+      "w": 1440,
+      "x": 18630,
+      "y": 18544
+    },
+    "CR-ORI-M7-K.dc.html": {
+      "h": 820,
+      "w": 1440,
+      "x": 46300,
+      "y": 320
+    },
+    "CR-ORI-M7-K1-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-K1 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 18544
+    },
+    "CR-ORI-M7-K1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-K1 · Knowledge check: unanswered · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 18544
+    },
+    "CR-ORI-M7-K2-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-K2 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 18544
+    },
+    "CR-ORI-M7-K2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-K2 · Knowledge check: correct answers · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 18544
+    },
+    "CR-ORI-M7-K3-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-K3 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 18544
+    },
+    "CR-ORI-M7-K3.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-K3 · Knowledge check: try again · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 18544
+    },
+    "CR-ORI-M7-L1-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-L1 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 18544
+    },
+    "CR-ORI-M7-L1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-L1 · Lesson 1: Your obligations to learners · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 18544
+    },
+    "CR-ORI-M7-L2-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-L2 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 18544
+    },
+    "CR-ORI-M7-L2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-L2 · Lesson 2: Declarations and changes · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 18544
+    },
+    "CR-ORI-M7-S.dc.html": {
+      "h": 820,
+      "w": 1440,
+      "x": 47820,
+      "y": 320
+    },
+    "CR-ORI-M7-S1-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-S1 · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 18544
+    },
+    "CR-ORI-M7-S1.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-S1 · Scenario exercise: unanswered · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 18544
+    },
+    "CR-ORI-M7-S2-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-S2 · Mobile",
+      "w": 390,
+      "x": 16010,
+      "y": 18544
+    },
+    "CR-ORI-M7-S2.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-S2 · Scenario exercise: correct · Desktop",
+      "w": 1440,
+      "x": 14490,
+      "y": 18544
+    },
+    "CR-ORI-M7-S3-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-S3 · Mobile",
+      "w": 390,
+      "x": 18080,
+      "y": 18544
+    },
+    "CR-ORI-M7-S3.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ORI-M7-S3 · Scenario exercise: try again · Desktop",
+      "w": 1440,
+      "x": 16560,
+      "y": 18544
+    },
+    "CR-POL-000-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-POL-000 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 23572
+    },
+    "CR-POL-000.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-POL-000 · None accepted yet · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 23572
+    },
+    "CR-POL-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-POL-001 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 23572
+    },
+    "CR-POL-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-POL-001 · Creator policies · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 23572
+    },
+    "CR-POL-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-POL-002 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 23572
+    },
+    "CR-POL-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-POL-002 · All policies accepted · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 23572
+    },
+    "CR-RDY-001-Mobile.dc.html": {
+      "h": 1520,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-RDY-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 4060
+    },
+    "CR-RDY-001.dc.html": {
+      "expand": "fill",
+      "h": 1160,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-RDY-001 · Your readiness (in progress) · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 4060
+    },
+    "CR-RDY-001d-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-RDY-001d · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 4060
+    },
+    "CR-RDY-001d.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-RDY-001d · Readiness: all complete · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 4060
+    },
+    "CR-RDY-001s-Mobile.dc.html": {
+      "h": 1450,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-RDY-001s · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 4060
+    },
+    "CR-RDY-001s.dc.html": {
+      "h": 1080,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-RDY-001s · Your readiness (new creator) · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 4060
+    },
+    "CR-VAL-MC-001-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-VAL-MC-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 31156
+    },
+    "CR-VAL-MC-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-VAL-MC-001 · Validation Centre · cases · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 31156
+    },
+    "CR-VAL-MC-002-Mobile.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-VAL-MC-002 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 31156
+    },
+    "CR-VAL-MC-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-VAL-MC-002 · Request routed to Mary · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 31156
+    },
+    "CR-VAL-MC-002L-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-VAL-MC-002L · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 31156
+    },
+    "CR-VAL-MC-002L.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-VAL-MC-002L · Lead views Mary’s request (read-only) · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 31156
+    },
+    "CR-VAL-MC-003-Mobile.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-VAL-MC-003 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 31156
+    },
+    "CR-VAL-MC-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-VAL-MC-003 · Mary responds with evidence · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 31156
+    },
+    "CR-VAL-WS-lead-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-VAL-WS-lead · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 31156
+    },
+    "CR-VAL-WS-lead.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-VAL-WS-lead · Workspace in Course Studio · Lead sees every request · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 31156
+    },
+    "CR-VAL-WS-mary-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-VAL-WS-mary · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 31156
+    },
+    "CR-VAL-WS-mary.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-VAL-WS-mary · Workspace · Mary sees only hers · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 31156
+    },
+    "CR-VAL-WS.dc.html": {
+      "h": 820,
+      "page": "p2",
+      "w": 1440,
+      "x": 0,
+      "y": 1600
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-001 · Desktop (responsive source)",
+      "w": 1440,
+      "x": 0,
+      "y": 320
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-02T16:30:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "div-l1": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "▲ End of Link 1 (client D3Y)",
+      "w": 240,
+      "x": 0,
+      "y": 34616
+    },
+    "l1m-CR-DASH-S01": {
+      "page": "p1",
+      "text": "Same screen as CR-DASH-NEW\nCR-DASH-S01 · STATE-01 · New creator: create, readiness, Copilot",
+      "w": 1440,
+      "x": 0,
+      "y": 25256
+    },
+    "l1s1": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Creator onboarding: sign up → how would you like to create → account → check inbox → email verified → password → about you → expertise → Copilot → ready",
+      "w": 240,
+      "x": 0,
+      "y": 0
+    },
+    "l1s10": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Orientation · Module 5: AI & Responsible Creation (10 screens)",
+      "w": 240,
+      "x": 0,
+      "y": 14824
+    },
+    "l1s11": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Orientation · Module 6: Creator Economy (7 screens)",
+      "w": 240,
+      "x": 0,
+      "y": 16564
+    },
+    "l1s12": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Orientation · Module 7: Creator Responsibilities (10 screens)",
+      "w": 240,
+      "x": 0,
+      "y": 18224
+    },
+    "l1s13": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Readiness task 1 · KYC: verify identity with Sumsub → next task",
+      "w": 240,
+      "x": 0,
+      "y": 19884
+    },
+    "l1s14": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Readiness task 2 · Credentials & expertise: upload or verify online (AWS, Microsoft, Credly…) → next task",
+      "w": 240,
+      "x": 0,
+      "y": 21568
+    },
+    "l1s15": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Readiness task 4 · Creator Policies: read and accept → next task",
+      "w": 240,
+      "x": 0,
+      "y": 23252
+    },
+    "l1s16": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Dashboard states (priority order)",
+      "w": 240,
+      "x": 0,
+      "y": 24936
+    },
+    "l1s17": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Dashboard states, notifications & navigation",
+      "w": 240,
+      "x": 0,
+      "y": 26756
+    },
+    "l1s18": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Collaboration, assigned work & contributor declarations",
+      "w": 240,
+      "x": 0,
+      "y": 28896
+    },
+    "l1s19": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Validation: Validation Centre lists cases; each workspace opens inside the Studio",
+      "w": 240,
+      "x": 0,
+      "y": 30836
+    },
+    "l1s2": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Start creating: first dashboard → choose how to start → Copilot or scratch",
+      "w": 240,
+      "x": 0,
+      "y": 1920
+    },
+    "l1s4": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Readiness & Creator Centre",
+      "w": 240,
+      "x": 0,
+      "y": 3740
+    },
+    "l1s5": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Creator Orientation · home (not started, in progress, complete) and orientation complete",
+      "w": 240,
+      "x": 0,
+      "y": 6100
+    },
+    "l1s6": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Orientation · Module 1: Welcome to Credalio (7 screens)",
+      "w": 240,
+      "x": 0,
+      "y": 7990
+    },
+    "l1s7": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Orientation · Module 2: Creating Trusted Learning (7 screens)",
+      "w": 240,
+      "x": 0,
+      "y": 9650
+    },
+    "l1s8": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Orientation · Module 3: Outcomes, Skills & Evidence (8 screens)",
+      "w": 240,
+      "x": 0,
+      "y": 11310
+    },
+    "l1s9": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Link 1 · Orientation · Module 4: Understanding Validation (8 screens)",
+      "w": 240,
+      "x": 0,
+      "y": 12994
+    },
+    "l1x": {
+      "kind": "title1",
+      "maxW": 8000,
+      "page": "p1",
+      "text": "Not in Link 1: ONB-005b topics (ours) · extra previews (ONB-001 small laptop / narrow window, ONB-002 copy)",
+      "w": 240,
+      "x": 0,
+      "y": 32776
+    },
+    "new-CR-ORI-M3-L1": {
+      "fill": "blue",
+      "page": "p1",
+      "text": "NEW · just made · CR-ORI-M3-L1",
+      "w": 1910,
+      "x": 2070,
+      "y": 12570
+    },
+    "new-CR-ORI-M5-K2": {
+      "fill": "blue",
+      "page": "p1",
+      "text": "NEW · just made · CR-ORI-M5-K2",
+      "w": 1910,
+      "x": 8280,
+      "y": 16184
+    },
+    "p2-moved": {
+      "fill": "blue",
+      "page": "p2",
+      "text": "Studio screens (Link 2) moved to their own canvas:\nhttps://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9\n\nThese two sources stay here because Link 1 screens import them.",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "p2-tpl": {
+      "fill": "gray",
+      "page": "p2",
+      "text": "Orientation templates: not screens in the flow. Every lesson and check is generated from these two.",
+      "w": 1910,
+      "x": 0,
+      "y": 2600
+    },
+    "sug05": {
+      "fill": "orange",
+      "maxH": 300,
+      "page": "p1",
+      "text": "I’d remove the footer “Keep building as you learn… See your readiness”. The Readiness page already covers this, and this page is really about getting back into the module.",
+      "w": 1440,
+      "x": 2070,
+      "y": 7494
+    },
+    "sug06": {
+      "fill": "orange",
+      "maxH": 140,
+      "page": "p1",
+      "text": "On all four ID steps, the line “Follow the identity steps, then return to your readiness checklist.” feels like extra reading on top of the tips. I’d remove it and let the tips do the work.",
+      "w": 1440,
+      "x": 4140,
+      "y": 21048
+    },
+    "sug07": {
+      "fill": "orange",
+      "maxH": 140,
+      "page": "p1",
+      "text": "The “What happens next” card and the line under the heading say pretty much the same thing. Shall we keep just one? I’d lean towards the card, with the line shortened to “We’ll notify you when it’s done.”",
+      "w": 1440,
+      "x": 14490,
+      "y": 21048
+    },
+    "sug08": {
+      "fill": "orange",
+      "maxH": 140,
+      "page": "p1",
+      "text": "Two dates here: the line under the heading says 1 Oct 2026, but the card says 7 October 2026. Which one is right?\nThe name, country and date already sit on the card, so the line could simply be: “Your identity badge now shows on your Creator Profile.”",
+      "w": 1440,
+      "x": 16560,
+      "y": 21048
+    },
+    "sug09": {
+      "fill": "orange",
+      "maxH": 140,
+      "page": "p1",
+      "text": "This message is quite long for the space. Could we try:\n“Your verification wasn’t approved. You can keep drafting. Support can help you finish.”\nThen “You can keep drafting while this is sorted.” under the button wouldn’t be needed.",
+      "w": 1440,
+      "x": 20700,
+      "y": 21048
+    },
+    "sug10": {
+      "fill": "orange",
+      "maxH": 360,
+      "page": "p1",
+      "text": "I’ve simplified this page: one column, and the “task complete” box and the next step are now one bar at the bottom.\nThe intro still runs to four lines though. Maybe: “Add degrees, certifications, licences or work experience. They show as verified once checked.”\nAnd the green text could be: “One verified credential completes this task. Others join your profile once verified.”",
+      "w": 1440,
+      "x": 0,
+      "y": 22732
+    },
+    "sug11": {
+      "fill": "orange",
+      "maxH": 360,
+      "page": "p1",
+      "text": "The small label “Add a credential” sits right on top of the heading that says the same thing, so I’d remove it.\nThe two boxes on the left (Checked online / Reviewed) also repeat the tags on each option. Could we drop them to keep the page lighter?",
+      "w": 1440,
+      "x": 4140,
+      "y": 22732
+    },
+    "sug12": {
+      "fill": "orange",
+      "maxH": 360,
+      "page": "p1",
+      "text": "The note on the left and the line next to the button both say it’s reviewed by our team, so I’d keep just the one by the button.\n“Degree or diploma” is also repeated inside the form under the heading. We could keep just the “Change” link up top.",
+      "w": 1440,
+      "x": 6210,
+      "y": 22732
+    },
+    "sug13": {
+      "fill": "orange",
+      "maxH": 360,
+      "page": "p1",
+      "text": "“Verification link or digital badge” is too long for the three options in a row. Could it be “Link or badge”?\nThe note on the left also repeats the line next to the button, so I’d remove it.",
+      "w": 1440,
+      "x": 8280,
+      "y": 22732
+    },
+    "sug14": {
+      "fill": "orange",
+      "maxH": 360,
+      "page": "p1",
+      "text": "Same as the screen before: “Link or badge” instead of “Verification link or digital badge”, and I’d remove the note on the left since the line next to the button already says it.",
+      "w": 1440,
+      "x": 10350,
+      "y": 22732
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "CR-ONB-001-Laptop.dc.html",
+    "CR-ONB-001-Tablet.dc.html",
+    "CR-ONB-001-Mobile.dc.html",
+    "CR-ONB-002.dc.html",
+    "CR-ONB-002-Mobile.dc.html",
+    "CR-ONB-002S.dc.html",
+    "CR-ONB-002S-Mobile.dc.html",
+    "CR-ONB-003.dc.html",
+    "CR-ONB-003-Mobile.dc.html",
+    "CR-ONB-003b.dc.html",
+    "CR-ONB-003b-Mobile.dc.html",
+    "CR-ONB-003v.dc.html",
+    "CR-ONB-003v-Mobile.dc.html",
+    "CR-ONB-002-9qo9.dc.html",
+    "CR-ONB-003c.dc.html",
+    "CR-ONB-003c-Mobile.dc.html",
+    "CR-ONB-004.dc.html",
+    "CR-ONB-004-Mobile.dc.html",
+    "CR-ONB-005.dc.html",
+    "CR-ONB-005-Mobile.dc.html",
+    "CR-ONB-005b.dc.html",
+    "CR-ONB-005b-Mobile.dc.html",
+    "CR-ONB-006.dc.html",
+    "CR-ONB-006-Mobile.dc.html",
+    "CR-ONB-007.dc.html",
+    "CR-ONB-007-Mobile.dc.html",
+    "CR-ONB-008.dc.html",
+    "CR-ONB-008-Mobile.dc.html",
+    "CR-DASH-NEW.dc.html",
+    "CR-DASH-NEW-Mobile.dc.html",
+    "CR-CREATE-001.dc.html",
+    "CR-CREATE-001-Mobile.dc.html",
+    "CR-CREATE-002A.dc.html",
+    "CR-CREATE-002A-Mobile.dc.html",
+    "CR-CREATE-002Ab.dc.html",
+    "CR-CREATE-002Ab-Mobile.dc.html",
+    "CR-CREATE-002B.dc.html",
+    "CR-CREATE-002B-Mobile.dc.html",
+    "CR-RDY-001.dc.html",
+    "CR-RDY-001-Mobile.dc.html",
+    "CR-RDY-001s.dc.html",
+    "CR-RDY-001s-Mobile.dc.html",
+    "CR-CTR-001.dc.html",
+    "CR-CTR-001-Mobile.dc.html",
+    "CR-ORI-001.dc.html",
+    "CR-ORI-001-Mobile.dc.html",
+    "CR-ORI-002.dc.html",
+    "CR-ORI-002-Mobile.dc.html",
+    "CR-ORI-003.dc.html",
+    "CR-ORI-003-Mobile.dc.html",
+    "CR-ORI-004.dc.html",
+    "CR-ORI-004-Mobile.dc.html",
+    "CR-ORI-005.dc.html",
+    "CR-ORI-005-Mobile.dc.html",
+    "CR-ORI-006.dc.html",
+    "CR-ORI-006-Mobile.dc.html",
+    "CR-ORI-007.dc.html",
+    "CR-ORI-007-Mobile.dc.html",
+    "CR-KYC-001.dc.html",
+    "CR-KYC-001-Mobile.dc.html",
+    "CR-KYC-002.dc.html",
+    "CR-KYC-002-Mobile.dc.html",
+    "CR-KYC-002b.dc.html",
+    "CR-KYC-002b-Mobile.dc.html",
+    "CR-KYC-002c.dc.html",
+    "CR-KYC-002c-Mobile.dc.html",
+    "CR-KYC-002d.dc.html",
+    "CR-KYC-002d-Mobile.dc.html",
+    "CR-KYC-003.dc.html",
+    "CR-KYC-003-Mobile.dc.html",
+    "CR-KYC-004.dc.html",
+    "CR-KYC-004-Mobile.dc.html",
+    "CR-KYC-005.dc.html",
+    "CR-KYC-005-Mobile.dc.html",
+    "CR-KYC-006.dc.html",
+    "CR-KYC-006-Mobile.dc.html",
+    "CR-CRED-001.dc.html",
+    "CR-CRED-001-Mobile.dc.html",
+    "CR-CRED-002.dc.html",
+    "CR-CRED-002-Mobile.dc.html",
+    "CR-CRED-002a.dc.html",
+    "CR-CRED-002a-Mobile.dc.html",
+    "CR-CRED-002b.dc.html",
+    "CR-CRED-002b-Mobile.dc.html",
+    "CR-CRED-002c.dc.html",
+    "CR-CRED-002c-Mobile.dc.html",
+    "CR-CRED-002d.dc.html",
+    "CR-CRED-002d-Mobile.dc.html",
+    "CR-CRED-002e.dc.html",
+    "CR-CRED-002e-Mobile.dc.html",
+    "CR-CRED-002f.dc.html",
+    "CR-CRED-002f-Mobile.dc.html",
+    "CR-CRED-003.dc.html",
+    "CR-CRED-003-Mobile.dc.html",
+    "CR-CRED-003b.dc.html",
+    "CR-CRED-003b-Mobile.dc.html",
+    "CR-POL-001.dc.html",
+    "CR-POL-001-Mobile.dc.html",
+    "CR-POL-002.dc.html",
+    "CR-POL-002-Mobile.dc.html",
+    "CR-DASH-S02.dc.html",
+    "CR-DASH-S02-Mobile.dc.html",
+    "CR-DASH-S03.dc.html",
+    "CR-DASH-S03-Mobile.dc.html",
+    "CR-DASH-S04.dc.html",
+    "CR-DASH-S04-Mobile.dc.html",
+    "CR-DASH-S05.dc.html",
+    "CR-DASH-S05-Mobile.dc.html",
+    "CR-DASH-S06.dc.html",
+    "CR-DASH-S06-Mobile.dc.html",
+    "CR-DASH-S07.dc.html",
+    "CR-DASH-S07-Mobile.dc.html",
+    "CR-DASH-S08.dc.html",
+    "CR-DASH-S08-Mobile.dc.html",
+    "CR-DASH-S09.dc.html",
+    "CR-DASH-S09-Mobile.dc.html",
+    "CR-NOT-001.dc.html",
+    "CR-NOT-001-Mobile.dc.html",
+    "CR-NOT-bell.dc.html",
+    "CR-NOT-bell-Mobile.dc.html",
+    "CR-HOME-EXP.dc.html",
+    "CR-HOME-EXP-Mobile.dc.html",
+    "CR-HOME-NEW.dc.html",
+    "CR-HOME-NEW-Mobile.dc.html",
+    "CR-HOME-SET.dc.html",
+    "CR-HOME-SET-Mobile.dc.html",
+    "CR-HOME-SOON.dc.html",
+    "CR-HOME-SOON-Mobile.dc.html",
+    "CR-COL-001.dc.html",
+    "CR-COL-001-Mobile.dc.html",
+    "CR-COL-002.dc.html",
+    "CR-COL-002-Mobile.dc.html",
+    "CR-COL-003.dc.html",
+    "CR-COL-003-Mobile.dc.html",
+    "CR-COL-004.dc.html",
+    "CR-COL-004-Mobile.dc.html",
+    "CR-ASG-001.dc.html",
+    "CR-ASG-001-Mobile.dc.html",
+    "CR-DEC-001.dc.html",
+    "CR-DEC-001-Mobile.dc.html",
+    "CR-DEC-002.dc.html",
+    "CR-DEC-002-Mobile.dc.html",
+    "CR-DEC-003.dc.html",
+    "CR-DEC-003-Mobile.dc.html",
+    "CR-DEC-004.dc.html",
+    "CR-DEC-004-Mobile.dc.html",
+    "CR-VAL-MC-001.dc.html",
+    "CR-VAL-MC-001-Mobile.dc.html",
+    "CR-VAL-WS-lead.dc.html",
+    "CR-VAL-WS-lead-Mobile.dc.html",
+    "CR-VAL-WS-mary.dc.html",
+    "CR-VAL-WS-mary-Mobile.dc.html",
+    "CR-VAL-MC-002.dc.html",
+    "CR-VAL-MC-002-Mobile.dc.html",
+    "CR-VAL-MC-003.dc.html",
+    "CR-VAL-MC-003-Mobile.dc.html",
+    "CR-VAL-MC-002L.dc.html",
+    "CR-VAL-MC-002L-Mobile.dc.html",
+    "CR-DASH-ST.dc.html",
+    "CR-VAL-WS.dc.html",
+    "CR-ONB-003e.dc.html",
+    "CR-ONB-003e-Mobile.dc.html",
+    "CR-ONB-003d.dc.html",
+    "CR-ONB-003d-Mobile.dc.html",
+    "CR-ONB-003ce.dc.html",
+    "CR-ONB-003ce-Mobile.dc.html",
+    "CR-ONB-004e.dc.html",
+    "CR-ONB-004e-Mobile.dc.html",
+    "CR-ONB-005e.dc.html",
+    "CR-ONB-005e-Mobile.dc.html",
+    "CR-ONB-007p.dc.html",
+    "CR-ONB-007p-Mobile.dc.html",
+    "CR-RDY-001d.dc.html",
+    "CR-RDY-001d-Mobile.dc.html",
+    "CR-ORI-001n.dc.html",
+    "CR-ORI-001n-Mobile.dc.html",
+    "CR-ORI-001c.dc.html",
+    "CR-ORI-001c-Mobile.dc.html",
+    "CR-ORI-M1-00.dc.html",
+    "CR-ORI-M1-00-Mobile.dc.html",
+    "CR-ORI-M1-L1.dc.html",
+    "CR-ORI-M1-L1-Mobile.dc.html",
+    "CR-ORI-M1-L2.dc.html",
+    "CR-ORI-M1-L2-Mobile.dc.html",
+    "CR-ORI-M1-K1.dc.html",
+    "CR-ORI-M1-K1-Mobile.dc.html",
+    "CR-ORI-M1-K2.dc.html",
+    "CR-ORI-M1-K2-Mobile.dc.html",
+    "CR-ORI-M1-K3.dc.html",
+    "CR-ORI-M1-K3-Mobile.dc.html",
+    "CR-ORI-M1-DONE.dc.html",
+    "CR-ORI-M1-DONE-Mobile.dc.html",
+    "CR-ORI-M2-00.dc.html",
+    "CR-ORI-M2-00-Mobile.dc.html",
+    "CR-ORI-M2-L1.dc.html",
+    "CR-ORI-M2-L1-Mobile.dc.html",
+    "CR-ORI-M2-L2.dc.html",
+    "CR-ORI-M2-L2-Mobile.dc.html",
+    "CR-ORI-M2-K1.dc.html",
+    "CR-ORI-M2-K1-Mobile.dc.html",
+    "CR-ORI-M2-K2.dc.html",
+    "CR-ORI-M2-K2-Mobile.dc.html",
+    "CR-ORI-M2-K3.dc.html",
+    "CR-ORI-M2-K3-Mobile.dc.html",
+    "CR-ORI-M2-DONE.dc.html",
+    "CR-ORI-M2-DONE-Mobile.dc.html",
+    "CR-ORI-M3-00.dc.html",
+    "CR-ORI-M3-00-Mobile.dc.html",
+    "CR-ORI-M3-L2.dc.html",
+    "CR-ORI-M3-L2-Mobile.dc.html",
+    "CR-ORI-M3-L3.dc.html",
+    "CR-ORI-M3-L3-Mobile.dc.html",
+    "CR-ORI-M3-K1.dc.html",
+    "CR-ORI-M3-K1-Mobile.dc.html",
+    "CR-ORI-M3-K2.dc.html",
+    "CR-ORI-M3-K2-Mobile.dc.html",
+    "CR-ORI-M3-K3.dc.html",
+    "CR-ORI-M3-K3-Mobile.dc.html",
+    "CR-ORI-M4-L1.dc.html",
+    "CR-ORI-M4-L1-Mobile.dc.html",
+    "CR-ORI-M3-DONE.dc.html",
+    "CR-ORI-M3-DONE-Mobile.dc.html",
+    "CR-ORI-M4-L3.dc.html",
+    "CR-ORI-M4-L3-Mobile.dc.html",
+    "CR-ORI-M4-K1.dc.html",
+    "CR-ORI-M4-K1-Mobile.dc.html",
+    "CR-ORI-M4-K2.dc.html",
+    "CR-ORI-M4-K2-Mobile.dc.html",
+    "CR-ORI-M4-K3.dc.html",
+    "CR-ORI-M4-K3-Mobile.dc.html",
+    "CR-ORI-M4-DONE.dc.html",
+    "CR-ORI-M4-DONE-Mobile.dc.html",
+    "CR-ORI-M5-00.dc.html",
+    "CR-ORI-M5-00-Mobile.dc.html",
+    "CR-ORI-M5-L1.dc.html",
+    "CR-ORI-M5-L1-Mobile.dc.html",
+    "CR-ORI-M5-L2.dc.html",
+    "CR-ORI-M5-L2-Mobile.dc.html",
+    "CR-ORI-M5-K1.dc.html",
+    "CR-ORI-M5-K1-Mobile.dc.html",
+    "CR-ORI-M5-K3.dc.html",
+    "CR-ORI-M5-K3-Mobile.dc.html",
+    "CR-ORI-M5-S1.dc.html",
+    "CR-ORI-M5-S1-Mobile.dc.html",
+    "CR-ORI-M5-S3.dc.html",
+    "CR-ORI-M5-S3-Mobile.dc.html",
+    "CR-ORI-M6-00.dc.html",
+    "CR-ORI-M6-00-Mobile.dc.html",
+    "CR-ORI-M6-L1.dc.html",
+    "CR-ORI-M6-L1-Mobile.dc.html",
+    "CR-ORI-M6-L2.dc.html",
+    "CR-ORI-M6-L2-Mobile.dc.html",
+    "CR-ORI-M6-K1.dc.html",
+    "CR-ORI-M6-K1-Mobile.dc.html",
+    "CR-ORI-M6-K2.dc.html",
+    "CR-ORI-M6-K2-Mobile.dc.html",
+    "CR-ORI-M6-K3.dc.html",
+    "CR-ORI-M6-K3-Mobile.dc.html",
+    "CR-ORI-M6-DONE.dc.html",
+    "CR-ORI-M6-DONE-Mobile.dc.html",
+    "CR-ORI-M7-00.dc.html",
+    "CR-ORI-M7-00-Mobile.dc.html",
+    "CR-ORI-M7-L1.dc.html",
+    "CR-ORI-M7-L1-Mobile.dc.html",
+    "CR-ORI-M7-L2.dc.html",
+    "CR-ORI-M7-L2-Mobile.dc.html",
+    "CR-ORI-M7-K1.dc.html",
+    "CR-ORI-M7-K1-Mobile.dc.html",
+    "CR-ORI-M7-K2.dc.html",
+    "CR-ORI-M7-K2-Mobile.dc.html",
+    "CR-ORI-M7-K3.dc.html",
+    "CR-ORI-M7-K3-Mobile.dc.html",
+    "CR-ORI-M7-S1.dc.html",
+    "CR-ORI-M7-S1-Mobile.dc.html",
+    "CR-ORI-M7-S2.dc.html",
+    "CR-ORI-M7-S2-Mobile.dc.html",
+    "CR-ORI-M7-S3.dc.html",
+    "CR-ORI-M7-S3-Mobile.dc.html",
+    "CR-ORI-M7-DONE.dc.html",
+    "CR-ORI-M7-DONE-Mobile.dc.html",
+    "CR-ORI-M4-L2.dc.html",
+    "CR-ORI-M4-L2-Mobile.dc.html",
+    "CR-KYC-001e.dc.html",
+    "CR-KYC-001e-Mobile.dc.html",
+    "CR-KYC-002e.dc.html",
+    "CR-KYC-002e-Mobile.dc.html",
+    "CR-CRED-001r.dc.html",
+    "CR-CRED-001r-Mobile.dc.html",
+    "CR-CRED-002g.dc.html",
+    "CR-CRED-002g-Mobile.dc.html",
+    "CR-CRED-002h.dc.html",
+    "CR-CRED-002h-Mobile.dc.html",
+    "CR-CRED-002x.dc.html",
+    "CR-CRED-002x-Mobile.dc.html",
+    "CR-POL-000.dc.html",
+    "CR-POL-000-Mobile.dc.html",
+    "CR-COL-002a.dc.html",
+    "CR-COL-002a-Mobile.dc.html",
+    "CR-COL-002d.dc.html",
+    "CR-COL-002d-Mobile.dc.html",
+    "CR-COL-002x.dc.html",
+    "CR-COL-002x-Mobile.dc.html",
+    "CR-COL-003d.dc.html",
+    "CR-COL-003d-Mobile.dc.html",
+    "CR-DEC-004f.dc.html",
+    "CR-DEC-004f-Mobile.dc.html",
+    "CR-ORI-M3-L1.dc.html",
+    "CR-ORI-M3-L1-Mobile.dc.html",
+    "CR-ORI-M5-K2.dc.html",
+    "CR-ORI-M5-K2-Mobile.dc.html",
+    "CR-ORI-M1-K.dc.html",
+    "CR-ORI-M2-K.dc.html",
+    "CR-ORI-M3-K.dc.html",
+    "CR-ORI-M4-K.dc.html",
+    "CR-ORI-M5-K.dc.html",
+    "CR-ORI-M6-K.dc.html",
+    "CR-ORI-M7-K.dc.html",
+    "CR-ORI-M7-S.dc.html"
+  ],
+  "pages": [
+    {
+      "id": "p1",
+      "name": "Link 1 (client D3Y)"
+    },
+    {
+      "id": "p2",
+      "name": "Page 2 · shared sources (Studio moved)"
+    }
+  ],
+  "title": "Credalio Creator Flow"
 }

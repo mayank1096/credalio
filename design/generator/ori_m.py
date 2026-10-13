@@ -43,7 +43,7 @@ LESSON_CSS = """
 .ls-gk{padding:16px 18px;border-radius:18px;background:#F5F8FF;border:1.5px solid #E6EAF3;display:flex;flex-direction:column;gap:4px}
 .ls-gk i{width:28px;height:28px;border-radius:9px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
 .ls-gk b{font-size:14px;font-weight:600}.ls-gk span{font-size:13.5px;line-height:1.5;color:#4A5578}
-.ls-vid{position:relative;margin:24px 0 0 0;border-radius:22px;overflow:hidden;aspect-ratio:10/3;background:#F7F9FD url(/_blob/35f92c519316f253dc620c3c4b2d859c) center 70% / 104% auto no-repeat;border:1.5px solid #E6EAF3}
+.ls-vid{position:relative;margin:24px 0 0 0;border-radius:22px;overflow:hidden;aspect-ratio:10/3;background:#F7F9FD url(/_blob/c6a3cfeead45b159745cbe37bd22bc3f) center 70% / 104% auto no-repeat;border:1.5px solid #E6EAF3}
 .ls-vid::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0) 40%,rgba(11,20,51,.10))}
 .ls-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:1;width:64px;height:64px;border-radius:50%;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(22,82,240,.14),0 14px 30px rgba(22,82,240,.30)}
 .ls-cap{position:absolute;left:16px;bottom:14px;z-index:1;display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:999px;background:#FFFFFF;color:#0B1433;font-size:13px;font-weight:500;box-shadow:0 4px 14px rgba(11,20,51,.10)}

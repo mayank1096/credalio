@@ -293,7 +293,7 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `ORI-M3-K3` M3 · Knowledge check: incorrect answer (try again)
 - [x] D [x] M  `ORI-M4-L1` M4 · Lesson 1: What validators look at
 - [x] D [x] M  `ORI-M3-DONE` M3 · Module complete (extra, no Link 1 slot; placed after CR-ORI-006)
-- [ ] D [ ] M  `ORI-M4-L2` M4 · Lesson 2: The validation case
+- [x] D [x] M  `ORI-M4-L2` M4 · Lesson 2: The validation case
 - [x] D [x] M  `ORI-M4-L3` M4 · Lesson 3: Tiers and revalidation
 - [x] D [x] M  `ORI-M4-K1` M4 · Knowledge check: unanswered
 - [x] D [x] M  `ORI-M4-K2` M4 · Knowledge check: correct answers
@@ -320,10 +320,10 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `ORI-M7-K1` M7 · Knowledge check: unanswered
 - [x] D [x] M  `ORI-M7-K2` M7 · Knowledge check: correct answers
 - [x] D [x] M  `ORI-M7-K3` M7 · Knowledge check: incorrect answer (try again)
-- [ ] D [ ] M  `ORI-M7-S1` M7 · Scenario exercise: unanswered
-- [ ] D [ ] M  `ORI-M7-S2` M7 · Scenario exercise: correct response
-- [ ] D [ ] M  `ORI-M7-S3` M7 · Scenario exercise: incorrect response
-- [ ] D [ ] M  `ORI-M7-DONE` M7 · Module complete
+- [x] D [x] M  `ORI-M7-S1` M7 · Scenario exercise: unanswered
+- [x] D [x] M  `ORI-M7-S2` M7 · Scenario exercise: correct response
+- [x] D [x] M  `ORI-M7-S3` M7 · Scenario exercise: incorrect response
+- [x] D [x] M  `ORI-M7-DONE` M7 · Module complete
 
 ## Link 1 · states & errors (D3YR4Ee6ZP53iSMf3v6LQT)
 

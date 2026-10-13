@@ -4118,6 +4118,96 @@
    "x": 5660,
    "y": 16884,
    "page": "p1"
+  },
+  "CR-ORI-M6-K1.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M6-K1 · Knowledge check: unanswered · Desktop",
+   "w": 1440,
+   "x": 6210,
+   "y": 16884,
+   "page": "p1"
+  },
+  "CR-ORI-M6-K1-Mobile.dc.html": {
+   "h": 1000,
+   "is_interactive": true,
+   "title": "CR-ORI-M6-K1 · Mobile",
+   "w": 390,
+   "x": 7730,
+   "y": 16884,
+   "page": "p1"
+  },
+  "CR-ORI-M6-K2.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M6-K2 · Knowledge check: correct answers · Desktop",
+   "w": 1440,
+   "x": 8280,
+   "y": 16884,
+   "page": "p1"
+  },
+  "CR-ORI-M6-K2-Mobile.dc.html": {
+   "h": 1000,
+   "is_interactive": true,
+   "title": "CR-ORI-M6-K2 · Mobile",
+   "w": 390,
+   "x": 9800,
+   "y": 16884,
+   "page": "p1"
+  },
+  "CR-ORI-M6-K3.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M6-K3 · Knowledge check: try again · Desktop",
+   "w": 1440,
+   "x": 10350,
+   "y": 16884,
+   "page": "p1"
+  },
+  "CR-ORI-M6-K3-Mobile.dc.html": {
+   "h": 1000,
+   "is_interactive": true,
+   "title": "CR-ORI-M6-K3 · Mobile",
+   "w": 390,
+   "x": 11870,
+   "y": 16884,
+   "page": "p1"
+  },
+  "CR-ORI-M6-DONE.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M6-DONE · Module 6 complete · Desktop",
+   "w": 1440,
+   "x": 12420,
+   "y": 16884,
+   "page": "p1"
+  },
+  "CR-ORI-M6-DONE-Mobile.dc.html": {
+   "h": 900,
+   "is_interactive": true,
+   "title": "CR-ORI-M6-DONE · Mobile",
+   "w": 390,
+   "x": 13940,
+   "y": 16884,
+   "page": "p1"
+  },
+  "CR-ORI-M7-00.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M7-00 · Module 7 overview · Desktop",
+   "w": 1440,
+   "x": 0,
+   "y": 18544,
+   "page": "p1"
+  },
+  "CR-ORI-M7-00-Mobile.dc.html": {
+   "h": 1200,
+   "is_interactive": true,
+   "title": "CR-ORI-M7-00 · Mobile",
+   "w": 390,
+   "x": 1520,
+   "y": 18544,
+   "page": "p1"
   }
  },
  "createdOnFiles": {
@@ -4226,34 +4316,6 @@
    "y": 16564,
    "page": "p1"
   },
-  "l1m-CR-ORI-M6-K1": {
-   "text": "Not done yet\nCR-ORI-M6-K1 · M6 · Knowledge check: unanswered",
-   "x": 6210,
-   "y": 16884,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-ORI-M6-K2": {
-   "text": "Not done yet\nCR-ORI-M6-K2 · M6 · Knowledge check: correct answers",
-   "x": 8280,
-   "y": 16884,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-ORI-M6-K3": {
-   "text": "Not done yet\nCR-ORI-M6-K3 · M6 · Knowledge check: incorrect answer (try again)",
-   "x": 10350,
-   "y": 16884,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-ORI-M6-DONE": {
-   "text": "Not done yet\nCR-ORI-M6-DONE · M6 · Module complete",
-   "x": 12420,
-   "y": 16884,
-   "w": 1440,
-   "page": "p1"
-  },
   "l1s12": {
    "kind": "title1",
    "maxW": 8000,
@@ -4261,13 +4323,6 @@
    "w": 240,
    "x": 0,
    "y": 18224,
-   "page": "p1"
-  },
-  "l1m-CR-ORI-M7-00": {
-   "text": "Not done yet\nCR-ORI-M7-00 · M7 · Creator Responsibilities: module overview",
-   "x": 0,
-   "y": 18544,
-   "w": 1440,
    "page": "p1"
   },
   "l1m-CR-ORI-M7-L1": {
@@ -4775,50 +4830,42 @@
    "y": 22732,
    "page": "p1"
   },
-  "new-CR-ORI-M5-S1": {
-   "text": "NEW · just made · CR-ORI-M5-S1",
+  "new-CR-ORI-M6-K1": {
+   "text": "NEW · just made · CR-ORI-M6-K1",
+   "x": 6210,
+   "y": 17924,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
+  },
+  "new-CR-ORI-M6-K2": {
+   "text": "NEW · just made · CR-ORI-M6-K2",
+   "x": 8280,
+   "y": 17924,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
+  },
+  "new-CR-ORI-M6-K3": {
+   "text": "NEW · just made · CR-ORI-M6-K3",
+   "x": 10350,
+   "y": 17924,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
+  },
+  "new-CR-ORI-M6-DONE": {
+   "text": "NEW · just made · CR-ORI-M6-DONE",
    "x": 12420,
-   "y": 16144,
+   "y": 17824,
    "w": 1910,
    "fill": "blue",
    "page": "p1"
   },
-  "new-CR-ORI-M5-S3": {
-   "text": "NEW · just made · CR-ORI-M5-S3",
-   "x": 16560,
-   "y": 16144,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-ORI-M5-DONE": {
-   "text": "NEW · just made · CR-ORI-M5-DONE",
-   "x": 18630,
-   "y": 16084,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-ORI-M6-00": {
-   "text": "NEW · just made · CR-ORI-M6-00",
+  "new-CR-ORI-M7-00": {
+   "text": "NEW · just made · CR-ORI-M7-00",
    "x": 0,
-   "y": 18064,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-ORI-M6-L1": {
-   "text": "NEW · just made · CR-ORI-M6-L1",
-   "x": 2070,
-   "y": 17884,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-ORI-M6-L2": {
-   "text": "NEW · just made · CR-ORI-M6-L2",
-   "x": 4140,
-   "y": 17884,
+   "y": 19784,
    "w": 1910,
    "fill": "blue",
    "page": "p1"
@@ -5283,7 +5330,17 @@
   "CR-ORI-M6-L1.dc.html",
   "CR-ORI-M6-L1-Mobile.dc.html",
   "CR-ORI-M6-L2.dc.html",
-  "CR-ORI-M6-L2-Mobile.dc.html"
+  "CR-ORI-M6-L2-Mobile.dc.html",
+  "CR-ORI-M6-K1.dc.html",
+  "CR-ORI-M6-K1-Mobile.dc.html",
+  "CR-ORI-M6-K2.dc.html",
+  "CR-ORI-M6-K2-Mobile.dc.html",
+  "CR-ORI-M6-K3.dc.html",
+  "CR-ORI-M6-K3-Mobile.dc.html",
+  "CR-ORI-M6-DONE.dc.html",
+  "CR-ORI-M6-DONE-Mobile.dc.html",
+  "CR-ORI-M7-00.dc.html",
+  "CR-ORI-M7-00-Mobile.dc.html"
  ],
  "pages": [
   {

@@ -227,6 +227,11 @@ body{background:#FFFFFF}
 .tk-root{position:relative;isolation:isolate}
 .tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/6acc9dd1cd600c17d2fd6381a3069aaa) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
 @media (max-width: 760px){.tk-scene{height:240px;background-size:250% auto;background-position:52% 100%}}
+
+/* build51 consent error */
+.kx-err{display:flex;align-items:center;gap:6px;margin:8px 0 0 0;font-size:13.5px;line-height:1.4;color:#B42318}.kx-err svg{flex-shrink:0}
+.tk-check.tk-bad .tk-box{border-color:#D92D20;box-shadow:0 0 0 3px rgba(217,45,32,.12)}
+.k1-card .kx-err{margin:-6px 0 4px 32px}
 </style>
 </helmet>
 <div class="tk-root">
@@ -248,7 +253,7 @@ body{background:#FFFFFF}
 <aside class="k1-card ob-in2">
 <span class="k1-ptn"><span class="k1-logo">S</span><span><b>Verified by Sumsub</b><span>Our identity partner</span></span></span>
 <p class="k1-priv"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span>Sumsub handles your ID check.</span></p>
-<label class="tk-check {{ckCls}}" onClick="{{toggle}}"><span class="tk-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>I agree to Sumsub processing my ID and biometric data to verify me. <a href="#">Privacy notice</a></span></label>
+<label class="tk-check {{ckCls}}" onClick="{{toggle}}"><span class="tk-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>I agree to Sumsub processing my ID and biometric data to verify me. <a href="#">Privacy notice</a></span></label><sc-if value="{{showErr}}" hint-placeholder-val="{{false}}"><p class="kx-err" role="alert"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5"></path><path d="M12 16.2v.2"></path></svg>Tick the box so Sumsub can check your ID.</p></sc-if>
 <a href="CR-KYC-002.dc.html" class="ds-btn k1-go {{goCls}}"><span>Start verification</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
 <span class="k1-later">You can keep drafting while we verify.</span>
 </aside>
@@ -257,8 +262,8 @@ body{background:#FFFFFF}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { ok: false }; }
-  renderVals() { const ok = this.state.ok; return { ckCls: ok ? 'tk-on' : '', goCls: ok ? '' : 'lp-off', toggle: (e) => { if (e && e.target && e.target.tagName === 'A') return; if (e && e.preventDefault) e.preventDefault(); this.setState({ ok: !ok }); } }; }
+  constructor(props) { super(props); this.state = { ok: false, err: ((props || {}).variant) === 'err' }; }
+  renderVals() { const ok = this.state.ok; const err = this.state.err && !ok; return { showErr: err, ckCls: ok ? 'tk-on' : (err ? 'tk-bad' : ''), goCls: (ok || err) ? '' : 'lp-off', toggle: (e) => { if (e && e.target && e.target.tagName === 'A') return; if (e && e.preventDefault) e.preventDefault(); this.setState({ ok: !ok }); } }; }
 }
 </script>
 </body>

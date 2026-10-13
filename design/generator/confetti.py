@@ -1,6 +1,6 @@
 # confetti.py: shared success confetti (designer 2026-10-13 "all success screens should have confetti").
-# A burst of pieces around the green tick. Default (static) state = burst visible, so it shows in the canvas editor;
-# in Play mode the pieces pop out from the tick. Insert CONF inside the emblem (position:relative), add CSS once.
+# A burst of pieces from the green tick that falls away and disappears (designer 2026-10-13 "confetti should not stuck anywhere");
+# nothing stays on screen. Plays in Play mode / live only. Insert CONF inside the emblem (position:relative), add CSS once.
 import random
 _r = random.Random(7)
 COL = ['#1652F0', '#6E96FF', '#AFC1F5', '#F6C343', '#0F6B45', '#3BB273', '#1652F0', '#F6C343']
@@ -18,10 +18,15 @@ CONF = '<span class="cf" aria-hidden="true">' + ''.join(_pieces()) + '</span>'
 CSS = """
 /* confetti.py success burst */
 .cf{position:absolute;left:50%;top:50%;width:0;height:0;pointer-events:none;z-index:0;--k:1}
-.cf i{position:absolute;left:0;top:0;display:block;transform:translate(calc(var(--x) * var(--k) * 1px - 50%),calc(var(--y) * 1px - 50%)) rotate(var(--r));animation:cfPop 1.1s cubic-bezier(.16,.84,.32,1) both}
-@keyframes cfPop{0%{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(0)}18%{opacity:1}}
+.cf i{position:absolute;left:0;top:0;display:block;opacity:0;animation:cfFall 2.8s cubic-bezier(.2,.7,.4,1) both}
+@keyframes cfFall{
+0%{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(0)}
+8%{opacity:1}
+22%{opacity:1;transform:translate(calc(var(--x) * var(--k) * 1px - 50%),calc(var(--y) * 1px - 50%)) rotate(var(--r))}
+75%{opacity:.9}
+100%{opacity:0;transform:translate(calc(var(--x) * var(--k) * 1.12px - 50%),calc(var(--y) * 1px + 340px)) rotate(calc(var(--r) + 260deg))}}
 @media (max-width: 960px){.cf{--k:.56}}
-@media (prefers-reduced-motion: reduce){.cf i{animation:none}}
+@media (prefers-reduced-motion: reduce){.cf{display:none}}
 """
 def add_css(s):
     if '/* confetti.py success burst */' in s: return s

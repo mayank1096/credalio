@@ -307,6 +307,9 @@ body{background:#FFFFFF}
 .pa-l li{display:flex;align-items:center;gap:9px;font-size:14px;color:#0B1433;min-width:0}
 .pa-c{width:20px;height:20px;flex-shrink:0;border-radius:50%;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
 .pa-c svg{width:11px;height:11px}
+/* pa-fill: list fills the card height (no empty bottom) */
+.ko-row .pa-card{grid-template-rows:1fr auto;align-content:stretch;row-gap:16px}
+.ko-row .pa-card .pa-l{align-content:space-between;row-gap:12px}
 @media (max-width: 760px){.pa-l{grid-template-columns:1fr}}
 
 /* confetti.py success burst */

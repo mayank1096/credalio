@@ -317,6 +317,15 @@ body{background:#FFFFFF}
 @media (prefers-reduced-motion: reduce){.cf{display:none}}
 
 .ko-halo,.ko-disc{z-index:1}
+
+/* grey1013: in review = grey */
+.tk-root:has(.ko-r){--glow:91,101,130}
+.ko-r{--k:#5B6582;--kb:#EEF1F7}
+.ko-r .ko-halo::after{border-top-color:#5B6582}
+.ko-r .ko-done .ko-dot{background:#5B6582;border-color:#5B6582}
+.ko-r .ko-path li.ko-done::before{background:#5B6582}
+.ko-r .ko-now .ko-dot{border-color:#5B6582;box-shadow:0 0 0 4px rgba(91,101,130,.14)}
+.ko-r .ko-now .ko-dot::after{background:#5B6582}
 </style>
 </helmet>
 <div class="tk-root">

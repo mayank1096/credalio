@@ -2212,22 +2212,22 @@
    "page": "p1"
   },
   "CR-ORI-006-Mobile.dc.html": {
-   "h": 844,
+   "h": 900,
    "is_interactive": true,
    "title": "CR-ORI-006 · Mobile",
    "w": 390,
-   "x": 16010,
-   "y": 11630,
+   "x": 20150,
+   "y": 15144,
    "page": "p1"
   },
   "CR-ORI-006.dc.html": {
    "expand": "fill",
    "h": 820,
    "is_interactive": true,
-   "title": "CR-ORI-006 · Module complete · Desktop",
+   "title": "CR-ORI-006 · Module 5 complete · Desktop",
    "w": 1440,
-   "x": 14490,
-   "y": 11630,
+   "x": 18630,
+   "y": 15144,
    "page": "p1"
   },
   "CR-ORI-007-Mobile.dc.html": {
@@ -4047,24 +4047,6 @@
    "y": 15144,
    "page": "p1"
   },
-  "CR-ORI-M5-DONE.dc.html": {
-   "h": 820,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-DONE · Module 5 complete · Desktop",
-   "w": 1440,
-   "x": 18630,
-   "y": 15144,
-   "page": "p1"
-  },
-  "CR-ORI-M5-DONE-Mobile.dc.html": {
-   "h": 900,
-   "is_interactive": true,
-   "title": "CR-ORI-M5-DONE · Mobile",
-   "w": 390,
-   "x": 20150,
-   "y": 15144,
-   "page": "p1"
-  },
   "CR-ORI-M6-00.dc.html": {
    "h": 820,
    "is_interactive": true,
@@ -4298,6 +4280,96 @@
    "x": 11870,
    "y": 18544,
    "page": "p1"
+  },
+  "CR-ORI-M7-S1.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M7-S1 · Scenario exercise: unanswered · Desktop",
+   "w": 1440,
+   "x": 12420,
+   "y": 18544,
+   "page": "p1"
+  },
+  "CR-ORI-M7-S1-Mobile.dc.html": {
+   "h": 960,
+   "is_interactive": true,
+   "title": "CR-ORI-M7-S1 · Mobile",
+   "w": 390,
+   "x": 13940,
+   "y": 18544,
+   "page": "p1"
+  },
+  "CR-ORI-M7-S2.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M7-S2 · Scenario exercise: correct · Desktop",
+   "w": 1440,
+   "x": 14490,
+   "y": 18544,
+   "page": "p1"
+  },
+  "CR-ORI-M7-S2-Mobile.dc.html": {
+   "h": 960,
+   "is_interactive": true,
+   "title": "CR-ORI-M7-S2 · Mobile",
+   "w": 390,
+   "x": 16010,
+   "y": 18544,
+   "page": "p1"
+  },
+  "CR-ORI-M7-S3.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M7-S3 · Scenario exercise: try again · Desktop",
+   "w": 1440,
+   "x": 16560,
+   "y": 18544,
+   "page": "p1"
+  },
+  "CR-ORI-M7-S3-Mobile.dc.html": {
+   "h": 960,
+   "is_interactive": true,
+   "title": "CR-ORI-M7-S3 · Mobile",
+   "w": 390,
+   "x": 18080,
+   "y": 18544,
+   "page": "p1"
+  },
+  "CR-ORI-M7-DONE.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M7-DONE · Module 7 complete · Desktop",
+   "w": 1440,
+   "x": 18630,
+   "y": 18544,
+   "page": "p1"
+  },
+  "CR-ORI-M7-DONE-Mobile.dc.html": {
+   "h": 900,
+   "is_interactive": true,
+   "title": "CR-ORI-M7-DONE · Mobile",
+   "w": 390,
+   "x": 20150,
+   "y": 18544,
+   "page": "p1"
+  },
+  "CR-ORI-M4-L2.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-ORI-M4-L2 · Lesson 2: The validation case · Desktop",
+   "w": 1440,
+   "x": 4140,
+   "y": 13314,
+   "page": "p1"
+  },
+  "CR-ORI-M4-L2-Mobile.dc.html": {
+   "h": 900,
+   "is_interactive": true,
+   "title": "CR-ORI-M4-L2 · Mobile",
+   "w": 390,
+   "x": 5660,
+   "y": 13314,
+   "page": "p1"
   }
  },
  "createdOnFiles": {
@@ -4381,13 +4453,6 @@
    "y": 12994,
    "page": "p1"
   },
-  "l1m-CR-ORI-M4-L2": {
-   "text": "Not done yet\nCR-ORI-M4-L2 · M4 · Lesson 2: The validation case",
-   "x": 4140,
-   "y": 13314,
-   "w": 1440,
-   "page": "p1"
-  },
   "l1s10": {
    "kind": "title1",
    "maxW": 8000,
@@ -4413,34 +4478,6 @@
    "w": 240,
    "x": 0,
    "y": 18224,
-   "page": "p1"
-  },
-  "l1m-CR-ORI-M7-S1": {
-   "text": "Not done yet\nCR-ORI-M7-S1 · M7 · Scenario exercise: unanswered",
-   "x": 12420,
-   "y": 18544,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-ORI-M7-S2": {
-   "text": "Not done yet\nCR-ORI-M7-S2 · M7 · Scenario exercise: correct response",
-   "x": 14490,
-   "y": 18544,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-ORI-M7-S3": {
-   "text": "Not done yet\nCR-ORI-M7-S3 · M7 · Scenario exercise: incorrect response",
-   "x": 16560,
-   "y": 18544,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-ORI-M7-DONE": {
-   "text": "Not done yet\nCR-ORI-M7-DONE · M7 · Module complete",
-   "x": 18630,
-   "y": 18544,
-   "w": 1440,
    "page": "p1"
   },
   "l1s13": {
@@ -4885,42 +4922,42 @@
    "y": 22732,
    "page": "p1"
   },
-  "new-CR-ORI-M7-L1": {
-   "text": "NEW · just made · CR-ORI-M7-L1",
-   "x": 2070,
-   "y": 19484,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-ORI-M7-L2": {
-   "text": "NEW · just made · CR-ORI-M7-L2",
-   "x": 4140,
+  "new-CR-ORI-M7-S1": {
+   "text": "NEW · just made · CR-ORI-M7-S1",
+   "x": 12420,
    "y": 19544,
    "w": 1910,
    "fill": "blue",
    "page": "p1"
   },
-  "new-CR-ORI-M7-K1": {
-   "text": "NEW · just made · CR-ORI-M7-K1",
-   "x": 6210,
-   "y": 19584,
+  "new-CR-ORI-M7-S2": {
+   "text": "NEW · just made · CR-ORI-M7-S2",
+   "x": 14490,
+   "y": 19544,
    "w": 1910,
    "fill": "blue",
    "page": "p1"
   },
-  "new-CR-ORI-M7-K2": {
-   "text": "NEW · just made · CR-ORI-M7-K2",
-   "x": 8280,
-   "y": 19584,
+  "new-CR-ORI-M7-S3": {
+   "text": "NEW · just made · CR-ORI-M7-S3",
+   "x": 16560,
+   "y": 19544,
    "w": 1910,
    "fill": "blue",
    "page": "p1"
   },
-  "new-CR-ORI-M7-K3": {
-   "text": "NEW · just made · CR-ORI-M7-K3",
-   "x": 10350,
-   "y": 19584,
+  "new-CR-ORI-M7-DONE": {
+   "text": "NEW · just made · CR-ORI-M7-DONE",
+   "x": 18630,
+   "y": 19484,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
+  },
+  "new-CR-ORI-M4-L2": {
+   "text": "NEW · just made · CR-ORI-M4-L2",
+   "x": 4140,
+   "y": 14254,
    "w": 1910,
    "fill": "blue",
    "page": "p1"
@@ -5378,8 +5415,6 @@
   "CR-ORI-M5-S1-Mobile.dc.html",
   "CR-ORI-M5-S3.dc.html",
   "CR-ORI-M5-S3-Mobile.dc.html",
-  "CR-ORI-M5-DONE.dc.html",
-  "CR-ORI-M5-DONE-Mobile.dc.html",
   "CR-ORI-M6-00.dc.html",
   "CR-ORI-M6-00-Mobile.dc.html",
   "CR-ORI-M6-L1.dc.html",
@@ -5405,7 +5440,17 @@
   "CR-ORI-M7-K2.dc.html",
   "CR-ORI-M7-K2-Mobile.dc.html",
   "CR-ORI-M7-K3.dc.html",
-  "CR-ORI-M7-K3-Mobile.dc.html"
+  "CR-ORI-M7-K3-Mobile.dc.html",
+  "CR-ORI-M7-S1.dc.html",
+  "CR-ORI-M7-S1-Mobile.dc.html",
+  "CR-ORI-M7-S2.dc.html",
+  "CR-ORI-M7-S2-Mobile.dc.html",
+  "CR-ORI-M7-S3.dc.html",
+  "CR-ORI-M7-S3-Mobile.dc.html",
+  "CR-ORI-M7-DONE.dc.html",
+  "CR-ORI-M7-DONE-Mobile.dc.html",
+  "CR-ORI-M4-L2.dc.html",
+  "CR-ORI-M4-L2-Mobile.dc.html"
  ],
  "pages": [
   {

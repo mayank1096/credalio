@@ -310,11 +310,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `ORI-M6-00` M6 · Creator Economy: module overview
 - [x] D [x] M  `ORI-M6-L1` M6 · Lesson 1: DLP and Credits
 - [x] D [x] M  `ORI-M6-L2` M6 · Lesson 2: Credit Wallet vs Earnings
-- [ ] D [ ] M  `ORI-M6-K1` M6 · Knowledge check: unanswered
-- [ ] D [ ] M  `ORI-M6-K2` M6 · Knowledge check: correct answers
-- [ ] D [ ] M  `ORI-M6-K3` M6 · Knowledge check: incorrect answer (try again)
-- [ ] D [ ] M  `ORI-M6-DONE` M6 · Module complete
-- [ ] D [ ] M  `ORI-M7-00` M7 · Creator Responsibilities: module overview
+- [x] D [x] M  `ORI-M6-K1` M6 · Knowledge check: unanswered
+- [x] D [x] M  `ORI-M6-K2` M6 · Knowledge check: correct answers
+- [x] D [x] M  `ORI-M6-K3` M6 · Knowledge check: incorrect answer (try again)
+- [x] D [x] M  `ORI-M6-DONE` M6 · Module complete
+- [x] D [x] M  `ORI-M7-00` M7 · Creator Responsibilities: module overview
 - [ ] D [ ] M  `ORI-M7-L1` M7 · Lesson 1: Your obligations to learners
 - [ ] D [ ] M  `ORI-M7-L2` M7 · Lesson 2: Declarations and changes
 - [ ] D [ ] M  `ORI-M7-K1` M7 · Knowledge check: unanswered

@@ -495,7 +495,7 @@ body{background:#FFFFFF}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { acc: { terms: true, ip: true }, open: 'ai' }; }
+  constructor(props) { super(props); const none = ((props || {}).variant) === 'none'; this.state = none ? { acc: {}, open: 'terms' } : { acc: { terms: true, ip: true }, open: 'ai' }; }
   renderVals() {
     const K = ['terms', 'ip', 'ai', 'val', 'learn', 'pay'];
     const S = this.state, out = {};

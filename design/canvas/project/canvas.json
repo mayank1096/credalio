@@ -2664,6 +2664,96 @@
    "x": 20150,
    "y": 21888,
    "page": "p1"
+  },
+  "CR-CRED-002x.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-CRED-002x · Missing required fields · Desktop",
+   "w": 1440,
+   "x": 22770,
+   "y": 21888,
+   "page": "p1"
+  },
+  "CR-CRED-002x-Mobile.dc.html": {
+   "h": 1000,
+   "is_interactive": true,
+   "title": "CR-CRED-002x · Mobile",
+   "w": 390,
+   "x": 24290,
+   "y": 21888,
+   "page": "p1"
+  },
+  "CR-POL-000.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-POL-000 · None accepted yet · Desktop",
+   "w": 1440,
+   "x": 0,
+   "y": 23572,
+   "page": "p1"
+  },
+  "CR-POL-000-Mobile.dc.html": {
+   "h": 900,
+   "is_interactive": true,
+   "title": "CR-POL-000 · Mobile",
+   "w": 390,
+   "x": 1520,
+   "y": 23572,
+   "page": "p1"
+  },
+  "CR-COL-002a.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-COL-002a · Ask a question · Desktop",
+   "w": 1440,
+   "x": 4140,
+   "y": 29216,
+   "page": "p1"
+  },
+  "CR-COL-002a-Mobile.dc.html": {
+   "h": 1300,
+   "is_interactive": true,
+   "title": "CR-COL-002a · Mobile",
+   "w": 390,
+   "x": 5660,
+   "y": 29216,
+   "page": "p1"
+  },
+  "CR-COL-002d.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-COL-002d · Confirm decline · Desktop",
+   "w": 1440,
+   "x": 6210,
+   "y": 29216,
+   "page": "p1"
+  },
+  "CR-COL-002d-Mobile.dc.html": {
+   "h": 1300,
+   "is_interactive": true,
+   "title": "CR-COL-002d · Mobile",
+   "w": 390,
+   "x": 7730,
+   "y": 29216,
+   "page": "p1"
+  },
+  "CR-COL-002x.dc.html": {
+   "h": 820,
+   "is_interactive": true,
+   "title": "CR-COL-002x · Invitation declined · Desktop",
+   "w": 1440,
+   "x": 8280,
+   "y": 29216,
+   "page": "p1"
+  },
+  "CR-COL-002x-Mobile.dc.html": {
+   "h": 844,
+   "is_interactive": true,
+   "title": "CR-COL-002x · Mobile",
+   "w": 390,
+   "x": 9800,
+   "y": 29216,
+   "page": "p1"
   }
  },
  "createdOnFiles": {
@@ -2792,13 +2882,6 @@
    "y": 21568,
    "page": "p1"
   },
-  "l1m-CR-CRED-002x": {
-   "text": "Not done yet\nCR-CRED-002x · CRED-002 · Missing required fields (error)",
-   "x": 22770,
-   "y": 21888,
-   "w": 1440,
-   "page": "p1"
-  },
   "l1s15": {
    "kind": "title1",
    "maxW": 8000,
@@ -2806,13 +2889,6 @@
    "w": 240,
    "x": 0,
    "y": 23252,
-   "page": "p1"
-  },
-  "l1m-CR-POL-000": {
-   "text": "Not done yet\nCR-POL-000 · POL-001 · Creator Policies: none accepted yet",
-   "x": 0,
-   "y": 23572,
-   "w": 1440,
    "page": "p1"
   },
   "l1s16": {
@@ -2847,27 +2923,6 @@
    "w": 240,
    "x": 0,
    "y": 28896,
-   "page": "p1"
-  },
-  "l1m-CR-COL-002a": {
-   "text": "Not done yet\nCR-COL-002a · CR-COL-002 · Invitation: ask a question",
-   "x": 4140,
-   "y": 29216,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-COL-002d": {
-   "text": "Not done yet\nCR-COL-002d · CR-COL-002 · Invitation: confirm decline",
-   "x": 6210,
-   "y": 29216,
-   "w": 1440,
-   "page": "p1"
-  },
-  "l1m-CR-COL-002x": {
-   "text": "Not done yet\nCR-COL-002x · CR-COL-002 · Invitation declined",
-   "x": 8280,
-   "y": 29216,
-   "w": 1440,
    "page": "p1"
   },
   "l1m-CR-COL-003d": {
@@ -3009,42 +3064,42 @@
    "fill": "blue",
    "page": "p2"
   },
-  "new-CR-KYC-001e": {
-   "text": "NEW · just made · CR-KYC-001e",
-   "x": 2070,
-   "y": 21088,
+  "new-CR-CRED-002x": {
+   "text": "NEW · just made · CR-CRED-002x",
+   "x": 22770,
+   "y": 22928,
    "w": 1910,
    "fill": "blue",
    "page": "p1"
   },
-  "new-CR-KYC-002e": {
-   "text": "NEW · just made · CR-KYC-002e",
+  "new-CR-POL-000": {
+   "text": "NEW · just made · CR-POL-000",
+   "x": 0,
+   "y": 24512,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
+  },
+  "new-CR-COL-002a": {
+   "text": "NEW · just made · CR-COL-002a",
+   "x": 4140,
+   "y": 30556,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
+  },
+  "new-CR-COL-002d": {
+   "text": "NEW · just made · CR-COL-002d",
+   "x": 6210,
+   "y": 30556,
+   "w": 1910,
+   "fill": "blue",
+   "page": "p1"
+  },
+  "new-CR-COL-002x": {
+   "text": "NEW · just made · CR-COL-002x",
    "x": 8280,
-   "y": 21088,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-CRED-001r": {
-   "text": "NEW · just made · CR-CRED-001r",
-   "x": 2070,
-   "y": 22928,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-CRED-002g": {
-   "text": "NEW · just made · CR-CRED-002g",
-   "x": 12420,
-   "y": 22928,
-   "w": 1910,
-   "fill": "blue",
-   "page": "p1"
-  },
-  "new-CR-CRED-002h": {
-   "text": "NEW · just made · CR-CRED-002h",
-   "x": 18630,
-   "y": 22928,
+   "y": 30100,
    "w": 1910,
    "fill": "blue",
    "page": "p1"
@@ -3343,7 +3398,17 @@
   "CR-CRED-002g.dc.html",
   "CR-CRED-002g-Mobile.dc.html",
   "CR-CRED-002h.dc.html",
-  "CR-CRED-002h-Mobile.dc.html"
+  "CR-CRED-002h-Mobile.dc.html",
+  "CR-CRED-002x.dc.html",
+  "CR-CRED-002x-Mobile.dc.html",
+  "CR-POL-000.dc.html",
+  "CR-POL-000-Mobile.dc.html",
+  "CR-COL-002a.dc.html",
+  "CR-COL-002a-Mobile.dc.html",
+  "CR-COL-002d.dc.html",
+  "CR-COL-002d-Mobile.dc.html",
+  "CR-COL-002x.dc.html",
+  "CR-COL-002x-Mobile.dc.html"
  ],
  "pages": [
   {

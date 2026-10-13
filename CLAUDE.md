@@ -3,7 +3,8 @@
 ## Who / what
 - Designer directs, Claude builds everything. Keep chat replies SHORT.
 - Deliverable: developer-ready Figma (later). For now we design screens on the canvas:
-  https://claude.ai/artifact/Xq1VzSNgkrxnjsEeHbpAZq (local copy: `design/canvas/project/`).
+  https://claude.ai/artifact/Xq1VzSNgkrxnjsEeHbpAZq (local copy: `design/canvas/project/`) = Link 1 screens.
+- Studio screens (Link 2, old Page 2) MOVED 2026-10-13 (file limit 512/canvas) to their own canvas https://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9 (local copy: `design/canvas2/project/`; blob ids there are NEW copies: PayPal 2304d2cd…, Tipalti 73c1fa9f…, campus 8bde69a3…, Nova aae2f6f9…, profile-bg 81b8d64e…, Payoneer a10968ec…). CR-DASH-ST + CR-VAL-WS live in BOTH (Link 1 imports them; main canvas page p2 = shared sources). Builds needing CR-SET-001 / other Studio sources: copy them from canvas2 into the scratch dir.
 - Client reference (content source, ~98% correct): `reference/project/` (snapshot), screen list: `screens.md`.
 - Order agreed: design a few screens to settle the look → then design system → then Figma.
 

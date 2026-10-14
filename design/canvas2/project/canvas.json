@@ -182,14 +182,16 @@
       "w": 1440,
       "x": 0,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-ANA · Analytics · shared source"
     },
     "CR-ANX.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 1520,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-ANX · Analytics · shared source"
     },
     "CR-CAL-001-Mobile.dc.html": {
       "h": 820,
@@ -340,7 +342,8 @@
       "w": 1440,
       "x": 3040,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-CAL · Calendar · shared source"
     },
     "CR-COURSE-OV-001-Mobile.dc.html": {
       "h": 1260,
@@ -599,14 +602,16 @@
       "w": 1440,
       "x": 4560,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-CREIO-BUY · Get more Creio · shared source"
     },
     "CR-CREIO-POP.dc.html": {
       "h": 1000,
       "w": 1440,
       "x": 6080,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-CREIO-POP · Creio balance · shared source"
     },
     "CR-CREIO-TOP-Mobile.dc.html": {
       "h": 844,
@@ -649,7 +654,8 @@
       "w": 1440,
       "x": 7600,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-DASH-ST · Creator Studio · shared source"
     },
     "CR-DISC-001-Mobile.dc.html": {
       "h": 1000,
@@ -746,14 +752,16 @@
       "w": 1440,
       "x": 9120,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-DISC · Discussions · shared source"
     },
     "CR-DTH.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 10640,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-DTH · Discussion · shared source"
     },
     "CR-EARN-001-Mobile.dc.html": {
       "h": 940,
@@ -796,7 +804,8 @@
       "w": 1440,
       "x": 12160,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-EARN · Earnings · shared source"
     },
     "CR-HELP-001-Mobile.dc.html": {
       "h": 900,
@@ -911,14 +920,16 @@
       "w": 1440,
       "x": 13680,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-HELP · Help · shared source"
     },
     "CR-HELPT.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 15200,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-HELPT · Support requests · shared source"
     },
     "CR-LRN-001-Mobile.dc.html": {
       "h": 940,
@@ -1123,7 +1134,8 @@
       "w": 1440,
       "x": 16720,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-PAY · Validation payment · shared source"
     },
     "CR-PAYO-001-Mobile.dc.html": {
       "h": 900,
@@ -1328,21 +1340,24 @@
       "w": 1440,
       "x": 18240,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-PAYO-OUT · Payout method · shared source"
     },
     "CR-PAYO.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 19760,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-PAYO · Payout method · shared source"
     },
     "CR-PAYST.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 21280,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-PAYST · Payout · shared source"
     },
     "CR-PROF-001-Mobile.dc.html": {
       "h": 820,
@@ -1421,14 +1436,16 @@
       "w": 1440,
       "x": 22800,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-PROF · Creator profile · shared source"
     },
     "CR-PUB.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 24320,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-PUB · Ada Ononuju · shared source"
     },
     "CR-REVAL-001-Mobile.dc.html": {
       "h": 1000,
@@ -1615,7 +1632,8 @@
       "w": 1440,
       "x": 25840,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-SET · Settings · shared source"
     },
     "CR-SUP-001-Mobile.dc.html": {
       "h": 844,
@@ -1658,14 +1676,16 @@
       "w": 1440,
       "x": 27360,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-SUP · Learner Support · shared source"
     },
     "CR-VAL-WS.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 28880,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-VAL-WS · Validation Workspace · shared source"
     },
     "CR-WAL-001-Mobile.dc.html": {
       "h": 960,
@@ -1816,14 +1836,16 @@
       "w": 1440,
       "x": 30400,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-WAL-FUND · Add Credits · shared source"
     },
     "CR-WAL-OUT.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 31920,
       "y": 35348,
-      "page": "p2"
+      "page": "p2",
+      "title": "CR-WAL-OUT · Credit Wallet · shared source"
     }
   },
   "order": [

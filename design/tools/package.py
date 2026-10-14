@@ -2,7 +2,7 @@
 # usage: python3 tools/package.py <support.js> <vendor-dir> <fonts-dir with gs.css + map.txt> <blob-dir>   (run in design/)
 import os, re, sys, json, shutil, hashlib, zipfile, csv, html
 SUP, VEN, FNT, BLOB = sys.argv[1:5]
-D = 'canvas/project'; OUT = 'handoff/build/credalio-link1'; ZIP = 'handoff/credalio-link1-handoff.zip'
+D = 'canvas/project'; OUT = 'handoff/build/credalio-link1-developer-package'; ZIP = 'handoff/credalio-link1-developer-package.zip'
 shutil.rmtree('handoff/build', ignore_errors=True)
 for d in ('screens', 'assets', 'fonts', 'screens/vendor'): os.makedirs(os.path.join(OUT, d), exist_ok=True)
 md5 = lambda p: hashlib.md5(open(p, 'rb').read()).hexdigest()
@@ -71,6 +71,7 @@ h1{font-weight:600;letter-spacing:-.02em}p{color:#4A5578;line-height:1.6}table{w
 th{text-align:left;padding:18px 16px 8px;font-size:13px;color:#8A93AD;font-weight:600;background:#fff}td{padding:9px 16px;border-top:1px solid #EEF1F7;font-size:14.5px}a{color:#1652F0;text-decoration:none;font-weight:500}</style></head>
 <body><main><h1>Credalio · Link 1 screens</h1><p>%d boards. Open each screen in a browser served over http (see README). Desktop boards are 1440 wide, mobile boards 390; each screen is one responsive file.</p><table>%s</table></main></body></html>''' % (len(rows), ''.join(tr)))
 shutil.copy('handoff/README.md', os.path.join(OUT, 'README.md'))
+shutil.copytree('handoff/tokens', os.path.join(OUT, 'tokens'))
 with zipfile.ZipFile(ZIP, 'w', zipfile.ZIP_DEFLATED) as z:
     for root, _, fs in os.walk(OUT):
         for f in fs:

@@ -11,6 +11,7 @@ Every value you need (colour, size, spacing, radius, shadow, motion) is in each 
 | `screens/` | The code of every screen (one responsive `.dc.html` file per screen) plus the small runtime that renders them (`support.js`, `vendor/`). Runs fully offline. |
 | `assets/` | Every image used (logo, illustrations, Copilot characters, backgrounds) |
 | `fonts/` | Google Sans (variable, latin + latin-ext) and `google-sans.css` |
+| `tokens/` | Design tokens: colours, type, radius, shadows, sizes, breakpoints, motion (`design-tokens.css` as CSS variables, `design-tokens.json` for any build tool) |
 | `screens.csv` | Screen index: title, desktop / mobile board, source file, variant, and the screens each one links to |
 
 **To open it:** unzip, then in the folder run `python3 -m http.server 8000` and open http://localhost:8000.

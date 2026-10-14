@@ -29,6 +29,8 @@ Press Play in the canvas to click through. Animations only run in Play mode.
 - **Sample data:** names, amounts, dates and counts are realistic placeholders. Copilot name, Creio balance, readiness % and counts,
   orientation progress and dates, and attempts left are all dynamic in the product.
 - **`href="#"`** marks an action that is designed but not wired to another board. Real links between boards are file names.
+  Everything that leads to a phase 2 screen (wallet, earnings, discussions, calendar, analytics, help, course studio) is `#` on purpose.
+- **Role picker (ONB-001):** all four cards are selectable; only Creator (→ ONB-002) and Organization (→ "coming soon") continue in phase 1.
 
 ## Foundations
 

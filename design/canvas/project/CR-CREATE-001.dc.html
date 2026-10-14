@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Credalio · How would you like to build it?</title>
+<title>CR-CREATE-001 · How would you like to build it?</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -14,12 +14,7 @@ body{margin:0;background:#F7F9FD}
 a{color:#1652F0}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@keyframes cpPop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
-@keyframes cpDot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
-@keyframes dsRing{from{stroke-dashoffset:1}}
-.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}.ob-in3{animation:obIn .5s ease .16s both}.ob-in4{animation:obIn .5s ease .24s both}
-.cp-pop{animation:cpPop .4s ease both}
-.cp-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#1652F0;animation:cpDot 1.2s ease-in-out infinite}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}
 .ds-root{display:grid;grid-template-columns:264px minmax(0,1fr);min-height:100vh;background:#F7F9FD;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
 .ds-side{position:sticky;top:0;height:100vh;overflow-y:auto;box-sizing:border-box;padding:22px 14px 24px 14px;background:#FFFFFF;border-right:1.5px solid #E6EAF3;display:flex;flex-direction:column;gap:2px;z-index:20}
 .ds-glab{display:block;margin:16px 12px 6px 12px;font-size:12px;font-weight:600;color:#8A93AD}
@@ -47,15 +42,11 @@ a{color:#1652F0}
 .ds-btn:hover .ob-arrow{transform:translateX(3px)}
 .ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
 .ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
-.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-weight:600;font-size:14.5px;text-decoration:none}
-.ds-link:hover{color:#0E3BB8}
 .ds-back{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px 0 10px;border-radius:999px;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none;margin-left:-10px}
 .ds-back:hover{background:#FFFFFF;color:#0B1433}
-.ds-chip{display:inline-flex;align-items:center;height:40px;padding:0 16px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;transition:border-color .2s ease,background .2s ease}
-.ds-chip:hover{border-color:#1652F0;background:#F5F8FF}
 .ds-menu,.ds-scrim,.ds-mlogo,.ds-close{display:none}
-.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-chip:focus-visible,.ds-item:focus-visible,.ds-icon-btn:focus-visible,.ds-opt:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
-@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2,.ob-in3,.ob-in4,.cp-pop,.cp-dot{animation:none}}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-item:focus-visible,.ds-icon-btn:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2{animation:none}}
 @media (max-width: 440px){.ds-mlogo .ds-brand{display:none}}
 @media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}}
 @media (max-width: 960px){
@@ -72,7 +63,6 @@ a{color:#1652F0}
 .ds-h1{font-size:24px !important;line-height:1.2}
 .ds-sub{font-size:14.5px;margin-top:6px}
 .ds-back{height:36px;font-size:13.5px}
-.ds-chip{height:36px;font-size:13.5px;padding:0 14px}
 .ds-btn{height:48px;font-size:15px}
 .ds-btn .ob-arrow{width:36px;height:36px}
 .ds-ghost{height:44px;font-size:14.5px}

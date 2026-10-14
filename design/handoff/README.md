@@ -3,6 +3,22 @@
 The designs are reference mockups. Rebuild them in your own components; don't copy the markup wholesale.
 Every value you need (colour, size, spacing, radius, shadow, motion) is in each screen's `<style>` block and inline styles.
 
+## What's in this package
+
+| Folder / file | What it is |
+|---|---|
+| `index.html` | List of every Link 1 screen in flow order, with desktop and mobile links |
+| `screens/` | The code of every screen (one responsive `.dc.html` file per screen) plus the small runtime that renders them (`support.js`, `vendor/`). Runs fully offline. |
+| `assets/` | Every image used (logo, illustrations, Copilot characters, backgrounds) |
+| `fonts/` | Google Sans (variable, latin + latin-ext) and `google-sans.css` |
+| `screens.csv` | Screen index: title, desktop / mobile board, source file, variant, and the screens each one links to |
+
+**To open it:** unzip, then in the folder run `python3 -m http.server 8000` and open http://localhost:8000.
+(Opening the files straight from disk with `file://` will not work: browsers block the scripts.)
+
+**Font licence:** Google Sans is served by Google Fonts (fonts.google.com). Check its licence there before you ship it in the product;
+if it can't be used, Google Sans Flex or Inter at the same weights are the closest swaps.
+
 ## Where the screens are
 
 This handoff covers **Link 1 (phase 1)**: creator onboarding → first dashboard → readiness (identity, credentials, policies) →

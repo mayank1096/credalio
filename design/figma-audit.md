@@ -4,17 +4,17 @@ Figma file: https://www.figma.com/design/bUBmVNm3WWd5eCl5JxX2sz · last synced 2
 
 | | Link 1 | Studio | Total |
 |---|---|---|---|
-| Up to date | 0 | 0 | 0 |
-| Outdated | 40 | 0 | 40 |
-| Missing | 113 | 114 | 227 |
+| Up to date | 10 | 0 | 10 |
+| Outdated | 34 | 0 | 34 |
+| Missing | 109 | 114 | 223 |
 | **Screens on canvas** | 153 | 114 | 267 |
+
+## Redesign progress (10 screens per batch)
+
+- **Batch 1 — done 2026-10-14** (18 frames): ONB-001, 002, 002L, 002V, 002S, 003, 003e, 003b, 003d, 003v. 002L/002V desktop only (role variants of 002). Next: 003c, 003ce, 004, 004e, 005, 005e, 006, 007, 007p, 008.
 
 ## Incorrect in Figma (wrong content / names)
 
-- **CR-ONB-001** — Figma title/H1 "Who will you become next?" — canvas is "Begin your journey"; old roles/scene, no route animation
-- **CR-ONB-002** — only the creator version; canvas has role scenes (learner/creator/validator) + route animation, Soon tag inline
-- **CR-ONB-002S** — Figma "Institution coming soon" — canvas "Organizations are coming soon"
-- **CR-ONB-003b** — old illustration; canvas uses the new "waiting with phone" scene
 - **CR-ONB-005b** — Figma title "What you will teach" — client: avoid "teach" (now "Topics")
 - **CR-ORI-006** — canvas board is now "Module 5 complete" (success style + confetti)
 - **CR-KYC-003** — canvas in-review state is now GREY (Figma cobalt)
@@ -44,12 +44,7 @@ Figma file: https://www.figma.com/design/bUBmVNm3WWd5eCl5JxX2sz · last synced 2
 | CR-KYC-004 | Identity verified | 2026-10-13 |
 | CR-KYC-005 | Identity: action needed (retake) | 2026-10-13 |
 | CR-KYC-006 | Identity not verified | 2026-10-13 |
-| CR-ONB-002 | How will you create? | 2026-10-13 |
-| CR-ONB-002S | Organisations coming soon | 2026-10-12 |
-| CR-ONB-003 | Create account | 2026-10-12 |
-| CR-ONB-003b | Check your inbox | 2026-10-13 |
 | CR-ONB-003c | Choose a password | 2026-10-12 |
-| CR-ONB-003v | Email confirmed | 2026-10-13 |
 | CR-ONB-004 | About you | 2026-10-13 |
 | CR-ONB-005 | Your field | 2026-10-12 |
 | CR-ONB-005b | What you will teach | 2026-10-12 |
@@ -63,9 +58,8 @@ Figma file: https://www.figma.com/design/bUBmVNm3WWd5eCl5JxX2sz · last synced 2
 | CR-ORI-007 | Orientation complete | 2026-10-10 |
 | CR-RDY-001 | Your readiness (in progress) | 2026-10-13 |
 | CR-RDY-001s | Your readiness (new creator) | 2026-10-13 |
-| CR-ONB-001 | CR-ONB-001 | 2026-10-13 |
 
-## Missing from Figma — Link 1 (113)
+## Missing from Figma — Link 1 (109)
 
 | Screen | Title | Mobile |
 |---|---|---|
@@ -108,11 +102,7 @@ Figma file: https://www.figma.com/design/bUBmVNm3WWd5eCl5JxX2sz · last synced 2
 | CR-KYC-002e | Photo missing | yes |
 | CR-NOT-001 | Notification Centre | yes |
 | CR-NOT-bell | Bell dropdown | yes |
-| CR-ONB-002L | How will you create? · Learner picked | no |
-| CR-ONB-002V | How will you create? · Validator picked | no |
 | CR-ONB-003ce | Password too weak | yes |
-| CR-ONB-003d | Change your email | yes |
-| CR-ONB-003e | Invalid email | yes |
 | CR-ONB-004e | Missing display name | yes |
 | CR-ONB-005e | Missing required fields | yes |
 | CR-ONB-007p | Copilot style: Proactive | yes |

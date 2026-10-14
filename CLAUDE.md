@@ -4,7 +4,7 @@
 - The designer directs and Claude builds. Keep chat replies SHORT; if the designer says "tldr", the reply was too long.
 - Give complete, honest answers up front, including what is missing or not done. Never say "enough" without listing what is not covered.
 - Commit and push after each change (`git push -u origin <current branch>`).
-- Start each session by reading `docs/link2-plan.md`, which says what's done and what's next. Update it at the end of each batch.
+- Start each session by reading `docs/link3-plan.md`, which says what's done and what's next. Update it at the end of each batch.
 - Full build log (every generator, blob id, past decision, by topic): see `docs/history.md` for how to open it. Grep it for details; never read it whole.
 
 ## Project
@@ -12,10 +12,10 @@
   - Canvas: https://claude.ai/artifact/Xq1VzSNgkrxnjsEeHbpAZq (local copy `design/canvas/project/`).
   - Handoff: `design/handoff/` (README, tokens, assets, developer package zip, screenshots zip, screen book PDF, developer guide PDF).
   - Don't change Link 1 unless the designer asks.
-- **Link 2 (phase 2) is NEXT.**
-  - Studio canvas: https://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9 (local copy `design/canvas2/project/`).
-  - Client Link 2 prototype: GCDVk2taFowXLcEABysm7u.
-  - Plan: `docs/link2-plan.md`.
+- **Link 3 is NEXT** (designer 2026-10-14; the old Link 2 is dropped).
+  - Client Link 3 prototype: https://claude.ai/artifact/Mg8o83iNa9x4ov1FxivdEW
+  - Our Studio canvas (most Studio screens already designed): https://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9 (local copy `design/canvas2/project/`).
+  - Plan: `docs/link3-plan.md`.
 - **Client reference** (content source only, about 98% correct): `reference/project/`. Screen list: `screens.md`.
 - **Artifact file limit:** 512 files per canvas version. Check the count before adding boards.
 
@@ -70,8 +70,8 @@
   - run `design/tools/audit.py` + `cleancss.py` (no unused CSS, no build comments or dates in code)
   - check that no page errors, broken images or broken links remain
   - link every new button to its destination (unwired = `href="#"`)
-  - update `screens.md` and `docs/link2-plan.md`
-- **Delivery tools** (reuse them for Link 2):
+  - update `screens.md` and `docs/link3-plan.md`
+- **Delivery tools** (reuse them for Link 3):
   - `design/tools/package.py`: offline developer package zip
   - `renderall.js` / `cmp.py` / `prep.sh`: render and pixel-compare
   - screen book + developer guide PDFs: HTML → Chromium `page.pdf`

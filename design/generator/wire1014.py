@@ -91,3 +91,7 @@ for f in sorted(glob.glob(D + '/CR-ORI-*.dc.html')):
         if 'mo-a' in s: css.append('.mo-a{flex:1 1 auto;align-self:stretch;display:flex;align-items:center;gap:14px;color:inherit;text-decoration:none}.mo-a:hover b{color:#1652F0}')
         s = s.replace('</style>', '\n'.join(css) + '\n</style>', 1); wr(f, s)
 print('ok')
+# 4. social sign-up skips the inbox check and password (client prototype: Google → ONB-004)
+s = rd('CR-ONB-003.dc.html')
+s = re.sub(r'<a href="CR-ONB-003b.dc.html"([^>]*)>((?:(?!</a>).)*?(?:Google|Apple)(?:(?!</a>).)*?)</a>', r'<a href="CR-ONB-004.dc.html"\1>\2</a>', s, flags=re.S)
+wr('CR-ONB-003.dc.html', s)

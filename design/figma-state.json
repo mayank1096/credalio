@@ -58,61 +58,13 @@
   "Illustration/Coming soon": "5:193"
  },
  "screens": {
-  "CR-ONB-003c · Choose a password · Desktop": {
-   "page": "2:4",
-   "x": 17600
-  },
-  "CR-ONB-003c · Choose a password · Mobile": {
-   "page": "2:5",
-   "x": 4230
-  },
-  "CR-ONB-004 · About you · Desktop": {
-   "page": "2:4",
-   "x": 19200
-  },
-  "CR-ONB-004 · About you · Mobile": {
-   "page": "2:5",
-   "x": 4700
-  },
-  "CR-ONB-005 · Your field · Desktop": {
-   "page": "2:4",
-   "x": 20800
-  },
-  "CR-ONB-005 · Your field · Mobile": {
-   "page": "2:5",
-   "x": 5170
-  },
   "CR-ONB-005b · What you will teach · Desktop": {
    "page": "2:4",
-   "x": 22400
+   "x": 32000
   },
   "CR-ONB-005b · What you will teach · Mobile": {
    "page": "2:5",
-   "x": 5640
-  },
-  "CR-ONB-006 · Meet your Copilot · Desktop": {
-   "page": "2:4",
-   "x": 24000
-  },
-  "CR-ONB-006 · Meet your Copilot · Mobile": {
-   "page": "2:5",
-   "x": 6110
-  },
-  "CR-ONB-007 · Copilot style · Desktop": {
-   "page": "2:4",
-   "x": 25600
-  },
-  "CR-ONB-007 · Copilot style · Mobile": {
-   "page": "2:5",
-   "x": 6580
-  },
-  "CR-ONB-008 · You’re a Creator · Desktop": {
-   "page": "2:4",
-   "x": 27200
-  },
-  "CR-ONB-008 · You’re a Creator · Mobile": {
-   "page": "2:5",
-   "x": 7050
+   "x": 8460
   },
   "CR-DASH-NEW · Creator Studio launchpad · Desktop": {
    "page": "25:12",
@@ -423,6 +375,126 @@
    "x": 3290,
    "id": "525:141",
    "synced": "2026-10-14"
+  },
+  "CR-ONB-003c · Choose a password · Desktop": {
+   "page": "2:4",
+   "x": 16000,
+   "id": "528:12",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-003c · Choose a password · Mobile": {
+   "page": "2:5",
+   "x": 3760,
+   "id": "531:12",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-003ce · Password too weak · Desktop": {
+   "page": "2:4",
+   "x": 17600,
+   "id": "528:75",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-003ce · Password too weak · Mobile": {
+   "page": "2:5",
+   "x": 4230,
+   "id": "531:75",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-004 · About you · Desktop": {
+   "page": "2:4",
+   "x": 19200,
+   "id": "528:145",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-004 · About you · Mobile": {
+   "page": "2:5",
+   "x": 4700,
+   "id": "531:144",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-004e · Missing display name · Desktop": {
+   "page": "2:4",
+   "x": 20800,
+   "id": "528:208",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-004e · Missing display name · Mobile": {
+   "page": "2:5",
+   "x": 5170,
+   "id": "532:12",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-005 · Your field · Desktop": {
+   "page": "2:4",
+   "x": 22400,
+   "id": "529:12",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-005 · Your field · Mobile": {
+   "page": "2:5",
+   "x": 5640,
+   "id": "532:80",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-005e · Missing required fields · Desktop": {
+   "page": "2:4",
+   "x": 24000,
+   "id": "529:68",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-005e · Missing required fields · Mobile": {
+   "page": "2:5",
+   "x": 6110,
+   "id": "532:136",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-006 · Meet your Copilot · Desktop": {
+   "page": "2:4",
+   "x": 25600,
+   "id": "529:137",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-006 · Meet your Copilot · Mobile": {
+   "page": "2:5",
+   "x": 6580,
+   "id": "533:12",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-007 · Copilot style · Desktop": {
+   "page": "2:4",
+   "x": 27200,
+   "id": "530:12",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-007 · Copilot style · Mobile": {
+   "page": "2:5",
+   "x": 7050,
+   "id": "533:65",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-007p · Copilot style: Proactive · Desktop": {
+   "page": "2:4",
+   "x": 28800,
+   "id": "530:85",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-007p · Copilot style: Proactive · Mobile": {
+   "page": "2:5",
+   "x": 7520,
+   "id": "534:12",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-008 · You’re a Creator · Desktop": {
+   "page": "2:4",
+   "x": 30400,
+   "id": "530:159",
+   "synced": "2026-10-14"
+  },
+  "CR-ONB-008 · You’re a Creator · Mobile": {
+   "page": "2:5",
+   "x": 7990,
+   "id": "534:77",
+   "synced": "2026-10-14"
   }
  },
  "kycOutcomes2026_10_08": {
@@ -468,6 +540,22 @@
     "CR-ONB-003v"
    ],
    "frames": 18
+  },
+  "2": {
+   "date": "2026-10-14",
+   "screens": [
+    "CR-ONB-003c",
+    "CR-ONB-003ce",
+    "CR-ONB-004",
+    "CR-ONB-004e",
+    "CR-ONB-005",
+    "CR-ONB-005e",
+    "CR-ONB-006",
+    "CR-ONB-007",
+    "CR-ONB-007p",
+    "CR-ONB-008"
+   ],
+   "frames": 20
   }
  }
 }

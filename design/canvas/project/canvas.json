@@ -1092,7 +1092,7 @@
       "h": 920,
       "is_interactive": true,
       "page": "p1",
-      "title": "CR-ONB-001 · Mobile (390)",
+      "title": "CR-ONB-001 · Mobile",
       "w": 390,
       "x": 1520,
       "y": 320
@@ -1149,7 +1149,7 @@
       "h": 820,
       "is_interactive": true,
       "page": "p1",
-      "title": "CR-ONB-002S · Organisations coming soon · Desktop",
+      "title": "CR-ONB-002S · Organizations are coming soon · Desktop",
       "w": 1440,
       "x": 4140,
       "y": 320
@@ -2870,7 +2870,7 @@
       "h": 820,
       "is_interactive": true,
       "page": "p1",
-      "title": "CR-ONB-001 · Desktop (responsive source)",
+      "title": "CR-ONB-001 · Begin your journey · Desktop",
       "w": 1440,
       "x": 0,
       "y": 320
@@ -3091,22 +3091,6 @@
       "w": 240,
       "x": 0,
       "y": 33776
-    },
-    "new-CR-ORI-M3-L1": {
-      "fill": "blue",
-      "page": "p1",
-      "text": "NEW · just made · CR-ORI-M3-L1",
-      "w": 1910,
-      "x": 2070,
-      "y": 13570
-    },
-    "new-CR-ORI-M5-K2": {
-      "fill": "blue",
-      "page": "p1",
-      "text": "NEW · just made · CR-ORI-M5-K2",
-      "w": 1910,
-      "x": 8280,
-      "y": 17184
     },
     "p2-moved": {
       "fill": "blue",

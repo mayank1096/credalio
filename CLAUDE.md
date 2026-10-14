@@ -121,6 +121,7 @@
 ## Code hygiene (2026-10-14 developer cleanup)
 - Both canvases were cleaned for developers: unused CSS selectors/keyframes removed per file, internal build comments removed, dead sessionStorage code removed from Main, page titles = board names ("CR-ONB-004 · About you", "… · Mobile", sources "… · shared source"). Verified by rendering all 527 boards before/after (no visual change).
 - Delivery cleanup 2026-10-14 (`deliv1014.py`): logos are blob refs (main wordmark f2bdb028…, mark 9e485e71…; canvas2 wordmark 4b16f774…, mark c988a8a0…), never base64 again; ORI M1–M7 check + M7 scenario sources moved to main page p2 (y 5200, note p2-ksrc); every shared source has a board title; stale `design/onboarding/` export removed. Developer guide + in-use images: `design/handoff/` (README.md + assets/). Keep it current when screens change.
+- SCOPE (designer 2026-10-14): Link 2 is PHASE 2, ignore it for now; deliver Link 1 only. Sticky sug notes and extra previews (ONB-001 Laptop/Tablet, ONB-002-9qo9) DELETED; 005b kept. Handoff guide is Link 1 only.
 - Tools in `design/tools/`: `audit.py` (report junk), `cleancss.py` (strip unused CSS + comments), `titles.py` (titles from canvas.json), `renderall.js` + `cmp.py` + `prep.sh` (before/after pixel check). Run audit + cleancss after every new batch so copied CSS never piles up again; never write build tags/dates into code comments.
 
 ## Hard layout rules

@@ -4,14 +4,15 @@ Figma file: https://www.figma.com/design/bUBmVNm3WWd5eCl5JxX2sz · last synced 2
 
 | | Link 1 | Studio | Total |
 |---|---|---|---|
-| Up to date | 10 | 0 | 10 |
-| Outdated | 34 | 0 | 34 |
-| Missing | 109 | 114 | 223 |
+| Up to date | 20 | 0 | 20 |
+| Outdated | 28 | 0 | 28 |
+| Missing | 105 | 114 | 219 |
 | **Screens on canvas** | 153 | 114 | 267 |
 
 ## Redesign progress (10 screens per batch)
 
-- **Batch 1 — done 2026-10-14** (18 frames): ONB-001, 002, 002L, 002V, 002S, 003, 003e, 003b, 003d, 003v. 002L/002V desktop only (role variants of 002). Next: 003c, 003ce, 004, 004e, 005, 005e, 006, 007, 007p, 008.
+- **Batch 1 — done 2026-10-14** (18 frames): ONB-001, 002, 002L, 002V, 002S, 003, 003e, 003b, 003d, 003v. 002L/002V desktop only (role variants of 002).
+- **Batch 2 — done 2026-10-14** (20 frames): ONB-003c, 003ce, 004, 004e, 005, 005e, 006, 007, 007p, 008. Old ONB-005b frames moved to the end of the onboarding rows (still to redo).
 
 ## Incorrect in Figma (wrong content / names)
 
@@ -44,13 +45,7 @@ Figma file: https://www.figma.com/design/bUBmVNm3WWd5eCl5JxX2sz · last synced 2
 | CR-KYC-004 | Identity verified | 2026-10-13 |
 | CR-KYC-005 | Identity: action needed (retake) | 2026-10-13 |
 | CR-KYC-006 | Identity not verified | 2026-10-13 |
-| CR-ONB-003c | Choose a password | 2026-10-12 |
-| CR-ONB-004 | About you | 2026-10-13 |
-| CR-ONB-005 | Your field | 2026-10-12 |
 | CR-ONB-005b | What you will teach | 2026-10-12 |
-| CR-ONB-006 | Meet your Copilot | 2026-10-08 |
-| CR-ONB-007 | Copilot style | 2026-10-12 |
-| CR-ONB-008 | You’re a Creator | 2026-10-10 |
 | CR-ORI-001 | Creator Orientation | 2026-10-12 |
 | CR-ORI-002 | Module overview | 2026-10-13 |
 | CR-ORI-005 | Scenario: AI-drafted lesson | 2026-10-13 |
@@ -59,7 +54,7 @@ Figma file: https://www.figma.com/design/bUBmVNm3WWd5eCl5JxX2sz · last synced 2
 | CR-RDY-001 | Your readiness (in progress) | 2026-10-13 |
 | CR-RDY-001s | Your readiness (new creator) | 2026-10-13 |
 
-## Missing from Figma — Link 1 (109)
+## Missing from Figma — Link 1 (105)
 
 | Screen | Title | Mobile |
 |---|---|---|
@@ -102,10 +97,6 @@ Figma file: https://www.figma.com/design/bUBmVNm3WWd5eCl5JxX2sz · last synced 2
 | CR-KYC-002e | Photo missing | yes |
 | CR-NOT-001 | Notification Centre | yes |
 | CR-NOT-bell | Bell dropdown | yes |
-| CR-ONB-003ce | Password too weak | yes |
-| CR-ONB-004e | Missing display name | yes |
-| CR-ONB-005e | Missing required fields | yes |
-| CR-ONB-007p | Copilot style: Proactive | yes |
 | CR-ORI-001c | Orientation: complete | yes |
 | CR-ORI-001n | Orientation: not started | yes |
 | CR-ORI-M1-00 | Module 1 overview | yes |

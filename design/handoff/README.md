@@ -5,12 +5,12 @@ Every value you need (colour, size, spacing, radius, shadow, motion) is in each 
 
 ## Where the screens are
 
-| Canvas | What | Local copy |
-|---|---|---|
-| [Link 1 · Creator onboarding → first validation](https://claude.ai/artifact/Xq1VzSNgkrxnjsEeHbpAZq) | onboarding, dashboard states, readiness (KYC, credentials, policies), orientation, collaboration, validation | `design/canvas/project/` |
-| [Link 2 · Creator Studio](https://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9) | wallet, payments, earnings & payouts, analytics, calendar, discussions, support, profile, settings, Nova / Creio, help | `design/canvas2/project/` |
+This handoff covers **Link 1 (phase 1)**: creator onboarding → first dashboard → readiness (identity, credentials, policies) →
+Creator Orientation (7 modules) → collaboration and declarations → validation centre.
 
-Each canvas page shows a desktop board (1440 wide) and a mobile board (390 wide) side by side, in flow order, under section notes.
+Canvas: [Credalio · Link 1](https://claude.ai/artifact/Xq1VzSNgkrxnjsEeHbpAZq) · local copy `design/canvas/project/`.
+
+Page 1 shows a desktop board (1440 wide) and a mobile board (390 wide) side by side, in flow order, under section notes.
 Press Play in the canvas to click through. Animations only run in Play mode.
 
 ## How the files are organised
@@ -20,17 +20,15 @@ Press Play in the canvas to click through. Animations only run in Play mode.
 - **States are variants of one source.** A small board file like `CR-KYC-004.dc.html` contains only
   `<dc-import name="CR-KYC-003" variant="verified">`. The variant switch lives in the source's `renderVals()` / `<sc-if>` blocks.
   Build one component with a prop; don't build one component per board.
-- **Shared sources** sit on Link 1 page 2 and at the end of Link 2, titled "… · shared source". They are not screens in the flow;
+- **Shared sources** sit on page 2, titled "… · shared source". They are not screens in the flow;
   the boards around them import them with a variant (e.g. `CR-ORI-M3-K` = Module 3 check with variants none / right / wrong).
 - **IDs:** `CR-<AREA>-<NNN><letter>`. AREA = ONB onboarding, DASH dashboard, RDY readiness, KYC identity, CRED credentials,
-  POL policies, ORI orientation, COL collaboration, DEC declarations, VAL validation, WAL wallet, PAY payment, EARN/PAYO payouts,
-  ANA analytics, CAL calendar, DISC discussions, SUP support, LRN learners, PROF/PUB profile, SET settings, AI/NOVA/CREIO Copilot and Creio, HELP help.
+  POL policies, ORI orientation, CTR Creator Centre, CREATE start creating, NOT notifications, HOME home pages,
+  COL collaboration, ASG assigned to me, DEC declarations, VAL validation.
   A trailing letter is a state: `e` error, `d` done/declined, `x` declined/missing, `s` short/sent, `v` verified, `p` proactive/pending.
 - **Sample data:** names, amounts, dates and counts are realistic placeholders. Copilot name, Creio balance, readiness % and counts,
   orientation progress and dates, and attempts left are all dynamic in the product.
 - **`href="#"`** marks an action that is designed but not wired to another board. Real links between boards are file names.
-- Studio (Link 2) screens link to Link 1 screens (dashboard, readiness, notifications, home settings) by file name;
-  those links only work inside the Link 1 canvas.
 
 ## Foundations
 
@@ -49,14 +47,13 @@ H1 onboarding `clamp(34px, 5.4vh, 46px)`; dashboard H1 28–32 desktop, 24 mobil
 | Success | `#0F6B45` (soft `#E7F5EE`) |
 | Error | border `#D92D20`, text `#B42318` |
 | Creio (AI usage, always gold) | bg `#FFF1CF → #FFFAEB`, border `#F4D98E`, text brown `#4A3300` |
-| Credits (wallet, never gold) | cobalt coin |
 
 Status colours: green = complete, cobalt = in progress, amber = action needed, grey = not started / declined / in review.
 
 **Shape:** buttons are pills; the primary button is a cobalt pill with a white circle arrow. Cards radius 16–22, 1.5px borders.
 Selected options are a soft blue fill + cobalt border + check (radius 14). They must never look like the primary button.
 
-**Breakpoints:** desktop ≥ 1081; tablet ≤ 1080 (grids collapse); mobile ≤ 960 (Studio: sidebar becomes a drawer) and ≤ 760 (onboarding stacks).
+**Breakpoints:** desktop ≥ 1081; tablet ≤ 1080 (grids collapse); mobile ≤ 960 (dashboard sidebar becomes a drawer) and ≤ 760 (onboarding stacks).
 Touch targets ≥ 44px. Onboarding screens must not scroll at 1440×820 or 1280×720 (layout uses `vh` / `clamp`). Dashboard pages may scroll.
 Every animation is switched off under `prefers-reduced-motion`.
 
@@ -66,7 +63,7 @@ Every animation is switched off under `prefers-reduced-motion`.
 |---|---|---|
 | Onboarding frame | `CR-ONB-003.dc.html` | logo, Log in, 5-step dashed tracker, centred content, illustration at the bottom |
 | Role picker + route animation | `Main.dc.html` (ONB-001), `CR-ONB-002.dc.html` | per option: cobalt trail draws in (`cd-draw`), white streak (`cd-comet`), pulsing end dot (`cd-pulse`), breathing orb under the walker (`cd-orb`). Paths are SVG in a 2172×724 viewBox over the image. |
-| Studio shell | `CR-DASH-NEW.dc.html` | 264px sidebar, sticky top bar (search, gold Creio pill, help, bell, avatar), content `#F7F9FD` |
+| Dashboard shell | `CR-DASH-NEW.dc.html` | 264px sidebar, sticky top bar (search, gold Creio pill, help, bell, avatar), content `#F7F9FD` |
 | Focus / task shell | `CR-KYC-001.dc.html`, `CR-CRED-002.dc.html` | no sidebar; close, task count, trust pill; sticky bottom actions on mobile |
 | Learning player | `CR-ORI-003.dc.html` | top segments, left step rail, 720 reading column, fixed Previous / Next bar |
 | Outcome page (all success / pending / action / failed screens) | `CR-KYC-003.dc.html` (`ko-*`) | emblem → status pill → H1 → sub → card(s) → CTA → small links; success adds confetti |
@@ -88,6 +85,5 @@ All images in use are in `assets/` (the canvases reference the same files as `/_
 | `copilot-nova/maya/alex/sage.webp` | Copilot characters (heads are CSS crops of these) |
 | `profile-bg.webp` | Nova cards, profile banners |
 | `wave.webp` | animated waving hand (Noto animated emoji, CC BY 4.0) |
-| `logo-paypal/payoneer/tipalti.png` | payout providers |
 
 Icons are inline SVG line icons (24 grid, 1.9–2.4 stroke, round caps). Swap them for your icon set at the same size and weight.

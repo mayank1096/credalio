@@ -1080,15 +1080,6 @@
       "x": 10350,
       "y": 27076
     },
-    "CR-ONB-001-Laptop.dc.html": {
-      "h": 720,
-      "is_interactive": true,
-      "page": "p1",
-      "title": "CR-ONB-001 · Small laptop (1280 × 720)",
-      "w": 1280,
-      "x": 1990,
-      "y": 33096
-    },
     "CR-ONB-001-Mobile.dc.html": {
       "h": 920,
       "is_interactive": true,
@@ -1097,25 +1088,6 @@
       "w": 390,
       "x": 1520,
       "y": 320
-    },
-    "CR-ONB-001-Tablet.dc.html": {
-      "h": 1000,
-      "is_interactive": true,
-      "page": "p1",
-      "title": "CR-ONB-001 · Narrow window (900)",
-      "w": 900,
-      "x": 3350,
-      "y": 33096
-    },
-    "CR-ONB-002-9qo9.dc.html": {
-      "expand": "fill",
-      "h": 820,
-      "is_interactive": true,
-      "page": "p1",
-      "title": "CR-ONB-002 · How will you create? · Desktop copy",
-      "w": 1440,
-      "x": 4330,
-      "y": 33096
     },
     "CR-ONB-002-Mobile.dc.html": {
       "h": 980,
@@ -3085,7 +3057,7 @@
       "kind": "title1",
       "maxW": 8000,
       "page": "p1",
-      "text": "Not in Link 1: ONB-005b topics (ours) · extra previews (ONB-001 small laptop / narrow window, ONB-002 copy)",
+      "text": "Not in Link 1: ONB-005b topics (ours)",
       "w": 240,
       "x": 0,
       "y": 32776
@@ -3093,7 +3065,7 @@
     "p2-moved": {
       "fill": "blue",
       "page": "p2",
-      "text": "Studio screens (Link 2) moved to their own canvas:\nhttps://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9\n\nThese two sources stay here because Link 1 screens import them.",
+      "text": "Shared sources: not screens in the flow. Link 1 dashboard-state and validation-workspace boards import these two with a variant.",
       "w": 1440,
       "x": 0,
       "y": 0
@@ -3106,96 +3078,6 @@
       "x": 0,
       "y": 2600
     },
-    "sug05": {
-      "fill": "orange",
-      "maxH": 300,
-      "page": "p1",
-      "text": "I’d remove the footer “Keep building as you learn… See your readiness”. The Readiness page already covers this, and this page is really about getting back into the module.",
-      "w": 1440,
-      "x": 2070,
-      "y": 7494
-    },
-    "sug06": {
-      "fill": "orange",
-      "maxH": 140,
-      "page": "p1",
-      "text": "On all four ID steps, the line “Follow the identity steps, then return to your readiness checklist.” feels like extra reading on top of the tips. I’d remove it and let the tips do the work.",
-      "w": 1440,
-      "x": 4140,
-      "y": 21048
-    },
-    "sug07": {
-      "fill": "orange",
-      "maxH": 140,
-      "page": "p1",
-      "text": "The “What happens next” card and the line under the heading say pretty much the same thing. Shall we keep just one? I’d lean towards the card, with the line shortened to “We’ll notify you when it’s done.”",
-      "w": 1440,
-      "x": 14490,
-      "y": 21048
-    },
-    "sug08": {
-      "fill": "orange",
-      "maxH": 140,
-      "page": "p1",
-      "text": "Two dates here: the line under the heading says 1 Oct 2026, but the card says 7 October 2026. Which one is right?\nThe name, country and date already sit on the card, so the line could simply be: “Your identity badge now shows on your Creator Profile.”",
-      "w": 1440,
-      "x": 16560,
-      "y": 21048
-    },
-    "sug09": {
-      "fill": "orange",
-      "maxH": 140,
-      "page": "p1",
-      "text": "This message is quite long for the space. Could we try:\n“Your verification wasn’t approved. You can keep drafting. Support can help you finish.”\nThen “You can keep drafting while this is sorted.” under the button wouldn’t be needed.",
-      "w": 1440,
-      "x": 20700,
-      "y": 21048
-    },
-    "sug10": {
-      "fill": "orange",
-      "maxH": 360,
-      "page": "p1",
-      "text": "I’ve simplified this page: one column, and the “task complete” box and the next step are now one bar at the bottom.\nThe intro still runs to four lines though. Maybe: “Add degrees, certifications, licences or work experience. They show as verified once checked.”\nAnd the green text could be: “One verified credential completes this task. Others join your profile once verified.”",
-      "w": 1440,
-      "x": 0,
-      "y": 22732
-    },
-    "sug11": {
-      "fill": "orange",
-      "maxH": 360,
-      "page": "p1",
-      "text": "The small label “Add a credential” sits right on top of the heading that says the same thing, so I’d remove it.\nThe two boxes on the left (Checked online / Reviewed) also repeat the tags on each option. Could we drop them to keep the page lighter?",
-      "w": 1440,
-      "x": 4140,
-      "y": 22732
-    },
-    "sug12": {
-      "fill": "orange",
-      "maxH": 360,
-      "page": "p1",
-      "text": "The note on the left and the line next to the button both say it’s reviewed by our team, so I’d keep just the one by the button.\n“Degree or diploma” is also repeated inside the form under the heading. We could keep just the “Change” link up top.",
-      "w": 1440,
-      "x": 6210,
-      "y": 22732
-    },
-    "sug13": {
-      "fill": "orange",
-      "maxH": 360,
-      "page": "p1",
-      "text": "“Verification link or digital badge” is too long for the three options in a row. Could it be “Link or badge”?\nThe note on the left also repeats the line next to the button, so I’d remove it.",
-      "w": 1440,
-      "x": 8280,
-      "y": 22732
-    },
-    "sug14": {
-      "fill": "orange",
-      "maxH": 360,
-      "page": "p1",
-      "text": "Same as the screen before: “Link or badge” instead of “Verification link or digital badge”, and I’d remove the note on the left since the line next to the button already says it.",
-      "w": 1440,
-      "x": 10350,
-      "y": 22732
-    },
     "p2-ksrc": {
       "page": "p2",
       "x": 0,
@@ -3207,8 +3089,6 @@
   },
   "order": [
     "Main.dc.html",
-    "CR-ONB-001-Laptop.dc.html",
-    "CR-ONB-001-Tablet.dc.html",
     "CR-ONB-001-Mobile.dc.html",
     "CR-ONB-002.dc.html",
     "CR-ONB-002-Mobile.dc.html",
@@ -3220,7 +3100,6 @@
     "CR-ONB-003b-Mobile.dc.html",
     "CR-ONB-003v.dc.html",
     "CR-ONB-003v-Mobile.dc.html",
-    "CR-ONB-002-9qo9.dc.html",
     "CR-ONB-003c.dc.html",
     "CR-ONB-003c-Mobile.dc.html",
     "CR-ONB-004.dc.html",

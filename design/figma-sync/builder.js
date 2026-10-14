@@ -25,7 +25,7 @@ function mk(p,N){let[k,name,x,y,w,h,pr,ch]=N;const inAL=!!(p&&p.layoutMode&&p.la
 if(k==='T'){const t=pr.t;n=figma.createText();n.fontName={family:FAM,style:sty(t.w,t.i)};n.characters=t.s;n.fontSize=t.z;n.fills=[paint(t.c)];
 if(t.lh)n.lineHeight={unit:'PIXELS',value:t.lh};if(t.ls)n.letterSpacing={unit:'PIXELS',value:t.ls};
 if(t.al)n.textAlignHorizontal=t.al==='C'?'CENTER':t.al==='R'?'RIGHT':'JUSTIFIED';if(t.d)n.textDecoration=t.d===1?'UNDERLINE':'STRIKETHROUGH';
-if(t.r)for(const[s,e,x2]of t.r){if(e<=s)continue;if(x2.w||x2.i!==undefined)n.setRangeFontName(s,e,{family:FAM,style:sty(x2.w||t.w,x2.i!==undefined?x2.i:t.i)});if(x2.c)n.setRangeFills(s,e,[paint(x2.c)]);if(x2.z)n.setRangeFontSize(s,e,x2.z);if(x2.d)n.setRangeTextDecoration(s,e,x2.d===1?'UNDERLINE':'STRIKETHROUGH')}
+if(t.r)for(const[s,e,x2]of t.r){if(e<=s)continue;if(x2.w||x2.i!==undefined)n.setRangeFontName(s,e,{family:FAM,style:sty(x2.w||t.w,x2.i!==undefined?x2.i:t.i)});if(x2.c)n.setRangeFills(s,e,[paint(x2.c)]);if(x2.z)n.setRangeFontSize(s,e,x2.z);if(x2.d!==undefined)n.setRangeTextDecoration(s,e,x2.d===1?'UNDERLINE':x2.d===2?'STRIKETHROUGH':'NONE')}
 n.name=name;
 n.textAutoResize='WIDTH_AND_HEIGHT';if(t.nw){const L=t.s.split('\n').reduce((m,l)=>Math.max(m,l.length),1);const d=(t.nw-n.width)/Math.max(1,L-1);if(Math.abs(d)>0.005){const ls=(t.ls||0)+d;n.letterSpacing={unit:'PIXELS',value:Math.round(ls*1000)/1000}}}
 if(t.ml||t.fw){const sl=t.ml?8:0;n.resize(Math.max(1,w+sl),Math.max(1,h));n.textAutoResize='HEIGHT';if(sl&&!inAL&&t.al==='C')x-=sl/2;else if(sl&&!inAL&&t.al==='R')x-=sl}

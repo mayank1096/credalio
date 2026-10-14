@@ -678,7 +678,8 @@
       "page": "p2",
       "w": 1440,
       "x": 0,
-      "y": 600
+      "y": 600,
+      "title": "CR-DASH-ST · Creator Studio · shared source"
     },
     "CR-DEC-001-Mobile.dc.html": {
       "h": 844,
@@ -1660,8 +1661,10 @@
     "CR-ORI-M1-K.dc.html": {
       "h": 820,
       "w": 1440,
-      "x": 37180,
-      "y": 320
+      "x": 0,
+      "y": 5200,
+      "title": "CR-ORI-M1-K · Orientation · Module 1 check · shared source",
+      "page": "p2"
     },
     "CR-ORI-M1-K1-Mobile.dc.html": {
       "h": 960,
@@ -1792,8 +1795,10 @@
     "CR-ORI-M2-K.dc.html": {
       "h": 820,
       "w": 1440,
-      "x": 38700,
-      "y": 320
+      "x": 1520,
+      "y": 5200,
+      "title": "CR-ORI-M2-K · Orientation · Module 2 check · shared source",
+      "page": "p2"
     },
     "CR-ORI-M2-K1-Mobile.dc.html": {
       "h": 960,
@@ -1924,8 +1929,10 @@
     "CR-ORI-M3-K.dc.html": {
       "h": 820,
       "w": 1440,
-      "x": 40220,
-      "y": 320
+      "x": 3040,
+      "y": 5200,
+      "title": "CR-ORI-M3-K · Orientation · Module 3 check · shared source",
+      "page": "p2"
     },
     "CR-ORI-M3-K1-Mobile.dc.html": {
       "h": 1000,
@@ -2056,8 +2063,10 @@
     "CR-ORI-M4-K.dc.html": {
       "h": 820,
       "w": 1440,
-      "x": 41740,
-      "y": 320
+      "x": 4560,
+      "y": 5200,
+      "title": "CR-ORI-M4-K · Orientation · Module 4 check · shared source",
+      "page": "p2"
     },
     "CR-ORI-M4-K1-Mobile.dc.html": {
       "h": 1000,
@@ -2188,8 +2197,10 @@
     "CR-ORI-M5-K.dc.html": {
       "h": 820,
       "w": 1440,
-      "x": 43260,
-      "y": 320
+      "x": 0,
+      "y": 6200,
+      "title": "CR-ORI-M5-K · Orientation · Module 5 check · shared source",
+      "page": "p2"
     },
     "CR-ORI-M5-K1-Mobile.dc.html": {
       "h": 1000,
@@ -2356,8 +2367,10 @@
     "CR-ORI-M6-K.dc.html": {
       "h": 820,
       "w": 1440,
-      "x": 44780,
-      "y": 320
+      "x": 1520,
+      "y": 6200,
+      "title": "CR-ORI-M6-K · Orientation · Module 6 check · shared source",
+      "page": "p2"
     },
     "CR-ORI-M6-K1-Mobile.dc.html": {
       "h": 1000,
@@ -2488,8 +2501,10 @@
     "CR-ORI-M7-K.dc.html": {
       "h": 820,
       "w": 1440,
-      "x": 46300,
-      "y": 320
+      "x": 3040,
+      "y": 6200,
+      "title": "CR-ORI-M7-K · Orientation · Module 7 check · shared source",
+      "page": "p2"
     },
     "CR-ORI-M7-K1-Mobile.dc.html": {
       "h": 1000,
@@ -2584,8 +2599,10 @@
     "CR-ORI-M7-S.dc.html": {
       "h": 820,
       "w": 1440,
-      "x": 47820,
-      "y": 320
+      "x": 4560,
+      "y": 6200,
+      "title": "CR-ORI-M7-S · Orientation · Module 7 scenario · shared source",
+      "page": "p2"
     },
     "CR-ORI-M7-S1-Mobile.dc.html": {
       "h": 960,
@@ -2863,7 +2880,8 @@
       "page": "p2",
       "w": 1440,
       "x": 0,
-      "y": 1600
+      "y": 1600,
+      "title": "CR-VAL-WS · Validation Workspace · shared source"
     },
     "Main.dc.html": {
       "expand": "fill",
@@ -3177,6 +3195,14 @@
       "w": 1440,
       "x": 10350,
       "y": 22732
+    },
+    "p2-ksrc": {
+      "page": "p2",
+      "x": 0,
+      "y": 5000,
+      "w": 5920,
+      "fill": "gray",
+      "text": "Orientation check + scenario sources: not screens in the flow. The K1–K3 / S1–S3 boards on Link 1 show them with a variant (none / right / wrong)."
     }
   },
   "order": [

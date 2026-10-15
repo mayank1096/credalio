@@ -38,11 +38,11 @@ Check for new IDs we don't have:
 
 **3. Account menu PM-001…003 and message pop-ups MSG-001…006.** NOT designed yet.
 
-**4. NEW: cohort enrolment, COH-ENR-001…010** (18 boards incl. states). NOT designed.
+**4. Cohort enrolment, COH-ENR-001…010.** OUT OF SCOPE: below the client's "DO NOT DESIGN ANYTHING BELOW THIS NOTE".
 
-**5. NEW: cohort operations, COH-OPS-001/002** (18 boards incl. states). NOT designed.
+**5. Cohort operations, COH-OPS-001/002.** OUT OF SCOPE (same note).
 
-**6. NEW: programmes** (PRG-LE-001, PRG-MGT-001/002 + 13 states, PRG-FLOW). NOT designed.
+**6. Programmes** (PRG-*). OUT OF SCOPE (same note). Also out: retired PAYO-002/003/004 ("DO NOT DESIGN THIS ROW").
 
 ## Suggested order
 1. **Map Link 3 against canvas2.** Produce one list of:
@@ -66,3 +66,4 @@ Check for new IDs we don't have:
 - 2026-10-14: Link 1 delivered. Designer: work on LINK 3 next (the old Link 2 link is dropped).
 - 2026-10-14: Context pulled. canvas2 live = repo (no drift, 207 files). Client Link 3 saved to `reference/link3/`. Client says 174 screens / 16 sections; PAYO-002/003/004 are RETIRED there. Next: step 1 (mapping list) for the designer.
 - 2026-10-15: Step 1 mapping list written: `docs/link3-map.md` (92 done, copy/rule changes, ≈80 new, 639 unwired). Waiting on designer review + 4 questions.
+- 2026-10-15: Designer: yes to all 4 questions; client note "DO NOT DESIGN ANYTHING BELOW THIS NOTE" excludes all PRG/COH screens. Scope now 29 new screens (PM 3, MSG 6, 20 missing states) + client copy/rule changes + SET-007/AI-012 copy + Gold wording in both canvases. Next: build in batches.

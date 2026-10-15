@@ -39,7 +39,13 @@ Applies to all Studio pages: sentence case, screen-ID eyebrows and `[TO CONFIRM]
 
 Rules stay "design, don't copy": we keep our layouts and copy, but terms and rules should match the client.
 
-## C. New screens to design (≈80)
+## Out of scope: client notes on their canvas (designer confirmed 2026-10-15)
+- **"DO NOT DESIGN ANYTHING BELOW THIS NOTE"** (y 30405): everything below it is out. That is all programme cohorts (PRG-*), cohort overview (COH-OPS-001), enrolment and roster (COH-OPS-002, COH-ENR-*), the PRG-FLOW / ENR-FLOW boards and the shared component. 51 screens.
+- **"DO NOT DESIGN THIS ROW"** (red box): the retired manual payout row PAYO-002/003/004.
+
+## C. New screens to design (29)
+
+~~Sections 1 and 2 below are OUT (below the client's do-not-design note). Kept for reference only.~~
 
 **1. Enrolment & learner roster (27):**
 - COH-OPS-002 roster states (9): active, completed, cancelled, upcoming, empty, error, loading, instructor view, Requests tab
@@ -52,6 +58,8 @@ Rules stay "design, don't copy": we keep our layouts and copy, but terms and rul
 - PRG-LE-001 My learning experiences (programme row), PRG-MGT-001 programme overview
 - PRG-MGT-002 programme cohorts + 13 states (after publish, delete draft, cancel, archive, 3 empties, instructor, loading, error, validation expired, new version in validation)
 - COH-OPS-001 cohort overview (9: active, upcoming, completed, cancelled, pending changes, instructor, loading, partial failure, unauthorized)
+
+**IN SCOPE ↓**
 
 **3. Account menu (3):** PM-001, PM-002, PM-003
 
@@ -69,11 +77,11 @@ Rules stay "design, don't copy": we keep our layouts and copy, but terms and rul
 
 639 `href="#"` across 37 Studio files (510 already linked). Most are the shared sidebar/top bar repeated on every page. Wire to match the client prototype in step 3.
 
-## E. Questions for the designer
+## E. Designer decisions (2026-10-15)
 
-1. DASH-ST is shared with Link 1. Change "Gold validated" in both canvases?
-2. SET-007 / AI-012 live in Link 1's CR-HOME-SET. Bring a copy into the Studio canvas so Link 3 is complete on its own?
-3. Client placeholders still open: [REFUND POLICY], [POST-COHORT ACCESS PERIOD]. Show them as-is?
-4. Add / edit / publish a cohort happen on the client's Learning Program Studio canvas (LP-STU-030/031/032, COH-PUB-001), which isn't in Link 3. Out of scope?
+1. Change "Gold validated" → new wording in BOTH canvases (DASH-ST is shared with Link 1). YES.
+2. Copy SET-007 / AI-012 (CR-HOME-SET) into the Studio canvas. YES.
+3. Placeholders [REFUND POLICY] etc. Moot: only on cohort screens, which are out of scope.
+4. Cohort add/edit/publish (LP-STU, COH-PUB). Moot: out of scope.
 
-File budget: 207 now + ≈80 screens × 2 boards + ≈15 sources ≈ 380 of 512.
+File budget: 207 now + 29 screens × 2 boards + 1 copied settings screen × 2 + a few sources ≈ 275 of 512.

@@ -20,8 +20,8 @@
       "is_interactive": true,
       "title": "CR-AI-001 · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 24400,
+      "x": 1520,
+      "y": 16580,
       "page": "p2"
     },
     "CR-AI-001.dc.html": {
@@ -29,8 +29,8 @@
       "is_interactive": true,
       "title": "CR-AI-001 · Nova Copilot panel · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 24400,
+      "x": 0,
+      "y": 16580,
       "page": "p2"
     },
     "CR-AI-001a-Mobile.dc.html": {
@@ -38,8 +38,8 @@
       "is_interactive": true,
       "title": "CR-AI-001a · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 26420,
+      "x": 5660,
+      "y": 16580,
       "page": "p2"
     },
     "CR-AI-001a.dc.html": {
@@ -47,8 +47,8 @@
       "is_interactive": true,
       "title": "CR-AI-001a · Nova · apply changes · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 26420,
+      "x": 4140,
+      "y": 16580,
       "page": "p2"
     },
     "CR-AI-003-Mobile.dc.html": {
@@ -56,8 +56,8 @@
       "is_interactive": true,
       "title": "CR-AI-003 · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 26420,
+      "x": 7730,
+      "y": 16580,
       "page": "p2"
     },
     "CR-AI-003.dc.html": {
@@ -65,8 +65,8 @@
       "is_interactive": true,
       "title": "CR-AI-003 · Nova · past conversations · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 26420,
+      "x": 6210,
+      "y": 16580,
       "page": "p2"
     },
     "CR-ANA-001-Mobile.dc.html": {
@@ -74,8 +74,8 @@
       "is_interactive": true,
       "title": "CR-ANA-001 · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 18020,
+      "x": 9800,
+      "y": 10240,
       "page": "p2"
     },
     "CR-ANA-001.dc.html": {
@@ -83,8 +83,8 @@
       "is_interactive": true,
       "title": "CR-ANA-001 · Analytics overview · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 18020,
+      "x": 8280,
+      "y": 10240,
       "page": "p2"
     },
     "CR-ANA-002-Mobile.dc.html": {
@@ -92,8 +92,8 @@
       "is_interactive": true,
       "title": "CR-ANA-002 · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 18020,
+      "x": 13940,
+      "y": 10240,
       "page": "p2"
     },
     "CR-ANA-002.dc.html": {
@@ -101,8 +101,8 @@
       "is_interactive": true,
       "title": "CR-ANA-002 · Course analytics · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 18020,
+      "x": 12420,
+      "y": 10240,
       "page": "p2"
     },
     "CR-ANA-002c-Mobile.dc.html": {
@@ -110,8 +110,8 @@
       "is_interactive": true,
       "title": "CR-ANA-002c · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 18020,
+      "x": 16010,
+      "y": 10240,
       "page": "p2"
     },
     "CR-ANA-002c.dc.html": {
@@ -119,8 +119,8 @@
       "is_interactive": true,
       "title": "CR-ANA-002c · Certification analytics · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 18020,
+      "x": 14490,
+      "y": 10240,
       "page": "p2"
     },
     "CR-ANA-002p-Mobile.dc.html": {
@@ -128,8 +128,8 @@
       "is_interactive": true,
       "title": "CR-ANA-002p · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 20180,
+      "x": 20150,
+      "y": 10240,
       "page": "p2"
     },
     "CR-ANA-002p.dc.html": {
@@ -137,8 +137,8 @@
       "is_interactive": true,
       "title": "CR-ANA-002p · Program analytics · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 20180,
+      "x": 18630,
+      "y": 10240,
       "page": "p2"
     },
     "CR-ANA-003-Mobile.dc.html": {
@@ -146,8 +146,8 @@
       "is_interactive": true,
       "title": "CR-ANA-003 · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 20180,
+      "x": 22220,
+      "y": 10240,
       "page": "p2"
     },
     "CR-ANA-003.dc.html": {
@@ -155,8 +155,8 @@
       "is_interactive": true,
       "title": "CR-ANA-003 · Compare · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 20180,
+      "x": 20700,
+      "y": 10240,
       "page": "p2"
     },
     "CR-ANA-004-Mobile.dc.html": {
@@ -164,8 +164,8 @@
       "is_interactive": true,
       "title": "CR-ANA-004 · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 18020,
+      "x": 11870,
+      "y": 10240,
       "page": "p2"
     },
     "CR-ANA-004.dc.html": {
@@ -173,15 +173,15 @@
       "is_interactive": true,
       "title": "CR-ANA-004 · Export report · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 18020,
+      "x": 10350,
+      "y": 10240,
       "page": "p2"
     },
     "CR-ANA.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 0,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-ANA · Analytics · shared source"
     },
@@ -189,7 +189,7 @@
       "h": 820,
       "w": 1440,
       "x": 1520,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-ANX · Analytics · shared source"
     },
@@ -198,8 +198,8 @@
       "is_interactive": true,
       "title": "CR-CAL-001 · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 12080,
+      "x": 1520,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-001.dc.html": {
@@ -207,8 +207,8 @@
       "is_interactive": true,
       "title": "CR-CAL-001 · Calendar · month · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 12080,
+      "x": 0,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-001a-Mobile.dc.html": {
@@ -216,8 +216,8 @@
       "is_interactive": true,
       "title": "CR-CAL-001a · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 14180,
+      "x": 9800,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-001a.dc.html": {
@@ -225,8 +225,8 @@
       "is_interactive": true,
       "title": "CR-CAL-001a · Calendar · agenda · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 14180,
+      "x": 8280,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-001d-Mobile.dc.html": {
@@ -234,8 +234,8 @@
       "is_interactive": true,
       "title": "CR-CAL-001d · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 14180,
+      "x": 7730,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-001d.dc.html": {
@@ -243,8 +243,8 @@
       "is_interactive": true,
       "title": "CR-CAL-001d · Calendar · day · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 14180,
+      "x": 6210,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-001w-Mobile.dc.html": {
@@ -252,8 +252,8 @@
       "is_interactive": true,
       "title": "CR-CAL-001w · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 14180,
+      "x": 3590,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-001w.dc.html": {
@@ -261,8 +261,8 @@
       "is_interactive": true,
       "title": "CR-CAL-001w · Calendar · week · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 14180,
+      "x": 2070,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-002-Mobile.dc.html": {
@@ -270,8 +270,8 @@
       "is_interactive": true,
       "title": "CR-CAL-002 · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 14180,
+      "x": 5660,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-002.dc.html": {
@@ -279,8 +279,8 @@
       "is_interactive": true,
       "title": "CR-CAL-002 · Event detail · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 14180,
+      "x": 4140,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-003-Mobile.dc.html": {
@@ -288,8 +288,8 @@
       "is_interactive": true,
       "title": "CR-CAL-003 · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 14180,
+      "x": 11870,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-003.dc.html": {
@@ -297,8 +297,8 @@
       "is_interactive": true,
       "title": "CR-CAL-003 · Weekly availability · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 14180,
+      "x": 10350,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-004-Mobile.dc.html": {
@@ -306,8 +306,8 @@
       "is_interactive": true,
       "title": "CR-CAL-004 · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 16080,
+      "x": 13940,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-004.dc.html": {
@@ -315,8 +315,8 @@
       "is_interactive": true,
       "title": "CR-CAL-004 · Days off & exceptions · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 16080,
+      "x": 12420,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-005-Mobile.dc.html": {
@@ -324,8 +324,8 @@
       "is_interactive": true,
       "title": "CR-CAL-005 · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 16080,
+      "x": 16010,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL-005.dc.html": {
@@ -333,15 +333,15 @@
       "is_interactive": true,
       "title": "CR-CAL-005 · Presence & visibility · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 16080,
+      "x": 14490,
+      "y": 8300,
       "page": "p2"
     },
     "CR-CAL.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 3040,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-CAL · Calendar · shared source"
     },
@@ -350,8 +350,8 @@
       "is_interactive": true,
       "title": "CR-COURSE-OV-001 · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 9980,
+      "x": 1520,
+      "y": 6200,
       "page": "p2"
     },
     "CR-COURSE-OV-001.dc.html": {
@@ -359,8 +359,8 @@
       "is_interactive": true,
       "title": "CR-COURSE-OV-001 · Course overview · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 9980,
+      "x": 0,
+      "y": 6200,
       "page": "p2"
     },
     "CR-CREIO-002-Mobile.dc.html": {
@@ -368,8 +368,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-002 · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 30240,
+      "x": 5660,
+      "y": 18660,
       "page": "p2"
     },
     "CR-CREIO-002.dc.html": {
@@ -377,8 +377,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-002 · Creio history · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 30240,
+      "x": 4140,
+      "y": 18660,
       "page": "p2"
     },
     "CR-CREIO-003-Mobile.dc.html": {
@@ -386,8 +386,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-003 · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 30240,
+      "x": 7730,
+      "y": 18660,
       "page": "p2"
     },
     "CR-CREIO-003.dc.html": {
@@ -395,8 +395,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-003 · Get more Creio · packages · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 30240,
+      "x": 6210,
+      "y": 18660,
       "page": "p2"
     },
     "CR-CREIO-003c-Mobile.dc.html": {
@@ -404,8 +404,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-003c · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 30240,
+      "x": 9800,
+      "y": 18660,
       "page": "p2"
     },
     "CR-CREIO-003c.dc.html": {
@@ -413,8 +413,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-003c · Get more Creio · custom · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 30240,
+      "x": 8280,
+      "y": 18660,
       "page": "p2"
     },
     "CR-CREIO-004-Mobile.dc.html": {
@@ -422,8 +422,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-004 · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 30240,
+      "x": 13940,
+      "y": 18660,
       "page": "p2"
     },
     "CR-CREIO-004.dc.html": {
@@ -431,8 +431,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-004 · Get more Creio · review · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 30240,
+      "x": 12420,
+      "y": 18660,
       "page": "p2"
     },
     "CR-CREIO-005-Mobile.dc.html": {
@@ -440,8 +440,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-005 · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 30240,
+      "x": 16010,
+      "y": 18660,
       "page": "p2"
     },
     "CR-CREIO-005.dc.html": {
@@ -449,8 +449,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-005 · Creio added · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 30240,
+      "x": 14490,
+      "y": 18660,
       "page": "p2"
     },
     "CR-CREIO-006-Mobile.dc.html": {
@@ -459,7 +459,7 @@
       "title": "CR-CREIO-006 · Mobile",
       "w": 390,
       "x": 1520,
-      "y": 31980,
+      "y": 20400,
       "page": "p2"
     },
     "CR-CREIO-006.dc.html": {
@@ -468,7 +468,7 @@
       "title": "CR-CREIO-006 · Not enough Credits · Desktop",
       "w": 1440,
       "x": 0,
-      "y": 31980,
+      "y": 20400,
       "page": "p2"
     },
     "CR-CREIO-006b-Mobile.dc.html": {
@@ -477,7 +477,7 @@
       "title": "CR-CREIO-006b · Mobile",
       "w": 390,
       "x": 3590,
-      "y": 31980,
+      "y": 20400,
       "page": "p2"
     },
     "CR-CREIO-006b.dc.html": {
@@ -486,7 +486,7 @@
       "title": "CR-CREIO-006b · Add Credits from Nova · Desktop",
       "w": 1440,
       "x": 2070,
-      "y": 31980,
+      "y": 20400,
       "page": "p2"
     },
     "CR-CREIO-006c-Mobile.dc.html": {
@@ -495,7 +495,7 @@
       "title": "CR-CREIO-006c · Mobile",
       "w": 390,
       "x": 5660,
-      "y": 31980,
+      "y": 20400,
       "page": "p2"
     },
     "CR-CREIO-006c.dc.html": {
@@ -504,7 +504,7 @@
       "title": "CR-CREIO-006c · Credits added · return · Desktop",
       "w": 1440,
       "x": 4140,
-      "y": 31980,
+      "y": 20400,
       "page": "p2"
     },
     "CR-CREIO-006d-Mobile.dc.html": {
@@ -513,7 +513,7 @@
       "title": "CR-CREIO-006d · Mobile",
       "w": 390,
       "x": 7730,
-      "y": 31980,
+      "y": 20400,
       "page": "p2"
     },
     "CR-CREIO-006d.dc.html": {
@@ -522,7 +522,7 @@
       "title": "CR-CREIO-006d · Back at purchase · covered · Desktop",
       "w": 1440,
       "x": 6210,
-      "y": 31980,
+      "y": 20400,
       "page": "p2"
     },
     "CR-CREIO-010-Mobile.dc.html": {
@@ -530,8 +530,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-010 · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 33664,
+      "x": 7730,
+      "y": 22084,
       "page": "p2"
     },
     "CR-CREIO-010.dc.html": {
@@ -539,8 +539,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-010 · Nova · low balance · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 33664,
+      "x": 6210,
+      "y": 22084,
       "page": "p2"
     },
     "CR-CREIO-010b-Mobile.dc.html": {
@@ -548,8 +548,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-010b · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 33664,
+      "x": 11870,
+      "y": 22084,
       "page": "p2"
     },
     "CR-CREIO-010b.dc.html": {
@@ -557,8 +557,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-010b · Creio popover · low · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 33664,
+      "x": 10350,
+      "y": 22084,
       "page": "p2"
     },
     "CR-CREIO-011-Mobile.dc.html": {
@@ -566,8 +566,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-011 · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 33664,
+      "x": 13940,
+      "y": 22084,
       "page": "p2"
     },
     "CR-CREIO-011.dc.html": {
@@ -575,8 +575,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-011 · Nova · Creio used up · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 33664,
+      "x": 12420,
+      "y": 22084,
       "page": "p2"
     },
     "CR-CREIO-011b-Mobile.dc.html": {
@@ -584,8 +584,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-011b · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 33664,
+      "x": 16010,
+      "y": 22084,
       "page": "p2"
     },
     "CR-CREIO-011b.dc.html": {
@@ -593,15 +593,15 @@
       "is_interactive": true,
       "title": "CR-CREIO-011b · Copilot · not enough Creio · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 33664,
+      "x": 14490,
+      "y": 22084,
       "page": "p2"
     },
     "CR-CREIO-BUY.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 4560,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-CREIO-BUY · Get more Creio · shared source"
     },
@@ -609,7 +609,7 @@
       "h": 1000,
       "w": 1440,
       "x": 6080,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-CREIO-POP · Creio balance · shared source"
     },
@@ -618,8 +618,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-TOP · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 33664,
+      "x": 5660,
+      "y": 22084,
       "page": "p2"
     },
     "CR-CREIO-TOP.dc.html": {
@@ -627,8 +627,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-TOP · Creio popover · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 33664,
+      "x": 4140,
+      "y": 22084,
       "page": "p2"
     },
     "CR-CREIO-USE-Mobile.dc.html": {
@@ -636,8 +636,8 @@
       "is_interactive": true,
       "title": "CR-CREIO-USE · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 31980,
+      "x": 1520,
+      "y": 22084,
       "page": "p2"
     },
     "CR-CREIO-USE.dc.html": {
@@ -645,15 +645,15 @@
       "is_interactive": true,
       "title": "CR-CREIO-USE · Creio usage · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 31980,
+      "x": 0,
+      "y": 22084,
       "page": "p2"
     },
     "CR-DASH-ST.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 7600,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-DASH-ST · Creator Studio · shared source"
     },
@@ -662,8 +662,8 @@
       "is_interactive": true,
       "title": "CR-DISC-001 · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 9980,
+      "x": 3590,
+      "y": 6200,
       "page": "p2"
     },
     "CR-DISC-001.dc.html": {
@@ -671,8 +671,8 @@
       "is_interactive": true,
       "title": "CR-DISC-001 · Discussions · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 9980,
+      "x": 2070,
+      "y": 6200,
       "page": "p2"
     },
     "CR-DISC-001u-Mobile.dc.html": {
@@ -680,8 +680,8 @@
       "is_interactive": true,
       "title": "CR-DISC-001u · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 12080,
+      "x": 5660,
+      "y": 6200,
       "page": "p2"
     },
     "CR-DISC-001u.dc.html": {
@@ -689,8 +689,8 @@
       "is_interactive": true,
       "title": "CR-DISC-001u · Discussions · unanswered · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 12080,
+      "x": 4140,
+      "y": 6200,
       "page": "p2"
     },
     "CR-DISC-002-Mobile.dc.html": {
@@ -698,8 +698,8 @@
       "is_interactive": true,
       "title": "CR-DISC-002 · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 12080,
+      "x": 7730,
+      "y": 6200,
       "page": "p2"
     },
     "CR-DISC-002.dc.html": {
@@ -707,8 +707,8 @@
       "is_interactive": true,
       "title": "CR-DISC-002 · Discussion thread · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 12080,
+      "x": 6210,
+      "y": 6200,
       "page": "p2"
     },
     "CR-DISC-002b-Mobile.dc.html": {
@@ -716,8 +716,8 @@
       "is_interactive": true,
       "title": "CR-DISC-002b · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 12080,
+      "x": 9800,
+      "y": 6200,
       "page": "p2"
     },
     "CR-DISC-002b.dc.html": {
@@ -725,8 +725,8 @@
       "is_interactive": true,
       "title": "CR-DISC-002b · Answer an unanswered question · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 12080,
+      "x": 8280,
+      "y": 6200,
       "page": "p2"
     },
     "CR-DISC-003-Mobile.dc.html": {
@@ -734,8 +734,8 @@
       "is_interactive": true,
       "title": "CR-DISC-003 · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 12080,
+      "x": 11870,
+      "y": 6200,
       "page": "p2"
     },
     "CR-DISC-003.dc.html": {
@@ -743,15 +743,15 @@
       "is_interactive": true,
       "title": "CR-DISC-003 · From a notification · new reply · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 12080,
+      "x": 10350,
+      "y": 6200,
       "page": "p2"
     },
     "CR-DISC.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 9120,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-DISC · Discussions · shared source"
     },
@@ -759,7 +759,7 @@
       "h": 820,
       "w": 1440,
       "x": 10640,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-DTH · Discussion · shared source"
     },
@@ -769,7 +769,7 @@
       "title": "CR-EARN-001 · Mobile",
       "w": 390,
       "x": 1520,
-      "y": 6320,
+      "y": 4320,
       "page": "p2"
     },
     "CR-EARN-001.dc.html": {
@@ -778,7 +778,7 @@
       "title": "CR-EARN-001 · Earnings · payout on its way · Desktop",
       "w": 1440,
       "x": 0,
-      "y": 6320,
+      "y": 4320,
       "page": "p2"
     },
     "CR-EARN-001b-Mobile.dc.html": {
@@ -787,7 +787,7 @@
       "title": "CR-EARN-001b · Mobile",
       "w": 390,
       "x": 3590,
-      "y": 6320,
+      "y": 4320,
       "page": "p2"
     },
     "CR-EARN-001b.dc.html": {
@@ -796,14 +796,14 @@
       "title": "CR-EARN-001b · Earnings · below payout minimum · Desktop",
       "w": 1440,
       "x": 2070,
-      "y": 6320,
+      "y": 4320,
       "page": "p2"
     },
     "CR-EARN.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 12160,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-EARN · Earnings · shared source"
     },
@@ -812,8 +812,8 @@
       "is_interactive": true,
       "title": "CR-HELP-001 · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 26420,
+      "x": 13940,
+      "y": 16580,
       "page": "p2"
     },
     "CR-HELP-001.dc.html": {
@@ -821,8 +821,8 @@
       "is_interactive": true,
       "title": "CR-HELP-001 · Help · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 26420,
+      "x": 12420,
+      "y": 16580,
       "page": "p2"
     },
     "CR-HELP-002-Mobile.dc.html": {
@@ -830,8 +830,8 @@
       "is_interactive": true,
       "title": "CR-HELP-002 · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 26420,
+      "x": 16010,
+      "y": 16580,
       "page": "p2"
     },
     "CR-HELP-002.dc.html": {
@@ -839,8 +839,8 @@
       "is_interactive": true,
       "title": "CR-HELP-002 · Help article · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 26420,
+      "x": 14490,
+      "y": 16580,
       "page": "p2"
     },
     "CR-HELP-003-Mobile.dc.html": {
@@ -848,8 +848,8 @@
       "is_interactive": true,
       "title": "CR-HELP-003 · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 28500,
+      "x": 18080,
+      "y": 16580,
       "page": "p2"
     },
     "CR-HELP-003.dc.html": {
@@ -857,8 +857,8 @@
       "is_interactive": true,
       "title": "CR-HELP-003 · Contact support · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 28500,
+      "x": 16560,
+      "y": 16580,
       "page": "p2"
     },
     "CR-HELP-004-Mobile.dc.html": {
@@ -866,8 +866,8 @@
       "is_interactive": true,
       "title": "CR-HELP-004 · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 28500,
+      "x": 22220,
+      "y": 16580,
       "page": "p2"
     },
     "CR-HELP-004.dc.html": {
@@ -875,8 +875,8 @@
       "is_interactive": true,
       "title": "CR-HELP-004 · Request sent · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 28500,
+      "x": 20700,
+      "y": 16580,
       "page": "p2"
     },
     "CR-HELP-005-Mobile.dc.html": {
@@ -884,8 +884,8 @@
       "is_interactive": true,
       "title": "CR-HELP-005 · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 28500,
+      "x": 24290,
+      "y": 16580,
       "page": "p2"
     },
     "CR-HELP-005.dc.html": {
@@ -893,8 +893,8 @@
       "is_interactive": true,
       "title": "CR-HELP-005 · My support requests · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 28500,
+      "x": 22770,
+      "y": 16580,
       "page": "p2"
     },
     "CR-HELP-006-Mobile.dc.html": {
@@ -902,8 +902,8 @@
       "is_interactive": true,
       "title": "CR-HELP-006 · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 28500,
+      "x": 26360,
+      "y": 16580,
       "page": "p2"
     },
     "CR-HELP-006.dc.html": {
@@ -911,15 +911,15 @@
       "is_interactive": true,
       "title": "CR-HELP-006 · Support conversation · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 28500,
+      "x": 24840,
+      "y": 16580,
       "page": "p2"
     },
     "CR-HELP.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 13680,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-HELP · Help · shared source"
     },
@@ -927,7 +927,7 @@
       "h": 820,
       "w": 1440,
       "x": 15200,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-HELPT · Support requests · shared source"
     },
@@ -936,8 +936,8 @@
       "is_interactive": true,
       "title": "CR-LRN-001 · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 16080,
+      "x": 5660,
+      "y": 10240,
       "page": "p2"
     },
     "CR-LRN-001.dc.html": {
@@ -945,8 +945,8 @@
       "is_interactive": true,
       "title": "CR-LRN-001 · Learners · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 16080,
+      "x": 4140,
+      "y": 10240,
       "page": "p2"
     },
     "CR-LRN-002-Mobile.dc.html": {
@@ -954,8 +954,8 @@
       "is_interactive": true,
       "title": "CR-LRN-002 · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 18020,
+      "x": 7730,
+      "y": 10240,
       "page": "p2"
     },
     "CR-LRN-002.dc.html": {
@@ -963,8 +963,8 @@
       "is_interactive": true,
       "title": "CR-LRN-002 · Learner detail · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 18020,
+      "x": 6210,
+      "y": 10240,
       "page": "p2"
     },
     "CR-NOVA-001-Mobile.dc.html": {
@@ -972,8 +972,8 @@
       "is_interactive": true,
       "title": "CR-NOVA-001 · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 28500,
+      "x": 3590,
+      "y": 18660,
       "page": "p2"
     },
     "CR-NOVA-001.dc.html": {
@@ -981,8 +981,8 @@
       "is_interactive": true,
       "title": "CR-NOVA-001 · Nova · Creio overview · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 28500,
+      "x": 2070,
+      "y": 18660,
       "page": "p2"
     },
     "CR-ORG-SOON-Mobile.dc.html": {
@@ -990,8 +990,8 @@
       "is_interactive": true,
       "title": "CR-ORG-SOON · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 22340,
+      "x": 11870,
+      "y": 12400,
       "page": "p2"
     },
     "CR-ORG-SOON.dc.html": {
@@ -999,8 +999,8 @@
       "is_interactive": true,
       "title": "CR-ORG-SOON · My organizations · coming soon · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 22340,
+      "x": 10350,
+      "y": 12400,
       "page": "p2"
     },
     "CR-PAY-001-Mobile.dc.html": {
@@ -1008,8 +1008,8 @@
       "is_interactive": true,
       "title": "CR-PAY-001 · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 2640,
+      "x": 1520,
+      "y": 2480,
       "page": "p2"
     },
     "CR-PAY-001.dc.html": {
@@ -1017,8 +1017,8 @@
       "is_interactive": true,
       "title": "CR-PAY-001 · Validation quote · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 2640,
+      "x": 0,
+      "y": 2480,
       "page": "p2"
     },
     "CR-PAY-002-Mobile.dc.html": {
@@ -1026,8 +1026,8 @@
       "is_interactive": true,
       "title": "CR-PAY-002 · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 2640,
+      "x": 3590,
+      "y": 2480,
       "page": "p2"
     },
     "CR-PAY-002.dc.html": {
@@ -1035,8 +1035,8 @@
       "is_interactive": true,
       "title": "CR-PAY-002 · Balance check · more Credits needed · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 2640,
+      "x": 2070,
+      "y": 2480,
       "page": "p2"
     },
     "CR-PAY-002b-Mobile.dc.html": {
@@ -1044,8 +1044,8 @@
       "is_interactive": true,
       "title": "CR-PAY-002b · Mobile",
       "w": 390,
-      "x": 11870,
-      "y": 2640,
+      "x": 5660,
+      "y": 2480,
       "page": "p2"
     },
     "CR-PAY-002b.dc.html": {
@@ -1053,8 +1053,8 @@
       "is_interactive": true,
       "title": "CR-PAY-002b · Balance check · enough Credits · Desktop",
       "w": 1440,
-      "x": 10350,
-      "y": 2640,
+      "x": 4140,
+      "y": 2480,
       "page": "p2"
     },
     "CR-PAY-002f-Mobile.dc.html": {
@@ -1062,8 +1062,8 @@
       "is_interactive": true,
       "title": "CR-PAY-002f · Mobile",
       "w": 390,
-      "x": 13940,
-      "y": 2640,
+      "x": 7730,
+      "y": 2480,
       "page": "p2"
     },
     "CR-PAY-002f.dc.html": {
@@ -1071,8 +1071,8 @@
       "is_interactive": true,
       "title": "CR-PAY-002f · Back from funding · shortfall covered · Desktop",
       "w": 1440,
-      "x": 12420,
-      "y": 2640,
+      "x": 6210,
+      "y": 2480,
       "page": "p2"
     },
     "CR-PAY-002r-Mobile.dc.html": {
@@ -1080,8 +1080,8 @@
       "is_interactive": true,
       "title": "CR-PAY-002r · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 4480,
+      "x": 9800,
+      "y": 2480,
       "page": "p2"
     },
     "CR-PAY-002r.dc.html": {
@@ -1089,8 +1089,8 @@
       "is_interactive": true,
       "title": "CR-PAY-002r · Wallet funded → return to validation payment · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 4480,
+      "x": 8280,
+      "y": 2480,
       "page": "p2"
     },
     "CR-PAY-003-Mobile.dc.html": {
@@ -1098,8 +1098,8 @@
       "is_interactive": true,
       "title": "CR-PAY-003 · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 4480,
+      "x": 11870,
+      "y": 2480,
       "page": "p2"
     },
     "CR-PAY-003.dc.html": {
@@ -1107,8 +1107,8 @@
       "is_interactive": true,
       "title": "CR-PAY-003 · Confirm payment · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 4480,
+      "x": 10350,
+      "y": 2480,
       "page": "p2"
     },
     "CR-PAY-003s-Mobile.dc.html": {
@@ -1116,8 +1116,8 @@
       "is_interactive": true,
       "title": "CR-PAY-003s · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 4480,
+      "x": 13940,
+      "y": 2480,
       "page": "p2"
     },
     "CR-PAY-003s.dc.html": {
@@ -1125,15 +1125,15 @@
       "is_interactive": true,
       "title": "CR-PAY-003s · Paid → validation case open · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 4480,
+      "x": 12420,
+      "y": 2480,
       "page": "p2"
     },
     "CR-PAY.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 16720,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-PAY · Validation payment · shared source"
     },
@@ -1142,8 +1142,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001 · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 6320,
+      "x": 7730,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001.dc.html": {
@@ -1151,8 +1151,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001 · Payout method · choose · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 6320,
+      "x": 6210,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001a-Mobile.dc.html": {
@@ -1160,8 +1160,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001a · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 6320,
+      "x": 9800,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001a.dc.html": {
@@ -1169,8 +1169,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001a · Payout method · PayPal · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 6320,
+      "x": 8280,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001b-Mobile.dc.html": {
@@ -1178,8 +1178,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001b · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 6320,
+      "x": 11870,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001b.dc.html": {
@@ -1187,8 +1187,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001b · Payout method · PayPal handoff · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 6320,
+      "x": 10350,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001c-Mobile.dc.html": {
@@ -1196,8 +1196,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001c · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 8100,
+      "x": 16010,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001c.dc.html": {
@@ -1205,8 +1205,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001c · Payoneer window · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 8100,
+      "x": 14490,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001d-Mobile.dc.html": {
@@ -1214,8 +1214,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001d · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 8100,
+      "x": 20150,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001d.dc.html": {
@@ -1223,8 +1223,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001d · Tipalti bank details · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 8100,
+      "x": 18630,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001e-Mobile.dc.html": {
@@ -1232,8 +1232,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001e · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 8100,
+      "x": 24290,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001e.dc.html": {
@@ -1241,8 +1241,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001e · Direct deposit (U.S.) · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 8100,
+      "x": 22770,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001g-Mobile.dc.html": {
@@ -1250,8 +1250,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001g · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 8100,
+      "x": 30500,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001g.dc.html": {
@@ -1259,8 +1259,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001g · PayPal connected · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 8100,
+      "x": 28980,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001p-Mobile.dc.html": {
@@ -1268,8 +1268,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001p · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 8100,
+      "x": 32570,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-001p.dc.html": {
@@ -1277,8 +1277,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-001p · Payoneer verification pending · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 8100,
+      "x": 31050,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-005-Mobile.dc.html": {
@@ -1286,8 +1286,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-005 · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 9980,
+      "x": 36710,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-005.dc.html": {
@@ -1295,8 +1295,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-005 · Payout status · processing · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 9980,
+      "x": 35190,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-005a-Mobile.dc.html": {
@@ -1304,8 +1304,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-005a · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 9980,
+      "x": 44990,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-005a.dc.html": {
@@ -1313,8 +1313,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-005a · Payout status · action required · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 9980,
+      "x": 43470,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-006-Mobile.dc.html": {
@@ -1322,8 +1322,8 @@
       "is_interactive": true,
       "title": "CR-PAYO-006 · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 9980,
+      "x": 47060,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-006.dc.html": {
@@ -1331,15 +1331,15 @@
       "is_interactive": true,
       "title": "CR-PAYO-006 · Payout history · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 9980,
+      "x": 45540,
+      "y": 4320,
       "page": "p2"
     },
     "CR-PAYO-OUT.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 18240,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-PAYO-OUT · Payout method · shared source"
     },
@@ -1347,7 +1347,7 @@
       "h": 820,
       "w": 1440,
       "x": 19760,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-PAYO · Payout method · shared source"
     },
@@ -1355,7 +1355,7 @@
       "h": 820,
       "w": 1440,
       "x": 21280,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-PAYST · Payout · shared source"
     },
@@ -1364,8 +1364,8 @@
       "is_interactive": true,
       "title": "CR-PROF-001 · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 20180,
+      "x": 1520,
+      "y": 12400,
       "page": "p2"
     },
     "CR-PROF-001.dc.html": {
@@ -1373,8 +1373,8 @@
       "is_interactive": true,
       "title": "CR-PROF-001 · Creator profile · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 20180,
+      "x": 0,
+      "y": 12400,
       "page": "p2"
     },
     "CR-PROF-001c-Mobile.dc.html": {
@@ -1382,8 +1382,8 @@
       "is_interactive": true,
       "title": "CR-PROF-001c · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 20180,
+      "x": 5660,
+      "y": 12400,
       "page": "p2"
     },
     "CR-PROF-001c.dc.html": {
@@ -1391,8 +1391,8 @@
       "is_interactive": true,
       "title": "CR-PROF-001c · Profile credentials · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 20180,
+      "x": 4140,
+      "y": 12400,
       "page": "p2"
     },
     "CR-PROF-001v-Mobile.dc.html": {
@@ -1400,8 +1400,8 @@
       "is_interactive": true,
       "title": "CR-PROF-001v · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 20180,
+      "x": 7730,
+      "y": 12400,
       "page": "p2"
     },
     "CR-PROF-001v.dc.html": {
@@ -1409,8 +1409,8 @@
       "is_interactive": true,
       "title": "CR-PROF-001v · Public profile preview · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 20180,
+      "x": 6210,
+      "y": 12400,
       "page": "p2"
     },
     "CR-PROF-002-Mobile.dc.html": {
@@ -1418,8 +1418,8 @@
       "is_interactive": true,
       "title": "CR-PROF-002 · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 22340,
+      "x": 9800,
+      "y": 12400,
       "page": "p2"
     },
     "CR-PROF-002.dc.html": {
@@ -1427,15 +1427,15 @@
       "is_interactive": true,
       "title": "CR-PROF-002 · Public creator profile · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 22340,
+      "x": 8280,
+      "y": 12400,
       "page": "p2"
     },
     "CR-PROF.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 22800,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-PROF · Creator profile · shared source"
     },
@@ -1443,7 +1443,7 @@
       "h": 820,
       "w": 1440,
       "x": 24320,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-PUB · Ada Ononuju · shared source"
     },
@@ -1452,8 +1452,8 @@
       "is_interactive": true,
       "title": "CR-REVAL-001 · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 4480,
+      "x": 16010,
+      "y": 2480,
       "page": "p2"
     },
     "CR-REVAL-001.dc.html": {
@@ -1461,8 +1461,8 @@
       "is_interactive": true,
       "title": "CR-REVAL-001 · Revalidation · what changed · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 4480,
+      "x": 14490,
+      "y": 2480,
       "page": "p2"
     },
     "CR-REVAL-002-Mobile.dc.html": {
@@ -1470,8 +1470,8 @@
       "is_interactive": true,
       "title": "CR-REVAL-002 · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 4480,
+      "x": 18080,
+      "y": 2480,
       "page": "p2"
     },
     "CR-REVAL-002.dc.html": {
@@ -1479,8 +1479,8 @@
       "is_interactive": true,
       "title": "CR-REVAL-002 · Revalidation quote · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 4480,
+      "x": 16560,
+      "y": 2480,
       "page": "p2"
     },
     "CR-SEARCH-002-Mobile.dc.html": {
@@ -1488,8 +1488,8 @@
       "is_interactive": true,
       "title": "CR-SEARCH-002 · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 26420,
+      "x": 9800,
+      "y": 16580,
       "page": "p2"
     },
     "CR-SEARCH-002.dc.html": {
@@ -1497,8 +1497,8 @@
       "is_interactive": true,
       "title": "CR-SEARCH-002 · Search results · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 26420,
+      "x": 8280,
+      "y": 16580,
       "page": "p2"
     },
     "CR-SET-001-Mobile.dc.html": {
@@ -1506,8 +1506,8 @@
       "is_interactive": true,
       "title": "CR-SET-001 · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 22340,
+      "x": 1520,
+      "y": 14560,
       "page": "p2"
     },
     "CR-SET-001.dc.html": {
@@ -1515,8 +1515,8 @@
       "is_interactive": true,
       "title": "CR-SET-001 · Settings · Account · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 22340,
+      "x": 0,
+      "y": 14560,
       "page": "p2"
     },
     "CR-SET-002d-Mobile.dc.html": {
@@ -1524,8 +1524,8 @@
       "is_interactive": true,
       "title": "CR-SET-002d · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 22340,
+      "x": 3590,
+      "y": 14560,
       "page": "p2"
     },
     "CR-SET-002d.dc.html": {
@@ -1533,8 +1533,8 @@
       "is_interactive": true,
       "title": "CR-SET-002d · Delete account · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 22340,
+      "x": 2070,
+      "y": 14560,
       "page": "p2"
     },
     "CR-SET-003-Mobile.dc.html": {
@@ -1542,8 +1542,8 @@
       "is_interactive": true,
       "title": "CR-SET-003 · Mobile",
       "w": 390,
-      "x": 9800,
-      "y": 22340,
+      "x": 5660,
+      "y": 14560,
       "page": "p2"
     },
     "CR-SET-003.dc.html": {
@@ -1551,8 +1551,8 @@
       "is_interactive": true,
       "title": "CR-SET-003 · Settings · Security · Desktop",
       "w": 1440,
-      "x": 8280,
-      "y": 22340,
+      "x": 4140,
+      "y": 14560,
       "page": "p2"
     },
     "CR-SET-004-Mobile.dc.html": {
@@ -1560,8 +1560,8 @@
       "is_interactive": true,
       "title": "CR-SET-004 · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 24400,
+      "x": 7730,
+      "y": 14560,
       "page": "p2"
     },
     "CR-SET-004.dc.html": {
@@ -1569,8 +1569,8 @@
       "is_interactive": true,
       "title": "CR-SET-004 · Settings · Notifications · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 24400,
+      "x": 6210,
+      "y": 14560,
       "page": "p2"
     },
     "CR-SET-005-Mobile.dc.html": {
@@ -1578,8 +1578,8 @@
       "is_interactive": true,
       "title": "CR-SET-005 · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 24400,
+      "x": 9800,
+      "y": 14560,
       "page": "p2"
     },
     "CR-SET-005.dc.html": {
@@ -1587,8 +1587,8 @@
       "is_interactive": true,
       "title": "CR-SET-005 · Settings · Privacy · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 24400,
+      "x": 8280,
+      "y": 14560,
       "page": "p2"
     },
     "CR-SET-006-Mobile.dc.html": {
@@ -1596,8 +1596,8 @@
       "is_interactive": true,
       "title": "CR-SET-006 · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 24400,
+      "x": 11870,
+      "y": 14560,
       "page": "p2"
     },
     "CR-SET-006.dc.html": {
@@ -1605,8 +1605,8 @@
       "is_interactive": true,
       "title": "CR-SET-006 · Settings · Language & region · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 24400,
+      "x": 10350,
+      "y": 14560,
       "page": "p2"
     },
     "CR-SET-008-Mobile.dc.html": {
@@ -1614,8 +1614,8 @@
       "is_interactive": true,
       "title": "CR-SET-008 · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 24400,
+      "x": 16010,
+      "y": 14560,
       "page": "p2"
     },
     "CR-SET-008.dc.html": {
@@ -1623,15 +1623,15 @@
       "is_interactive": true,
       "title": "CR-SET-008 · Settings · Sign-in methods · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 24400,
+      "x": 14490,
+      "y": 14560,
       "page": "p2"
     },
     "CR-SET.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 25840,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-SET · Settings · shared source"
     },
@@ -1640,8 +1640,8 @@
       "is_interactive": true,
       "title": "CR-SUP-001 · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 16080,
+      "x": 1520,
+      "y": 10240,
       "page": "p2"
     },
     "CR-SUP-001.dc.html": {
@@ -1649,8 +1649,8 @@
       "is_interactive": true,
       "title": "CR-SUP-001 · Learner Support inbox · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 16080,
+      "x": 0,
+      "y": 10240,
       "page": "p2"
     },
     "CR-SUP-002-Mobile.dc.html": {
@@ -1658,8 +1658,8 @@
       "is_interactive": true,
       "title": "CR-SUP-002 · Mobile",
       "w": 390,
-      "x": 7730,
-      "y": 16080,
+      "x": 3590,
+      "y": 10240,
       "page": "p2"
     },
     "CR-SUP-002.dc.html": {
@@ -1667,15 +1667,15 @@
       "is_interactive": true,
       "title": "CR-SUP-002 · Support conversation · Desktop",
       "w": 1440,
-      "x": 6210,
-      "y": 16080,
+      "x": 2070,
+      "y": 10240,
       "page": "p2"
     },
     "CR-SUP.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 27360,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-SUP · Learner Support · shared source"
     },
@@ -1683,7 +1683,7 @@
       "h": 820,
       "w": 1440,
       "x": 28880,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-VAL-WS · Validation Workspace · shared source"
     },
@@ -1693,7 +1693,7 @@
       "title": "CR-WAL-001 · Mobile",
       "w": 390,
       "x": 1520,
-      "y": 840,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-001.dc.html": {
@@ -1702,7 +1702,7 @@
       "title": "CR-WAL-001 · Credit Wallet · Desktop",
       "w": 1440,
       "x": 0,
-      "y": 840,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-002-Mobile.dc.html": {
@@ -1711,7 +1711,7 @@
       "title": "CR-WAL-002 · Mobile",
       "w": 390,
       "x": 3590,
-      "y": 840,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-002.dc.html": {
@@ -1720,7 +1720,7 @@
       "title": "CR-WAL-002 · Add Credits · amount · Desktop",
       "w": 1440,
       "x": 2070,
-      "y": 840,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-003-Mobile.dc.html": {
@@ -1729,7 +1729,7 @@
       "title": "CR-WAL-003 · Mobile",
       "w": 390,
       "x": 5660,
-      "y": 840,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-003.dc.html": {
@@ -1738,7 +1738,7 @@
       "title": "CR-WAL-003 · Add Credits · payment method · Desktop",
       "w": 1440,
       "x": 4140,
-      "y": 840,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-004-Mobile.dc.html": {
@@ -1747,7 +1747,7 @@
       "title": "CR-WAL-004 · Mobile",
       "w": 390,
       "x": 7730,
-      "y": 840,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-004.dc.html": {
@@ -1756,7 +1756,7 @@
       "title": "CR-WAL-004 · Add Credits · review and pay · Desktop",
       "w": 1440,
       "x": 6210,
-      "y": 840,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-005-Mobile.dc.html": {
@@ -1765,7 +1765,7 @@
       "title": "CR-WAL-005 · Mobile",
       "w": 390,
       "x": 9800,
-      "y": 840,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-005.dc.html": {
@@ -1774,7 +1774,7 @@
       "title": "CR-WAL-005 · Add Credits · processing · Desktop",
       "w": 1440,
       "x": 8280,
-      "y": 840,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-005f-Mobile.dc.html": {
@@ -1782,8 +1782,8 @@
       "is_interactive": true,
       "title": "CR-WAL-005f · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 2640,
+      "x": 11870,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-005f.dc.html": {
@@ -1791,8 +1791,8 @@
       "is_interactive": true,
       "title": "CR-WAL-005f · Payment failed, not charged · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 2640,
+      "x": 10350,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-006-Mobile.dc.html": {
@@ -1800,8 +1800,8 @@
       "is_interactive": true,
       "title": "CR-WAL-006 · Mobile",
       "w": 390,
-      "x": 3590,
-      "y": 2640,
+      "x": 13940,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-006.dc.html": {
@@ -1809,8 +1809,8 @@
       "is_interactive": true,
       "title": "CR-WAL-006 · Wallet funded · Desktop",
       "w": 1440,
-      "x": 2070,
-      "y": 2640,
+      "x": 12420,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-007-Mobile.dc.html": {
@@ -1818,8 +1818,8 @@
       "is_interactive": true,
       "title": "CR-WAL-007 · Mobile",
       "w": 390,
-      "x": 5660,
-      "y": 2640,
+      "x": 16010,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-007.dc.html": {
@@ -1827,15 +1827,15 @@
       "is_interactive": true,
       "title": "CR-WAL-007 · Transaction history · Desktop",
       "w": 1440,
-      "x": 4140,
-      "y": 2640,
+      "x": 14490,
+      "y": 640,
       "page": "p2"
     },
     "CR-WAL-FUND.dc.html": {
       "h": 820,
       "w": 1440,
       "x": 30400,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-WAL-FUND · Add Credits · shared source"
     },
@@ -1843,7 +1843,7 @@
       "h": 820,
       "w": 1440,
       "x": 31920,
-      "y": 35348,
+      "y": 27088,
       "page": "p2",
       "title": "CR-WAL-OUT · Credit Wallet · shared source"
     }
@@ -2057,184 +2057,365 @@
     "CR-WAL-OUT.dc.html"
   ],
   "notes": {
-    "div-l2": {
+    "l3-head": {
       "kind": "title1",
       "maxW": 8000,
-      "text": "Studio screens (Link 2)",
       "w": 240,
       "x": 0,
       "y": 0,
+      "text": "Link 3 · client order (Mg8o). \"Not done yet\" marks a screen still to design.",
       "page": "p2"
     },
-    "wal": {
+    "l3s0": {
       "kind": "title1",
       "maxW": 8000,
-      "text": "Credit Wallet · Add Credits: amount → payment method → review and pay → processing (never charged twice)",
       "w": 240,
       "x": 0,
-      "y": 520,
+      "y": 320,
+      "text": "Credit Wallet",
       "page": "p2"
     },
-    "pay": {
+    "l3s1": {
       "kind": "title1",
       "maxW": 8000,
-      "text": "Wallet outcomes + validation payment: failed (not charged) · funded · transactions · quote → balance check (short / enough) → back from funding",
       "w": 240,
       "x": 0,
-      "y": 2320,
+      "y": 2160,
+      "text": "Payments & revalidation",
       "page": "p2"
     },
-    "pay2": {
+    "l3s2": {
       "kind": "title1",
       "maxW": 8000,
-      "text": "Validation payment, end of flow + revalidation: funded → return · confirm · paid (case open) · revalidation changes → quote",
       "w": 240,
       "x": 0,
-      "y": 4160,
+      "y": 4000,
+      "text": "Earnings & payouts: PayPal, Payoneer, Tipalti or Direct Deposit · paid automatically each month once the balance reaches $25",
       "page": "p2"
     },
-    "earn1": {
-      "kind": "title1",
-      "maxW": 8000,
-      "text": "Earnings + payout method: next payout · below minimum · choose method · PayPal · PayPal handoff",
-      "w": 240,
-      "x": 0,
-      "y": 6000,
+    "l3m-CR-EARN-001n": {
+      "text": "Not done yet\nCR-EARN-001n · CR-EARN-001 · Earnings with no payout method yet",
+      "x": 4140,
+      "y": 4320,
+      "w": 1440,
       "page": "p2"
     },
-    "payo2": {
-      "kind": "title1",
-      "maxW": 8000,
-      "text": "Payout method, other providers + outcomes: Payoneer · Tipalti · Direct deposit · PayPal connected · Payoneer pending",
-      "w": 240,
-      "x": 0,
-      "y": 7780,
+    "l3m-CR-PAYO-001h": {
+      "text": "Not done yet\nCR-PAYO-001h · CR-PAYO-001 · Payoneer: connect",
+      "x": 12420,
+      "y": 4320,
+      "w": 1440,
       "page": "p2"
     },
-    "payst": {
-      "kind": "title1",
-      "maxW": 8000,
-      "text": "Payout status + history, course overview, discussions",
-      "w": 240,
-      "x": 0,
-      "y": 9660,
+    "l3m-CR-PAYO-001i": {
+      "text": "Not done yet\nCR-PAYO-001i · CR-PAYO-001 · Tipalti: open setup",
+      "x": 16560,
+      "y": 4320,
+      "w": 1440,
       "page": "p2"
     },
-    "disc2": {
-      "kind": "title1",
-      "maxW": 8000,
-      "text": "Discussions (unanswered · thread · answer · from notification) + calendar month",
-      "w": 240,
-      "x": 0,
-      "y": 11760,
+    "l3m-CR-PAYO-001m": {
+      "text": "Not done yet\nCR-PAYO-001m · CR-PAYO-001 · Tipalti submitted: verification pending",
+      "x": 20700,
+      "y": 4320,
+      "w": 1440,
       "page": "p2"
     },
-    "cal2": {
-      "kind": "title1",
-      "maxW": 8000,
-      "text": "Calendar: week · event detail · day · agenda · weekly availability",
-      "w": 240,
-      "x": 0,
-      "y": 13860,
+    "l3m-CR-PAYO-001j": {
+      "text": "Not done yet\nCR-PAYO-001j · CR-PAYO-001 · Direct Deposit: routing number invalid (error)",
+      "x": 24840,
+      "y": 4320,
+      "w": 1440,
       "page": "p2"
     },
-    "sup1": {
-      "kind": "title1",
-      "maxW": 8000,
-      "text": "Days off & exceptions · presence & visibility · Learner Support inbox + conversation · Learners",
-      "w": 240,
-      "x": 0,
-      "y": 15760,
+    "l3m-CR-PAYO-001k": {
+      "text": "Not done yet\nCR-PAYO-001k · CR-PAYO-001 · Direct Deposit submitted: test deposit pending",
+      "x": 26910,
+      "y": 4320,
+      "w": 1440,
       "page": "p2"
     },
-    "ana1": {
-      "kind": "title1",
-      "maxW": 8000,
-      "text": "Learner detail · Analytics overview · Export · Course + Certification analytics",
-      "w": 240,
-      "x": 0,
-      "y": 17700,
+    "l3m-CR-PAYO-001n": {
+      "text": "Not done yet\nCR-PAYO-001n · CR-PAYO-001 · Payout method: action required",
+      "x": 33120,
+      "y": 4320,
+      "w": 1440,
       "page": "p2"
     },
-    "prof1": {
-      "kind": "title1",
-      "maxW": 8000,
-      "text": "Program analytics · Compare · Creator profile (edit, credentials, public preview)",
-      "w": 240,
-      "x": 0,
-      "y": 19860,
+    "l3m-CR-PAYO-005p": {
+      "text": "Not done yet\nCR-PAYO-005p · CR-PAYO-005 · Monthly payout: paid",
+      "x": 37260,
+      "y": 4320,
+      "w": 1440,
       "page": "p2"
     },
-    "set1": {
-      "kind": "title1",
-      "maxW": 8000,
-      "text": "Public profile · My organizations · Settings (account, delete, security)",
-      "w": 240,
-      "x": 0,
-      "y": 22020,
+    "l3m-CR-PAYO-005f": {
+      "text": "Not done yet\nCR-PAYO-005f · CR-PAYO-005 · Monthly payout: failed",
+      "x": 39330,
+      "y": 4320,
+      "w": 1440,
       "page": "p2"
     },
-    "set2": {
-      "kind": "title1",
-      "maxW": 8000,
-      "text": "Settings (notifications, privacy, language, sign-in methods; AI preferences = CR-HOME-SET) · Nova Copilot panel",
-      "w": 240,
-      "x": 0,
-      "y": 24080,
+    "l3m-CR-PAYO-005r": {
+      "text": "Not done yet\nCR-PAYO-005r · CR-PAYO-005 · Monthly payout: returned by bank",
+      "x": 41400,
+      "y": 4320,
+      "w": 1440,
       "page": "p2"
     },
-    "help1": {
+    "l3s3": {
       "kind": "title1",
       "maxW": 8000,
-      "text": "Nova (apply changes, past conversations) · Search · Help",
       "w": 240,
       "x": 0,
-      "y": 26100,
+      "y": 5880,
+      "text": "Course Overview & Discussions",
       "page": "p2"
     },
-    "help2": {
+    "l3s4": {
       "kind": "title1",
       "maxW": 8000,
-      "text": "Support requests (contact, sent, list, conversation) · Nova overview",
       "w": 240,
       "x": 0,
-      "y": 28180,
+      "y": 7980,
+      "text": "Calendar, availability & presence",
       "page": "p2"
     },
-    "creio1": {
+    "l3s5": {
       "kind": "title1",
       "maxW": 8000,
-      "text": "Creio: history · get more (packages, custom, review) · added",
       "w": 240,
       "x": 0,
-      "y": 29920,
+      "y": 9920,
+      "text": "Learner Support, Learners & Analytics",
       "page": "p2"
     },
-    "creio2": {
-      "kind": "title1",
-      "maxW": 8000,
-      "text": "Creio: not enough Credits → Add Credits → back to purchase · usage",
-      "w": 240,
-      "x": 0,
-      "y": 31660,
+    "l3m-CR-ANA-002path": {
+      "text": "Not done yet\nCR-ANA-002path · ANA-002 · Experience analytics: Career Path",
+      "x": 16560,
+      "y": 10240,
+      "w": 1440,
       "page": "p2"
     },
-    "creio3": {
+    "l3m-CR-ANA-003c": {
+      "text": "Not done yet\nCR-ANA-003c · ANA-003 · Compare cohorts",
+      "x": 22770,
+      "y": 10240,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3s6": {
       "kind": "title1",
       "maxW": 8000,
-      "text": "Creio: balance pop-over · low · used up · not enough for this action",
       "w": 240,
       "x": 0,
-      "y": 33344,
+      "y": 12080,
+      "text": "Creator Profile · My Organizations (coming soon)",
+      "page": "p2"
+    },
+    "l3m-CR-PROF-001e": {
+      "text": "Not done yet\nCR-PROF-001e · PROF-001 · Expertise tab",
+      "x": 2070,
+      "y": 12400,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3s7": {
+      "kind": "title1",
+      "maxW": 8000,
+      "w": 240,
+      "x": 0,
+      "y": 14240,
+      "text": "Settings",
+      "page": "p2"
+    },
+    "l3m-CR-SET-007": {
+      "text": "In the Link 1 canvas (CR-HOME-SET) · to copy here\nCR-SET-007 · SET-007 · AI Preferences",
+      "x": 12420,
+      "y": 14560,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3s8": {
+      "kind": "title1",
+      "maxW": 8000,
+      "w": 240,
+      "x": 0,
+      "y": 16260,
+      "text": "Copilot panel (CP-001 to CP-003), Search and Help & Support",
+      "page": "p2"
+    },
+    "l3m-CP-EXP": {
+      "text": "Not done yet\nCP-EXP · CP-001 · Copilot panel expanded",
+      "x": 2070,
+      "y": 16580,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3m-CR-SEARCH-EMPTY": {
+      "text": "Not done yet\nCR-SEARCH-EMPTY · SEARCH · No results",
+      "x": 10350,
+      "y": 16580,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3m-CR-HELP-003e": {
+      "text": "Not done yet\nCR-HELP-003e · HELP-003 · Contact Support: missing fields (error)",
+      "x": 18630,
+      "y": 16580,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3s9": {
+      "kind": "title1",
+      "maxW": 8000,
+      "w": 240,
+      "x": 0,
+      "y": 18340,
+      "text": "Creio · Nova, Your Creator Copilot: overview, balance, buy (packages or custom amount), confirm, success",
+      "page": "p2"
+    },
+    "l3m-AI-001n": {
+      "text": "Not done yet\nAI-001n · AI-001 · New creator, starting Creio balance",
+      "x": 0,
+      "y": 18660,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3m-AI-003e": {
+      "text": "Not done yet\nAI-003e · AI-003 · Custom amount below minimum (error)",
+      "x": 10350,
+      "y": 18660,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3s10": {
+      "kind": "title1",
+      "maxW": 8000,
+      "w": 240,
+      "x": 0,
+      "y": 20080,
+      "text": "Creio · Not enough Credits → existing Fund Wallet flow → back to purchase",
+      "page": "p2"
+    },
+    "l3s11": {
+      "kind": "title1",
+      "maxW": 8000,
+      "w": 240,
+      "x": 0,
+      "y": 21764,
+      "text": "Creio · Usage, preferences, low and depleted states, top-bar chip, estimates",
+      "page": "p2"
+    },
+    "l3m-AI-012": {
+      "text": "In the Link 1 canvas (CR-HOME-SET) · to copy here\nAI-012 · AI-012 · Copilot Preferences",
+      "x": 2070,
+      "y": 22084,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3m-AI-010c": {
+      "text": "Not done yet\nAI-010c · AI-010 · Critical Creio balance",
+      "x": 8280,
+      "y": 22084,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3m-AI-EST": {
+      "text": "Not done yet\nAI-EST · Large AI action: estimate before running (full course review)",
+      "x": 16560,
+      "y": 22084,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3s12": {
+      "kind": "title1",
+      "maxW": 8000,
+      "w": 240,
+      "x": 0,
+      "y": 23448,
+      "text": "Account menu (avatar): status, profile, switch role between the roles you have, settings, sign out",
+      "page": "p2"
+    },
+    "l3m-PM-001": {
+      "text": "Not done yet\nPM-001 · PM-001 · Account menu: status, profile, switch role, settings",
+      "x": 0,
+      "y": 23768,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3m-PM-002": {
+      "text": "Not done yet\nPM-002 · PM-002 · Account menu for a creator with one role (no switcher)",
+      "x": 2070,
+      "y": 23768,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3m-PM-003": {
+      "text": "Not done yet\nPM-003 · PM-003 · Switching role (Validator workspace opens)",
+      "x": 4140,
+      "y": 23768,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3s13": {
+      "kind": "title1",
+      "maxW": 8000,
+      "w": 240,
+      "x": 0,
+      "y": 25108,
+      "text": "Message pop-ups: open the exact message · quick reply for Learner Support and Team Chat only",
+      "page": "p2"
+    },
+    "l3m-MSG-001": {
+      "text": "Not done yet\nMSG-001 · MSG-001 · Message pop-ups: learner, team, validator (each opens the exact message)",
+      "x": 0,
+      "y": 25428,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3m-MSG-002": {
+      "text": "Not done yet\nMSG-002 · MSG-002 · Quick reply to a learner from the pop-up",
+      "x": 2070,
+      "y": 25428,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3m-MSG-003": {
+      "text": "Not done yet\nMSG-003 · MSG-003 · Quick reply sent (added to the conversation)",
+      "x": 4140,
+      "y": 25428,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3m-MSG-004": {
+      "text": "Not done yet\nMSG-004 · MSG-004 · More than 3: collapsed into “+3 more · View all”",
+      "x": 6210,
+      "y": 25428,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3m-MSG-005": {
+      "text": "Not done yet\nMSG-005 · MSG-005 · Preview hidden (screen-sharing setting)",
+      "x": 8280,
+      "y": 25428,
+      "w": 1440,
+      "page": "p2"
+    },
+    "l3m-MSG-006": {
+      "text": "Not done yet\nMSG-006 · MSG-006 · Settings › Notifications: message pop-up preferences",
+      "x": 10350,
+      "y": 25428,
+      "w": 1440,
       "page": "p2"
     },
     "srcs": {
       "kind": "title1",
       "maxW": 8000,
-      "text": "Component sources (not screens)",
       "w": 240,
       "x": 0,
-      "y": 35028,
+      "y": 26768,
+      "text": "Component sources (not screens)",
       "page": "p2"
     }
   },

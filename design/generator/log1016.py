@@ -45,7 +45,7 @@ LG_CSS = r'''
 .lg-ok{--glow:15,107,69}
 .lg-wait{--glow:214,140,20}
 .ko-emb{margin-bottom:6px}
-@media (max-width: 960px){.lg-glow{width:640px;top:-300px}.ob-main{padding-top:20px !important}.lg-note{margin-top:14px}}
+@media (max-width: 960px){.lg-glow{width:640px;top:-300px}.ob-main{padding-top:44px !important}.lg-note{margin-top:14px}}
 '''.strip('\n').split('\n')
 
 def head(title, extra_css):

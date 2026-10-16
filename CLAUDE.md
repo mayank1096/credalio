@@ -17,6 +17,7 @@
   - Client Link 3 prototype: https://claude.ai/artifact/Mg8o83iNa9x4ov1FxivdEW
   - Our Studio canvas (most Studio screens already designed): https://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9 (local copy `design/canvas2/project/`).
   - Plan: `docs/link3-plan.md`.
+  - **Scope:** skip anything below the client's "DO NOT DESIGN ANYTHING BELOW THIS NOTE" (all PRG/COH cohort screens) and the "DO NOT DESIGN THIS ROW" retired payouts. Mapping: `docs/link3-map.md`.
 - **Client reference** (content source only, about 98% correct): `reference/project/`. Screen list: `screens.md`.
 - **Artifact file limit:** 512 files per canvas version. Check the count before adding boards.
 

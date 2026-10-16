@@ -17,7 +17,7 @@ There are 3 source files. Each state is a variant of its source; build one compo
 | CR-LOG-001c | Email not confirmed: amber message with "Resend link" | `CR-LOG-001` · `unverified` |
 | CR-LOG-001d | Too many attempts: amber message, Log in disabled for 15 minutes | `CR-LOG-001` · `locked` |
 | CR-LOG-002 | Forgot your password: email + "Send reset link" | `CR-LOG-002` (default) |
-| CR-LOG-002b | Reset link sent: "Check your inbox" (same illustration as sign-up) | `CR-LOG-002` · `sent` |
+| CR-LOG-002b | Reset link sent: "Check your inbox" | `CR-LOG-002` · `sent` |
 | CR-LOG-003 | Choose a new password: same strength check as sign-up (8+ characters, a number, a symbol) | `CR-LOG-003` (default) |
 | CR-LOG-003b | Password updated: success, green tick and confetti | `CR-LOG-003` · `done` |
 | CR-LOG-003c | Reset link expired: amber, "Send a new link" | `CR-LOG-003` · `expired` |
@@ -44,4 +44,4 @@ Links to screens outside this package (dashboard, sign-up) point to the main Lin
 - **Locked:** the Log in button is disabled (`aria-disabled="true"`, `.lg-off`). Show the real remaining time if the backend gives it.
 - **Reset link sent:** never confirm whether an account exists ("If there's an account for …").
 - **Outcome screens** (003b, 003c) use the standard outcome emblem: a green tick for success, an amber clock for expired. The top glow uses the same status colour. The confetti only plays in success states.
-- **Images used:** `campus-bg.webp` (soft scene behind the forms), `check-inbox-v2.webp` (reset link sent), plus the logo.
+- **Images used:** `auth-scene.webp` (the scene along the bottom of every log-in and sign-up page; on short laptop screens a soft white glow behind the form keeps the figures from clashing with it), `wave.webp` (animated waving hand on "Welcome back."), plus the logo.

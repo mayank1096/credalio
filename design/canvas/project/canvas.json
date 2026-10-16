@@ -1501,8 +1501,8 @@
       "page": "p1",
       "title": "CR-ONB-005b · Mobile",
       "w": 390,
-      "x": 1520,
-      "y": 35696
+      "x": 30500,
+      "y": 2920
     },
     "CR-ONB-005b.dc.html": {
       "expand": "fill",
@@ -1511,8 +1511,8 @@
       "page": "p1",
       "title": "CR-ONB-005b · Your topics · Desktop",
       "w": 1440,
-      "x": 0,
-      "y": 35696
+      "x": 28980,
+      "y": 2920
     },
     "CR-ONB-005e-Mobile.dc.html": {
       "h": 990,
@@ -1538,7 +1538,7 @@
       "page": "p1",
       "title": "CR-ONB-006 · Mobile",
       "w": 390,
-      "x": 30500,
+      "x": 32570,
       "y": 2920
     },
     "CR-ONB-006.dc.html": {
@@ -1548,7 +1548,7 @@
       "page": "p1",
       "title": "CR-ONB-006 · Meet your Copilot · Desktop",
       "w": 1440,
-      "x": 28980,
+      "x": 31050,
       "y": 2920
     },
     "CR-ONB-007-Mobile.dc.html": {
@@ -1557,7 +1557,7 @@
       "page": "p1",
       "title": "CR-ONB-007 · Mobile",
       "w": 390,
-      "x": 32570,
+      "x": 34640,
       "y": 2920
     },
     "CR-ONB-007.dc.html": {
@@ -1567,7 +1567,7 @@
       "page": "p1",
       "title": "CR-ONB-007 · Copilot style · Desktop",
       "w": 1440,
-      "x": 31050,
+      "x": 33120,
       "y": 2920
     },
     "CR-ONB-007p-Mobile.dc.html": {
@@ -1576,7 +1576,7 @@
       "page": "p1",
       "title": "CR-ONB-007p · Mobile",
       "w": 390,
-      "x": 34640,
+      "x": 36710,
       "y": 2920
     },
     "CR-ONB-007p.dc.html": {
@@ -1585,7 +1585,7 @@
       "page": "p1",
       "title": "CR-ONB-007p · Copilot style: Proactive · Desktop",
       "w": 1440,
-      "x": 33120,
+      "x": 35190,
       "y": 2920
     },
     "CR-ONB-008-Mobile.dc.html": {
@@ -1594,7 +1594,7 @@
       "page": "p1",
       "title": "CR-ONB-008 · Mobile",
       "w": 390,
-      "x": 36710,
+      "x": 38780,
       "y": 2920
     },
     "CR-ONB-008.dc.html": {
@@ -1604,7 +1604,7 @@
       "page": "p1",
       "title": "CR-ONB-008 · You’re a Creator · Desktop",
       "w": 1440,
-      "x": 35190,
+      "x": 37260,
       "y": 2920
     },
     "CR-ORI-001-Mobile.dc.html": {
@@ -3253,22 +3253,13 @@
       "x": 0,
       "y": 15594
     },
-    "l1x": {
-      "kind": "title1",
-      "maxW": 8000,
-      "page": "p1",
-      "text": "Not in Link 1: ONB-005b topics (ours)",
-      "w": 240,
-      "x": 0,
-      "y": 35376
-    },
     "new-CR-ONB-005b": {
       "fill": "red",
       "page": "p1",
       "text": "HERE · CR-ONB-005b · Who will learners become? (was “What will you teach?”)",
       "w": 1910,
-      "x": 0,
-      "y": 36626
+      "x": 28980,
+      "y": 3850
     },
     "p2-ksrc": {
       "fill": "gray",
@@ -3334,8 +3325,6 @@
     "CR-ONB-004-Mobile.dc.html",
     "CR-ONB-005.dc.html",
     "CR-ONB-005-Mobile.dc.html",
-    "CR-ONB-005b.dc.html",
-    "CR-ONB-005b-Mobile.dc.html",
     "CR-ONB-006.dc.html",
     "CR-ONB-006-Mobile.dc.html",
     "CR-ONB-007.dc.html",
@@ -3484,6 +3473,8 @@
     "CR-ONB-004e-Mobile.dc.html",
     "CR-ONB-005e.dc.html",
     "CR-ONB-005e-Mobile.dc.html",
+    "CR-ONB-005b.dc.html",
+    "CR-ONB-005b-Mobile.dc.html",
     "CR-ONB-007p.dc.html",
     "CR-ONB-007p-Mobile.dc.html",
     "CR-RDY-001d.dc.html",

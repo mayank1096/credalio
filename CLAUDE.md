@@ -12,6 +12,7 @@
   - Canvas: https://claude.ai/artifact/Xq1VzSNgkrxnjsEeHbpAZq (local copy `design/canvas/project/`).
   - Handoff: `design/handoff/` (README, tokens, assets, developer package zip, screenshots zip, screen book PDF, developer guide PDF).
   - Don't change Link 1 unless the designer asks.
+  - 2026-10-16: Log in + password reset added at the top of page p1 (CR-LOG-001 a–d, 002 b, 003 b–c; `design/generator/log1016.py` + `log1016_canvas.py`); onboarding "Log in" buttons → CR-LOG-001. The handoff zips/PDFs predate this.
 - **Link 3 is NEXT** (designer 2026-10-14; the old Link 2 is dropped).
   - Client Link 3 prototype: https://claude.ai/artifact/Mg8o83iNa9x4ov1FxivdEW
   - Our Studio canvas (most Studio screens already designed): https://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9 (local copy `design/canvas2/project/`).

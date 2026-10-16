@@ -2,6 +2,8 @@
 
 This package adds **10 screens** to the Link 1 handoff. Everything else (foundations, tokens, patterns) is the same as the main Link 1 package and its README.
 
+**What's inside:** `screens/` (code, runs offline), `assets/` (images), `fonts/`, `tokens/`, `index.html`, `screens.csv`, and `screenshots/` (a JPG of every screen, desktop and mobile).
+
 **To open it:** unzip, then in the folder run `python3 -m http.server 8000` and open http://localhost:8000.
 Opening the files straight from disk with `file://` won't work, because browsers block the scripts.
 

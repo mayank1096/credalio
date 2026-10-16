@@ -37,7 +37,6 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ob-back{position:static !important;width:44px;height:44px !important;padding:0 !important;justify-content:center;flex-shrink:0}
 .ob-back-t{display:none}
 .ob-steps{width:auto !important;flex-grow:1;align-items:flex-start !important}
-.ob-illus{position:relative !important;flex-shrink:0;align-self:flex-start;height:170px !important;width:510px !important;order:2;margin-top:4px;transform:translateX(calc(-50% + var(--pan))) !important}
 .ob-main{order:3;position:relative !important;top:0 !important;padding:8px 20px 32px 20px;box-sizing:border-box}
 .ob-col{width:100% !important}
 .ob-h1{font-size:30px !important}
@@ -46,7 +45,6 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ob-h1{width:auto !important}
 .ob-btn{justify-content:space-between !important;align-self:stretch !important}
 }
-@media (max-width: 960px){.ob-illus-img{width:auto !important}}
 .lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/f2bdb0288176649cd148845b2c46e3ab) left center/contain no-repeat}.lg-mark{display:none;width:30px;height:30px;background:url(/_blob/9e485e715f9869055157634fa82d3fa5) center/contain no-repeat}@media (max-width: 960px){.lg-word{height:22px}}
 .ob-row > .ob-err{order:3;flex-basis:100%;margin:0 0 0 22px}
 @media (max-width: 960px){.ob-row > input{order:1}.ob-row > .ob-err{order:2;margin:-2px 0 4px 18px}.ob-row > a{order:3}.ob-sub{width:auto !important}}
@@ -54,9 +52,14 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ob-err{display:flex;align-items:center;gap:6px;margin:8px 0 0 2px;font-size:13.5px;line-height:1.4;color:#B42318;text-align:left}
 .ob-err svg{flex-shrink:0}
 @media (max-width: 960px){.ob-link{position:relative}.ob-link::after{content:'';position:absolute;left:-8px;right:-8px;top:50%;height:44px;transform:translateY(-50%)}}
+.ob-root{isolation:isolate}
+.ob-scene{position:absolute;left:0;right:0;bottom:0;height:min(48vh,44vw);background:url(/_blob/2f4b6a89779043fb2ec851f8050aa46a) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
+@media (max-width: 760px){.ob-scene{height:190px;background-size:auto 100%;background-position:50% 100%}}
+@media (max-height: 800px) and (min-width: 961px){.ob-main::before{content:'';position:absolute;left:50%;top:-24px;bottom:-56px;width:min(820px,92vw);transform:translateX(-50%);background:radial-gradient(closest-side,#FFFFFF 74%,rgba(255,255,255,0));z-index:-1;pointer-events:none}}
 </style>
 </helmet>
 <div class="ob-root" style="width: 100%; height: 100vh; min-height: 680px; position: relative; overflow: hidden; background: #FFFFFF; font-family: 'Google Sans', 'Google Sans Text', 'Helvetica Neue', system-ui, sans-serif; color: #0B1433">
+<div class="ob-scene" aria-hidden="true"></div>
 <header class="ob-header" style="position: absolute; left: 0; top: 0; width: 100%; height: 88px; box-sizing: border-box; padding: 0 clamp(24px, 6.67vw, 96px); display: flex; align-items: center; justify-content: space-between; z-index: 3">
 <div style="display: flex; align-items: center; gap: 10px">
 <span class="lg-mark" aria-hidden="true"></span><span class="lg-word ob-brand" role="img" aria-label="Credalio"></span>
@@ -84,9 +87,6 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 <p style="margin: clamp(14px, 2.6vh, 20px) 0 0 0; font-size: 12.5px; line-height: 1.5; color: #5B6582; text-align: center">By continuing, you agree to Credalio’s <a href="#" class="ob-link" style="color: #3A4566; font-weight: 500">Terms</a> and <a href="#" class="ob-link" style="color: #3A4566; font-weight: 500">Privacy Policy</a>.</p></sc-if>
 </div>
 </main>
-<div class="ob-illus ob-illus-img" aria-hidden="true" style="position: absolute; left: 50%; bottom: 0; height: clamp(160px, calc(100vh - 530px), min(40vh, 33.33vw)); aspect-ratio: 2000 / 667; transform: translateX(-50%); --pan: 30px; overflow: hidden; z-index: 1; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%); mask-image: linear-gradient(to bottom, transparent 0, #000 14%)">
-<img src="/_blob/34dadbf4e06ff8af9b5cae78d8420c53" alt="" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%); mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%)">
-</div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>

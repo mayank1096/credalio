@@ -82,6 +82,8 @@ SUB = '<p class="ob-in2" style="margin: 12px 0 0 0; max-width: 460px; font-size:
 def main(top, width, inner):
     return ('<main class="ob-main" style="position: absolute; z-index: 2; left: 0; top: %s; width: 100%%; display: flex; flex-direction: column; align-items: center">\n'
             '<div class="ob-col" style="width: min(%dpx, calc(100%% - 48px)); display: flex; flex-direction: column; align-items: center">\n%s\n</div>\n</main>\n') % (top, width, inner)
+WAVE = re.search(r'<img class="ob-wave"[^>]*>', rd('CR-ONB-004.dc.html')).group(0)
+WAVE_CSS = [l for l in css(rd('CR-ONB-004.dc.html')).split('\n') if 'obWave' in l or 'ob-wave' in l]
 I_ALERT = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5v5.5"></path><path d="M12 16.4v.2"></path></svg>'
 I_MAIL = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m4 7 8 6 8-6"></path></svg>'
 I_LOCK = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"></rect><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"></path></svg>'
@@ -103,9 +105,9 @@ form1 = (
     '<div style="position: relative"><input id="lg-pw" class="ob-f {{pCls}}" type="{{pwType}}" value="{{pw}}" onChange="{{onPw}}" aria-invalid="{{pInv}}" autocomplete="current-password" placeholder="Your password" style="padding-right: 64px">%s</div>%s</div>\n'
     '</div>'
 ) % (err('eErr', 'Enter a full email, like name@example.com.'), SHOW_BTN, err('pErr', 'Enter your password.'))
-inner1 = '\n'.join([H1 % 'Welcome back.', SUB % 'Log in to pick up where you left off.', alerts, form1,
+inner1 = '\n'.join([H1 % ('Welcome back.' + WAVE), SUB % 'Log in to pick up where you left off.', alerts, form1,
                     btn('CR-DASH-NEW.dc.html', 'Log in', 'lg-go {{goCls}}" aria-disabled="{{goDis}}'), OR, SOCIAL.replace('CR-ONB-004.dc.html', 'CR-DASH-NEW.dc.html')])
-log1 = (head('CR-LOG-001 · Log in', ROW_CSS + LG_CSS) + ROOT + '\n' + SCENE + HDR_JOIN + '\n'
+log1 = (head('CR-LOG-001 · Log in', ROW_CSS + LG_CSS + WAVE_CSS) + ROOT + '\n' + SCENE + HDR_JOIN + '\n'
         + main('clamp(116px, 15vh, 150px)', 460, inner1) + script(r'''
 class Component extends DCLogic {
   constructor(props) {
@@ -129,7 +131,6 @@ class Component extends DCLogic {
 }'''))
 
 # ---------- CR-LOG-002 · Reset your password (variant sent) ----------
-ILLUS = re.search(r'<div class="ob-illus ob-illus-img".*?</div>', c3b, re.S).group(0)
 ask = '\n'.join([H1 % 'Forgot your password?', SUB % 'Enter your email and we’ll send you a link to choose a new one.',
     '<div class="ob-in3" style="margin-top: clamp(20px, 3.6vh, 32px); width: 100%; text-align: left"><label for="lg-em" class="ob-lab">Email</label>'
     '<input id="lg-em" class="ob-f" type="email" value="{{email}}" onChange="{{onEmail}}" autocomplete="email" placeholder="you@example.com"></div>',
@@ -141,10 +142,10 @@ sent = '\n'.join([H1 % 'Check your inbox.',
     '<p class="lg-note">No email yet? Check spam or <a href="#" class="ob-link">resend the link</a>. <a href="CR-LOG-001.dc.html" class="ob-link">Back to log in</a></p>'])
 inner2 = ('<sc-if value="{{ask}}" hint-placeholder-val="{{true}}">\n%s\n</sc-if>\n<sc-if value="{{sent}}" hint-placeholder-val="{{false}}">\n%s\n</sc-if>' % (ask, sent))
 log2 = (head('CR-LOG-002 · Forgot your password', ROW_CSS + INBOX_CSS + LG_CSS) + ROOT + '\n'
-        + '<sc-if value="{{ask}}" hint-placeholder-val="{{true}}">' + SCENE.strip('\n') + '</sc-if>\n'
+        + SCENE
         + HDR_JOIN + '\n' + track('CR-LOG-001.dc.html')
         + main('clamp(140px, 19vh, 176px)', 460, inner2).replace('<div class="ob-col" style="width: min(460px', '<div class="ob-col" style="width: min({{colW}}px')
-        + '<sc-if value="{{sent}}" hint-placeholder-val="{{false}}">\n' + ILLUS + '\n</sc-if>\n' + script(r'''
+        + script(r'''
 class Component extends DCLogic {
   constructor(props) { super(props); const sent = !!(props && props.variant === 'sent'); this.state = { sent, email: sent ? 'ada.ononuju@example.com' : '' }; }
   renderVals() {

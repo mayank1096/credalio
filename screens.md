@@ -5,6 +5,19 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 **Active: 182 screens → 364 frames.**
 
 
+## 00. Log in + password reset (client DxY95gKeGK4wSLyrTGp5Tg, 10)
+
+- [x] D [x] M  `LOG-001` Log in
+- [x] D [x] M  `LOG-001a` Check your details
+- [x] D [x] M  `LOG-001b` Wrong email or password
+- [x] D [x] M  `LOG-001c` Email not confirmed
+- [x] D [x] M  `LOG-001d` Too many attempts
+- [x] D [x] M  `LOG-002` Forgot your password
+- [x] D [x] M  `LOG-002b` Reset link sent
+- [x] D [x] M  `LOG-003` Choose a new password
+- [x] D [x] M  `LOG-003b` Password updated
+- [x] D [x] M  `LOG-003c` Reset link expired
+
 ## 01. Creator onboarding: sign up → creator type → account → check inbox → email verified → password → about you → expertise → Copilot → ready (12)
 
 - [x] D [x] M  `CR-ONB-001` CR-ONB-001 · Choose participation: Create

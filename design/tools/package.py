@@ -1,14 +1,16 @@
 # package.py: builds the Link 1 developer handoff zip (screens runnable offline, images, fonts, index, guide).
-# usage: python3 tools/package.py <support.js> <vendor-dir> <fonts-dir with gs.css + map.txt> <blob-dir>   (run in design/)
+# usage: python3 tools/package.py <support.js> <vendor-dir> <fonts-dir with gs.css + map.txt> <blob-dir> [<board prefix> <package name> <readme> <index title>]   (run in design/)
+# The optional args build a package for a subset of boards only (e.g. CR-LOG- credalio-link1-login handoff/login/README.md).
 import os, re, sys, json, shutil, hashlib, zipfile, csv, html
 SUP, VEN, FNT, BLOB = sys.argv[1:5]
-D = 'canvas/project'; OUT = 'handoff/build/credalio-link1-developer-package'; ZIP = 'handoff/credalio-link1-developer-package.zip'
+PRE, NAME, README, TITLE = sys.argv[5:9] if len(sys.argv) > 5 else ('', 'credalio-link1', 'handoff/README.md', 'Credalio · Link 1 screens')
+D = 'canvas/project'; OUT = 'handoff/build/%s-developer-package' % NAME; ZIP = os.path.join(os.path.dirname(README), '%s-developer-package.zip' % NAME)
 shutil.rmtree('handoff/build', ignore_errors=True)
 for d in ('screens', 'assets', 'fonts', 'screens/vendor'): os.makedirs(os.path.join(OUT, d), exist_ok=True)
 md5 = lambda p: hashlib.md5(open(p, 'rb').read()).hexdigest()
 ill = {md5('handoff/assets/' + f): f for f in os.listdir('handoff/assets')}
 c = json.load(open(D + '/canvas.json', encoding='utf-8'))
-files = [f for f in sorted(os.listdir(D)) if f.endswith('.dc.html')]
+files = [f for f in sorted(os.listdir(D)) if f.endswith('.dc.html') and f.startswith(PRE)]
 # images: /_blob/<id> -> ../assets/<name>
 blobs = {}
 for f in files:
@@ -42,7 +44,7 @@ B = c['boards']; notes = c['notes']
 def key(b): v = B[b]; return (0 if v.get('page') == 'p1' else 1, v['y'], v['x'])
 rows = []
 for b in sorted(B, key=key):
-    if b.endswith('-Mobile.dc.html'): continue
+    if b.endswith('-Mobile.dc.html') or b not in files: continue
     s = open(os.path.join(D, b), encoding='utf-8').read()
     m = re.search(r'<dc-import name="([^"]+)"(?: variant="([^"]+)")?', s)
     mob = b.replace('.dc.html', '-Mobile.dc.html')
@@ -65,12 +67,12 @@ for r in rows:
     elif last != 'src':
         tr.append('<tr><th colspan="3">Shared sources (imported by the boards above with a variant)</th></tr>'); last = 'src'
     tr.append('<tr><td>%s</td><td><a href="screens/%s">Desktop</a></td><td>%s</td></tr>' % (html.escape(r[0]), r[1], ('<a href="screens/%s">Mobile</a>' % r[2]) if r[2] else ''))
-open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write('''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Credalio · Link 1 screens</title>
+open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write('''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>%s</title>
 <link rel="stylesheet" href="fonts/google-sans.css"><style>body{margin:0;padding:32px 24px;font-family:'Google Sans',system-ui,sans-serif;color:#0B1433;background:#F7F9FD}main{max-width:980px;margin:0 auto}
 h1{font-weight:600;letter-spacing:-.02em}p{color:#4A5578;line-height:1.6}table{width:100%%;border-collapse:collapse;background:#fff;border:1.5px solid #E6EAF3;border-radius:16px;overflow:hidden}
 th{text-align:left;padding:18px 16px 8px;font-size:13px;color:#8A93AD;font-weight:600;background:#fff}td{padding:9px 16px;border-top:1px solid #EEF1F7;font-size:14.5px}a{color:#1652F0;text-decoration:none;font-weight:500}</style></head>
-<body><main><h1>Credalio · Link 1 screens</h1><p>%d boards. Open each screen in a browser served over http (see README). Desktop boards are 1440 wide, mobile boards 390; each screen is one responsive file.</p><table>%s</table></main></body></html>''' % (len(rows), ''.join(tr)))
-shutil.copy('handoff/README.md', os.path.join(OUT, 'README.md'))
+<body><main><h1>%s</h1><p>%d boards. Open each screen in a browser served over http (see README). Desktop boards are 1440 wide, mobile boards 390; each screen is one responsive file.</p><table>%s</table></main></body></html>''' % (TITLE, TITLE, len(rows), ''.join(tr)))
+shutil.copy(README, os.path.join(OUT, 'README.md'))
 shutil.copytree('handoff/tokens', os.path.join(OUT, 'tokens'))
 with zipfile.ZipFile(ZIP, 'w', zipfile.ZIP_DEFLATED) as z:
     for root, _, fs in os.walk(OUT):

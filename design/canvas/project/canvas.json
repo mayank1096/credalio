@@ -1271,6 +1271,42 @@
       "x": 1520,
       "y": 2920
     },
+    "CR-ONB-001L-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-001L · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 2920
+    },
+    "CR-ONB-001L.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-001L · Learning is coming soon · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 2920
+    },
+    "CR-ONB-001V-Mobile.dc.html": {
+      "h": 980,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-001V · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 2920
+    },
+    "CR-ONB-001V.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-001V · Validation is coming soon · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 2920
+    },
     "CR-ONB-002-Mobile.dc.html": {
       "h": 980,
       "is_interactive": true,
@@ -1315,7 +1351,7 @@
       "page": "p1",
       "title": "CR-ONB-003 · Mobile",
       "w": 390,
-      "x": 7730,
+      "x": 11870,
       "y": 2920
     },
     "CR-ONB-003.dc.html": {
@@ -1325,7 +1361,7 @@
       "page": "p1",
       "title": "CR-ONB-003 · Create account · Desktop",
       "w": 1440,
-      "x": 6210,
+      "x": 10350,
       "y": 2920
     },
     "CR-ONB-003b-Mobile.dc.html": {
@@ -1334,7 +1370,7 @@
       "page": "p1",
       "title": "CR-ONB-003b · Mobile",
       "w": 390,
-      "x": 11870,
+      "x": 16010,
       "y": 2920
     },
     "CR-ONB-003b.dc.html": {
@@ -1344,7 +1380,7 @@
       "page": "p1",
       "title": "CR-ONB-003b · Check your inbox · Desktop",
       "w": 1440,
-      "x": 10350,
+      "x": 14490,
       "y": 2920
     },
     "CR-ONB-003c-Mobile.dc.html": {
@@ -1353,7 +1389,7 @@
       "page": "p1",
       "title": "CR-ONB-003c · Mobile",
       "w": 390,
-      "x": 18080,
+      "x": 22220,
       "y": 2920
     },
     "CR-ONB-003c.dc.html": {
@@ -1363,7 +1399,7 @@
       "page": "p1",
       "title": "CR-ONB-003c · Choose a password · Desktop",
       "w": 1440,
-      "x": 16560,
+      "x": 20700,
       "y": 2920
     },
     "CR-ONB-003ce-Mobile.dc.html": {
@@ -1372,7 +1408,7 @@
       "page": "p1",
       "title": "CR-ONB-003ce · Mobile",
       "w": 390,
-      "x": 20150,
+      "x": 24290,
       "y": 2920
     },
     "CR-ONB-003ce.dc.html": {
@@ -1381,7 +1417,7 @@
       "page": "p1",
       "title": "CR-ONB-003ce · Password too weak · Desktop",
       "w": 1440,
-      "x": 18630,
+      "x": 22770,
       "y": 2920
     },
     "CR-ONB-003d-Mobile.dc.html": {
@@ -1390,7 +1426,7 @@
       "page": "p1",
       "title": "CR-ONB-003d · Mobile",
       "w": 390,
-      "x": 13940,
+      "x": 18080,
       "y": 2920
     },
     "CR-ONB-003d.dc.html": {
@@ -1399,7 +1435,7 @@
       "page": "p1",
       "title": "CR-ONB-003d · Change your email · Desktop",
       "w": 1440,
-      "x": 12420,
+      "x": 16560,
       "y": 2920
     },
     "CR-ONB-003e-Mobile.dc.html": {
@@ -1408,7 +1444,7 @@
       "page": "p1",
       "title": "CR-ONB-003e · Mobile",
       "w": 390,
-      "x": 9800,
+      "x": 13940,
       "y": 2920
     },
     "CR-ONB-003e.dc.html": {
@@ -1417,7 +1453,7 @@
       "page": "p1",
       "title": "CR-ONB-003e · Invalid email · Desktop",
       "w": 1440,
-      "x": 8280,
+      "x": 12420,
       "y": 2920
     },
     "CR-ONB-003v-Mobile.dc.html": {
@@ -1426,7 +1462,7 @@
       "page": "p1",
       "title": "CR-ONB-003v · Mobile",
       "w": 390,
-      "x": 16010,
+      "x": 20150,
       "y": 2920
     },
     "CR-ONB-003v.dc.html": {
@@ -1436,7 +1472,7 @@
       "page": "p1",
       "title": "CR-ONB-003v · Email confirmed · Desktop",
       "w": 1440,
-      "x": 14490,
+      "x": 18630,
       "y": 2920
     },
     "CR-ONB-004-Mobile.dc.html": {
@@ -1445,7 +1481,7 @@
       "page": "p1",
       "title": "CR-ONB-004 · Mobile",
       "w": 390,
-      "x": 22220,
+      "x": 26360,
       "y": 2920
     },
     "CR-ONB-004.dc.html": {
@@ -1455,7 +1491,7 @@
       "page": "p1",
       "title": "CR-ONB-004 · About you · Desktop",
       "w": 1440,
-      "x": 20700,
+      "x": 24840,
       "y": 2920
     },
     "CR-ONB-004e-Mobile.dc.html": {
@@ -1464,7 +1500,7 @@
       "page": "p1",
       "title": "CR-ONB-004e · Mobile",
       "w": 390,
-      "x": 24290,
+      "x": 28430,
       "y": 2920
     },
     "CR-ONB-004e.dc.html": {
@@ -1473,7 +1509,7 @@
       "page": "p1",
       "title": "CR-ONB-004e · Missing display name · Desktop",
       "w": 1440,
-      "x": 22770,
+      "x": 26910,
       "y": 2920
     },
     "CR-ONB-005-Mobile.dc.html": {
@@ -1482,7 +1518,7 @@
       "page": "p1",
       "title": "CR-ONB-005 · Mobile",
       "w": 390,
-      "x": 26360,
+      "x": 30500,
       "y": 2920
     },
     "CR-ONB-005.dc.html": {
@@ -1492,7 +1528,7 @@
       "page": "p1",
       "title": "CR-ONB-005 · Your field · Desktop",
       "w": 1440,
-      "x": 24840,
+      "x": 28980,
       "y": 2920
     },
     "CR-ONB-005b-Mobile.dc.html": {
@@ -1501,7 +1537,7 @@
       "page": "p1",
       "title": "CR-ONB-005b · Mobile",
       "w": 390,
-      "x": 30500,
+      "x": 34640,
       "y": 2920
     },
     "CR-ONB-005b.dc.html": {
@@ -1511,7 +1547,7 @@
       "page": "p1",
       "title": "CR-ONB-005b · Your topics · Desktop",
       "w": 1440,
-      "x": 28980,
+      "x": 33120,
       "y": 2920
     },
     "CR-ONB-005e-Mobile.dc.html": {
@@ -1520,7 +1556,7 @@
       "page": "p1",
       "title": "CR-ONB-005e · Mobile",
       "w": 390,
-      "x": 28430,
+      "x": 32570,
       "y": 2920
     },
     "CR-ONB-005e.dc.html": {
@@ -1529,7 +1565,7 @@
       "page": "p1",
       "title": "CR-ONB-005e · Missing required fields · Desktop",
       "w": 1440,
-      "x": 26910,
+      "x": 31050,
       "y": 2920
     },
     "CR-ONB-006-Mobile.dc.html": {
@@ -1538,7 +1574,7 @@
       "page": "p1",
       "title": "CR-ONB-006 · Mobile",
       "w": 390,
-      "x": 32570,
+      "x": 36710,
       "y": 2920
     },
     "CR-ONB-006.dc.html": {
@@ -1548,7 +1584,7 @@
       "page": "p1",
       "title": "CR-ONB-006 · Meet your Copilot · Desktop",
       "w": 1440,
-      "x": 31050,
+      "x": 35190,
       "y": 2920
     },
     "CR-ONB-007-Mobile.dc.html": {
@@ -1557,7 +1593,7 @@
       "page": "p1",
       "title": "CR-ONB-007 · Mobile",
       "w": 390,
-      "x": 34640,
+      "x": 38780,
       "y": 2920
     },
     "CR-ONB-007.dc.html": {
@@ -1567,7 +1603,7 @@
       "page": "p1",
       "title": "CR-ONB-007 · Copilot style · Desktop",
       "w": 1440,
-      "x": 33120,
+      "x": 37260,
       "y": 2920
     },
     "CR-ONB-007p-Mobile.dc.html": {
@@ -1576,7 +1612,7 @@
       "page": "p1",
       "title": "CR-ONB-007p · Mobile",
       "w": 390,
-      "x": 36710,
+      "x": 40850,
       "y": 2920
     },
     "CR-ONB-007p.dc.html": {
@@ -1585,7 +1621,7 @@
       "page": "p1",
       "title": "CR-ONB-007p · Copilot style: Proactive · Desktop",
       "w": 1440,
-      "x": 35190,
+      "x": 39330,
       "y": 2920
     },
     "CR-ONB-008-Mobile.dc.html": {
@@ -1594,7 +1630,7 @@
       "page": "p1",
       "title": "CR-ONB-008 · Mobile",
       "w": 390,
-      "x": 38780,
+      "x": 42920,
       "y": 2920
     },
     "CR-ONB-008.dc.html": {
@@ -1604,7 +1640,7 @@
       "page": "p1",
       "title": "CR-ONB-008 · You’re a Creator · Desktop",
       "w": 1440,
-      "x": 37260,
+      "x": 41400,
       "y": 2920
     },
     "CR-ORI-001-Mobile.dc.html": {
@@ -3253,12 +3289,28 @@
       "x": 0,
       "y": 15594
     },
+    "new-CR-ONB-001L": {
+      "fill": "red",
+      "page": "p1",
+      "text": "NEW · just made · CR-ONB-001L",
+      "w": 1910,
+      "x": 6210,
+      "y": 3930
+    },
+    "new-CR-ONB-001V": {
+      "fill": "red",
+      "page": "p1",
+      "text": "NEW · just made · CR-ONB-001V",
+      "w": 1910,
+      "x": 8280,
+      "y": 3930
+    },
     "new-CR-ONB-005b": {
       "fill": "red",
       "page": "p1",
       "text": "HERE · CR-ONB-005b · Who will learners become? (was “What will you teach?”)",
       "w": 1910,
-      "x": 28980,
+      "x": 33120,
       "y": 3850
     },
     "p2-ksrc": {
@@ -3313,6 +3365,10 @@
     "CR-ONB-002-Mobile.dc.html",
     "CR-ONB-002S.dc.html",
     "CR-ONB-002S-Mobile.dc.html",
+    "CR-ONB-001L.dc.html",
+    "CR-ONB-001L-Mobile.dc.html",
+    "CR-ONB-001V.dc.html",
+    "CR-ONB-001V-Mobile.dc.html",
     "CR-ONB-003.dc.html",
     "CR-ONB-003-Mobile.dc.html",
     "CR-ONB-003b.dc.html",

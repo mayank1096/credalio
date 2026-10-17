@@ -82,7 +82,7 @@ a{color:#1652F0}
 .pg-back:hover{color:#0B1433}
 .pg-back + .hp-head{padding-top:10px}
 .st{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:500;white-space:nowrap}
-.st.cb{background:#EAF0FF;color:#0E3BB8}.st.am{background:#FFF3E0;color:#9A5B00}
+.st.cb{background:#EAF0FF;color:#0E3BB8}.st.am{background:#FFF3E0;color:#9A5B00}.st.gn{background:#E7F5EE;color:#0F6B45}
 @media (max-width: 960px){.pg-back{margin-top:12px}}
 .ps-card{padding:32px 36px 22px 36px}
 .ps-top{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
@@ -100,6 +100,7 @@ a{color:#1652F0}
 .ps-trk li.now i{border-color:#1652F0;box-shadow:0 0 0 5px rgba(22,82,240,.14)}
 .ps-trk li.now i::after{content:"";width:9px;height:9px;border-radius:50%;background:#1652F0}
 .ps-trk.am li.now::before{background:linear-gradient(90deg,#D98A00 0 40%,#E6EAF3 40%)}
+.ps-trk.gn li.dn::before{background:#0F6B45}.ps-trk.gn li.dn i{background:#0F6B45;border-color:#0F6B45}
 .ps-trk.am li.now i{border-color:#D98A00;box-shadow:0 0 0 5px rgba(217,138,0,.16)}.ps-trk.am li.now i::after{background:#D98A00}
 .ps-trk b{font-size:15px;font-weight:600}.ps-trk li:not(.dn):not(.now) b{color:#5B6582;font-weight:500}
 .ps-trk span{font-size:13.5px;color:#5B6582}
@@ -145,7 +146,7 @@ a{color:#1652F0}
 <a href="#" aria-label="Your account" style="position: relative; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: #0B1433; color: #FFFFFF; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">AO<span style="position: absolute; right: 0; bottom: 1px; width: 11px; height: 11px; border-radius: 50%; background: #0F6B45; border: 2px solid #F7F9FD"></span></a>
 </header>
 <main class="ds-main hp">
-<a href="CR-EARN-001.dc.html" class="pg-back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 6-6 6 6 6"></path></svg>Earnings</a><div class="hp-head ob-in"><div><h1 class="ds-h1">November payout</h1></div><span class="st {{stCls}}">{{stTxt}}</span></div><section class="ds-card ps-card ob-in2" aria-label="Payout status"><div class="ps-top"><div><span class="hp-lab">Amount</span><b class="ps-big">$2,850.00</b></div><div class="ps-to"><img src="/_blob/2304d2cd7c945eeea685d9ca3396cd4b" alt="" width="40" height="40"><span><b>PayPal</b><span>ada.ononuju@example.com</span></span></div></div><ol class="ps-trk {{trkCls}}" aria-label="Progress"><li class="dn"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><b>Scheduled</b><span>1 Nov</span></li><li class="now"><i></i><b>{{midT}}</b><span>{{midS}}</span></li><li><i></i><b>Paid</b><span>Usually by 5 Nov</span></li></ol><sc-if value="{{isAction}}" hint-placeholder-val="{{false}}"><div class="ps-act"><span class="ps-ai"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8v5M12 16.5v.01"></path><circle cx="12" cy="12" r="9"></circle></svg></span><span class="ps-at"><b>PayPal needs you to confirm your account</b><span>Your payout continues as soon as it’s confirmed.</span></span><a href="CR-PAYO-001.dc.html" class="ds-btn hp-btn"><span>Fix payout details</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></sc-if><div class="ps-meta"><span>Covers October earnings<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b l" role="tooltip">Earnings that cleared in October. Anything still pending moves to December.</span></span></span><span>Reference PO-20488</span></div></section>
+<a href="CR-EARN-001.dc.html" class="pg-back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 6-6 6 6 6"></path></svg>Earnings</a><div class="hp-head ob-in"><div><h1 class="ds-h1">November payout</h1></div><span class="st {{stCls}}">{{stTxt}}</span></div><section class="ds-card ps-card ob-in2" aria-label="Payout status"><div class="ps-top"><div><span class="hp-lab">Amount</span><b class="ps-big">$2,850.00</b></div><div class="ps-to"><img src="/_blob/2304d2cd7c945eeea685d9ca3396cd4b" alt="" width="40" height="40"><span><b>PayPal</b><span>ada.ononuju@example.com</span></span></div></div><ol class="ps-trk {{trkCls}}" aria-label="Progress"><li class="dn"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><b>Scheduled</b><span>1 Nov</span></li><li class="{{c2}}"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><b>{{midT}}</b><span>{{midS}}</span></li><li class="{{c3}}"><i><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><b>{{endT}}</b><span>{{endS}}</span></li></ol><sc-if value="{{isAction}}" hint-placeholder-val="{{false}}"><div class="ps-act"><span class="ps-ai"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8v5M12 16.5v.01"></path><circle cx="12" cy="12" r="9"></circle></svg></span><span class="ps-at"><b>{{actT}}</b><span>{{actS}}</span></span><a href="{{actH}}" class="ds-btn hp-btn"><span>{{actB}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></sc-if><div class="ps-meta"><span>Covers October earnings<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b l" role="tooltip">Earnings that cleared in October. Anything still pending moves to December.</span></span></span><span>Reference PO-20488</span></div></section>
 </main>
 </div>
 </div>
@@ -155,10 +156,20 @@ class Component extends DCLogic {
   constructor(props) { super(props); this.props0 = props; this.state = { nav: false }; }
   renderVals() {
     const S = this.state, props = this.props0 || {};
-    const a = props.variant === 'action';
-    return { navCls: S.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !S.nav }), isAction: a,
-      stCls: a ? 'am' : 'cb', stTxt: a ? 'Action required' : 'Processing', trkCls: a ? 'am' : '',
-      midT: a ? 'Paused' : 'Processing', midS: a ? 'Waiting for you' : 'With PayPal now' };
+    const V = {
+      proc: { st: 'cb', stT: 'Processing', c2: 'now', m: ['Processing', 'With PayPal now'], c3: '', e: ['Paid', 'By 13 Nov'] },
+      action: { st: 'am', stT: 'Action required', trk: 'am', c2: 'now', m: ['Paused', 'Waiting for you'], c3: '', e: ['Paid', 'By 13 Nov'],
+        act: ['PayPal needs you to confirm your account', 'Your payout continues as soon as it’s confirmed.', 'Fix payout details', 'CR-PAYO-001n.dc.html'] },
+      failed: { st: 'am', stT: 'Failed', trk: 'am', c2: 'now', m: ['Failed', '3 Nov'], c3: '', e: ['Paid', 'Not sent'],
+        act: ['PayPal rejected the transfer', 'The $2,850.00 is back in your available balance. Check your payout details and it goes out again.', 'Check payout details', 'CR-PAYO-001.dc.html'] },
+      returned: { st: 'am', stT: 'Returned', trk: 'am', c2: 'dn', m: ['Sent', '2 Nov'], c3: 'now', e: ['Returned', '6 Nov'],
+        act: ['Your bank returned this payout', 'The $2,850.00 is back in your available balance. Check that the account is open and in your verified name.', 'Update payout method', 'CR-PAYO-001.dc.html'] },
+      paid: { st: 'gn', stT: 'Paid', trk: 'gn', c2: 'dn', m: ['Processing', '2 Nov'], c3: 'dn', e: ['Paid', '4 Nov'] }
+    };
+    const c = V[props.variant] || V.proc, act = c.act || ['', '', '', '#'];
+    return { navCls: S.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !S.nav }), isAction: !!c.act,
+      stCls: c.st, stTxt: c.stT, trkCls: c.trk || '', c2: c.c2, c3: c.c3, midT: c.m[0], midS: c.m[1], endT: c.e[0], endS: c.e[1],
+      actT: act[0], actS: act[1], actB: act[2], actH: act[3] };
   }
 }
 </script>

@@ -1,6 +1,7 @@
 """Coming soon pages for the Learner and Validator paths (client WTusAd9o3fJn711spDqBsJ, 2026-10-17).
 CR-ONB-002S becomes one source with variants: (default) organization / learn / validate.
 New boards CR-ONB-001L / 001V (+ Mobile) import it; ONB-001 Continue now leads Learner -> 001L, Validator -> 001V.
+Designer follow-up: all three variants keep the organization coming-soon illustration (the client's per-role images were dropped).
 Usage: python3 soon1017.py <canvas/project dir>"""
 import json, os, re, sys
 P = sys.argv[1]

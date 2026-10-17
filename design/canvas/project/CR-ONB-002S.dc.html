@@ -68,17 +68,17 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </div>
 </main>
 <div class="ob-illus ob-illus-img" aria-hidden="true" style="position: absolute; left: 50%; bottom: 0; height: clamp(160px, calc(100vh - 410px), min(40vh, 33.33vw)); aspect-ratio: 1855 / 848; transform: translateX(-50%); --pan: 0px; overflow: hidden; z-index: 1; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%); mask-image: linear-gradient(to bottom, transparent 0, #000 14%)">
-<img src="{{img}}" alt="" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%); mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%)">
+<img src="/_blob/dd59631e21fe0b4aa5b410aa522bc1b7" alt="" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%); mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%)">
 </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
 class Component extends DCLogic {
   renderVals() {
-    const v = { learn: ['Learning is coming soon.', 'Pick another path to get started today.', '/_blob/8cf042f136c8ee1dfa3a3cb348ed6234'],
-                validate: ['Validation is coming soon.', 'Pick another path to get started today.', '/_blob/ffd6552769fa87f54686dc11ffc01420'] }[(this.props || {}).variant]
-      || ['Organizations are coming soon.', 'You can start creating on your own today.', '/_blob/dd59631e21fe0b4aa5b410aa522bc1b7'];
-    return { h1: v[0], sub: v[1], img: v[2] };
+    const v = { learn: ['Learning is coming soon.', 'Pick another path to get started today.'],
+                validate: ['Validation is coming soon.', 'Pick another path to get started today.'] }[(this.props || {}).variant]
+      || ['Organizations are coming soon.', 'You can start creating on your own today.'];
+    return { h1: v[0], sub: v[1] };
   }
 }
 </script>

@@ -149,7 +149,7 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-REVAL-001` Revalidation: content update → assessment (Standard)
 - [x] D [x] M  `CR-REVAL-002` Revalidation quote: same wallet & payment
 
-## 13. Earnings & payouts: PayPal, Payoneer, Tipalti or Direct Deposit · paid automatically each month once the balance reaches $25 (13)
+## 13. Earnings & payouts: PayPal, Payoneer, Tipalti or Direct Deposit · paid automatically each month once the balance reaches $25 (23)
 
 - [x] D [x] M  `CR-EARN-001` CR-EARN-001 · Earnings & next automatic payout
 - [x] D [x] M  `CR-EARN-001b` CR-EARN-001 · Below the $25 minimum (carries over)
@@ -164,6 +164,16 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-PAYO-005` CR-PAYO-005 · Monthly payout status: Scheduled → Processing → Paid
 - [x] D [x] M  `CR-PAYO-005a` CR-PAYO-005 · Payout status: action required
 - [x] D [x] M  `CR-PAYO-006` CR-PAYO-006 · Payout history
+- [x] D [x] M  `CR-EARN-001n` CR-EARN-001 · Earnings with no payout method yet
+- [x] D [x] M  `CR-PAYO-001h` CR-PAYO-001 · Payoneer: connect
+- [x] D [x] M  `CR-PAYO-001i` CR-PAYO-001 · Tipalti: open setup
+- [x] D [x] M  `CR-PAYO-001j` CR-PAYO-001 · Direct Deposit: routing number invalid (error)
+- [x] D [x] M  `CR-PAYO-001k` CR-PAYO-001 · Direct Deposit submitted: test deposit pending
+- [x] D [x] M  `CR-PAYO-001m` CR-PAYO-001 · Tipalti submitted: verification pending
+- [x] D [x] M  `CR-PAYO-001n` CR-PAYO-001 · Payout method: action required
+- [x] D [x] M  `CR-PAYO-005f` CR-PAYO-005 · Monthly payout: failed
+- [x] D [x] M  `CR-PAYO-005p` CR-PAYO-005 · Monthly payout: paid
+- [x] D [x] M  `CR-PAYO-005r` CR-PAYO-005 · Monthly payout: returned by bank
 
 ## 14. Course Overview & Discussions (6)
 

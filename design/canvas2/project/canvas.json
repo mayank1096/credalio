@@ -1846,6 +1846,186 @@
       "y": 27088,
       "page": "p2",
       "title": "CR-WAL-OUT · Credit Wallet · shared source"
+    },
+    "CR-EARN-001n.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-EARN-001n · Earnings · no payout method yet · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-EARN-001n-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-EARN-001n · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-001h.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-001h · Payout method · Payoneer · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-001h-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-PAYO-001h · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-001i.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-001i · Payout method · Tipalti · Desktop",
+      "w": 1440,
+      "x": 16560,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-001i-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-PAYO-001i · Mobile",
+      "w": 390,
+      "x": 18080,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-001j.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-001j · Direct deposit · routing number error · Desktop",
+      "w": 1440,
+      "x": 24840,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-001j-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "title": "CR-PAYO-001j · Mobile",
+      "w": 390,
+      "x": 26360,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-001k.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-001k · Direct deposit · test deposit pending · Desktop",
+      "w": 1440,
+      "x": 26910,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-001k-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-PAYO-001k · Mobile",
+      "w": 390,
+      "x": 28430,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-001m.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-001m · Tipalti verification pending · Desktop",
+      "w": 1440,
+      "x": 20700,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-001m-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-PAYO-001m · Mobile",
+      "w": 390,
+      "x": 22220,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-001n.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-001n · Payout method · action needed · Desktop",
+      "w": 1440,
+      "x": 33120,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-001n-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-PAYO-001n · Mobile",
+      "w": 390,
+      "x": 34640,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-005f.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-005f · Payout status · failed · Desktop",
+      "w": 1440,
+      "x": 39330,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-005f-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAYO-005f · Mobile",
+      "w": 390,
+      "x": 40850,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-005p.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-005p · Payout status · paid · Desktop",
+      "w": 1440,
+      "x": 37260,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-005p-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-PAYO-005p · Mobile",
+      "w": 390,
+      "x": 38780,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-005r.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PAYO-005r · Payout status · returned by bank · Desktop",
+      "w": 1440,
+      "x": 41400,
+      "y": 4320,
+      "page": "p2"
+    },
+    "CR-PAYO-005r-Mobile.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAYO-005r · Mobile",
+      "w": 390,
+      "x": 42920,
+      "y": 4320,
+      "page": "p2"
     }
   },
   "order": [
@@ -2054,7 +2234,27 @@
     "CR-SUP.dc.html",
     "CR-VAL-WS.dc.html",
     "CR-WAL-FUND.dc.html",
-    "CR-WAL-OUT.dc.html"
+    "CR-WAL-OUT.dc.html",
+    "CR-EARN-001n.dc.html",
+    "CR-EARN-001n-Mobile.dc.html",
+    "CR-PAYO-001h.dc.html",
+    "CR-PAYO-001h-Mobile.dc.html",
+    "CR-PAYO-001i.dc.html",
+    "CR-PAYO-001i-Mobile.dc.html",
+    "CR-PAYO-001j.dc.html",
+    "CR-PAYO-001j-Mobile.dc.html",
+    "CR-PAYO-001k.dc.html",
+    "CR-PAYO-001k-Mobile.dc.html",
+    "CR-PAYO-001m.dc.html",
+    "CR-PAYO-001m-Mobile.dc.html",
+    "CR-PAYO-001n.dc.html",
+    "CR-PAYO-001n-Mobile.dc.html",
+    "CR-PAYO-005f.dc.html",
+    "CR-PAYO-005f-Mobile.dc.html",
+    "CR-PAYO-005p.dc.html",
+    "CR-PAYO-005p-Mobile.dc.html",
+    "CR-PAYO-005r.dc.html",
+    "CR-PAYO-005r-Mobile.dc.html"
   ],
   "notes": {
     "l3-head": {
@@ -2091,76 +2291,6 @@
       "x": 0,
       "y": 4000,
       "text": "Earnings & payouts: PayPal, Payoneer, Tipalti or Direct Deposit · paid automatically each month once the balance reaches $25",
-      "page": "p2"
-    },
-    "l3m-CR-EARN-001n": {
-      "text": "Not done yet\nCR-EARN-001n · CR-EARN-001 · Earnings with no payout method yet",
-      "x": 4140,
-      "y": 4320,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-CR-PAYO-001h": {
-      "text": "Not done yet\nCR-PAYO-001h · CR-PAYO-001 · Payoneer: connect",
-      "x": 12420,
-      "y": 4320,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-CR-PAYO-001i": {
-      "text": "Not done yet\nCR-PAYO-001i · CR-PAYO-001 · Tipalti: open setup",
-      "x": 16560,
-      "y": 4320,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-CR-PAYO-001m": {
-      "text": "Not done yet\nCR-PAYO-001m · CR-PAYO-001 · Tipalti submitted: verification pending",
-      "x": 20700,
-      "y": 4320,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-CR-PAYO-001j": {
-      "text": "Not done yet\nCR-PAYO-001j · CR-PAYO-001 · Direct Deposit: routing number invalid (error)",
-      "x": 24840,
-      "y": 4320,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-CR-PAYO-001k": {
-      "text": "Not done yet\nCR-PAYO-001k · CR-PAYO-001 · Direct Deposit submitted: test deposit pending",
-      "x": 26910,
-      "y": 4320,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-CR-PAYO-001n": {
-      "text": "Not done yet\nCR-PAYO-001n · CR-PAYO-001 · Payout method: action required",
-      "x": 33120,
-      "y": 4320,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-CR-PAYO-005p": {
-      "text": "Not done yet\nCR-PAYO-005p · CR-PAYO-005 · Monthly payout: paid",
-      "x": 37260,
-      "y": 4320,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-CR-PAYO-005f": {
-      "text": "Not done yet\nCR-PAYO-005f · CR-PAYO-005 · Monthly payout: failed",
-      "x": 39330,
-      "y": 4320,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-CR-PAYO-005r": {
-      "text": "Not done yet\nCR-PAYO-005r · CR-PAYO-005 · Monthly payout: returned by bank",
-      "x": 41400,
-      "y": 4320,
-      "w": 1440,
       "page": "p2"
     },
     "l3s3": {

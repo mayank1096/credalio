@@ -1587,13 +1587,31 @@
       "x": 35190,
       "y": 2920
     },
+    "CR-ONB-006t-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-006t · Mobile",
+      "w": 390,
+      "x": 38780,
+      "y": 2920
+    },
+    "CR-ONB-006t.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-006t · Meet your Copilot · Nova thinking · Desktop",
+      "w": 1440,
+      "x": 37260,
+      "y": 2920
+    },
     "CR-ONB-007-Mobile.dc.html": {
       "h": 900,
       "is_interactive": true,
       "page": "p1",
       "title": "CR-ONB-007 · Mobile",
       "w": 390,
-      "x": 38780,
+      "x": 40850,
       "y": 2920
     },
     "CR-ONB-007.dc.html": {
@@ -1603,7 +1621,7 @@
       "page": "p1",
       "title": "CR-ONB-007 · Copilot style · Desktop",
       "w": 1440,
-      "x": 37260,
+      "x": 39330,
       "y": 2920
     },
     "CR-ONB-007p-Mobile.dc.html": {
@@ -1612,7 +1630,7 @@
       "page": "p1",
       "title": "CR-ONB-007p · Mobile",
       "w": 390,
-      "x": 40850,
+      "x": 44990,
       "y": 2920
     },
     "CR-ONB-007p.dc.html": {
@@ -1621,7 +1639,25 @@
       "page": "p1",
       "title": "CR-ONB-007p · Copilot style: Proactive · Desktop",
       "w": 1440,
-      "x": 39330,
+      "x": 43470,
+      "y": 2920
+    },
+    "CR-ONB-007t-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-007t · Mobile",
+      "w": 390,
+      "x": 42920,
+      "y": 2920
+    },
+    "CR-ONB-007t.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-ONB-007t · How should Nova help · Nova thinking · Desktop",
+      "w": 1440,
+      "x": 41400,
       "y": 2920
     },
     "CR-ONB-008-Mobile.dc.html": {
@@ -1630,7 +1666,7 @@
       "page": "p1",
       "title": "CR-ONB-008 · Mobile",
       "w": 390,
-      "x": 42920,
+      "x": 47060,
       "y": 2920
     },
     "CR-ONB-008.dc.html": {
@@ -1640,7 +1676,7 @@
       "page": "p1",
       "title": "CR-ONB-008 · You’re a Creator · Desktop",
       "w": 1440,
-      "x": 41400,
+      "x": 45540,
       "y": 2920
     },
     "CR-ORI-001-Mobile.dc.html": {
@@ -3313,6 +3349,22 @@
       "x": 33120,
       "y": 3850
     },
+    "new-CR-ONB-006t": {
+      "fill": "red",
+      "page": "p1",
+      "text": "NEW · Nova thinking state · CR-ONB-006t",
+      "w": 1910,
+      "x": 37260,
+      "y": 3930
+    },
+    "new-CR-ONB-007t": {
+      "fill": "red",
+      "page": "p1",
+      "text": "NEW · Nova thinking state · CR-ONB-007t",
+      "w": 1910,
+      "x": 41400,
+      "y": 3930
+    },
     "p2-ksrc": {
       "fill": "gray",
       "page": "p2",
@@ -3383,8 +3435,12 @@
     "CR-ONB-005-Mobile.dc.html",
     "CR-ONB-006.dc.html",
     "CR-ONB-006-Mobile.dc.html",
+    "CR-ONB-006t.dc.html",
+    "CR-ONB-006t-Mobile.dc.html",
     "CR-ONB-007.dc.html",
     "CR-ONB-007-Mobile.dc.html",
+    "CR-ONB-007t.dc.html",
+    "CR-ONB-007t-Mobile.dc.html",
     "CR-ONB-008.dc.html",
     "CR-ONB-008-Mobile.dc.html",
     "CR-DASH-NEW.dc.html",

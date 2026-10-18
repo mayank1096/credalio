@@ -42,3 +42,5 @@ s = rep(s, "askShown: phase === 'done',", "askShown: this.state.asked || phase =
 s = rep(s, "op: sel === label ? '1' : '0' }))", "op: sel === label ? '1' : '0', tf: sel === label ? 'none' : 'translateY(14px) scale(.96)', fl: sel === label ? 'none' : 'blur(6px)' }))")
 s = rep(s, "pick: () => this.setState({ sel: label }),", "pick: () => this.pick(label),")
 open(f, 'w').write(s); print('ok')
+# Designer 2026-10-18 follow-up (applied in place): thinking lasts longer (006: 5.2 s first / 3.3 s per pick; 007: 4.8 s;
+# 002A: 3.3 s per answer, 4.2 s drafting) and the status line is regular weight (400), not medium.

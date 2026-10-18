@@ -226,6 +226,11 @@ body{margin:0;background:#F7F9FD}
 .nv-orb i{width:7px;height:7px;border-radius:50%;background:#1652F0;animation:nvPulse 1.1s ease-in-out infinite}
 .nv-tt{font-size:15px;font-weight:400;line-height:1.4;background:linear-gradient(90deg,#5B6582 0%,#5B6582 35%,#1652F0 50%,#5B6582 65%,#5B6582 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:nvShim 1.6s linear infinite}
 @media (prefers-reduced-motion: reduce){.nv-orb::before,.nv-orb i,.nv-tt{animation:none}.nv-tt{color:#5B6582}}
+@keyframes nvBorder{from{background-position:0 0,0% 0}to{background-position:0 0,300% 0}}
+@keyframes nvRing{0%,100%{box-shadow:0 0 0 0 rgba(22,82,240,.35)}50%{box-shadow:0 0 0 7px rgba(22,82,240,0)}}
+.nv-bub{display:inline-flex;align-self:flex-start;padding:10px 16px 10px 12px;border-radius:18px 18px 18px 6px;border:1.5px solid transparent;background:linear-gradient(#F5F8FF,#F5F8FF) padding-box,linear-gradient(90deg,#1652F0,#C9D8FF,#6E96FF,#DCE5FB,#1652F0) border-box;background-size:100% 100%,300% 100%;box-shadow:0 0 0 5px rgba(22,82,240,.07),0 12px 30px rgba(22,82,240,.13);animation:nvBorder 2.2s linear infinite}
+.nv-ava{animation:nvRing 1.6s ease-out infinite}
+@media (prefers-reduced-motion: reduce){.nv-bub,.nv-ava{animation:none}}
 </style>
 </helmet>
 <div class="fx-root">
@@ -242,7 +247,7 @@ body{margin:0;background:#F7F9FD}
 <section class="fx-chat" aria-label="Conversation with Nova">
 <div class="fx-scroll"><div class="fx-col fx-msgs" aria-live="polite">
 <div class="fx-hello"><span aria-hidden="true" style="position: relative; flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; overflow: hidden; background: #EAF0FF; box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 4.5px #D6DDEE; display: block"><img src="/_blob/b8f0756720795e1bd3b02e9c2655cb25" alt="" style="position: absolute; left: -87.50%; top: -57.81%; width: 294.06%; max-width: none; height: auto; mix-blend-mode: multiply"></span><h1>Let’s sketch your course</h1><p>Answer five questions. I’ll sketch a draft for you to review.</p></div>
-<sc-for list="{{msgs}}" as="m" hint-placeholder-count="3"><div class="fx-msg fx-nova cp-pop" style="display: {{m.nd}}"><span aria-hidden="true" style="position: relative; flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; background: #EAF0FF; display: block"><img src="/_blob/b8f0756720795e1bd3b02e9c2655cb25" alt="" style="position: absolute; left: -87.50%; top: -57.81%; width: 294.06%; max-width: none; height: auto; mix-blend-mode: multiply"></span><div class="fx-mb"><span class="fx-who">Nova<em style="display: {{m.qd}}">{{m.ql}}</em></span><p>{{m.text}}</p></div></div><div class="fx-msg fx-me cp-pop" style="display: {{m.md}}"><button type="button" class="fx-edit" onClick="{{m.edit}}" aria-label="Edit this answer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"></path><path d="m13.5 6.5 4 4"></path></svg></button><p>{{m.text}}</p></div><div class="fx-msg fx-nova" style="display: {{m.dd}}"><span aria-hidden="true" style="position: relative; flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; background: #EAF0FF; display: block"><img src="/_blob/b8f0756720795e1bd3b02e9c2655cb25" alt="" style="position: absolute; left: -87.50%; top: -57.81%; width: 294.06%; max-width: none; height: auto; mix-blend-mode: multiply"></span><div class="fx-mb"><span class="fx-who">Nova</span><span class="nv-think" role="status"><span class="nv-orb" aria-hidden="true"><i></i></span><span class="nv-tt">{{m.think}}</span></span></div></div></sc-for>
+<sc-for list="{{msgs}}" as="m" hint-placeholder-count="3"><div class="fx-msg fx-nova cp-pop" style="display: {{m.nd}}"><span aria-hidden="true" style="position: relative; flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; background: #EAF0FF; display: block"><img src="/_blob/b8f0756720795e1bd3b02e9c2655cb25" alt="" style="position: absolute; left: -87.50%; top: -57.81%; width: 294.06%; max-width: none; height: auto; mix-blend-mode: multiply"></span><div class="fx-mb"><span class="fx-who">Nova<em style="display: {{m.qd}}">{{m.ql}}</em></span><p>{{m.text}}</p></div></div><div class="fx-msg fx-me cp-pop" style="display: {{m.md}}"><button type="button" class="fx-edit" onClick="{{m.edit}}" aria-label="Edit this answer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"></path><path d="m13.5 6.5 4 4"></path></svg></button><p>{{m.text}}</p></div><div class="fx-msg fx-nova" style="display: {{m.dd}}"><span class="nv-ava" aria-hidden="true" style="position: relative; flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; background: #EAF0FF; display: block"><img src="/_blob/b8f0756720795e1bd3b02e9c2655cb25" alt="" style="position: absolute; left: -87.50%; top: -57.81%; width: 294.06%; max-width: none; height: auto; mix-blend-mode: multiply"></span><div class="fx-mb"><span class="fx-who">Nova</span><span class="nv-bub"><span class="nv-think" role="status"><span class="nv-orb" aria-hidden="true"><i></i></span><span class="nv-tt">{{m.think}}</span></span></span></div></div></sc-for>
 </div></div>
 <div class="fx-dock">
 <div class="fx-col">
@@ -287,7 +292,23 @@ class Component extends DCLogic {
     const full = (props || {}).variant === 'proposal';
     this.state = { answers: full ? this.Q.map((x) => x.demo) : [], text: '', typing: false, phase: full ? 'proposal' : 'chat', dec: full ? { title: 'a', desc: 'a', aud: 'a', pre: 'e' } : {}, err: false, bp: false, notes: false };
   }
-  componentWillUnmount() { clearTimeout(this.t); clearInterval(this.ts); }
+  componentDidMount() {
+    if (this.state.phase !== 'chat' || this.state.answers.length) return;
+    const start = () => {
+      clearTimeout(this.ti); clearInterval(this.ts);
+      this.setState({ intro: true, step: 0 });
+      this.ts = setInterval(() => this.setState({ step: Math.min((this.state.step || 0) + 1, 2) }), 1300);
+      this.ti = setTimeout(() => { clearInterval(this.ts); this.setState({ intro: false }); }, 4000);
+    };
+    if (typeof IntersectionObserver !== 'function') { start(); return; }
+    let shown = false;
+    this.io = new IntersectionObserver((es) => {
+      const r = es[es.length - 1].intersectionRatio;
+      if (r >= 0.5 && !shown) { shown = true; if (!this.state.answers.length) start(); } else if (r < 0.05) shown = false;
+    }, { threshold: [0, 0.05, 0.5] });
+    this.io.observe(document.querySelector('.fx-msgs') || document.documentElement);
+  }
+  componentWillUnmount() { if (this.io) this.io.disconnect(); clearTimeout(this.t); clearTimeout(this.ti); clearInterval(this.ts); }
   send(v) {
     const t = (v || '').trim();
     if (!t || this.state.typing || this.state.answers.length >= 5) return;
@@ -304,7 +325,8 @@ class Component extends DCLogic {
       msgs.push(nova(this.Q[i].q, 'Question ' + (i + 1) + ' of 5'));
       msgs.push({ text: a, nd: 'none', md: 'flex', dd: 'none', qd: 'none', ql: '', edit: () => this.setState({ answers: answers.slice(0, i), text: a, phase: 'chat', typing: false }) });
     });
-    if (typing) msgs.push({ text: '', nd: 'none', md: 'none', dd: 'flex', qd: 'none', ql: '', edit: () => {} });
+    const intro = this.state.intro && n === 0 && phase === 'chat';
+    if (typing || intro) msgs.push({ text: '', nd: 'none', md: 'none', dd: 'flex', qd: 'none', ql: '', edit: () => {} });
     else if (n < 5) msgs.push(nova(this.Q[n].q, 'Question ' + (n + 1) + ' of 5'));
     else msgs.push(nova('That’s everything I need. I’ll draft a title, description, skills, outcomes and a first curriculum. You review every part.', ''));
     const reviewed = this.K.filter(([k]) => dec[k]).length;
@@ -319,14 +341,14 @@ class Component extends DCLogic {
     const accepted = this.K.filter(([k]) => dec[k] === 'a').length;
     const later = this.K.filter(([k]) => dec[k] === 'e').length;
     const widths = ['82%', '64%', '72%', '58%', '46%'];
-    msgs.forEach((m) => { m.think = ['Reading your answer…', 'Thinking it through…', 'Writing…'][this.state.step || 0]; });
+    msgs.forEach((m) => { m.think = (intro ? ['Getting to know your field…', 'Planning a few questions…', 'Writing the first one…'] : ['Reading your answer…', 'Thinking it through…', 'Writing…'])[this.state.step || 0]; });
     return {
       chatView: phase === 'chat' || phase === 'drafting', reviewView: phase === 'proposal', doneView: phase === 'done',
       stageLabel: phase === 'proposal' ? 'Review Nova’s draft' : (phase === 'done' ? 'Draft ready' : 'Sketch it with Nova'),
       progress: phase === 'proposal' || phase === 'done' ? 'Draft ready' : (n < 5 ? 'Question ' + (n + 1) + ' of 5' : 'All five answered'),
       segs: [0, 1, 2, 3, 4].map((i) => ({ c: (i < n || phase !== 'chat') ? '#1652F0' : (i === n ? '#AFC1F5' : '#E6EAF3') })),
       msgs, composerShown: n < 5 && phase === 'chat', readyShown: n === 5 && !typing && phase === 'chat', draftingShown: phase === 'drafting',
-      chips: (n < 5 && !typing) ? this.Q[n].chips.map((label) => ({ label, pick: () => this.send(label) })) : [],
+      chips: (n < 5 && !typing && !intro) ? this.Q[n].chips.map((label) => ({ label, pick: () => this.send(label) })) : [],
       text, onText: (e) => this.setState({ text: e.target.value }),
       onKey: (e) => { if (e.key === 'Enter') { e.preventDefault(); this.send(this.state.text); } },
       sendText: () => this.send(this.state.text), sendBg: text.trim() ? '#1652F0' : '#CBD3E6',

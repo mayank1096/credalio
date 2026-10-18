@@ -134,7 +134,7 @@ class Component extends DCLogic {
   constructor(props) { super(props); this.props0 = props; this.state = { nav: false }; }
   renderVals() {
     const S = this.state, e = (this.props0 || {}).variant === 'empty';
-    return { navCls: S.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !S.nav }), q: e ? 'zzqx' : 'SQL', h1: 'Results for “' + (e ? 'zzqx' : 'SQL') + '”', nm: 'Nothing matches “zzqx”', vRes: !e, vEmpty: e };
+    return { navCls: S.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !S.nav }), q: e ? 'zzqx' : 'SQL', h1: 'Results for “' + (e ? 'zzqx' : 'SQL') + '”', nm: 'Nothing found', vRes: !e, vEmpty: e };
   }
 }
 </script>

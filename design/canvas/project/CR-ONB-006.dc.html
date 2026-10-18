@@ -121,7 +121,16 @@ class Component extends DCLogic {
     this.reduce = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (this.props && this.props.variant === 'thinking') { this.setState({ step: 1 }); return; }
     if (this.reduce) { this.setState({ phase: 'done', i: 9999, asked: true }); return; }
-    this.greet(5200, 1700);
+    this.watch(() => this.setState({ sel: 'Nova', picked: false, asked: false }, () => this.greet(5200, 1700)));
+  }
+  watch(start) {
+    if (typeof IntersectionObserver !== 'function') { start(); return; }
+    let shown = false;
+    this.io = new IntersectionObserver((es) => {
+      const r = es[es.length - 1].intersectionRatio;
+      if (r >= 0.5 && !shown) { shown = true; start(); } else if (r < 0.05) shown = false;
+    }, { threshold: [0, 0.05, 0.5] });
+    this.io.observe(document.querySelector('.ob-root') || document.documentElement);
   }
   greet(wait, every) {
     clearInterval(this.ts); clearTimeout(this.t0); clearTimeout(this.t1); clearInterval(this.iv);
@@ -141,7 +150,7 @@ class Component extends DCLogic {
     if (label === this.state.sel) return;
     this.setState({ sel: label, picked: true }, () => { if (this.reduce) this.setState({ phase: 'done', i: 9999 }); else this.greet(3300, 1100); });
   }
-  componentWillUnmount() { clearInterval(this.ts); clearTimeout(this.t0); clearTimeout(this.t1); clearInterval(this.iv); }
+  componentWillUnmount() { if (this.io) this.io.disconnect(); clearInterval(this.ts); clearTimeout(this.t0); clearTimeout(this.t1); clearInterval(this.iv); }
   name() { return this.state.sel; }
   full() { return 'Hi Ada, I’m ' + this.name() + '. You chose Data Analysis. What would you like to help someone learn?'; }
   renderVals() {

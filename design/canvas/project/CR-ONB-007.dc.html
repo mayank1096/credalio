@@ -140,9 +140,18 @@ class Component extends DCLogic {
     if (this.props && this.props.variant === 'thinking') { this.setState({ step: 1 }); return; }
     this.reduce = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (this.reduce) { this.setState({ phase: 'done' }); return; }
-    this.think();
+    this.watch(() => this.think());
   }
-  componentWillUnmount() { clearTimeout(this.t0); clearInterval(this.iv); clearInterval(this.ts); }
+  watch(start) {
+    if (typeof IntersectionObserver !== 'function') { start(); return; }
+    let shown = false;
+    this.io = new IntersectionObserver((es) => {
+      const r = es[es.length - 1].intersectionRatio;
+      if (r >= 0.5 && !shown) { shown = true; start(); } else if (r < 0.05) shown = false;
+    }, { threshold: [0, 0.05, 0.5] });
+    this.io.observe(document.querySelector('.ob-root') || document.documentElement);
+  }
+  componentWillUnmount() { if (this.io) this.io.disconnect(); clearTimeout(this.t0); clearInterval(this.iv); clearInterval(this.ts); }
   think() {
     clearTimeout(this.t0); clearInterval(this.iv); clearInterval(this.ts);
     this.setState({ phase: 'wait', step: 0 });

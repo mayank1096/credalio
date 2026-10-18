@@ -45,6 +45,7 @@
 - **Explanations** go in an info tooltip (`design/generator/tipx.py`: navy bubble, ⓘ), not in extra paragraphs. Never repeat what the H1 already says.
 - **Top ambient glow** is status-coloured (green success, amber action, cobalt normal, grey declined / in review).
 - **Cobalt line/path** is the progress motif.
+- **Nova thinking state** (designer 2026-10-18): before every AI reply show `.nv-think` (spinning cobalt ring orb + shimmering status line that steps through what Nova is doing, ~2–3 s), then type the reply. Never a bare caret or three dots. Source: `design/generator/think1018.py` (ONB-006, ONB-007, CREATE-002A).
 - **Outcome screens** (success, pending, action, failed) use the ONE standard `ko-*` layout from `CR-KYC-003`:
   - order: emblem → status pill → H1 → sub → card(s) / Next for you → CTA → small links
   - success screens add confetti (`confetti.py` / `conf1013c.py`)

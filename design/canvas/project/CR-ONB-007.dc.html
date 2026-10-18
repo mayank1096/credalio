@@ -45,17 +45,24 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 @keyframes cpRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes cpPop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
 @keyframes cpBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
-@keyframes cpDot{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
 .cp-char{animation:cpRise .9s cubic-bezier(.2,.8,.2,1) .15s both}
 .cp-pop{animation:cpPop .45s ease both}
 .cp-caret{display:inline-block;width:2px;height:1.05em;margin-left:2px;vertical-align:-0.15em;background:#1652F0;animation:cpBlink 1s steps(1) infinite}
-.cp-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#1652F0;animation:cpDot 1.2s ease-in-out infinite}
 .ob-arrow{flex-shrink:0}
-@media (prefers-reduced-motion: reduce){.cp-char,.cp-pop,.cp-caret,.cp-dot{animation:none}}
+@media (prefers-reduced-motion: reduce){.cp-char,.cp-pop,.cp-caret{animation:none}}
 @media (max-width: 960px){.cp-stage{grid-template-columns:72px minmax(0,1fr) !important;gap:10px !important;align-items:start !important}.cp-char{width:72px !important}.cp-stage > div:first-child{align-self:start !important;margin-top:24px}.cp-floor{display:none}.cp-chat{margin-top:0 !important}.cp-label{display:none !important}.cp-stage{margin-top:28px !important}.cp-stage > div:first-child{margin-top:0 !important}.cp-cta-d,.cp-d{display:none !important}.ob-main{padding-top:28px !important}}
 @media (min-width: 961px){.cp-cta-m{display:none !important}}
 @media (max-width: 960px){.cp-opts-m{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%;margin-top:16px}.cp-opts-m .ob-opt{flex-direction:column;align-items:flex-start !important;gap:10px !important;padding:14px !important}}
 .lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/f2bdb0288176649cd148845b2c46e3ab) left center/contain no-repeat}.lg-mark{display:none;width:30px;height:30px;background:url(/_blob/9e485e715f9869055157634fa82d3fa5) center/contain no-repeat}@media (max-width: 960px){.lg-word{height:22px}}
+@keyframes nvSpin{to{transform:rotate(360deg)}}
+@keyframes nvPulse{0%,100%{transform:scale(.65);opacity:.65}50%{transform:scale(1);opacity:1}}
+@keyframes nvShim{from{background-position:100% 0}to{background-position:-100% 0}}
+.nv-think{display:inline-flex;align-items:center;gap:10px;min-height:24px}
+.nv-orb{position:relative;width:22px;height:22px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.nv-orb::before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,#1652F0,#6E96FF,#DCE5FB,#1652F0);-webkit-mask:radial-gradient(circle,transparent 6.5px,#000 7.5px);mask:radial-gradient(circle,transparent 6.5px,#000 7.5px);animation:nvSpin 1.1s linear infinite}
+.nv-orb i{width:7px;height:7px;border-radius:50%;background:#1652F0;animation:nvPulse 1.1s ease-in-out infinite}
+.nv-tt{font-size:15px;font-weight:500;line-height:1.4;background:linear-gradient(90deg,#5B6582 0%,#5B6582 35%,#1652F0 50%,#5B6582 65%,#5B6582 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:nvShim 1.6s linear infinite}
+@media (prefers-reduced-motion: reduce){.nv-orb::before,.nv-orb i,.nv-tt{animation:none}.nv-tt{color:#5B6582}}
 </style>
 </helmet>
 <div class="ob-root" style="width: 100%; height: 100vh; min-height: 680px; position: relative; overflow: hidden; background: #FFFFFF; font-family: 'Google Sans', 'Google Sans Text', 'Helvetica Neue', system-ui, sans-serif; color: #0B1433">
@@ -85,7 +92,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </div>
 <div class="cp-chat" style="display: flex; flex-direction: column; gap: 10px; margin-top: calc(clamp(170px, 17vw, 230px) * 0.2); min-width: 0">
 <span class="cp-pop cp-label" style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B6582"><span style="width: 8px; height: 8px; border-radius: 50%; background: #0F6B45; box-shadow: 0 0 0 3px rgba(15, 107, 69, 0.15)"></span><span style="font-weight: 600; color: #0B1433">Nova</span> · your Creator Copilot</span>
-<div class="cp-pop" style="max-width: 560px; padding: 16px 18px; border-radius: 20px 20px 20px 6px; background: #F5F8FF; border: 1.5px solid #E6EAF3; font-size: 16px; line-height: 1.55; color: #0B1433; min-height: 104px; box-sizing: border-box"><sc-if value="{{waiting}}" hint-placeholder-val="{{false}}"><span style="display: inline-flex; gap: 5px; padding: 6px 0" aria-label="typing"><span class="cp-dot"></span><span class="cp-dot" style="animation-delay: .15s"></span><span class="cp-dot" style="animation-delay: .3s"></span></span></sc-if><span aria-live="polite">{{typed}}</span><sc-if value="{{typing}}" hint-placeholder-val="{{false}}"><span class="cp-caret" aria-hidden="true"></span></sc-if></div>
+<div class="cp-pop" style="max-width: 560px; padding: 16px 18px; border-radius: 20px 20px 20px 6px; background: #F5F8FF; border: 1.5px solid #E6EAF3; font-size: 16px; line-height: 1.55; color: #0B1433; min-height: 104px; box-sizing: border-box"><sc-if value="{{waiting}}" hint-placeholder-val="{{false}}"><span class="nv-think" role="status"><span class="nv-orb" aria-hidden="true"><i></i></span><span class="nv-tt">{{think}}</span></span></sc-if><span aria-live="polite">{{typed}}</span><sc-if value="{{typing}}" hint-placeholder-val="{{false}}"><span class="cp-caret" aria-hidden="true"></span></sc-if></div>
 <div role="radiogroup" aria-label="Copilot working style" class="cp-d cp-pop" style="max-width: 560px; margin-top: 6px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; animation-delay: .15s"><button type="button" role="radio" class="ob-opt" onClick="{{o.concise.pick}}" aria-checked="{{o.concise.checked}}" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; min-height: 72px; box-sizing: border-box; border-radius: 16px; border: 1.5px solid {{o.concise.border}}; background: {{o.concise.bg}}; box-shadow: {{o.concise.shadow}}; cursor: pointer; text-align: left; font-family: inherit">
 <span style="width: 40px; height: 40px; flex-shrink: 0; border-radius: 12px; background: {{o.concise.iconBg}}; color: {{o.concise.iconFg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"></path></svg></span>
 <span style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1; min-width: 0"><span style="font-size: 16px; font-weight: 600; letter-spacing: -0.01em; color: #0B1433">Concise</span><span style="font-size: 13px; line-height: 1.35; color: #4A5578">Short, direct suggestions.</span></span>
@@ -122,12 +129,18 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
 class Component extends DCLogic {
-  constructor(props) { super(props); this.state = { sel: (props && props.variant === 'proactive') ? 'proactive' : 'concise', i: 0, phase: 'wait' }; }  componentDidMount() {
+  constructor(props) { super(props); this.state = { sel: (props && props.variant === 'proactive') ? 'proactive' : 'concise', i: 0, phase: 'wait', step: 0 }; }  componentDidMount() {
     this.reduce = typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (this.reduce) { this.setState({ phase: 'done' }); return; }
-    this.t0 = setTimeout(() => this.type(), 1100);
+    this.think();
   }
-  componentWillUnmount() { clearTimeout(this.t0); clearInterval(this.iv); }
+  componentWillUnmount() { clearTimeout(this.t0); clearInterval(this.iv); clearInterval(this.ts); }
+  think() {
+    clearTimeout(this.t0); clearInterval(this.iv); clearInterval(this.ts);
+    this.setState({ phase: 'wait', step: 0 });
+    this.ts = setInterval(() => this.setState({ step: Math.min(this.state.step + 1, 2) }), 800);
+    this.t0 = setTimeout(() => { clearInterval(this.ts); this.type(); }, 2400);
+  }
   type() {
     clearInterval(this.iv);
     this.setState({ phase: 'typing', i: 0 });
@@ -150,9 +163,9 @@ class Component extends DCLogic {
     const o = {};
     ['concise', 'collab', 'detailed', 'proactive'].forEach((id) => {
       const on = sel === id;
-      o[id] = { pick: () => { if (id === this.state.sel) return; clearTimeout(this.t0); this.setState({ sel: id }, () => { if (this.reduce) this.setState({ phase: 'done' }); else this.type(); }); }, checked: on ? 'true' : 'false', border: on ? '#1652F0' : '#E6EAF3', bg: on ? '#F5F8FF' : '#FFFFFF', shadow: on ? '0 0 0 4px rgba(22, 82, 240, 0.12), 0 12px 28px rgba(22, 82, 240, 0.14)' : '0 1px 2px rgba(11, 20, 51, 0.04)', iconBg: on ? '#1652F0' : '#EAF0FF', iconFg: on ? '#FFFFFF' : '#1652F0' };
+      o[id] = { pick: () => { if (id === this.state.sel) return; clearTimeout(this.t0); this.setState({ sel: id }, () => { if (this.reduce) this.setState({ phase: 'done' }); else this.think(); }); }, checked: on ? 'true' : 'false', border: on ? '#1652F0' : '#E6EAF3', bg: on ? '#F5F8FF' : '#FFFFFF', shadow: on ? '0 0 0 4px rgba(22, 82, 240, 0.12), 0 12px 28px rgba(22, 82, 240, 0.14)' : '0 1px 2px rgba(11, 20, 51, 0.04)', iconBg: on ? '#1652F0' : '#EAF0FF', iconFg: on ? '#FFFFFF' : '#1652F0' };
     });
-    return { o, typed: phase === 'wait' ? '' : (phase === 'done' ? full : full.slice(0, i)), waiting: phase === 'wait', typing: phase === 'typing' };
+    return { o, typed: phase === 'wait' ? '' : (phase === 'done' ? full : full.slice(0, i)), think: ['Nova is reading your outcomes…', 'Nova is thinking it through…', 'Nova is writing in your style…'][this.state.step], waiting: phase === 'wait', typing: phase === 'typing' };
   }
 }
 </script>

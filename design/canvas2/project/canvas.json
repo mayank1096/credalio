@@ -2547,6 +2547,86 @@
       "y": 26768,
       "text": "Component sources (not screens)",
       "page": "p2"
+    },
+    "b1-CR-EARN-001n": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 1 (17 Oct) · CR-EARN-001n",
+      "w": 1910,
+      "x": 4140,
+      "y": 5360
+    },
+    "b1-CR-PAYO-001h": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 1 (17 Oct) · CR-PAYO-001h",
+      "w": 1910,
+      "x": 12420,
+      "y": 5260
+    },
+    "b1-CR-PAYO-001i": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 1 (17 Oct) · CR-PAYO-001i",
+      "w": 1910,
+      "x": 16560,
+      "y": 5260
+    },
+    "b1-CR-PAYO-001j": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 1 (17 Oct) · CR-PAYO-001j",
+      "w": 1910,
+      "x": 24840,
+      "y": 5320
+    },
+    "b1-CR-PAYO-001k": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 1 (17 Oct) · CR-PAYO-001k",
+      "w": 1910,
+      "x": 26910,
+      "y": 5260
+    },
+    "b1-CR-PAYO-001m": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 1 (17 Oct) · CR-PAYO-001m",
+      "w": 1910,
+      "x": 20700,
+      "y": 5260
+    },
+    "b1-CR-PAYO-001n": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 1 (17 Oct) · CR-PAYO-001n",
+      "w": 1910,
+      "x": 33120,
+      "y": 5260
+    },
+    "b1-CR-PAYO-005f": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 1 (17 Oct) · CR-PAYO-005f",
+      "w": 1910,
+      "x": 39330,
+      "y": 5360
+    },
+    "b1-CR-PAYO-005p": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 1 (17 Oct) · CR-PAYO-005p",
+      "w": 1910,
+      "x": 37260,
+      "y": 5260
+    },
+    "b1-CR-PAYO-005r": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 1 (17 Oct) · CR-PAYO-005r",
+      "w": 1910,
+      "x": 41400,
+      "y": 5360
     }
   },
   "designSystems": []

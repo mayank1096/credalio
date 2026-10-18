@@ -2134,6 +2134,114 @@
       "x": 20150,
       "y": 16580,
       "page": "p2"
+    },
+    "CR-NOVA-001n.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-NOVA-001n · Nova · new creator · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 18660,
+      "page": "p2"
+    },
+    "CR-NOVA-001n-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-NOVA-001n · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 18660,
+      "page": "p2"
+    },
+    "CR-CREIO-003e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-003e · Get more Creio · below minimum · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 18660,
+      "page": "p2"
+    },
+    "CR-CREIO-003e-Mobile.dc.html": {
+      "h": 960,
+      "is_interactive": true,
+      "title": "CR-CREIO-003e · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 18660,
+      "page": "p2"
+    },
+    "CR-CREIO-010c.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-010c · Nova · Creio almost out · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 22084,
+      "page": "p2"
+    },
+    "CR-CREIO-010c-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-010c · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 22084,
+      "page": "p2"
+    },
+    "CR-CREIO-EST.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-CREIO-EST · Copilot · estimate before running · Desktop",
+      "w": 1440,
+      "x": 16560,
+      "y": 22084,
+      "page": "p2"
+    },
+    "CR-CREIO-EST-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-CREIO-EST · Mobile",
+      "w": 390,
+      "x": 18080,
+      "y": 22084,
+      "page": "p2"
+    },
+    "CR-AI-012.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-AI-012 · Copilot preferences · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 22084,
+      "page": "p2"
+    },
+    "CR-AI-012-Mobile.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-AI-012 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 22084,
+      "page": "p2"
+    },
+    "CR-HOME-SET.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-HOME-SET · Settings · AI preferences · Desktop",
+      "w": 1440,
+      "x": 12420,
+      "y": 14560,
+      "page": "p2"
+    },
+    "CR-HOME-SET-Mobile.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-HOME-SET · Mobile",
+      "w": 390,
+      "x": 13940,
+      "y": 14560,
+      "page": "p2"
     }
   },
   "order": [
@@ -2374,7 +2482,19 @@
     "CR-SEARCH-EMPTY.dc.html",
     "CR-SEARCH-EMPTY-Mobile.dc.html",
     "CR-HELP-003e.dc.html",
-    "CR-HELP-003e-Mobile.dc.html"
+    "CR-HELP-003e-Mobile.dc.html",
+    "CR-NOVA-001n.dc.html",
+    "CR-NOVA-001n-Mobile.dc.html",
+    "CR-CREIO-003e.dc.html",
+    "CR-CREIO-003e-Mobile.dc.html",
+    "CR-CREIO-010c.dc.html",
+    "CR-CREIO-010c-Mobile.dc.html",
+    "CR-CREIO-EST.dc.html",
+    "CR-CREIO-EST-Mobile.dc.html",
+    "CR-AI-012.dc.html",
+    "CR-AI-012-Mobile.dc.html",
+    "CR-HOME-SET.dc.html",
+    "CR-HOME-SET-Mobile.dc.html"
   ],
   "notes": {
     "l3-head": {
@@ -2458,13 +2578,6 @@
       "text": "Settings",
       "page": "p2"
     },
-    "l3m-CR-SET-007": {
-      "text": "In the Link 1 canvas (CR-HOME-SET) · to copy here\nCR-SET-007 · SET-007 · AI Preferences",
-      "x": 12420,
-      "y": 14560,
-      "w": 1440,
-      "page": "p2"
-    },
     "l3s8": {
       "kind": "title1",
       "maxW": 8000,
@@ -2483,20 +2596,6 @@
       "text": "Creio · Nova, Your Creator Copilot: overview, balance, buy (packages or custom amount), confirm, success",
       "page": "p2"
     },
-    "l3m-AI-001n": {
-      "text": "Not done yet\nAI-001n · AI-001 · New creator, starting Creio balance",
-      "x": 0,
-      "y": 18660,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-AI-003e": {
-      "text": "Not done yet\nAI-003e · AI-003 · Custom amount below minimum (error)",
-      "x": 10350,
-      "y": 18660,
-      "w": 1440,
-      "page": "p2"
-    },
     "l3s10": {
       "kind": "title1",
       "maxW": 8000,
@@ -2513,27 +2612,6 @@
       "x": 0,
       "y": 21764,
       "text": "Creio · Usage, preferences, low and depleted states, top-bar chip, estimates",
-      "page": "p2"
-    },
-    "l3m-AI-012": {
-      "text": "In the Link 1 canvas (CR-HOME-SET) · to copy here\nAI-012 · AI-012 · Copilot Preferences",
-      "x": 2070,
-      "y": 22084,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-AI-010c": {
-      "text": "Not done yet\nAI-010c · AI-010 · Critical Creio balance",
-      "x": 8280,
-      "y": 22084,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-AI-EST": {
-      "text": "Not done yet\nAI-EST · Large AI action: estimate before running (full course review)",
-      "x": 16560,
-      "y": 22084,
-      "w": 1440,
       "page": "p2"
     },
     "l3s12": {
@@ -2753,6 +2831,54 @@
       "w": 1910,
       "x": 18630,
       "y": 17520
+    },
+    "b3-CR-NOVA-001n": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 3 (18 Oct) · CR-NOVA-001n",
+      "w": 1910,
+      "x": 0,
+      "y": 19600
+    },
+    "b3-CR-CREIO-003e": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 3 (18 Oct) · CR-CREIO-003e",
+      "w": 1910,
+      "x": 10350,
+      "y": 19660
+    },
+    "b3-CR-CREIO-010c": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 3 (18 Oct) · CR-CREIO-010c",
+      "w": 1910,
+      "x": 8280,
+      "y": 22968
+    },
+    "b3-CR-CREIO-EST": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 3 (18 Oct) · CR-CREIO-EST",
+      "w": 1910,
+      "x": 16560,
+      "y": 22968
+    },
+    "b3-CR-AI-012": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 3 (18 Oct) · CR-AI-012",
+      "w": 1910,
+      "x": 2070,
+      "y": 23424
+    },
+    "b3-CR-HOME-SET": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 3 (18 Oct) · CR-HOME-SET",
+      "w": 1910,
+      "x": 12420,
+      "y": 15900
     }
   },
   "designSystems": []

@@ -227,7 +227,7 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-SET-004` SET-004 · Notification preferences (matrix)
 - [x] D [x] M  `CR-SET-005` SET-005 · Privacy
 - [x] D [x] M  `CR-SET-006` SET-006 · Language & Region
-- [x] D [x] M  `CR-SET-007` SET-007 · AI Preferences (= CR-HOME-SET)
+- [x] D [x] M  `CR-SET-007` SET-007 · AI Preferences (= CR-HOME-SET, copied into the Studio canvas)
 - [x] D [x] M  `CR-SET-008` Sign-in methods
 
 ## 19. Copilot panel (CP-001 to CP-003), Search and Help & Support (10)
@@ -249,9 +249,11 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 ## 20. AI Tokens · Nova, Your Creator Copilot: overview, balance, buy (packages or custom amount), confirm, success (6)
 
 - [x] D [x] M  `AI-001` AI-001 · Nova: Your Creator Copilot · Overview (= CR-NOVA-001)
+- [x] D [x] M  `AI-001n` AI-001 · New creator, starting Creio balance (= CR-NOVA-001n)
 - [x] D [x] M  `AI-002` AI-002 / AI-009 · AI Tokens: balance & purchase history (detail)
 - [x] D [x] M  `AI-003` AI-003 · Buy AI Tokens (packages)
 - [x] D [x] M  `AI-003c` AI-003 · Custom amount (enter AI Tokens, Credits update live)
+- [x] D [x] M  `AI-003e` AI-003 · Custom amount below minimum (error) (= CR-CREIO-003e)
 - [x] D [x] M  `AI-004` AI-004 · Confirm AI Token purchase
 - [x] D [x] M  `AI-005` AI-005 · Purchase successful
 
@@ -265,13 +267,14 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 ## 22. AI Tokens · Usage, preferences, low and depleted states, top-bar chip, estimates (8)
 
 - [x] D [x] M  `AI-007` AI-007 / AI-008 · AI Usage with filters & usage detail
-- [x] D [x] M  `AI-012` AI-012 · Copilot Preferences
+- [x] D [x] M  `AI-012` AI-012 · Copilot Preferences (= CR-AI-012, imports CR-HOME-SET; now in the Studio canvas)
 - [x] D [x] M  `AI-TOP` Top-bar AI Token chip & popover: Nova ✦ 72.4K
 - [x] D [x] M  `AI-010` AI-010 · Low AI Token balance (Copilot page)
 - [x] D [x] M  `AI-010b` AI-010 · Low balance in the top bar: Nova ✦ 8.2K · Low
+- [x] D [x] M  `AI-010c` AI-010 · Critical Creio balance (= CR-CREIO-010c)
 - [x] D [x] M  `AI-011` AI-011 · AI Tokens depleted (manual creation still works)
 - [x] D [x] M  `AI-011b` AI-011 · Copilot: not enough AI Tokens for this action
-- [ ] D [ ] M  `AI-EST` Large AI action: estimate before running (full course review)
+- [x] D [x] M  `AI-EST` Large AI action: estimate before running (= CR-CREIO-EST)
 
 ## 23. Account menu (avatar): status, profile, switch role between the roles you have, settings, sign out (3)
 

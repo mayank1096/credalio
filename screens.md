@@ -207,11 +207,14 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-ANA-002c` ANA-002 · Experience analytics: Certification
 - [x] D [x] M  `CR-ANA-002p` ANA-002 · Experience analytics: Learning Program
 - [x] D [x] M  `CR-ANA-003` ANA-003 · Compare courses
+- [x] D [x] M  `CR-ANA-002path` ANA-002 · Experience analytics: Career Path
+- [x] D [x] M  `CR-ANA-003c` ANA-003 · Compare cohorts
 
 ## 17. Creator Profile · My Organizations (coming soon) (5)
 
 - [x] D [x] M  `CR-PROF-001` PROF-001 · Creator Profile management
 - [x] D [x] M  `CR-PROF-001c` PROF-001 · Credentials (verification status)
+- [x] D [x] M  `CR-PROF-001e` PROF-001 · Expertise tab
 - [x] D [x] M  `CR-PROF-001v` PROF-001 · Public profile preview
 - [x] D [x] M  `CR-PROF-002` PROF-002 · Public Creator Profile
 - [x] D [x] M  `CR-ORG-SOON` My Organizations: coming soon
@@ -232,10 +235,13 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-AI-001` CP-001/002 · Copilot panel, context-aware (shows AI Token balance)
 - [x] D [x] M  `CR-AI-001a` CP-001 · Level 3 Act: Apply Changes / consequential action guided
 - [x] D [x] M  `CR-AI-003` CP-003 · Copilot history
+- [x] D [x] M  `CR-AI-001x` CP-001 · Copilot panel expanded (client CP-EXP)
 - [x] D [x] M  `CR-SEARCH-002` SEARCH-001/002 · Global search results for "SQL"
+- [x] D [x] M  `CR-SEARCH-EMPTY` SEARCH · No results
 - [x] D [x] M  `CR-HELP-001` HELP-001 · Help & Support home
 - [x] D [x] M  `CR-HELP-002` HELP-002 · Help article
 - [x] D [x] M  `CR-HELP-003` HELP-003 · Contact Support
+- [x] D [x] M  `CR-HELP-003e` HELP-003 · Contact Support: missing fields (error)
 - [x] D [x] M  `CR-HELP-004` HELP-004 · Support ticket created
 - [x] D [x] M  `CR-HELP-005` HELP-005 · My support requests
 - [x] D [x] M  `CR-HELP-006` HELP-006 · Support conversation (ticket is the record)

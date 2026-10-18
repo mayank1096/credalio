@@ -2026,6 +2026,114 @@
       "x": 42920,
       "y": 4320,
       "page": "p2"
+    },
+    "CR-ANA-002path.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ANA-002path · Career path analytics · Desktop",
+      "w": 1440,
+      "x": 16560,
+      "y": 10240,
+      "page": "p2"
+    },
+    "CR-ANA-002path-Mobile.dc.html": {
+      "h": 1060,
+      "is_interactive": true,
+      "title": "CR-ANA-002path · Mobile",
+      "w": 390,
+      "x": 18080,
+      "y": 10240,
+      "page": "p2"
+    },
+    "CR-ANA-003c.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-ANA-003c · Compare cohorts · Desktop",
+      "w": 1440,
+      "x": 22770,
+      "y": 10240,
+      "page": "p2"
+    },
+    "CR-ANA-003c-Mobile.dc.html": {
+      "h": 860,
+      "is_interactive": true,
+      "title": "CR-ANA-003c · Mobile",
+      "w": 390,
+      "x": 24290,
+      "y": 10240,
+      "page": "p2"
+    },
+    "CR-PROF-001e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PROF-001e · Profile expertise · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 12400,
+      "page": "p2"
+    },
+    "CR-PROF-001e-Mobile.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-PROF-001e · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 12400,
+      "page": "p2"
+    },
+    "CR-AI-001x.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-AI-001x · Nova panel · expanded · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 16580,
+      "page": "p2"
+    },
+    "CR-AI-001x-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-AI-001x · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 16580,
+      "page": "p2"
+    },
+    "CR-SEARCH-EMPTY.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-SEARCH-EMPTY · Search · no results · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 16580,
+      "page": "p2"
+    },
+    "CR-SEARCH-EMPTY-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-SEARCH-EMPTY · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 16580,
+      "page": "p2"
+    },
+    "CR-HELP-003e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-HELP-003e · Contact support · missing details · Desktop",
+      "w": 1440,
+      "x": 18630,
+      "y": 16580,
+      "page": "p2"
+    },
+    "CR-HELP-003e-Mobile.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-HELP-003e · Mobile",
+      "w": 390,
+      "x": 20150,
+      "y": 16580,
+      "page": "p2"
     }
   },
   "order": [
@@ -2254,7 +2362,19 @@
     "CR-PAYO-005p.dc.html",
     "CR-PAYO-005p-Mobile.dc.html",
     "CR-PAYO-005r.dc.html",
-    "CR-PAYO-005r-Mobile.dc.html"
+    "CR-PAYO-005r-Mobile.dc.html",
+    "CR-ANA-002path.dc.html",
+    "CR-ANA-002path-Mobile.dc.html",
+    "CR-ANA-003c.dc.html",
+    "CR-ANA-003c-Mobile.dc.html",
+    "CR-PROF-001e.dc.html",
+    "CR-PROF-001e-Mobile.dc.html",
+    "CR-AI-001x.dc.html",
+    "CR-AI-001x-Mobile.dc.html",
+    "CR-SEARCH-EMPTY.dc.html",
+    "CR-SEARCH-EMPTY-Mobile.dc.html",
+    "CR-HELP-003e.dc.html",
+    "CR-HELP-003e-Mobile.dc.html"
   ],
   "notes": {
     "l3-head": {
@@ -2320,20 +2440,6 @@
       "text": "Learner Support, Learners & Analytics",
       "page": "p2"
     },
-    "l3m-CR-ANA-002path": {
-      "text": "Not done yet\nCR-ANA-002path · ANA-002 · Experience analytics: Career Path",
-      "x": 16560,
-      "y": 10240,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-CR-ANA-003c": {
-      "text": "Not done yet\nCR-ANA-003c · ANA-003 · Compare cohorts",
-      "x": 22770,
-      "y": 10240,
-      "w": 1440,
-      "page": "p2"
-    },
     "l3s6": {
       "kind": "title1",
       "maxW": 8000,
@@ -2341,13 +2447,6 @@
       "x": 0,
       "y": 12080,
       "text": "Creator Profile · My Organizations (coming soon)",
-      "page": "p2"
-    },
-    "l3m-CR-PROF-001e": {
-      "text": "Not done yet\nCR-PROF-001e · PROF-001 · Expertise tab",
-      "x": 2070,
-      "y": 12400,
-      "w": 1440,
       "page": "p2"
     },
     "l3s7": {
@@ -2373,27 +2472,6 @@
       "x": 0,
       "y": 16260,
       "text": "Copilot panel (CP-001 to CP-003), Search and Help & Support",
-      "page": "p2"
-    },
-    "l3m-CP-EXP": {
-      "text": "Not done yet\nCP-EXP · CP-001 · Copilot panel expanded",
-      "x": 2070,
-      "y": 16580,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-CR-SEARCH-EMPTY": {
-      "text": "Not done yet\nCR-SEARCH-EMPTY · SEARCH · No results",
-      "x": 10350,
-      "y": 16580,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-CR-HELP-003e": {
-      "text": "Not done yet\nCR-HELP-003e · HELP-003 · Contact Support: missing fields (error)",
-      "x": 18630,
-      "y": 16580,
-      "w": 1440,
       "page": "p2"
     },
     "l3s9": {
@@ -2627,6 +2705,54 @@
       "w": 1910,
       "x": 41400,
       "y": 5360
+    },
+    "b2-CR-ANA-002path": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 2 (18 Oct) · CR-ANA-002path",
+      "w": 1910,
+      "x": 16560,
+      "y": 11340
+    },
+    "b2-CR-ANA-003c": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 2 (18 Oct) · CR-ANA-003c",
+      "w": 1910,
+      "x": 22770,
+      "y": 11140
+    },
+    "b2-CR-PROF-001e": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 2 (18 Oct) · CR-PROF-001e",
+      "w": 1910,
+      "x": 2070,
+      "y": 13540
+    },
+    "b2-CR-AI-001x": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 2 (18 Oct) · CR-AI-001x",
+      "w": 1910,
+      "x": 2070,
+      "y": 17464
+    },
+    "b2-CR-SEARCH-EMPTY": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 2 (18 Oct) · CR-SEARCH-EMPTY",
+      "w": 1910,
+      "x": 10350,
+      "y": 17464
+    },
+    "b2-CR-HELP-003e": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 2 (18 Oct) · CR-HELP-003e",
+      "w": 1910,
+      "x": 18630,
+      "y": 17520
     }
   },
   "designSystems": []

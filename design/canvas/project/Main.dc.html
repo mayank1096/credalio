@@ -127,15 +127,11 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </button>
 </div>
 <div class="cd-ctawrap" style="margin-top: clamp(24px, 3.6vh, 36px); display: flex; flex-direction: column; align-items: center; gap: 12px">
-<sc-if value="{{ctaGo}}" hint-placeholder-val="{{true}}"><a href="{{ctaHref}}" class="cd-cta" style="display: flex; align-items: center; gap: 16px; height: 60px; padding: 0 8px 0 30px; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-size: 17px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 12px 28px rgba(22, 82, 240, 0.30)">{{ctaLabel}}
+<a href="{{ctaHref}}" class="cd-cta" style="display: flex; align-items: center; gap: 16px; height: 60px; padding: 0 8px 0 30px; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-size: 17px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 12px 28px rgba(22, 82, 240, 0.30)">{{ctaLabel}}
 <span class="cd-cta-arrow" style="width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; color: #1652F0; display: flex; align-items: center; justify-content: center">
 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
 </span>
-</a></sc-if><sc-if value="{{ctaStay}}" hint-placeholder-val="{{false}}"><button type="button" class="cd-cta" style="border: 0; cursor: pointer; font-family: inherit; display: flex; align-items: center; gap: 16px; height: 60px; padding: 0 8px 0 30px; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-size: 17px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 12px 28px rgba(22, 82, 240, 0.30)">{{ctaLabel}}
-<span class="cd-cta-arrow" style="width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; color: #1652F0; display: flex; align-items: center; justify-content: center">
-<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
-</span>
-</button></sc-if>
+</a>
 </div>
 </main>
 <div class="cd-illus" style="position: absolute; left: 50%; bottom: 0; height: min(50vh, 33.33vw, calc((100vh - clamp(92px, 13vh, 140px) - 330px) / 0.81)); aspect-ratio: 2172 / 724; transform: translateX(-50%); --pan: {{panX}}px; overflow: hidden; z-index: 1">
@@ -175,7 +171,7 @@ class Component extends DCLogic {
       };
     });
     const pans = {"learn": 147, "create": 83, "validate": -37, "institution": -122};
-    return { c, is, not, ctaLabel: ctas[sel], panX: pans[sel], ctaHref: sel === 'institution' ? 'CR-ONB-002S.dc.html' : 'CR-ONB-002.dc.html', ctaGo: sel === 'create' || sel === 'institution', ctaStay: sel === 'learn' || sel === 'validate' };
+    return { c, is, not, ctaLabel: ctas[sel], panX: pans[sel], ctaHref: { institution: 'CR-ONB-002S.dc.html', learn: 'CR-ONB-001L.dc.html', validate: 'CR-ONB-001V.dc.html' }[sel] || 'CR-ONB-002.dc.html' };
   }
 }
 </script>

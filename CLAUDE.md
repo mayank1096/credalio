@@ -14,6 +14,7 @@
   - Don't change Link 1 unless the designer asks.
   - 2026-10-16: Log in + password reset added at the top of page p1 (CR-LOG-001 a–d, 002 b, 003 b–c; `design/generator/log1016.py` + `log1016_canvas.py`); onboarding "Log in" buttons → CR-LOG-001. The handoff zips/PDFs predate this.
   - 2026-10-16: sign-up + log-in illustration = `design/illustrations/auth-scene.webp` (blob `/_blob/2f4b6a89779043fb2ec851f8050aa46a`) as the bottom `.ob-scene` on ONB-003 (+003e/003d), ONB-003c (+003ce) and every CR-LOG page (`auth1016.py`); 003b inbox and 003v confirmed keep their own. "Welcome back." has the waving hand.
+  - 2026-10-17: CR-ONB-001L / 001V (Learning / Validation coming soon, client WTusAd9o3fJn711spDqBsJ) = `dc-import CR-ONB-002S variant=learn|validate` (002S is now one source; all three use the same coming-soon illustration, designer 2026-10-17); ONB-001 Continue: Learner → 001L, Validator → 001V (`soon1017.py`).
 - **Link 3 is NEXT** (designer 2026-10-14; the old Link 2 is dropped).
   - Client Link 3 prototype: https://claude.ai/artifact/Mg8o83iNa9x4ov1FxivdEW
   - Our Studio canvas (most Studio screens already designed): https://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9 (local copy `design/canvas2/project/`).
@@ -44,6 +45,7 @@
 - **Explanations** go in an info tooltip (`design/generator/tipx.py`: navy bubble, ⓘ), not in extra paragraphs. Never repeat what the H1 already says.
 - **Top ambient glow** is status-coloured (green success, amber action, cobalt normal, grey declined / in review).
 - **Cobalt line/path** is the progress motif.
+- **Nova thinking state** (designer 2026-10-18): before every AI reply show `.nv-think` (spinning cobalt ring orb + shimmering status line that steps through what Nova is doing, ~2–3 s), then type the reply. Never a bare caret or three dots. Source: `design/generator/think1018.py` + `think1018b.py` (ONB-006, ONB-007, CREATE-002A); while thinking the bubble gets a moving cobalt gradient border + glow and Nova a soft aura; frozen review boards CR-ONB-006t / 007t (variant thinking). ONB-006: every Copilot pick replays it ("Maya is stepping in…") with the new character rising in (`think1018c.py`).
 - **Outcome screens** (success, pending, action, failed) use the ONE standard `ko-*` layout from `CR-KYC-003`:
   - order: emblem → status pill → H1 → sub → card(s) / Next for you → CTA → small links
   - success screens add confetti (`confetti.py` / `conf1013c.py`)

@@ -75,7 +75,7 @@ Rules stay "design, don't copy": we keep our layouts and copy, but terms and rul
 
 ## D. Unwired buttons
 
-639 `href="#"` across 37 Studio files (510 already linked). Most are the shared sidebar/top bar repeated on every page. Wire to match the client prototype in step 3.
+WIRED 2026-10-19: 75 `href="#"` left, all in-place actions (see link3-plan.md).
 
 ## E. Designer decisions (2026-10-15)
 

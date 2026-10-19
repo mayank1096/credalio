@@ -133,6 +133,16 @@ body{background:#FFFFFF}
 .ko-cta .ds-btn{justify-content:space-between}
 .ko-cn{text-align:center;font-size:13px}
 .ko-links{justify-content:center;font-size:14px}
+.ko-r{padding-top:48px;padding-bottom:28px}
+.ko-r .ko-pill{margin-top:20px}
+.ko-r .ko-h{margin-top:14px}
+.ko-r .ko-sub{margin-top:10px;line-height:1.55}
+.ko-r .ko-card{margin-top:32px;padding:18px 18px 20px 18px}
+.ko-r .ko-path{margin-top:16px}
+.ko-r .ko-path li{padding-bottom:22px}
+.ko-r .ko-path li:last-child{padding-bottom:0}
+.ko-r .ko-cta{position:static;margin:24px 0 0 0;padding:0;border-top:0;background:none}
+.ko-r .ko-links{margin-top:auto;padding-top:28px}
 }
 .tk-root{position:relative;isolation:isolate}
 .tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/8bde69a3fbce17def55d28680fd3fa0a) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
@@ -180,7 +190,7 @@ body{background:#FFFFFF}
 <p class="ko-sub ob-in2">{{sub}}</p>
 
 <sc-if value="{{r}}" hint-placeholder-val="{{true}}">
-<section class="ko-card wo-one ob-in3" aria-label="What happens next"><span class="sec-h">What happens next</span><ol class="ko-path"><li class="ko-done"><span class="ko-dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Payment sent</b><span>$253.75 by Visa •••• 4417</span></span></li><li class="ko-now"><span class="ko-dot"></span><span><b>Your bank confirms</b><span>Usually under a minute</span></span></li><li><span class="ko-dot"></span><span><b>2,500 Credits land in your wallet</b><span>This page updates on its own</span></span></li></ol></section>
+<section class="ko-card wo-one ob-in3" aria-label="What happens next"><span class="sec-h">What happens next</span><ol class="ko-path"><li class="ko-done"><span class="ko-dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Payment sent</b><span>$253.75 by Visa •••• 4417</span></span></li><li class="ko-now"><span class="ko-dot"></span><span><b>Your bank confirms</b><span>Usually under a minute</span></span></li><li><span class="ko-dot"></span><span><b>2,500 Credits land in your wallet</b><span>Right after your bank confirms</span></span></li></ol></section>
 <div class="ko-cta ob-in4"><span class="ko-cn">You won’t be charged twice. Paying again is paused until this finishes.</span></div>
 </sc-if>
 <sc-if value="{{a}}" hint-placeholder-val="{{false}}">
@@ -207,7 +217,7 @@ class Component extends DCLogic {
   renderVals() {
     const v = this.v;
     const T = {
-      processing: ['ko-r', 'Processing', 'Processing your payment', 'We’re waiting for your bank to confirm. You can leave this page; we’ll let you know.'],
+      processing: ['ko-r', 'Processing', 'Processing your payment', 'We’re waiting for your bank. You can leave this page; we’ll let you know.'],
       failed: ['ko-a', 'Not charged', 'Your payment didn’t go through', 'Your bank declined $253.75 by Visa •••• 4417.'],
       funded: ['ko-v', 'Funded', '2,500 Credits added', 'They’re in your wallet and ready to use.'],
       ret: ['ko-v', 'Funded', '2,500 Credits added', 'They’re in your wallet and ready to use.'],
@@ -220,7 +230,7 @@ class Component extends DCLogic {
       nxH: pay ? 'Follow the case' : (ai ? 'Back to your Creio purchase' : (ret ? 'Back to your validation payment' : 'Pay for validation')),
       nxP: pay ? 'Requests and decisions show up in the Validation Centre.' : (ai ? '250,000 Creio for 175 Credits. You’re covered now.' : (ret ? '1,260 Credits for Data Analysis with SQL. You’re covered now.' : 'Data Analysis with SQL needs 1,260 Credits. You have enough now.')),
       nxCta: pay ? 'Open Validation Centre' : (ai ? 'Return to purchase' : (ret ? 'Return to payment' : 'Continue')), isAi: ai, notAi: !ai, fdBal: ai ? '655 Credits' : '3,650 Credits', fdPay: ai ? '$50.00 · Visa •••• 4417' : '$253.75 · Visa •••• 4417', nxHref: pay ? 'CR-VAL-MC-001.dc.html' : (ai ? 'CR-CREIO-006d.dc.html' : (ret ? 'CR-PAY-002f.dc.html' : 'CR-PAY-002b.dc.html')),
-      l1: pay ? 'Back to my Studio' : (ai ? 'Back to Nova' : 'Back to wallet'), l1h: pay ? 'CR-DASH-NEW.dc.html' : (ai ? 'CR-NOVA-001.dc.html' : 'CR-WAL-001.dc.html'), hasL2: !pay && !ret, l2: pay ? 'Back to my Studio' : 'Transactions', l2h: pay ? 'CR-DASH-NEW.dc.html' : 'CR-WAL-007.dc.html' };
+      l1: pay ? 'Back to my Studio' : (ai ? 'Back to Nova' : 'Back to wallet'), l1h: pay ? 'CR-DASH-ST.dc.html' : (ai ? 'CR-NOVA-001.dc.html' : 'CR-WAL-001.dc.html'), hasL2: !pay && !ret, l2: pay ? 'Back to my Studio' : 'Transactions', l2h: pay ? 'CR-DASH-ST.dc.html' : 'CR-WAL-007.dc.html' };
   }
 }
 </script>

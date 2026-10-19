@@ -2242,6 +2242,186 @@
       "x": 13940,
       "y": 14560,
       "page": "p2"
+    },
+    "CR-PM-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PM-001 · Account menu · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 23768,
+      "page": "p2"
+    },
+    "CR-PM-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-PM-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 23768,
+      "page": "p2"
+    },
+    "CR-PM-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PM-002 · Account menu · one role · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 23768,
+      "page": "p2"
+    },
+    "CR-PM-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-PM-002 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 23768,
+      "page": "p2"
+    },
+    "CR-PM-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PM-003 · Switching role · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 23768,
+      "page": "p2"
+    },
+    "CR-PM-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-PM-003 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 23768,
+      "page": "p2"
+    },
+    "CR-MSG-001.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-MSG-001 · Message pop-ups · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 25428,
+      "page": "p2"
+    },
+    "CR-MSG-001-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-MSG-001 · Mobile",
+      "w": 390,
+      "x": 1520,
+      "y": 25428,
+      "page": "p2"
+    },
+    "CR-MSG-002.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-MSG-002 · Message pop-up · quick reply · Desktop",
+      "w": 1440,
+      "x": 2070,
+      "y": 25428,
+      "page": "p2"
+    },
+    "CR-MSG-002-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-MSG-002 · Mobile",
+      "w": 390,
+      "x": 3590,
+      "y": 25428,
+      "page": "p2"
+    },
+    "CR-MSG-003.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-MSG-003 · Message pop-up · reply sent · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 25428,
+      "page": "p2"
+    },
+    "CR-MSG-003-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-MSG-003 · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 25428,
+      "page": "p2"
+    },
+    "CR-MSG-004.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-MSG-004 · Message pop-ups · more than 3 · Desktop",
+      "w": 1440,
+      "x": 6210,
+      "y": 25428,
+      "page": "p2"
+    },
+    "CR-MSG-004-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-MSG-004 · Mobile",
+      "w": 390,
+      "x": 7730,
+      "y": 25428,
+      "page": "p2"
+    },
+    "CR-MSG-005.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-MSG-005 · Message pop-ups · preview hidden · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 25428,
+      "page": "p2"
+    },
+    "CR-MSG-005-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-MSG-005 · Mobile",
+      "w": 390,
+      "x": 9800,
+      "y": 25428,
+      "page": "p2"
+    },
+    "CR-MSG-006.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-MSG-006 · Settings · message pop-ups · Desktop",
+      "w": 1440,
+      "x": 10350,
+      "y": 25428,
+      "page": "p2"
+    },
+    "CR-MSG-006-Mobile.dc.html": {
+      "h": 1180,
+      "is_interactive": true,
+      "title": "CR-MSG-006 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 25428,
+      "page": "p2"
+    },
+    "CR-PM.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-PM · Account menu · shared source",
+      "w": 1440,
+      "x": 33440,
+      "y": 27088,
+      "page": "p2"
+    },
+    "CR-MSG.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-MSG · Message pop-ups · shared source",
+      "w": 1440,
+      "x": 34960,
+      "y": 27088,
+      "page": "p2"
     }
   },
   "order": [
@@ -2494,7 +2674,27 @@
     "CR-AI-012.dc.html",
     "CR-AI-012-Mobile.dc.html",
     "CR-HOME-SET.dc.html",
-    "CR-HOME-SET-Mobile.dc.html"
+    "CR-HOME-SET-Mobile.dc.html",
+    "CR-PM-001.dc.html",
+    "CR-PM-001-Mobile.dc.html",
+    "CR-PM-002.dc.html",
+    "CR-PM-002-Mobile.dc.html",
+    "CR-PM-003.dc.html",
+    "CR-PM-003-Mobile.dc.html",
+    "CR-MSG-001.dc.html",
+    "CR-MSG-001-Mobile.dc.html",
+    "CR-MSG-002.dc.html",
+    "CR-MSG-002-Mobile.dc.html",
+    "CR-MSG-003.dc.html",
+    "CR-MSG-003-Mobile.dc.html",
+    "CR-MSG-004.dc.html",
+    "CR-MSG-004-Mobile.dc.html",
+    "CR-MSG-005.dc.html",
+    "CR-MSG-005-Mobile.dc.html",
+    "CR-MSG-006.dc.html",
+    "CR-MSG-006-Mobile.dc.html",
+    "CR-PM.dc.html",
+    "CR-MSG.dc.html"
   ],
   "notes": {
     "l3-head": {
@@ -2623,27 +2823,6 @@
       "text": "Account menu (avatar): status, profile, switch role between the roles you have, settings, sign out",
       "page": "p2"
     },
-    "l3m-PM-001": {
-      "text": "Not done yet\nPM-001 · PM-001 · Account menu: status, profile, switch role, settings",
-      "x": 0,
-      "y": 23768,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-PM-002": {
-      "text": "Not done yet\nPM-002 · PM-002 · Account menu for a creator with one role (no switcher)",
-      "x": 2070,
-      "y": 23768,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-PM-003": {
-      "text": "Not done yet\nPM-003 · PM-003 · Switching role (Validator workspace opens)",
-      "x": 4140,
-      "y": 23768,
-      "w": 1440,
-      "page": "p2"
-    },
     "l3s13": {
       "kind": "title1",
       "maxW": 8000,
@@ -2651,48 +2830,6 @@
       "x": 0,
       "y": 25108,
       "text": "Message pop-ups: open the exact message · quick reply for Learner Support and Team Chat only",
-      "page": "p2"
-    },
-    "l3m-MSG-001": {
-      "text": "Not done yet\nMSG-001 · MSG-001 · Message pop-ups: learner, team, validator (each opens the exact message)",
-      "x": 0,
-      "y": 25428,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-MSG-002": {
-      "text": "Not done yet\nMSG-002 · MSG-002 · Quick reply to a learner from the pop-up",
-      "x": 2070,
-      "y": 25428,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-MSG-003": {
-      "text": "Not done yet\nMSG-003 · MSG-003 · Quick reply sent (added to the conversation)",
-      "x": 4140,
-      "y": 25428,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-MSG-004": {
-      "text": "Not done yet\nMSG-004 · MSG-004 · More than 3: collapsed into “+3 more · View all”",
-      "x": 6210,
-      "y": 25428,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-MSG-005": {
-      "text": "Not done yet\nMSG-005 · MSG-005 · Preview hidden (screen-sharing setting)",
-      "x": 8280,
-      "y": 25428,
-      "w": 1440,
-      "page": "p2"
-    },
-    "l3m-MSG-006": {
-      "text": "Not done yet\nMSG-006 · MSG-006 · Settings › Notifications: message pop-up preferences",
-      "x": 10350,
-      "y": 25428,
-      "w": 1440,
       "page": "p2"
     },
     "srcs": {
@@ -2879,6 +3016,78 @@
       "w": 1910,
       "x": 12420,
       "y": 15900
+    },
+    "b4-CR-PM-001": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 4 (19 Oct) · CR-PM-001",
+      "w": 1910,
+      "x": 0,
+      "y": 24652
+    },
+    "b4-CR-PM-002": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 4 (19 Oct) · CR-PM-002",
+      "w": 1910,
+      "x": 2070,
+      "y": 24652
+    },
+    "b4-CR-PM-003": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 4 (19 Oct) · CR-PM-003",
+      "w": 1910,
+      "x": 4140,
+      "y": 24652
+    },
+    "b4-CR-MSG-001": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 4 (19 Oct) · CR-MSG-001",
+      "w": 1910,
+      "x": 0,
+      "y": 26312
+    },
+    "b4-CR-MSG-002": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 4 (19 Oct) · CR-MSG-002",
+      "w": 1910,
+      "x": 2070,
+      "y": 26312
+    },
+    "b4-CR-MSG-003": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 4 (19 Oct) · CR-MSG-003",
+      "w": 1910,
+      "x": 4140,
+      "y": 26312
+    },
+    "b4-CR-MSG-004": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 4 (19 Oct) · CR-MSG-004",
+      "w": 1910,
+      "x": 6210,
+      "y": 26312
+    },
+    "b4-CR-MSG-005": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 4 (19 Oct) · CR-MSG-005",
+      "w": 1910,
+      "x": 8280,
+      "y": 26312
+    },
+    "b4-CR-MSG-006": {
+      "fill": "pink",
+      "page": "p2",
+      "text": "NEW · batch 4 (19 Oct) · CR-MSG-006",
+      "w": 1910,
+      "x": 10350,
+      "y": 26648
     }
   },
   "designSystems": []

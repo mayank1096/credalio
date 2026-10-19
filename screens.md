@@ -278,18 +278,18 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 
 ## 23. Account menu (avatar): status, profile, switch role between the roles you have, settings, sign out (3)
 
-- [ ] D [ ] M  `PM-001` PM-001 · Account menu: status, profile, switch role, settings
-- [ ] D [ ] M  `PM-002` PM-002 · Account menu for a creator with one role (no switcher)
-- [ ] D [ ] M  `PM-003` PM-003 · Switching role (Validator workspace opens)
+- [x] D [x] M  `PM-001` PM-001 · Account menu: status, profile, switch role, settings
+- [x] D [x] M  `PM-002` PM-002 · Account menu for a creator with one role (no switcher)
+- [x] D [x] M  `PM-003` PM-003 · Switching role (Validator workspace opens)
 
 ## 24. Message pop-ups: open the exact message · quick reply for Learner Support and Team Chat only (6)
 
-- [ ] D [ ] M  `MSG-001` MSG-001 · Message pop-ups: learner, team, validator (each opens the exact message)
-- [ ] D [ ] M  `MSG-002` MSG-002 · Quick reply to a learner from the pop-up
-- [ ] D [ ] M  `MSG-003` MSG-003 · Quick reply sent (added to the conversation)
-- [ ] D [ ] M  `MSG-004` MSG-004 · More than 3: collapsed into “+3 more · View all”
-- [ ] D [ ] M  `MSG-005` MSG-005 · Preview hidden (screen-sharing setting)
-- [ ] D [ ] M  `MSG-006` MSG-006 · Settings › Notifications: message pop-up preferences
+- [x] D [x] M  `MSG-001` MSG-001 · Message pop-ups: learner, team, validator (each opens the exact message)
+- [x] D [x] M  `MSG-002` MSG-002 · Quick reply to a learner from the pop-up
+- [x] D [x] M  `MSG-003` MSG-003 · Quick reply sent (added to the conversation)
+- [x] D [x] M  `MSG-004` MSG-004 · More than 3: collapsed into “+3 more · View all”
+- [x] D [x] M  `MSG-005` MSG-005 · Preview hidden (screen-sharing setting)
+- [x] D [x] M  `MSG-006` MSG-006 · Settings › Notifications: message pop-up preferences
 
 
 ## Ignored (not designed)

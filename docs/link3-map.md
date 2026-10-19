@@ -22,7 +22,7 @@ Client inventory: 174 screens in 16 sections. Compared with the old Link 2 file 
 
 In the **Link 1 canvas** (CR-HOME-SET), not in the Studio canvas: SET-007 AI preferences, AI-012 Copilot preferences.
 
-## B. Done, but changed by the client (copy and rules)
+## B. Done, but changed by the client (copy and rules) · APPLIED 2026-10-19 (see link3-plan.md log)
 
 Applies to all Studio pages: sentence case, screen-ID eyebrows and `[TO CONFIRM]` placeholders removed, US spelling ("authorized", "organization").
 

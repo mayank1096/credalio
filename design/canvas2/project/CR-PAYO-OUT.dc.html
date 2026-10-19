@@ -154,6 +154,26 @@ body{background:#FFFFFF}
 @media (max-width: 960px){.cf{--k:.56}}
 @media (prefers-reduced-motion: reduce){.cf{display:none}}
 .ko-halo,.ko-disc{z-index:1}
+@media (min-width: 961px){
+.ko-card:has(.ko-path){max-width:760px;margin-top:40px;padding:0;border:0;background:none}
+.ko-path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0}
+.ko-path li{flex-direction:column;align-items:center;gap:14px;padding:0 12px;text-align:center}
+.ko-path li:not(:last-child)::before{left:calc(50% + 22px);right:calc(-50% + 22px);top:13px;bottom:auto;width:auto;height:2px}
+.ko-path li.ko-now::before{background:repeating-linear-gradient(90deg,#1652F0 0 6px,transparent 6px 12px) 0 0 / 12px 2px;opacity:.55;animation:koFlow 1.2s linear infinite}
+.ko-path .ko-dot{width:28px;height:28px}
+.ko-path .ko-now .ko-dot::after{width:10px;height:10px}
+.ko-card:has(.ko-path) ~ .ko-links,.ko-card:has(.ko-path) + .ko-links{margin-top:40px}
+.ko-path li > span:last-child{align-items:center;gap:4px}
+}
+@keyframes koFlow{to{background-position:12px 0}}
+@media (prefers-reduced-motion: reduce){.ko-path li.ko-now::before{animation:none}}
+@media (min-width: 961px){
+.po-one:has(.ko-path){max-width:760px;display:flex;flex-direction:column;align-items:center}
+.po-one:has(.ko-path) .po-who{width:max-content;margin:0 0 30px 0;padding:6px 18px 6px 6px;border:1.5px solid #E6EAF3;border-radius:999px;background:#FFFFFF}
+.po-one:has(.ko-path) .po-who img,.po-one:has(.ko-path) .po-who i{width:36px;height:36px;border-radius:50%}
+.po-one:has(.ko-path) .po-who > span{flex-direction:row;align-items:baseline;gap:8px}
+.po-one:has(.ko-path) .ko-path{width:100%}
+}
 </style>
 </helmet>
 <div class="tk-root">
@@ -198,7 +218,7 @@ class Component extends DCLogic {
   renderVals() {
     const PP = '/_blob/2304d2cd7c945eeea685d9ca3396cd4b', PO = '/_blob/a10968ece1d72c0bc99bfa7d3405d9b1', TI = '/_blob/73c1fa9f10e6fd35337de2c87a00a1a3';
     const st = (c, t, s) => ({ c, t, s });
-    const start = st('', 'Payouts start', 'Your November payout goes here');
+    const start = st('', 'Payouts start', 'From your November payout');
     const V = {
       verified: { ko: 'ko-v', pill: 'Connected', h1: 'PayPal is connected', sub: 'Your earnings go here automatically each month.' },
       pending: { ko: 'ko-r', pill: 'Verification pending', h1: 'Payoneer is linked', sub: 'Payoneer is checking your account. We’ll let you know when it’s done.',
@@ -218,7 +238,7 @@ class Component extends DCLogic {
     return { koCls: c.ko, pill: c.pill, h1: c.h1, sub: c.sub, r, v, a, f: false,
       whoImg: c.img || '', whoHas: !!c.img, whoIcon: !!c.icon, whoT: c.wt || '', whoS: c.ws || '', steps: c.steps || [],
       lt: a ? 'Choose another method' : (v ? 'Back to my Studio' : 'Back to earnings'),
-      lh: a ? 'CR-PAYO-001.dc.html' : (v ? 'CR-DASH-NEW.dc.html' : 'CR-EARN-001.dc.html') };
+      lh: a ? 'CR-PAYO-001.dc.html' : (v ? 'CR-DASH-ST.dc.html' : 'CR-EARN-001.dc.html') };
   }
 }
 </script>

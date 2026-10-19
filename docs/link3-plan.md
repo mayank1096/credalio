@@ -85,3 +85,9 @@ Check for new IDs we don't have:
 - Left as `#` on purpose (in-place actions, no screen): Save changes, Download/Export/receipt, Join call, Propose, Decline, Apply changes, Change/Edit/Connect/Sign out in Settings, Change photo, Mark resolved, help categories, CREIO-USE rows, PUB cards, VAL-WS (Link 1).
 - OPEN: ~430 links point at Link 1-only boards (CR-HOME-EXP/NEW, CREATE-*, ASG, VAL-MC, CTR, RDY, NOT, KYC, CRED, ORI, POL, COL, DEC, LOG). They don't exist in the Studio canvas, so they do nothing there; fine in the merged developer package.
 - 246 boards render, 0 page errors; audit = 12 known false positives.
+
+### 2026-10-19 · Redesign: outcome + quote components (designer: "bad use of space / cluttered")
+- Steps (WAL-005, PAYO-001g/k/m): desktop = horizontal cobalt track (done solid, current dashed + flowing), no card; provider = pill chip above it. Mobile keeps the vertical list. "Won't be charged twice" → ⓘ tooltip on the sub.
+- Funded / paid (WAL-006, PAY-002f/r, CREIO-006c, PAY-003s): balance card + Next-for-you merged into ONE ticket (gradient stub with big number + receipt | perforated edge | next step + CTA).
+- Quote (PAY-001, REVAL-002): balance pill removed from all headers; balance now sits in the footer next to the CTA ("110 short" amber / "1,760 left after").
+- REVAL-001: "stays live" line moved into the footer next to the CTA, with a green dot.

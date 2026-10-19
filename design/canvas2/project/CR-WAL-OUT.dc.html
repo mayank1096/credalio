@@ -62,7 +62,7 @@ body{background:#FFFFFF}
 .ko-pill{margin-top:14px;display:inline-flex;align-items:center;height:30px;padding:0 13px;border-radius:999px;background:var(--kb);color:var(--k);font-size:13px;font-weight:500}
 .ko-h{margin-top:10px;font-size:clamp(28px,4.4vh,38px)}
 .ko-sub{margin:10px 0 0 0;font-size:16.5px;line-height:1.55;color:#4A5578;max-width:520px}
-.ko-card{margin-top:22px;width:100%;box-sizing:border-box;padding:18px 20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;text-align:left}
+.ko-card{margin-top:22px;width:100%;box-sizing:border-box;padding:18px 20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;text-align:left;max-width:640px}
 .ko-path{list-style:none;margin:12px 0 0 0;padding:0;display:flex;flex-direction:column}
 .ko-path li{position:relative;display:flex;align-items:flex-start;gap:12px;padding-bottom:12px}
 .ko-path li:last-child{padding-bottom:0}
@@ -84,13 +84,6 @@ body{background:#FFFFFF}
 .ko-nt b{font-size:16px;font-weight:600}
 .ko-nt > span:last-child{font-size:13.5px;line-height:1.45;color:#3A4566}
 .ko-go{flex-shrink:0}
-.ko-idc{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px 14px;background:#FFFFFF url(/_blob/81b8d64e5a0d9ce807d39f47ffca572c) center top / cover no-repeat;border-color:#CBD7F5;box-shadow:0 18px 40px rgba(22,82,240,.08)}
-.ko-ii{width:44px;height:44px;border-radius:14px;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
-.ko-it{display:flex;flex-direction:column;gap:2px}
-.ko-it b{font-size:17px;font-weight:600}
-.ko-it span{font-size:13.5px;color:#3A4566}
-.ko-rd{grid-column:1 / -1;display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1.5px solid rgba(203,211,230,.6)}
-.ko-rl{font-size:13px;color:#5B6582}
 .ko-opts{margin-top:12px;display:flex;flex-direction:column;gap:8px}
 .ko-opt{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#0B1433;text-decoration:none;transition:all .2s ease}
 .ko-opt:hover{border-color:#AFC1F5;background:#F5F8FF;color:#0B1433}
@@ -101,13 +94,7 @@ body{background:#FFFFFF}
 .ko-oi{width:40px;height:40px;flex-shrink:0;border-radius:12px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
 .ko-cta{margin-top:20px;display:flex;flex-direction:column;align-items:center;gap:10px}
 .ko-cn{font-size:13.5px;color:#5B6582}
-.ko-row{margin-top:24px;width:100%;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:14px;align-items:stretch}
-.ko-row .ko-card,.ko-row .ko-next{margin-top:0}
-.ko-row .ko-next{flex-direction:column;align-items:flex-start;gap:10px;padding:18px 20px}
-.ko-row .ko-go{margin-top:auto}
-.ko-row .ko-idc{align-content:start}
 .ko-sub{max-width:600px}
-.ko-card:not(.ko-row .ko-card){max-width:640px}
 .ko-opts{display:grid !important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
 .ko-a .ko-card{max-width:none}
 .ko-links{margin-top:18px;display:flex;align-items:center;gap:10px;font-size:14.5px;color:#8A93AD}
@@ -122,13 +109,10 @@ body{background:#FFFFFF}
 .ko-h{font-size:24px;margin-top:10px}
 .ko-sub{font-size:14.5px;margin-top:8px}
 .ko-card{margin-top:20px;padding:14px 16px;border-radius:18px}
-.ko-row{grid-template-columns:minmax(0,1fr);gap:10px;margin-top:20px}
 .ko-opts{grid-template-columns:minmax(0,1fr) !important}
-.ko-card:not(.ko-row .ko-card){max-width:none}
 .ko-next{flex-wrap:wrap;padding:14px 16px;border-radius:18px}
 .ko-ni{display:none}
 .ko-go{width:100%;justify-content:space-between}
-.ko-idc{grid-template-columns:auto minmax(0,1fr)}
 .ko-cta{position:sticky;bottom:0;margin:20px -16px 0 -16px;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7;align-items:stretch}
 .ko-cta .ds-btn{justify-content:space-between}
 .ko-cn{text-align:center;font-size:13px}
@@ -148,10 +132,6 @@ body{background:#FFFFFF}
 .tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/8bde69a3fbce17def55d28680fd3fa0a) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
 @media (max-width: 760px){.tk-scene{height:240px;background-size:250% auto;background-position:52% 100%}}
 .wo-one{max-width:560px}
-.wo-coin{background:#1652F0 !important}
-.wo-rd{justify-content:space-between}
-.ko-row .ko-idc:has(.wo-rd){align-content:space-between}
-.wo-rd .ds-link{font-size:13.5px;font-weight:600;white-space:nowrap}
 .ko-cta:not(:has(.ds-btn)){margin-top:14px}
 .cb-coin{display:inline-block;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#FFE9A3,#F6C343 45%,#D08A12);box-shadow:inset 0 0 0 3px rgba(255,241,194,.6)}
 .cf{position:absolute;left:50%;top:50%;width:0;height:0;pointer-events:none;z-index:0;--k:1}
@@ -169,6 +149,48 @@ body{background:#FFFFFF}
 @media (max-width: 960px){.cf{--k:.56}}
 @media (prefers-reduced-motion: reduce){.cf{display:none}}
 .ko-halo,.ko-disc{z-index:1}
+@media (min-width: 961px){
+.ko-card:has(.ko-path){max-width:760px;margin-top:40px;padding:0;border:0;background:none}
+.ko-card:has(.ko-path) .sec-h{display:none}
+.ko-path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0}
+.ko-path li{flex-direction:column;align-items:center;gap:14px;padding:0 12px;text-align:center}
+.ko-path li:not(:last-child)::before{left:calc(50% + 22px);right:calc(-50% + 22px);top:13px;bottom:auto;width:auto;height:2px}
+.ko-path li.ko-now::before{background:repeating-linear-gradient(90deg,#1652F0 0 6px,transparent 6px 12px) 0 0 / 12px 2px;opacity:.55;animation:koFlow 1.2s linear infinite}
+.ko-path .ko-dot{width:28px;height:28px}
+.ko-path .ko-now .ko-dot::after{width:10px;height:10px}
+.ko-card:has(.ko-path) ~ .ko-links,.ko-card:has(.ko-path) + .ko-links{margin-top:40px}
+.ko-path li > span:last-child{align-items:center;gap:4px}
+}
+@keyframes koFlow{to{background-position:12px 0}}
+@media (prefers-reduced-motion: reduce){.ko-path li.ko-now::before{animation:none}}
+.tip{position:relative;display:inline-flex;vertical-align:-3px;margin-left:6px;color:#8A93AD;cursor:help;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);width:260px;padding:10px 12px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;text-align:left;opacity:0;visibility:hidden;transition:opacity .15s ease;z-index:20;pointer-events:none}
+.tip-b::after{content:'';position:absolute;top:100%;left:50%;margin-left:-6px;border:6px solid transparent;border-top-color:#0B1433}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible}
+.wo-tk{margin:36px auto 0 auto;width:100%;max-width:760px;display:grid;grid-template-columns:250px minmax(0,1fr);text-align:left;filter:drop-shadow(0 18px 36px rgba(22,82,240,.10))}
+.wo-stub{display:flex;flex-direction:column;gap:2px;padding:22px 24px;border-radius:22px 0 0 22px;border:1.5px solid #CBD7F5;border-right:0;background:#FFFFFF url(/_blob/81b8d64e5a0d9ce807d39f47ffca572c) center / cover no-repeat}
+.wo-l{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#3A4566}
+.wo-l .cb-c{width:22px;height:22px;border-radius:50%;background:#1652F0;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+.wo-big{margin-top:10px;font-size:34px;line-height:1.05;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.wo-big small{margin-left:6px;font-size:15px;font-weight:500;color:#3A4566;letter-spacing:0}
+.wo-s{font-size:13.5px;color:#3A4566}
+.wo-ft{margin-top:auto;padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;color:#5B6582}
+.wo-ft a{font-weight:600;white-space:nowrap}
+.wo-nx{position:relative;margin:0;border-radius:0 22px 22px 0;border:1.5px solid #E6EAF3;border-left:2px dashed #CBD3E6;background:#FFFFFF;padding:22px 24px;gap:18px}
+.wo-nx::before,.wo-nx::after{content:'';position:absolute;left:-12px;width:22px;height:22px;border-radius:50%;background:#FFFFFF;border:1.5px solid #E6EAF3}
+.wo-nx::before{top:-12px;clip-path:inset(50% 0 0 0)}
+.wo-nx::after{bottom:-12px;clip-path:inset(0 0 50% 0)}
+.wo-nx .ko-ni{display:none}
+@media (max-width: 960px){
+.wo-tk{grid-template-columns:minmax(0,1fr);margin-top:24px}
+.wo-stub{border-radius:20px 20px 0 0;border-right:1.5px solid #CBD7F5;border-bottom:0;padding:18px 18px}
+.wo-big{font-size:28px;margin-top:8px}
+.wo-nx{border-radius:0 0 20px 20px;border-left:1.5px solid #E6EAF3;border-top:2px dashed #CBD3E6;padding:18px}
+.wo-nx::before,.wo-nx::after{top:-12px;bottom:auto;clip-path:none}
+.wo-nx::before{left:-12px;clip-path:inset(0 0 0 50%)}
+.wo-nx::after{left:auto;right:-12px;clip-path:inset(0 50% 0 0)}
+}
 </style>
 </helmet>
 <div class="tk-root">
@@ -187,20 +209,19 @@ body{background:#FFFFFF}
 </span></div>
 <span class="ko-pill ob-in2">{{pill}}</span>
 <h1 class="lp-h1 ko-h ob-in2">{{h1}}</h1>
-<p class="ko-sub ob-in2">{{sub}}</p>
+<p class="ko-sub ob-in2">{{sub}}<sc-if value="{{r}}" hint-placeholder-val="{{true}}"><span class="tip" tabindex="0" aria-label="More info"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.5h.01"></path></svg><span class="tip-b" role="tooltip">You won’t be charged twice. Paying again is paused until this finishes.</span></span></sc-if></p>
 
 <sc-if value="{{r}}" hint-placeholder-val="{{true}}">
-<section class="ko-card wo-one ob-in3" aria-label="What happens next"><span class="sec-h">What happens next</span><ol class="ko-path"><li class="ko-done"><span class="ko-dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Payment sent</b><span>$253.75 by Visa •••• 4417</span></span></li><li class="ko-now"><span class="ko-dot"></span><span><b>Your bank confirms</b><span>Usually under a minute</span></span></li><li><span class="ko-dot"></span><span><b>2,500 Credits land in your wallet</b><span>Right after your bank confirms</span></span></li></ol></section>
-<div class="ko-cta ob-in4"><span class="ko-cn">You won’t be charged twice. Paying again is paused until this finishes.</span></div>
+<section class="ko-card wo-one ob-in3" aria-label="What happens next"><span class="sec-h">What happens next</span><ol class="ko-path"><li class="ko-done"><span class="ko-dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Payment sent</b><span>$253.75 by Visa •••• 4417</span></span></li><li class="ko-now"><span class="ko-dot"></span><span><b>Bank confirms</b><span>Usually under a minute</span></span></li><li><span class="ko-dot"></span><span><b>Credits land</b><span>2,500 in your wallet</span></span></li></ol></section>
 </sc-if>
 <sc-if value="{{a}}" hint-placeholder-val="{{false}}">
 <section class="ko-card wo-one ob-in3" aria-label="Other ways to pay"><span class="sec-h">Other ways to pay</span><div class="ko-opts"><a href="CR-WAL-003.dc.html" class="ko-opt"><span class="ko-oi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h18L12 4z"></path><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"></path></svg></span><span><b>Bank transfer</b><span>No fee. Usually confirmed in minutes.</span></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></a><a href="CR-WAL-003.dc.html" class="ko-opt"><span class="ko-oi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg></span><span><b>A different card</b><span>Or a local payment provider.</span></span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></a></div></section>
 <div class="ko-cta ob-in4"><a href="CR-WAL-004.dc.html" class="ds-btn"><span>Try this card again</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><span class="ko-cn">Nothing was taken. Your balance is still 1,150 Credits.</span></div>
 </sc-if>
 <sc-if value="{{v}}" hint-placeholder-val="{{false}}">
-<div class="ko-row">
-<sc-if value="{{pd}}" hint-placeholder-val="{{false}}"><section class="ko-card ko-idc ob-in3" aria-label="Validation case"><span class="ko-ii wo-coin"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 21h14M6 7h12"></path><path d="m6 7-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"></path></svg></span><span class="ko-it"><b>Case VAL-00928</b><span>Data Analysis with SQL · course validation</span></span><div class="ko-rd wo-rd"><span class="ko-rl">1,260 Credits paid · balance now 2,390</span><a href="CR-WAL-007.dc.html" class="ds-link">Transactions</a></div></section></sc-if><sc-if value="{{fd}}" hint-placeholder-val="{{false}}"><section class="ko-card ko-idc ob-in3" aria-label="New balance"><span class="ko-ii wo-coin"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M14.8 9.2A4 4 0 1 0 14.8 14.8"></path></svg></span><span class="ko-it"><b>{{fdBal}}</b><span>New balance</span></span><div class="ko-rd wo-rd"><span class="ko-rl">{{fdPay}}</span><a href="#" class="ds-link">Download receipt</a></div></section></sc-if>
-<section class="ko-next ob-in4" aria-label="Next for you"><span class="ko-ni"><sc-if value="{{notAi}}" hint-placeholder-val="{{true}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 21h14M6 7h12"></path><path d="m6 7-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"></path></svg></sc-if><sc-if value="{{isAi}}" hint-placeholder-val="{{false}}"><span class="cb-coin" aria-hidden="true"></span></sc-if></span><span class="ko-nt"><span class="ko-nl">Next for you</span><b>{{nxH}}</b><span>{{nxP}}</span></span><a href="{{nxHref}}" class="ds-btn sm ko-go"><span>{{nxCta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></section>
+<div class="wo-tk">
+<section class="wo-stub ob-in3" aria-label="{{stubAria}}"><sc-if value="{{pd}}" hint-placeholder-val="{{false}}"><span class="wo-l">Case opened</span><b class="wo-big">VAL-00928</b><span class="wo-s">Data Analysis with SQL</span><div class="wo-ft"><span>1,260 Cr paid</span><a href="CR-WAL-007.dc.html" class="ds-link">Transactions</a></div></sc-if><sc-if value="{{fd}}" hint-placeholder-val="{{true}}"><span class="wo-l"><span class="cb-c" aria-hidden="true">C</span>New balance</span><b class="wo-big">{{fdNum}}<small>Credits</small></b><div class="wo-ft"><span>{{fdPay}}</span><a href="#" class="ds-link">Receipt</a></div></sc-if></section>
+<section class="ko-next wo-nx ob-in4" aria-label="Next for you"><span class="ko-ni"><sc-if value="{{notAi}}" hint-placeholder-val="{{true}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 21h14M6 7h12"></path><path d="m6 7-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"></path></svg></sc-if><sc-if value="{{isAi}}" hint-placeholder-val="{{false}}"><span class="cb-coin" aria-hidden="true"></span></sc-if></span><span class="ko-nt"><span class="ko-nl">Next for you</span><b>{{nxH}}</b><span>{{nxP}}</span></span><a href="{{nxHref}}" class="ds-btn sm ko-go"><span>{{nxCta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></section>
 </div>
 </sc-if>
 
@@ -229,7 +250,7 @@ class Component extends DCLogic {
       bar: pay ? 'Submit for validation' : (ai ? 'Nova, your Copilot' : 'Credit Wallet'), closeHref: pay ? 'CR-VAL-MC-001.dc.html' : 'CR-WAL-001.dc.html',
       nxH: pay ? 'Follow the case' : (ai ? 'Back to your Creio purchase' : (ret ? 'Back to your validation payment' : 'Pay for validation')),
       nxP: pay ? 'Requests and decisions show up in the Validation Centre.' : (ai ? '250,000 Creio for 175 Credits. You’re covered now.' : (ret ? '1,260 Credits for Data Analysis with SQL. You’re covered now.' : 'Data Analysis with SQL needs 1,260 Credits. You have enough now.')),
-      nxCta: pay ? 'Open Validation Centre' : (ai ? 'Return to purchase' : (ret ? 'Return to payment' : 'Continue')), isAi: ai, notAi: !ai, fdBal: ai ? '655 Credits' : '3,650 Credits', fdPay: ai ? '$50.00 · Visa •••• 4417' : '$253.75 · Visa •••• 4417', nxHref: pay ? 'CR-VAL-MC-001.dc.html' : (ai ? 'CR-CREIO-006d.dc.html' : (ret ? 'CR-PAY-002f.dc.html' : 'CR-PAY-002b.dc.html')),
+      nxCta: pay ? 'Open Validation Centre' : (ai ? 'Return to purchase' : (ret ? 'Return to payment' : 'Continue')), isAi: ai, notAi: !ai, fdNum: ai ? '655' : '3,650', stubAria: pay ? 'Validation case' : 'New balance', fdPay: ai ? '$50.00 · Visa •••• 4417' : '$253.75 · Visa •••• 4417', nxHref: pay ? 'CR-VAL-MC-001.dc.html' : (ai ? 'CR-CREIO-006d.dc.html' : (ret ? 'CR-PAY-002f.dc.html' : 'CR-PAY-002b.dc.html')),
       l1: pay ? 'Back to my Studio' : (ai ? 'Back to Nova' : 'Back to wallet'), l1h: pay ? 'CR-DASH-ST.dc.html' : (ai ? 'CR-NOVA-001.dc.html' : 'CR-WAL-001.dc.html'), hasL2: !pay && !ret, l2: pay ? 'Back to my Studio' : 'Transactions', l2h: pay ? 'CR-DASH-ST.dc.html' : 'CR-WAL-007.dc.html' };
   }
 }

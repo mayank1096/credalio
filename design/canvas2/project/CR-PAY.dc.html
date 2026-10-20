@@ -153,7 +153,7 @@ class Component extends DCLogic {
       isVal: !rv, isReval: rv, svc: rv ? 'Standard Revalidation · Tier 2' : 'Standard Course Validation · Tier 2',
       svcTip: rv ? 'SV-007. Covers up to 50% changed content. If the review finds bigger changes, it moves to Major Revalidation and you see a new quote first.' : 'SV-001. Tier 2 is for courses of 11 to 30 learning hours.', qH: rv ? 'Your revalidation quote' : 'Your validation quote',
       qHref: rv ? '#' : 'CR-PAY-002.dc.html', qCta: rv ? 'Continue' : 'Pay with Credits',
-      enoughH: cov ? 'Credits added. You’re covered' : 'You have enough Credits', enoughP: cov ? 'You’re back where you left off. 1,260 Credits come from your balance, leaving 2,390.' : '1,260 Credits come from your balance, leaving 2,390. Paying opens the validation case.',
+      enoughH: cov ? 'Credits added. You’re covered' : 'You have enough Credits', enoughP: cov ? 'You’re back where you left off. 1,260 Credits come from your balance, leaving 2,390.' : '1,260 Credits come from your balance, leaving 2,390.',
       wCls: rv ? '' : 'short', wNote: rv ? '1,760 left after' : '110 short',
       balTxt: v === 'quote' || v === 'short' ? '1,150' : (rv ? '2,390' : '3,650'), leftTxt: '2,390'
     };

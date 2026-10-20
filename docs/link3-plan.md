@@ -97,3 +97,4 @@ Check for new IDs we don't have:
 - Desktop: text column (pill, H1, sub, Next for you, links) left, receipt right, both vertically centred. Mobile: receipt first, then text and CTA.
 - Replaces the ticket card. Funded receipt lines: Credits + card fee 1.5% = total; paid receipt lines: validator fees + service fee.
 - Also this session: payment methods = 4 tiles (WAL-FUND), softer total separators, PAY-002 panel centred, spacing scan of all 246 boards (`design/tools/overlap.js`).
+- 2026-10-20: Add Credits illustration (designer) = `design/illustrations/add-credits.webp`, Studio blob `/_blob/c2da5637e0727865bb6e7d2c12f6825e`, as the `.tk-scene` bottom layer in CR-WAL-FUND (WAL-002/003/004, CREIO-006b). Mobile: scene sits after the content (order:99), not behind the sticky bar.

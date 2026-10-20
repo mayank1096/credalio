@@ -82,7 +82,6 @@ a{color:#1652F0}
 .tx-ref{font-size:13px;color:#8A93AD;font-variant-numeric:tabular-nums}
 .vp-am{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:999px;background:#FFF3DC;color:#8A5300;font-size:12.5px;font-weight:500}
 .tx-a{justify-self:end;font-size:15.5px;font-weight:600;white-space:nowrap}
-.tx-a::after{content:' Cr';font-size:12.5px;font-weight:500;color:#8A93AD}
 .tx-a.in{color:#0F6B45}.tx-a.off{color:#8A93AD;text-decoration:line-through}
 .f-fund .tx-r:not([data-f="fund"]),.f-val .tx-r:not([data-f="val"]):not([data-f="reval"]),.f-creio .tx-r:not([data-f="creio"]){display:none}
 .f-fund .tx-g:not(:has([data-f="fund"])),.f-val .tx-g:not(:has([data-f="val"])):not(:has([data-f="reval"])),.f-creio .tx-g:not(:has([data-f="creio"])){display:none}
@@ -103,6 +102,8 @@ a{color:#1652F0}
 .vp-am{height:22px;font-size:11.5px;padding:0 8px}
 .tx-a{grid-column:3;grid-row:1}
 }
+.tx-a::before{content:"";display:inline-block;width:18px;height:18px;margin-right:7px;vertical-align:-3px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%2212%22%20fill%3D%22%231652F0%22/%3E%3Cpath%20d%3D%22M15.4%208.9A4.4%204.4%200%201%200%2015.4%2015.1%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E") center / contain no-repeat}
+.tx-a.off::before{opacity:.45}
 </style>
 </helmet>
 <div class="ds-root">

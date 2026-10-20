@@ -91,3 +91,9 @@ Check for new IDs we don't have:
 - Funded / paid (WAL-006, PAY-002f/r, CREIO-006c, PAY-003s): balance card + Next-for-you merged into ONE ticket (gradient stub with big number + receipt | perforated edge | next step + CTA).
 - Quote (PAY-001, REVAL-002): balance pill removed from all headers; balance now sits in the footer next to the CTA ("110 short" amber / "1,760 left after").
 - REVAL-001: "stays live" line moved into the footer next to the CTA, with a green dot.
+
+### 2026-10-20 · Payment-complete receipt (designer reference: printing receipt video)
+- CR-WAL-OUT success variants (WAL-006, PAY-002f/r, CREIO-006c, PAY-003s): printer slot + receipt that prints down (stepped, 2.2 s), green "Paid" stamp with the Credalio mark lands at ~2.4 s, then confetti. Zigzag bottom edge (CSS mask). Final state is the static view (editor shows it printed).
+- Desktop: text column (pill, H1, sub, Next for you, links) left, receipt right, both vertically centred. Mobile: receipt first, then text and CTA.
+- Replaces the ticket card. Funded receipt lines: Credits + card fee 1.5% = total; paid receipt lines: validator fees + service fee.
+- Also this session: payment methods = 4 tiles (WAL-FUND), softer total separators, PAY-002 panel centred, spacing scan of all 246 boards (`design/tools/overlap.js`).

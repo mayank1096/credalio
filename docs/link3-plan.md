@@ -108,3 +108,4 @@ Check for new IDs we don't have:
 - 2026-10-20 coins in lists: cobalt Credits coin before every amount in WAL-001 Recent activity and WAL-007 Transactions (CSS ::before, 'Cr' suffix dropped); gold Creio coin in CREIO-USE list. Old pale outline Credits icon (.cr-ic) switched to the solid cobalt coin in PAY, WAL-001, WAL-FUND, CREIO-BUY.
 - 2026-10-20: PM-003 'Opening your Validator workspace' illustration (designer) = design/illustrations/validator-switch.webp, Studio blob /_blob/cefeb2ed55579c524fd4ec636cb7cff1, bottom band .rs-scene (desktop cover min(48vh,33.5vw); mobile 250px, figure kept in view).
 - 2026-10-20: sidebar/back-link label 'My learning experiences' → 'My Creations' (designer) in all 37 Studio sources. Link 1 canvas not changed. Generic 'learning experiences' copy (search placeholder, filters, body text) unchanged.
+- 2026-10-20: pink 'NEW · batch' strips (31 notes) removed and header note shortened for the client review.

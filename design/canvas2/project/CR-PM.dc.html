@@ -147,7 +147,7 @@ a.pm-r:hover{background:#F5F8FF}
 .pm-scrim{position:fixed;inset:0;z-index:9;background:rgba(11,20,51,.06);pointer-events:none}
 .rs{min-height:100vh;box-sizing:border-box;display:flex;flex-direction:column;background:radial-gradient(55% 40% at 50% 0%,rgba(22,82,240,.12),rgba(22,82,240,0) 70%),#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
 .rs-top{height:64px;box-sizing:border-box;display:flex;align-items:center;padding:0 24px;border-bottom:1.5px solid #EEF1F7}
-.rs-m{flex:1;width:min(560px,100%);box-sizing:border-box;margin:0 auto;padding:72px 24px 40px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;padding-bottom:12vh}
+.rs-m{flex:1;width:min(560px,100%);box-sizing:border-box;margin:0 auto;padding:72px 24px 40px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;padding-bottom:24px}
 .rs-emb{position:relative;width:84px;height:84px;border-radius:50%;background:#EAF0FF;display:flex;align-items:center;justify-content:center}
 .rs-emb::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid transparent;border-top-color:#1652F0;animation:rsSpin 1.4s linear infinite}
 @keyframes rsSpin{to{transform:rotate(360deg)}}
@@ -164,6 +164,8 @@ a.pm-r:hover{background:#F5F8FF}
 .rs-m{padding:48px 16px 32px 16px}.rs-h{font-size:24px}.rs-sub{font-size:14.5px}
 }
 .pm-dot.aw{background:#D98A00}.pm-dot.dn{background:#8A93AD}
+.rs-scene{flex-shrink:0;height:min(48vh,33.5vw);background:url(/_blob/cefeb2ed55579c524fd4ec636cb7cff1) 50% 100% / cover no-repeat}
+@media (max-width: 760px){.rs-scene{height:250px;background-size:auto 100%;background-position:37% 100%}}
 </style>
 </helmet>
 <sc-if value="{{vDash}}" hint-placeholder-val="{{true}}"><div class="ds-root">
@@ -215,7 +217,7 @@ a.pm-r:hover{background:#F5F8FF}
 </section>
 </main>
 </div>
-</div></sc-if><sc-if value="{{vSwitch}}" hint-placeholder-val="{{false}}"><div class="rs"><header class="rs-top"><span class="lg-word" role="img" aria-label="Credalio"></span></header><main class="rs-m"><div class="rs-emb" aria-hidden="true"><span><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 21h14M6 7h12"></path><path d="m6 7-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"></path></svg></span></div><h1 class="rs-h">Opening your Validator workspace</h1><p class="rs-sub">2 reviews are waiting for you.<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b l" role="tooltip">You’re never assigned to review learning experiences you created or contributed to.</span></span></p><a href="CR-DASH-ST.dc.html" class="rs-back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 6-6 6 6 6"></path></svg>Back to Creator</a></main></div></sc-if>
+</div></sc-if><sc-if value="{{vSwitch}}" hint-placeholder-val="{{false}}"><div class="rs"><header class="rs-top"><span class="lg-word" role="img" aria-label="Credalio"></span></header><main class="rs-m"><div class="rs-emb" aria-hidden="true"><span><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 21h14M6 7h12"></path><path d="m6 7-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"></path></svg></span></div><h1 class="rs-h">Opening your Validator workspace</h1><p class="rs-sub">2 reviews are waiting for you.<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b l" role="tooltip">You’re never assigned to review learning experiences you created or contributed to.</span></span></p><a href="CR-DASH-ST.dc.html" class="rs-back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 6-6 6 6 6"></path></svg>Back to Creator</a></main><div class="rs-scene" aria-hidden="true"></div></div></sc-if>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1000}}'>
 class Component extends DCLogic {

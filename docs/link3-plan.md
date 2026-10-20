@@ -103,3 +103,4 @@ Check for new IDs we don't have:
 - 2026-10-20 review of screens 41–60 (COURSE-OV, DISC, CAL, SUP, LRN, ANA-001/004): only CAL-001a agenda changed (list + month side card like the day view, list no longer half width). Rest consistent.
 - 2026-10-20 review of screens 61–80 (ANA-002…003c, PROF, ORG-SOON, SET-001…008, HOME-SET): only PROF-001c changed (same 'How learners see you' preview as the other tabs, with its verified credentials). Rest consistent.
 - 2026-10-20 review of screens 81–100 (AI panel, SEARCH, HELP, NOVA, CREIO-002…004): HELP-003/003e contact form gets a 'Quick answers' side card (desktop only); HELP-004 and CREIO-005 outcome screens centred vertically on desktop like the other outcomes. Rest consistent.
+- 2026-10-20 review of screens 101–123 (CREIO-005…EST, AI-012, PM, MSG): CREIO-006/006d status panels centred (matches PAY-002); PM-003 switch page centred vertically. Full 123-screen pass done.

@@ -110,3 +110,10 @@ Check for new IDs we don't have:
 - 2026-10-20: sidebar/back-link label 'My learning experiences' → 'My Creations' (designer) in all 37 Studio sources. Link 1 canvas not changed. Generic 'learning experiences' copy (search placeholder, filters, body text) unchanged.
 - 2026-10-20: pink 'NEW · batch' strips (31 notes) removed and header note shortened for the client review.
 - 2026-10-21: removed the only Claude mention from deliverables (canvas URL in handoff README + developer package zip). Rule added to CLAUDE.md; commits no longer carry AI trailers.
+
+### 2026-10-21 · Client design review (Creator workspace design review)
+- Skipped (designer): the 53 programme / cohort / enrolment boards (below the client's do-not-design note).
+- Copy: tutor → help from you; PAY-003s no 2-day promise; institutions → organizations; AIT → CRE refs; Wallet funded → Credits added (rows, boards, titles); PAY-001 short → "Add 110 Credits" (→ WAL-002); 002b/f "Confirm payment"; REVAL-002 "Review and pay"; top-up "Choose payment" (amount) / "Review top-up" (payment); Creio "Review purchase"; 006b "Add Credits"; low alert 5,000; enrollment / visualization (US, only these words); Learner support; Nova usage 8,640.
+- New: SET-002a deactivate confirmation (CR-SET variant deactivate, wired from Deactivate); PAYO-006 rows July Failed, August Returned.
+- Design: REVAL-001 level = read-only amber scale; AI-012 = saved state (Maya, Concise, "Saved" note) so it differs from HOME-SET; MSG pop-ups show the same total ("3/6 new messages") on desktop and mobile; "What happens next" card in the left column of PAY/REVAL and CREIO-BUY (not WAL-FUND: illustration fills it).
+- Not changed (client to confirm): MFORGE option kept; waiting times, Tipalti FX, decision time, bundle prices.

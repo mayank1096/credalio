@@ -1087,7 +1087,7 @@
     "CR-PAY-002r.dc.html": {
       "h": 820,
       "is_interactive": true,
-      "title": "CR-PAY-002r · Wallet funded → return to validation payment · Desktop",
+      "title": "CR-PAY-002r · Credits added → return to validation payment · Desktop",
       "w": 1440,
       "x": 8280,
       "y": 2480,
@@ -1542,7 +1542,7 @@
       "is_interactive": true,
       "title": "CR-SET-003 · Mobile",
       "w": 390,
-      "x": 5660,
+      "x": 7730,
       "y": 14560,
       "page": "p2"
     },
@@ -1551,7 +1551,7 @@
       "is_interactive": true,
       "title": "CR-SET-003 · Settings · Security · Desktop",
       "w": 1440,
-      "x": 4140,
+      "x": 6210,
       "y": 14560,
       "page": "p2"
     },
@@ -1560,7 +1560,7 @@
       "is_interactive": true,
       "title": "CR-SET-004 · Mobile",
       "w": 390,
-      "x": 7730,
+      "x": 9800,
       "y": 14560,
       "page": "p2"
     },
@@ -1569,7 +1569,7 @@
       "is_interactive": true,
       "title": "CR-SET-004 · Settings · Notifications · Desktop",
       "w": 1440,
-      "x": 6210,
+      "x": 8280,
       "y": 14560,
       "page": "p2"
     },
@@ -1578,7 +1578,7 @@
       "is_interactive": true,
       "title": "CR-SET-005 · Mobile",
       "w": 390,
-      "x": 9800,
+      "x": 11870,
       "y": 14560,
       "page": "p2"
     },
@@ -1587,7 +1587,7 @@
       "is_interactive": true,
       "title": "CR-SET-005 · Settings · Privacy · Desktop",
       "w": 1440,
-      "x": 8280,
+      "x": 10350,
       "y": 14560,
       "page": "p2"
     },
@@ -1596,7 +1596,7 @@
       "is_interactive": true,
       "title": "CR-SET-006 · Mobile",
       "w": 390,
-      "x": 11870,
+      "x": 13940,
       "y": 14560,
       "page": "p2"
     },
@@ -1605,7 +1605,7 @@
       "is_interactive": true,
       "title": "CR-SET-006 · Settings · Language & region · Desktop",
       "w": 1440,
-      "x": 10350,
+      "x": 12420,
       "y": 14560,
       "page": "p2"
     },
@@ -1614,7 +1614,7 @@
       "is_interactive": true,
       "title": "CR-SET-008 · Mobile",
       "w": 390,
-      "x": 16010,
+      "x": 18080,
       "y": 14560,
       "page": "p2"
     },
@@ -1623,7 +1623,7 @@
       "is_interactive": true,
       "title": "CR-SET-008 · Settings · Sign-in methods · Desktop",
       "w": 1440,
-      "x": 14490,
+      "x": 16560,
       "y": 14560,
       "page": "p2"
     },
@@ -1647,7 +1647,7 @@
     "CR-SUP-001.dc.html": {
       "h": 820,
       "is_interactive": true,
-      "title": "CR-SUP-001 · Learner Support inbox · Desktop",
+      "title": "CR-SUP-001 · Learner support inbox · Desktop",
       "w": 1440,
       "x": 0,
       "y": 10240,
@@ -1677,7 +1677,7 @@
       "x": 27360,
       "y": 27088,
       "page": "p2",
-      "title": "CR-SUP · Learner Support · shared source"
+      "title": "CR-SUP · Learner support · shared source"
     },
     "CR-VAL-WS.dc.html": {
       "h": 820,
@@ -1807,7 +1807,7 @@
     "CR-WAL-006.dc.html": {
       "h": 820,
       "is_interactive": true,
-      "title": "CR-WAL-006 · Wallet funded · Desktop",
+      "title": "CR-WAL-006 · Credits added · Desktop",
       "w": 1440,
       "x": 12420,
       "y": 640,
@@ -2210,7 +2210,7 @@
     "CR-AI-012.dc.html": {
       "h": 900,
       "is_interactive": true,
-      "title": "CR-AI-012 · Copilot preferences · Desktop",
+      "title": "CR-AI-012 · Copilot preferences · saved · Desktop",
       "w": 1440,
       "x": 2070,
       "y": 22084,
@@ -2230,7 +2230,7 @@
       "is_interactive": true,
       "title": "CR-HOME-SET · Settings · AI preferences · Desktop",
       "w": 1440,
-      "x": 12420,
+      "x": 14490,
       "y": 14560,
       "page": "p2"
     },
@@ -2239,7 +2239,7 @@
       "is_interactive": true,
       "title": "CR-HOME-SET · Mobile",
       "w": 390,
-      "x": 13940,
+      "x": 16010,
       "y": 14560,
       "page": "p2"
     },
@@ -2421,6 +2421,24 @@
       "w": 1440,
       "x": 34960,
       "y": 27088,
+      "page": "p2"
+    },
+    "CR-SET-002a.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "CR-SET-002a · Deactivate account · Desktop",
+      "w": 1440,
+      "x": 4140,
+      "y": 14560,
+      "page": "p2"
+    },
+    "CR-SET-002a-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CR-SET-002a · Mobile",
+      "w": 390,
+      "x": 5660,
+      "y": 14560,
       "page": "p2"
     }
   },

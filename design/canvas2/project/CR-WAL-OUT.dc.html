@@ -288,7 +288,7 @@ class Component extends DCLogic {
       funded: ['ko-v', 'Funded', '2,500 Credits added', 'They’re in your wallet and ready to use.'],
       ret: ['ko-v', 'Funded', '2,500 Credits added', 'They’re in your wallet and ready to use.'],
       airet: ['ko-v', 'Funded', '500 Credits added', 'They’re in your wallet and ready to use.'],
-      paid: ['ko-v', 'Paid', 'Your validation case is open', 'Validators are usually assigned within 2 business days. We’ll let you know.']
+      paid: ['ko-v', 'Paid', 'Your validation case is open', 'We’ll let you know as soon as Validators are assigned.']
     }[v];
     const pay = v === 'paid', ai = v === 'airet', ret = v === 'ret' || ai;
     const rcI = pay ? [['Educational validator', '400 Cr'], ['Subject matter validator', '500 Cr'], ['Assessment validator', '300 Cr'], ['Credalio service fee (5%)', '60 Cr']] : (ai ? [['500 Credits', '$50.00'], ['Card fee (1.5%)', '$0.75']] : [['2,500 Credits', '$250.00'], ['Card fee (1.5%)', '$3.75']]);

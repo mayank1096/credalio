@@ -7,6 +7,8 @@
 - Start each session by reading `docs/link3-plan.md`, which says what's done and what's next. Update it at the end of each batch.
 - Full build log (every generator, blob id, past decision, by topic): see `docs/history.md` for how to open it. Grep it for details; never read it whole.
 
+- **Never mention Claude, Anthropic or "built by AI"** anywhere in what we deliver: canvases, handoff READMEs, zips, PDFs, screenshots, code comments, commit messages (no Co-Authored-By / Claude-Session trailers). Don't put artifact links in handoff files; say "link shared with this handoff". Check before every delivery: `grep -ri -E "claude|anthropic"` on design/handoff, both canvases and the unzipped packages must return nothing.
+
 ## Project
 - **Link 1 (phase 1) is DELIVERED** (2026-10-14).
   - Canvas: https://claude.ai/artifact/Xq1VzSNgkrxnjsEeHbpAZq (local copy `design/canvas/project/`).

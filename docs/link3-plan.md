@@ -109,3 +109,4 @@ Check for new IDs we don't have:
 - 2026-10-20: PM-003 'Opening your Validator workspace' illustration (designer) = design/illustrations/validator-switch.webp, Studio blob /_blob/cefeb2ed55579c524fd4ec636cb7cff1, bottom band .rs-scene (desktop cover min(48vh,33.5vw); mobile 250px, figure kept in view).
 - 2026-10-20: sidebar/back-link label 'My learning experiences' → 'My Creations' (designer) in all 37 Studio sources. Link 1 canvas not changed. Generic 'learning experiences' copy (search placeholder, filters, body text) unchanged.
 - 2026-10-20: pink 'NEW · batch' strips (31 notes) removed and header note shortened for the client review.
+- 2026-10-21: removed the only Claude mention from deliverables (canvas URL in handoff README + developer package zip). Rule added to CLAUDE.md; commits no longer carry AI trailers.

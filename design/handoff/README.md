@@ -25,7 +25,7 @@ if it can't be used, Google Sans Flex or Inter at the same weights are the close
 This handoff covers **Link 1 (phase 1)**: creator onboarding → first dashboard → readiness (identity, credentials, policies) →
 Creator Orientation (7 modules) → collaboration and declarations → validation centre.
 
-Canvas: [Credalio · Link 1](https://claude.ai/artifact/Xq1VzSNgkrxnjsEeHbpAZq) · local copy `design/canvas/project/`.
+Canvas: Credalio · Link 1 (link shared with this handoff) · local copy `design/canvas/project/`.
 
 Page 1 shows a desktop board (1440 wide) and a mobile board (390 wide) side by side, in flow order, under section notes.
 Press Play in the canvas to click through. Animations only run in Play mode.

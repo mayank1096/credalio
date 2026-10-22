@@ -117,3 +117,4 @@ Check for new IDs we don't have:
 - New: SET-002a deactivate confirmation (CR-SET variant deactivate, wired from Deactivate); PAYO-006 rows July Failed, August Returned.
 - Design: REVAL-001 level = read-only amber scale; AI-012 = saved state (Maya, Concise, "Saved" note) so it differs from HOME-SET; MSG pop-ups show the same total ("3/6 new messages") on desktop and mobile; "What happens next" card in the left column of PAY/REVAL and CREIO-BUY (not WAL-FUND: illustration fills it).
 - Not changed (client to confirm): MFORGE option kept; waiting times, Tipalti FX, decision time, bundle prices.
+- 2026-10-22 client round 2 (no missing pages): alert options 2,000/5,000/10,000 (5,000 default); deactivate 'sign in' + 'Deactivate account'; WAL-005 sub carries the no-double-charge line (tooltip removed); WAL-005f 'declined the $253.75 charge on Visa'; PAYO-006 July/August tagged 'Paid late' (green). Open: MFORGE, claims to confirm.

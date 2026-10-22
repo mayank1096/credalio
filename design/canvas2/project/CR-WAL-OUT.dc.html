@@ -159,11 +159,7 @@ body{background:#FFFFFF}
 .ko-path li > span:last-child{align-items:center;gap:4px}
 @keyframes koFlow{to{background-position:12px 0}}
 @media (prefers-reduced-motion: reduce){.ko-path li.ko-now::before{animation:none}}
-.tip{position:relative;display:inline-flex;vertical-align:-3px;margin-left:6px;color:#8A93AD;cursor:help;outline:none}
-.tip:hover,.tip:focus{color:#1652F0}
-.tip-b{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);width:260px;padding:10px 12px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;text-align:left;opacity:0;visibility:hidden;transition:opacity .15s ease;z-index:20;pointer-events:none}
-.tip-b::after{content:'';position:absolute;top:100%;left:50%;margin-left:-6px;border:6px solid transparent;border-top-color:#0B1433}
-.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible}@media (max-width: 960px){
+@media (max-width: 960px){
 }
 .ko-rc .ko-emb{display:none}
 .rc{position:relative;width:100%;max-width:380px;align-self:center}
@@ -245,7 +241,7 @@ body{background:#FFFFFF}
 </sc-if>
 <span class="ko-pill ob-in2">{{pill}}</span>
 <h1 class="lp-h1 ko-h ob-in2">{{h1}}</h1>
-<p class="ko-sub ob-in2">{{sub}}<sc-if value="{{r}}" hint-placeholder-val="{{true}}"><span class="tip" tabindex="0" aria-label="More info"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.5h.01"></path></svg><span class="tip-b" role="tooltip">You won’t be charged twice. Paying again is paused until this finishes.</span></span></sc-if></p>
+<p class="ko-sub ob-in2">{{sub}}</p>
 
 <sc-if value="{{r}}" hint-placeholder-val="{{true}}">
 <section class="ko-card wo-one ob-in3" aria-label="What happens next"><span class="sec-h">What happens next</span><ol class="ko-path"><li class="ko-done"><span class="ko-dot"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Payment sent</b><span>$253.75 by Visa •••• 4417</span></span></li><li class="ko-now"><span class="ko-dot"></span><span><b>Bank confirms</b><span>Usually under a minute</span></span></li><li><span class="ko-dot"></span><span><b>Credits land</b><span>2,500 in your wallet</span></span></li></ol></section>
@@ -283,8 +279,8 @@ class Component extends DCLogic {
   renderVals() {
     const v = this.v;
     const T = {
-      processing: ['ko-r', 'Processing', 'Processing your payment', 'We’re waiting for your bank. You can leave this page; we’ll let you know.'],
-      failed: ['ko-a', 'Not charged', 'Your payment didn’t go through', 'Your bank declined $253.75 by Visa •••• 4417.'],
+      processing: ['ko-r', 'Processing', 'Processing your payment', 'We’re waiting for your bank. You can leave this page. We’ll let you know when it’s done, and you won’t be charged twice.'],
+      failed: ['ko-a', 'Not charged', 'Your payment didn’t go through', 'Your bank declined the $253.75 charge on Visa •••• 4417.'],
       funded: ['ko-v', 'Funded', '2,500 Credits added', 'They’re in your wallet and ready to use.'],
       ret: ['ko-v', 'Funded', '2,500 Credits added', 'They’re in your wallet and ready to use.'],
       airet: ['ko-v', 'Funded', '500 Credits added', 'They’re in your wallet and ready to use.'],

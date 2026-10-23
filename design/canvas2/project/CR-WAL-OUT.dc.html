@@ -281,9 +281,9 @@ class Component extends DCLogic {
     const T = {
       processing: ['ko-r', 'Processing', 'Processing your payment', 'We’re waiting for your bank. You can leave this page. We’ll let you know when it’s done, and you won’t be charged twice.'],
       failed: ['ko-a', 'Not charged', 'Your payment didn’t go through', 'Your bank declined the $253.75 charge on Visa •••• 4417.'],
-      funded: ['ko-v', 'Funded', '2,500 Credits added', 'They’re in your wallet and ready to use.'],
-      ret: ['ko-v', 'Funded', '2,500 Credits added', 'They’re in your wallet and ready to use.'],
-      airet: ['ko-v', 'Funded', '500 Credits added', 'They’re in your wallet and ready to use.'],
+      funded: ['ko-v', 'Added', '2,500 Credits added', 'They’re in your wallet and ready to use.'],
+      ret: ['ko-v', 'Added', '2,500 Credits added', 'They’re in your wallet and ready to use.'],
+      airet: ['ko-v', 'Added', '500 Credits added', 'They’re in your wallet and ready to use.'],
       paid: ['ko-v', 'Paid', 'Your validation case is open', 'We’ll let you know as soon as Validators are assigned.']
     }[v];
     const pay = v === 'paid', ai = v === 'airet', ret = v === 'ret' || ai;

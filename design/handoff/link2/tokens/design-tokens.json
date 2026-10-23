@@ -1,0 +1,43 @@
+{
+  "color": {
+    "text":        { "primary": "#0B1433", "body": "#3A4566", "secondary": "#4A5578", "muted": "#5B6582", "faded": "#8A93AD", "inverse": "#FFFFFF" },
+    "accent":      { "default": "#1652F0", "hover": "#0E3BB8", "soft": "#EAF0FF", "softer": "#F5F8FF", "ring": "rgba(22, 82, 240, 0.12)" },
+    "surface":     { "page": "#FFFFFF", "app": "#F7F9FD", "card": "#FFFFFF", "subtle": "#F1F3F8" },
+    "border":      { "default": "#E6EAF3", "strong": "#D6DDEE", "stronger": "#CBD3E6", "divider": "#EEF1F7" },
+    "status": {
+      "success":   { "text": "#0F6B45", "bg": "#E7F5EE" },
+      "progress":  { "text": "#1652F0", "bg": "#EAF0FF" },
+      "warning":   { "text": "#8A5300", "bg": "#FFF3E0" },
+      "neutral":   { "text": "#4A5578", "bg": "#F1F3F8" },
+      "error":     { "text": "#B42318", "border": "#D92D20" }
+    },
+    "creio":       { "bgFrom": "#FFF1CF", "bgTo": "#FFFAEB", "border": "#F4D98E", "text": "#4A3300", "coin": "#F6C343" }
+  },
+  "font": {
+    "family": "'Google Sans', 'Google Sans Text', 'Helvetica Neue', system-ui, sans-serif",
+    "weight": { "regular": 400, "medium": 500, "semibold": 600 },
+    "size": {
+      "h1Onboarding": "clamp(34px, 5.4vh, 46px)", "h1Page": "clamp(30px, 4.6vh, 40px)", "h1Mobile": "25px",
+      "lead": "17.5px", "body": "15px", "small": "13.5px", "label": "13px", "button": "15.5px"
+    },
+    "letterSpacing": { "h1": "-0.03em", "tight": "-0.005em" },
+    "lineHeight": { "heading": 1.12, "body": 1.6 }
+  },
+  "radius": { "xs": "4px", "sm": "12px", "chip": "14px", "card": "18px", "cardLarge": "22px", "pill": "999px" },
+  "border": { "width": "1.5px" },
+  "shadow": {
+    "card": "0 1px 2px rgba(11, 20, 51, 0.03)",
+    "raised": "0 18px 44px rgba(22, 82, 240, 0.08)",
+    "dialog": "0 24px 64px rgba(11, 20, 51, 0.18)",
+    "buttonPrimary": "0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 10px 24px rgba(22, 82, 240, 0.24)",
+    "selected": "0 0 0 4px rgba(22, 82, 240, 0.12)",
+    "focus": "0 0 0 3px rgba(22, 82, 240, 0.45)"
+  },
+  "size": { "touchTarget": "44px", "buttonHeight": "52px", "buttonHeightMobile": "48px", "sidebar": "264px", "topBar": "64px", "topBarMobile": "56px", "readingColumn": "720px" },
+  "breakpoint": { "tablet": "1080px", "mobile": "960px", "small": "760px" },
+  "motion": {
+    "ease": "ease", "spring": "cubic-bezier(.3, 1.4, .5, 1)", "out": "cubic-bezier(.2, .8, .2, 1)",
+    "fast": "0.2s", "enter": "0.5s", "stagger": "0.08s",
+    "reducedMotion": "every animation is switched off under prefers-reduced-motion"
+  }
+}

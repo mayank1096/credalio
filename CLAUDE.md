@@ -17,6 +17,7 @@
   - 2026-10-16: Log in + password reset added at the top of page p1 (CR-LOG-001 a–d, 002 b, 003 b–c; `design/generator/log1016.py` + `log1016_canvas.py`); onboarding "Log in" buttons → CR-LOG-001. The handoff zips/PDFs predate this.
   - 2026-10-16: sign-up + log-in illustration = `design/illustrations/auth-scene.webp` (blob `/_blob/2f4b6a89779043fb2ec851f8050aa46a`) as the bottom `.ob-scene` on ONB-003 (+003e/003d), ONB-003c (+003ce) and every CR-LOG page (`auth1016.py`); 003b inbox and 003v confirmed keep their own. "Welcome back." has the waving hand.
   - 2026-10-17: CR-ONB-001L / 001V (Learning / Validation coming soon, client WTusAd9o3fJn711spDqBsJ) = `dc-import CR-ONB-002S variant=learn|validate` (002S is now one source; all three use the same coming-soon illustration, designer 2026-10-17); ONB-001 Continue: Learner → 001L, Validator → 001V (`soon1017.py`).
+- **Link 2 · Creator Studio is DELIVERED** (2026-10-23): `design/handoff/link2/` (README, tokens, assets, developer package zip, screenshots zip, screen book PDF, developer guide PDF, illustrations zip). Build steps: `design/tools/link2/README.md`.
 - **Link 3 is NEXT** (designer 2026-10-14; the old Link 2 is dropped).
   - Client Link 3 prototype: https://claude.ai/artifact/Mg8o83iNa9x4ov1FxivdEW
   - Our Studio canvas (most Studio screens already designed): https://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9 (local copy `design/canvas2/project/`).

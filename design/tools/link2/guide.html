@@ -1,0 +1,73 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:'GS';src:url(GoogleSans-latin.woff2) format('woff2');font-weight:400 700}
+@page{size:A4;margin:0}*{box-sizing:border-box}body{margin:0;font-family:'GS',system-ui;color:#0B1433}
+.pg{width:210mm;height:296.8mm;position:relative;overflow:hidden;page-break-after:always;padding:18mm 18mm 16mm}
+.top{display:flex;justify-content:space-between;align-items:center}.top img{height:7mm}.top span{font-size:7.5pt;color:#8A93AD}
+.ey{margin-top:12mm;font-size:7.5pt;font-weight:600;letter-spacing:.08em;color:#1652F0}
+h1{font-size:19pt;font-weight:600;letter-spacing:-.01em;margin:1.5mm 0 3mm}h3{font-size:11pt;font-weight:600;margin:9mm 0 2.5mm}
+p,li,td{font-size:9pt;line-height:1.6;color:#3A4566}p{margin:0 0 2mm}
+.flow{display:flex;flex-wrap:wrap;gap:1.5mm 1.5mm;margin:3mm 0}.flow span{font-size:8pt;padding:1.2mm 3mm;border-radius:10mm;background:#EAF0FF;color:#0E3BB8;font-weight:500}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:4mm}.card{border:.35mm solid #E6EAF3;border-radius:4mm;padding:5mm}
+.card i{display:inline-flex;width:6mm;height:6mm;border-radius:50%;background:#1652F0;color:#fff;font-style:normal;font-size:8pt;font-weight:600;align-items:center;justify-content:center}
+.card b{display:block;font-size:9.5pt;margin:3mm 0 1.5mm}.card p{font-size:8.5pt}.card .u{color:#1652F0}
+table{width:100%;border-collapse:collapse;margin-top:2mm}td{padding:2.2mm 2mm;border-top:.3mm solid #EEF1F7;vertical-align:top}td:first-child{width:38mm;color:#0B1433;font-weight:500}
+code{font-family:inherit;font-size:8.5pt;background:#F5F8FF;padding:.3mm 1.2mm;border-radius:1mm;color:#0E3BB8}
+.note{margin-top:4mm;padding:4mm 5mm;border-radius:4mm;background:#F5F8FF;font-size:8.5pt;color:#3A4566}
+ul{margin:2mm 0;padding-left:0;list-style:none}li{margin:0 0 3mm;padding-left:5mm;position:relative}li::before{content:'';position:absolute;left:0;top:2.2mm;width:1.8mm;height:1.8mm;border-radius:50%;background:#1652F0}li b{color:#0B1433}
+.ft{position:absolute;left:18mm;right:18mm;bottom:9mm;display:flex;justify-content:space-between;font-size:7pt;color:#8A93AD}
+</style></head><body>
+<div class="pg"><div class="top"><img src="credalio-wordmark.png"><span>Link 2 · Developer guide</span></div>
+<div class="ey">START HERE</div><h1>What is built, and where to find it</h1>
+<p>This guide explains the Link 2 design handoff: what it covers, what you received, and how to find your way around it. It takes about five minutes to read.</p>
+<h3>What is built</h3>
+<p>Link 2 is the Creator Studio: everything a creator uses once their work is live. Every screen is designed for desktop and mobile, including empty, error, pending and success states.</p>
+<div class="flow"><span>Credit Wallet</span><span>Payments &amp; revalidation</span><span>Earnings &amp; payouts</span><span>Course overview &amp; discussions</span><span>Calendar</span><span>Learner support, learners &amp; analytics</span><span>Profile</span><span>Settings</span><span>Nova, search &amp; help</span><span>Nova &amp; Creio</span><span>Account menu</span><span>Message pop-ups</span></div>
+<p>124 screens (248 boards, desktop + mobile) plus 24 shared sources. Programme cohorts, cohort overview, enrolment and roster, and the retired manual payout request are not part of this handoff.</p>
+<h3>What you received</h3>
+<div class="cards">
+<div class="card"><i>1</i><b>Clickable prototype</b><p>The design canvas link. Every screen side by side, desktop and mobile, in flow order.</p><p class="u">Use it to: see the flow, click through it, inspect any screen.</p></div>
+<div class="card"><i>2</i><b>Developer package (zip)</b><p>The code of every screen, all images, the fonts, design tokens, a screen index and a README.</p><p class="u">Use it to: build. Exact values live here.</p></div>
+<div class="card"><i>3</i><b>Screen book (PDF)</b><p>Every screen on its own page, desktop and mobile, in flow order, with a contents page.</p><p class="u">Use it to: review, plan tickets, discuss with the team.</p></div>
+<div class="card"><i>4</i><b>Screenshots (zip)</b><p>Every board as an image, numbered in flow order.</p><p class="u">Use it to: attach to tickets and specs.</p></div>
+</div>
+<div class="ft"><span>Credalio · Link 2 (Creator Studio) design handoff · October 2026</span><span>1 / 3</span></div></div>
+
+<div class="pg"><div class="top"><img src="credalio-wordmark.png"><span>Link 2 · Developer guide</span></div>
+<div class="ey">NAVIGATE</div><h1>Finding your way around</h1>
+<h3>1 · The prototype (canvas)</h3>
+<p>Every screen sits in flow order under section labels. Each row is a desktop board (1440 wide) next to its mobile board (390 wide).</p>
+<p>Press Play to click through. Animations (status tracks, the printing receipt, confetti) only run in Play mode.</p>
+<p>The last row holds shared sources. These are not screens; the boards above reuse them with a state (for example a payout method that is pending, connected or needs action).</p>
+<h3>2 · The developer package</h3>
+<table>
+<tr><td>index.html</td><td>Every screen in flow order, by section, with desktop and mobile links. Start here.</td></tr>
+<tr><td>screens/</td><td>The code: one responsive .dc.html file per screen, plus the small runtime that renders it.</td></tr>
+<tr><td>tokens/</td><td>Colours, type, radii, shadows, sizes, breakpoints and motion as CSS variables and JSON.</td></tr>
+<tr><td>assets/ · fonts/</td><td>Every image used (illustrations, Copilot characters, payout provider logos) and Google Sans.</td></tr>
+<tr><td>screens.csv</td><td>Each screen's section, file, state, and which screens it links to.</td></tr>
+<tr><td>README.md</td><td>The detailed reference: sections, patterns, links, open items.</td></tr>
+</table>
+<div class="note"><b>To open it:</b> unzip, then run <code>python3 -m http.server 8000</code> inside the folder and open <code>localhost:8000</code>. Opening files directly with file:// does not work (browsers block the scripts).</div>
+<h3>3 · Screen names</h3>
+<p><code>CR-AREA-NUMBER</code>, for example <code>CR-PAYO-005</code>. Areas: WAL wallet, PAY payment, REVAL revalidation, EARN earnings, PAYO payouts, COURSE-OV course overview, DISC discussions, CAL calendar, SUP learner support, LRN learners, ANA analytics, PROF profile, ORG organizations, SET settings, AI Nova panel, SEARCH, HELP, NOVA, CREIO Creio, PM account menu, MSG message pop-ups. A trailing letter is a state, such as f failed or p paid.</p>
+<div class="ft"><span>Credalio · Link 2 (Creator Studio) design handoff · October 2026</span><span>2 / 3</span></div></div>
+
+<div class="pg"><div class="top"><img src="credalio-wordmark.png"><span>Link 2 · Developer guide</span></div>
+<div class="ey">BUILD</div><h1>Five things to know before you build</h1>
+<ul>
+<li><b>One file per screen, not per device.</b> Each screen is responsive. The mobile board only previews the same file at 390 wide.</li>
+<li><b>States are variants, not copies.</b> A board like CR-PAYO-001m just shows CR-PAYO-OUT in its "tipalti" state. Build one component with a state prop.</li>
+<li><b>Values come from the code.</b> Treat the files as a precise reference for colour, size, spacing, radius, shadow and motion, and rebuild them in your own components. The tokens folder has the shared values.</li>
+<li><b>Build these patterns once:</b> the Studio shell (sidebar + top bar), the focus flow (add Credits, payments, payout method, buy Creio), the outcome page, the status track, the printing receipt, the info tooltip, the Nova panel and the message pop-ups.</li>
+<li><b>Responsive rules:</b> breakpoints at 1080, 960 (the sidebar becomes a drawer) and 760. Touch targets are at least 44px. All motion turns off with "reduce motion".</li>
+</ul>
+<h3>Good to know</h3>
+<table>
+<tr><td>Links</td><td>Buttons that lead to another screen work in the prototype. Buttons that act on the page (Save, Download, Export, Decline) have no screen of their own. Links to Link 1 screens (My Creations, Validation Centre, Notifications, Log in) point to files in the Link 1 package.</td></tr>
+<tr><td>Sample data</td><td>Names, amounts and dates are examples. Balances, Creio, counts and dates are dynamic.</td></tr>
+<tr><td>Creio vs Credits</td><td>Creio (AI usage) is always gold with the gold coin. Credits (wallet) always use the cobalt "C" coin.</td></tr>
+<tr><td>Open items</td><td>The client is confirming the MFORGE payment option, payout waiting times, the Tipalti fee claim, the validation decision time and the Creio bundle prices.</td></tr>
+<tr><td>Font</td><td>Google Sans, from Google Fonts. Please confirm its licence before shipping; Google Sans Flex or Inter are the closest alternatives.</td></tr>
+</table>
+<div class="ft"><span>Credalio · Link 2 (Creator Studio) design handoff · October 2026</span><span>3 / 3</span></div></div>
+</body></html>

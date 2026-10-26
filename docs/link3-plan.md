@@ -119,3 +119,4 @@ Check for new IDs we don't have:
 - Not changed (client to confirm): MFORGE option kept; waiting times, Tipalti FX, decision time, bundle prices.
 - 2026-10-22 client round 2 (no missing pages): alert options 2,000/5,000/10,000 (5,000 default); deactivate 'sign in' + 'Deactivate account'; WAL-005 sub carries the no-double-charge line (tooltip removed); WAL-005f 'declined the $253.75 charge on Visa'; PAYO-006 July/August tagged 'Paid late' (green). Open: MFORGE, claims to confirm.
 - 2026-10-23: Link 2 (Creator Studio) handoff built in design/handoff/link2 (124 screens / 248 boards + 24 sources). Package tested offline (273 pages, 0 errors). Status pill 'Funded' → 'Added'.
+- 2026-10-26: 57 boards were cut off (content taller than board, e.g. ANA-001 Analytics); board heights now fit full content (canvas.json h + wrapper height/hint-size/preview). Developer package rebuilt.

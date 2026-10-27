@@ -18,11 +18,11 @@
   - 2026-10-16: sign-up + log-in illustration = `design/illustrations/auth-scene.webp` (blob `/_blob/2f4b6a89779043fb2ec851f8050aa46a`) as the bottom `.ob-scene` on ONB-003 (+003e/003d), ONB-003c (+003ce) and every CR-LOG page (`auth1016.py`); 003b inbox and 003v confirmed keep their own. "Welcome back." has the waving hand.
   - 2026-10-17: CR-ONB-001L / 001V (Learning / Validation coming soon, client WTusAd9o3fJn711spDqBsJ) = `dc-import CR-ONB-002S variant=learn|validate` (002S is now one source; all three use the same coming-soon illustration, designer 2026-10-17); ONB-001 Continue: Learner → 001L, Validator → 001V (`soon1017.py`).
 - **Link 2 · Creator Studio is DELIVERED** (2026-10-23): `design/handoff/link2/` (README, tokens, assets, developer package zip, screenshots zip, screen book PDF, developer guide PDF, illustrations zip). Build steps: `design/tools/link2/README.md`.
-- **Link 3 is NEXT** (designer 2026-10-14; the old Link 2 is dropped).
-  - Client Link 3 prototype: https://claude.ai/artifact/Mg8o83iNa9x4ov1FxivdEW
-  - Our Studio canvas (most Studio screens already designed): https://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9 (local copy `design/canvas2/project/`).
-  - Plan: `docs/link3-plan.md`.
-  - **Scope:** skip anything below the client's "DO NOT DESIGN ANYTHING BELOW THIS NOTE" (all PRG/COH cohort screens) and the "DO NOT DESIGN THIS ROW" retired payouts. Mapping: `docs/link3-map.md`.
+- **Link 2 work history:** built in the Studio canvas https://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9 (local `design/canvas2/project/`, plan log `docs/link3-plan.md`, map `docs/link3-map.md`; client prototype Mg8o83iNa9x4ov1FxivdEW). Out of scope there: the PRG/COH cohort screens and the retired manual payouts.
+- **NOW: new project (started 2026-10-27), two client links. Read `docs/next-project.md` first.**
+  - **Link 4** = Course Studio + Manage Published Course: https://claude.ai/artifact/3RdUuYV5KDmaKATNxvRqyJ
+  - **Landing link** = landing page, learners, pricing, creators, validators: https://claude.ai/artifact/W174uLihc1ZtqgMRojf3M2
+  - Client instructions: `reference/link4/client-instructions.pdf`. Client canvases saved in `reference/link4/` and `reference/landing/`.
 - **Client reference** (content source only, about 98% correct): `reference/project/`. Screen list: `screens.md`.
 - **Artifact file limit:** 512 files per canvas version. Check the count before adding boards.
 
@@ -79,7 +79,7 @@
   - check that no page errors, broken images or broken links remain
   - link every new button to its destination (unwired = `href="#"`)
   - update `screens.md` and `docs/link3-plan.md`
-- **Delivery tools** (reuse them for Link 3):
+- **Delivery tools** (reuse them for every link; Link 2 steps in `design/tools/link2/README.md`):
   - `design/tools/package.py`: offline developer package zip
   - `renderall.js` / `cmp.py` / `prep.sh`: render and pixel-compare
   - screen book + developer guide PDFs: HTML → Chromium `page.pdf`

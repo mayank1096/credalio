@@ -64,7 +64,8 @@ and *-000 architecture pages are references for flow and rules, not screens.
 - Work in batches of ~20–30 screens in client order; after each batch: render check (0 page errors), overlap scan (`design/tools/overlap.js`), coin check (`design/tools/coins.js`), board heights fit content, audit + cleancss, publish, commit, push, log in this file.
 - Mark each batch's new boards with a pink strip note on the canvas (remove before client delivery).
 - Never mention Claude / Anthropic in anything delivered (see CLAUDE.md).
-- Quoted to the client: $7,500, about 3–4 weeks (not yet confirmed). Course Studio (Link 4) first.
+- Quoted to the client: $7,500, about 3–4 weeks (not yet confirmed).
+- **Order (designer 2026-10-27): Landing link FIRST, then Link 4.** Start with the landing page section in client order.
 
 ## Log
 

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CR-PAYO · Payout method · shared source</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-weight:600;font-size:14.5px;text-decoration:none}
+.ds-link:hover{color:#0E3BB8}
+.ds-btn:focus-visible,.ds-ghost:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2{animation:none}}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
+.ds-btn{justify-content:space-between}
+}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+body{background:#FFFFFF}
+.lp-x{width:40px;height:40px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3A4566;text-decoration:none}
+.lp-x:hover{background:#F5F8FF;color:#0B1433}
+.lp-title{display:flex;align-items:baseline;gap:8px;min-width:0}
+.lp-t1{font-size:16px;font-weight:600;white-space:nowrap}
+@media (max-width: 960px){
+.lp-t1{display:none}
+}
+.tk-root{min-height:100vh;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.tk-top{position:sticky;top:0;z-index:5;height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1.5px solid #EEF1F7;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+@media (max-width: 960px){
+.tk-top{height:56px;padding:0 12px 0 6px;gap:8px}
+.tk-top .lp-t1{display:block;font-size:15px}
+}
+.xb-ck{display:none;width:18px;height:18px;border-radius:50%;background:#1652F0;color:#FFFFFF;align-items:center;justify-content:center;flex-shrink:0}
+.xb-on .xb-ck{display:inline-flex}
+.tk-root{position:relative;isolation:isolate}
+.tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/8bde69a3fbce17def55d28680fd3fa0a) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
+@media (max-width: 760px){.tk-scene{height:240px;background-size:250% auto;background-position:52% 100%}}
+.cl{flex-grow:1;width:min(1280px,100%);box-sizing:border-box;margin:0 auto;padding:clamp(24px,5vh,52px) 32px 64px 32px;display:grid;grid-template-columns:minmax(0,1fr) 640px;gap:64px;align-items:start;align-content:start}
+.cl-side{position:sticky;top:104px;display:flex;flex-direction:column;align-items:flex-start}
+.cl-h1{margin:8px 0 0 0;font-size:clamp(30px,4.4vh,38px);line-height:1.12;font-weight:600;letter-spacing:-0.03em}
+.cl-sub{margin:10px 0 0 0;font-size:15.5px;line-height:1.65;color:#3A4566;max-width:460px}
+.cl-steps{list-style:none;margin:32px 0 0 0;padding:0;display:flex;gap:6px;width:100%;max-width:420px}
+.cl-steps li{flex:1 1 0;display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:500;color:#8A93AD}
+.cl-steps i{display:block;height:4px;border-radius:4px;background:#E6EAF3}
+.cl-steps .on i{background:#1652F0}.cl-steps .on{color:#0B1433}
+.cl-steps .dn i{background:#0F6B45}.cl-steps .dn{color:#0F6B45}
+.cl-panel{border-radius:24px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 18px 44px rgba(22,82,240,.08);padding:24px 26px 18px 26px;display:flex;flex-direction:column}
+.cl-foot{margin-top:20px;padding-top:16px;border-top:1.5px solid #F0F2F8;display:flex;align-items:center;gap:12px}
+.cl-go{margin-left:0}
+.cl-go.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}.cl-go.lp-off .ob-arrow{color:#9AA8CC}
+.cl-bk{height:52px;width:52px;padding:0}
+.cl-bk + .cl-go{margin-left:auto}.cl-bk span{display:none}
+.cl-glow{position:absolute;left:0;right:0;top:0;height:340px;z-index:-1;pointer-events:none;background:radial-gradient(60% 100% at 50% 0,rgba(22,82,240,.08),transparent 70%)}
+@media (max-width: 960px){
+.cl{grid-template-columns:minmax(0,1fr);gap:36px;padding:32px 16px 0 16px}
+.cl-side{position:static}
+.cl-h1{font-size:24px;margin-top:6px}
+.cl-sub{display:none}
+.cl-steps{margin-top:28px;max-width:none}
+.cl-panel{border:0;box-shadow:none;border-radius:0;padding:0;background:none}
+.cl-foot{position:sticky;bottom:0;z-index:4;margin:28px -16px 0 -16px;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7}
+.cl-go{flex-grow:1;justify-content:space-between}
+}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .16s ease,transform .16s ease,visibility .16s;z-index:20;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip-b.dn{bottom:auto;top:calc(100% + 10px)}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.hp-lab{display:block;font-size:12.5px;font-weight:500;color:#8A93AD}
+.po-h{margin-top:0}
+.po-c{margin-top:20px;display:flex;align-items:baseline;gap:10px}
+.po-c b{font-size:15px;font-weight:600}.po-c .ds-link{font-size:13.5px;font-weight:600}
+.po-l{margin-top:0;display:flex;flex-direction:column;gap:10px}
+.po-o{position:relative;display:flex;align-items:center;gap:16px;padding:16px 52px 16px 16px;border-radius:16px;border:1.5px solid #E6EAF3;background:#FFFFFF;font-family:inherit;text-align:left;color:#0B1433;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.po-o:hover{border-color:#AFC1F5}
+.po-lg{width:44px;height:44px;flex-shrink:0;border-radius:12px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-sizing:border-box;color:#3A4566;display:flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:600;letter-spacing:.02em}
+.po-lg img{width:26px;height:26px;object-fit:contain}.po-lg img.wide{width:34px}.po-lg.sm img{width:20px;height:20px}
+.po-lg.sm{width:32px;height:32px;border-radius:10px;font-size:11.5px}
+.po-t{display:flex;flex-direction:column;gap:3px}
+.po-t b{font-size:15.5px;font-weight:600}.po-t span{font-size:13.5px;color:#5B6582}
+.xb-ck{display:none;position:absolute;top:50%;right:18px;margin-top:-10px;width:20px;height:20px;border-radius:50%;background:#1652F0;color:#FFFFFF;align-items:center;justify-content:center}
+.xb-on{border-color:#1652F0;background:#F5F8FF;box-shadow:0 0 0 4px rgba(22,82,240,.10)}
+.xb-on .xb-ck{display:inline-flex}
+.xb-on .po-lg{background:#FFFFFF}
+.po-o.dis{opacity:.5;pointer-events:none}
+.po-go{margin-left:auto}
+.po-tip{position:relative;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#4A5578;cursor:default;outline:none}
+.po-tip svg{color:#8A93AD}
+.po-tip:hover,.po-tip:focus-visible{color:#0B1433}
+.po-tt{position:absolute;left:-8px;bottom:calc(100% + 12px);width:300px;padding:16px 18px;border-radius:14px;background:#0B1433;color:#FFFFFF;box-shadow:0 18px 40px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .18s ease,transform .18s ease,visibility .18s;z-index:10}
+.po-tip:hover .po-tt,.po-tip:focus .po-tt{opacity:1;visibility:visible;transform:none}
+.po-tt ol{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.4}
+.po-tt p{margin:14px 0 0 0;padding-top:12px;border-top:1px solid rgba(255,255,255,.14);display:flex;gap:8px;font-size:12.5px;line-height:1.45;color:#C9D3EC}
+.po-tt p svg{flex-shrink:0;color:#C9D3EC;margin-top:1px}
+.po-ext{max-width:460px;margin:0 auto;border-radius:24px;border:1.5px solid #D6DDEE;background:#FFFFFF;box-shadow:0 24px 60px rgba(11,20,51,.12);overflow:hidden}
+.po-eb{padding:32px 36px 24px 36px;display:flex;flex-direction:column}
+.po-pair{display:flex;align-items:center;justify-content:center;gap:10px}
+.po-bd{width:56px;height:56px;border-radius:18px;border:1.5px solid #E6EAF3;background:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(11,20,51,.06)}
+.po-bd img{width:30px;height:30px;object-fit:contain}
+.po-cr{background:#FFFFFF url(/_blob/c988a8a0ac19714cd1286a040d58e5f7) center/30px no-repeat}
+.po-pair i{width:44px;border-top:2px dashed #CBD3E6}
+.po-eh2{margin:22px 0 0 0;text-align:center;font-size:22px;font-weight:600;letter-spacing:-0.01em}
+.po-acct{margin-top:22px;display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:#F7F9FD}
+.po-av{width:36px;height:36px;border-radius:50%;background:#0B1433;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0}
+.po-acct > span:not(.po-av){flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.po-acct b{font-size:14.5px;font-weight:600}.po-acct > span > span{font-size:13px;color:#5B6582;overflow:hidden;text-overflow:ellipsis}
+.po-acct .ds-link{font-size:13px;font-weight:600;white-space:nowrap}
+.po-ph{margin-top:24px}
+.po-perm{list-style:none;margin:12px 0 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.po-perm li{display:flex;align-items:center;gap:12px;font-size:15px}
+.po-perm svg{flex-shrink:0;width:22px;height:22px;padding:5px;box-sizing:border-box;border-radius:50%;background:#E7F5EE;color:#0F6B45}
+.po-agree{margin:0;flex-grow:1;justify-content:space-between}
+.po-bt{margin-top:28px;display:flex;align-items:center;gap:10px}
+.po-cancel{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;height:52px;padding:0 24px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-size:15px;font-weight:600;color:#0B1433;text-decoration:none}
+.po-cancel:hover{border-color:#AFC1F5}
+.po-sm{margin-top:20px;gap:8px}.po-sm .po-o{padding:13px 48px 13px 16px}
+.po-fg{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px}
+.po-eb .po-fg{margin-top:22px;grid-template-columns:1fr}
+.po-wide{max-width:560px}.po-wide .po-eh2{margin-top:4px}.po-wide .po-fg{grid-template-columns:1fr 1fr}
+.po-f{display:flex;flex-direction:column;gap:7px;grid-column:span 2}.po-f.h{grid-column:span 1}.po-eb .po-f{grid-column:auto}
+.po-f > span:first-child{display:flex;align-items:center;font-size:13.5px;font-weight:500;color:#4A5578}
+.po-in{display:flex;align-items:center;justify-content:space-between;gap:10px;height:48px;padding:0 16px;border-radius:12px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-size:15px;color:#0B1433;font-variant-numeric:tabular-nums}
+.po-in svg{color:#8A93AD;flex-shrink:0}
+.po-lk .po-in{background:#F7F9FD;border-color:#E6EAF3;color:#3A4566}
+.po-seg{display:flex;padding:4px;border-radius:12px;background:#F1F3F8;height:48px;box-sizing:border-box}
+.po-seg > *{flex:1;display:flex;align-items:center;justify-content:center;border-radius:9px;font-size:14.5px;font-weight:500;color:#5B6582}
+.po-seg b{background:#FFFFFF;color:#0B1433;box-shadow:0 1px 4px rgba(11,20,51,.08)}
+.po-tax{margin-top:18px;display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:#F7F9FD}
+.po-ti{width:36px;height:36px;border-radius:10px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.po-tax > span:nth-child(2){flex:1;display:flex;flex-direction:column;gap:1px}.po-tax b{font-size:14.5px;font-weight:600}.po-tax > span > span{font-size:13px;color:#5B6582}
+.po-f.err .po-in{border-color:#D92D20;box-shadow:0 0 0 3px rgba(217,45,32,.10)}
+.po-err{display:flex;align-items:center;gap:6px;font-size:13.5px;color:#B42318}
+.po-go.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}.po-go.lp-off .ob-arrow{color:#9AA8CC}
+.po-eh{display:flex;align-items:center;gap:10px;padding:14px 20px;background:#F7F9FD;border-bottom:1.5px solid #E6EAF3;font-size:15px}
+.po-eh b{font-weight:600}
+.po-sec{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#5B6582}
+@media (max-width: 960px){
+.po-c{margin-top:16px}
+.po-o{padding:14px 48px 14px 14px;gap:14px}
+.po-lg{width:40px;height:40px}
+.po-ext{margin:0 -4px}
+.po-eb{padding:24px 20px 20px 20px}
+.po-ext{max-width:none}
+.po-fg,.po-wide .po-fg{grid-template-columns:1fr}.po-f.h{grid-column:span 2}
+.cl-foot:has(.po-tip){flex-wrap:wrap;justify-content:center}
+.po-tip{order:2;padding:4px 0}
+.po-tt{left:50%;margin-left:-150px}
+}
+@media (max-width: 960px){.po-cancel{height:48px;padding:0 18px}}
+</style>
+</helmet>
+<div class="tk-root cl-root">
+<div class="tk-scene" aria-hidden="true"></div><div class="cl-glow" aria-hidden="true"></div>
+<header class="tk-top">
+<a href="CR-EARN-001.dc.html" class="lp-x" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
+<div class="lp-title"><span class="lp-t1" style="display: block">Payout method</span></div>
+<span style="flex-grow: 1"></span>
+</header>
+<main class="cl">
+<aside class="cl-side ob-in"><h1 class="cl-h1 po-h">How you get paid</h1><p class="cl-sub">Pick one. We send your earnings there each month.</p><div class="po-c"><span class="hp-lab">Country</span><b>{{country}}</b><a href="#" class="ds-link">Change</a></div><ol class="cl-steps" aria-label="Steps"><li class="{{s0}}"><i></i><span>Choose</span></li><li class="{{s1}}"><i></i><span>Connect</span></li><li class="{{s2}}"><i></i><span>Done</span></li></ol></aside>
+<div class="cl-main"><sc-if value="{{vChoose}}" hint-placeholder-val="{{true}}"><section class="cl-panel ob-in2" aria-label="Payout method"><div class="po-l" role="radiogroup" aria-label="Payout method"><button type="button" role="radio" aria-checked="{{o_paypal.on}}" class="po-o {{o_paypal.cls}}" onClick="{{o_paypal.pick}}"><span class="po-lg"><img src="/_blob/2304d2cd7c945eeea685d9ca3396cd4b" alt=""></span><span class="po-t"><b>PayPal</b><span>Straight to your PayPal account, worldwide.</span></span><i class="xb-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i></button><button type="button" role="radio" aria-checked="{{o_payoneer.on}}" class="po-o {{o_payoneer.cls}}" onClick="{{o_payoneer.pick}}"><span class="po-lg"><img src="/_blob/a10968ece1d72c0bc99bfa7d3405d9b1" alt=""></span><span class="po-t"><b>Payoneer</b><span>To a local bank account or a prepaid Mastercard.</span></span><i class="xb-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i></button><button type="button" role="radio" aria-checked="{{o_tipalti.on}}" class="po-o {{o_tipalti.cls}}" onClick="{{o_tipalti.pick}}"><span class="po-lg"><img class="wide" src="/_blob/73c1fa9f10e6fd35337de2c87a00a1a3" alt=""></span><span class="po-t"><b>Tipalti</b><span>Local bank deposits, lower FX fees in some regions.</span></span><i class="xb-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i></button><button type="button" role="radio" aria-checked="{{o_ach.on}}" class="po-o {{o_ach.cls}}" onClick="{{o_ach.pick}}"><span class="po-lg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"></path><path d="M16.5 7.5c-.8-1.3-2.5-2-4.5-2-2.5 0-4.2 1.3-4.2 3.2 0 4.6 9 2.4 9 7 0 1.9-1.9 3.3-4.6 3.3-2.2 0-4-.9-4.8-2.4"></path></svg></span><span class="po-t"><b>Direct deposit</b><span>U.S. bank accounts only.</span></span><i class="xb-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i></button></div><div class="cl-foot"><sc-if value="{{hasTip}}" hint-placeholder-val="{{false}}"><span class="po-tip" tabindex="0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg>How connecting works<span class="po-tt" role="tooltip"><ol><sc-for list="{{tipSteps}}" as="t" hint-placeholder-count="3"><li>{{t}}</li></sc-for></ol><p><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>{{tipNote}}</p></span></span></sc-if><a href="{{goHref}}" class="ds-btn cl-go po-go {{goOff}}"><span>{{goTxt}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section></sc-if><sc-if value="{{vHand}}" hint-placeholder-val="{{false}}"><section class="po-ext  ob-in2" aria-label="PayPal window"><div class="po-eh"><span class="po-lg sm"><img src="/_blob/2304d2cd7c945eeea685d9ca3396cd4b" alt=""></span><b>PayPal</b><span class="po-sec"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Secure window<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r dn" role="tooltip">This step happens on PayPal. You’ll come straight back to Credalio.</span></span></span></div><div class="po-eb"><div class="po-pair" aria-hidden="true"><span class="po-bd po-cr"></span><i></i><span class="po-bd"><img src="/_blob/2304d2cd7c945eeea685d9ca3396cd4b" alt=""></span></div><h2 class="po-eh2">Allow Credalio to pay you</h2><div class="po-acct"><span class="po-av">AO</span><span><b>Ada Ononuju</b><span>ada.ononuju@example.com</span></span><a href="#" class="ds-link">Not you?</a></div><span class="hp-lab po-ph">Credalio will be able to</span><ul class="po-perm"><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Send payouts to this PayPal account</li><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>See your account name and status</li></ul><div class="po-bt"><a href="CR-PAYO-001.dc.html" class="po-cancel">Cancel</a><a href="CR-PAYO-001g.dc.html" class="ds-btn cl-go po-agree"><span>Agree and connect</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></section></sc-if><sc-if value="{{vPo}}" hint-placeholder-val="{{false}}"><section class="po-ext  ob-in2" aria-label="Payoneer window"><div class="po-eh"><span class="po-lg sm"><img src="/_blob/a10968ece1d72c0bc99bfa7d3405d9b1" alt=""></span><b>Payoneer</b><span class="po-sec"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Secure window<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r dn" role="tooltip">This step happens on Payoneer. You’ll come straight back to Credalio.</span></span></span></div><div class="po-eb"><div class="po-pair" aria-hidden="true"><span class="po-bd po-cr"></span><i></i><span class="po-bd"><img src="/_blob/a10968ece1d72c0bc99bfa7d3405d9b1" alt=""></span></div><h2 class="po-eh2">Choose how you receive</h2><div class="po-acct"><span class="po-av">AO</span><span><b>Ada Ononuju</b><span>ada.ononuju@example.com</span></span><a href="#" class="ds-link">Not you?</a></div><div class="po-l po-sm" role="radiogroup" aria-label="Receive to"><button type="button" role="radio" aria-checked="true" class="po-o xb-on"><span class="po-t"><b>Local bank account</b><span>NGN · •••• 2219</span></span><i class="xb-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i></button><button type="button" role="radio" aria-checked="false" class="po-o"><span class="po-t"><b>Prepaid Mastercard</b><span>Spend anywhere Mastercard works</span></span><i class="xb-ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i></button></div><div class="po-bt"><a href="CR-PAYO-001.dc.html" class="po-cancel">Cancel</a><a href="CR-PAYO-001p.dc.html" class="ds-btn cl-go po-agree"><span>Link Payoneer account</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></section></sc-if><sc-if value="{{vTi}}" hint-placeholder-val="{{false}}"><section class="po-ext po-wide ob-in2" aria-label="Tipalti window"><div class="po-eh"><span class="po-lg sm"><img class="wide" src="/_blob/73c1fa9f10e6fd35337de2c87a00a1a3" alt=""></span><b>Tipalti</b><span class="po-sec"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg>Secure window<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r dn" role="tooltip">Tipalti holds your bank details. Credalio never sees them.</span></span></span></div><div class="po-eb"><h2 class="po-eh2">Your bank details</h2><div class="po-fg"><label class="po-f po-lk"><span>Account holder<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b l" role="tooltip">Payouts only go to an account in your own verified name.</span></span></span><span class="po-in">Ada Ononuju<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span></label><label class="po-f "><span>Bank country</span><span class="po-in">Nigeria<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span></label><label class="po-f "><span>Bank</span><span class="po-in">Access Bank<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span></label><label class="po-f "><span>Account number</span><span class="po-in">0123 457 730</span></label></div><div class="po-tax"><span class="po-ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"></path><path d="M14 3v5h5M10 13h6M10 17h6"></path></svg></span><span><b>Tax form · W-8BEN</b><span>Tipalti asks for it next</span></span><span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Tipalti picks the form that fits your country. Creators outside the U.S. usually fill in a W-8BEN.</span></span></div><div class="po-bt"><a href="CR-PAYO-001.dc.html" class="po-cancel">Cancel</a><a href="CR-PAYO-001m.dc.html" class="ds-btn cl-go po-agree"><span>Submit to Tipalti</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></section></sc-if><sc-if value="{{vAch}}" hint-placeholder-val="{{false}}"><section class="cl-panel ob-in2" aria-label="U.S. bank details"><div class="po-fg"><label class="po-f po-lk h"><span>Account holder<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b l" role="tooltip">Payouts only go to an account in your own verified name.</span></span></span><span class="po-in">Ada Ononuju<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span></label><div class="po-f h"><span>Account type</span><span class="po-seg"><b>Checking</b><span>Savings</span></span></div><label class="po-f {{rtCls}}"><span>Routing number<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b l" role="tooltip">The 9-digit number on your checks or in your bank app.</span></span></span><span class="po-in">{{rt}}</span><sc-if value="{{achErr}}" hint-placeholder-val="{{false}}"><span class="po-err" role="alert"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5"></path><path d="M12 16.5v.01"></path></svg>Routing numbers have 9 digits.</span></sc-if></label><label class="po-f h"><span>Account number</span><span class="po-in">•••••6789</span></label><label class="po-f h"><span>Confirm account number</span><span class="po-in">•••••6789</span></label></div><div class="cl-foot"><a href="CR-PAYO-001.dc.html" class="ds-ghost cl-bk" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 6-6 6 6 6"></path></svg><span>Back</span></a><a href="CR-PAYO-001k.dc.html" class="ds-btn cl-go po-go"><span>Save bank details</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section></sc-if></div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); const v = (props && props.variant) || 'choose'; this.state = { v, sel: { choose: '', paypal: 'paypal', handoff: 'paypal', payoneer: 'payoneer', tipalti: 'tipalti', ach: 'ach', poconnect: 'payoneer', ticonnect: 'tipalti', acherr: 'ach' }[v] }; }
+  renderVals() {
+    const S = this.state, v = S.v, out = {}, isAch = v === 'ach' || v === 'acherr';
+    ['paypal', 'payoneer', 'tipalti', 'ach'].forEach((k) => { const on = S.sel === k; out['o_' + k] = { on: on ? 'true' : 'false', cls: (on ? 'xb-on' : '') + (k === 'ach' && !isAch ? ' dis' : ''), pick: () => this.setState({ sel: k }) }; });
+    const names = { paypal: 'Connect PayPal', payoneer: 'Connect Payoneer', tipalti: 'Open Tipalti setup' };
+    const hrefs = { paypal: 'CR-PAYO-001b.dc.html', payoneer: 'CR-PAYO-001c.dc.html', tipalti: 'CR-PAYO-001d.dc.html', ach: 'CR-PAYO-001e.dc.html' };
+    const TIPS = {
+      paypal: [['Log in to PayPal', 'Approve Credalio to send you payouts', 'Come back here, connected'], 'We only receive your PayPal email and account status.'],
+      payoneer: [['Log in to Payoneer, or sign up', 'Pick a local bank account or prepaid card', 'Come back here, linked'], 'Payoneer keeps your bank details. We only see the last digits.'],
+      tipalti: [['Open Tipalti’s secure form', 'Add your bank details and tax form', 'Come back here while Tipalti checks them'], 'Tipalti holds your bank details. Credalio never sees them.']
+    };
+    const tip = TIPS[S.sel], chooseView = ['choose', 'paypal', 'poconnect', 'ticonnect'].indexOf(v) > -1;
+    return Object.assign(out, {
+      vChoose: chooseView, vHand: v === 'handoff', vPo: v === 'payoneer', vTi: v === 'tipalti', vAch: isAch, country: isAch ? 'United States' : 'Nigeria',
+      hasTip: chooseView && !!tip, tipSteps: tip ? tip[0] : [], tipNote: tip ? tip[1] : '',
+      s0: v === 'choose' && !S.sel ? 'on' : 'dn', s1: (v === 'choose' && !S.sel) ? '' : 'on', s2: '',
+      goTxt: names[S.sel] || 'Continue', goOff: S.sel ? '' : 'lp-off', goHref: hrefs[S.sel] || '#',
+      achErr: v === 'acherr', rtCls: v === 'acherr' ? 'err' : '', rt: v === 'acherr' ? '02100002' : '021000021'
+    });
+  }
+}
+</script>
+</body>
+</html>

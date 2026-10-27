@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CR-ONB-002 · How will you create?</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#1652F0}a:hover{color:#0E3BB8}
+@keyframes cdDraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes cdComet{0%{stroke-dashoffset:0.08;opacity:0}10%{opacity:1}85%{opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
+@keyframes cdPulse{0%{transform:scale(.7);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+@keyframes cdOrb{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.cd-draw{stroke-dasharray:1;animation:cdDraw 1s cubic-bezier(.4,0,.2,1) .2s both}
+.cd-comet{stroke-dasharray:0.07 2;stroke-dashoffset:0.08;animation:cdComet 2.6s ease-in-out 1.2s infinite}
+.cd-pulse{transform-box:fill-box;transform-origin:center;animation:cdPulse 2s ease-out 1.1s infinite}
+.cd-orb{animation:cdOrb 2.4s ease-in-out infinite}
+.ob-in{animation:obIn .5s ease both}
+.ob-in2{animation:obIn .5s ease .08s both}
+.ob-in3{animation:obIn .5s ease .16s both}
+.ob-btn{transition:background .2s ease,transform .2s ease}
+.ob-btn:hover{background:#0E3BB8 !important;color:#FFFFFF;transform:translateY(-1px)}
+.ob-btn:active{transform:scale(.98)}
+.ob-arrow{transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ob-btn:hover .ob-arrow{transform:translateX(4px)}
+.ob-ghost{transition:border-color .2s ease,background .2s ease}
+.ob-ghost:hover{border-color:#1652F0 !important;background:#F5F8FF !important;color:#0B1433}
+.ob-opt{transition:all .25s ease}
+.ob-opt:hover{transform:translateY(-2px);border-color:#AFC1F5 !important}
+.ob-opt:active{transform:scale(.985)}
+.ob-btn:focus-visible,.ob-opt:focus-visible,.ob-ghost:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+@media (prefers-reduced-motion: reduce){.cd-draw,.cd-comet,.cd-pulse,.cd-orb,.ob-in,.ob-in2,.ob-in3{animation:none}.cd-comet{opacity:0}}
+@media (max-width: 960px){
+.ob-root{height:auto !important;min-height:100vh !important;display:flex;flex-direction:column}
+.ob-header{position:relative !important;height:64px !important;padding:0 20px !important;flex-shrink:0;order:0}
+.ob-brand{font-size:18px !important}
+.ob-hide-sm{display:none}
+.ob-track{position:relative !important;top:0 !important;height:auto !important;padding:4px 20px 0 20px !important;justify-content:flex-start !important;gap:12px;flex-shrink:0;order:1}
+.ob-back{position:static !important;width:44px;height:44px !important;padding:0 !important;justify-content:center;flex-shrink:0}
+.ob-back-t{display:none}
+.ob-steps{width:auto !important;flex-grow:1;align-items:flex-start !important}
+.ob-illus{position:relative !important;flex-shrink:0;align-self:flex-start;height:240px !important;width:720px !important;order:2;margin-top:8px;transform:translateX(calc(-50% + var(--pan))) !important}
+.ob-main{order:3;position:relative !important;top:0 !important;padding:8px 20px 32px 20px;box-sizing:border-box}
+.ob-col{width:100% !important}
+.ob-h1{font-size:30px !important}
+.ob-grid3{grid-template-columns:minmax(0,1fr) !important;gap:10px !important}
+.ob-h1{width:auto !important}
+.ob-btn{justify-content:space-between !important;align-self:stretch !important}
+}
+.lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/f2bdb0288176649cd148845b2c46e3ab) left center/contain no-repeat}.lg-mark{display:none;width:30px;height:30px;background:url(/_blob/9e485e715f9869055157634fa82d3fa5) center/contain no-repeat}@media (max-width: 960px){.lg-word{height:22px}}
+</style>
+</helmet>
+<div class="ob-root" style="width: 100%; height: 100vh; min-height: 680px; position: relative; overflow: hidden; background: #FFFFFF; font-family: 'Google Sans', 'Google Sans Text', 'Helvetica Neue', system-ui, sans-serif; color: #0B1433">
+<header class="ob-header" style="position: absolute; left: 0; top: 0; width: 100%; height: 88px; box-sizing: border-box; padding: 0 clamp(24px, 6.67vw, 96px); display: flex; align-items: center; justify-content: space-between; z-index: 3">
+<div style="display: flex; align-items: center; gap: 10px">
+<span class="lg-mark" aria-hidden="true"></span><span class="lg-word ob-brand" role="img" aria-label="Credalio"></span>
+</div>
+<div style="display: flex; align-items: center; gap: 14px; font-size: 14px; color: #3A4566"><span class="ob-hide-sm">Already have an account?</span> <a href="CR-LOG-001.dc.html" class="ob-ghost" style="display: flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; border: 1.5px solid #D6DDEE; background: #FFFFFF; color: #0B1433; font-weight: 600; text-decoration: none">Log in</a></div>
+</header>
+<div class="ob-track" style="position: absolute; left: 0; top: 88px; width: 100%; height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 3">
+<a href="Main.dc.html" class="ob-ghost ob-back" aria-label="Back" style="position: absolute; left: clamp(24px, 6.67vw, 96px); top: 2px; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px 0 12px; box-sizing: border-box; border-radius: 999px; border: 1.5px solid #E6EAF3; background: #FFFFFF; color: #3A4566; font-size: 14px; font-weight: 500; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span class="ob-back-t">Back</span></a>
+<div class="ob-steps" role="group" aria-label="Step 1 of 5: Your account" style="width: 320px; display: flex; flex-direction: column; align-items: center; gap: 8px">
+<div aria-hidden="true" style="width: 100%; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px"><span style="height: 4px; border-radius: 4px; background: #1652F0"></span><span style="height: 4px; border-radius: 4px; background: #E6EAF3"></span><span style="height: 4px; border-radius: 4px; background: #E6EAF3"></span><span style="height: 4px; border-radius: 4px; background: #E6EAF3"></span><span style="height: 4px; border-radius: 4px; background: #E6EAF3"></span></div>
+<span style="font-size: 13px; color: #5B6582">Step 1 of 5 · <span style="color: #0B1433; font-weight: 600">Your account</span></span>
+</div>
+</div>
+<main class="ob-main" style="position: absolute; z-index: 2; left: 0; top: clamp(140px, 19vh, 176px); width: 100%; display: flex; flex-direction: column; align-items: center">
+<div class="ob-col" style="width: min(1040px, calc(100% - 48px)); display: flex; flex-direction: column; align-items: center">
+<h1 class="ob-h1 ob-in" style="margin: 0; font-size: clamp(36px, 6vh, 52px); line-height: 1.1; font-weight: 600; letter-spacing: -0.035em; color: #0B1433; text-align: center; width: max-content; max-width: calc(100vw - 48px)">How will you create?</h1>
+<p class="ob-in2" style="margin: 12px 0 0 0; max-width: 560px; font-size: 16px; line-height: 1.55; color: #4A5578; text-align: center">Choose your own path or create with an organization.</p>
+<div role="radiogroup" aria-label="How you will create" class="ob-grid3 ob-in3" style="margin-top: clamp(22px, 4vh, 36px); width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 920px">
+<button type="button" role="radio" class="ob-opt" onClick="{{o.ind.pick}}" aria-checked="{{o.ind.checked}}" style="display: flex; align-items: center; gap: 14px; padding: 16px; min-height: 76px; box-sizing: border-box; border-radius: 18px; border: 1.5px solid {{o.ind.border}}; background: {{o.ind.bg}}; box-shadow: {{o.ind.shadow}}; cursor: pointer; text-align: left; font-family: inherit">
+<span style="width: 46px; height: 46px; flex-shrink: 0; border-radius: 13px; background: {{o.ind.iconBg}}; color: {{o.ind.iconFg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px; flex-grow: 1; min-width: 0">
+<span style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px"><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: #0B1433">Create independently</span></span>
+<span style="font-size: 13.5px; line-height: 1.35; color: #4A5578">Create learning under your own Creator profile.</span>
+</span>
+<span style="width: 22px; height: 22px; flex-shrink: 0; box-sizing: border-box; border-radius: 50%; border: 1.5px solid {{o.ind.radioBorder}}; background: {{o.ind.radioBg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity: {{o.ind.check}}"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>
+</button>
+<button type="button" role="radio" class="ob-opt" onClick="{{o.inst.pick}}" aria-checked="{{o.inst.checked}}" style="display: flex; align-items: center; gap: 14px; padding: 16px; min-height: 76px; box-sizing: border-box; border-radius: 18px; border: 1.5px solid {{o.inst.border}}; background: {{o.inst.bg}}; box-shadow: {{o.inst.shadow}}; cursor: pointer; text-align: left; font-family: inherit">
+<span style="width: 46px; height: 46px; flex-shrink: 0; border-radius: 13px; background: {{o.inst.iconBg}}; color: {{o.inst.iconFg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 9.5 12 5 2 9.5l10 4.5 10-4.5z"></path><path d="M6 11.5V16c3 2.2 9 2.2 12 0v-4.5"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px; flex-grow: 1; min-width: 0">
+<span style="display: flex; flex-wrap: nowrap; align-items: center; gap: 8px; min-width: 0"><span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: #0B1433; white-space: nowrap">With an organization</span><span style="flex-shrink: 0; padding: 2px 8px; border-radius: 999px; background: #EAF0FF; color: #0E3BB8; font-size: 11.5px; font-weight: 500">Soon</span></span>
+<span style="font-size: 13.5px; line-height: 1.35; color: #4A5578">Find one to work with, or accept its invitation.</span>
+</span>
+<span style="width: 22px; height: 22px; flex-shrink: 0; box-sizing: border-box; border-radius: 50%; border: 1.5px solid {{o.inst.radioBorder}}; background: {{o.inst.radioBg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity: {{o.inst.check}}"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>
+</button>
+</div>
+<sc-if value="{{hasNote}}" hint-placeholder-val="{{false}}"><p style="margin: 16px 0 0 0; display: flex; align-items: flex-start; gap: 8px; font-size: 13.5px; line-height: 1.5; color: #3A4566; text-align: left"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><span>{{note}}</span></p></sc-if>
+<sc-if value="{{isInd}}" hint-placeholder-val="{{true}}"><a href="CR-ONB-003.dc.html" class="ob-btn" style="margin-top: clamp(18px, 3vh, 28px); display: flex; align-items: center; gap: 16px; height: 56px; padding: 0 6px 0 28px; box-sizing: border-box; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-size: 16px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; white-space: nowrap; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 12px 28px rgba(22, 82, 240, 0.28)">Continue<span class="ob-arrow" style="width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; color: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></sc-if>
+<sc-if value="{{notInd}}" hint-placeholder-val="{{false}}"><a href="CR-ONB-002S.dc.html" class="ob-btn" style="margin-top: clamp(18px, 3vh, 28px); display: flex; align-items: center; gap: 16px; height: 56px; padding: 0 6px 0 28px; box-sizing: border-box; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-size: 16px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; white-space: nowrap; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 12px 28px rgba(22, 82, 240, 0.28)">Continue<span class="ob-arrow" style="width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; color: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></sc-if>
+</div>
+</main>
+<div class="ob-illus" aria-hidden="true" style="position: absolute; left: 50%; bottom: 0; height: min(60vh, 32vw, calc(89vh - 300px)); aspect-ratio: 2172 / 724; transform: translateX(-50%); --pan: {{rolePan}}px; overflow: hidden; z-index: 1">
+<img src="/_blob/658ad152ad44cf112bd78a2beaa31aae" alt="" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; object-fit: cover; object-position: center bottom">
+<sc-if value="{{rt.create_ind}}" hint-placeholder-val="{{true}}"><svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; filter: blur(7px); opacity: 0.85"><path class="cd-draw" d="M902 627 L875 627 L854 626 L832 623 L810 621 L788 618 L767 613 L745 605 L723 596 L702 590 L680 585 L658 581 L636 575 L615 566 L598 554 L588 542" pathLength="1" fill="none" stroke="#1652F0" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path></svg><svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none"><path class="cd-draw" d="M902 627 L875 627 L854 626 L832 623 L810 621 L788 618 L767 613 L745 605 L723 596 L702 590 L680 585 L658 581 L636 575 L615 566 L598 554 L588 542" pathLength="1" fill="none" stroke="#1652F0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"></path><path class="cd-comet" d="M902 627 L875 627 L854 626 L832 623 L810 621 L788 618 L767 613 L745 605 L723 596 L702 590 L680 585 L658 581 L636 575 L615 566 L598 554 L588 542" pathLength="1" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path><circle class="cd-pulse" cx="588" cy="542" r="12" fill="none" stroke="#1652F0" stroke-width="3"></circle><circle cx="588" cy="542" r="9" fill="#1652F0" stroke="#FFFFFF" stroke-width="3"></circle></svg></sc-if><sc-if value="{{rt.create_inst}}" hint-placeholder-val="{{false}}"><svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; filter: blur(7px); opacity: 0.85"><path class="cd-draw" d="M902 627 L940 627 L973 626 L1006 623 L1027 625 L1049 627 L1071 629 L1093 631 L1114 634 L1136 635 L1179 636 L1201 635 L1223 633 L1245 629 L1266 625 L1288 618 L1310 607 L1331 593 L1347 577" pathLength="1" fill="none" stroke="#1652F0" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path></svg><svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none"><path class="cd-draw" d="M902 627 L940 627 L973 626 L1006 623 L1027 625 L1049 627 L1071 629 L1093 631 L1114 634 L1136 635 L1179 636 L1201 635 L1223 633 L1245 629 L1266 625 L1288 618 L1310 607 L1331 593 L1347 577" pathLength="1" fill="none" stroke="#1652F0" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"></path><path class="cd-comet" d="M902 627 L940 627 L973 626 L1006 623 L1027 625 L1049 627 L1071 629 L1093 631 L1114 634 L1136 635 L1179 636 L1201 635 L1223 633 L1245 629 L1266 625 L1288 618 L1310 607 L1331 593 L1347 577" pathLength="1" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path><circle class="cd-pulse" cx="1347" cy="577" r="12" fill="none" stroke="#1652F0" stroke-width="3"></circle><circle cx="1347" cy="577" r="9" fill="#1652F0" stroke="#FFFFFF" stroke-width="3"></circle></svg></sc-if><sc-if value="{{rt.create}}" hint-placeholder-val="{{true}}"><svg viewBox="0 0 2172 724" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none"><circle class="cd-orb" cx="902" cy="627" r="7" fill="#1652F0" stroke="#FFFFFF" stroke-width="2.5"></circle></svg></sc-if>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"role":{"editor":"enum","options":["learn","create","validate"],"default":"create"},"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { sel: 'ind' }; }
+  renderVals() {
+    const sel = this.state.sel;
+    const notes = {
+      ind: '',
+      inst: '',
+          };
+    const o = {};
+    ['ind', 'inst'].forEach((id) => {
+      const on = sel === id;
+      o[id] = {
+        pick: () => this.setState({ sel: id }),
+        checked: on ? 'true' : 'false',
+        border: on ? '#1652F0' : '#E6EAF3',
+        bg: on ? '#F5F8FF' : '#FFFFFF',
+        shadow: on ? '0 0 0 4px rgba(22, 82, 240, 0.12), 0 12px 28px rgba(22, 82, 240, 0.14)' : '0 1px 2px rgba(11, 20, 51, 0.04)',
+        iconBg: on ? '#1652F0' : '#EAF0FF',
+        iconFg: on ? '#FFFFFF' : '#1652F0',
+        radioBorder: on ? '#1652F0' : '#CBD3E6',
+        radioBg: on ? '#1652F0' : '#FFFFFF',
+        check: on ? 1 : 0
+      };
+    });
+    const rt = { create: true, create_ind: sel === 'ind', create_inst: sel === 'inst' };
+    return { rt, rolePan: 55, o, note: notes[sel], hasNote: !!notes[sel], isInd: sel === 'ind', notInd: sel !== 'ind' };
+  }
+}
+</script>
+</body>
+</html>

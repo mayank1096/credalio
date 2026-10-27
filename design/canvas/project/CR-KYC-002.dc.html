@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CR-KYC-002 · Sumsub: choose document</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-btn:focus-visible,.ds-ghost:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
+.ds-btn{justify-content:space-between}
+}
+.sec-h{margin:0;font-size:13.5px;font-weight:600;color:#8A93AD}
+body{background:#FFFFFF}
+.lp-x{width:40px;height:40px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3A4566;text-decoration:none}
+.lp-x:hover{background:#F5F8FF;color:#0B1433}
+.lp-title{display:flex;align-items:baseline;gap:8px;min-width:0}
+.lp-t1{font-size:16px;font-weight:600;white-space:nowrap}
+.lp-t2{font-size:14px;color:#5B6582;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width: 960px){
+.lp-t1{display:none}
+.lp-t2{font-size:14.5px;font-weight:600;color:#0B1433}
+}
+.tk-root{min-height:100vh;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.tk-top{position:sticky;top:0;z-index:5;height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1.5px solid #EEF1F7;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tk-sec{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px 0 11px;border-radius:999px;background:#E7F5EE;color:#0F6B45;font-size:13px;font-weight:500;white-space:nowrap}
+@media (max-width: 960px){
+.tk-top{height:56px;padding:0 12px 0 6px;gap:8px}
+.tk-top .lp-t1{display:block;font-size:15px}
+.tk-top .lp-t2{display:none}
+.tk-sec span{display:none}
+.tk-sec{width:34px;padding:0;justify-content:center}
+}
+.ob-lab{display:block;font-size:13px;font-weight:600;color:#0B1433;margin:0 0 6px 2px;text-align:left}
+.ob-f{width:100%;height:48px;box-sizing:border-box;padding:0 40px 0 16px;border-radius:14px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;font-size:15px;color:#0B1433;outline:none;appearance:none;-webkit-appearance:none}
+.ob-f:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.ob-sel{position:relative}.ob-sel svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none;color:#5B6582}
+.k2{flex-grow:1;width:min(1120px,100%);box-sizing:border-box;margin:0 auto;padding:clamp(24px,5vh,56px) 32px 48px 32px;display:grid;grid-template-columns:minmax(0,1fr) 560px;gap:64px;align-items:start}
+.k2-side{position:sticky;top:104px;padding-top:8px}
+.k2-h{margin:10px 0 0 0;font-size:clamp(30px,4.6vh,40px);line-height:1.12;font-weight:600;letter-spacing:-0.03em}
+.k2-tl{display:block;margin:28px 0 10px 2px}
+.k2-tips{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.k2-tips li{display:flex;align-items:flex-start;gap:10px;font-size:15px;line-height:1.5;color:#0B1433}
+.k2-tips svg{color:#0F6B45;flex-shrink:0;margin-top:3px}
+.k2-panel{border-radius:24px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 18px 44px rgba(22,82,240,.08);padding:22px 24px 16px 24px;display:flex;flex-direction:column}
+.k2-steps{list-style:none;margin:0;padding:0 0 16px 0;border-bottom:1.5px solid #F0F2F8;display:flex;gap:6px}
+.k2-s{flex:1 1 0;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#8A93AD}
+.k2-s::after{content:'';flex-grow:1;height:2px;border-radius:2px;background:#E6EAF3;margin-right:4px}
+.k2-s:last-child{flex:0 0 auto}.k2-s:last-child::after{display:none}
+.k2-sd{width:24px;height:24px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:600}
+.k2-done{color:#0F6B45}.k2-done .k2-sd{background:#0F6B45;border-color:#0F6B45;color:#FFFFFF;font-size:0}
+.k2-done .k2-sd::before{content:'';width:8px;height:4px;border-left:2px solid #FFFFFF;border-bottom:2px solid #FFFFFF;transform:rotate(-45deg) translate(1px,-1px)}
+.k2-done::after{background:#0F6B45}
+.k2-cur{color:#0B1433;font-weight:600}.k2-cur .k2-sd{border-color:#1652F0;background:#1652F0;color:#FFFFFF}
+.k2-body{padding:18px 0 2px 0}
+.k2-ph{margin:0;font-size:20px;font-weight:600;letter-spacing:-0.01em}
+.k2-pp{margin:8px 0 0 0;font-size:14.5px;line-height:1.55;color:#3A4566}
+.k2-docs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.k2-doc{display:flex;align-items:center;gap:10px;height:50px;padding:0 12px 0 10px;box-sizing:border-box;border-radius:14px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14.5px;font-weight:500;cursor:pointer;text-align:left;transition:all .2s ease}
+.k2-doc:hover{border-color:#AFC1F5}
+.k2-doc > span:nth-child(2){flex-grow:1}
+.k2-di{width:32px;height:32px;border-radius:10px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.k2-doc.xb-on{border-color:#1652F0;background:#F5F8FF;color:#0E3BB8;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.k2-doc.xb-on .k2-di{background:#FFFFFF}
+.xb-ck{display:none;width:18px;height:18px;border-radius:50%;background:#1652F0;color:#FFFFFF;align-items:center;justify-content:center;flex-shrink:0}
+.xb-on .xb-ck{display:inline-flex}
+.k2-ups{margin-top:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.k2-up{height:104px;box-sizing:border-box;border-radius:16px;border:2px dashed #CBD3E6;background:#F7F9FD;color:#0B1433;font-family:inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;padding:10px;transition:all .2s ease}
+.k2-up:hover{border-color:#1652F0;background:#F5F8FF}
+.k2-ui{width:34px;height:34px;border-radius:10px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;margin-bottom:4px;font-size:0}
+.k2-ui::before{content:'';width:18px;height:18px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 16V4'/%3E%3Cpath d='m7 9 5-5 5 5'/%3E%3Cpath d='M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3'/%3E%3C/svg%3E") center / contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 16V4'/%3E%3Cpath d='m7 9 5-5 5 5'/%3E%3Cpath d='M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3'/%3E%3C/svg%3E") center / contain no-repeat}
+.k2-up b{font-size:14.5px;font-weight:600}
+.k2-up > span:last-child{font-size:12.5px;color:#5B6582}
+.k2-upd{border-style:solid;border-color:#0F6B45;background:#F1FAF5}
+.k2-upd .k2-ui{background:#0F6B45;color:#FFFFFF}
+.k2-upd .k2-ui::before{-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12.5 4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / contain no-repeat}
+.k2-qr{margin-top:10px;display:flex;align-items:center;gap:14px;padding:10px 14px 10px 10px;border-radius:16px;border:1.5px solid #E6EAF3}
+.k2-qr svg{flex-shrink:0;padding:6px;background:#FFFFFF;border-radius:10px;border:1px solid #EEF1F7}
+.k2-qr > span{display:flex;flex-direction:column;gap:4px}
+.k2-qr b{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:600}
+.k2-qr b svg{padding:0;border:0;color:#1652F0}
+.k2-qr > span > span{font-size:13px;line-height:1.5;color:#5B6582}
+.k2-face{margin-top:14px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.k2-oval{position:relative;width:132px;height:162px;border-radius:50%;background:#F5F8FF;display:flex;align-items:center;justify-content:center;color:#AFC1F5}
+.k2-oval::before{content:'';position:absolute;inset:-8px;border-radius:50%;border:3px dashed #1652F0;animation:k2Pulse 2.2s ease-in-out infinite}
+@keyframes k2Pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.04);opacity:.55}}
+.k2-ok{display:none;width:72px;height:72px;border-radius:50%;background:#0F6B45;color:#FFFFFF;align-items:center;justify-content:center}
+.k2-fl{font-size:14.5px;font-weight:500;color:#3A4566}
+.k2-pass .k2-oval{background:#F1FAF5}
+.k2-pass .k2-oval::before{border-style:solid;border-color:#0F6B45;animation:none}
+.k2-pass .k2-sil{display:none}.k2-pass .k2-ok{display:flex}
+.k2-pass .k2-fl{color:#0F6B45;font-weight:600}
+.k2-rv{list-style:none;margin:16px 0 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.k2-rv li{display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 12px;box-sizing:border-box;border-radius:16px;border:1.5px solid #E6EAF3}
+.k2-ri{width:40px;height:40px;flex-shrink:0;border-radius:12px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.k2-rt{flex-grow:1;display:flex;flex-direction:column;gap:2px}
+.k2-rt b{font-size:15px;font-weight:600}
+.k2-rt span{font-size:13px;color:#0F6B45}
+.k2-ed{height:36px;padding:0 14px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer}
+.k2-ed:hover{border-color:#1652F0;background:#F5F8FF}
+.k2-ok2{width:24px;height:24px;margin-right:6px;border-radius:50%;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.k2-foot{margin-top:14px;padding-top:14px;border-top:1.5px solid #F0F2F8;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.k2-back{height:48px}
+.k2-go.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}
+.k2-go.lp-off .ob-arrow{color:#9AA8CC}
+@media (prefers-reduced-motion: reduce){.k2-oval::before{animation:none}}
+@media (max-width: 960px){
+.k2{grid-template-columns:minmax(0,1fr);gap:0;padding:0 0 0 0}
+.k2-side{position:static;padding:30px 16px 0 16px}
+.k2-h{font-size:24px;margin-top:6px}
+.k2-tl,.k2-tips{display:none}
+.k2-panel{border:0;box-shadow:none;border-radius:0;padding:16px 16px 0 16px;min-height:calc(100vh - 140px);box-sizing:border-box}
+.k2-steps{order:-1;padding-bottom:14px}
+.k2-s > span:last-child{display:none}
+.k2-cur > span:last-child{display:inline}
+.k2-body{min-height:0;flex-grow:1;padding-top:24px}
+.k2-ph{font-size:18px}
+.k2-docs{grid-template-columns:minmax(0,1fr);gap:8px}
+.k2-doc{height:54px}
+.k2-up{height:128px}
+.k2-qr{display:none}
+.k2-oval{width:150px;height:184px}
+.k2-ups{grid-template-columns:minmax(0,1fr);gap:14px;margin-top:20px}
+.k2-up{height:156px;gap:4px}
+.k2-ui{width:42px;height:42px;margin-bottom:8px}
+.k2-up b{font-size:15.5px}
+.k2-up > span:last-child{font-size:13px}
+.k2-foot{position:sticky;bottom:0;background:#FFFFFF;margin:0 -16px;padding:12px 16px;border-top:1.5px solid #EEF1F7}
+.k2-back{width:48px;padding:0;flex-shrink:0}
+.k2-back span{display:none}
+.k2-go{flex-grow:1;justify-content:space-between}
+}
+.tk-sec.tk-sum{background:#F1F3F8;color:#4A5578;padding:0 13px}
+@media (max-width: 960px){.tk-sec.tk-sum{width:auto;padding:0 12px;font-size:12px;height:30px}.tk-sec.tk-sum span{display:inline}}
+.tk-root{position:relative;isolation:isolate}
+.tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/6acc9dd1cd600c17d2fd6381a3069aaa) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
+@media (max-width: 760px){.tk-scene{height:240px;background-size:250% auto;background-position:52% 100%}}
+.kx-err{display:flex;align-items:center;gap:6px;margin:8px 0 0 0;font-size:13.5px;line-height:1.4;color:#B42318}.kx-err svg{flex-shrink:0}
+.k2-up.k2-bad{border-color:#D92D20;border-style:dashed;background:#FFF8F7}
+.k2-up.k2-bad b{color:#B42318}
+</style>
+</helmet>
+<div class="tk-root">
+<div class="tk-scene" aria-hidden="true"></div>
+<header class="tk-top">
+<a href="CR-RDY-001.dc.html" class="lp-x" aria-label="Close and go back to readiness"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
+<div class="lp-title"><span class="lp-t1">Verify your identity</span><span class="lp-t2">Readiness · task 1 of 5</span></div>
+<span style="flex-grow: 1"></span>
+<span class="tk-sec tk-sum"><span>Powered by Sumsub</span></span>
+</header>
+<main class="k2">
+<aside class="k2-side">
+
+<h1 class="k2-h">{{sideH}}</h1>
+
+<span class="sec-h k2-tl">Tips</span>
+<ul class="k2-tips"><sc-for list="{{tips}}" as="t" hint-placeholder-count="3"><li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>{{t}}</span></li></sc-for></ul>
+</aside>
+<section class="k2-panel" aria-label="Sumsub verification">
+<ol class="k2-steps"><sc-for list="{{steps}}" as="s" hint-placeholder-count="4"><li class="k2-s {{s.cls}}"><span class="k2-sd">{{s.n}}</span><span>{{s.label}}</span></li></sc-for></ol>
+<div class="k2-body">
+<sc-if value="{{s0}}" hint-placeholder-val="{{true}}">
+<h2 class="k2-ph">Choose your document</h2>
+<label class="ob-lab" for="k2-c" style="margin-top: 14px">Issuing country</label>
+<div class="ob-sel k2-sel"><select id="k2-c" class="ob-f"><option selected>Nigeria</option><option>Ghana</option><option>Kenya</option><option>South Africa</option><option>United Kingdom</option><option>Other</option></select><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></div>
+<span class="ob-lab" style="margin-top: 14px">Document type</span>
+<div class="k2-docs" role="radiogroup" aria-label="Document type"><button type="button" role="radio" class="k2-doc {{d0}}" aria-checked="{{da0}}" onClick="{{dp0}}"><span class="k2-di"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"></rect><circle cx="12" cy="10" r="3"></circle><path d="M9 16h6"></path></svg></span><span>Passport</span><span class="xb-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" role="radio" class="k2-doc {{d1}}" aria-checked="{{da1}}" onClick="{{dp1}}"><span class="k2-di"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><circle cx="9" cy="11" r="2.2"></circle><path d="M5.8 16a3.4 3.4 0 0 1 6.4 0M14.5 10h4M14.5 13.5h3"></path></svg></span><span>National ID card</span><span class="xb-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" role="radio" class="k2-doc {{d2}}" aria-checked="{{da2}}" onClick="{{dp2}}"><span class="k2-di"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><path d="M7 15h4M7 11h10"></path></svg></span><span>Driver’s licence</span><span class="xb-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" role="radio" class="k2-doc {{d3}}" aria-checked="{{da3}}" onClick="{{dp3}}"><span class="k2-di"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7"></path><path d="M6 10v10h12V10"></path></svg></span><span>Residence permit</span><span class="xb-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div>
+</sc-if>
+<sc-if value="{{s1}}" hint-placeholder-val="{{false}}">
+<h2 class="k2-ph">Photos of your national ID card</h2>
+<div class="k2-ups">
+<button type="button" class="k2-up {{fCls}}" onClick="{{addF}}"><span class="k2-ui">{{fIcon}}</span><b>{{fHead}}</b><span>{{fSub}}</span></button>
+<button type="button" class="k2-up {{bCls}}" onClick="{{addB}}"><span class="k2-ui">{{bIcon}}</span><b>{{bHead}}</b><span>{{bSub}}</span></button>
+</div>
+<sc-if value="{{bErr}}" hint-placeholder-val="{{false}}"><p class="kx-err" role="alert"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5"></path><path d="M12 16.2v.2"></path></svg>Add a photo of the back of your ID to continue.</p></sc-if>
+<div class="k2-qr"><svg viewBox="0 0 21 21" width="56" height="56" fill="#0B1433" aria-hidden="true"><rect x="0" y="7" width="1" height="1"></rect><rect x="0" y="10" width="1" height="1"></rect><rect x="0" y="12" width="1" height="1"></rect><rect x="1" y="7" width="1" height="1"></rect><rect x="1" y="11" width="1" height="1"></rect><rect x="1" y="12" width="1" height="1"></rect><rect x="3" y="9" width="1" height="1"></rect><rect x="3" y="10" width="1" height="1"></rect><rect x="4" y="9" width="1" height="1"></rect><rect x="4" y="11" width="1" height="1"></rect><rect x="5" y="7" width="1" height="1"></rect><rect x="5" y="10" width="1" height="1"></rect><rect x="5" y="12" width="1" height="1"></rect><rect x="6" y="7" width="1" height="1"></rect><rect x="6" y="11" width="1" height="1"></rect><rect x="6" y="12" width="1" height="1"></rect><rect x="8" y="0" width="1" height="1"></rect><rect x="8" y="4" width="1" height="1"></rect><rect x="8" y="5" width="1" height="1"></rect><rect x="8" y="9" width="1" height="1"></rect><rect x="8" y="10" width="1" height="1"></rect><rect x="8" y="14" width="1" height="1"></rect><rect x="8" y="15" width="1" height="1"></rect><rect x="8" y="19" width="1" height="1"></rect><rect x="8" y="20" width="1" height="1"></rect><rect x="9" y="1" width="1" height="1"></rect><rect x="9" y="4" width="1" height="1"></rect><rect x="9" y="6" width="1" height="1"></rect><rect x="9" y="9" width="1" height="1"></rect><rect x="9" y="11" width="1" height="1"></rect><rect x="9" y="14" width="1" height="1"></rect><rect x="9" y="16" width="1" height="1"></rect><rect x="9" y="19" width="1" height="1"></rect><rect x="10" y="0" width="1" height="1"></rect><rect x="10" y="2" width="1" height="1"></rect><rect x="10" y="5" width="1" height="1"></rect><rect x="10" y="7" width="1" height="1"></rect><rect x="10" y="10" width="1" height="1"></rect><rect x="10" y="12" width="1" height="1"></rect><rect x="10" y="15" width="1" height="1"></rect><rect x="10" y="17" width="1" height="1"></rect><rect x="10" y="20" width="1" height="1"></rect><rect x="11" y="1" width="1" height="1"></rect><rect x="11" y="2" width="1" height="1"></rect><rect x="11" y="6" width="1" height="1"></rect><rect x="11" y="7" width="1" height="1"></rect><rect x="11" y="11" width="1" height="1"></rect><rect x="11" y="12" width="1" height="1"></rect><rect x="11" y="16" width="1" height="1"></rect><rect x="11" y="17" width="1" height="1"></rect><rect x="13" y="0" width="1" height="1"></rect><rect x="13" y="4" width="1" height="1"></rect><rect x="13" y="5" width="1" height="1"></rect><rect x="13" y="9" width="1" height="1"></rect><rect x="13" y="10" width="1" height="1"></rect><rect x="13" y="14" width="1" height="1"></rect><rect x="13" y="15" width="1" height="1"></rect><rect x="13" y="19" width="1" height="1"></rect><rect x="13" y="20" width="1" height="1"></rect><rect x="14" y="9" width="1" height="1"></rect><rect x="14" y="11" width="1" height="1"></rect><rect x="14" y="14" width="1" height="1"></rect><rect x="14" y="16" width="1" height="1"></rect><rect x="14" y="19" width="1" height="1"></rect><rect x="15" y="7" width="1" height="1"></rect><rect x="15" y="10" width="1" height="1"></rect><rect x="15" y="12" width="1" height="1"></rect><rect x="15" y="15" width="1" height="1"></rect><rect x="15" y="17" width="1" height="1"></rect><rect x="15" y="20" width="1" height="1"></rect><rect x="16" y="7" width="1" height="1"></rect><rect x="16" y="11" width="1" height="1"></rect><rect x="16" y="12" width="1" height="1"></rect><rect x="16" y="16" width="1" height="1"></rect><rect x="16" y="17" width="1" height="1"></rect><rect x="18" y="9" width="1" height="1"></rect><rect x="18" y="10" width="1" height="1"></rect><rect x="18" y="14" width="1" height="1"></rect><rect x="18" y="15" width="1" height="1"></rect><rect x="18" y="19" width="1" height="1"></rect><rect x="18" y="20" width="1" height="1"></rect><rect x="19" y="9" width="1" height="1"></rect><rect x="19" y="11" width="1" height="1"></rect><rect x="19" y="14" width="1" height="1"></rect><rect x="19" y="16" width="1" height="1"></rect><rect x="19" y="19" width="1" height="1"></rect><rect x="20" y="7" width="1" height="1"></rect><rect x="20" y="10" width="1" height="1"></rect><rect x="20" y="12" width="1" height="1"></rect><rect x="20" y="15" width="1" height="1"></rect><rect x="20" y="17" width="1" height="1"></rect><rect x="20" y="20" width="1" height="1"></rect><rect x="0.5" y="0.5" width="6" height="6" fill="none" stroke="#0B1433" stroke-width="1"></rect><rect x="2" y="2" width="3" height="3"></rect><rect x="14.5" y="0.5" width="6" height="6" fill="none" stroke="#0B1433" stroke-width="1"></rect><rect x="16" y="2" width="3" height="3"></rect><rect x="0.5" y="14.5" width="6" height="6" fill="none" stroke="#0B1433" stroke-width="1"></rect><rect x="2" y="16" width="3" height="3"></rect></svg><span><b><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M11 18.5h2"></path></svg>Use your phone’s camera</b><span>Scan this code to take photos on your phone. Keep this page open.</span></span></div>
+</sc-if>
+<sc-if value="{{s2}}" hint-placeholder-val="{{false}}">
+<h2 class="k2-ph">Liveness check</h2>
+<p class="k2-pp">Look at the camera and follow the prompts. It confirms you’re a real person and matches you to your document.</p>
+<div class="k2-face {{lvCls}}"><span class="k2-oval"><span class="k2-sil"><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="4"></circle><path d="M4.5 20a7.5 7.5 0 0 1 15 0"></path></svg></span><span class="k2-ok"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></span><span class="k2-fl">{{lvLabel}}</span></div>
+</sc-if>
+<sc-if value="{{s3}}" hint-placeholder-val="{{false}}">
+<h2 class="k2-ph">Review and submit</h2>
+<p class="k2-pp">Sumsub compares your photos and selfie with your ID. Most checks finish within minutes.</p>
+<ul class="k2-rv">
+<li><span class="k2-ri"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><circle cx="9" cy="11" r="2.2"></circle><path d="M5.8 16a3.4 3.4 0 0 1 6.4 0M14.5 10h4M14.5 13.5h3"></path></svg></span><span class="k2-rt"><b>National ID card</b><span>Issued in Nigeria</span></span><button type="button" class="k2-ed" onClick="{{to0}}">Edit</button></li>
+<li><span class="k2-ri"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"></rect><path d="M8.5 7 10 4.5h4L15.5 7"></path><circle cx="12" cy="13.5" r="3.5"></circle></svg></span><span class="k2-rt"><b>Front and back photos</b><span>Both clear and readable</span></span><button type="button" class="k2-ed" onClick="{{to1}}">Edit</button></li>
+<li><span class="k2-ri"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="4"></circle><path d="M4.5 20a7.5 7.5 0 0 1 15 0"></path></svg></span><span class="k2-rt"><b>Liveness check</b><span>Passed</span></span><span class="k2-ok2"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></li>
+</ul>
+</sc-if>
+</div>
+<footer class="k2-foot"><button type="button" class="ds-ghost k2-back" onClick="{{back}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></button><button type="button" class="ds-btn k2-go {{goCls}}" onClick="{{go}}"><span>{{goLabel}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></footer>
+
+</section>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const v = (props || {}).variant;
+    const step = v === 'review' ? 3 : (v === 'liveness' ? 2 : ((v === 'photos' || v === 'photosx') ? 1 : 0));
+    this.state = { step, doc: step > 0 ? 1 : -1, f: step > 0, b: step > 1, live: step > 2, perr: v === 'photosx' };
+  }
+  renderVals() {
+    const { step, doc, f, b, live, perr } = this.state; const bErr = perr && step === 1 && !b;
+    const L = ['Document', 'Photos', 'Liveness', 'Submit'];
+    const TIPS = [
+      ['Use an ID that isn’t expired', 'The name must match your Credalio account', 'Any of the four types works'],
+      ['All four corners visible', 'No glare or reflections', 'Not a photocopy or a screenshot'],
+      ['Good, even light on your face', 'Look straight at the camera', 'Follow the prompts as they appear'],
+      ['Check your details', 'You can go back to change anything', 'We’ll update you when the review is complete']
+    ];
+    const SH = ['Pick the ID you’ll use', 'Take clear photos', 'A quick selfie check', 'Check and submit'];
+    const ok = step === 0 ? doc >= 0 : (step === 1 ? (f && b) : (step === 2 ? live : true));
+    const v = {
+      stepN: step + 1, sideH: SH[step], tips: TIPS[step],
+      steps: L.map((label, i) => ({ label, n: i + 1, cls: i < step ? 'k2-done' : (i === step ? 'k2-cur' : '') })),
+      s0: step === 0, s1: step === 1, s2: step === 2, s3: step === 3, to0: () => this.setState({ step: 0 }), to1: () => this.setState({ step: 1 }),
+      fCls: f ? 'k2-upd' : '', fIcon: '', fHead: f ? 'Front added' : 'Front', fSub: f ? 'nin-front.jpg' : 'Upload or take a photo', addF: () => this.setState({ f: true }),
+      bErr, bCls: b ? 'k2-upd' : (bErr ? 'k2-bad' : ''), bIcon: '', bHead: b ? 'Back added' : 'Back', bSub: b ? 'nin-back.jpg' : 'Upload or take a photo', addB: () => this.setState({ b: true }),
+      lvCls: live ? 'k2-pass' : '', lvLabel: live ? 'Liveness check passed' : 'Ready when you are',
+      goCls: (ok || (step === 2 && !live)) ? '' : 'lp-off',
+      goLabel: step === 3 ? 'Submit' : (step === 2 ? (live ? 'Continue' : 'Start check') : 'Continue'),
+      go: () => { if (step === 2 && !live) { this.setState({ live: true }); return; } if (step === 3) { window.location.href = 'CR-KYC-003.dc.html'; return; } if (ok && step < 3) this.setState({ step: step + 1 }); },
+      back: () => { if (step > 0) this.setState({ step: step - 1 }); }
+    };
+    for (let i = 0; i < 4; i++) { v['d' + i] = doc === i ? 'xb-on' : ''; v['da' + i] = doc === i ? 'true' : 'false'; v['dp' + i] = () => this.setState({ doc: i }); }
+    return v;
+  }
+}
+</script>
+</body>
+</html>

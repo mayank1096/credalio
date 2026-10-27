@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CR-CREATE-002B · Build from scratch</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}.ob-in3{animation:obIn .5s ease .16s both}.ob-in4{animation:obIn .5s ease .24s both}
+.ds-tok{height:44px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:7px;padding:0 14px 0 7px;border-radius:999px;background:linear-gradient(135deg,#FFFAEB,#FFF1CF);border:1.5px solid #F4D98E;font-size:14.5px;font-weight:600;color:#4A3300;text-decoration:none;box-shadow:0 6px 16px rgba(214,150,30,.12);transition:box-shadow .2s ease}
+.ds-tok:hover{box-shadow:0 8px 20px rgba(214,150,30,.24)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2,.ob-in3,.ob-in4{animation:none}}
+@media (max-width: 960px){
+.ds-tok{padding:0 12px 0 6px;height:40px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn{justify-content:space-between}
+}
+@keyframes ndPulse{0%{box-shadow:0 0 0 0 rgba(22,82,240,.35)}100%{box-shadow:0 0 0 10px rgba(22,82,240,0)}}
+.sec-h{margin:0;font-size:13.5px;font-weight:600;color:#8A93AD}
+body{background:#FFFFFF}
+.xb-root{min-height:100vh;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433;position:relative;isolation:isolate}
+.xb-root::before{content:'';position:absolute;z-index:-1;left:0;right:0;top:64px;height:320px;pointer-events:none;background:linear-gradient(90deg,rgba(22,82,240,0) 0%,rgba(22,82,240,.14) 18%,rgba(140,175,255,.22) 34%,rgba(22,82,240,0) 50%,rgba(22,82,240,.14) 68%,rgba(140,175,255,.22) 84%,rgba(22,82,240,0) 100%);background-size:200% 100%;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.4) 50%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.4) 50%,transparent 100%);animation:fxFlow 12s linear infinite}
+@keyframes fxFlow{from{background-position:0% 0}to{background-position:-200% 0}}
+.xb-top{height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1.5px solid #EEF1F7;background:#FFFFFF}
+.xb-x{width:40px;height:40px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3A4566;text-decoration:none}
+.xb-x:hover{background:#F5F8FF;color:#0B1433}
+.xb-title{display:flex;align-items:baseline;gap:8px;min-width:0}
+.xb-t1{font-size:16px;font-weight:600;white-space:nowrap}
+.xb-t2{font-size:14px;color:#5B6582;white-space:nowrap}
+.xb-main{flex-grow:1;display:flex;justify-content:center;align-items:center;padding:clamp(32px,7vh,72px) 24px 48px 24px}
+.xb-col{width:min(860px,100%);display:flex;flex-direction:column;align-items:center;text-align:center}
+.xb-h1{margin:0;font-size:clamp(34px,5.4vh,46px);line-height:1.1;font-weight:600;letter-spacing:-0.035em}
+.xb-sub{margin:12px 0 0 0;max-width:560px;font-size:16.5px;line-height:1.55;color:#4A5578}
+.xb-fmts{margin-top:28px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.xb-f{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 14px 0 8px;box-sizing:border-box;border-radius:14px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14.5px;font-weight:500;cursor:pointer;transition:border-color .2s ease,background .2s ease,box-shadow .2s ease}
+.xb-f:hover{border-color:#AFC1F5}
+.xb-fi{width:30px;height:30px;border-radius:9px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.xb-ck{display:none;width:16px;height:16px;border-radius:50%;background:#1652F0;color:#FFFFFF;align-items:center;justify-content:center}
+.xb-on{border-color:#1652F0;background:#F5F8FF;color:#0E3BB8;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.xb-on .xb-fi{background:#FFFFFF}
+.xb-on .xb-ck{display:inline-flex}
+.xb-f:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.xb-route{margin-top:28px;width:100%;box-sizing:border-box;padding:22px 26px 20px 26px;border-radius:22px;background:rgba(255,255,255,.92);border:1.5px solid #E6EAF3;box-shadow:0 18px 44px rgba(22,82,240,.08);text-align:left}
+.xb-rh{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.xb-rn{font-size:13px;color:#5B6582}
+.xb-steps{list-style:none;margin:22px 0 4px 0;padding:0;display:flex;position:relative}
+.xb-steps::before{content:'';position:absolute;left:16px;right:16px;top:15px;height:3px;border-radius:3px;background:linear-gradient(90deg,#1652F0,#AFC1F5 30%,#E6EAF3 60%)}
+.xb-s{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;position:relative}
+.xb-s:first-child{align-items:flex-start;text-align:left}
+.xb-s:last-child{align-items:flex-end;text-align:right}
+.xb-sn{position:relative;z-index:1;width:32px;height:32px;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;background:#FFFFFF;color:#5B6582;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.xb-sl{font-size:13px;line-height:1.3;color:#3A4566;padding:0 2px}
+.xb-first .xb-sn{background:#1652F0;border-color:#1652F0;color:#FFFFFF;animation:ndPulse 2s ease-out infinite}
+.xb-first .xb-sl{color:#0B1433;font-weight:600}
+.xb-acts{margin-top:28px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.xb-alt{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:500;color:#3A4566;text-decoration:none}
+.xb-alt svg{color:#1652F0}
+.xb-alt:hover{color:#1652F0}
+@media (prefers-reduced-motion: reduce){.xb-root::before{animation:none}}
+@media (max-width: 960px){
+.xb-top{height:56px;padding:0 12px 0 6px;gap:8px}
+.xb-t2{display:none}
+.xb-main{align-items:flex-start;padding:36px 16px 28px 16px}
+.xb-col{align-items:stretch;text-align:left}
+.xb-h1{font-size:26px}
+.xb-sub{font-size:14.5px;margin-top:8px}
+.xb-fmts{margin:18px -16px 0 -16px;padding:0 16px;flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;scrollbar-width:none}
+.xb-fmts::-webkit-scrollbar{display:none}
+.xb-f{flex-shrink:0;height:42px;font-size:13.5px}
+.xb-route{margin-top:20px;padding:18px 16px;border-radius:18px}
+.xb-rn{font-size:12px}
+.xb-steps{flex-direction:column;margin-top:16px;gap:0}
+.xb-steps::before{left:13px;right:auto;top:14px;bottom:14px;width:3px;height:auto;background:linear-gradient(180deg,#1652F0,#AFC1F5 30%,#E6EAF3 60%)}
+.xb-s,.xb-s:first-child,.xb-s:last-child{flex-direction:row;align-items:center;text-align:left;gap:14px;min-height:44px}
+.xb-sn{width:28px;height:28px;font-size:12px}
+.xb-sl{font-size:14px}
+.xb-acts{margin-top:18px;align-items:stretch}
+.xb-go{justify-content:space-between}
+.xb-alt{justify-content:center;font-size:14px}
+}
+@media (max-width: 960px){.xb-alt{position:relative}.xb-alt::after{content:'';position:absolute;left:-8px;right:-8px;top:50%;height:44px;transform:translateY(-50%)}}
+</style>
+</helmet>
+<div class="xb-root">
+<header class="xb-top">
+<a href="CR-CREATE-001.dc.html" class="xb-x" aria-label="Close and go back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
+<div class="xb-title"><span class="xb-t1">{{newTitle}}</span><span class="xb-t2">From scratch</span></div>
+<span style="flex-grow: 1"></span>
+<a href="#" class="ds-tok xb-tok" aria-label="20,000 Creio"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0; display: block"><defs><linearGradient id="xbca" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9A3"></stop><stop offset="0.45" stop-color="#F6C343"></stop><stop offset="1" stop-color="#D08A12"></stop></linearGradient><linearGradient id="xbcb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9CF5A"></stop><stop offset="1" stop-color="#E2A024"></stop></linearGradient></defs><circle cx="32" cy="34" r="29" fill="#B8740A" opacity="0.35"></circle><circle cx="32" cy="32" r="29" fill="url(#xbca)"></circle><circle cx="32" cy="32" r="22" fill="url(#xbcb)" stroke="#FFF1C2" stroke-opacity="0.7" stroke-width="1.5"></circle><path d="M32 18l2.9 9.3 9.3 2.9-9.3 2.9L32 42.4l-2.9-9.3-9.3-2.9 9.3-2.9z" fill="#FFF8DF"></path><ellipse cx="23" cy="19" rx="9" ry="5" fill="#FFFFFF" opacity="0.35" transform="rotate(-30 23 19)"></ellipse></svg><span>20K</span></a>
+</header>
+<main class="xb-main">
+<div class="xb-col">
+<h1 class="xb-h1 ob-in">Build it your way.</h1>
+<p class="xb-sub ob-in2">Build each part yourself. Ask Nova for help if you need it.</p>
+<div class="xb-fmts ob-in2" role="radiogroup" aria-label="What are you building?"><button type="button" role="radio" class="xb-f {{c0}}" aria-checked="{{a0}}" onClick="{{p0}}"><span class="xb-fi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><span>Course</span><span class="xb-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" role="radio" class="xb-f {{c1}}" aria-checked="{{a1}}" onClick="{{p1}}"><span class="xb-fi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg></span><span>Professional certification</span><span class="xb-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" role="radio" class="xb-f {{c2}}" aria-checked="{{a2}}" onClick="{{p2}}"><span class="xb-fi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2.5"></circle><circle cx="18" cy="5" r="2.5"></circle><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"></path></svg></span><span>Career path</span><span class="xb-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" role="radio" class="xb-f {{c3}}" aria-checked="{{a3}}" onClick="{{p3}}"><span class="xb-fi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M7.5 14h3M7.5 17h6"></path></svg></span><span>Learning program</span><span class="xb-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div>
+<section class="xb-route ob-in3" aria-label="Your route">
+<div class="xb-rh"><span class="sec-h">Your route</span><span class="xb-rn">{{count}} steps · save and come back anytime</span></div>
+<ol class="xb-steps">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="8"><li class="xb-s {{s.cls}}"><span class="xb-sn">{{s.n}}</span><span class="xb-sl">{{s.label}}</span></li></sc-for>
+</ol>
+</section>
+<div class="xb-acts ob-in4">
+<a href="#" class="ds-btn xb-go"><span>Start setup</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+<a href="CR-CREATE-002A.dc.html" class="xb-alt"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg>Rather sketch it with Nova first?</a>
+</div>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { f: 0 }; }
+  renderVals() {
+    const F = [
+      ['Course', 'course', 'Build a structured learning experience around a subject or skill.', ['Course setup', 'Delivery', 'Collaboration', 'Basics', 'Audience', 'Skills', 'Outcomes', 'Curriculum']],
+      ['Professional certification', 'certification', 'Assess and verify professional competencies.', ['Certification setup', 'Purpose', 'Authority', 'Collaboration', 'Standard', 'Competencies', 'Assessment blueprint']],
+      ['Career path', 'career path', 'Create a structured journey toward a career outcome.', ['Path setup', 'Starting point', 'Destination', 'Collaboration', 'Competency map', 'Journey builder']],
+      ['Learning program', 'program', 'Deliver coordinated learning over a structured period.', ['Program setup', 'Delivery', 'Duration', 'Collaboration', 'Design', 'Program builder', 'Cohorts']]
+    ];
+    const f = this.state.f, cur = F[f];
+    const v = {
+      newTitle: 'New ' + cur[1], lower: cur[1], desc: cur[2], count: cur[3].length,
+      steps: cur[3].map((label, i) => ({ label, n: i + 1, cls: i === 0 ? 'xb-first' : '' }))
+    };
+    for (let i = 0; i < 4; i++) { v['c' + i] = i === f ? 'xb-on' : ''; v['a' + i] = i === f ? 'true' : 'false'; v['p' + i] = () => this.setState({ f: i }); }
+    return v;
+  }
+}
+</script>
+</body>
+</html>

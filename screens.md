@@ -1,0 +1,370 @@
+# Credalio screen checklist
+
+Source: client reference canvas, snapshot 2026-10-02 (`reference/project/canvas.json`).
+Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when built.
+**Active: 182 screens → 364 frames.**
+
+
+## 00. Log in + password reset (client DxY95gKeGK4wSLyrTGp5Tg, 10)
+
+- [x] D [x] M  `LOG-001` Log in
+- [x] D [x] M  `LOG-001a` Check your details
+- [x] D [x] M  `LOG-001b` Wrong email or password
+- [x] D [x] M  `LOG-001c` Email not confirmed
+- [x] D [x] M  `LOG-001d` Too many attempts
+- [x] D [x] M  `LOG-002` Forgot your password
+- [x] D [x] M  `LOG-002b` Reset link sent
+- [x] D [x] M  `LOG-003` Choose a new password
+- [x] D [x] M  `LOG-003b` Password updated
+- [x] D [x] M  `LOG-003c` Reset link expired
+
+## 01. Creator onboarding: sign up → creator type → account → check inbox → email verified → password → about you → expertise → Copilot → ready (12)
+
+- [x] D [x] M  `CR-ONB-001` CR-ONB-001 · Choose participation: Create
+- [x] D [x] M  `CR-ONB-002` CR-ONB-002 · Creator type
+- [x] D [x] M  `CR-ONB-002S` CR-ONB-002S · With an institution / As an organisation: coming soon
+- [x] D [x] M  `CR-ONB-003` CR-ONB-003 · Create account: email first, Google & Apple below, no password
+- [x] D [x] M  `CR-ONB-003b` CR-ONB-003 · Check your inbox (verification link)
+- [x] D [x] M  `CR-ONB-003v` CR-ONB-003V · Email verified → create password
+- [x] D [x] M  `CR-ONB-003c` CR-ONB-003 · Link clicked → verified email captured, create password
+- [x] D [x] M  `CR-ONB-004` CR-ONB-004 · About you
+- [x] D [x] M  `CR-ONB-005` CR-ONB-005 · Creator profile & expertise
+- [x] D [x] M  `CR-ONB-006` CR-ONB-006 · Meet & name your Creator Copilot (knows your expertise)
+- [x] D [x] M  `CR-ONB-007` CR-ONB-007 · Copilot working style
+- [x] D [x] M  `CR-ONB-008` CR-ONB-008 · Creator setup complete → Dashboard (no auto course)
+
+## 02. Start creating: first dashboard → choose how to start → Copilot or scratch (5)
+
+- [x] D [x] M  `CR-DASH-NEW` Creator Dashboard entry: choose what to create (full dashboard next batch)
+- [x] D [x] M  `CR-CREATE-001` CR-CREATE-001 · Start with your Copilot or from scratch
+- [x] D [x] M  `CR-CREATE-002A` CR-CREATE-002A · Start with Copilot: the outcome question lives here
+- [x] D [x] M  `CR-CREATE-002Ab` CR-CREATE-002A · Copilot proposal: review & accept before the Studio
+- [x] D [x] M  `CR-CREATE-002B` CR-CREATE-002B · Build from scratch → existing setup flow
+
+## 03. Readiness, Creator Centre & Orientation (10)
+
+- [x] D [x] M  `CR-RDY-001` CR-RDY-001 · Readiness Centre (in review, action required, in progress)
+- [x] D [x] M  `CR-RDY-001s` CR-RDY-001 · Readiness Centre: new creator
+- [x] D [x] M  `CR-CTR-001` Creator Centre (orientation is one part)
+- [x] D [x] M  `CR-ORI-001` CR-ORI-001 · Creator Orientation home
+- [x] D [x] M  `CR-ORI-002` CR-ORI-002 · Orientation module
+- [x] D [x] M  `CR-ORI-003` CR-ORI-003 · Orientation lesson
+- [x] D [x] M  `CR-ORI-004` CR-ORI-004 · Quick knowledge check (immediate feedback)
+- [x] D [x] M  `CR-ORI-005` CR-ORI-005 · Scenario exercise: AI-generated lesson
+- [x] D [x] M  `CR-ORI-006` CR-ORI-006 · Module complete
+- [x] D [x] M  `CR-ORI-007` CR-ORI-007 · Orientation complete → Readiness updated
+
+## 04. Readiness task 1 · KYC: verify identity with Sumsub → next task (9)
+
+- [x] D [x] M  `CR-KYC-001` KYC-001 · Verify identity: before you start (Sumsub)
+- [x] D [x] M  `CR-KYC-002` KYC-002 · Sumsub WebSDK: choose document
+- [x] D [x] M  `CR-KYC-002b` KYC-002 · Sumsub WebSDK: upload photos
+- [x] D [x] M  `CR-KYC-002c` KYC-002 · Sumsub WebSDK: liveness check
+- [x] D [x] M  `CR-KYC-002d` KYC-002 · Sumsub WebSDK: review & submit
+- [x] D [x] M  `CR-KYC-003` KYC-003 · In review → next task
+- [x] D [x] M  `CR-KYC-004` KYC-004 · Verified → next task
+- [x] D [x] M  `CR-KYC-005` KYC-005 · Action required: retake photos
+- [x] D [x] M  `CR-KYC-006` KYC-006 · Not verified: contact support
+
+## 05. Readiness task 2 · Credentials & expertise: upload or verify online (AWS, Microsoft, Credly…) → next task (10)
+
+- [x] D [x] M  `CR-CRED-001` CRED-001 · Your credentials & expertise
+- [x] D [x] M  `CR-CRED-002` CRED-002 · Add a credential: choose type
+- [x] D [x] M  `CR-CRED-002a` CRED-002 · Degree or diploma (upload)
+- [x] D [x] M  `CR-CRED-002b` CRED-002 · AWS certification by credential ID (checked online)
+- [x] D [x] M  `CR-CRED-002c` CRED-002 · Certification by badge link (Credly)
+- [x] D [x] M  `CR-CRED-002d` CRED-002 · Licence or membership
+- [x] D [x] M  `CR-CRED-002e` CRED-002 · Work experience
+- [x] D [x] M  `CR-CRED-002f` CRED-002 · Other evidence (portfolio, publications)
+- [x] D [x] M  `CR-CRED-003` CRED-003 · Verified online instantly → next task
+- [x] D [x] M  `CR-CRED-003b` CRED-003 · Submitted for manual review → next task
+
+## 06. Readiness task 4 · Creator Policies: read and accept → next task (2)
+
+- [x] D [x] M  `CR-POL-001` POL-001 · Creator Policies: read and accept each
+- [x] D [x] M  `CR-POL-002` POL-002 · All policies accepted → next task
+
+## 07. Dashboard states (priority order) (5)
+
+- [x] D [x] M  `CR-DASH-S01` STATE-01 · New creator: create, readiness, Copilot (= CR-DASH-NEW)
+- [x] D [x] M  `CR-DASH-S02` STATE-02 · Draft started: Continue dominates (no start choice again)
+- [x] D [x] M  `CR-DASH-S03` STATE-03 · Collaboration invitation in Needs Your Attention
+- [x] D [x] M  `CR-DASH-S04` STATE-04 · Assigned contributor: My Assigned Work prominent
+- [x] D [x] M  `CR-DASH-S05` STATE-05 · Readiness required: exact blocking requirement
+
+## 08. Dashboard states, notifications & navigation (10)
+
+- [x] D [x] M  `CR-DASH-S06` STATE-06 · In validation: case status
+- [x] D [x] M  `CR-DASH-S07` STATE-07 · Validation action required rises to top
+- [x] D [x] M  `CR-DASH-S08` STATE-08 · Published: learners, discussions, earnings appear
+- [x] D [x] M  `CR-DASH-S09` STATE-09 · Established creator
+- [x] D [x] M  `CR-NOT-001` CR-NOT-001 · Notification Centre (categories, deep links)
+- [x] D [x] M  `CR-NOT-bell` Notification bell dropdown
+- [x] D [x] M  `CR-HOME-EXP` CREATE · My Learning Experiences
+- [x] D [x] M  `CR-HOME-NEW` CREATE · Create New
+- [x] D [x] M  `CR-HOME-SET` Settings · AI preferences (Copilot name & style)
+- [x] D [x] M  `CR-HOME-SOON` Not-yet-built destination (example: Validation Centre)
+
+## 09. Collaboration, assigned work & contributor declarations (9)
+
+- [x] D [x] M  `CR-COL-001` CR-COL-001 · Invitation notification
+- [x] D [x] M  `CR-COL-002` CR-COL-002 · Review invitation (Accept / Decline / Ask)
+- [x] D [x] M  `CR-COL-003` CR-COL-003 · Collaboration consent (not the validation declaration)
+- [x] D [x] M  `CR-COL-004` CR-COL-004 · Invitation accepted
+- [x] D [x] M  `CR-ASG-001` WORK · Assigned to Me (across experiences)
+- [x] D [x] M  `CR-DEC-001` CR-DEC-001 · Contributor declaration request (Mary)
+- [x] D [x] M  `CR-DEC-002` CR-DEC-002 · Contributor declaration (Mary signs her own)
+- [x] D [x] M  `CR-DEC-003` CR-DEC-003 · Declaration status: blocked while pending
+- [x] D [x] M  `CR-DEC-004` CR-DEC-004 · Lead Creator submission declaration
+
+## 10. Validation: Validation Centre lists cases; each workspace opens inside the Studio (6)
+
+- [x] D [x] M  `CR-VAL-MC-001` CR-VAL-MC-001 · Validation Centre: list of cases (each opens in its Studio)
+- [x] D [x] M  `CR-VAL-WS-lead` Validation Workspace inside Course Studio · Lead Creator sees every request
+- [x] D [x] M  `CR-VAL-WS-mary` Validation Workspace inside Course Studio · Mary sees only hers
+- [x] D [x] M  `CR-VAL-MC-002` CR-VAL-MC-002 · Routed request assigned to Mary (in the Studio)
+- [x] D [x] M  `CR-VAL-MC-003` CR-VAL-MC-003 · Mary responds with evidence (in the Studio)
+- [x] D [x] M  `CR-VAL-MC-002L` Lead Creator views Mary’s request (read-only, in the Studio)
+
+## 11. Credit Wallet (8)
+
+- [x] D [x] M  `CR-WAL-001` CR-WAL-001 · Credit Wallet
+- [x] D [x] M  `CR-WAL-002` CR-WAL-002 · Fund Wallet: choose Credits
+- [x] D [x] M  `CR-WAL-003` CR-WAL-003 · Payment method (supported rails)
+- [x] D [x] M  `CR-WAL-004` CR-WAL-004 · Payment summary
+- [x] D [x] M  `CR-WAL-005` CR-WAL-005 · Processing (no duplicate payment)
+- [x] D [x] M  `CR-WAL-005f` CR-WAL-005 · Payment failed, not charged
+- [x] D [x] M  `CR-WAL-006` CR-WAL-006 · Wallet funded
+- [x] D [x] M  `CR-WAL-007` CR-WAL-007 · Transaction history (filters)
+
+## 12. Payments & revalidation (9)
+
+- [x] D [x] M  `CR-PAY-001` CR-PAY-001 · Validation quote (reusable)
+- [x] D [x] M  `CR-PAY-002` CR-PAY-002 · Balance check: Additional Credits Required
+- [x] D [x] M  `CR-PAY-002b` CR-PAY-002 · Balance check: enough Credits
+- [x] D [x] M  `CR-PAY-002f` Fund Wallet from the payment (shortfall covered)
+- [x] D [x] M  `CR-PAY-002r` Wallet funded → Return to Validation Payment
+- [x] D [x] M  `CR-PAY-003` CR-PAY-003 · Payment confirmation (returned automatically)
+- [x] D [x] M  `CR-PAY-003s` CR-PAY-003 · Payment successful → Validation case created
+- [x] D [x] M  `CR-REVAL-001` Revalidation: content update → assessment (Standard)
+- [x] D [x] M  `CR-REVAL-002` Revalidation quote: same wallet & payment
+
+## 13. Earnings & payouts: PayPal, Payoneer, Tipalti or Direct Deposit · paid automatically each month once the balance reaches $25 (23)
+
+- [x] D [x] M  `CR-EARN-001` CR-EARN-001 · Earnings & next automatic payout
+- [x] D [x] M  `CR-EARN-001b` CR-EARN-001 · Below the $25 minimum (carries over)
+- [x] D [x] M  `CR-PAYO-001` CR-PAYO-001 · Payout method: choose PayPal, Payoneer, Tipalti or Direct Deposit
+- [x] D [x] M  `CR-PAYO-001a` CR-PAYO-001 · PayPal: connect
+- [x] D [x] M  `CR-PAYO-001b` CR-PAYO-001 · PayPal: log in & approve (handoff)
+- [x] D [x] M  `CR-PAYO-001c` CR-PAYO-001 · Payoneer: bank or prepaid Mastercard (handoff)
+- [x] D [x] M  `CR-PAYO-001d` CR-PAYO-001 · Tipalti: secure bank & tax form (handoff)
+- [x] D [x] M  `CR-PAYO-001e` CR-PAYO-001 · Direct Deposit (ACH): U.S. bank details
+- [x] D [x] M  `CR-PAYO-001g` CR-PAYO-001 · PayPal connected & verified
+- [x] D [x] M  `CR-PAYO-001p` CR-PAYO-001 · Payoneer linked: verification pending
+- [x] D [x] M  `CR-PAYO-005` CR-PAYO-005 · Monthly payout status: Scheduled → Processing → Paid
+- [x] D [x] M  `CR-PAYO-005a` CR-PAYO-005 · Payout status: action required
+- [x] D [x] M  `CR-PAYO-006` CR-PAYO-006 · Payout history
+- [x] D [x] M  `CR-EARN-001n` CR-EARN-001 · Earnings with no payout method yet
+- [x] D [x] M  `CR-PAYO-001h` CR-PAYO-001 · Payoneer: connect
+- [x] D [x] M  `CR-PAYO-001i` CR-PAYO-001 · Tipalti: open setup
+- [x] D [x] M  `CR-PAYO-001j` CR-PAYO-001 · Direct Deposit: routing number invalid (error)
+- [x] D [x] M  `CR-PAYO-001k` CR-PAYO-001 · Direct Deposit submitted: test deposit pending
+- [x] D [x] M  `CR-PAYO-001m` CR-PAYO-001 · Tipalti submitted: verification pending
+- [x] D [x] M  `CR-PAYO-001n` CR-PAYO-001 · Payout method: action required
+- [x] D [x] M  `CR-PAYO-005f` CR-PAYO-005 · Monthly payout: failed
+- [x] D [x] M  `CR-PAYO-005p` CR-PAYO-005 · Monthly payout: paid
+- [x] D [x] M  `CR-PAYO-005r` CR-PAYO-005 · Monthly payout: returned by bank
+
+## 14. Course Overview & Discussions (6)
+
+- [x] D [x] M  `CR-COURSE-OV-001` CR-COURSE-OV-001 · Course Overview (canonical creator summary)
+- [x] D [x] M  `CR-DISC-001` CR-DISC-001 · Discussions
+- [x] D [x] M  `CR-DISC-001u` CR-DISC-001 · Discussions: Unanswered
+- [x] D [x] M  `CR-DISC-002` CR-DISC-002 · Discussion thread (Creator badge, answer)
+- [x] D [x] M  `CR-DISC-002b` CR-DISC-002 · Unanswered question → reply
+- [x] D [x] M  `CR-DISC-003` CR-DISC-003 · Discussion notification → deep link
+
+## 15. Calendar, availability & presence (8)
+
+- [x] D [x] M  `CR-CAL-001` CR-CAL-001 · Calendar: month
+- [x] D [x] M  `CR-CAL-001w` CR-CAL-001 · Calendar: week (unavailable hours shaded)
+- [x] D [x] M  `CR-CAL-002` CR-CAL-002 · Event detail (role-based actions)
+- [x] D [x] M  `CR-CAL-001d` CR-CAL-001 · Calendar: day
+- [x] D [x] M  `CR-CAL-001a` CR-CAL-001 · Calendar: agenda
+- [x] D [x] M  `CR-CAL-003` CR-CAL-003 · Weekly availability (multiple windows)
+- [x] D [x] M  `CR-CAL-004` CR-CAL-004 · Availability exceptions
+- [x] D [x] M  `CR-CAL-005` CR-CAL-005 · Presence & visibility
+
+## 16. Learner Support, Learners & Analytics (10)
+
+- [x] D [x] M  `CR-SUP-001` WORK · Learner Support inbox
+- [x] D [x] M  `CR-SUP-002` Learner Support conversation (escalated from AI Coach)
+- [x] D [x] M  `CR-LRN-001` LRN-001 · Learners
+- [x] D [x] M  `CR-LRN-002` LRN-002 · Learner detail (need-to-know)
+- [x] D [x] M  `CR-ANA-001` ANA-001 · Analytics overview
+- [x] D [x] M  `CR-ANA-004` ANA-004 · Export report (CSV)
+- [x] D [x] M  `CR-ANA-002` ANA-002 · Experience analytics: Course
+- [x] D [x] M  `CR-ANA-002c` ANA-002 · Experience analytics: Certification
+- [x] D [x] M  `CR-ANA-002p` ANA-002 · Experience analytics: Learning Program
+- [x] D [x] M  `CR-ANA-003` ANA-003 · Compare courses
+- [x] D [x] M  `CR-ANA-002path` ANA-002 · Experience analytics: Career Path
+- [x] D [x] M  `CR-ANA-003c` ANA-003 · Compare cohorts
+
+## 17. Creator Profile · My Organizations (coming soon) (5)
+
+- [x] D [x] M  `CR-PROF-001` PROF-001 · Creator Profile management
+- [x] D [x] M  `CR-PROF-001c` PROF-001 · Credentials (verification status)
+- [x] D [x] M  `CR-PROF-001e` PROF-001 · Expertise tab
+- [x] D [x] M  `CR-PROF-001v` PROF-001 · Public profile preview
+- [x] D [x] M  `CR-PROF-002` PROF-002 · Public Creator Profile
+- [x] D [x] M  `CR-ORG-SOON` My Organizations: coming soon
+
+## 18. Settings (8)
+
+- [x] D [x] M  `CR-SET-001` SET-001/002 · Settings: Account
+- [x] D [x] M  `CR-SET-002d` SET-002 · Delete account: obligations first
+- [x] D [x] M  `CR-SET-003` SET-003 · Security
+- [x] D [x] M  `CR-SET-004` SET-004 · Notification preferences (matrix)
+- [x] D [x] M  `CR-SET-005` SET-005 · Privacy
+- [x] D [x] M  `CR-SET-006` SET-006 · Language & Region
+- [x] D [x] M  `CR-SET-007` SET-007 · AI Preferences (= CR-HOME-SET, copied into the Studio canvas)
+- [x] D [x] M  `CR-SET-008` Sign-in methods
+
+## 19. Copilot panel (CP-001 to CP-003), Search and Help & Support (10)
+
+- [x] D [x] M  `CR-AI-001` CP-001/002 · Copilot panel, context-aware (shows AI Token balance)
+- [x] D [x] M  `CR-AI-001a` CP-001 · Level 3 Act: Apply Changes / consequential action guided
+- [x] D [x] M  `CR-AI-003` CP-003 · Copilot history
+- [x] D [x] M  `CR-AI-001x` CP-001 · Copilot panel expanded (client CP-EXP)
+- [x] D [x] M  `CR-SEARCH-002` SEARCH-001/002 · Global search results for "SQL"
+- [x] D [x] M  `CR-SEARCH-EMPTY` SEARCH · No results
+- [x] D [x] M  `CR-HELP-001` HELP-001 · Help & Support home
+- [x] D [x] M  `CR-HELP-002` HELP-002 · Help article
+- [x] D [x] M  `CR-HELP-003` HELP-003 · Contact Support
+- [x] D [x] M  `CR-HELP-003e` HELP-003 · Contact Support: missing fields (error)
+- [x] D [x] M  `CR-HELP-004` HELP-004 · Support ticket created
+- [x] D [x] M  `CR-HELP-005` HELP-005 · My support requests
+- [x] D [x] M  `CR-HELP-006` HELP-006 · Support conversation (ticket is the record)
+
+## 20. AI Tokens · Nova, Your Creator Copilot: overview, balance, buy (packages or custom amount), confirm, success (6)
+
+- [x] D [x] M  `AI-001` AI-001 · Nova: Your Creator Copilot · Overview (= CR-NOVA-001)
+- [x] D [x] M  `AI-001n` AI-001 · New creator, starting Creio balance (= CR-NOVA-001n)
+- [x] D [x] M  `AI-002` AI-002 / AI-009 · AI Tokens: balance & purchase history (detail)
+- [x] D [x] M  `AI-003` AI-003 · Buy AI Tokens (packages)
+- [x] D [x] M  `AI-003c` AI-003 · Custom amount (enter AI Tokens, Credits update live)
+- [x] D [x] M  `AI-003e` AI-003 · Custom amount below minimum (error) (= CR-CREIO-003e)
+- [x] D [x] M  `AI-004` AI-004 · Confirm AI Token purchase
+- [x] D [x] M  `AI-005` AI-005 · Purchase successful
+
+## 21. AI Tokens · Not enough Credits → existing Fund Wallet flow → back to purchase (4)
+
+- [x] D [x] M  `AI-006` AI-006 · Insufficient Credits → Fund Credit Wallet
+- [x] D [x] M  `AI-006b` AI-006 · Fund Wallet in AI context (existing flow)
+- [x] D [x] M  `AI-006c` AI-006 · Funded → Return to AI Token Purchase
+- [x] D [x] M  `AI-006d` AI-006 · Back at purchase: “Wallet funded. You’re back where you left off.”
+
+## 22. AI Tokens · Usage, preferences, low and depleted states, top-bar chip, estimates (8)
+
+- [x] D [x] M  `AI-007` AI-007 / AI-008 · AI Usage with filters & usage detail
+- [x] D [x] M  `AI-012` AI-012 · Copilot Preferences (= CR-AI-012, imports CR-HOME-SET; now in the Studio canvas)
+- [x] D [x] M  `AI-TOP` Top-bar AI Token chip & popover: Nova ✦ 72.4K
+- [x] D [x] M  `AI-010` AI-010 · Low AI Token balance (Copilot page)
+- [x] D [x] M  `AI-010b` AI-010 · Low balance in the top bar: Nova ✦ 8.2K · Low
+- [x] D [x] M  `AI-010c` AI-010 · Critical Creio balance (= CR-CREIO-010c)
+- [x] D [x] M  `AI-011` AI-011 · AI Tokens depleted (manual creation still works)
+- [x] D [x] M  `AI-011b` AI-011 · Copilot: not enough AI Tokens for this action
+- [x] D [x] M  `AI-EST` Large AI action: estimate before running (= CR-CREIO-EST)
+
+## 23. Account menu (avatar): status, profile, switch role between the roles you have, settings, sign out (3)
+
+- [x] D [x] M  `PM-001` PM-001 · Account menu: status, profile, switch role, settings
+- [x] D [x] M  `PM-002` PM-002 · Account menu for a creator with one role (no switcher)
+- [x] D [x] M  `PM-003` PM-003 · Switching role (Validator workspace opens)
+
+## 24. Message pop-ups: open the exact message · quick reply for Learner Support and Team Chat only (6)
+
+- [x] D [x] M  `MSG-001` MSG-001 · Message pop-ups: learner, team, validator (each opens the exact message)
+- [x] D [x] M  `MSG-002` MSG-002 · Quick reply to a learner from the pop-up
+- [x] D [x] M  `MSG-003` MSG-003 · Quick reply sent (added to the conversation)
+- [x] D [x] M  `MSG-004` MSG-004 · More than 3: collapsed into “+3 more · View all”
+- [x] D [x] M  `MSG-005` MSG-005 · Preview hidden (screen-sharing setting)
+- [x] D [x] M  `MSG-006` MSG-006 · Settings › Notifications: message pop-up preferences
+
+
+## Ignored (not designed)
+
+- Architecture reference (1)
+- Retired: manual payout requests (replaced by automatic monthly payouts) (3)
+- Retired: earlier verification screens (replaced by the readiness tasks above) (11)
+- Shared components (each board shows its default screen; the boards above use them) (3)
+- Retired: old onboarding component (replaced by the Creator onboarding row at the top) (1)
+- Moved to the Organizations canvas (safe to delete these cards) (11)
+
+## Link 2 · Orientation lessons (D3YR4Ee6ZP53iSMf3v6LQT, 52 screens)
+
+- [x] D [x] M  `ORI-M1-00` M1 · Welcome to Credalio: module overview
+- [x] D [x] M  `ORI-M1-L1` M1 · Lesson 1: What Credalio is for
+- [x] D [x] M  `ORI-M1-L2` M1 · Lesson 2: How creating on Credalio works
+- [x] D [x] M  `ORI-M1-K1` M1 · Knowledge check: unanswered
+- [x] D [x] M  `ORI-M1-K2` M1 · Knowledge check: correct answers
+- [x] D [x] M  `ORI-M1-K3` M1 · Knowledge check: incorrect answer (try again)
+- [x] D [x] M  `ORI-M1-DONE` M1 · Module complete
+- [x] D [x] M  `ORI-M2-00` M2 · Creating Trusted Learning: module overview
+- [x] D [x] M  `ORI-M2-L1` M2 · Lesson 1: What makes learning trustworthy
+- [x] D [x] M  `ORI-M2-L2` M2 · Lesson 2: Evidence of learning
+- [x] D [x] M  `ORI-M2-K1` M2 · Knowledge check: unanswered
+- [x] D [x] M  `ORI-M2-K2` M2 · Knowledge check: correct answers
+- [x] D [x] M  `ORI-M2-K3` M2 · Knowledge check: incorrect answer (try again)
+- [x] D [x] M  `ORI-M2-DONE` M2 · Module complete
+- [x] D [x] M  `ORI-M3-00` M3 · Outcomes, Skills & Evidence: module overview
+- [x] D [x] M  `ORI-M3-L2` M3 · Lesson 2: Skills and proficiency
+- [x] D [x] M  `ORI-M3-L3` M3 · Lesson 3: Linking evidence
+- [x] D [x] M  `ORI-M3-K1` M3 · Knowledge check: unanswered
+- [x] D [x] M  `ORI-M3-K2` M3 · Knowledge check: correct answers
+- [x] D [x] M  `ORI-M3-K3` M3 · Knowledge check: incorrect answer (try again)
+- [x] D [x] M  `ORI-M4-L1` M4 · Lesson 1: What validators look at
+- [x] D [x] M  `ORI-M3-DONE` M3 · Module complete (extra, no Link 1 slot; placed after CR-ORI-006)
+- [x] D [x] M  `ORI-M4-L2` M4 · Lesson 2: The validation case
+- [x] D [x] M  `ORI-M4-L3` M4 · Lesson 3: Tiers and revalidation
+- [x] D [x] M  `ORI-M4-K1` M4 · Knowledge check: unanswered
+- [x] D [x] M  `ORI-M4-K2` M4 · Knowledge check: correct answers
+- [x] D [x] M  `ORI-M4-K3` M4 · Knowledge check: incorrect answer (try again)
+- [x] D [x] M  `ORI-M4-DONE` M4 · Module complete
+- [x] D [x] M  `ORI-M5-00` M5 · AI & Responsible Creation: module overview
+- [x] D [x] M  `ORI-M5-L1` M5 · Lesson 1: Using your Copilot well
+- [x] D [x] M  `ORI-M5-L2` M5 · Lesson 2: Review, disclose, own
+- [x] D [x] M  `ORI-M5-K1` M5 · Knowledge check: unanswered
+- [x] D [x] M  `ORI-M5-K3` M5 · Knowledge check: incorrect answer (try again)
+- [x] D [x] M  `ORI-M5-S1` M5 · Scenario exercise: unanswered
+- [x] D [x] M  `ORI-M5-S3` M5 · Scenario exercise: incorrect response
+- [x] D [x] M  `ORI-M5-DONE` M5 · Module complete
+- [x] D [x] M  `ORI-M6-00` M6 · Creator Economy: module overview
+- [x] D [x] M  `ORI-M6-L1` M6 · Lesson 1: DLP and Credits
+- [x] D [x] M  `ORI-M6-L2` M6 · Lesson 2: Credit Wallet vs Earnings
+- [x] D [x] M  `ORI-M6-K1` M6 · Knowledge check: unanswered
+- [x] D [x] M  `ORI-M6-K2` M6 · Knowledge check: correct answers
+- [x] D [x] M  `ORI-M6-K3` M6 · Knowledge check: incorrect answer (try again)
+- [x] D [x] M  `ORI-M6-DONE` M6 · Module complete
+- [x] D [x] M  `ORI-M7-00` M7 · Creator Responsibilities: module overview
+- [x] D [x] M  `ORI-M7-L1` M7 · Lesson 1: Your obligations to learners
+- [x] D [x] M  `ORI-M7-L2` M7 · Lesson 2: Declarations and changes
+- [x] D [x] M  `ORI-M7-K1` M7 · Knowledge check: unanswered
+- [x] D [x] M  `ORI-M7-K2` M7 · Knowledge check: correct answers
+- [x] D [x] M  `ORI-M7-K3` M7 · Knowledge check: incorrect answer (try again)
+- [x] D [x] M  `ORI-M7-S1` M7 · Scenario exercise: unanswered
+- [x] D [x] M  `ORI-M7-S2` M7 · Scenario exercise: correct response
+- [x] D [x] M  `ORI-M7-S3` M7 · Scenario exercise: incorrect response
+- [x] D [x] M  `ORI-M7-DONE` M7 · Module complete
+
+## Link 1 · states & errors (D3YR4Ee6ZP53iSMf3v6LQT)
+
+- [x] D [x] M  `ONB-003e` Account: invalid email (CR-ONB-003 variant invalid)
+- [x] D [x] M  `ONB-003d` Change your email → new verification link (CR-ONB-003 variant change)
+- [x] D [x] M  `ONB-003ce` Create password: too weak (CR-ONB-003c variant weak)
+- [x] D [x] M  `ONB-004e` About you: missing display name (CR-ONB-004 variant err)
+- [x] D [x] M  `ONB-005e` Expertise: missing required fields (CR-ONB-005 variant err)
+- [x] D [x] M  `ONB-007p` Copilot style: Proactive selected (CR-ONB-007 variant proactive)
+- [x] D [x] M  `RDY-001d` Readiness: all tasks complete (CR-RDY-001 variant done)
+- [x] D [x] M  `ORI-001n` Orientation home: not started (CR-ORI-001 variant start)
+- [x] D [x] M  `ORI-001c` Orientation home: all modules complete (CR-ORI-001 variant done)

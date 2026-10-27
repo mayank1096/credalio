@@ -1,0 +1,1895 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "AI-001.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "AI-001 · Nova: Your Creator Copilot · Overview",
+      "w": 1440,
+      "x": 1520,
+      "y": 22453
+    },
+    "AI-001n.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "AI-001 · New creator, starting Creio balance",
+      "w": 1440,
+      "x": 0,
+      "y": 22453
+    },
+    "AI-002.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "title": "AI-002 / AI-009 · Creio: balance & purchase history (detail)",
+      "w": 1440,
+      "x": 3040,
+      "y": 22453
+    },
+    "AI-003.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "AI-003 · Buy Creio (packages)",
+      "w": 1440,
+      "x": 4560,
+      "y": 22453
+    },
+    "AI-003c.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "AI-003 · Custom amount (enter Creio, Credits update live)",
+      "w": 1440,
+      "x": 6080,
+      "y": 22453
+    },
+    "AI-003e.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "AI-003 · Custom amount below minimum (error)",
+      "w": 1440,
+      "x": 7600,
+      "y": 22453
+    },
+    "AI-004.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "AI-004 · Confirm Creio purchase",
+      "w": 1440,
+      "x": 9120,
+      "y": 22453
+    },
+    "AI-005.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "AI-005 · Purchase successful",
+      "w": 1440,
+      "x": 10640,
+      "y": 22453
+    },
+    "AI-006.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "AI-006 · Insufficient Credits → Fund Credit Wallet",
+      "w": 1440,
+      "x": 0,
+      "y": 24133
+    },
+    "AI-006b.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "AI-006 · Fund Wallet in AI context (existing flow)",
+      "w": 1440,
+      "x": 1520,
+      "y": 24133
+    },
+    "AI-006c.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "AI-006 · Funded → Return to Creio Purchase",
+      "w": 1440,
+      "x": 3040,
+      "y": 24133
+    },
+    "AI-006d.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "AI-006 · Back at purchase: “Credits added. You’re back on your payment.”",
+      "w": 1440,
+      "x": 4560,
+      "y": 24133
+    },
+    "AI-007.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "AI-007 / AI-008 · AI Usage with filters & usage detail",
+      "w": 1440,
+      "x": 0,
+      "y": 25813
+    },
+    "AI-010.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "AI-010 · Low Creio balance (Copilot page)",
+      "w": 1440,
+      "x": 4560,
+      "y": 25813
+    },
+    "AI-010b.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "AI-010 · Low balance in the top bar: Nova ✦ 8.2K · Low",
+      "w": 1440,
+      "x": 7600,
+      "y": 25813
+    },
+    "AI-010c.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "AI-010 · Critical Creio balance",
+      "w": 1440,
+      "x": 6080,
+      "y": 25813
+    },
+    "AI-011.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "AI-011 · Creio depleted (manual creation still works)",
+      "w": 1440,
+      "x": 9120,
+      "y": 25813
+    },
+    "AI-011b.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "AI-011 · Copilot: not enough Creio for this action",
+      "w": 1440,
+      "x": 10640,
+      "y": 25813
+    },
+    "AI-012.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "AI-012 · Copilot Preferences",
+      "w": 1440,
+      "x": 1520,
+      "y": 25813
+    },
+    "AI-EST.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "Large AI action: estimate before running (full course review)",
+      "w": 1440,
+      "x": 12160,
+      "y": 25813
+    },
+    "AI-TOP.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "Top-bar Creio chip & popover: Nova ✦ 72.4K",
+      "w": 1440,
+      "x": 3040,
+      "y": 25813
+    },
+    "COH-ENR-001.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "COH-ENR-001 · Learner Enrollment Detail drawer (Sarah Johnson · Credits)",
+      "w": 1440,
+      "x": 1520,
+      "y": 43603
+    },
+    "COH-ENR-001d.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "COH-ENR-001 · Drawer: DLP learner with insufficient DLP (seat preserved)",
+      "w": 1440,
+      "x": 3040,
+      "y": 43603
+    },
+    "COH-ENR-001p.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "COH-ENR-001 · Drawer: payment succeeded, confirmation failed (reconcile, no double charge)",
+      "w": 1440,
+      "x": 4560,
+      "y": 43603
+    },
+    "COH-ENR-002.dc.html": {
+      "h": 1050,
+      "is_interactive": true,
+      "title": "COH-ENR-002 · Invite Learner (Cohort B · invite to enroll)",
+      "w": 1440,
+      "x": 3040,
+      "y": 45513
+    },
+    "COH-ENR-002a.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "COH-ENR-002 · Invite Learner on a closed cohort → creates a Late Enrollment Exception request",
+      "w": 1440,
+      "x": 0,
+      "y": 45513
+    },
+    "COH-ENR-003.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "COH-ENR-003 · Enrollment Request Review: payment reconciliation (applied before closure)",
+      "w": 1440,
+      "x": 7600,
+      "y": 43603
+    },
+    "COH-ENR-003L.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "COH-ENR-003 · Late Enrollment Exception review (John Bassey · checks pass)",
+      "w": 1440,
+      "x": 9120,
+      "y": 43603
+    },
+    "COH-ENR-003a.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "COH-ENR-003 · Approve Late Enrollment (reason, recovery plan, learner acknowledgment)",
+      "w": 1440,
+      "x": 10640,
+      "y": 43603
+    },
+    "COH-ENR-003n.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "COH-ENR-003 · Offer Next Cohort (late entry not feasible → new offer for Cohort B)",
+      "w": 1440,
+      "x": 12160,
+      "y": 43603
+    },
+    "COH-ENR-004.dc.html": {
+      "h": 1050,
+      "is_interactive": true,
+      "title": "COH-ENR-004 · Waitlist (positions, eligibility, offers with expiry)",
+      "w": 1440,
+      "x": 4560,
+      "y": 45513
+    },
+    "COH-ENR-005.dc.html": {
+      "h": 1050,
+      "is_interactive": true,
+      "title": "COH-ENR-005 · Seat Offer (time-limited reservation)",
+      "w": 1440,
+      "x": 6080,
+      "y": 45513
+    },
+    "COH-ENR-006.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "COH-ENR-006 · Withdraw Learner (records retained, refund not automatic)",
+      "w": 1440,
+      "x": 7600,
+      "y": 45513
+    },
+    "COH-ENR-007.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "COH-ENR-007 · Transfer Learner 1: choose an eligible target cohort",
+      "w": 1440,
+      "x": 9120,
+      "y": 45513
+    },
+    "COH-ENR-007b.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "COH-ENR-007 · Transfer Learner 2: checks, progress mapping, pricing, confirm",
+      "w": 1440,
+      "x": 10640,
+      "y": 45513
+    },
+    "COH-ENR-007f.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "COH-ENR-007 · Transfer target full (original enrollment kept)",
+      "w": 1440,
+      "x": 12160,
+      "y": 45513
+    },
+    "COH-ENR-008.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "COH-ENR-008 · Suspend / Revoke Access (restricted, audited, appeal route)",
+      "w": 1440,
+      "x": 13680,
+      "y": 45513
+    },
+    "COH-ENR-009.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "COH-ENR-009 · Enrollment Audit History (drawer section)",
+      "w": 1440,
+      "x": 15200,
+      "y": 45513
+    },
+    "COH-ENR-010.dc.html": {
+      "h": 1350,
+      "is_interactive": true,
+      "title": "COH-ENR-010 · Bulk Learner Actions toolbar (3 selected)",
+      "w": 1440,
+      "x": 16720,
+      "y": 45513
+    },
+    "COH-OPS-001.dc.html": {
+      "h": 1800,
+      "is_interactive": true,
+      "title": "COH-OPS-001 · Cohort Overview · Active (Cohort A)",
+      "w": 1440,
+      "x": 0,
+      "y": 38533
+    },
+    "COH-OPS-001c.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "COH-OPS-001 · Cohort Overview · Completed (Cohort D)",
+      "w": 1440,
+      "x": 3040,
+      "y": 38533
+    },
+    "COH-OPS-001f.dc.html": {
+      "h": 1750,
+      "is_interactive": true,
+      "title": "COH-OPS-001 · Partial data failure (Attendance retry)",
+      "w": 1440,
+      "x": 10640,
+      "y": 38533
+    },
+    "COH-OPS-001i.dc.html": {
+      "h": 1750,
+      "is_interactive": true,
+      "title": "COH-OPS-001 · Assigned instructor view (Mary Cole · via Assigned to Me)",
+      "w": 1440,
+      "x": 7600,
+      "y": 38533
+    },
+    "COH-OPS-001l.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "COH-OPS-001 · Loading (skeletons)",
+      "w": 1440,
+      "x": 9120,
+      "y": 38533
+    },
+    "COH-OPS-001p.dc.html": {
+      "h": 1800,
+      "is_interactive": true,
+      "title": "COH-OPS-001 · Active with Pending Changes indicator (revision awaiting publish)",
+      "w": 1440,
+      "x": 6080,
+      "y": 38533
+    },
+    "COH-OPS-001r.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "COH-OPS-001 · Unauthorized: instructor opens a cohort they aren’t assigned to",
+      "w": 1440,
+      "x": 12160,
+      "y": 38533
+    },
+    "COH-OPS-001u.dc.html": {
+      "h": 1400,
+      "is_interactive": true,
+      "title": "COH-OPS-001 · Cohort Overview · Upcoming (Cohort B)",
+      "w": 1440,
+      "x": 1520,
+      "y": 38533
+    },
+    "COH-OPS-001x.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "COH-OPS-001 · Cohort Overview · Cancelled (Cohort B)",
+      "w": 1440,
+      "x": 4560,
+      "y": 38533
+    },
+    "COH-OPS-002.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "COH-OPS-002 · Enrollment & Learner Roster (Cohort A · active · enrollment closed)",
+      "w": 1440,
+      "x": 0,
+      "y": 43603
+    },
+    "COH-OPS-002c.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "COH-OPS-002 · Completed cohort roster (Cohort D · read-only)",
+      "w": 1440,
+      "x": 0,
+      "y": 47523
+    },
+    "COH-OPS-002e.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "COH-OPS-002 · Empty: no enrolled learners yet (Cohort C · just published)",
+      "w": 1440,
+      "x": 3040,
+      "y": 47523
+    },
+    "COH-OPS-002f.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "COH-OPS-002 · Error: roster couldn’t load (metrics kept)",
+      "w": 1440,
+      "x": 7600,
+      "y": 47523
+    },
+    "COH-OPS-002i.dc.html": {
+      "h": 1150,
+      "is_interactive": true,
+      "title": "COH-OPS-002 · Assigned instructor view (Mary Cole · no payment or access data)",
+      "w": 1440,
+      "x": 4560,
+      "y": 47523
+    },
+    "COH-OPS-002l.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "COH-OPS-002 · Loading (skeletons)",
+      "w": 1440,
+      "x": 6080,
+      "y": 47523
+    },
+    "COH-OPS-002rq.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "COH-OPS-002 · Requests tab: classified requests (payment check, late exceptions)",
+      "w": 1440,
+      "x": 6080,
+      "y": 43603
+    },
+    "COH-OPS-002u.dc.html": {
+      "h": 1050,
+      "is_interactive": true,
+      "title": "COH-OPS-002 · Upcoming cohort roster (Cohort B · enrollment open)",
+      "w": 1440,
+      "x": 1520,
+      "y": 45513
+    },
+    "COH-OPS-002x.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "COH-OPS-002 · Cancelled cohort roster (affected learners, outstanding remediation)",
+      "w": 1440,
+      "x": 1520,
+      "y": 47523
+    },
+    "CP-EXP.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CP-001 · Copilot panel expanded",
+      "w": 1440,
+      "x": 1520,
+      "y": 20673
+    },
+    "CR-AI-001.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CP-001/002 · Copilot panel, context-aware (shows Creio balance)",
+      "w": 1440,
+      "x": 0,
+      "y": 20673
+    },
+    "CR-AI-001a.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CP-001 · Level 3 Act: Apply Changes / consequential action guided",
+      "w": 1440,
+      "x": 3040,
+      "y": 20673
+    },
+    "CR-AI-003.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CP-003 · Copilot history",
+      "w": 1440,
+      "x": 4560,
+      "y": 20673
+    },
+    "CR-ANA-001.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "ANA-001 · Analytics overview",
+      "w": 1440,
+      "x": 6080,
+      "y": 14933
+    },
+    "CR-ANA-002.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "ANA-002 · Experience analytics: Course",
+      "w": 1440,
+      "x": 9120,
+      "y": 14933
+    },
+    "CR-ANA-002c.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "ANA-002 · Experience analytics: Certification",
+      "w": 1440,
+      "x": 10640,
+      "y": 14933
+    },
+    "CR-ANA-002p.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "ANA-002 · Experience analytics: Learning Program",
+      "w": 1440,
+      "x": 13680,
+      "y": 14933
+    },
+    "CR-ANA-002path.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "ANA-002 · Experience analytics: Career Path",
+      "w": 1440,
+      "x": 12160,
+      "y": 14933
+    },
+    "CR-ANA-003.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "ANA-003 · Compare courses",
+      "w": 1440,
+      "x": 15200,
+      "y": 14933
+    },
+    "CR-ANA-003c.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "ANA-003 · Compare cohorts",
+      "w": 1440,
+      "x": 16720,
+      "y": 14933
+    },
+    "CR-ANA-004.dc.html": {
+      "h": 1900,
+      "is_interactive": true,
+      "title": "ANA-004 · Export report (CSV)",
+      "w": 1440,
+      "x": 7600,
+      "y": 14933
+    },
+    "CR-CAL-001.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "title": "CR-CAL-001 · Calendar: month",
+      "w": 1440,
+      "x": 0,
+      "y": 13353
+    },
+    "CR-CAL-001a.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "title": "CR-CAL-001 · Calendar: agenda",
+      "w": 1440,
+      "x": 6080,
+      "y": 13353
+    },
+    "CR-CAL-001d.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-CAL-001 · Calendar: day",
+      "w": 1440,
+      "x": 4560,
+      "y": 13353
+    },
+    "CR-CAL-001w.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-CAL-001 · Calendar: week (unavailable hours shaded)",
+      "w": 1440,
+      "x": 1520,
+      "y": 13353
+    },
+    "CR-CAL-002.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-CAL-002 · Event detail (role-based actions)",
+      "w": 1440,
+      "x": 3040,
+      "y": 13353
+    },
+    "CR-CAL-003.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-CAL-003 · Weekly availability (multiple windows)",
+      "w": 1440,
+      "x": 7600,
+      "y": 13353
+    },
+    "CR-CAL-004.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-CAL-004 · Availability exceptions",
+      "w": 1440,
+      "x": 9120,
+      "y": 13353
+    },
+    "CR-CAL-005.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-CAL-005 · Presence & visibility",
+      "w": 1440,
+      "x": 10640,
+      "y": 13353
+    },
+    "CR-COURSE-OV-001.dc.html": {
+      "h": 2300,
+      "is_interactive": true,
+      "title": "CR-COURSE-OV-001 · Course Overview (canonical creator summary)",
+      "w": 1440,
+      "x": 0,
+      "y": 10673
+    },
+    "CR-DISC-001.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-DISC-001 · Discussions",
+      "w": 1440,
+      "x": 1520,
+      "y": 10673
+    },
+    "CR-DISC-001u.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-DISC-001 · Discussions: Unanswered",
+      "w": 1440,
+      "x": 3040,
+      "y": 10673
+    },
+    "CR-DISC-002.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-DISC-002 · Discussion thread (Creator badge, answer)",
+      "w": 1440,
+      "x": 4560,
+      "y": 10673
+    },
+    "CR-DISC-002b.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-DISC-002 · Unanswered question → reply",
+      "w": 1440,
+      "x": 6080,
+      "y": 10673
+    },
+    "CR-DISC-003.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-DISC-003 · Discussion notification → deep link",
+      "w": 1440,
+      "x": 7600,
+      "y": 10673
+    },
+    "CR-EARN-001.dc.html": {
+      "h": 1400,
+      "is_interactive": true,
+      "title": "CR-EARN-001 · Earnings & next automatic payout",
+      "w": 1440,
+      "x": 0,
+      "y": 7413
+    },
+    "CR-EARN-001b.dc.html": {
+      "h": 1400,
+      "is_interactive": true,
+      "title": "CR-EARN-001 · Below the $25 minimum (carries over)",
+      "w": 1440,
+      "x": 1520,
+      "y": 7413
+    },
+    "CR-EARN-001n.dc.html": {
+      "h": 1400,
+      "is_interactive": true,
+      "title": "CR-EARN-001 · Earnings with no payout method yet",
+      "w": 1440,
+      "x": 3040,
+      "y": 7413
+    },
+    "CR-HELP-001.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "HELP-001 · Help & Support home",
+      "w": 1440,
+      "x": 9120,
+      "y": 20673
+    },
+    "CR-HELP-002.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "HELP-002 · Help article",
+      "w": 1440,
+      "x": 10640,
+      "y": 20673
+    },
+    "CR-HELP-003.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "title": "HELP-003 · Contact Support",
+      "w": 1440,
+      "x": 12160,
+      "y": 20673
+    },
+    "CR-HELP-003e.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "title": "HELP-003 · Contact Support: missing fields (error)",
+      "w": 1440,
+      "x": 13680,
+      "y": 20673
+    },
+    "CR-HELP-004.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "HELP-004 · Support ticket created",
+      "w": 1440,
+      "x": 15200,
+      "y": 20673
+    },
+    "CR-HELP-005.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "HELP-005 · My support requests",
+      "w": 1440,
+      "x": 16720,
+      "y": 20673
+    },
+    "CR-HELP-006.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "HELP-006 · Support conversation (ticket is the record)",
+      "w": 1440,
+      "x": 18240,
+      "y": 20673
+    },
+    "CR-LRN-001.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "title": "LRN-001 · Learners",
+      "w": 1440,
+      "x": 3040,
+      "y": 14933
+    },
+    "CR-LRN-002.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "LRN-002 · Learner detail (need-to-know)",
+      "w": 1440,
+      "x": 4560,
+      "y": 14933
+    },
+    "CR-ORG-SOON.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "My Organizations: coming soon",
+      "w": 1440,
+      "x": 7600,
+      "y": 17213
+    },
+    "CR-PAY-001.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAY-001 · Validation quote (reusable)",
+      "w": 1440,
+      "x": 0,
+      "y": 6033
+    },
+    "CR-PAY-002.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAY-002 · Balance check: Additional Credits Required",
+      "w": 1440,
+      "x": 1520,
+      "y": 6033
+    },
+    "CR-PAY-002b.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAY-002 · Balance check: enough Credits",
+      "w": 1440,
+      "x": 3040,
+      "y": 6033
+    },
+    "CR-PAY-002f.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "Fund Wallet from the payment (shortfall covered)",
+      "w": 1440,
+      "x": 4560,
+      "y": 6033
+    },
+    "CR-PAY-002r.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "Wallet funded → Return to Validation Payment",
+      "w": 1440,
+      "x": 6080,
+      "y": 6033
+    },
+    "CR-PAY-003.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAY-003 · Payment confirmation (returned automatically)",
+      "w": 1440,
+      "x": 7600,
+      "y": 6033
+    },
+    "CR-PAY-003s.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAY-003 · Payment successful → Validation case created",
+      "w": 1440,
+      "x": 9120,
+      "y": 6033
+    },
+    "CR-PAYO-001.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · Payout method: choose PayPal, Payoneer, Tipalti or Direct Deposit",
+      "w": 1440,
+      "x": 4560,
+      "y": 7413
+    },
+    "CR-PAYO-001a.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · PayPal: connect",
+      "w": 1440,
+      "x": 6080,
+      "y": 7413
+    },
+    "CR-PAYO-001b.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · PayPal: log in & approve (handoff)",
+      "w": 1440,
+      "x": 7600,
+      "y": 7413
+    },
+    "CR-PAYO-001c.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · Payoneer: bank or prepaid Mastercard (handoff)",
+      "w": 1440,
+      "x": 10640,
+      "y": 7413
+    },
+    "CR-PAYO-001d.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · Tipalti: secure bank & tax form (handoff)",
+      "w": 1440,
+      "x": 13680,
+      "y": 7413
+    },
+    "CR-PAYO-001e.dc.html": {
+      "h": 1400,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · Direct Deposit (ACH): U.S. bank details",
+      "w": 1440,
+      "x": 16720,
+      "y": 7413
+    },
+    "CR-PAYO-001g.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · PayPal connected & verified",
+      "w": 1440,
+      "x": 21280,
+      "y": 7413
+    },
+    "CR-PAYO-001h.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · Payoneer: connect",
+      "w": 1440,
+      "x": 9120,
+      "y": 7413
+    },
+    "CR-PAYO-001i.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · Tipalti: open setup",
+      "w": 1440,
+      "x": 12160,
+      "y": 7413
+    },
+    "CR-PAYO-001j.dc.html": {
+      "h": 1400,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · Direct Deposit: routing number invalid (error)",
+      "w": 1440,
+      "x": 18240,
+      "y": 7413
+    },
+    "CR-PAYO-001k.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · Direct Deposit submitted: test deposit pending",
+      "w": 1440,
+      "x": 19760,
+      "y": 7413
+    },
+    "CR-PAYO-001m.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · Tipalti submitted: verification pending",
+      "w": 1440,
+      "x": 15200,
+      "y": 7413
+    },
+    "CR-PAYO-001n.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · Payout method: action required",
+      "w": 1440,
+      "x": 24320,
+      "y": 7413
+    },
+    "CR-PAYO-001p.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "CR-PAYO-001 · Payoneer linked: verification pending",
+      "w": 1440,
+      "x": 22800,
+      "y": 7413
+    },
+    "CR-PAYO-002.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAYO-002 · RETIRED: manual payout request (payouts are now automatic)",
+      "w": 1440,
+      "x": 0,
+      "y": 9193
+    },
+    "CR-PAYO-003.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-PAYO-003 · RETIRED: manual payout request (payouts are now automatic)",
+      "w": 1440,
+      "x": 1520,
+      "y": 9193
+    },
+    "CR-PAYO-004.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-PAYO-004 · RETIRED: manual payout request (payouts are now automatic)",
+      "w": 1440,
+      "x": 3040,
+      "y": 9193
+    },
+    "CR-PAYO-005.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAYO-005 · Monthly payout status: Scheduled → Processing → Paid",
+      "w": 1440,
+      "x": 25840,
+      "y": 7413
+    },
+    "CR-PAYO-005a.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAYO-005 · Payout status: action required",
+      "w": 1440,
+      "x": 31920,
+      "y": 7413
+    },
+    "CR-PAYO-005f.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAYO-005 · Monthly payout: failed",
+      "w": 1440,
+      "x": 28880,
+      "y": 7413
+    },
+    "CR-PAYO-005p.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAYO-005 · Monthly payout: paid",
+      "w": 1440,
+      "x": 27360,
+      "y": 7413
+    },
+    "CR-PAYO-005r.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAYO-005 · Monthly payout: returned by bank",
+      "w": 1440,
+      "x": 30400,
+      "y": 7413
+    },
+    "CR-PAYO-006.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-PAYO-006 · Payout history",
+      "w": 1440,
+      "x": 33440,
+      "y": 7413
+    },
+    "CR-PROF-001.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "PROF-001 · Creator Profile management",
+      "w": 1440,
+      "x": 0,
+      "y": 17213
+    },
+    "CR-PROF-001c.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "PROF-001 · Credentials (verification status)",
+      "w": 1440,
+      "x": 3040,
+      "y": 17213
+    },
+    "CR-PROF-001e.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "PROF-001 · Expertise tab",
+      "w": 1440,
+      "x": 1520,
+      "y": 17213
+    },
+    "CR-PROF-001v.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "PROF-001 · Public profile preview",
+      "w": 1440,
+      "x": 4560,
+      "y": 17213
+    },
+    "CR-PROF-002.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "PROF-002 · Public Creator Profile",
+      "w": 1440,
+      "x": 6080,
+      "y": 17213
+    },
+    "CR-REVAL-001.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "Revalidation: content update → assessment (Standard)",
+      "w": 1440,
+      "x": 10640,
+      "y": 6033
+    },
+    "CR-REVAL-002.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "Revalidation quote: same wallet & payment",
+      "w": 1440,
+      "x": 12160,
+      "y": 6033
+    },
+    "CR-SEARCH-002.dc.html": {
+      "h": 1400,
+      "is_interactive": true,
+      "title": "SEARCH-001/002 · Global search results for \"SQL\"",
+      "w": 1440,
+      "x": 6080,
+      "y": 20673
+    },
+    "CR-SEARCH-EMPTY.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "SEARCH · No results",
+      "w": 1440,
+      "x": 7600,
+      "y": 20673
+    },
+    "CR-SET-001.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "SET-001/002 · Settings: Account",
+      "w": 1440,
+      "x": 0,
+      "y": 18893
+    },
+    "CR-SET-002d.dc.html": {
+      "h": 1400,
+      "is_interactive": true,
+      "title": "SET-002 · Delete account: obligations first",
+      "w": 1440,
+      "x": 1520,
+      "y": 18893
+    },
+    "CR-SET-003.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "title": "SET-003 · Security",
+      "w": 1440,
+      "x": 3040,
+      "y": 18893
+    },
+    "CR-SET-004.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "title": "SET-004 · Notification preferences (matrix)",
+      "w": 1440,
+      "x": 4560,
+      "y": 18893
+    },
+    "CR-SET-005.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "SET-005 · Privacy",
+      "w": 1440,
+      "x": 6080,
+      "y": 18893
+    },
+    "CR-SET-006.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "SET-006 · Language & Region",
+      "w": 1440,
+      "x": 7600,
+      "y": 18893
+    },
+    "CR-SET-007.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "SET-007 · AI Preferences",
+      "w": 1440,
+      "x": 9120,
+      "y": 18893
+    },
+    "CR-SET-008.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "Sign-in methods",
+      "w": 1440,
+      "x": 10640,
+      "y": 18893
+    },
+    "CR-SUP-001.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "WORK · Learner Support inbox",
+      "w": 1440,
+      "x": 0,
+      "y": 14933
+    },
+    "CR-SUP-002.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "Learner Support conversation (escalated from AI Coach)",
+      "w": 1440,
+      "x": 1520,
+      "y": 14933
+    },
+    "CR-WAL-001.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-WAL-001 · Credit Wallet",
+      "w": 1440,
+      "x": 0,
+      "y": 4553
+    },
+    "CR-WAL-002.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-WAL-002 · Fund Wallet: choose Credits",
+      "w": 1440,
+      "x": 1520,
+      "y": 4553
+    },
+    "CR-WAL-003.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-WAL-003 · Payment method (supported rails)",
+      "w": 1440,
+      "x": 3040,
+      "y": 4553
+    },
+    "CR-WAL-004.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-WAL-004 · Payment summary",
+      "w": 1440,
+      "x": 4560,
+      "y": 4553
+    },
+    "CR-WAL-005.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-WAL-005 · Processing (no duplicate payment)",
+      "w": 1440,
+      "x": 6080,
+      "y": 4553
+    },
+    "CR-WAL-005f.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "CR-WAL-005 · Payment failed, not charged",
+      "w": 1440,
+      "x": 7600,
+      "y": 4553
+    },
+    "CR-WAL-006.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-WAL-006 · Wallet funded",
+      "w": 1440,
+      "x": 9120,
+      "y": 4553
+    },
+    "CR-WAL-007.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-WAL-007 · Transaction history (filters)",
+      "w": 1440,
+      "x": 10640,
+      "y": 4553
+    },
+    "CreatorHome.dc.html": {
+      "h": 1400,
+      "is_interactive": true,
+      "title": "CreatorHome component (shared)",
+      "w": 1440,
+      "x": 0,
+      "y": 31053
+    },
+    "ENR-FLOW.dc.html": {
+      "h": 1950,
+      "title": "ENR-FLOW · Enrollment & Learner Roster flow",
+      "w": 1440,
+      "x": 0,
+      "y": 40993
+    },
+    "INVENTORY.dc.html": {
+      "h": 2850,
+      "title": "Screen inventory · Creator Workspace, Economy & AI (123 screens)",
+      "w": 1440,
+      "x": 0,
+      "y": 1300
+    },
+    "MSG-001.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "MSG-001 · Message pop-ups: learner, team, validator (each opens the exact message)",
+      "w": 1440,
+      "x": 0,
+      "y": 28973
+    },
+    "MSG-002.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "MSG-002 · Quick reply to a learner from the pop-up",
+      "w": 1440,
+      "x": 1520,
+      "y": 28973
+    },
+    "MSG-003.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "MSG-003 · Quick reply sent (added to the conversation)",
+      "w": 1440,
+      "x": 3040,
+      "y": 28973
+    },
+    "MSG-004.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "MSG-004 · More than 3: collapsed into “+3 more · View all”",
+      "w": 1440,
+      "x": 4560,
+      "y": 28973
+    },
+    "MSG-005.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "MSG-005 · Preview hidden (screen-sharing setting)",
+      "w": 1440,
+      "x": 6080,
+      "y": 28973
+    },
+    "MSG-006.dc.html": {
+      "h": 1700,
+      "is_interactive": true,
+      "title": "MSG-006 · Settings › Notifications: message pop-up preferences",
+      "w": 1440,
+      "x": 7600,
+      "y": 28973
+    },
+    "Main.dc.html": {
+      "h": 900,
+      "title": "Start here",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "PM-001.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "PM-001 · Account menu: status, profile, switch role, settings",
+      "w": 1440,
+      "x": 0,
+      "y": 27493
+    },
+    "PM-002.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "PM-002 · Account menu for a creator with one role (no switcher)",
+      "w": 1440,
+      "x": 1520,
+      "y": 27493
+    },
+    "PM-003.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "PM-003 · Switching role (Validator workspace opens)",
+      "w": 1440,
+      "x": 3040,
+      "y": 27493
+    },
+    "PRG-FLOW.dc.html": {
+      "h": 2310,
+      "title": "PRG-FLOW · Program Cohorts & Cohort Overview flow",
+      "w": 1440,
+      "x": 0,
+      "y": 32833
+    },
+    "PRG-LE-001.dc.html": {
+      "h": 950,
+      "is_interactive": true,
+      "title": "PRG-LE-001 · My Learning Experiences: program row with live cohorts · Manage Program",
+      "w": 1440,
+      "x": 0,
+      "y": 35523
+    },
+    "PRG-MGT-001.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "PRG-MGT-001 · Program Overview (secondary to Program Cohorts)",
+      "w": 1440,
+      "x": 1520,
+      "y": 35523
+    },
+    "PRG-MGT-002.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "PRG-MGT-002 · Program Cohorts (independent creator)",
+      "w": 1440,
+      "x": 3040,
+      "y": 35523
+    },
+    "PRG-MGT-002ar.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "PRG-MGT-002 · Archive Cohort (completed)",
+      "w": 1440,
+      "x": 9120,
+      "y": 35523
+    },
+    "PRG-MGT-002ca.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "PRG-MGT-002 · Cancel Cohort (published, learners enrolled)",
+      "w": 1440,
+      "x": 7600,
+      "y": 35523
+    },
+    "PRG-MGT-002de.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "PRG-MGT-002 · Delete Draft Cohort (confirmation)",
+      "w": 1440,
+      "x": 6080,
+      "y": 35523
+    },
+    "PRG-MGT-002e1.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "PRG-MGT-002 · Empty: no cohorts yet",
+      "w": 1440,
+      "x": 0,
+      "y": 37153
+    },
+    "PRG-MGT-002e2.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "PRG-MGT-002 · Empty: no active cohorts (Active filter)",
+      "w": 1440,
+      "x": 1520,
+      "y": 37153
+    },
+    "PRG-MGT-002e3.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "PRG-MGT-002 · Empty: no matching cohorts (search)",
+      "w": 1440,
+      "x": 3040,
+      "y": 37153
+    },
+    "PRG-MGT-002e4.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "PRG-MGT-002 · Restricted: assigned instructor (Mary Cole) read-only view",
+      "w": 1440,
+      "x": 4560,
+      "y": 37153
+    },
+    "PRG-MGT-002er.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "PRG-MGT-002 · Error: cohorts couldn’t load",
+      "w": 1440,
+      "x": 7600,
+      "y": 37153
+    },
+    "PRG-MGT-002ld.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "PRG-MGT-002 · Loading (skeletons)",
+      "w": 1440,
+      "x": 6080,
+      "y": 37153
+    },
+    "PRG-MGT-002n.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "PRG-MGT-002 · New program version in validation (cohorts stay on v1.0)",
+      "w": 1440,
+      "x": 12160,
+      "y": 35523
+    },
+    "PRG-MGT-002p.dc.html": {
+      "h": 1250,
+      "is_interactive": true,
+      "title": "PRG-MGT-002 · Return after Publish Cohort: Cohort C now Upcoming · Enrollment Open",
+      "w": 1440,
+      "x": 4560,
+      "y": 35523
+    },
+    "PRG-MGT-002v.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "PRG-MGT-002 · Validation expired: Add Cohort blocked",
+      "w": 1440,
+      "x": 10640,
+      "y": 35523
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-02T18:19:21.900Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "ai1": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Creio · Nova, Your Creator Copilot: overview, balance, buy (packages or custom amount), confirm, success",
+      "w": 240,
+      "x": 0,
+      "y": 22193
+    },
+    "ai2": {
+      "kind": "title1",
+      "maxW": 6000,
+      "text": "Creio · Not enough Credits → existing Fund Wallet flow → back to purchase",
+      "w": 240,
+      "x": 0,
+      "y": 23873
+    },
+    "ai3": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Creio · Usage, preferences, low and depleted states, top-bar chip, estimates",
+      "w": 240,
+      "x": 0,
+      "y": 25553
+    },
+    "comps": {
+      "kind": "title1",
+      "maxW": 1440,
+      "text": "Shared component",
+      "w": 240,
+      "x": 0,
+      "y": 30793
+    },
+    "enr": {
+      "kind": "title1",
+      "maxW": 1440,
+      "text": "NEW · COH-OPS-002 Enrollment & Learner Roster (independent creator)",
+      "w": 240,
+      "x": 0,
+      "y": 40733
+    },
+    "enr_r1": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Roster · learner drawer · Requests tab · late enrollment exceptions (approve / offer next cohort)",
+      "w": 240,
+      "x": 0,
+      "y": 43343
+    },
+    "enr_r2": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Invite · waitlist · seat offer · withdraw · transfer · suspend · audit · bulk actions",
+      "w": 240,
+      "x": 0,
+      "y": 45253
+    },
+    "enr_r3": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Roster states · Completed · Cancelled · Empty · Instructor view · Loading · Error",
+      "w": 240,
+      "x": 0,
+      "y": 47263
+    },
+    "inv": {
+      "kind": "title1",
+      "maxW": 1440,
+      "text": "Screen inventory",
+      "w": 240,
+      "x": 0,
+      "y": 1040
+    },
+    "msg": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Message pop-ups: open the exact message · quick reply for Learner Support and Team Chat only",
+      "w": 240,
+      "x": 0,
+      "y": 28713
+    },
+    "note-62fn52": {
+      "bold": true,
+      "color": "red",
+      "size": 120,
+      "text": "DO NOT DESIGN ANYTHING BELOW THIS NOTE",
+      "w": 2000,
+      "x": -33,
+      "y": 30405
+    },
+    "note-e7ka9z": {
+      "kind": "title1",
+      "text": "DO NOT DESIGN THIS ROW - 3 PAGES HERE ",
+      "w": 240,
+      "x": 4937,
+      "y": 9544
+    },
+    "note-r3r3om": {
+      "bold": false,
+      "kind": "title1",
+      "size": 24,
+      "text": "",
+      "w": 240,
+      "x": 5844,
+      "y": 9706
+    },
+    "pm": {
+      "kind": "title1",
+      "maxW": 4480,
+      "text": "Account menu (avatar): status, profile, switch role between the roles you have, settings, sign out",
+      "w": 240,
+      "x": 0,
+      "y": 27233
+    },
+    "prg_flow": {
+      "kind": "title1",
+      "maxW": 1440,
+      "text": "NEW · Published Program & Cohort management (independent creator)",
+      "w": 240,
+      "x": 0,
+      "y": 32573
+    },
+    "prg_r1": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Entry → Program Cohorts (PRG-MGT-002) · return after publish · delete / cancel / archive · program states",
+      "w": 240,
+      "x": 0,
+      "y": 35263
+    },
+    "prg_r3": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Program Cohorts · empty, loading, error and restricted states",
+      "w": 240,
+      "x": 0,
+      "y": 36893
+    },
+    "prg_r4": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "COH-OPS-001 Cohort Overview · Active · Upcoming · Completed · Cancelled · pending revision · instructor · loading · partial failure · restricted",
+      "w": 240,
+      "x": 0,
+      "y": 38273
+    },
+    "row_payret": {
+      "kind": "title1",
+      "maxW": 4480,
+      "text": "Retired: manual payout requests (replaced by automatic monthly payouts)",
+      "w": 240,
+      "x": 0,
+      "y": 8933
+    },
+    "row_r10": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Earnings & payouts: PayPal, Payoneer, Tipalti or Direct Deposit · paid automatically each month once the balance reaches $25",
+      "w": 240,
+      "x": 0,
+      "y": 7153
+    },
+    "row_r11": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Course Overview & Discussions",
+      "w": 240,
+      "x": 0,
+      "y": 10413
+    },
+    "row_r12": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Calendar, availability & presence",
+      "w": 240,
+      "x": 0,
+      "y": 13093
+    },
+    "row_r13": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Learner Support, Learners & Analytics",
+      "w": 240,
+      "x": 0,
+      "y": 14673
+    },
+    "row_r14": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Creator Profile · My Organizations (coming soon)",
+      "w": 240,
+      "x": 0,
+      "y": 16953
+    },
+    "row_r15": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Settings",
+      "w": 240,
+      "x": 0,
+      "y": 18633
+    },
+    "row_r16": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Copilot panel (CP-001 to CP-003), Search and Help & Support",
+      "w": 240,
+      "x": 0,
+      "y": 20413
+    },
+    "row_r8": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Credit Wallet",
+      "w": 240,
+      "x": 0,
+      "y": 4293
+    },
+    "row_r9": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Payments & revalidation",
+      "w": 240,
+      "x": 0,
+      "y": 5773
+    },
+    "shape-hefxa4": {
+      "color": "red",
+      "kind": "arrow",
+      "x": 4838,
+      "x2": 4492,
+      "y": 9727,
+      "y2": 9727
+    },
+    "shape-rm3eqe": {
+      "color": "red",
+      "h": 651,
+      "kind": "rect",
+      "w": 2737,
+      "x": 4863,
+      "y": 9369
+    }
+  },
+  "order": [
+    "AI-001.dc.html",
+    "AI-002.dc.html",
+    "AI-003.dc.html",
+    "AI-003c.dc.html",
+    "AI-004.dc.html",
+    "AI-005.dc.html",
+    "AI-006.dc.html",
+    "AI-006b.dc.html",
+    "AI-006c.dc.html",
+    "AI-006d.dc.html",
+    "AI-007.dc.html",
+    "AI-010.dc.html",
+    "AI-010b.dc.html",
+    "AI-011.dc.html",
+    "AI-011b.dc.html",
+    "AI-012.dc.html",
+    "AI-EST.dc.html",
+    "AI-TOP.dc.html",
+    "CR-AI-001.dc.html",
+    "CR-AI-001a.dc.html",
+    "CR-AI-003.dc.html",
+    "CR-ANA-001.dc.html",
+    "CR-ANA-002.dc.html",
+    "CR-ANA-002c.dc.html",
+    "CR-ANA-002p.dc.html",
+    "CR-ANA-003.dc.html",
+    "CR-ANA-004.dc.html",
+    "CR-CAL-001.dc.html",
+    "CR-CAL-001a.dc.html",
+    "CR-CAL-001d.dc.html",
+    "CR-CAL-001w.dc.html",
+    "CR-CAL-002.dc.html",
+    "CR-CAL-003.dc.html",
+    "CR-CAL-004.dc.html",
+    "CR-CAL-005.dc.html",
+    "CR-COURSE-OV-001.dc.html",
+    "CR-DISC-001.dc.html",
+    "CR-DISC-001u.dc.html",
+    "CR-DISC-002.dc.html",
+    "CR-DISC-002b.dc.html",
+    "CR-DISC-003.dc.html",
+    "CR-EARN-001.dc.html",
+    "CR-EARN-001b.dc.html",
+    "CR-HELP-001.dc.html",
+    "CR-HELP-002.dc.html",
+    "CR-HELP-003.dc.html",
+    "CR-HELP-004.dc.html",
+    "CR-HELP-005.dc.html",
+    "CR-HELP-006.dc.html",
+    "CR-LRN-001.dc.html",
+    "CR-LRN-002.dc.html",
+    "CR-ORG-SOON.dc.html",
+    "CR-PAY-001.dc.html",
+    "CR-PAY-002.dc.html",
+    "CR-PAY-002b.dc.html",
+    "CR-PAY-002f.dc.html",
+    "CR-PAY-002r.dc.html",
+    "CR-PAY-003.dc.html",
+    "CR-PAY-003s.dc.html",
+    "CR-PAYO-001.dc.html",
+    "CR-PAYO-001a.dc.html",
+    "CR-PAYO-001b.dc.html",
+    "CR-PAYO-001c.dc.html",
+    "CR-PAYO-001d.dc.html",
+    "CR-PAYO-001e.dc.html",
+    "CR-PAYO-001g.dc.html",
+    "CR-PAYO-001p.dc.html",
+    "CR-PAYO-002.dc.html",
+    "CR-PAYO-003.dc.html",
+    "CR-PAYO-004.dc.html",
+    "CR-PAYO-005.dc.html",
+    "CR-PAYO-005a.dc.html",
+    "CR-PAYO-006.dc.html",
+    "CR-PROF-001.dc.html",
+    "CR-PROF-001c.dc.html",
+    "CR-PROF-001v.dc.html",
+    "CR-PROF-002.dc.html",
+    "CR-REVAL-001.dc.html",
+    "CR-REVAL-002.dc.html",
+    "CR-SEARCH-002.dc.html",
+    "CR-SET-001.dc.html",
+    "CR-SET-002d.dc.html",
+    "CR-SET-003.dc.html",
+    "CR-SET-004.dc.html",
+    "CR-SET-005.dc.html",
+    "CR-SET-006.dc.html",
+    "CR-SET-007.dc.html",
+    "CR-SET-008.dc.html",
+    "CR-SUP-001.dc.html",
+    "CR-SUP-002.dc.html",
+    "CR-WAL-001.dc.html",
+    "CR-WAL-002.dc.html",
+    "CR-WAL-003.dc.html",
+    "CR-WAL-004.dc.html",
+    "CR-WAL-005.dc.html",
+    "CR-WAL-005f.dc.html",
+    "CR-WAL-006.dc.html",
+    "CR-WAL-007.dc.html",
+    "CreatorHome.dc.html",
+    "MSG-001.dc.html",
+    "MSG-002.dc.html",
+    "MSG-003.dc.html",
+    "MSG-004.dc.html",
+    "MSG-005.dc.html",
+    "MSG-006.dc.html",
+    "Main.dc.html",
+    "PM-001.dc.html",
+    "PM-002.dc.html",
+    "PM-003.dc.html",
+    "AI-001n.dc.html",
+    "AI-003e.dc.html",
+    "AI-010c.dc.html",
+    "CP-EXP.dc.html",
+    "CR-SEARCH-EMPTY.dc.html",
+    "CR-HELP-003e.dc.html",
+    "CR-PROF-001e.dc.html",
+    "CR-ANA-002path.dc.html",
+    "CR-ANA-003c.dc.html",
+    "CR-EARN-001n.dc.html",
+    "CR-PAYO-001h.dc.html",
+    "CR-PAYO-001i.dc.html",
+    "CR-PAYO-001j.dc.html",
+    "CR-PAYO-001k.dc.html",
+    "CR-PAYO-001m.dc.html",
+    "CR-PAYO-001n.dc.html",
+    "CR-PAYO-005p.dc.html",
+    "CR-PAYO-005f.dc.html",
+    "CR-PAYO-005r.dc.html",
+    "INVENTORY.dc.html",
+    "PRG-FLOW.dc.html",
+    "PRG-LE-001.dc.html",
+    "PRG-MGT-001.dc.html",
+    "PRG-MGT-002.dc.html",
+    "PRG-MGT-002p.dc.html",
+    "PRG-MGT-002de.dc.html",
+    "PRG-MGT-002ca.dc.html",
+    "PRG-MGT-002ar.dc.html",
+    "PRG-MGT-002v.dc.html",
+    "PRG-MGT-002n.dc.html",
+    "PRG-MGT-002e1.dc.html",
+    "PRG-MGT-002e2.dc.html",
+    "PRG-MGT-002e3.dc.html",
+    "PRG-MGT-002e4.dc.html",
+    "PRG-MGT-002ld.dc.html",
+    "PRG-MGT-002er.dc.html",
+    "COH-OPS-001.dc.html",
+    "COH-OPS-001u.dc.html",
+    "COH-OPS-001c.dc.html",
+    "COH-OPS-001x.dc.html",
+    "COH-OPS-001p.dc.html",
+    "COH-OPS-001i.dc.html",
+    "COH-OPS-001l.dc.html",
+    "COH-OPS-001f.dc.html",
+    "COH-OPS-001r.dc.html",
+    "ENR-FLOW.dc.html",
+    "COH-OPS-002.dc.html",
+    "COH-ENR-001.dc.html",
+    "COH-ENR-001d.dc.html",
+    "COH-ENR-001p.dc.html",
+    "COH-OPS-002rq.dc.html",
+    "COH-ENR-003.dc.html",
+    "COH-ENR-003L.dc.html",
+    "COH-ENR-003a.dc.html",
+    "COH-ENR-003n.dc.html",
+    "COH-ENR-002a.dc.html",
+    "COH-OPS-002u.dc.html",
+    "COH-ENR-002.dc.html",
+    "COH-ENR-004.dc.html",
+    "COH-ENR-005.dc.html",
+    "COH-ENR-006.dc.html",
+    "COH-ENR-007.dc.html",
+    "COH-ENR-007b.dc.html",
+    "COH-ENR-007f.dc.html",
+    "COH-ENR-008.dc.html",
+    "COH-ENR-009.dc.html",
+    "COH-ENR-010.dc.html",
+    "COH-OPS-002c.dc.html",
+    "COH-OPS-002x.dc.html",
+    "COH-OPS-002e.dc.html",
+    "COH-OPS-002i.dc.html",
+    "COH-OPS-002l.dc.html",
+    "COH-OPS-002f.dc.html"
+  ],
+  "pages": [],
+  "title": "Credalio · Creator Workspace, Economy & AI"
+}

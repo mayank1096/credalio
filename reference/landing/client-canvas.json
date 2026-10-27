@@ -1,0 +1,2279 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "ACC-001.dc.html": {
+      "h": 1180,
+      "is_interactive": true,
+      "title": "ACC-001 \u00b7 Course needs more DLP (Free learner)",
+      "w": 1440,
+      "x": 1520,
+      "y": 45240,
+      "page": "main"
+    },
+    "ACC-002.dc.html": {
+      "h": 1180,
+      "is_interactive": true,
+      "title": "ACC-002 \u00b7 Course needs more DLP (Pro learner: top-up, not upgrade)",
+      "w": 1440,
+      "x": 3040,
+      "y": 45240,
+      "page": "main"
+    },
+    "ACC-003.dc.html": {
+      "h": 1180,
+      "is_interactive": true,
+      "title": "ACC-003 \u00b7 Zero DLP: You\u2019re ready for the next step",
+      "w": 1440,
+      "x": 4560,
+      "y": 45240,
+      "page": "main"
+    },
+    "ACC-004.dc.html": {
+      "h": 1180,
+      "is_interactive": true,
+      "title": "ACC-004 \u00b7 Low DLP during a lesson (non-blocking)",
+      "w": 1440,
+      "x": 6080,
+      "y": 45240,
+      "page": "main"
+    },
+    "Access.dc.html": {
+      "h": 1180,
+      "is_interactive": true,
+      "title": "Access component (shortfall, zero, low)",
+      "w": 1440,
+      "x": 0,
+      "y": 45240,
+      "page": "main"
+    },
+    "CHK-001.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "CHK-001 \u00b7 Choose Basic from Pricing (create account first)",
+      "w": 1440,
+      "x": 4560,
+      "y": 38740,
+      "page": "main"
+    },
+    "CHK-001p.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "CHK-001 \u00b7 Choose Pro from Pricing (create account first)",
+      "w": 1440,
+      "x": 6080,
+      "y": 38740,
+      "page": "main"
+    },
+    "CHK-002.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "CHK-002 \u00b7 Pro after onboarding: plan & payment",
+      "w": 1440,
+      "x": 7600,
+      "y": 38740,
+      "page": "main"
+    },
+    "CHK-003.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "CHK-003 \u00b7 Upgrade from the allowance moment",
+      "w": 1440,
+      "x": 9120,
+      "y": 38740,
+      "page": "main"
+    },
+    "CHK-004.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "CHK-004 \u00b7 Done: Pro, back to the journey",
+      "w": 1440,
+      "x": 10640,
+      "y": 38740,
+      "page": "main"
+    },
+    "CHK-005.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "CHK-005 \u00b7 Done: Basic, continue to the next stage",
+      "w": 1440,
+      "x": 12160,
+      "y": 38740,
+      "page": "main"
+    },
+    "CHK-006.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "CHK-006 \u00b7 Basic from the Data Analyst path",
+      "w": 1440,
+      "x": 0,
+      "y": 46740,
+      "page": "main"
+    },
+    "CHK-006p.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "CHK-006 \u00b7 Pro from the Data Analyst path",
+      "w": 1440,
+      "x": 1520,
+      "y": 46740,
+      "page": "main"
+    },
+    "CHK-007.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "CHK-007 \u00b7 Choose Basic from your plan page",
+      "w": 1440,
+      "x": 4560,
+      "y": 46740,
+      "page": "main"
+    },
+    "CHK-007p.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "CHK-007 \u00b7 Choose Pro from your plan page",
+      "w": 1440,
+      "x": 6080,
+      "y": 46740,
+      "page": "main"
+    },
+    "CHK-008.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "CHK-008 \u00b7 \u2713 Plan updated \u2192 Return to Data Analyst Path",
+      "w": 1440,
+      "x": 3040,
+      "y": 46740,
+      "page": "main"
+    },
+    "CHK-TOP-done.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "CHK-TOP \u00b7 Top-up done \u2192 back to the course",
+      "w": 1440,
+      "x": 9120,
+      "y": 46740,
+      "page": "main"
+    },
+    "CHK-TOP.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "CHK-TOP \u00b7 Add DLP without changing plan",
+      "w": 1440,
+      "x": 7600,
+      "y": 46740,
+      "page": "main"
+    },
+    "COB-01.dc.html": {
+      "h": 1800,
+      "is_interactive": true,
+      "title": "CR-ONB-01 \u00b7 Tell us what you know (self-declared)",
+      "w": 1440,
+      "x": 0,
+      "y": 2020,
+      "page": "creators"
+    },
+    "COB-01i.dc.html": {
+      "h": 1700,
+      "is_interactive": true,
+      "title": "CR-ONB-01 \u00b7 Organisation profile & disciplines",
+      "w": 1440,
+      "x": 3040,
+      "y": 2020,
+      "page": "creators"
+    },
+    "COB-01w.dc.html": {
+      "h": 2250,
+      "is_interactive": true,
+      "title": "CR-ONB-01 \u00b7 With an institution: find & verify affiliation",
+      "w": 1440,
+      "x": 1520,
+      "y": 2020,
+      "page": "creators"
+    },
+    "COB-02.dc.html": {
+      "h": 1150,
+      "is_interactive": true,
+      "title": "CR-ONB-02 \u00b7 AI summary of your expertise",
+      "w": 1440,
+      "x": 4560,
+      "y": 2020,
+      "page": "creators"
+    },
+    "COB-03.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-ONB-03 \u00b7 Meet your Creator Copilot",
+      "w": 1440,
+      "x": 6080,
+      "y": 2020,
+      "page": "creators"
+    },
+    "COB-04.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-ONB-04 \u00b7 What would you like to create?",
+      "w": 1440,
+      "x": 7600,
+      "y": 2020,
+      "page": "creators"
+    },
+    "COB-05.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-ONB-05 \u00b7 Help Me Choose: learner outcome",
+      "w": 1440,
+      "x": 9120,
+      "y": 2020,
+      "page": "creators"
+    },
+    "COB-06.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-ONB-06 \u00b7 AI recommends a Career Path",
+      "w": 1440,
+      "x": 10640,
+      "y": 2020,
+      "page": "creators"
+    },
+    "COB-07.dc.html": {
+      "h": 1100,
+      "is_interactive": true,
+      "title": "CR-ONB-07 \u00b7 Tell us about the course",
+      "w": 1440,
+      "x": 0,
+      "y": 4390,
+      "page": "creators"
+    },
+    "COB-08.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-ONB-08 \u00b7 You\u2019re ready to create",
+      "w": 1440,
+      "x": 1520,
+      "y": 4390,
+      "page": "creators"
+    },
+    "COB-09.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-STU-01 \u00b7 Studio dashboard: draft, AI structure, Creator Readiness",
+      "w": 1440,
+      "x": 3040,
+      "y": 4390,
+      "page": "creators"
+    },
+    "COB-09c.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-STU-01 \u00b7 Studio: Career Path draft (different Copilot tools)",
+      "w": 1440,
+      "x": 4560,
+      "y": 4390,
+      "page": "creators"
+    },
+    "COB-09o.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-STU-01 \u00b7 Organisation Readiness in Studio",
+      "w": 1440,
+      "x": 6080,
+      "y": 4390,
+      "page": "creators"
+    },
+    "COB-10.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR-STU-00 \u00b7 I\u2019ll create later: empty Creator Studio",
+      "w": 1440,
+      "x": 7600,
+      "y": 4390,
+      "page": "creators"
+    },
+    "COB-11.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-CTR-01 \u00b7 Creator Centre home",
+      "w": 1440,
+      "x": 9120,
+      "y": 4390,
+      "page": "creators"
+    },
+    "COB-12.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-CTR-02 \u00b7 Creator Orientation (7 modules)",
+      "w": 1440,
+      "x": 10640,
+      "y": 4390,
+      "page": "creators"
+    },
+    "COB-13.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-VER-01 \u00b7 Verification: identity (separate from credentials)",
+      "w": 1440,
+      "x": 0,
+      "y": 6010,
+      "page": "creators"
+    },
+    "COB-14.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-VER-02 \u00b7 Verify Your Expertise (credentials)",
+      "w": 1440,
+      "x": 1520,
+      "y": 6010,
+      "page": "creators"
+    },
+    "COB-15.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-GATE-2 \u00b7 Submit check: 2 requirements remaining",
+      "w": 1440,
+      "x": 3040,
+      "y": 6010,
+      "page": "creators"
+    },
+    "COB-16.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-GATE-2 \u00b7 Submit check: ready \u2192 Continue to Validation",
+      "w": 1440,
+      "x": 4560,
+      "y": 6010,
+      "page": "creators"
+    },
+    "COB-17.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-AFF-01 \u00b7 With an institution: affiliation awaiting approval",
+      "w": 1440,
+      "x": 6080,
+      "y": 6010,
+      "page": "creators"
+    },
+    "COB-18.dc.html": {
+      "h": 2000,
+      "is_interactive": true,
+      "title": "CR-ORG-01 \u00b7 Organisation verification + authorised representative",
+      "w": 1440,
+      "x": 7600,
+      "y": 6010,
+      "page": "creators"
+    },
+    "COB-19.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-ORG-02 \u00b7 Organisation Verified \u2713",
+      "w": 1440,
+      "x": 9120,
+      "y": 6010,
+      "page": "creators"
+    },
+    "COB-20.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-ORG-03 \u00b7 Institution admin approves an affiliation request",
+      "w": 1440,
+      "x": 10640,
+      "y": 6010,
+      "page": "creators"
+    },
+    "COB-21.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-POL-01 \u00b7 Creator policies",
+      "w": 1440,
+      "x": 12160,
+      "y": 6010,
+      "page": "creators"
+    },
+    "COB-22.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-PAY-01 \u00b7 Payouts: later, set up when earning",
+      "w": 1440,
+      "x": 13680,
+      "y": 6010,
+      "page": "creators"
+    },
+    "COURSES-001-guest.dc.html": {
+      "h": 3900,
+      "is_interactive": true,
+      "title": "COURSES-001 \u00b7 Browse Courses, logged out",
+      "w": 1440,
+      "x": 13680,
+      "y": 10780,
+      "page": "main"
+    },
+    "CR-000.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-000 \u00b7 Creator journey: 5 phases, 3 gates, trust layers",
+      "w": 1440,
+      "x": 0,
+      "y": 0,
+      "page": "creators"
+    },
+    "CR-DASH-000.dc.html": {
+      "h": 1400,
+      "is_interactive": true,
+      "title": "CR-DASH-000 \u00b7 Priority rules, readiness list, definitions",
+      "w": 1440,
+      "x": 0,
+      "y": 8450,
+      "page": "creators"
+    },
+    "CR-DASH-01.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-DASH-01 \u00b7 New creator, first creation started",
+      "w": 1440,
+      "x": 3040,
+      "y": 8450,
+      "page": "creators"
+    },
+    "CR-DASH-01s.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-DASH-01 \u00b7 New creator who chose \u201cI\u2019ll create later\u201d",
+      "w": 1440,
+      "x": 4560,
+      "y": 8450,
+      "page": "creators"
+    },
+    "CR-DASH-02.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "CR-DASH-02 \u00b7 Draft in progress",
+      "w": 1440,
+      "x": 6080,
+      "y": 8450,
+      "page": "creators"
+    },
+    "CR-DASH-03.dc.html": {
+      "h": 1700,
+      "is_interactive": true,
+      "title": "CR-DASH-03 \u00b7 Readiness blocking submission (+ validation cost)",
+      "w": 1440,
+      "x": 7600,
+      "y": 8450,
+      "page": "creators"
+    },
+    "CR-DASH-04.dc.html": {
+      "h": 1400,
+      "is_interactive": true,
+      "title": "CR-DASH-04 \u00b7 First learning experience in validation",
+      "w": 1440,
+      "x": 9120,
+      "y": 8450,
+      "page": "creators"
+    },
+    "CR-DASH-05.dc.html": {
+      "h": 2250,
+      "is_interactive": true,
+      "title": "CR-DASH-05 \u00b7 Action required: validator clarification rises to top",
+      "w": 1440,
+      "x": 0,
+      "y": 11070,
+      "page": "creators"
+    },
+    "CR-DASH-06.dc.html": {
+      "h": 1400,
+      "is_interactive": true,
+      "title": "CR-DASH-06 \u00b7 First published: milestone",
+      "w": 1440,
+      "x": 1520,
+      "y": 11070,
+      "page": "creators"
+    },
+    "CR-DASH-07.dc.html": {
+      "h": 2750,
+      "is_interactive": true,
+      "title": "CR-DASH-07 \u00b7 Active creator: operations + impact",
+      "w": 1440,
+      "x": 3040,
+      "y": 11070,
+      "page": "creators"
+    },
+    "CR-DASH-08.dc.html": {
+      "h": 1900,
+      "is_interactive": true,
+      "title": "CR-DASH-08 \u00b7 Returning creator: what\u2019s changed",
+      "w": 1440,
+      "x": 4560,
+      "y": 11070,
+      "page": "creators"
+    },
+    "CR-DASH-09.dc.html": {
+      "h": 2750,
+      "is_interactive": true,
+      "title": "CR-DASH-09 \u00b7 Established creator",
+      "w": 1440,
+      "x": 6080,
+      "y": 11070,
+      "page": "creators"
+    },
+    "CR-DASH-10.dc.html": {
+      "h": 2200,
+      "is_interactive": true,
+      "title": "CR-DASH-10 \u00b7 Creating for an institution",
+      "w": 1440,
+      "x": 7600,
+      "y": 11070,
+      "page": "creators"
+    },
+    "CR-DASH-11.dc.html": {
+      "h": 2300,
+      "is_interactive": true,
+      "title": "CR-DASH-11 \u00b7 Low Creator Credits before validation",
+      "w": 1440,
+      "x": 9120,
+      "y": 11070,
+      "page": "creators"
+    },
+    "CareerPathDetail.dc.html": {
+      "h": 3880,
+      "is_interactive": true,
+      "title": "PATH-002 \u00b7 Career Path Detail \u2192 DLP coverage + Personalise This Path",
+      "w": 1440,
+      "x": 7600,
+      "y": 10780,
+      "page": "main"
+    },
+    "CareerPaths.dc.html": {
+      "h": 2460,
+      "is_interactive": true,
+      "title": "PATH-001 \u00b7 Find Your Path",
+      "w": 1440,
+      "x": 6080,
+      "y": 10780,
+      "page": "main"
+    },
+    "CertDetail.dc.html": {
+      "h": 3000,
+      "is_interactive": true,
+      "title": "CERT-002 \u00b7 Certification Detail \u2192 Start Certification",
+      "w": 1440,
+      "x": 4560,
+      "y": 10780,
+      "page": "main"
+    },
+    "Certifications.dc.html": {
+      "h": 2560,
+      "is_interactive": true,
+      "title": "CERT-001 \u00b7 See Certifications",
+      "w": 1440,
+      "x": 3040,
+      "y": 10780,
+      "page": "main"
+    },
+    "Checkout.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "Checkout component (press Play)",
+      "w": 1440,
+      "x": 3040,
+      "y": 38740,
+      "page": "main"
+    },
+    "CourseDetail.dc.html": {
+      "h": 2500,
+      "is_interactive": true,
+      "title": "COURSES-002 \u00b7 Course Detail",
+      "w": 1440,
+      "x": 1520,
+      "y": 10780,
+      "page": "main"
+    },
+    "Courses.dc.html": {
+      "h": 3900,
+      "is_interactive": true,
+      "title": "COURSES-001 \u00b7 Browse Courses: new card, access filters (signed in, 1,460 DLP)",
+      "w": 1440,
+      "x": 0,
+      "y": 10780,
+      "page": "main"
+    },
+    "CreatorDash.dc.html": {
+      "h": 2500,
+      "is_interactive": true,
+      "title": "Creator dashboard component (press Play)",
+      "w": 1440,
+      "x": 1520,
+      "y": 8450,
+      "page": "creators"
+    },
+    "CreatorOnb.dc.html": {
+      "h": 1900,
+      "is_interactive": true,
+      "title": "Creator onboarding + Studio component (press Play)",
+      "w": 1440,
+      "x": 1520,
+      "y": 0,
+      "page": "creators"
+    },
+    "CreatorSignup.dc.html": {
+      "h": 1240,
+      "is_interactive": true,
+      "title": "CRE-008 \u00b7 RETIRED: replaced by the unified creator onboarding (row I)",
+      "w": 1440,
+      "x": 3040,
+      "y": 19240,
+      "page": "main"
+    },
+    "Creators-A.dc.html": {
+      "h": 3780,
+      "is_interactive": true,
+      "title": "CRE-001 \u2192 003 \u00b7 For Creators: hero, what you can create, Creator Studio",
+      "w": 1440,
+      "x": 0,
+      "y": 19240,
+      "page": "main"
+    },
+    "Creators-B.dc.html": {
+      "h": 3000,
+      "is_interactive": true,
+      "title": "CRE-004 \u2192 007 \u00b7 Validation, earnings, service credits, who can create",
+      "w": 1440,
+      "x": 1520,
+      "y": 19240,
+      "page": "main"
+    },
+    "DASH-000.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "DASH-000 \u00b7 Learner dashboard system: states, season model, removed widgets",
+      "w": 1440,
+      "x": 0,
+      "y": 29720,
+      "page": "main"
+    },
+    "Dashboard.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "Learner dashboard component (press Play)",
+      "w": 1440,
+      "x": 1520,
+      "y": 29720,
+      "page": "main"
+    },
+    "ENG-01.dc.html": {
+      "h": 1060,
+      "is_interactive": true,
+      "title": "ENG-01 \u00b7 Stage 1: Vision",
+      "w": 1440,
+      "x": 6160,
+      "y": 0,
+      "page": "main"
+    },
+    "ENG-02.dc.html": {
+      "h": 1060,
+      "is_interactive": true,
+      "title": "ENG-02 \u00b7 Stage 2: Discover",
+      "w": 1440,
+      "x": 7680,
+      "y": 0,
+      "page": "main"
+    },
+    "ENG-03.dc.html": {
+      "h": 1060,
+      "is_interactive": true,
+      "title": "ENG-03 \u00b7 Stage 3: AI Coach",
+      "w": 1440,
+      "x": 4640,
+      "y": 1180,
+      "page": "main"
+    },
+    "ENG-04.dc.html": {
+      "h": 1060,
+      "is_interactive": true,
+      "title": "ENG-04 \u00b7 Stage 4: Learn",
+      "w": 1440,
+      "x": 6160,
+      "y": 1180,
+      "page": "main"
+    },
+    "ENG-05.dc.html": {
+      "h": 1060,
+      "is_interactive": true,
+      "title": "ENG-05 \u00b7 Stage 5: Practise",
+      "w": 1440,
+      "x": 7680,
+      "y": 1180,
+      "page": "main"
+    },
+    "ENG-06.dc.html": {
+      "h": 1060,
+      "is_interactive": true,
+      "title": "ENG-06 \u00b7 Stage 6: Connect",
+      "w": 1440,
+      "x": 4640,
+      "y": 2360,
+      "page": "main"
+    },
+    "ENG-07.dc.html": {
+      "h": 1060,
+      "is_interactive": true,
+      "title": "ENG-07 \u00b7 Stage 7: Prove",
+      "w": 1440,
+      "x": 6160,
+      "y": 2360,
+      "page": "main"
+    },
+    "ENG-08.dc.html": {
+      "h": 1060,
+      "is_interactive": true,
+      "title": "ENG-08 \u00b7 Stage 8: Advance \u2192 Start Your Journey",
+      "w": 1440,
+      "x": 7680,
+      "y": 2360,
+      "page": "main"
+    },
+    "Ecosystem.dc.html": {
+      "h": 4180,
+      "title": "3 \u00b7 Creators & Institutions \u2192 Ecosystem \u2192 Pricing \u2192 Final CTA",
+      "w": 1440,
+      "x": 3040,
+      "y": 0,
+      "page": "main"
+    },
+    "Engine.dc.html": {
+      "h": 1060,
+      "is_interactive": true,
+      "title": "Become Engine \u00b7 shared component (press Play)",
+      "w": 1440,
+      "x": 4640,
+      "y": 0,
+      "page": "main"
+    },
+    "Explore.dc.html": {
+      "h": 2700,
+      "is_interactive": true,
+      "title": "EXP-001 \u00b7 Explore Learning",
+      "w": 1440,
+      "x": 0,
+      "y": 7640,
+      "page": "main"
+    },
+    "Institutions-A.dc.html": {
+      "h": 3420,
+      "is_interactive": true,
+      "title": "ENT-001 \u2192 004 \u00b7 For Institutions: hero, audiences, capabilities, AI",
+      "w": 1440,
+      "x": 4560,
+      "y": 19240,
+      "page": "main"
+    },
+    "Institutions-B.dc.html": {
+      "h": 4200,
+      "is_interactive": true,
+      "title": "ENT-005 \u2192 009 \u00b7 Workspace, structure, validation, credentials, integration",
+      "w": 1440,
+      "x": 6080,
+      "y": 19240,
+      "page": "main"
+    },
+    "JNY-001.dc.html": {
+      "h": 1420,
+      "is_interactive": true,
+      "title": "JNY-001 \u00b7 Understand your goal",
+      "w": 1440,
+      "x": 1520,
+      "y": 4820,
+      "page": "main"
+    },
+    "JNY-002.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "JNY-002 \u00b7 What you already know",
+      "w": 1440,
+      "x": 3040,
+      "y": 4820,
+      "page": "main"
+    },
+    "JNY-003.dc.html": {
+      "h": 1120,
+      "is_interactive": true,
+      "title": "JNY-003 \u00b7 AI builds your journey",
+      "w": 1440,
+      "x": 4560,
+      "y": 4820,
+      "page": "main"
+    },
+    "JNY-004-saved.dc.html": {
+      "h": 2400,
+      "is_interactive": true,
+      "title": "JNY-004 \u00b7 After account created \u2192 Start Step 1",
+      "w": 1440,
+      "x": 7600,
+      "y": 4820,
+      "page": "main"
+    },
+    "JNY-004.dc.html": {
+      "h": 2400,
+      "is_interactive": true,
+      "title": "JNY-004 \u00b7 Your journey + AI Coach (guest)",
+      "w": 1440,
+      "x": 6080,
+      "y": 4820,
+      "page": "main"
+    },
+    "JNY-005-step1.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "Step 1 started",
+      "w": 1440,
+      "x": 9120,
+      "y": 4820,
+      "page": "main"
+    },
+    "Journey.dc.html": {
+      "h": 2400,
+      "is_interactive": true,
+      "title": "Start Your Journey \u00b7 full flow (press Play)",
+      "w": 1440,
+      "x": 0,
+      "y": 4820,
+      "page": "main"
+    },
+    "LRN-001.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "R \u00b7 Journey ready (just finished onboarding with Nova)",
+      "w": 1440,
+      "x": 3040,
+      "y": 29720,
+      "page": "main"
+    },
+    "LRN-A-coach.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "A \u00b7 Unnamed AI Coach: naming recovered from the header",
+      "w": 1440,
+      "x": 6080,
+      "y": 29720,
+      "page": "main"
+    },
+    "LRN-A.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "A \u00b7 Skipped everything: What would you like to learn?",
+      "w": 1440,
+      "x": 4560,
+      "y": 29720,
+      "page": "main"
+    },
+    "LRN-B.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "B \u00b7 Interests only",
+      "w": 1440,
+      "x": 7600,
+      "y": 29720,
+      "page": "main"
+    },
+    "LRN-C.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "C \u00b7 Goal captured, no path",
+      "w": 1440,
+      "x": 9120,
+      "y": 29720,
+      "page": "main"
+    },
+    "LRN-D.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "D \u00b7 Career Path selected (no AI journey)",
+      "w": 1440,
+      "x": 0,
+      "y": 32620,
+      "page": "main"
+    },
+    "LRN-E-las.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "E \u00b7 LAS breakdown panel",
+      "w": 1440,
+      "x": 3040,
+      "y": 35520,
+      "page": "main"
+    },
+    "LRN-E-wallets.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "E \u00b7 Wallets open: DLP, Marketplace Credits, MFORGE",
+      "w": 1440,
+      "x": 1520,
+      "y": 35520,
+      "page": "main"
+    },
+    "LRN-E.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "E \u00b7 Active journey learner (full dashboard)",
+      "w": 1440,
+      "x": 1520,
+      "y": 32620,
+      "page": "main"
+    },
+    "LRN-F.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "F \u00b7 Course-only learner",
+      "w": 1440,
+      "x": 3040,
+      "y": 32620,
+      "page": "main"
+    },
+    "LRN-G.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "G \u00b7 Certification-first learner",
+      "w": 1440,
+      "x": 4560,
+      "y": 32620,
+      "page": "main"
+    },
+    "LRN-H.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "H \u00b7 Learning Program learner",
+      "w": 1440,
+      "x": 6080,
+      "y": 32620,
+      "page": "main"
+    },
+    "LRN-I.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "I \u00b7 Returning learner",
+      "w": 1440,
+      "x": 7600,
+      "y": 32620,
+      "page": "main"
+    },
+    "LRN-L.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "L \u00b7 Allowance used: ready for the next step",
+      "w": 1440,
+      "x": 9120,
+      "y": 32620,
+      "page": "main"
+    },
+    "LRN-M.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "MFORGE not yet eligible (3 of 4)",
+      "w": 1440,
+      "x": 7600,
+      "y": 35520,
+      "page": "main"
+    },
+    "LRN-S2.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "Season closed: Calculating rewards",
+      "w": 1440,
+      "x": 4560,
+      "y": 35520,
+      "page": "main"
+    },
+    "LRN-S3.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "Season rewards ready (placeholder amounts)",
+      "w": 1440,
+      "x": 6080,
+      "y": 35520,
+      "page": "main"
+    },
+    "LRN-W.dc.html": {
+      "h": 2780,
+      "is_interactive": true,
+      "title": "W \u00b7 Running low on DLP",
+      "w": 1440,
+      "x": 0,
+      "y": 35520,
+      "page": "main"
+    },
+    "Main.dc.html": {
+      "h": 4250,
+      "is_interactive": true,
+      "title": "1 \u00b7 Hero \u2192 Become Engine \u2192 Grow \u2192 AI Coach",
+      "w": 1440,
+      "x": 0,
+      "y": 0,
+      "page": "main"
+    },
+    "ONB-000.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "ONB-000 \u00b7 Account model & onboarding architecture",
+      "w": 1440,
+      "x": 0,
+      "y": 23880,
+      "page": "main"
+    },
+    "ONB-001.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "ONB-001 Welcome: how are you joining?",
+      "w": 1440,
+      "x": 3040,
+      "y": 23880,
+      "page": "main"
+    },
+    "ONB-002.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "ONB-002 Create your account",
+      "w": 1440,
+      "x": 4560,
+      "y": 23880,
+      "page": "main"
+    },
+    "ONB-002b.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "ONB-003 Email verified, auto-continue",
+      "w": 1440,
+      "x": 7600,
+      "y": 23880,
+      "page": "main"
+    },
+    "ONB-003.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "ONB-003 Check your inbox",
+      "w": 1440,
+      "x": 6080,
+      "y": 23880,
+      "page": "main"
+    },
+    "ONB-004.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "ONB-004 Tell us about you",
+      "w": 1440,
+      "x": 9120,
+      "y": 23880,
+      "page": "main"
+    },
+    "ONB-004b.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "ONB-004b \u00b7 Personalize Credalio or Explore now",
+      "w": 1440,
+      "x": 10640,
+      "y": 23880,
+      "page": "main"
+    },
+    "ONB-005.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "ONB-005 Meet your AI Coach (Personalize 1 of 4)",
+      "w": 1440,
+      "x": 12160,
+      "y": 23880,
+      "page": "main"
+    },
+    "ONB-006.dc.html": {
+      "h": 1200,
+      "is_interactive": true,
+      "title": "ONB-006 Goal + timeline (Personalize 2 of 4)",
+      "w": 1440,
+      "x": 13680,
+      "y": 23880,
+      "page": "main"
+    },
+    "ONB-007.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "ONB-007 How do you like to learn? (3 of 4)",
+      "w": 1440,
+      "x": 15200,
+      "y": 23880,
+      "page": "main"
+    },
+    "ONB-008.dc.html": {
+      "h": 2000,
+      "is_interactive": true,
+      "title": "ONB-008 Starting point: answers recap, prior learning, CV upload, skills (4 of 4)",
+      "w": 1440,
+      "x": 0,
+      "y": 26000,
+      "page": "main"
+    },
+    "ONB-009.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "ONB-009 Nova builds your journey",
+      "w": 1440,
+      "x": 1520,
+      "y": 26000,
+      "page": "main"
+    },
+    "ONB-010-pro.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "ONB-010 Starting journey (arrived from Pro pricing)",
+      "w": 1440,
+      "x": 4560,
+      "y": 26000,
+      "page": "main"
+    },
+    "ONB-010.dc.html": {
+      "h": 1300,
+      "is_interactive": true,
+      "title": "ONB-010 Your starting journey",
+      "w": 1440,
+      "x": 3040,
+      "y": 26000,
+      "page": "main"
+    },
+    "ONB-011.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "ONB-011 Progress saved (Save & exit)",
+      "w": 1440,
+      "x": 6080,
+      "y": 26000,
+      "page": "main"
+    },
+    "ONB-C01.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR \u00b7 How will you create? (creator type)",
+      "w": 1440,
+      "x": 3040,
+      "y": 0,
+      "page": "creators"
+    },
+    "ONB-C02.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "CR \u00b7 You\u2019re ready to set up your Creator experience",
+      "w": 1440,
+      "x": 10640,
+      "y": 0,
+      "page": "creators"
+    },
+    "ONB-I01.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "Institution: invite code",
+      "w": 1440,
+      "x": 6080,
+      "y": 28120,
+      "page": "main"
+    },
+    "ONB-I02.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "Institution invite: accept",
+      "w": 1440,
+      "x": 7600,
+      "y": 28120,
+      "page": "main"
+    },
+    "ONB-I03.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "Institution invite: linked",
+      "w": 1440,
+      "x": 9120,
+      "y": 28120,
+      "page": "main"
+    },
+    "Onboarding.dc.html": {
+      "h": 2000,
+      "is_interactive": true,
+      "title": "Learner onboarding \u00b7 full flow (press Play)",
+      "w": 1440,
+      "x": 1520,
+      "y": 23880,
+      "page": "main"
+    },
+    "PRC-000.dc.html": {
+      "h": 1700,
+      "is_interactive": true,
+      "title": "PRC-000 \u00b7 Pricing architecture: modes, entry points, units, open decisions",
+      "w": 1440,
+      "x": 0,
+      "y": 43420,
+      "page": "main"
+    },
+    "PRC-C-path.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "PRC Mode 3 \u00b7 Plan options for the Data Analyst path",
+      "w": 1440,
+      "x": 7600,
+      "y": 43420,
+      "page": "main"
+    },
+    "PRC-M-basic.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "PRC Mode 2 \u00b7 Signed-in Basic learner",
+      "w": 1440,
+      "x": 4560,
+      "y": 43420,
+      "page": "main"
+    },
+    "PRC-M-free.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "PRC Mode 2 \u00b7 Signed-in Free learner",
+      "w": 1440,
+      "x": 3040,
+      "y": 43420,
+      "page": "main"
+    },
+    "PRC-M-pro.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "PRC Mode 2 \u00b7 Signed-in Pro learner (no upgrade push)",
+      "w": 1440,
+      "x": 6080,
+      "y": 43420,
+      "page": "main"
+    },
+    "PartnerInquiry.dc.html": {
+      "h": 1900,
+      "is_interactive": true,
+      "title": "ENT-010 \u00b7 Partner with Credalio: inquiry \u2192 confirmation",
+      "w": 1440,
+      "x": 7600,
+      "y": 19240,
+      "page": "main"
+    },
+    "Pricing-A.dc.html": {
+      "h": 4560,
+      "is_interactive": true,
+      "title": "PRC-001 \u2192 004 \u00b7 Pricing: plans, Enterprise, what DLP is, how DLP works",
+      "w": 1440,
+      "x": 0,
+      "y": 38740,
+      "page": "main"
+    },
+    "Pricing-B.dc.html": {
+      "h": 4260,
+      "is_interactive": true,
+      "title": "PRC-005 \u2192 011 \u00b7 Compare, rollover, AI, rewards, plan recommendation, FAQ",
+      "w": 1440,
+      "x": 1520,
+      "y": 38740,
+      "page": "main"
+    },
+    "PricingMe.dc.html": {
+      "h": 1500,
+      "is_interactive": true,
+      "title": "Personalised & contextual pricing component",
+      "w": 1440,
+      "x": 1520,
+      "y": 43420,
+      "page": "main"
+    },
+    "ProgramDetail.dc.html": {
+      "h": 2360,
+      "is_interactive": true,
+      "title": "PROG-002 \u00b7 Program Detail \u2192 Apply",
+      "w": 1440,
+      "x": 10640,
+      "y": 10780,
+      "page": "main"
+    },
+    "Programs.dc.html": {
+      "h": 2140,
+      "is_interactive": true,
+      "title": "PROG-001 \u00b7 Explore Programs",
+      "w": 1440,
+      "x": 9120,
+      "y": 10780,
+      "page": "main"
+    },
+    "RTN-001.dc.html": {
+      "h": 1260,
+      "is_interactive": true,
+      "title": "RTN-001 \u00b7 Logged-in learner starts a new goal",
+      "w": 1440,
+      "x": 10640,
+      "y": 4820,
+      "page": "main"
+    },
+    "SupportChat.dc.html": {
+      "h": 1240,
+      "is_interactive": true,
+      "title": "TUT-001 \u00b7 Ask Tutor: AI handover to Student Support Chat",
+      "w": 1440,
+      "x": 12160,
+      "y": 10780,
+      "page": "main"
+    },
+    "TV-001.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "TV-001 \u00b7 First credential \u2192 set up TruVault (later, in context)",
+      "w": 1440,
+      "x": 10640,
+      "y": 28120,
+      "page": "main"
+    },
+    "TV-002.dc.html": {
+      "h": 1160,
+      "is_interactive": true,
+      "title": "TV-002 \u00b7 Settings \u2192 TruVault & Connected Accounts",
+      "w": 1440,
+      "x": 12160,
+      "y": 28120,
+      "page": "main"
+    },
+    "Trust.dc.html": {
+      "h": 3640,
+      "title": "2 \u00b7 Trusted Learning \u2192 Learn by Doing \u2192 Backpack \u2192 Marketplace",
+      "w": 1440,
+      "x": 1520,
+      "y": 0,
+      "page": "main"
+    },
+    "Usage.dc.html": {
+      "h": 1380,
+      "is_interactive": true,
+      "title": "DLP usage \u00b7 My Learning Allowance",
+      "w": 1440,
+      "x": 7600,
+      "y": 45240,
+      "page": "main"
+    },
+    "Validation-A.dc.html": {
+      "h": 3000,
+      "is_interactive": true,
+      "title": "TRST-001 \u2192 003 \u00b7 How Validation Works: hero, review areas, journey",
+      "w": 1440,
+      "x": 0,
+      "y": 15640,
+      "page": "main"
+    },
+    "Validation-B.dc.html": {
+      "h": 3160,
+      "is_interactive": true,
+      "title": "TRST-004 \u00b7 005 \u00b7 007 \u00b7 008 \u00b7 Clarification, decision, versioning, statuses",
+      "w": 1440,
+      "x": 1520,
+      "y": 15640,
+      "page": "main"
+    },
+    "Validation-C.dc.html": {
+      "h": 2240,
+      "is_interactive": true,
+      "title": "TRST-009 \u2192 011 \u00b7 Status on cards, creators, validators",
+      "w": 1440,
+      "x": 3040,
+      "y": 15640,
+      "page": "main"
+    },
+    "ValidationRecord.dc.html": {
+      "h": 2200,
+      "is_interactive": true,
+      "title": "TRST-006 \u00b7 Public Validation Record",
+      "w": 1440,
+      "x": 4560,
+      "y": 15640,
+      "page": "main"
+    },
+    "ONB-C01a.dc.html": {
+      "x": 4560,
+      "y": 0,
+      "w": 1440,
+      "h": 1000,
+      "title": "CR \u00b7 Create your account (email, Google or Apple)",
+      "is_interactive": true,
+      "page": "creators"
+    },
+    "ONB-C01b.dc.html": {
+      "x": 6080,
+      "y": 0,
+      "w": 1440,
+      "h": 1000,
+      "title": "CR \u00b7 Check your inbox (email verification)",
+      "is_interactive": true,
+      "page": "creators"
+    },
+    "ONB-C01c.dc.html": {
+      "x": 7600,
+      "y": 0,
+      "w": 1440,
+      "h": 1000,
+      "title": "CR \u00b7 Email verified",
+      "is_interactive": true,
+      "page": "creators"
+    },
+    "ONB-C01d.dc.html": {
+      "x": 9120,
+      "y": 0,
+      "w": 1440,
+      "h": 1100,
+      "title": "CR \u00b7 Basic information",
+      "is_interactive": true,
+      "page": "creators"
+    },
+    "VAL-000.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1600,
+      "title": "VAL-000 \u00b7 Validator architecture & rules",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "ValOnb.dc.html": {
+      "x": 1520,
+      "y": 0,
+      "w": 1440,
+      "h": 1700,
+      "title": "Validator onboarding component (press Play)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "ValQual.dc.html": {
+      "x": 3040,
+      "y": 0,
+      "w": 1440,
+      "h": 1700,
+      "title": "Qualification Centre component (press Play)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "ValDash.dc.html": {
+      "x": 4560,
+      "y": 0,
+      "w": 1440,
+      "h": 2000,
+      "title": "Validator workspace component (press Play)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "SVE.dc.html": {
+      "x": 6080,
+      "y": 0,
+      "w": 1440,
+      "h": 1400,
+      "title": "Secure Validation Environment component (press Play)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "ONB-V01.dc.html": {
+      "x": 0,
+      "y": 2120,
+      "w": 1440,
+      "h": 1150,
+      "title": "VAL-ONB-004 \u00b7 Tell us about yourself (validator)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "ONB-V02.dc.html": {
+      "x": 1520,
+      "y": 2120,
+      "w": 1440,
+      "h": 1000,
+      "title": "VAL-ONB \u00b7 Account ready \u2192 validator setup",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-005.dc.html": {
+      "x": 3040,
+      "y": 2120,
+      "w": 1440,
+      "h": 1100,
+      "title": "VAL-ONB-005 \u00b7 Meet your Validator Assistant",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-006.dc.html": {
+      "x": 4560,
+      "y": 2120,
+      "w": 1440,
+      "h": 1150,
+      "title": "VAL-ONB-006 \u00b7 Become a Credalio Validator (7-step path)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-007.dc.html": {
+      "x": 6080,
+      "y": 2120,
+      "w": 1440,
+      "h": 1000,
+      "title": "VAL-ONB-007 \u00b7 How will you validate?",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-008.dc.html": {
+      "x": 7600,
+      "y": 2120,
+      "w": 1440,
+      "h": 1150,
+      "title": "VAL-ONB-008 \u00b7 Choose your validator roles (3 core roles)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-009.dc.html": {
+      "x": 9120,
+      "y": 2120,
+      "w": 1440,
+      "h": 1500,
+      "title": "VAL-ONB-009 \u00b7 Configure Educational Validator",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-009b.dc.html": {
+      "x": 10640,
+      "y": 2120,
+      "w": 1440,
+      "h": 1250,
+      "title": "VAL-ONB-009 \u00b7 Configure Subject Matter Validator",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-009c.dc.html": {
+      "x": 12160,
+      "y": 2120,
+      "w": 1440,
+      "h": 1200,
+      "title": "VAL-ONB-009 \u00b7 Configure Assessment Validator",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-009s.dc.html": {
+      "x": 0,
+      "y": 3740,
+      "w": 1440,
+      "h": 1450,
+      "title": "VAL-ONB-009s \u00b7 Special Review Qualifications (optional)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-010.dc.html": {
+      "x": 1520,
+      "y": 3740,
+      "w": 1440,
+      "h": 1600,
+      "title": "VAL-ONB-010 \u00b7 Professional profile (adapts by role)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-011.dc.html": {
+      "x": 3040,
+      "y": 3740,
+      "w": 1440,
+      "h": 1350,
+      "title": "VAL-ONB-011 \u00b7 Credentials verification",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-012.dc.html": {
+      "x": 4560,
+      "y": 3740,
+      "w": 1440,
+      "h": 1000,
+      "title": "VAL-ONB-012 \u00b7 Identity verification",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-013.dc.html": {
+      "x": 6080,
+      "y": 3740,
+      "w": 1440,
+      "h": 1150,
+      "title": "VAL-ONB-013 \u00b7 Institution affiliation",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-014.dc.html": {
+      "x": 7600,
+      "y": 3740,
+      "w": 1440,
+      "h": 1150,
+      "title": "VAL-ONB-014 \u00b7 Availability & capacity",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-015.dc.html": {
+      "x": 9120,
+      "y": 3740,
+      "w": 1440,
+      "h": 1250,
+      "title": "VAL-ONB-015 \u00b7 Independence, confidentiality & creator protection",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VAL-ONB-016.dc.html": {
+      "x": 10640,
+      "y": 3740,
+      "w": 1440,
+      "h": 1300,
+      "title": "VAL-ONB-016 \u00b7 Your Validator Profile is Ready (authorisation map)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VQ-001.dc.html": {
+      "x": 0,
+      "y": 5460,
+      "w": 1440,
+      "h": 1700,
+      "title": "VDS-01 \u00b7 Qualification Centre: per role + domain, special qualifications",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VQ-001b.dc.html": {
+      "x": 1520,
+      "y": 5460,
+      "w": 1440,
+      "h": 1700,
+      "title": "VDS-02 \u00b7 Qualification in progress",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VQ-002.dc.html": {
+      "x": 3040,
+      "y": 5460,
+      "w": 1440,
+      "h": 1400,
+      "title": "VAL-LRN-001 \u00b7 Orientation home",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VQ-003.dc.html": {
+      "x": 4560,
+      "y": 5460,
+      "w": 1440,
+      "h": 1300,
+      "title": "VAL-QUAL-002 \u00b7 Assessment Centre",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VQ-003e.dc.html": {
+      "x": 6080,
+      "y": 5460,
+      "w": 1440,
+      "h": 1150,
+      "title": "VAL-QUAL-002 \u00b7 In the assessment (assistant guardrail)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VQ-004.dc.html": {
+      "x": 7600,
+      "y": 5460,
+      "w": 1440,
+      "h": 1100,
+      "title": "VAL-QUAL-003 \u00b7 Practical validation exercise",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VQ-005.dc.html": {
+      "x": 9120,
+      "y": 5460,
+      "w": 1440,
+      "h": 1100,
+      "title": "VDS-03 \u00b7 Qualification under review",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VQ-006.dc.html": {
+      "x": 10640,
+      "y": 5460,
+      "w": 1440,
+      "h": 1500,
+      "title": "VAL-QUAL-005 \u00b7 You\u2019re Qualified: Junior Validator",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VDS-04.dc.html": {
+      "x": 0,
+      "y": 7280,
+      "w": 1440,
+      "h": 1250,
+      "title": "VDS-04 \u00b7 Dashboard: newly qualified",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VDS-05.dc.html": {
+      "x": 1520,
+      "y": 7280,
+      "w": 1440,
+      "h": 1650,
+      "title": "VDS-05 \u00b7 Dashboard: assignment offered + conflict check",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VDS-06.dc.html": {
+      "x": 3040,
+      "y": 7280,
+      "w": 1440,
+      "h": 1350,
+      "title": "VDS-06 \u00b7 Dashboard: active validator (command centre)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VDS-07.dc.html": {
+      "x": 4560,
+      "y": 7280,
+      "w": 1440,
+      "h": 1250,
+      "title": "VDS-07 \u00b7 Dashboard: awaiting creator",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VDS-08.dc.html": {
+      "x": 6080,
+      "y": 7280,
+      "w": 1440,
+      "h": 1500,
+      "title": "VDS-08 \u00b7 Dashboard: high workload",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VDS-09.dc.html": {
+      "x": 7600,
+      "y": 7280,
+      "w": 1440,
+      "h": 1150,
+      "title": "VDS-09 \u00b7 Qualifications: Add Qualification",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VDS-10.dc.html": {
+      "x": 9120,
+      "y": 7280,
+      "w": 1440,
+      "h": 1500,
+      "title": "VDS-10 \u00b7 Career Progression: eligible for promotion review",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VW-CASES.dc.html": {
+      "x": 0,
+      "y": 9050,
+      "w": 1440,
+      "h": 1000,
+      "title": "Validation Cases \u00b7 My Cases",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VW-NEW.dc.html": {
+      "x": 1520,
+      "y": 9050,
+      "w": 1440,
+      "h": 1200,
+      "title": "Validation Cases \u00b7 New Assignments",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VW-MSG.dc.html": {
+      "x": 3040,
+      "y": 9050,
+      "w": 1440,
+      "h": 1000,
+      "title": "Messages \u00b7 case-linked conversations",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VW-NOTIF.dc.html": {
+      "x": 4560,
+      "y": 9050,
+      "w": 1440,
+      "h": 1100,
+      "title": "Notification Centre",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VW-QUALS.dc.html": {
+      "x": 6080,
+      "y": 9050,
+      "w": 1440,
+      "h": 1350,
+      "title": "Qualifications \u00b7 My Roles (authorisation map)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VW-EXP.dc.html": {
+      "x": 7600,
+      "y": 9050,
+      "w": 1440,
+      "h": 950,
+      "title": "Qualifications \u00b7 Expertise",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VW-CAREER.dc.html": {
+      "x": 0,
+      "y": 10520,
+      "w": 1440,
+      "h": 1500,
+      "title": "Career Progression \u00b7 72% to Validator",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VW-EARN.dc.html": {
+      "x": 1520,
+      "y": 10520,
+      "w": 1440,
+      "h": 1650,
+      "title": "Earnings",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VW-EARN-D.dc.html": {
+      "x": 3040,
+      "y": 10520,
+      "w": 1440,
+      "h": 950,
+      "title": "Earnings detail \u00b7 VAL-2048",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VW-PAY.dc.html": {
+      "x": 4560,
+      "y": 10520,
+      "w": 1440,
+      "h": 1350,
+      "title": "Payments & Payouts",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VW-LEARN.dc.html": {
+      "x": 6080,
+      "y": 10520,
+      "w": 1440,
+      "h": 1000,
+      "title": "Learning & Protocols",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "VW-PROFILE.dc.html": {
+      "x": 7600,
+      "y": 10520,
+      "w": 1440,
+      "h": 900,
+      "title": "Profile & Settings",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "SVE-01.dc.html": {
+      "x": 0,
+      "y": 12290,
+      "w": 1440,
+      "h": 1100,
+      "title": "SVE \u00b7 Case overview (VAL-2048)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "SVE-02.dc.html": {
+      "x": 1520,
+      "y": 12290,
+      "w": 1440,
+      "h": 1100,
+      "title": "SVE \u00b7 Assigned materials (watermarked)",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "SVE-03.dc.html": {
+      "x": 3040,
+      "y": 12290,
+      "w": 1440,
+      "h": 1150,
+      "title": "SVE \u00b7 Clarifications: case-linked chat",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "SVE-04.dc.html": {
+      "x": 4560,
+      "y": 12290,
+      "w": 1440,
+      "h": 1400,
+      "title": "SVE \u00b7 Findings",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "SVE-05.dc.html": {
+      "x": 6080,
+      "y": 12290,
+      "w": 1440,
+      "h": 1000,
+      "title": "SVE \u00b7 Submit checks",
+      "is_interactive": true,
+      "page": "validators"
+    },
+    "SVE-P.dc.html": {
+      "x": 7600,
+      "y": 12290,
+      "w": 1440,
+      "h": 1100,
+      "title": "SVE \u00b7 Practice case PRACTICE-DA-001",
+      "is_interactive": true,
+      "page": "validators"
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-25T12:00:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas",
+    "page": "main"
+  },
+  "notes": {
+    "creatorDashTitle": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "J \u00b7 Creator dashboard: one system, hero chosen by priority (new \u2192 draft \u2192 readiness \u2192 validation \u2192 published \u2192 active \u2192 established)",
+      "w": 240,
+      "x": 0,
+      "y": 8130,
+      "page": "creators"
+    },
+    "creatorOnbTitle": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "I \u00b7 Creator journey (revised): setup \u2192 Creator Studio with Readiness & Creator Centre \u2192 verification layers \u2192 submit gate",
+      "w": 240,
+      "x": 0,
+      "y": -320,
+      "page": "creators"
+    },
+    "creatorsTitle": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "E \u00b7 Start Creating (creators) and Partner with Credalio (institutions)",
+      "w": 240,
+      "x": 0,
+      "y": 18920,
+      "page": "main"
+    },
+    "dashTitle": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "G \u00b7 Learner dashboard (redesigned): one system, states from onboarding, Learning Season",
+      "w": 240,
+      "x": 0,
+      "y": 29400,
+      "page": "main"
+    },
+    "engineTitle": {
+      "kind": "title1",
+      "maxW": 4400,
+      "text": "Become Engine \u00b7 every stage state",
+      "w": 240,
+      "x": 4640,
+      "y": -320,
+      "page": "main"
+    },
+    "exploreTitle": {
+      "kind": "title1",
+      "maxW": 4480,
+      "text": "B \u00b7 Explore Learning \u2192 public discovery",
+      "w": 240,
+      "x": 0,
+      "y": 7320,
+      "page": "main"
+    },
+    "flowTitle": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "A \u00b7 Start Your Journey \u2192 AI-guided goal onboarding",
+      "w": 240,
+      "x": 0,
+      "y": 4500,
+      "page": "main"
+    },
+    "growTitle": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "C \u00b7 Choose how you want to grow \u2192 discovery & detail pages, plus the tutor handover",
+      "w": 240,
+      "x": 0,
+      "y": 10460,
+      "page": "main"
+    },
+    "heading": {
+      "kind": "title1",
+      "maxW": 4480,
+      "text": "Credalio landing page \u00b7 desktop \u00b7 reads left to right",
+      "w": 240,
+      "x": 0,
+      "y": -320,
+      "page": "main"
+    },
+    "onbTitle": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "F \u00b7 Create account \u2192 learner onboarding v1 (plus creator, validator and institution branches; TruVault later)",
+      "w": 240,
+      "x": 0,
+      "y": 23560,
+      "page": "main"
+    },
+    "pricingTitle": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "H \u00b7 Pricing: public, personalised and contextual modes \u00b7 checkout, top-ups, access screens, usage",
+      "w": 240,
+      "x": 0,
+      "y": 38420,
+      "page": "main"
+    },
+    "trustTitle": {
+      "kind": "title1",
+      "maxW": 5960,
+      "text": "D \u00b7 Trusted Learning \u2192 How Validation Works + Validation Record",
+      "w": 240,
+      "x": 0,
+      "y": 15320,
+      "page": "main"
+    },
+    "validatorTitle": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "K \u00b7 Validators: 3 core roles \u00d7 expertise \u2192 Qualification Centre \u2192 workspace (dashboard, cases, messages, qualifications, career, earnings, payments) \u2192 SVE",
+      "w": 240,
+      "x": 0,
+      "y": -320,
+      "page": "validators"
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Trust.dc.html",
+    "Ecosystem.dc.html",
+    "Journey.dc.html",
+    "JNY-001.dc.html",
+    "JNY-002.dc.html",
+    "JNY-003.dc.html",
+    "JNY-004.dc.html",
+    "JNY-004-saved.dc.html",
+    "JNY-005-step1.dc.html",
+    "RTN-001.dc.html",
+    "Explore.dc.html",
+    "Courses.dc.html",
+    "CourseDetail.dc.html",
+    "Certifications.dc.html",
+    "CertDetail.dc.html",
+    "CareerPaths.dc.html",
+    "CareerPathDetail.dc.html",
+    "Programs.dc.html",
+    "ProgramDetail.dc.html",
+    "SupportChat.dc.html",
+    "Engine.dc.html",
+    "ENG-01.dc.html",
+    "ENG-02.dc.html",
+    "ENG-03.dc.html",
+    "ENG-04.dc.html",
+    "ENG-05.dc.html",
+    "ENG-06.dc.html",
+    "ENG-07.dc.html",
+    "ENG-08.dc.html",
+    "Validation-A.dc.html",
+    "Validation-B.dc.html",
+    "Validation-C.dc.html",
+    "ValidationRecord.dc.html",
+    "Creators-A.dc.html",
+    "Creators-B.dc.html",
+    "CreatorSignup.dc.html",
+    "Institutions-A.dc.html",
+    "Institutions-B.dc.html",
+    "PartnerInquiry.dc.html",
+    "ONB-000.dc.html",
+    "Onboarding.dc.html",
+    "ONB-001.dc.html",
+    "ONB-002.dc.html",
+    "ONB-002b.dc.html",
+    "ONB-003.dc.html",
+    "ONB-004.dc.html",
+    "ONB-005.dc.html",
+    "ONB-006.dc.html",
+    "ONB-007.dc.html",
+    "ONB-C01.dc.html",
+    "ONB-C01a.dc.html",
+    "ONB-C01b.dc.html",
+    "ONB-C01c.dc.html",
+    "ONB-C01d.dc.html",
+    "ONB-C02.dc.html",
+    "ONB-V01.dc.html",
+    "ONB-V02.dc.html",
+    "ONB-I01.dc.html",
+    "ONB-I02.dc.html",
+    "ONB-I03.dc.html",
+    "TV-001.dc.html",
+    "TV-002.dc.html",
+    "ONB-008.dc.html",
+    "ONB-009.dc.html",
+    "ONB-010.dc.html",
+    "ONB-010-pro.dc.html",
+    "ONB-011.dc.html",
+    "LRN-001.dc.html",
+    "ONB-004b.dc.html",
+    "DASH-000.dc.html",
+    "Dashboard.dc.html",
+    "LRN-A.dc.html",
+    "LRN-A-coach.dc.html",
+    "LRN-B.dc.html",
+    "LRN-C.dc.html",
+    "LRN-D.dc.html",
+    "LRN-E.dc.html",
+    "LRN-F.dc.html",
+    "LRN-G.dc.html",
+    "LRN-H.dc.html",
+    "LRN-I.dc.html",
+    "LRN-L.dc.html",
+    "Pricing-A.dc.html",
+    "Pricing-B.dc.html",
+    "Checkout.dc.html",
+    "CHK-001.dc.html",
+    "CHK-001p.dc.html",
+    "CHK-002.dc.html",
+    "CHK-003.dc.html",
+    "CHK-004.dc.html",
+    "CHK-005.dc.html",
+    "PRC-000.dc.html",
+    "PricingMe.dc.html",
+    "PRC-M-free.dc.html",
+    "PRC-M-basic.dc.html",
+    "PRC-M-pro.dc.html",
+    "PRC-C-path.dc.html",
+    "Access.dc.html",
+    "ACC-001.dc.html",
+    "ACC-002.dc.html",
+    "ACC-003.dc.html",
+    "ACC-004.dc.html",
+    "Usage.dc.html",
+    "CHK-006.dc.html",
+    "CHK-006p.dc.html",
+    "CHK-008.dc.html",
+    "CHK-007.dc.html",
+    "CHK-007p.dc.html",
+    "CHK-TOP.dc.html",
+    "CHK-TOP-done.dc.html",
+    "LRN-W.dc.html",
+    "LRN-E-wallets.dc.html",
+    "LRN-E-las.dc.html",
+    "LRN-S2.dc.html",
+    "LRN-S3.dc.html",
+    "LRN-M.dc.html",
+    "COURSES-001-guest.dc.html",
+    "CreatorOnb.dc.html",
+    "COB-01.dc.html",
+    "COB-01w.dc.html",
+    "COB-01i.dc.html",
+    "COB-02.dc.html",
+    "COB-03.dc.html",
+    "COB-04.dc.html",
+    "COB-05.dc.html",
+    "COB-06.dc.html",
+    "COB-07.dc.html",
+    "COB-08.dc.html",
+    "COB-09.dc.html",
+    "COB-09c.dc.html",
+    "COB-10.dc.html",
+    "CR-000.dc.html",
+    "COB-09o.dc.html",
+    "COB-11.dc.html",
+    "COB-12.dc.html",
+    "COB-13.dc.html",
+    "COB-14.dc.html",
+    "COB-15.dc.html",
+    "COB-16.dc.html",
+    "COB-17.dc.html",
+    "COB-18.dc.html",
+    "COB-19.dc.html",
+    "COB-20.dc.html",
+    "COB-21.dc.html",
+    "COB-22.dc.html",
+    "CR-DASH-000.dc.html",
+    "CreatorDash.dc.html",
+    "CR-DASH-01.dc.html",
+    "CR-DASH-01s.dc.html",
+    "CR-DASH-02.dc.html",
+    "CR-DASH-03.dc.html",
+    "CR-DASH-04.dc.html",
+    "CR-DASH-05.dc.html",
+    "CR-DASH-06.dc.html",
+    "CR-DASH-07.dc.html",
+    "CR-DASH-08.dc.html",
+    "CR-DASH-09.dc.html",
+    "CR-DASH-10.dc.html",
+    "CR-DASH-11.dc.html",
+    "VAL-000.dc.html",
+    "ValOnb.dc.html",
+    "ValQual.dc.html",
+    "ValDash.dc.html",
+    "SVE.dc.html",
+    "VAL-ONB-005.dc.html",
+    "VAL-ONB-006.dc.html",
+    "VAL-ONB-007.dc.html",
+    "VAL-ONB-008.dc.html",
+    "VAL-ONB-009.dc.html",
+    "VAL-ONB-010.dc.html",
+    "VAL-ONB-011.dc.html",
+    "VAL-ONB-012.dc.html",
+    "VAL-ONB-013.dc.html",
+    "VAL-ONB-014.dc.html",
+    "VAL-ONB-015.dc.html",
+    "VAL-ONB-016.dc.html",
+    "VQ-001.dc.html",
+    "VQ-001b.dc.html",
+    "VQ-002.dc.html",
+    "VQ-003.dc.html",
+    "VQ-003e.dc.html",
+    "VQ-004.dc.html",
+    "VQ-005.dc.html",
+    "VQ-006.dc.html",
+    "VDS-04.dc.html",
+    "VDS-05.dc.html",
+    "VDS-06.dc.html",
+    "VDS-07.dc.html",
+    "VDS-08.dc.html",
+    "VDS-09.dc.html",
+    "VDS-10.dc.html",
+    "SVE-01.dc.html",
+    "SVE-02.dc.html",
+    "SVE-03.dc.html",
+    "SVE-04.dc.html",
+    "SVE-05.dc.html",
+    "SVE-P.dc.html",
+    "VAL-ONB-009b.dc.html",
+    "VAL-ONB-009c.dc.html",
+    "VAL-ONB-009s.dc.html",
+    "VW-CASES.dc.html",
+    "VW-NEW.dc.html",
+    "VW-MSG.dc.html",
+    "VW-NOTIF.dc.html",
+    "VW-QUALS.dc.html",
+    "VW-EXP.dc.html",
+    "VW-CAREER.dc.html",
+    "VW-EARN.dc.html",
+    "VW-EARN-D.dc.html",
+    "VW-PAY.dc.html",
+    "VW-LEARN.dc.html",
+    "VW-PROFILE.dc.html"
+  ],
+  "pages": [
+    {
+      "id": "main",
+      "name": "Landing, learners & pricing"
+    },
+    {
+      "id": "creators",
+      "name": "Creators"
+    },
+    {
+      "id": "validators",
+      "name": "Validators"
+    }
+  ],
+  "title": "Credalio Landing Page"
+}

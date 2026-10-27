@@ -1,0 +1,128 @@
+[
+{
+"key": "Main@1440",
+"page": "2:4",
+"x": 0,
+"name": "CR-ONB-001 · Begin your journey · Desktop",
+"old": "CR-ONB-001 · Who will you become next? · Desktop"
+},
+{
+"key": "CR-ONB-002@1440",
+"page": "2:4",
+"x": 1600,
+"name": "CR-ONB-002 · How will you create? · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-002L@1440",
+"page": "2:4",
+"x": 3200,
+"name": "CR-ONB-002L · How will you create? · Learner picked · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-002V@1440",
+"page": "2:4",
+"x": 4800,
+"name": "CR-ONB-002V · How will you create? · Validator picked · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-002S@1440",
+"page": "2:4",
+"x": 6400,
+"name": "CR-ONB-002S · Organizations are coming soon · Desktop",
+"old": "CR-ONB-002S · Institution coming soon · Desktop"
+},
+{
+"key": "CR-ONB-003@1440",
+"page": "2:4",
+"x": 8000,
+"name": "CR-ONB-003 · Create account · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-003e@1440",
+"page": "2:4",
+"x": 9600,
+"name": "CR-ONB-003e · Invalid email · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-003b@1440",
+"page": "2:4",
+"x": 11200,
+"name": "CR-ONB-003b · Check your inbox · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-003d@1440",
+"page": "2:4",
+"x": 12800,
+"name": "CR-ONB-003d · Change your email · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-003v@1440",
+"page": "2:4",
+"x": 14400,
+"name": "CR-ONB-003v · Email confirmed · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-001-Mobile@390",
+"page": "2:5",
+"x": 0,
+"name": "CR-ONB-001 · Begin your journey · Mobile",
+"old": "CR-ONB-001 · Who will you become next? · Mobile"
+},
+{
+"key": "CR-ONB-002-Mobile@390",
+"page": "2:5",
+"x": 470,
+"name": "CR-ONB-002 · How will you create? · Mobile",
+"old": ""
+},
+{
+"key": "CR-ONB-002S-Mobile@390",
+"page": "2:5",
+"x": 940,
+"name": "CR-ONB-002S · Organizations are coming soon · Mobile",
+"old": "CR-ONB-002S · Institution coming soon · Mobile"
+},
+{
+"key": "CR-ONB-003-Mobile@390",
+"page": "2:5",
+"x": 1410,
+"name": "CR-ONB-003 · Create account · Mobile",
+"old": ""
+},
+{
+"key": "CR-ONB-003e-Mobile@390",
+"page": "2:5",
+"x": 1880,
+"name": "CR-ONB-003e · Invalid email · Mobile",
+"old": ""
+},
+{
+"key": "CR-ONB-003b-Mobile@390",
+"page": "2:5",
+"x": 2350,
+"name": "CR-ONB-003b · Check your inbox · Mobile",
+"old": ""
+},
+{
+"key": "CR-ONB-003d-Mobile@390",
+"page": "2:5",
+"x": 2820,
+"name": "CR-ONB-003d · Change your email · Mobile",
+"old": ""
+},
+{
+"key": "CR-ONB-003v-Mobile@390",
+"page": "2:5",
+"x": 3290,
+"name": "CR-ONB-003v · Email confirmed · Mobile",
+"old": ""
+}
+]

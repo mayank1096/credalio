@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CR-ORI-M6-K · Orientation · Module 6 check · shared source</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes cpPop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+.ob-in{animation:obIn .5s ease both}.ob-in3{animation:obIn .5s ease .16s both}
+.cp-pop{animation:cpPop .4s ease both}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in3,.cp-pop{animation:none}}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn{justify-content:space-between}
+}
+body{background:#FFFFFF}
+.lp-root{min-height:100vh;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.lp-top{position:sticky;top:0;z-index:5;height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1.5px solid #EEF1F7;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.lp-x{width:40px;height:40px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3A4566;text-decoration:none}
+.lp-x:hover{background:#F5F8FF;color:#0B1433}
+.lp-title{display:flex;align-items:baseline;gap:8px;min-width:0}
+.lp-t1{font-size:16px;font-weight:600;white-space:nowrap}
+.lp-t2{font-size:14px;color:#5B6582;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lp-segs{display:flex;gap:4px;margin-left:auto}
+.lp-seg{width:34px;height:4px;border-radius:4px;background:#E6EAF3}
+.lp-seg-done{background:#1652F0}
+.lp-seg-cur{background:linear-gradient(90deg,#1652F0 50%,#E6EAF3 50%)}
+.lp-tn{font-size:13px;color:#5B6582;white-space:nowrap;min-width:84px;text-align:right}
+.lp-body{flex-grow:1;display:flex;justify-content:center;gap:56px;padding:40px 32px 120px 32px}
+.lp-main{width:min(720px,100%);min-width:0}
+.lp-wide{width:min(1100px,100%)}
+.lp-body:has(.lp-wide){align-items:center;padding-bottom:64px}
+.lp-h1{margin:10px 0 0 0;font-size:clamp(30px,4.6vh,40px);line-height:1.12;font-weight:600;letter-spacing:-0.03em}
+.lp-bar{position:fixed;left:0;right:0;bottom:0;z-index:5;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1.5px solid #EEF1F7}
+.lp-barin{max-width:1100px;margin:0 auto;height:76px;box-sizing:border-box;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.lp-prev{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 18px 0 14px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:14.5px;font-weight:600;text-decoration:none;white-space:nowrap;max-width:300px;overflow:hidden;text-overflow:ellipsis}
+.lp-prev:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.lp-next.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}
+.lp-next.lp-off .ob-arrow{color:#9AA8CC}
+@media (max-width: 1100px){.lp-body{gap:0}}
+@media (max-width: 960px){
+.lp-top{height:56px;padding:0 12px 0 6px;gap:8px;flex-wrap:wrap}
+.lp-t1{display:none}
+.lp-t2{font-size:14.5px;font-weight:600;color:#0B1433}
+.lp-segs{position:absolute;left:16px;right:16px;bottom:-1px;margin:0;gap:3px}
+.lp-seg{flex:1 1 0;width:auto;height:3px}
+.lp-tn{display:none}
+.lp-body{padding:40px 16px 112px 16px}
+.lp-h1{font-size:25px}
+.lp-barin{height:72px;padding:0 16px;gap:10px}
+.lp-hide-sm{display:none}
+.lp-prev{width:48px;padding:0;justify-content:center;flex-shrink:0}
+.lp-next{flex:1 1 auto;min-width:0;justify-content:space-between}
+.lp-next > span:first-child{overflow:hidden;text-overflow:ellipsis}
+}
+.kc{margin-top:26px;padding:22px 22px 20px 22px;border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3}
+.kc-n{font-size:12.5px;font-weight:500;color:#8A93AD}
+.kc-q{margin:6px 0 0 0;font-size:19px;line-height:1.4;font-weight:600;letter-spacing:-0.01em}
+.kc-opts{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.kc-o{display:flex;align-items:center;gap:12px;min-height:52px;padding:10px 16px 10px 14px;box-sizing:border-box;border-radius:14px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15.5px;font-weight:500;text-align:left;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.kc-o:hover{border-color:#AFC1F5}
+.kc-o:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.kc-r{width:22px;height:22px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:2px solid #CBD3E6;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.kc-ok,.kc-no{display:none}
+.kc-right{border-color:#0F6B45;background:#F1FAF5}
+.kc-right .kc-r{background:#0F6B45;border-color:#0F6B45}.kc-right .kc-ok{display:flex}
+.kc-wrong{border-color:#E0A23B;background:#FFF9EE}
+.kc-wrong .kc-r{background:#B86E00;border-color:#B86E00}.kc-wrong .kc-no{display:flex}
+.kc-fb{margin-top:12px;padding:12px 14px;border-radius:14px;display:flex;flex-direction:column;gap:2px;font-size:14.5px;line-height:1.5}
+.kc-fb b{font-size:14.5px;font-weight:600}
+.kc-fb-ok{background:#E7F5EE;color:#0B4A30}
+.kc-fb-no{background:#FFF4E2;color:#6B4100}
+@media (max-width: 960px){
+.kc{margin-top:18px;padding:16px;border-radius:18px}
+.kc-q{font-size:17px}
+.kc-o{font-size:14.5px;min-height:48px}
+}
+.kc-grid{margin-top:26px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.kc-grid .kc{margin-top:0}
+.kc-two{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr))}
+.lp-body:has(.kc-grid){align-items:flex-start;padding-top:40px;padding-bottom:120px}
+@media (max-width: 960px){.kc-grid{grid-template-columns:minmax(0,1fr);gap:14px;margin-top:18px}.lp-body:has(.kc-grid){padding-top:40px;padding-bottom:112px}}
+.lp-root{position:relative;isolation:isolate}
+.lp-scene ~ .lp-body{background-color:transparent !important}
+.lp-scene{position:absolute;left:0;right:0;bottom:0;height:min(44vh,38vw);background:url(/_blob/6acc9dd1cd600c17d2fd6381a3069aaa) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
+@media (max-width: 960px){.lp-scene{height:220px;background-size:250% auto;background-position:52% 100%}}
+</style>
+</helmet>
+<div class="lp-root"><div class="lp-scene" aria-hidden="true"></div>
+<header class="lp-top">
+<a href="CR-ORI-001.dc.html" class="lp-x" aria-label="Close and go back to Orientation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
+<div class="lp-title"><span class="lp-t1">Creator Orientation</span><span class="lp-t2">Module 6 · Creator economy</span></div>
+<div class="lp-segs" aria-hidden="true"><span class="lp-seg lp-seg-done"></span><span class="lp-seg lp-seg-done"></span><span class="lp-seg lp-seg-cur"></span></div>
+<span class="lp-tn">Step 3 of 3</span>
+</header>
+<div class="lp-body">
+
+<main class="lp-main lp-wide">
+<h1 class="lp-h1 ob-in">Two quick questions</h1>
+
+<div class="kc-grid"><sc-for list="{{qs}}" as="q" hint-placeholder-count="2"><section class="kc ob-in3" aria-label="{{q.n}}">
+<span class="kc-n">{{q.n}}</span>
+<h2 class="kc-q">{{q.text}}</h2>
+<div class="kc-opts {{q.oc}}" role="radiogroup" aria-label="{{q.text}}"><sc-for list="{{q.opts}}" as="o" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{o.on}}" class="kc-o {{o.cls}}" onClick="{{o.pick}}"><span class="kc-r"><span class="kc-ok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="kc-no"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></span><span>{{o.label}}</span></button></sc-for></div>
+<sc-if value="{{q.fbShown}}" hint-placeholder-val="{{false}}"><div class="kc-fb {{q.fbCls}} cp-pop" role="status"><b>{{q.fbHead}}</b><span>{{q.fbText}}</span></div></sc-if>
+</section></sc-for></div></main>
+</div>
+<footer class="lp-bar"><div class="lp-barin"><a href="CR-ORI-M6-L2.dc.html" class="lp-prev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span class="lp-hide-sm">Credit Wallet vs Earnings</span></a><a href="CR-ORI-M6-DONE.dc.html" class="ds-btn lp-next {{nextCls}}" aria-disabled="{{nextDis}}"><span>{{nextLabel}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); const v = (props && props.variant) || 'none'; this.state = { a: v === 'right' ? [1, 1] : (v === 'wrong' ? [2, -1] : [-1, -1]) }; }
+  renderVals() {
+    const Q = [
+      ['Multiple choice', 'You need to pay for validation. Where do the Credits come from?', ['Your earnings', 'Your Credit Wallet', 'The validator'], 1, 'Validation is paid from your Credit Wallet. Earnings stay separate.'],
+      ['True or false', 'You can set any price you like for a course.', ['True', 'False'], 1, 'You choose within the range Credalio suggests.']
+    ];
+    const a = this.state.a;
+    const qs = Q.map((q, qi) => {
+      const pick = a[qi], ok = pick === q[3];
+      return {
+        n: 'Question ' + (qi + 1) + ' of ' + Q.length, kind: q[0], text: q[1], oc: q[2].length === 2 ? 'kc-two' : '',
+        opts: q[2].map((label, oi) => ({ label, on: pick === oi ? 'true' : 'false', cls: pick === oi ? (oi === q[3] ? 'kc-right' : 'kc-wrong') : '', pick: () => { if (ok) return; const n = a.slice(); n[qi] = oi; this.setState({ a: n }); } })),
+        fbShown: pick >= 0, fbCls: ok ? 'kc-fb-ok' : 'kc-fb-no', fbHead: ok ? 'Correct.' : 'Not quite.', fbText: ok ? q[4] : 'Have another look and try again.'
+      };
+    });
+    const all = Q.every((q, i) => a[i] === q[3]);
+    return { qs, nextCls: all ? '' : 'lp-off', nextDis: all ? 'false' : 'true', nextLabel: all ? 'Complete module' : 'Answer both to finish' };
+  }
+}
+</script>
+</body>
+</html>

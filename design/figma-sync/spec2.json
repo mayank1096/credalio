@@ -1,0 +1,142 @@
+[
+{
+"key": "CR-ONB-003c@1440",
+"page": "2:4",
+"x": 16000,
+"name": "CR-ONB-003c · Choose a password · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-003ce@1440",
+"page": "2:4",
+"x": 17600,
+"name": "CR-ONB-003ce · Password too weak · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-004@1440",
+"page": "2:4",
+"x": 19200,
+"name": "CR-ONB-004 · About you · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-004e@1440",
+"page": "2:4",
+"x": 20800,
+"name": "CR-ONB-004e · Missing display name · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-005@1440",
+"page": "2:4",
+"x": 22400,
+"name": "CR-ONB-005 · Your field · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-005e@1440",
+"page": "2:4",
+"x": 24000,
+"name": "CR-ONB-005e · Missing required fields · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-006@1440",
+"page": "2:4",
+"x": 25600,
+"name": "CR-ONB-006 · Meet your Copilot · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-007@1440",
+"page": "2:4",
+"x": 27200,
+"name": "CR-ONB-007 · Copilot style · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-007p@1440",
+"page": "2:4",
+"x": 28800,
+"name": "CR-ONB-007p · Copilot style: Proactive · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-008@1440",
+"page": "2:4",
+"x": 30400,
+"name": "CR-ONB-008 · You’re a Creator · Desktop",
+"old": ""
+},
+{
+"key": "CR-ONB-003c-Mobile@390",
+"page": "2:5",
+"x": 3760,
+"name": "CR-ONB-003c · Choose a password · Mobile",
+"old": ""
+},
+{
+"key": "CR-ONB-003ce-Mobile@390",
+"page": "2:5",
+"x": 4230,
+"name": "CR-ONB-003ce · Password too weak · Mobile",
+"old": ""
+},
+{
+"key": "CR-ONB-004-Mobile@390",
+"page": "2:5",
+"x": 4700,
+"name": "CR-ONB-004 · About you · Mobile",
+"old": ""
+},
+{
+"key": "CR-ONB-004e-Mobile@390",
+"page": "2:5",
+"x": 5170,
+"name": "CR-ONB-004e · Missing display name · Mobile",
+"old": ""
+},
+{
+"key": "CR-ONB-005-Mobile@390",
+"page": "2:5",
+"x": 5640,
+"name": "CR-ONB-005 · Your field · Mobile",
+"old": ""
+},
+{
+"key": "CR-ONB-005e-Mobile@390",
+"page": "2:5",
+"x": 6110,
+"name": "CR-ONB-005e · Missing required fields · Mobile",
+"old": ""
+},
+{
+"key": "CR-ONB-006-Mobile@390",
+"page": "2:5",
+"x": 6580,
+"name": "CR-ONB-006 · Meet your Copilot · Mobile",
+"old": ""
+},
+{
+"key": "CR-ONB-007-Mobile@390",
+"page": "2:5",
+"x": 7050,
+"name": "CR-ONB-007 · Copilot style · Mobile",
+"old": ""
+},
+{
+"key": "CR-ONB-007p-Mobile@390",
+"page": "2:5",
+"x": 7520,
+"name": "CR-ONB-007p · Copilot style: Proactive · Mobile",
+"old": ""
+},
+{
+"key": "CR-ONB-008-Mobile@390",
+"page": "2:5",
+"x": 7990,
+"name": "CR-ONB-008 · You’re a Creator · Mobile",
+"old": ""
+}
+]

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CR-KYC-001 · Verify identity: before you start</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}.ob-in3{animation:obIn .5s ease .16s both}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2,.ob-in3{animation:none}}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn{justify-content:space-between}
+}
+.sec-h{margin:0;font-size:13.5px;font-weight:600;color:#8A93AD}
+body{background:#FFFFFF}
+.lp-x{width:40px;height:40px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3A4566;text-decoration:none}
+.lp-x:hover{background:#F5F8FF;color:#0B1433}
+.lp-title{display:flex;align-items:baseline;gap:8px;min-width:0}
+.lp-t1{font-size:16px;font-weight:600;white-space:nowrap}
+.lp-t2{font-size:14px;color:#5B6582;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lp-eb{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#1652F0}
+.lp-h1{margin:10px 0 0 0;font-size:clamp(30px,4.6vh,40px);line-height:1.12;font-weight:600;letter-spacing:-0.03em}
+@media (max-width: 960px){
+.lp-t1{display:none}
+.lp-t2{font-size:14.5px;font-weight:600;color:#0B1433}
+.lp-h1{font-size:25px}
+}
+.tk-root{min-height:100vh;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.tk-top{position:sticky;top:0;z-index:5;height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1.5px solid #EEF1F7;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tk-sec{display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 13px 0 11px;border-radius:999px;background:#E7F5EE;color:#0F6B45;font-size:13px;font-weight:500;white-space:nowrap}
+.tk-check{display:flex;align-items:flex-start;gap:12px;font-size:14px;line-height:1.5;color:#3A4566;cursor:pointer}
+.tk-box{width:22px;height:22px;flex-shrink:0;box-sizing:border-box;border-radius:7px;border:2px solid #CBD3E6;background:#FFFFFF;color:#FFFFFF;display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all .2s ease}
+.tk-on .tk-box{background:#1652F0;border-color:#1652F0}
+@media (max-width: 960px){
+.tk-top{height:56px;padding:0 12px 0 6px;gap:8px}
+.tk-top .lp-t1{display:block;font-size:15px}
+.tk-top .lp-t2{display:none}
+.tk-sec span{display:none}
+.tk-sec{width:34px;padding:0;justify-content:center}
+}
+.k1{flex-grow:1;width:min(1120px,100%);box-sizing:border-box;margin:0 auto;padding:clamp(28px,6vh,64px) 32px 48px 32px;display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:64px;align-items:start}
+.k1-sub{margin:14px 0 0 0;font-size:17.5px;line-height:1.6;color:#3A4566;max-width:560px}
+.k1-sh{display:block;margin:32px 0 12px 2px}
+.k1-need{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:620px}
+.k1-n{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:16px;border-radius:18px;background:#F7F9FD;border:1.5px solid #EEF1F7}
+.k1-n b{font-size:14.5px;font-weight:600;line-height:1.3}
+.k1-ni{width:42px;height:42px;flex-shrink:0;border-radius:13px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(11,20,51,.05)}
+.k1-card{padding:24px;gap:18px !important;border-radius:24px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 18px 44px rgba(22,82,240,.08);display:flex;flex-direction:column;gap:16px;position:sticky;top:96px}
+.k1-ptn{display:flex;align-items:center;gap:12px}
+.k1-ptn > span:last-child{display:flex;flex-direction:column;gap:1px}
+.k1-ptn b{font-size:15px;font-weight:600}
+.k1-ptn > span:last-child > span{font-size:12.5px;color:#5B6582}
+.k1-logo{width:40px;height:40px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:18px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.k1-go{width:100%;justify-content:space-between}
+.k1-go.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}
+.k1-go.lp-off .ob-arrow{color:#9AA8CC}
+.k1-later{font-size:13px;color:#5B6582;text-align:center;margin-top:-4px}
+@media (max-width: 960px){
+.k1{grid-template-columns:minmax(0,1fr);gap:22px;padding:36px 16px 32px 16px;align-content:start}
+.k1-sub{font-size:15px;margin-top:10px}
+.k1-sh{margin:22px 0 10px 2px}
+.k1-need{grid-template-columns:minmax(0,1fr);gap:0;border:1.5px solid #EEF1F7;border-radius:18px;background:#F7F9FD;overflow:hidden}
+.k1-n{flex-direction:row;border:0;border-radius:0;background:transparent;padding:12px 14px;gap:12px;align-items:center}
+.k1-n b{font-size:14px}
+.k1-n + .k1-n{border-top:1.5px solid #EEF1F7}
+.k1-ni{width:36px;height:36px;border-radius:11px}
+.k1-ni svg{width:18px;height:18px}
+.k1-need{grid-template-columns:repeat(2,minmax(0,1fr))}
+.k1-n + .k1-n{border-top:0}
+.k1-n:nth-child(n+3){border-top:1.5px solid #EEF1F7 !important}
+.k1-n:nth-child(even){border-left:1.5px solid #EEF1F7}
+.k1-card{position:static;padding:0;border:0;box-shadow:none;border-radius:0;gap:20px !important;margin-top:10px}
+.k1-ptn{display:none !important}
+.tk-check{font-size:13.5px}
+}
+.tk-sec.tk-sum{background:#F1F3F8;color:#4A5578;padding:0 13px}
+@media (max-width: 960px){.tk-sec.tk-sum{width:auto;padding:0 12px;font-size:12px;height:30px}.tk-sec.tk-sum span{display:inline}}
+.tk-root{position:relative;isolation:isolate}
+.tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/6acc9dd1cd600c17d2fd6381a3069aaa) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
+@media (max-width: 760px){.tk-scene{height:240px;background-size:250% auto;background-position:52% 100%}}
+.kx-err{display:flex;align-items:center;gap:6px;margin:8px 0 0 0;font-size:13.5px;line-height:1.4;color:#B42318}.kx-err svg{flex-shrink:0}
+.tk-check.tk-bad .tk-box{border-color:#D92D20;box-shadow:0 0 0 3px rgba(217,45,32,.12)}
+.k1-card .kx-err{margin:-6px 0 4px 32px}
+</style>
+</helmet>
+<div class="tk-root">
+<div class="tk-scene" aria-hidden="true"></div>
+<header class="tk-top">
+<a href="CR-RDY-001.dc.html" class="lp-x" aria-label="Close and go back to readiness"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
+<div class="lp-title"><span class="lp-t1">Verify your identity</span><span class="lp-t2">Readiness · task 1 of 5</span></div>
+<span style="flex-grow: 1"></span>
+<span class="tk-sec tk-sum"><span>Powered by Sumsub</span></span>
+</header>
+<main class="k1">
+<section class="k1-l">
+<span class="lp-eb ob-in"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.5V12l3 2"></path></svg>About 3 to 5 minutes</span>
+<h1 class="lp-h1 ob-in">Let’s confirm it’s you.</h1>
+<p class="k1-sub ob-in2">Confirm your identity before submitting work for validation.</p>
+<span class="sec-h k1-sh ob-in2">You’ll need</span>
+<ul class="k1-need ob-in3"><li class="k1-n"><span class="k1-ni"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><circle cx="9" cy="11" r="2.2"></circle><path d="M5.8 16a3.4 3.4 0 0 1 6.4 0M14.5 10h4M14.5 13.5h3"></path></svg></span><b>A valid ID</b></li><li class="k1-n"><span class="k1-ni"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="4"></circle><path d="M4.5 20a7.5 7.5 0 0 1 15 0"></path></svg></span><b>A selfie</b></li><li class="k1-n"><span class="k1-ni"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="3"></rect><path d="M8.5 7 10 4.5h4L15.5 7"></path><circle cx="12" cy="13.5" r="3.5"></circle></svg></span><b>A camera</b></li><li class="k1-n"><span class="k1-ni"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"></path></svg></span><b>Good light</b></li></ul>
+</section>
+<aside class="k1-card ob-in2">
+<span class="k1-ptn"><span class="k1-logo">S</span><span><b>Verified by Sumsub</b><span>Our identity partner</span></span></span>
+
+<label class="tk-check {{ckCls}}" onClick="{{toggle}}"><span class="tk-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>I agree to Sumsub processing my ID and biometric data to verify me. <a href="#">Privacy notice</a></span></label><sc-if value="{{showErr}}" hint-placeholder-val="{{false}}"><p class="kx-err" role="alert"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5"></path><path d="M12 16.2v.2"></path></svg>Tick the box so Sumsub can check your ID.</p></sc-if>
+<a href="CR-KYC-002.dc.html" class="ds-btn k1-go {{goCls}}"><span>Start verification</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+<span class="k1-later">You can keep drafting while we verify.</span>
+</aside>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { ok: false, err: ((props || {}).variant) === 'err' }; }
+  renderVals() { const ok = this.state.ok; const err = this.state.err && !ok; return { showErr: err, ckCls: ok ? 'tk-on' : (err ? 'tk-bad' : ''), goCls: (ok || err) ? '' : 'lp-off', toggle: (e) => { if (e && e.target && e.target.tagName === 'A') return; if (e && e.preventDefault) e.preventDefault(); this.setState({ ok: !ok }); } }; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CR-COL-002 · Review invitation</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-btn:focus-visible,.ds-ghost:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2{animation:none}}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
+.ds-btn{justify-content:space-between}
+}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+body{background:#FFFFFF}
+.lp-x{width:40px;height:40px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3A4566;text-decoration:none}
+.lp-x:hover{background:#F5F8FF;color:#0B1433}
+.lp-title{display:flex;align-items:baseline;gap:8px;min-width:0}
+.lp-t1{font-size:16px;font-weight:600;white-space:nowrap}
+@media (max-width: 960px){
+.lp-t1{display:none}
+}
+.tk-root{min-height:100vh;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.tk-top{position:sticky;top:0;z-index:5;height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1.5px solid #EEF1F7;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.tk-box{width:22px;height:22px;flex-shrink:0;box-sizing:border-box;border-radius:7px;border:2px solid #CBD3E6;background:#FFFFFF;color:#FFFFFF;display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all .2s ease}
+.tk-on .tk-box{background:#1652F0;border-color:#1652F0}
+@media (max-width: 960px){
+.tk-top{height:56px;padding:0 12px 0 6px;gap:8px}
+.tk-top .lp-t1{display:block;font-size:15px}
+}
+.tk-root{position:relative;isolation:isolate}
+.tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/6acc9dd1cd600c17d2fd6381a3069aaa) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
+@media (max-width: 760px){.tk-scene{height:240px;background-size:250% auto;background-position:52% 100%}}
+.cl{flex-grow:1;width:min(1280px,100%);box-sizing:border-box;margin:0 auto;padding:clamp(24px,5vh,52px) 32px 64px 32px;display:grid;grid-template-columns:minmax(0,1fr) 640px;gap:64px;align-items:start;align-content:start}
+.cl-side{position:sticky;top:104px;display:flex;flex-direction:column;align-items:flex-start}
+.cl-from{display:flex;align-items:center;gap:12px}
+.cl-from > span:last-child{display:flex;flex-direction:column;gap:1px}
+.cl-from b{font-size:15px;font-weight:600}.cl-from > span:last-child span{font-size:13.5px;color:#5B6582}
+.cl-av{width:44px;height:44px;flex-shrink:0;border-radius:50%;background:#0B1433;color:#FFFFFF;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.cl-av.sm{width:30px;height:30px;font-size:11px;border:2px solid #FFFFFF;box-sizing:content-box}
+.cl-av.t2{background:#1652F0}.cl-av.t3{background:#5B6582}
+.cl-eb{margin-top:36px;font-size:13px;font-weight:500;color:#8A93AD}
+.cl-h1{margin:8px 0 0 0;font-size:clamp(30px,4.4vh,38px);line-height:1.12;font-weight:600;letter-spacing:-0.03em}
+.cl-sub{margin:10px 0 0 0;font-size:15.5px;line-height:1.65;color:#3A4566;max-width:460px}
+.cl-meta{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+.cl-meta span{display:inline-flex;align-items:center;height:28px;padding:0 11px;border-radius:999px;background:#F1F3F8;color:#3A4566;font-size:12.5px;font-weight:500}
+.cl-team{margin-top:20px;display:flex;align-items:center;gap:10px;font-size:13.5px;color:#5B6582}
+.cl-avs{display:flex}.cl-avs .cl-av + .cl-av{margin-left:-6px}
+.cl-steps{list-style:none;margin:32px 0 0 0;padding:0;display:flex;gap:6px;width:100%;max-width:420px}
+.cl-steps li{flex:1 1 0;display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:500;color:#8A93AD}
+.cl-steps i{display:block;height:4px;border-radius:4px;background:#E6EAF3}
+.cl-steps .on i{background:#1652F0}.cl-steps .on{color:#0B1433}
+.cl-steps .dn i{background:#0F6B45}.cl-steps .dn{color:#0F6B45}
+.cl-panel{border-radius:24px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 18px 44px rgba(22,82,240,.08);padding:24px 26px 18px 26px;display:flex;flex-direction:column}
+.cl-ph{margin:0;font-size:20px;font-weight:600;letter-spacing:-0.01em}
+.cl-chi{width:40px;height:40px;flex-shrink:0;border-radius:12px;background:linear-gradient(135deg,#1652F0,#6E96FF);color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.cl-lab{display:block;margin:16px 0 8px 0;font-size:12.5px;font-weight:500;color:#8A93AD}
+.cl-do{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.cl-do li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;line-height:1.5}
+.cl-do svg{color:#1652F0;flex-shrink:0;margin-top:3px}
+.cl-sum{margin-top:14px;display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;align-items:center;gap:22px;padding:12px 18px 12px 12px;border-radius:16px;background:#F5F8FF}
+.cl-sc{display:flex;align-items:center;gap:12px;min-width:0}
+.cl-sc > span:last-child{display:flex;flex-direction:column;gap:2px;min-width:0}
+.cl-sc b{font-size:15px;font-weight:600;white-space:nowrap}.cl-sc > span:last-child span{font-size:13px;color:#5B6582}
+.cl-sv{display:flex;flex-direction:column;gap:2px}
+.cl-sv em{font-style:normal;font-size:12.5px;color:#8A93AD}.cl-sv b{font-size:15px;font-weight:600;white-space:nowrap}
+.cl-perm{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cl-pb{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:16px 18px;border-radius:16px;border:1.5px solid #E6EAF3}
+.cl-pb.ok{background:#F3FAF6;border-color:#D5EEDF}
+.cl-pl{font-size:12.5px;font-weight:500;color:#8A93AD;margin-bottom:2px}
+.cl-p{display:inline-flex;align-items:center;gap:7px;font-size:14px;color:#5B6582}
+.cl-p svg{color:#8A93AD}
+.cl-p.ok{color:#0B1433}.cl-p.ok svg{color:#0F6B45}
+.cl-box{margin-top:18px;padding:14px;border-radius:16px;background:#F7F9FD;border:1.5px solid #E6EAF3}
+.cl-box .cl-lab{margin:0 0 8px 0;color:#3A4566}
+.cl-box textarea{width:100%;box-sizing:border-box;border-radius:12px;border:1.5px solid #D6DDEE;padding:10px 12px;font-family:inherit;font-size:14.5px;line-height:1.5;color:#0B1433;resize:none;outline:none;background:#FFFFFF}
+.cl-box textarea:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.cl-bf{margin-top:10px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;color:#5B6582}
+.cl-sm{height:40px;padding:0 16px;font-size:14px}
+.cl-red{color:#9A3B12;border-color:#F0C9B5}
+.cl-note{margin-top:16px;display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:#EAF0FF;color:#0E3BB8;font-size:14px;font-weight:500}
+.cl-note.gy{background:#F1F3F8;color:#4A5578}
+.cl-foot{margin-top:20px;padding-top:16px;border-top:1.5px solid #F0F2F8;display:flex;align-items:center;gap:12px}
+.cl-tx{height:48px;padding:0 6px;border:0;background:none;font-family:inherit;font-size:15px;font-weight:600;color:#5B6582;cursor:pointer;margin-right:auto}
+.cl-tx:hover{color:#0B1433}
+.cl-ask{height:52px}
+.cl-go{margin-left:0}
+.cl-go.lp-off{background:#C9D3EC;box-shadow:none;pointer-events:none}.cl-go.lp-off .ob-arrow{color:#9AA8CC}
+.cl-bk{height:52px;width:52px;padding:0}
+.cl-bk + .cl-go{margin-left:auto}.cl-bk span{display:none}
+.cl-ckw{margin-top:18px;border:1.5px solid #E6EAF3;border-radius:18px;overflow:hidden}
+.cl-ckh{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 18px;background:#F5F8FF;border-bottom:1.5px solid #E6EAF3;font-size:13px;font-weight:500;color:#4A5578}
+.cl-ckh b{font-size:13px;font-weight:600;color:#1652F0}
+.cl-cks{display:flex;flex-direction:column;max-height:296px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#CBD3E6 transparent;background:linear-gradient(#FFF 30%,rgba(255,255,255,0)) center top / 100% 40px no-repeat local,linear-gradient(rgba(255,255,255,0),#FFF 70%) center bottom / 100% 40px no-repeat local,radial-gradient(farthest-side at 50% 0,rgba(11,20,51,.14),transparent) center top / 100% 12px no-repeat scroll,radial-gradient(farthest-side at 50% 100%,rgba(11,20,51,.14),transparent) center bottom / 100% 12px no-repeat scroll}
+.cl-ck{display:flex;align-items:flex-start;gap:14px;padding:14px 18px;border:0;border-top:1.5px solid #F0F2F8;background:transparent;font-family:inherit;text-align:left;cursor:pointer;color:#0B1433;transition:border-color .2s ease,background .2s ease}
+.cl-ck:first-child{border-top:0}
+.cl-ck:hover{background:#F7F9FD}
+.cl-ck:hover .tk-box{border-color:#1652F0}
+.cl-ck > span:last-child{display:flex;flex-direction:column;gap:2px}
+.cl-ck b{font-size:14.5px;font-weight:500;line-height:1.4}
+.cl-ck > span:last-child span{font-size:13px;line-height:1.45;color:#5B6582}
+.cl-ck.tk-on b{color:#0B1433}
+.cl-glow{position:absolute;left:0;right:0;top:0;height:340px;z-index:-1;pointer-events:none;background:radial-gradient(60% 100% at 50% 0,rgba(22,82,240,.08),transparent 70%)}
+.is-joined .cl-glow{background:radial-gradient(60% 100% at 50% 0,rgba(15,107,69,.12),transparent 70%)}
+@media (max-width: 960px){
+.cl{grid-template-columns:minmax(0,1fr);gap:36px;padding:32px 16px 0 16px}
+.cl-side{position:static}
+.cl-from b{font-size:14px}.cl-av{width:38px;height:38px;font-size:13px}
+.cl-eb{margin-top:22px}
+.cl-h1{font-size:24px;margin-top:6px}
+.cl-sub,.cl-team{display:none}
+.cl-meta{margin-top:16px}
+.cl-steps{margin-top:28px;max-width:none}
+.cl-panel{border:0;box-shadow:none;border-radius:0;padding:0;background:none}
+.cl-ph{font-size:18px}
+.cl-sum{margin-top:16px;grid-template-columns:repeat(3,auto);justify-content:space-between;gap:18px 12px;padding:16px}
+.cl-lab{margin:28px 0 12px 0}
+.cl-do{gap:12px}
+.cl-sc{grid-column:1 / -1;padding-bottom:16px;border-bottom:1.5px solid #DDE5F7}
+.cl-perm{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:28px}
+.cl-foot{position:sticky;bottom:0;z-index:4;margin:28px -16px 0 -16px;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7}
+.cl-tx{margin-right:0;padding:0 4px;font-size:14.5px}
+.cl-ask{width:52px;padding:0;flex-shrink:0}.cl-ask span{display:none}
+.cl-go{flex-grow:1;justify-content:space-between}
+.cl-cks{max-height:none;overflow:visible}
+}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .16s ease,transform .16s ease,visibility .16s;z-index:20;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip-b.dn{bottom:auto;top:calc(100% + 10px)}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+</style>
+</helmet>
+<div class="tk-root cl-root {{rootCls}}">
+<div class="tk-scene" aria-hidden="true"></div><div class="cl-glow" aria-hidden="true"></div>
+<header class="tk-top">
+<a href="CR-NOT-001.dc.html" class="lp-x" aria-label="Close and go back to notifications"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
+<div class="lp-title"><span class="lp-t1" style="display: block">Collaboration invitation</span></div>
+<span style="flex-grow: 1"></span>
+</header>
+<main class="cl">
+<aside class="cl-side ob-in"><div class="cl-from"><span class="cl-av">BA</span><span><b>Dr. Bola Ade</b><span>Lead Creator · ABC Institute</span></span></div><span class="cl-eb">Invited you to co-create</span><h1 class="cl-h1">Financial Modelling Basics</h1><p class="cl-sub">Build, test and present financial models in spreadsheets: revenue models, scenarios and sensitivity analysis, for early-career finance professionals.</p><div class="cl-meta"><span>Draft · build phase</span></div><div class="cl-team"><span class="cl-avs"><span class="cl-av sm">BA</span><span class="cl-av sm t2">TB</span><span class="cl-av sm t3">AO</span></span><span>Dr. Bola Ade, Tunde Bello and you</span></div><ol class="cl-steps" aria-label="Steps"><li class="{{s0}}"><i></i><span>Review</span></li><li class="{{s1}}"><i></i><span>Consent</span></li><li class="{{s2}}"><i></i><span>Joined</span></li></ol></aside>
+<div class="cl-main"><sc-if value="{{vReview}}" hint-placeholder-val="{{true}}"><section class="cl-panel ob-in2" aria-labelledby="cl-ph"><h2 id="cl-ph" class="cl-ph">Your part</h2><div class="cl-sum"><span class="cl-sc"><span class="cl-chi"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6.5A2.5 2.5 0 0 1 4 18.5"></path><path d="M8 7h8"></path></svg></span><span><b>Chapter 3 · Revenue models</b><span>3 lessons and Quiz 3</span></span></span><span class="cl-sv"><em>Role</em><b>Co-Creator</b></span><span class="cl-sv"><em>Revenue share</em><b>20%</b></span><span class="cl-sv"><em>Reply by</em><b>in 6 days</b></span></div><span class="cl-lab">What you’ll do</span><ul class="cl-do"><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Build your chapter and respond to comments and validator requests on it</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Declare your own contribution before validation</span></li></ul><div class="cl-perm"><div class="cl-pb ok"><span class="cl-pl">You can</span><span class="cl-p ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Edit your chapter</span><span class="cl-p ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Comment anywhere</span><span class="cl-p ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Use Team chat</span></div><div class="cl-pb"><span class="cl-pl">Lead Creator keeps</span><span class="cl-p"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>Publishing</span><span class="cl-p"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>Pricing</span><span class="cl-p"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg>Other chapters</span></div></div><sc-if value="{{asking}}" hint-placeholder-val="{{false}}"><div class="cl-box"><label for="cl-q" class="cl-lab">Your question to Dr. Bola Ade<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b l" role="tooltip">The reply appears with this invitation.</span></span></label><textarea id="cl-q" rows="3" placeholder="For example: can I add a case study to Chapter 3?"></textarea><div class="cl-bf"><span></span><button type="button" class="ds-ghost cl-sm" onClick="{{send}}">Send question</button></div></div></sc-if><sc-if value="{{sent}}" hint-placeholder-val="{{false}}"><div class="cl-note" role="status"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span>Question sent. Dr. Bola Ade’s reply will appear here.</span></div></sc-if><sc-if value="{{declining}}" hint-placeholder-val="{{false}}"><div class="cl-box"><label for="cl-d" class="cl-lab">Reason (optional, shared with Dr. Bola Ade)</label><textarea id="cl-d" rows="2"></textarea><div class="cl-bf"><span>You can’t undo this.</span><a href="CR-COL-002x.dc.html" class="ds-ghost cl-sm cl-red" onClick="{{confirmDecline}}">Decline invitation</a></div></div></sc-if><sc-if value="{{declined}}" hint-placeholder-val="{{false}}"><div class="cl-note gy" role="status"><span>You declined. Dr. Bola Ade has been told.</span></div></sc-if><div class="cl-foot"><button type="button" class="cl-tx" onClick="{{decline}}">Decline</button><button type="button" class="ds-ghost cl-ask" onClick="{{ask}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span>Ask a question</span></button><a href="CR-COL-003.dc.html" class="ds-btn cl-go {{goOff}}" onClick="{{accept}}"><span>Accept</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section></sc-if><sc-if value="{{vConsent}}" hint-placeholder-val="{{false}}"><section class="cl-panel ob-in2" aria-labelledby="cl-ch2"><h2 id="cl-ch2" class="cl-ph">Before you join<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b l" role="tooltip">This isn’t the validation declaration. That comes later, for your own work.</span></span></h2><div class="cl-ckw"><div class="cl-ckh"><span>Tick each statement to join</span><b>{{nOn}} of 6 ticked</b></div><div class="cl-cks"><button type="button" role="checkbox" aria-checked="{{c0.on}}" class="cl-ck {{c0.cls}}" onClick="{{c0.pick}}"><span class="tk-box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>I agree to take part as Co-Creator on Financial Modelling Basics</b><span>You can leave later; your contributions stay attributed to you.</span></span></button><button type="button" role="checkbox" aria-checked="{{c1.on}}" class="cl-ck {{c1.cls}}" onClick="{{c1.pick}}"><span class="tk-box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>I understand my role, responsibilities and permissions</b><span>Co-Creator: build your assigned chapter; no publishing or pricing rights.</span></span></button><button type="button" role="checkbox" aria-checked="{{c2.on}}" class="cl-ck {{c2.cls}}" onClick="{{c2.pick}}"><span class="tk-box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>I accept the applicable Credalio creator terms</b></span></button><button type="button" role="checkbox" aria-checked="{{c3.on}}" class="cl-ck {{c3.cls}}" onClick="{{c3.pick}}"><span class="tk-box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>I accept the IP and contribution terms for this course</b><span>Content you contribute is licensed to the course as set out in the terms.</span></span></button><button type="button" role="checkbox" aria-checked="{{c4.on}}" class="cl-ck {{c4.cls}}" onClick="{{c4.pick}}"><span class="tk-box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>I accept the proposed revenue arrangement (20%)</b><span>Final shares are confirmed in the revenue agreement before publishing.</span></span></button><button type="button" role="checkbox" aria-checked="{{c5.on}}" class="cl-ck {{c5.cls}}" onClick="{{c5.pick}}"><span class="tk-box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>I’ll follow the platform collaboration rules</b><span>Work communication stays in Team chat, comments and assignments.</span></span></button></div></div><div class="cl-foot"><a href="CR-COL-002.dc.html" class="ds-ghost cl-bk" aria-label="Back to the invitation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 6-6 6 6 6"></path></svg><span>Back</span></a><a href="CR-COL-004.dc.html" class="ds-btn cl-go {{joinOff}}"><span>Accept and join</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section></sc-if></div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); const v = (props && props.variant) || 'review'; this.state = { v: v === 'consentall' ? 'consent' : v, cons: v === 'consentall' ? { 0: 1, 1: 1, 2: 1, 3: 1, 4: 1, 5: 1 } : (v === 'consent' ? { 0: 1, 1: 1, 2: 1 } : {}), ask: v === 'ask', dec: v === 'decline', sent: false, declined: false }; }
+  renderVals() {
+    const S = this.state, v = (S.v === 'ask' || S.v === 'decline') ? 'review' : S.v, out = {};
+    const n = Object.keys(S.cons).filter((k) => S.cons[k]).length;
+    for (let i = 0; i < 6; i++) { const on = !!S.cons[i]; out['c' + i] = { on: on ? 'true' : 'false', cls: on ? 'tk-on' : '', pick: () => this.setState({ cons: Object.assign({}, S.cons, { [i]: !on }) }) }; }
+    return Object.assign(out, {
+      vReview: v === 'review', vConsent: v === 'consent', vJoined: v === 'joined', rootCls: v === 'joined' ? 'is-joined' : '',
+      s0: v === 'review' ? 'on' : 'dn', s1: v === 'consent' ? 'on' : (v === 'joined' ? 'dn' : ''), s2: v === 'joined' ? 'dn' : '',
+      asking: S.ask, declining: S.dec, sent: S.sent, declined: S.declined, goOff: S.declined ? 'lp-off' : '',
+      ask: () => this.setState({ ask: !S.ask, dec: false }), decline: () => this.setState({ dec: !S.dec, ask: false }),
+      send: () => this.setState({ ask: false, sent: true }), confirmDecline: () => this.setState({ dec: false, declined: true }),
+      accept: () => {}, nOn: n, joinOff: n < 6 ? 'lp-off' : ''
+    });
+  }
+}
+</script>
+</body>
+</html>

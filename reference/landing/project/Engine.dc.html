@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Become Engine</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&amp;family=Sora:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<!-- BECOME ENGINE -->
+<section id="engine" aria-label="The Become Engine" style="width: 1440px; height: 1060px; box-sizing: border-box; background: #0B1433; color: #ffffff; font-family: 'Sora', system-ui, sans-serif; padding: 120px 120px 0; display: flex; flex-direction: column; gap: 64px; overflow: hidden">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 64px">
+<div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: #8FB0FF">The Become Engine</span>
+<h2 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 60px; line-height: 1.05; letter-spacing: -1.4px">Every journey starts with a vision. Credalio builds the rest.</h2>
+</div>
+<p style="margin: 0; max-width: 380px; font-size: 17px; line-height: 1.6; color: #B7C1DD">Eight connected stages take you from knowing where you want to go to proving you got there. Select a stage to see what happens.</p>
+</div>
+
+<div style="position: relative">
+<div style="position: absolute; left: 6%; right: 6%; top: 35px; height: 2px; background: #26315A"></div>
+<div style="position: absolute; left: 6%; top: 35px; height: 2px; width: {{progressPct}}; background: #4C7DFF"></div>
+<div style="position: relative; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{stages}}" as="st" hint-placeholder-count="8">
+<button type="button" onClick="{{st.pick}}" aria-pressed="{{st.pressed}}" style="background: none; border: none; padding: 0; cursor: pointer; color: #ffffff; font-family: 'Sora', sans-serif; display: flex; flex-direction: column; align-items: center; gap: 16px">
+<span style="width: 72px; height: 72px; border-radius: 22px; box-sizing: border-box; background: {{st.bg}}; border: 1.5px solid {{st.border}}; color: {{st.fg}}; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 500; box-shadow: {{st.glow}}">{{st.n}}</span>
+<span style="font-size: 16px; font-weight: 600; color: {{st.label}}">{{st.name}}</span>
+</button>
+</sc-for>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 24px">
+<div style="min-height: 340px; box-sizing: border-box; padding: 44px; border-radius: 24px; background: #121D45; border: 1px solid #26315A; display: flex; flex-direction: column; gap: 20px">
+<span style="font-size: 14px; font-weight: 600; color: #8FB0FF">Stage {{cur.n}} of 8</span>
+<h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 44px; font-weight: 500; line-height: 1.1; letter-spacing: -0.8px">{{cur.headline}}</h3>
+<p style="margin: 0; font-size: 18px; line-height: 1.65; color: #C7D0E8">{{cur.detail}}</p>
+</div>
+<div style="padding: 40px; border-radius: 24px; background: #1652F0; display: flex; flex-direction: column; justify-content: space-between; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: #DCE6FF">What you get</span>
+<sc-for list="{{cur.gets}}" as="g" hint-placeholder-count="3">
+<div style="display: flex; gap: 12px; align-items: flex-start; font-size: 17px; line-height: 1.5">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+<span>{{g}}</span>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{notLast}}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{next}}" style="align-self: flex-start; height: 48px; padding: 0 20px; box-sizing: border-box; border-radius: 12px; border: 1px solid rgba(255,255,255,0.5); background: #ffffff; color: #0E3BB8; font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none">{{nextLabel}} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</sc-if>
+<sc-if value="{{isLast}}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 15px; color: #DCE6FF">Tell Credalio who you want to become. We’ll build the path.</span>
+<a href="Journey.dc.html" style="align-self: flex-start; height: 48px; padding: 0 20px; box-sizing: border-box; border-radius: 12px; border: 1px solid rgba(255,255,255,0.5); background: #ffffff; color: #0E3BB8; font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none">Start Your Journey <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</sc-if>
+</div>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"stage":{"editor":"int","default":1,"min":1,"max":8},"$preview":{"width":1440,"height":1060}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    var n = parseInt(this.props.stage, 10);
+    this.state = { stage: (n >= 1 && n <= 8) ? n - 1 : 0 };
+  }
+  renderVals() {
+    var self = this;
+    var stageData = [
+      ['Vision', 'Start with who you want to become.', 'Tell Credalio your goal in your own words: a role, a skill, a career change. Your vision becomes the anchor for everything that follows.', ['Your goal, captured in your words', 'A clear starting direction']],
+      ['Discover', 'Understand the possibilities ahead of you.', 'Explore the roles and skills connected to your goal, and see the gap between where you are today and where you want to be.', ['Role and skill discovery', 'Your skill gaps, identified']],
+      ['AI Coach', 'Turn your goal into a personalised journey.', 'Your AI Coach maps a recommended route from your starting point to your goal, then adapts it as you learn.', ['A recommended route', 'Guidance that adapts as you progress']],
+      ['Learn', 'Build the knowledge you need.', 'Learn through courses, lessons and resources from trusted creators and institutions, with guided support whenever you need it.', ['Courses and lessons', 'Resources and guided learning']],
+      ['Practise', 'Turn knowledge into capability.', 'Apply what you learn through projects, exercises and simulations, with feedback while you work.', ['Projects and exercises', 'Simulations and practical tasks']],
+      ['Connect', 'Learn with people when people matter.', 'Reach tutors, peers, experts and communities who can answer questions, review your work and open doors.', ['Tutors and experts', 'Peers and communities']],
+      ['Prove', 'Show what you can actually do.', 'Assessments and verified work turn your effort into evidence. Everything you earn is kept in your Digital Backpack.', ['Assessments and verified projects', 'Credentials and portfolio evidence']],
+      ['Advance', 'Use what you\u2019ve proven to move forward.', 'Take your next step with confidence: a new role, next-level learning or a fresh goal. Then the engine starts again.', ['Next-level learning', 'New goals and continued progression']]
+    ];
+    var si = this.state.stage;
+    var stages = stageData.map(function (s, i) {
+      var on = i === si, done = i < si;
+      return { n: i + 1, name: s[0], pressed: on ? 'true' : 'false',
+        bg: on ? '#1652F0' : (done ? '#1B2A63' : '#0B1433'),
+        border: on ? '#4C7DFF' : (done ? '#4C7DFF' : '#344070'),
+        fg: on || done ? '#FFFFFF' : '#8E9BC2',
+        label: on ? '#FFFFFF' : '#AEB8D6',
+        glow: on ? '0 0 0 6px rgba(22, 82, 240, 0.28)' : 'none',
+        pick: function () { self.setState({ stage: i }); } };
+    });
+    var c = stageData[si];
+    return {
+      stages: stages, cur: { n: si + 1, headline: c[1], detail: c[2], gets: c[3] },
+      nextLabel: si < 7 ? 'Next: ' + stageData[si + 1][0] : '', isLast: si === 7, notLast: si < 7,
+      progressPct: (si / 7 * 88) + '%',
+      next: function () { self.setState({ stage: Math.min(7, si + 1) }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

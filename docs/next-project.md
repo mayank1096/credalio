@@ -71,3 +71,4 @@ and *-000 architecture pages are references for flow and rules, not screens.
 
 - 2026-10-27: project set up; references saved; nothing designed yet.
 - 2026-10-28: Landing canvas created: https://claude.ai/artifact/J3znQsAEUEHQEJNruQgjFm (local `design/canvas3/project/`). Hero v1 (Main + Main-Mobile): pill nav, eyebrow, "Who will you become next?" with path tile, goal search bar + Try chips, illustration area reserved (dashed placeholder). Logo blobs copied from Link 1: wordmark `/_blob/8acabcff7ece53343d63205e8b7321a2`, mark `/_blob/f81e36d31295a0d0737959589ec1abd4`.
+- 2026-10-28: hero edits from comments (no icon tile, wider nav, one-line sub, no Try chips, no note line); planet illustration as hero background: `design/illustrations/landing-planet.webp` (+ source .png) = `/_blob/195737ec1e847c0d182e13d12b6cc269`, overlaps content via `margin-top: calc(40px - 45.3%)` (mobile: 160% wide, centred).

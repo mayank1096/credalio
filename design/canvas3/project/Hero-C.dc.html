@@ -26,17 +26,19 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-search:focus-within{border-color:#1652F0 !important;box-shadow:0 0 0 4px rgba(22,82,240,.14),0 24px 60px -24px rgba(22,82,240,.45) !important}
 .lh-input::placeholder{color:#8A93AD}
 .lh-cta:focus-visible,.lh-link:focus-visible,.lh-menu:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-.lh-stage{position:absolute;z-index:2;left:50%;bottom:calc((100% - 380px) * -.1724);height:calc((100% - 380px) * 1.724);aspect-ratio:3/2;transform:translateX(-50%);pointer-events:none;--r:300px}
-.lh-orbit{position:absolute;inset:0;perspective:2200px;perspective-origin:50% 42%}
+.lh-stage{position:absolute;z-index:2;left:50%;bottom:calc((100% - 380px) * -.1724);height:calc((100% - 380px) * 1.724);aspect-ratio:3/2;transform:translateX(-50%);pointer-events:none;--r:340px}
+.lh-orbit{position:absolute;inset:0;perspective:2200px;perspective-origin:50% 44%}
 .lh-orbit-back{z-index:1;opacity:.75}
 .lh-orbit-front{z-index:3}
-.lh-ring{position:absolute;left:50%;top:42%;width:0;height:0;transform-style:preserve-3d;transform:rotateX(-12deg) rotateY(0deg);animation:lhSpin 48s linear infinite}
-@keyframes lhSpin{from{transform:rotateX(-12deg) rotateY(0deg)}to{transform:rotateX(-12deg) rotateY(-360deg)}}
+.lh-ring{position:absolute;left:50%;top:44%;width:0;height:0;transform-style:preserve-3d;transform:rotateX(-8deg) rotateY(0deg);animation:lhSpin 48s linear infinite}
+@keyframes lhSpin{from{transform:rotateX(-8deg) rotateY(0deg)}to{transform:rotateX(-8deg) rotateY(-360deg)}}
 .lh-stage:has(.lh-card:hover) .lh-ring{animation-play-state:paused}
-.lh-card{position:absolute;left:-75px;top:-38px;width:150px;height:76px;box-sizing:border-box;padding:12px 14px;border-radius:18px;display:flex;flex-direction:column;justify-content:space-between;text-align:left;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 18px 36px -18px rgba(11,20,51,.35);font-family:'Google Sans',system-ui,sans-serif;pointer-events:auto}
+.lh-card{position:absolute;left:-64px;top:-74px;width:128px;height:148px;box-sizing:border-box;padding:8px 8px 12px;border-radius:20px;display:flex;flex-direction:column;gap:10px;text-align:left;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 22px 40px -22px rgba(11,20,51,.38);font-family:'Google Sans',system-ui,sans-serif;pointer-events:auto;transition:box-shadow .2s ease}
+.lh-orbit-front .lh-card:hover{box-shadow:0 0 0 3px rgba(22,82,240,.25),0 22px 40px -22px rgba(11,20,51,.38)}
+.lh-card-vis{height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;overflow:hidden}
+.lh-card-body{padding:0 6px;display:flex;flex-direction:column;gap:4px}
 .lh-orbit-front .lh-card{cursor:pointer}
 .lh-orbit-back .lh-card{pointer-events:none}
-.lh-card-ic{width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .lh-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .lh-figure{position:absolute;inset:0;z-index:2;width:100%;height:100%;display:block;user-select:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 10%,#000 90%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 10%,#000 90%,transparent 100%)}
 @keyframes lhRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
@@ -60,12 +62,14 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-field{padding:0 12px !important}
 .lh-input{height:52px !important;font-size:16px !important}
 .lh-cta-main{justify-content:center !important;height:52px !important}
-.lh-stage{position:relative !important;left:auto !important;bottom:auto !important;transform:none !important;height:auto !important;width:190%;flex-shrink:0;margin:calc(62px - 50.7%) 0 -12.7%;--r:150px}
+.lh-stage{position:relative !important;left:auto !important;bottom:auto !important;transform:none !important;height:auto !important;width:190%;flex-shrink:0;margin:calc(84px - 55.7%) 0 -12.7%;--r:168px}
 .lh-figure{-webkit-mask-image:none;mask-image:none}
-.lh-card{left:-56px !important;top:-30px !important;width:112px !important;height:60px !important;padding:8px 10px !important;border-radius:14px !important}
-.lh-card-ic{width:20px !important;height:20px !important;border-radius:6px !important}
-.lh-card-t{font-size:12px !important}
-.lh-card-m{font-size:10px !important}
+.lh-card{left:-46px !important;top:-52px !important;width:92px !important;height:104px !important;padding:6px 6px 9px !important;gap:7px !important;border-radius:16px !important}
+.lh-card-vis{height:42px !important;border-radius:11px !important}
+.lh-card-vis svg{width:22px;height:22px}
+.lh-card-body{padding:0 4px !important;gap:2px !important}
+.lh-card-t{font-size:11px !important}
+.lh-card-m{font-size:9px !important}
 }
 </style>
 </helmet>
@@ -109,13 +113,13 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 <div class="lh-stage">
 <div class="lh-orbit lh-orbit-back" aria-hidden="true"><div class="lh-ring">
 <sc-for list="{{cards}}" as="c" hint-placeholder-count="8">
-<div class="lh-card" style="transform: {{c.tb}}; background: {{c.bg}}; border: 1.5px solid {{c.border}}"><span style="display: flex; align-items: center; gap: 8px"><span class="lh-card-ic" style="background: {{c.icBg}}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="{{c.icFg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{c.icon}}"></path></svg></span><span class="lh-card-t" style="font-size: 14px; font-weight: 600; line-height: 1.2; color: {{c.fg}}">{{c.name}}</span></span><span class="lh-card-m" style="font-size: 12px; font-weight: 500; color: {{c.sub}}">{{c.meta}}</span></div>
+<div class="lh-card" style="transform: {{c.tb}}; background: {{c.bg}}; border: 1.5px solid {{c.border}}"><span class="lh-card-vis" style="background: {{c.visBg}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="{{c.icFg}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{c.icon}}"></path></svg></span><span class="lh-card-body"><span class="lh-card-t" style="font-size: 15px; font-weight: 600; line-height: 1.2; color: {{c.fg}}">{{c.name}}</span><span class="lh-card-m" style="font-size: 12px; font-weight: 500; color: {{c.sub}}">{{c.meta}}</span></span></div>
 </sc-for>
 </div></div>
 <img class="lh-figure" src="/_blob/edace6a66615ca20dfb081994323901a" alt="A young person floats gently above a cobalt path, looking up with hope, with learners reading, studying and presenting on either side">
 <div class="lh-orbit lh-orbit-front"><div class="lh-ring">
 <sc-for list="{{cards}}" as="c" hint-placeholder-count="8">
-<button class="lh-card" type="button" onClick="{{c.pick}}" aria-label="I want to become a {{c.name}}" style="transform: {{c.tf}}; background: {{c.bg}}; border: 1.5px solid {{c.border}}"><span style="display: flex; align-items: center; gap: 8px"><span class="lh-card-ic" style="background: {{c.icBg}}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="{{c.icFg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{c.icon}}"></path></svg></span><span class="lh-card-t" style="font-size: 14px; font-weight: 600; line-height: 1.2; color: {{c.fg}}">{{c.name}}</span></span><span class="lh-card-m" style="font-size: 12px; font-weight: 500; color: {{c.sub}}">{{c.meta}}</span></button>
+<button class="lh-card" type="button" onClick="{{c.pick}}" aria-label="I want to become a {{c.name}}" style="transform: {{c.tf}}; background: {{c.bg}}; border: 1.5px solid {{c.border}}"><span class="lh-card-vis" style="background: {{c.visBg}}"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="{{c.icFg}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{c.icon}}"></path></svg></span><span class="lh-card-body"><span class="lh-card-t" style="font-size: 15px; font-weight: 600; line-height: 1.2; color: {{c.fg}}">{{c.name}}</span><span class="lh-card-m" style="font-size: 12px; font-weight: 500; color: {{c.sub}}">{{c.meta}}</span></span></button>
 </sc-for>
 </div></div>
 </div>
@@ -142,17 +146,17 @@ class Component extends DCLogic {
     ];
     var n = data.length;
     var cards = data.map(function (d, i) {
-      var a = (360 / n) * i;
+      var a = (360 / n) * i + 180 / n;
       var tone = i === 2 ? 'cobalt' : (i === 5 ? 'navy' : 'white');
       return {
         name: d[0], meta: d[1], icon: d[2],
         tf: 'rotateY(' + a + 'deg) translateZ(var(--r))',
         tb: 'rotateY(' + a + 'deg) translateZ(var(--r)) rotateY(180deg)',
         bg: tone === 'cobalt' ? '#1652F0' : (tone === 'navy' ? '#0B1433' : '#FFFFFF'),
-        border: tone === 'white' ? '#E6EAF3' : 'transparent',
+        border: tone === 'white' ? '#FFFFFF' : 'transparent',
         fg: tone === 'white' ? '#0B1433' : '#FFFFFF',
         sub: tone === 'white' ? '#5B6582' : 'rgba(255,255,255,.75)',
-        icBg: tone === 'white' ? '#EAF0FF' : 'rgba(255,255,255,.16)',
+        visBg: tone === 'white' ? 'linear-gradient(160deg,#EAF0FF,#F5F8FF)' : 'rgba(255,255,255,.14)',
         icFg: tone === 'white' ? '#1652F0' : '#FFFFFF',
         pick: function () { self.setState({ goal: 'I want to become a ' + d[0].toLowerCase() }); }
       };

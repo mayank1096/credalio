@@ -143,6 +143,14 @@ a{color:#1652F0}
 .tp-u{align-self:center;padding:10px 0}
 .tp-scrim{background:rgba(11,20,51,.28)}
 }
+.ds-main{flex-grow:1}
+.pg-end{box-sizing:border-box;width:100%;max-width:1200px;padding:0 clamp(20px,3vw,40px) 28px clamp(20px,3vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:13px;color:#8A93AD}
+.pg-end::before{content:'';position:absolute;left:0;right:0;top:0;height:1.5px;background:#E6EAF3}
+.pg-end{position:relative;padding-top:20px;margin-top:8px}
+.pg-end nav{display:flex;gap:20px}
+.pg-end a{color:#5B6582;text-decoration:none;font-weight:500}
+.pg-end a:hover{color:#1652F0}
+@media (max-width: 960px){.pg-end{flex-direction:column;gap:10px;padding:18px 16px 24px 16px;text-align:center}.pg-end::before{left:16px;right:16px}.pg-end a{position:relative}.pg-end a::after{content:'';position:absolute;left:-8px;right:-8px;top:-14px;bottom:-14px}}
 </style>
 </helmet>
 <div class="ds-root">
@@ -193,6 +201,7 @@ a{color:#1652F0}
 <ol class="dn-track" style="list-style: none; margin: 18px 0 0 0; padding: 0; position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px"><span class="dn-rail" aria-hidden="true"><span style="display: block; width: 12%; height: 100%; background: #0F6B45; border-radius: 3px"></span></span><li class="dn-ms"><span class="dn-dot" style="background: #0F6B45; border-color: #0F6B45; color: #FFFFFF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span style="display: flex; flex-direction: column; min-width: 0"><span class="dn-msl">Creator profile</span><span class="dn-mss" style="color: #0F6B45">Complete</span></span><span></span></li><li class="dn-ms"><span class="dn-dot dn-next" style="background: #FFFFFF; border-color: #1652F0"><span style="width: 9px; height: 9px; border-radius: 50%; background: #1652F0"></span></span><span style="display: flex; flex-direction: column; min-width: 0"><span class="dn-msl">Verify your identity</span><span class="dn-mss" style="color: #5B6582">Not started</span></span><a href="CR-KYC-001.dc.html" class="ds-link dn-act">Verify</a></li><li class="dn-ms"><span class="dn-dot" style="background: #FFFFFF; border-color: #CBD3E6"></span><span style="display: flex; flex-direction: column; min-width: 0"><span class="dn-msl">Credentials &amp; expertise</span><span class="dn-mss" style="color: #5B6582">Not started</span></span><a href="CR-CRED-001.dc.html" class="ds-link dn-act">Start</a></li><li class="dn-ms"><span class="dn-dot" style="background: #FFFFFF; border-color: #CBD3E6"></span><span style="display: flex; flex-direction: column; min-width: 0"><span class="dn-msl">Creator Orientation</span><span class="dn-mss" style="color: #5B6582">Not started</span></span><a href="CR-ORI-001.dc.html" class="ds-link dn-act">Start</a></li><li class="dn-ms"><span class="dn-dot" style="background: #FFFFFF; border-color: #CBD3E6"></span><span style="display: flex; flex-direction: column; min-width: 0"><span class="dn-msl">Creator policies</span><span class="dn-mss" style="color: #5B6582">Not started</span></span><a href="CR-POL-001.dc.html" class="ds-link dn-act">Review</a></li></ol>
 </section>
 </main>
+<footer class="pg-end"><span>© 2026 Credalio</span><nav aria-label="Footer"><a href="CR-HELP-001.dc.html">Help &amp; Support</a><a href="CR-POL-001.dc.html">Privacy</a><a href="#">Terms</a></nav></footer>
 </div>
 </div>
 </x-dc>

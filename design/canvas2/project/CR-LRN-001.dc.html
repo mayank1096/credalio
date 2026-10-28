@@ -97,6 +97,14 @@ a{color:#1652F0}
 .ln-s{grid-row:1;grid-column:2}
 .ln-s .st{height:24px;padding:0 9px;font-size:12px}
 }
+.ds-main{flex-grow:1}
+.pg-end{box-sizing:border-box;width:100%;max-width:1200px;padding:0 clamp(20px,3vw,40px) 28px clamp(20px,3vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:13px;color:#8A93AD}
+.pg-end::before{content:'';position:absolute;left:0;right:0;top:0;height:1.5px;background:#E6EAF3}
+.pg-end{position:relative;padding-top:20px;margin-top:8px}
+.pg-end nav{display:flex;gap:20px}
+.pg-end a{color:#5B6582;text-decoration:none;font-weight:500}
+.pg-end a:hover{color:#1652F0}
+@media (max-width: 960px){.pg-end{flex-direction:column;gap:10px;padding:18px 16px 24px 16px;text-align:center}.pg-end::before{left:16px;right:16px}.pg-end a{position:relative}.pg-end a::after{content:'';position:absolute;left:-8px;right:-8px;top:-14px;bottom:-14px}}
 </style>
 </helmet>
 <div class="ds-root">
@@ -122,10 +130,11 @@ a{color:#1652F0}
 <main class="ds-main hp">
 <div class="hp-head ob-in"><div><h1 class="ds-h1">Learners <span class="ln-cnt">1,284</span></h1></div></div><div class="ln-bar ob-in2"><span class="ln-q"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span>Search learners</span></span><button type="button" class="hp-rb ln-f">All learning experiences<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button><button type="button" class="hp-rb ln-f">Any progress<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><section class="ds-card ln-card ob-in3" aria-label="Learners"><div class="ln-hd"><span>Learner</span><span>Progress</span><span>Last active</span><span></span></div><ul class="ln-l"><li><a href="CR-LRN-002.dc.html" class="ln-r"><span class="av">ME</span><span class="ln-n"><b>Mary E.</b><span>Data Analysis with SQL</span></span><span class="ln-p"><i><em style="width:62%"></em></i><b>62%</b></span><span class="ln-t">12 min ago</span><span class="ln-s"></span></a></li><li><a href="CR-LRN-002.dc.html" class="ln-r"><span class="av">TA</span><span class="ln-n"><b>Tunde A.</b><span>Data Analysis with SQL</span></span><span class="ln-p"><i><em style="width:41%"></em></i><b>41%</b></span><span class="ln-t">2 h ago</span><span class="ln-s"></span></a></li><li><a href="CR-LRN-002.dc.html" class="ln-r"><span class="av">IN</span><span class="ln-n"><b>Ifeoma N.</b><span>Advanced SQL for Analysts</span></span><span class="ln-p"><i><em style="width:100%"></em></i><b>100%</b></span><span class="ln-t">Yesterday</span><span class="ln-s"><span class="st gr">Completed</span></span></a></li><li><a href="CR-LRN-002.dc.html" class="ln-r"><span class="av">CO</span><span class="ln-n"><b>Chioma O.</b><span>Data Analysis with SQL</span></span><span class="ln-p"><i><em style="width:78%"></em></i><b>78%</b></span><span class="ln-t">Yesterday</span><span class="ln-s"></span></a></li><li><a href="CR-LRN-002.dc.html" class="ln-r"><span class="av">KB</span><span class="ln-n"><b>Kwame B.</b><span>Certified Data Analyst</span></span><span class="ln-p"><i><em style="width:23%"></em></i><b>23%</b></span><span class="ln-t">16 days ago</span><span class="ln-s"><span class="st am">Inactive</span></span></a></li><li><a href="CR-LRN-002.dc.html" class="ln-r"><span class="av">GM</span><span class="ln-n"><b>Grace M.</b><span>Certified Data Analyst</span></span><span class="ln-p"><i><em style="width:55%"></em></i><b>55%</b></span><span class="ln-t">3 days ago</span><span class="ln-s"></span></a></li><li><a href="CR-LRN-002.dc.html" class="ln-r"><span class="av">SE</span><span class="ln-n"><b>Samuel E.</b><span>Applied AI Program</span></span><span class="ln-p"><i><em style="width:88%"></em></i><b>88%</b></span><span class="ln-t">Today</span><span class="ln-s"></span></a></li></ul></section>
 </main>
+<footer class="pg-end"><span>© 2026 Credalio</span><nav aria-label="Footer"><a href="CR-HELP-001.dc.html">Help &amp; Support</a><a href="CR-POL-001.dc.html">Privacy</a><a href="#">Terms</a></nav></footer>
 </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":880}}'>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { nav: false }; }
   renderVals() {

@@ -31,15 +31,11 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-cta:focus-visible,.lh-chip:focus-visible,.lh-link:focus-visible,.lh-menu:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .lh-chips::-webkit-scrollbar{display:none}
 @keyframes lhRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@keyframes lhTilt{0%{transform:rotate(-14deg) scale(.7);opacity:0}60%{transform:rotate(-3deg) scale(1.06);opacity:1}100%{transform:rotate(-6deg) scale(1)}}
-@keyframes lhDraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 .lh-r1{animation:lhRise .7s cubic-bezier(.2,.7,.2,1) both}
 .lh-r2{animation:lhRise .7s cubic-bezier(.2,.7,.2,1) .08s both}
 .lh-r3{animation:lhRise .7s cubic-bezier(.2,.7,.2,1) .16s both}
 .lh-r4{animation:lhRise .7s cubic-bezier(.2,.7,.2,1) .24s both}
-.lh-tile{animation:lhTilt .8s cubic-bezier(.3,1.4,.5,1) .3s both}
-.lh-path{stroke-dasharray:1;animation:lhDraw 1s ease .6s both}
-@media (prefers-reduced-motion: reduce){.lh-r1,.lh-r2,.lh-r3,.lh-r4,.lh-tile,.lh-path{animation:none}}
+@media (prefers-reduced-motion: reduce){.lh-r1,.lh-r2,.lh-r3,.lh-r4{animation:none}}
 @media (max-width: 1180px){.lh-links{display:none !important}.lh-menu{display:flex !important}}
 @media (max-width: 760px){
 .lh-root{padding:8px !important}
@@ -51,8 +47,6 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-content{margin-top:40px !important;padding:0 16px !important}
 .lh-eyebrow{font-size:13px !important;height:32px !important}
 .lh-h1{font-size:40px !important;letter-spacing:-1.2px !important;margin-top:18px !important}
-.lh-tile{width:44px !important;height:44px !important;border-radius:13px !important;margin:0 4px 0 2px !important}
-.lh-tile svg{width:26px;height:26px}
 .lh-sub{font-size:15px !important;margin-top:14px !important}
 .lh-search{flex-direction:column !important;align-items:stretch !important;height:auto !important;border-radius:24px !important;padding:6px !important;margin-top:24px !important}
 .lh-field{padding:0 12px !important}
@@ -93,7 +87,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 <span aria-hidden="true" style="width: 22px; height: 22px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4z"></path></svg></span>
 AI-guided learning, built around your goal</span>
 
-<h1 class="lh-h1 lh-r2" style="margin: 22px 0 0; font-size: 76px; line-height: 1.04; font-weight: 600; letter-spacing: -2.4px; color: #0B1433">Who will you<br><span class="lh-tile" aria-hidden="true" style="display: inline-flex; vertical-align: -0.08em; width: 72px; height: 72px; margin: 0 10px 0 4px; border-radius: 20px; background: #FFFFFF; border: 1.5px solid #D6DDEE; box-shadow: 0 14px 30px -14px rgba(22,82,240,.5); align-items: center; justify-content: center; transform: rotate(-6deg)"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path class="lh-path" pathLength="1" d="M7 31c6 0 7-9 13-9s6-12 13-12" stroke="#1652F0" stroke-width="3" stroke-linecap="round"></path><circle cx="7" cy="31" r="3.5" fill="#FFFFFF" stroke="#1652F0" stroke-width="2.5"></circle><circle cx="33" cy="10" r="4.5" fill="#1652F0"></circle></svg></span><span style="color: #1652F0">become</span> next?</h1>
+<h1 class="lh-h1 lh-r2" style="margin: 22px 0 0; font-size: 76px; line-height: 1.04; font-weight: 600; letter-spacing: -2.4px; color: #0B1433">Who will you<br><span style="color: #1652F0">become</span> next?</h1>
 
 <p class="lh-sub lh-r3" style="margin: 20px 0 0; max-width: 600px; font-size: 19px; line-height: 1.55; color: #4A5578">Tell us where you want to go. We’ll build the journey around your goal, coach you with AI and help you prove what you can do.</p>
 

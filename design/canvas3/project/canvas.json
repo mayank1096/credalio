@@ -1,0 +1,17 @@
+{
+  "v": 3,
+  "createdOnFiles": {"v": 1, "at": "2026-10-28T09:00:00Z"},
+  "title": "Credalio · Landing",
+  "launch": {"view": "canvas"},
+  "pages": [{"id": "main", "name": "Landing, learners & pricing"}],
+  "boards": {
+    "Main.dc.html": {"x": 0, "y": 0, "w": 1440, "h": 900, "title": "LND-001 · Landing hero · Desktop", "page": "main", "expand": "fill", "is_interactive": true},
+    "Main-Mobile.dc.html": {"x": 1520, "y": 0, "w": 390, "h": 1000, "title": "LND-001 · Mobile", "page": "main", "is_interactive": true}
+  },
+  "order": ["Main.dc.html", "Main-Mobile.dc.html"],
+  "notes": {
+    "row-hero": {"x": 0, "y": -300, "text": "Landing page · hero", "kind": "title1", "maxW": 1910, "page": "main"},
+    "new-hero": {"x": 1990, "y": 0, "w": 260, "text": "NEW · hero v1 (illustration area reserved)", "fill": "pink", "page": "main"}
+  },
+  "designSystems": []
+}

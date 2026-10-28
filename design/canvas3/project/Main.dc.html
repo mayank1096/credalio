@@ -16,7 +16,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-arc{background:radial-gradient(closest-side,rgba(255,255,255,0) 97.6%,rgba(255,255,255,.95) 98.4%,rgba(255,255,255,0) 100%)}
 .lh-word{display:block;height:24px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}
 .lh-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
-.lh-link{transition:color .2s ease,background .2s ease}
+.lh-link{white-space:nowrap;transition:color .2s ease,background .2s ease}
 .lh-link:hover{color:#0B1433 !important;background:#F5F8FF}
 .lh-cta{transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
 .lh-cta:hover{background:#0E3BB8 !important;color:#FFFFFF;transform:translateY(-1px)}
@@ -36,7 +36,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-r3{animation:lhRise .7s cubic-bezier(.2,.7,.2,1) .16s both}
 .lh-r4{animation:lhRise .7s cubic-bezier(.2,.7,.2,1) .24s both}
 @media (prefers-reduced-motion: reduce){.lh-r1,.lh-r2,.lh-r3,.lh-r4{animation:none}}
-@media (max-width: 1180px){.lh-links{display:none !important}.lh-menu{display:flex !important}}
+@media (max-width: 1280px){.lh-links{display:none !important}.lh-menu{display:flex !important}}
 @media (max-width: 760px){
 .lh-root{padding:8px !important}
 .lh-hero{border-radius:22px !important;min-height:0 !important}
@@ -65,9 +65,9 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 <section class="lh-hero" aria-label="Start your journey" style="position: relative; overflow: hidden; border-radius: 28px; min-height: 868px; display: flex; flex-direction: column; align-items: center">
 <div class="lh-arc" aria-hidden="true" style="position: absolute; left: 50%; top: 210px; width: 2200px; height: 2200px; transform: translateX(-50%); pointer-events: none"></div>
 
-<header class="lh-nav" style="position: relative; z-index: 2; margin-top: 20px; width: min(1080px, calc(100% - 48px)); height: 64px; box-sizing: border-box; padding: 0 8px 0 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; background: rgba(255,255,255,.86); border: 1.5px solid rgba(255,255,255,.9); border-radius: 999px; box-shadow: 0 12px 32px -18px rgba(11,20,51,.28); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)">
+<header class="lh-nav" style="position: relative; z-index: 2; margin-top: 20px; width: min(1240px, calc(100% - 48px)); height: 64px; box-sizing: border-box; padding: 0 8px 0 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; background: rgba(255,255,255,.86); border: 1.5px solid rgba(255,255,255,.9); border-radius: 999px; box-shadow: 0 12px 32px -18px rgba(11,20,51,.28); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)">
 <a href="#" aria-label="Credalio home" style="display: flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0"><span class="lh-mark" aria-hidden="true"></span><span class="lh-word" aria-hidden="true"></span></a>
-<nav class="lh-links" aria-label="Main" style="display: flex; align-items: center; gap: 2px">
+<nav class="lh-links" aria-label="Main" style="display: flex; align-items: center; gap: 4px">
 <a class="lh-link" href="#" style="height: 40px; padding: 0 12px; border-radius: 999px; display: flex; align-items: center; font-size: 15px; font-weight: 500; color: #3A4566; text-decoration: none">Explore learning</a>
 <a class="lh-link" href="#" style="height: 40px; padding: 0 12px; border-radius: 999px; display: flex; align-items: center; font-size: 15px; font-weight: 500; color: #3A4566; text-decoration: none">Career paths</a>
 <a class="lh-link" href="#" style="height: 40px; padding: 0 12px; border-radius: 999px; display: flex; align-items: center; font-size: 15px; font-weight: 500; color: #3A4566; text-decoration: none">Certifications</a>

@@ -16,7 +16,7 @@
   ],
   "boards": {
     "CR-AI-001-Mobile.dc.html": {
-      "h": 900,
+      "h": 980,
       "is_interactive": true,
       "title": "CR-AI-001 · Mobile",
       "w": 390,
@@ -25,7 +25,7 @@
       "page": "p2"
     },
     "CR-AI-001.dc.html": {
-      "h": 860,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-AI-001 · Nova Copilot panel · Desktop",
       "w": 1440,
@@ -34,7 +34,7 @@
       "page": "p2"
     },
     "CR-AI-001a-Mobile.dc.html": {
-      "h": 1100,
+      "h": 1180,
       "is_interactive": true,
       "title": "CR-AI-001a · Mobile",
       "w": 390,
@@ -52,7 +52,7 @@
       "page": "p2"
     },
     "CR-AI-003-Mobile.dc.html": {
-      "h": 900,
+      "h": 980,
       "is_interactive": true,
       "title": "CR-AI-003 · Mobile",
       "w": 390,
@@ -61,7 +61,7 @@
       "page": "p2"
     },
     "CR-AI-003.dc.html": {
-      "h": 860,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-AI-003 · Nova · past conversations · Desktop",
       "w": 1440,
@@ -70,7 +70,7 @@
       "page": "p2"
     },
     "CR-ANA-001-Mobile.dc.html": {
-      "h": 1320,
+      "h": 1360,
       "is_interactive": true,
       "title": "CR-ANA-001 · Mobile",
       "w": 390,
@@ -79,7 +79,7 @@
       "page": "p2"
     },
     "CR-ANA-001.dc.html": {
-      "h": 1140,
+      "h": 1200,
       "is_interactive": true,
       "title": "CR-ANA-001 · Analytics overview · Desktop",
       "w": 1440,
@@ -88,7 +88,7 @@
       "page": "p2"
     },
     "CR-ANA-002-Mobile.dc.html": {
-      "h": 1160,
+      "h": 1240,
       "is_interactive": true,
       "title": "CR-ANA-002 · Mobile",
       "w": 390,
@@ -106,7 +106,7 @@
       "page": "p2"
     },
     "CR-ANA-002c-Mobile.dc.html": {
-      "h": 1100,
+      "h": 1180,
       "is_interactive": true,
       "title": "CR-ANA-002c · Mobile",
       "w": 390,
@@ -124,7 +124,7 @@
       "page": "p2"
     },
     "CR-ANA-002p-Mobile.dc.html": {
-      "h": 1080,
+      "h": 1160,
       "is_interactive": true,
       "title": "CR-ANA-002p · Mobile",
       "w": 390,
@@ -142,7 +142,7 @@
       "page": "p2"
     },
     "CR-ANA-003-Mobile.dc.html": {
-      "h": 800,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-ANA-003 · Mobile",
       "w": 390,
@@ -160,7 +160,7 @@
       "page": "p2"
     },
     "CR-ANA-004-Mobile.dc.html": {
-      "h": 1280,
+      "h": 1360,
       "is_interactive": true,
       "title": "CR-ANA-004 · Mobile",
       "w": 390,
@@ -169,7 +169,7 @@
       "page": "p2"
     },
     "CR-ANA-004.dc.html": {
-      "h": 1140,
+      "h": 1200,
       "is_interactive": true,
       "title": "CR-ANA-004 · Export report · Desktop",
       "w": 1440,
@@ -194,7 +194,7 @@
       "title": "CR-ANX · Analytics · shared source"
     },
     "CR-CAL-001-Mobile.dc.html": {
-      "h": 820,
+      "h": 880,
       "is_interactive": true,
       "title": "CR-CAL-001 · Mobile",
       "w": 390,
@@ -203,7 +203,7 @@
       "page": "p2"
     },
     "CR-CAL-001.dc.html": {
-      "h": 820,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-CAL-001 · Calendar · month · Desktop",
       "w": 1440,
@@ -212,7 +212,7 @@
       "page": "p2"
     },
     "CR-CAL-001a-Mobile.dc.html": {
-      "h": 1060,
+      "h": 1120,
       "is_interactive": true,
       "title": "CR-CAL-001a · Mobile",
       "w": 390,
@@ -221,7 +221,7 @@
       "page": "p2"
     },
     "CR-CAL-001a.dc.html": {
-      "h": 1060,
+      "h": 1120,
       "is_interactive": true,
       "title": "CR-CAL-001a · Calendar · agenda · Desktop",
       "w": 1440,
@@ -230,7 +230,7 @@
       "page": "p2"
     },
     "CR-CAL-001d-Mobile.dc.html": {
-      "h": 900,
+      "h": 960,
       "is_interactive": true,
       "title": "CR-CAL-001d · Mobile",
       "w": 390,
@@ -239,7 +239,7 @@
       "page": "p2"
     },
     "CR-CAL-001d.dc.html": {
-      "h": 820,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-CAL-001d · Calendar · day · Desktop",
       "w": 1440,
@@ -248,7 +248,7 @@
       "page": "p2"
     },
     "CR-CAL-001w-Mobile.dc.html": {
-      "h": 900,
+      "h": 960,
       "is_interactive": true,
       "title": "CR-CAL-001w · Mobile",
       "w": 390,
@@ -257,7 +257,7 @@
       "page": "p2"
     },
     "CR-CAL-001w.dc.html": {
-      "h": 820,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-CAL-001w · Calendar · week · Desktop",
       "w": 1440,
@@ -266,7 +266,7 @@
       "page": "p2"
     },
     "CR-CAL-002-Mobile.dc.html": {
-      "h": 880,
+      "h": 960,
       "is_interactive": true,
       "title": "CR-CAL-002 · Mobile",
       "w": 390,
@@ -275,7 +275,7 @@
       "page": "p2"
     },
     "CR-CAL-002.dc.html": {
-      "h": 820,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-CAL-002 · Event detail · Desktop",
       "w": 1440,
@@ -284,7 +284,7 @@
       "page": "p2"
     },
     "CR-CAL-003-Mobile.dc.html": {
-      "h": 1060,
+      "h": 1140,
       "is_interactive": true,
       "title": "CR-CAL-003 · Mobile",
       "w": 390,
@@ -293,7 +293,7 @@
       "page": "p2"
     },
     "CR-CAL-003.dc.html": {
-      "h": 880,
+      "h": 940,
       "is_interactive": true,
       "title": "CR-CAL-003 · Weekly availability · Desktop",
       "w": 1440,
@@ -311,7 +311,7 @@
       "page": "p2"
     },
     "CR-CAL-004.dc.html": {
-      "h": 820,
+      "h": 880,
       "is_interactive": true,
       "title": "CR-CAL-004 · Days off & exceptions · Desktop",
       "w": 1440,
@@ -320,7 +320,7 @@
       "page": "p2"
     },
     "CR-CAL-005-Mobile.dc.html": {
-      "h": 780,
+      "h": 840,
       "is_interactive": true,
       "title": "CR-CAL-005 · Mobile",
       "w": 390,
@@ -526,7 +526,7 @@
       "page": "p2"
     },
     "CR-CREIO-010-Mobile.dc.html": {
-      "h": 844,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-CREIO-010 · Mobile",
       "w": 390,
@@ -544,7 +544,7 @@
       "page": "p2"
     },
     "CR-CREIO-010b-Mobile.dc.html": {
-      "h": 900,
+      "h": 980,
       "is_interactive": true,
       "title": "CR-CREIO-010b · Mobile",
       "w": 390,
@@ -553,7 +553,7 @@
       "page": "p2"
     },
     "CR-CREIO-010b.dc.html": {
-      "h": 860,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-CREIO-010b · Creio popover · low · Desktop",
       "w": 1440,
@@ -562,7 +562,7 @@
       "page": "p2"
     },
     "CR-CREIO-011-Mobile.dc.html": {
-      "h": 1020,
+      "h": 1100,
       "is_interactive": true,
       "title": "CR-CREIO-011 · Mobile",
       "w": 390,
@@ -580,7 +580,7 @@
       "page": "p2"
     },
     "CR-CREIO-011b-Mobile.dc.html": {
-      "h": 1100,
+      "h": 1180,
       "is_interactive": true,
       "title": "CR-CREIO-011b · Mobile",
       "w": 390,
@@ -614,7 +614,7 @@
       "title": "CR-CREIO-POP · Creio balance · shared source"
     },
     "CR-CREIO-TOP-Mobile.dc.html": {
-      "h": 900,
+      "h": 980,
       "is_interactive": true,
       "title": "CR-CREIO-TOP · Mobile",
       "w": 390,
@@ -623,7 +623,7 @@
       "page": "p2"
     },
     "CR-CREIO-TOP.dc.html": {
-      "h": 860,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-CREIO-TOP · Creio popover · Desktop",
       "w": 1440,
@@ -667,7 +667,7 @@
       "page": "p2"
     },
     "CR-DISC-001.dc.html": {
-      "h": 820,
+      "h": 840,
       "is_interactive": true,
       "title": "CR-DISC-001 · Discussions · Desktop",
       "w": 1440,
@@ -703,7 +703,7 @@
       "page": "p2"
     },
     "CR-DISC-002.dc.html": {
-      "h": 1080,
+      "h": 1140,
       "is_interactive": true,
       "title": "CR-DISC-002 · Discussion thread · Desktop",
       "w": 1440,
@@ -712,7 +712,7 @@
       "page": "p2"
     },
     "CR-DISC-002b-Mobile.dc.html": {
-      "h": 860,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-DISC-002b · Mobile",
       "w": 390,
@@ -730,7 +730,7 @@
       "page": "p2"
     },
     "CR-DISC-003-Mobile.dc.html": {
-      "h": 1260,
+      "h": 1360,
       "is_interactive": true,
       "title": "CR-DISC-003 · Mobile",
       "w": 390,
@@ -739,7 +739,7 @@
       "page": "p2"
     },
     "CR-DISC-003.dc.html": {
-      "h": 1220,
+      "h": 1260,
       "is_interactive": true,
       "title": "CR-DISC-003 · From a notification · new reply · Desktop",
       "w": 1440,
@@ -764,7 +764,7 @@
       "title": "CR-DTH · Discussion · shared source"
     },
     "CR-EARN-001-Mobile.dc.html": {
-      "h": 940,
+      "h": 1020,
       "is_interactive": true,
       "title": "CR-EARN-001 · Mobile",
       "w": 390,
@@ -782,7 +782,7 @@
       "page": "p2"
     },
     "CR-EARN-001b-Mobile.dc.html": {
-      "h": 844,
+      "h": 880,
       "is_interactive": true,
       "title": "CR-EARN-001b · Mobile",
       "w": 390,
@@ -808,7 +808,7 @@
       "title": "CR-EARN · Earnings · shared source"
     },
     "CR-HELP-001-Mobile.dc.html": {
-      "h": 900,
+      "h": 1000,
       "is_interactive": true,
       "title": "CR-HELP-001 · Mobile",
       "w": 390,
@@ -817,7 +817,7 @@
       "page": "p2"
     },
     "CR-HELP-001.dc.html": {
-      "h": 880,
+      "h": 940,
       "is_interactive": true,
       "title": "CR-HELP-001 · Help · Desktop",
       "w": 1440,
@@ -826,7 +826,7 @@
       "page": "p2"
     },
     "CR-HELP-002-Mobile.dc.html": {
-      "h": 1240,
+      "h": 1260,
       "is_interactive": true,
       "title": "CR-HELP-002 · Mobile",
       "w": 390,
@@ -844,7 +844,7 @@
       "page": "p2"
     },
     "CR-HELP-003-Mobile.dc.html": {
-      "h": 830,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-HELP-003 · Mobile",
       "w": 390,
@@ -853,7 +853,7 @@
       "page": "p2"
     },
     "CR-HELP-003.dc.html": {
-      "h": 880,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-HELP-003 · Contact support · Desktop",
       "w": 1440,
@@ -880,7 +880,7 @@
       "page": "p2"
     },
     "CR-HELP-005-Mobile.dc.html": {
-      "h": 620,
+      "h": 700,
       "is_interactive": true,
       "title": "CR-HELP-005 · Mobile",
       "w": 390,
@@ -898,7 +898,7 @@
       "page": "p2"
     },
     "CR-HELP-006-Mobile.dc.html": {
-      "h": 940,
+      "h": 1020,
       "is_interactive": true,
       "title": "CR-HELP-006 · Mobile",
       "w": 390,
@@ -932,7 +932,7 @@
       "title": "CR-HELPT · Support requests · shared source"
     },
     "CR-LRN-001-Mobile.dc.html": {
-      "h": 940,
+      "h": 1040,
       "is_interactive": true,
       "title": "CR-LRN-001 · Mobile",
       "w": 390,
@@ -941,7 +941,7 @@
       "page": "p2"
     },
     "CR-LRN-001.dc.html": {
-      "h": 820,
+      "h": 880,
       "is_interactive": true,
       "title": "CR-LRN-001 · Learners · Desktop",
       "w": 1440,
@@ -968,7 +968,7 @@
       "page": "p2"
     },
     "CR-NOVA-001-Mobile.dc.html": {
-      "h": 844,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-NOVA-001 · Mobile",
       "w": 390,
@@ -1318,7 +1318,7 @@
       "page": "p2"
     },
     "CR-PAYO-006-Mobile.dc.html": {
-      "h": 1000,
+      "h": 1060,
       "is_interactive": true,
       "title": "CR-PAYO-006 · Mobile",
       "w": 390,
@@ -1327,7 +1327,7 @@
       "page": "p2"
     },
     "CR-PAYO-006.dc.html": {
-      "h": 1060,
+      "h": 1120,
       "is_interactive": true,
       "title": "CR-PAYO-006 · Payout history · Desktop",
       "w": 1440,
@@ -1360,7 +1360,7 @@
       "title": "CR-PAYST · Payout · shared source"
     },
     "CR-PROF-001-Mobile.dc.html": {
-      "h": 820,
+      "h": 880,
       "is_interactive": true,
       "title": "CR-PROF-001 · Mobile",
       "w": 390,
@@ -1369,7 +1369,7 @@
       "page": "p2"
     },
     "CR-PROF-001.dc.html": {
-      "h": 820,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-PROF-001 · Creator profile · Desktop",
       "w": 1440,
@@ -1378,7 +1378,7 @@
       "page": "p2"
     },
     "CR-PROF-001c-Mobile.dc.html": {
-      "h": 844,
+      "h": 880,
       "is_interactive": true,
       "title": "CR-PROF-001c · Mobile",
       "w": 390,
@@ -1396,7 +1396,7 @@
       "page": "p2"
     },
     "CR-PROF-001v-Mobile.dc.html": {
-      "h": 1320,
+      "h": 1360,
       "is_interactive": true,
       "title": "CR-PROF-001v · Mobile",
       "w": 390,
@@ -1405,7 +1405,7 @@
       "page": "p2"
     },
     "CR-PROF-001v.dc.html": {
-      "h": 820,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-PROF-001v · Public profile preview · Desktop",
       "w": 1440,
@@ -1414,7 +1414,7 @@
       "page": "p2"
     },
     "CR-PROF-002-Mobile.dc.html": {
-      "h": 1280,
+      "h": 1360,
       "is_interactive": true,
       "title": "CR-PROF-002 · Mobile",
       "w": 390,
@@ -1423,7 +1423,7 @@
       "page": "p2"
     },
     "CR-PROF-002.dc.html": {
-      "h": 820,
+      "h": 880,
       "is_interactive": true,
       "title": "CR-PROF-002 · Public creator profile · Desktop",
       "w": 1440,
@@ -1484,7 +1484,7 @@
       "page": "p2"
     },
     "CR-SEARCH-002-Mobile.dc.html": {
-      "h": 1060,
+      "h": 1180,
       "is_interactive": true,
       "title": "CR-SEARCH-002 · Mobile",
       "w": 390,
@@ -1493,7 +1493,7 @@
       "page": "p2"
     },
     "CR-SEARCH-002.dc.html": {
-      "h": 1000,
+      "h": 1060,
       "is_interactive": true,
       "title": "CR-SEARCH-002 · Search results · Desktop",
       "w": 1440,
@@ -1520,7 +1520,7 @@
       "page": "p2"
     },
     "CR-SET-002d-Mobile.dc.html": {
-      "h": 844,
+      "h": 960,
       "is_interactive": true,
       "title": "CR-SET-002d · Mobile",
       "w": 390,
@@ -1556,7 +1556,7 @@
       "page": "p2"
     },
     "CR-SET-004-Mobile.dc.html": {
-      "h": 1180,
+      "h": 1280,
       "is_interactive": true,
       "title": "CR-SET-004 · Mobile",
       "w": 390,
@@ -1565,7 +1565,7 @@
       "page": "p2"
     },
     "CR-SET-004.dc.html": {
-      "h": 1080,
+      "h": 1140,
       "is_interactive": true,
       "title": "CR-SET-004 · Settings · Notifications · Desktop",
       "w": 1440,
@@ -1574,7 +1574,7 @@
       "page": "p2"
     },
     "CR-SET-005-Mobile.dc.html": {
-      "h": 860,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-SET-005 · Mobile",
       "w": 390,
@@ -1583,7 +1583,7 @@
       "page": "p2"
     },
     "CR-SET-005.dc.html": {
-      "h": 820,
+      "h": 880,
       "is_interactive": true,
       "title": "CR-SET-005 · Settings · Privacy · Desktop",
       "w": 1440,
@@ -1592,7 +1592,7 @@
       "page": "p2"
     },
     "CR-SET-006-Mobile.dc.html": {
-      "h": 844,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-SET-006 · Mobile",
       "w": 390,
@@ -1654,7 +1654,7 @@
       "page": "p2"
     },
     "CR-SUP-002-Mobile.dc.html": {
-      "h": 844,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-SUP-002 · Mobile",
       "w": 390,
@@ -1663,7 +1663,7 @@
       "page": "p2"
     },
     "CR-SUP-002.dc.html": {
-      "h": 880,
+      "h": 1000,
       "is_interactive": true,
       "title": "CR-SUP-002 · Support conversation · Desktop",
       "w": 1440,
@@ -1688,7 +1688,7 @@
       "title": "CR-VAL-WS · Validation Workspace · shared source"
     },
     "CR-WAL-001-Mobile.dc.html": {
-      "h": 1020,
+      "h": 1100,
       "is_interactive": true,
       "title": "CR-WAL-001 · Mobile",
       "w": 390,
@@ -1697,7 +1697,7 @@
       "page": "p2"
     },
     "CR-WAL-001.dc.html": {
-      "h": 820,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-WAL-001 · Credit Wallet · Desktop",
       "w": 1440,
@@ -1823,7 +1823,7 @@
       "page": "p2"
     },
     "CR-WAL-007.dc.html": {
-      "h": 1020,
+      "h": 1080,
       "is_interactive": true,
       "title": "CR-WAL-007 · Transaction history · Desktop",
       "w": 1440,
@@ -1857,7 +1857,7 @@
       "page": "p2"
     },
     "CR-EARN-001n-Mobile.dc.html": {
-      "h": 1000,
+      "h": 1060,
       "is_interactive": true,
       "title": "CR-EARN-001n · Mobile",
       "w": 390,
@@ -2037,7 +2037,7 @@
       "page": "p2"
     },
     "CR-ANA-002path-Mobile.dc.html": {
-      "h": 1060,
+      "h": 1120,
       "is_interactive": true,
       "title": "CR-ANA-002path · Mobile",
       "w": 390,
@@ -2055,7 +2055,7 @@
       "page": "p2"
     },
     "CR-ANA-003c-Mobile.dc.html": {
-      "h": 860,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-ANA-003c · Mobile",
       "w": 390,
@@ -2064,7 +2064,7 @@
       "page": "p2"
     },
     "CR-PROF-001e.dc.html": {
-      "h": 820,
+      "h": 880,
       "is_interactive": true,
       "title": "CR-PROF-001e · Profile expertise · Desktop",
       "w": 1440,
@@ -2082,7 +2082,7 @@
       "page": "p2"
     },
     "CR-AI-001x.dc.html": {
-      "h": 860,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-AI-001x · Nova panel · expanded · Desktop",
       "w": 1440,
@@ -2091,7 +2091,7 @@
       "page": "p2"
     },
     "CR-AI-001x-Mobile.dc.html": {
-      "h": 900,
+      "h": 980,
       "is_interactive": true,
       "title": "CR-AI-001x · Mobile",
       "w": 390,
@@ -2118,7 +2118,7 @@
       "page": "p2"
     },
     "CR-HELP-003e.dc.html": {
-      "h": 940,
+      "h": 1000,
       "is_interactive": true,
       "title": "CR-HELP-003e · Contact support · missing details · Desktop",
       "w": 1440,
@@ -2127,7 +2127,7 @@
       "page": "p2"
     },
     "CR-HELP-003e-Mobile.dc.html": {
-      "h": 900,
+      "h": 980,
       "is_interactive": true,
       "title": "CR-HELP-003e · Mobile",
       "w": 390,
@@ -2181,7 +2181,7 @@
       "page": "p2"
     },
     "CR-CREIO-010c-Mobile.dc.html": {
-      "h": 844,
+      "h": 900,
       "is_interactive": true,
       "title": "CR-CREIO-010c · Mobile",
       "w": 390,
@@ -2199,7 +2199,7 @@
       "page": "p2"
     },
     "CR-CREIO-EST-Mobile.dc.html": {
-      "h": 1100,
+      "h": 1180,
       "is_interactive": true,
       "title": "CR-CREIO-EST · Mobile",
       "w": 390,
@@ -2208,7 +2208,7 @@
       "page": "p2"
     },
     "CR-AI-012.dc.html": {
-      "h": 900,
+      "h": 940,
       "is_interactive": true,
       "title": "CR-AI-012 · Copilot preferences · saved · Desktop",
       "w": 1440,
@@ -2226,7 +2226,7 @@
       "page": "p2"
     },
     "CR-HOME-SET.dc.html": {
-      "h": 900,
+      "h": 940,
       "is_interactive": true,
       "title": "CR-HOME-SET · Settings · AI preferences · Desktop",
       "w": 1440,
@@ -2244,7 +2244,7 @@
       "page": "p2"
     },
     "CR-PM-001.dc.html": {
-      "h": 860,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-PM-001 · Account menu · Desktop",
       "w": 1440,
@@ -2253,7 +2253,7 @@
       "page": "p2"
     },
     "CR-PM-001-Mobile.dc.html": {
-      "h": 900,
+      "h": 980,
       "is_interactive": true,
       "title": "CR-PM-001 · Mobile",
       "w": 390,
@@ -2262,7 +2262,7 @@
       "page": "p2"
     },
     "CR-PM-002.dc.html": {
-      "h": 860,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-PM-002 · Account menu · one role · Desktop",
       "w": 1440,
@@ -2271,7 +2271,7 @@
       "page": "p2"
     },
     "CR-PM-002-Mobile.dc.html": {
-      "h": 900,
+      "h": 980,
       "is_interactive": true,
       "title": "CR-PM-002 · Mobile",
       "w": 390,
@@ -2298,7 +2298,7 @@
       "page": "p2"
     },
     "CR-MSG-001.dc.html": {
-      "h": 860,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-MSG-001 · Message pop-ups · Desktop",
       "w": 1440,
@@ -2307,7 +2307,7 @@
       "page": "p2"
     },
     "CR-MSG-001-Mobile.dc.html": {
-      "h": 900,
+      "h": 980,
       "is_interactive": true,
       "title": "CR-MSG-001 · Mobile",
       "w": 390,
@@ -2316,7 +2316,7 @@
       "page": "p2"
     },
     "CR-MSG-002.dc.html": {
-      "h": 860,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-MSG-002 · Message pop-up · quick reply · Desktop",
       "w": 1440,
@@ -2325,7 +2325,7 @@
       "page": "p2"
     },
     "CR-MSG-002-Mobile.dc.html": {
-      "h": 900,
+      "h": 980,
       "is_interactive": true,
       "title": "CR-MSG-002 · Mobile",
       "w": 390,
@@ -2334,7 +2334,7 @@
       "page": "p2"
     },
     "CR-MSG-003.dc.html": {
-      "h": 860,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-MSG-003 · Message pop-up · reply sent · Desktop",
       "w": 1440,
@@ -2343,7 +2343,7 @@
       "page": "p2"
     },
     "CR-MSG-003-Mobile.dc.html": {
-      "h": 900,
+      "h": 980,
       "is_interactive": true,
       "title": "CR-MSG-003 · Mobile",
       "w": 390,
@@ -2352,7 +2352,7 @@
       "page": "p2"
     },
     "CR-MSG-004.dc.html": {
-      "h": 860,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-MSG-004 · Message pop-ups · more than 3 · Desktop",
       "w": 1440,
@@ -2361,7 +2361,7 @@
       "page": "p2"
     },
     "CR-MSG-004-Mobile.dc.html": {
-      "h": 900,
+      "h": 980,
       "is_interactive": true,
       "title": "CR-MSG-004 · Mobile",
       "w": 390,
@@ -2370,7 +2370,7 @@
       "page": "p2"
     },
     "CR-MSG-005.dc.html": {
-      "h": 860,
+      "h": 920,
       "is_interactive": true,
       "title": "CR-MSG-005 · Message pop-ups · preview hidden · Desktop",
       "w": 1440,
@@ -2379,7 +2379,7 @@
       "page": "p2"
     },
     "CR-MSG-005-Mobile.dc.html": {
-      "h": 900,
+      "h": 980,
       "is_interactive": true,
       "title": "CR-MSG-005 · Mobile",
       "w": 390,
@@ -2388,7 +2388,7 @@
       "page": "p2"
     },
     "CR-MSG-006.dc.html": {
-      "h": 1100,
+      "h": 1160,
       "is_interactive": true,
       "title": "CR-MSG-006 · Settings · message pop-ups · Desktop",
       "w": 1440,
@@ -2397,7 +2397,7 @@
       "page": "p2"
     },
     "CR-MSG-006-Mobile.dc.html": {
-      "h": 1220,
+      "h": 1300,
       "is_interactive": true,
       "title": "CR-MSG-006 · Mobile",
       "w": 390,
@@ -2433,7 +2433,7 @@
       "page": "p2"
     },
     "CR-SET-002a-Mobile.dc.html": {
-      "h": 844,
+      "h": 960,
       "is_interactive": true,
       "title": "CR-SET-002a · Mobile",
       "w": 390,

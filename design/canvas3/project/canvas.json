@@ -52,13 +52,34 @@
       "title": "LND-001 B · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Hero-C.dc.html": {
+      "x": 0,
+      "y": 2640,
+      "w": 1440,
+      "h": 820,
+      "title": "LND-001 C · Floating figure + orbiting careers · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Hero-C-Mobile.dc.html": {
+      "x": 1520,
+      "y": 2640,
+      "w": 390,
+      "h": 724,
+      "title": "LND-001 C · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "order": [
     "Main.dc.html",
     "Main-Mobile.dc.html",
     "Hero-B.dc.html",
-    "Hero-B-Mobile.dc.html"
+    "Hero-B-Mobile.dc.html",
+    "Hero-C.dc.html",
+    "Hero-C-Mobile.dc.html"
   ],
   "notes": {
     "row-hero": {
@@ -81,6 +102,14 @@
       "x": 0,
       "y": 1100,
       "text": "Landing page · hero · concept B",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
+    },
+    "row-hero-c": {
+      "x": 0,
+      "y": 2340,
+      "text": "Landing page · hero · concept C",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"

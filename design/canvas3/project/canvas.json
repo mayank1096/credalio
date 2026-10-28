@@ -33,11 +33,32 @@
       "title": "LND-001 · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Hero-B.dc.html": {
+      "x": 0,
+      "y": 1400,
+      "w": 1440,
+      "h": 920,
+      "title": "LND-001 B · Landing hero (new concept) · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Hero-B-Mobile.dc.html": {
+      "x": 1520,
+      "y": 1400,
+      "w": 390,
+      "h": 640,
+      "title": "LND-001 B · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "order": [
     "Main.dc.html",
-    "Main-Mobile.dc.html"
+    "Main-Mobile.dc.html",
+    "Hero-B.dc.html",
+    "Hero-B-Mobile.dc.html"
   ],
   "notes": {
     "row-hero": {
@@ -54,6 +75,14 @@
       "w": 260,
       "text": "NEW · hero v1 with planet illustration",
       "fill": "pink",
+      "page": "main"
+    },
+    "row-hero-b": {
+      "x": 0,
+      "y": 1100,
+      "text": "Landing page · hero · concept B",
+      "kind": "title1",
+      "maxW": 1910,
       "page": "main"
     }
   },

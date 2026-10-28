@@ -27,19 +27,16 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-input::placeholder{color:#8A93AD}
 .lh-cta:focus-visible,.lh-link:focus-visible,.lh-menu:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .lh-stage{position:absolute;z-index:2;left:50%;bottom:calc((100% - 380px) * -.1724);height:calc((100% - 380px) * 1.724);aspect-ratio:3/2;transform:translateX(-50%);pointer-events:none;--r:360px}
-.lh-orbit{position:absolute;inset:0;perspective:2200px;perspective-origin:50% 42%}
+.lh-orbit{position:absolute;inset:0;perspective:2200px;perspective-origin:50% 40%}
 .lh-orbit-back{z-index:1;opacity:.75}
 .lh-orbit-front{z-index:3}
-.lh-ring{position:absolute;left:50%;top:42%;width:0;height:0;transform-style:preserve-3d;transform:rotateX(-8deg) rotateY(0deg);animation:lhSpin 48s linear infinite}
+.lh-ring{position:absolute;left:50%;top:40%;width:0;height:0;transform-style:preserve-3d;transform:rotateX(-8deg) rotateY(0deg);animation:lhSpin 48s linear infinite}
 @keyframes lhSpin{from{transform:rotateX(-8deg) rotateY(0deg)}to{transform:rotateX(-8deg) rotateY(-360deg)}}
 .lh-stage:has(.lh-card:hover) .lh-ring{animation-play-state:paused}
-.lh-card{position:absolute;left:-106px;top:-40px;width:212px;height:80px;box-sizing:border-box;padding:12px 14px 12px 12px;border-radius:20px;display:flex;align-items:center;gap:12px;text-align:left;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 20px 36px -20px rgba(11,20,51,.4);font-family:'Google Sans',system-ui,sans-serif;pointer-events:auto;transition:box-shadow .2s ease}
-.lh-orbit-front .lh-card:hover{box-shadow:0 0 0 3px rgba(22,82,240,.25),0 20px 36px -20px rgba(11,20,51,.4)}
-.lh-card-vis{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.lh-card-body{min-width:0;display:flex;flex-direction:column;gap:7px}
-.lh-card-t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.lh-chips{display:flex;gap:4px}
-.lh-chip{height:20px;padding:0 8px;border-radius:999px;display:inline-flex;align-items:center;font-size:11px;font-weight:500;white-space:nowrap}
+.lh-card{position:absolute;left:0;top:0;transform-origin:0 0;width:max-content;height:52px;box-sizing:border-box;padding:0 16px 0 8px;border-radius:16px;display:flex;align-items:center;gap:10px;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 16px 30px -18px rgba(11,20,51,.4);font-family:'Google Sans',system-ui,sans-serif;pointer-events:auto;transition:box-shadow .2s ease}
+.lh-orbit-front .lh-card:hover{box-shadow:0 0 0 3px rgba(22,82,240,.25),0 16px 30px -18px rgba(11,20,51,.4)}
+.lh-card-vis{width:36px;height:36px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.lh-card-t{white-space:nowrap}
 .lh-orbit-front .lh-card{cursor:pointer}
 .lh-orbit-back .lh-card{pointer-events:none}
 .lh-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
@@ -65,15 +62,13 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-field{padding:0 12px !important}
 .lh-input{height:52px !important;font-size:16px !important}
 .lh-cta-main{justify-content:center !important;height:52px !important}
-.lh-stage{position:relative !important;left:auto !important;bottom:auto !important;transform:none !important;height:auto !important;width:190%;flex-shrink:0;margin:calc(65px - 53.2%) 0 -12.7%;--r:176px}
+.lh-stage{position:relative !important;left:auto !important;bottom:auto !important;transform:none !important;height:auto !important;width:190%;flex-shrink:0;margin:calc(50px - 50.7%) 0 -12.7%;--r:118px}
 .lh-figure{-webkit-mask-image:none;mask-image:none}
-.lh-card{left:-76px !important;top:-29px !important;width:152px !important;height:58px !important;padding:8px 10px 8px 8px !important;gap:8px !important;border-radius:15px !important}
-.lh-card-vis{width:38px !important;height:38px !important;border-radius:11px !important}
-.lh-card-vis svg{width:18px;height:18px}
-.lh-card-body{gap:4px !important}
+.lh-card{height:36px !important;padding:0 10px 0 5px !important;gap:6px !important;border-radius:11px !important}
+.lh-card-vis{width:26px !important;height:26px !important;border-radius:8px !important}
+.lh-card-vis svg{width:14px;height:14px}
+.lh-card-t{font-size:11px !important}
 .lh-card:nth-child(even){display:none !important}
-.lh-card-t{font-size:12px !important}
-.lh-chip{height:16px !important;padding:0 6px !important;font-size:9px !important}
 }
 </style>
 </helmet>
@@ -117,13 +112,13 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 <div class="lh-stage">
 <div class="lh-orbit lh-orbit-back" aria-hidden="true"><div class="lh-ring">
 <sc-for list="{{cards}}" as="c" hint-placeholder-count="8">
-<div class="lh-card" style="transform: {{c.tb}}; background: {{c.bg}}; border: 1.5px solid {{c.border}}"><span class="lh-card-vis" style="background: {{c.visBg}}; box-shadow: inset 0 0 0 1px {{c.visLine}}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{{c.icFg}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{c.icon}}"></path></svg></span><span class="lh-card-body"><span class="lh-card-t" style="font-size: 15px; font-weight: 600; line-height: 1.2; color: {{c.fg}}">{{c.name}}</span><span class="lh-chips"><span class="lh-chip" style="background: {{c.chipBg}}; color: {{c.chipFg}}">{{c.m1}}</span><span class="lh-chip" style="background: {{c.chipBg}}; color: {{c.chipFg}}">{{c.m2}}</span></span></span></div>
+<div class="lh-card" style="transform: {{c.tb}}; background: {{c.bg}}; border: 1.5px solid {{c.border}}"><span class="lh-card-vis" style="background: {{c.visBg}}; box-shadow: inset 0 0 0 1px {{c.visLine}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="{{c.icFg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{c.icon}}"></path></svg></span><span class="lh-card-t" style="font-size: 14px; font-weight: 600; color: {{c.fg}}">{{c.name}}</span></div>
 </sc-for>
 </div></div>
 <img class="lh-figure" src="/_blob/edace6a66615ca20dfb081994323901a" alt="A young person floats gently above a cobalt path, looking up with hope, with learners reading, studying and presenting on either side">
 <div class="lh-orbit lh-orbit-front"><div class="lh-ring">
 <sc-for list="{{cards}}" as="c" hint-placeholder-count="8">
-<button class="lh-card" type="button" onClick="{{c.pick}}" aria-label="I want to become a {{c.name}}" style="transform: {{c.tf}}; background: {{c.bg}}; border: 1.5px solid {{c.border}}"><span class="lh-card-vis" style="background: {{c.visBg}}; box-shadow: inset 0 0 0 1px {{c.visLine}}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="{{c.icFg}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{c.icon}}"></path></svg></span><span class="lh-card-body"><span class="lh-card-t" style="font-size: 15px; font-weight: 600; line-height: 1.2; color: {{c.fg}}">{{c.name}}</span><span class="lh-chips"><span class="lh-chip" style="background: {{c.chipBg}}; color: {{c.chipFg}}">{{c.m1}}</span><span class="lh-chip" style="background: {{c.chipBg}}; color: {{c.chipFg}}">{{c.m2}}</span></span></span></button>
+<button class="lh-card" type="button" onClick="{{c.pick}}" aria-label="I want to become a {{c.name}}" style="transform: {{c.tf}}; background: {{c.bg}}; border: 1.5px solid {{c.border}}"><span class="lh-card-vis" style="background: {{c.visBg}}; box-shadow: inset 0 0 0 1px {{c.visLine}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="{{c.icFg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{c.icon}}"></path></svg></span><span class="lh-card-t" style="font-size: 14px; font-weight: 600; color: {{c.fg}}">{{c.name}}</span></button>
 </sc-for>
 </div></div>
 </div>
@@ -144,7 +139,7 @@ class Component extends DCLogic {
       ['Software engineer', 'Cloud · APIs', 'M8 6l-6 6 6 6M16 6l6 6-6 6'],
       ['Nurse', 'Patient care · Triage', 'M3 12h4l2-5 4 10 2-5h6'],
       ['Product manager', 'Roadmaps · Data', 'M12 3l9 5-9 5-9-5zM3 13l9 5 9-5'],
-      ['Security analyst', 'Threats · Networks', 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z'],
+      ['Cybersecurity analyst', 'Threats · Networks', 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z'],
       ['Architect', 'Design · CAD', 'M3 21l9-18 9 18M7 13h10'],
       ['Marketing lead', 'Brand · Growth', 'M3 11v2l13 5V6zM16 8a4 4 0 0 1 0 8']
     ];
@@ -153,14 +148,12 @@ class Component extends DCLogic {
       var a = (360 / n) * i + 180 / n;
       var tone = i === 2 ? 'cobalt' : (i === 5 ? 'navy' : 'white');
       return {
-        name: d[0], m1: d[1].split(' · ')[0], m2: d[1].split(' · ')[1], icon: d[2],
-        tf: 'rotateY(' + a + 'deg) translateZ(var(--r))',
-        tb: 'rotateY(' + a + 'deg) translateZ(var(--r)) rotateY(180deg)',
+        name: d[0], icon: d[2],
+        tf: 'rotateY(' + a + 'deg) translateZ(var(--r)) translate(-50%, -50%)',
+        tb: 'rotateY(' + a + 'deg) translateZ(var(--r)) rotateY(180deg) translate(-50%, -50%)',
         bg: tone === 'cobalt' ? '#1652F0' : (tone === 'navy' ? '#0B1433' : '#FFFFFF'),
         border: tone === 'white' ? '#FFFFFF' : 'transparent',
         fg: tone === 'white' ? '#0B1433' : '#FFFFFF',
-        chipBg: tone === 'white' ? '#F0F4FD' : 'rgba(255,255,255,.16)',
-        chipFg: tone === 'white' ? '#3A4566' : '#FFFFFF',
         visLine: tone === 'white' ? '#DCE5FB' : 'rgba(255,255,255,.18)',
         visBg: tone === 'white' ? 'linear-gradient(150deg,#EAF0FF,#F7F9FD)' : 'rgba(255,255,255,.14)',
         icFg: tone === 'white' ? '#1652F0' : '#FFFFFF',

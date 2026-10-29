@@ -235,46 +235,29 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 }
 
 
-.tv2-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,600px);gap:72px;align-items:center}
-.tv2-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
-.tv2-stage{position:relative;width:100%;max-width:600px;justify-self:end}
-.tv2-glow{position:absolute;left:50%;top:50%;width:76%;aspect-ratio:1;transform:translate(-50%,-56%);border-radius:999px;background:radial-gradient(closest-side,rgba(22,82,240,.16),rgba(22,82,240,0));transition:background .9s ease,transform .9s ease;pointer-events:none}
-.tv2-glow-on{background:radial-gradient(closest-side,rgba(22,82,240,.26),rgba(22,82,240,0));transform:translate(-50%,-56%) scale(1.12)}
-.tv2-dots{position:absolute;inset:-6%;background-image:radial-gradient(#DCE5FB 1.1px,transparent 1.4px);background-size:18px 18px;-webkit-mask-image:radial-gradient(closest-side,#000 40%,transparent 100%);mask-image:radial-gradient(closest-side,#000 40%,transparent 100%);pointer-events:none}
-.tv2-svg{position:relative;display:block;width:100%;height:auto;overflow:visible}
-.tv2-stamp,.tv2-ringtxt,.tv2-pop{opacity:0}
-.tv2-stamp.tv2-on{animation:tv2Stamp .75s cubic-bezier(.3,1.5,.5,1) both}
-.tv2-ringtxt.tv2-on{animation:tv2Fade .6s ease .35s both}
-.tv2-pop.tv2-on{animation:tv2Pop .5s cubic-bezier(.3,1.6,.5,1) .5s both}
-@keyframes tv2Stamp{0%{transform:scale(.55) rotate(-30deg);opacity:0}100%{transform:scale(1) rotate(0deg);opacity:1}}
-@keyframes tv2Fade{from{opacity:0}to{opacity:1}}
-@keyframes tv2Pop{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
-.tv2-cap{display:flex;align-items:center;justify-content:center;gap:8px;min-height:24px;margin-top:4px;font-size:15px;font-weight:500;text-align:center;transition:color .4s ease}
-.tv2-shim{background:linear-gradient(90deg,#5B6582 0%,#5B6582 35%,#1652F0 50%,#5B6582 65%,#5B6582 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:tv2Shim 1.8s linear infinite}
-@keyframes tv2Shim{from{background-position:100% 0}to{background-position:-120% 0}}
-.tv2-pills{display:flex;flex-wrap:wrap;gap:8px}
-.tv2-pill{height:38px;padding:0 14px 0 10px;border-radius:999px;border:1.5px solid #E6EAF3;background:#FFFFFF;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#5B6582;transition:background .5s ease,border-color .5s ease,color .5s ease}
-.tv2-pill-on{background:#F5F8FF;border-color:#C9D7FA;color:#0B1433}
-.tv2-pill-ok{background:#E7F5EE;border-color:#CFE8DC;color:#0F6B45}
-.tv2-spin{width:14px;height:14px;border-radius:999px;border:2px dashed currentColor;box-sizing:border-box}
-.tv2-pill-on .tv2-spin{animation:tv2Spin 2.4s linear infinite}
-@keyframes tv2Spin{to{transform:rotate(360deg)}}
-.tv2-link{align-self:flex-start;height:46px;padding:0 8px 0 20px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:12px;text-decoration:none;transition:border-color .2s ease,background .2s ease}
-.tv2-link:hover{border-color:#1652F0;background:#F5F8FF}
-.tv2-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-@media (prefers-reduced-motion: reduce){.tv2-shim,.tv2-pill-on .tv2-spin{animation:none}.tv2-stamp.tv2-on,.tv2-ringtxt.tv2-on,.tv2-pop.tv2-on{animation:none;opacity:1}}
-@media (max-width: 1080px){.tv2-grid{grid-template-columns:minmax(0,1fr) !important;gap:24px !important}.tv2-stage{justify-self:center;max-width:540px}}
+.tq-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:64px;align-items:end}
+.tq-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
+.tq-band{position:relative;height:560px;margin:0 -48px}
+.tq-cv{position:absolute;inset:0;width:100%;height:100%;display:block}
+.tq-gate{position:absolute;bottom:18px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;white-space:nowrap}
+.tq-gn{font-size:12px;font-weight:600;color:#1652F0;letter-spacing:.4px}
+.tq-gt{font-size:15px;font-weight:600;color:#0B1433}
+.tq-gs{font-size:13px;color:#5B6582}
+.tq-zone{position:absolute;top:22px;transform:translateX(-50%);height:32px;padding:0 13px 0 10px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;white-space:nowrap;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#5B6582}
+.tq-zone-ok{background:#E7F5EE;border-color:#CFE8DC;color:#0F6B45}
+.tq-link{height:46px;padding:0 8px 0 20px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:12px;text-decoration:none;transition:border-color .2s ease,background .2s ease}
+.tq-link:hover{border-color:#1652F0;background:#F5F8FF}
+.tq-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+@media (max-width: 1080px){.tq-head{grid-template-columns:minmax(0,1fr) !important;gap:16px !important}}
 @media (max-width: 760px){
-.tv2-wrap{padding:80px 20px 88px !important}
-.tv2-h2{font-size:32px !important;letter-spacing:-.9px !important}
-.tv2-sub{font-size:16px !important}
-.tv2-grid{gap:14px !important}
-.tv2-copy{display:contents !important}
-.tv2-o1{order:1}.tv2-stage{order:2}.tv2-pills{order:3;margin-top:8px !important}.tv2-link{order:4;margin-top:6px !important}
-.tv2-lab{font-size:17px;letter-spacing:2px}
-.tv2-stage{margin:10px -8px 8px;width:calc(100% + 16px)}
-.tv2-cap{font-size:14px}
-.tv2-pill{height:34px;font-size:13px;padding:0 12px 0 9px}
+.tq-wrap{padding:80px 20px 72px !important;gap:24px !important}
+.tq-h2{font-size:32px !important;letter-spacing:-.9px !important}
+.tq-sub{font-size:16px !important}
+.tq-band{height:720px;margin:0 -20px}
+.tq-gate{bottom:auto;left:auto !important;right:20px;transform:translateY(-50%);align-items:flex-end;text-align:right}
+.tq-gs{display:none}
+.tq-zone{top:auto;left:20px !important;transform:translateY(-50%)}
+.tq-zone-ok{left:50% !important;transform:translate(-50%,0)}
 }
 </style>
 </helmet>
@@ -717,52 +700,33 @@ Not sure which? Ask your AI Coach
 </section>
 </section>
 <section class="lh-eng" aria-label="Trusted learning">
-<section aria-labelledby="tv-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
-<div class="tv2-wrap" style="max-width: 1312px; margin: 0 auto; padding: 120px 48px; box-sizing: border-box">
-<div class="tv2-grid" ref="{{tv.stageRef}}">
-<div class="tv2-copy" style="display: flex; flex-direction: column; gap: 18px">
-<span class="tv2-o1" style="font-size: 14px; font-weight: 500; color: #1652F0">Trusted learning</span>
-<h2 id="tv-h" class="tv2-h2 tv2-o1">Know the quality before you commit your time.</h2>
-<p class="tv2-sub tv2-o1" style="margin: 0; max-width: 480px; font-size: 18px; line-height: 1.6; color: #4A5578">Three independent experts can check any course: its subject, its learning design and its assessments. You see the verdict before you start.</p>
-<div class="tv2-pills" role="list" aria-label="What every course shows" style="margin-top: 10px">
-<span class="tv2-pill {{tv.p0}}" role="listitem"><svg width="18" height="18" viewBox="0 0 100 100" aria-hidden="true"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg>Credalio Validated</span>
-<span class="tv2-pill {{tv.p1}}" role="listitem"><span class="tv2-spin" aria-hidden="true"></span>Review in progress</span>
-<span class="tv2-pill {{tv.p2}}" role="listitem"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 999px; border: 2px solid #CBD3E6; box-sizing: border-box"></span>Not yet validated</span>
+<section aria-labelledby="tq-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; overflow: hidden">
+<div class="tq-wrap" style="max-width: 1312px; margin: 0 auto; padding: 120px 48px 96px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+<div class="tq-head">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 500; color: #1652F0">Trusted learning</span>
+<h2 id="tq-h" class="tq-h2">Know the quality before you commit your time.</h2>
 </div>
-<a class="tv2-link" href="#" style="margin-top: 14px">How validation works<span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+<div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start; padding-bottom: 6px">
+<p class="tq-sub" style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">Three independent experts can check a course before it earns the seal. Not everything gets through.</p>
+<a class="tq-link" href="#">How validation works<span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
 </div>
-<div class="tv2-stage">
-<div class="tv2-dots" aria-hidden="true"></div>
-<div class="tv2-glow {{tv.glowCls}}" aria-hidden="true"></div>
-<svg class="tv2-svg" viewBox="20 20 560 560" role="img" aria-label="Three reviews close around the Credalio seal: subject matter, learning design and assessment">
-<defs><linearGradient id="tvSg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C7DFF"></stop><stop offset=".55" stop-color="#1652F0"></stop><stop offset="1" stop-color="#0E3BB8"></stop></linearGradient><path id="tvSt" d="M300,300 m-103,0 a103,103 0 1,1 206,0 a103,103 0 1,1 -206,0"></path><filter id="tvSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0B1433" flood-opacity=".16"></feDropShadow></filter></defs>
-<path id="tvR0" d="M300,150 a150,150 0 1,1 0,300 a150,150 0 1,1 0,-300" fill="none" stroke="#E6EAF3" stroke-width="1.5" stroke-dasharray="2 6"></path>
-<path id="tvR1" d="M300,100 a200,200 0 1,1 0,400 a200,200 0 1,1 0,-400" fill="none" stroke="#E6EAF3" stroke-width="1.5" stroke-dasharray="2 6"></path>
-<path id="tvR2" d="M300,50 a250,250 0 1,1 0,500 a250,250 0 1,1 0,-500" fill="none" stroke="#E6EAF3" stroke-width="1.5" stroke-dasharray="2 6"></path>
-<path d="M300,150 a150,150 0 1,1 0,300 a150,150 0 1,1 0,-300" fill="none" stroke-width="3" stroke-linecap="round" pathLength="1" stroke-dasharray="0 1" ref="{{tv.arc0}}" style="stroke: {{tv.arcC}}; transition: stroke .8s ease"></path>
-<path d="M300,100 a200,200 0 1,1 0,400 a200,200 0 1,1 0,-400" fill="none" stroke-width="3" stroke-linecap="round" pathLength="1" stroke-dasharray="0 1" ref="{{tv.arc1}}" style="stroke: {{tv.arcC}}; transition: stroke .8s ease"></path>
-<path d="M300,50 a250,250 0 1,1 0,500 a250,250 0 1,1 0,-500" fill="none" stroke-width="3" stroke-linecap="round" pathLength="1" stroke-dasharray="0 1" ref="{{tv.arc2}}" style="stroke: {{tv.arcC}}; transition: stroke .8s ease"></path>
-<text class="tv2-lab" font-family="Google Sans, system-ui, sans-serif" font-size="11.5" font-weight="500" letter-spacing="2.6" style="fill: {{tv.lab0}}; transition: fill .5s ease" dy="-12"><textPath href="#tvR0" startOffset="1.6%">SUBJECT MATTER</textPath></text>
-<text class="tv2-lab" font-family="Google Sans, system-ui, sans-serif" font-size="11.5" font-weight="500" letter-spacing="2.6" style="fill: {{tv.lab1}}; transition: fill .5s ease" dy="-12"><textPath href="#tvR1" startOffset="1.6%">LEARNING DESIGN</textPath></text>
-<text class="tv2-lab" font-family="Google Sans, system-ui, sans-serif" font-size="11.5" font-weight="500" letter-spacing="2.6" style="fill: {{tv.lab2}}; transition: fill .5s ease" dy="-12"><textPath href="#tvR2" startOffset="1.6%">ASSESSMENT</textPath></text>
-<g transform="translate(300 300)"><g class="tv2-stamp {{tv.sealCls}}"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" transform="scale(2.75) translate(-50 -50)" fill="url(#tvSg)"></path></g></g>
-<text class="tv2-ringtxt {{tv.sealCls}}" font-family="Google Sans, system-ui, sans-serif" font-size="9" font-weight="600" letter-spacing="3.1" fill="#FFFFFF"><textPath href="#tvSt" textLength="642" lengthAdjust="spacing">CREDALIO · VALIDATED · CREDALIO · VALIDATED · CREDALIO · VALIDATED ·</textPath></text>
-<circle cx="300" cy="300" r="90" fill="#FFFFFF" stroke-width="1.5" filter="url(#tvSh)" style="stroke: {{tv.discBd}}; transition: stroke .5s ease"></circle>
-<image href="/_blob/f81e36d31295a0d0737959589ec1abd4" x="262" y="262" width="76" height="76" style="opacity: {{tv.markOp}}; transition: opacity .6s ease"></image>
-<g transform="translate(368 368)"><g class="tv2-pop {{tv.sealCls}}"><circle r="22" fill="#0F6B45" stroke="#FFFFFF" stroke-width="4"></circle><path d="M-8 0.5l5.5 5.5 10.5-11" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></g></g>
-<g ref="{{tv.node0}}" transform="translate(300 150)" style="opacity: {{tv.nodeOp0}}; transition: opacity .4s ease"><circle r="19" fill="#FFFFFF" stroke="#1652F0" stroke-width="2"></circle><circle r="15" fill="#DCE5FB"></circle><text text-anchor="middle" dy="4" font-family="Google Sans, system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#1652F0">PN</text></g>
-<g ref="{{tv.node1}}" transform="translate(300 100)" style="opacity: {{tv.nodeOp1}}; transition: opacity .4s ease"><circle r="19" fill="#FFFFFF" stroke="#1652F0" stroke-width="2"></circle><circle r="15" fill="#0B1433"></circle><text text-anchor="middle" dy="4" font-family="Google Sans, system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#FFFFFF">JO</text></g>
-<g ref="{{tv.node2}}" transform="translate(300 50)" style="opacity: {{tv.nodeOp2}}; transition: opacity .4s ease"><circle r="19" fill="#FFFFFF" stroke="#1652F0" stroke-width="2"></circle><circle r="15" fill="#1652F0"></circle><text text-anchor="middle" dy="4" font-family="Google Sans, system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#FFFFFF">LM</text></g>
-</svg>
-<p class="tv2-cap" aria-live="polite" style="margin: 4px 0 0; color: {{tv.capFg}}"><sc-if value="{{tv.capOk}}" hint-placeholder-val="{{ false }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if><span class="{{tv.capCls}}">{{tv.cap}}</span></p>
 </div>
+<div class="tq-band" ref="{{tv.bandRef}}" role="img" aria-label="Courses flow through three expert checks, subject matter, learning design and assessment. Some fall away; the ones that pass form the Credalio Validated seal.">
+<canvas class="tq-cv" ref="{{tv.cvRef}}" aria-hidden="true"></canvas>
+<span class="tq-zone" ref="{{tv.z0}}" aria-hidden="true"><span style="width: 12px; height: 12px; border-radius: 999px; border: 2px solid #CBD3E6; box-sizing: border-box"></span>Not yet validated</span>
+<span class="tq-zone" ref="{{tv.z1}}" aria-hidden="true"><span style="width: 12px; height: 12px; border-radius: 999px; border: 2px dashed #8A93AD; box-sizing: border-box"></span>Review in progress</span>
+<span class="tq-zone tq-zone-ok" ref="{{tv.z2}}" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Credalio Validated</span>
+<span class="tq-gate" ref="{{tv.g0}}" aria-hidden="true"><span class="tq-gn">01</span><span class="tq-gt">Subject matter</span><span class="tq-gs">Accurate and current</span></span>
+<span class="tq-gate" ref="{{tv.g1}}" aria-hidden="true"><span class="tq-gn">02</span><span class="tq-gt">Learning design</span><span class="tq-gs">Lessons that add up</span></span>
+<span class="tq-gate" ref="{{tv.g2}}" aria-hidden="true"><span class="tq-gn">03</span><span class="tq-gt">Assessment</span><span class="tq-gs">Fair and on target</span></span>
 </div>
 </div>
 </section>
 </section>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4734}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4802}}'>
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }
   setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }
@@ -1095,56 +1059,131 @@ class CoachPart extends Part {
 class TrustPart extends Part {
   constructor(host) {
     super(host);
-    this.state = { step: 0 };
+    this.state = {};
     var self = this;
-    this.arcs = []; this.nodes = [];
-    this.arcRefs = [0, 1, 2].map(function (k) { return function (e) { self.arcs[k] = e; }; });
-    this.nodeRefs = [0, 1, 2].map(function (k) { return function (e) { self.nodes[k] = e; }; });
-    this.setStage = function (e) { self.stage = e; };
-    this.R = [150, 200, 250];
-    this.T = [1000, 3400, 5800, 8200, 12600];
+    this.el = {};
+    ['band', 'cv', 'z0', 'z1', 'z2', 'g0', 'g1', 'g2'].forEach(function (k) { self['r_' + k] = function (e) { self.el[k] = e; }; });
+    this.G = [0.3, 0.5, 0.69];
+    this.U_SEAL = 0.89;
   }
   componentDidMount() {
     var self = this;
-    this.t0 = performance.now();
-    var ease = function (x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+    this.vis = true; this.last = performance.now();
     var tick = function (now) {
-      var el = now - self.t0, T = self.T, s = 0;
-      if (el >= T[4]) { self.t0 = now; el = 0; }
-      for (var k = 0; k < 4; k++) if (el >= T[k]) s = k + 1;
-      if (s !== self.state.step) self.setState({ step: s });
-      for (var i = 0; i < 3; i++) {
-        var a = self.arcs[i], n = self.nodes[i];
-        var p = s > i + 1 ? 1 : (s === i + 1 ? ease(Math.min(1, (el - T[i]) / (T[i + 1] - T[i] - 250))) : 0);
-        if (a) a.style.strokeDasharray = p.toFixed(4) + ' 1';
-        if (n) { var ang = (-90 + 360 * p) * Math.PI / 180, r = self.R[i]; n.setAttribute('transform', 'translate(' + (300 + r * Math.cos(ang)).toFixed(2) + ' ' + (300 + r * Math.sin(ang)).toFixed(2) + ')'); }
-      }
+      var dt = Math.min(0.05, (now - self.last) / 1000); self.last = now;
+      if (self.vis) self.frame(dt, now / 1000);
       self.raf = requestAnimationFrame(tick);
     };
     this.raf = requestAnimationFrame(tick);
-    if (window.IntersectionObserver && this.stage) {
-      this.io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) self.t0 = performance.now(); }, { threshold: 0.35 });
-      this.io.observe(this.stage);
+    if (window.IntersectionObserver && this.el.band) {
+      this.io = new IntersectionObserver(function (en) { self.vis = en[0].isIntersecting; }, { rootMargin: '200px' });
+      this.io.observe(this.el.band);
     }
   }
   componentWillUnmount() { cancelAnimationFrame(this.raf); if (this.io) this.io.disconnect(); }
-  renderVals() {
-    var s = this.state.step, sealed = s === 4;
-    var caps = ['Not reviewed yet', 'Priya, a subject expert, is checking the content', 'James, a learning designer, is checking how it’s built', 'Lena, an assessment specialist, is testing the assessments', 'Validated by three independent experts'];
-    var v = {
-      stageRef: this.setStage,
-      arc0: this.arcRefs[0], arc1: this.arcRefs[1], arc2: this.arcRefs[2],
-      node0: this.nodeRefs[0], node1: this.nodeRefs[1], node2: this.nodeRefs[2],
-      sealed: sealed, sealCls: sealed ? 'tv2-on' : '', glowCls: sealed ? 'tv2-glow-on' : '',
-      arcC: sealed ? '#A9C2FF' : '#1652F0', discBd: sealed ? '#FFFFFF' : '#E6EAF3', markOp: s === 0 ? 0.35 : (sealed ? 1 : 0.6),
-      cap: caps[s], capOk: sealed, capCls: s >= 1 && s <= 3 ? 'tv2-shim' : '', capFg: sealed ? '#0F6B45' : '#8A93AD',
-      p0: sealed ? 'tv2-pill-ok' : '', p1: s >= 1 && s <= 3 ? 'tv2-pill-on' : '', p2: s === 0 ? 'tv2-pill-on' : ''
-    };
-    for (var i = 0; i < 3; i++) {
-      v['lab' + i] = s === i + 1 ? '#1652F0' : (s > i + 1 ? '#3A4566' : '#B5BDD3');
-      v['nodeOp' + i] = s >= i + 1 ? 1 : 0;
+  setup(W, H, vert) {
+    var L = vert ? 15 : 28, du = vert ? 0.0125 : 0.0068, P = [];
+    for (var l = 0; l < L; l++) {
+      var v = -1 + 2 * (l + 0.5) / L, n = Math.ceil(1.12 / du), spd = 0.05 * (1 + 0.06 * Math.sin(l * 2.3));
+      for (var j = 0; j < n; j++) P.push({ l: l, v: v + (Math.random() - 0.5) * 0.02, w: Math.sin(l * 1.7 + j * 0.3), off: j * du + (l % 3) * du / 3, spd: spd, prev: 9, rej: -1, tg: 0, ph: Math.random() * 6.28 });
     }
-    return v;
+    this.P = P; this.W = W; this.H = H; this.vert = vert; this.glow = [0, 0, 0];
+    var T = [], k;
+    for (k = 0; k < 160; k++) { var a = k / 160 * Math.PI * 2, rr = 1 + 0.035 * Math.cos(a * 20); T.push([rr * Math.cos(a), rr * Math.sin(a)]); }
+    for (k = 0; k < 80; k++) { var b = k / 80 * Math.PI * 2; T.push([0.76 * Math.cos(b), 0.76 * Math.sin(b)]); }
+    var chk = [[-0.38, 0.02], [-0.1, 0.3], [0.42, -0.27]];
+    for (k = 0; k < 16; k++) { var t = k / 15; T.push([chk[0][0] + (chk[1][0] - chk[0][0]) * t, chk[0][1] + (chk[1][1] - chk[0][1]) * t]); }
+    for (k = 0; k < 28; k++) { var q = k / 27; T.push([chk[1][0] + (chk[2][0] - chk[1][0]) * q, chk[1][1] + (chk[2][1] - chk[1][1]) * q]); }
+    this.T = T;
+    this.placeLabels();
+  }
+  spread(u) {
+    var g = this.G;
+    var sm = function (e0, e1, x) { var t = Math.min(1, Math.max(0, (x - e0) / (e1 - e0))); return t * t * (3 - 2 * t); };
+    var s = 1 - 0.3 * sm(g[0] - 0.05, g[0] + 0.03, u) - 0.22 * sm(g[1] - 0.05, g[1] + 0.03, u) - 0.18 * sm(g[2] - 0.05, g[2] + 0.03, u);
+    return s * (1 - 0.86 * sm(g[2] + 0.03, this.U_SEAL - 0.02, u));
+  }
+  map(u, c) {
+    if (this.vert) { var y0 = 50, y1 = this.H - 140; return [this.W * 0.42 + c, y0 + u * (y1 - y0)]; }
+    var x0 = this.W * 0.06, x1 = this.W * 0.94; return [x0 + u * (x1 - x0), this.H * 0.47 + c];
+  }
+  placeLabels() {
+    var self = this, e = this.el, vert = this.vert;
+    var pos = function (u) { return self.map(u, 0); };
+    [[e.g0, this.G[0]], [e.g1, this.G[1]], [e.g2, this.G[2]]].forEach(function (a) { if (!a[0]) return; var p = pos(a[1]); if (vert) { a[0].style.top = p[1] + 'px'; a[0].style.left = ''; } else { a[0].style.left = p[0] + 'px'; a[0].style.top = ''; } });
+    var zs = [[e.z0, 0.12], [e.z1, 0.5]];
+    zs.forEach(function (a) { if (!a[0]) return; var p = pos(a[1]); if (vert) { a[0].style.top = (p[1] - 34) + 'px'; a[0].style.left = ''; } else { a[0].style.left = p[0] + 'px'; a[0].style.top = ''; } });
+    if (e.z2) { if (vert) { e.z2.style.top = (this.H - 78) + 'px'; e.z2.style.left = ''; e.z2.style.bottom = 'auto'; } else { e.z2.style.left = pos(this.U_SEAL)[0] + 'px'; e.z2.style.top = 'auto'; e.z2.style.bottom = '18px'; } }
+  }
+  frame(dt, time) {
+    var cv = this.el.cv, band = this.el.band;
+    if (!cv || !band) return;
+    var W = band.clientWidth, H = band.clientHeight, vert = W < 760, dpr = Math.min(2, window.devicePixelRatio || 1);
+    if (!this.P || W !== this.W || H !== this.H) this.setup(W, H, vert);
+    if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
+    var g = cv.getContext('2d');
+    g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, W, H);
+    if (!this.sp) {
+      var mk = function (col) { var c = document.createElement('canvas'); c.width = c.height = 32; var x = c.getContext('2d'); var gr = x.createRadialGradient(16, 16, 0, 16, 16, 16); gr.addColorStop(0, col); gr.addColorStop(0.6, col); gr.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = gr; x.beginPath(); x.arc(16, 16, 16, 0, 6.283); x.fill(); return c; };
+      this.sp = [mk('#A3ABC2'), mk('#8FB0FF'), mk('#4C7DFF'), mk('#1652F0'), mk('#C9CFDD'), mk('#C9D7FA')];
+    }
+    var SP = this.sp, P = this.P, G = this.G, US = this.U_SEAL, A = vert ? W * 0.3 : H * 0.34;
+    var sealC = vert ? [W * 0.5, H - 200] : this.map(US, 0), sealR = vert ? Math.min(84, W * 0.21) : Math.min(118, H * 0.2);
+    var sx = Math.cos(0.35 * Math.sin(time * 0.6));
+    // gates
+    for (var k = 0; k < 3; k++) {
+      this.glow[k] *= Math.pow(0.05, dt);
+      var gp = this.map(G[k], 0), len = A * [1.08, 0.82, 0.62][k] * 1.12, gl = Math.min(1, this.glow[k] / 40);
+      var bw = 22 + 26 * gl, hz = vert ? g.createLinearGradient(0, gp[1] - bw, 0, gp[1] + bw) : g.createLinearGradient(gp[0] - bw, 0, gp[0] + bw, 0);
+      hz.addColorStop(0, 'rgba(127,164,255,0)'); hz.addColorStop(0.5, 'rgba(127,164,255,' + (0.07 + 0.1 * gl).toFixed(3) + ')'); hz.addColorStop(1, 'rgba(127,164,255,0)');
+      g.fillStyle = hz;
+      if (vert) g.fillRect(gp[0] - len, gp[1] - bw, len * 2, bw * 2); else g.fillRect(gp[0] - bw, gp[1] - len, bw * 2, len * 2);
+      for (var d = -len; d <= len; d += 7) { var f = 1 - Math.abs(d) / len; g.globalAlpha = 0.2 + 0.6 * f; var r0 = 1.2 + 0.8 * gl * f; if (vert) g.drawImage(SP[3], gp[0] + d - r0, gp[1] - r0, r0 * 2, r0 * 2); else g.drawImage(SP[3], gp[0] - r0, gp[1] + d - r0, r0 * 2, r0 * 2); }
+      g.globalAlpha = 1;
+    }
+    // seal: glow + resting dots
+    var sg = g.createRadialGradient(sealC[0], sealC[1], 0, sealC[0], sealC[1], sealR * 2);
+    sg.addColorStop(0, 'rgba(22,82,240,.14)'); sg.addColorStop(1, 'rgba(22,82,240,0)');
+    g.fillStyle = sg; g.fillRect(sealC[0] - sealR * 2, sealC[1] - sealR * 2, sealR * 4, sealR * 4);
+    var T = this.T;
+    for (var t = 0; t < T.length; t++) {
+      var tx = sealC[0] + T[t][0] * sealR * sx, ty = sealC[1] + T[t][1] * sealR, pr = 0.5 + 0.5 * Math.sin(time * 2 - t * 0.21);
+      var rr = (vert ? 1.5 : 1.8) + 0.5 * pr;
+      g.globalAlpha = 0.55 + 0.4 * pr; g.drawImage(SP[3], tx - rr, ty - rr, rr * 2, rr * 2);
+    }
+    // flow
+    for (var i = 0; i < P.length; i++) {
+      var p = P[i], u = ((p.off + time * p.spd) % 1.12) - 0.06;
+      if (u < p.prev) { p.rej = -1; for (var q = 0; q < 3; q++) if (p.rej < 0 && Math.random() < 0.2) p.rej = q; p.tg = Math.floor(Math.random() * T.length); }
+      for (var q2 = 0; q2 < 3; q2++) if (p.prev < G[q2] && u >= G[q2] && p.rej !== q2 && p.rej < q2 + 1) this.glow[q2] += p.rej < 0 || p.rej > q2 ? 1 : 0;
+      p.prev = u;
+      if (u < 0) continue;
+      var stage = u < G[0] ? 0 : (u < G[1] ? 1 : (u < G[2] ? 2 : 3));
+      var fall = p.rej >= 0 && u > G[p.rej] ? (u - G[p.rej]) / 0.07 : 0;
+      if (fall > 1) continue;
+      if (p.rej < 0 && u > US - 0.03) {
+        var kk = (u - (US - 0.03)) / 0.07; if (kk > 1) continue;
+        var e = kk * kk * (3 - 2 * kk), st0 = this.map(US - 0.03, p.v * A * this.spread(US - 0.03)), tg = T[p.tg];
+        var px = st0[0] + (sealC[0] + tg[0] * sealR * sx - st0[0]) * e, py = st0[1] + (sealC[1] + tg[1] * sealR - st0[1]) * e;
+        var r3 = (vert ? 1.7 : 2.1) * (1 + 0.6 * (1 - kk));
+        g.globalAlpha = 1 - kk * 0.6; g.drawImage(SP[3], px - r3, py - r3, r3 * 2, r3 * 2);
+        continue;
+      }
+      var wob = (vert ? 7 : 11) * (1 - 0.75 * Math.min(1, u / G[2]));
+      var c = p.v * A * this.spread(u) + Math.sin(u * 13 - time * 1.4 + p.l * 0.45) * wob;
+      if (fall > 0) c += (p.v >= 0 ? 1 : -1) * fall * fall * A * 0.45;
+      var pt = this.map(u, c);
+      if (fall > 0) { if (vert) pt[1] += fall * 18; else pt[1] += fall * fall * 40; }
+      var depth = (p.w + 1) / 2, fin = Math.min(1, u / 0.1);
+      var a = (0.3 + 0.4 * depth + stage * 0.07) * fin, spr = SP[stage];
+      if (fall > 0) { a *= 1 - fall; spr = SP[4]; }
+      var r2 = ((vert ? 1.05 : 1.2) + 0.55 * depth + stage * 0.14);
+      g.globalAlpha = Math.min(1, a); g.drawImage(spr, pt[0] - r2, pt[1] - r2, r2 * 2, r2 * 2);
+    }
+    g.globalAlpha = 1;
+  }
+  renderVals() {
+    return { bandRef: this.r_band, cvRef: this.r_cv, z0: this.r_z0, z1: this.r_z1, z2: this.r_z2, g0: this.r_g0, g1: this.r_g1, g2: this.r_g2 };
   }
 }
 class Component extends DCLogic {

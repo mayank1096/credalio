@@ -10,276 +10,156 @@
 <helmet>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
-body{margin:0;background:#0B1433}
-.gw-stage{position:absolute;right:max(48px,calc((100% - 1312px) / 2));top:50%;width:560px;height:420px;margin-top:-190px;perspective:1600px;perspective-origin:50% 30%}
-.gw-tilt{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
-.gw-card{position:absolute;inset:0;border-radius:26px;background:#FFFFFF;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 50px 90px -40px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.06);overflow:hidden;transform-origin:50% 100%;will-change:transform,opacity;backface-visibility:hidden;color:#0B1433;display:flex;flex-direction:column}
-.gw-bar{height:46px;flex-shrink:0;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid #EEF1F7}
-.gw-dots{display:flex;gap:6px}.gw-dots span{width:9px;height:9px;border-radius:9px;background:#E3E8F3}
-.gw-tab{height:26px;padding:0 10px;border-radius:999px;background:#F5F8FF;border:1px solid #E6EAF3;display:inline-flex;align-items:center;font-size:12px;font-weight:500;color:#3A4566}
-.gw-body{flex:1;min-height:0;padding:22px;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;background:radial-gradient(120% 90% at 50% 0%,#F5F8FF 0%,#FFFFFF 60%)}
-.gw-title{display:block;font-size:76px;line-height:1.02;font-weight:600;letter-spacing:-2.6px;color:#FFFFFF;background:none;border:none;padding:0;margin:0;text-align:left;font-family:'Google Sans',system-ui,sans-serif;cursor:pointer;will-change:opacity,transform;white-space:nowrap}
-.gw-title:focus-visible,.gw-cta:focus-visible{outline:3px solid rgba(127,164,255,.6);outline-offset:6px;border-radius:8px}
-.gw-cta{transition:background .2s ease,transform .2s ease}
-.gw-cta:hover{background:#0E3BB8 !important;transform:translateY(-1px)}
-.gw-cta:hover .gw-arr{transform:translateX(3px)}
-.gw-arr{transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
-.gw-noise{position:absolute;inset:0;width:100%;height:100%;opacity:.06;mix-blend-mode:screen;pointer-events:none}
-.gw-comet{stroke-dasharray:.08 1.2;stroke-dashoffset:.08;animation:gwComet 3.4s cubic-bezier(.45,0,.3,1) infinite}
-@keyframes gwComet{0%{stroke-dashoffset:.08;opacity:0}8%{opacity:1}85%{opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
-.gw-fill{animation:gwFill 3.6s cubic-bezier(.4,0,.2,1) infinite}
-@keyframes gwFill{0%{width:22%}60%,100%{width:74%}}
-.gw-sheen{animation:gwSheen 4s ease-in-out infinite}
-@keyframes gwSheen{0%,55%{transform:translateX(-160%) rotate(20deg)}85%,100%{transform:translateX(160%) rotate(20deg)}}
-.gw-spin{animation:gwSpin 24s linear infinite}
-@keyframes gwSpin{to{transform:rotate(360deg)}}
-.gw-live{animation:gwLive 1.8s ease-out infinite}
-@keyframes gwLive{0%{box-shadow:0 0 0 0 rgba(22,82,240,.5)}100%{box-shadow:0 0 0 10px rgba(22,82,240,0)}}
-@media (prefers-reduced-motion: reduce){.gw-comet,.gw-fill,.gw-sheen,.gw-spin,.gw-live{animation:none !important}}
-@media (max-width: 1080px){.gw-stage{transform:scale(.82);transform-origin:100% 50%}.gw-title{font-size:60px}}
+body{margin:0;background:#FFFFFF}
+.gs-roll{position:relative;display:block;height:1.26em;overflow:hidden;transition:width .7s cubic-bezier(.7,0,.2,1)}
+.gs-track{display:flex;flex-direction:column;transition:transform .7s cubic-bezier(.7,0,.2,1)}
+.gs-track > span{display:block;width:max-content;height:1.26em;line-height:1.12em;white-space:nowrap}
+.gs-line{position:absolute;left:0;right:0;bottom:.12em;height:.07em;border-radius:9px;background:#1652F0;transform-origin:left}
+.gs-a .gs-line{animation:gsDrawA 1s cubic-bezier(.7,0,.2,1) both}
+.gs-b .gs-line{animation:gsDrawB 1s cubic-bezier(.7,0,.2,1) both}
+@keyframes gsDrawA{0%{transform:scaleX(0)}40%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@keyframes gsDrawB{0%{transform:scaleX(0)}40%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+.gs-opt{height:48px;padding:0 18px 0 14px;border-radius:14px;border:1.5px solid #E6EAF3;background:#FFFFFF;display:inline-flex;align-items:center;gap:10px;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;font-weight:500;color:#3A4566;cursor:pointer;white-space:nowrap;transition:border-color .25s ease,background .25s ease,color .25s ease}
+.gs-opt:hover{border-color:#A9C2FF}
+.gs-opt:focus-visible,.gs-cta:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.gs-pane{position:absolute;inset:0;transition:opacity .6s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.gs-cta{transition:background .2s ease,transform .2s ease}
+.gs-cta:hover{background:#0E3BB8 !important;transform:translateY(-1px)}
+.gs-cta:hover .gs-arr{transform:translateX(3px)}
+.gs-arr{transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.gs-ring{animation:gsSpin 18s linear infinite;transform-origin:50% 50%}
+@keyframes gsSpin{to{transform:rotate(360deg)}}
+.gs-draw{stroke-dasharray:1;stroke-dashoffset:1;animation:gsPath 4.2s cubic-bezier(.6,0,.2,1) infinite}
+@keyframes gsPath{0%{stroke-dashoffset:1}55%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:0;opacity:0}}
+.gs-ms{animation:gsMs 4.2s ease infinite;opacity:0}
+@keyframes gsMs{0%{opacity:0;transform:translateY(8px)}15%,85%{opacity:1;transform:none}100%{opacity:0}}
+.gs-dot{animation:gsDot 3.2s ease-in-out infinite}
+@keyframes gsDot{0%,100%{background:#DCE5FB;transform:scale(1)}40%{background:#1652F0;transform:scale(1.12)}60%{background:#4C7DFF}}
+.gs-fillbar{animation:gsFill 3.6s cubic-bezier(.6,0,.2,1) infinite}
+@keyframes gsFill{0%{transform:scaleX(.08)}70%,100%{transform:scaleX(1)}}
+@media (prefers-reduced-motion: reduce){.gs-ring,.gs-draw,.gs-ms,.gs-dot,.gs-fillbar,.gs-a .gs-line,.gs-b .gs-line{animation:none !important}.gs-draw{stroke-dashoffset:0}.gs-ms{opacity:1}.gs-track,.gs-roll{transition:none}}
+@media (max-width: 1080px){.gs-sent{font-size:72px !important}.gs-low{grid-template-columns:minmax(0,1fr) !important}.gs-art{height:300px !important}}
 @media (max-width: 760px){
-.gw-ui{padding:36px 20px 28px !important}
-.gw-list{display:none !important}
-.gw-mob-title{display:block !important}
-.gw-h2{font-size:15px !important}
-.gw-stage{right:50%;top:46%;margin:-210px -280px 0 0;transform:scale(.58);transform-origin:50% 50%}
-.gw-num{font-size:260px !important;right:-20px !important;top:18% !important}
-.gw-copy{max-width:none !important}
-.gw-copy p{font-size:15px !important}
-.gw-segs{display:none !important}
+.gs-wrap{padding:72px 20px 64px !important;gap:28px !important}
+.gs-sent{font-size:40px !important;letter-spacing:-1.3px !important}
+.gs-roll{height:2.2em !important}
+.gs-track > span{white-space:normal !important;width:auto !important;height:2.2em !important;line-height:1.1em !important;display:flex !important;align-items:flex-end}
+.gs-opts{flex-wrap:nowrap !important;overflow-x:auto;margin:0 -20px;padding:0 20px 4px;scrollbar-width:none}
+.gs-opts::-webkit-scrollbar{display:none}
+.gs-name{font-size:40px !important}
+.gs-art{height:260px !important}
+.gs-big{font-size:96px !important}
+.gs-guides{display:none}
+.gs-four{display:none}
 }
 </style>
 </helmet>
-<div ref="{{trackRef}}" style="position: relative; height: 420vh; background: #0B1433">
-<section aria-labelledby="gw-h" ref="{{viewRef}}" style="position: sticky; top: 0; height: clamp(640px, 100vh, 900px); overflow: hidden; background: #0B1433; font-family: 'Google Sans', system-ui, sans-serif; color: #FFFFFF">
-<div aria-hidden="true" ref="{{glowRef}}" style="position: absolute; width: 1100px; height: 1100px; left: 50%; top: 50%; margin: -550px 0 0 -550px; border-radius: 999px; background: radial-gradient(closest-side, rgba(22,82,240,.55), rgba(22,82,240,.14) 45%, rgba(22,82,240,0) 72%); will-change: transform"></div>
-<div aria-hidden="true" style="position: absolute; inset: 0; background-image: radial-gradient(rgba(127,164,255,.22) 1px, transparent 1.3px); background-size: 22px 22px; -webkit-mask-image: radial-gradient(70% 70% at 70% 50%, #000 0%, transparent 75%); mask-image: radial-gradient(70% 70% at 70% 50%, #000 0%, transparent 75%)"></div>
-<svg class="gw-noise" aria-hidden="true"><filter id="gwN"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"></feTurbulence></filter><rect width="100%" height="100%" filter="url(#gwN)"></rect></svg>
-<span class="gw-num" aria-hidden="true" style="position: absolute; right: 3%; top: 4%; font-size: 420px; line-height: 1; font-weight: 600; letter-spacing: -20px; color: transparent; -webkit-text-stroke: 1.5px rgba(127,164,255,.16); pointer-events: none; user-select: none">0{{cur.n}}</span>
-
-<div class="gw-stage" aria-hidden="true">
-<div class="gw-tilt" ref="{{tiltRef}}">
-
-<div class="gw-card" ref="{{c0}}">
-<div class="gw-bar"><span class="gw-dots"><span></span><span></span><span></span></span><span class="gw-tab">Course · Data Foundations</span><span style="width: 39px"></span></div>
-<div class="gw-body">
-<div style="position: relative; height: 170px; border-radius: 16px; overflow: hidden; background: linear-gradient(135deg, #1652F0 0%, #0B2A8F 60%, #0B1433 100%); display: flex; align-items: center; justify-content: center">
-<span style="position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.18) 1px, transparent 1.3px); background-size: 14px 14px"></span>
-<span style="position: relative; width: 60px; height: 60px; border-radius: 999px; background: rgba(255,255,255,.95); display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 10px rgba(255,255,255,.15)"><svg width="22" height="22" viewBox="0 0 24 24" fill="#1652F0"><path d="M8 5v14l11-7z"></path></svg></span>
-<span style="position: absolute; left: 14px; bottom: 12px; font-size: 12px; font-weight: 500; color: rgba(255,255,255,.85)">Lesson 4 · Joining tables with SQL</span>
-</div>
-<div style="display: flex; flex-direction: column; gap: 9px">
-<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: #3A4566"><span style="width: 20px; height: 20px; border-radius: 999px; background: #E7F5EE; display: flex; align-items: center; justify-content: center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Spreadsheets to SQL</div>
-<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: #3A4566"><span style="width: 20px; height: 20px; border-radius: 999px; background: #E7F5EE; display: flex; align-items: center; justify-content: center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Filtering and sorting data</div>
-<div style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: #0B1433"><span style="width: 20px; height: 20px; border-radius: 999px; border: 2px solid #1652F0; box-sizing: border-box"></span>Joining tables<span style="margin-left: auto; font-size: 12px; font-weight: 500; color: #1652F0">In progress</span></div>
-</div>
-<div style="margin-top: auto; display: flex; align-items: center; gap: 12px"><span style="flex: 1; height: 7px; border-radius: 9px; background: #EEF1F7; position: relative; overflow: hidden"><span class="gw-fill" style="position: absolute; left: 0; top: 0; bottom: 0; width: 60%; border-radius: 9px; background: #1652F0"></span></span><span style="font-size: 12px; font-weight: 500; color: #5B6582">At your own pace</span></div>
-</div>
+<section aria-labelledby="gs-h" style="position: relative; overflow: hidden; background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<div class="gs-guides" aria-hidden="true" style="position: absolute; inset: 0; max-width: 1312px; margin: 0 auto; padding: 0 64px; box-sizing: border-box; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); pointer-events: none">
+<span style="border-left: 1px solid #F0F3F9"></span><span style="border-left: 1px solid #F0F3F9"></span><span style="border-left: 1px solid #F0F3F9"></span><span style="border-left: 1px solid #F0F3F9; border-right: 1px solid #F0F3F9"></span>
 </div>
 
-<div class="gw-card" ref="{{c1}}">
-<div class="gw-bar"><span class="gw-dots"><span></span><span></span><span></span></span><span class="gw-tab">Professional Certification</span><span style="width: 39px"></span></div>
-<div class="gw-body" style="flex-direction: row; gap: 22px; align-items: center">
-<div style="position: relative; width: 190px; height: 190px; flex-shrink: 0">
-<svg class="gw-spin" viewBox="0 0 190 190" style="position: absolute; inset: 0; width: 100%; height: 100%"><circle cx="95" cy="95" r="88" fill="none" stroke="#A9C2FF" stroke-width="1.5" stroke-dasharray="2 8" stroke-linecap="round"></circle></svg>
-<div style="position: absolute; inset: 22px; border-radius: 999px; overflow: hidden; background: radial-gradient(circle at 34% 28%, #DCE7FF 0%, #7FA4FF 22%, #1652F0 58%, #0B2A8F 100%); box-shadow: 0 0 0 7px #FFFFFF, 0 0 0 8.5px #DCE5FB, 0 26px 40px -18px rgba(22,82,240,.7); display: flex; align-items: center; justify-content: center">
-<span class="gw-sheen" style="position: absolute; top: -20%; bottom: -20%; width: 34%; background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.5), rgba(255,255,255,0))"></span>
-<svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6zM8.5 12l2.5 2.5 4.5-5"></path></svg>
-</div>
-</div>
-<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 12px">
-<span style="align-self: flex-start; height: 26px; padding: 0 10px; border-radius: 999px; background: #E7F5EE; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: #0F6B45"><span style="width: 6px; height: 6px; border-radius: 9px; background: #0F6B45"></span>Assessed</span>
-<span style="font-size: 20px; line-height: 1.2; font-weight: 600; letter-spacing: -.3px">Data Analysis Professional</span>
-<div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #3A4566">
-<span style="display: flex; justify-content: space-between">Practical exam<span style="font-weight: 600; color: #0B1433">Passed</span></span>
-<span style="display: flex; justify-content: space-between">Portfolio review<span style="font-weight: 600; color: #0B1433">Passed</span></span>
-<span style="display: flex; justify-content: space-between">Verified by<span style="font-weight: 600; color: #1652F0">Credalio</span></span>
-</div>
-</div>
-</div>
+<div class="gs-wrap" style="position: relative; max-width: 1312px; margin: 0 auto; padding: 120px 64px 112px; box-sizing: border-box; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<h2 id="gs-h" style="margin: 0; font-size: 15px; font-weight: 500; color: #1652F0">Choose how you want to grow</h2>
+<span class="gs-four" style="font-size: 14px; font-weight: 500; color: #8A93AD">Four ways to get there</span>
 </div>
 
-<div class="gw-card" ref="{{c2}}">
-<div class="gw-bar"><span class="gw-dots"><span></span><span></span><span></span></span><span class="gw-tab">Career Path · Data Analyst</span><span style="width: 39px"></span></div>
-<div class="gw-body" style="padding: 0">
-<div style="position: relative; flex: 1">
-<svg viewBox="0 0 560 330" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible">
-<path d="M50 270 C 130 270, 120 180, 200 180 S 280 240, 330 210 S 420 100, 500 80" fill="none" stroke="#C9D7FA" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 9"></path>
-<path class="gw-comet" pathLength="1" d="M50 270 C 130 270, 120 180, 200 180 S 280 240, 330 210 S 420 100, 500 80" fill="none" stroke="#1652F0" stroke-width="6" stroke-linecap="round"></path>
-</svg>
-<span style="position: absolute; left: 9%; top: 82%; transform: translate(-50%, -50%); height: 30px; padding: 0 12px; border-radius: 999px; background: #0B1433; color: #FFFFFF; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500; white-space: nowrap">You, today</span>
-<span style="position: absolute; left: 35.7%; top: 54.5%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="width: 38px; height: 38px; border-radius: 999px; background: #1652F0; box-shadow: 0 0 0 7px rgba(22,82,240,.12); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16"></path></svg></span><span style="font-size: 12px; font-weight: 500; color: #3A4566">Courses</span></span>
-<span style="position: absolute; left: 59%; top: 63.6%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="width: 38px; height: 38px; border-radius: 999px; background: #1652F0; box-shadow: 0 0 0 7px rgba(22,82,240,.12); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"></path></svg></span><span style="font-size: 12px; font-weight: 500; color: #3A4566">Practice</span></span>
-<span style="position: absolute; left: 89%; top: 24%; transform: translate(-80%, -120%); padding: 10px 12px 10px 10px; border-radius: 14px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 0 0 8px rgba(22,82,240,.08), 0 16px 30px -18px rgba(22,82,240,.6); display: flex; align-items: center; gap: 10px; white-space: nowrap"><span style="width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(150deg, #4C7DFF, #1652F0); display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v11H4zM9 8V5h6v3"></path></svg></span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">Your goal</span><span style="font-size: 14px; font-weight: 600">Data analyst</span></span></span>
-<span style="position: absolute; left: 89%; top: 24%; transform: translate(-50%, -50%); width: 16px; height: 16px; border-radius: 999px; background: #1652F0; box-shadow: 0 0 0 6px rgba(22,82,240,.15)"></span>
-</div>
-<div style="padding: 0 22px 20px; display: flex; gap: 8px">
-<span style="height: 28px; padding: 0 10px; border-radius: 999px; background: #F5F8FF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500; color: #3A4566">6 courses</span>
-<span style="height: 28px; padding: 0 10px; border-radius: 999px; background: #F5F8FF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500; color: #3A4566">3 projects</span>
-<span style="height: 28px; padding: 0 10px; border-radius: 999px; background: #F5F8FF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500; color: #3A4566">1 certification</span>
-</div>
-</div>
-</div>
+<p class="gs-sent {{lineCls}}" aria-live="polite" style="margin: 0; font-size: 104px; line-height: 1.04; font-weight: 600; letter-spacing: -4px">I want to <span class="gs-roll" style="width: {{rollW}}; color: #1652F0"><span class="gs-track" style="transform: translateY({{rollY}})"><sc-for list="{{opts}}" as="o" hint-placeholder-count="4"><span ref="{{o.ref}}">{{o.phrase}}<span style="color: #A9C2FF">.</span></span></sc-for></span><span class="gs-line"></span></span></p>
 
-<div class="gw-card" ref="{{c3}}">
-<div class="gw-bar"><span class="gw-dots"><span></span><span></span><span></span></span><span class="gw-tab">Program · Cohort 12</span><span style="width: 39px"></span></div>
-<div class="gw-body">
-<div style="display: flex; align-items: center; justify-content: space-between">
-<div style="display: flex; padding-left: 10px">
-<span style="width: 38px; height: 38px; margin-left: -10px; border-radius: 999px; border: 3px solid #FFFFFF; background: #DCE5FB; color: #1652F0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">AK</span>
-<span style="width: 38px; height: 38px; margin-left: -10px; border-radius: 999px; border: 3px solid #FFFFFF; background: #1652F0; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">MS</span>
-<span style="width: 38px; height: 38px; margin-left: -10px; border-radius: 999px; border: 3px solid #FFFFFF; background: #0B1433; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">PL</span>
-<span style="width: 38px; height: 38px; margin-left: -10px; border-radius: 999px; border: 3px solid #FFFFFF; background: #C9D7FA; color: #0B1433; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">TN</span>
-<span style="height: 38px; margin-left: -10px; padding: 0 12px; border-radius: 999px; border: 3px solid #FFFFFF; background: #EAF0FF; color: #1652F0; display: flex; align-items: center; font-size: 12px; font-weight: 600; box-sizing: border-box">+20</span>
-</div>
-<span style="height: 30px; padding: 0 12px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; white-space: nowrap"><span class="gw-live" style="width: 8px; height: 8px; border-radius: 9px; background: #1652F0"></span>Live · Thu 18:00</span>
-</div>
-<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px">
-<div style="height: 92px; box-sizing: border-box; border-radius: 14px; border: 1px solid #E6EAF3; padding: 10px; display: flex; flex-direction: column; justify-content: space-between; background: #FFFFFF"><span style="font-size: 11px; color: #8A93AD">Mon</span><span style="height: 16px; border-radius: 7px; background: #EAF0FF"></span></div>
-<div style="height: 92px; box-sizing: border-box; border-radius: 14px; border: 1px solid #E6EAF3; padding: 10px; display: flex; flex-direction: column; justify-content: space-between; background: #FFFFFF"><span style="font-size: 11px; color: #8A93AD">Tue</span><span style="height: 32px; border-radius: 7px; background: #DCE5FB"></span></div>
-<div style="height: 92px; box-sizing: border-box; border-radius: 14px; border: 1px solid #E6EAF3; padding: 10px; display: flex; flex-direction: column; justify-content: space-between; background: #FFFFFF"><span style="font-size: 11px; color: #8A93AD">Wed</span><span style="height: 22px; border-radius: 7px; background: #EAF0FF"></span></div>
-<div style="height: 92px; box-sizing: border-box; border-radius: 14px; border: 1px solid #C9D7FA; padding: 10px; display: flex; flex-direction: column; justify-content: space-between; background: #FFFFFF"><span style="font-size: 11px; color: #1652F0; font-weight: 600">Thu</span><span style="height: 50px; border-radius: 7px; background: linear-gradient(180deg, #4C7DFF, #1652F0)"></span></div>
-<div style="height: 92px; box-sizing: border-box; border-radius: 14px; border: 1px solid #E6EAF3; padding: 10px; display: flex; flex-direction: column; justify-content: space-between; background: #FFFFFF"><span style="font-size: 11px; color: #8A93AD">Fri</span><span style="height: 26px; border-radius: 7px; background: #DCE5FB"></span></div>
-</div>
-<div style="display: flex; gap: 10px; align-items: flex-start; padding: 12px; border-radius: 14px; background: #F5F8FF; border: 1px solid #E6EAF3">
-<span style="width: 30px; height: 30px; border-radius: 999px; flex-shrink: 0; background: #0B1433; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600">DR</span>
-<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; font-weight: 600">Dr Rahman · lead tutor</span><span style="font-size: 12px; line-height: 1.45; color: #4A5578">Great work this week. Thursday we build the dashboard together.</span></span>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="gw-ui" style="position: relative; z-index: 2; max-width: 1312px; height: 100%; margin: 0 auto; box-sizing: border-box; padding: clamp(48px, 9vh, 84px) 64px clamp(36px, 6vh, 56px); display: flex; flex-direction: column; justify-content: space-between; pointer-events: none">
-<div style="display: flex; align-items: center; gap: 14px">
-<h2 id="gw-h" class="gw-h2" style="margin: 0; font-size: 16px; font-weight: 500; color: #7FA4FF">Choose how you want to grow</h2>
-<span aria-hidden="true" style="width: 40px; height: 1px; background: rgba(127,164,255,.4)"></span>
-<span style="font-size: 14px; font-weight: 500; color: rgba(255,255,255,.55)">0{{cur.n}} / 04</span>
-</div>
-
-<div class="gw-list" style="display: flex; flex-direction: column; gap: 2px; pointer-events: auto">
-<sc-for list="{{formats}}" as="f" hint-placeholder-count="4">
-<button class="gw-title" type="button" ref="{{f.ref}}" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}">{{f.name}}</button>
+<div class="gs-opts" role="tablist" aria-label="Pick your goal" style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{opts}}" as="o" hint-placeholder-count="4">
+<button class="gs-opt" type="button" role="tab" aria-selected="{{o.sel}}" onClick="{{o.pick}}" style="background: {{o.bg}}; border-color: {{o.bd}}; color: {{o.fg}}"><span style="font-size: 12px; font-weight: 500; color: {{o.num}}">0{{o.n}}</span>{{o.short}}<sc-if value="{{o.on}}" hint-placeholder-val="{{ false }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if></button>
 </sc-for>
 </div>
 
-<div class="gw-copy" ref="{{copyRef}}" style="max-width: 440px; display: flex; flex-direction: column; gap: 16px; pointer-events: auto">
-<span class="gw-mob-title" style="display: none; font-size: 40px; line-height: 1.05; font-weight: 600; letter-spacing: -1.2px">{{cur.name}}</span>
-<p style="margin: 0; font-size: 18px; line-height: 1.55; color: rgba(255,255,255,.78)">{{cur.detail}}</p>
-<span style="font-size: 14px; color: rgba(255,255,255,.5)">Designed for · <span style="color: rgba(255,255,255,.85)">{{cur.for}}</span></span>
-<div style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap">
-<a class="gw-cta" href="#" style="height: 52px; padding: 0 6px 0 22px; border-radius: 999px; background: #1652F0; color: #FFFFFF; display: inline-flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; text-decoration: none">{{cur.cta}}<span style="width: 40px; height: 40px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg class="gw-arr" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
-<div class="gw-segs" style="display: flex; gap: 6px" aria-hidden="true">
-<sc-for list="{{formats}}" as="f" hint-placeholder-count="4">
-<span style="width: 44px; height: 3px; border-radius: 9px; background: rgba(255,255,255,.15); overflow: hidden"><span ref="{{f.seg}}" style="display: block; height: 100%; width: 0; background: #7FA4FF"></span></span>
+<div class="gs-low" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 64px; align-items: end; margin-top: 24px; padding-top: 40px; border-top: 1px solid #E6EAF3">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 500; color: #8A93AD">Start with</span>
+<span class="gs-name" style="font-size: 60px; line-height: 1; font-weight: 600; letter-spacing: -2px">{{cur.name}}</span>
+<p style="margin: 0; max-width: 460px; font-size: 18px; line-height: 1.55; color: #4A5578">{{cur.detail}}</p>
+<a class="gs-cta" href="#" style="align-self: flex-start; margin-top: 8px; height: 52px; padding: 0 6px 0 22px; border-radius: 999px; background: #1652F0; color: #FFFFFF; display: inline-flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; text-decoration: none">{{cur.cta}}<span style="width: 40px; height: 40px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg class="gs-arr" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+</div>
+
+<div class="gs-art" aria-hidden="true" style="position: relative; height: 340px">
+<div class="gs-pane" style="opacity: {{p0.op}}; transform: {{p0.tf}}; display: flex; flex-direction: column; justify-content: flex-end; gap: 22px">
+<div style="display: flex; align-items: flex-end; gap: 18px"><span class="gs-big" style="font-size: 200px; line-height: .8; font-weight: 600; letter-spacing: -10px; color: #1652F0">12</span><span style="padding-bottom: 6px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 28px; font-weight: 600; letter-spacing: -.6px">minutes</span><span style="font-size: 15px; color: #5B6582">a typical lesson</span></span></div>
+<div style="height: 14px; border-radius: 999px; background: #EEF1F7; overflow: hidden"><span class="gs-fillbar" style="display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #A9C2FF, #1652F0); transform-origin: left"></span></div>
+<div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 500; color: #8A93AD"><span>One skill</span><span>Your pace</span><span>Any device</span></div>
+</div>
+
+<div class="gs-pane" style="opacity: {{p1.op}}; transform: {{p1.tf}}; display: flex; align-items: center; justify-content: center">
+<div style="position: relative; width: 320px; height: 320px">
+<svg class="gs-ring" viewBox="0 0 320 320" style="position: absolute; inset: 0; width: 100%; height: 100%"><defs><path id="gsCirc" d="M160,160 m-132,0 a132,132 0 1,1 264,0 a132,132 0 1,1 -264,0"></path></defs><text font-family="Google Sans, system-ui, sans-serif" font-size="19" font-weight="600" letter-spacing="7" fill="#1652F0"><textPath href="#gsCirc">ASSESSED · VERIFIED · RECOGNISED · ASSESSED · VERIFIED · RECOGNISED ·</textPath></text></svg>
+<div style="position: absolute; inset: 62px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 10px #EAF0FF, 0 30px 60px -24px rgba(22,82,240,.6)"><svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
+</div>
+</div>
+
+<div class="gs-pane" style="opacity: {{p2.op}}; transform: {{p2.tf}}">
+<svg viewBox="0 0 600 340" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible"><path d="M10 300 C 140 300, 150 200, 250 200 S 380 250, 430 160 S 520 60, 590 40" fill="none" stroke="#EAF0FF" stroke-width="22" stroke-linecap="round"></path><path class="gs-draw" pathLength="1" d="M10 300 C 140 300, 150 200, 250 200 S 380 250, 430 160 S 520 60, 590 40" fill="none" stroke="#1652F0" stroke-width="6" stroke-linecap="round"></path></svg>
+<span class="gs-ms" style="position: absolute; left: 1.6%; top: 88%; margin-top: -17px; animation-delay: 0s"><span style="display: inline-flex; height: 34px; padding: 0 14px; border-radius: 999px; background: #0B1433; color: #FFFFFF; align-items: center; font-size: 14px; font-weight: 500">Today</span></span>
+<span class="gs-ms" style="position: absolute; left: 41.6%; top: 58.8%; animation-delay: .7s"><span style="display: block; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 999px; background: #FFFFFF; border: 4px solid #1652F0; box-sizing: border-box"></span><span style="position: absolute; top: 18px; left: 0; transform: translateX(-50%); font-size: 14px; font-weight: 500; color: #3A4566; white-space: nowrap">Courses</span></span>
+<span class="gs-ms" style="position: absolute; left: 71.6%; top: 47%; animation-delay: 1.3s"><span style="display: block; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 999px; background: #FFFFFF; border: 4px solid #1652F0; box-sizing: border-box"></span><span style="position: absolute; top: 18px; left: 0; transform: translateX(-50%); font-size: 14px; font-weight: 500; color: #3A4566; white-space: nowrap">Projects</span></span>
+<span class="gs-ms" style="position: absolute; right: 0; top: 0; margin-top: -20px; animation-delay: 2s"><span style="display: inline-flex; height: 40px; padding: 0 16px; border-radius: 999px; background: #1652F0; color: #FFFFFF; align-items: center; font-size: 15px; font-weight: 600; box-shadow: 0 0 0 8px #EAF0FF">Data analyst</span></span>
+</div>
+
+<div class="gs-pane" style="opacity: {{p3.op}}; transform: {{p3.tf}}; display: flex; flex-direction: column; justify-content: flex-end; gap: 20px">
+<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{crowd}}" as="c" hint-placeholder-count="36">
+<span class="gs-dot" style="aspect-ratio: 1; border-radius: 999px; background: #DCE5FB; animation-delay: {{c.d}}; box-shadow: {{c.ring}}"></span>
 </sc-for>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap"><span style="font-size: 28px; font-weight: 600; letter-spacing: -.6px">Cohort 12 <span style="color: #8A93AD; font-weight: 500">· 36 learners</span></span><span style="font-size: 15px; color: #5B6582">Led by experts · live each week</span></div>
 </div>
 </div>
 </div>
 </div>
 </section>
-</div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1040}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { i: 0 };
-    this.pos = 0; this.target = 0; this.mode = 'auto';
-    this.mx = 0; this.my = 0; this.tx = 0; this.ty = 0;
-    this.cards = []; this.titles = []; this.segs = [];
+    this.state = { i: 2, flip: 0, widths: null };
+    this.el = [];
     var self = this;
-    this.trackRef = function (el) { self.track = el; };
-    this.viewRef = function (el) { self.view = el; };
-    this.tiltRef = function (el) { self.tilt = el; };
-    this.glowRef = function (el) { self.glow = el; };
-    this.copyRef = function (el) { self.copy = el; };
-    this.cardRefs = [0, 1, 2, 3].map(function (k) { return function (el) { self.cards[k] = el; }; });
-    this.titleRefs = [0, 1, 2, 3].map(function (k) { return function (el) { self.titles[k] = el; }; });
-    this.segRefs = [0, 1, 2, 3].map(function (k) { return function (el) { self.segs[k] = el; }; });
+    this.refs4 = [0, 1, 2, 3].map(function (k) { return function (e) { self.el[k] = e; }; });
   }
   componentDidMount() {
     var self = this;
-    this.onScroll = function () {
-      if (!self.track) return;
-      var r = self.track.getBoundingClientRect(), vh = self.view ? self.view.clientHeight : window.innerHeight, span = r.height - vh;
-      if (span <= 0 || r.top > window.innerHeight || r.bottom < 0) return;
-      self.mode = 'scroll'; clearInterval(self.timer);
-      self.target = Math.min(1, Math.max(0, -r.top / span)) * 3;
-    };
-    this.onMove = function (e) {
-      if (!self.view) return;
-      var r = self.view.getBoundingClientRect();
-      self.tx = ((e.clientX - r.left) / r.width - 0.5) * 2; self.ty = ((e.clientY - r.top) / r.height - 0.5) * 2;
-    };
-    window.addEventListener('scroll', this.onScroll, { passive: true });
-    window.addEventListener('mousemove', this.onMove, { passive: true });
-    this.startTimer();
-    var tick = function () {
-      var d = self.target - self.pos;
-      self.pos = Math.abs(d) < 0.0005 ? self.target : self.pos + d * 0.08;
-      self.mx += (self.tx - self.mx) * 0.06; self.my += (self.ty - self.my) * 0.06;
-      self.paint();
-      var i = Math.max(0, Math.min(3, Math.round(self.pos)));
-      if (i !== self.state.i) self.setState({ i: i });
-      self.raf = requestAnimationFrame(tick);
-    };
-    this.raf = requestAnimationFrame(tick);
+    var measure = function () { var w = self.el.map(function (e) { return e ? e.getBoundingClientRect().width : 0; }); var mob = window.innerWidth <= 760; if (w[0]) self.setState({ widths: mob ? null : w, mob: mob }); };
+    this.measure = measure;
+    setTimeout(measure, 60);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+    window.addEventListener('resize', measure);
+    this.start();
   }
-  componentWillUnmount() { cancelAnimationFrame(this.raf); clearInterval(this.timer); window.removeEventListener('scroll', this.onScroll); window.removeEventListener('mousemove', this.onMove); }
-  startTimer() {
-    var self = this;
-    clearInterval(this.timer);
-    if (this.mode !== 'auto') return;
-    this.timer = setInterval(function () { self.target = self.target >= 3 ? 0 : Math.round(self.target) + 1; }, 4200);
-  }
-  goTo(k) {
-    if (this.mode === 'scroll' && this.track) {
-      var r = this.track.getBoundingClientRect(), vh = this.view ? this.view.clientHeight : window.innerHeight, span = r.height - vh;
-      window.scrollTo({ top: window.scrollY + r.top + span * k / 3, behavior: 'smooth' });
-    } else { this.target = k; this.startTimer(); }
-  }
-  paint() {
-    var p = this.pos;
-    if (this.tilt) this.tilt.style.transform = 'rotateY(' + (this.mx * 7).toFixed(2) + 'deg) rotateX(' + (-this.my * 5).toFixed(2) + 'deg)';
-    if (this.glow) this.glow.style.transform = 'translate(' + (220 + this.mx * 60 - p * 30).toFixed(1) + 'px,' + (this.my * 40 + Math.sin(p * 1.6) * 60).toFixed(1) + 'px)';
-    for (var k = 0; k < 4; k++) {
-      var el = this.cards[k]; if (!el) continue;
-      var o = k - p, tf, op, z;
-      if (o >= 0) {
-        tf = 'translate3d(0,' + (-o * 34).toFixed(1) + 'px,' + (-o * 130).toFixed(1) + 'px) scale(' + (1 - o * 0.05).toFixed(3) + ')';
-        op = o > 2.4 ? Math.max(0, 1 - (o - 2.4) * 2.5) : 1;
-        z = 100 - Math.round(o * 10);
-      } else {
-        var t = Math.min(1.4, -o);
-        tf = 'translate3d(' + (-t * 40).toFixed(1) + 'px,' + (t * 140).toFixed(1) + 'px,' + (t * 300).toFixed(1) + 'px) rotateX(' + (-t * 24).toFixed(1) + 'deg) rotateZ(' + (-t * 6).toFixed(1) + 'deg)';
-        op = Math.max(0, 1 - t * 1.6);
-        z = 200;
-      }
-      el.style.transform = tf; el.style.opacity = op.toFixed(3); el.style.zIndex = z;
-      el.style.filter = o > 0.05 ? 'brightness(' + (1 - Math.min(0.35, o * 0.14)).toFixed(3) + ')' : 'none';
-    }
-    for (var j = 0; j < 4; j++) {
-      var tl = this.titles[j]; if (tl) { var dd = Math.abs(j - p); tl.style.opacity = Math.max(0.14, 1 - dd * 0.86).toFixed(3); tl.style.transform = 'translateX(' + (Math.max(0, 1 - dd) * 18).toFixed(1) + 'px)'; }
-      var sg = this.segs[j]; if (sg) sg.style.width = (Math.max(0, Math.min(1, p - j + 1)) * 100).toFixed(1) + '%';
-    }
-    if (this.copy) { var fr = Math.abs(p - Math.round(p)); this.copy.style.opacity = (1 - Math.min(1, fr * 2.4)).toFixed(3); this.copy.style.transform = 'translateY(' + (fr * 24).toFixed(1) + 'px)'; }
-  }
+  componentWillUnmount() { clearInterval(this.timer); window.removeEventListener('resize', this.measure); }
+  start() { var self = this; clearInterval(this.timer); this.timer = setInterval(function () { self.go((self.state.i + 1) % 4); }, 3400); }
+  go(k) { if (k !== this.state.i) this.setState({ i: k, flip: 1 - this.state.flip }); }
   renderVals() {
-    var self = this;
-    var F = [
-      ['Courses', 'Focused learning that builds one specific skill, at your own pace.', 'Learning a new skill or sharpening one you have', 'Browse courses'],
-      ['Certifications', 'Assessed programs that confirm you meet a professional standard.', 'Earning recognised proof of competence', 'See certifications'],
-      ['Career Paths', 'A sequenced route of learning, practice and credentials toward a role.', 'Moving into a new role, step by step', 'Find your path'],
-      ['Programs', 'Structured, cohort-based learning led by experts or institutions.', 'Deep, guided learning with others over time', 'Explore programs']
+    var self = this, i = this.state.i;
+    var D = [
+      ['pick up a new skill', 'New skill', 'Courses', 'Focused learning that builds one specific skill, at your own pace.', 'Browse courses'],
+      ['prove I’m job-ready', 'Job-ready', 'Certifications', 'Assessed programs that confirm you meet a professional standard.', 'See certifications'],
+      ['change careers', 'Career change', 'Career Paths', 'A sequenced route of learning, practice and credentials toward a role.', 'Find your path'],
+      ['learn alongside others', 'With others', 'Programs', 'Structured, cohort-based learning led by experts or institutions.', 'Explore programs']
     ];
-    var i = this.state.i, c = F[i];
+    var w = this.state.widths;
+    var pane = function (k) { var on = k === i; return { op: on ? 1 : 0, tf: on ? 'none' : (k < i ? 'translateY(-24px)' : 'translateY(24px)') }; };
+    var crowd = [];
+    for (var c = 0; c < 36; c++) crowd.push({ d: ((c % 12) * 0.08 + Math.floor(c / 12) * 0.22).toFixed(2) + 's', ring: c === 17 ? '0 0 0 4px #FFFFFF, 0 0 0 6px #1652F0' : 'none' });
     return {
-      formats: F.map(function (f, k) { return { name: f[0], pressed: k === i ? 'true' : 'false', ref: self.titleRefs[k], seg: self.segRefs[k], pick: function () { self.goTo(k); } }; }),
-      cur: { n: i + 1, name: c[0], detail: c[1], for: c[2], cta: c[3] },
-      trackRef: this.trackRef, viewRef: this.viewRef, tiltRef: this.tiltRef, glowRef: this.glowRef, copyRef: this.copyRef,
-      c0: this.cardRefs[0], c1: this.cardRefs[1], c2: this.cardRefs[2], c3: this.cardRefs[3]
+      opts: D.map(function (d, k) {
+        var on = k === i;
+        return { n: k + 1, phrase: d[0], short: d[1], on: on, sel: on ? 'true' : 'false', ref: self.refs4[k],
+          bg: on ? '#EAF0FF' : '#FFFFFF', bd: on ? '#1652F0' : '#E6EAF3', fg: on ? '#0B1433' : '#3A4566', num: on ? '#1652F0' : '#8A93AD',
+          pick: function () { self.go(k); self.start(); } };
+      }),
+      rollW: w ? w[i] + 'px' : 'auto', rollY: (-i * (this.state.mob ? 2.2 : 1.26)) + 'em',
+      lineCls: this.state.flip ? 'gs-a' : 'gs-b',
+      cur: { name: D[i][2], detail: D[i][3], cta: D[i][4] },
+      p0: pane(0), p1: pane(1), p2: pane(2), p3: pane(3), crowd: crowd
     };
   }
 }

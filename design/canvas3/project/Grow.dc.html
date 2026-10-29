@@ -11,157 +11,167 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
-.gs-roll{position:relative;display:block;height:1.26em;overflow:hidden;transition:width .7s cubic-bezier(.7,0,.2,1)}
-.gs-track{display:flex;flex-direction:column;transition:transform .7s cubic-bezier(.7,0,.2,1)}
-.gs-track > span{display:block;width:max-content;height:1.26em;line-height:1.12em;white-space:nowrap}
-.gs-line{position:absolute;left:0;right:0;bottom:.12em;height:.07em;border-radius:9px;background:#1652F0;transform-origin:left}
-.gs-a .gs-line{animation:gsDrawA 1s cubic-bezier(.7,0,.2,1) both}
-.gs-b .gs-line{animation:gsDrawB 1s cubic-bezier(.7,0,.2,1) both}
-@keyframes gsDrawA{0%{transform:scaleX(0)}40%{transform:scaleX(0)}100%{transform:scaleX(1)}}
-@keyframes gsDrawB{0%{transform:scaleX(0)}40%{transform:scaleX(0)}100%{transform:scaleX(1)}}
-.gs-opt{height:48px;padding:0 18px 0 14px;border-radius:14px;border:1.5px solid #E6EAF3;background:#FFFFFF;display:inline-flex;align-items:center;gap:10px;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;font-weight:500;color:#3A4566;cursor:pointer;white-space:nowrap;transition:border-color .25s ease,background .25s ease,color .25s ease}
-.gs-opt:hover{border-color:#A9C2FF}
-.gs-opt:focus-visible,.gs-cta:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-.gs-pane{position:absolute;inset:0;transition:opacity .6s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
-.gs-cta{transition:background .2s ease,transform .2s ease}
-.gs-cta:hover{background:#0E3BB8 !important;transform:translateY(-1px)}
-.gs-cta:hover .gs-arr{transform:translateX(3px)}
-.gs-arr{transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
-.gs-ring{animation:gsSpin 18s linear infinite;transform-origin:50% 50%}
-@keyframes gsSpin{to{transform:rotate(360deg)}}
-.gs-draw{stroke-dasharray:1;stroke-dashoffset:1;animation:gsPath 4.2s cubic-bezier(.6,0,.2,1) infinite}
-@keyframes gsPath{0%{stroke-dashoffset:1}55%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:0;opacity:0}}
-.gs-ms{animation:gsMs 4.2s ease infinite;opacity:0}
-@keyframes gsMs{0%{opacity:0;transform:translateY(8px)}15%,85%{opacity:1;transform:none}100%{opacity:0}}
-.gs-dot{animation:gsDot 3.2s ease-in-out infinite}
-@keyframes gsDot{0%,100%{background:#DCE5FB;transform:scale(1)}40%{background:#1652F0;transform:scale(1.12)}60%{background:#4C7DFF}}
-.gs-fillbar{animation:gsFill 3.6s cubic-bezier(.6,0,.2,1) infinite}
-@keyframes gsFill{0%{transform:scaleX(.08)}70%,100%{transform:scaleX(1)}}
-@media (prefers-reduced-motion: reduce){.gs-ring,.gs-draw,.gs-ms,.gs-dot,.gs-fillbar,.gs-a .gs-line,.gs-b .gs-line{animation:none !important}.gs-draw{stroke-dashoffset:0}.gs-ms{opacity:1}.gs-track,.gs-roll{transition:none}}
-@media (max-width: 1080px){.gs-sent{font-size:72px !important}.gs-low{grid-template-columns:minmax(0,1fr) !important}.gs-art{height:300px !important}}
+.gc-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.gc-card{position:relative;display:flex;flex-direction:column;border-radius:28px;overflow:hidden;background:#FFFFFF;border:1px solid #E6EAF3;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 30px 60px -50px rgba(11,20,51,.4);text-decoration:none;color:#0B1433;transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .55s cubic-bezier(.2,.7,.2,1),border-color .4s ease}
+.gc-card:hover{transform:translateY(-6px);border-color:#D6DDEE;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 44px 80px -46px rgba(22,82,240,.5)}
+.gc-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:4px}
+.gc-vis{position:relative;height:300px;flex-shrink:0;overflow:hidden;background:radial-gradient(120% 100% at 50% 0%,#EAF0FF 0%,#F5F8FF 50%,#FFFFFF 100%)}
+.gc-vis::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#C9D7FA 1.1px,transparent 1.4px);background-size:16px 16px;-webkit-mask-image:radial-gradient(75% 80% at 50% 30%,#000 25%,transparent 80%);mask-image:radial-gradient(75% 80% at 50% 30%,#000 25%,transparent 80%);opacity:.75}
+.gc-body{flex:1;display:flex;flex-direction:column;gap:12px;padding:26px 28px 24px}
+.gc-label{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#5B6582}
+.gc-ico{width:28px;height:28px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:#EAF0FF}
+.gc-meta{margin-top:auto;padding-top:18px;border-top:1px solid #EEF1F7;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.gc-facts{display:flex;flex-wrap:wrap;gap:6px}
+.gc-fact{height:28px;padding:0 10px;border-radius:999px;background:#F5F8FF;border:1px solid #E6EAF3;display:inline-flex;align-items:center;font-size:12px;font-weight:500;color:#3A4566;white-space:nowrap}
+.gc-go{width:44px;height:44px;flex-shrink:0;border-radius:999px;border:1.5px solid #D6DDEE;display:flex;align-items:center;justify-content:center;color:#0B1433;transition:background .3s ease,border-color .3s ease,color .3s ease}
+.gc-card:hover .gc-go{background:#1652F0;border-color:#1652F0;color:#FFFFFF}
+.gc-go svg{transition:transform .35s cubic-bezier(.3,1.4,.5,1)}
+.gc-card:hover .gc-go svg{transform:translateX(2px) rotate(-45deg)}
+.gc-float{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.gc-card:hover .gc-f1{transform:translate(-6px,-8px)}
+.gc-card:hover .gc-f2{transform:translate(8px,-4px) rotate(2deg)}
+.gc-card:hover .gc-f3{transform:translateY(-10px)}
+.gc-feat{background:#0B1433;border-color:#0B1433;color:#FFFFFF;box-shadow:0 40px 80px -48px rgba(11,20,51,.8)}
+.gc-feat:hover{border-color:#0B1433;box-shadow:0 50px 90px -44px rgba(22,82,240,.7)}
+.gc-feat .gc-vis{background:radial-gradient(110% 100% at 50% 0%,#1C3AA8 0%,#122467 45%,#0B1433 100%)}
+.gc-feat .gc-vis::before{background-image:radial-gradient(rgba(127,164,255,.35) 1.1px,transparent 1.4px)}
+.gc-feat .gc-label{color:rgba(255,255,255,.65)}
+.gc-feat .gc-ico{background:rgba(255,255,255,.1)}
+.gc-feat .gc-meta{border-top-color:rgba(255,255,255,.1)}
+.gc-feat .gc-fact{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.85)}
+.gc-feat .gc-go{border-color:rgba(255,255,255,.25);color:#FFFFFF}
+.gc-fill{animation:gcFill 3.6s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes gcFill{0%{width:20%}60%,100%{width:66%}}
+.gc-pop{animation:gcPop 3.6s cubic-bezier(.3,1.4,.5,1) infinite}
+@keyframes gcPop{0%,55%{transform:scale(0);opacity:0}65%,90%{transform:scale(1);opacity:1}100%{transform:scale(.9);opacity:0}}
+.gc-sheen{animation:gcSheen 4.4s ease-in-out infinite}
+@keyframes gcSheen{0%,55%{transform:translateX(-180%) rotate(20deg)}85%,100%{transform:translateX(220%) rotate(20deg)}}
+.gc-spin{animation:gcSpin 20s linear infinite;transform-origin:50% 50%}
+@keyframes gcSpin{to{transform:rotate(360deg)}}
+.gc-comet{stroke-dasharray:.1 1.2;stroke-dashoffset:.1;animation:gcComet 3.4s cubic-bezier(.45,0,.3,1) infinite}
+@keyframes gcComet{0%{stroke-dashoffset:.1;opacity:0}10%{opacity:1}85%{opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
+.gc-beat{animation:gcBeat 3.4s ease-in-out infinite}
+@keyframes gcBeat{0%,70%,100%{box-shadow:0 0 0 6px rgba(127,164,255,.18)}80%{box-shadow:0 0 0 14px rgba(127,164,255,.28),0 0 30px rgba(76,125,255,.6)}}
+.gc-coach{transition:border-color .2s ease,background .2s ease}
+.gc-coach:hover{border-color:#1652F0 !important;background:#F5F8FF !important}
+.gc-coach:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+@supports (animation-timeline: view()){
+.gc-in{animation:gcIn linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+.gc-in-2{animation-range:entry 5% cover 35%}.gc-in-3{animation-range:entry 10% cover 40%}
+@keyframes gcIn{from{opacity:0;transform:translateY(56px)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion: reduce){.gc-fill,.gc-pop,.gc-sheen,.gc-spin,.gc-comet,.gc-beat,.gc-in{animation:none !important}.gc-pop{opacity:1;transform:none}}
+@media (max-width: 1080px){.gc-head{grid-template-columns:minmax(0,1fr) !important;gap:20px !important}.gc-row{grid-template-columns:repeat(3,minmax(300px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -48px;padding:4px 48px 24px;scrollbar-width:none}.gc-row::-webkit-scrollbar{display:none}.gc-card{scroll-snap-align:start}}
 @media (max-width: 760px){
-.gs-wrap{padding:72px 20px 64px !important;gap:28px !important}
-.gs-sent{font-size:40px !important;letter-spacing:-1.3px !important}
-.gs-roll{height:2.2em !important}
-.gs-track > span{white-space:normal !important;width:auto !important;height:2.2em !important;line-height:1.1em !important;display:flex !important;align-items:flex-end}
-.gs-opts{flex-wrap:nowrap !important;overflow-x:auto;margin:0 -20px;padding:0 20px 4px;scrollbar-width:none}
-.gs-opts::-webkit-scrollbar{display:none}
-.gs-name{font-size:40px !important}
-.gs-art{height:260px !important}
-.gs-big{font-size:96px !important}
-.gs-guides{display:none}
-.gs-four{display:none}
+.gc-wrap{padding:72px 20px !important;gap:32px !important}
+.gc-h2{font-size:32px !important;letter-spacing:-.9px !important}
+.gc-row{grid-template-columns:repeat(3,86%);gap:14px;margin:0 -20px;padding:4px 20px 20px;scroll-padding:0 20px}
+.gc-vis{height:240px}
+.gc-scene{transform:scale(.86)}
+.gc-body{padding:22px 22px 20px}
+.gc-title{font-size:23px !important}
 }
 </style>
 </helmet>
-<section aria-labelledby="gs-h" style="position: relative; overflow: hidden; background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
-<div class="gs-guides" aria-hidden="true" style="position: absolute; inset: 0; max-width: 1312px; margin: 0 auto; padding: 0 64px; box-sizing: border-box; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); pointer-events: none">
-<span style="border-left: 1px solid #F0F3F9"></span><span style="border-left: 1px solid #F0F3F9"></span><span style="border-left: 1px solid #F0F3F9"></span><span style="border-left: 1px solid #F0F3F9; border-right: 1px solid #F0F3F9"></span>
-</div>
+<section aria-labelledby="gc-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<div class="gc-wrap" style="max-width: 1312px; margin: 0 auto; padding: 120px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 56px">
 
-<div class="gs-wrap" style="position: relative; max-width: 1312px; margin: 0 auto; padding: 120px 64px 112px; box-sizing: border-box; display: flex; flex-direction: column; gap: 40px">
-<div style="display: flex; justify-content: space-between; align-items: center">
-<h2 id="gs-h" style="margin: 0; font-size: 15px; font-weight: 500; color: #1652F0">Choose how you want to grow</h2>
-<span class="gs-four" style="font-size: 14px; font-weight: 500; color: #8A93AD">Four ways to get there</span>
-</div>
-
-<p class="gs-sent {{lineCls}}" aria-live="polite" style="margin: 0; font-size: 104px; line-height: 1.04; font-weight: 600; letter-spacing: -4px">I want to <span class="gs-roll" style="width: {{rollW}}; color: #1652F0"><span class="gs-track" style="transform: translateY({{rollY}})"><sc-for list="{{opts}}" as="o" hint-placeholder-count="4"><span ref="{{o.ref}}">{{o.phrase}}<span style="color: #A9C2FF">.</span></span></sc-for></span><span class="gs-line"></span></span></p>
-
-<div class="gs-opts" role="tablist" aria-label="Pick your goal" style="display: flex; flex-wrap: wrap; gap: 10px">
-<sc-for list="{{opts}}" as="o" hint-placeholder-count="4">
-<button class="gs-opt" type="button" role="tab" aria-selected="{{o.sel}}" onClick="{{o.pick}}" style="background: {{o.bg}}; border-color: {{o.bd}}; color: {{o.fg}}"><span style="font-size: 12px; font-weight: 500; color: {{o.num}}">0{{o.n}}</span>{{o.short}}<sc-if value="{{o.on}}" hint-placeholder-val="{{ false }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if></button>
-</sc-for>
-</div>
-
-<div class="gs-low" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 64px; align-items: end; margin-top: 24px; padding-top: 40px; border-top: 1px solid #E6EAF3">
+<div class="gc-head gc-in" style="display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: end">
 <div style="display: flex; flex-direction: column; gap: 16px">
-<span style="font-size: 14px; font-weight: 500; color: #8A93AD">Start with</span>
-<span class="gs-name" style="font-size: 60px; line-height: 1; font-weight: 600; letter-spacing: -2px">{{cur.name}}</span>
-<p style="margin: 0; max-width: 460px; font-size: 18px; line-height: 1.55; color: #4A5578">{{cur.detail}}</p>
-<a class="gs-cta" href="#" style="align-self: flex-start; margin-top: 8px; height: 52px; padding: 0 6px 0 22px; border-radius: 999px; background: #1652F0; color: #FFFFFF; display: inline-flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; text-decoration: none">{{cur.cta}}<span style="width: 40px; height: 40px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg class="gs-arr" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+<span style="font-size: 14px; font-weight: 500; color: #1652F0">Choose how you want to grow</span>
+<h2 id="gc-h" class="gc-h2" style="margin: 0; font-size: 48px; line-height: 1.06; font-weight: 600; letter-spacing: -1.5px">Not just courses. Learning shaped around the outcome you want.</h2>
 </div>
-
-<div class="gs-art" aria-hidden="true" style="position: relative; height: 340px">
-<div class="gs-pane" style="opacity: {{p0.op}}; transform: {{p0.tf}}; display: flex; flex-direction: column; justify-content: flex-end; gap: 22px">
-<div style="display: flex; align-items: flex-end; gap: 18px"><span class="gs-big" style="font-size: 200px; line-height: .8; font-weight: 600; letter-spacing: -10px; color: #1652F0">12</span><span style="padding-bottom: 6px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 28px; font-weight: 600; letter-spacing: -.6px">minutes</span><span style="font-size: 15px; color: #5B6582">a typical lesson</span></span></div>
-<div style="height: 14px; border-radius: 999px; background: #EEF1F7; overflow: hidden"><span class="gs-fillbar" style="display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #A9C2FF, #1652F0); transform-origin: left"></span></div>
-<div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 500; color: #8A93AD"><span>One skill</span><span>Your pace</span><span>Any device</span></div>
-</div>
-
-<div class="gs-pane" style="opacity: {{p1.op}}; transform: {{p1.tf}}; display: flex; align-items: center; justify-content: center">
-<div style="position: relative; width: 320px; height: 320px">
-<svg class="gs-ring" viewBox="0 0 320 320" style="position: absolute; inset: 0; width: 100%; height: 100%"><defs><path id="gsCirc" d="M160,160 m-132,0 a132,132 0 1,1 264,0 a132,132 0 1,1 -264,0"></path></defs><text font-family="Google Sans, system-ui, sans-serif" font-size="19" font-weight="600" letter-spacing="7" fill="#1652F0"><textPath href="#gsCirc">ASSESSED · VERIFIED · RECOGNISED · ASSESSED · VERIFIED · RECOGNISED ·</textPath></text></svg>
-<div style="position: absolute; inset: 62px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 10px #EAF0FF, 0 30px 60px -24px rgba(22,82,240,.6)"><svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></div>
+<div style="display: flex; flex-direction: column; gap: 18px; padding-bottom: 6px">
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">Each format is built for a different kind of progress. Use one, or combine them into a single plan.</p>
+<a class="gc-coach" href="#" style="align-self: flex-start; height: 48px; padding: 0 18px 0 6px; border-radius: 999px; border: 1.5px solid #D6DDEE; background: #FFFFFF; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #0B1433; font-size: 14px; font-weight: 500">
+<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 999px; background: radial-gradient(circle at 34% 28%, #DCE7FF 0%, #7FA4FF 25%, #1652F0 62%, #0B2A8F 100%); box-shadow: 0 0 0 3px #EAF0FF"></span>
+Not sure? Your AI Coach can help you choose
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
 </div>
 </div>
 
-<div class="gs-pane" style="opacity: {{p2.op}}; transform: {{p2.tf}}">
-<svg viewBox="0 0 600 340" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible"><path d="M10 300 C 140 300, 150 200, 250 200 S 380 250, 430 160 S 520 60, 590 40" fill="none" stroke="#EAF0FF" stroke-width="22" stroke-linecap="round"></path><path class="gs-draw" pathLength="1" d="M10 300 C 140 300, 150 200, 250 200 S 380 250, 430 160 S 520 60, 590 40" fill="none" stroke="#1652F0" stroke-width="6" stroke-linecap="round"></path></svg>
-<span class="gs-ms" style="position: absolute; left: 1.6%; top: 88%; margin-top: -17px; animation-delay: 0s"><span style="display: inline-flex; height: 34px; padding: 0 14px; border-radius: 999px; background: #0B1433; color: #FFFFFF; align-items: center; font-size: 14px; font-weight: 500">Today</span></span>
-<span class="gs-ms" style="position: absolute; left: 41.6%; top: 58.8%; animation-delay: .7s"><span style="display: block; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 999px; background: #FFFFFF; border: 4px solid #1652F0; box-sizing: border-box"></span><span style="position: absolute; top: 18px; left: 0; transform: translateX(-50%); font-size: 14px; font-weight: 500; color: #3A4566; white-space: nowrap">Courses</span></span>
-<span class="gs-ms" style="position: absolute; left: 71.6%; top: 47%; animation-delay: 1.3s"><span style="display: block; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 999px; background: #FFFFFF; border: 4px solid #1652F0; box-sizing: border-box"></span><span style="position: absolute; top: 18px; left: 0; transform: translateX(-50%); font-size: 14px; font-weight: 500; color: #3A4566; white-space: nowrap">Projects</span></span>
-<span class="gs-ms" style="position: absolute; right: 0; top: 0; margin-top: -20px; animation-delay: 2s"><span style="display: inline-flex; height: 40px; padding: 0 16px; border-radius: 999px; background: #1652F0; color: #FFFFFF; align-items: center; font-size: 15px; font-weight: 600; box-shadow: 0 0 0 8px #EAF0FF">Data analyst</span></span>
-</div>
+<div class="gc-row">
 
-<div class="gs-pane" style="opacity: {{p3.op}}; transform: {{p3.tf}}; display: flex; flex-direction: column; justify-content: flex-end; gap: 20px">
-<div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px">
-<sc-for list="{{crowd}}" as="c" hint-placeholder-count="36">
-<span class="gs-dot" style="aspect-ratio: 1; border-radius: 999px; background: #DCE5FB; animation-delay: {{c.d}}; box-shadow: {{c.ring}}"></span>
-</sc-for>
+<a class="gc-card gc-in" href="#" aria-label="Courses: browse courses">
+<div class="gc-vis" aria-hidden="true">
+<div class="gc-scene" style="position: absolute; inset: 0">
+<div class="gc-float gc-f2" style="position: absolute; left: 50%; top: 50%; width: 252px; margin: -92px 0 0 -126px; box-sizing: border-box; padding: 12px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 26px 48px -28px rgba(11,20,51,.45); display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; height: 92px; border-radius: 12px; overflow: hidden; background: linear-gradient(135deg, #1652F0, #0B1433); display: flex; align-items: center; justify-content: center">
+<span style="position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.18) 1px, transparent 1.3px); background-size: 12px 12px"></span>
+<span style="position: relative; width: 38px; height: 38px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px rgba(255,255,255,.18)"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1652F0"><path d="M8 5v14l11-7z"></path></svg></span>
+<span style="position: absolute; right: 8px; bottom: 8px; height: 20px; padding: 0 7px; border-radius: 999px; background: rgba(11,20,51,.55); color: #FFFFFF; display: inline-flex; align-items: center; font-size: 10px; font-weight: 500">12:04</span>
 </div>
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap"><span style="font-size: 28px; font-weight: 600; letter-spacing: -.6px">Cohort 12 <span style="color: #8A93AD; font-weight: 500">· 36 learners</span></span><span style="font-size: 15px; color: #5B6582">Led by experts · live each week</span></div>
+<span style="font-size: 13px; font-weight: 600">Joining tables with SQL</span>
+<div style="display: flex; align-items: center; gap: 8px"><span style="flex: 1; height: 6px; border-radius: 9px; background: #EEF1F7; position: relative; overflow: hidden"><span class="gc-fill" style="position: absolute; left: 0; top: 0; bottom: 0; width: 60%; border-radius: 9px; background: #1652F0"></span></span><span style="font-size: 11px; font-weight: 500; color: #5B6582">Lesson 4 of 12</span></div>
+</div>
+<span class="gc-float gc-f1" style="position: absolute; left: 24px; bottom: 30px; height: 30px; padding: 0 11px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: #3A4566; box-shadow: 0 12px 24px -16px rgba(11,20,51,.4)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Your pace</span>
+<span class="gc-float gc-f3" style="position: absolute; right: 22px; top: 26px"><span class="gc-pop" style="display: inline-flex; height: 32px; padding: 0 12px 0 6px; border-radius: 999px; background: #0B1433; color: #FFFFFF; align-items: center; gap: 8px; font-size: 12px; font-weight: 500"><span style="width: 22px; height: 22px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>New skill: SQL joins</span></span>
 </div>
 </div>
+<div class="gc-body">
+<span class="gc-label"><span class="gc-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16"></path></svg></span>For learning one skill well</span>
+<h3 class="gc-title" style="margin: 0; font-size: 26px; line-height: 1.15; font-weight: 600; letter-spacing: -.6px">Courses</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">Focused learning that builds one specific skill, at your own pace.</p>
+<div class="gc-meta"><span class="gc-facts"><span class="gc-fact">Self-paced</span><span class="gc-fact">Short lessons</span></span><span class="gc-go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+</a>
+
+<a class="gc-card gc-in gc-in-2" href="#" aria-label="Professional Certifications: see certifications">
+<div class="gc-vis" aria-hidden="true">
+<div class="gc-scene" style="position: absolute; inset: 0">
+<div class="gc-float gc-f2" style="position: absolute; left: 50%; top: 50%; width: 236px; height: 166px; margin: -100px 0 0 -158px; box-sizing: border-box; padding: 18px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 26px 48px -28px rgba(11,20,51,.45); display: flex; flex-direction: column; gap: 9px; overflow: hidden">
+<span style="position: absolute; inset: 7px; border: 1px solid #DCE5FB; border-radius: 6px; pointer-events: none"></span>
+<span class="gc-sheen" style="position: absolute; top: -30%; bottom: -30%; width: 30%; background: linear-gradient(90deg, rgba(234,240,255,0), rgba(234,240,255,.95), rgba(234,240,255,0))"></span>
+<span style="position: relative; font-size: 10px; font-weight: 500; letter-spacing: 1.6px; color: #8A93AD">PROFESSIONAL CERTIFICATE</span>
+<span style="position: relative; font-size: 16px; font-weight: 600; letter-spacing: -.3px">Data Analysis</span>
+<span style="position: relative; width: 70%; height: 6px; border-radius: 9px; background: #EEF1F7"></span>
+<span style="position: relative; width: 52%; height: 6px; border-radius: 9px; background: #EEF1F7"></span>
+<span style="position: relative; margin-top: auto; display: flex; justify-content: space-between; font-size: 10px; color: #8A93AD"><span>Credalio</span><span>ID 4F2-91</span></span>
+</div>
+<div class="gc-float gc-f3" style="position: absolute; right: 22px; top: 40px; width: 104px; height: 104px">
+<svg class="gc-spin" viewBox="0 0 104 104" style="position: absolute; inset: 0; width: 100%; height: 100%"><defs><path id="gcSeal" d="M52,52 m-41,0 a41,41 0 1,1 82,0 a41,41 0 1,1 -82,0"></path></defs><text font-family="Google Sans, system-ui, sans-serif" font-size="8.6" font-weight="600" letter-spacing="2.4" fill="#1652F0"><textPath href="#gcSeal">ASSESSED · VERIFIED · RECOGNISED ·</textPath></text></svg>
+<span style="position: absolute; inset: 22px; border-radius: 999px; background: radial-gradient(circle at 34% 28%, #DCE7FF 0%, #7FA4FF 22%, #1652F0 60%, #0B2A8F 100%); box-shadow: 0 0 0 4px #FFFFFF, 0 14px 26px -12px rgba(22,82,240,.7); display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+</div>
+<span class="gc-float gc-f1" style="position: absolute; left: 26px; bottom: 30px; height: 30px; padding: 0 11px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: #0F6B45; box-shadow: 0 12px 24px -16px rgba(11,20,51,.4)"><span style="width: 7px; height: 7px; border-radius: 9px; background: #0F6B45"></span>Practical exam passed</span>
+</div>
+</div>
+<div class="gc-body">
+<span class="gc-label"><span class="gc-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path></svg></span>For proof employers trust</span>
+<h3 class="gc-title" style="margin: 0; font-size: 26px; line-height: 1.15; font-weight: 600; letter-spacing: -.6px">Professional Certifications</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">Assessed programs that confirm you meet a professional standard.</p>
+<div class="gc-meta"><span class="gc-facts"><span class="gc-fact">Assessed</span><span class="gc-fact">Verifiable</span></span><span class="gc-go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+</a>
+
+<a class="gc-card gc-feat gc-in gc-in-3" href="#" aria-label="Career Paths: find your path">
+<div class="gc-vis" aria-hidden="true">
+<div class="gc-scene" style="position: absolute; inset: 0">
+<svg viewBox="0 0 400 300" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible">
+<path d="M36 250 C 110 250, 100 170, 170 170 S 250 210, 290 150 S 340 70, 368 58" fill="none" stroke="rgba(127,164,255,.35)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 8"></path>
+<path class="gc-comet" pathLength="1" d="M36 250 C 110 250, 100 170, 170 170 S 250 210, 290 150 S 340 70, 368 58" fill="none" stroke="#7FA4FF" stroke-width="5" stroke-linecap="round"></path>
+</svg>
+<span style="position: absolute; left: 9%; top: 83%; transform: translate(-20%, -50%); height: 28px; padding: 0 11px; border-radius: 999px; background: #FFFFFF; color: #0B1433; display: inline-flex; align-items: center; font-size: 11px; font-weight: 600; white-space: nowrap">You, today</span>
+<span style="position: absolute; left: 42.5%; top: 56.7%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="width: 34px; height: 34px; border-radius: 999px; background: #1652F0; border: 2px solid #7FA4FF; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16"></path></svg></span><span style="font-size: 11px; font-weight: 500; color: rgba(255,255,255,.75)">Courses</span></span>
+<span style="position: absolute; left: 72.5%; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="width: 34px; height: 34px; border-radius: 999px; background: #1652F0; border: 2px solid #7FA4FF; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"></path></svg></span><span style="font-size: 11px; font-weight: 500; color: rgba(255,255,255,.75)">Projects</span></span>
+<span class="gc-float gc-f1" style="position: absolute; right: 18px; top: 22px; padding: 9px 12px 9px 9px; border-radius: 14px; background: #FFFFFF; color: #0B1433; display: flex; align-items: center; gap: 9px; white-space: nowrap"><span class="gc-beat" style="width: 32px; height: 32px; border-radius: 10px; background: linear-gradient(150deg, #4C7DFF, #1652F0); display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v11H4zM9 8V5h6v3"></path></svg></span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 10px; color: #8A93AD">Your goal</span><span style="font-size: 13px; font-weight: 600">Data analyst</span></span></span>
+</div>
+</div>
+<div class="gc-body">
+<span class="gc-label"><span class="gc-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7FA4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path></svg></span>For moving into a new role</span>
+<h3 class="gc-title" style="margin: 0; font-size: 26px; line-height: 1.15; font-weight: 600; letter-spacing: -.6px">Career Paths</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,.72)">A sequenced route of learning, practice and credentials toward a role, adjusted by your AI Coach as you go.</p>
+<div class="gc-meta"><span class="gc-facts"><span class="gc-fact">Goal-led</span><span class="gc-fact">Step by step</span></span><span class="gc-go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+</a>
+
 </div>
 </div>
 </section>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1040}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1020}}'>
 class Component extends DCLogic {
-  constructor(props) {
-    super(props);
-    this.state = { i: 2, flip: 0, widths: null };
-    this.el = [];
-    var self = this;
-    this.refs4 = [0, 1, 2, 3].map(function (k) { return function (e) { self.el[k] = e; }; });
-  }
-  componentDidMount() {
-    var self = this;
-    var measure = function () { var w = self.el.map(function (e) { return e ? e.getBoundingClientRect().width : 0; }); var mob = window.innerWidth <= 760; if (w[0]) self.setState({ widths: mob ? null : w, mob: mob }); };
-    this.measure = measure;
-    setTimeout(measure, 60);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
-    window.addEventListener('resize', measure);
-    this.start();
-  }
-  componentWillUnmount() { clearInterval(this.timer); window.removeEventListener('resize', this.measure); }
-  start() { var self = this; clearInterval(this.timer); this.timer = setInterval(function () { self.go((self.state.i + 1) % 4); }, 3400); }
-  go(k) { if (k !== this.state.i) this.setState({ i: k, flip: 1 - this.state.flip }); }
-  renderVals() {
-    var self = this, i = this.state.i;
-    var D = [
-      ['pick up a new skill', 'New skill', 'Courses', 'Focused learning that builds one specific skill, at your own pace.', 'Browse courses'],
-      ['prove I’m job-ready', 'Job-ready', 'Certifications', 'Assessed programs that confirm you meet a professional standard.', 'See certifications'],
-      ['change careers', 'Career change', 'Career Paths', 'A sequenced route of learning, practice and credentials toward a role.', 'Find your path'],
-      ['learn alongside others', 'With others', 'Programs', 'Structured, cohort-based learning led by experts or institutions.', 'Explore programs']
-    ];
-    var w = this.state.widths;
-    var pane = function (k) { var on = k === i; return { op: on ? 1 : 0, tf: on ? 'none' : (k < i ? 'translateY(-24px)' : 'translateY(24px)') }; };
-    var crowd = [];
-    for (var c = 0; c < 36; c++) crowd.push({ d: ((c % 12) * 0.08 + Math.floor(c / 12) * 0.22).toFixed(2) + 's', ring: c === 17 ? '0 0 0 4px #FFFFFF, 0 0 0 6px #1652F0' : 'none' });
-    return {
-      opts: D.map(function (d, k) {
-        var on = k === i;
-        return { n: k + 1, phrase: d[0], short: d[1], on: on, sel: on ? 'true' : 'false', ref: self.refs4[k],
-          bg: on ? '#EAF0FF' : '#FFFFFF', bd: on ? '#1652F0' : '#E6EAF3', fg: on ? '#0B1433' : '#3A4566', num: on ? '#1652F0' : '#8A93AD',
-          pick: function () { self.go(k); self.start(); } };
-      }),
-      rollW: w ? w[i] + 'px' : 'auto', rollY: (-i * (this.state.mob ? 2.2 : 1.26)) + 'em',
-      lineCls: this.state.flip ? 'gs-a' : 'gs-b',
-      cur: { name: D[i][2], detail: D[i][3], cta: D[i][4] },
-      p0: pane(0), p1: pane(1), p2: pane(2), p3: pane(3), crowd: crowd
-    };
-  }
+  renderVals() { return {}; }
 }
 </script>
 </body>

@@ -1,124 +1,62 @@
 {
   "v": 3,
-  "createdOnFiles": {
-    "v": 1,
-    "at": "2026-10-28T09:00:00Z"
-  },
-  "title": "Credalio · Landing",
-  "launch": {
-    "view": "canvas"
-  },
-  "pages": [
-    {
-      "id": "main",
-      "name": "Landing, learners & pricing"
-    }
-  ],
+  "attachments": {},
   "boards": {
-    "Main.dc.html": {
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 920,
-      "title": "LND-001 · Landing hero · Desktop",
-      "page": "main",
+    "Engine-Field.dc.html": {
       "expand": "fill",
-      "is_interactive": true
-    },
-    "Main-Mobile.dc.html": {
-      "x": 1520,
-      "y": 0,
-      "w": 390,
-      "h": 640,
-      "title": "LND-001 · Mobile",
-      "page": "main",
-      "is_interactive": true
-    },
-    "Hero-B.dc.html": {
-      "x": 0,
-      "y": 1400,
-      "w": 1440,
       "h": 820,
-      "title": "LND-001 B · Landing hero (new concept) · Desktop",
+      "is_interactive": true,
       "page": "main",
-      "expand": "fill",
-      "is_interactive": true
+      "title": "Become Engine A2 · Dot-field road",
+      "w": 1440,
+      "x": 0,
+      "y": 6020
     },
     "Hero-B-Mobile.dc.html": {
-      "x": 1520,
-      "y": 1400,
-      "w": 390,
       "h": 640,
+      "is_interactive": true,
+      "page": "main",
       "title": "LND-001 B · Mobile",
-      "page": "main",
-      "is_interactive": true
+      "w": 390,
+      "x": 1520,
+      "y": 1400
     },
-    "Hero-C.dc.html": {
-      "x": 0,
-      "y": 2640,
-      "w": 1440,
-      "h": 1665,
-      "title": "LND-001 C · Hero + Become Engine · Desktop",
-      "page": "main",
+    "Hero-B.dc.html": {
       "expand": "fill",
-      "is_interactive": true
+      "h": 820,
+      "is_interactive": true,
+      "page": "main",
+      "title": "LND-001 B · Landing hero (new concept) · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 1400
     },
     "Hero-C-Mobile.dc.html": {
-      "x": 1520,
-      "y": 2640,
-      "w": 390,
       "h": 1830,
+      "is_interactive": true,
+      "page": "main",
       "title": "LND-001 C · Mobile",
-      "page": "main",
-      "is_interactive": true
-    },
-    "Engine-Path.dc.html": {
-      "x": 0,
-      "y": 4900,
-      "w": 1440,
-      "h": 820,
-      "title": "Become Engine A · Journey flythrough",
-      "page": "main",
-      "expand": "fill",
-      "is_interactive": true
-    },
-    "Engine-Gyro.dc.html": {
+      "w": 390,
       "x": 1520,
-      "y": 4900,
-      "w": 1440,
-      "h": 820,
-      "title": "Become Engine B · Gyroscope",
-      "page": "main",
-      "expand": "fill",
-      "is_interactive": true
+      "y": 2640
     },
-    "Engine-Stairs.dc.html": {
-      "x": 3040,
-      "y": 4900,
-      "w": 1440,
-      "h": 820,
-      "title": "Become Engine C · Staircase",
-      "page": "main",
+    "Hero-C.dc.html": {
       "expand": "fill",
-      "is_interactive": true
+      "h": 1665,
+      "is_interactive": true,
+      "page": "main",
+      "title": "LND-001 C · Hero + Become Engine · Desktop",
+      "w": 1440,
+      "x": 0,
+      "y": 2640
     },
     "Moment.dc.html": {
-      "x": 4560,
-      "y": 4900,
-      "w": 280,
       "h": 150,
-      "title": "Become Engine · product moment card (shared)",
-      "page": "main"
-    },
-    "Engine-Field.dc.html": {
-      "x": 0,
-      "y": 6020,
-      "w": 1440,
-      "h": 820,
-      "title": "Become Engine A2 · Dot-field road",
       "page": "main",
-      "expand": "fill",
-      "is_interactive": true
+      "title": "Become Engine · product moment card (shared)",
+      "w": 280,
+      "x": 4560,
+      "y": 4900
     },
     "Engine-Field-Mobile.dc.html": {
       "x": 1520,
@@ -130,69 +68,71 @@
       "is_interactive": true
     }
   },
+  "createdOnFiles": {
+    "at": "2026-10-28T09:00:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "noteOrder": [
+    "new-hero",
+    "row-hero-b",
+    "row-hero-c",
+    "row-engine-a2"
+  ],
+  "notes": {
+    "new-hero": {
+      "fill": "pink",
+      "page": "main",
+      "text": "NEW · hero v1 with planet illustration",
+      "w": 260,
+      "x": 1990,
+      "y": 0
+    },
+    "row-engine-a2": {
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main",
+      "text": "Become Engine A2 · Dot-field road",
+      "w": 240,
+      "x": 0,
+      "y": 5720
+    },
+    "row-hero-b": {
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main",
+      "text": "Landing page · hero · concept B",
+      "w": 240,
+      "x": 0,
+      "y": 1100
+    },
+    "row-hero-c": {
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main",
+      "text": "Landing page · concept C (hero + section 2)",
+      "w": 240,
+      "x": 0,
+      "y": 2340
+    }
+  },
   "order": [
-    "Main.dc.html",
-    "Main-Mobile.dc.html",
     "Hero-B.dc.html",
     "Hero-B-Mobile.dc.html",
     "Hero-C.dc.html",
     "Hero-C-Mobile.dc.html",
-    "Engine-Path.dc.html",
-    "Engine-Gyro.dc.html",
-    "Engine-Stairs.dc.html",
     "Moment.dc.html",
     "Engine-Field.dc.html",
     "Engine-Field-Mobile.dc.html"
   ],
-  "notes": {
-    "row-hero": {
-      "x": 0,
-      "y": -300,
-      "text": "Landing page · hero",
-      "kind": "title1",
-      "maxW": 1910,
-      "page": "main"
-    },
-    "new-hero": {
-      "x": 1990,
-      "y": 0,
-      "w": 260,
-      "text": "NEW · hero v1 with planet illustration",
-      "fill": "pink",
-      "page": "main"
-    },
-    "row-hero-b": {
-      "x": 0,
-      "y": 1100,
-      "text": "Landing page · hero · concept B",
-      "kind": "title1",
-      "maxW": 1910,
-      "page": "main"
-    },
-    "row-hero-c": {
-      "x": 0,
-      "y": 2340,
-      "text": "Landing page · concept C (hero + section 2)",
-      "kind": "title1",
-      "maxW": 1910,
-      "page": "main"
-    },
-    "row-engine": {
-      "x": 0,
-      "y": 4600,
-      "text": "Become Engine (section 2) · 3 directions",
-      "kind": "title1",
-      "maxW": 4840,
-      "page": "main"
-    },
-    "row-engine-a2": {
-      "x": 0,
-      "y": 5720,
-      "text": "Become Engine A2 · Dot-field road",
-      "kind": "title1",
-      "maxW": 1910,
-      "page": "main"
+  "pages": [
+    {
+      "id": "main",
+      "name": "Landing, learners & pricing"
     }
-  },
-  "designSystems": []
+  ],
+  "title": "Credalio · Landing"
 }

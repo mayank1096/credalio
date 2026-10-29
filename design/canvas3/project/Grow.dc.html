@@ -12,7 +12,7 @@
 <style>
 body{margin:0;background:#FFFFFF}
 .gc-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.gc-card{position:relative;display:flex;flex-direction:column;border-radius:28px;overflow:hidden;background:#FFFFFF;border:1px solid #E6EAF3;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 30px 60px -50px rgba(11,20,51,.4);text-decoration:none;color:#0B1433;transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .55s cubic-bezier(.2,.7,.2,1),border-color .4s ease}
+.gc-card{position:relative;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:#FFFFFF;border:1px solid #E6EAF3;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 30px 60px -50px rgba(11,20,51,.4);text-decoration:none;color:#0B1433;transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .55s cubic-bezier(.2,.7,.2,1),border-color .4s ease}
 .gc-card:hover{transform:translateY(-6px);border-color:#D6DDEE;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 44px 80px -46px rgba(22,82,240,.5)}
 .gc-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:4px}
 .gc-vis{position:relative;height:270px;flex-shrink:0;overflow:hidden;background:radial-gradient(120% 100% at 50% 0%,#EAF0FF 0%,#F5F8FF 50%,#FFFFFF 100%)}
@@ -20,7 +20,7 @@ body{margin:0;background:#FFFFFF}
 .gc-body{flex:1;display:flex;flex-direction:column;gap:10px;padding:22px 22px 20px}
 .gc-scene{transform:scale(.86);transform-origin:50% 50%}
 .gc-label{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#5B6582}
-.gc-ico{width:28px;height:28px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:#EAF0FF}
+.gc-ico{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;background:#EAF0FF}
 .gc-meta{margin-top:auto;padding-top:18px;border-top:1px solid #EEF1F7;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .gc-facts{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#5B6582;white-space:nowrap}
 .gc-sep{width:4px;height:4px;border-radius:9px;background:#CBD3E6}
@@ -102,8 +102,8 @@ Not sure? Your AI Coach can help you choose
 <a class="gc-card gc-in" href="#" aria-label="Courses: browse courses">
 <div class="gc-vis" aria-hidden="true">
 <div class="gc-scene" style="position: absolute; inset: 0">
-<div class="gc-float gc-f2" style="position: absolute; left: 50%; top: 50%; width: 252px; margin: -92px 0 0 -126px; box-sizing: border-box; padding: 12px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 26px 48px -28px rgba(11,20,51,.45); display: flex; flex-direction: column; gap: 10px">
-<div style="position: relative; height: 92px; border-radius: 12px; overflow: hidden; background: linear-gradient(135deg, #1652F0, #0B1433); display: flex; align-items: center; justify-content: center">
+<div class="gc-float gc-f2" style="position: absolute; left: 50%; top: 50%; width: 252px; margin: -92px 0 0 -126px; box-sizing: border-box; padding: 12px; border-radius: 12px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 26px 48px -28px rgba(11,20,51,.45); display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; height: 92px; border-radius: 8px; overflow: hidden; background: linear-gradient(135deg, #1652F0, #0B1433); display: flex; align-items: center; justify-content: center">
 <span style="position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.18) 1px, transparent 1.3px); background-size: 12px 12px"></span>
 <span style="position: relative; width: 38px; height: 38px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px rgba(255,255,255,.18)"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1652F0"><path d="M8 5v14l11-7z"></path></svg></span>
 <span style="position: absolute; right: 8px; bottom: 8px; height: 20px; padding: 0 7px; border-radius: 999px; background: rgba(11,20,51,.55); color: #FFFFFF; display: inline-flex; align-items: center; font-size: 10px; font-weight: 500">12:04</span>
@@ -160,7 +160,7 @@ Not sure? Your AI Coach can help you choose
 <span style="position: absolute; left: 9%; top: 83%; transform: translate(-20%, -50%); height: 28px; padding: 0 11px; border-radius: 999px; background: #FFFFFF; color: #0B1433; display: inline-flex; align-items: center; font-size: 11px; font-weight: 600; white-space: nowrap">You, today</span>
 <span style="position: absolute; left: 42.5%; top: 56.7%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="width: 34px; height: 34px; border-radius: 999px; background: #1652F0; border: 2px solid #7FA4FF; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16"></path></svg></span><span style="font-size: 11px; font-weight: 500; color: rgba(255,255,255,.75)">Courses</span></span>
 <span style="position: absolute; left: 72.5%; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="width: 34px; height: 34px; border-radius: 999px; background: #1652F0; border: 2px solid #7FA4FF; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"></path></svg></span><span style="font-size: 11px; font-weight: 500; color: rgba(255,255,255,.75)">Projects</span></span>
-<span class="gc-float gc-f1" style="position: absolute; right: 18px; top: 22px; padding: 9px 12px 9px 9px; border-radius: 14px; background: #FFFFFF; color: #0B1433; display: flex; align-items: center; gap: 9px; white-space: nowrap"><span class="gc-beat" style="width: 32px; height: 32px; border-radius: 10px; background: linear-gradient(150deg, #4C7DFF, #1652F0); display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v11H4zM9 8V5h6v3"></path></svg></span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 10px; color: #8A93AD">Your goal</span><span style="font-size: 13px; font-weight: 600">Data analyst</span></span></span>
+<span class="gc-float gc-f1" style="position: absolute; right: 18px; top: 22px; padding: 9px 12px 9px 9px; border-radius: 10px; background: #FFFFFF; color: #0B1433; display: flex; align-items: center; gap: 9px; white-space: nowrap"><span class="gc-beat" style="width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(150deg, #4C7DFF, #1652F0); display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v11H4zM9 8V5h6v3"></path></svg></span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 10px; color: #8A93AD">Your goal</span><span style="font-size: 13px; font-weight: 600">Data analyst</span></span></span>
 </div>
 </div>
 <div class="gc-body">
@@ -174,7 +174,7 @@ Not sure? Your AI Coach can help you choose
 <a class="gc-card gc-in gc-in-4" href="#" aria-label="Learning Programs: explore programs">
 <div class="gc-vis" aria-hidden="true">
 <div class="gc-scene" style="position: absolute; inset: 0">
-<div class="gc-float gc-f2" style="position: absolute; left: 50%; top: 50%; width: 252px; margin: -78px 0 0 -126px; box-sizing: border-box; padding: 14px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 26px 48px -28px rgba(11,20,51,.45); display: flex; flex-direction: column; gap: 12px">
+<div class="gc-float gc-f2" style="position: absolute; left: 50%; top: 50%; width: 252px; margin: -78px 0 0 -126px; box-sizing: border-box; padding: 14px; border-radius: 12px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 26px 48px -28px rgba(11,20,51,.45); display: flex; flex-direction: column; gap: 12px">
 <div style="display: flex; align-items: center; justify-content: space-between">
 <span style="display: flex; padding-left: 8px">
 <span style="width: 30px; height: 30px; margin-left: -8px; border-radius: 999px; border: 2.5px solid #FFFFFF; background: #DCE5FB; color: #1652F0; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600">AK</span>
@@ -185,11 +185,11 @@ Not sure? Your AI Coach can help you choose
 <span style="font-size: 11px; font-weight: 500; color: #8A93AD">Cohort 12</span>
 </div>
 <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; align-items: end; height: 54px">
-<span class="gc-day" style="height: 40%; border-radius: 6px; background: #EAF0FF; animation-delay: 0s"></span>
-<span class="gc-day" style="height: 65%; border-radius: 6px; background: #DCE5FB; animation-delay: .2s"></span>
-<span class="gc-day" style="height: 50%; border-radius: 6px; background: #EAF0FF; animation-delay: .4s"></span>
-<span class="gc-day" style="height: 100%; border-radius: 6px; background: linear-gradient(180deg, #4C7DFF, #1652F0); animation-delay: .6s"></span>
-<span class="gc-day" style="height: 58%; border-radius: 6px; background: #DCE5FB; animation-delay: .8s"></span>
+<span class="gc-day" style="height: 40%; border-radius: 4px; background: #EAF0FF; animation-delay: 0s"></span>
+<span class="gc-day" style="height: 65%; border-radius: 4px; background: #DCE5FB; animation-delay: .2s"></span>
+<span class="gc-day" style="height: 50%; border-radius: 4px; background: #EAF0FF; animation-delay: .4s"></span>
+<span class="gc-day" style="height: 100%; border-radius: 4px; background: linear-gradient(180deg, #4C7DFF, #1652F0); animation-delay: .6s"></span>
+<span class="gc-day" style="height: 58%; border-radius: 4px; background: #DCE5FB; animation-delay: .8s"></span>
 </div>
 <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; font-size: 10px; font-weight: 500; color: #8A93AD; text-align: center"><span>Mon</span><span>Tue</span><span>Wed</span><span style="color: #1652F0">Thu</span><span>Fri</span></div>
 </div>

@@ -32,7 +32,7 @@
       "y": 1400
     },
     "Hero-C-Mobile.dc.html": {
-      "h": 3852,
+      "h": 5609,
       "is_interactive": true,
       "page": "main",
       "title": "LND-001 C · Mobile",
@@ -42,10 +42,10 @@
     },
     "Hero-C.dc.html": {
       "expand": "fill",
-      "h": 3850,
+      "h": 4905,
       "is_interactive": true,
       "page": "main",
-      "title": "LND-001 C · Hero + Become Engine + Grow · Desktop",
+      "title": "LND-001 C · Full landing so far (sections 1–5) · Desktop",
       "w": 1440,
       "x": 0,
       "y": 2640
@@ -102,6 +102,25 @@
       "w": 390,
       "h": 1104,
       "title": "Section 4 · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Validated.dc.html": {
+      "x": 0,
+      "y": 10200,
+      "w": 1440,
+      "h": 1040,
+      "title": "Section 5 · Trusted learning · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Validated-Mobile.dc.html": {
+      "x": 1520,
+      "y": 10200,
+      "w": 390,
+      "h": 1744,
+      "title": "Section 5 · Mobile",
       "page": "main",
       "is_interactive": true
     }
@@ -171,6 +190,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-trust": {
+      "x": 0,
+      "y": 9900,
+      "text": "Landing page · section 5 · Trusted learning",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -184,7 +211,9 @@
     "Grow.dc.html",
     "Grow-Mobile.dc.html",
     "Coach.dc.html",
-    "Coach-Mobile.dc.html"
+    "Coach-Mobile.dc.html",
+    "Validated.dc.html",
+    "Validated-Mobile.dc.html"
   ],
   "pages": [
     {

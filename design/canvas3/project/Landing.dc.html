@@ -235,77 +235,46 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 }
 
 
-.tv-grid{display:grid;grid-template-columns:316px 520px minmax(0,1fr);gap:48px;align-items:center}
-.tv-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
-.tv-side{display:flex;flex-direction:column;gap:10px}
-.tv-legend{display:flex;flex-direction:column;gap:4px}
-.tv-lg{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;align-items:center;padding:12px 14px 12px 12px;border-radius:14px;border:1.5px solid transparent;transition:background .5s ease,border-color .5s ease}
-.tv-lg-on{background:#F5F8FF;border-color:#E6EAF3}
-.tv-lg-t{font-size:15px;font-weight:600;color:#0B1433}
-.tv-lg-d{font-size:13px;line-height:1.5;color:#5B6582}
-.tv-link{align-self:flex-start;margin:12px 0 0 12px;height:46px;padding:0 8px 0 20px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:12px;text-decoration:none;transition:border-color .2s ease,background .2s ease}
-.tv-link:hover{border-color:#1652F0;background:#F5F8FF}
-.tv-link:focus-visible,.tv-note:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-.tv-stagebg{position:absolute;inset:-60px -40px;background-image:radial-gradient(#DCE5FB 1.1px,transparent 1.4px);background-size:18px 18px;-webkit-mask-image:radial-gradient(50% 50% at 50% 50%,#000 30%,transparent 80%);mask-image:radial-gradient(50% 50% at 50% 50%,#000 30%,transparent 80%);pointer-events:none}
-.tv-card{position:relative;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 40px 80px -48px rgba(11,20,51,.45);transition:box-shadow .9s ease,border-color .9s ease}
-.tv-card-ok{border-color:#CFE8DC;box-shadow:0 0 0 8px rgba(15,107,69,.06),0 40px 90px -40px rgba(15,107,69,.45)}
-.tv-thumb{position:relative;height:132px;border-radius:18px 18px 0 0;overflow:hidden;background:linear-gradient(135deg,#1652F0 0%,#0E3BB8 55%,#0B1433 100%)}
-.tv-thumb::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.16) 1px,transparent 1.3px);background-size:14px 14px}
-.tv-reg{position:relative;padding:16px 24px}
-.tv-lbl{font-size:12px;font-weight:500;color:#8A93AD}
-.tv-row{display:grid;grid-template-columns:26px minmax(0,1fr) auto;align-items:center;gap:12px;height:40px;font-size:14px;color:#0B1433;border-top:1px solid #EEF1F7}
-.tv-row:first-of-type{border-top:none}
-.tv-n{width:26px;height:26px;border-radius:999px;background:#F5F8FF;color:#1652F0;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
-.tv-chip{height:30px;padding:0 12px;border-radius:999px;background:#F5F8FF;border:1px solid #E6EAF3;display:inline-flex;align-items:center;font-size:13px;font-weight:500;color:#3A4566;white-space:nowrap}
-.tv-hi{position:absolute;left:10px;right:10px;top:0;height:0;border-radius:14px;border:2px solid #1652F0;background:rgba(22,82,240,.04);box-shadow:0 0 0 6px rgba(22,82,240,.08);pointer-events:none;opacity:0;overflow:hidden;transition:top .7s cubic-bezier(.2,.7,.2,1),height .7s cubic-bezier(.2,.7,.2,1),opacity .4s ease}
-.tv-hi::after{content:"";position:absolute;top:0;bottom:0;width:40%;background:linear-gradient(90deg,rgba(22,82,240,0),rgba(22,82,240,.12),rgba(22,82,240,0));animation:tvScan 1.6s ease-in-out infinite}
-@keyframes tvScan{from{transform:translateX(-110%)}to{transform:translateX(260%)}}
-.tv-status{position:absolute;left:88px;top:14px;z-index:2;height:30px;padding:0 12px 0 10px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;transition:background .5s ease,color .5s ease}
-.tv-spin{width:12px;height:12px;border-radius:999px;border:2px solid currentColor;border-right-color:transparent;animation:tvSpin .9s linear infinite;box-sizing:border-box}
-@keyframes tvSpin{to{transform:rotate(360deg)}}
-.tv-seal{position:absolute;top:-34px;right:-34px;z-index:3;width:112px;height:112px;animation:tvStamp .7s cubic-bezier(.3,1.5,.5,1) both}
-@keyframes tvStamp{0%{transform:scale(1.9) rotate(-18deg);opacity:0}60%{opacity:1}100%{transform:scale(1) rotate(-8deg);opacity:1}}
-.tv-burst{position:absolute;inset:0;border-radius:999px;border:2px solid #1652F0;animation:tvBurst .9s ease-out .25s both}
-@keyframes tvBurst{from{transform:scale(.7);opacity:.7}to{transform:scale(1.7);opacity:0}}
-.tv-notes{position:relative;display:flex;flex-direction:column;gap:16px}
-.tv-note{position:relative;display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;text-align:left;font-family:'Google Sans',system-ui,sans-serif;color:#0B1433;cursor:pointer;transition:border-color .5s ease,box-shadow .5s ease,opacity .5s ease}
-.tv-note-wait{opacity:.55}
-.tv-note-run{border-color:#1652F0;box-shadow:0 0 0 5px rgba(22,82,240,.08),0 26px 50px -34px rgba(22,82,240,.6)}
-.tv-note-t{font-size:16px;font-weight:600;letter-spacing:-.2px}
-.tv-note-d{font-size:13px;line-height:1.5;color:#5B6582}
-.tv-who{display:flex;align-items:center;gap:10px;font-size:13px;color:#3A4566}
-.tv-av{width:30px;height:30px;border-radius:999px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}
-.tv-res{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500}
-.tv-link-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
-.tv-wire{fill:none;stroke:#CBD3E6;stroke-width:1.5;stroke-dasharray:3 5;transition:stroke .5s ease}
-.tv-wire-on{stroke:#1652F0;stroke-dasharray:none;stroke-width:2}
-.tv-wire-ok{stroke:#9FD3B8;stroke-dasharray:none}
-.tv-end{transition:fill .5s ease}
-@media (prefers-reduced-motion: reduce){.tv-hi::after,.tv-spin{animation:none}.tv-seal,.tv-burst{animation:none}}
-@media (max-width: 1240px){
-.tv-grid{grid-template-columns:minmax(0,1fr) 340px !important;gap:40px 48px !important}
-.tv-side{grid-column:1 / -1;order:3}
-.tv-legend{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
-}
-@media (max-width: 1080px){.tv-head{grid-template-columns:minmax(0,1fr) !important;gap:16px !important}}
-@media (max-width: 860px){
-.tv-wrap{padding:80px 20px 88px !important;gap:32px !important}
-.tv-h2{font-size:32px !important;letter-spacing:-.9px !important}
-.tv-sub{font-size:16px !important;margin:0 !important}
-.tv-grid{grid-template-columns:minmax(0,1fr) !important;gap:28px !important}
-.tv-legend{display:flex}
-.tv-link{margin:6px 0 0}
-.tv-link-svg{display:none}
-.tv-seal{width:84px;height:84px;top:-22px;right:-10px}
-.tv-reg{padding:14px 18px}
-.tv-thumb{height:104px}
-.tv-notes{gap:10px}
-.tv-note{padding:14px 16px;gap:8px}
-.tv-note-d{display:none}
-.tv-lg{padding:10px 12px 10px 10px}
-.tv-side .tv-lbl{padding-left:0 !important}
-.tv-chip:nth-child(3){display:none}
-.tv-lg-d{font-size:12.5px}
+.tv2-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,600px);gap:72px;align-items:center}
+.tv2-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
+.tv2-stage{position:relative;width:100%;max-width:600px;justify-self:end}
+.tv2-glow{position:absolute;left:50%;top:50%;width:76%;aspect-ratio:1;transform:translate(-50%,-56%);border-radius:999px;background:radial-gradient(closest-side,rgba(22,82,240,.16),rgba(22,82,240,0));transition:background .9s ease,transform .9s ease;pointer-events:none}
+.tv2-glow-on{background:radial-gradient(closest-side,rgba(22,82,240,.26),rgba(22,82,240,0));transform:translate(-50%,-56%) scale(1.12)}
+.tv2-dots{position:absolute;inset:-6%;background-image:radial-gradient(#DCE5FB 1.1px,transparent 1.4px);background-size:18px 18px;-webkit-mask-image:radial-gradient(closest-side,#000 40%,transparent 100%);mask-image:radial-gradient(closest-side,#000 40%,transparent 100%);pointer-events:none}
+.tv2-svg{position:relative;display:block;width:100%;height:auto;overflow:visible}
+.tv2-stamp,.tv2-ringtxt,.tv2-pop{opacity:0}
+.tv2-stamp.tv2-on{animation:tv2Stamp .75s cubic-bezier(.3,1.5,.5,1) both}
+.tv2-ringtxt.tv2-on{animation:tv2Fade .6s ease .35s both}
+.tv2-pop.tv2-on{animation:tv2Pop .5s cubic-bezier(.3,1.6,.5,1) .5s both}
+@keyframes tv2Stamp{0%{transform:scale(.55) rotate(-30deg);opacity:0}100%{transform:scale(1) rotate(0deg);opacity:1}}
+@keyframes tv2Fade{from{opacity:0}to{opacity:1}}
+@keyframes tv2Pop{0%{transform:scale(0);opacity:0}100%{transform:scale(1);opacity:1}}
+.tv2-cap{display:flex;align-items:center;justify-content:center;gap:8px;min-height:24px;margin-top:4px;font-size:15px;font-weight:500;text-align:center;transition:color .4s ease}
+.tv2-shim{background:linear-gradient(90deg,#5B6582 0%,#5B6582 35%,#1652F0 50%,#5B6582 65%,#5B6582 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:tv2Shim 1.8s linear infinite}
+@keyframes tv2Shim{from{background-position:100% 0}to{background-position:-120% 0}}
+.tv2-pills{display:flex;flex-wrap:wrap;gap:8px}
+.tv2-pill{height:38px;padding:0 14px 0 10px;border-radius:999px;border:1.5px solid #E6EAF3;background:#FFFFFF;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#5B6582;transition:background .5s ease,border-color .5s ease,color .5s ease}
+.tv2-pill-on{background:#F5F8FF;border-color:#C9D7FA;color:#0B1433}
+.tv2-pill-ok{background:#E7F5EE;border-color:#CFE8DC;color:#0F6B45}
+.tv2-spin{width:14px;height:14px;border-radius:999px;border:2px dashed currentColor;box-sizing:border-box}
+.tv2-pill-on .tv2-spin{animation:tv2Spin 2.4s linear infinite}
+@keyframes tv2Spin{to{transform:rotate(360deg)}}
+.tv2-link{align-self:flex-start;height:46px;padding:0 8px 0 20px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:12px;text-decoration:none;transition:border-color .2s ease,background .2s ease}
+.tv2-link:hover{border-color:#1652F0;background:#F5F8FF}
+.tv2-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+@media (prefers-reduced-motion: reduce){.tv2-shim,.tv2-pill-on .tv2-spin{animation:none}.tv2-stamp.tv2-on,.tv2-ringtxt.tv2-on,.tv2-pop.tv2-on{animation:none;opacity:1}}
+@media (max-width: 1080px){.tv2-grid{grid-template-columns:minmax(0,1fr) !important;gap:24px !important}.tv2-stage{justify-self:center;max-width:540px}}
+@media (max-width: 760px){
+.tv2-wrap{padding:80px 20px 88px !important}
+.tv2-h2{font-size:32px !important;letter-spacing:-.9px !important}
+.tv2-sub{font-size:16px !important}
+.tv2-grid{gap:14px !important}
+.tv2-copy{display:contents !important}
+.tv2-o1{order:1}.tv2-stage{order:2}.tv2-pills{order:3;margin-top:8px !important}.tv2-link{order:4;margin-top:6px !important}
+.tv2-lab{font-size:17px;letter-spacing:2px}
+.tv2-stage{margin:10px -8px 8px;width:calc(100% + 16px)}
+.tv2-cap{font-size:14px}
+.tv2-pill{height:34px;font-size:13px;padding:0 12px 0 9px}
 }
 </style>
 </helmet>
@@ -749,120 +718,51 @@ Not sure which? Ask your AI Coach
 </section>
 <section class="lh-eng" aria-label="Trusted learning">
 <section aria-labelledby="tv-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
-<div class="tv-wrap" style="max-width: 1312px; margin: 0 auto; padding: 120px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 72px">
-<div class="tv-head" style="display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: end">
-<div style="display: flex; flex-direction: column; gap: 16px">
-<span style="font-size: 14px; font-weight: 500; color: #1652F0">Trusted learning</span>
-<h2 id="tv-h" class="tv-h2">Know the quality before you commit your time.</h2>
+<div class="tv2-wrap" style="max-width: 1312px; margin: 0 auto; padding: 120px 48px; box-sizing: border-box">
+<div class="tv2-grid" ref="{{tv.stageRef}}">
+<div class="tv2-copy" style="display: flex; flex-direction: column; gap: 18px">
+<span class="tv2-o1" style="font-size: 14px; font-weight: 500; color: #1652F0">Trusted learning</span>
+<h2 id="tv-h" class="tv2-h2 tv2-o1">Know the quality before you commit your time.</h2>
+<p class="tv2-sub tv2-o1" style="margin: 0; max-width: 480px; font-size: 18px; line-height: 1.6; color: #4A5578">Three independent experts can check any course: its subject, its learning design and its assessments. You see the verdict before you start.</p>
+<div class="tv2-pills" role="list" aria-label="What every course shows" style="margin-top: 10px">
+<span class="tv2-pill {{tv.p0}}" role="listitem"><svg width="18" height="18" viewBox="0 0 100 100" aria-hidden="true"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg>Credalio Validated</span>
+<span class="tv2-pill {{tv.p1}}" role="listitem"><span class="tv2-spin" aria-hidden="true"></span>Review in progress</span>
+<span class="tv2-pill {{tv.p2}}" role="listitem"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 999px; border: 2px solid #CBD3E6; box-sizing: border-box"></span>Not yet validated</span>
 </div>
-<p class="tv-sub" style="margin: 0 0 6px; font-size: 18px; line-height: 1.6; color: #4A5578">Independent experts can review any course on Credalio: one for the subject, one for learning design, one for assessment. What they find shows on every experience.</p>
+<a class="tv2-link" href="#" style="margin-top: 14px">How validation works<span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
 </div>
-<div class="tv-grid" ref="{{tv.stageRef}}" style="position: relative">
-
-<svg class="tv-link-svg" aria-hidden="true">
-<path class="tv-wire" ref="{{tv.wp0}}" d="M0 0"></path><circle class="tv-end" ref="{{tv.wc0}}" cx="-20" cy="-20" r="4" fill="#CBD3E6"></circle>
-<path class="tv-wire" ref="{{tv.wp1}}" d="M0 0"></path><circle class="tv-end" ref="{{tv.wc1}}" cx="-20" cy="-20" r="4" fill="#CBD3E6"></circle>
-<path class="tv-wire" ref="{{tv.wp2}}" d="M0 0"></path><circle class="tv-end" ref="{{tv.wc2}}" cx="-20" cy="-20" r="4" fill="#CBD3E6"></circle>
+<div class="tv2-stage">
+<div class="tv2-dots" aria-hidden="true"></div>
+<div class="tv2-glow {{tv.glowCls}}" aria-hidden="true"></div>
+<svg class="tv2-svg" viewBox="20 20 560 560" role="img" aria-label="Three reviews close around the Credalio seal: subject matter, learning design and assessment">
+<defs><linearGradient id="tvSg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C7DFF"></stop><stop offset=".55" stop-color="#1652F0"></stop><stop offset="1" stop-color="#0E3BB8"></stop></linearGradient><path id="tvSt" d="M300,300 m-103,0 a103,103 0 1,1 206,0 a103,103 0 1,1 -206,0"></path><filter id="tvSh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0B1433" flood-opacity=".16"></feDropShadow></filter></defs>
+<path id="tvR0" d="M300,150 a150,150 0 1,1 0,300 a150,150 0 1,1 0,-300" fill="none" stroke="#E6EAF3" stroke-width="1.5" stroke-dasharray="2 6"></path>
+<path id="tvR1" d="M300,100 a200,200 0 1,1 0,400 a200,200 0 1,1 0,-400" fill="none" stroke="#E6EAF3" stroke-width="1.5" stroke-dasharray="2 6"></path>
+<path id="tvR2" d="M300,50 a250,250 0 1,1 0,500 a250,250 0 1,1 0,-500" fill="none" stroke="#E6EAF3" stroke-width="1.5" stroke-dasharray="2 6"></path>
+<path d="M300,150 a150,150 0 1,1 0,300 a150,150 0 1,1 0,-300" fill="none" stroke-width="3" stroke-linecap="round" pathLength="1" stroke-dasharray="0 1" ref="{{tv.arc0}}" style="stroke: {{tv.arcC}}; transition: stroke .8s ease"></path>
+<path d="M300,100 a200,200 0 1,1 0,400 a200,200 0 1,1 0,-400" fill="none" stroke-width="3" stroke-linecap="round" pathLength="1" stroke-dasharray="0 1" ref="{{tv.arc1}}" style="stroke: {{tv.arcC}}; transition: stroke .8s ease"></path>
+<path d="M300,50 a250,250 0 1,1 0,500 a250,250 0 1,1 0,-500" fill="none" stroke-width="3" stroke-linecap="round" pathLength="1" stroke-dasharray="0 1" ref="{{tv.arc2}}" style="stroke: {{tv.arcC}}; transition: stroke .8s ease"></path>
+<text class="tv2-lab" font-family="Google Sans, system-ui, sans-serif" font-size="11.5" font-weight="500" letter-spacing="2.6" style="fill: {{tv.lab0}}; transition: fill .5s ease" dy="-12"><textPath href="#tvR0" startOffset="1.6%">SUBJECT MATTER</textPath></text>
+<text class="tv2-lab" font-family="Google Sans, system-ui, sans-serif" font-size="11.5" font-weight="500" letter-spacing="2.6" style="fill: {{tv.lab1}}; transition: fill .5s ease" dy="-12"><textPath href="#tvR1" startOffset="1.6%">LEARNING DESIGN</textPath></text>
+<text class="tv2-lab" font-family="Google Sans, system-ui, sans-serif" font-size="11.5" font-weight="500" letter-spacing="2.6" style="fill: {{tv.lab2}}; transition: fill .5s ease" dy="-12"><textPath href="#tvR2" startOffset="1.6%">ASSESSMENT</textPath></text>
+<g transform="translate(300 300)"><g class="tv2-stamp {{tv.sealCls}}"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" transform="scale(2.75) translate(-50 -50)" fill="url(#tvSg)"></path></g></g>
+<text class="tv2-ringtxt {{tv.sealCls}}" font-family="Google Sans, system-ui, sans-serif" font-size="9" font-weight="600" letter-spacing="3.1" fill="#FFFFFF"><textPath href="#tvSt" textLength="642" lengthAdjust="spacing">CREDALIO · VALIDATED · CREDALIO · VALIDATED · CREDALIO · VALIDATED ·</textPath></text>
+<circle cx="300" cy="300" r="90" fill="#FFFFFF" stroke-width="1.5" filter="url(#tvSh)" style="stroke: {{tv.discBd}}; transition: stroke .5s ease"></circle>
+<image href="/_blob/f81e36d31295a0d0737959589ec1abd4" x="262" y="262" width="76" height="76" style="opacity: {{tv.markOp}}; transition: opacity .6s ease"></image>
+<g transform="translate(368 368)"><g class="tv2-pop {{tv.sealCls}}"><circle r="22" fill="#0F6B45" stroke="#FFFFFF" stroke-width="4"></circle><path d="M-8 0.5l5.5 5.5 10.5-11" fill="none" stroke="#FFFFFF" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"></path></g></g>
+<g ref="{{tv.node0}}" transform="translate(300 150)" style="opacity: {{tv.nodeOp0}}; transition: opacity .4s ease"><circle r="19" fill="#FFFFFF" stroke="#1652F0" stroke-width="2"></circle><circle r="15" fill="#DCE5FB"></circle><text text-anchor="middle" dy="4" font-family="Google Sans, system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#1652F0">PN</text></g>
+<g ref="{{tv.node1}}" transform="translate(300 100)" style="opacity: {{tv.nodeOp1}}; transition: opacity .4s ease"><circle r="19" fill="#FFFFFF" stroke="#1652F0" stroke-width="2"></circle><circle r="15" fill="#0B1433"></circle><text text-anchor="middle" dy="4" font-family="Google Sans, system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#FFFFFF">JO</text></g>
+<g ref="{{tv.node2}}" transform="translate(300 50)" style="opacity: {{tv.nodeOp2}}; transition: opacity .4s ease"><circle r="19" fill="#FFFFFF" stroke="#1652F0" stroke-width="2"></circle><circle r="15" fill="#1652F0"></circle><text text-anchor="middle" dy="4" font-family="Google Sans, system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#FFFFFF">LM</text></g>
 </svg>
-
-<div class="tv-side">
-<span class="tv-lbl" style="font-size: 13px; padding-left: 12px">Every experience shows where it stands</span>
-<div class="tv-legend" role="list" aria-label="Validation statuses">
-<sc-for list="{{tv.legend}}" as="l" hint-placeholder-count="3">
-<div class="tv-lg {{l.cls}}" role="listitem">
-<span aria-hidden="true" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center">
-<sc-if value="{{l.seal}}" hint-placeholder-val="{{ false }}">
-<svg width="36" height="36" viewBox="0 0 100 100"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-</sc-if>
-<sc-if value="{{l.review}}" hint-placeholder-val="{{ false }}">
-<span style="width: 26px; height: 26px; border-radius: 999px; border: 2.5px dashed #8A93AD; box-sizing: border-box"></span>
-</sc-if>
-<sc-if value="{{l.none}}" hint-placeholder-val="{{ false }}">
-<span style="width: 26px; height: 26px; border-radius: 999px; border: 2px solid #CBD3E6; box-sizing: border-box"></span>
-</sc-if>
-</span>
-<span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span class="tv-lg-t">{{l.t}}</span><span class="tv-lg-d">{{l.d}}</span></span>
+<p class="tv2-cap" aria-live="polite" style="margin: 4px 0 0; color: {{tv.capFg}}"><sc-if value="{{tv.capOk}}" hint-placeholder-val="{{ false }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if><span class="{{tv.capCls}}">{{tv.cap}}</span></p>
 </div>
-</sc-for>
-</div>
-<a class="tv-link" href="#">How validation works<span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
-</div>
-<div class="tv-cardcol" style="position: relative">
-<div class="tv-stagebg" aria-hidden="true"></div>
-<div class="tv-card {{tv.cardCls}}" ref="{{tv.cardRef}}" aria-label="Example course under review">
-<div class="tv-hi" ref="{{tv.hiRef}}" aria-hidden="true"></div>
-<div class="tv-thumb">
-<svg viewBox="0 0 480 132" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%"><path d="M0 104 C 80 98, 120 70, 190 76 S 300 40, 360 46 S 440 18, 480 14" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"></path><path d="M0 104 C 80 98, 120 70, 190 76 S 300 40, 360 46 S 440 18, 480 14 L480 132 L0 132Z" fill="rgba(255,255,255,.07)"></path></svg>
-<span style="position: absolute; left: 16px; top: 16px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(255,255,255,.16); color: #FFFFFF; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500">Course</span>
-</div>
-<span class="tv-status" style="background: {{tv.st.bg}}; color: {{tv.st.fg}}; box-shadow: 0 0 0 1px {{tv.st.bd}}">
-<sc-if value="{{tv.st.spin}}" hint-placeholder-val="{{ false }}"><span class="tv-spin"></span></sc-if>
-<sc-if value="{{tv.st.ok}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if>
-<sc-if value="{{tv.st.none}}" hint-placeholder-val="{{ true }}"><span style="width: 10px; height: 10px; border-radius: 999px; border: 1.5px solid currentColor; box-sizing: border-box"></span></sc-if>
-{{tv.st.label}}
-</span>
-<sc-if value="{{tv.sealed}}" hint-placeholder-val="{{ false }}">
-<div class="tv-seal" aria-hidden="true">
-<span class="tv-burst"></span>
-<svg viewBox="0 0 100 100" style="position: absolute; inset: 0; width: 100%; height: 100%; filter: drop-shadow(0 14px 18px rgba(22,82,240,.35))"><defs><linearGradient id="tvSg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C7DFF"></stop><stop offset=".55" stop-color="#1652F0"></stop><stop offset="1" stop-color="#0E3BB8"></stop></linearGradient><path id="tvSt" d="M50,50 m-29,0 a29,29 0 1,1 58,0 a29,29 0 1,1 -58,0"></path></defs><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="url(#tvSg)"></path><circle cx="50" cy="50" r="35" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1"></circle><text font-family="Google Sans, system-ui, sans-serif" font-size="6.6" font-weight="600" letter-spacing="1.9" fill="#FFFFFF"><textPath href="#tvSt">CREDALIO · VALIDATED · CREDALIO · VALIDATED ·</textPath></text><circle cx="50" cy="50" r="19" fill="#FFFFFF"></circle><path d="M41 50.5l6.5 6.5 12-12.5" fill="none" stroke="#1652F0" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-</div>
-</sc-if>
-
-<div class="tv-reg" style="padding-top: 20px; padding-bottom: 6px; display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 21px; font-weight: 600; letter-spacing: -.4px; line-height: 1.25">Data Foundations: spreadsheets to SQL</span>
-<span style="font-size: 13px; color: #5B6582">by Amara Okafor · Independent creator · 8 lessons · 10 hrs</span>
-</div>
-
-<div class="tv-reg" ref="{{tv.r1}}">
-<span class="tv-lbl">Lessons</span>
-<div style="display: flex; flex-direction: column; margin-top: 6px">
-<div class="tv-row"><span class="tv-n">1</span><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">Cleaning messy data</span><span style="font-size: 12px; color: #8A93AD">18 min</span></div>
-<div class="tv-row"><span class="tv-n">2</span><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">From spreadsheets to tables</span><span style="font-size: 12px; color: #8A93AD">22 min</span></div>
-<div class="tv-row"><span class="tv-n">3</span><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">Joining tables with SQL</span><span style="font-size: 12px; color: #8A93AD">25 min</span></div>
-</div>
-</div>
-
-<div class="tv-reg" ref="{{tv.r2}}">
-<span class="tv-lbl">You’ll be able to</span>
-<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px"><span class="tv-chip">Clean a dataset</span><span class="tv-chip">Write SQL queries</span><span class="tv-chip">Explain findings</span></div>
-</div>
-
-<div class="tv-reg" ref="{{tv.r3}}" style="padding-bottom: 22px">
-<span class="tv-lbl">Final assessment</span>
-<div style="display: flex; align-items: center; gap: 12px; margin-top: 10px">
-<span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 12px; background: #EAF0FF; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6v3H9zM7 5.5H5.5v15h13v-15H17M8.5 12l2 2 4-4M8.5 17h7"></path></svg></span>
-<span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 600">20 questions and 1 practical task</span><span style="font-size: 12px; color: #5B6582">Pass mark 70% · Two attempts</span></span>
-</div>
-</div>
-</div>
-</div>
-
-<div class="tv-notes" role="list" aria-label="Who reviews it">
-<sc-for list="{{tv.notes}}" as="n" hint-placeholder-count="3">
-<button class="tv-note {{n.cls}}" type="button" role="listitem" ref="{{n.ref}}" onClick="{{n.pick}}">
-<span style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
-<span class="tv-who"><span class="tv-av" style="background: {{n.avBg}}; color: {{n.avFg}}">{{n.ini}}</span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-weight: 600; color: #0B1433">{{n.who}}</span><span style="font-size: 12px; color: #8A93AD">{{n.role}}</span></span></span>
-<span style="font-size: 12px; font-weight: 600; color: {{n.numFg}}">{{n.num}}</span>
-</span>
-<span class="tv-note-t">{{n.t}}</span>
-<span class="tv-note-d">{{n.d}}</span>
-<span class="tv-res" style="color: {{n.resFg}}">
-<sc-if value="{{n.run}}" hint-placeholder-val="{{ false }}"><span class="tv-spin"></span></sc-if>
-<sc-if value="{{n.done}}" hint-placeholder-val="{{ false }}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if>
-<sc-if value="{{n.wait}}" hint-placeholder-val="{{ true }}"><span style="width: 8px; height: 8px; border-radius: 999px; background: #CBD3E6"></span></sc-if>
-{{n.res}}
-</span>
-</button>
-</sc-for>
-</div>
-
 </div>
 </div>
 </section>
 </section>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4905}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4734}}'>
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }
   setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }
@@ -1197,30 +1097,28 @@ class TrustPart extends Part {
     super(host);
     this.state = { step: 0 };
     var self = this;
-    this.regs = []; this.noteEls = []; this.wps = []; this.wcs = [];
-    this.wpRefs = [0, 1, 2].map(function (k) { return function (e) { self.wps[k] = e; }; });
-    this.wcRefs = [0, 1, 2].map(function (k) { return function (e) { self.wcs[k] = e; }; });
-    this.regRefs = [0, 1, 2].map(function (k) { return function (e) { self.regs[k] = e; }; });
-    this.noteRefs = [0, 1, 2].map(function (k) { return function (e) { self.noteEls[k] = e; }; });
+    this.arcs = []; this.nodes = [];
+    this.arcRefs = [0, 1, 2].map(function (k) { return function (e) { self.arcs[k] = e; }; });
+    this.nodeRefs = [0, 1, 2].map(function (k) { return function (e) { self.nodes[k] = e; }; });
     this.setStage = function (e) { self.stage = e; };
-    this.setCard = function (e) { self.card = e; };
-    this.setHi = function (e) { self.hi = e; };
-    this.T = [1200, 3800, 6400, 9000, 12800];
-    this.N = [
-      { t: 'Subject matter is checked', d: 'Is the content accurate and current for the field?', ini: 'PN', who: 'Priya N.', role: 'Subject expert · Data', ok: 'Accurate and current', avBg: '#DCE5FB', avFg: '#1652F0' },
-      { t: 'Learning design is reviewed', d: 'Do lessons, activities and outcomes actually line up?', ini: 'JO', who: 'James O.', role: 'Learning designer', ok: 'Lessons match the outcomes', avBg: '#0B1433', avFg: '#FFFFFF' },
-      { t: 'Assessments are tested', d: 'Do they fairly measure what they claim to measure?', ini: 'LM', who: 'Lena M.', role: 'Assessment specialist', ok: 'Fair and on target', avBg: '#1652F0', avFg: '#FFFFFF' }
-    ];
+    this.R = [150, 200, 250];
+    this.T = [1000, 3400, 5800, 8200, 12600];
   }
   componentDidMount() {
     var self = this;
-    this.t0 = performance.now(); this.lastM = 0;
+    this.t0 = performance.now();
+    var ease = function (x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
     var tick = function (now) {
       var el = now - self.t0, T = self.T, s = 0;
       if (el >= T[4]) { self.t0 = now; el = 0; }
       for (var k = 0; k < 4; k++) if (el >= T[k]) s = k + 1;
-      if (s !== self.state.step) { self.setState({ step: s }); self.lastM = 0; }
-      if (now - self.lastM > 300) { self.lastM = now; self.measure(); }
+      if (s !== self.state.step) self.setState({ step: s });
+      for (var i = 0; i < 3; i++) {
+        var a = self.arcs[i], n = self.nodes[i];
+        var p = s > i + 1 ? 1 : (s === i + 1 ? ease(Math.min(1, (el - T[i]) / (T[i + 1] - T[i] - 250))) : 0);
+        if (a) a.style.strokeDasharray = p.toFixed(4) + ' 1';
+        if (n) { var ang = (-90 + 360 * p) * Math.PI / 180, r = self.R[i]; n.setAttribute('transform', 'translate(' + (300 + r * Math.cos(ang)).toFixed(2) + ' ' + (300 + r * Math.sin(ang)).toFixed(2) + ')'); }
+      }
       self.raf = requestAnimationFrame(tick);
     };
     this.raf = requestAnimationFrame(tick);
@@ -1230,59 +1128,23 @@ class TrustPart extends Part {
     }
   }
   componentWillUnmount() { cancelAnimationFrame(this.raf); if (this.io) this.io.disconnect(); }
-  measure() {
-    var st = this.stage, cd = this.card, s = this.state.step;
-    if (!st || !cd) return;
-    var cr = cd.getBoundingClientRect(), sr = st.getBoundingClientRect();
-    if (this.hi) {
-      var r = s >= 1 && s <= 3 ? this.regs[s - 1] : null;
-      if (r) { var rr = r.getBoundingClientRect(); this.hi.style.top = (rr.top - cr.top + 4) + 'px'; this.hi.style.height = (rr.height - 8) + 'px'; this.hi.style.opacity = '1'; }
-      else this.hi.style.opacity = '0';
-    }
-    var side = window.innerWidth > 860;
-    for (var k = 0; k < 3; k++) {
-      var n = this.noteEls[k], g = this.regs[k], p = this.wps[k], c = this.wcs[k];
-      if (!p || !c) continue;
-      if (!side || !n || !g) { p.setAttribute('d', 'M0 0'); c.setAttribute('cx', -20); continue; }
-      var nr = n.getBoundingClientRect(), gr = g.getBoundingClientRect();
-      var x1 = nr.left - sr.left, y1 = nr.top - sr.top + 34, x0 = cr.right - sr.left, y0 = gr.top - sr.top + gr.height / 2, mx = (x0 + x1) / 2;
-      var ph = s < k + 1 ? 'wait' : (s === k + 1 ? 'run' : 'done');
-      p.setAttribute('d', 'M' + x0 + ' ' + y0 + ' C' + mx + ' ' + y0 + ' ' + mx + ' ' + y1 + ' ' + x1 + ' ' + y1);
-      p.setAttribute('class', 'tv-wire' + (ph === 'run' ? ' tv-wire-on' : (ph === 'done' ? ' tv-wire-ok' : '')));
-      c.setAttribute('cx', x0); c.setAttribute('cy', y0);
-      c.setAttribute('fill', ph === 'run' ? '#1652F0' : (ph === 'done' ? '#0F6B45' : '#CBD3E6'));
-    }
-  }
-  go(k) { this.t0 = performance.now() - this.T[k]; }
   renderVals() {
-    var self = this, s = this.state.step;
-    var stI = s === 0 ? 0 : (s < 4 ? 1 : 2);
-    var ST = [
-      { label: 'Not yet validated', bg: '#FFFFFF', fg: '#5B6582', bd: '#D6DDEE', none: true, spin: false, ok: false },
-      { label: 'Review in progress', bg: '#F1F3F8', fg: '#4A5578', bd: '#E6EAF3', none: false, spin: true, ok: false },
-      { label: 'Credalio Validated', bg: '#E7F5EE', fg: '#0F6B45', bd: '#CFE8DC', none: false, spin: false, ok: true }
-    ];
-    var L = [
-      { t: 'Credalio Validated', d: 'Reviewed and approved. Only validated learning carries the seal.', seal: true, i: 2 },
-      { t: 'Review in progress', d: 'Being reviewed now. Not validated yet.', review: true, i: 1 },
-      { t: 'Not yet validated', d: 'Open to learn, without a validator review.', none: true, i: 0 }
-    ];
-    return {
-      stageRef: this.setStage, cardRef: this.setCard, hiRef: this.setHi,
-      r1: this.regRefs[0], r2: this.regRefs[1], r3: this.regRefs[2],
-      st: ST[stI], sealed: s === 4, cardCls: s === 4 ? 'tv-card-ok' : '',
-      legend: L.map(function (l) { return { t: l.t, d: l.d, seal: !!l.seal, review: !!l.review, none: !!l.none, cls: l.i === stI ? 'tv-lg-on' : '' }; }),
-      notes: this.N.map(function (n, k) {
-        var ph = s < k + 1 ? 'wait' : (s === k + 1 ? 'run' : 'done');
-        return { t: n.t, d: n.d, ini: n.ini, who: n.who, role: n.role, avBg: n.avBg, avFg: n.avFg, num: '0' + (k + 1),
-          numFg: ph === 'wait' ? '#8A93AD' : '#1652F0', cls: 'tv-note-' + ph, ref: self.noteRefs[k],
-          run: ph === 'run', done: ph === 'done', wait: ph === 'wait',
-          res: ph === 'run' ? 'Reviewing…' : (ph === 'done' ? n.ok : 'Waiting for review'),
-          resFg: ph === 'run' ? '#1652F0' : (ph === 'done' ? '#0F6B45' : '#8A93AD'),
-          pick: function () { self.go(k); } };
-      }),
-      wp0: this.wpRefs[0], wp1: this.wpRefs[1], wp2: this.wpRefs[2], wc0: this.wcRefs[0], wc1: this.wcRefs[1], wc2: this.wcRefs[2]
+    var s = this.state.step, sealed = s === 4;
+    var caps = ['Not reviewed yet', 'Priya, a subject expert, is checking the content', 'James, a learning designer, is checking how it’s built', 'Lena, an assessment specialist, is testing the assessments', 'Validated by three independent experts'];
+    var v = {
+      stageRef: this.setStage,
+      arc0: this.arcRefs[0], arc1: this.arcRefs[1], arc2: this.arcRefs[2],
+      node0: this.nodeRefs[0], node1: this.nodeRefs[1], node2: this.nodeRefs[2],
+      sealed: sealed, sealCls: sealed ? 'tv2-on' : '', glowCls: sealed ? 'tv2-glow-on' : '',
+      arcC: sealed ? '#A9C2FF' : '#1652F0', discBd: sealed ? '#FFFFFF' : '#E6EAF3', markOp: s === 0 ? 0.35 : (sealed ? 1 : 0.6),
+      cap: caps[s], capOk: sealed, capCls: s >= 1 && s <= 3 ? 'tv2-shim' : '', capFg: sealed ? '#0F6B45' : '#8A93AD',
+      p0: sealed ? 'tv2-pill-ok' : '', p1: s >= 1 && s <= 3 ? 'tv2-pill-on' : '', p2: s === 0 ? 'tv2-pill-on' : ''
     };
+    for (var i = 0; i < 3; i++) {
+      v['lab' + i] = s === i + 1 ? '#1652F0' : (s > i + 1 ? '#3A4566' : '#B5BDD3');
+      v['nodeOp' + i] = s >= i + 1 ? 1 : 0;
+    }
+    return v;
   }
 }
 class Component extends DCLogic {

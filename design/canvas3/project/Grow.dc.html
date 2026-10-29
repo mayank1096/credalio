@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Choose how you want to grow</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+.gr-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:20px}
+.gr-tile{position:relative;overflow:hidden;border-radius:28px;background:#FFFFFF;border:1px solid #E6EAF3;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 30px 60px -48px rgba(11,20,51,.35);display:flex;flex-direction:column;transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s cubic-bezier(.2,.7,.2,1),border-color .4s ease;--mx:50%;--my:0%}
+.gr-tile::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(420px circle at var(--mx) var(--my),rgba(22,82,240,.10),rgba(22,82,240,0) 60%);opacity:0;transition:opacity .4s ease;pointer-events:none;z-index:2}
+.gr-tile:hover{transform:translateY(-4px);border-color:#D6DDEE;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 40px 70px -44px rgba(22,82,240,.45)}
+.gr-tile:hover::before{opacity:1}
+.gr-vis{position:relative;overflow:hidden;background:radial-gradient(120% 100% at 50% 0%,#EAF0FF 0%,#F5F8FF 45%,#FFFFFF 100%)}
+.gr-vis::after{content:"";position:absolute;inset:0;background-image:radial-gradient(#C9D7FA 1.1px,transparent 1.4px);background-size:16px 16px;-webkit-mask-image:radial-gradient(80% 90% at 50% 20%,#000 30%,transparent 80%);mask-image:radial-gradient(80% 90% at 50% 20%,#000 30%,transparent 80%);opacity:.7;pointer-events:none}
+.gr-vis > *{position:relative;z-index:1}
+.gr-body{position:relative;z-index:3;display:flex;flex-direction:column;gap:12px}
+.gr-tag{align-self:flex-start;height:28px;padding:0 12px;border-radius:999px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500}
+.gr-link{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:#1652F0;text-decoration:none;padding:8px 0;position:relative}
+.gr-link::after{content:"";position:absolute;left:0;right:22px;bottom:4px;height:1.5px;background:#1652F0;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.gr-tile:hover .gr-link::after,.gr-link:hover::after{transform:scaleX(1)}
+.gr-arrow{transition:transform .35s cubic-bezier(.3,1.4,.5,1)}
+.gr-tile:hover .gr-arrow{transform:translateX(4px)}
+.gr-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:4px;border-radius:6px}
+/* career path */
+.gr-route{stroke-dasharray:6 8}
+.gr-comet{stroke-dasharray:.08 1.2;stroke-dashoffset:.08;animation:grComet 3.6s cubic-bezier(.45,0,.3,1) infinite}
+@keyframes grComet{0%{stroke-dashoffset:.08;opacity:0}8%{opacity:1}85%{opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
+.gr-node{animation:grNode 3.6s ease-in-out infinite}
+@keyframes grNode{0%,100%{background:#FFFFFF;border-color:#C9D7FA;color:#8A93AD;box-shadow:none}18%,40%{background:#1652F0;border-color:#1652F0;color:#FFFFFF;box-shadow:0 0 0 8px rgba(22,82,240,.12)}}
+.gr-goal{animation:grGoal 3.6s ease-in-out infinite}
+@keyframes grGoal{0%,70%,100%{box-shadow:0 18px 36px -24px rgba(11,20,51,.4)}82%{box-shadow:0 0 0 10px rgba(22,82,240,.12),0 18px 36px -18px rgba(22,82,240,.6)}}
+/* courses */
+.gr-stack{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.gr-tile:hover .gr-s1{transform:translate(-50%,-50%) translate(-58px,10px) rotate(-9deg)}
+.gr-tile:hover .gr-s2{transform:translate(-50%,-50%) translate(58px,10px) rotate(9deg)}
+.gr-tile:hover .gr-s3{transform:translate(-50%,-50%) translateY(-8px)}
+.gr-fill{animation:grFill 3.4s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes grFill{0%{width:18%}60%,100%{width:72%}}
+/* certifications */
+.gr-spin{animation:grSpin 22s linear infinite}
+@keyframes grSpin{to{transform:rotate(360deg)}}
+.gr-sheen{animation:grSheen 4.2s ease-in-out infinite}
+@keyframes grSheen{0%,55%{transform:translateX(-140%) rotate(20deg)}85%,100%{transform:translateX(140%) rotate(20deg)}}
+/* programmes */
+.gr-live{animation:grLive 1.8s ease-out infinite}
+@keyframes grLive{0%{box-shadow:0 0 0 0 rgba(22,82,240,.5)}100%{box-shadow:0 0 0 10px rgba(22,82,240,0)}}
+.gr-av{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.gr-tile:hover .gr-av{transform:translateY(-4px)}
+.gr-coach{transition:border-color .2s ease,background .2s ease}
+.gr-coach:hover{border-color:#1652F0 !important;background:#F5F8FF !important}
+.gr-coach:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+@supports (animation-timeline: view()){
+.gr-in{animation:grIn linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+.gr-in-2{animation-range:entry 6% cover 34%}.gr-in-3{animation-range:entry 12% cover 40%}.gr-in-4{animation-range:entry 18% cover 46%}
+@keyframes grIn{from{opacity:0;transform:translateY(48px) scale(.98)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion: reduce){.gr-comet,.gr-node,.gr-goal,.gr-fill,.gr-spin,.gr-sheen,.gr-live,.gr-in{animation:none !important}.gr-comet{opacity:0}}
+@media (max-width: 1080px){
+.gr-head{grid-template-columns:minmax(0,1fr) !important;gap:20px !important}
+.gr-path,.gr-course,.gr-cert,.gr-prog{grid-column:1 / -1 !important;grid-row:auto !important}
+.gr-prog{flex-direction:column !important}
+.gr-prog .gr-vis{width:auto !important;min-height:240px}
+}
+@media (max-width: 760px){
+.gr-wrap{padding:72px 20px !important}
+.gr-h2{font-size:32px !important;letter-spacing:-.9px !important}
+.gr-grid{gap:14px}
+.gr-tile{border-radius:22px}
+.gr-body{padding:22px !important}
+.gr-title{font-size:21px !important}
+.gr-path .gr-vis{min-height:260px !important}
+.gr-route-box{transform:scale(.5);transform-origin:50% 50%;margin:0 -150px !important}
+.gr-path .gr-vis{min-height:220px !important}
+.gr-prog .gr-vis{padding:24px 16px}
+.gr-week{gap:6px !important}
+.gr-crew{flex-wrap:wrap;gap:12px}
+}
+</style>
+</helmet>
+<section aria-labelledby="gr-title" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<div class="gr-wrap" style="max-width: 1240px; margin: 0 auto; padding: 120px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 56px">
+
+<div class="gr-head gr-in" style="display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: end">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 500; color: #1652F0">Choose how you want to grow</span>
+<h2 id="gr-title" class="gr-h2" style="margin: 0; font-size: 48px; line-height: 1.06; font-weight: 600; letter-spacing: -1.5px">Not just courses. Learning shaped around the outcome you want.</h2>
+</div>
+<div style="display: flex; flex-direction: column; gap: 18px; padding-bottom: 6px">
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">Each format is built for a different kind of progress. Use one, or combine them into a single plan.</p>
+<a class="gr-coach" href="#" style="align-self: flex-start; height: 48px; padding: 0 18px 0 6px; border-radius: 999px; border: 1.5px solid #D6DDEE; background: #FFFFFF; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #0B1433; font-size: 14px; font-weight: 500">
+<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 999px; background: radial-gradient(circle at 34% 28%, #DCE7FF 0%, #7FA4FF 25%, #1652F0 62%, #0B2A8F 100%); box-shadow: 0 0 0 3px #EAF0FF"></span>
+Not sure? Your AI Coach can help you choose
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+</div>
+
+<div class="gr-grid">
+
+<article class="gr-tile gr-path gr-in gr-in-2" onMouseMove="{{spot}}" style="grid-column: span 7; grid-row: span 2">
+<div class="gr-vis" style="flex: 1; min-height: 360px; display: flex; align-items: center; justify-content: center">
+<div class="gr-route-box" aria-hidden="true" style="position: relative; width: 600px; height: 300px; margin-top: 60px; flex-shrink: 0">
+<svg viewBox="0 0 600 300" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible">
+<path class="gr-route" d="M40 230 C 120 230, 120 150, 190 150 S 270 210, 330 190 S 420 90, 470 100 S 540 80, 560 60" fill="none" stroke="#A9C2FF" stroke-width="2.5" stroke-linecap="round"></path>
+<path class="gr-comet" pathLength="1" d="M40 230 C 120 230, 120 150, 190 150 S 270 210, 330 190 S 420 90, 470 100 S 540 80, 560 60" fill="none" stroke="#1652F0" stroke-width="5" stroke-linecap="round"></path>
+</svg>
+<span style="position: absolute; left: 40px; top: 230px; transform: translate(-50%, -50%); height: 32px; padding: 0 12px; border-radius: 999px; background: #0B1433; color: #FFFFFF; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500; white-space: nowrap">You, today</span>
+<sc-for list="{{route}}" as="r" hint-placeholder-count="3">
+<span style="position: absolute; left: {{r.x}}; top: {{r.y}}; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 8px">
+<span class="gr-node" style="width: 40px; height: 40px; border-radius: 999px; border: 1.5px solid #C9D7FA; background: #FFFFFF; color: #8A93AD; display: flex; align-items: center; justify-content: center; animation-delay: {{r.delay}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{r.icon}}"></path></svg></span>
+<span style="position: absolute; top: 48px; font-size: 12px; font-weight: 500; color: #3A4566; white-space: nowrap">{{r.label}}</span>
+</span>
+</sc-for>
+<span class="gr-goal" style="position: absolute; left: 560px; top: 60px; transform: translate(-88%, -125%); padding: 12px 14px 12px 12px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E6EAF3; display: flex; align-items: center; gap: 10px; box-shadow: 0 18px 36px -24px rgba(11,20,51,.4)">
+<span style="width: 36px; height: 36px; border-radius: 11px; background: linear-gradient(150deg, #4C7DFF, #1652F0); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v11H4zM9 8V5h6v3"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px; white-space: nowrap"><span style="font-size: 11px; font-weight: 500; color: #8A93AD">Your goal</span><span style="font-size: 14px; font-weight: 600; color: #0B1433">Data analyst</span></span>
+</span>
+</div>
+</div>
+<div class="gr-body" style="padding: 32px 36px 36px">
+<span class="gr-tag" style="background: #0B1433; color: #FFFFFF"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path></svg>Goal-led</span>
+<h3 class="gr-title" style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 600; letter-spacing: -.7px">Career Paths</h3>
+<p style="margin: 0; max-width: 520px; font-size: 16px; line-height: 1.6; color: #4A5578">A sequenced route of learning, practice and credentials toward a role. Your AI Coach adjusts it as you go.</p>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 4px">
+<span style="font-size: 14px; color: #5B6582"><span style="color: #8A93AD">Designed for</span> · Moving into a new role, step by step</span>
+<a class="gr-link" href="#">Find your path<svg class="gr-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</article>
+
+<article class="gr-tile gr-course gr-in gr-in-3" onMouseMove="{{spot}}" style="grid-column: span 5">
+<div class="gr-vis" aria-hidden="true" style="height: 200px">
+<div class="gr-stack gr-s1" style="position: absolute; left: 50%; top: 52%; width: 210px; height: 112px; transform: translate(-50%, -50%) translate(-26px, 14px) rotate(-5deg); border-radius: 16px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 16px 30px -22px rgba(11,20,51,.4)"></div>
+<div class="gr-stack gr-s2" style="position: absolute; left: 50%; top: 52%; width: 210px; height: 112px; transform: translate(-50%, -50%) translate(26px, 14px) rotate(5deg); border-radius: 16px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 16px 30px -22px rgba(11,20,51,.4)"></div>
+<div class="gr-stack gr-s3" style="position: absolute; left: 50%; top: 50%; width: 236px; box-sizing: border-box; padding: 14px; transform: translate(-50%, -50%); border-radius: 16px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 22px 40px -24px rgba(11,20,51,.45); display: flex; gap: 12px; align-items: center">
+<span style="width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0; background: linear-gradient(150deg, #1652F0, #0B1433); display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M8 5v14l11-7z"></path></svg></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 600; color: #0B1433">Joining tables with SQL</span>
+<span style="font-size: 11px; color: #5B6582">Lesson 4 · 12 min</span>
+<span style="height: 6px; border-radius: 9px; background: #EEF1F7; position: relative; overflow: hidden"><span class="gr-fill" style="position: absolute; left: 0; top: 0; bottom: 0; width: 60%; border-radius: 9px; background: #1652F0"></span></span>
+</span>
+</div>
+</div>
+<div class="gr-body" style="padding: 26px 30px 28px">
+<h3 class="gr-title" style="margin: 0; font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -.5px">Courses</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">Focused learning that builds one specific skill, at your own pace.</p>
+<a class="gr-link" href="#">Browse courses<svg class="gr-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</article>
+
+<article class="gr-tile gr-cert gr-in gr-in-4" onMouseMove="{{spot}}" style="grid-column: span 5">
+<div class="gr-vis" aria-hidden="true" style="height: 200px; display: flex; align-items: center; justify-content: center">
+<div style="position: relative; width: 140px; height: 140px">
+<svg class="gr-spin" viewBox="0 0 140 140" style="position: absolute; inset: 0; width: 100%; height: 100%"><circle cx="70" cy="70" r="64" fill="none" stroke="#A9C2FF" stroke-width="1.5" stroke-dasharray="2 7" stroke-linecap="round"></circle></svg>
+<div style="position: absolute; inset: 16px; border-radius: 999px; overflow: hidden; background: radial-gradient(circle at 34% 28%, #DCE7FF 0%, #7FA4FF 22%, #1652F0 58%, #0B2A8F 100%); box-shadow: 0 0 0 6px #FFFFFF, 0 0 0 7.5px #DCE5FB, 0 24px 40px -18px rgba(22,82,240,.7); display: flex; align-items: center; justify-content: center">
+<span class="gr-sheen" style="position: absolute; top: -20%; bottom: -20%; width: 34%; background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.45), rgba(255,255,255,0))"></span>
+<svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6zM8.5 12l2.5 2.5 4.5-5"></path></svg>
+</div>
+<span style="position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%); height: 26px; padding: 0 10px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; color: #0F6B45; white-space: nowrap; box-shadow: 0 10px 20px -14px rgba(11,20,51,.4)"><span style="width: 6px; height: 6px; border-radius: 9px; background: #0F6B45"></span>Assessed</span>
+</div>
+</div>
+<div class="gr-body" style="padding: 26px 30px 28px">
+<h3 class="gr-title" style="margin: 0; font-size: 24px; line-height: 1.2; font-weight: 600; letter-spacing: -.5px">Professional Certifications</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">Assessed programs that confirm you meet a professional standard.</p>
+<a class="gr-link" href="#">See certifications<svg class="gr-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</article>
+
+<article class="gr-tile gr-prog gr-in gr-in-2" onMouseMove="{{spot}}" style="grid-column: 1 / -1; flex-direction: row">
+<div class="gr-body" style="flex: 1; min-width: 0; padding: 36px; justify-content: center">
+<h3 class="gr-title" style="margin: 0; font-size: 28px; line-height: 1.15; font-weight: 600; letter-spacing: -.6px">Learning Programs</h3>
+<p style="margin: 0; max-width: 440px; font-size: 16px; line-height: 1.6; color: #4A5578">Structured, often cohort-based learning led by experts or institutions. Deep, guided progress with others over time.</p>
+<a class="gr-link" href="#">Explore programs<svg class="gr-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<div class="gr-vis" aria-hidden="true" style="width: 56%; min-height: 260px; display: flex; align-items: center; justify-content: center">
+<div style="display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 420px">
+<div class="gr-crew" style="display: flex; align-items: center; justify-content: space-between">
+<div style="display: flex; padding-left: 10px">
+<sc-for list="{{people}}" as="p" hint-placeholder-count="5">
+<span class="gr-av" style="width: 40px; height: 40px; flex-shrink: 0; margin-left: -10px; border-radius: 999px; border: 3px solid #FFFFFF; background: {{p.bg}}; color: {{p.fg}}; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; transition-delay: {{p.d}}">{{p.i}}</span>
+</sc-for>
+<span class="gr-av" style="height: 40px; margin-left: -10px; padding: 0 12px; border-radius: 999px; border: 3px solid #FFFFFF; background: #EAF0FF; color: #1652F0; display: flex; align-items: center; font-size: 12px; font-weight: 600; transition-delay: .25s">+19</span>
+</div>
+<span style="height: 30px; padding: 0 12px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: #0B1433; white-space: nowrap; flex-shrink: 0"><span class="gr-live" style="width: 8px; height: 8px; border-radius: 9px; background: #1652F0"></span>Live session · Thu</span>
+</div>
+<div class="gr-week" style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{week}}" as="w" hint-placeholder-count="5">
+<div style="height: 96px; box-sizing: border-box; border-radius: 14px; background: #FFFFFF; border: 1px solid {{w.bd}}; padding: 10px; display: flex; flex-direction: column; justify-content: space-between">
+<span style="font-size: 11px; font-weight: 500; color: #8A93AD">{{w.day}}</span>
+<span style="height: {{w.h}}; border-radius: 8px; background: {{w.bg}}"></span>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      spot: function (e) {
+        var el = e.currentTarget, r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      },
+      route: [
+        { x: '190px', y: '150px', label: 'Courses', delay: '.3s', icon: 'M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16' },
+        { x: '330px', y: '190px', label: 'Practice', delay: '1.1s', icon: 'M8 6l-6 6 6 6M16 6l6 6-6 6' },
+        { x: '470px', y: '100px', label: 'Certification', delay: '1.9s', icon: 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z' }
+      ],
+      people: [
+        { i: 'AK', bg: '#DCE5FB', fg: '#1652F0', d: '0s' }, { i: 'MS', bg: '#1652F0', fg: '#FFFFFF', d: '.05s' },
+        { i: 'JR', bg: '#EAF0FF', fg: '#0B1433', d: '.1s' }, { i: 'PL', bg: '#0B1433', fg: '#FFFFFF', d: '.15s' }, { i: 'TN', bg: '#C9D7FA', fg: '#0B1433', d: '.2s' }
+      ],
+      week: [
+        { day: 'Mon', h: '18px', bg: '#EAF0FF', bd: '#E6EAF3' },
+        { day: 'Tue', h: '34px', bg: '#DCE5FB', bd: '#E6EAF3' },
+        { day: 'Wed', h: '22px', bg: '#EAF0FF', bd: '#E6EAF3' },
+        { day: 'Thu', h: '52px', bg: 'linear-gradient(180deg, #4C7DFF, #1652F0)', bd: '#C9D7FA' },
+        { day: 'Fri', h: '26px', bg: '#DCE5FB', bd: '#E6EAF3' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

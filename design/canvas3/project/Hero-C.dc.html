@@ -57,7 +57,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-node{position:absolute;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:background .35s ease,border-color .35s ease,box-shadow .35s ease,transform .35s ease}
 .lh-node:hover{transform:scale(1.06)}
 .lh-node:focus-visible,.lh-step:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-.lh-node-lab{position:absolute;transform:translate(-50%,-50%);font-size:14px;font-weight:500;white-space:nowrap;pointer-events:none;transition:color .35s ease}
+.lh-node-lab{position:absolute;font-size:14px;font-weight:500;white-space:nowrap;pointer-events:none;transition:color .35s ease}
 .lh-prog{transition:stroke-dashoffset .7s cubic-bezier(.4,0,.2,1)}
 .lh-spark{position:absolute;inset:0;animation:lhOrbit 9s linear infinite}
 @keyframes lhOrbit{to{transform:rotate(360deg)}}
@@ -189,7 +189,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 <p class="lh-eng-sub" style="margin: 0; max-width: 520px; font-size: 18px; line-height: 1.55; color: #4A5578">Eight connected stages take you from knowing where you want to go to proving you got there.</p>
 </div>
 <div class="lh-detail" style="box-sizing: border-box; padding: 28px; border-radius: 22px; background: #FFFFFF; border: 1.5px solid #E6EAF3; box-shadow: 0 24px 48px -32px rgba(11,20,51,.28); display: flex; flex-direction: column; gap: 18px">
-<div class="lh-swap" key="{{cur.n}}" style="display: flex; flex-direction: column; gap: 14px">
+<div class="lh-swap" style="display: flex; flex-direction: column; gap: 14px">
 <div style="display: flex; align-items: center; gap: 12px">
 <span aria-hidden="true" style="width: 44px; height: 44px; border-radius: 14px; background: #EAF0FF; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{cur.icon}}"></path></svg></span>
 <span style="font-size: 14px; font-weight: 500; color: #8A93AD">Stage {{cur.n}} of 8 · <span style="color: #1652F0">{{cur.name}}</span></span>
@@ -224,13 +224,13 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 <div class="lh-spark" aria-hidden="true"><span style="position: absolute; left: 50%; top: 13.4%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 0 0 3px rgba(22,82,240,.35), 0 0 16px 4px rgba(22,82,240,.55)"></span></div>
 <div aria-hidden="true" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center">
 <div class="lh-core-glow" style="width: 196px; height: 196px; border-radius: 999px; background: radial-gradient(circle at 50% 40%, #FFFFFF 0%, #F5F8FF 55%, #EAF0FF 100%); border: 1.5px solid #DCE5FB; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px">
-<span class="lh-swap lh-core-n" key="{{cur.n}}" style="font-size: 52px; line-height: 1; font-weight: 600; letter-spacing: -1.5px; color: #1652F0">0{{cur.n}}</span>
-<span class="lh-swap" key="{{cur.name}}" style="font-size: 15px; font-weight: 600; color: #0B1433">{{cur.name}}</span>
+<span class="lh-swap lh-core-n" style="font-size: 52px; line-height: 1; font-weight: 600; letter-spacing: -1.5px; color: #1652F0">0{{cur.n}}</span>
+<span class="lh-swap" style="font-size: 15px; font-weight: 600; color: #0B1433">{{cur.name}}</span>
 </div>
 </div>
 <sc-for list="{{stages}}" as="st" hint-placeholder-count="8">
 <button class="lh-node" type="button" onClick="{{st.pick}}" aria-pressed="{{st.pressed}}" aria-label="Stage {{st.n}}: {{st.name}}" style="left: {{st.x}}; top: {{st.y}}; background: {{st.bg}}; border: 1.5px solid {{st.border}}; box-shadow: {{st.glow}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="{{st.fg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{st.icon}}"></path></svg></button>
-<span class="lh-node-lab" style="left: {{st.lx}}; top: {{st.ly}}; color: {{st.lab}}">{{st.name}}</span>
+<span class="lh-node-lab" style="left: {{st.lx}}; top: {{st.ly}}; transform: {{st.ltx}}; color: {{st.lab}}">{{st.name}}</span>
 </sc-for>
 </div>
 </div>
@@ -276,7 +276,8 @@ class Component extends DCLogic {
       var on = k === si, done = k < si;
       var ang = (-90 + k * 45) * Math.PI / 180;
       var nx = 50 + 36.6 * Math.cos(ang), ny = 50 + 36.6 * Math.sin(ang);
-      var lx = 50 + 48.2 * Math.cos(ang), ly = 50 + 48.2 * Math.sin(ang);
+      var cs = Math.cos(ang), side = Math.abs(cs) > 0.3, lr = side ? 43.6 : 47.6;
+      var lx = 50 + lr * cs, ly = 50 + lr * Math.sin(ang);
       return {
         n: k + 1, name: s[0], icon: s[4], pressed: on ? 'true' : 'false',
         x: nx.toFixed(2) + '%', y: ny.toFixed(2) + '%', lx: lx.toFixed(2) + '%', ly: ly.toFixed(2) + '%',
@@ -285,6 +286,7 @@ class Component extends DCLogic {
         fg: on ? '#FFFFFF' : (done ? '#1652F0' : '#8A93AD'),
         glow: on ? '0 0 0 8px rgba(22,82,240,.14), 0 14px 28px -12px rgba(22,82,240,.6)' : 'none',
         lab: on ? '#0B1433' : '#5B6582',
+        ltx: cs > 0.3 ? 'translate(0, -50%)' : (cs < -0.3 ? 'translate(-100%, -50%)' : 'translate(-50%, -50%)'),
         bar: on ? '#1652F0' : (done ? '#C9D7FA' : '#E6EAF3'), barW: on ? '22px' : '6px',
         pick: function () { self.goTo(k); }
       };

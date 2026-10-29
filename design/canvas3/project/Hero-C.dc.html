@@ -26,7 +26,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-search:focus-within{border-color:#1652F0 !important;box-shadow:0 0 0 4px rgba(22,82,240,.14),0 24px 60px -24px rgba(22,82,240,.45) !important}
 .lh-input::placeholder{color:#8A93AD}
 .lh-cta:focus-visible,.lh-link:focus-visible,.lh-menu:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-.lh-stage{position:absolute;z-index:2;left:50%;--h:min(66.667cqw,calc((100cqh - 388px) * 2.2026));height:var(--h);bottom:calc(48px - var(--h) * .151);aspect-ratio:3/2;transform:translateX(-50%);pointer-events:none}
+.lh-stage{position:absolute;z-index:2;left:50%;--h:min(66.667cqw,calc((100cqh - 416px) * 2.2026));height:var(--h);bottom:calc(48px - var(--h) * .151);aspect-ratio:3/2;transform:translateX(-50%);pointer-events:none}
 @media (min-width: 761px){.lh-hero{container-type:size}}
 .lh-orbit{position:absolute;inset:0;perspective:2200px;perspective-origin:50% 45%}
 .lh-orbit-back{z-index:1;opacity:.75}
@@ -50,40 +50,24 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 @keyframes lhSig{0%{stroke-dashoffset:.08;opacity:0}8%{opacity:1}80%{opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
 .lh-core{transform-box:fill-box;transform-origin:center;transform:scale(1.8);opacity:.45;animation:lhCore 3.2s ease-out -1.4s infinite}
 @keyframes lhCore{0%{transform:scale(.6);opacity:.9}100%{transform:scale(3.4);opacity:0}}
-.lh-core-dot{animation:lhDot 3.2s ease-in-out infinite}
-@keyframes lhDot{0%,100%{opacity:.85}12%{opacity:1}}
-.lh-eng{position:relative;z-index:3;margin-top:16px;border-radius:28px;background:#FFFFFF;box-shadow:0 -18px 40px -30px rgba(11,20,51,.2);overflow:hidden}
-.lh-eng-wrap{max-width:1240px;margin:0 auto;padding:88px 64px 96px;display:grid;grid-template-columns:minmax(0,1fr) 560px;gap:56px;align-items:center}
-.lh-node{position:absolute;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:background .35s ease,border-color .35s ease,box-shadow .35s ease,transform .35s ease}
-.lh-node:hover{transform:scale(1.06)}
-.lh-node:focus-visible,.lh-step:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-.lh-node-lab{position:absolute;font-size:14px;font-weight:500;white-space:nowrap;pointer-events:none;transition:color .35s ease}
-.lh-prog{transition:stroke-dashoffset .7s cubic-bezier(.4,0,.2,1)}
-.lh-spark{position:absolute;inset:0;animation:lhOrbit 9s linear infinite}
-@keyframes lhOrbit{to{transform:rotate(360deg)}}
-.lh-core-glow{animation:lhBreathe 4.2s ease-in-out infinite}
-@keyframes lhBreathe{0%,100%{box-shadow:0 0 0 0 rgba(22,82,240,.18),0 30px 60px -30px rgba(22,82,240,.55)}50%{box-shadow:0 0 0 18px rgba(22,82,240,0),0 30px 60px -30px rgba(22,82,240,.55)}}
-.lh-swap{animation:lhSwap .5s cubic-bezier(.2,.7,.2,1) both}
-@keyframes lhSwap{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.lh-step{transition:background .2s ease,border-color .2s ease}
-.lh-step:hover{border-color:#1652F0 !important}
+.lh-mark-g{transform-box:fill-box;transform-origin:center;animation:lhMark 3.2s ease-in-out -1.4s infinite}
+@keyframes lhMark{0%,100%{transform:scale(1)}10%{transform:scale(1.14)}30%{transform:scale(1)}}
+.lh-eng{position:relative;z-index:3;margin-top:16px;border-radius:28px;overflow:clip;background:#FFFFFF;box-shadow:0 -18px 40px -30px rgba(11,20,51,.2)}
 @supports (animation-timeline: scroll()){
 .lh-content{animation:lhOut linear both;animation-timeline:scroll(root);animation-range:0 45vh}
 .lh-stage{animation:lhSink linear both;animation-timeline:scroll(root);animation-range:0 90vh}
 .lh-hero{animation:lhDim linear both;animation-timeline:scroll(root);animation-range:20vh 100vh}
-.lh-eng-in{animation:lhIn linear both;animation-timeline:view();animation-range:entry 10% cover 35%}
 @keyframes lhOut{to{transform:translateY(-36px) scale(.97);opacity:0}}
 @keyframes lhSink{to{transform:translateX(-50%) translateY(90px) scale(.92)}}
 @media (max-width: 760px){.lh-stage,.lh-hero{animation:none !important}}
 @keyframes lhDim{to{filter:saturate(.8) brightness(.96)}}
-@keyframes lhIn{from{opacity:0;transform:translateY(70px)}to{opacity:1;transform:none}}
 }
 @keyframes lhRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .lh-r2{animation:lhRise .7s cubic-bezier(.2,.7,.2,1) .08s both}
 .lh-r3{animation:lhRise .7s cubic-bezier(.2,.7,.2,1) .16s both}
 .lh-r4{animation:lhRise .7s cubic-bezier(.2,.7,.2,1) .24s both}
-@media (prefers-reduced-motion: reduce){.lh-r2,.lh-r3,.lh-r4,.lh-ring,.lh-sig,.lh-core,.lh-core-dot,.lh-spark,.lh-core-glow,.lh-swap,.lh-content,.lh-stage,.lh-hero,.lh-eng-in{animation:none}}
-@media (min-width: 761px) and (max-height: 780px){.lh-content{margin-top:16px !important}.lh-h1{font-size:52px !important}.lh-search{margin-top:20px !important}}
+@media (prefers-reduced-motion: reduce){.lh-r2,.lh-r3,.lh-r4,.lh-ring,.lh-sig,.lh-core,.lh-mark-g,.lh-content,.lh-stage,.lh-hero{animation:none}}
+@media (min-width: 761px) and (max-height: 780px){.lh-content{margin-top:30px !important}.lh-h1{font-size:52px !important}.lh-search{margin-top:20px !important}}
 @media (max-width: 1280px){.lh-links{display:none !important}.lh-menu{display:flex !important}}
 @media (max-width: 760px){
 .lh-root{padding:8px !important}
@@ -99,21 +83,6 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-field{padding:0 12px !important}
 .lh-input{height:52px !important;font-size:16px !important}
 .lh-cta-main{justify-content:center !important;height:52px !important}
-.lh-eng-wrap{grid-template-columns:minmax(0,1fr) !important;padding:48px 20px 56px !important;gap:28px !important}
-.lh-eng-h2{font-size:30px !important;letter-spacing:-.8px !important}
-.lh-eng-sub{font-size:15px !important}
-.lh-ring-box{width:320px !important;height:320px !important;justify-self:center}
-.lh-node{width:40px !important;height:40px !important;margin:-20px 0 0 -20px !important}
-.lh-node svg{width:18px;height:18px}
-.lh-node-lab{display:none}
-.lh-core-glow{width:150px !important;height:150px !important}
-.lh-core-n{font-size:36px !important}
-.lh-detail{padding:20px !important;order:2}
-.lh-eng-left{display:contents !important}
-.lh-ring-box{order:1}
-.lh-next-t{display:none}
-.lh-next-m{display:inline !important}
-.lh-detail-h3{font-size:22px !important}
 .lh-hero{position:relative !important;top:auto !important}
 .lh-stage{position:relative !important;left:auto !important;bottom:auto !important;transform:none !important;height:auto !important;width:180%;flex-shrink:0;margin:calc(50px - 47.4%) 0 calc(36px - 18.1%)}
 .lh-figure{-webkit-mask-image:none;mask-image:none}
@@ -148,7 +117,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </div>
 </header>
 
-<div class="lh-content" style="position: relative; z-index: 4; margin-top: 16px; width: 100%; max-width: 1120px; box-sizing: border-box; padding: 0 24px; display: flex; flex-direction: column; align-items: center; text-align: center">
+<div class="lh-content" style="position: relative; z-index: 4; margin-top: 44px; width: 100%; max-width: 1120px; box-sizing: border-box; padding: 0 24px; display: flex; flex-direction: column; align-items: center; text-align: center">
 <h1 class="lh-h1 lh-r2" style="margin: 0; font-size: 60px; line-height: 1.05; font-weight: 600; letter-spacing: -1.8px; white-space: nowrap; color: #0B1433">Who will you <span style="color: #1652F0">become</span> next?</h1>
 
 <p class="lh-sub lh-r3" style="margin: 12px 0 0; max-width: 720px; font-size: 18px; line-height: 1.55; color: #4A5578">Tell us your goal. We’ll build the path and help you prove it.</p>
@@ -172,7 +141,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </sc-for>
 </div></div>
 <img class="lh-figure" src="/_blob/296390fb43ef166647144a765490d140" alt="A young woman floats above a glowing point where five paths begin, leading to a lab, an easel, a desk, a rocket and an open doorway">
-<svg class="lh-signals" viewBox="0 0 1536 1024" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="lhGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><g filter="url(#lhGlow)"><path class="lh-sig" pathLength="1" d="M756 876C560 878 430 868 373 852C320 836 300 822 275 807C220 772 170 742 123 717"></path><path class="lh-sig lh-sig-2" pathLength="1" d="M756 876C680 874 610 860 560 838C520 820 480 800 440 785"></path><path class="lh-sig lh-sig-3" pathLength="1" d="M756 876C830 874 880 858 912 843C950 826 980 810 1008 798"></path><path class="lh-sig lh-sig-4" pathLength="1" d="M756 876C950 878 1120 870 1185 848C1230 832 1260 805 1292 785C1340 755 1390 728 1428 705"></path></g><circle class="lh-core" cx="756" cy="876" r="16" fill="none" stroke="#1652F0" stroke-width="3"></circle><circle class="lh-core lh-sig-3" cx="756" cy="876" r="16" fill="none" stroke="#5B86F5" stroke-width="2"></circle><circle class="lh-core-dot" cx="756" cy="876" r="7" fill="#FFFFFF" filter="url(#lhGlow)"></circle></svg>
+<svg class="lh-signals" viewBox="0 0 1536 1024" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="lhGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><g filter="url(#lhGlow)"><path class="lh-sig" pathLength="1" d="M756 876C560 878 430 868 373 852C320 836 300 822 275 807C220 772 170 742 123 717"></path><path class="lh-sig lh-sig-2" pathLength="1" d="M756 876C680 874 610 860 560 838C520 820 480 800 440 785"></path><path class="lh-sig lh-sig-3" pathLength="1" d="M756 876C830 874 880 858 912 843C950 826 980 810 1008 798"></path><path class="lh-sig lh-sig-4" pathLength="1" d="M756 876C950 878 1120 870 1185 848C1230 832 1260 805 1292 785C1340 755 1390 728 1428 705"></path></g><circle class="lh-core" cx="756" cy="876" r="16" fill="none" stroke="#1652F0" stroke-width="3"></circle><circle class="lh-core lh-sig-3" cx="756" cy="876" r="16" fill="none" stroke="#5B86F5" stroke-width="2"></circle><g class="lh-mark-g"><circle cx="756" cy="876" r="30" fill="#FFFFFF" filter="url(#lhGlow)"></circle><circle cx="756" cy="876" r="30" fill="none" stroke="#C9D7FA" stroke-width="2"></circle><image href="/_blob/f81e36d31295a0d0737959589ec1abd4" x="736" y="856" width="40" height="40"></image></g></svg>
 <div class="lh-orbit lh-orbit-front"><div class="lh-ring">
 <sc-for list="{{frontSlices}}" as="s" hint-placeholder-count="48">
 <button class="lh-sl {{s.cls}}" type="button" onClick="{{s.pick}}" tabIndex="{{s.tab}}" aria-hidden="{{s.hide}}" aria-label="I want to become a {{s.name}}" style="--td: {{s.td}}; --tm: {{s.tm}}; --wd: {{s.wd}}; --wm: {{s.wm}}; --cd: {{s.cd}}; --cm: {{s.cm}}; --od: {{s.od}}; --om: {{s.om}}; --bc: {{s.bc}}; background: {{s.bg}}"><span class="lh-card-in"><span class="lh-card-vis" style="background: {{s.visBg}}; box-shadow: inset 0 0 0 1px {{s.visLine}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="{{s.icFg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{s.icon}}"></path></svg></span><span class="lh-card-t" style="font-size: 14px; font-weight: 600; color: {{s.fg}}">{{s.name}}</span></span></button>
@@ -180,60 +149,8 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </div></div>
 </div>
 </section>
-<section class="lh-eng" aria-labelledby="lh-eng-title">
-<div class="lh-eng-wrap">
-<div class="lh-eng-left lh-eng-in" style="display: flex; flex-direction: column; gap: 28px; min-width: 0">
-<div style="display: flex; flex-direction: column; gap: 14px">
-<span style="font-size: 14px; font-weight: 500; color: #1652F0">The Become Engine</span>
-<h2 id="lh-eng-title" class="lh-eng-h2" style="margin: 0; font-size: 46px; line-height: 1.08; font-weight: 600; letter-spacing: -1.4px; color: #0B1433">Every journey starts with a vision. We build the rest.</h2>
-<p class="lh-eng-sub" style="margin: 0; max-width: 520px; font-size: 18px; line-height: 1.55; color: #4A5578">Eight connected stages take you from knowing where you want to go to proving you got there.</p>
-</div>
-<div class="lh-detail" style="box-sizing: border-box; padding: 28px; border-radius: 22px; background: #FFFFFF; border: 1.5px solid #E6EAF3; box-shadow: 0 24px 48px -32px rgba(11,20,51,.28); display: flex; flex-direction: column; gap: 18px">
-<div class="lh-swap" style="display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; align-items: center; gap: 12px">
-<span aria-hidden="true" style="width: 44px; height: 44px; border-radius: 14px; background: #EAF0FF; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{cur.icon}}"></path></svg></span>
-<span style="font-size: 14px; font-weight: 500; color: #8A93AD">Stage {{cur.n}} of 8 · <span style="color: #1652F0">{{cur.name}}</span></span>
-</div>
-<h3 class="lh-detail-h3" style="margin: 0; font-size: 28px; line-height: 1.2; font-weight: 600; letter-spacing: -.5px; color: #0B1433">{{cur.headline}}</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A5578">{{cur.detail}}</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
-<sc-for list="{{cur.gets}}" as="g" hint-placeholder-count="2">
-<span style="height: 34px; padding: 0 14px 0 10px; border-radius: 999px; background: #F5F8FF; border: 1.5px solid #E6EAF3; display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: #3A4566"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>{{g}}</span>
-</sc-for>
-</div>
-</div>
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 16px; border-top: 1.5px solid #EEF1F7">
-<div style="display: flex; gap: 6px" aria-hidden="true">
-<sc-for list="{{stages}}" as="st" hint-placeholder-count="8">
-<span style="width: {{st.barW}}; height: 6px; border-radius: 999px; background: {{st.bar}}; transition: width .35s ease, background .35s ease"></span>
-</sc-for>
-</div>
-<div style="display: flex; gap: 8px">
-<button class="lh-step" type="button" onClick="{{prev}}" aria-label="Previous stage" style="width: 44px; height: 44px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #D6DDEE; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B1433" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
-<button class="lh-step" type="button" onClick="{{next}}" aria-label="Next stage" style="height: 44px; padding: 0 16px 0 18px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #D6DDEE; display: flex; align-items: center; gap: 8px; cursor: pointer; font-family: 'Google Sans', system-ui, sans-serif; font-size: 14px; font-weight: 600; color: #0B1433; white-space: nowrap"><span class="lh-next-t">{{nextLabel}}</span><span class="lh-next-m" style="display: none">Next</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B1433" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
-</div>
-</div>
-</div>
-</div>
-
-<div class="lh-ring-box lh-eng-in" style="position: relative; width: 560px; height: 560px">
-<svg viewBox="0 0 560 560" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible">
-<circle cx="280" cy="280" r="205" fill="none" stroke="#E6EAF3" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round"></circle>
-<circle class="lh-prog" cx="280" cy="280" r="205" fill="none" stroke="#1652F0" stroke-width="3" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="{{progOff}}" transform="rotate(-90 280 280)"></circle>
-</svg>
-<div class="lh-spark" aria-hidden="true"><span style="position: absolute; left: 50%; top: 13.4%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 0 0 3px rgba(22,82,240,.35), 0 0 16px 4px rgba(22,82,240,.55)"></span></div>
-<div aria-hidden="true" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center">
-<div class="lh-core-glow" style="width: 196px; height: 196px; border-radius: 999px; background: radial-gradient(circle at 50% 40%, #FFFFFF 0%, #F5F8FF 55%, #EAF0FF 100%); border: 1.5px solid #DCE5FB; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px">
-<span class="lh-swap lh-core-n" style="font-size: 52px; line-height: 1; font-weight: 600; letter-spacing: -1.5px; color: #1652F0">0{{cur.n}}</span>
-<span class="lh-swap" style="font-size: 15px; font-weight: 600; color: #0B1433">{{cur.name}}</span>
-</div>
-</div>
-<sc-for list="{{stages}}" as="st" hint-placeholder-count="8">
-<button class="lh-node" type="button" onClick="{{st.pick}}" aria-pressed="{{st.pressed}}" aria-label="Stage {{st.n}}: {{st.name}}" style="left: {{st.x}}; top: {{st.y}}; background: {{st.bg}}; border: 1.5px solid {{st.border}}; box-shadow: {{st.glow}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="{{st.fg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{st.icon}}"></path></svg></button>
-<span class="lh-node-lab" style="left: {{st.lx}}; top: {{st.ly}}; transform: {{st.ltx}}; color: {{st.lab}}">{{st.name}}</span>
-</sc-for>
-</div>
-</div>
+<section class="lh-eng" aria-label="The Become Engine">
+<dc-import name="Engine-Field" hint-size="100%,900px"></dc-import>
 </section>
 </div>
 </x-dc>
@@ -241,16 +158,8 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { goal: '', stage: 0 };
+    this.state = { goal: '' };
   }
-  componentDidMount() { this.startTimer(); }
-  componentWillUnmount() { clearInterval(this.timer); }
-  startTimer() {
-    var self = this;
-    clearInterval(this.timer);
-    this.timer = setInterval(function () { self.setState({ stage: (self.state.stage + 1) % 8 }); }, 4200);
-  }
-  goTo(i) { this.setState({ stage: (i + 8) % 8 }); this.startTimer(); }
   renderVals() {
     var self = this;
     var data = [
@@ -261,37 +170,6 @@ class Component extends DCLogic {
       ['Product manager', 'Roadmaps · Data', 'M12 3l9 5-9 5-9-5zM3 13l9 5 9-5'],
       ['Cybersecurity analyst', 'Threats · Networks', 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z']
     ];
-    var eng = [
-      ['Vision', 'Start with who you want to become.', 'Tell us your goal in your own words: a role, a skill, a career change. It becomes the anchor for everything that follows.', ['Your goal, in your words', 'A clear direction'], 'M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z'],
-      ['Discover', 'See the possibilities ahead.', 'Explore the roles and skills linked to your goal, and the gap between where you are and where you want to be.', ['Roles and skills to explore', 'Your skill gaps, mapped'], 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM15.5 8.5l-2 5-5 2 2-5z'],
-      ['AI Coach', 'Turn your goal into a personal journey.', 'Your AI Coach maps a route from where you are to where you\u2019re going, and adapts it as you learn.', ['A recommended route', 'Guidance that adapts'], 'M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z'],
-      ['Learn', 'Build the knowledge you need.', 'Courses, lessons and resources from trusted creators and institutions, with support whenever you need it.', ['Courses and lessons', 'Guided resources'], 'M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16'],
-      ['Practise', 'Turn knowledge into capability.', 'Apply what you learn through projects, exercises and simulations, with feedback while you work.', ['Real projects', 'Feedback as you go'], 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2z'],
-      ['Connect', 'Learn with people when it matters.', 'Tutors, peers, experts and communities who answer questions, review your work and open doors.', ['Tutors and experts', 'Peers and communities'], 'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21v-1a6 6 0 0 1 12 0v1M16 3.5a4 4 0 0 1 0 7M22 21v-1a6 6 0 0 0-4-5.6'],
-      ['Prove', 'Show what you can actually do.', 'Assessments and verified work turn effort into evidence, kept safe in your Digital Backpack.', ['Verified projects', 'Credentials you own'], 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6zM8.5 12l2.5 2.5 4.5-5'],
-      ['Advance', 'Use what you\u2019ve proven to move forward.', 'A new role, the next level of learning or a fresh goal. Then the engine starts again.', ['Your next step', 'A new goal, when you\u2019re ready'], 'M7 17L17 7M9 7h8v8']
-    ];
-    var si = this.state.stage;
-    var stages = eng.map(function (s, k) {
-      var on = k === si, done = k < si;
-      var ang = (-90 + k * 45) * Math.PI / 180;
-      var nx = 50 + 36.6 * Math.cos(ang), ny = 50 + 36.6 * Math.sin(ang);
-      var cs = Math.cos(ang), side = Math.abs(cs) > 0.3, lr = side ? 43.6 : 47.6;
-      var lx = 50 + lr * cs, ly = 50 + lr * Math.sin(ang);
-      return {
-        n: k + 1, name: s[0], icon: s[4], pressed: on ? 'true' : 'false',
-        x: nx.toFixed(2) + '%', y: ny.toFixed(2) + '%', lx: lx.toFixed(2) + '%', ly: ly.toFixed(2) + '%',
-        bg: on ? '#1652F0' : (done ? '#EAF0FF' : '#FFFFFF'),
-        border: on ? '#1652F0' : (done ? '#C9D7FA' : '#D6DDEE'),
-        fg: on ? '#FFFFFF' : (done ? '#1652F0' : '#8A93AD'),
-        glow: on ? '0 0 0 8px rgba(22,82,240,.14), 0 14px 28px -12px rgba(22,82,240,.6)' : 'none',
-        lab: on ? '#0B1433' : '#5B6582',
-        ltx: cs > 0.3 ? 'translate(0, -50%)' : (cs < -0.3 ? 'translate(-100%, -50%)' : 'translate(-50%, -50%)'),
-        bar: on ? '#1652F0' : (done ? '#C9D7FA' : '#E6EAF3'), barW: on ? '22px' : '6px',
-        pick: function () { self.goTo(k); }
-      };
-    });
-    var c = eng[si];
     var n = data.length, N = 6;
     var geo = { d: { r: 360, pad: 70, ch: 7.7 }, m: { r: 118, pad: 47, ch: 6.1 } };
     function slicesFor(back) {
@@ -334,12 +212,6 @@ class Component extends DCLogic {
     return {
       frontSlices: slicesFor(false), backSlices: slicesFor(true),
       goal: this.state.goal,
-      stages: stages,
-      cur: { n: si + 1, name: c[0], headline: c[1], detail: c[2], gets: c[3], icon: c[4] },
-      progOff: (1 - (si + 1) / 8).toFixed(4),
-      nextLabel: si < 7 ? 'Next: ' + eng[si + 1][0] : 'Start again',
-      next: function () { self.goTo(si + 1); },
-      prev: function () { self.goTo(si - 1); },
       onGoal: function (e) { self.setState({ goal: e.target.value }); },
       onStart: function (e) { e.preventDefault(); }
     };

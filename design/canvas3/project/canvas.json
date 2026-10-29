@@ -32,7 +32,7 @@
       "y": 1400
     },
     "Hero-C-Mobile.dc.html": {
-      "h": 2726,
+      "h": 3862,
       "is_interactive": true,
       "page": "main",
       "title": "LND-001 C · Mobile",
@@ -42,7 +42,7 @@
     },
     "Hero-C.dc.html": {
       "expand": "fill",
-      "h": 2868,
+      "h": 3844,
       "is_interactive": true,
       "page": "main",
       "title": "LND-001 C · Hero + Become Engine + Grow · Desktop",
@@ -83,6 +83,25 @@
       "w": 390,
       "h": 1060,
       "title": "Section 3 · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Coach.dc.html": {
+      "x": 0,
+      "y": 8600,
+      "w": 1440,
+      "h": 960,
+      "title": "Section 4 · AI Coach, questions and answers · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Coach-Mobile.dc.html": {
+      "x": 1520,
+      "y": 8600,
+      "w": 390,
+      "h": 1120,
+      "title": "Section 4 · Mobile",
       "page": "main",
       "is_interactive": true
     }
@@ -144,6 +163,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-coach": {
+      "x": 0,
+      "y": 8300,
+      "text": "Landing page · section 4 · AI woven into every step",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -155,7 +182,9 @@
     "Engine-Field.dc.html",
     "Engine-Field-Mobile.dc.html",
     "Grow.dc.html",
-    "Grow-Mobile.dc.html"
+    "Grow-Mobile.dc.html",
+    "Coach.dc.html",
+    "Coach-Mobile.dc.html"
   ],
   "pages": [
     {

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Become Engine · dot-field road</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+.fd-card{position:absolute;left:0;top:0;transform-origin:50% 100%;will-change:transform,opacity;transition:opacity .5s ease}
+.fd-btn{transition:border-color .2s ease}
+.fd-btn:hover{border-color:#1652F0 !important}
+.fd-btn:focus-visible,.fd-dot:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+</style>
+</helmet>
+<div ref="{{trackRef}}" style="position: relative; height: 420vh; background: #FFFFFF">
+<section aria-labelledby="fd-title" ref="{{viewRef}}" style="position: sticky; top: 0; height: 100vh; min-height: 640px; overflow: hidden; background: linear-gradient(180deg, #FFFFFF 0%, #F7F9FD 100%); font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<canvas ref="{{canvasRef}}" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block"></canvas>
+<div class="fd-card" ref="{{cardRef}}" aria-hidden="true">
+<dc-import name="Moment" stage="{{cur.n}}" hint-size="280px,150px"></dc-import>
+</div>
+
+<div style="position: relative; z-index: 2; max-width: 1312px; height: 100%; margin: 0 auto; box-sizing: border-box; padding: clamp(48px, 9vh, 80px) 64px clamp(40px, 7vh, 64px); display: flex; flex-direction: column; justify-content: space-between; pointer-events: none">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 500px">
+<span style="font-size: 14px; font-weight: 500; color: #1652F0">The Become Engine</span>
+<h2 id="fd-title" style="margin: 0; font-size: 44px; line-height: 1.08; font-weight: 600; letter-spacing: -1.3px">Every journey starts with a vision. We build the rest.</h2>
+</div>
+<div style="max-width: 420px; display: flex; flex-direction: column; gap: 16px; pointer-events: auto">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 14px; font-weight: 500; color: #8A93AD">Stage {{cur.n}} of 8 · <span style="color: #1652F0">{{cur.name}}</span></span>
+<h3 style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 600; letter-spacing: -.4px">{{cur.headline}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">{{cur.detail}}</p>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<button class="fd-btn" type="button" onClick="{{prev}}" aria-label="Previous stage" style="width: 44px; height: 44px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #D6DDEE; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B1433" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<button class="fd-btn" type="button" onClick="{{next}}" style="height: 44px; padding: 0 16px 0 18px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #D6DDEE; display: flex; align-items: center; gap: 8px; cursor: pointer; font-family: 'Google Sans', system-ui, sans-serif; font-size: 14px; font-weight: 600; color: #0B1433; white-space: nowrap">{{nextLabel}}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B1433" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+<div style="display: flex; gap: 4px; margin-left: 6px">
+<sc-for list="{{stages}}" as="st" hint-placeholder-count="8">
+<button class="fd-dot" type="button" onClick="{{st.pick}}" aria-label="Stage {{st.n}}: {{st.name}}" style="width: {{st.barW}}; height: 8px; padding: 0; border: none; border-radius: 999px; background: {{st.bar}}; cursor: pointer; transition: width .35s ease, background .35s ease"></button>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { stage: 0 };
+    this.pos = 0; this.target = 0; this.mode = 'auto';
+    var self = this;
+    this.trackRef = function (el) { self.track = el; };
+    this.viewRef = function (el) { self.view = el; };
+    this.canvasRef = function (el) { self.cv = el; };
+    this.cardRef = function (el) { self.card = el; };
+  }
+  componentDidMount() {
+    var self = this;
+    this.onScroll = function () {
+      if (!self.track) return;
+      var r = self.track.getBoundingClientRect(), span = r.height - window.innerHeight;
+      if (span <= 0 || r.top > window.innerHeight || r.bottom < 0) return;
+      self.mode = 'scroll'; clearInterval(self.timer);
+      self.target = Math.min(1, Math.max(0, -r.top / span)) * 7;
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.startTimer();
+    var tick = function (now) {
+      var d = self.target - self.pos, moving = Math.abs(d) > 0.0004;
+      if (moving) self.pos += d * 0.07; else self.pos = self.target;
+      self.draw(now);
+      var s = Math.max(0, Math.min(7, Math.round(self.pos)));
+      if (s !== self.state.stage) self.setState({ stage: s });
+      self.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); clearInterval(this.timer); window.removeEventListener('scroll', this.onScroll); }
+  startTimer() {
+    var self = this;
+    clearInterval(this.timer);
+    if (this.mode !== 'auto') return;
+    this.timer = setInterval(function () { self.target = self.target >= 7 ? 0 : Math.round(self.target) + 1; }, 4600);
+  }
+  goTo(i) {
+    var s = Math.max(0, Math.min(7, i));
+    if (this.mode === 'scroll' && this.track) {
+      var r = this.track.getBoundingClientRect(), span = r.height - window.innerHeight;
+      window.scrollTo({ top: window.scrollY + r.top + span * s / 7, behavior: 'smooth' });
+    } else { this.target = s; this.startTimer(); }
+  }
+  draw(now) {
+    var cv = this.cv, view = this.view;
+    if (!cv || !view) return;
+    var W = view.clientWidth, H = view.clientHeight, dpr = Math.min(2, window.devicePixelRatio || 1);
+    if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
+    var g = cv.getContext('2d');
+    g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    g.clearRect(0, 0, W, H);
+    if (!this.sprites) {
+      var mk = function (col) { var c = document.createElement('canvas'); c.width = c.height = 32; var x = c.getContext('2d'); var gr = x.createRadialGradient(16, 16, 0, 16, 16, 16); gr.addColorStop(0, col); gr.addColorStop(0.62, col); gr.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = gr; x.beginPath(); x.arc(16, 16, 16, 0, 6.283); x.fill(); return c; };
+      this.sprites = [mk('#1652F0'), mk('#7FA4FF')];
+    }
+    var SP = this.sprites, time = (now || 0) / 1000;
+    var smooth = function (e0, e1, x) { var t = Math.min(1, Math.max(0, (x - e0) / (e1 - e0))); return t * t * (3 - 2 * t); };
+    var camZ = 0.5 + 6 * this.pos;
+    var hy = H * 0.3, camH = 1.3, f = (H - hy) * 1.5 / camH, vpX = W * 0.7, LANE = 0.46;
+    var X = function (z) { return 1.9 * Math.sin(0.3 * z) + 0.9 * Math.sin(0.11 * z + 1); };
+    var tx = X(camZ + 3.5);
+    this.camX = this.camX == null ? tx : this.camX + (tx - this.camX) * 0.12;
+    var camX = this.camX;
+    var hgt = function (x, z) {
+      var m = smooth(LANE + 0.12, LANE + 1.6, Math.abs(x - X(z)));
+      if (m <= 0) return 0;
+      return m * (0.42 * Math.sin(0.45 * x + 0.2 * z) + 0.3 * Math.sin(0.85 * z + 0.6 * x + 1.3) + 0.16 * Math.sin(1.7 * x - 0.5 * z + time * 0.4) + 0.5) * 0.9;
+    };
+    // dot field, far to near
+    var tiers = [[14, 30, 0.6], [6, 14, 0.3], [1.15, 6, 0.15]];
+    for (var ti = 0; ti < tiers.length; ti++) {
+      var T = tiers[ti], st = T[2];
+      var z0 = Math.ceil((camZ + T[0]) / st) * st, z1 = camZ + T[1];
+      for (var z = z1 - ((z1 - z0) % st); z >= z0 - 1e-6; z -= st) {
+        var d = z - camZ; if (d <= 1.1) continue;
+        var rc = X(z), half = 4 + d * 0.9, fog = 1 - smooth(13, 30, d);
+        var x0 = Math.ceil((rc - half) / st) * st;
+        for (var x = x0; x <= rc + half; x += st) {
+          if (Math.abs(x - rc) < LANE + 0.08) continue;
+          var h = hgt(x, z);
+          var sx = vpX + (x - camX) * f / d;
+          if (sx < W * 0.28 || sx > W + 10) continue;
+          var sy = hy + (camH - h) * f / d;
+          if (sy > H + 10) continue;
+          var slope = hgt(x + 0.12, z) - hgt(x - 0.12, z);
+          var shade = Math.min(1, Math.max(0.12, 0.55 - slope * 3.2 + h * 0.15));
+          var a = fog * shade * smooth(W * 0.3, W * 0.58, sx);
+          if (a < 0.03) continue;
+          var r = Math.min(4.2, Math.max(0.55, 0.02 * f / d));
+          g.globalAlpha = Math.min(1, a);
+          g.drawImage(SP[(d > 12 || h > 0.75) ? 1 : 0], sx - r, sy - r, r * 2, r * 2);
+        }
+      }
+    }
+    g.globalAlpha = 1;
+    // road of light
+    var rows = [];
+    for (var y = H + 4; y > hy + 2; y -= 2) {
+      var dd = camH * f / (y - hy); if (dd > 30) break;
+      var zz = camZ + dd; rows.push({ y: y, cx: vpX + (X(zz) - camX) * f / dd, hw: LANE * f / dd, z: zz, d: dd });
+    }
+    var cur = Math.max(0, Math.min(7, Math.ceil((camZ - 2) / 6))), stageZ = 4 + 6 * cur;
+    if (rows.length > 2) {
+      var poly = function (fn) { g.beginPath(); rows.forEach(function (q, i) { var p = fn(q, -1); if (i === 0) g.moveTo(p, q.y); else g.lineTo(p, q.y); }); for (var i = rows.length - 1; i >= 0; i--) g.lineTo(fn(rows[i], 1), rows[i].y); g.closePath(); };
+      var grd = g.createLinearGradient(0, hy, 0, H); grd.addColorStop(0, 'rgba(255,255,255,0)'); grd.addColorStop(0.25, 'rgba(255,255,255,.9)'); grd.addColorStop(1, '#FFFFFF');
+      poly(function (q, s) { return q.cx + s * q.hw; }); g.fillStyle = grd; g.fill();
+      // travelled glow
+      var tr = rows.filter(function (q) { return q.z <= stageZ; });
+      if (tr.length > 1) { g.beginPath(); tr.forEach(function (q, i) { if (i === 0) g.moveTo(q.cx - q.hw, q.y); else g.lineTo(q.cx - q.hw, q.y); }); for (var j = tr.length - 1; j >= 0; j--) g.lineTo(tr[j].cx + tr[j].hw, tr[j].y); g.closePath(); g.fillStyle = 'rgba(22,82,240,.07)'; g.fill(); }
+      var line = function (side, col, w, alphaFn) {
+        for (var i = 1; i < rows.length; i++) { var a = rows[i - 1], b = rows[i]; g.globalAlpha = alphaFn(b); g.strokeStyle = col; g.lineWidth = w(b); g.beginPath(); g.moveTo(a.cx + side * a.hw, a.y); g.lineTo(b.cx + side * b.hw, b.y); g.stroke(); }
+        g.globalAlpha = 1;
+      };
+      var fogA = function (q) { return 1 - smooth(12, 30, q.d); };
+      line(-1, '#7FA4FF', function (q) { return Math.max(1, Math.min(6, 0.05 * f / q.d)); }, function (q) { return 0.25 * fogA(q); });
+      line(1, '#7FA4FF', function (q) { return Math.max(1, Math.min(6, 0.05 * f / q.d)); }, function (q) { return 0.25 * fogA(q); });
+      line(-1, '#1652F0', function (q) { return Math.max(0.8, Math.min(2.2, 0.012 * f / q.d)); }, fogA);
+      line(1, '#1652F0', function (q) { return Math.max(0.8, Math.min(2.2, 0.012 * f / q.d)); }, fogA);
+      g.lineCap = 'round';
+      for (var k = 1; k < rows.length; k++) {
+        var a2 = rows[k - 1], b2 = rows[k], done = b2.z <= stageZ;
+        if (!done && Math.floor(b2.z * 1.6) % 2) continue;
+        g.globalAlpha = fogA(b2); g.strokeStyle = done ? '#1652F0' : '#A9C2FF'; g.lineWidth = Math.max(0.8, Math.min(5, 0.022 * f / b2.d));
+        g.beginPath(); g.moveTo(a2.cx, a2.y); g.lineTo(b2.cx, b2.y); g.stroke();
+      }
+      g.globalAlpha = 1;
+    }
+    // beacons
+    var cardPos = null;
+    for (var m = 7; m >= 0; m--) {
+      var zm = 4 + 6 * m, dm = zm - camZ; if (dm < 0.95 || dm > 30) continue;
+      var px = vpX + (X(zm) - camX) * f / dm, py = hy + camH * f / dm, s = f / dm, fa = 1 - smooth(12, 30, dm);
+      if (py > H + 60) continue;
+      var on = m === cur, rad = Math.max(2, Math.min(on ? 34 : 14, (on ? 0.13 : 0.07) * s));
+      var bh = (on ? 1.5 : 0.9) * s;
+      var bw = rad * (on ? 1.5 : 0.8), hg = g.createLinearGradient(px - bw, 0, px + bw, 0);
+      hg.addColorStop(0, 'rgba(127,164,255,0)'); hg.addColorStop(0.5, on ? 'rgba(76,125,255,.42)' : 'rgba(127,164,255,.26)'); hg.addColorStop(1, 'rgba(127,164,255,0)');
+      g.fillStyle = hg;
+      for (var sl = 0; sl < 16; sl++) { g.globalAlpha = fa * Math.pow(1 - sl / 16, 1.6); g.fillRect(px - bw, py - bh * (sl + 1) / 16, bw * 2, bh / 16 + 0.5); }
+      if (on) {
+        var ph = (time % 2.4) / 2.4;
+        [ph, (ph + 0.5) % 1].forEach(function (q) { g.globalAlpha = fa * (1 - q) * 0.8; g.strokeStyle = '#4C7DFF'; g.lineWidth = 2; g.beginPath(); g.ellipse(px, py, rad * (1.2 + q * 2.6), rad * (1.2 + q * 2.6) * 0.3, 0, 0, 6.283); g.stroke(); });
+        g.globalAlpha = fa;
+        var og = g.createRadialGradient(px - rad * 0.35, py - rad * 1.4, rad * 0.1, px, py - rad, rad * 1.15);
+        og.addColorStop(0, '#DCE7FF'); og.addColorStop(0.22, '#7FA4FF'); og.addColorStop(0.6, '#1652F0'); og.addColorStop(1, '#0B2A8F');
+        g.shadowColor = 'rgba(22,82,240,.6)'; g.shadowBlur = rad * 1.4;
+        g.fillStyle = og; g.beginPath(); g.arc(px, py - rad, rad, 0, 6.283); g.fill();
+        g.shadowBlur = 0;
+        cardPos = { x: px, y: py - rad * 2.2 - bh * 0.25, s: Math.min(1, Math.max(0.45, 3.5 / dm)) };
+      } else {
+        g.globalAlpha = fa; g.fillStyle = '#FFFFFF'; g.strokeStyle = m < cur ? '#A9C2FF' : '#1652F0'; g.lineWidth = Math.max(1, rad * 0.22);
+        g.beginPath(); g.ellipse(px, py, rad, rad * 0.42, 0, 0, 6.283); g.fill(); g.stroke();
+      }
+      g.globalAlpha = 1;
+    }
+    if (this.card) {
+      if (cardPos) { this.card.style.opacity = '1'; this.card.style.transform = 'translate(' + (cardPos.x - 140).toFixed(1) + 'px,' + (cardPos.y - 160).toFixed(1) + 'px) scale(' + cardPos.s.toFixed(3) + ')'; }
+      else this.card.style.opacity = '0';
+    }
+  }
+  renderVals() {
+    var self = this;
+    var eng = [
+      ['Vision', 'Start with who you want to become.', 'Tell us your goal in your own words: a role, a skill, a career change.'],
+      ['Discover', 'See the possibilities ahead.', 'Explore the roles and skills linked to your goal, and the gap between today and where you want to be.'],
+      ['AI Coach', 'Turn your goal into a personal journey.', 'Your AI Coach maps the route and adapts it as you learn.'],
+      ['Learn', 'Build the knowledge you need.', 'Courses, lessons and resources from trusted creators and institutions.'],
+      ['Practise', 'Turn knowledge into capability.', 'Projects, exercises and simulations, with feedback while you work.'],
+      ['Connect', 'Learn with people when it matters.', 'Tutors, peers and experts who answer questions and review your work.'],
+      ['Prove', 'Show what you can actually do.', 'Verified work becomes evidence, kept in your Digital Backpack.'],
+      ['Advance', 'Use what you’ve proven to move forward.', 'A new role, the next level or a fresh goal. Then the engine starts again.']
+    ];
+    var si = this.state.stage, c = eng[si];
+    var stages = eng.map(function (s, k) {
+      var on = k === si, done = k < si;
+      return { n: k + 1, name: s[0], bar: on ? '#1652F0' : (done ? '#C9D7FA' : '#E6EAF3'), barW: on ? '24px' : '8px', pick: function () { self.goTo(k); } };
+    });
+    return {
+      stages: stages,
+      cur: { n: si + 1, name: c[0], headline: c[1], detail: c[2] },
+      nextLabel: si < 7 ? 'Next: ' + eng[si + 1][0] : 'Start again',
+      next: function () { self.goTo(si < 7 ? si + 1 : 0); },
+      prev: function () { self.goTo(si - 1); },
+      trackRef: this.trackRef, viewRef: this.viewRef, canvasRef: this.canvasRef, cardRef: this.cardRef
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -58,6 +58,9 @@ and *-000 architecture pages are references for flow and rules, not screens.
 - Link 1 (`design/canvas/`): collaboration COL-001–004 (old version), Nova chat, readiness, creator journey and dashboard. Link 4's collaboration flow is new and larger: design it fresh in our style, reuse components.
 - Link 2 (`design/canvas2/`): Creio (top-bar chip, low / not enough / estimate), message pop-ups, account menu, Studio shell. Reuse these sources for Link 4's AI-token and pop-up boards.
 
+## Before every new section
+- Re-read the "Designer's rule for every new section" in CLAUDE.md: client files are dummy content layout only; design from scratch, $24K-website quality.
+
 ## How we work (same as before)
 
 - New canvas(es) for each link. **512 files per canvas** limit: Link 4 (~490 boards) and Landing (~392) each need their own canvas; split a link across two canvases if it passes ~480.

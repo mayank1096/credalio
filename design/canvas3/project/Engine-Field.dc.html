@@ -122,7 +122,7 @@ class Component extends DCLogic {
       return m * (0.42 * Math.sin(0.45 * x + 0.2 * z) + 0.3 * Math.sin(0.85 * z + 0.6 * x + 1.3) + 0.16 * Math.sin(1.7 * x - 0.5 * z + time * 0.4) + 0.5) * 0.9;
     };
     // dot field, far to near
-    var tiers = [[14, 30, 0.6], [6, 14, 0.3], [1.15, 6, 0.15]];
+    var tiers = [[14, 30, 0.45], [6, 14, 0.22], [1.15, 6, 0.11]];
     for (var ti = 0; ti < tiers.length; ti++) {
       var T = tiers[ti], st = T[2];
       var z0 = Math.ceil((camZ + T[0]) / st) * st, z1 = camZ + T[1];
@@ -141,7 +141,7 @@ class Component extends DCLogic {
           var shade = Math.min(1, Math.max(0.12, 0.55 - slope * 3.2 + h * 0.15));
           var a = fog * shade * smooth(W * 0.3, W * 0.58, sx);
           if (a < 0.03) continue;
-          var r = Math.min(4.2, Math.max(0.55, 0.02 * f / d));
+          var r = Math.min(3.6, Math.max(0.5, 0.017 * f / d));
           g.globalAlpha = Math.min(1, a);
           g.drawImage(SP[(d > 12 || h > 0.75) ? 1 : 0], sx - r, sy - r, r * 2, r * 2);
         }
@@ -162,21 +162,26 @@ class Component extends DCLogic {
       // travelled glow
       var tr = rows.filter(function (q) { return q.z <= stageZ; });
       if (tr.length > 1) { g.beginPath(); tr.forEach(function (q, i) { if (i === 0) g.moveTo(q.cx - q.hw, q.y); else g.lineTo(q.cx - q.hw, q.y); }); for (var j = tr.length - 1; j >= 0; j--) g.lineTo(tr[j].cx + tr[j].hw, tr[j].y); g.closePath(); g.fillStyle = 'rgba(22,82,240,.07)'; g.fill(); }
-      var line = function (side, col, w, alphaFn) {
-        for (var i = 1; i < rows.length; i++) { var a = rows[i - 1], b = rows[i]; g.globalAlpha = alphaFn(b); g.strokeStyle = col; g.lineWidth = w(b); g.beginPath(); g.moveTo(a.cx + side * a.hw, a.y); g.lineTo(b.cx + side * b.hw, b.y); g.stroke(); }
-        g.globalAlpha = 1;
-      };
       var fogA = function (q) { return 1 - smooth(12, 30, q.d); };
-      line(-1, '#7FA4FF', function (q) { return Math.max(1, Math.min(6, 0.05 * f / q.d)); }, function (q) { return 0.25 * fogA(q); });
-      line(1, '#7FA4FF', function (q) { return Math.max(1, Math.min(6, 0.05 * f / q.d)); }, function (q) { return 0.25 * fogA(q); });
-      line(-1, '#1652F0', function (q) { return Math.max(0.8, Math.min(2.2, 0.012 * f / q.d)); }, fogA);
-      line(1, '#1652F0', function (q) { return Math.max(0.8, Math.min(2.2, 0.012 * f / q.d)); }, fogA);
-      g.lineCap = 'round';
-      for (var k = 1; k < rows.length; k++) {
-        var a2 = rows[k - 1], b2 = rows[k], done = b2.z <= stageZ;
-        if (!done && Math.floor(b2.z * 1.6) % 2) continue;
-        g.globalAlpha = fogA(b2); g.strokeStyle = done ? '#1652F0' : '#A9C2FF'; g.lineWidth = Math.max(0.8, Math.min(5, 0.022 * f / b2.d));
-        g.beginPath(); g.moveTo(a2.cx, a2.y); g.lineTo(b2.cx, b2.y); g.stroke();
+      // soft edge glow
+      [-1, 1].forEach(function (side) {
+        for (var i = 1; i < rows.length; i++) { var a = rows[i - 1], b = rows[i]; g.globalAlpha = 0.12 * fogA(b); g.strokeStyle = '#7FA4FF'; g.lineWidth = Math.max(1, Math.min(10, 0.07 * f / b.d)); g.beginPath(); g.moveTo(a.cx + side * a.hw, a.y); g.lineTo(b.cx + side * b.hw, b.y); g.stroke(); }
+      });
+      // dotted edges and centre, placed on world-fixed spacing so they glide with the camera
+      var dotAt = function (z, xo, col, size, alpha) {
+        var d = z - camZ; if (d < 1.12 || d > 30) return;
+        var sx = vpX + (X(z) + xo - camX) * f / d, sy = hy + camH * f / d; if (sy > H + 8) return;
+        var r = Math.max(0.7, Math.min(size * 190, size * f / d));
+        g.globalAlpha = alpha * (1 - smooth(12, 30, d)); g.drawImage(col, sx - r, sy - r, r * 2, r * 2);
+      };
+      var ez0 = Math.ceil((camZ + 1.1) / 0.09) * 0.09;
+      for (var ez = ez0; ez < camZ + 30; ez += (ez - camZ > 10 ? 0.27 : 0.09)) {
+        dotAt(ez, -LANE, SP[1], 0.014, 1); dotAt(ez, LANE, SP[1], 0.014, 1);
+      }
+      var cz0 = Math.ceil((camZ + 1.1) / 0.18) * 0.18;
+      for (var cz = cz0; cz < camZ + 30; cz += 0.18) {
+        var past = cz <= stageZ;
+        dotAt(cz, 0, SP[past ? 0 : 1], past ? 0.016 : 0.012, past ? 0.85 : 0.7);
       }
       g.globalAlpha = 1;
     }

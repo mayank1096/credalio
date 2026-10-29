@@ -2,16 +2,6 @@
   "v": 3,
   "attachments": {},
   "boards": {
-    "Engine-Field.dc.html": {
-      "expand": "fill",
-      "h": 820,
-      "is_interactive": true,
-      "page": "main",
-      "title": "Become Engine A2 · Dot-field road",
-      "w": 1440,
-      "x": 0,
-      "y": 6020
-    },
     "Hero-B-Mobile.dc.html": {
       "h": 640,
       "is_interactive": true,
@@ -31,96 +21,22 @@
       "x": 0,
       "y": 1400
     },
-    "Hero-C-Mobile.dc.html": {
-      "h": 5609,
-      "is_interactive": true,
-      "page": "main",
-      "title": "LND-001 C · Mobile",
-      "w": 390,
-      "x": 1520,
-      "y": 2640
-    },
-    "Hero-C.dc.html": {
-      "expand": "fill",
+    "Landing.dc.html": {
+      "x": 0,
+      "y": 2640,
+      "w": 1440,
       "h": 4905,
-      "is_interactive": true,
-      "page": "main",
-      "title": "LND-001 C · Full landing so far (sections 1–5) · Desktop",
-      "w": 1440,
-      "x": 0,
-      "y": 2640
-    },
-    "Moment.dc.html": {
-      "h": 150,
-      "page": "main",
-      "title": "Become Engine · product moment card (shared)",
-      "w": 280,
-      "x": 4560,
-      "y": 4900
-    },
-    "Engine-Field-Mobile.dc.html": {
-      "x": 1520,
-      "y": 6020,
-      "w": 390,
-      "h": 760,
-      "title": "Become Engine A2 · Mobile",
-      "page": "main",
-      "is_interactive": true
-    },
-    "Grow.dc.html": {
-      "x": 0,
-      "y": 7200,
-      "w": 1440,
-      "h": 1060,
-      "title": "Section 3 · Choose how you want to grow · Desktop",
+      "title": "Landing page · Desktop",
       "page": "main",
       "expand": "fill",
       "is_interactive": true
     },
-    "Grow-Mobile.dc.html": {
+    "Landing-Mobile.dc.html": {
       "x": 1520,
-      "y": 7200,
+      "y": 2640,
       "w": 390,
-      "h": 1060,
-      "title": "Section 3 · Mobile",
-      "page": "main",
-      "is_interactive": true
-    },
-    "Coach.dc.html": {
-      "x": 0,
-      "y": 8600,
-      "w": 1440,
-      "h": 960,
-      "title": "Section 4 · AI Coach, questions and answers · Desktop",
-      "page": "main",
-      "expand": "fill",
-      "is_interactive": true
-    },
-    "Coach-Mobile.dc.html": {
-      "x": 1520,
-      "y": 8600,
-      "w": 390,
-      "h": 1104,
-      "title": "Section 4 · Mobile",
-      "page": "main",
-      "is_interactive": true
-    },
-    "Validated.dc.html": {
-      "x": 0,
-      "y": 10200,
-      "w": 1440,
-      "h": 1040,
-      "title": "Section 5 · Trusted learning · Desktop",
-      "page": "main",
-      "expand": "fill",
-      "is_interactive": true
-    },
-    "Validated-Mobile.dc.html": {
-      "x": 1520,
-      "y": 10200,
-      "w": 390,
-      "h": 1744,
-      "title": "Section 5 · Mobile",
+      "h": 5643,
+      "title": "Landing page · Mobile",
       "page": "main",
       "is_interactive": true
     }
@@ -136,8 +52,7 @@
   "noteOrder": [
     "new-hero",
     "row-hero-b",
-    "row-hero-c",
-    "row-engine-a2"
+    "row-hero-c"
   ],
   "notes": {
     "new-hero": {
@@ -147,15 +62,6 @@
       "w": 260,
       "x": 1990,
       "y": 0
-    },
-    "row-engine-a2": {
-      "kind": "title1",
-      "maxW": 1910,
-      "page": "main",
-      "text": "Become Engine A2 · Dot-field road",
-      "w": 240,
-      "x": 0,
-      "y": 5720
     },
     "row-hero-b": {
       "kind": "title1",
@@ -170,50 +76,17 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main",
-      "text": "Landing page · concept C (hero + section 2)",
+      "text": "Landing page · sections 1–5 (hero, Become Engine, grow, AI Coach, trusted learning)",
       "w": 240,
       "x": 0,
       "y": 2340
-    },
-    "row-grow": {
-      "x": 0,
-      "y": 6900,
-      "text": "Landing page · section 3 · Choose how you want to grow",
-      "kind": "title1",
-      "maxW": 1910,
-      "page": "main"
-    },
-    "row-coach": {
-      "x": 0,
-      "y": 8300,
-      "text": "Landing page · section 4 · AI woven into every step",
-      "kind": "title1",
-      "maxW": 1910,
-      "page": "main"
-    },
-    "row-trust": {
-      "x": 0,
-      "y": 9900,
-      "text": "Landing page · section 5 · Trusted learning",
-      "kind": "title1",
-      "maxW": 1910,
-      "page": "main"
     }
   },
   "order": [
     "Hero-B.dc.html",
     "Hero-B-Mobile.dc.html",
-    "Hero-C.dc.html",
-    "Hero-C-Mobile.dc.html",
-    "Moment.dc.html",
-    "Engine-Field.dc.html",
-    "Engine-Field-Mobile.dc.html",
-    "Grow.dc.html",
-    "Grow-Mobile.dc.html",
-    "Coach.dc.html",
-    "Coach-Mobile.dc.html",
-    "Validated.dc.html",
-    "Validated-Mobile.dc.html"
+    "Landing.dc.html",
+    "Landing-Mobile.dc.html"
   ],
   "pages": [
     {

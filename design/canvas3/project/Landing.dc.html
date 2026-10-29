@@ -1,0 +1,1308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Credalio · Landing page</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#1652F0}a:hover{color:#0E3BB8}
+.lh-hero{background:radial-gradient(60% 55% at 12% 0%,rgba(22,82,240,.22) 0%,rgba(22,82,240,0) 70%),radial-gradient(55% 50% at 90% 4%,rgba(22,82,240,.18) 0%,rgba(22,82,240,0) 70%),linear-gradient(180deg,#DCE7FF 0%,#EDF2FF 34%,#F7F9FD 62%,#FFFFFF 86%)}
+.lh-word{display:block;height:24px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}
+.lh-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
+.lh-link{white-space:nowrap;transition:color .2s ease,background .2s ease}
+.lh-link:hover{color:#0B1433 !important;background:#F5F8FF}
+.lh-cta{transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.lh-cta:hover{background:#0E3BB8 !important;color:#FFFFFF;transform:translateY(-1px)}
+.lh-cta:active{transform:translateY(0) scale(.98)}
+.lh-arrow{transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.lh-cta:hover .lh-arrow{transform:translateX(3px)}
+.lh-search{transition:border-color .2s ease,box-shadow .2s ease}
+.lh-search:focus-within{border-color:#1652F0 !important;box-shadow:0 0 0 4px rgba(22,82,240,.14),0 24px 60px -24px rgba(22,82,240,.45) !important}
+.lh-input::placeholder{color:#8A93AD}
+.lh-cta:focus-visible,.lh-link:focus-visible,.lh-menu:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.lh-stage{position:absolute;z-index:2;left:50%;--h:min(66.667cqw,calc((100cqh - 416px) * 2.2026));height:var(--h);bottom:calc(48px - var(--h) * .151);aspect-ratio:3/2;transform:translateX(-50%);pointer-events:none}
+@media (min-width: 761px){.lh-hero{container-type:size}}
+.lh-orbit{position:absolute;inset:0;perspective:2200px;perspective-origin:50% 45%}
+.lh-orbit-back{z-index:1;opacity:.75}
+.lh-orbit-front{z-index:3}
+.lh-ring{position:absolute;left:50%;top:45%;width:0;height:0;transform-style:preserve-3d;transform:rotateX(-6deg) rotateY(0deg);animation:lhSpin 48s linear infinite}
+@keyframes lhSpin{from{transform:rotateX(-6deg) rotateY(0deg)}to{transform:rotateX(-6deg) rotateY(-360deg)}}
+.lh-stage:has(.lh-sl:hover) .lh-ring{animation-play-state:paused}
+.lh-sl{position:absolute;left:0;top:0;transform-origin:0 0;transform:var(--td);width:var(--wd);height:52px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:none;padding:0;margin:0;box-shadow:inset 0 1px 0 var(--bc),inset 0 -1px 0 var(--bc),0 14px 24px -18px rgba(11,20,51,.45);font-family:'Google Sans',system-ui,sans-serif;pointer-events:auto}
+.lh-sl-l{border-radius:16px 0 0 16px;box-shadow:inset 1px 0 0 var(--bc),inset 0 1px 0 var(--bc),inset 0 -1px 0 var(--bc),0 14px 24px -18px rgba(11,20,51,.45)}
+.lh-sl-r{border-radius:0 16px 16px 0;box-shadow:inset -1px 0 0 var(--bc),inset 0 1px 0 var(--bc),inset 0 -1px 0 var(--bc),0 14px 24px -18px rgba(11,20,51,.45)}
+.lh-orbit-front .lh-sl{cursor:pointer}
+.lh-orbit-back .lh-sl{pointer-events:none}
+.lh-sl:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:-3px}
+.lh-card-in{width:var(--cd);margin-left:var(--od);height:100%;box-sizing:border-box;padding:0 16px 0 8px;display:flex;align-items:center;gap:10px;text-align:left}
+.lh-card-vis{width:36px;height:36px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.lh-card-t{white-space:nowrap}
+.lh-figure{position:absolute;inset:0;z-index:2;width:100%;height:100%;display:block;user-select:none;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%)}
+.lh-signals{position:absolute;inset:0;z-index:2;width:100%;height:100%;overflow:visible}
+.lh-sig{fill:none;stroke:#FFFFFF;stroke-width:7;stroke-linecap:round;stroke-dasharray:.08 1.2;stroke-dashoffset:-.45;animation:lhSig 3.2s cubic-bezier(.45,0,.3,1) -1.4s infinite}
+.lh-sig-2{animation-delay:-1.15s}.lh-sig-3{animation-delay:-.9s}.lh-sig-4{animation-delay:-.65s}
+@keyframes lhSig{0%{stroke-dashoffset:.08;opacity:0}8%{opacity:1}80%{opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
+.lh-core{transform-box:fill-box;transform-origin:center;transform:scale(1.8);opacity:.45;animation:lhCore 3.2s ease-out -1.4s infinite}
+@keyframes lhCore{0%{transform:scale(.6);opacity:.9}100%{transform:scale(3.4);opacity:0}}
+.lh-mark-g{transform-box:fill-box;transform-origin:center;animation:lhMark 3.2s ease-in-out -1.4s infinite}
+@keyframes lhMark{0%,100%{transform:scale(1)}10%{transform:scale(1.14)}30%{transform:scale(1)}}
+.lh-eng{position:relative;z-index:3;margin-top:16px;border-radius:28px;overflow:clip;background:#FFFFFF;box-shadow:0 -18px 40px -30px rgba(11,20,51,.2)}
+@supports (animation-timeline: scroll()){
+.lh-content{animation:lhOut linear both;animation-timeline:scroll(root);animation-range:0 45vh}
+.lh-stage{animation:lhSink linear both;animation-timeline:scroll(root);animation-range:0 90vh}
+.lh-hero{animation:lhDim linear both;animation-timeline:scroll(root);animation-range:20vh 100vh}
+@keyframes lhOut{to{transform:translateY(-36px) scale(.97);opacity:0}}
+@keyframes lhSink{to{transform:translateX(-50%) translateY(90px) scale(.92)}}
+@media (max-width: 760px){.lh-stage,.lh-hero{animation:none !important}}
+@keyframes lhDim{to{filter:saturate(.8) brightness(.96)}}
+}
+@keyframes lhRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.lh-r2{animation:lhRise .7s cubic-bezier(.2,.7,.2,1) .08s both}
+.lh-r3{animation:lhRise .7s cubic-bezier(.2,.7,.2,1) .16s both}
+.lh-r4{animation:lhRise .7s cubic-bezier(.2,.7,.2,1) .24s both}
+@media (prefers-reduced-motion: reduce){.lh-r2,.lh-r3,.lh-r4,.lh-ring,.lh-sig,.lh-core,.lh-mark-g,.lh-content,.lh-stage,.lh-hero{animation:none}}
+@media (min-width: 761px) and (max-height: 780px){.lh-content{margin-top:30px !important}.lh-h1{font-size:52px !important}.lh-search{margin-top:20px !important}}
+@media (max-width: 1280px){.lh-links{display:none !important}.lh-menu{display:flex !important}}
+@media (max-width: 760px){
+.lh-root{padding:8px !important}
+.lh-hero{border-radius:22px !important;min-height:0 !important;height:auto !important}
+.lh-nav{margin:8px 16px 0 !important;width:calc(100% - 32px) !important;height:56px !important}
+.lh-word{display:none}
+.lh-login{display:none !important}
+.lh-join{height:40px !important;padding:0 16px !important;font-size:14px !important}
+.lh-content{margin-top:40px !important;padding:0 16px !important}
+.lh-h1{font-size:40px !important;letter-spacing:-1.2px !important;margin-top:18px !important;white-space:normal !important}
+.lh-sub{font-size:15px !important;margin-top:14px !important}
+.lh-search{flex-direction:column !important;align-items:stretch !important;height:auto !important;border-radius:24px !important;padding:6px !important;margin-top:24px !important}
+.lh-field{padding:0 12px !important}
+.lh-input{height:52px !important;font-size:16px !important}
+.lh-cta-main{justify-content:center !important;height:52px !important}
+.lh-hero{position:relative !important;top:auto !important}
+.lh-stage{position:relative !important;left:auto !important;bottom:auto !important;transform:none !important;height:auto !important;width:180%;flex-shrink:0;margin:calc(50px - 47.4%) 0 calc(36px - 18.1%)}
+.lh-figure{-webkit-mask-image:none;mask-image:none}
+.lh-sl{transform:var(--tm) !important;width:var(--wm) !important;height:36px !important}
+.lh-sl-l{border-radius:11px 0 0 11px !important}
+.lh-sl-r{border-radius:0 11px 11px 0 !important}
+.lh-card-in{width:var(--cm) !important;margin-left:var(--om) !important;padding:0 10px 0 5px !important;gap:6px !important}
+.lh-card-vis{width:26px !important;height:26px !important;border-radius:8px !important}
+.lh-card-vis svg{width:14px;height:14px}
+.lh-card-t{font-size:11px !important}
+.lh-alt{display:none !important}
+}
+
+
+.fd-card{position:absolute;left:0;top:0;transform-origin:50% 100%;will-change:transform,opacity;transition:opacity .5s ease}
+.fd-btn{transition:border-color .2s ease}
+@media (max-width: 760px){
+.fd-ui{padding:32px 20px 24px !important}
+.fd-h2{font-size:28px !important;letter-spacing:-.8px !important}
+.fd-h3{font-size:20px !important}
+.fd-panel{max-width:none !important;gap:12px !important;margin:0 -20px -24px;padding:48px 20px 24px;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,#FFFFFF 38%)}
+.fd-panel p{font-size:14px !important}
+}
+.fd-btn:hover{border-color:#1652F0 !important}
+.fd-btn:focus-visible,.fd-dot:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+
+
+.gc-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.gc-card{position:relative;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:#FFFFFF;border:1px solid #E6EAF3;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 30px 60px -50px rgba(11,20,51,.4);text-decoration:none;color:#0B1433;transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .55s cubic-bezier(.2,.7,.2,1),border-color .4s ease}
+.gc-card:hover{transform:translateY(-6px);border-color:#D6DDEE;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 44px 80px -46px rgba(22,82,240,.5)}
+.gc-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:4px}
+.gc-vis{position:relative;height:270px;flex-shrink:0;overflow:hidden;background:radial-gradient(120% 100% at 50% 0%,#EAF0FF 0%,#F5F8FF 50%,#FFFFFF 100%)}
+.gc-vis::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#C9D7FA 1.1px,transparent 1.4px);background-size:16px 16px;-webkit-mask-image:radial-gradient(75% 80% at 50% 30%,#000 25%,transparent 80%);mask-image:radial-gradient(75% 80% at 50% 30%,#000 25%,transparent 80%);opacity:.75}
+.gc-body{flex:1;display:flex;flex-direction:column;gap:10px;padding:22px 22px 20px}
+.gc-scene{transform:scale(.86);transform-origin:50% 50%}
+.gc-label{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#5B6582}
+.gc-ico{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;background:#EAF0FF}
+.gc-meta{margin-top:auto;padding-top:18px;border-top:1px solid #EEF1F7;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.gc-facts{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#5B6582;white-space:nowrap}
+.gc-sep{width:4px;height:4px;border-radius:9px;background:#CBD3E6}
+.gc-feat .gc-facts{color:rgba(255,255,255,.7)}
+.gc-feat .gc-sep{background:rgba(255,255,255,.3)}
+.gc-go{width:44px;height:44px;flex-shrink:0;border-radius:999px;border:1.5px solid #D6DDEE;display:flex;align-items:center;justify-content:center;color:#0B1433;transition:background .3s ease,border-color .3s ease,color .3s ease}
+.gc-card:hover .gc-go{background:#1652F0;border-color:#1652F0;color:#FFFFFF}
+.gc-go svg{transition:transform .35s cubic-bezier(.3,1.4,.5,1)}
+.gc-card:hover .gc-go svg{transform:translateX(2px) rotate(-45deg)}
+.gc-float{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.gc-card:hover .gc-f1{transform:translate(-6px,-8px)}
+.gc-card:hover .gc-f2{transform:translate(8px,-4px) rotate(2deg)}
+.gc-card:hover .gc-f3{transform:translateY(-10px)}
+.gc-feat{background:#0B1433;border-color:#0B1433;color:#FFFFFF;box-shadow:0 40px 80px -48px rgba(11,20,51,.8)}
+.gc-feat:hover{border-color:#0B1433;box-shadow:0 50px 90px -44px rgba(22,82,240,.7)}
+.gc-feat .gc-vis{background:radial-gradient(110% 100% at 50% 0%,#1C3AA8 0%,#122467 45%,#0B1433 100%)}
+.gc-feat .gc-vis::before{background-image:radial-gradient(rgba(127,164,255,.35) 1.1px,transparent 1.4px)}
+.gc-feat .gc-label{color:rgba(255,255,255,.65)}
+.gc-feat .gc-ico{background:rgba(255,255,255,.1)}
+.gc-feat .gc-meta{border-top-color:rgba(255,255,255,.1)}
+.gc-feat .gc-go{border-color:rgba(255,255,255,.25);color:#FFFFFF}
+.gc-fill{animation:gcFill 3.6s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes gcFill{0%{width:20%}60%,100%{width:66%}}
+.gc-pop{animation:gcPop 3.6s cubic-bezier(.3,1.4,.5,1) infinite}
+@keyframes gcPop{0%,55%{transform:scale(0);opacity:0}65%,90%{transform:scale(1);opacity:1}100%{transform:scale(.9);opacity:0}}
+.gc-sheen{animation:gcSheen 4.4s ease-in-out infinite}
+@keyframes gcSheen{0%,55%{transform:translateX(-180%) rotate(20deg)}85%,100%{transform:translateX(220%) rotate(20deg)}}
+.gc-spin{animation:gcSpin 20s linear infinite;transform-origin:50% 50%}
+@keyframes gcSpin{to{transform:rotate(360deg)}}
+.gc-comet{stroke-dasharray:.1 1.2;stroke-dashoffset:.1;animation:gcComet 3.4s cubic-bezier(.45,0,.3,1) infinite}
+@keyframes gcComet{0%{stroke-dashoffset:.1;opacity:0}10%{opacity:1}85%{opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
+.gc-beat{animation:gcBeat 3.4s ease-in-out infinite}
+.gc-live{animation:gcLive 1.8s ease-out infinite}
+@keyframes gcLive{0%{box-shadow:0 0 0 0 rgba(22,82,240,.5)}100%{box-shadow:0 0 0 9px rgba(22,82,240,0)}}
+.gc-day{animation:gcDay 3.2s ease-in-out infinite;transform-origin:bottom}
+@keyframes gcDay{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
+@keyframes gcBeat{0%,70%,100%{box-shadow:0 0 0 6px rgba(127,164,255,.18)}80%{box-shadow:0 0 0 14px rgba(127,164,255,.28),0 0 30px rgba(76,125,255,.6)}}
+.gc-coach{transition:border-color .2s ease,background .2s ease}
+.gc-coach:hover{border-color:#1652F0 !important;background:#F5F8FF !important}
+.gc-coach:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+@supports (animation-timeline: view()){
+.gc-in{animation:gcIn linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+.gc-in-2{animation-range:entry 5% cover 35%}.gc-in-3{animation-range:entry 10% cover 40%}.gc-in-4{animation-range:entry 15% cover 45%}
+@keyframes gcIn{from{opacity:0;transform:translateY(56px)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion: reduce){.gc-fill,.gc-pop,.gc-sheen,.gc-spin,.gc-comet,.gc-beat,.gc-live,.gc-day,.gc-in{animation:none !important}.gc-pop{opacity:1;transform:none}}
+@media (max-width: 1080px){.gc-head{grid-template-columns:minmax(0,1fr) !important;gap:20px !important}.gc-row{grid-template-columns:repeat(4,minmax(300px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -48px;padding:4px 48px 24px;scrollbar-width:none}.gc-row::-webkit-scrollbar{display:none}.gc-card{scroll-snap-align:start}}
+@media (max-width: 760px){
+.gc-wrap{padding:80px 20px 72px !important;gap:40px !important}
+.gc-head p{font-size:16px !important}
+.gc-h2{font-size:32px !important;letter-spacing:-.9px !important}
+.gc-row{grid-template-columns:repeat(4,86%);gap:14px;margin:0 -20px;padding:4px 20px 20px;scroll-padding:0 20px}
+.gc-vis{height:240px}
+.gc-scene{transform:scale(.9)}
+.gc-body{padding:22px 22px 20px}
+.gc-title{font-size:23px !important}
+}
+
+
+.ac-tab{position:relative;flex:1;min-width:0;height:auto;padding:0 0 14px;background:none;border:none;text-align:left;cursor:pointer;font-family:'Google Sans',system-ui,sans-serif;font-size:13px;font-weight:500;color:#8A93AD;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .3s ease}
+.ac-tab:hover{color:#3A4566}
+.ac-tab:focus-visible,.ac-btn:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px;border-radius:6px}
+.ac-seg{position:absolute;left:0;right:0;bottom:0;height:3px;border-radius:9px;background:#E6EAF3;overflow:hidden}
+.ac-seg span{display:block;height:100%;width:0;background:#1652F0;border-radius:9px}
+.ac-stage{position:relative;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#F5F8FF 0%,#FFFFFF 70%);border:1px solid #E6EAF3}
+.ac-stage::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#DCE5FB 1.1px,transparent 1.4px);background-size:18px 18px;-webkit-mask-image:radial-gradient(70% 80% at 30% 30%,#000 20%,transparent 75%);mask-image:radial-gradient(70% 80% at 30% 30%,#000 20%,transparent 75%);pointer-events:none}
+.ac-bubble{position:relative;border-radius:16px;font-size:16px;line-height:1.55}
+.ac-q{background:#0B1433;color:#FFFFFF;border-bottom-left-radius:4px;padding:16px 18px;box-shadow:0 20px 40px -26px rgba(11,20,51,.6)}
+.ac-a{background:#FFFFFF;color:#0B1433;border:1px solid #E6EAF3;border-top-left-radius:4px;padding:16px 18px;box-shadow:0 20px 40px -30px rgba(11,20,51,.35)}
+.ac-caret{display:inline-block;width:2px;height:1.05em;margin-left:2px;vertical-align:-2px;background:currentColor;animation:acBlink .9s steps(1) infinite}
+@keyframes acBlink{50%{opacity:0}}
+.ac-orb{position:relative;width:44px;height:44px;flex-shrink:0;border-radius:999px;background:radial-gradient(circle at 34% 28%,#DCE7FF 0%,#7FA4FF 24%,#1652F0 62%,#0B2A8F 100%);box-shadow:0 10px 24px -10px rgba(22,82,240,.7)}
+.ac-orb-ring{position:absolute;inset:-6px;border-radius:999px;background:conic-gradient(from 0deg,rgba(22,82,240,0),#4C7DFF,rgba(22,82,240,0) 60%);-webkit-mask:radial-gradient(closest-side,transparent 78%,#000 80%);mask:radial-gradient(closest-side,transparent 78%,#000 80%);animation:acSpin 1s linear infinite}
+@keyframes acSpin{to{transform:rotate(360deg)}}
+.ac-shimmer{background:linear-gradient(90deg,#8A93AD 0%,#8A93AD 35%,#1652F0 50%,#8A93AD 65%,#8A93AD 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:acShim 1.6s linear infinite}
+@keyframes acShim{from{background-position:100% 0}to{background-position:-120% 0}}
+.ac-think-b{border:1.5px solid transparent;background:linear-gradient(#FFFFFF,#FFFFFF) padding-box,linear-gradient(120deg,#C9D7FA,#1652F0,#C9D7FA) border-box;background-size:100% 100%,200% 100%;animation:acBorder 1.6s linear infinite;box-shadow:0 0 0 6px rgba(22,82,240,.06),0 20px 40px -28px rgba(22,82,240,.6)}
+@keyframes acBorder{to{background-position:0 0,-200% 0}}
+.ac-rise{transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.ac-art{background:#FFFFFF;border:1px solid #E6EAF3;border-radius:16px;box-shadow:0 30px 60px -36px rgba(11,20,51,.45);padding:22px;display:flex;flex-direction:column;gap:14px}
+.ac-k{font-size:12px;font-weight:500;color:#8A93AD}
+.ac-btn{align-self:flex-start;height:42px;padding:0 18px;border-radius:999px;border:none;background:#1652F0;color:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;cursor:pointer;white-space:nowrap}
+.ac-ghost{background:#FFFFFF;color:#0B1433;border:1.5px solid #D6DDEE}
+.ac-mini{background:url(/_blob/29a268dcb297a1c04f59e9ee20e60886) 35% 4% / 330% no-repeat}
+.ac-learner{position:absolute;left:12px;bottom:0;width:340px;pointer-events:none;user-select:none;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+@media (prefers-reduced-motion: reduce){.ac-caret,.ac-orb-ring,.ac-shimmer,.ac-think-b{animation:none}.ac-rise{transition:none}}
+@media (max-width: 1080px){.ac-grid{grid-template-columns:200px minmax(0,1fr) !important}.ac-artcol{grid-column:1 / -1}.ac-learner{width:220px}}
+@media (max-width: 760px){
+.ac-wrap{padding:80px 20px 88px !important;gap:36px !important}
+.ac-head{grid-template-columns:minmax(0,1fr) !important;gap:16px !important}
+.ac-h2{font-size:32px !important;letter-spacing:-.9px !important}
+.ac-sub{font-size:16px !important;margin:0 !important}
+.ac-tabs{overflow-x:auto;gap:18px !important;scrollbar-width:none;margin:0 -20px;padding:0 20px}
+.ac-tabs::-webkit-scrollbar{display:none}
+.ac-tab{flex:0 0 auto;font-size:14px;padding-bottom:12px}
+.ac-tabwrap{gap:28px !important}
+.ac-stage{background:none;border:none;border-radius:0;overflow:visible}
+.ac-stage::before{display:none}
+.ac-grid{grid-template-columns:minmax(0,1fr) !important;padding:0 !important;gap:28px !important;min-height:612px !important;align-content:start}
+.ac-girlcol{display:none !important}
+.ac-chat{min-height:244px;justify-content:flex-start !important;gap:20px !important}
+.ac-qrow{flex-direction:row-reverse;align-items:flex-end !important}
+.ac-q{max-width:84%;border-bottom-left-radius:16px;border-bottom-right-radius:4px}
+.ac-mini{display:block !important;width:36px !important;height:36px !important}
+.ac-orb{width:36px;height:36px}
+.ac-arow{gap:10px !important}
+.ac-bubble{font-size:15px;padding:14px 16px}
+.ac-artcol{justify-content:flex-start !important}
+.ac-art{padding:20px;gap:16px}
+.ac-btn{height:40px;padding:0 16px;font-size:13px}
+.ac-plan{grid-template-columns:38px 74px minmax(0,1fr) !important;gap:8px !important}
+.ac-hand{padding:10px !important;gap:6px !important;font-size:12.5px !important}
+}
+
+
+.tv-grid{display:grid;grid-template-columns:316px 520px minmax(0,1fr);gap:48px;align-items:center}
+.tv-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
+.tv-side{display:flex;flex-direction:column;gap:10px}
+.tv-legend{display:flex;flex-direction:column;gap:4px}
+.tv-lg{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;align-items:center;padding:12px 14px 12px 12px;border-radius:14px;border:1.5px solid transparent;transition:background .5s ease,border-color .5s ease}
+.tv-lg-on{background:#F5F8FF;border-color:#E6EAF3}
+.tv-lg-t{font-size:15px;font-weight:600;color:#0B1433}
+.tv-lg-d{font-size:13px;line-height:1.5;color:#5B6582}
+.tv-link{align-self:flex-start;margin:12px 0 0 12px;height:46px;padding:0 8px 0 20px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:12px;text-decoration:none;transition:border-color .2s ease,background .2s ease}
+.tv-link:hover{border-color:#1652F0;background:#F5F8FF}
+.tv-link:focus-visible,.tv-note:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.tv-stagebg{position:absolute;inset:-60px -40px;background-image:radial-gradient(#DCE5FB 1.1px,transparent 1.4px);background-size:18px 18px;-webkit-mask-image:radial-gradient(50% 50% at 50% 50%,#000 30%,transparent 80%);mask-image:radial-gradient(50% 50% at 50% 50%,#000 30%,transparent 80%);pointer-events:none}
+.tv-card{position:relative;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 40px 80px -48px rgba(11,20,51,.45);transition:box-shadow .9s ease,border-color .9s ease}
+.tv-card-ok{border-color:#CFE8DC;box-shadow:0 0 0 8px rgba(15,107,69,.06),0 40px 90px -40px rgba(15,107,69,.45)}
+.tv-thumb{position:relative;height:132px;border-radius:18px 18px 0 0;overflow:hidden;background:linear-gradient(135deg,#1652F0 0%,#0E3BB8 55%,#0B1433 100%)}
+.tv-thumb::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.16) 1px,transparent 1.3px);background-size:14px 14px}
+.tv-reg{position:relative;padding:16px 24px}
+.tv-lbl{font-size:12px;font-weight:500;color:#8A93AD}
+.tv-row{display:grid;grid-template-columns:26px minmax(0,1fr) auto;align-items:center;gap:12px;height:40px;font-size:14px;color:#0B1433;border-top:1px solid #EEF1F7}
+.tv-row:first-of-type{border-top:none}
+.tv-n{width:26px;height:26px;border-radius:999px;background:#F5F8FF;color:#1652F0;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.tv-chip{height:30px;padding:0 12px;border-radius:999px;background:#F5F8FF;border:1px solid #E6EAF3;display:inline-flex;align-items:center;font-size:13px;font-weight:500;color:#3A4566;white-space:nowrap}
+.tv-hi{position:absolute;left:10px;right:10px;top:0;height:0;border-radius:14px;border:2px solid #1652F0;background:rgba(22,82,240,.04);box-shadow:0 0 0 6px rgba(22,82,240,.08);pointer-events:none;opacity:0;overflow:hidden;transition:top .7s cubic-bezier(.2,.7,.2,1),height .7s cubic-bezier(.2,.7,.2,1),opacity .4s ease}
+.tv-hi::after{content:"";position:absolute;top:0;bottom:0;width:40%;background:linear-gradient(90deg,rgba(22,82,240,0),rgba(22,82,240,.12),rgba(22,82,240,0));animation:tvScan 1.6s ease-in-out infinite}
+@keyframes tvScan{from{transform:translateX(-110%)}to{transform:translateX(260%)}}
+.tv-status{position:absolute;left:88px;top:14px;z-index:2;height:30px;padding:0 12px 0 10px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;transition:background .5s ease,color .5s ease}
+.tv-spin{width:12px;height:12px;border-radius:999px;border:2px solid currentColor;border-right-color:transparent;animation:tvSpin .9s linear infinite;box-sizing:border-box}
+@keyframes tvSpin{to{transform:rotate(360deg)}}
+.tv-seal{position:absolute;top:-34px;right:-34px;z-index:3;width:112px;height:112px;animation:tvStamp .7s cubic-bezier(.3,1.5,.5,1) both}
+@keyframes tvStamp{0%{transform:scale(1.9) rotate(-18deg);opacity:0}60%{opacity:1}100%{transform:scale(1) rotate(-8deg);opacity:1}}
+.tv-burst{position:absolute;inset:0;border-radius:999px;border:2px solid #1652F0;animation:tvBurst .9s ease-out .25s both}
+@keyframes tvBurst{from{transform:scale(.7);opacity:.7}to{transform:scale(1.7);opacity:0}}
+.tv-notes{position:relative;display:flex;flex-direction:column;gap:16px}
+.tv-note{position:relative;display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;text-align:left;font-family:'Google Sans',system-ui,sans-serif;color:#0B1433;cursor:pointer;transition:border-color .5s ease,box-shadow .5s ease,opacity .5s ease}
+.tv-note-wait{opacity:.55}
+.tv-note-run{border-color:#1652F0;box-shadow:0 0 0 5px rgba(22,82,240,.08),0 26px 50px -34px rgba(22,82,240,.6)}
+.tv-note-t{font-size:16px;font-weight:600;letter-spacing:-.2px}
+.tv-note-d{font-size:13px;line-height:1.5;color:#5B6582}
+.tv-who{display:flex;align-items:center;gap:10px;font-size:13px;color:#3A4566}
+.tv-av{width:30px;height:30px;border-radius:999px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}
+.tv-res{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500}
+.tv-link-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.tv-wire{fill:none;stroke:#CBD3E6;stroke-width:1.5;stroke-dasharray:3 5;transition:stroke .5s ease}
+.tv-wire-on{stroke:#1652F0;stroke-dasharray:none;stroke-width:2}
+.tv-wire-ok{stroke:#9FD3B8;stroke-dasharray:none}
+.tv-end{transition:fill .5s ease}
+@media (prefers-reduced-motion: reduce){.tv-hi::after,.tv-spin{animation:none}.tv-seal,.tv-burst{animation:none}}
+@media (max-width: 1240px){
+.tv-grid{grid-template-columns:minmax(0,1fr) 340px !important;gap:40px 48px !important}
+.tv-side{grid-column:1 / -1;order:3}
+.tv-legend{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width: 1080px){.tv-head{grid-template-columns:minmax(0,1fr) !important;gap:16px !important}}
+@media (max-width: 860px){
+.tv-wrap{padding:80px 20px 88px !important;gap:32px !important}
+.tv-h2{font-size:32px !important;letter-spacing:-.9px !important}
+.tv-sub{font-size:16px !important;margin:0 !important}
+.tv-grid{grid-template-columns:minmax(0,1fr) !important;gap:28px !important}
+.tv-legend{display:flex}
+.tv-link{margin:6px 0 0}
+.tv-link-svg{display:none}
+.tv-seal{width:84px;height:84px;top:-22px;right:-10px}
+.tv-reg{padding:14px 18px}
+.tv-thumb{height:104px}
+.tv-notes{gap:10px}
+.tv-note{padding:14px 16px;gap:8px}
+.tv-note-d{display:none}
+.tv-lg{padding:10px 12px 10px 10px}
+.tv-side .tv-lbl{padding-left:0 !important}
+.tv-chip:nth-child(3){display:none}
+.tv-lg-d{font-size:12.5px}
+}
+</style>
+</helmet>
+<div class="lh-root" style="box-sizing: border-box; min-height: 100vh; padding: 16px; background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<section class="lh-hero" aria-label="Start your journey" style="position: sticky; top: 16px; z-index: 1; overflow: hidden; border-radius: 28px; height: clamp(720px, calc(100vh - 32px), 860px); display: flex; flex-direction: column; align-items: center">
+
+<header class="lh-nav" style="position: relative; z-index: 5; margin-top: 16px; width: min(1320px, calc(100% - 64px)); height: 64px; box-sizing: border-box; padding: 0; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#" aria-label="Credalio home" style="display: flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0"><span class="lh-mark" aria-hidden="true"></span><span class="lh-word" aria-hidden="true"></span></a>
+<nav class="lh-links" aria-label="Main" style="display: flex; align-items: center; gap: 4px">
+<a class="lh-link" href="#" style="height: 40px; padding: 0 12px; border-radius: 999px; display: flex; align-items: center; font-size: 15px; font-weight: 500; color: #3A4566; text-decoration: none">Explore learning</a>
+<a class="lh-link" href="#" style="height: 40px; padding: 0 12px; border-radius: 999px; display: flex; align-items: center; font-size: 15px; font-weight: 500; color: #3A4566; text-decoration: none">Career paths</a>
+<a class="lh-link" href="#" style="height: 40px; padding: 0 12px; border-radius: 999px; display: flex; align-items: center; font-size: 15px; font-weight: 500; color: #3A4566; text-decoration: none">Certifications</a>
+<a class="lh-link" href="#" style="height: 40px; padding: 0 12px; border-radius: 999px; display: flex; align-items: center; font-size: 15px; font-weight: 500; color: #3A4566; text-decoration: none">Pricing</a>
+<a class="lh-link" href="#" style="height: 40px; padding: 0 12px; border-radius: 999px; display: flex; align-items: center; font-size: 15px; font-weight: 500; color: #3A4566; text-decoration: none">For creators</a>
+<a class="lh-link" href="#" style="height: 40px; padding: 0 12px; border-radius: 999px; display: flex; align-items: center; font-size: 15px; font-weight: 500; color: #3A4566; text-decoration: none">For institutions</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0">
+<a class="lh-link lh-login" href="#" style="height: 44px; padding: 0 14px; border-radius: 999px; display: flex; align-items: center; font-size: 15px; font-weight: 600; color: #0B1433; text-decoration: none">Log in</a>
+<a class="lh-cta lh-join" href="#" style="height: 46px; padding: 0 20px; border-radius: 999px; display: flex; align-items: center; background: #1652F0; color: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none">Create account</a>
+<button class="lh-menu" type="button" aria-label="Open menu" style="display: none; width: 44px; height: 44px; border-radius: 999px; border: none; background: transparent; color: #0B1433; align-items: center; justify-content: center; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+</header>
+
+<div class="lh-content" style="position: relative; z-index: 4; margin-top: 44px; width: 100%; max-width: 1120px; box-sizing: border-box; padding: 0 24px; display: flex; flex-direction: column; align-items: center; text-align: center">
+<h1 class="lh-h1 lh-r2" style="margin: 0; font-size: 60px; line-height: 1.05; font-weight: 600; letter-spacing: -1.8px; white-space: nowrap; color: #0B1433">Who will you <span style="color: #1652F0">become</span> next?</h1>
+
+<p class="lh-sub lh-r3" style="margin: 12px 0 0; max-width: 720px; font-size: 18px; line-height: 1.55; color: #4A5578">Tell us your goal. We’ll build the path and help you prove it.</p>
+
+<form class="lh-search lh-r4" role="search" onSubmit="{{hero.onStart}}" style="margin-top: 24px; width: 100%; max-width: 660px; height: 62px; box-sizing: border-box; padding: 0 8px 0 0; display: flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1.5px solid #D6DDEE; border-radius: 999px; box-shadow: 0 24px 60px -24px rgba(22,82,240,.4)">
+<label class="lh-field" for="lh-goal" style="flex-grow: 1; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 0 0 0 24px; cursor: text">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M15.5 8.5l-2 5-5 2 2-5z"></path></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Who do you want to become?</span>
+<input class="lh-input" id="lh-goal" type="text" autocomplete="off" value="{{hero.goal}}" onChange="{{hero.onGoal}}" placeholder="Describe who you want to become" style="flex-grow: 1; min-width: 0; height: 48px; border: none; outline: none; background: transparent; font-family: 'Google Sans', system-ui, sans-serif; font-size: 17px; color: #0B1433">
+</label>
+<button class="lh-cta lh-cta-main" type="submit" style="height: 48px; padding: 0 6px 0 20px; flex-shrink: 0; border: none; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 12px; cursor: pointer">Start your journey<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg class="lh-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></button>
+</form>
+
+
+</div>
+
+<div class="lh-stage">
+<div class="lh-orbit lh-orbit-back" aria-hidden="true"><div class="lh-ring">
+<sc-for list="{{hero.backSlices}}" as="s" hint-placeholder-count="48">
+<div class="lh-sl {{s.cls}}" style="--td: {{s.td}}; --tm: {{s.tm}}; --wd: {{s.wd}}; --wm: {{s.wm}}; --cd: {{s.cd}}; --cm: {{s.cm}}; --od: {{s.od}}; --om: {{s.om}}; --bc: {{s.bc}}; background: {{s.bg}}"><span class="lh-card-in"><span class="lh-card-vis" style="background: {{s.visBg}}; box-shadow: inset 0 0 0 1px {{s.visLine}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="{{s.icFg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20" style="display: {{s.d0}}"></path><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" style="display: {{s.d1}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{s.d2}}"></path><path d="M3 12h4l2-5 4 10 2-5h6" style="display: {{s.d3}}"></path><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5" style="display: {{s.d4}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{s.d5}}"></path></svg></span><span class="lh-card-t" style="font-size: 14px; font-weight: 600; color: {{s.fg}}">{{s.name}}</span></span></div>
+</sc-for>
+</div></div>
+<img class="lh-figure" src="/_blob/c8358d40470e2f7e32e8a358d911397a" alt="A young woman floats above a glowing point where five paths begin, leading to a lab, an easel, a desk, a rocket and an open doorway">
+<svg class="lh-signals" viewBox="0 0 1536 1024" preserveAspectRatio="none" aria-hidden="true"><defs><filter id="lhGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><g filter="url(#lhGlow)"><path class="lh-sig" pathLength="1" d="M760 888C565 891 440 889 385 877C332 862 310 846 286 831C230 796 172 752 122 726"></path><path class="lh-sig lh-sig-2" pathLength="1" d="M760 888C680 886 605 870 554 849C515 832 470 808 421 791"></path><path class="lh-sig lh-sig-3" pathLength="1" d="M760 888C835 886 895 870 935 857C965 846 990 830 1013 817"></path><path class="lh-sig lh-sig-4" pathLength="1" d="M760 888C950 890 1130 885 1197 868C1240 855 1262 826 1291 806C1335 776 1380 738 1418 712"></path></g><circle class="lh-core" cx="760" cy="888" r="16" fill="none" stroke="#1652F0" stroke-width="3"></circle><circle class="lh-core lh-sig-3" cx="760" cy="888" r="16" fill="none" stroke="#5B86F5" stroke-width="2"></circle><g class="lh-mark-g"><circle cx="760" cy="888" r="30" fill="#FFFFFF" filter="url(#lhGlow)"></circle><circle cx="760" cy="888" r="30" fill="none" stroke="#C9D7FA" stroke-width="2"></circle><image href="/_blob/f81e36d31295a0d0737959589ec1abd4" x="740" y="868" width="40" height="40"></image></g></svg>
+<div class="lh-orbit lh-orbit-front"><div class="lh-ring">
+<sc-for list="{{hero.frontSlices}}" as="s" hint-placeholder-count="48">
+<button class="lh-sl {{s.cls}}" type="button" onClick="{{s.pick}}" tabIndex="{{s.tab}}" aria-hidden="{{s.hide}}" aria-label="I want to become a {{s.name}}" style="--td: {{s.td}}; --tm: {{s.tm}}; --wd: {{s.wd}}; --wm: {{s.wm}}; --cd: {{s.cd}}; --cm: {{s.cm}}; --od: {{s.od}}; --om: {{s.om}}; --bc: {{s.bc}}; background: {{s.bg}}"><span class="lh-card-in"><span class="lh-card-vis" style="background: {{s.visBg}}; box-shadow: inset 0 0 0 1px {{s.visLine}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="{{s.icFg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20" style="display: {{s.d0}}"></path><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" style="display: {{s.d1}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{s.d2}}"></path><path d="M3 12h4l2-5 4 10 2-5h6" style="display: {{s.d3}}"></path><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5" style="display: {{s.d4}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{s.d5}}"></path></svg></span><span class="lh-card-t" style="font-size: 14px; font-weight: 600; color: {{s.fg}}">{{s.name}}</span></span></button>
+</sc-for>
+</div></div>
+</div>
+</section>
+<section class="lh-eng" aria-label="The Become Engine">
+<div ref="{{eng.trackRef}}" style="position: relative; height: 420vh; background: #FFFFFF">
+<section aria-labelledby="fd-title" ref="{{eng.viewRef}}" style="position: sticky; top: 0; height: clamp(640px, 100vh, 900px); overflow: hidden; background: linear-gradient(180deg, #FFFFFF 0%, #F7F9FD 100%); font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<canvas ref="{{eng.canvasRef}}" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block"></canvas>
+<div class="fd-card" ref="{{eng.cardRef}}" aria-hidden="true">
+<div style="width: 280px; box-sizing: border-box; padding: 14px; border-radius: 18px; background: #FFFFFF; border: 1.5px solid #E6EAF3; box-shadow: 0 24px 44px -28px rgba(11,20,51,.45); font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; display: flex; flex-direction: column; gap: 10px; text-align: left">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="font-size: 11px; font-weight: 500; color: #8A93AD">{{eng.mo.label}}</span>
+<span style="display: flex; gap: 3px" aria-hidden="true"><span style="width: 5px; height: 5px; border-radius: 9px; background: #D6DDEE"></span><span style="width: 5px; height: 5px; border-radius: 9px; background: #D6DDEE"></span><span style="width: 5px; height: 5px; border-radius: 9px; background: #1652F0"></span></span>
+</div>
+
+<sc-if value="{{eng.mo.s1}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 600">Who do you want to become?</span>
+<div style="height: 38px; border-radius: 999px; border: 1.5px solid #1652F0; box-shadow: 0 0 0 3px rgba(22,82,240,.12); display: flex; align-items: center; justify-content: space-between; padding: 0 4px 0 12px; font-size: 12px; color: #0B1433">I want to become a data analyst<span style="width: 30px; height: 30px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{eng.mo.s2}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 13px; font-weight: 600">Your skill gaps</span>
+<div style="display: flex; flex-direction: column; gap: 7px; font-size: 11px; font-weight: 500; color: #3A4566">
+<div style="display: grid; grid-template-columns: 62px minmax(0, 1fr); align-items: center; gap: 8px">SQL<span style="height: 7px; border-radius: 9px; background: #EEF1F7; position: relative; overflow: hidden"><span style="position: absolute; left: 0; top: 0; bottom: 0; width: 30%; background: #1652F0; border-radius: 9px"></span></span></div>
+<div style="display: grid; grid-template-columns: 62px minmax(0, 1fr); align-items: center; gap: 8px">Statistics<span style="height: 7px; border-radius: 9px; background: #EEF1F7; position: relative; overflow: hidden"><span style="position: absolute; left: 0; top: 0; bottom: 0; width: 55%; background: #1652F0; border-radius: 9px"></span></span></div>
+<div style="display: grid; grid-template-columns: 62px minmax(0, 1fr); align-items: center; gap: 8px">Python<span style="height: 7px; border-radius: 9px; background: #EEF1F7; position: relative; overflow: hidden"><span style="position: absolute; left: 0; top: 0; bottom: 0; width: 15%; background: #1652F0; border-radius: 9px"></span></span></div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{eng.mo.s3}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; gap: 8px; align-items: flex-start">
+<span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 999px; flex-shrink: 0; background: radial-gradient(circle at 35% 30%, #8FB0FF, #1652F0 70%); box-shadow: 0 0 0 3px #EAF0FF"></span>
+<div style="flex: 1; min-width: 0; padding: 9px 11px; border-radius: 4px 14px 14px 14px; background: #F5F8FF; border: 1.5px solid #E6EAF3; font-size: 12px; line-height: 1.45; color: #0B1433">Here’s your route: foundations first, then real projects. I’ll adjust as you go.</div>
+</div>
+</sc-if>
+
+<sc-if value="{{eng.mo.s4}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; gap: 10px; align-items: center">
+<span aria-hidden="true" style="width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0; background: linear-gradient(150deg, #1652F0, #0B1433); display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg></span>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px">
+<span style="font-size: 13px; font-weight: 600">Joining tables with SQL</span>
+<span style="font-size: 11px; color: #5B6582">Lesson 4 · 12 min</span>
+<span style="height: 6px; border-radius: 9px; background: #EEF1F7; position: relative; overflow: hidden"><span style="position: absolute; left: 0; top: 0; bottom: 0; width: 62%; background: #1652F0; border-radius: 9px"></span></span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{eng.mo.s5}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 7px">
+<div style="padding: 9px 11px; border-radius: 10px; background: #0B1433; font-family: ui-monospace, Menlo, monospace; font-size: 11px; line-height: 1.6; color: #C9D7FA">SELECT name, total<br>FROM customers c<br><span style="color: #8FB0FF">LEFT JOIN</span> orders o ON …</div>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; color: #0F6B45"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Query runs. Nice join.</span>
+</div>
+</sc-if>
+
+<sc-if value="{{eng.mo.s6}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; gap: 8px; align-items: flex-start">
+<span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 999px; flex-shrink: 0; background: #DCE5FB; color: #1652F0; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center">PR</span>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 11px; font-weight: 600">Priya · mentor</span>
+<span style="font-size: 12px; line-height: 1.45; color: #3A4566">Great start. Try grouping by month, then we’ll review it together.</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{eng.mo.s7}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; gap: 10px; align-items: center">
+<span aria-hidden="true" style="width: 48px; height: 48px; border-radius: 999px; flex-shrink: 0; background: radial-gradient(circle at 35% 30%, #4C7DFF, #1652F0 65%); box-shadow: 0 0 0 4px #EAF0FF, 0 10px 20px -8px rgba(22,82,240,.7); display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 3px">
+<span style="font-size: 13px; font-weight: 600">Data Foundations</span>
+<span style="font-size: 11px; color: #0F6B45; font-weight: 500">Verified · added to your Backpack</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{eng.mo.s8}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; gap: 10px; align-items: center">
+<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 10px; background: #EAF0FF; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16v11H4zM9 8V5h6v3"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 13px; font-weight: 600">Junior Data Analyst</span><span style="font-size: 11px; color: #5B6582">Your next role</span></div>
+</div>
+<span style="align-self: flex-start; height: 26px; padding: 0 10px; border-radius: 999px; background: #F5F8FF; border: 1.5px solid #E6EAF3; display: inline-flex; align-items: center; font-size: 11px; font-weight: 500; color: #1652F0">Set a new goal</span>
+</div>
+</sc-if>
+</div>
+</div>
+
+<div class="fd-ui" style="position: relative; z-index: 2; max-width: 1312px; height: 100%; margin: 0 auto; box-sizing: border-box; padding: clamp(48px, 9vh, 80px) 64px clamp(40px, 7vh, 64px); display: flex; flex-direction: column; justify-content: space-between; pointer-events: none">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 500px">
+<span style="font-size: 14px; font-weight: 500; color: #1652F0">The Become Engine</span>
+<h2 id="fd-title" class="fd-h2" style="margin: 0; font-size: 44px; line-height: 1.08; font-weight: 600; letter-spacing: -1.3px">Every journey starts with a vision. We build the rest.</h2>
+</div>
+<div class="fd-panel" style="max-width: 420px; display: flex; flex-direction: column; gap: 16px; pointer-events: auto">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 14px; font-weight: 500; color: #8A93AD">Stage {{eng.cur.n}} of 8 · <span style="color: #1652F0">{{eng.cur.name}}</span></span>
+<h3 class="fd-h3" style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 600; letter-spacing: -.4px">{{eng.cur.headline}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">{{eng.cur.detail}}</p>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<button class="fd-btn" type="button" onClick="{{eng.prev}}" aria-label="Previous stage" style="width: 44px; height: 44px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #D6DDEE; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B1433" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<button class="fd-btn" type="button" onClick="{{eng.next}}" style="height: 44px; padding: 0 16px 0 18px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #D6DDEE; display: flex; align-items: center; gap: 8px; cursor: pointer; font-family: 'Google Sans', system-ui, sans-serif; font-size: 14px; font-weight: 600; color: #0B1433; white-space: nowrap">{{eng.nextLabel}}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B1433" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+<div style="display: flex; gap: 4px; margin-left: 6px">
+<sc-for list="{{eng.stages}}" as="st" hint-placeholder-count="8">
+<button class="fd-dot" type="button" onClick="{{st.pick}}" aria-label="Stage {{st.n}}: {{st.name}}" style="width: {{st.barW}}; height: 8px; padding: 0; border: none; border-radius: 999px; background: {{st.bar}}; cursor: pointer; transition: width .35s ease, background .35s ease"></button>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</section>
+<section class="lh-eng" aria-label="Choose how you want to grow">
+<section aria-labelledby="gc-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<div class="gc-wrap" style="max-width: 1312px; margin: 0 auto; padding: 120px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 56px">
+
+<div class="gc-head gc-in" style="display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: end">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 500; color: #1652F0">Choose how you want to grow</span>
+<h2 id="gc-h" class="gc-h2" style="margin: 0; font-size: 48px; line-height: 1.06; font-weight: 600; letter-spacing: -1.5px">Not just courses. Learning shaped around the outcome you want.</h2>
+</div>
+<div style="display: flex; flex-direction: column; gap: 18px; padding-bottom: 6px">
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">Each format is built for a different kind of progress. Use one, or combine them into a single plan.</p>
+<a class="gc-coach" href="#" style="align-self: flex-start; height: 48px; padding: 0 18px 0 6px; border-radius: 999px; border: 1.5px solid #D6DDEE; background: #FFFFFF; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #0B1433; font-size: 14px; font-weight: 500">
+<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 999px; background: radial-gradient(circle at 34% 28%, #DCE7FF 0%, #7FA4FF 25%, #1652F0 62%, #0B2A8F 100%); box-shadow: 0 0 0 3px #EAF0FF"></span>
+Not sure which? Ask your AI Coach
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+</div>
+
+<div class="gc-row">
+
+<a class="gc-card gc-in" href="#" aria-label="Courses: browse courses">
+<div class="gc-vis" aria-hidden="true">
+<div class="gc-scene" style="position: absolute; inset: 0">
+<div class="gc-float gc-f2" style="position: absolute; left: 50%; top: 50%; width: 252px; margin: -92px 0 0 -126px; box-sizing: border-box; padding: 12px; border-radius: 12px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 26px 48px -28px rgba(11,20,51,.45); display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; height: 92px; border-radius: 8px; overflow: hidden; background: linear-gradient(135deg, #1652F0, #0B1433); display: flex; align-items: center; justify-content: center">
+<span style="position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.18) 1px, transparent 1.3px); background-size: 12px 12px"></span>
+<span style="position: relative; width: 38px; height: 38px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px rgba(255,255,255,.18)"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1652F0"><path d="M8 5v14l11-7z"></path></svg></span>
+<span style="position: absolute; right: 8px; bottom: 8px; height: 20px; padding: 0 7px; border-radius: 999px; background: rgba(11,20,51,.55); color: #FFFFFF; display: inline-flex; align-items: center; font-size: 10px; font-weight: 500">12:04</span>
+</div>
+<span style="font-size: 13px; font-weight: 600">Joining tables with SQL</span>
+<div style="display: flex; align-items: center; gap: 8px"><span style="flex: 1; height: 6px; border-radius: 9px; background: #EEF1F7; position: relative; overflow: hidden"><span class="gc-fill" style="position: absolute; left: 0; top: 0; bottom: 0; width: 60%; border-radius: 9px; background: #1652F0"></span></span><span style="font-size: 11px; font-weight: 500; color: #5B6582">Lesson 4 of 12</span></div>
+</div>
+<span class="gc-float gc-f1" style="position: absolute; left: 24px; bottom: 30px; height: 30px; padding: 0 11px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: #3A4566; box-shadow: 0 12px 24px -16px rgba(11,20,51,.4)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Your pace</span>
+<span class="gc-float gc-f3" style="position: absolute; right: 22px; top: 26px"><span class="gc-pop" style="display: inline-flex; height: 32px; padding: 0 12px 0 6px; border-radius: 999px; background: #0B1433; color: #FFFFFF; align-items: center; gap: 8px; font-size: 12px; font-weight: 500"><span style="width: 22px; height: 22px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>New skill: SQL joins</span></span>
+</div>
+</div>
+<div class="gc-body">
+<span class="gc-label"><span class="gc-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16"></path></svg></span>For learning one skill well</span>
+<h3 class="gc-title" style="margin: 0; font-size: 22px; line-height: 1.18; font-weight: 600; letter-spacing: -.5px">Courses</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">Focused learning that builds one specific skill, at your own pace.</p>
+<div class="gc-meta"><span class="gc-facts">Self-paced<span class="gc-sep" aria-hidden="true"></span>Short lessons</span><span class="gc-go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+</a>
+
+<a class="gc-card gc-in gc-in-2" href="#" aria-label="Professional Certifications: see certifications">
+<div class="gc-vis" aria-hidden="true">
+<div class="gc-scene" style="position: absolute; inset: 0">
+<div class="gc-float gc-f2" style="position: absolute; left: 50%; top: 50%; width: 236px; height: 166px; margin: -100px 0 0 -158px; box-sizing: border-box; padding: 18px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 26px 48px -28px rgba(11,20,51,.45); display: flex; flex-direction: column; gap: 9px; overflow: hidden">
+<span style="position: absolute; inset: 7px; border: 1px solid #DCE5FB; border-radius: 6px; pointer-events: none"></span>
+<span class="gc-sheen" style="position: absolute; top: -30%; bottom: -30%; width: 30%; background: linear-gradient(90deg, rgba(234,240,255,0), rgba(234,240,255,.95), rgba(234,240,255,0))"></span>
+<span style="position: relative; font-size: 10px; font-weight: 500; letter-spacing: 1.6px; color: #8A93AD">PROFESSIONAL CERTIFICATE</span>
+<span style="position: relative; font-size: 16px; font-weight: 600; letter-spacing: -.3px">Data Analysis</span>
+<span style="position: relative; width: 70%; height: 6px; border-radius: 9px; background: #EEF1F7"></span>
+<span style="position: relative; width: 52%; height: 6px; border-radius: 9px; background: #EEF1F7"></span>
+<span style="position: relative; margin-top: auto; display: flex; justify-content: space-between; font-size: 10px; color: #8A93AD"><span>Credalio</span><span>ID 4F2-91</span></span>
+</div>
+<div class="gc-float gc-f3" style="position: absolute; right: 22px; top: 40px; width: 104px; height: 104px">
+<svg class="gc-spin" viewBox="0 0 104 104" style="position: absolute; inset: 0; width: 100%; height: 100%"><defs><path id="gcSeal" d="M52,52 m-41,0 a41,41 0 1,1 82,0 a41,41 0 1,1 -82,0"></path></defs><text font-family="Google Sans, system-ui, sans-serif" font-size="8.6" font-weight="600" letter-spacing="2.4" fill="#1652F0"><textPath href="#gcSeal">ASSESSED · VERIFIED · RECOGNISED ·</textPath></text></svg>
+<span style="position: absolute; inset: 22px; border-radius: 999px; background: radial-gradient(circle at 34% 28%, #DCE7FF 0%, #7FA4FF 22%, #1652F0 60%, #0B2A8F 100%); box-shadow: 0 0 0 4px #FFFFFF, 0 14px 26px -12px rgba(22,82,240,.7); display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+</div>
+<span class="gc-float gc-f1" style="position: absolute; left: 26px; bottom: 30px; height: 30px; padding: 0 11px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: #0F6B45; box-shadow: 0 12px 24px -16px rgba(11,20,51,.4)"><span style="width: 7px; height: 7px; border-radius: 9px; background: #0F6B45"></span>Practical exam passed</span>
+</div>
+</div>
+<div class="gc-body">
+<span class="gc-label"><span class="gc-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path></svg></span>For proof employers trust</span>
+<h3 class="gc-title" style="margin: 0; font-size: 22px; line-height: 1.18; font-weight: 600; letter-spacing: -.5px">Professional Certifications</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">Assessed programs that confirm you meet a professional standard.</p>
+<div class="gc-meta"><span class="gc-facts">Assessed<span class="gc-sep" aria-hidden="true"></span>Verifiable</span><span class="gc-go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+</a>
+
+<a class="gc-card gc-feat gc-in gc-in-3" href="#" aria-label="Career Paths: find your path">
+<div class="gc-vis" aria-hidden="true">
+<div class="gc-scene" style="position: absolute; inset: 0">
+<svg viewBox="0 0 400 300" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible">
+<path d="M36 250 C 110 250, 100 170, 170 170 S 250 210, 290 150 S 340 70, 368 58" fill="none" stroke="rgba(127,164,255,.35)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 8"></path>
+<path class="gc-comet" pathLength="1" d="M36 250 C 110 250, 100 170, 170 170 S 250 210, 290 150 S 340 70, 368 58" fill="none" stroke="#7FA4FF" stroke-width="5" stroke-linecap="round"></path>
+</svg>
+<span style="position: absolute; left: 9%; top: 83%; transform: translate(-20%, -50%); height: 28px; padding: 0 11px; border-radius: 999px; background: #FFFFFF; color: #0B1433; display: inline-flex; align-items: center; font-size: 11px; font-weight: 600; white-space: nowrap">You, today</span>
+<span style="position: absolute; left: 42.5%; top: 56.7%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="width: 34px; height: 34px; border-radius: 999px; background: #1652F0; border: 2px solid #7FA4FF; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16"></path></svg></span><span style="font-size: 11px; font-weight: 500; color: rgba(255,255,255,.75)">Courses</span></span>
+<span style="position: absolute; left: 72.5%; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="width: 34px; height: 34px; border-radius: 999px; background: #1652F0; border: 2px solid #7FA4FF; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"></path></svg></span><span style="font-size: 11px; font-weight: 500; color: rgba(255,255,255,.75)">Projects</span></span>
+<span class="gc-float gc-f1" style="position: absolute; right: 18px; top: 22px; padding: 9px 12px 9px 9px; border-radius: 10px; background: #FFFFFF; color: #0B1433; display: flex; align-items: center; gap: 9px; white-space: nowrap"><span class="gc-beat" style="width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(150deg, #4C7DFF, #1652F0); display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v11H4zM9 8V5h6v3"></path></svg></span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 10px; color: #8A93AD">Your goal</span><span style="font-size: 13px; font-weight: 600">Data analyst</span></span></span>
+</div>
+</div>
+<div class="gc-body">
+<span class="gc-label"><span class="gc-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7FA4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path></svg></span>For moving into a new role</span>
+<h3 class="gc-title" style="margin: 0; font-size: 22px; line-height: 1.18; font-weight: 600; letter-spacing: -.5px">Career Paths</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,.72)">A sequenced route of learning, practice and credentials toward a role.</p>
+<div class="gc-meta"><span class="gc-facts">Goal-led<span class="gc-sep" aria-hidden="true"></span>Step by step</span><span class="gc-go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+</a>
+
+<a class="gc-card gc-in gc-in-4" href="#" aria-label="Learning Programs: explore programs">
+<div class="gc-vis" aria-hidden="true">
+<div class="gc-scene" style="position: absolute; inset: 0">
+<div class="gc-float gc-f2" style="position: absolute; left: 50%; top: 50%; width: 252px; margin: -78px 0 0 -126px; box-sizing: border-box; padding: 14px; border-radius: 12px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 26px 48px -28px rgba(11,20,51,.45); display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="display: flex; padding-left: 8px">
+<span style="width: 30px; height: 30px; margin-left: -8px; border-radius: 999px; border: 2.5px solid #FFFFFF; background: #DCE5FB; color: #1652F0; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600">AK</span>
+<span style="width: 30px; height: 30px; margin-left: -8px; border-radius: 999px; border: 2.5px solid #FFFFFF; background: #1652F0; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600">MS</span>
+<span style="width: 30px; height: 30px; margin-left: -8px; border-radius: 999px; border: 2.5px solid #FFFFFF; background: #0B1433; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600">PL</span>
+<span style="height: 30px; margin-left: -8px; padding: 0 9px; box-sizing: border-box; border-radius: 999px; border: 2.5px solid #FFFFFF; background: #EAF0FF; color: #1652F0; display: flex; align-items: center; font-size: 10px; font-weight: 600">+20</span>
+</span>
+<span style="font-size: 11px; font-weight: 500; color: #8A93AD">Cohort 12</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; align-items: end; height: 54px">
+<span class="gc-day" style="height: 40%; border-radius: 4px; background: #EAF0FF; animation-delay: 0s"></span>
+<span class="gc-day" style="height: 65%; border-radius: 4px; background: #DCE5FB; animation-delay: .2s"></span>
+<span class="gc-day" style="height: 50%; border-radius: 4px; background: #EAF0FF; animation-delay: .4s"></span>
+<span class="gc-day" style="height: 100%; border-radius: 4px; background: linear-gradient(180deg, #4C7DFF, #1652F0); animation-delay: .6s"></span>
+<span class="gc-day" style="height: 58%; border-radius: 4px; background: #DCE5FB; animation-delay: .8s"></span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; font-size: 10px; font-weight: 500; color: #8A93AD; text-align: center"><span>Mon</span><span>Tue</span><span>Wed</span><span style="color: #1652F0">Thu</span><span>Fri</span></div>
+</div>
+<span class="gc-float gc-f1" style="position: absolute; left: 22px; top: 26px; height: 30px; padding: 0 11px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 500; color: #0B1433; box-shadow: 0 12px 24px -16px rgba(11,20,51,.4)"><span class="gc-live" style="width: 7px; height: 7px; border-radius: 9px; background: #1652F0"></span>Live · Thu 18:00</span>
+<span class="gc-float gc-f3" style="position: absolute; right: 20px; bottom: 26px; height: 32px; padding: 0 12px 0 5px; border-radius: 999px; background: #0B1433; color: #FFFFFF; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500"><span style="width: 22px; height: 22px; border-radius: 999px; background: #DCE5FB; color: #0B1433; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 600">DR</span>Led by Dr Rahman</span>
+</div>
+</div>
+<div class="gc-body">
+<span class="gc-label"><span class="gc-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21v-1a6 6 0 0 1 12 0v1M16 3.5a4 4 0 0 1 0 7M22 21v-1a6 6 0 0 0-4-5.6"></path></svg></span>For learning with others</span>
+<h3 class="gc-title" style="margin: 0; font-size: 22px; line-height: 1.18; font-weight: 600; letter-spacing: -.5px">Learning Programs</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">Structured, cohort-based learning led by experts or institutions.</p>
+<div class="gc-meta"><span class="gc-facts">Cohort-based<span class="gc-sep" aria-hidden="true"></span>Expert-led</span><span class="gc-go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+</a>
+
+</div>
+</div>
+</section>
+</section>
+<section class="lh-eng" aria-label="AI woven into every step">
+<section aria-labelledby="ac-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<div class="ac-wrap" style="max-width: 1312px; margin: 0 auto; padding: 120px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 44px">
+
+<div class="ac-head" style="display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: end">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 500; color: #1652F0">AI learning experience</span>
+<h2 id="ac-h" class="ac-h2" style="margin: 0; font-size: 48px; line-height: 1.06; font-weight: 600; letter-spacing: -1.5px">AI woven into every step. Not a chatbot bolted on.</h2>
+</div>
+<p class="ac-sub" style="margin: 0 0 6px; font-size: 18px; line-height: 1.6; color: #4A5578">Your AI Coach knows your goal, your progress and the lesson in front of you. When a person would help more, it brings one in.</p>
+</div>
+
+<div class="ac-tabwrap" style="display: flex; flex-direction: column; gap: 24px">
+<div class="ac-tabs" role="tablist" aria-label="What your AI Coach can do" style="display: flex; gap: 14px">
+<sc-for list="{{coach.caps}}" as="c" hint-placeholder-count="7">
+<button class="ac-tab" type="button" role="tab" aria-selected="{{c.sel}}" onClick="{{c.pick}}" style="color: {{c.fg}}">{{c.label}}<span class="ac-seg"><span ref="{{c.seg}}" style="width: {{c.fill}}"></span></span></button>
+</sc-for>
+</div>
+
+<div class="ac-stage">
+<div class="ac-grid" style="position: relative; display: grid; grid-template-columns: 300px minmax(0, 1fr) 400px; gap: 32px; padding: 40px 40px 40px 0; min-height: 460px; box-sizing: border-box">
+
+<div class="ac-girlcol" aria-hidden="true" style="position: relative">
+<img class="ac-learner" src="/_blob/29a268dcb297a1c04f59e9ee20e60886" alt="" style="transform: translateY({{coach.girlY}})">
+</div>
+
+<div class="ac-chat" aria-live="polite" style="display: flex; flex-direction: column; gap: 18px; justify-content: center; padding-left: 0; min-width: 0">
+<div class="ac-qrow" style="display: flex; align-items: flex-end; gap: 10px">
+<span class="ac-mini" aria-hidden="true" style="display: none; width: 44px; height: 44px; border-radius: 999px; background-color: #EAF0FF; flex-shrink: 0; box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 3.5px #DCE5FB"></span>
+<div class="ac-bubble ac-q">{{coach.qShown}}<sc-if value="{{coach.typingQ}}" hint-placeholder-val="{{ false }}"><span class="ac-caret"></span></sc-if></div>
+</div>
+<div class="ac-rise ac-arow" style="display: flex; align-items: flex-start; gap: 12px; opacity: {{coach.aOp}}; transform: translateY({{coach.aY}})">
+<span class="ac-orb" aria-hidden="true"><sc-if value="{{coach.thinking}}" hint-placeholder-val="{{ false }}"><span class="ac-orb-ring"></span></sc-if></span>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 500; color: #8A93AD">Nova · your AI Coach</span>
+<sc-if value="{{coach.thinking}}" hint-placeholder-val="{{ false }}">
+<div class="ac-bubble ac-a ac-think-b" style="padding: 14px 18px"><span class="ac-shimmer" style="font-size: 15px; font-weight: 500">{{coach.status}}</span></div>
+</sc-if>
+<sc-if value="{{coach.answered}}" hint-placeholder-val="{{ true }}">
+<div class="ac-bubble ac-a">{{coach.aShown}}<sc-if value="{{coach.typingA}}" hint-placeholder-val="{{ false }}"><span class="ac-caret" style="color: #1652F0"></span></sc-if></div>
+</sc-if>
+</div>
+</div>
+</div>
+
+<div class="ac-artcol ac-rise" aria-hidden="true" style="display: flex; flex-direction: column; justify-content: center; opacity: {{coach.artOp}}; transform: translateY({{coach.artY}}) scale({{coach.artS}})">
+
+<sc-if value="{{coach.k1}}" hint-placeholder-val="{{ false }}">
+<div class="ac-art">
+<span class="ac-k">Roles that fit what you enjoy</span>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: grid; grid-template-columns: 130px minmax(0, 1fr) 38px; align-items: center; gap: 12px; font-size: 14px; font-weight: 600">Data analyst<span style="height: 8px; border-radius: 9px; background: #EEF1F7; overflow: hidden"><span style="display: block; width: 92%; height: 100%; background: #1652F0; border-radius: 9px"></span></span><span style="font-size: 13px; color: #1652F0">92%</span></div>
+<div style="display: grid; grid-template-columns: 130px minmax(0, 1fr) 38px; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; color: #3A4566">Financial analyst<span style="height: 8px; border-radius: 9px; background: #EEF1F7; overflow: hidden"><span style="display: block; width: 81%; height: 100%; background: #7FA4FF; border-radius: 9px"></span></span><span style="font-size: 13px; color: #5B6582">81%</span></div>
+<div style="display: grid; grid-template-columns: 130px minmax(0, 1fr) 38px; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; color: #3A4566">Operations<span style="height: 8px; border-radius: 9px; background: #EEF1F7; overflow: hidden"><span style="display: block; width: 74%; height: 100%; background: #A9C2FF; border-radius: 9px"></span></span><span style="font-size: 13px; color: #5B6582">74%</span></div>
+</div>
+<div style="display: flex; gap: 8px"><span class="ac-btn" style="cursor: default">Set as my goal</span><span class="ac-btn ac-ghost" style="cursor: default">Compare roles</span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{coach.k2}}" hint-placeholder-val="{{ false }}">
+<div class="ac-art">
+<span class="ac-k">Recommended next</span>
+<div style="display: flex; gap: 14px; align-items: center">
+<span style="width: 64px; height: 64px; border-radius: 12px; flex-shrink: 0; background: linear-gradient(150deg, #1652F0, #0B1433); display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 17px; font-weight: 600">SQL for Data Analysis</span><span style="font-size: 13px; color: #5B6582">Validated course · Intermediate · 10 hrs</span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 12px 14px; border-radius: 12px; background: #F5F8FF; font-size: 13px; color: #3A4566">
+<span style="display: flex; justify-content: space-between">You already know<span style="font-weight: 600; color: #0B1433">Spreadsheets</span></span>
+<span style="display: flex; justify-content: space-between">This unlocks<span style="font-weight: 600; color: #1652F0">Most analysis work</span></span>
+</div>
+<span class="ac-btn" style="cursor: default">Add to my journey</span>
+</div>
+</sc-if>
+
+<sc-if value="{{coach.k3}}" hint-placeholder-val="{{ false }}">
+<div class="ac-art">
+<span class="ac-k">What this query returns</span>
+<div style="border: 1px solid #E6EAF3; border-radius: 12px; overflow: hidden; font-size: 14px">
+<div style="display: grid; grid-template-columns: 1fr 1fr; background: #F5F8FF; color: #5B6582; font-family: ui-monospace, Menlo, monospace; font-size: 12px"><span style="padding: 10px 14px">c.name</span><span style="padding: 10px 14px">o.total</span></div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #EEF1F7"><span style="padding: 10px 14px">Ada</span><span style="padding: 10px 14px">120.00</span></div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #EEF1F7"><span style="padding: 10px 14px">Ada</span><span style="padding: 10px 14px">80.00</span></div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #C9D7FA; background: #EAF0FF; color: #0B1433; font-weight: 600"><span style="padding: 10px 14px">Tunde</span><span style="padding: 10px 14px; color: #1652F0">NULL · no orders</span></div>
+</div>
+<span style="font-size: 13px; line-height: 1.5; color: #5B6582">The highlighted row is the one an INNER JOIN would drop.</span>
+<div style="display: flex; gap: 8px"><span class="ac-btn ac-ghost" style="cursor: default">Show me visually</span><span class="ac-btn ac-ghost" style="cursor: default">Give me an example</span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{coach.k4}}" hint-placeholder-val="{{ false }}">
+<div class="ac-art">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 17px; font-weight: 600">Your study plan</span><span class="ac-k">6 hrs/week · 4 weeks</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{coach.plan}}" as="r" hint-placeholder-count="4">
+<div class="ac-plan" style="display: grid; grid-template-columns: 44px 90px minmax(0, 1fr); align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; background: {{r.bg}}; border: 1px solid {{r.bd}}; font-size: 13px"><span style="font-weight: 600; color: {{r.day}}">{{r.d}}</span><span style="color: #5B6582">{{r.t}}</span><span style="color: #0B1433">{{r.w}}</span></div>
+</sc-for>
+</div>
+<span class="ac-btn" style="cursor: default">Add to my calendar</span>
+</div>
+</sc-if>
+
+<sc-if value="{{coach.k5}}" hint-placeholder-val="{{ false }}">
+<div class="ac-art">
+<span class="ac-k">Your attempt · Total sales by region, 2025</span>
+<div style="padding: 14px 16px; border-radius: 12px; background: #0B1433; font-family: ui-monospace, Menlo, monospace; font-size: 13px; line-height: 1.75; color: #C9D7FA">SELECT region, SUM(total)<br>FROM orders<br>WHERE order_year = 2025<br><span style="display: inline-block; margin: 0 -6px; padding: 0 6px; border-radius: 4px; background: rgba(245,180,60,.18); color: #FFD27A">GROUP BY customer_id;</span></div>
+<div style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; background: #FFF6E5; border: 1px solid #F4D98E; font-size: 13px; line-height: 1.5; color: #7A4B00"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B26A00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5v.5"></path></svg>Filtering is right. Each row should represent a region, not a customer.</div>
+<div style="display: flex; gap: 8px"><span class="ac-btn ac-ghost" style="cursor: default">Give me a hint</span><span class="ac-btn ac-ghost" style="cursor: default">Try again</span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{coach.k6}}" hint-placeholder-val="{{ false }}">
+<div class="ac-art">
+<span class="ac-k">Your readiness, from your progress</span>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{coach.ready}}" as="r" hint-placeholder-count="3">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; border-radius: 12px; border: 1px solid #E6EAF3; font-size: 14px"><span style="font-weight: 500">{{r.topic}}</span><span style="height: 26px; padding: 0 10px; border-radius: 999px; background: {{r.bg}}; color: {{r.fg}}; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500"><span style="width: 6px; height: 6px; border-radius: 9px; background: {{r.fg}}"></span>{{r.status}}</span></div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 8px"><span class="ac-btn" style="cursor: default">Start practice quiz</span><span class="ac-btn ac-ghost" style="cursor: default">Review weak areas</span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{coach.k7}}" hint-placeholder-val="{{ false }}">
+<div class="ac-art">
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="width: 48px; height: 48px; border-radius: 999px; background: #0B1433; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; flex-shrink: 0">DR</span>
+<span style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 16px; font-weight: 600">Dr Rahman · your tutor</span><span style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: #0F6B45"><span style="width: 7px; height: 7px; border-radius: 9px; background: #0F6B45"></span>Available now</span></span>
+</div>
+<span class="ac-k">I'll send them</span>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
+<sc-for list="{{coach.handoff}}" as="h" hint-placeholder-count="4">
+<span class="ac-hand" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 10px; background: #F5F8FF; font-size: 13px; color: #3A4566"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>{{h}}</span>
+</sc-for>
+</div>
+<span class="ac-btn" style="cursor: default">Ask Tutor</span>
+</div>
+</sc-if>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="lh-eng" aria-label="Trusted learning">
+<section aria-labelledby="tv-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<div class="tv-wrap" style="max-width: 1312px; margin: 0 auto; padding: 120px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 72px">
+<div class="tv-head" style="display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: end">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 500; color: #1652F0">Trusted learning</span>
+<h2 id="tv-h" class="tv-h2">Know the quality before you commit your time.</h2>
+</div>
+<p class="tv-sub" style="margin: 0 0 6px; font-size: 18px; line-height: 1.6; color: #4A5578">Independent experts can review any course on Credalio: one for the subject, one for learning design, one for assessment. What they find shows on every experience.</p>
+</div>
+<div class="tv-grid" ref="{{tv.stageRef}}" style="position: relative">
+
+<svg class="tv-link-svg" aria-hidden="true">
+<path class="tv-wire" ref="{{tv.wp0}}" d="M0 0"></path><circle class="tv-end" ref="{{tv.wc0}}" cx="-20" cy="-20" r="4" fill="#CBD3E6"></circle>
+<path class="tv-wire" ref="{{tv.wp1}}" d="M0 0"></path><circle class="tv-end" ref="{{tv.wc1}}" cx="-20" cy="-20" r="4" fill="#CBD3E6"></circle>
+<path class="tv-wire" ref="{{tv.wp2}}" d="M0 0"></path><circle class="tv-end" ref="{{tv.wc2}}" cx="-20" cy="-20" r="4" fill="#CBD3E6"></circle>
+</svg>
+
+<div class="tv-side">
+<span class="tv-lbl" style="font-size: 13px; padding-left: 12px">Every experience shows where it stands</span>
+<div class="tv-legend" role="list" aria-label="Validation statuses">
+<sc-for list="{{tv.legend}}" as="l" hint-placeholder-count="3">
+<div class="tv-lg {{l.cls}}" role="listitem">
+<span aria-hidden="true" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center">
+<sc-if value="{{l.seal}}" hint-placeholder-val="{{ false }}">
+<svg width="36" height="36" viewBox="0 0 100 100"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</sc-if>
+<sc-if value="{{l.review}}" hint-placeholder-val="{{ false }}">
+<span style="width: 26px; height: 26px; border-radius: 999px; border: 2.5px dashed #8A93AD; box-sizing: border-box"></span>
+</sc-if>
+<sc-if value="{{l.none}}" hint-placeholder-val="{{ false }}">
+<span style="width: 26px; height: 26px; border-radius: 999px; border: 2px solid #CBD3E6; box-sizing: border-box"></span>
+</sc-if>
+</span>
+<span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span class="tv-lg-t">{{l.t}}</span><span class="tv-lg-d">{{l.d}}</span></span>
+</div>
+</sc-for>
+</div>
+<a class="tv-link" href="#">How validation works<span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+</div>
+<div class="tv-cardcol" style="position: relative">
+<div class="tv-stagebg" aria-hidden="true"></div>
+<div class="tv-card {{tv.cardCls}}" ref="{{tv.cardRef}}" aria-label="Example course under review">
+<div class="tv-hi" ref="{{tv.hiRef}}" aria-hidden="true"></div>
+<div class="tv-thumb">
+<svg viewBox="0 0 480 132" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%"><path d="M0 104 C 80 98, 120 70, 190 76 S 300 40, 360 46 S 440 18, 480 14" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"></path><path d="M0 104 C 80 98, 120 70, 190 76 S 300 40, 360 46 S 440 18, 480 14 L480 132 L0 132Z" fill="rgba(255,255,255,.07)"></path></svg>
+<span style="position: absolute; left: 16px; top: 16px; height: 26px; padding: 0 10px; border-radius: 999px; background: rgba(255,255,255,.16); color: #FFFFFF; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500">Course</span>
+</div>
+<span class="tv-status" style="background: {{tv.st.bg}}; color: {{tv.st.fg}}; box-shadow: 0 0 0 1px {{tv.st.bd}}">
+<sc-if value="{{tv.st.spin}}" hint-placeholder-val="{{ false }}"><span class="tv-spin"></span></sc-if>
+<sc-if value="{{tv.st.ok}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if>
+<sc-if value="{{tv.st.none}}" hint-placeholder-val="{{ true }}"><span style="width: 10px; height: 10px; border-radius: 999px; border: 1.5px solid currentColor; box-sizing: border-box"></span></sc-if>
+{{tv.st.label}}
+</span>
+<sc-if value="{{tv.sealed}}" hint-placeholder-val="{{ false }}">
+<div class="tv-seal" aria-hidden="true">
+<span class="tv-burst"></span>
+<svg viewBox="0 0 100 100" style="position: absolute; inset: 0; width: 100%; height: 100%; filter: drop-shadow(0 14px 18px rgba(22,82,240,.35))"><defs><linearGradient id="tvSg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C7DFF"></stop><stop offset=".55" stop-color="#1652F0"></stop><stop offset="1" stop-color="#0E3BB8"></stop></linearGradient><path id="tvSt" d="M50,50 m-29,0 a29,29 0 1,1 58,0 a29,29 0 1,1 -58,0"></path></defs><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="url(#tvSg)"></path><circle cx="50" cy="50" r="35" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1"></circle><text font-family="Google Sans, system-ui, sans-serif" font-size="6.6" font-weight="600" letter-spacing="1.9" fill="#FFFFFF"><textPath href="#tvSt">CREDALIO · VALIDATED · CREDALIO · VALIDATED ·</textPath></text><circle cx="50" cy="50" r="19" fill="#FFFFFF"></circle><path d="M41 50.5l6.5 6.5 12-12.5" fill="none" stroke="#1652F0" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+</sc-if>
+
+<div class="tv-reg" style="padding-top: 20px; padding-bottom: 6px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 21px; font-weight: 600; letter-spacing: -.4px; line-height: 1.25">Data Foundations: spreadsheets to SQL</span>
+<span style="font-size: 13px; color: #5B6582">by Amara Okafor · Independent creator · 8 lessons · 10 hrs</span>
+</div>
+
+<div class="tv-reg" ref="{{tv.r1}}">
+<span class="tv-lbl">Lessons</span>
+<div style="display: flex; flex-direction: column; margin-top: 6px">
+<div class="tv-row"><span class="tv-n">1</span><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">Cleaning messy data</span><span style="font-size: 12px; color: #8A93AD">18 min</span></div>
+<div class="tv-row"><span class="tv-n">2</span><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">From spreadsheets to tables</span><span style="font-size: 12px; color: #8A93AD">22 min</span></div>
+<div class="tv-row"><span class="tv-n">3</span><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">Joining tables with SQL</span><span style="font-size: 12px; color: #8A93AD">25 min</span></div>
+</div>
+</div>
+
+<div class="tv-reg" ref="{{tv.r2}}">
+<span class="tv-lbl">You’ll be able to</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px"><span class="tv-chip">Clean a dataset</span><span class="tv-chip">Write SQL queries</span><span class="tv-chip">Explain findings</span></div>
+</div>
+
+<div class="tv-reg" ref="{{tv.r3}}" style="padding-bottom: 22px">
+<span class="tv-lbl">Final assessment</span>
+<div style="display: flex; align-items: center; gap: 12px; margin-top: 10px">
+<span aria-hidden="true" style="width: 40px; height: 40px; border-radius: 12px; background: #EAF0FF; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4h6v3H9zM7 5.5H5.5v15h13v-15H17M8.5 12l2 2 4-4M8.5 17h7"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 14px; font-weight: 600">20 questions and 1 practical task</span><span style="font-size: 12px; color: #5B6582">Pass mark 70% · Two attempts</span></span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="tv-notes" role="list" aria-label="Who reviews it">
+<sc-for list="{{tv.notes}}" as="n" hint-placeholder-count="3">
+<button class="tv-note {{n.cls}}" type="button" role="listitem" ref="{{n.ref}}" onClick="{{n.pick}}">
+<span style="display: flex; align-items: center; justify-content: space-between; gap: 10px">
+<span class="tv-who"><span class="tv-av" style="background: {{n.avBg}}; color: {{n.avFg}}">{{n.ini}}</span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-weight: 600; color: #0B1433">{{n.who}}</span><span style="font-size: 12px; color: #8A93AD">{{n.role}}</span></span></span>
+<span style="font-size: 12px; font-weight: 600; color: {{n.numFg}}">{{n.num}}</span>
+</span>
+<span class="tv-note-t">{{n.t}}</span>
+<span class="tv-note-d">{{n.d}}</span>
+<span class="tv-res" style="color: {{n.resFg}}">
+<sc-if value="{{n.run}}" hint-placeholder-val="{{ false }}"><span class="tv-spin"></span></sc-if>
+<sc-if value="{{n.done}}" hint-placeholder-val="{{ false }}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if>
+<sc-if value="{{n.wait}}" hint-placeholder-val="{{ true }}"><span style="width: 8px; height: 8px; border-radius: 999px; background: #CBD3E6"></span></sc-if>
+{{n.res}}
+</span>
+</button>
+</sc-for>
+</div>
+
+</div>
+</div>
+</section>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4905}}'>
+class Part {
+  constructor(host) { this.host = host; this.props = {}; this.state = {}; }
+  setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }
+}
+function momentVals(stage) {
+  var s = parseInt(stage, 10) || 1;
+  var labels = ['Vision', 'Discover', 'AI Coach', 'Learn', 'Practise', 'Connect', 'Prove', 'Advance'];
+  var v = { label: labels[s - 1] };
+  for (var i = 1; i <= 8; i++) v['s' + i] = s === i;
+  return v;
+}
+class HeroPart extends Part {
+  constructor(host) {
+    super(host);
+    this.state = { goal: '' };
+  }
+  renderVals() {
+    var self = this;
+    var data = [
+      ['Data scientist', 'Python · SQL', 'M4 20V10M10 20V4M16 20v-7M2 20h20'],
+      ['UX designer', 'Figma · Research', 'M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z'],
+      ['Software engineer', 'Cloud · APIs', 'M8 6l-6 6 6 6M16 6l6 6-6 6'],
+      ['Nurse', 'Patient care · Triage', 'M3 12h4l2-5 4 10 2-5h6'],
+      ['Product manager', 'Roadmaps · Data', 'M12 3l9 5-9 5-9-5zM3 13l9 5 9-5'],
+      ['Cybersecurity analyst', 'Threats · Networks', 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z']
+    ];
+    var n = data.length, N = 6;
+    var geo = { d: { r: 360, pad: 70, ch: 7.7 }, m: { r: 118, pad: 47, ch: 6.1 } };
+    function slicesFor(back) {
+      var out = [];
+      data.forEach(function (d, i) {
+        var a = (360 / n) * i + 180 / n;
+        var tone = i === 2 ? 'cobalt' : (i === 5 ? 'navy' : 'white');
+        var w = tone === 'white';
+        var g = {};
+        ['d', 'm'].forEach(function (k) {
+          var G = geo[k], W = Math.round(G.pad + d[0].length * G.ch), sw = W / N;
+          g[k] = { W: W, sw: sw, step: sw / G.r * 180 / Math.PI, r: G.r };
+        });
+        for (var j = 0; j < N; j++) {
+          var off = j - (N - 1) / 2;
+          var tf = function (k) {
+            var G = g[k], ang = a + (back ? -off : off) * G.step;
+            return 'rotateY(' + ang.toFixed(3) + 'deg) translateZ(' + G.r + 'px)' + (back ? ' rotateY(180deg)' : '') + ' translate(-50%, -50%)';
+          };
+          out.push({
+            name: d[0], d0: i === 0 ? 'inline' : 'none', d1: i === 1 ? 'inline' : 'none', d2: i === 2 ? 'inline' : 'none', d3: i === 3 ? 'inline' : 'none', d4: i === 4 ? 'inline' : 'none', d5: i === 5 ? 'inline' : 'none',
+            cls: (j === 0 ? 'lh-sl-l' : (j === N - 1 ? 'lh-sl-r' : '')) + (i % 2 ? ' lh-alt' : ''),
+            td: tf('d'), tm: tf('m'),
+            wd: (g.d.sw + 0.6).toFixed(2) + 'px', wm: (g.m.sw + 0.6).toFixed(2) + 'px',
+            cd: g.d.W + 'px', cm: g.m.W + 'px',
+            od: (-j * g.d.sw).toFixed(2) + 'px', om: (-j * g.m.sw).toFixed(2) + 'px',
+            tab: j === 0 ? 0 : -1, hide: j === 0 ? 'false' : 'true',
+            bg: tone === 'cobalt' ? '#1652F0' : (tone === 'navy' ? '#0B1433' : '#FFFFFF'),
+            fg: w ? '#0B1433' : '#FFFFFF',
+            bc: w ? 'rgba(11,20,51,.08)' : 'rgba(255,255,255,.2)',
+            visBg: w ? 'linear-gradient(150deg,#EAF0FF,#F7F9FD)' : 'rgba(255,255,255,.14)',
+            visLine: w ? '#DCE5FB' : 'rgba(255,255,255,.18)',
+            icFg: w ? '#1652F0' : '#FFFFFF',
+            pick: function () { self.setState({ goal: 'I want to become a ' + d[0].toLowerCase() }); }
+          });
+        }
+      });
+      return out;
+    }
+    return {
+      frontSlices: slicesFor(false), backSlices: slicesFor(true),
+      goal: this.state.goal,
+      onGoal: function (e) { self.setState({ goal: e.target.value }); },
+      onStart: function (e) { e.preventDefault(); }
+    };
+  }
+}
+class EnginePart extends Part {
+  constructor(host) {
+    super(host);
+    this.state = { stage: 0 };
+    this.pos = 0; this.target = 0; this.mode = 'auto';
+    var self = this;
+    this.trackRef = function (el) { self.track = el; };
+    this.viewRef = function (el) { self.view = el; };
+    this.canvasRef = function (el) { self.cv = el; };
+    this.cardRef = function (el) { self.card = el; };
+  }
+  componentDidMount() {
+    var self = this;
+    this.onScroll = function () {
+      if (!self.track) return;
+      var r = self.track.getBoundingClientRect(), span = r.height - window.innerHeight;
+      if (span <= 0 || r.top > window.innerHeight || r.bottom < 0) return;
+      self.mode = 'scroll'; clearInterval(self.timer);
+      self.target = Math.min(1, Math.max(0, -r.top / span)) * 7;
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.startTimer();
+    var tick = function (now) {
+      var d = self.target - self.pos, moving = Math.abs(d) > 0.0004;
+      if (moving) self.pos += d * 0.07; else self.pos = self.target;
+      self.draw(now);
+      var s = Math.max(0, Math.min(7, Math.round(self.pos)));
+      if (s !== self.state.stage) self.setState({ stage: s });
+      self.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); clearInterval(this.timer); window.removeEventListener('scroll', this.onScroll); }
+  startTimer() {
+    var self = this;
+    clearInterval(this.timer);
+    if (this.mode !== 'auto') return;
+    this.timer = setInterval(function () { self.target = self.target >= 7 ? 0 : Math.round(self.target) + 1; }, 4600);
+  }
+  goTo(i) {
+    var s = Math.max(0, Math.min(7, i));
+    if (this.mode === 'scroll' && this.track) {
+      var r = this.track.getBoundingClientRect(), span = r.height - window.innerHeight;
+      window.scrollTo({ top: window.scrollY + r.top + span * s / 7, behavior: 'smooth' });
+    } else { this.target = s; this.startTimer(); }
+  }
+  draw(now) {
+    var cv = this.cv, view = this.view;
+    if (!cv || !view) return;
+    var W = view.clientWidth, H = view.clientHeight, dpr = Math.min(2, window.devicePixelRatio || 1);
+    if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
+    var g = cv.getContext('2d');
+    g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    g.clearRect(0, 0, W, H);
+    if (!this.sprites) {
+      var mk = function (col) { var c = document.createElement('canvas'); c.width = c.height = 32; var x = c.getContext('2d'); var gr = x.createRadialGradient(16, 16, 0, 16, 16, 16); gr.addColorStop(0, col); gr.addColorStop(0.62, col); gr.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = gr; x.beginPath(); x.arc(16, 16, 16, 0, 6.283); x.fill(); return c; };
+      this.sprites = [mk('#1652F0'), mk('#7FA4FF')];
+    }
+    var SP = this.sprites, time = (now || 0) / 1000;
+    var smooth = function (e0, e1, x) { var t = Math.min(1, Math.max(0, (x - e0) / (e1 - e0))); return t * t * (3 - 2 * t); };
+    var camZ = 0.5 + 6 * this.pos;
+    var mob = W < 760;
+    var hy = H * (mob ? 0.33 : 0.3), camH = 1.3, f = (H - hy) * (mob ? 1.1 : 1.5) / camH, vpX = W * (mob ? 0.5 : 0.7), LANE = 0.46;
+    var X = function (z) { return 1.9 * Math.sin(0.3 * z) + 0.9 * Math.sin(0.11 * z + 1); };
+    var tx = X(camZ + 3.5);
+    this.camX = this.camX == null ? tx : this.camX + (tx - this.camX) * 0.12;
+    var camX = this.camX;
+    var hgt = function (x, z) {
+      var m = smooth(LANE + 0.12, LANE + 1.6, Math.abs(x - X(z)));
+      if (m <= 0) return 0;
+      return m * (0.42 * Math.sin(0.45 * x + 0.2 * z) + 0.3 * Math.sin(0.85 * z + 0.6 * x + 1.3) + 0.16 * Math.sin(1.7 * x - 0.5 * z + time * 0.4) + 0.5) * 0.9;
+    };
+    // dot field, far to near
+    var tiers = mob ? [[14, 30, 0.48], [6, 14, 0.24], [1.15, 6, 0.12]] : [[14, 30, 0.36], [6, 14, 0.18], [1.15, 6, 0.09]];
+    for (var ti = 0; ti < tiers.length; ti++) {
+      var T = tiers[ti], st = T[2];
+      var z0 = Math.ceil((camZ + T[0]) / st) * st, z1 = camZ + T[1];
+      for (var z = z1 - ((z1 - z0) % st); z >= z0 - 1e-6; z -= st) {
+        var d = z - camZ; if (d <= 1.1) continue;
+        var rc = X(z), half = 4 + d * 0.9, fog = 1 - smooth(13, 30, d);
+        var x0 = Math.ceil((rc - half) / st) * st;
+        for (var x = x0; x <= rc + half; x += st) {
+          if (Math.abs(x - rc) < LANE + 0.08) continue;
+          var h = hgt(x, z);
+          var sx = vpX + (x - camX) * f / d;
+          if (sx < (mob ? -10 : W * 0.28) || sx > W + 10) continue;
+          var sy = hy + (camH - h) * f / d;
+          if (sy > H + 10) continue;
+          var slope = hgt(x + 0.12, z) - hgt(x - 0.12, z);
+          var shade = Math.min(1, Math.max(0.12, 0.55 - slope * 3.2 + h * 0.15));
+          var a = fog * shade * (mob ? smooth(hy - 10, hy + 70, sy) : smooth(W * 0.3, W * 0.58, sx));
+          if (a < 0.03) continue;
+          var r = Math.min(mob ? 2 : 2.4, Math.max(0.45, (mob ? 0.012 : 0.011) * f / d));
+          g.globalAlpha = Math.min(1, a);
+          g.drawImage(SP[(d > 12 || h > 0.75) ? 1 : 0], sx - r, sy - r, r * 2, r * 2);
+        }
+      }
+    }
+    g.globalAlpha = 1;
+    // road of light
+    var rows = [];
+    for (var y = H + 4; y > hy + 2; y -= 2) {
+      var dd = camH * f / (y - hy); if (dd > 30) break;
+      var zz = camZ + dd; rows.push({ y: y, cx: vpX + (X(zz) - camX) * f / dd, hw: LANE * f / dd, z: zz, d: dd });
+    }
+    var cur = Math.max(0, Math.min(7, Math.ceil((camZ - 2) / 6))), stageZ = 4 + 6 * cur;
+    if (rows.length > 2) {
+      var poly = function (fn) { g.beginPath(); rows.forEach(function (q, i) { var p = fn(q, -1); if (i === 0) g.moveTo(p, q.y); else g.lineTo(p, q.y); }); for (var i = rows.length - 1; i >= 0; i--) g.lineTo(fn(rows[i], 1), rows[i].y); g.closePath(); };
+      var grd = g.createLinearGradient(0, hy, 0, H); grd.addColorStop(0, 'rgba(255,255,255,0)'); grd.addColorStop(0.25, 'rgba(255,255,255,.9)'); grd.addColorStop(1, '#FFFFFF');
+      poly(function (q, s) { return q.cx + s * q.hw; }); g.fillStyle = grd; g.fill();
+      // travelled glow
+      var tr = rows.filter(function (q) { return q.z <= stageZ; });
+      if (tr.length > 1) { g.beginPath(); tr.forEach(function (q, i) { if (i === 0) g.moveTo(q.cx - q.hw, q.y); else g.lineTo(q.cx - q.hw, q.y); }); for (var j = tr.length - 1; j >= 0; j--) g.lineTo(tr[j].cx + tr[j].hw, tr[j].y); g.closePath(); g.fillStyle = 'rgba(22,82,240,.07)'; g.fill(); }
+      var fogA = function (q) { return 1 - smooth(12, 30, q.d); };
+      // soft edge glow
+      [-1, 1].forEach(function (side) {
+        for (var i = 1; i < rows.length; i++) { var a = rows[i - 1], b = rows[i]; g.globalAlpha = 0.12 * fogA(b); g.strokeStyle = '#7FA4FF'; g.lineWidth = Math.max(1, Math.min(10, 0.07 * f / b.d)); g.beginPath(); g.moveTo(a.cx + side * a.hw, a.y); g.lineTo(b.cx + side * b.hw, b.y); g.stroke(); }
+      });
+      // dotted edges and centre, placed on world-fixed spacing so they glide with the camera
+      var dotAt = function (z, xo, col, size, alpha) {
+        var d = z - camZ; if (d < 1.12 || d > 30) return;
+        var sx = vpX + (X(z) + xo - camX) * f / d, sy = hy + camH * f / d; if (sy > H + 8) return;
+        var r = Math.max(0.7, Math.min(size * 190, size * f / d));
+        g.globalAlpha = alpha * (1 - smooth(12, 30, d)); g.drawImage(col, sx - r, sy - r, r * 2, r * 2);
+      };
+      var ez0 = Math.ceil((camZ + 1.1) / 0.09) * 0.09;
+      for (var ez = ez0; ez < camZ + 30; ez += (ez - camZ > 10 ? 0.27 : 0.09)) {
+        dotAt(ez, -LANE, SP[1], 0.014, 1); dotAt(ez, LANE, SP[1], 0.014, 1);
+      }
+      var cz0 = Math.ceil((camZ + 1.1) / 0.18) * 0.18;
+      for (var cz = cz0; cz < camZ + 30; cz += 0.18) {
+        var past = cz <= stageZ;
+        dotAt(cz, 0, SP[past ? 0 : 1], past ? 0.016 : 0.012, past ? 0.85 : 0.7);
+      }
+      g.globalAlpha = 1;
+    }
+    // beacons
+    var cardPos = null;
+    for (var m = 7; m >= 0; m--) {
+      var zm = 4 + 6 * m, dm = zm - camZ; if (dm < 0.95 || dm > 30) continue;
+      var px = vpX + (X(zm) - camX) * f / dm, py = hy + camH * f / dm, s = f / dm, fa = 1 - smooth(12, 30, dm);
+      if (py > H + 60) continue;
+      var on = m === cur, rad = Math.max(2, Math.min(on ? 34 : 14, (on ? 0.13 : 0.07) * s));
+      var bh = (on ? 1.5 : 0.9) * s;
+      var bw = rad * (on ? 1.5 : 0.8), hg = g.createLinearGradient(px - bw, 0, px + bw, 0);
+      hg.addColorStop(0, 'rgba(127,164,255,0)'); hg.addColorStop(0.5, on ? 'rgba(76,125,255,.42)' : 'rgba(127,164,255,.26)'); hg.addColorStop(1, 'rgba(127,164,255,0)');
+      g.fillStyle = hg;
+      for (var sl = 0; sl < 16; sl++) { g.globalAlpha = fa * Math.pow(1 - sl / 16, 1.6); g.fillRect(px - bw, py - bh * (sl + 1) / 16, bw * 2, bh / 16 + 0.5); }
+      if (on) {
+        var ph = (time % 2.4) / 2.4;
+        [ph, (ph + 0.5) % 1].forEach(function (q) { g.globalAlpha = fa * (1 - q) * 0.8; g.strokeStyle = '#4C7DFF'; g.lineWidth = 2; g.beginPath(); g.ellipse(px, py, rad * (1.2 + q * 2.6), rad * (1.2 + q * 2.6) * 0.3, 0, 0, 6.283); g.stroke(); });
+        g.globalAlpha = fa;
+        var og = g.createRadialGradient(px - rad * 0.35, py - rad * 1.4, rad * 0.1, px, py - rad, rad * 1.15);
+        og.addColorStop(0, '#DCE7FF'); og.addColorStop(0.22, '#7FA4FF'); og.addColorStop(0.6, '#1652F0'); og.addColorStop(1, '#0B2A8F');
+        g.shadowColor = 'rgba(22,82,240,.6)'; g.shadowBlur = rad * 1.4;
+        g.fillStyle = og; g.beginPath(); g.arc(px, py - rad, rad, 0, 6.283); g.fill();
+        g.shadowBlur = 0;
+        cardPos = { x: px, y: py - rad * 2.2 - bh * 0.25, s: Math.min(1, Math.max(0.45, 3.5 / dm)) };
+      } else {
+        g.globalAlpha = fa; g.fillStyle = '#FFFFFF'; g.strokeStyle = m < cur ? '#A9C2FF' : '#1652F0'; g.lineWidth = Math.max(1, rad * 0.22);
+        g.beginPath(); g.ellipse(px, py, rad, rad * 0.42, 0, 0, 6.283); g.fill(); g.stroke();
+      }
+      g.globalAlpha = 1;
+    }
+    if (this.card) {
+      if (cardPos) { var cs = mob ? Math.min(0.78, cardPos.s) : cardPos.s, cx = mob ? Math.min(W - 16 - 140 * cs, Math.max(16 + 140 * cs, cardPos.x)) : cardPos.x; this.card.style.opacity = '1'; this.card.style.transform = 'translate(' + (cx - 140).toFixed(1) + 'px,' + (cardPos.y - 160).toFixed(1) + 'px) scale(' + cs.toFixed(3) + ')'; }
+      else this.card.style.opacity = '0';
+    }
+  }
+  renderVals() {
+    var self = this;
+    var eng = [
+      ['Vision', 'Start with who you want to become.', 'Tell us your goal in your own words: a role, a skill, a career change.'],
+      ['Discover', 'See the possibilities ahead.', 'Explore the roles and skills linked to your goal, and the gap between today and where you want to be.'],
+      ['AI Coach', 'Turn your goal into a personal journey.', 'Your AI Coach maps the route and adapts it as you learn.'],
+      ['Learn', 'Build the knowledge you need.', 'Courses, lessons and resources from trusted creators and institutions.'],
+      ['Practise', 'Turn knowledge into capability.', 'Projects, exercises and simulations, with feedback while you work.'],
+      ['Connect', 'Learn with people when it matters.', 'Tutors, peers and experts who answer questions and review your work.'],
+      ['Prove', 'Show what you can actually do.', 'Verified work becomes evidence, kept in your Digital Backpack.'],
+      ['Advance', 'Use what you’ve proven to move forward.', 'A new role, the next level or a fresh goal. Then the engine starts again.']
+    ];
+    var si = this.state.stage, c = eng[si];
+    var stages = eng.map(function (s, k) {
+      var on = k === si, done = k < si;
+      return { n: k + 1, name: s[0], bar: on ? '#1652F0' : (done ? '#C9D7FA' : '#E6EAF3'), barW: on ? '24px' : '8px', pick: function () { self.goTo(k); } };
+    });
+    return {
+      stages: stages,
+      cur: { n: si + 1, name: c[0], headline: c[1], detail: c[2] },
+      nextLabel: si < 7 ? 'Next: ' + eng[si + 1][0] : 'Start again',
+      next: function () { self.goTo(si < 7 ? si + 1 : 0); },
+      prev: function () { self.goTo(si - 1); },
+      trackRef: this.trackRef, viewRef: this.viewRef, canvasRef: this.canvasRef, cardRef: this.cardRef,
+      mo: momentVals(si + 1)
+    };
+  }
+}
+class GrowPart extends Part {
+  renderVals() { return {}; }
+}
+class CoachPart extends Part {
+  constructor(host) {
+    super(host);
+    this.state = { i: 0, phase: 'ask', qn: 0, an: 0, si: 0 };
+    this.segs = [];
+    var self = this;
+    this.segRefs = [0, 1, 2, 3, 4, 5, 6].map(function (k) { return function (e) { self.segs[k] = e; }; });
+    this.D = [
+      { label: 'Identify goals', q: 'I like working with numbers, but I’m not sure which career fits me.', a: 'Let’s narrow it down. Three directions stand out from what you enjoy. Data analysis is the strongest match.', st: ['Reading what you enjoy…', 'Matching roles to your strengths…', 'Ranking the best fits…'] },
+      { label: 'Recommend learning', q: 'I want to become a data analyst. What should I learn next?', a: 'SQL is your strongest next step. You already know spreadsheets, and SQL unlocks most of the analysis work you’ll do.', st: ['Checking your goal…', 'Looking at your current skills…', 'Finding the best next course…'] },
+      { label: 'Explain lessons', q: 'I don’t understand why we’re using a LEFT JOIN here.', a: 'A LEFT JOIN keeps every customer, even those with no orders yet. An INNER JOIN would drop them, and you’d lose sight of who hasn’t bought.', st: ['Opening lesson 4…', 'Reading the query…', 'Building an example…'] },
+      { label: 'Create study plans', q: 'I have six hours a week and want to finish this course in a month.', a: 'That works. Shorter lessons on weekdays, a longer session on Saturday, and Sunday for practice so it sticks.', st: ['Checking what’s left in the course…', 'Fitting it into six hours a week…', 'Balancing lessons and practice…'] },
+      { label: 'Support practice', q: 'Here’s my attempt. Can you check it?', a: 'You’re close. Your filtering is correct, but look again at how you’re grouping the results.', st: ['Running your query…', 'Comparing it with the task…', 'Finding the one thing to fix…'] },
+      { label: 'Prepare for assessments', q: 'I have my assessment tomorrow. Help me prepare.', a: 'From your modules and practice results, I’d focus on these three areas tonight.', st: ['Reviewing your modules…', 'Checking your practice scores…', 'Spotting your weak areas…'] },
+      { label: 'Escalate to a human tutor', q: 'I’m still confused.', a: 'We’ve tried two explanations and a worked example. A tutor may help more here. I’ll pass everything on.', st: ['Looking at what we’ve tried…', 'Finding an available tutor…', 'Preparing your handover…'] }
+    ];
+  }
+  componentDidMount() {
+    var self = this;
+    this.t0 = performance.now();
+    var tick = function (now) {
+      var d = self.D[self.state.i], el = now - self.t0;
+      var tQ = Math.max(900, d.q.length * 24), tT = 2300, tA = Math.max(1200, d.a.length * 17), tH = 3600, total = tQ + tT + tA + tH;
+      var phase, qn = d.q.length, an = 0, si = 0;
+      if (el < tQ) { phase = 'ask'; qn = Math.floor(d.q.length * el / tQ); }
+      else if (el < tQ + tT) { phase = 'think'; si = Math.min(2, Math.floor((el - tQ) / (tT / 3))); }
+      else if (el < tQ + tT + tA) { phase = 'answer'; an = Math.floor(d.a.length * (el - tQ - tT) / tA); }
+      else { phase = 'show'; an = d.a.length; }
+      var S = self.state;
+      if (phase !== S.phase || qn !== S.qn || an !== S.an || si !== S.si) self.setState({ phase: phase, qn: qn, an: an, si: si });
+      for (var k = 0; k < 7; k++) { var s = self.segs[k]; if (s) s.style.width = (k < self.state.i ? 100 : (k === self.state.i ? Math.min(100, el / total * 100) : 0)) + '%'; }
+      if (el >= total) self.go((self.state.i + 1) % 7);
+      self.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); }
+  go(k) { this.t0 = performance.now(); this.setState({ i: k, phase: 'ask', qn: 0, an: 0, si: 0 }); }
+  renderVals() {
+    var self = this, S = this.state, d = this.D[S.i], ph = S.phase;
+    var v = {
+      caps: this.D.map(function (c, k) { var on = k === S.i; return { label: c.label, sel: on ? 'true' : 'false', fg: on ? '#0B1433' : (k < S.i ? '#5B6582' : '#8A93AD'), seg: self.segRefs[k], fill: k < S.i ? '100%' : '0%', pick: function () { self.go(k); } }; }),
+      qShown: d.q.slice(0, S.qn), typingQ: ph === 'ask',
+      thinking: ph === 'think', answered: ph === 'answer' || ph === 'show', typingA: ph === 'answer',
+      status: d.st[S.si], aShown: d.a.slice(0, S.an),
+      aOp: ph === 'ask' ? 0 : 1, aY: ph === 'ask' ? '12px' : '0px',
+      artOp: ph === 'show' ? 1 : 0, artY: ph === 'show' ? '0px' : '20px', artS: ph === 'show' ? 1 : 0.98,
+      girlY: ph === 'think' ? '-6px' : '0px',
+      plan: [['Mon', '45 min', 'Lesson 5 and a short quiz'], ['Wed', '60 min', 'Lessons 6 and 7'], ['Sat', '2 hrs', 'Module project'], ['Sun', '2 hrs 15 min', 'Practice and review']].map(function (r, k) { return { d: r[0], t: r[1], w: r[2], bg: k === 2 ? '#EAF0FF' : '#FFFFFF', bd: k === 2 ? '#C9D7FA' : '#E6EAF3', day: k === 2 ? '#1652F0' : '#0B1433' }; }),
+      ready: [['Joins', 'Ready', '#E7F5EE', '#0F6B45'], ['GROUP BY', 'Review', '#FFF6E5', '#B26A00'], ['Subqueries', 'Practise more', '#FFF6E5', '#B26A00']].map(function (r) { return { topic: r[0], status: r[1], bg: r[2], fg: r[3] }; }),
+      handoff: ['Your question', 'Our conversation', 'The lesson you’re on', 'What we’ve tried']
+    };
+    for (var k = 1; k <= 7; k++) v['k' + k] = S.i === k - 1;
+    return v;
+  }
+}
+class TrustPart extends Part {
+  constructor(host) {
+    super(host);
+    this.state = { step: 0 };
+    var self = this;
+    this.regs = []; this.noteEls = []; this.wps = []; this.wcs = [];
+    this.wpRefs = [0, 1, 2].map(function (k) { return function (e) { self.wps[k] = e; }; });
+    this.wcRefs = [0, 1, 2].map(function (k) { return function (e) { self.wcs[k] = e; }; });
+    this.regRefs = [0, 1, 2].map(function (k) { return function (e) { self.regs[k] = e; }; });
+    this.noteRefs = [0, 1, 2].map(function (k) { return function (e) { self.noteEls[k] = e; }; });
+    this.setStage = function (e) { self.stage = e; };
+    this.setCard = function (e) { self.card = e; };
+    this.setHi = function (e) { self.hi = e; };
+    this.T = [1200, 3800, 6400, 9000, 12800];
+    this.N = [
+      { t: 'Subject matter is checked', d: 'Is the content accurate and current for the field?', ini: 'PN', who: 'Priya N.', role: 'Subject expert · Data', ok: 'Accurate and current', avBg: '#DCE5FB', avFg: '#1652F0' },
+      { t: 'Learning design is reviewed', d: 'Do lessons, activities and outcomes actually line up?', ini: 'JO', who: 'James O.', role: 'Learning designer', ok: 'Lessons match the outcomes', avBg: '#0B1433', avFg: '#FFFFFF' },
+      { t: 'Assessments are tested', d: 'Do they fairly measure what they claim to measure?', ini: 'LM', who: 'Lena M.', role: 'Assessment specialist', ok: 'Fair and on target', avBg: '#1652F0', avFg: '#FFFFFF' }
+    ];
+  }
+  componentDidMount() {
+    var self = this;
+    this.t0 = performance.now(); this.lastM = 0;
+    var tick = function (now) {
+      var el = now - self.t0, T = self.T, s = 0;
+      if (el >= T[4]) { self.t0 = now; el = 0; }
+      for (var k = 0; k < 4; k++) if (el >= T[k]) s = k + 1;
+      if (s !== self.state.step) { self.setState({ step: s }); self.lastM = 0; }
+      if (now - self.lastM > 300) { self.lastM = now; self.measure(); }
+      self.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+    if (window.IntersectionObserver && this.stage) {
+      this.io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) self.t0 = performance.now(); }, { threshold: 0.35 });
+      this.io.observe(this.stage);
+    }
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); if (this.io) this.io.disconnect(); }
+  measure() {
+    var st = this.stage, cd = this.card, s = this.state.step;
+    if (!st || !cd) return;
+    var cr = cd.getBoundingClientRect(), sr = st.getBoundingClientRect();
+    if (this.hi) {
+      var r = s >= 1 && s <= 3 ? this.regs[s - 1] : null;
+      if (r) { var rr = r.getBoundingClientRect(); this.hi.style.top = (rr.top - cr.top + 4) + 'px'; this.hi.style.height = (rr.height - 8) + 'px'; this.hi.style.opacity = '1'; }
+      else this.hi.style.opacity = '0';
+    }
+    var side = window.innerWidth > 860;
+    for (var k = 0; k < 3; k++) {
+      var n = this.noteEls[k], g = this.regs[k], p = this.wps[k], c = this.wcs[k];
+      if (!p || !c) continue;
+      if (!side || !n || !g) { p.setAttribute('d', 'M0 0'); c.setAttribute('cx', -20); continue; }
+      var nr = n.getBoundingClientRect(), gr = g.getBoundingClientRect();
+      var x1 = nr.left - sr.left, y1 = nr.top - sr.top + 34, x0 = cr.right - sr.left, y0 = gr.top - sr.top + gr.height / 2, mx = (x0 + x1) / 2;
+      var ph = s < k + 1 ? 'wait' : (s === k + 1 ? 'run' : 'done');
+      p.setAttribute('d', 'M' + x0 + ' ' + y0 + ' C' + mx + ' ' + y0 + ' ' + mx + ' ' + y1 + ' ' + x1 + ' ' + y1);
+      p.setAttribute('class', 'tv-wire' + (ph === 'run' ? ' tv-wire-on' : (ph === 'done' ? ' tv-wire-ok' : '')));
+      c.setAttribute('cx', x0); c.setAttribute('cy', y0);
+      c.setAttribute('fill', ph === 'run' ? '#1652F0' : (ph === 'done' ? '#0F6B45' : '#CBD3E6'));
+    }
+  }
+  go(k) { this.t0 = performance.now() - this.T[k]; }
+  renderVals() {
+    var self = this, s = this.state.step;
+    var stI = s === 0 ? 0 : (s < 4 ? 1 : 2);
+    var ST = [
+      { label: 'Not yet validated', bg: '#FFFFFF', fg: '#5B6582', bd: '#D6DDEE', none: true, spin: false, ok: false },
+      { label: 'Review in progress', bg: '#F1F3F8', fg: '#4A5578', bd: '#E6EAF3', none: false, spin: true, ok: false },
+      { label: 'Credalio Validated', bg: '#E7F5EE', fg: '#0F6B45', bd: '#CFE8DC', none: false, spin: false, ok: true }
+    ];
+    var L = [
+      { t: 'Credalio Validated', d: 'Reviewed and approved. Only validated learning carries the seal.', seal: true, i: 2 },
+      { t: 'Review in progress', d: 'Being reviewed now. Not validated yet.', review: true, i: 1 },
+      { t: 'Not yet validated', d: 'Open to learn, without a validator review.', none: true, i: 0 }
+    ];
+    return {
+      stageRef: this.setStage, cardRef: this.setCard, hiRef: this.setHi,
+      r1: this.regRefs[0], r2: this.regRefs[1], r3: this.regRefs[2],
+      st: ST[stI], sealed: s === 4, cardCls: s === 4 ? 'tv-card-ok' : '',
+      legend: L.map(function (l) { return { t: l.t, d: l.d, seal: !!l.seal, review: !!l.review, none: !!l.none, cls: l.i === stI ? 'tv-lg-on' : '' }; }),
+      notes: this.N.map(function (n, k) {
+        var ph = s < k + 1 ? 'wait' : (s === k + 1 ? 'run' : 'done');
+        return { t: n.t, d: n.d, ini: n.ini, who: n.who, role: n.role, avBg: n.avBg, avFg: n.avFg, num: '0' + (k + 1),
+          numFg: ph === 'wait' ? '#8A93AD' : '#1652F0', cls: 'tv-note-' + ph, ref: self.noteRefs[k],
+          run: ph === 'run', done: ph === 'done', wait: ph === 'wait',
+          res: ph === 'run' ? 'Reviewing…' : (ph === 'done' ? n.ok : 'Waiting for review'),
+          resFg: ph === 'run' ? '#1652F0' : (ph === 'done' ? '#0F6B45' : '#8A93AD'),
+          pick: function () { self.go(k); } };
+      }),
+      wp0: this.wpRefs[0], wp1: this.wpRefs[1], wp2: this.wpRefs[2], wc0: this.wcRefs[0], wc1: this.wcRefs[1], wc2: this.wcRefs[2]
+    };
+  }
+}
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { v: 0 };
+    this.parts = { hero: new HeroPart(this), eng: new EnginePart(this), grow: new GrowPart(this), coach: new CoachPart(this), tv: new TrustPart(this) };
+    this.parts.hero.sync = true;
+  }
+  bump(now) {
+    var self = this;
+    if (now) { this.setState({ v: this.state.v + 1 }); return; }
+    if (this.pend) return;
+    this.pend = true;
+    requestAnimationFrame(function () { self.pend = false; self.setState({ v: self.state.v + 1 }); });
+  }
+  componentDidMount() { for (var k in this.parts) if (this.parts[k].componentDidMount) this.parts[k].componentDidMount(); }
+  componentWillUnmount() { for (var k in this.parts) if (this.parts[k].componentWillUnmount) this.parts[k].componentWillUnmount(); }
+  renderVals() { var o = {}; for (var k in this.parts) o[k] = this.parts[k].renderVals(); return o; }
+}
+</script>
+</body>
+</html>

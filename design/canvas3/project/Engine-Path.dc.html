@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Become Engine · journey flythrough</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+.pv-plane{position:absolute;left:64%;top:70%;width:3200px;height:3600px;transform-origin:0 0;transform-style:preserve-3d;transition:transform 1.4s cubic-bezier(.65,0,.35,1)}
+.pv-grid{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(22,82,240,.08) 0 2px,transparent 2px 160px),repeating-linear-gradient(90deg,rgba(22,82,240,.08) 0 2px,transparent 2px 160px);-webkit-mask-image:radial-gradient(closest-side,#000 55%,transparent 100%);mask-image:radial-gradient(closest-side,#000 55%,transparent 100%)}
+.pv-node{position:absolute;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:999px;display:flex;align-items:center;justify-content:center;transition:background .5s ease,border-color .5s ease,box-shadow .5s ease}
+.pv-card{position:absolute;transform-origin:50% 100%;transition:opacity .8s ease,filter .8s ease}
+.pv-trail{stroke-dasharray:.04 1.2;animation:pvTrail 2.6s linear infinite}
+@keyframes pvTrail{from{stroke-dashoffset:.04}to{stroke-dashoffset:-1}}
+.pv-prog{transition:stroke-dashoffset 1.4s cubic-bezier(.65,0,.35,1)}
+.pv-pulse{animation:pvPulse 2.2s ease-out infinite}
+@keyframes pvPulse{0%{box-shadow:0 0 0 0 rgba(22,82,240,.45)}100%{box-shadow:0 0 0 48px rgba(22,82,240,0)}}
+.pv-btn{transition:border-color .2s ease}
+.pv-btn:hover{border-color:#1652F0 !important}
+.pv-btn:focus-visible,.pv-dot:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.pv-swap{animation:pvSwap .6s cubic-bezier(.2,.7,.2,1) both}
+@keyframes pvSwap{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.pv-plane,.pv-prog{transition:none}.pv-trail,.pv-pulse,.pv-swap{animation:none}}
+</style>
+</helmet>
+<section aria-labelledby="pv-title" style="position: relative; width: 100%; height: 820px; overflow: hidden; background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FF 100%); font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<div aria-hidden="true" style="position: absolute; inset: 0; perspective: 900px; perspective-origin: 64% 18%">
+<div class="pv-plane" style="transform: rotateX(64deg) translate({{camX}}, {{camY}})">
+<div class="pv-grid"></div>
+<svg viewBox="0 0 3200 3600" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible">
+<path d="{{pathD}}" fill="none" stroke="#DCE5FB" stroke-width="14" stroke-linecap="round"></path>
+<path class="pv-prog" d="{{pathD}}" fill="none" stroke="#1652F0" stroke-width="14" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="{{progOff}}"></path>
+<path class="pv-trail" d="{{pathD}}" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" pathLength="1"></path>
+</svg>
+<sc-for list="{{stages}}" as="st" hint-placeholder-count="8">
+<div class="pv-node {{st.pulse}}" style="left: {{st.x}}; top: {{st.y}}; background: {{st.bg}}; border: 3px solid {{st.border}}"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="{{st.fg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{st.icon}}"></path></svg></div>
+</sc-for>
+<sc-for list="{{stages}}" as="st" hint-placeholder-count="8">
+<div class="pv-card" style="left: {{st.x}}; top: {{st.y}}; transform: translate(-50%, -100%) rotateX(-64deg) translateY(-36px) scale(1.25); opacity: {{st.op}}; filter: {{st.blur}}">
+<dc-import name="Moment" stage="{{st.n}}" hint-size="280px,150px"></dc-import>
+</div>
+</sc-for>
+</div>
+</div>
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; height: 48%; background: linear-gradient(180deg, #FFFFFF 30%, rgba(255,255,255,0)); pointer-events: none"></div>
+
+<div style="position: relative; z-index: 2; max-width: 1312px; height: 100%; margin: 0 auto; box-sizing: border-box; padding: 80px 64px 64px; display: flex; flex-direction: column; justify-content: space-between; pointer-events: none">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 520px">
+<span style="font-size: 14px; font-weight: 500; color: #1652F0">The Become Engine</span>
+<h2 id="pv-title" style="margin: 0; font-size: 44px; line-height: 1.08; font-weight: 600; letter-spacing: -1.3px">Every journey starts with a vision. We build the rest.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #4A5578">Eight connected stages, from knowing where you want to go to proving you got there.</p>
+</div>
+<div style="max-width: 440px; display: flex; flex-direction: column; gap: 16px; pointer-events: auto">
+<div class="pv-swap" style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 14px; font-weight: 500; color: #8A93AD">Stage {{cur.n}} of 8 · <span style="color: #1652F0">{{cur.name}}</span></span>
+<h3 style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 600; letter-spacing: -.4px">{{cur.headline}}</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">{{cur.detail}}</p>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<button class="pv-btn" type="button" onClick="{{prev}}" aria-label="Previous stage" style="width: 44px; height: 44px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #D6DDEE; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B1433" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<button class="pv-btn" type="button" onClick="{{next}}" style="height: 44px; padding: 0 16px 0 18px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #D6DDEE; display: flex; align-items: center; gap: 8px; cursor: pointer; font-family: 'Google Sans', system-ui, sans-serif; font-size: 14px; font-weight: 600; color: #0B1433; white-space: nowrap">{{nextLabel}}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B1433" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+<div style="display: flex; gap: 4px; margin-left: 6px">
+<sc-for list="{{stages}}" as="st" hint-placeholder-count="8">
+<button class="pv-dot" type="button" onClick="{{st.pick}}" aria-label="Stage {{st.n}}: {{st.name}}" style="width: {{st.barW}}; height: 8px; padding: 0; border: none; border-radius: 999px; background: {{st.bar}}; cursor: pointer; transition: width .35s ease, background .35s ease"></button>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { stage: 0 }; }
+  componentDidMount() { this.startTimer(); }
+  componentWillUnmount() { clearInterval(this.timer); }
+  startTimer() {
+    var self = this;
+    clearInterval(this.timer);
+    this.timer = setInterval(function () { self.setState({ stage: (self.state.stage + 1) % 8 }); }, 4600);
+  }
+  goTo(i) { this.setState({ stage: (i + 8) % 8 }); this.startTimer(); }
+  renderVals() {
+    var self = this;
+    var eng = [
+      ['Vision', 'Start with who you want to become.', 'Tell us your goal in your own words: a role, a skill, a career change.', 'M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z'],
+      ['Discover', 'See the possibilities ahead.', 'Explore the roles and skills linked to your goal, and the gap between today and where you want to be.', 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM15.5 8.5l-2 5-5 2 2-5z'],
+      ['AI Coach', 'Turn your goal into a personal journey.', 'Your AI Coach maps the route and adapts it as you learn.', 'M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z'],
+      ['Learn', 'Build the knowledge you need.', 'Courses, lessons and resources from trusted creators and institutions.', 'M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16'],
+      ['Practise', 'Turn knowledge into capability.', 'Projects, exercises and simulations, with feedback while you work.', 'M8 6l-6 6 6 6M16 6l6 6-6 6'],
+      ['Connect', 'Learn with people when it matters.', 'Tutors, peers and experts who answer questions and review your work.', 'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21v-1a6 6 0 0 1 12 0v1M16 3.5a4 4 0 0 1 0 7M22 21v-1a6 6 0 0 0-4-5.6'],
+      ['Prove', 'Show what you can actually do.', 'Verified work becomes evidence, kept in your Digital Backpack.', 'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6zM8.5 12l2.5 2.5 4.5-5'],
+      ['Advance', 'Use what you’ve proven to move forward.', 'A new role, the next level or a fresh goal. Then the engine starts again.', 'M7 17L17 7M9 7h8v8']
+    ];
+    var pts = [[1600, 3200], [1220, 2780], [1660, 2360], [1260, 1940], [1700, 1520], [1300, 1100], [1700, 700], [1480, 300]];
+    var d = 'M' + pts[0][0] + ' ' + pts[0][1];
+    for (var k = 1; k < pts.length; k++) {
+      var a = pts[k - 1], b = pts[k], my = (a[1] + b[1]) / 2;
+      d += ' C' + a[0] + ' ' + my + ' ' + b[0] + ' ' + my + ' ' + b[0] + ' ' + b[1];
+    }
+    var si = this.state.stage;
+    var stages = eng.map(function (s, k) {
+      var on = k === si, done = k < si;
+      return {
+        n: k + 1, name: s[0], icon: s[3],
+        x: pts[k][0] + 'px', y: pts[k][1] + 'px',
+        bg: on ? '#1652F0' : (done ? '#EAF0FF' : '#FFFFFF'),
+        border: on ? '#1652F0' : (done ? '#C9D7FA' : '#D6DDEE'),
+        fg: on ? '#FFFFFF' : (done ? '#1652F0' : '#8A93AD'),
+        pulse: on ? 'pv-pulse' : '',
+        op: k < si ? 0 : (on ? 1 : (k - si < 3 ? 0.55 : 0)),
+        blur: on ? 'none' : 'blur(1px)',
+        bar: on ? '#1652F0' : (done ? '#C9D7FA' : '#E6EAF3'), barW: on ? '24px' : '8px',
+        pick: function () { self.goTo(k); }
+      };
+    });
+    var c = eng[si];
+    return {
+      stages: stages, pathD: d,
+      camX: (-pts[si][0]) + 'px', camY: (-pts[si][1]) + 'px',
+      progOff: (1 - si / 7).toFixed(4),
+      cur: { n: si + 1, name: c[0], headline: c[1], detail: c[2] },
+      nextLabel: si < 7 ? 'Next: ' + eng[si + 1][0] : 'Start again',
+      next: function () { self.goTo(si + 1); },
+      prev: function () { self.goTo(si - 1); }
+    };
+  }
+}
+</script>
+</body>
+</html>

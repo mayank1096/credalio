@@ -13,6 +13,13 @@
 body{margin:0;background:#FFFFFF}
 .fd-card{position:absolute;left:0;top:0;transform-origin:50% 100%;will-change:transform,opacity;transition:opacity .5s ease}
 .fd-btn{transition:border-color .2s ease}
+@media (max-width: 760px){
+.fd-ui{padding:32px 20px 24px !important}
+.fd-h2{font-size:28px !important;letter-spacing:-.8px !important}
+.fd-h3{font-size:20px !important}
+.fd-panel{max-width:none !important;gap:12px !important;margin:0 -20px -24px;padding:48px 20px 24px;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,#FFFFFF 38%)}
+.fd-panel p{font-size:14px !important}
+}
 .fd-btn:hover{border-color:#1652F0 !important}
 .fd-btn:focus-visible,.fd-dot:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 </style>
@@ -24,15 +31,15 @@ body{margin:0;background:#FFFFFF}
 <dc-import name="Moment" stage="{{cur.n}}" hint-size="280px,150px"></dc-import>
 </div>
 
-<div style="position: relative; z-index: 2; max-width: 1312px; height: 100%; margin: 0 auto; box-sizing: border-box; padding: clamp(48px, 9vh, 80px) 64px clamp(40px, 7vh, 64px); display: flex; flex-direction: column; justify-content: space-between; pointer-events: none">
+<div class="fd-ui" style="position: relative; z-index: 2; max-width: 1312px; height: 100%; margin: 0 auto; box-sizing: border-box; padding: clamp(48px, 9vh, 80px) 64px clamp(40px, 7vh, 64px); display: flex; flex-direction: column; justify-content: space-between; pointer-events: none">
 <div style="display: flex; flex-direction: column; gap: 14px; max-width: 500px">
 <span style="font-size: 14px; font-weight: 500; color: #1652F0">The Become Engine</span>
-<h2 id="fd-title" style="margin: 0; font-size: 44px; line-height: 1.08; font-weight: 600; letter-spacing: -1.3px">Every journey starts with a vision. We build the rest.</h2>
+<h2 id="fd-title" class="fd-h2" style="margin: 0; font-size: 44px; line-height: 1.08; font-weight: 600; letter-spacing: -1.3px">Every journey starts with a vision. We build the rest.</h2>
 </div>
-<div style="max-width: 420px; display: flex; flex-direction: column; gap: 16px; pointer-events: auto">
+<div class="fd-panel" style="max-width: 420px; display: flex; flex-direction: column; gap: 16px; pointer-events: auto">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <span style="font-size: 14px; font-weight: 500; color: #8A93AD">Stage {{cur.n}} of 8 · <span style="color: #1652F0">{{cur.name}}</span></span>
-<h3 style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 600; letter-spacing: -.4px">{{cur.headline}}</h3>
+<h3 class="fd-h3" style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 600; letter-spacing: -.4px">{{cur.headline}}</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">{{cur.detail}}</p>
 </div>
 <div style="display: flex; align-items: center; gap: 12px">
@@ -111,7 +118,8 @@ class Component extends DCLogic {
     var SP = this.sprites, time = (now || 0) / 1000;
     var smooth = function (e0, e1, x) { var t = Math.min(1, Math.max(0, (x - e0) / (e1 - e0))); return t * t * (3 - 2 * t); };
     var camZ = 0.5 + 6 * this.pos;
-    var hy = H * 0.3, camH = 1.3, f = (H - hy) * 1.5 / camH, vpX = W * 0.7, LANE = 0.46;
+    var mob = W < 760;
+    var hy = H * (mob ? 0.33 : 0.3), camH = 1.3, f = (H - hy) * (mob ? 1.1 : 1.5) / camH, vpX = W * (mob ? 0.5 : 0.7), LANE = 0.46;
     var X = function (z) { return 1.9 * Math.sin(0.3 * z) + 0.9 * Math.sin(0.11 * z + 1); };
     var tx = X(camZ + 3.5);
     this.camX = this.camX == null ? tx : this.camX + (tx - this.camX) * 0.12;
@@ -122,7 +130,7 @@ class Component extends DCLogic {
       return m * (0.42 * Math.sin(0.45 * x + 0.2 * z) + 0.3 * Math.sin(0.85 * z + 0.6 * x + 1.3) + 0.16 * Math.sin(1.7 * x - 0.5 * z + time * 0.4) + 0.5) * 0.9;
     };
     // dot field, far to near
-    var tiers = [[14, 30, 0.45], [6, 14, 0.22], [1.15, 6, 0.11]];
+    var tiers = mob ? [[14, 30, 0.6], [6, 14, 0.3], [1.15, 6, 0.15]] : [[14, 30, 0.45], [6, 14, 0.22], [1.15, 6, 0.11]];
     for (var ti = 0; ti < tiers.length; ti++) {
       var T = tiers[ti], st = T[2];
       var z0 = Math.ceil((camZ + T[0]) / st) * st, z1 = camZ + T[1];
@@ -134,12 +142,12 @@ class Component extends DCLogic {
           if (Math.abs(x - rc) < LANE + 0.08) continue;
           var h = hgt(x, z);
           var sx = vpX + (x - camX) * f / d;
-          if (sx < W * 0.28 || sx > W + 10) continue;
+          if (sx < (mob ? -10 : W * 0.28) || sx > W + 10) continue;
           var sy = hy + (camH - h) * f / d;
           if (sy > H + 10) continue;
           var slope = hgt(x + 0.12, z) - hgt(x - 0.12, z);
           var shade = Math.min(1, Math.max(0.12, 0.55 - slope * 3.2 + h * 0.15));
-          var a = fog * shade * smooth(W * 0.3, W * 0.58, sx);
+          var a = fog * shade * (mob ? smooth(hy - 10, hy + 70, sy) : smooth(W * 0.3, W * 0.58, sx));
           if (a < 0.03) continue;
           var r = Math.min(3.6, Math.max(0.5, 0.017 * f / d));
           g.globalAlpha = Math.min(1, a);
@@ -214,7 +222,7 @@ class Component extends DCLogic {
       g.globalAlpha = 1;
     }
     if (this.card) {
-      if (cardPos) { this.card.style.opacity = '1'; this.card.style.transform = 'translate(' + (cardPos.x - 140).toFixed(1) + 'px,' + (cardPos.y - 160).toFixed(1) + 'px) scale(' + cardPos.s.toFixed(3) + ')'; }
+      if (cardPos) { var cs = mob ? Math.min(0.78, cardPos.s) : cardPos.s, cx = mob ? Math.min(W - 16 - 140 * cs, Math.max(16 + 140 * cs, cardPos.x)) : cardPos.x; this.card.style.opacity = '1'; this.card.style.transform = 'translate(' + (cx - 140).toFixed(1) + 'px,' + (cardPos.y - 160).toFixed(1) + 'px) scale(' + cs.toFixed(3) + ')'; }
       else this.card.style.opacity = '0';
     }
   }

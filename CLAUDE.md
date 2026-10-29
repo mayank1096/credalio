@@ -26,6 +26,9 @@
 - **Client reference** (content source only, about 98% correct): `reference/project/`. Screen list: `screens.md`.
 - **Artifact file limit:** 512 files per canvas version. Check the count before adding boards.
 
+## Designer's rule for every new section (read before starting EACH new section or screen)
+> "YOU DO NOT HAVE TO FOLLOW THE CLIENT'S DESIGN, THATS JUST A DUMMY CONTENT LAYOUT. YOU HAVE TO THINK FROM SCRATCH AND THINK OF THE BEST POSSIBLE LAYOUT AND CONCEPT AND VISUAL DESIGN. THIS IS A $24K WEBSITE AND SHOULD FEEL LIKE THAT"
+
 ## Goal (never lose this)
 - DESIGN, DON'T COPY. The client prototype is a content source only. For every screen, work out its job and invent the clearest, most efficient layout. Never reuse the client's layout.
 - Clean, modern, world-class: simple, premium, calm, youthful, intelligent. Theme: "the feeling of becoming".

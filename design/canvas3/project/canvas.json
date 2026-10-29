@@ -32,7 +32,7 @@
       "y": 1400
     },
     "Hero-C-Mobile.dc.html": {
-      "h": 3862,
+      "h": 3852,
       "is_interactive": true,
       "page": "main",
       "title": "LND-001 C · Mobile",
@@ -42,7 +42,7 @@
     },
     "Hero-C.dc.html": {
       "expand": "fill",
-      "h": 3844,
+      "h": 3850,
       "is_interactive": true,
       "page": "main",
       "title": "LND-001 C · Hero + Become Engine + Grow · Desktop",
@@ -100,7 +100,7 @@
       "x": 1520,
       "y": 8600,
       "w": 390,
-      "h": 1120,
+      "h": 1104,
       "title": "Section 4 · Mobile",
       "page": "main",
       "is_interactive": true

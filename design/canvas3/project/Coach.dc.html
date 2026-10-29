@@ -40,18 +40,30 @@ body{margin:0;background:#FFFFFF}
 @media (prefers-reduced-motion: reduce){.ac-caret,.ac-orb-ring,.ac-shimmer,.ac-think-b{animation:none}.ac-rise{transition:none}}
 @media (max-width: 1080px){.ac-grid{grid-template-columns:200px minmax(0,1fr) !important}.ac-artcol{grid-column:1 / -1}.ac-learner{width:240px}}
 @media (max-width: 760px){
-.ac-wrap{padding:72px 20px !important;gap:28px !important}
-.ac-head{grid-template-columns:minmax(0,1fr) !important;gap:14px !important}
+.ac-wrap{padding:80px 20px 88px !important;gap:36px !important}
+.ac-head{grid-template-columns:minmax(0,1fr) !important;gap:16px !important}
 .ac-h2{font-size:32px !important;letter-spacing:-.9px !important}
-.ac-tabs{overflow-x:auto;gap:16px !important;scrollbar-width:none;margin:0 -20px;padding:0 20px}
+.ac-sub{font-size:16px !important;margin:0 !important}
+.ac-tabs{overflow-x:auto;gap:18px !important;scrollbar-width:none;margin:0 -20px;padding:0 20px}
 .ac-tabs::-webkit-scrollbar{display:none}
-.ac-tab{flex:0 0 auto}
-.ac-grid{grid-template-columns:minmax(0,1fr) !important;padding:20px !important;gap:18px !important;min-height:0 !important}
+.ac-tab{flex:0 0 auto;font-size:14px;padding-bottom:12px}
+.ac-tabwrap{gap:28px !important}
+.ac-stage{background:none;border:none;border-radius:0;overflow:visible}
+.ac-stage::before{display:none}
+.ac-grid{grid-template-columns:minmax(0,1fr) !important;padding:0 !important;gap:28px !important;min-height:612px !important;align-content:start}
 .ac-girlcol{display:none !important}
-.ac-mini{display:block !important}
-.ac-bubble{font-size:15px}
-.ac-art{padding:18px}
-.ac-btn{height:38px;padding:0 14px;font-size:13px}
+.ac-chat{min-height:244px;justify-content:flex-start !important;gap:20px !important}
+.ac-qrow{flex-direction:row-reverse;align-items:flex-end !important}
+.ac-q{max-width:84%;border-bottom-left-radius:16px;border-bottom-right-radius:4px}
+.ac-mini{display:block !important;width:36px !important;height:36px !important}
+.ac-orb{width:36px;height:36px}
+.ac-arow{gap:10px !important}
+.ac-bubble{font-size:15px;padding:14px 16px}
+.ac-artcol{justify-content:flex-start !important}
+.ac-art{padding:20px;gap:16px}
+.ac-btn{height:40px;padding:0 16px;font-size:13px}
+.ac-plan{grid-template-columns:38px 74px minmax(0,1fr) !important;gap:8px !important}
+.ac-hand{padding:10px !important;gap:6px !important;font-size:12.5px !important}
 }
 </style>
 </helmet>
@@ -63,10 +75,10 @@ body{margin:0;background:#FFFFFF}
 <span style="font-size: 14px; font-weight: 500; color: #1652F0">AI learning experience</span>
 <h2 id="ac-h" class="ac-h2" style="margin: 0; font-size: 48px; line-height: 1.06; font-weight: 600; letter-spacing: -1.5px">AI woven into every step. Not a chatbot bolted on.</h2>
 </div>
-<p style="margin: 0 0 6px; font-size: 18px; line-height: 1.6; color: #4A5578">Your AI Coach knows your goal, your progress and the lesson in front of you. When a person would help more, it brings one in.</p>
+<p class="ac-sub" style="margin: 0 0 6px; font-size: 18px; line-height: 1.6; color: #4A5578">Your AI Coach knows your goal, your progress and the lesson in front of you. When a person would help more, it brings one in.</p>
 </div>
 
-<div style="display: flex; flex-direction: column; gap: 18px">
+<div class="ac-tabwrap" style="display: flex; flex-direction: column; gap: 24px">
 <div class="ac-tabs" role="tablist" aria-label="What your AI Coach can do" style="display: flex; gap: 14px">
 <sc-for list="{{caps}}" as="c" hint-placeholder-count="7">
 <button class="ac-tab" type="button" role="tab" aria-selected="{{c.sel}}" onClick="{{c.pick}}" style="color: {{c.fg}}">{{c.label}}<span class="ac-seg"><span ref="{{c.seg}}" style="width: {{c.fill}}"></span></span></button>
@@ -80,12 +92,12 @@ body{margin:0;background:#FFFFFF}
 <img class="ac-learner" src="/_blob/0d0e423d8fee6d6a79d2c01adceb2955" alt="" style="transform: translateY({{girlY}})">
 </div>
 
-<div aria-live="polite" style="display: flex; flex-direction: column; gap: 18px; justify-content: center; padding-left: 0; min-width: 0">
-<div style="display: flex; align-items: flex-end; gap: 10px">
+<div class="ac-chat" aria-live="polite" style="display: flex; flex-direction: column; gap: 18px; justify-content: center; padding-left: 0; min-width: 0">
+<div class="ac-qrow" style="display: flex; align-items: flex-end; gap: 10px">
 <span class="ac-mini" aria-hidden="true" style="display: none; width: 44px; height: 44px; border-radius: 999px; background-color: #EAF0FF; flex-shrink: 0; box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 3.5px #DCE5FB"></span>
 <div class="ac-bubble ac-q">{{qShown}}<sc-if value="{{typingQ}}" hint-placeholder-val="{{ false }}"><span class="ac-caret"></span></sc-if></div>
 </div>
-<div class="ac-rise" style="display: flex; align-items: flex-start; gap: 12px; opacity: {{aOp}}; transform: translateY({{aY}})">
+<div class="ac-rise ac-arow" style="display: flex; align-items: flex-start; gap: 12px; opacity: {{aOp}}; transform: translateY({{aY}})">
 <span class="ac-orb" aria-hidden="true"><sc-if value="{{thinking}}" hint-placeholder-val="{{ false }}"><span class="ac-orb-ring"></span></sc-if></span>
 <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <span style="font-size: 13px; font-weight: 500; color: #8A93AD">Nova · your AI Coach</span>
@@ -147,7 +159,7 @@ body{margin:0;background:#FFFFFF}
 <div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 17px; font-weight: 600">Your study plan</span><span class="ac-k">6 hrs/week · 4 weeks</span></div>
 <div style="display: flex; flex-direction: column; gap: 8px">
 <sc-for list="{{plan}}" as="r" hint-placeholder-count="4">
-<div style="display: grid; grid-template-columns: 44px 90px minmax(0, 1fr); align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; background: {{r.bg}}; border: 1px solid {{r.bd}}; font-size: 13px"><span style="font-weight: 600; color: {{r.day}}">{{r.d}}</span><span style="color: #5B6582">{{r.t}}</span><span style="color: #0B1433">{{r.w}}</span></div>
+<div class="ac-plan" style="display: grid; grid-template-columns: 44px 90px minmax(0, 1fr); align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; background: {{r.bg}}; border: 1px solid {{r.bd}}; font-size: 13px"><span style="font-weight: 600; color: {{r.day}}">{{r.d}}</span><span style="color: #5B6582">{{r.t}}</span><span style="color: #0B1433">{{r.w}}</span></div>
 </sc-for>
 </div>
 <span class="ac-btn" style="cursor: default">Add to my calendar</span>
@@ -184,7 +196,7 @@ body{margin:0;background:#FFFFFF}
 <span class="ac-k">I'll send them</span>
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px">
 <sc-for list="{{handoff}}" as="h" hint-placeholder-count="4">
-<span style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 10px; background: #F5F8FF; font-size: 13px; color: #3A4566"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>{{h}}</span>
+<span class="ac-hand" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 10px; background: #F5F8FF; font-size: 13px; color: #3A4566"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>{{h}}</span>
 </sc-for>
 </div>
 <span class="ac-btn" style="cursor: default">Ask Tutor</span>

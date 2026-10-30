@@ -25,7 +25,7 @@
       "x": 0,
       "y": 2640,
       "w": 1440,
-      "h": 7236,
+      "h": 7258,
       "title": "Landing page · Desktop",
       "page": "main",
       "expand": "fill",
@@ -35,7 +35,7 @@
       "x": 1520,
       "y": 2640,
       "w": 390,
-      "h": 7377,
+      "h": 7385,
       "title": "Landing page · Mobile",
       "page": "main",
       "is_interactive": true

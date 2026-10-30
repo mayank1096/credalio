@@ -605,6 +605,45 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ci-vis{display:none}
 .ci-float{display:none}
 }
+.ec-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,640px);gap:72px;align-items:center}
+.ec-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
+.ec-mm{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px 0 6px;border-radius:999px;background:#F5F8FF;border:1px solid #E6EAF3;font-size:13px;color:#3A4566}
+.ec-mm i{width:22px;height:22px;border-radius:7px;background:#0B1433;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12px;font-weight:600}
+.ec-stack{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;padding:22px 0 8px}
+.ec-beam{position:absolute;left:50%;top:0;bottom:40px;width:2px;margin-left:-1px;background:linear-gradient(180deg,rgba(22,82,240,.0),rgba(22,82,240,.25) 20%,rgba(22,82,240,.25) 80%,rgba(22,82,240,0));z-index:0}
+.ec-pulse{position:absolute;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:999px;background:#1652F0;box-shadow:0 0 0 6px rgba(22,82,240,.15),0 0 18px rgba(22,82,240,.7);z-index:3;transition:top 1s cubic-bezier(.65,0,.35,1),opacity .4s ease}
+.ec-slab{position:relative;z-index:1;box-sizing:border-box;display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:center;gap:14px;padding:16px 20px;border-radius:18px;transition:box-shadow .5s ease,transform .5s cubic-bezier(.2,.7,.2,1),border-color .5s ease;cursor:default}
+.ec-slab-on{transform:translateY(-3px)}
+.ec-l0{width:64%;background:#FFFFFF;border:1.5px solid #C9D7FA;color:#0B1433;box-shadow:0 20px 40px -30px rgba(22,82,240,.5)}
+.ec-l0.ec-slab-on{border-color:#1652F0;box-shadow:0 0 0 6px rgba(22,82,240,.1),0 30px 60px -28px rgba(22,82,240,.6)}
+.ec-l1{width:76%;background:#EAF0FF;border:1.5px solid #DCE5FB;color:#0B1433}
+.ec-l2{width:88%;background:#DCE5FB;border:1.5px solid #C9D7FA;color:#0B1433}
+.ec-l3{width:100%;background:linear-gradient(150deg,#1C3AA8,#0B1433);border:1.5px solid #0B1433;color:#FFFFFF}
+.ec-l1.ec-slab-on,.ec-l2.ec-slab-on{border-color:#1652F0;box-shadow:0 20px 40px -26px rgba(22,82,240,.6)}
+.ec-l3.ec-slab-on{box-shadow:0 0 0 6px rgba(22,82,240,.14),0 30px 60px -28px rgba(11,20,51,.8)}
+.ec-ico{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center}
+.ec-n{font-size:17px;font-weight:600;letter-spacing:-.2px}
+.ec-r{font-size:12px;font-weight:500;opacity:.7}
+.ec-d{font-size:13px;line-height:1.45;opacity:.78;margin-top:2px}
+.ec-here{height:26px;padding:0 10px;border-radius:999px;background:#1652F0;color:#FFFFFF;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;white-space:nowrap}
+.ec-here i{width:6px;height:6px;border-radius:999px;background:#FFFFFF;display:block;animation:ecBlink 1.6s ease-in-out infinite}
+@keyframes ecBlink{50%{opacity:.3}}
+@media (prefers-reduced-motion: reduce){.ec-here i{animation:none}.ec-pulse{display:none}}
+@media (max-width: 1080px){.ec-grid{grid-template-columns:minmax(0,1fr) !important;gap:36px !important}.ec-stack{max-width:640px;width:100%;margin:0 auto}}
+@media (max-width: 760px){
+.ec-wrap{padding:80px 20px !important}
+.ec-h2{font-size:30px !important;letter-spacing:-.8px !important}
+.ec-p{font-size:15px !important}
+.ec-grid{gap:28px !important}
+.ec-stack{gap:10px}
+.ec-slab{grid-template-columns:36px minmax(0,1fr) auto;gap:10px;padding:12px 14px;border-radius:15px}
+.ec-l0{width:78%}.ec-l1{width:86%}.ec-l2{width:93%}
+.ec-ico{width:36px;height:36px;border-radius:11px}
+.ec-ico svg,.ec-ico img{transform:scale(.85)}
+.ec-n{font-size:15px}
+.ec-d{display:none}
+.ec-here{height:22px;font-size:11px;padding:0 8px}
+}
 </style>
 </helmet>
 <div class="lh-root" style="box-sizing: border-box; padding: 16px; background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
@@ -1377,6 +1416,35 @@ Not sure which? Ask your AI Coach
 </div>
 </section>
 </section>
+<section class="lh-eng" aria-label="The Credalio ecosystem">
+<section aria-labelledby="ec-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<div class="ec-wrap" ref="{{ec.rootRef}}" style="max-width: 1312px; margin: 0 auto; padding: 112px 48px; box-sizing: border-box">
+<div class="ec-grid">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<span style="font-size: 14px; font-weight: 500; color: #1652F0">The Credalio ecosystem</span>
+<h2 id="ec-h" class="ec-h2">Built on infrastructure designed to last.</h2>
+<p class="ec-p" style="margin: 0; max-width: 470px; font-size: 18px; line-height: 1.6; color: #4A5578">You only need Credalio to learn. Underneath, three connected layers keep your identity secure, your learning delivered and the ecosystem running.</p>
+<span class="ec-mm" style="margin-top: 6px"><i>m</i>Part of the magnummeta ecosystem</span>
+</div>
+
+<div class="ec-stack" ref="{{ec.stackRef}}" role="list" aria-label="The four layers of the ecosystem">
+<span class="ec-beam" aria-hidden="true"></span>
+<span class="ec-pulse" aria-hidden="true" style="top: {{ec.pulseTop}}; opacity: {{ec.pulseOp}}"></span>
+<sc-for list="{{ec.layers}}" as="l" hint-placeholder-count="4">
+<div class="ec-slab {{l.cls}}" role="listitem" ref="{{l.ref}}" onMouseEnter="{{l.enter}}" onMouseLeave="{{l.leave}}">
+<span class="ec-ico" style="background: {{l.icoBg}}" aria-hidden="true">
+<sc-if value="{{l.mark}}" hint-placeholder-val="{{ false }}"><img src="/_blob/f81e36d31295a0d0737959589ec1abd4" alt="" width="26" height="26"></sc-if>
+<sc-if value="{{l.svg}}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="{{l.icoFg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{l.i1}}"></path><path d="M10 12.5l1.5 1.5 3-3" style="display: {{l.i1}}"></path><path d="M12 5v4M12 15v4M5 12h4M15 12h4M6.5 6.5l2.5 2.5M15 15l2.5 2.5M17.5 6.5L15 9M9 15l-2.5 2.5" style="display: {{l.i2}}"></path><circle cx="12" cy="12" r="2.2" style="display: {{l.i2}}"></circle><path d="M12 2l8.5 5v10L12 22l-8.5-5V7z" style="display: {{l.i3}}"></path><path d="M12 8l3.5 2v4L12 16l-3.5-2v-4z" style="display: {{l.i3}}"></path></svg></sc-if>
+</span>
+<span style="display: flex; flex-direction: column; gap: 1px; min-width: 0"><span style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap"><span class="ec-n">{{l.n}}</span><span class="ec-r">{{l.r}}</span></span><span class="ec-d">{{l.d}}</span></span>
+<sc-if value="{{l.here}}" hint-placeholder-val="{{ false }}"><span class="ec-here"><i></i>You are here</span></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</section>
+</section>
 <footer class="lh-eng ft" aria-label="Footer">
 <div class="ft-top">
 <div class="ft-brand">
@@ -1401,7 +1469,7 @@ Not sure which? Ask your AI Coach
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":8884}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":9520}}'>
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }
   setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }
@@ -1946,11 +2014,63 @@ class MarketPart extends Part {
     };
   }
 }
+class EcoPart extends Part {
+  constructor(host) {
+    super(host);
+    this.state = { on: 3, top: 0, hover: -1 };
+    var self = this;
+    this.els = [];
+    this.refs4 = [0, 1, 2, 3].map(function (k) { return function (e) { self.els[k] = e; }; });
+    this.setRoot = function (e) { self.root = e; };
+    this.setStack = function (e) { self.stack = e; };
+  }
+  componentDidMount() {
+    var self = this;
+    var seq = [3, 2, 1, 0, 0];
+    this.i = 0; this.vis = true;
+    var step = function () {
+      if (!self.vis || self.state.hover >= 0) return;
+      self.i = (self.i + 1) % seq.length;
+      self.go(seq[self.i]);
+    };
+    this.go(3);
+    this.timer = setInterval(step, 1300);
+    if (window.IntersectionObserver && this.root) { this.io = new IntersectionObserver(function (en) { self.vis = en[0].isIntersecting; }, { threshold: 0.2 }); this.io.observe(this.root); }
+    this.onR = function () { self.go(self.state.on); };
+    window.addEventListener('resize', this.onR);
+    setTimeout(function () { self.go(self.state.on); }, 300);
+  }
+  componentWillUnmount() { clearInterval(this.timer); if (this.io) this.io.disconnect(); window.removeEventListener('resize', this.onR); }
+  go(k) {
+    var el = this.els[k], st = this.stack, top = 0;
+    if (el && st) { var r = el.getBoundingClientRect(), s = st.getBoundingClientRect(); top = r.top - s.top - 11; }
+    this.setState({ on: k, top: top });
+  }
+  renderVals() {
+    var self = this, S = this.state, on = S.hover >= 0 ? S.hover : S.on;
+    var L = [
+      { n: 'Credalio', r: 'Learning', d: 'Where you learn, practise and prove what you can do.', here: true, mark: true, icoBg: '#EAF0FF' },
+      { n: 'TruVault', r: 'Identity & Access', d: 'Keeps your identity and access secure, and in your control.', i: 1, icoBg: '#FFFFFF', icoFg: '#1652F0' },
+      { n: 'MagNode', r: 'Infrastructure', d: 'The network that delivers learning reliably, closer to where you are.', i: 2, icoBg: '#FFFFFF', icoFg: '#1652F0' },
+      { n: 'MFORGE', r: 'Ecosystem utility', d: 'Connects and rewards participation across the ecosystem.', i: 3, icoBg: 'rgba(255,255,255,.12)', icoFg: '#FFFFFF' }
+    ];
+    return {
+      rootRef: this.setRoot, stackRef: this.setStack,
+      pulseTop: S.top + 'px', pulseOp: S.hover >= 0 ? 0 : 1,
+      layers: L.map(function (l, k) {
+        return { n: l.n, r: l.r, d: l.d, here: !!l.here, mark: !!l.mark, svg: !l.mark, icoBg: l.icoBg, icoFg: l.icoFg || '#1652F0',
+          i1: l.i === 1 ? 'inline' : 'none', i2: l.i === 2 ? 'inline' : 'none', i3: l.i === 3 ? 'inline' : 'none',
+          cls: 'ec-l' + k + (k === on ? ' ec-slab-on' : ''), ref: self.refs4[k],
+          enter: function () { self.setState({ hover: k }); }, leave: function () { self.setState({ hover: -1 }); } };
+      })
+    };
+  }
+}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
     this.state = { v: 0 };
-    this.parts = { hero: new HeroPart(this), eng: new EnginePart(this), grow: new GrowPart(this), coach: new CoachPart(this), tv: new TrustPart(this), ld: new LearnPart(this), bp: new BackpackPart(this), mk: new MarketPart(this) };
+    this.parts = { hero: new HeroPart(this), eng: new EnginePart(this), grow: new GrowPart(this), coach: new CoachPart(this), tv: new TrustPart(this), ld: new LearnPart(this), bp: new BackpackPart(this), mk: new MarketPart(this), ec: new EcoPart(this) };
     this.parts.hero.sync = true;
   }
   bump(now) {

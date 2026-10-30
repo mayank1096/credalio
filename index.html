@@ -517,7 +517,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .mk-n{font-size:12px;color:#8A93AD}
 .mk-chip-on .mk-n{color:#1652F0}
 .mk-shelf{position:relative;display:flex;flex-direction:column;gap:20px;margin:0 -48px;padding:8px 0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
-.mk-row{display:flex;gap:20px;width:max-content;animation:mkL 70s linear infinite}
+.mk-row{display:flex;gap:20px;width:max-content;animation:mkL 110s linear infinite}
 .mk-row-r{animation-name:mkR;animation-duration:80s}
 .mk-shelf:hover .mk-row{animation-play-state:paused}
 @keyframes mkL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -542,6 +542,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 @media (max-width: 1080px){.mk-head{grid-template-columns:minmax(0,1fr) !important;gap:16px !important}}
 @media (max-width: 760px){
 .mk-wrap{padding:80px 20px 80px !important;gap:24px !important}
+.mk-row{animation-duration:90s}
 .mk-h2{font-size:30px !important;letter-spacing:-.8px !important}
 .mk-p{font-size:15px !important}
 .mk-chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px;padding:2px 20px;scrollbar-width:none}
@@ -1235,14 +1236,14 @@ Not sure which? Ask your AI Coach
 </section>
 <section class="lh-eng" aria-label="Learning Marketplace">
 <section aria-labelledby="mk-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; overflow: hidden">
-<div class="mk-wrap" style="max-width: 1312px; margin: 0 auto; padding: 120px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 40px">
+<div class="mk-wrap" style="max-width: 1312px; margin: 0 auto; padding: 112px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 36px">
 <div class="mk-head">
 <div style="display: flex; flex-direction: column; gap: 16px">
 <span style="font-size: 14px; font-weight: 500; color: #1652F0">Learning Marketplace</span>
 <h2 id="mk-h" class="mk-h2">Learn from independent experts and trusted institutions.</h2>
 </div>
 <div style="display: flex; flex-direction: column; gap: 20px; padding-bottom: 6px">
-<p class="mk-p" style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">Courses, programs and simulations from people who do the work. Every listing shows who made it and whether it’s been validated.</p>
+<p class="mk-p" style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">Courses, programs and simulations from people who do the work, each showing who made it and its validation status.</p>
 <a class="mk-link mk-link-d" href="#">Explore the marketplace<span style="width: 32px; height: 32px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
 </div>
 </div>
@@ -1302,7 +1303,7 @@ Not sure which? Ask your AI Coach
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":8398}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":8083}}'>
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }
   setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }
@@ -1839,13 +1840,11 @@ class MarketPart extends Part {
         avR: c.inst ? '7px' : '999px', avBg: c.inst ? '#0B1433' : '#DCE5FB', avFg: c.inst ? '#FFFFFF' : '#1652F0',
         dim: A === 'All' || c.a === A ? '' : 'mk-dim', tab: dup ? -1 : 0, hide: dup ? 'true' : 'false' };
     };
-    var r1 = this.L.slice(0, 6), r2 = this.L.slice(6);
-    var mob = typeof window !== 'undefined' && window.innerWidth <= 760;
-    if (mob) r1 = this.L;
+    var r1 = this.L;
     var row = function (list, cls) { return { cls: cls, items: list.map(function (c) { return card(c, false); }).concat(list.map(function (c) { return card(c, true); })) }; };
     return {
       chips: areas.map(function (a) { var n = a === 'All' ? self.L.length : self.L.filter(function (c) { return c.a === a; }).length; return { label: a, n: n, on: a === A ? 'true' : 'false', cls: a === A ? 'mk-chip-on' : '', pick: function () { self.setState({ area: a }); } }; }),
-      rows: [row(r1, ''), row(r2, 'mk-row-r')]
+      rows: [row(r1, '')]
     };
   }
 }

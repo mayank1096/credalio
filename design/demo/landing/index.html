@@ -411,9 +411,12 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .bp-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
 .bp-stage{position:relative;display:grid;grid-template-columns:420px minmax(0,1fr) 380px;align-items:center;gap:0;padding:40px 56px 36px;border-radius:20px;background:radial-gradient(60% 80% at 30% 40%,#EAF0FF 0%,#F5F8FF 45%,#FFFFFF 100%);border:1.5px solid #E6EAF3;overflow:hidden}
 .bp-stage::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#DCE5FB 1.1px,transparent 1.4px);background-size:18px 18px;-webkit-mask-image:radial-gradient(60% 70% at 50% 50%,#000 25%,transparent 80%);mask-image:radial-gradient(60% 70% at 50% 50%,#000 25%,transparent 80%);pointer-events:none}
-.bp-wallet{position:relative;height:430px}
-.bp-whead{position:absolute;left:0;right:0;top:0;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#5B6582}
-.bp-whead b{font-size:15px;font-weight:600;color:#0B1433}
+.bp-wallet{position:relative;height:452px}
+.bp-whead{position:absolute;left:50%;top:0;transform:translateX(-50%);z-index:15;display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px 0 5px;border-radius:999px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 10px 24px -16px rgba(11,20,51,.35);font-size:13px;color:#5B6582;white-space:nowrap}
+.bp-whead b{font-size:13px;font-weight:600;color:#0B1433}
+.bp-whead .bp-av{width:26px;height:26px;font-size:10px}
+.bp-wsep{width:1px;height:14px;background:#E3E8F3}
+.bp-wok{display:inline-flex;align-items:center;gap:5px;color:#0F6B45;font-weight:500}
 .bp-card{position:absolute;left:0;right:0;bottom:0;height:236px;box-sizing:border-box;padding:13px 20px 20px;border-radius:18px;display:flex;flex-direction:column;gap:8px;transform-origin:50% 0;transition:transform .9s cubic-bezier(.65,0,.35,1),box-shadow .6s ease,filter .6s ease;will-change:transform;box-shadow:0 30px 50px -34px rgba(11,20,51,.55)}
 .bp-card-front{box-shadow:0 40px 70px -36px rgba(11,20,51,.6)}
 .bp-type{display:flex;align-items:center;justify-content:space-between;min-height:24px;font-size:12px;font-weight:500;opacity:.85}
@@ -461,21 +464,19 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .bp-h2{font-size:30px !important;letter-spacing:-.8px !important}
 .bp-p{font-size:15px !important}
 .bp-head{gap:10px}
-.bp-stage{display:block;padding:0;margin:0;height:250px;box-sizing:border-box;background:none;border:none;border-radius:0;overflow:visible}
+.bp-stage{display:block;padding:0;margin:0;height:258px;box-sizing:border-box;background:none;border:none;border-radius:0;overflow:visible}
 .bp-stage::before{display:none}
-.bp-wallet{height:250px}
-.bp-whead{font-size:12px}
-.bp-whead b{font-size:13px}
-.bp-whead > span:first-child{flex-direction:row !important;gap:6px !important;align-items:baseline}
-.bp-whead > span:first-child span::before{content:"· "}
-.bp-whead .bp-av{display:none}
-.bp-card{height:172px;padding:10px 16px 14px;border-radius:16px;gap:4px}
+.bp-wallet{height:258px}
+.bp-whead{height:32px;font-size:12px;gap:7px;padding:0 12px 0 4px}
+.bp-whead b{font-size:12px}
+.bp-whead .bp-av{width:24px;height:24px}
+.bp-card{height:160px;padding:10px 14px 12px;border-radius:15px;gap:4px}
 .bp-deep{opacity:0}
-.bp-type{min-height:22px;font-size:11px}
-.bp-vchip{height:22px;font-size:10px}
-.bp-title{font-size:17px}
-.bp-meta{min-height:30px;font-size:11px}
-.bp-share{bottom:12px;right:12px;height:30px;font-size:12px}
+.bp-type{min-height:20px;font-size:10px}
+.bp-vchip{height:20px;padding:0 7px;font-size:9.5px}
+.bp-title{font-size:15px;letter-spacing:-.2px}
+.bp-meta{min-height:28px;font-size:10px}
+.bp-share{bottom:12px;right:12px;height:28px;font-size:11px;padding:0 11px 0 9px}
 .bp-path{display:none}
 .bp-dest{position:absolute;left:0;right:0;bottom:0;opacity:0;transform:translateY(20px) scale(.97);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1);z-index:20}
 .bp-dest-show{opacity:1;transform:none}
@@ -483,7 +484,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .bp-url{font-size:10px}
 .bp-body{min-height:0;padding:12px 14px 14px;gap:7px}
 .bp-got{gap:7px}
-.bp-got > span:nth-child(2){font-size:15px !important}
+.bp-got > span:nth-child(2){font-size:14px !important}
 .bp-ok{padding:8px 10px;font-size:12px}
 .bp-empty{display:none}
 .bp-beats{gap:10px}
@@ -1132,7 +1133,7 @@ Not sure which? Ask your AI Coach
 
 <div class="bp-stage {{bp.goCls}}" role="img" aria-label="A Digital Backpack of verified credentials. One is shared by link and arrives verified on a hiring manager's screen.">
 <div class="bp-wallet">
-<div class="bp-whead"><span style="display: flex; flex-direction: column; gap: 2px; text-align: left"><b>Maya’s Backpack</b><span>5 items · all verified</span></span><span class="bp-av" style="background: #EAF0FF; color: #1652F0">MR</span></div>
+<div class="bp-whead"><span class="bp-av" style="background: #EAF0FF; color: #1652F0">MR</span><b>Maya’s Backpack</b><span class="bp-wsep"></span><span class="bp-wok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>5 items, all verified</span></div>
 <sc-for list="{{bp.cards}}" as="c" hint-placeholder-count="5">
 <div class="bp-card {{c.cls}}" style="transform: {{c.tf}}; z-index: {{c.z}}; background: {{c.bg}}; color: {{c.fg}}; border: 1px solid {{c.bd}}">
 <div class="bp-type"><span>{{c.type}}</span><span class="bp-vchip" style="background: {{c.chipBg}}; color: {{c.chipFg}}"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Verified</span></div>
@@ -1191,7 +1192,7 @@ Not sure which? Ask your AI Coach
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7236}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7258}}'>
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }
   setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }

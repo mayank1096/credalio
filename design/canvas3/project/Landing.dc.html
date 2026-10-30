@@ -401,6 +401,76 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 }
 
 
+.bp-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;max-width:760px;margin:0 auto}
+.bp-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
+.bp-stage{position:relative;display:grid;grid-template-columns:420px minmax(0,1fr) 380px;align-items:center;gap:0;padding:40px 56px 36px;border-radius:20px;background:radial-gradient(60% 80% at 30% 40%,#EAF0FF 0%,#F5F8FF 45%,#FFFFFF 100%);border:1.5px solid #E6EAF3;overflow:hidden}
+.bp-stage::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#DCE5FB 1.1px,transparent 1.4px);background-size:18px 18px;-webkit-mask-image:radial-gradient(60% 70% at 50% 50%,#000 25%,transparent 80%);mask-image:radial-gradient(60% 70% at 50% 50%,#000 25%,transparent 80%);pointer-events:none}
+.bp-wallet{position:relative;height:430px}
+.bp-whead{position:absolute;left:0;right:0;top:0;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#5B6582}
+.bp-whead b{font-size:15px;font-weight:600;color:#0B1433}
+.bp-card{position:absolute;left:0;right:0;bottom:0;height:236px;box-sizing:border-box;padding:13px 20px 20px;border-radius:18px;display:flex;flex-direction:column;gap:8px;transform-origin:50% 0;transition:transform .9s cubic-bezier(.65,0,.35,1),box-shadow .6s ease,filter .6s ease;will-change:transform;box-shadow:0 30px 50px -34px rgba(11,20,51,.55)}
+.bp-card-front{box-shadow:0 40px 70px -36px rgba(11,20,51,.6)}
+.bp-type{display:flex;align-items:center;justify-content:space-between;min-height:24px;font-size:12px;font-weight:500;opacity:.85}
+.bp-vchip{height:24px;padding:0 9px;border-radius:999px;display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500}
+.bp-title{margin-top:auto;font-size:21px;font-weight:600;letter-spacing:-.4px;line-height:1.2}
+.bp-meta{display:flex;align-items:center;justify-content:space-between;min-height:34px;font-size:12px;opacity:.75}
+.bp-share{position:absolute;right:16px;bottom:14px;height:34px;padding:0 14px 0 12px;border-radius:999px;background:#FFFFFF;color:#1652F0;border:1.5px solid #C9D7FA;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;opacity:0;transform:translateY(6px) scale(.96);transition:opacity .4s ease,transform .4s ease,background .3s ease,color .3s ease}
+.bp-share-on{opacity:1;transform:none}
+.bp-share-tap{background:#1652F0;color:#FFFFFF;border-color:#1652F0}
+.bp-path{position:relative;height:60px;margin:0 18px}
+.bp-dots{position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background-image:radial-gradient(circle,#9DB8F7 1.5px,transparent 1.7px);background-size:12px 2px;background-repeat:repeat-x}
+.bp-trail{position:absolute;left:0;top:50%;height:2px;margin-top:-1px;width:0;background:#1652F0;border-radius:2px;transition:width 1.4s cubic-bezier(.65,0,.35,1)}
+.bp-link{position:absolute;top:50%;left:0;transform:translate(-10%,-50%);height:34px;padding:0 12px 0 10px;border-radius:999px;background:#0B1433;color:#FFFFFF;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:500;white-space:nowrap;opacity:0;transition:left 1.4s cubic-bezier(.65,0,.35,1),transform 1.4s cubic-bezier(.65,0,.35,1),opacity .3s ease;box-shadow:0 14px 26px -14px rgba(11,20,51,.6)}
+.bp-go .bp-trail{width:100%}
+.bp-go .bp-link{left:100%;transform:translate(-90%,-50%)}
+.bp-link-on{opacity:1}
+.bp-dest{position:relative;border-radius:16px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 30px 60px -38px rgba(11,20,51,.45);overflow:hidden;transition:box-shadow .6s ease,border-color .6s ease}
+.bp-dest-ok{border-color:#CFE8DC;box-shadow:0 0 0 6px rgba(15,107,69,.06),0 30px 60px -34px rgba(15,107,69,.4)}
+.bp-bar{display:flex;align-items:center;gap:6px;height:36px;padding:0 12px;background:#F5F8FF;border-bottom:1px solid #E6EAF3}
+.bp-bar i{width:8px;height:8px;border-radius:999px;background:#D6DDEE}
+.bp-url{margin-left:8px;flex:1;height:22px;border-radius:999px;background:#FFFFFF;border:1px solid #E6EAF3;display:flex;align-items:center;padding:0 10px;font-size:11px;color:#5B6582;overflow:hidden;white-space:nowrap}
+.bp-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;min-height:196px;box-sizing:border-box}
+.bp-who{display:flex;align-items:center;gap:10px;font-size:13px;color:#5B6582}
+.bp-av{width:32px;height:32px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0}
+.bp-empty{display:flex;flex-direction:column;gap:8px;padding-top:6px}
+.bp-empty span{height:10px;border-radius:9px;background:#EEF1F7}
+.bp-got{display:flex;flex-direction:column;gap:10px;opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease}
+.bp-got-on{opacity:1;transform:none}
+.bp-ok{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:12px;background:#E7F5EE;color:#0F6B45;font-size:13px;font-weight:600}
+.bp-ok-i{width:22px;height:22px;border-radius:999px;background:#0F6B45;display:flex;align-items:center;justify-content:center;flex-shrink:0;transform:scale(0);transition:transform .45s cubic-bezier(.3,1.6,.5,1) .25s}
+.bp-got-on .bp-ok-i{transform:scale(1)}
+.bp-beats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.bp-beat{position:relative;display:flex;flex-direction:column;gap:4px;padding-top:18px;transition:opacity .4s ease}
+.bp-beat::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;border-radius:9px;background:#E6EAF3}
+.bp-beat::after{content:"";position:absolute;left:0;top:0;height:3px;width:0;border-radius:9px;background:#1652F0;transition:width .6s ease}
+.bp-beat-on::after{width:100%}
+.bp-bn{font-size:12px;font-weight:600;color:#8A93AD;transition:color .4s ease}
+.bp-beat-on .bp-bn{color:#1652F0}
+.bp-bt{font-size:17px;font-weight:600;letter-spacing:-.2px}
+.bp-bd{font-size:14px;color:#5B6582}
+@media (prefers-reduced-motion: reduce){.bp-card,.bp-trail,.bp-link,.bp-got,.bp-ok-i{transition:none}}
+@media (max-width: 1080px){.bp-stage{grid-template-columns:360px minmax(0,1fr) 320px;padding:36px 32px}.bp-title{font-size:19px}}
+@media (max-width: 860px){
+.bp-wrap{padding:80px 20px 72px !important;gap:24px !important}
+.bp-h2{font-size:30px !important;letter-spacing:-.8px !important}
+.bp-p{font-size:15px !important}
+.bp-head{gap:12px}
+.bp-stage{display:block;padding:20px 16px 18px;margin:0 -4px;height:392px;box-sizing:border-box}
+.bp-wallet{height:352px}
+.bp-card{height:196px;padding:11px 16px 16px;border-radius:16px}
+.bp-title{font-size:18px}
+.bp-share{bottom:12px;right:12px;height:30px;font-size:12px}
+.bp-path{display:none}
+.bp-dest{position:absolute;left:16px;right:16px;bottom:18px;opacity:0;transform:translateY(24px) scale(.97);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1);z-index:20}
+.bp-dest-show{opacity:1;transform:none}
+.bp-bar{height:30px}
+.bp-body{min-height:0;padding:14px 16px 16px;gap:8px}
+.bp-empty{display:none}
+.bp-beats{gap:10px}
+.bp-beat{padding-top:12px}
+.bp-bt{font-size:13px}
+.bp-bd{display:none}
+}
 </style>
 </helmet>
 <div class="lh-root" style="box-sizing: border-box; padding: 16px; background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
@@ -1029,6 +1099,52 @@ Not sure which? Ask your AI Coach
 </div>
 </section>
 </section>
+<section class="lh-eng" aria-label="Your Digital Backpack">
+<section aria-labelledby="bp-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<div class="bp-wrap" ref="{{bp.rootRef}}" style="max-width: 1312px; margin: 0 auto; padding: 120px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
+<div class="bp-head">
+<span style="font-size: 14px; font-weight: 500; color: #1652F0">Your Digital Backpack</span>
+<h2 id="bp-h" class="bp-h2">Your achievements go with you.</h2>
+<p class="bp-p" style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">Everything you earn on Credalio lands in one place you own. Share it with an employer, a school or a client, and they can check it’s real.</p>
+</div>
+
+<div class="bp-stage {{bp.goCls}}" role="img" aria-label="A Digital Backpack of verified credentials. One is shared by link and arrives verified on a hiring manager's screen.">
+<div class="bp-wallet">
+<div class="bp-whead"><span style="display: flex; flex-direction: column; gap: 2px; text-align: left"><b>Maya’s Backpack</b><span>5 items · all verified</span></span><span class="bp-av" style="background: #EAF0FF; color: #1652F0">MR</span></div>
+<sc-for list="{{bp.cards}}" as="c" hint-placeholder-count="5">
+<div class="bp-card {{c.cls}}" style="transform: {{c.tf}}; z-index: {{c.z}}; background: {{c.bg}}; color: {{c.fg}}; border: 1px solid {{c.bd}}">
+<div class="bp-type"><span>{{c.type}}</span><span class="bp-vchip" style="background: {{c.chipBg}}; color: {{c.chipFg}}"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Verified</span></div>
+<span class="bp-title">{{c.title}}</span>
+<div class="bp-meta"><span>{{c.meta}}</span><span style="font-weight: 600; letter-spacing: .2px">credalio</span></div>
+</div>
+</sc-for>
+<span class="bp-share {{bp.shareCls}}" style="z-index: 12"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg>{{bp.shareLabel}}</span>
+</div>
+
+<div class="bp-path" aria-hidden="true"><span class="bp-dots"></span><span class="bp-trail"></span><span class="bp-link {{bp.linkCls}}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#8FB0FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg>credalio.com/b/maya</span></div>
+
+<div class="bp-dest {{bp.destCls}}">
+<div class="bp-bar"><i></i><i></i><i></i><span class="bp-url">credalio.com/verify/{{bp.d.id}}</span></div>
+<div class="bp-body">
+<div class="bp-who"><span class="bp-av" style="background: {{bp.d.avBg}}; color: {{bp.d.avFg}}">{{bp.d.ini}}</span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-weight: 600; color: #0B1433">{{bp.d.who}}</span><span style="font-size: 12px">{{bp.d.org}}</span></span></div>
+<sc-if value="{{bp.waiting}}" hint-placeholder-val="{{ false }}"><div class="bp-empty"><span style="width: 80%"></span><span style="width: 60%"></span><span style="width: 70%"></span></div></sc-if>
+<div class="bp-got {{bp.gotCls}}">
+<span style="font-size: 12px; color: #8A93AD">Shared with you by Maya Rao</span>
+<span style="font-size: 17px; font-weight: 600; letter-spacing: -.3px; line-height: 1.25">{{bp.d.title}}</span>
+<div class="bp-ok"><span class="bp-ok-i"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Verified by Credalio<span style="margin-left: auto; font-size: 11px; font-weight: 500; opacity: .8">ID {{bp.d.id}}</span></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bp-beats">
+<sc-for list="{{bp.beats}}" as="b" hint-placeholder-count="3">
+<div class="bp-beat {{b.cls}}"><span class="bp-bn">{{b.n}}</span><span class="bp-bt">{{b.t}}</span><span class="bp-bd">{{b.d}}</span></div>
+</sc-for>
+</div>
+</div>
+</section>
+</section>
 <footer class="lh-eng ft" aria-label="Footer">
 <div class="ft-top">
 <div class="ft-brand">
@@ -1053,7 +1169,7 @@ Not sure which? Ask your AI Coach
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6137}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7236}}'>
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }
   setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }
@@ -1498,11 +1614,70 @@ class LearnPart extends Part {
   componentWillUnmount() { cancelAnimationFrame(this.raf); if (this.io) this.io.disconnect(); }
   renderVals() { return { stageRef: this.setStage, knobRef: this.setKnob }; }
 }
+class BackpackPart extends Part {
+  constructor(host) {
+    super(host);
+    this.state = { front: 0, step: 0, dest: 0 };
+    var self = this;
+    this.setRoot = function (e) { self.root = e; };
+    this.C = [
+      { type: 'Professional credential', title: 'Professional Certificate in Data Analysis', meta: 'Issued 14 Oct 2026', bg: 'linear-gradient(150deg,#1C3AA8 0%,#0B1433 100%)', fg: '#FFFFFF', bd: 'rgba(255,255,255,.08)', chipBg: 'rgba(255,255,255,.14)', chipFg: '#FFFFFF', id: '4F2-91' },
+      { type: 'Certificate', title: 'Data Foundations: spreadsheets to SQL', meta: 'Course · 10 hrs', bg: 'linear-gradient(150deg,#4C7DFF 0%,#1652F0 100%)', fg: '#FFFFFF', bd: 'rgba(255,255,255,.12)', chipBg: 'rgba(255,255,255,.18)', chipFg: '#FFFFFF', id: '7C1-04' },
+      { type: 'Badge', title: 'SQL Practitioner', meta: 'Skill badge · Oct 2026', bg: '#FFFFFF', fg: '#0B1433', bd: '#E3E8F3', chipBg: '#E7F5EE', chipFg: '#0F6B45', id: '2B8-55' },
+      { type: 'Completed project', title: 'Retail sales analysis', meta: 'Reviewed by a mentor', bg: 'linear-gradient(150deg,#EAF0FF 0%,#DCE5FB 100%)', fg: '#0B1433', bd: '#C9D7FA', chipBg: '#FFFFFF', chipFg: '#0F6B45', id: '9D3-12' },
+      { type: 'Verified achievement', title: 'Practical assessment: data cleaning', meta: 'Validated assessment · 91%', bg: '#FFFFFF', fg: '#0B1433', bd: '#E3E8F3', chipBg: '#E7F5EE', chipFg: '#0F6B45', id: '5A6-38' }
+    ];
+    this.D = [
+      { who: 'Hiring manager', org: 'Northwind Analytics', ini: 'NA', avBg: '#0B1433', avFg: '#FFFFFF' },
+      { who: 'Admissions', org: 'City University', ini: 'CU', avBg: '#DCE5FB', avFg: '#1652F0' },
+      { who: 'Client', org: 'Freelance brief', ini: 'JL', avBg: '#1652F0', avFg: '#FFFFFF' }
+    ];
+    this.T = [1600, 2600, 4200, 8200];
+  }
+  componentDidMount() {
+    var self = this;
+    this.t0 = performance.now(); this.vis = true;
+    var tick = function (now) {
+      if (!self.vis) { self.t0 = now; self.raf = requestAnimationFrame(tick); return; }
+      var el = now - self.t0, T = self.T, s = 0;
+      for (var k = 0; k < 3; k++) if (el >= T[k]) s = k + 1;
+      if (el >= T[3]) { self.t0 = now; self.setState({ step: 0, front: (self.state.front + 1) % 5, dest: (self.state.dest + 1) % 3 }); }
+      else if (s !== self.state.step) self.setState({ step: s });
+      self.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+    if (window.IntersectionObserver && this.root) { this.io = new IntersectionObserver(function (en) { self.vis = en[0].isIntersecting; }, { threshold: 0.2 }); this.io.observe(this.root); }
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); if (this.io) this.io.disconnect(); }
+  renderVals() {
+    // steps: 0 keep, 1 share button, 2 link travels, 3 verified
+    var S = this.state, self = this, mob = typeof window !== 'undefined' && window.innerWidth <= 860;
+    var peek = mob ? 30 : 38;
+    var cards = this.C.map(function (c, k) {
+      var d = (k - S.front + 5) % 5;
+      var tf = 'translateY(' + (-d * peek) + 'px) scale(' + (1 - d * 0.045).toFixed(3) + ')';
+      return { type: c.type, title: c.title, meta: c.meta, bg: c.bg, fg: c.fg, bd: c.bd, chipBg: c.chipBg, chipFg: c.chipFg, tf: tf, z: 10 - d, cls: d === 0 ? 'bp-card-front' : '' };
+    });
+    var fc = this.C[S.front], dd = this.D[S.dest];
+    var beatOn = S.step <= 1 ? 0 : (S.step === 2 ? 1 : 2);
+    var B = [['01', 'Yours to keep', 'Wherever your career goes'], ['02', 'Share with a link', 'One item or your whole Backpack'], ['03', 'Anyone can check it', 'Verified in one click, no calls needed']];
+    return {
+      rootRef: this.setRoot, cards: cards,
+      shareCls: S.step >= 1 && S.step <= 2 ? 'bp-share-on' + (S.step === 2 ? ' bp-share-tap' : '') : '',
+      shareLabel: S.step === 2 ? 'Link copied' : 'Share',
+      goCls: S.step >= 2 ? 'bp-go' : '', linkCls: S.step === 2 ? 'bp-link-on' : '',
+      destCls: (S.step === 3 ? 'bp-dest-ok bp-dest-show' : '') + (mob && S.step >= 2 ? ' bp-dest-show' : ''),
+      waiting: S.step < 3, gotCls: S.step === 3 ? 'bp-got-on' : '',
+      d: { who: dd.who, org: dd.org, ini: dd.ini, avBg: dd.avBg, avFg: dd.avFg, title: fc.title, id: fc.id },
+      beats: B.map(function (b, k) { return { n: b[0], t: b[1], d: b[2], cls: k === beatOn ? 'bp-beat-on' : '' }; })
+    };
+  }
+}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
     this.state = { v: 0 };
-    this.parts = { hero: new HeroPart(this), eng: new EnginePart(this), grow: new GrowPart(this), coach: new CoachPart(this), tv: new TrustPart(this), ld: new LearnPart(this) };
+    this.parts = { hero: new HeroPart(this), eng: new EnginePart(this), grow: new GrowPart(this), coach: new CoachPart(this), tv: new TrustPart(this), ld: new LearnPart(this), bp: new BackpackPart(this) };
     this.parts.hero.sync = true;
   }
   bump(now) {

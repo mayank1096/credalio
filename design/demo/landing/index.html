@@ -343,6 +343,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 @keyframes ftLift{from{transform:translateY(48px);opacity:.35}to{transform:none;opacity:1}}
 }
 @media (prefers-reduced-motion: reduce){.ft-img,.ft-top{animation:none !important}}
+.ld-mob{display:none}
 .ld-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:64px;align-items:end}
 .ld-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
 .ld-stage{--x:88%;position:relative;height:560px;border-radius:20px;overflow:hidden;border:1.5px solid #E6EAF3;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:ew-resize}
@@ -385,35 +386,26 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ld-head{gap:12px !important}
 .ld-h2{font-size:30px !important;letter-spacing:-.8px !important}
 .ld-p{font-size:15px !important;margin:0 !important}
-.ld-stage{height:452px;margin:0 -4px;border-radius:18px}
-.ld-bento{inset:56px 10px 10px;grid-template-columns:1fr 1fr !important;grid-template-rows:1.45fr 1fr .62fr !important;gap:8px}
-.ld-c1{grid-column:span 2 !important;grid-row:auto !important}
-.ld-c4,.ld-c5{display:none !important}
-.ld-c6{grid-column:span 2 !important;grid-row:auto !important;flex-direction:row !important;gap:12px !important;text-align:left !important;justify-content:flex-start !important;padding:10px 14px !important}
-.ld-c6 .ld-k{display:none}
-.ld-c6 svg,.ld-c6 > span:first-of-type{width:44px !important;height:44px !important;flex-shrink:0}
-.ld-c6 .ld-t{margin-top:0 !important;font-size:14px !important}
-.ld-c6 .ld-ok{margin-left:auto !important}
-.ld-c1 .ld-t{font-size:15px !important}
-.ld-c1 > div:last-child{display:none !important}
-.ld-grow:nth-child(n+3){display:none}
-.ld-grow{padding:6px 8px;font-size:12px}
-.ld-c2 svg{width:44px;height:44px}
-.ld-c2 > div:nth-child(2){gap:10px !important}
-.ld-c3 > div:nth-child(2){font-size:11px !important;line-height:1.55 !important;padding:8px 10px !important}
-.ld-card{padding:11px;gap:6px;border-radius:13px}
-.ld-k{font-size:11px}
-.ld-t{font-size:13px}
-.ld-ok,.ld-gtick{font-size:11px;height:22px}
-.ld-hide-m{display:none !important}
+.ld-stage{height:336px;margin:0 -4px;border-radius:18px}
+.ld-bento{display:none !important}
+.ld-mob{display:flex;position:absolute;left:14px;right:14px;top:58px;bottom:14px;flex-direction:column;gap:9px;padding:16px;border-radius:16px;box-sizing:border-box}
+.ld-mob-p{background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 24px 44px -34px rgba(11,20,51,.35)}
+.ld-mob-d{background:#FAFAFB;border:1px solid #E1E4EA;color:#9A9FAF}
+.ld-mob .ld-k{font-size:12px}
+.ld-mstats{margin-top:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.ld-mstats span{display:flex;flex-direction:column;gap:2px;padding:8px 9px;border-radius:10px;background:#F5F8FF;font-size:11px;color:#5B6582}
+.ld-mstats b{display:flex;align-items:center;gap:4px;font-size:14px;font-weight:600;color:#0B1433;white-space:nowrap}
+.ld-mrow{display:flex;justify-content:space-between;gap:10px;padding:9px 10px;border-radius:10px;background:#F3F4F7;font-size:13px;color:#8A90A3}
+.ld-mrow span:last-child{font-weight:500}
+.ld-mob-d > span:last-child{margin-top:auto;font-size:12px}
 .ld-tag{top:12px}
-.ld-tag[style*="left"]{left:12px !important}.ld-tag[style*="right"]{right:12px !important}
+.ld-tag[style*="left"]{left:14px !important}.ld-tag[style*="right"]{right:14px !important}
 .ld-pill{height:28px;font-size:12px;padding:0 11px}
 .ld-tag .ld-sub{display:none}
 .ld-knob{width:44px;height:44px;margin:-22px 0 0 -22px}
 .ld-hint{top:calc(50% + 32px)}
-.ld-g.ld-c6 > span:last-child{display:none}
 }
+
 
 </style>
 </helmet>
@@ -950,6 +942,16 @@ Not sure which? Ask your AI Coach
 
 <div class="ld-proof">
 <div class="ld-tag" style="right: 24px"><span class="ld-sub">Shows what you can actually do</span><span class="ld-pill" style="background: #1652F0; color: #FFFFFF">Proof</span></div>
+<div class="ld-mob ld-mob-p">
+<div class="ld-k"><span>Project · real brief</span><span class="ld-ok" style="height: 22px">Reviewed</span></div>
+<span class="ld-t" style="font-size: 17px">Retail sales analysis</span>
+<svg viewBox="0 0 260 70" preserveAspectRatio="none" aria-hidden="true" style="width: 100%; height: 64px; display: block"><g fill="#C9D7FA"><rect x="6" y="38" width="34" height="32" rx="6"></rect><rect x="58" y="26" width="34" height="44" rx="6"></rect><rect x="110" y="32" width="34" height="38" rx="6"></rect><rect x="162" y="16" width="34" height="54" rx="6"></rect></g><rect x="214" y="4" width="34" height="66" rx="6" fill="#1652F0"></rect></svg>
+<div class="ld-mstats">
+<span><b>86%</b>Assessment</span>
+<span><b style="color: #0F6B45"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg> Runs</b>Practical</span>
+<span><b style="color: #1652F0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg> Verified</b>Badge</span>
+</div>
+</div>
 <div class="ld-bento">
 
 <div class="ld-card ld-c1">
@@ -1008,6 +1010,14 @@ Not sure which? Ask your AI Coach
 
 <div class="ld-done" aria-hidden="true">
 <div class="ld-tag" style="left: 24px"><span class="ld-pill" style="background: #FFFFFF; color: #5B6582; border: 1px solid #DFE2EA">Completion</span><span class="ld-sub" style="color: #8A90A3">Says you showed up</span></div>
+<div class="ld-mob ld-mob-d">
+<div class="ld-k"><span>Course</span><span class="ld-gtick"><span class="ld-gt"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9AA0B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Completed</span></div>
+<span class="ld-t ld-gtx" style="font-size: 17px">Data Foundations</span>
+<div class="ld-mrow"><span>Lesson videos</span><span>12 of 12 watched</span></div>
+<div class="ld-mrow"><span>Module quiz</span><span>Attempted</span></div>
+<div class="ld-bar" style="margin-top: 2px"><span style="width: 100%; background: #B9BECC"></span></div>
+<span style="font-size: 12px">Certificate of completion</span>
+</div>
 <div class="ld-bento">
 <div class="ld-card ld-g ld-c1"><div class="ld-k"><span>Module 3</span><span>4 videos</span></div><span class="ld-t ld-gtx" style="font-size: 18px">Lesson videos</span><div style="display: flex; flex-direction: column; gap: 8px; flex: 1"><div class="ld-grow"><span class="ld-play"><svg width="10" height="10" viewBox="0 0 24 24" fill="#B4B9C7"><path d="M8 5v14l11-7z"></path></svg></span><span style="flex: 1; min-width: 0">Lesson 1 · Intro to data</span><span class="ld-gtick"><span class="ld-gt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9AA0B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Watched</span></div><div class="ld-grow"><span class="ld-play"><svg width="10" height="10" viewBox="0 0 24 24" fill="#B4B9C7"><path d="M8 5v14l11-7z"></path></svg></span><span style="flex: 1; min-width: 0">Lesson 2 · Spreadsheets</span><span class="ld-gtick"><span class="ld-gt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9AA0B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Watched</span></div><div class="ld-grow"><span class="ld-play"><svg width="10" height="10" viewBox="0 0 24 24" fill="#B4B9C7"><path d="M8 5v14l11-7z"></path></svg></span><span style="flex: 1; min-width: 0">Lesson 3 · Cleaning data</span><span class="ld-gtick"><span class="ld-gt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9AA0B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Watched</span></div><div class="ld-grow"><span class="ld-play"><svg width="10" height="10" viewBox="0 0 24 24" fill="#B4B9C7"><path d="M8 5v14l11-7z"></path></svg></span><span style="flex: 1; min-width: 0">Lesson 4 · Joining tables</span><span class="ld-gtick"><span class="ld-gt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9AA0B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Watched</span></div></div><div class="ld-bar"><span style="width: 100%; background: #B9BECC"></span></div><span style="font-size: 12px">100% watched</span></div>
 <div class="ld-card ld-g ld-c2"><div class="ld-k"><span>Quiz</span></div><span class="ld-t ld-gtx">End-of-module quiz</span><span style="font-size: 12px; flex: 1">5 questions</span><span class="ld-gtick"><span class="ld-gt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9AA0B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Attempted</span></div>
@@ -1160,7 +1170,17 @@ class EnginePart extends Part {
     this.onScroll = function () {
       if (!self.track) return;
       var r = self.track.getBoundingClientRect(), span = r.height - window.innerHeight;
-      if (span <= 0 || r.top > window.innerHeight || r.bottom < 0) return;
+      if (span <= 0) return;
+      if (self.lastTop != null && self.lastTop > 0 && r.top <= 0) self.entered = true;
+      self.lastTop = r.top;
+      if (self.entered && !self.done && r.top < 0) {
+        if (self.pos >= 6.9) self.done = true;
+        else {
+          var allow = Math.max((self.pos + 0.75) / 7, (self.allowTo || 0) / 7);
+          if (-r.top > span * allow) { window.scrollTo(0, window.scrollY + r.top + span * allow); r = self.track.getBoundingClientRect(); self.lastTop = r.top; }
+        }
+      }
+      if (r.top > window.innerHeight || r.bottom < 0) return;
       self.mode = 'scroll'; clearInterval(self.timer);
       self.target = Math.min(1, Math.max(0, -r.top / span)) * 7;
     };
@@ -1173,6 +1193,7 @@ class EnginePart extends Part {
       self.draw(now);
       var s = Math.max(0, Math.min(7, Math.round(self.pos)));
       if (s !== self.state.stage) self.setState({ stage: s });
+      if (self.entered && !self.done && self.pos >= 6.9) self.done = true;
       self.raf = requestAnimationFrame(tick);
     };
     this.raf = requestAnimationFrame(tick);
@@ -1188,6 +1209,7 @@ class EnginePart extends Part {
     var s = Math.max(0, Math.min(7, i));
     if (this.mode === 'scroll' && this.track) {
       var r = this.track.getBoundingClientRect(), span = r.height - window.innerHeight;
+      this.allowTo = Math.max(this.allowTo || 0, s);
       window.scrollTo({ top: window.scrollY + r.top + span * s / 7, behavior: 'smooth' });
     } else { this.target = s; this.startTimer(); }
   }

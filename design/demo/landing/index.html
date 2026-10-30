@@ -331,6 +331,14 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ft-a{position:relative}
 .ft-a::after{content:"";position:absolute;left:-6px;right:-6px;top:50%;height:44px;transform:translateY(-50%)}
 }
+@supports (animation-timeline: view()){
+.ft{view-timeline:--ft block}
+.ft-img{transform-origin:50% 100%;animation:ftRise linear both;animation-timeline:--ft;animation-range:entry 25% entry 100%}
+.ft-top{animation:ftLift linear both;animation-timeline:--ft;animation-range:entry 0% entry 60%}
+@keyframes ftRise{from{transform:translateX(-50%) translateY(110px) scale(1.1)}to{transform:translateX(-50%) translateY(0) scale(1)}}
+@keyframes ftLift{from{transform:translateY(48px);opacity:.35}to{transform:none;opacity:1}}
+}
+@media (prefers-reduced-motion: reduce){.ft-img,.ft-top{animation:none !important}}
 </style>
 </helmet>
 <div class="lh-root" style="box-sizing: border-box; padding: 16px; background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">

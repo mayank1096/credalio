@@ -235,29 +235,57 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 }
 
 
-.tq-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:64px;align-items:end}
-.tq-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
-.tq-band{position:relative;height:560px;margin:0 -48px}
-.tq-cv{position:absolute;inset:0;width:100%;height:100%;display:block}
-.tq-gate{position:absolute;bottom:18px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;white-space:nowrap}
-.tq-gn{font-size:12px;font-weight:600;color:#1652F0;letter-spacing:.4px}
-.tq-gt{font-size:15px;font-weight:600;color:#0B1433}
-.tq-gs{font-size:13px;color:#5B6582}
-.tq-zone{position:absolute;top:22px;transform:translateX(-50%);height:32px;padding:0 13px 0 10px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;white-space:nowrap;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#5B6582}
-.tq-zone-ok{background:#E7F5EE;border-color:#CFE8DC;color:#0F6B45}
-.tq-link{height:46px;padding:0 8px 0 20px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:12px;text-decoration:none;transition:border-color .2s ease,background .2s ease}
-.tq-link:hover{border-color:#1652F0;background:#F5F8FF}
-.tq-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-@media (max-width: 1080px){.tq-head{grid-template-columns:minmax(0,1fr) !important;gap:16px !important}}
+.tx-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,700px);gap:40px;align-items:center}
+.tx-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
+.tx-steps{display:flex;flex-direction:column;gap:2px;margin-top:14px}
+.tx-step{display:grid;grid-template-columns:32px minmax(0,1fr);gap:14px;align-items:center;padding:12px 0;border-top:1px solid #EEF1F7;transition:opacity .5s ease}
+.tx-step:first-child{border-top:none}
+.tx-step-wait{opacity:.45}
+.tx-num{width:32px;height:32px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;border:1.5px solid #D6DDEE;color:#5B6582;box-sizing:border-box;transition:background .4s ease,border-color .4s ease,color .4s ease}
+.tx-step-run .tx-num{border-color:#1652F0;color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.1)}
+.tx-step-done .tx-num{background:#E7F5EE;border-color:#CFE8DC;color:#0F6B45}
+.tx-st{font-size:16px;font-weight:600}
+.tx-sd{font-size:14px;color:#5B6582}
+.tx-link{align-self:flex-start;margin-top:12px;height:46px;padding:0 8px 0 20px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:12px;text-decoration:none;transition:border-color .2s ease,background .2s ease}
+.tx-link:hover{border-color:#1652F0;background:#F5F8FF}
+.tx-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.tx-stage{position:relative;height:660px;perspective:1800px;perspective-origin:50% 30%}
+.tx-stage::before{content:"";position:absolute;inset:6% 0 0;background:radial-gradient(50% 45% at 50% 55%,#EAF0FF 0%,rgba(234,240,255,0) 100%);pointer-events:none}
+.tx-pill{position:absolute;right:20px;top:18px;z-index:3;height:34px;padding:0 14px 0 11px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#5B6582;transition:background .5s ease,border-color .5s ease,color .5s ease}
+.tx-pill-run{color:#1652F0;border-color:#C9D7FA;background:#F5F8FF}
+.tx-pill-ok{background:#E7F5EE;border-color:#CFE8DC;color:#0F6B45}
+.tx-spin{width:13px;height:13px;border-radius:999px;border:2px solid currentColor;border-right-color:transparent;box-sizing:border-box;animation:txSpin .9s linear infinite}
+@keyframes txSpin{to{transform:rotate(360deg)}}
+.tx-idle{position:absolute;left:50%;top:54%;width:0;height:0;transform-style:preserve-3d;animation:txIdle 9s ease-in-out infinite}
+@keyframes txIdle{0%,100%{transform:rotateX(56deg) rotateZ(-36deg)}50%{transform:rotateX(52deg) rotateZ(-31deg)}}
+.tx-floor{position:absolute;left:-230px;top:-160px;width:460px;height:320px;border-radius:40px;background:radial-gradient(closest-side,rgba(11,20,51,.16),rgba(11,20,51,0));transform:translateZ(-40px);filter:blur(10px)}
+.tx-layer{position:absolute;left:-200px;top:-135px;width:400px;height:270px;box-sizing:border-box;padding:20px 22px;border-radius:18px;background:#FFFFFF;border:1.5px solid #DCE3F2;box-shadow:0 1px 0 #FFFFFF inset,0 30px 50px -30px rgba(11,20,51,.35);transform-style:preserve-3d;transition:transform 1.1s cubic-bezier(.6,0,.2,1),border-color .5s ease,box-shadow .5s ease;overflow:hidden;font-family:'Google Sans',system-ui,sans-serif;color:#0B1433}
+.tx-layer-run{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12),0 30px 60px -26px rgba(22,82,240,.55)}
+.tx-scan{position:absolute;top:-10%;bottom:-10%;left:0;width:34%;background:linear-gradient(90deg,rgba(22,82,240,0),rgba(22,82,240,.16) 70%,rgba(22,82,240,.5) 98%,rgba(22,82,240,0));opacity:0;pointer-events:none}
+.tx-layer-run .tx-scan{animation:txScan 2.2s cubic-bezier(.5,0,.5,1) .15s both}
+@keyframes txScan{0%{transform:translateX(-110%);opacity:1}90%{opacity:1}100%{transform:translateX(320%);opacity:0}}
+.tx-badge{position:absolute;right:16px;top:16px;width:30px;height:30px;border-radius:999px;border:2px dashed #CBD3E6;box-sizing:border-box;display:flex;align-items:center;justify-content:center;color:transparent;transition:background .4s ease,border-color .4s ease,color .4s ease,transform .5s cubic-bezier(.3,1.6,.5,1)}
+.tx-layer-run .tx-badge{border-style:solid;border-color:#1652F0;animation:txSpin 1.2s linear infinite;border-right-color:transparent}
+.tx-layer-done .tx-badge{background:#0F6B45;border:none;color:#FFFFFF;transform:scale(1.08)}
+.tx-k{font-size:11px;font-weight:600;letter-spacing:1.4px;color:#8A93AD}
+.tx-bar{height:7px;border-radius:9px;background:#EEF1F7}
+.tx-seal{position:absolute;left:118px;top:-196px;width:124px;height:124px;transform:translateZ(320px) scale(1.5);opacity:0;transition:transform .7s cubic-bezier(.5,0,.3,1.3),opacity .3s ease;transform-style:preserve-3d;pointer-events:none}
+.tx-seal-on{transform:translateZ(30px) scale(1);opacity:1;filter:drop-shadow(0 18px 18px rgba(22,82,240,.35))}
+.tx-cap{position:absolute;left:0;right:0;bottom:0;text-align:center;font-size:15px;font-weight:500;color:#5B6582;transition:color .4s ease}
+@media (prefers-reduced-motion: reduce){.tx-idle,.tx-spin,.tx-layer-run .tx-scan,.tx-layer-run .tx-badge{animation:none}}
+@media (max-width: 1080px){.tx-grid{grid-template-columns:minmax(0,1fr) !important;gap:8px !important}.tx-stage{max-width:700px;width:100%;justify-self:center}}
 @media (max-width: 760px){
-.tq-wrap{padding:80px 20px 72px !important;gap:24px !important}
-.tq-h2{font-size:32px !important;letter-spacing:-.9px !important}
-.tq-sub{font-size:16px !important}
-.tq-band{height:720px;margin:0 -20px}
-.tq-gate{bottom:auto;left:auto !important;right:20px;transform:translateY(-50%);align-items:flex-end;text-align:right}
-.tq-gs{display:none}
-.tq-zone{top:auto;left:20px !important;transform:translateY(-50%)}
-.tq-zone-ok{left:50% !important;transform:translate(-50%,0)}
+.tx-wrap{padding:80px 20px 72px !important}
+.tx-h2{font-size:32px !important;letter-spacing:-.9px !important}
+.tx-sub{font-size:16px !important}
+.tx-copy{display:contents !important}
+.tx-o1{order:1}.tx-stage{order:2}.tx-steps{order:3}.tx-link{order:4}
+.tx-grid{gap:14px !important}
+.tx-stage{height:450px;margin:0 -20px;width:calc(100% + 40px);perspective:1300px}
+.tx-idle{top:60%}
+.tx-scale{transform:scale(.62)}
+.tx-pill{right:50%;transform:translateX(50%);top:0;font-size:13px;height:32px}
+.tx-cap{bottom:6px;font-size:14px}
 }
 </style>
 </helmet>
@@ -700,33 +728,86 @@ Not sure which? Ask your AI Coach
 </section>
 </section>
 <section class="lh-eng" aria-label="Trusted learning">
-<section aria-labelledby="tq-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; overflow: hidden">
-<div class="tq-wrap" style="max-width: 1312px; margin: 0 auto; padding: 120px 48px 96px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
-<div class="tq-head">
-<div style="display: flex; flex-direction: column; gap: 16px">
-<span style="font-size: 14px; font-weight: 500; color: #1652F0">Trusted learning</span>
-<h2 id="tq-h" class="tq-h2">Know the quality before you commit your time.</h2>
+<section aria-labelledby="tx-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; overflow: hidden">
+<div class="tx-wrap" style="max-width: 1312px; margin: 0 auto; padding: 112px 48px; box-sizing: border-box">
+<div class="tx-grid" ref="{{tv.rootRef}}">
+<div class="tx-copy" style="display: flex; flex-direction: column; gap: 16px">
+<span class="tx-o1" style="font-size: 14px; font-weight: 500; color: #1652F0">Trusted learning</span>
+<h2 id="tx-h" class="tx-h2 tx-o1">Know the quality before you commit your time.</h2>
+<p class="tx-sub tx-o1" style="margin: 0; max-width: 470px; font-size: 18px; line-height: 1.6; color: #4A5578">Independent experts can take a course apart and check every layer before it earns the seal.</p>
+<div class="tx-steps" role="list">
+<sc-for list="{{tv.steps}}" as="s" hint-placeholder-count="3">
+<div class="tx-step {{s.cls}}" role="listitem"><span class="tx-num">{{s.n}}</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">{{s.t}}</span><span class="tx-sd">{{s.d}}</span></span></div>
+</sc-for>
 </div>
-<div style="display: flex; flex-direction: column; gap: 20px; align-items: flex-start; padding-bottom: 6px">
-<p class="tq-sub" style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">Three independent experts can check a course before it earns the seal. Not everything gets through.</p>
-<a class="tq-link" href="#">How validation works<span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+<a class="tx-link" href="#">How validation works<span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+</div>
+
+<div class="tx-stage" role="img" aria-label="A course comes apart into three layers, content, learning design and assessment. Each is checked, then the layers close and the Credalio seal is applied.">
+<span class="tx-pill {{tv.pillCls}}" aria-hidden="true">
+<sc-if value="{{tv.pRun}}" hint-placeholder-val="{{ false }}"><span class="tx-spin"></span></sc-if>
+<sc-if value="{{tv.pOk}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if>
+<sc-if value="{{tv.pNone}}" hint-placeholder-val="{{ true }}"><span style="width: 12px; height: 12px; border-radius: 999px; border: 2px solid #CBD3E6; box-sizing: border-box"></span></sc-if>
+{{tv.pill}}</span>
+<div class="tx-scale" style="position: absolute; inset: 0; transform-style: preserve-3d">
+<div class="tx-idle">
+<div class="tx-floor"></div>
+
+<div class="tx-layer {{tv.l3.cls}}" style="transform: translate3d({{tv.l3.x}}, {{tv.l3.y}}, {{tv.l3.z}})">
+<span class="tx-scan"></span>
+<span class="tx-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+<span class="tx-k">ASSESSMENT</span>
+<div style="margin-top: 14px; font-size: 15px; font-weight: 600">Which join keeps every customer?</div>
+<div style="display: flex; flex-direction: column; gap: 8px; margin-top: 14px">
+<div style="display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 12px; border-radius: 10px; border: 1.5px solid #E6EAF3; font-size: 13px"><span style="width: 14px; height: 14px; border-radius: 999px; border: 2px solid #CBD3E6; box-sizing: border-box"></span>INNER JOIN</div>
+<div style="display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 12px; border-radius: 10px; border: 1.5px solid #1652F0; background: #F5F8FF; font-size: 13px; font-weight: 500"><span style="width: 14px; height: 14px; border-radius: 999px; border: 4px solid #1652F0; box-sizing: border-box"></span>LEFT JOIN</div>
+<div style="display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 12px; border-radius: 10px; border: 1.5px solid #E6EAF3; font-size: 13px"><span style="width: 14px; height: 14px; border-radius: 999px; border: 2px solid #CBD3E6; box-sizing: border-box"></span>CROSS JOIN</div>
+</div>
+<div style="display: flex; justify-content: space-between; margin-top: 12px; font-size: 12px; color: #5B6582"><span>Question 7 of 20</span><span>Pass mark 70%</span></div>
+</div>
+
+<div class="tx-layer {{tv.l2.cls}}" style="transform: translate3d({{tv.l2.x}}, {{tv.l2.y}}, {{tv.l2.z}})">
+<span class="tx-scan"></span>
+<span class="tx-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+<span class="tx-k">LEARNING DESIGN</span>
+<div style="position: relative; display: flex; justify-content: space-between; align-items: center; margin-top: 30px">
+<span style="position: absolute; left: 20px; right: 20px; top: 50%; height: 2px; background: #C9D7FA"></span>
+<span style="position: relative; height: 32px; padding: 0 12px; border-radius: 999px; background: #0B1433; color: #FFFFFF; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500">Outcome</span>
+<span style="position: relative; height: 32px; padding: 0 12px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #C9D7FA; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500">Lessons</span>
+<span style="position: relative; height: 32px; padding: 0 12px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #C9D7FA; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500">Practice</span>
+<span style="position: relative; height: 32px; padding: 0 12px; border-radius: 999px; background: #1652F0; color: #FFFFFF; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500">Project</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 26px; align-items: end; height: 76px">
+<span style="height: 40%; border-radius: 6px; background: #EAF0FF"></span><span style="height: 65%; border-radius: 6px; background: #DCE5FB"></span><span style="height: 82%; border-radius: 6px; background: #C9D7FA"></span><span style="height: 100%; border-radius: 6px; background: linear-gradient(180deg, #4C7DFF, #1652F0)"></span>
+</div>
+<div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 12px; color: #5B6582"><span>8 lessons</span><span>Each step builds on the last</span></div>
+</div>
+
+<div class="tx-layer {{tv.l1.cls}}" style="transform: translate3d({{tv.l1.x}}, {{tv.l1.y}}, {{tv.l1.z}})">
+<span class="tx-scan"></span>
+<span class="tx-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+<span class="tx-k">CONTENT</span>
+<div style="margin-top: 12px; font-size: 18px; font-weight: 600; letter-spacing: -.3px">Joining tables with SQL</div>
+<div style="display: flex; flex-direction: column; gap: 7px; margin-top: 12px"><span class="tx-bar" style="width: 92%"></span><span class="tx-bar" style="width: 78%"></span></div>
+<div style="margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: #0B1433; font-family: ui-monospace, Menlo, monospace; font-size: 12px; line-height: 1.7; color: #C9D7FA">SELECT c.name, o.total<br>FROM customers c<br><span style="color: #8FB0FF">LEFT JOIN</span> orders o ON …</div>
+<div style="display: flex; gap: 8px; margin-top: 12px; font-size: 12px; color: #5B6582"><span>Lesson 4 of 8</span><span>·</span><span>12 min</span></div>
+
+</div>
+<div class="tx-seal {{tv.sealCls}}">
+<svg viewBox="0 0 100 100" style="position: absolute; inset: 0; width: 100%; height: 100%"><defs><linearGradient id="txSg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C7DFF"></stop><stop offset=".55" stop-color="#1652F0"></stop><stop offset="1" stop-color="#0E3BB8"></stop></linearGradient><path id="txSt" d="M50,50 m-31,0 a31,31 0 1,1 62,0 a31,31 0 1,1 -62,0"></path></defs><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="url(#txSg)"></path><text font-family="Google Sans, system-ui, sans-serif" font-size="7" font-weight="600" letter-spacing="1.6" fill="#FFFFFF"><textPath href="#txSt" textLength="192" lengthAdjust="spacing">CREDALIO · VALIDATED · CREDALIO · VALIDATED ·</textPath></text><circle cx="50" cy="50" r="21" fill="#FFFFFF"></circle><path d="M40 50.5l7 7 13-13.5" fill="none" stroke="#1652F0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+
 </div>
 </div>
-<div class="tq-band" ref="{{tv.bandRef}}" role="img" aria-label="Courses flow through three expert checks, subject matter, learning design and assessment. Some fall away; the ones that pass form the Credalio Validated seal.">
-<canvas class="tq-cv" ref="{{tv.cvRef}}" aria-hidden="true"></canvas>
-<span class="tq-zone" ref="{{tv.z0}}" aria-hidden="true"><span style="width: 12px; height: 12px; border-radius: 999px; border: 2px solid #CBD3E6; box-sizing: border-box"></span>Not yet validated</span>
-<span class="tq-zone" ref="{{tv.z1}}" aria-hidden="true"><span style="width: 12px; height: 12px; border-radius: 999px; border: 2px dashed #8A93AD; box-sizing: border-box"></span>Review in progress</span>
-<span class="tq-zone tq-zone-ok" ref="{{tv.z2}}" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Credalio Validated</span>
-<span class="tq-gate" ref="{{tv.g0}}" aria-hidden="true"><span class="tq-gn">01</span><span class="tq-gt">Subject matter</span><span class="tq-gs">Accurate and current</span></span>
-<span class="tq-gate" ref="{{tv.g1}}" aria-hidden="true"><span class="tq-gn">02</span><span class="tq-gt">Learning design</span><span class="tq-gs">Lessons that add up</span></span>
-<span class="tq-gate" ref="{{tv.g2}}" aria-hidden="true"><span class="tq-gn">03</span><span class="tq-gt">Assessment</span><span class="tq-gs">Fair and on target</span></span>
+<p class="tx-cap" aria-live="polite" style="margin: 0; color: {{tv.capFg}}">{{tv.cap}}</p>
+</div>
 </div>
 </div>
 </section>
 </section>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4802}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4750}}'>
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }
   setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }
@@ -1059,131 +1140,44 @@ class CoachPart extends Part {
 class TrustPart extends Part {
   constructor(host) {
     super(host);
-    this.state = {};
+    this.state = { step: 0 };
     var self = this;
-    this.el = {};
-    ['band', 'cv', 'z0', 'z1', 'z2', 'g0', 'g1', 'g2'].forEach(function (k) { self['r_' + k] = function (e) { self.el[k] = e; }; });
-    this.G = [0.3, 0.5, 0.69];
-    this.U_SEAL = 0.89;
+    this.setRoot = function (e) { self.root = e; };
+    this.T = [1200, 2300, 4700, 7100, 9500, 10500, 14000];
   }
   componentDidMount() {
     var self = this;
-    this.vis = true; this.last = performance.now();
+    this.t0 = performance.now();
     var tick = function (now) {
-      var dt = Math.min(0.05, (now - self.last) / 1000); self.last = now;
-      if (self.vis) self.frame(dt, now / 1000);
+      var el = now - self.t0, T = self.T, s = 0;
+      if (el >= T[6]) { self.t0 = now; el = 0; }
+      for (var k = 0; k < 6; k++) if (el >= T[k]) s = k + 1;
+      if (s !== self.state.step) self.setState({ step: s });
       self.raf = requestAnimationFrame(tick);
     };
     this.raf = requestAnimationFrame(tick);
-    if (window.IntersectionObserver && this.el.band) {
-      this.io = new IntersectionObserver(function (en) { self.vis = en[0].isIntersecting; }, { rootMargin: '200px' });
-      this.io.observe(this.el.band);
+    if (window.IntersectionObserver && this.root) {
+      this.io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) self.t0 = performance.now(); }, { threshold: 0.4 });
+      this.io.observe(this.root);
     }
   }
   componentWillUnmount() { cancelAnimationFrame(this.raf); if (this.io) this.io.disconnect(); }
-  setup(W, H, vert) {
-    var L = vert ? 15 : 28, du = vert ? 0.0125 : 0.0068, P = [];
-    for (var l = 0; l < L; l++) {
-      var v = -1 + 2 * (l + 0.5) / L, n = Math.ceil(1.12 / du), spd = 0.05 * (1 + 0.06 * Math.sin(l * 2.3));
-      for (var j = 0; j < n; j++) P.push({ l: l, v: v + (Math.random() - 0.5) * 0.02, w: Math.sin(l * 1.7 + j * 0.3), off: j * du + (l % 3) * du / 3, spd: spd, prev: 9, rej: -1, tg: 0, ph: Math.random() * 6.28 });
-    }
-    this.P = P; this.W = W; this.H = H; this.vert = vert; this.glow = [0, 0, 0];
-    var T = [], k;
-    for (k = 0; k < 160; k++) { var a = k / 160 * Math.PI * 2, rr = 1 + 0.035 * Math.cos(a * 20); T.push([rr * Math.cos(a), rr * Math.sin(a)]); }
-    for (k = 0; k < 80; k++) { var b = k / 80 * Math.PI * 2; T.push([0.76 * Math.cos(b), 0.76 * Math.sin(b)]); }
-    var chk = [[-0.38, 0.02], [-0.1, 0.3], [0.42, -0.27]];
-    for (k = 0; k < 16; k++) { var t = k / 15; T.push([chk[0][0] + (chk[1][0] - chk[0][0]) * t, chk[0][1] + (chk[1][1] - chk[0][1]) * t]); }
-    for (k = 0; k < 28; k++) { var q = k / 27; T.push([chk[1][0] + (chk[2][0] - chk[1][0]) * q, chk[1][1] + (chk[2][1] - chk[1][1]) * q]); }
-    this.T = T;
-    this.placeLabels();
-  }
-  spread(u) {
-    var g = this.G;
-    var sm = function (e0, e1, x) { var t = Math.min(1, Math.max(0, (x - e0) / (e1 - e0))); return t * t * (3 - 2 * t); };
-    var s = 1 - 0.3 * sm(g[0] - 0.05, g[0] + 0.03, u) - 0.22 * sm(g[1] - 0.05, g[1] + 0.03, u) - 0.18 * sm(g[2] - 0.05, g[2] + 0.03, u);
-    return s * (1 - 0.86 * sm(g[2] + 0.03, this.U_SEAL - 0.02, u));
-  }
-  map(u, c) {
-    if (this.vert) { var y0 = 50, y1 = this.H - 140; return [this.W * 0.42 + c, y0 + u * (y1 - y0)]; }
-    var x0 = this.W * 0.06, x1 = this.W * 0.94; return [x0 + u * (x1 - x0), this.H * 0.47 + c];
-  }
-  placeLabels() {
-    var self = this, e = this.el, vert = this.vert;
-    var pos = function (u) { return self.map(u, 0); };
-    [[e.g0, this.G[0]], [e.g1, this.G[1]], [e.g2, this.G[2]]].forEach(function (a) { if (!a[0]) return; var p = pos(a[1]); if (vert) { a[0].style.top = p[1] + 'px'; a[0].style.left = ''; } else { a[0].style.left = p[0] + 'px'; a[0].style.top = ''; } });
-    var zs = [[e.z0, 0.12], [e.z1, 0.5]];
-    zs.forEach(function (a) { if (!a[0]) return; var p = pos(a[1]); if (vert) { a[0].style.top = (p[1] - 34) + 'px'; a[0].style.left = ''; } else { a[0].style.left = p[0] + 'px'; a[0].style.top = ''; } });
-    if (e.z2) { if (vert) { e.z2.style.top = (this.H - 78) + 'px'; e.z2.style.left = ''; e.z2.style.bottom = 'auto'; } else { e.z2.style.left = pos(this.U_SEAL)[0] + 'px'; e.z2.style.top = 'auto'; e.z2.style.bottom = '18px'; } }
-  }
-  frame(dt, time) {
-    var cv = this.el.cv, band = this.el.band;
-    if (!cv || !band) return;
-    var W = band.clientWidth, H = band.clientHeight, vert = W < 760, dpr = Math.min(2, window.devicePixelRatio || 1);
-    if (!this.P || W !== this.W || H !== this.H) this.setup(W, H, vert);
-    if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
-    var g = cv.getContext('2d');
-    g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, W, H);
-    if (!this.sp) {
-      var mk = function (col) { var c = document.createElement('canvas'); c.width = c.height = 32; var x = c.getContext('2d'); var gr = x.createRadialGradient(16, 16, 0, 16, 16, 16); gr.addColorStop(0, col); gr.addColorStop(0.6, col); gr.addColorStop(1, 'rgba(0,0,0,0)'); x.fillStyle = gr; x.beginPath(); x.arc(16, 16, 16, 0, 6.283); x.fill(); return c; };
-      this.sp = [mk('#A3ABC2'), mk('#8FB0FF'), mk('#4C7DFF'), mk('#1652F0'), mk('#C9CFDD'), mk('#C9D7FA')];
-    }
-    var SP = this.sp, P = this.P, G = this.G, US = this.U_SEAL, A = vert ? W * 0.3 : H * 0.34;
-    var sealC = vert ? [W * 0.5, H - 200] : this.map(US, 0), sealR = vert ? Math.min(84, W * 0.21) : Math.min(118, H * 0.2);
-    var sx = Math.cos(0.35 * Math.sin(time * 0.6));
-    // gates
-    for (var k = 0; k < 3; k++) {
-      this.glow[k] *= Math.pow(0.05, dt);
-      var gp = this.map(G[k], 0), len = A * [1.08, 0.82, 0.62][k] * 1.12, gl = Math.min(1, this.glow[k] / 40);
-      var bw = 22 + 26 * gl, hz = vert ? g.createLinearGradient(0, gp[1] - bw, 0, gp[1] + bw) : g.createLinearGradient(gp[0] - bw, 0, gp[0] + bw, 0);
-      hz.addColorStop(0, 'rgba(127,164,255,0)'); hz.addColorStop(0.5, 'rgba(127,164,255,' + (0.07 + 0.1 * gl).toFixed(3) + ')'); hz.addColorStop(1, 'rgba(127,164,255,0)');
-      g.fillStyle = hz;
-      if (vert) g.fillRect(gp[0] - len, gp[1] - bw, len * 2, bw * 2); else g.fillRect(gp[0] - bw, gp[1] - len, bw * 2, len * 2);
-      for (var d = -len; d <= len; d += 7) { var f = 1 - Math.abs(d) / len; g.globalAlpha = 0.2 + 0.6 * f; var r0 = 1.2 + 0.8 * gl * f; if (vert) g.drawImage(SP[3], gp[0] + d - r0, gp[1] - r0, r0 * 2, r0 * 2); else g.drawImage(SP[3], gp[0] - r0, gp[1] + d - r0, r0 * 2, r0 * 2); }
-      g.globalAlpha = 1;
-    }
-    // seal: glow + resting dots
-    var sg = g.createRadialGradient(sealC[0], sealC[1], 0, sealC[0], sealC[1], sealR * 2);
-    sg.addColorStop(0, 'rgba(22,82,240,.14)'); sg.addColorStop(1, 'rgba(22,82,240,0)');
-    g.fillStyle = sg; g.fillRect(sealC[0] - sealR * 2, sealC[1] - sealR * 2, sealR * 4, sealR * 4);
-    var T = this.T;
-    for (var t = 0; t < T.length; t++) {
-      var tx = sealC[0] + T[t][0] * sealR * sx, ty = sealC[1] + T[t][1] * sealR, pr = 0.5 + 0.5 * Math.sin(time * 2 - t * 0.21);
-      var rr = (vert ? 1.5 : 1.8) + 0.5 * pr;
-      g.globalAlpha = 0.55 + 0.4 * pr; g.drawImage(SP[3], tx - rr, ty - rr, rr * 2, rr * 2);
-    }
-    // flow
-    for (var i = 0; i < P.length; i++) {
-      var p = P[i], u = ((p.off + time * p.spd) % 1.12) - 0.06;
-      if (u < p.prev) { p.rej = -1; for (var q = 0; q < 3; q++) if (p.rej < 0 && Math.random() < 0.2) p.rej = q; p.tg = Math.floor(Math.random() * T.length); }
-      for (var q2 = 0; q2 < 3; q2++) if (p.prev < G[q2] && u >= G[q2] && p.rej !== q2 && p.rej < q2 + 1) this.glow[q2] += p.rej < 0 || p.rej > q2 ? 1 : 0;
-      p.prev = u;
-      if (u < 0) continue;
-      var stage = u < G[0] ? 0 : (u < G[1] ? 1 : (u < G[2] ? 2 : 3));
-      var fall = p.rej >= 0 && u > G[p.rej] ? (u - G[p.rej]) / 0.07 : 0;
-      if (fall > 1) continue;
-      if (p.rej < 0 && u > US - 0.03) {
-        var kk = (u - (US - 0.03)) / 0.07; if (kk > 1) continue;
-        var e = kk * kk * (3 - 2 * kk), st0 = this.map(US - 0.03, p.v * A * this.spread(US - 0.03)), tg = T[p.tg];
-        var px = st0[0] + (sealC[0] + tg[0] * sealR * sx - st0[0]) * e, py = st0[1] + (sealC[1] + tg[1] * sealR - st0[1]) * e;
-        var r3 = (vert ? 1.7 : 2.1) * (1 + 0.6 * (1 - kk));
-        g.globalAlpha = 1 - kk * 0.6; g.drawImage(SP[3], px - r3, py - r3, r3 * 2, r3 * 2);
-        continue;
-      }
-      var wob = (vert ? 7 : 11) * (1 - 0.75 * Math.min(1, u / G[2]));
-      var c = p.v * A * this.spread(u) + Math.sin(u * 13 - time * 1.4 + p.l * 0.45) * wob;
-      if (fall > 0) c += (p.v >= 0 ? 1 : -1) * fall * fall * A * 0.45;
-      var pt = this.map(u, c);
-      if (fall > 0) { if (vert) pt[1] += fall * 18; else pt[1] += fall * fall * 40; }
-      var depth = (p.w + 1) / 2, fin = Math.min(1, u / 0.1);
-      var a = (0.3 + 0.4 * depth + stage * 0.07) * fin, spr = SP[stage];
-      if (fall > 0) { a *= 1 - fall; spr = SP[4]; }
-      var r2 = ((vert ? 1.05 : 1.2) + 0.55 * depth + stage * 0.14);
-      g.globalAlpha = Math.min(1, a); g.drawImage(spr, pt[0] - r2, pt[1] - r2, r2 * 2, r2 * 2);
-    }
-    g.globalAlpha = 1;
-  }
   renderVals() {
-    return { bandRef: this.r_band, cvRef: this.r_cv, z0: this.r_z0, z1: this.r_z1, z2: this.r_z2, g0: this.r_g0, g1: this.r_g1, g2: this.r_g2 };
+    // steps: 0 closed, 1 opening, 2 content, 3 design, 4 assessment, 5 closing, 6 sealed
+    var s = this.state.step, open = s >= 1 && s <= 4;
+    var Z = open ? [270, 135, 0] : [24, 12, 0], X = open ? [0, -30, -60] : [0, 0, 0], Y = open ? [0, 52, 104] : [0, 0, 0];
+    var lay = function (k, z) { var chk = k + 2; return { z: z + 'px', x: X[k] + 'px', y: Y[k] + 'px', cls: s === chk ? 'tx-layer-run' : (s > chk ? 'tx-layer-done' : '') }; };
+    var S = [['Content', 'Accurate and current for the field'], ['Learning design', 'Lessons and practice add up to the outcome'], ['Assessment', 'Fair, and measures what it claims']];
+    var caps = ['A new course arrives', 'Taking it apart', 'A subject expert checks the content', 'A learning designer checks how it’s built', 'An assessment specialist tests the assessment', 'Every layer passed', 'Credalio Validated'];
+    return {
+      rootRef: this.setRoot,
+      l1: lay(0, Z[0]), l2: lay(1, Z[1]), l3: lay(2, Z[2]),
+      sealCls: s === 6 ? 'tx-seal-on' : '',
+      steps: S.map(function (r, k) { var c = k + 2; return { n: k + 1, t: r[0], d: r[1], cls: s === c ? 'tx-step-run' : (s > c ? 'tx-step-done' : 'tx-step-wait') }; }),
+      pill: s === 0 ? 'Not yet validated' : (s < 6 ? 'Review in progress' : 'Credalio Validated'),
+      pillCls: s === 0 ? '' : (s < 6 ? 'tx-pill-run' : 'tx-pill-ok'), pNone: s === 0, pRun: s > 0 && s < 6, pOk: s === 6,
+      cap: caps[s], capFg: s === 6 ? '#0F6B45' : '#5B6582'
+    };
   }
 }
 class Component extends DCLogic {

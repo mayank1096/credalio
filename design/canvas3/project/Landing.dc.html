@@ -451,20 +451,21 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .bp-beat-on .bp-bn{color:#1652F0}
 .bp-bt{font-size:17px;font-weight:600;letter-spacing:-.2px}
 .bp-bd{font-size:14px;color:#5B6582}
+.bp-bs{display:none}
 @media (prefers-reduced-motion: reduce){.bp-card,.bp-trail,.bp-link,.bp-got,.bp-ok-i{transition:none}}
 @media (max-width: 1080px){.bp-stage{grid-template-columns:360px minmax(0,1fr) 320px;padding:36px 32px}.bp-title{font-size:19px}}
 @media (max-width: 860px){
-.bp-wrap{padding:72px 20px 64px !important;gap:22px !important}
+.bp-wrap{padding:80px 20px 80px !important;gap:36px !important}
 .bp-h2{font-size:30px !important;letter-spacing:-.8px !important}
 .bp-p{font-size:15px !important}
-.bp-head{gap:10px}
-.bp-stage{display:block;padding:0;margin:0;height:258px;box-sizing:border-box;background:none;border:none;border-radius:0;overflow:visible}
+.bp-head{gap:14px}
+.bp-stage{display:block;padding:0;margin:0;height:262px;box-sizing:border-box;background:none;border:none;border-radius:0;overflow:visible}
 .bp-stage::before{display:none}
-.bp-wallet{height:258px}
+.bp-wallet{height:262px}
 .bp-whead{height:32px;font-size:12px;gap:7px;padding:0 12px 0 4px}
 .bp-whead b{font-size:12px}
 .bp-whead .bp-av{width:24px;height:24px}
-.bp-card{height:160px;padding:10px 14px 12px;border-radius:15px;gap:4px}
+.bp-card{height:150px;padding:10px 14px 12px;border-radius:15px;gap:4px}
 .bp-deep{opacity:0}
 .bp-type{min-height:20px;font-size:10px}
 .bp-vchip{height:20px;padding:0 7px;font-size:9.5px}
@@ -481,10 +482,11 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .bp-got > span:nth-child(2){font-size:14px !important}
 .bp-ok{padding:8px 10px;font-size:12px}
 .bp-empty{display:none}
-.bp-beats{gap:10px}
+.bp-beats{gap:14px;margin-top:4px}
 .bp-beat{padding-top:10px;gap:2px}
 .bp-bn{font-size:11px}
-.bp-bt{font-size:12px}
+.bp-bt{display:none}
+.bp-bs{display:block;font-size:13px;font-weight:600;letter-spacing:-.1px;white-space:nowrap}
 .bp-bd{display:none}
 }
 
@@ -1156,7 +1158,7 @@ Not sure which? Ask your AI Coach
 
 <div class="bp-beats">
 <sc-for list="{{bp.beats}}" as="b" hint-placeholder-count="3">
-<div class="bp-beat {{b.cls}}"><span class="bp-bn">{{b.n}}</span><span class="bp-bt">{{b.t}}</span><span class="bp-bd">{{b.d}}</span></div>
+<div class="bp-beat {{b.cls}}"><span class="bp-bn">{{b.n}}</span><span class="bp-bt">{{b.t}}</span><span class="bp-bs">{{b.s}}</span><span class="bp-bd">{{b.d}}</span></div>
 </sc-for>
 </div>
 </div>
@@ -1669,7 +1671,7 @@ class BackpackPart extends Part {
   renderVals() {
     // steps: 0 keep, 1 share button, 2 link travels, 3 verified
     var S = this.state, self = this, mob = typeof window !== 'undefined' && window.innerWidth <= 860;
-    var peek = mob ? 24 : 38;
+    var peek = mob ? 26 : 38;
     var cards = this.C.map(function (c, k) {
       var d = (k - S.front + 5) % 5;
       var tf = 'translateY(' + (-d * peek) + 'px) scale(' + (1 - d * 0.045).toFixed(3) + ')';
@@ -1686,7 +1688,7 @@ class BackpackPart extends Part {
       destCls: S.step === 3 ? 'bp-dest-ok bp-dest-show' : '',
       waiting: S.step < 3, gotCls: S.step === 3 ? 'bp-got-on' : '',
       d: { who: dd.who, org: dd.org, ini: dd.ini, avBg: dd.avBg, avFg: dd.avFg, title: fc.title, id: fc.id },
-      beats: B.map(function (b, k) { return { n: b[0], t: b[1], d: b[2], cls: k === beatOn ? 'bp-beat-on' : '' }; })
+      beats: B.map(function (b, k) { return { n: b[0], t: b[1], d: b[2], s: ['Keep it', 'Share it', 'Anyone checks it'][k], cls: k === beatOn ? 'bp-beat-on' : '' }; })
     };
   }
 }

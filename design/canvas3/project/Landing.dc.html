@@ -12,7 +12,7 @@
 <style>
 body{margin:0;background:#FFFFFF}
 a{color:#1652F0}a:hover{color:#0E3BB8}
-.lh-hero{background:radial-gradient(60% 55% at 12% 0%,rgba(22,82,240,.22) 0%,rgba(22,82,240,0) 70%),radial-gradient(55% 50% at 90% 4%,rgba(22,82,240,.18) 0%,rgba(22,82,240,0) 70%),linear-gradient(180deg,#DCE7FF 0%,#EDF2FF 34%,#F7F9FD 62%,#FFFFFF 86%)}
+.lh-hero{--sb:292px;--ih:min(calc((100vw - 32px) * .243),520px);background:radial-gradient(60% 55% at 12% 0%,rgba(22,82,240,.22) 0%,rgba(22,82,240,0) 70%),radial-gradient(55% 50% at 90% 4%,rgba(22,82,240,.18) 0%,rgba(22,82,240,0) 70%),linear-gradient(180deg,#DCE7FF 0%,#EDF2FF 34%,#F7F9FD 62%,#FFFFFF 86%)}
 .lh-word{display:block;height:24px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}
 .lh-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
 .lh-link{white-space:nowrap;transition:color .2s ease,background .2s ease}
@@ -26,12 +26,13 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-search:focus-within{border-color:#1652F0 !important;box-shadow:0 0 0 4px rgba(22,82,240,.14),0 24px 60px -24px rgba(22,82,240,.45) !important}
 .lh-input::placeholder{color:#8A93AD}
 .lh-cta:focus-visible,.lh-link:focus-visible,.lh-menu:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-.lh-stage{position:absolute;z-index:2;left:50%;--h:min(24.3cqw,calc((100cqh - 400px) / .75));height:var(--h);bottom:calc(70px - var(--h) * .135);aspect-ratio:2800/681;transform:translateX(-50%);pointer-events:none}
+.lh-stage{position:absolute;z-index:2;left:50%;--h:var(--ih);height:var(--h);top:calc(var(--sb) + 28px - var(--h) * .115);aspect-ratio:2800/681;transform:translateX(-50%);pointer-events:none}
 @media (min-width: 761px){.lh-hero{container-type:size}}
+@media (min-width: 1600px){.lh-hero{--sb:318px}}
 .lh-orbit{position:absolute;inset:0;perspective:2200px;perspective-origin:50% 45%;transform:scale(var(--os,1));transform-origin:50% 45%}
 .lh-orbit-back{z-index:1;opacity:.75}
 .lh-orbit-front{z-index:3}
-.lh-ring{position:absolute;left:48.86%;top:29%;width:0;height:0;transform-style:preserve-3d;transform:rotateX(-6deg) rotateY(0deg);animation:lhSpin 48s linear infinite}
+.lh-ring{position:absolute;left:48.86%;top:23%;width:0;height:0;transform-style:preserve-3d;transform:rotateX(-6deg) rotateY(0deg);animation:lhSpin 48s linear infinite}
 @keyframes lhSpin{from{transform:rotateX(-6deg) rotateY(0deg)}to{transform:rotateX(-6deg) rotateY(-360deg)}}
 .lh-stage:has(.lh-sl:hover) .lh-ring{animation-play-state:paused}
 .lh-sl{position:absolute;left:0;top:0;transform-origin:0 0;transform:var(--td);width:var(--wd);height:52px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:none;padding:0;margin:0;box-shadow:inset 0 1px 0 var(--bc),inset 0 -1px 0 var(--bc),0 14px 24px -18px rgba(11,20,51,.45);font-family:'Google Sans',system-ui,sans-serif;pointer-events:auto}
@@ -85,7 +86,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-input{height:52px !important;font-size:16px !important}
 .lh-cta-main{justify-content:center !important;height:52px !important}
 .lh-hero{position:relative !important;top:auto !important}
-.lh-stage{position:relative !important;left:auto !important;bottom:auto !important;transform:none !important;height:auto !important;width:180%;flex-shrink:0;margin:calc(50px - 47.4%) 0 calc(36px - 18.1%);aspect-ratio:3/2 !important}
+.lh-stage{position:relative !important;left:auto !important;bottom:auto !important;top:auto !important;transform:none !important;height:auto !important;width:180%;flex-shrink:0;margin:calc(50px - 47.4%) 0 calc(36px - 18.1%);aspect-ratio:3/2 !important}
 .lh-figure{-webkit-mask-image:none;mask-image:none}
 .lh-signals-d{display:none}.lh-signals-m{display:block}
 .lh-ring{left:50%;top:45%}
@@ -331,7 +332,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </style>
 </helmet>
 <div class="lh-root" style="box-sizing: border-box; padding: 16px; background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
-<section class="lh-hero" aria-label="Start your journey" style="position: sticky; top: 16px; z-index: 1; overflow: hidden; border-radius: 28px; height: clamp(560px, min(calc(100svh - 32px), calc(500px + 18vw)), 860px); display: flex; flex-direction: column; align-items: center">
+<section class="lh-hero" aria-label="Start your journey" style="position: sticky; top: 16px; z-index: 1; overflow: hidden; border-radius: 28px; height: calc(var(--sb) + 52px + var(--ih) * .79); display: flex; flex-direction: column; align-items: center">
 
 <header class="lh-nav" style="position: relative; z-index: 5; margin-top: 16px; width: min(1320px, calc(100% - 64px)); height: 64px; box-sizing: border-box; padding: 0; display: flex; align-items: center; justify-content: space-between; gap: 16px">
 <a href="#" aria-label="Credalio home" style="display: flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0"><span class="lh-mark" aria-hidden="true"></span><span class="lh-word" aria-hidden="true"></span></a>
@@ -872,7 +873,7 @@ Not sure which? Ask your AI Coach
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5280}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5135}}'>
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }
   setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }
@@ -892,7 +893,7 @@ class HeroPart extends Part {
   componentDidMount() {
     var fit = function () {
       var st = document.querySelectorAll('.lh-stage');
-      for (var k = 0; k < st.length; k++) { var h = st[k].getBoundingClientRect().height; st[k].style.setProperty('--os', window.innerWidth > 760 && h ? Math.min(1, h / 500).toFixed(3) : 1); }
+      for (var k = 0; k < st.length; k++) { var h = st[k].getBoundingClientRect().height; st[k].style.setProperty('--os', window.innerWidth > 760 && h ? Math.min(1, h / 440).toFixed(3) : 1); }
     };
     fit(); setTimeout(fit, 300);
     window.addEventListener('resize', fit);

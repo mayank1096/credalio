@@ -337,6 +337,60 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 @keyframes ftLift{from{transform:translateY(48px);opacity:.35}to{transform:none;opacity:1}}
 }
 @media (prefers-reduced-motion: reduce){.ft-img,.ft-top{animation:none !important}}
+.ld-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:64px;align-items:end}
+.ld-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
+.ld-stage{--x:88%;position:relative;height:560px;border-radius:20px;overflow:hidden;border:1.5px solid #E6EAF3;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:ew-resize}
+.ld-proof{position:absolute;inset:0;background:radial-gradient(70% 90% at 70% 0%,#EAF0FF 0%,#F5F8FF 45%,#FFFFFF 100%)}
+.ld-proof::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#D3DEFA 1.1px,transparent 1.4px);background-size:18px 18px;-webkit-mask-image:radial-gradient(80% 80% at 70% 40%,#000 25%,transparent 80%);mask-image:radial-gradient(80% 80% at 70% 40%,#000 25%,transparent 80%)}
+.ld-bento{position:absolute;inset:84px 32px 32px;display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:16px}
+.ld-card{position:relative;display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:16px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 24px 44px -34px rgba(11,20,51,.35);min-width:0;min-height:0;overflow:hidden}
+.ld-c1{grid-column:1;grid-row:1 / 3}.ld-c2{grid-column:2;grid-row:1}.ld-c3{grid-column:3;grid-row:1}.ld-c4{grid-column:2;grid-row:2}.ld-c5{grid-column:3;grid-row:2}.ld-c6{grid-column:4;grid-row:1 / 3}
+.ld-k{display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:500;color:#8A93AD}
+.ld-t{font-size:16px;font-weight:600;letter-spacing:-.2px;color:#0B1433}
+.ld-ok{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:999px;background:#E7F5EE;color:#0F6B45;font-size:12px;font-weight:500;align-self:flex-start;white-space:nowrap}
+.ld-done{position:absolute;inset:0;background:#F3F4F7;clip-path:inset(0 calc(100% - var(--x)) 0 0);-webkit-clip-path:inset(0 calc(100% - var(--x)) 0 0)}
+.ld-done::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(11,20,51,.025) 0 2px,transparent 2px 12px)}
+.ld-g{background:#FAFAFB;border-color:#E1E4EA;box-shadow:none;color:#9A9FAF}
+.ld-g .ld-k{color:#A5AABA}
+.ld-gtx{color:#7C8294 !important}
+.ld-gtick{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:#9A9FAF;white-space:nowrap}
+.ld-g .ld-gtick{align-self:flex-start}
+.ld-gt{width:18px;height:18px;border-radius:999px;border:1.5px solid #C9CDD8;display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+.ld-grow{display:flex;align-items:center;gap:10px;font-size:13px;color:#8A90A3;padding:8px 10px;border-radius:10px;background:#F3F4F7}
+.ld-grow .ld-gtick{align-self:center}
+.ld-play{width:22px;height:22px;border-radius:7px;background:#ECEEF2;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ld-tag{position:absolute;top:22px;z-index:2;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.ld-pill{height:32px;padding:0 13px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500}
+.ld-sub{font-size:14px;color:#5B6582}
+.ld-line{position:absolute;top:0;bottom:0;left:var(--x);width:2px;margin-left:-1px;background:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.08);z-index:3;pointer-events:none}
+.ld-knob{position:absolute;top:50%;left:var(--x);z-index:4;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:999px;background:#FFFFFF;border:2px solid #1652F0;box-shadow:0 14px 30px -12px rgba(22,82,240,.55);display:flex;align-items:center;justify-content:center;gap:2px;color:#1652F0;cursor:ew-resize;padding:0}
+.ld-knob:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:4px}
+.ld-knob::after{content:"";position:absolute;inset:-8px;border-radius:999px;border:2px solid rgba(22,82,240,.35);animation:ldPing 2s ease-out infinite;pointer-events:none}
+.ld-touched .ld-knob::after{animation:none;opacity:0}
+@keyframes ldPing{0%{transform:scale(.9);opacity:.9}100%{transform:scale(1.45);opacity:0}}
+.ld-hint{position:absolute;left:var(--x);top:calc(50% + 40px);z-index:4;transform:translateX(-50%);font-size:12px;font-weight:500;color:#1652F0;background:#FFFFFF;border:1px solid #C9D7FA;height:26px;padding:0 10px;border-radius:999px;display:inline-flex;align-items:center;white-space:nowrap;transition:opacity .4s ease;pointer-events:none}
+.ld-touched .ld-hint{opacity:0}
+.ld-bar{height:8px;border-radius:9px;background:#E3E8F3;overflow:hidden}
+.ld-bar span{display:block;height:100%;border-radius:9px;background:#1652F0}
+@media (prefers-reduced-motion: reduce){.ld-knob::after{animation:none}}
+@media (max-width: 1080px){.ld-head{grid-template-columns:minmax(0,1fr) !important;gap:16px !important}.ld-bento{grid-template-columns:1fr 1fr 1fr !important;grid-template-rows:1fr 1fr 1fr !important}.ld-card{grid-column:auto !important;grid-row:auto !important}.ld-c1{grid-row:span 2 !important}.ld-c6{grid-column:span 3 !important;flex-direction:row !important;gap:16px !important;text-align:left !important;justify-content:flex-start !important;padding:16px 22px !important}.ld-c6 .ld-k{display:none}.ld-c6 svg,.ld-c6 > span:first-of-type{width:60px !important;height:60px !important;flex-shrink:0}.ld-c6 .ld-t{margin-top:0 !important}.ld-c6 .ld-ok{margin-left:auto !important}.ld-bento{grid-template-rows:1fr 1fr .62fr !important}.ld-stage{height:640px}}
+@media (max-width: 760px){
+.ld-wrap{padding:80px 20px 88px !important;gap:28px !important}
+.ld-h2{font-size:32px !important;letter-spacing:-.9px !important}
+.ld-p{font-size:16px !important}
+.ld-stage{height:780px;margin:0 -4px}
+.ld-bento{inset:64px 12px 12px;grid-template-columns:1fr 1fr !important;grid-template-rows:1.3fr 1fr 1fr .8fr !important;gap:10px}
+.ld-c1{grid-column:span 2 !important;grid-row:auto !important}
+.ld-c6{grid-column:span 2 !important}
+.ld-grow:nth-child(n+3){display:none}
+.ld-c2 svg{width:48px;height:48px}
+.ld-card{padding:12px;gap:7px;border-radius:14px}
+.ld-t{font-size:14px}
+.ld-hide-m{display:none !important}
+.ld-tag{top:16px}
+.ld-tag .ld-sub{display:none}
+.ld-knob{width:48px;height:48px;margin:-24px 0 0 -24px}
+}
 </style>
 </helmet>
 <div class="lh-root" style="box-sizing: border-box; padding: 16px; background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
@@ -857,6 +911,96 @@ Not sure which? Ask your AI Coach
 </div>
 </section>
 </section>
+<section class="lh-eng" aria-label="Learn by doing">
+<section aria-labelledby="ld-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<div class="ld-wrap" style="max-width: 1312px; margin: 0 auto; padding: 120px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
+<div class="ld-head">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 500; color: #1652F0">Learn by doing</span>
+<h2 id="ld-h" class="ld-h2">Don’t just finish courses. Prove what you can do.</h2>
+</div>
+<p class="ld-p" style="margin: 0 0 6px; font-size: 18px; line-height: 1.6; color: #4A5578">Watching lessons earns a tick. Doing the work earns proof you can show anyone. Drag to see the difference.</p>
+</div>
+
+<div class="ld-stage" ref="{{ld.stageRef}}" role="group" aria-label="Completion compared with proof">
+
+<div class="ld-proof">
+<div class="ld-tag" style="right: 24px"><span class="ld-sub">Shows what you can actually do</span><span class="ld-pill" style="background: #1652F0; color: #FFFFFF">Proof</span></div>
+<div class="ld-bento">
+
+<div class="ld-card ld-c1">
+<div class="ld-k"><span>Project</span><span>Real brief · 3 weeks</span></div>
+<span class="ld-t" style="font-size: 18px">Retail sales analysis</span>
+<div style="flex: 1; min-height: 0; position: relative; border-radius: 12px; background: #F5F8FF; border: 1px solid #E6EAF3; padding: 14px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; font-size: 12px; color: #5B6582"><span>Revenue by region</span><span style="color: #0F6B45; font-weight: 500">+18% Q3</span></div>
+<svg viewBox="0 0 260 130" preserveAspectRatio="none" aria-hidden="true" style="flex: 1; width: 100%; min-height: 0"><g fill="#C9D7FA"><rect x="8" y="70" width="26" height="60" rx="5"></rect><rect x="58" y="52" width="26" height="78" rx="5"></rect><rect x="108" y="62" width="26" height="68" rx="5"></rect><rect x="158" y="34" width="26" height="96" rx="5"></rect></g><rect x="208" y="14" width="26" height="116" rx="5" fill="#1652F0"></rect><path d="M21 64 L71 46 L121 56 L171 28 L221 8" fill="none" stroke="#0B1433" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 5"></path></svg>
+<div class="ld-hide-m" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; font-size: 11px; color: #5B6582"><span style="display: flex; flex-direction: column; gap: 2px"><b style="font-size: 15px; font-weight: 600; color: #0B1433">£2.4m</b>Revenue</span><span style="display: flex; flex-direction: column; gap: 2px"><b style="font-size: 15px; font-weight: 600; color: #0B1433">North</b>Top region</span><span style="display: flex; flex-direction: column; gap: 2px"><b style="font-size: 15px; font-weight: 600; color: #0B1433">3</b>Insights</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 30px; height: 30px; border-radius: 999px; background: #DCE5FB; color: #1652F0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0">PN</span><span style="font-size: 13px; color: #3A4566; min-width: 0">“Clear story, strong charts.” <span class="ld-hide-m" style="color: #8A93AD">Priya, mentor</span></span></div>
+</div>
+
+<div class="ld-card ld-c2">
+<div class="ld-k"><span>Assessment</span></div>
+<div style="display: flex; align-items: center; gap: 14px; flex: 1">
+<svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0"><circle cx="32" cy="32" r="26" fill="none" stroke="#EAF0FF" stroke-width="7"></circle><circle cx="32" cy="32" r="26" fill="none" stroke="#1652F0" stroke-width="7" stroke-linecap="round" stroke-dasharray="140.5 163.4" transform="rotate(-90 32 32)"></circle><text x="32" y="37" text-anchor="middle" font-family="Google Sans, system-ui, sans-serif" font-size="15" font-weight="600" fill="#0B1433">86%</text></svg>
+<span style="display: flex; flex-direction: column; gap: 4px; min-width: 0"><span class="ld-t">Data analysis test</span><span class="ld-hide-m" style="font-size: 12px; color: #5B6582">Pass mark 70%</span></span>
+</div>
+<span class="ld-ok">Passed</span>
+</div>
+
+<div class="ld-card ld-c3">
+<div class="ld-k"><span>Practical activity</span></div>
+<div style="flex: 1; border-radius: 10px; background: #F5F8FF; border: 1px solid #E6EAF3; padding: 10px 12px; font-family: ui-monospace, Menlo, monospace; font-size: 12px; line-height: 1.7; color: #3A4566">SELECT region,<br>  SUM(total)<br>FROM orders<br><span style="color: #1652F0; font-weight: 600">GROUP BY</span> region;</div>
+<span class="ld-ok">Query runs</span>
+</div>
+
+<div class="ld-card ld-c4">
+<div class="ld-k"><span>Simulation</span></div>
+<span style="align-self: flex-start; max-width: 92%; padding: 8px 11px; border-radius: 12px 12px 12px 4px; background: #F1F3F8; font-size: 12px; line-height: 1.45; color: #3A4566">“Can you have the report by Monday?”</span>
+<span style="align-self: flex-end; max-width: 92%; padding: 8px 11px; border-radius: 12px 12px 4px 12px; background: #1652F0; color: #FFFFFF; font-size: 12px; line-height: 1.45">“Wednesday, with the data checked.”</span>
+<span class="ld-ok" style="margin-top: auto">Handled well</span>
+</div>
+
+<div class="ld-card ld-c5">
+<div class="ld-k"><span>Portfolio</span><span>6 pieces</span></div>
+<div style="position: relative; flex: 1; min-height: 70px">
+<span style="position: absolute; left: 14%; top: 8px; width: 62%; height: 70%; border-radius: 10px; background: linear-gradient(150deg, #DCE5FB, #F5F8FF); border: 1px solid #E3E8F3; transform: rotate(-7deg)"></span>
+<span style="position: absolute; left: 24%; top: 4px; width: 62%; height: 70%; border-radius: 10px; background: linear-gradient(150deg, #C9D7FA, #EAF0FF); border: 1px solid #E3E8F3; transform: rotate(4deg)"></span>
+<span style="position: absolute; left: 19%; top: 12px; width: 62%; height: 70%; border-radius: 10px; background: #FFFFFF; border: 1px solid #DCE3F2; box-shadow: 0 14px 24px -18px rgba(11,20,51,.4); display: flex; align-items: flex-end; gap: 4px; padding: 10px; box-sizing: border-box"><span style="width: 18%; height: 40%; border-radius: 3px; background: #C9D7FA"></span><span style="width: 18%; height: 70%; border-radius: 3px; background: #9DB8F7"></span><span style="width: 18%; height: 55%; border-radius: 3px; background: #C9D7FA"></span><span style="width: 18%; height: 90%; border-radius: 3px; background: #1652F0"></span></span>
+</div>
+<span style="font-size: 12px; color: #1652F0; font-weight: 500">Share with one link</span>
+</div>
+
+<div class="ld-card ld-c6" style="align-items: center; justify-content: center; text-align: center; background: linear-gradient(180deg, #FFFFFF, #F5F8FF)">
+<div class="ld-k" style="position: absolute; left: 18px; right: 18px; top: 18px"><span>Verified achievement</span></div>
+<svg width="104" height="104" viewBox="0 0 100 100" aria-hidden="true" style="filter: drop-shadow(0 16px 18px rgba(22,82,240,.3))"><defs><linearGradient id="ldSg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C7DFF"></stop><stop offset=".55" stop-color="#1652F0"></stop><stop offset="1" stop-color="#0E3BB8"></stop></linearGradient></defs><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="url(#ldSg)"></path><circle cx="50" cy="50" r="22" fill="#FFFFFF"></circle><path d="M40 50.5l7 7 13-13.5" fill="none" stroke="#1652F0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span class="ld-t" style="font-size: 18px; margin-top: 6px">SQL Practitioner</span>
+<span class="ld-hide-m" style="font-size: 12px; color: #5B6582">Issued by Credalio · Oct 2026</span>
+<span class="ld-ok" style="align-self: center">Verified<span class="ld-hide-m">· anyone can check</span></span>
+</div>
+
+</div>
+</div>
+
+<div class="ld-done" aria-hidden="true">
+<div class="ld-tag" style="left: 24px"><span class="ld-pill" style="background: #FFFFFF; color: #5B6582; border: 1px solid #DFE2EA">Completion</span><span class="ld-sub" style="color: #8A90A3">Says you showed up</span></div>
+<div class="ld-bento">
+<div class="ld-card ld-g ld-c1"><div class="ld-k"><span>Module 3</span><span>4 videos</span></div><span class="ld-t ld-gtx" style="font-size: 18px">Lesson videos</span><div style="display: flex; flex-direction: column; gap: 8px; flex: 1"><div class="ld-grow"><span class="ld-play"><svg width="10" height="10" viewBox="0 0 24 24" fill="#B4B9C7"><path d="M8 5v14l11-7z"></path></svg></span><span style="flex: 1; min-width: 0">Lesson 1 · Intro to data</span><span class="ld-gtick"><span class="ld-gt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9AA0B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Watched</span></div><div class="ld-grow"><span class="ld-play"><svg width="10" height="10" viewBox="0 0 24 24" fill="#B4B9C7"><path d="M8 5v14l11-7z"></path></svg></span><span style="flex: 1; min-width: 0">Lesson 2 · Spreadsheets</span><span class="ld-gtick"><span class="ld-gt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9AA0B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Watched</span></div><div class="ld-grow"><span class="ld-play"><svg width="10" height="10" viewBox="0 0 24 24" fill="#B4B9C7"><path d="M8 5v14l11-7z"></path></svg></span><span style="flex: 1; min-width: 0">Lesson 3 · Cleaning data</span><span class="ld-gtick"><span class="ld-gt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9AA0B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Watched</span></div><div class="ld-grow"><span class="ld-play"><svg width="10" height="10" viewBox="0 0 24 24" fill="#B4B9C7"><path d="M8 5v14l11-7z"></path></svg></span><span style="flex: 1; min-width: 0">Lesson 4 · Joining tables</span><span class="ld-gtick"><span class="ld-gt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9AA0B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Watched</span></div></div><div class="ld-bar"><span style="width: 100%; background: #B9BECC"></span></div><span style="font-size: 12px">100% watched</span></div>
+<div class="ld-card ld-g ld-c2"><div class="ld-k"><span>Quiz</span></div><span class="ld-t ld-gtx">End-of-module quiz</span><span style="font-size: 12px; flex: 1">5 questions</span><span class="ld-gtick"><span class="ld-gt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9AA0B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Attempted</span></div>
+<div class="ld-card ld-g ld-c3"><div class="ld-k"><span>Reading</span></div><span class="ld-t ld-gtx">Lesson 6 notes</span><span style="font-size: 12px; flex: 1">8 min read</span><span class="ld-gtick"><span class="ld-gt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9AA0B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Marked as read</span></div>
+<div class="ld-card ld-g ld-c4"><div class="ld-k"><span>Video</span></div><span class="ld-t ld-gtx">Working with clients</span><span style="font-size: 12px; flex: 1">14 min</span><span class="ld-gtick"><span class="ld-gt"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9AA0B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Watched</span></div>
+<div class="ld-card ld-g ld-c5"><div class="ld-k"><span>Course progress</span></div><span class="ld-t ld-gtx">12 of 12 lessons</span><div class="ld-bar" style="margin-top: auto"><span style="width: 100%; background: #B9BECC"></span></div></div>
+<div class="ld-card ld-g ld-c6" style="align-items: center; justify-content: center; text-align: center"><div class="ld-k" style="position: absolute; left: 18px; right: 18px; top: 18px"><span>Certificate</span></div><span style="width: 84px; height: 84px; border-radius: 999px; border: 2px dashed #C9CDD8; display: flex; align-items: center; justify-content: center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B4B9C7" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span class="ld-t ld-gtx" style="font-size: 16px; margin-top: 8px">Certificate of completion</span><span style="font-size: 12px">Data Foundations</span></div>
+</div>
+</div>
+
+<span class="ld-line" aria-hidden="true"></span>
+<button class="ld-knob" type="button" role="slider" aria-label="Compare completion and proof" aria-valuemin="0" aria-valuemax="100" ref="{{ld.knobRef}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"></path></svg></button>
+<span class="ld-hint" aria-hidden="true">Drag</span>
+</div>
+</div>
+</section>
+</section>
 <footer class="lh-eng ft" aria-label="Footer">
 <div class="ft-top">
 <div class="ft-brand">
@@ -881,7 +1025,7 @@ Not sure which? Ask your AI Coach
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5135}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6137}}'>
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }
   setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }
@@ -1276,11 +1420,49 @@ class TrustPart extends Part {
     };
   }
 }
+class LearnPart extends Part {
+  constructor(host) {
+    super(host);
+    this.state = {};
+    var self = this;
+    this.setStage = function (e) { self.stage = e; };
+    this.setKnob = function (e) { self.knob = e; };
+    this.x = 88;
+  }
+  componentDidMount() {
+    var self = this, st = this.stage, kb = this.knob;
+    if (!st) return;
+    var set = function (v) { self.x = Math.max(4, Math.min(96, v)); st.style.setProperty('--x', self.x + '%'); if (kb) kb.setAttribute('aria-valuenow', Math.round(self.x)); };
+    var touch = function () { if (!self.touched) { self.touched = true; st.classList.add('ld-touched'); cancelAnimationFrame(self.raf); } };
+    var fromEvent = function (e) { var r = st.getBoundingClientRect(); return (e.clientX - r.left) / r.width * 100; };
+    var drag = false;
+    st.addEventListener('pointerdown', function (e) { drag = true; touch(); set(fromEvent(e)); try { st.setPointerCapture(e.pointerId); } catch (_) {} });
+    st.addEventListener('pointermove', function (e) { if (drag) set(fromEvent(e)); });
+    var end = function () { drag = false; };
+    st.addEventListener('pointerup', end); st.addEventListener('pointercancel', end);
+    if (kb) kb.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { e.preventDefault(); touch(); set(self.x + (e.key === 'ArrowLeft' ? -5 : 5)); }
+      if (e.key === 'Home') { e.preventDefault(); touch(); set(4); }
+      if (e.key === 'End') { e.preventDefault(); touch(); set(96); }
+    });
+    set(88);
+    var intro = function () {
+      if (self.touched || self.played) return; self.played = true;
+      var t0 = performance.now(), from = 90, to = 30, dur = 1700;
+      var step = function (now) { if (self.touched) return; var k = Math.min(1, (now - t0) / dur), e = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; set(from + (to - from) * e); if (k < 1) self.raf = requestAnimationFrame(step); };
+      self.raf = requestAnimationFrame(step);
+    };
+    if (window.IntersectionObserver) { this.io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) setTimeout(intro, 350); }, { threshold: 0.45 }); this.io.observe(st); }
+    else intro();
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); if (this.io) this.io.disconnect(); }
+  renderVals() { return { stageRef: this.setStage, knobRef: this.setKnob }; }
+}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
     this.state = { v: 0 };
-    this.parts = { hero: new HeroPart(this), eng: new EnginePart(this), grow: new GrowPart(this), coach: new CoachPart(this), tv: new TrustPart(this) };
+    this.parts = { hero: new HeroPart(this), eng: new EnginePart(this), grow: new GrowPart(this), coach: new CoachPart(this), tv: new TrustPart(this), ld: new LearnPart(this) };
     this.parts.hero.sync = true;
   }
   bump(now) {

@@ -457,26 +457,42 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 @media (prefers-reduced-motion: reduce){.bp-card,.bp-trail,.bp-link,.bp-got,.bp-ok-i{transition:none}}
 @media (max-width: 1080px){.bp-stage{grid-template-columns:360px minmax(0,1fr) 320px;padding:36px 32px}.bp-title{font-size:19px}}
 @media (max-width: 860px){
-.bp-wrap{padding:80px 20px 72px !important;gap:24px !important}
+.bp-wrap{padding:72px 20px 64px !important;gap:22px !important}
 .bp-h2{font-size:30px !important;letter-spacing:-.8px !important}
 .bp-p{font-size:15px !important}
-.bp-head{gap:12px}
-.bp-stage{display:block;padding:20px 16px 18px;margin:0 -4px;height:392px;box-sizing:border-box}
-.bp-wallet{height:352px}
-.bp-card{height:196px;padding:11px 16px 16px;border-radius:16px}
-.bp-title{font-size:18px}
+.bp-head{gap:10px}
+.bp-stage{display:block;padding:0;margin:0;height:250px;box-sizing:border-box;background:none;border:none;border-radius:0;overflow:visible}
+.bp-stage::before{display:none}
+.bp-wallet{height:250px}
+.bp-whead{font-size:12px}
+.bp-whead b{font-size:13px}
+.bp-whead > span:first-child{flex-direction:row !important;gap:6px !important;align-items:baseline}
+.bp-whead > span:first-child span::before{content:"· "}
+.bp-whead .bp-av{display:none}
+.bp-card{height:172px;padding:10px 16px 14px;border-radius:16px;gap:4px}
+.bp-deep{opacity:0}
+.bp-type{min-height:22px;font-size:11px}
+.bp-vchip{height:22px;font-size:10px}
+.bp-title{font-size:17px}
+.bp-meta{min-height:30px;font-size:11px}
 .bp-share{bottom:12px;right:12px;height:30px;font-size:12px}
 .bp-path{display:none}
-.bp-dest{position:absolute;left:16px;right:16px;bottom:18px;opacity:0;transform:translateY(24px) scale(.97);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1);z-index:20}
+.bp-dest{position:absolute;left:0;right:0;bottom:0;opacity:0;transform:translateY(20px) scale(.97);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.7,.2,1);z-index:20}
 .bp-dest-show{opacity:1;transform:none}
-.bp-bar{height:30px}
-.bp-body{min-height:0;padding:14px 16px 16px;gap:8px}
+.bp-bar{height:28px}
+.bp-url{font-size:10px}
+.bp-body{min-height:0;padding:12px 14px 14px;gap:7px}
+.bp-got{gap:7px}
+.bp-got > span:nth-child(2){font-size:15px !important}
+.bp-ok{padding:8px 10px;font-size:12px}
 .bp-empty{display:none}
 .bp-beats{gap:10px}
-.bp-beat{padding-top:12px}
-.bp-bt{font-size:13px}
+.bp-beat{padding-top:10px;gap:2px}
+.bp-bn{font-size:11px}
+.bp-bt{font-size:12px}
 .bp-bd{display:none}
 }
+
 </style>
 </helmet>
 <div class="lh-root" style="box-sizing: border-box; padding: 16px; background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
@@ -1658,11 +1674,11 @@ class BackpackPart extends Part {
   renderVals() {
     // steps: 0 keep, 1 share button, 2 link travels, 3 verified
     var S = this.state, self = this, mob = typeof window !== 'undefined' && window.innerWidth <= 860;
-    var peek = mob ? 30 : 38;
+    var peek = mob ? 24 : 38;
     var cards = this.C.map(function (c, k) {
       var d = (k - S.front + 5) % 5;
       var tf = 'translateY(' + (-d * peek) + 'px) scale(' + (1 - d * 0.045).toFixed(3) + ')';
-      return { type: c.type, title: c.title, meta: c.meta, bg: c.bg, fg: c.fg, bd: c.bd, chipBg: c.chipBg, chipFg: c.chipFg, tf: tf, z: 10 - d, cls: d === 0 ? 'bp-card-front' : '' };
+      return { type: c.type, title: c.title, meta: c.meta, bg: c.bg, fg: c.fg, bd: c.bd, chipBg: c.chipBg, chipFg: c.chipFg, tf: tf, z: 10 - d, cls: (d === 0 ? 'bp-card-front' : '') + (d >= 3 ? ' bp-deep' : '') };
     });
     var fc = this.C[S.front], dd = this.D[S.dest];
     var beatOn = S.step <= 1 ? 0 : (S.step === 2 ? 1 : 2);
@@ -1672,7 +1688,7 @@ class BackpackPart extends Part {
       shareCls: S.step >= 1 && S.step <= 2 ? 'bp-share-on' + (S.step === 2 ? ' bp-share-tap' : '') : '',
       shareLabel: S.step === 2 ? 'Link copied' : 'Share',
       goCls: S.step >= 2 ? 'bp-go' : '', linkCls: S.step === 2 ? 'bp-link-on' : '',
-      destCls: (S.step === 3 ? 'bp-dest-ok bp-dest-show' : '') + (mob && S.step >= 2 ? ' bp-dest-show' : ''),
+      destCls: S.step === 3 ? 'bp-dest-ok bp-dest-show' : '',
       waiting: S.step < 3, gotCls: S.step === 3 ? 'bp-got-on' : '',
       d: { who: dd.who, org: dd.org, ini: dd.ini, avBg: dd.avBg, avFg: dd.avFg, title: fc.title, id: fc.id },
       beats: B.map(function (b, k) { return { n: b[0], t: b[1], d: b[2], cls: k === beatOn ? 'bp-beat-on' : '' }; })

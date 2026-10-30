@@ -28,7 +28,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-cta:focus-visible,.lh-link:focus-visible,.lh-menu:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .lh-stage{position:absolute;z-index:2;left:50%;--h:min(66.667cqw,calc((100cqh - 416px) * 2.2026));height:var(--h);bottom:calc(48px - var(--h) * .151);aspect-ratio:3/2;transform:translateX(-50%);pointer-events:none}
 @media (min-width: 761px){.lh-hero{container-type:size}}
-.lh-orbit{position:absolute;inset:0;perspective:2200px;perspective-origin:50% 45%}
+.lh-orbit{position:absolute;inset:0;perspective:2200px;perspective-origin:50% 45%;transform:scale(var(--os,1));transform-origin:50% 45%}
 .lh-orbit-back{z-index:1;opacity:.75}
 .lh-orbit-front{z-index:3}
 .lh-ring{position:absolute;left:50%;top:45%;width:0;height:0;transform-style:preserve-3d;transform:rotateX(-6deg) rotateY(0deg);animation:lhSpin 48s linear infinite}
@@ -328,7 +328,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </style>
 </helmet>
 <div class="lh-root" style="box-sizing: border-box; padding: 16px; background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
-<section class="lh-hero" aria-label="Start your journey" style="position: sticky; top: 16px; z-index: 1; overflow: hidden; border-radius: 28px; height: clamp(720px, calc(100vh - 32px), 860px); display: flex; flex-direction: column; align-items: center">
+<section class="lh-hero" aria-label="Start your journey" style="position: sticky; top: 16px; z-index: 1; overflow: hidden; border-radius: 28px; height: clamp(560px, calc(100svh - 32px), 860px); display: flex; flex-direction: column; align-items: center">
 
 <header class="lh-nav" style="position: relative; z-index: 5; margin-top: 16px; width: min(1320px, calc(100% - 64px)); height: 64px; box-sizing: border-box; padding: 0; display: flex; align-items: center; justify-content: space-between; gap: 16px">
 <a href="#" aria-label="Credalio home" style="display: flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0"><span class="lh-mark" aria-hidden="true"></span><span class="lh-word" aria-hidden="true"></span></a>
@@ -885,6 +885,14 @@ class HeroPart extends Part {
   constructor(host) {
     super(host);
     this.state = { goal: '' };
+  }
+  componentDidMount() {
+    var fit = function () {
+      var st = document.querySelectorAll('.lh-stage');
+      for (var k = 0; k < st.length; k++) { var h = st[k].getBoundingClientRect().height; st[k].style.setProperty('--os', window.innerWidth > 760 && h ? Math.min(1, h / 820).toFixed(3) : 1); }
+    };
+    fit(); setTimeout(fit, 300);
+    window.addEventListener('resize', fit);
   }
   renderVals() {
     var self = this;

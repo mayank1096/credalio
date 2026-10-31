@@ -17,6 +17,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
+h1,h2,h3,p,.ci-d{text-wrap:pretty}
+.fd-h3{text-wrap:balance}
+@media (min-width: 761px){p,.ci-d{text-wrap:balance}}
+@media (max-width: 760px){h2{text-wrap:balance}}
 a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-hero{--sb:292px;--ih:min(calc((100vw - 32px) * .243),520px);background:radial-gradient(60% 55% at 12% 0%,rgba(22,82,240,.22) 0%,rgba(22,82,240,0) 70%),radial-gradient(55% 50% at 90% 4%,rgba(22,82,240,.18) 0%,rgba(22,82,240,0) 70%),linear-gradient(180deg,#DCE7FF 0%,#EDF2FF 34%,#F7F9FD 62%,#FFFFFF 86%)}
 .lh-word{display:block;height:24px;aspect-ratio:292/56;background:url(img/wordmark.png) left center/contain no-repeat}
@@ -115,6 +119,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .fd-h3{font-size:20px !important}
 .fd-panel{max-width:none !important;gap:12px !important;margin:0 -20px -24px;padding:48px 20px 24px;background:linear-gradient(180deg,rgba(255,255,255,0) 0%,#FFFFFF 38%)}
 .fd-panel p{font-size:14px !important}
+.fd-br{display:none}
 }
 .fd-btn:hover{border-color:#1652F0 !important}
 .fd-btn:focus-visible,.fd-dot:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
@@ -216,6 +221,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ac-mini{background:url(img/learner-700.webp) 35% 4% / 330% no-repeat}
 .ac-learner{height:auto;position:absolute;left:12px;bottom:0;width:340px;pointer-events:none;user-select:none;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
 @media (prefers-reduced-motion: reduce){.ac-caret,.ac-orb-ring,.ac-shimmer,.ac-think-b{animation:none}.ac-rise{transition:none}}
+@media (max-width: 1240px){.ac-tabs{overflow-x:auto;scrollbar-width:none;gap:24px !important}.ac-tabs::-webkit-scrollbar{display:none}.ac-tab{flex:0 0 auto;overflow:visible}}
 @media (max-width: 1080px){.ac-grid{grid-template-columns:200px minmax(0,1fr) !important}.ac-artcol{grid-column:1 / -1}.ac-learner{width:220px}}
 @media (max-width: 760px){
 .ac-wrap{padding:80px 20px 88px !important;gap:36px !important}
@@ -380,7 +386,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ld-bar{height:8px;border-radius:9px;background:#E3E8F3;overflow:hidden}
 .ld-bar span{display:block;height:100%;border-radius:9px;background:#1652F0}
 @media (prefers-reduced-motion: reduce){.ld-knob::after{animation:none}}
-@media (max-width: 1080px){.ld-head{grid-template-columns:minmax(0,1fr) !important;gap:16px !important}.ld-bento{grid-template-columns:1fr 1fr 1fr !important;grid-template-rows:1fr 1fr 1fr !important}.ld-card{grid-column:auto !important;grid-row:auto !important}.ld-c1{grid-row:span 2 !important}.ld-c6{grid-column:span 3 !important;flex-direction:row !important;gap:16px !important;text-align:left !important;justify-content:flex-start !important;padding:16px 22px !important}.ld-c6 .ld-k{display:none}.ld-c6 svg,.ld-c6 > span:first-of-type{width:60px !important;height:60px !important;flex-shrink:0}.ld-c6 .ld-t{margin-top:0 !important}.ld-c6 .ld-ok{margin-left:auto !important}.ld-bento{grid-template-rows:1fr 1fr .62fr !important}.ld-stage{height:640px}}
+@media (max-width: 1080px){.ld-head{grid-template-columns:minmax(0,1fr) !important;gap:16px !important}.ld-bento{grid-template-columns:1.25fr 1fr !important;grid-template-rows:1fr 1fr 1fr !important}.ld-c3,.ld-c5{display:none !important}.ld-card{grid-column:auto !important;grid-row:auto !important}.ld-c1{grid-row:span 2 !important}.ld-c6{grid-column:span 2 !important;flex-direction:row !important;gap:16px !important;text-align:left !important;justify-content:flex-start !important;padding:16px 22px !important}.ld-c6 .ld-k{display:none}.ld-c6 svg,.ld-g.ld-c6 > span:first-of-type{width:60px !important;height:60px !important;flex-shrink:0}.ld-c6 .ld-t{margin-top:0 !important;flex-shrink:0;white-space:nowrap}.ld-c6 .ld-ok{margin-left:auto !important}.ld-bento{grid-template-rows:1fr 1fr .62fr !important}.ld-stage{height:640px}}
 @media (max-width: 760px){
 .ld-wrap{padding:72px 20px 72px !important;gap:24px !important}
 .ld-head{gap:12px !important}
@@ -558,6 +564,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .mk-t{font-size:14px;min-height:36px}
 .mk-by{font-size:11px}
 .mk-foot{font-size:11px}
+.mk-foot > span{white-space:nowrap}
 .mk-link{align-self:stretch;justify-content:space-between}
 }
 .ci-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}
@@ -666,7 +673,8 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .pr-card-fit{border-color:#1652F0;box-shadow:0 0 0 6px rgba(22,82,240,.08),0 30px 60px -36px rgba(22,82,240,.55);transform:translateY(-4px)}
 .pr-pro{background:radial-gradient(90% 70% at 100% 0%,#1C3AA8 0%,#0B1433 70%);border-color:#0B1433;color:#FFFFFF}
 .pr-pro.pr-card-fit{border-color:#4C7DFF;box-shadow:0 0 0 6px rgba(22,82,240,.14),0 36px 70px -36px rgba(11,20,51,.8)}
-.pr-badge{position:absolute;top:22px;right:22px;height:26px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.14);color:#FFFFFF;display:inline-flex;align-items:center;font-size:12px;font-weight:500}
+.pr-top{display:flex;align-items:center;justify-content:space-between;gap:6px 8px;min-height:26px;margin:-2px 0 -4px}
+.pr-badge{height:26px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.14);color:#FFFFFF;display:inline-flex;align-items:center;font-size:12px;font-weight:500}
 .pr-name{font-size:13px;font-weight:600;letter-spacing:1.6px;color:#8A93AD}
 .pr-pro .pr-name{color:#9DB8F7}
 .pr-dlp{display:flex;align-items:baseline;gap:8px}
@@ -700,7 +708,9 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .pr-table td:first-child{color:#3A4566}
 .pr-tip{position:relative;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;margin-left:4px;border-radius:999px;border:1.5px solid currentColor;font-size:11px;font-weight:600;opacity:.6;cursor:help;vertical-align:2px}
 .pr-tip:hover::after,.pr-tip:focus::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);width:220px;padding:10px 12px;border-radius:10px;background:#0B1433;color:#FFFFFF;font-size:12px;font-weight:400;line-height:1.45;text-align:left;z-index:5;opacity:1}
-@media (max-width: 1080px){.pr-card{padding:22px 20px}.pr-big{font-size:34px}}
+@media (max-width: 1080px){.pr-card{padding:22px 20px}.pr-big{font-size:34px}.pr-top{flex-wrap:wrap}.tx-sub,.ec-p{max-width:none !important}}
+@media (max-width: 860px) and (min-width: 761px){.ci-br{display:none}}
+@media (max-width: 960px) and (min-width: 761px){.pr-badge{padding:0 8px;font-size:11px}.pr-hrs{letter-spacing:-.1px}.pr-cards{gap:12px}.pr-card{padding:22px 18px}.pr-feat li{font-size:13px}}
 @media (max-width: 760px){
 .pr-wrap{padding:80px 20px !important;gap:22px !important}
 .pr-h2{font-size:30px !important;letter-spacing:-.8px !important}
@@ -903,11 +913,11 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </div>
 
 <div class="fd-ui" style="position: relative; z-index: 2; max-width: 1312px; height: 100%; margin: 0 auto; box-sizing: border-box; padding: clamp(48px, 9vh, 80px) 64px clamp(40px, 7vh, 64px); display: flex; flex-direction: column; justify-content: space-between; pointer-events: none">
-<div style="display: flex; flex-direction: column; gap: 14px; max-width: 500px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 760px">
 <span style="font-size: 14px; font-weight: 500; color: #1652F0">The Become Engine</span>
-<h2 id="fd-title" class="fd-h2" style="margin: 0; font-size: 44px; line-height: 1.08; font-weight: 600; letter-spacing: -1.3px">Every journey starts with a vision. We build the rest.</h2>
+<h2 id="fd-title" class="fd-h2" style="margin: 0; font-size: 44px; line-height: 1.08; font-weight: 600; letter-spacing: -1.3px">Every journey starts with a vision.<br class="fd-br"> We build the rest.</h2>
 </div>
-<div class="fd-panel" style="max-width: 420px; display: flex; flex-direction: column; gap: 16px; pointer-events: auto">
+<div class="fd-panel" style="max-width: 480px; display: flex; flex-direction: column; gap: 16px; pointer-events: auto">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <span style="font-size: 14px; font-weight: 500; color: #8A93AD">Stage {{eng.cur.n}} of 8 · <span style="color: #1652F0">{{eng.cur.name}}</span></span>
 <h3 class="fd-h3" style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 600; letter-spacing: -.4px">{{eng.cur.headline}}</h3>
@@ -1470,7 +1480,7 @@ Not sure which? Ask your AI Coach
 <span class="mk-by"><span class="mk-av" style="border-radius: {{k.avR}}; background: {{k.avBg}}; color: {{k.avFg}}">{{k.ini}}</span><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap"><b style="font-weight: 600; color: #0B1433">{{k.by}}</b> · {{k.kind}}</span></span>
 <div class="mk-foot"><span>{{k.meta}}</span>
 <sc-if value="{{k.ok}}" hint-placeholder-val="{{ true }}"><span class="mk-st mk-ok"><svg width="13" height="13" viewBox="0 0 100 100" aria-hidden="true"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>Validated</span></sc-if>
-<sc-if value="{{k.rv}}" hint-placeholder-val="{{ false }}"><span class="mk-st mk-rv"><span style="width: 10px; height: 10px; border-radius: 999px; border: 1.5px dashed #8A93AD; box-sizing: border-box; margin-left: 2px"></span>Review in progress</span></sc-if>
+<sc-if value="{{k.rv}}" hint-placeholder-val="{{ false }}"><span class="mk-st mk-rv"><span style="width: 10px; height: 10px; border-radius: 999px; border: 1.5px dashed #8A93AD; box-sizing: border-box; margin-left: 2px"></span>In review</span></sc-if>
 </div>
 </div>
 </a>
@@ -1495,7 +1505,7 @@ Not sure which? Ask your AI Coach
 <a class="ci-door ci-cr" href="#" aria-label="For creators and experts: start creating">
 <div class="ci-copy">
 <span class="ci-k">For creators and experts</span>
-<span class="ci-t">Share what you know. Earn from it.</span>
+<span class="ci-t">Share what you know.<br class="ci-br"> Earn from it.</span>
 <span class="ci-d">Build courses, certifications and career paths with AI help, get them validated, and earn when people learn.</span>
 <span class="ci-btn">Start creating<span class="ci-arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
 </div>
@@ -1587,8 +1597,7 @@ Not sure which? Ask your AI Coach
 <div class="pr-cards">
 <sc-for list="{{pr.plans}}" as="p" hint-placeholder-count="3">
 <div class="pr-card {{p.cls}}">
-<sc-if value="{{p.best}}" hint-placeholder-val="{{ false }}"><span class="pr-badge">Best for deeper learning</span></sc-if>
-<span class="pr-name">{{p.name}}</span>
+<div class="pr-top"><span class="pr-name">{{p.name}}</span><sc-if value="{{p.best}}" hint-placeholder-val="{{ false }}"><span class="pr-badge">Best for deeper learning</span></sc-if></div>
 <div class="pr-dlp"><span class="pr-big">{{p.dlp}}</span><span class="pr-unit">{{p.unit}}</span></div>
 <span class="pr-hrs">≈ {{p.hrs}} of eligible learning</span>
 <span class="pr-price">{{p.price}}</span>
@@ -1646,7 +1655,7 @@ Not sure which? Ask your AI Coach
 <div class="ft-top">
 <div class="ft-brand">
 <a href="#" aria-label="Credalio home" style="display: flex; align-items: center; gap: 8px; text-decoration: none"><span class="lh-mark" aria-hidden="true"></span><span class="lh-word" aria-hidden="true"></span></a>
-<p style="margin: 0; max-width: 300px; font-size: 15px; line-height: 1.6; color: #4A5578">Helping you become who you want to be next.</p>
+<p style="margin: 0; max-width: 340px; font-size: 15px; line-height: 1.6; color: #4A5578">Helping you become who you want to be next.</p>
 </div>
 <nav class="ft-col" aria-label="Learn"><span class="ft-h">Learn</span><a class="ft-a" href="#">Courses</a><a class="ft-a" href="#">Professional Certifications</a><a class="ft-a" href="#">Career Paths</a><a class="ft-a" href="#">Learning Programs</a></nav><nav class="ft-col" aria-label="Create"><span class="ft-h">Create</span><a class="ft-a" href="#">For Creators</a><a class="ft-a" href="#">For Institutions</a><a class="ft-a" href="#">Become a Validator</a></nav><nav class="ft-col" aria-label="Company"><span class="ft-h">Company</span><a class="ft-a" href="#">Pricing</a><a class="ft-a" href="#">About magnummeta</a><a class="ft-a" href="#">Ecosystem</a><a class="ft-a" href="#">Contact</a></nav>
 <div class="ft-news">
@@ -1666,7 +1675,7 @@ Not sure which? Ask your AI Coach
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":11184}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":11187}}'>
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }
   setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }

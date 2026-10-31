@@ -142,9 +142,10 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .gc-card:hover .gc-f1{transform:translate(-6px,-8px)}
 .gc-card:hover .gc-f2{transform:translate(8px,-4px) rotate(2deg)}
 .gc-card:hover .gc-f3{transform:translateY(-10px)}
-.gc-feat{background:#0B1433;border-color:#0B1433;color:#FFFFFF;box-shadow:0 40px 80px -48px rgba(11,20,51,.8)}
+.gc-feat{background:#0B1433;isolation:isolate;border-color:#0B1433;color:#FFFFFF;box-shadow:0 40px 80px -48px rgba(11,20,51,.8)}
 .gc-feat:hover{border-color:#0B1433;box-shadow:0 50px 90px -44px rgba(22,82,240,.7)}
-.gc-feat .gc-vis{background:radial-gradient(110% 100% at 50% 0%,#1C3AA8 0%,#122467 45%,#0B1433 100%)}
+.gc-feat .gc-vis{background:none}
+.gc-feat::after,.ci-cr::after,.pr-pro::after,.ec-l3::after{content:"";position:absolute;inset:0;z-index:-1;background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat;transform:scale(1.5);transform-origin:0 35%;pointer-events:none}
 .gc-feat .gc-vis::before{background-image:radial-gradient(rgba(127,164,255,.35) 1.1px,transparent 1.4px)}
 .gc-feat .gc-label{color:rgba(255,255,255,.65)}
 .gc-feat .gc-ico{background:rgba(255,255,255,.1)}
@@ -567,7 +568,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ci-door{position:relative;flex:1;display:flex;flex-direction:column;border-radius:22px;overflow:hidden;text-decoration:none;transition:flex .7s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease}
 .ci-doors:hover .ci-door{flex:.82}
 .ci-doors .ci-door:hover{flex:1.18}
-.ci-cr{background:radial-gradient(90% 90% at 85% 100%,#2A4FD0 0%,#14286E 45%,#0B1433 100%);color:#FFFFFF;box-shadow:0 40px 80px -50px rgba(11,20,51,.8)}
+.ci-cr{background:#0B1433;isolation:isolate;color:#FFFFFF;box-shadow:0 40px 80px -50px rgba(11,20,51,.8)}
 .ci-in{background:radial-gradient(90% 90% at 85% 100%,#DCE5FB 0%,#EAF0FF 50%,#F5F8FF 100%);color:#0B1433;border:1px solid #DCE5FB}
 .ci-cr::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,164,255,.22) 1px,transparent 1.3px);background-size:16px 16px;-webkit-mask-image:linear-gradient(200deg,#000,transparent 70%);mask-image:linear-gradient(200deg,#000,transparent 70%);pointer-events:none}
 .ci-copy{position:relative;z-index:2;display:flex;flex-direction:column;gap:12px;padding:36px 36px 0;max-width:430px}
@@ -625,7 +626,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ec-l0.ec-slab-on{border-color:#1652F0;box-shadow:0 0 0 6px rgba(22,82,240,.1),0 30px 60px -28px rgba(22,82,240,.6)}
 .ec-l1{width:76%;background:#EAF0FF;border:1.5px solid #DCE5FB;color:#0B1433}
 .ec-l2{width:88%;background:#DCE5FB;border:1.5px solid #C9D7FA;color:#0B1433}
-.ec-l3{width:100%;background:linear-gradient(150deg,#1C3AA8,#0B1433);border:1.5px solid #0B1433;color:#FFFFFF}
+.ec-l3{width:100%;background:#0B1433;isolation:isolate;overflow:hidden;border:1.5px solid #0B1433;color:#FFFFFF}
 .ec-l1.ec-slab-on,.ec-l2.ec-slab-on{border-color:#1652F0;box-shadow:0 20px 40px -26px rgba(22,82,240,.6)}
 .ec-l3.ec-slab-on{box-shadow:0 0 0 6px rgba(22,82,240,.14),0 30px 60px -28px rgba(11,20,51,.8)}
 .ec-ico{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center}
@@ -665,7 +666,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .pr-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
 .pr-card{position:relative;display:flex;flex-direction:column;gap:14px;padding:26px 26px 24px;border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3;transition:border-color .4s ease,box-shadow .4s ease,transform .4s cubic-bezier(.2,.7,.2,1),opacity .4s ease}
 .pr-card-fit{border-color:#1652F0;box-shadow:0 0 0 6px rgba(22,82,240,.08),0 30px 60px -36px rgba(22,82,240,.55);transform:translateY(-4px)}
-.pr-pro{background:radial-gradient(90% 70% at 100% 0%,#1C3AA8 0%,#0B1433 70%);border-color:#0B1433;color:#FFFFFF}
+.pr-pro{background:#0B1433;isolation:isolate;overflow:hidden;border-color:#0B1433;color:#FFFFFF}
 .pr-pro.pr-card-fit{border-color:#4C7DFF;box-shadow:0 0 0 6px rgba(22,82,240,.14),0 36px 70px -36px rgba(11,20,51,.8)}
 .pr-top{display:flex;align-items:center;justify-content:space-between;gap:6px 8px;min-height:26px;margin:-2px 0 -4px}
 .pr-badge{height:26px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.14);color:#FFFFFF;display:inline-flex;align-items:center;font-size:12px;font-weight:500}

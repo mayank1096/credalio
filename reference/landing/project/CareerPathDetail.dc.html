@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Career Path: Data Analyst</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&amp;family=Sora:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 3880px; box-sizing: border-box; background: #ffffff; font-family: 'Sora', system-ui, sans-serif; color: #0B1433; overflow: hidden">
+<header style="height: 88px; box-sizing: border-box; padding: 0 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #E3E7F1; background: #ffffff">
+<div style="display: flex; align-items: center; gap: 36px">
+<a href="Main.dc.html" aria-label="Credalio home" style="display: flex; align-items: center; gap: 10px; color: #0B1433; text-decoration: none">
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#1652F0"></rect><path d="M22.5 11.5a8 8 0 1 0 0 11" stroke="#fff" stroke-width="3" stroke-linecap="round"></path><circle cx="24" cy="17" r="2.2" fill="#fff"></circle></svg>
+<span style="font-family: 'Fraunces', Georgia, serif; font-size: 26px; font-weight: 600; letter-spacing: -0.5px">Credalio</span>
+</a>
+<nav aria-label="Primary" style="display: flex; gap: 22px; font-size: 14px"><a href="Explore.dc.html" style="color: #3A4566; font-weight: 500; text-decoration: none; white-space: nowrap">Explore Learning</a><a href="CareerPaths.dc.html" aria-current="page" style="color: #0E3BB8; font-weight: 600; text-decoration: none; white-space: nowrap">Career Paths</a><a href="Certifications.dc.html" style="color: #3A4566; font-weight: 500; text-decoration: none; white-space: nowrap">Certifications</a><a href="Pricing-A.dc.html" style="color: #3A4566; font-weight: 500; text-decoration: none; white-space: nowrap">Pricing</a><a href="Creators-A.dc.html" style="color: #3A4566; font-weight: 500; text-decoration: none; white-space: nowrap">For Creators</a><a href="Institutions-A.dc.html" style="color: #3A4566; font-weight: 500; text-decoration: none; white-space: nowrap">For Institutions</a></nav>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<a href="#login" style="height: 44px; padding: 0 18px; display: flex; align-items: center; font-size: 15px; font-weight: 600; color: #0B1433; text-decoration: none">Log in</a>
+<a href="Journey.dc.html" style="height: 44px; padding: 0 20px; display: flex; align-items: center; border-radius: 10px; background: #1652F0; color: #ffffff; font-size: 15px; font-weight: 600; text-decoration: none">Start Your Journey</a>
+</div>
+</header>
+
+<section style="padding: 32px 120px 56px; background: #F5F7FC; display: flex; flex-direction: column; gap: 20px">
+<nav aria-label="Breadcrumb" style="display: flex; gap: 8px; font-size: 14px; color: #8E9BC2"><a href="CareerPaths.dc.html" style="color: #3A4566; text-decoration: none">Career Paths</a> <span aria-hidden="true">/</span> <span style="color: #0B1433; font-weight: 600">Data Analyst</span></nav>
+<span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; padding: 5px 10px; border-radius: 6px; background: #EAF0FF; color: #0E3BB8">Career Path</span>
+<h1 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; letter-spacing: -1.6px; font-size: 64px; line-height: 1.04">Your path to becoming a Data Analyst</h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #3A4566; max-width: 760px">A designed route from beginner to job-ready, built from validated courses, real projects and a professional certification.</p>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; max-width: 1040px">
+<div style="padding: 16px 18px; border-radius: 14px; background: #ffffff; border: 1px solid #E3E7F1; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #5B6582">Level</span><span style="font-size: 16px; font-weight: 600">Beginner → Job-ready</span></div>
+<div style="padding: 16px 18px; border-radius: 14px; background: #ffffff; border: 1px solid #E3E7F1; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #5B6582">Estimated time</span><span style="font-size: 16px; font-weight: 600; color: {{estFg}}">{{estimate}}</span></div>
+<div style="padding: 16px 18px; border-radius: 14px; background: #ffffff; border: 1px solid #E3E7F1; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #5B6582">Includes</span><span style="font-size: 16px; font-weight: 600">{{coursesLeft}} Courses · 4 Projects</span></div>
+<div style="padding: 16px 18px; border-radius: 14px; background: #ffffff; border: 1px solid #E3E7F1; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #5B6582">Proof</span><span style="font-size: 16px; font-weight: 600">1 Certification + portfolio</span></div>
+</div>
+<div style="display: flex; gap: 12px; margin-top: 4px">
+<button type="button" onClick="{{togglePanel}}" aria-expanded="{{panelExpanded}}" style="height: 52px; padding: 0 24px; box-sizing: border-box; border: none; border-radius: 12px; background: #1652F0; color: #ffffff; font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg>Personalise This Path</button>
+<button type="button" onClick="{{toggleSave}}" aria-pressed="{{savePressed}}" style="height: 52px; padding: 0 22px; box-sizing: border-box; border: 1px solid #CBD3E6; border-radius: 12px; background: #ffffff; color: #0B1433; font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none">{{saveLabel}}</button>
+</div>
+</section>
+
+<div style="padding: 40px 120px 0; display: grid; grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1fr); gap: 0; align-items: center">
+<div style="padding: 24px 28px; border-radius: 20px; border: 1px solid #E3E7F1; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #5B6582">Career Path</span><span style="font-size: 20px; font-weight: 600">The designed route</span><span style="font-size: 15px; color: #3A4566; line-height: 1.5">Built by experts. The same proven sequence for everyone who takes it.</span></div>
+<span aria-hidden="true" style="text-align: center; font-size: 26px; color: #1652F0">→</span>
+<div style="padding: 24px 28px; border-radius: 20px; background: #0B1433; color: #ffffff; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #8FB0FF">My Journey</span><span style="font-size: 20px; font-weight: 600">Your personalised route</span><span style="font-size: 15px; color: #C7D0E8; line-height: 1.5">The same destination, starting from what you already know.</span></div>
+</div>
+
+<section aria-labelledby="dlp-h" style="margin: 32px 120px 0; padding: 32px; border-radius: 24px; background: #0B1433; color: #ffffff; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8FB0FF">Your DLP and this path</span>
+<h2 id="dlp-h" style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 32px; font-weight: 500; line-height: 1.15">You can start this journey today.</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #C7D0E8">DLP is your learning allowance, not a price for the path. Each learning experience uses DLP as you take it.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<div style="padding: 16px; border-radius: 14px; background: #121D45; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; font-weight: 700; color: #8FB0FF">ESTIMATED LEARNING REQUIREMENT</span><span style="font-size: 24px; font-weight: 700">3,800 DLP</span></div>
+<div style="padding: 16px; border-radius: 14px; background: #121D45; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 12px; font-weight: 700; color: #8FB0FF">YOUR AVAILABLE BALANCE</span><span style="font-size: 24px; font-weight: 700">{balLabel} DLP</span></div>
+</div>
+<sc-if value="{hasPersonal}" hint-placeholder-val="{ false }"><div role="status" style="padding: 14px 16px; border-radius: 14px; background: #1652F0; font-size: 15px; line-height: 1.5">Your personalised requirement: <strong>{personalReq} DLP</strong>, because you already know {knownList}.</div></sc-if>
+<div style="display: flex; gap: 10px; flex-wrap: wrap"><a href="CourseDetail.dc.html" style="height: 48px; padding: 0 20px; box-sizing: border-box; border-radius: 12px; background: #ffffff; color: #0E3BB8; font-size: 15px; font-weight: 600; display: flex; align-items: center; text-decoration: none">{startLabel} →</a><a href="PRC-C-path.dc.html" style="height: 48px; padding: 0 20px; box-sizing: border-box; border-radius: 12px; border: 1px solid #344070; color: #ffffff; font-size: 15px; font-weight: 600; display: flex; align-items: center; text-decoration: none">See Plan Options</a></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><span id="plan-l" style="font-size: 13px; font-weight: 600; color: #C7D0E8">Preview with plan</span>
+<div role="radiogroup" aria-labelledby="plan-l" style="display: flex; gap: 4px; padding: 4px; border-radius: 12px; background: #121D45; align-self: flex-start"><sc-for list="{planBtns}" as="p" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{p.checked}" onClick="{p.pick}" style="height: 40px; padding: 0 16px; border: none; border-radius: 9px; background: {p.bg}; color: #ffffff; font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer">{p.label}</button></sc-for></div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{dlpStages}" as="d" hint-placeholder-count="6"><div style="display: grid; grid-template-columns: 70px minmax(0, 1fr) 90px 190px; gap: 12px; align-items: center; padding: 14px 16px; border-radius: 14px; background: {d.bg}; border: 1px solid {d.border}">
+<span style="font-size: 12px; font-weight: 700; color: #8FB0FF">Stage {d.n}</span><span style="font-size: 15px; font-weight: 600; text-decoration: {d.strike}">{d.title}</span><span style="font-size: 14px; font-weight: 600; text-align: right; color: #C7D0E8">{d.cost} DLP</span>
+<span style="justify-self: end; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; background: {d.stBg}; color: {d.stFg}">{d.status}</span></div></sc-for>
+</div>
+</section>
+<sc-if value="{{panelOpen}}" hint-placeholder-val="{{ false }}">
+<section aria-labelledby="pers-h" style="margin: 32px 120px 0; padding: 32px; border-radius: 24px; border: 1.5px solid #1652F0; background: #ffffff; box-shadow: 0 20px 50px rgba(22, 82, 240, 0.12); display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; gap: 12px; align-items: center"><span style="width: 40px; height: 40px; border-radius: 12px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg></span><h2 id="pers-h" style="margin: 0; font-size: 22px; font-weight: 600">Which of these do you already know?</h2></div>
+<p style="margin: 0; font-size: 15px; color: #3A4566; line-height: 1.55">I’ll compare this path with your skills and skip learning you don’t need. Projects and proof always stay: that’s where you show what you can do.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{skillBtns}}" as="s" hint-placeholder-count="5"><button type="button" onClick="{{s.pick}}" aria-pressed="{{s.pressed}}" style="height: 46px; padding: 0 18px; border-radius: 999px; border: 1.5px solid {{s.border}}; background: {{s.bg}}; color: {{s.fg}}; font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer">{{s.label}}</button></sc-for>
+</div>
+</div>
+<div style="padding: 24px; border-radius: 18px; background: #F5F7FC; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #5B6582">Your personalised version</span>
+<span role="status" style="font-family: 'Fraunces', Georgia, serif; font-size: 30px; font-weight: 500">{{skipLabel}}</span>
+<span style="font-size: 15px; color: #3A4566">Estimated time: <strong style="color: #0B1433">{{estimate}}</strong></span>
+<a href="Journey.dc.html" style="height: 52px; padding: 0 24px; box-sizing: border-box; border: none; border-radius: 12px; background: #1652F0; color: #ffffff; font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; margin-top: 6px">Build My Journey <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</section>
+</sc-if>
+
+<main style="padding: 56px 120px 80px; display: flex; flex-direction: column; gap: 8px">
+<h2 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 34px; font-weight: 500; letter-spacing: -0.6px; margin-bottom: 20px">The roadmap</h2>
+<sc-for list="{{stages}}" as="st" hint-placeholder-count="6">
+<div style="display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 24px">
+<div style="display: flex; flex-direction: column; align-items: center">
+<span style="width: 52px; height: 52px; flex-shrink: 0; border-radius: 16px; background: {{st.nodeBg}}; color: {{st.nodeFg}}; border: 1.5px solid #1652F0; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-size: 22px">{{st.n}}</span>
+<span style="width: 2px; flex-grow: 1; min-height: 24px; background: {{st.line}}"></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; padding: 10px 0 36px">
+<div style="display: flex; align-items: baseline; gap: 12px"><h3 style="margin: 0; font-size: 22px; font-weight: 600">{{st.name}}</h3><span style="font-size: 14px; color: #5B6582">{{st.note}}</span></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{st.items}}" as="it" hint-placeholder-count="3">
+<div style="padding: 16px 18px; border-radius: 16px; border: 1px solid {{it.border}}; background: {{it.bg}}; display: flex; flex-direction: column; gap: 8px; opacity: {{it.opacity}}">
+<span style="align-self: flex-start; font-size: 11px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; padding: 4px 8px; border-radius: 6px; background: {{it.tagBg}}; color: {{it.tagFg}}">{{it.kind}}</span>
+<span style="font-size: 15px; font-weight: 600; line-height: 1.4; text-decoration: {{it.strike}}">{{it.title}}</span>
+<sc-if value="{{it.skipped}}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; font-weight: 600; color: #0F6B45">Skip: you already know {{it.skill}}</span></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</sc-for>
+<div style="padding: 32px 40px; border-radius: 24px; background: #EAF0FF; display: flex; align-items: center; justify-content: space-between; gap: 32px">
+<div style="display: flex; align-items: center; gap: 18px">
+<span style="width: 52px; height: 52px; flex-shrink: 0; border-radius: 14px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 20px; font-weight: 600">Ready to start from where you are?</span><span style="font-size: 15px; color: #3A4566; line-height: 1.5">Personalise this path and your AI Coach builds your journey, then adapts it as you learn.</span></div>
+</div>
+<a href="Journey.dc.html" style="height: 52px; padding: 0 24px; box-sizing: border-box; border: none; border-radius: 12px; background: #1652F0; color: #ffffff; font-family: 'Sora', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; white-space: nowrap">Personalise This Path <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3880}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { open: false, known: {}, saved: false, plan: 200 }; }
+  renderVals() {
+    var self = this, S = this.state;
+    var C = ['Course', '#EAF0FF', '#0E3BB8'], P = ['Project', '#E7F6EF', '#0F6B45'], X = ['Certification', '#FFF3E0', '#8A4F00'], F = ['Proof', '#0B1433', '#FFFFFF'];
+    var raw = [
+      ['Foundation', 'Start here', [[C, 'Data Foundations: Spreadsheets to SQL', 'Excel'], [C, 'Statistics Essentials', 'Statistics']]],
+      ['Core Skills', 'The analyst toolkit', [[C, 'SQL for Data Analysis', 'SQL'], [C, 'Data Cleaning in Practice', 'SQL'], [C, 'Python for Data Analysis', 'Python']]],
+      ['Applied Learning', 'Using skills in context', [[C, 'Data Visualisation with Power BI', 'Power BI'], [C, 'Storytelling with Data', null], [C, 'Analytics in a Business Context', null]]],
+      ['Projects', 'Real work, reviewed', [[P, 'Clean and analyse a real sales dataset', null], [P, 'Build a KPI dashboard', null], [P, 'Customer segmentation analysis', null], [P, 'Forecasting project', null]]],
+      ['Professional Certification', 'Assessed to a standard', [[X, 'Professional Certificate in Data Analysis', null]]],
+      ['Portfolio / Proof', 'Goes into your Digital Backpack', [[F, '3 verified case studies', null], [F, '1 capstone project', null], [F, 'Professional credential', null]]]
+    ];
+    var skipped = 0;
+    var stages = raw.map(function (s, i) {
+      return { n: i + 1, name: s[0], note: s[1], nodeBg: i === 0 ? '#1652F0' : '#FFFFFF', nodeFg: i === 0 ? '#FFFFFF' : '#1652F0', line: i === raw.length - 1 ? 'transparent' : '#CBD3E6',
+        items: s[2].map(function (it) {
+          var sk = !!(it[2] && S.known[it[2]]); if (sk) skipped++;
+          return { kind: it[0][0], tagBg: it[0][1], tagFg: it[0][2], title: it[1], skill: it[2] || '', skipped: sk, strike: sk ? 'line-through' : 'none', opacity: sk ? '0.75' : '1', bg: sk ? '#F2FBF6' : '#FFFFFF', border: sk ? '#9BD3B5' : '#E3E7F1' };
+        }) };
+    });
+    var cut = Math.floor(skipped * 0.6);
+    var lo = Math.max(2, 6 - cut), hi = Math.max(lo + 1, 8 - cut);
+    var skills = ['Excel', 'SQL', 'Statistics', 'Power BI', 'Python'].map(function (k) {
+      var on = !!S.known[k];
+      return { label: k, pressed: on ? 'true' : 'false', bg: on ? '#1652F0' : '#FFFFFF', fg: on ? '#FFFFFF' : '#0B1433', border: on ? '#1652F0' : '#CBD3E6',
+        pick: function () { var n = Object.assign({}, S.known); if (n[k]) delete n[k]; else n[k] = true; self.setState({ known: n, open: true }); } };
+    });
+    var D = [['Data Foundations', 200, 'Excel'], ['SQL for Data Analysis', 500, 'SQL'], ['Data Visualisation', 600, 'Power BI'], ['Practical Project', 700, null], ['Advanced Analytics', 800, null], ['Professional Assessment', 1000, null]];
+    var bal = S.plan, personal = 0, known = [];
+    var dlpStages = D.map(function (d, i) {
+      var cov = !!(d[2] && S.known[d[2]]), st, c;
+      if (cov) { st = '\u2713 Already covered'; c = ['#E7F6EF', '#0F6B45']; known.push(d[2]); }
+      else { personal += d[1]; if (d[1] <= bal) { bal -= d[1]; st = '\u2713 Available now'; c = ['#1652F0', '#FFFFFF']; } else { st = '\uD83D\uDD12 More DLP required'; c = ['#26315A', '#C7D0E8']; } }
+      return { n: i + 1, title: d[0], cost: d[1].toLocaleString('en-GB'), status: st, stBg: c[0], stFg: c[1], strike: cov ? 'line-through' : 'none', bg: cov ? '#0F2A2A' : '#121D45', border: cov ? '#1E5A45' : '#26315A' };
+    });
+    var fmt = function (n) { return n.toLocaleString('en-GB'); };
+    return {
+      dlpStages: dlpStages, balLabel: fmt(S.plan), hasPersonal: personal < 3800, startLabel: 'Start With My ' + fmt(S.plan) + ' DLP', personalReq: fmt(personal), knownList: known.join(' and '),
+      planBtns: [[200, 'Free \u00b7 200'], [2000, 'Basic \u00b7 2,000'], [6000, 'Pro \u00b7 6,000']].map(function (p) { var on = S.plan === p[0]; return { label: p[1], checked: on ? 'true' : 'false', bg: on ? '#1652F0' : 'transparent', pick: function () { self.setState({ plan: p[0] }); } }; }),
+      stages: stages, skillBtns: skills, panelOpen: S.open, panelExpanded: S.open ? 'true' : 'false',
+      togglePanel: function () { self.setState({ open: !S.open }); },
+      estimate: lo + '\u2013' + hi + ' months', estFg: skipped ? '#0E3BB8' : '#0B1433', coursesLeft: 8 - skipped,
+      skipLabel: skipped ? 'Skip ' + skipped + ' course' + (skipped === 1 ? '' : 's') : 'Nothing skipped yet',
+      toggleSave: function () { self.setState({ saved: !S.saved }); }, savePressed: S.saved ? 'true' : 'false', saveLabel: S.saved ? '\u2713 Path saved' : 'Save path'
+    };
+  }
+}
+</script>
+</body>
+</html>

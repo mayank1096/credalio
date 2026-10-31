@@ -25,7 +25,7 @@
       "x": 0,
       "y": 2640,
       "w": 1440,
-      "h": 11187,
+      "h": 8000,
       "title": "Landing page · Desktop",
       "page": "main",
       "expand": "fill",
@@ -35,7 +35,7 @@
       "x": 1520,
       "y": 2640,
       "w": 390,
-      "h": 11426,
+      "h": 8000,
       "title": "Landing page · Mobile",
       "page": "main",
       "is_interactive": true
@@ -92,8 +92,103 @@
       "x": 1520,
       "y": 19189,
       "w": 390,
-      "h": 1882,
+      "h": 1901,
       "title": "COURSES-001 Browse Courses · Signed in (1,460 DLP) · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "CourseDetail.dc.html": {
+      "x": 0,
+      "y": 21753,
+      "w": 1440,
+      "h": 3029,
+      "title": "COURSES-002 Course Detail · Guest · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "CourseDetail-Mobile.dc.html": {
+      "x": 1520,
+      "y": 21753,
+      "w": 390,
+      "h": 3696,
+      "title": "COURSES-002 Course Detail · Guest · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "CourseDetail-Learner.dc.html": {
+      "x": 0,
+      "y": 25689,
+      "w": 1440,
+      "h": 3029,
+      "title": "COURSES-002 Course Detail · Signed in (1,460 DLP) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "CourseDetail-Learner-Mobile.dc.html": {
+      "x": 1520,
+      "y": 25689,
+      "w": 390,
+      "h": 3696,
+      "title": "COURSES-002 Course Detail · Signed in (1,460 DLP) · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "CareerPaths.dc.html": {
+      "x": 0,
+      "y": 29625,
+      "w": 1440,
+      "h": 1430,
+      "title": "PATH-001 Career Paths · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "CareerPaths-Mobile.dc.html": {
+      "x": 1520,
+      "y": 29625,
+      "w": 390,
+      "h": 2378,
+      "title": "PATH-001 Career Paths · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "PathDetail.dc.html": {
+      "x": 0,
+      "y": 32243,
+      "w": 1440,
+      "h": 2266,
+      "title": "PATH-002 Career Path Detail · Guest · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "PathDetail-Mobile.dc.html": {
+      "x": 1520,
+      "y": 32243,
+      "w": 390,
+      "h": 2721,
+      "title": "PATH-002 Career Path Detail · Guest · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "PathDetail-Learner.dc.html": {
+      "x": 0,
+      "y": 35204,
+      "w": 1440,
+      "h": 2266,
+      "title": "PATH-002 Career Path Detail · Signed in (1,460 DLP) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "PathDetail-Learner-Mobile.dc.html": {
+      "x": 1520,
+      "y": 35204,
+      "w": 390,
+      "h": 2691,
+      "title": "PATH-002 Career Path Detail · Signed in (1,460 DLP) · Mobile",
       "page": "main",
       "is_interactive": true
     }
@@ -109,7 +204,9 @@
   "noteOrder": [
     "new-hero",
     "row-hero-b",
-    "row-hero-c"
+    "row-hero-c",
+    "row-b1",
+    "row-b2"
   ],
   "notes": {
     "new-hero": {
@@ -145,6 +242,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b2": {
+      "x": 0,
+      "y": 21453,
+      "text": "Batch 2 · Course detail and Career Paths",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -157,7 +262,17 @@
     "Courses.dc.html",
     "Courses-Mobile.dc.html",
     "Courses-Learner.dc.html",
-    "Courses-Learner-Mobile.dc.html"
+    "Courses-Learner-Mobile.dc.html",
+    "CourseDetail.dc.html",
+    "CourseDetail-Mobile.dc.html",
+    "CourseDetail-Learner.dc.html",
+    "CourseDetail-Learner-Mobile.dc.html",
+    "CareerPaths.dc.html",
+    "CareerPaths-Mobile.dc.html",
+    "PathDetail.dc.html",
+    "PathDetail-Mobile.dc.html",
+    "PathDetail-Learner.dc.html",
+    "PathDetail-Learner-Mobile.dc.html"
   ],
   "pages": [
     {

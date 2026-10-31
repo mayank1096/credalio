@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Career Paths</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+h1,h2,h3,p{text-wrap:pretty}
+@media (min-width: 761px){p{text-wrap:balance}}
+.sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sx-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.sx-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
+.sx-word{display:block;height:24px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}
+.sx-links{display:flex;align-items:center;gap:4px}
+.sx-link{height:40px;padding:0 12px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:500;color:#3A4566;text-decoration:none;white-space:nowrap;transition:color .2s ease,background .2s ease}
+.sx-link:hover{color:#0B1433;background:#F5F8FF}
+.sx-link-on{color:#0B1433;background:#EAF0FF}
+.sx-cta{height:44px;padding:0 20px;border-radius:999px;display:flex;align-items:center;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease}
+.sx-cta:hover{background:#0E3BB8}
+.sx-menu{display:none;width:44px;height:44px;border-radius:999px;border:none;background:transparent;color:#0B1433;align-items:center;justify-content:center;cursor:pointer}
+.sx-link:focus-visible,.sx-cta:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.cp-hero{background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / max(1440px,100%) auto no-repeat}
+.cp-hin{max-width:960px;margin:0 auto;padding:72px 24px 48px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
+.cp-h1{margin:0;font-size:56px;line-height:1.04;font-weight:600;letter-spacing:-1.8px;color:#0B1433}
+.cp-h1 em{font-style:normal;color:#1652F0}
+.cp-sub{margin:0;max-width:720px;font-size:18px;line-height:1.55;color:#4A5578}
+.cp-areas{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:10px}
+.cp-ar{height:36px;padding:0 15px;border-radius:10px;border:1px solid #E3E8F3;background:rgba(255,255,255,.8);font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:500;color:#3A4566;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:border-color .2s ease,background .2s ease}
+.cp-ar i{font-style:normal;font-size:12px;color:#8A93AD}
+.cp-ar:hover{border-color:#C9D7FA}
+.cp-ar-on{background:#0B1433;border-color:#0B1433;color:#FFFFFF}
+.cp-ar-on i{color:rgba(255,255,255,.6)}
+.cp-body{max-width:1312px;margin:0 auto;padding:16px 48px 96px;box-sizing:border-box;display:flex;flex-direction:column;gap:40px}
+.cp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cp-card{position:relative;display:flex;flex-direction:column;gap:14px;padding:24px 24px 20px;border-radius:20px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 22px 44px -38px rgba(11,20,51,.45);text-decoration:none;color:#0B1433;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,border-color .3s ease}
+.cp-card:hover{transform:translateY(-4px);border-color:#D6DDEE;box-shadow:0 34px 60px -38px rgba(22,82,240,.45)}
+.cp-card:focus-visible,.cp-ar:focus-visible,.cp-go:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.cp-feat{background:#0B1433;border-color:#0B1433;color:#FFFFFF;isolation:isolate}
+.cp-feat::after{content:"";position:absolute;inset:0;z-index:-1;background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat;transform:scale(1.5);transform-origin:0 35%;pointer-events:none}
+.cp-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.cp-ico{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cp-feat .cp-ico{background:rgba(255,255,255,.14) !important;color:#FFFFFF !important}
+.cp-pop{height:26px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.16);color:#FFFFFF;display:inline-flex;align-items:center;font-size:12px;font-weight:500}
+.cp-time{font-size:13px;font-weight:500;color:#5B6582;white-space:nowrap}
+.cp-feat .cp-time{color:rgba(255,255,255,.75)}
+.cp-name{font-size:23px;font-weight:600;letter-spacing:-.5px;line-height:1.15;margin-top:4px}
+.cp-lvl{font-size:13px;color:#5B6582;margin-top:-8px}
+.cp-feat .cp-lvl{color:rgba(255,255,255,.7)}
+.cp-route{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:6px 0 0}
+.cp-route::before{content:"";position:absolute;left:12.5%;right:12.5%;top:13px;border-top:2px dashed #C9D7FA}
+.cp-feat .cp-route::before{border-top-color:rgba(157,184,247,.45)}
+.cp-step{position:relative;display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12px;font-weight:500;color:#3A4566;text-align:center;white-space:nowrap}
+.cp-feat .cp-step{color:rgba(255,255,255,.85)}
+.cp-node{width:28px;height:28px;border-radius:999px;background:#FFFFFF;border:2px solid #C9D7FA;box-sizing:border-box;display:flex;align-items:center;justify-content:center;color:#1652F0}
+.cp-node-end{background:#1652F0;border-color:#1652F0;color:#FFFFFF}
+.cp-feat .cp-node{background:#14286E;border-color:#4C7DFF;color:#9DB8F7}
+.cp-feat .cp-node-end{background:#4C7DFF;border-color:#4C7DFF;color:#FFFFFF}
+.cp-skills{display:flex;flex-wrap:wrap;gap:6px}
+.cp-sk{height:26px;padding:0 10px;border-radius:999px;background:#F5F8FF;border:1px solid #E6EAF3;display:inline-flex;align-items:center;font-size:12px;font-weight:500;color:#3A4566}
+.cp-feat .cp-sk{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.14);color:#FFFFFF}
+.cp-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:14px;border-top:1px solid #EEF1F7;font-size:13px;color:#8A93AD}
+.cp-feat .cp-foot{border-top-color:rgba(255,255,255,.12);color:rgba(255,255,255,.6)}
+.cp-go{font-size:14px;font-weight:600;color:#1652F0;white-space:nowrap}
+.cp-feat .cp-go{color:#FFFFFF}
+.cp-empty{grid-column:1 / -1;padding:40px;border-radius:20px;background:#F5F8FF;text-align:center;font-size:15px;color:#5B6582}
+.cp-ai{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:40px;align-items:center;padding:36px 40px;border-radius:24px;background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / cover no-repeat;border:1px solid #E3E8F3}
+.cp-al{display:flex;align-items:flex-start;gap:16px}
+.cp-orb{width:44px;height:44px;border-radius:999px;flex-shrink:0;background:radial-gradient(circle at 34% 28%,#DCE7FF 0%,#7FA4FF 24%,#1652F0 62%,#0B2A8F 100%);box-shadow:0 0 0 6px rgba(22,82,240,.08),0 10px 24px -8px rgba(22,82,240,.6)}
+.cp-ah{margin:0;font-size:26px;line-height:1.15;font-weight:600;letter-spacing:-.6px;color:#0B1433}
+.cp-ap{margin:6px 0 0;font-size:15px;line-height:1.55;color:#4A5578}
+.cp-af{height:56px;box-sizing:border-box;padding:5px 5px 5px 20px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE;display:flex;align-items:center;gap:10px;box-shadow:0 20px 40px -30px rgba(11,20,51,.5);transition:border-color .2s ease,box-shadow .2s ease}
+.cp-af:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.cp-ai-in{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;color:#0B1433}
+.cp-ai-in::placeholder{color:#8A93AD}
+.cp-ab{height:44px;padding:0 6px 0 18px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.cp-ab:hover{background:#0E3BB8}
+.cp-ab span{width:32px;height:32px;border-radius:999px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
+.cp-ab:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
+.sx-fin{max-width:1312px;margin:0 auto;padding:40px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#5B6582}
+.sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
+.sx-fin a{color:#3A4566;text-decoration:none}
+.sx-fin a:hover{color:#1652F0}
+@media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}.cp-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 960px){.cp-ai{grid-template-columns:minmax(0,1fr);gap:22px;padding:30px}}
+@media (max-width: 520px){.sx-login{display:none !important}}
+@media (max-width: 760px){
+.sx-nav{height:60px;padding:0 16px}
+.sx-word{height:20px}
+.sx-cta{height:40px;padding:0 16px;font-size:14px}
+.cp-hero{background-size:auto 340px}
+.cp-hin{padding:44px 20px 24px;gap:14px}
+.cp-h1{font-size:32px;letter-spacing:-.9px}
+.cp-sub{font-size:15px}
+.cp-areas{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;align-self:stretch;margin:6px -20px 0;padding:0 20px;scrollbar-width:none}
+.cp-areas::-webkit-scrollbar{display:none}
+.cp-ar{flex-shrink:0;height:34px;font-size:13px}
+.cp-body{padding:12px 20px 72px;gap:28px}
+.cp-grid{grid-template-columns:minmax(0,1fr);gap:12px}
+.cp-card{padding:18px 18px 14px;gap:12px;border-radius:18px}
+.cp-ico{width:38px;height:38px;border-radius:11px}
+.cp-name{font-size:20px}
+.cp-step{font-size:11px}
+.cp-skills{display:none}
+.cp-route{margin-top:2px}
+.cp-ai{padding:24px 20px 20px;border-radius:20px;background-size:auto 300px}
+.cp-al{gap:12px}
+.cp-orb{width:36px;height:36px}
+.cp-ah{font-size:21px}
+.cp-ap{font-size:14px}
+.cp-af{flex-direction:column;align-items:stretch;height:auto;padding:0;gap:10px;border:none;background:none;box-shadow:none;border-radius:0}
+.cp-af:focus-within{box-shadow:none}
+.cp-ai-in{flex:none;height:50px;box-sizing:border-box;padding:0 18px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE}
+.cp-ai-in:focus{border-color:#1652F0}
+.cp-ab{height:50px;justify-content:space-between;padding:0 6px 0 20px;font-size:15px}
+.cp-ab span{width:38px;height:38px}
+.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}
+}
+</style>
+</helmet>
+<div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
+<div class="cp-hero">
+<header class="sx-nav">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav class="sx-links" aria-label="Main">
+<a class="sx-link" href="#">Explore learning</a>
+<a class="sx-link sx-link-on" href="#" aria-current="page">Career paths</a>
+<a class="sx-link" href="#">Certifications</a>
+<a class="sx-link" href="#">Pricing</a>
+<a class="sx-link" href="#">For creators</a>
+<a class="sx-link" href="#">For institutions</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
+<a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
+<a class="sx-cta" href="#">Create account</a>
+<button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+</header>
+<div class="cp-hin">
+<h1 class="cp-h1">Where do you want to <em>go</em>?</h1>
+<p class="cp-sub">Pick a route to a role. Your AI Coach then shapes it around what you already know.</p>
+<div class="cp-areas" role="group" aria-label="Area">
+<sc-for list="{{areas}}" as="a" hint-placeholder-count="6">
+<button class="cp-ar {{a.cls}}" type="button" aria-pressed="{{a.on}}" onClick="{{a.pick}}">{{a.label}}<i>{{a.n}}</i></button>
+</sc-for>
+</div>
+</div>
+</div>
+
+<div class="cp-body">
+<div class="cp-grid">
+<sc-for list="{{paths}}" as="p" hint-placeholder-count="6">
+<a class="cp-card {{p.cls}}" href="#">
+<span class="cp-top">
+<span class="cp-ico" style="background: {{p.icoBg}}; color: {{p.icoFg}}" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20" style="display: {{p.i0}}"></path><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" style="display: {{p.i1}}"></path><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" style="display: {{p.i2}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{p.i3}}"></path><path d="M9 4h6M4 8h16v12H4zM9 12h6" style="display: {{p.i4}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{p.i5}}"></path></svg></span>
+<sc-if value="{{p.feat}}" hint-placeholder-val="{{ false }}"><span class="cp-pop">Most chosen</span></sc-if>
+<sc-if value="{{p.plain}}" hint-placeholder-val="{{ true }}"><span class="cp-time">{{p.time}}</span></sc-if>
+</span>
+<span>
+<span class="cp-name" style="display: block">{{p.t}}</span>
+</span>
+<span class="cp-lvl">{{p.lvl}}<sc-if value="{{p.feat}}" hint-placeholder-val="{{ false }}"> · {{p.time}}</sc-if></span>
+<span class="cp-route" aria-label="{{p.aria}}">
+<span class="cp-step"><span class="cp-node"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16"></path></svg></span><span>{{p.courses}} courses</span></span>
+<span class="cp-step"><span class="cp-node"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"></path></svg></span><span>{{p.proj}}</span></span>
+<span class="cp-step"><span class="cp-node"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path></svg></span>Certification</span>
+<span class="cp-step"><span class="cp-node cp-node-end"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Portfolio</span>
+</span>
+<span class="cp-skills"><sc-for list="{{p.skills}}" as="s" hint-placeholder-count="4"><span class="cp-sk">{{s}}</span></sc-for></span>
+<span class="cp-foot"><span>{{p.area}}</span><span class="cp-go">Explore path →</span></span>
+</a>
+</sc-for>
+<sc-if value="{{none}}" hint-placeholder-val="{{ false }}"><div class="cp-empty">No paths in this area yet. Your AI Coach can still build you a route.</div></sc-if>
+</div>
+
+<section class="cp-ai" aria-labelledby="cp-ai-h">
+<div class="cp-al">
+<span class="cp-orb" aria-hidden="true"></span>
+<div>
+<h2 id="cp-ai-h" class="cp-ah">Not sure which path fits?</h2>
+<p class="cp-ap">Tell your AI Coach what you enjoy. It compares the paths with what you already know.</p>
+</div>
+</div>
+<form class="cp-af" onSubmit="{{onSubmit}}"><label for="cp-goal" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">What do you enjoy?</label><input id="cp-goal" class="cp-ai-in" type="text" placeholder="I enjoy working with numbers…" autocomplete="off"><button class="cp-ab" type="submit">Find my path<span aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></button></form>
+</section>
+</div>
+
+<footer class="sx-foot">
+<div class="sx-fin">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="#">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+<span>© 2026 magnummeta. All rights reserved.</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1430}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { area: 'All' };
+    this.P = [
+      { t: 'Data Analyst', area: 'Data & AI', lvl: 'Beginner → Job-ready', time: '6–8 months', courses: 8, proj: '4 projects', skills: ['SQL', 'Excel', 'Power BI', 'Statistics'], ico: 0 },
+      { t: 'Product Designer', area: 'Design', lvl: 'Beginner → Job-ready', time: '7–9 months', courses: 7, proj: '4 projects', skills: ['Figma', 'User research', 'Prototyping', 'Design systems'], ico: 1 },
+      { t: 'AI Engineer', area: 'Data & AI', lvl: 'Intermediate → Job-ready', time: '8–10 months', courses: 8, proj: '4 projects', skills: ['Python', 'Machine learning', 'LLM apps', 'Evaluation'], ico: 2 },
+      { t: 'Cybersecurity Analyst', area: 'Security', lvl: 'Beginner → Job-ready', time: '8–10 months', courses: 7, proj: '3 simulations', skills: ['Networking', 'Linux', 'SIEM', 'Incident response'], ico: 3 },
+      { t: 'Project Manager', area: 'Business', lvl: 'Beginner → Job-ready', time: '5–7 months', courses: 6, proj: '3 projects', skills: ['Planning', 'Agile', 'Risk', 'Stakeholders'], ico: 4 },
+      { t: 'Frontend Developer', area: 'Technology', lvl: 'Beginner → Job-ready', time: '8–10 months', courses: 8, proj: '4 projects', skills: ['HTML & CSS', 'JavaScript', 'React', 'Testing'], ico: 5 }
+    ];
+  }
+  renderVals() {
+    var self = this, S = this.state, P = this.P;
+    var areas = ['All', 'Data & AI', 'Design', 'Technology', 'Business', 'Security'];
+    var list = P.filter(function (p) { return S.area === 'All' || p.area === S.area; });
+    return {
+      areas: areas.map(function (a) { var on = S.area === a; return { label: a === 'All' ? 'All paths' : a, n: a === 'All' ? P.length : P.filter(function (p) { return p.area === a; }).length, on: on ? 'true' : 'false', cls: on ? 'cp-ar-on' : '', pick: function () { self.setState({ area: a }); } }; }),
+      paths: list.map(function (p, k) {
+        var feat = S.area === 'All' && k === 0;
+        var v = { t: p.t, area: p.area, lvl: p.lvl, time: p.time, courses: p.courses, proj: p.proj, skills: p.skills.slice(0, 3), feat: feat, plain: !feat, cls: feat ? 'cp-feat' : '', icoBg: '#EAF0FF', icoFg: '#1652F0',
+          aria: p.courses + ' courses, ' + p.proj + ', a professional certification and a portfolio' };
+        for (var i = 0; i < 6; i++) v['i' + i] = p.ico === i ? 'inline' : 'none';
+        return v;
+      }),
+      none: list.length === 0,
+      onSubmit: function (e) { e.preventDefault(); }
+    };
+  }
+}
+</script>
+</body>
+</html>

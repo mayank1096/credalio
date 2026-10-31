@@ -32,7 +32,6 @@ body{margin:0;background:#FFFFFF}
 .cs-crumb a{color:#5B6582;text-decoration:none}
 .cs-crumb a:hover{color:#1652F0}
 .cs-h1{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px;color:#0B1433}
-.cs-sub{margin:0;font-size:18px;line-height:1.6;color:#4A5578}
 .cs-search{position:relative;margin-top:8px;height:58px;max-width:640px;box-sizing:border-box;padding:6px 6px 6px 18px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE;display:flex;align-items:center;gap:10px;box-shadow:0 18px 40px -30px rgba(11,20,51,.5);transition:border-color .2s ease,box-shadow .2s ease}
 .cs-search:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
 .cs-input{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:'Google Sans',system-ui,sans-serif;font-size:16px;color:#0B1433}
@@ -44,8 +43,6 @@ body{margin:0;background:#FFFFFF}
 .cs-bv{display:flex;align-items:baseline;gap:6px}
 .cs-bvn{font-size:28px;font-weight:600;letter-spacing:-.6px;color:#0B1433;line-height:1.1}
 .cs-bvu{font-size:14px;font-weight:500;color:#5B6582}
-.cs-meter{height:6px;border-radius:9px;background:#EEF1F7;overflow:hidden}
-.cs-meter span{display:block;height:100%;border-radius:9px;background:#1652F0}
 .cs-blink{font-size:14px;font-weight:600;color:#1652F0;text-decoration:none;align-self:flex-start}
 .cs-blink:hover{color:#0E3BB8}
 .cs-body{max-width:1312px;margin:0 auto;padding:36px 48px 96px;box-sizing:border-box;display:grid;grid-template-columns:248px minmax(0,1fr);gap:40px;align-items:start}
@@ -96,9 +93,7 @@ body{margin:0;background:#FFFFFF}
 .cs-th{position:relative;height:112px;overflow:hidden;display:flex;align-items:flex-start;justify-content:space-between;padding:14px;box-sizing:border-box}
 .cs-th::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1.3px);background-size:12px 12px}
 .cs-ico{position:absolute;right:-12px;bottom:-16px;width:116px;height:116px;opacity:.22}
-.cs-cat{position:relative;height:26px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.2);color:#FFFFFF;display:inline-flex;align-items:center;font-size:12px;font-weight:500;backdrop-filter:blur(4px)}
-.cs-light .cs-cat{background:#FFFFFF;color:#1652F0}
-.cs-heart{position:relative;width:36px;height:36px;border-radius:999px;border:none;background:rgba(255,255,255,.92);color:#5B6582;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:color .2s ease,transform .2s ease}
+.cs-heart{position:relative;margin-left:auto;width:36px;height:36px;border-radius:999px;border:none;background:rgba(255,255,255,.92);color:#5B6582;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:color .2s ease,transform .2s ease}
 .cs-heart:hover{color:#0B1433;transform:scale(1.06)}
 .cs-heart-on{color:#1652F0}
 .cs-cb{display:flex;flex-direction:column;gap:10px;padding:16px 16px 0;flex:1}
@@ -114,16 +109,13 @@ body{margin:0;background:#FFFFFF}
 .cs-cei{height:26px;padding:0 10px;border-radius:999px;background:#FFFFFF;border:1px solid #E3E8F3;display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;color:#3A4566;white-space:nowrap}
 .cs-cei b{font-weight:600;color:#0B1433}
 .cs-acc{margin-top:auto;display:flex;flex-direction:column;gap:8px;padding:14px 16px 16px;margin-left:-16px;margin-right:-16px;border-top:1px solid #EEF1F7}
-.cs-ar{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#5B6582}
+.cs-ar{display:flex;align-items:center;font-size:14px;color:#5B6582}
 .cs-ar b{font-weight:600;color:#0B1433}
 .cs-free{color:#0F6B45 !important}
 .cs-fit{display:flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:9px;font-size:12px;font-weight:500}
 .cs-fit-ok{background:#E7F5EE;color:#0F6B45}
 .cs-fit-need{background:#FFF6E5;color:#8A4F00}
 .cs-empty{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:56px 24px;border-radius:20px;border:1.5px dashed #D6DDEE;background:#FAFBFE}
-.cs-skills{display:flex;flex-wrap:wrap;gap:10px}
-.cs-skill{height:40px;padding:0 16px;border-radius:999px;border:1.5px solid #E3E8F3;background:#FFFFFF;display:inline-flex;align-items:center;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:500;color:#0B1433;cursor:pointer;transition:border-color .2s ease,background .2s ease}
-.cs-skill:hover{border-color:#1652F0;background:#F5F8FF}
 .cs-ptip{margin-left:6px;width:15px;height:15px;font-size:9.5px;vertical-align:1px;border-color:#B5BDD3;color:#8A93AD}
 .cs-ptip:hover::after,.cs-ptip:focus::after{left:auto;right:-8px;top:auto;bottom:calc(100% + 8px)}
 .cs-tipw{position:relative;cursor:help}
@@ -140,8 +132,7 @@ body{margin:0;background:#FFFFFF}
 .cs-hin{grid-template-columns:minmax(0,1fr);gap:24px}
 .cs-bal{flex-direction:row;align-items:center;gap:10px;padding:0;border:none;background:none;box-shadow:none;border-radius:0}
 .cs-bal .cs-bk{display:none}
-.cs-bal .cs-meter{display:none}
-.cs-bvn{font-size:16px !important}
+.cs-bal .cs-bvn{font-size:16px !important}
 .cs-bvu{font-size:14px}
 .cs-blink{margin-left:auto}
 .cs-body{grid-template-columns:minmax(0,1fr)}
@@ -163,7 +154,6 @@ body{margin:0;background:#FFFFFF}
 .cs-hero{background-image:url(/_blob/6d413632692b3ddab8bd438b7e97a664);background-size:280% auto;background-position:center 75%}
 .cs-crumb{display:none}
 .cs-h1{font-size:30px;letter-spacing:-.8px}
-.cs-sub{font-size:15px}
 .cs-search{height:52px;padding:4px 4px 4px 16px}
 .cs-input{font-size:15px}
 .cs-go{height:42px;padding:0 16px;font-size:14px}
@@ -171,11 +161,7 @@ body{margin:0;background:#FFFFFF}
 .cs-bal .cs-bk{display:none}
 .cs-bvn{font-size:15px !important}
 .cs-bvu{font-size:13px}
-.cs-skills{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px;padding:0 20px 4px;scrollbar-width:none}
-.cs-skills::-webkit-scrollbar{display:none}
-.cs-skill{flex-shrink:0;height:38px}
-.cs-hin{padding-bottom:22px !important}
-.cs-meter{display:none}
+
 .cs-blink{margin-left:auto;font-size:13px}
 .cs-body{padding:24px 20px 72px;gap:0}
 .cs-main{gap:36px}
@@ -224,7 +210,6 @@ body{margin:0;background:#FFFFFF}
 <div style="display: flex; flex-direction: column; gap: 14px">
 <nav class="cs-crumb" aria-label="Breadcrumb"><a href="#">Explore learning</a><span aria-hidden="true">/</span><span>Courses</span></nav>
 <h1 class="cs-h1">Learn something specific.</h1>
-<p class="cs-sub">Build a new skill, sharpen one you have, or explore something new.</p>
 <form class="cs-search" role="search" onSubmit="{{onSubmit}}">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B6582" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
 <label for="cs-q" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search courses</label>
@@ -235,7 +220,6 @@ body{margin:0;background:#FFFFFF}
 <div class="cs-bal">
 <span class="cs-bk">{{balK}}</span>
 <div class="cs-bv"><b class="cs-bvn">{{balV}}</b><span class="cs-bvu">{{balU}}</span></div>
-<sc-if value="{{learner}}" hint-placeholder-val="{{ false }}"><div class="cs-meter" aria-hidden="true"><span style="width: 73%"></span></div></sc-if>
 <a class="cs-blink" href="#">{{balLink}} →</a>
 </div>
 </div>
@@ -307,7 +291,6 @@ body{margin:0;background:#FFFFFF}
 <a class="cs-card" href="#" aria-label="{{c.t}}">
 <div class="cs-th {{c.light}}" style="background: {{c.bg}}">
 <svg class="cs-ico" viewBox="0 0 24 24" fill="none" stroke="{{c.icoC}}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20" style="display: {{c.i0}}"></path><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" style="display: {{c.i1}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{c.i2}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{c.i3}}"></path><path d="M3 7h18v13H3zM8 7V4h8v3" style="display: {{c.i4}}"></path><path d="M12 3v18M17 7H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6" style="display: {{c.i5}}"></path><path d="M7 7h10v10H7zM10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4" style="display: {{c.i6}}"></path></svg>
-<span class="cs-cat">{{c.cat}}</span>
 <button class="cs-heart {{c.heartCls}}" type="button" aria-pressed="{{c.wished}}" aria-label="{{c.heartLabel}}" onClick="{{c.wish}}"><svg width="17" height="17" viewBox="0 0 24 24" fill="{{c.heartFill}}" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></button>
 </div>
 <div class="cs-cb">
@@ -316,7 +299,7 @@ body{margin:0;background:#FFFFFF}
 <span class="cs-meta"><span class="cs-star" aria-hidden="true">★</span><b>{{c.rating}}</b><span>({{c.reviews}})</span><span class="cs-dot"></span><span>{{c.lvl}}</span><span class="cs-dot"></span><span>{{c.hrs}}</span></span>
 <span class="cs-tags"><span class="cs-tier"><span class="cs-tdot" style="background: {{c.tierDot}}"></span>{{c.tierLabel}}</span><span class="cs-cei cs-tipw" tabindex="0" data-tip="Creator Expertise Index: the creator’s validated subject knowledge, experience and recognition, out of 100.">CEI <b>{{c.cei}}</b></span></span>
 <div class="cs-acc">
-<span class="cs-ar"><span>{{c.accK}}</span><b class="{{c.accCls}}">{{c.accV}}<sc-if value="{{c.hasLife}}" hint-placeholder-val="{{ false }}"><span class="cs-tip cs-ptip" tabindex="0" data-tip="{{c.lifeTip}}" onClick="{{c.stop}}">i</span></sc-if></b></span>
+<span class="cs-ar"><b class="{{c.accCls}}">{{c.accV}}<sc-if value="{{c.hasLife}}" hint-placeholder-val="{{ false }}"><span class="cs-tip cs-ptip" tabindex="0" data-tip="{{c.lifeTip}}" onClick="{{c.stop}}">i</span></sc-if></b></span>
 <sc-if value="{{c.showFit}}" hint-placeholder-val="{{ false }}"><span class="cs-fit {{c.fitCls}}">{{c.fit}}</span></sc-if>
 </div>
 </div>
@@ -343,7 +326,6 @@ body{margin:0;background:#FFFFFF}
 <a class="cs-card" href="#" aria-label="{{c.t}}">
 <div class="cs-th {{c.light}}" style="background: {{c.bg}}">
 <svg class="cs-ico" viewBox="0 0 24 24" fill="none" stroke="{{c.icoC}}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20" style="display: {{c.i0}}"></path><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" style="display: {{c.i1}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{c.i2}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{c.i3}}"></path><path d="M3 7h18v13H3zM8 7V4h8v3" style="display: {{c.i4}}"></path><path d="M12 3v18M17 7H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6" style="display: {{c.i5}}"></path><path d="M7 7h10v10H7zM10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4" style="display: {{c.i6}}"></path></svg>
-<span class="cs-cat">{{c.cat}}</span>
 <button class="cs-heart {{c.heartCls}}" type="button" aria-pressed="{{c.wished}}" aria-label="{{c.heartLabel}}" onClick="{{c.wish}}"><svg width="17" height="17" viewBox="0 0 24 24" fill="{{c.heartFill}}" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></button>
 </div>
 <div class="cs-cb">
@@ -352,7 +334,7 @@ body{margin:0;background:#FFFFFF}
 <span class="cs-meta"><span class="cs-star" aria-hidden="true">★</span><b>{{c.rating}}</b><span>({{c.reviews}})</span><span class="cs-dot"></span><span>{{c.lvl}}</span><span class="cs-dot"></span><span>{{c.hrs}}</span></span>
 <span class="cs-tags"><span class="cs-tier"><span class="cs-tdot" style="background: {{c.tierDot}}"></span>{{c.tierLabel}}</span><span class="cs-cei cs-tipw" tabindex="0" data-tip="Creator Expertise Index: the creator’s validated subject knowledge, experience and recognition, out of 100.">CEI <b>{{c.cei}}</b></span></span>
 <div class="cs-acc">
-<span class="cs-ar"><span>{{c.accK}}</span><b class="{{c.accCls}}">{{c.accV}}<sc-if value="{{c.hasLife}}" hint-placeholder-val="{{ false }}"><span class="cs-tip cs-ptip" tabindex="0" data-tip="{{c.lifeTip}}" onClick="{{c.stop}}">i</span></sc-if></b></span>
+<span class="cs-ar"><b class="{{c.accCls}}">{{c.accV}}<sc-if value="{{c.hasLife}}" hint-placeholder-val="{{ false }}"><span class="cs-tip cs-ptip" tabindex="0" data-tip="{{c.lifeTip}}" onClick="{{c.stop}}">i</span></sc-if></b></span>
 <sc-if value="{{c.showFit}}" hint-placeholder-val="{{ false }}"><span class="cs-fit {{c.fitCls}}">{{c.fit}}</span></sc-if>
 </div>
 </div>
@@ -361,14 +343,6 @@ body{margin:0;background:#FFFFFF}
 </div>
 </section>
 </sc-for>
-<section class="cs-rail" aria-label="Browse by skill">
-<div class="cs-rh"><div class="cs-rt">Browse by skill</div></div>
-<div class="cs-skills">
-<sc-for list="{{skills}}" as="s" hint-placeholder-count="10">
-<button class="cs-skill" type="button" onClick="{{s.pick}}">{{s.label}}</button>
-</sc-for>
-</div>
-</section>
 </sc-if>
 </main>
 </div>
@@ -481,7 +455,6 @@ class Component extends DCLogic {
       sorts: ['Recommended', 'Highest rated', 'Lowest DLP', 'Highest CEI'].map(function (v) { return { v: v, sel: v === S.sort ? 'selected' : null }; }),
       onSort: function (e) { set({ sort: e.target.value }); },
       rails: rails,
-      skills: ['SQL', 'Excel', 'Python', 'Figma', 'Power BI', 'Prompting', 'Networking', 'Statistics', 'Communication', 'Forecasting'].map(function (k) { return { label: k, pick: function () { set({ q: k }); } }; }),
       sideCls: S.sheet ? 'cs-side-open' : '', sheetBg: S.sheet ? 'cs-sheetbg cs-sheetbg-on' : 'cs-sheetbg',
       showLabel: 'Show ' + (filtering ? res.length : L.length * 120).toLocaleString('en-GB') + ' courses',
       openSheet: function () { set({ sheet: true }); }, closeSheet: function () { set({ sheet: false }); }

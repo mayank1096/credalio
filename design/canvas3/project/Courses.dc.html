@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Browse Courses</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+.sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sx-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.sx-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
+.sx-word{display:block;height:24px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}
+.sx-links{display:flex;align-items:center;gap:4px}
+.sx-link{height:40px;padding:0 12px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:500;color:#3A4566;text-decoration:none;white-space:nowrap;transition:color .2s ease,background .2s ease}
+.sx-link:hover{color:#0B1433;background:#F5F8FF}
+.sx-link-on{color:#0B1433;background:#EAF0FF}
+.sx-cta{height:44px;padding:0 20px;border-radius:999px;display:flex;align-items:center;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease}
+.sx-cta:hover{background:#0E3BB8}
+.sx-dlp{height:36px;padding:0 12px 0 8px;border-radius:999px;background:#F5F8FF;border:1px solid #DCE5FB;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#0B1433;text-decoration:none;white-space:nowrap}
+.sx-dlp i{width:22px;height:22px;border-radius:999px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:9px;font-weight:700;letter-spacing:.2px}
+.sx-av{width:40px;height:40px;border-radius:999px;background:#DCE5FB;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
+.sx-menu{display:none;width:44px;height:44px;border-radius:999px;border:none;background:transparent;color:#0B1433;align-items:center;justify-content:center;cursor:pointer}
+.sx-link:focus-visible,.sx-cta:focus-visible,.sx-menu:focus-visible,.sx-dlp:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.cs-hero{position:relative;background:radial-gradient(60% 120% at 85% 0%,#DCE7FF 0%,rgba(220,231,255,0) 70%),linear-gradient(180deg,#F5F8FF 0%,#FFFFFF 100%);border-bottom:1px solid #EEF1F7}
+.cs-hin{max-width:1312px;margin:0 auto;padding:40px 48px 44px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:48px;align-items:end}
+.cs-crumb{display:flex;align-items:center;gap:8px;font-size:13px;color:#8A93AD}
+.cs-crumb a{color:#5B6582;text-decoration:none}
+.cs-crumb a:hover{color:#1652F0}
+.cs-h1{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px;color:#0B1433}
+.cs-sub{margin:0;font-size:18px;line-height:1.6;color:#4A5578}
+.cs-search{position:relative;margin-top:8px;height:58px;max-width:640px;box-sizing:border-box;padding:6px 6px 6px 18px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE;display:flex;align-items:center;gap:10px;box-shadow:0 18px 40px -30px rgba(11,20,51,.5);transition:border-color .2s ease,box-shadow .2s ease}
+.cs-search:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.cs-input{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:'Google Sans',system-ui,sans-serif;font-size:16px;color:#0B1433}
+.cs-input::placeholder{color:#8A93AD}
+.cs-go{height:44px;padding:0 20px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;font-weight:600;cursor:pointer}
+.cs-go:hover{background:#0E3BB8}
+.cs-bal{display:flex;flex-direction:column;gap:10px;padding:18px 20px;border-radius:18px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 20px 44px -34px rgba(11,20,51,.45)}
+.cs-bk{font-size:12px;font-weight:500;color:#8A93AD}
+.cs-bv{display:flex;align-items:baseline;gap:6px}
+.cs-bvn{font-size:28px;font-weight:600;letter-spacing:-.6px;color:#0B1433;line-height:1.1}
+.cs-bvu{font-size:14px;font-weight:500;color:#5B6582}
+.cs-meter{height:6px;border-radius:9px;background:#EEF1F7;overflow:hidden}
+.cs-meter span{display:block;height:100%;border-radius:9px;background:#1652F0}
+.cs-blink{font-size:14px;font-weight:600;color:#1652F0;text-decoration:none;align-self:flex-start}
+.cs-blink:hover{color:#0E3BB8}
+.cs-body{max-width:1312px;margin:0 auto;padding:36px 48px 96px;box-sizing:border-box;display:grid;grid-template-columns:248px minmax(0,1fr);gap:40px;align-items:start}
+.cs-side{position:sticky;top:20px;display:flex;flex-direction:column;gap:4px}
+.cs-sh{display:flex;align-items:center;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid #EEF1F7}
+.cs-sh b{font-size:16px;font-weight:600;color:#0B1433}
+.cs-clear{border:none;background:none;padding:6px 0;font-family:'Google Sans',system-ui,sans-serif;font-size:13px;font-weight:600;color:#1652F0;cursor:pointer}
+.cs-clear-off{color:#B5BDD3;pointer-events:none}
+.cs-grp{display:flex;flex-direction:column;gap:2px;padding:16px 0;border-bottom:1px solid #EEF1F7}
+.cs-gl{display:flex;align-items:center;gap:6px;margin-bottom:6px;font-size:12px;font-weight:600;letter-spacing:.8px;color:#8A93AD}
+.cs-opt{display:flex;align-items:center;gap:10px;min-height:36px;padding:0 8px;margin:0 -8px;border-radius:10px;border:none;background:none;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;color:#3A4566;text-align:left;cursor:pointer;transition:background .15s ease}
+.cs-opt:hover{background:#F5F8FF}
+.cs-opt:focus-visible,.cs-chip:focus-visible,.cs-card:focus-visible,.cs-heart:focus-visible,.cs-sel:focus-visible,.cs-filt:focus-visible,.cs-tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.cs-box{width:18px;height:18px;flex-shrink:0;border-radius:6px;border:1.5px solid #CBD3E6;background:#FFFFFF;display:flex;align-items:center;justify-content:center;transition:background .15s ease,border-color .15s ease}
+.cs-rad{border-radius:999px}
+.cs-on .cs-box{background:#1652F0;border-color:#1652F0}
+.cs-on .cs-rad{background:#1652F0;border-color:#1652F0;box-shadow:inset 0 0 0 3.5px #FFFFFF}
+.cs-on{color:#0B1433}
+.cs-cnt{margin-left:auto;font-size:12px;color:#8A93AD}
+.cs-tdot{width:10px;height:10px;border-radius:999px;flex-shrink:0}
+.cs-tip{position:relative;display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:999px;border:1.5px solid #8A93AD;font-size:10px;font-weight:600;color:#8A93AD;cursor:help;letter-spacing:0}
+.cs-tip:hover::after,.cs-tip:focus::after{content:attr(data-tip);position:absolute;left:-8px;top:calc(100% + 8px);width:220px;padding:10px 12px;border-radius:10px;background:#0B1433;color:#FFFFFF;font-size:12px;font-weight:400;line-height:1.45;text-align:left;letter-spacing:0;z-index:20}
+.cs-fmt{display:flex;align-items:center;justify-content:space-between;min-height:34px;font-size:14px;color:#3A4566;text-decoration:none}
+.cs-fmt span{font-size:13px;color:#1652F0;font-weight:500}
+.cs-fmt-on{color:#0B1433;font-weight:600}
+.cs-fmt-on span{color:#8A93AD;font-weight:500}
+.cs-main{min-width:0;display:flex;flex-direction:column;gap:44px}
+.cs-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:-20px}
+.cs-count{font-size:15px;color:#3A4566}
+.cs-count b{font-weight:600;color:#0B1433}
+.cs-chips{display:flex;flex-wrap:wrap;gap:8px}
+.cs-chip{height:32px;padding:0 8px 0 12px;border-radius:999px;border:1px solid #C9D7FA;background:#F5F8FF;display:inline-flex;align-items:center;gap:6px;font-family:'Google Sans',system-ui,sans-serif;font-size:13px;font-weight:500;color:#0B1433;cursor:pointer}
+.cs-chip svg{color:#5B6582}
+.cs-sortw{display:flex;align-items:center;gap:8px;font-size:14px;color:#5B6582}
+.cs-sel{height:40px;padding:0 34px 0 14px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;-webkit-appearance:none;appearance:none;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:500;color:#0B1433;cursor:pointer}
+.cs-selw{position:relative;display:inline-flex}
+.cs-selw svg{position:absolute;right:12px;top:50%;margin-top:-7px;pointer-events:none;color:#5B6582}
+.cs-filt{display:none}
+.cs-rail{display:flex;flex-direction:column;gap:18px}
+.cs-rh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.cs-rt{font-size:22px;font-weight:600;letter-spacing:-.4px;color:#0B1433}
+.cs-rs{font-size:14px;color:#5B6582;margin-top:2px}
+.cs-all{font-size:14px;font-weight:600;color:#1652F0;text-decoration:none;white-space:nowrap}
+.cs-all:hover{color:#0E3BB8}
+.cs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cs-card{position:relative;display:flex;flex-direction:column;border-radius:18px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 22px 44px -38px rgba(11,20,51,.45);overflow:hidden;text-decoration:none;color:#0B1433;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,border-color .3s ease}
+.cs-card:hover{transform:translateY(-4px);border-color:#D6DDEE;box-shadow:0 34px 60px -38px rgba(22,82,240,.45)}
+.cs-th{position:relative;height:132px;overflow:hidden;display:flex;align-items:flex-start;justify-content:space-between;padding:14px;box-sizing:border-box}
+.cs-th::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1.3px);background-size:12px 12px}
+.cs-ico{position:absolute;right:-12px;bottom:-16px;width:116px;height:116px;opacity:.22}
+.cs-cat{position:relative;height:26px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.2);color:#FFFFFF;display:inline-flex;align-items:center;font-size:12px;font-weight:500;backdrop-filter:blur(4px)}
+.cs-light .cs-cat{background:#FFFFFF;color:#1652F0}
+.cs-heart{position:relative;width:36px;height:36px;border-radius:999px;border:none;background:rgba(255,255,255,.92);color:#5B6582;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:color .2s ease,transform .2s ease}
+.cs-heart:hover{color:#0B1433;transform:scale(1.06)}
+.cs-heart-on{color:#1652F0}
+.cs-cb{display:flex;flex-direction:column;gap:10px;padding:16px 16px 0;flex:1}
+.cs-ct{font-size:16px;font-weight:600;letter-spacing:-.2px;line-height:1.3;min-height:42px}
+.cs-by{display:flex;align-items:center;gap:8px;font-size:13px;color:#3A4566}
+.cs-cav{width:24px;height:24px;border-radius:999px;background:#DCE5FB;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:600;flex-shrink:0}
+.cs-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:13px;color:#5B6582}
+.cs-meta b{font-weight:600;color:#0B1433}
+.cs-star{color:#0B1433}
+.cs-dot{width:3px;height:3px;border-radius:9px;background:#CBD3E6}
+.cs-tags{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.cs-tier{height:26px;padding:0 10px 0 8px;border-radius:999px;background:#F5F8FF;border:1px solid #E3E8F3;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:#0B1433;white-space:nowrap}
+.cs-cei{height:26px;padding:0 10px;border-radius:999px;background:#FFFFFF;border:1px solid #E3E8F3;display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;color:#3A4566;white-space:nowrap}
+.cs-cei b{font-weight:600;color:#0B1433}
+.cs-acc{margin-top:auto;display:flex;flex-direction:column;gap:8px;padding:14px 16px 16px;margin-left:-16px;margin-right:-16px;border-top:1px solid #EEF1F7}
+.cs-ar{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#5B6582}
+.cs-ar b{font-weight:600;color:#0B1433}
+.cs-free{color:#0F6B45 !important}
+.cs-fit{display:flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:9px;font-size:12px;font-weight:500}
+.cs-fit-ok{background:#E7F5EE;color:#0F6B45}
+.cs-fit-need{background:#FFF6E5;color:#8A4F00}
+.cs-empty{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:56px 24px;border-radius:20px;border:1.5px dashed #D6DDEE;background:#FAFBFE}
+.cs-skills{display:flex;flex-wrap:wrap;gap:10px}
+.cs-skill{height:40px;padding:0 16px;border-radius:999px;border:1.5px solid #E3E8F3;background:#FFFFFF;display:inline-flex;align-items:center;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:500;color:#0B1433;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.cs-skill:hover{border-color:#1652F0;background:#F5F8FF}
+.cs-sheetbg{display:none}
+.cs-show{display:none}
+.sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
+.sx-fin{max-width:1312px;margin:0 auto;padding:40px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#5B6582}
+.sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
+.sx-fin a{color:#3A4566;text-decoration:none}
+.sx-fin a:hover{color:#1652F0}
+@media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}.cs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 960px){
+.cs-hin{grid-template-columns:minmax(0,1fr);gap:24px}
+.cs-body{grid-template-columns:minmax(0,1fr)}
+.cs-side{display:none;position:fixed;left:0;right:0;bottom:0;top:auto;z-index:60;max-height:82%;overflow-y:auto;padding:8px 20px 20px;background:#FFFFFF;border-radius:22px 22px 0 0;box-shadow:0 -30px 60px -20px rgba(11,20,51,.35)}
+.cs-side-open{display:flex}
+.cs-sheetbg-on{display:block;position:fixed;inset:0;z-index:55;background:rgba(11,20,51,.38)}
+.cs-sheetx{display:flex !important}
+.cs-show{display:block;position:sticky;bottom:0;margin:8px 0 0;height:52px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;font-weight:600;cursor:pointer;box-shadow:0 -16px 20px 4px #FFFFFF;flex-shrink:0}
+.cs-filt{display:inline-flex;height:40px;padding:0 16px 0 12px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;align-items:center;gap:8px;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:600;color:#0B1433;cursor:pointer}
+.cs-filt i{min-width:20px;height:20px;padding:0 5px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:11px}
+}
+@media (max-width: 760px){
+.sx-nav{height:60px;padding:0 16px}
+.sx-word{height:20px}
+.sx-dlp b span{display:none}
+.sx-cta{height:40px;padding:0 16px;font-size:14px}
+.cs-hin{padding:20px 20px 28px;gap:20px}
+.cs-crumb{display:none}
+.cs-h1{font-size:30px;letter-spacing:-.8px}
+.cs-sub{font-size:15px}
+.cs-search{height:52px;padding:4px 4px 4px 16px}
+.cs-input{font-size:15px}
+.cs-go{height:42px;padding:0 16px;font-size:14px}
+.cs-bal{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:14px 16px;border-radius:16px}
+.cs-bal .cs-bk{width:100%}
+.cs-bvn{font-size:20px}
+.cs-meter{display:none}
+.cs-blink{margin-left:auto;font-size:13px}
+.cs-body{padding:24px 20px 72px;gap:0}
+.cs-main{gap:36px}
+.cs-bar{margin-bottom:-16px;gap:10px}
+.cs-sortw > span{display:none}
+.cs-grid{grid-template-columns:repeat(4,78%);overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:4px 20px 8px;gap:12px;scrollbar-width:none}
+.cs-grid::-webkit-scrollbar{display:none}
+.cs-grid > *{scroll-snap-align:start}
+.cs-res{grid-template-columns:minmax(0,1fr) !important;overflow:visible !important;margin:0 !important;padding:0 !important}
+.cs-rt{font-size:19px}
+.cs-rs{font-size:13px}
+.cs-th{height:96px}
+.cs-acc .cs-ar + .cs-ar{display:none}
+.cs-ico{width:96px;height:96px}
+.cs-ct{font-size:15px;min-height:0}
+.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}
+}
+</style>
+</helmet>
+<div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
+
+<div class="cs-hero">
+<header class="sx-nav">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav class="sx-links" aria-label="Main">
+<a class="sx-link sx-link-on" href="#" aria-current="page">Explore learning</a>
+<a class="sx-link" href="#">Career paths</a>
+<a class="sx-link" href="#">Certifications</a>
+<a class="sx-link" href="#">Pricing</a>
+<a class="sx-link" href="#">For creators</a>
+<a class="sx-link" href="#">For institutions</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
+<sc-if value="{{guest}}" hint-placeholder-val="{{ true }}">
+<a class="sx-link" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
+<a class="sx-cta" href="#">Create account</a>
+</sc-if>
+<sc-if value="{{learner}}" hint-placeholder-val="{{ false }}">
+<a class="sx-dlp" href="#" aria-label="1,460 DLP available. View usage"><i>DLP</i><b style="font-weight: 600">1,460<span style="font-weight: 500; color: #5B6582"> available</span></b></a>
+<span class="sx-av" aria-label="Your account">MR</span>
+</sc-if>
+<button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+</header>
+<div class="cs-hin">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<nav class="cs-crumb" aria-label="Breadcrumb"><a href="#">Explore learning</a><span aria-hidden="true">/</span><span>Courses</span></nav>
+<h1 class="cs-h1">Learn something specific.</h1>
+<p class="cs-sub">Build a new skill, sharpen one you have, or explore something new.</p>
+<form class="cs-search" role="search" onSubmit="{{onSubmit}}">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B6582" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+<label for="cs-q" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search courses</label>
+<input id="cs-q" class="cs-input" type="search" placeholder="What do you want to learn?" value="{{q}}" onInput="{{onQ}}" autocomplete="off">
+<button class="cs-go" type="submit">Search</button>
+</form>
+</div>
+<div class="cs-bal">
+<span class="cs-bk">{{balK}}</span>
+<div class="cs-bv"><b class="cs-bvn">{{balV}}</b><span class="cs-bvu">{{balU}}</span></div>
+<sc-if value="{{learner}}" hint-placeholder-val="{{ false }}"><div class="cs-meter" aria-hidden="true"><span style="width: 73%"></span></div></sc-if>
+<a class="cs-blink" href="#">{{balLink}} →</a>
+</div>
+</div>
+</div>
+
+<div class="cs-body">
+<div class="{{sheetBg}}" onClick="{{closeSheet}}"></div>
+<aside class="cs-side {{sideCls}}" aria-label="Filters">
+<div class="cs-sh"><b>Filters</b><span style="display: flex; align-items: center; gap: 14px"><button class="cs-clear {{clearCls}}" type="button" onClick="{{clearAll}}">Clear all</button><button class="cs-clear cs-sheetx" type="button" onClick="{{closeSheet}}" style="display: none; color: #0B1433">Done</button></span></div>
+<div class="cs-grp" role="group" aria-label="Access">
+<span class="cs-gl">ACCESS</span>
+<sc-for list="{{fAcc}}" as="f" hint-placeholder-count="3">
+<button class="cs-opt {{f.cls}}" type="button" role="checkbox" aria-checked="{{f.on}}" onClick="{{f.pick}}"><span class="cs-box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>{{f.label}}<span class="cs-cnt">{{f.n}}</span></button>
+</sc-for>
+</div>
+<div class="cs-grp" role="radiogroup" aria-label="DLP needed">
+<span class="cs-gl">DLP NEEDED<span class="cs-tip" tabindex="0" data-tip="DLP is your learning allowance. About 100 DLP covers one hour of eligible learning.">i</span></span>
+<sc-for list="{{fDlp}}" as="f" hint-placeholder-count="5">
+<button class="cs-opt {{f.cls}}" type="button" role="radio" aria-checked="{{f.on}}" onClick="{{f.pick}}"><span class="cs-box cs-rad"></span>{{f.label}}</button>
+</sc-for>
+</div>
+<div class="cs-grp" role="group" aria-label="Validation tier">
+<span class="cs-gl">VALIDATION TIER<span class="cs-tip" tabindex="0" data-tip="Every published course is validated. The tier describes the course’s validation, not a validator’s rank.">i</span></span>
+<sc-for list="{{fTier}}" as="f" hint-placeholder-count="3">
+<button class="cs-opt {{f.cls}}" type="button" role="checkbox" aria-checked="{{f.on}}" onClick="{{f.pick}}"><span class="cs-box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span class="cs-tdot" style="background: {{f.dot}}"></span>{{f.label}}<span class="cs-cnt">{{f.n}}</span></button>
+</sc-for>
+</div>
+<div class="cs-grp" role="group" aria-label="Level">
+<span class="cs-gl">LEVEL</span>
+<sc-for list="{{fLvl}}" as="f" hint-placeholder-count="3">
+<button class="cs-opt {{f.cls}}" type="button" role="checkbox" aria-checked="{{f.on}}" onClick="{{f.pick}}"><span class="cs-box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>{{f.label}}<span class="cs-cnt">{{f.n}}</span></button>
+</sc-for>
+</div>
+<div class="cs-grp" role="radiogroup" aria-label="Topic">
+<span class="cs-gl">TOPIC</span>
+<sc-for list="{{fTopic}}" as="f" hint-placeholder-count="7">
+<button class="cs-opt {{f.cls}}" type="button" role="radio" aria-checked="{{f.on}}" onClick="{{f.pick}}"><span class="cs-box cs-rad"></span>{{f.label}}<span class="cs-cnt">{{f.n}}</span></button>
+</sc-for>
+</div>
+<div class="cs-grp" role="radiogroup" aria-label="Language">
+<span class="cs-gl">LANGUAGE</span>
+<sc-for list="{{fLang}}" as="f" hint-placeholder-count="3">
+<button class="cs-opt {{f.cls}}" type="button" role="radio" aria-checked="{{f.on}}" onClick="{{f.pick}}"><span class="cs-box cs-rad"></span>{{f.label}}</button>
+</sc-for>
+</div>
+<div class="cs-grp" style="border-bottom: none">
+<span class="cs-gl">OTHER FORMATS</span>
+<a class="cs-fmt" href="#">Professional Certifications<span>Browse →</span></a>
+<a class="cs-fmt" href="#">Career Paths<span>Browse →</span></a>
+<a class="cs-fmt" href="#">Learning Programs<span>Browse →</span></a>
+</div>
+<button class="cs-show" type="button" onClick="{{closeSheet}}">{{showLabel}}</button>
+</aside>
+
+<main class="cs-main">
+<div class="cs-bar">
+<div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; min-width: 0">
+<button class="cs-filt" type="button" onClick="{{openSheet}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"></path></svg>Filters<sc-if value="{{hasFilters}}" hint-placeholder-val="{{ false }}"><i>{{nFilters}}</i></sc-if></button>
+<span class="cs-count" aria-live="polite">{{countLabel}}</span>
+</div>
+<span class="cs-sortw"><span>Sort</span><span class="cs-selw"><label for="cs-sort" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Sort courses</label><select id="cs-sort" class="cs-sel" onChange="{{onSort}}">
+<sc-for list="{{sorts}}" as="o" hint-placeholder-count="4"><option value="{{o.v}}" selected="{{o.sel}}">{{o.v}}</option></sc-for>
+</select><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></span></span>
+</div>
+
+<sc-if value="{{hasFilters}}" hint-placeholder-val="{{ false }}">
+<div class="cs-chips" aria-label="Active filters">
+<sc-for list="{{active}}" as="a" hint-placeholder-count="2">
+<button class="cs-chip" type="button" onClick="{{a.drop}}" aria-label="Remove filter {{a.label}}">{{a.label}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+</sc-for>
+</div>
+<sc-if value="{{hasResults}}" hint-placeholder-val="{{ true }}">
+<div class="cs-grid cs-res">
+<sc-for list="{{results}}" as="c" hint-placeholder-count="6">
+<a class="cs-card" href="#" aria-label="{{c.t}}">
+<div class="cs-th {{c.light}}" style="background: {{c.bg}}">
+<svg class="cs-ico" viewBox="0 0 24 24" fill="none" stroke="{{c.icoC}}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20" style="display: {{c.i0}}"></path><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" style="display: {{c.i1}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{c.i2}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{c.i3}}"></path><path d="M3 7h18v13H3zM8 7V4h8v3" style="display: {{c.i4}}"></path><path d="M12 3v18M17 7H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6" style="display: {{c.i5}}"></path><path d="M7 7h10v10H7zM10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4" style="display: {{c.i6}}"></path></svg>
+<span class="cs-cat">{{c.cat}}</span>
+<button class="cs-heart {{c.heartCls}}" type="button" aria-pressed="{{c.wished}}" aria-label="{{c.heartLabel}}" onClick="{{c.wish}}"><svg width="17" height="17" viewBox="0 0 24 24" fill="{{c.heartFill}}" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></button>
+</div>
+<div class="cs-cb">
+<span class="cs-ct">{{c.t}}</span>
+<span class="cs-by"><span class="cs-cav">{{c.ini}}</span>{{c.by}}</span>
+<span class="cs-meta"><span class="cs-star" aria-hidden="true">★</span><b>{{c.rating}}</b><span>({{c.reviews}})</span><span class="cs-dot"></span><span>{{c.lvl}}</span><span class="cs-dot"></span><span>{{c.hrs}}</span></span>
+<span class="cs-tags"><span class="cs-tier"><span class="cs-tdot" style="background: {{c.tierDot}}"></span>{{c.tierLabel}}</span><span class="cs-cei" title="Creator Expertise Index, based on validated subject knowledge, practical experience and industry recognition">CEI <b>{{c.cei}}</b></span></span>
+<div class="cs-acc">
+<span class="cs-ar"><span>{{c.accK}}</span><b class="{{c.accCls}}">{{c.accV}}</b></span>
+<sc-if value="{{c.hasLife}}" hint-placeholder-val="{{ false }}"><span class="cs-ar"><span>Lifetime access</span><b>{{c.life}}</b></span></sc-if>
+<sc-if value="{{c.showFit}}" hint-placeholder-val="{{ false }}"><span class="cs-fit {{c.fitCls}}">{{c.fit}}</span></sc-if>
+</div>
+</div>
+</a>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{noResults}}" hint-placeholder-val="{{ false }}">
+<div class="cs-empty">
+<span style="width: 48px; height: 48px; border-radius: 999px; background: radial-gradient(circle at 34% 28%, #DCE7FF 0%, #7FA4FF 24%, #1652F0 62%, #0B2A8F 100%)"></span>
+<span style="font-size: 18px; font-weight: 600">No courses match those filters yet.</span>
+<span style="font-size: 14px; color: #5B6582">Try widening a filter, or ask your AI Coach for a path.</span>
+<span style="display: flex; gap: 10px; margin-top: 6px"><button class="cs-chip" type="button" onClick="{{clearAll}}" style="padding: 0 14px">Clear filters</button><a class="cs-all" href="#" style="display: flex; align-items: center">Ask your AI Coach →</a></span>
+</div>
+</sc-if>
+</sc-if>
+
+<sc-if value="{{browse}}" hint-placeholder-val="{{ true }}">
+<sc-for list="{{rails}}" as="r" hint-placeholder-count="4">
+<section class="cs-rail" aria-label="{{r.t}}">
+<div class="cs-rh"><div><div class="cs-rt">{{r.t}}</div><div class="cs-rs">{{r.s}}</div></div><a class="cs-all" href="#">View all</a></div>
+<div class="cs-grid">
+<sc-for list="{{r.items}}" as="c" hint-placeholder-count="3">
+<a class="cs-card" href="#" aria-label="{{c.t}}">
+<div class="cs-th {{c.light}}" style="background: {{c.bg}}">
+<svg class="cs-ico" viewBox="0 0 24 24" fill="none" stroke="{{c.icoC}}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20" style="display: {{c.i0}}"></path><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" style="display: {{c.i1}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{c.i2}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{c.i3}}"></path><path d="M3 7h18v13H3zM8 7V4h8v3" style="display: {{c.i4}}"></path><path d="M12 3v18M17 7H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6" style="display: {{c.i5}}"></path><path d="M7 7h10v10H7zM10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4" style="display: {{c.i6}}"></path></svg>
+<span class="cs-cat">{{c.cat}}</span>
+<button class="cs-heart {{c.heartCls}}" type="button" aria-pressed="{{c.wished}}" aria-label="{{c.heartLabel}}" onClick="{{c.wish}}"><svg width="17" height="17" viewBox="0 0 24 24" fill="{{c.heartFill}}" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></button>
+</div>
+<div class="cs-cb">
+<span class="cs-ct">{{c.t}}</span>
+<span class="cs-by"><span class="cs-cav">{{c.ini}}</span>{{c.by}}</span>
+<span class="cs-meta"><span class="cs-star" aria-hidden="true">★</span><b>{{c.rating}}</b><span>({{c.reviews}})</span><span class="cs-dot"></span><span>{{c.lvl}}</span><span class="cs-dot"></span><span>{{c.hrs}}</span></span>
+<span class="cs-tags"><span class="cs-tier"><span class="cs-tdot" style="background: {{c.tierDot}}"></span>{{c.tierLabel}}</span><span class="cs-cei" title="Creator Expertise Index, based on validated subject knowledge, practical experience and industry recognition">CEI <b>{{c.cei}}</b></span></span>
+<div class="cs-acc">
+<span class="cs-ar"><span>{{c.accK}}</span><b class="{{c.accCls}}">{{c.accV}}</b></span>
+<sc-if value="{{c.hasLife}}" hint-placeholder-val="{{ false }}"><span class="cs-ar"><span>Lifetime access</span><b>{{c.life}}</b></span></sc-if>
+<sc-if value="{{c.showFit}}" hint-placeholder-val="{{ false }}"><span class="cs-fit {{c.fitCls}}">{{c.fit}}</span></sc-if>
+</div>
+</div>
+</a>
+</sc-for>
+</div>
+</section>
+</sc-for>
+<section class="cs-rail" aria-label="Browse by skill">
+<div class="cs-rh"><div><div class="cs-rt">Browse by skill</div><div class="cs-rs">Jump straight to what you need.</div></div></div>
+<div class="cs-skills">
+<sc-for list="{{skills}}" as="s" hint-placeholder-count="10">
+<button class="cs-skill" type="button" onClick="{{s.pick}}">{{s.label}}</button>
+</sc-for>
+</div>
+</section>
+</sc-if>
+</main>
+</div>
+
+<footer class="sx-foot">
+<div class="sx-fin">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="#">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+<span>© 2026 magnummeta. All rights reserved.</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"viewer":{"editor":"enum","options":["guest","learner"],"default":"guest"},"$preview":{"width":1440,"height":3000}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { q: '', acc: {}, dlp: 'Any', tier: {}, lvl: {}, topic: 'Any topic', lang: 'Any language', sort: 'Recommended', wish: {}, sheet: false };
+    var C = function (t, by, cat, lvl, tier, cei, rating, reviews, hrs, dlp, life, lang, free) { return { t: t, by: by, cat: cat, lvl: lvl, tier: tier, cei: cei, rating: rating, reviews: reviews, hrs: hrs, dlp: dlp, life: life, lang: lang, free: !!free }; };
+    this.L = [
+      C('SQL for Data Analysis', 'Joseph Crawford', 'Data Analytics', 'Intermediate', 'gold', 94, '4.9', '2.1k', 10, 1200, 2400, 'English'),
+      C('Data Foundations: Spreadsheets to SQL', 'Amara Okafor', 'Data Analytics', 'Beginner', 'gold', 91, '4.8', '3.4k', 8, 0, 0, 'English', true),
+      C('UX and Product Design Foundations', 'Lena Fischer', 'Design', 'Beginner', 'silver', 86, '4.7', '1.2k', 12, 900, 1800, 'English'),
+      C('Prompt Engineering for Professionals', 'David Mensah', 'AI', 'Intermediate', 'gold', 92, '4.8', '980', 4, 400, 900, 'English'),
+      C('Python for Everyday Automation', 'Priya Nair', 'Software', 'Beginner', 'bronze', 78, '4.6', '1.6k', 9, 800, 0, 'English'),
+      C('Networking and Security Fundamentals', 'Tunde Balogun', 'Cybersecurity', 'Beginner', 'bronze', 81, '4.6', '740', 11, 0, 0, 'English', true),
+      C('Data Visualisation with Power BI', 'Sofia Marín', 'Data Analytics', 'Intermediate', 'silver', 85, '4.7', '1.1k', 6, 2600, 3200, 'English'),
+      C('Financial Modelling Essentials', 'Kwame Asante', 'Finance', 'Intermediate', 'silver', 88, '4.8', '620', 14, 1800, 2800, 'English'),
+      C('Introduction à l’analyse de données', 'Élise Laurent', 'Data Analytics', 'Beginner', 'gold', 90, '4.9', '410', 7, 600, 1200, 'French'),
+      C('Stakeholder Communication', 'Grace Adeyemi', 'Business', 'Beginner', 'silver', 83, '4.7', '890', 3, 300, 0, 'English'),
+      C('Machine Learning Foundations', 'Daniel Kim', 'AI', 'Advanced', 'gold', 95, '4.9', '1.9k', 18, 2400, 4200, 'English'),
+      C('Accessibility for Designers', 'Hannah Cole', 'Design', 'Intermediate', 'bronze', 79, '4.6', '350', 4, 0, 0, 'English', true)
+    ];
+    this.BAL = 1460;
+    this.TIER = { gold: ['Gold Validated', '#C8961E'], silver: ['Silver Validated', '#8E9BB0'], bronze: ['Bronze Validated', '#A8683A'] };
+    this.TONE = { 'Data Analytics': ['linear-gradient(150deg,#1C3AA8,#0B1433)', '#FFFFFF', '', 0], 'Design': ['linear-gradient(150deg,#7FA4FF,#4C7DFF)', '#FFFFFF', '', 1], 'Software': ['linear-gradient(150deg,#4C7DFF,#1652F0)', '#FFFFFF', '', 2], 'Cybersecurity': ['linear-gradient(150deg,#14286E,#0B1433)', '#FFFFFF', '', 3], 'Business': ['linear-gradient(150deg,#DCE5FB,#EAF0FF)', '#1652F0', 'cs-light', 4], 'Finance': ['linear-gradient(150deg,#C9D7FA,#EAF0FF)', '#1652F0', 'cs-light', 5], 'AI': ['linear-gradient(150deg,#2A55E8,#14286E)', '#FFFFFF', '', 6] };
+  }
+  learner() { return (this.props.viewer || 'guest') === 'learner'; }
+  matches(c, S, skip) {
+    var me = this.learner();
+    if (S.q) { var q = S.q.toLowerCase(); if ((c.t + ' ' + c.by + ' ' + c.cat).toLowerCase().indexOf(q) < 0) return false; }
+    if (skip !== 'acc') {
+      var a = Object.keys(S.acc).filter(function (k) { return S.acc[k]; });
+      if (a.length && !a.some(function (k) { return (k === 'free' && c.free) || (k === 'dlp' && !c.free) || (k === 'life' && c.life > 0) || (k === 'mine' && (c.free || c.dlp <= 1460)); })) return false;
+    }
+    if (skip !== 'dlp' && S.dlp !== 'Any') {
+      var r = { '0–500': [0, 500], '500–1,000': [500, 1000], '1,000–2,500': [1000, 2500], '2,500+': [2500, 1e9] }[S.dlp];
+      if (c.dlp < r[0] || c.dlp > r[1]) return false;
+    }
+    if (skip !== 'tier') { var t = Object.keys(S.tier).filter(function (k) { return S.tier[k]; }); if (t.length && t.indexOf(c.tier) < 0) return false; }
+    if (skip !== 'lvl') { var l = Object.keys(S.lvl).filter(function (k) { return S.lvl[k]; }); if (l.length && l.indexOf(c.lvl) < 0) return false; }
+    if (skip !== 'topic' && S.topic !== 'Any topic' && c.cat !== S.topic) return false;
+    if (S.lang !== 'Any language' && c.lang !== S.lang) return false;
+    return true;
+  }
+  card(c) {
+    var self = this, me = this.learner(), S = this.state, tn = this.TONE[c.cat], ini = c.by.split(' ').map(function (w) { return w[0]; }).slice(0, 2).join(''), w = !!S.wish[c.t];
+    var v = { t: c.t, by: c.by, cat: c.cat, lvl: c.lvl, rating: c.rating, reviews: c.reviews, hrs: c.hrs + (c.hrs === 1 ? ' hr' : ' hrs'), cei: c.cei, ini: ini,
+      bg: tn[0], icoC: tn[1], light: tn[2], tierLabel: this.TIER[c.tier][0], tierDot: this.TIER[c.tier][1],
+      accK: c.free ? 'Access' : 'Learn with DLP', accV: c.free ? 'Free to learn' : c.dlp.toLocaleString('en-GB') + ' DLP', accCls: c.free ? 'cs-free' : '',
+      hasLife: c.life > 0, life: c.life.toLocaleString('en-GB') + ' credits',
+      showFit: me && !c.free, fit: c.free ? '✓ Free, no DLP needed' : (c.dlp <= this.BAL ? '✓ Covered by your DLP' : (c.dlp - this.BAL).toLocaleString('en-GB') + ' more DLP needed'),
+      fitCls: c.free || c.dlp <= this.BAL ? 'cs-fit-ok' : 'cs-fit-need',
+      wished: w ? 'true' : 'false', heartCls: w ? 'cs-heart-on' : '', heartFill: w ? 'currentColor' : 'none', heartLabel: w ? 'Remove from wishlist' : 'Add to wishlist',
+      wish: function (e) { e.preventDefault(); e.stopPropagation(); var o = Object.assign({}, self.state.wish); o[c.t] = !o[c.t]; self.setState({ wish: o }); } };
+    for (var i = 0; i < 7; i++) v['i' + i] = tn[3] === i ? 'inline' : 'none';
+    return v;
+  }
+  renderVals() {
+    var self = this, S = this.state, me = this.learner(), L = this.L;
+    var set = function (patch) { self.setState(patch); };
+    var tog = function (grp, k) { return function () { var o = Object.assign({}, self.state[grp]); o[k] = !o[k]; var p = {}; p[grp] = o; set(p); }; };
+    var cnt = function (pred, skip) { return L.filter(function (c) { return self.matches(c, S, skip) && pred(c); }).length; };
+    var accOpts = [['free', 'Free to learn', function (c) { return c.free; }], ['dlp', 'Available with DLP', function (c) { return !c.free; }], ['life', 'Lifetime access available', function (c) { return c.life > 0; }]];
+    if (me) accOpts.push(['mine', 'Covered by my DLP', function (c) { return c.free || c.dlp <= 1460; }]);
+    var nf = Object.keys(S.acc).filter(function (k) { return S.acc[k]; }).length + Object.keys(S.tier).filter(function (k) { return S.tier[k]; }).length + Object.keys(S.lvl).filter(function (k) { return S.lvl[k]; }).length + (S.dlp !== 'Any' ? 1 : 0) + (S.topic !== 'Any topic' ? 1 : 0) + (S.lang !== 'Any language' ? 1 : 0);
+    var filtering = nf > 0 || !!S.q;
+    var res = L.filter(function (c) { return self.matches(c, S); });
+    var srt = { 'Highest rated': function (a, b) { return parseFloat(b.rating) - parseFloat(a.rating); }, 'Lowest DLP': function (a, b) { return a.dlp - b.dlp; }, 'Highest CEI': function (a, b) { return b.cei - a.cei; } }[S.sort];
+    if (srt) res = res.slice().sort(srt);
+    var active = [];
+    accOpts.forEach(function (o) { if (S.acc[o[0]]) active.push({ label: o[1], drop: tog('acc', o[0]) }); });
+    if (S.dlp !== 'Any') active.push({ label: S.dlp + ' DLP', drop: function () { set({ dlp: 'Any' }); } });
+    ['gold', 'silver', 'bronze'].forEach(function (k) { if (S.tier[k]) active.push({ label: self.TIER[k][0], drop: tog('tier', k) }); });
+    ['Beginner', 'Intermediate', 'Advanced'].forEach(function (k) { if (S.lvl[k]) active.push({ label: k, drop: tog('lvl', k) }); });
+    if (S.topic !== 'Any topic') active.push({ label: S.topic, drop: function () { set({ topic: 'Any topic' }); } });
+    if (S.lang !== 'Any language') active.push({ label: S.lang, drop: function () { set({ lang: 'Any language' }); } });
+    if (S.q) active.push({ label: '“' + S.q + '”', drop: function () { set({ q: '' }); } });
+    var pick = function (idx) { return idx.map(function (i) { return self.card(L[i]); }); };
+    var rails = [];
+    if (me) rails.push({ t: 'Recommended for you', s: 'Picked for your goal: Data Analyst.', items: pick([0, 6, 3]) });
+    rails.push({ t: 'Popular right now', s: 'What learners are choosing this month.', items: pick(me ? [1, 2, 10] : [0, 1, 2]) });
+    rails.push({ t: 'Recently added', s: 'New on Credalio.', items: pick([8, 11, 7]) });
+    rails.push({ t: 'Gold Validated', s: 'The highest validation tier.', items: pick(me ? [10, 8, 3] : [10, 3, 8]) });
+    rails.push({ t: 'Short courses', s: 'Under five hours.', items: pick([9, 3, 11]) });
+    var topics = ['Any topic', 'Data Analytics', 'Design', 'AI', 'Software', 'Cybersecurity', 'Business', 'Finance'];
+    return {
+      guest: !me, learner: me,
+      balK: me ? 'Your DLP balance' : 'Learn with a plan', balV: me ? '1,460' : 'From 200', balU: me ? 'DLP available' : 'DLP free', balLink: me ? 'View usage' : 'See plans',
+      q: S.q, onQ: function (e) { set({ q: e.target.value }); }, onSubmit: function (e) { e.preventDefault(); },
+      fAcc: accOpts.map(function (o) { var on = !!S.acc[o[0]]; return { label: o[1], n: cnt(o[2], 'acc'), on: on ? 'true' : 'false', cls: on ? 'cs-on' : '', pick: tog('acc', o[0]) }; }),
+      fDlp: ['Any', '0–500', '500–1,000', '1,000–2,500', '2,500+'].map(function (k) { var on = S.dlp === k; return { label: k === 'Any' ? 'Any amount' : k + ' DLP', on: on ? 'true' : 'false', cls: on ? 'cs-on' : '', pick: function () { set({ dlp: k }); } }; }),
+      fTier: ['gold', 'silver', 'bronze'].map(function (k) { var on = !!S.tier[k]; return { label: self.TIER[k][0], dot: self.TIER[k][1], n: cnt(function (c) { return c.tier === k; }, 'tier'), on: on ? 'true' : 'false', cls: on ? 'cs-on' : '', pick: tog('tier', k) }; }),
+      fLvl: ['Beginner', 'Intermediate', 'Advanced'].map(function (k) { var on = !!S.lvl[k]; return { label: k, n: cnt(function (c) { return c.lvl === k; }, 'lvl'), on: on ? 'true' : 'false', cls: on ? 'cs-on' : '', pick: tog('lvl', k) }; }),
+      fTopic: topics.map(function (k) { var on = S.topic === k; return { label: k, n: k === 'Any topic' ? '' : cnt(function (c) { return c.cat === k; }, 'topic'), on: on ? 'true' : 'false', cls: on ? 'cs-on' : '', pick: function () { set({ topic: k }); } }; }),
+      fLang: ['Any language', 'English', 'French'].map(function (k) { var on = S.lang === k; return { label: k, on: on ? 'true' : 'false', cls: on ? 'cs-on' : '', pick: function () { set({ lang: k }); } }; }),
+      clearCls: nf === 0 && !S.q ? 'cs-clear-off' : '', clearAll: function () { set({ q: '', acc: {}, dlp: 'Any', tier: {}, lvl: {}, topic: 'Any topic', lang: 'Any language' }); },
+      hasFilters: filtering, nFilters: nf, browse: !filtering, active: active,
+      hasResults: res.length > 0, noResults: res.length === 0, results: res.map(function (c) { return self.card(c); }),
+      countLabel: filtering ? (res.length + (res.length === 1 ? ' course' : ' courses')) : (L.length * 120).toLocaleString('en-GB') + ' courses',
+      sorts: ['Recommended', 'Highest rated', 'Lowest DLP', 'Highest CEI'].map(function (v) { return { v: v, sel: v === S.sort ? 'selected' : null }; }),
+      onSort: function (e) { set({ sort: e.target.value }); },
+      rails: rails,
+      skills: ['SQL', 'Excel', 'Python', 'Figma', 'Power BI', 'Prompting', 'Networking', 'Statistics', 'Communication', 'Forecasting'].map(function (k) { return { label: k, pick: function () { set({ q: k }); } }; }),
+      sideCls: S.sheet ? 'cs-side-open' : '', sheetBg: S.sheet ? 'cs-sheetbg cs-sheetbg-on' : 'cs-sheetbg',
+      showLabel: 'Show ' + (filtering ? res.length : L.length * 120).toLocaleString('en-GB') + ' courses',
+      openSheet: function () { set({ sheet: true }); }, closeSheet: function () { set({ sheet: false }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

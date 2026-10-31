@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Course Detail</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+h1,h2,h3,p{text-wrap:pretty}
+@media (min-width: 761px){p{text-wrap:balance}}
+.sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sx-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.sx-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
+.sx-word{display:block;height:24px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}
+.sx-links{display:flex;align-items:center;gap:4px}
+.sx-link{height:40px;padding:0 12px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:500;color:#3A4566;text-decoration:none;white-space:nowrap;transition:color .2s ease,background .2s ease}
+.sx-link:hover{color:#0B1433;background:#F5F8FF}
+.sx-link-on{color:#0B1433;background:#EAF0FF}
+.sx-cta{height:44px;padding:0 20px;border-radius:999px;display:flex;align-items:center;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease}
+.sx-cta:hover{background:#0E3BB8}
+.sx-dlp{height:36px;padding:0 12px 0 8px;border-radius:999px;background:#F5F8FF;border:1px solid #DCE5FB;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#0B1433;text-decoration:none;white-space:nowrap}
+.sx-dlp i{width:22px;height:22px;border-radius:999px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:9px;font-weight:700;letter-spacing:.2px}
+.sx-av{width:40px;height:40px;border-radius:999px;background:#DCE5FB;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
+.sx-menu{display:none;width:44px;height:44px;border-radius:999px;border:none;background:transparent;color:#0B1433;align-items:center;justify-content:center;cursor:pointer}
+.sx-link:focus-visible,.sx-cta:focus-visible,.sx-menu:focus-visible,.sx-dlp:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.cd-top{background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / max(1440px,100%) auto no-repeat}
+.cd-grid{max-width:1312px;margin:0 auto;padding:40px 48px 96px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:0 64px;align-items:start}
+.cd-main{min-width:0;display:flex;flex-direction:column}
+.cd-hero{display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding-bottom:40px}
+.cd-crumb{display:flex;align-items:center;gap:8px;font-size:13px;color:#8A93AD}
+.cd-crumb a{color:#5B6582;text-decoration:none}
+.cd-crumb a:hover{color:#1652F0}
+.cd-tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cd-tag{height:28px;padding:0 11px 0 9px;border-radius:999px;background:rgba(255,255,255,.85);border:1px solid #E3E8F3;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:#0B1433;white-space:nowrap}
+.cd-tag b{font-weight:600}
+.cd-dot{width:9px;height:9px;border-radius:999px;background:#C8961E}
+.cd-h1{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px;color:#0B1433;max-width:760px}
+.cd-sub{margin:0;font-size:18px;line-height:1.55;color:#4A5578;max-width:680px}
+.cd-by{display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px;margin-top:4px;font-size:14px;color:#5B6582}
+.cd-who{display:flex;align-items:center;gap:10px}
+.cd-av{width:36px;height:36px;border-radius:999px;background:#DCE5FB;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0}
+.cd-who b{font-weight:600;color:#0B1433}
+.cd-sep{width:1px;height:18px;background:#D6DDEE}
+.cd-fact{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.cd-fact b{font-weight:600;color:#0B1433}
+.cd-star{color:#C8961E}
+.cd-tabs{position:sticky;top:0;z-index:5;display:flex;gap:28px;background:#FFFFFF;border-bottom:1px solid #E6EAF3;margin-bottom:8px}
+.cd-tab{position:relative;height:52px;padding:0 2px;border:none;background:none;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;font-weight:500;color:#5B6582;cursor:pointer;white-space:nowrap;transition:color .2s ease}
+.cd-tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2.5px;border-radius:3px;background:#1652F0;transform:scaleX(0);transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.cd-tab:hover{color:#0B1433}
+.cd-tab-on{color:#0B1433;font-weight:600}
+.cd-tab-on::after{transform:scaleX(1)}
+.cd-sec{display:flex;flex-direction:column;gap:20px;padding:40px 0 8px;scroll-margin-top:56px}
+.cd-h2{margin:0;font-size:26px;line-height:1.15;font-weight:600;letter-spacing:-.6px;color:#0B1433;display:flex;align-items:center;gap:8px}
+.cd-sh{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cd-sm{font-size:14px;color:#5B6582}
+.cd-tip{position:relative;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:999px;border:1.5px solid #B5BDD3;font-size:11px;font-weight:600;color:#8A93AD;letter-spacing:0;cursor:help;flex-shrink:0}
+.cd-tip:hover::after,.cd-tip:focus::after{content:attr(data-tip);position:absolute;left:-10px;top:calc(100% + 8px);width:240px;padding:10px 12px;border-radius:10px;background:#0B1433;color:#FFFFFF;font-size:12px;font-weight:400;line-height:1.45;text-align:left;z-index:20}
+.cd-tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.cd-outs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 28px;margin:0;padding:0;list-style:none}
+.cd-outs li{display:flex;align-items:flex-start;gap:12px;font-size:15px;line-height:1.5;color:#3A4566}
+.cd-ck{width:22px;height:22px;border-radius:999px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.cd-skills{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cd-skl{font-size:13px;font-weight:500;color:#8A93AD;margin-right:4px}
+.cd-chip{height:32px;padding:0 13px;border-radius:999px;background:#F5F8FF;border:1px solid #E3E8F3;display:inline-flex;align-items:center;font-size:13px;font-weight:500;color:#0B1433}
+.cd-for{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:16px;background:#F5F8FF;font-size:14px;line-height:1.5;color:#3A4566}
+.cd-for b{font-weight:600;color:#0B1433}
+.cd-fi{width:36px;height:36px;border-radius:11px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cd-mods{border-radius:20px;border:1.5px solid #E6EAF3;overflow:hidden;background:#FFFFFF}
+.cd-mod + .cd-mod{border-top:1px solid #EEF1F7}
+.cd-mh{width:100%;min-height:68px;padding:12px 20px;border:none;background:#FFFFFF;display:flex;align-items:center;gap:16px;text-align:left;font-family:'Google Sans',system-ui,sans-serif;cursor:pointer;transition:background .2s ease}
+.cd-mh:hover{background:#FAFBFE}
+.cd-mh:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:-3px}
+.cd-mn{width:32px;height:32px;border-radius:10px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0;transition:background .2s ease,color .2s ease}
+.cd-mod-open .cd-mn{background:#1652F0;color:#FFFFFF}
+.cd-mt{flex:1;min-width:0;font-size:16px;font-weight:600;letter-spacing:-.2px;color:#0B1433}
+.cd-mm{font-size:13px;color:#8A93AD;white-space:nowrap}
+.cd-chev{color:#8A93AD;transition:transform .3s ease;flex-shrink:0}
+.cd-mod-open .cd-chev{transform:rotate(180deg)}
+.cd-ls{margin:0;padding:0 20px 14px 68px;list-style:none;display:flex;flex-direction:column}
+.cd-l{display:flex;align-items:center;gap:12px;min-height:42px;font-size:14px;color:#3A4566;border-top:1px dashed #E6EAF3}
+.cd-l:first-child{border-top:none}
+.cd-li{width:26px;height:26px;border-radius:8px;background:#F5F8FF;color:#5B6582;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cd-lt{flex:1;min-width:0}
+.cd-lk{font-size:12px;font-weight:500;color:#8A93AD}
+.cd-route{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;padding:28px 24px 24px;border-radius:20px;background:linear-gradient(180deg,#F5F8FF,#FFFFFF);border:1.5px solid #E6EAF3}
+.cd-route::before{content:"";position:absolute;left:46px;right:calc((100% - 96px) / 4 + 2px);top:49px;height:2px;background:linear-gradient(90deg,#1652F0,#9DB8F7)}
+.cd-step{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.cd-node{width:44px;height:44px;border-radius:999px;background:#FFFFFF;border:2px solid #C9D7FA;color:#1652F0;display:flex;align-items:center;justify-content:center;box-sizing:border-box;margin-bottom:8px}
+.cd-node-end{background:#1652F0;border-color:#1652F0;color:#FFFFFF;box-shadow:0 0 0 6px rgba(22,82,240,.12)}
+.cd-sk{font-size:12px;font-weight:500;color:#8A93AD}
+.cd-stt{font-size:15px;font-weight:600;letter-spacing:-.2px;line-height:1.3;color:#0B1433}
+.cd-std{font-size:13px;line-height:1.5;color:#5B6582;text-wrap:pretty}
+.cd-val{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;padding:26px 28px;border-radius:20px;border:1.5px solid #E6EAF3;background:#FFFFFF}
+.cd-seal{width:64px;height:64px;filter:drop-shadow(0 12px 16px rgba(200,150,30,.3))}
+.cd-vt{font-size:20px;font-weight:600;letter-spacing:-.4px;color:#0B1433}
+.cd-vd{font-size:14px;line-height:1.5;color:#5B6582;margin-top:4px}
+.cd-checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+.cd-chk{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border-radius:14px;background:#F5F8FF}
+.cd-chk b{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:#0B1433}
+.cd-chk span{font-size:13px;line-height:1.45;color:#5B6582;text-wrap:pretty}
+.cd-vf{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid #EEF1F7;font-size:13px;color:#8A93AD}
+.cd-vid{display:flex;flex-wrap:wrap;gap:2px 10px}
+.cd-vid span{white-space:nowrap}
+.cd-vid span + span::before{content:"·";margin-right:10px}
+.cd-link{font-size:14px;font-weight:600;color:#1652F0;text-decoration:none;white-space:nowrap}
+.cd-link:hover{color:#0E3BB8}
+.cd-cr{display:flex;align-items:flex-start;gap:20px}
+.cd-cav{width:72px;height:72px;border-radius:999px;background:linear-gradient(150deg,#DCE5FB,#EAF0FF);color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:600;flex-shrink:0}
+.cd-cn{font-size:18px;font-weight:600;letter-spacing:-.3px;color:#0B1433}
+.cd-ct{font-size:14px;color:#5B6582;margin-top:2px}
+.cd-cb{margin:10px 0 0;max-width:620px;font-size:15px;line-height:1.6;color:#3A4566;text-wrap:pretty !important}
+.cd-revs{display:grid;grid-template-columns:200px minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:stretch}
+.cd-score{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:20px;border-radius:18px;background:#F5F8FF}
+.cd-score b{font-size:44px;font-weight:600;letter-spacing:-1.4px;line-height:1;color:#0B1433}
+.cd-stars{display:flex;gap:2px;color:#C8961E}
+.cd-score > span:last-child{font-size:13px;color:#5B6582}
+.cd-rev{display:flex;flex-direction:column;gap:10px;padding:20px;border-radius:18px;border:1.5px solid #E6EAF3}
+.cd-rq{margin:0;font-size:14px;line-height:1.6;color:#3A4566;text-wrap:pretty !important}
+.cd-rb{display:flex;align-items:center;gap:10px;margin-top:auto;font-size:13px;color:#5B6582}
+.cd-rb b{font-weight:600;color:#0B1433}
+.cd-rav{width:30px;height:30px;border-radius:999px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}
+.cd-path{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:24px;margin-top:48px;padding:28px 32px;border-radius:22px;background:#0B1433;color:#FFFFFF;text-decoration:none;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.cd-path::after{content:"";position:absolute;inset:0;z-index:-1;background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat;transform:scale(1.5);transform-origin:0 35%;pointer-events:none}
+.cd-path:hover{transform:translateY(-3px)}
+.cd-path:focus-visible{outline:3px solid rgba(22,82,240,.5);outline-offset:4px}
+.cd-pk{font-size:13px;font-weight:500;color:#9DB8F7}
+.cd-pt{font-size:22px;font-weight:600;letter-spacing:-.4px;margin-top:4px}
+.cd-pd{font-size:14px;color:rgba(255,255,255,.75);margin-top:6px}
+.cd-pgo{height:44px;padding:0 6px 0 18px;border-radius:999px;background:#FFFFFF;color:#0B1433;display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:600;white-space:nowrap}
+.cd-pgo i{width:32px;height:32px;border-radius:999px;background:#1652F0;display:flex;align-items:center;justify-content:center}
+.cd-side{position:sticky;top:24px;z-index:6}
+.cd-card{border-radius:22px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 40px 80px -48px rgba(11,20,51,.45);overflow:hidden}
+.cd-vis{position:relative;isolation:isolate;overflow:hidden;height:150px;display:flex;align-items:flex-end;justify-content:space-between;padding:16px;box-sizing:border-box}
+.cd-vis::after{content:"";position:absolute;inset:0;z-index:-1;background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat;transform:scale(1.6);transform-origin:0 30%}
+.cd-prev{height:36px;padding:0 14px 0 6px;border-radius:999px;border:none;background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#FFFFFF;display:inline-flex;align-items:center;gap:8px;font-family:'Google Sans',system-ui,sans-serif;font-size:13px;font-weight:600;cursor:pointer}
+.cd-prev i{width:26px;height:26px;border-radius:999px;background:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.cd-wish{width:40px;height:40px;border-radius:999px;border:none;background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer;align-self:flex-start;position:absolute;top:14px;right:14px}
+.cd-wish-on{background:#FFFFFF;color:#1652F0}
+.cd-cbody{display:flex;flex-direction:column;gap:16px;padding:22px 24px 24px}
+.cd-req{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:#8A93AD}
+.cd-amt{display:flex;align-items:baseline;gap:8px;margin-top:-8px}
+.cd-amt b{font-size:34px;font-weight:600;letter-spacing:-1px;color:#0B1433}
+.cd-amt span{font-size:15px;font-weight:500;color:#5B6582}
+.cd-fit{display:flex;align-items:center;gap:8px;min-height:36px;padding:0 12px;border-radius:11px;background:#E7F5EE;color:#0F6B45;font-size:13px;font-weight:500;margin-top:-4px}
+.cd-btn{height:56px;padding:0 8px 0 24px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:space-between;font-family:'Google Sans',system-ui,sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;transition:background .2s ease}
+.cd-btn:hover{background:#0E3BB8}
+.cd-btn i{width:40px;height:40px;border-radius:999px;background:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.cd-btn:focus-visible,.cd-tab:focus-visible,.cd-prev:focus-visible,.cd-wish:focus-visible,.cd-ask:focus-visible,.cd-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.cd-done{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:#E7F5EE;color:#0F6B45;font-size:14px;font-weight:500}
+.cd-ask{display:flex;align-items:center;justify-content:center;gap:10px;height:44px;border-radius:999px;font-size:14px;font-weight:600;color:#0B1433;text-decoration:none;border:1.5px solid #D6DDEE;transition:border-color .2s ease}
+.cd-ask:hover{border-color:#1652F0}
+.cd-orb{width:22px;height:22px;border-radius:999px;flex-shrink:0;background:radial-gradient(circle at 34% 28%,#DCE7FF 0%,#7FA4FF 24%,#1652F0 62%,#0B2A8F 100%)}
+.cd-inc{display:flex;flex-direction:column;gap:12px;margin:2px 0 0;padding:18px 0 0;list-style:none;border-top:1px solid #EEF1F7}
+.cd-inc li{display:flex;align-items:center;gap:12px;font-size:14px;color:#3A4566}
+.cd-ii{width:30px;height:30px;border-radius:9px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cd-bar{display:none}
+.sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
+.sx-fin{max-width:1312px;margin:0 auto;padding:40px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#5B6582}
+.sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
+.sx-fin a{color:#3A4566;text-decoration:none}
+.sx-fin a:hover{color:#1652F0}
+@media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}.cd-grid{grid-template-columns:minmax(0,1fr) 340px;gap:0 40px}.cd-revs{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.cd-score{grid-column:1 / -1;flex-direction:row;align-items:center;gap:14px}.cd-outs{grid-template-columns:minmax(0,1fr)}}
+@media (max-width: 960px){
+.cd-grid{grid-template-columns:minmax(0,1fr);padding-top:32px}
+.cd-main{display:contents}
+.cd-main > *{order:3}
+.cd-hero{order:1;padding-bottom:28px}
+.cd-side{order:2;position:static;margin-bottom:12px}
+.cd-card{max-width:520px}
+.cd-vis,.cd-inc{display:none}
+.cd-outs{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cd-route{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
+.cd-route::before{display:none}
+}
+@media (max-width: 520px){.sx-login{display:none !important}}
+@media (max-width: 760px){
+.sx-nav{height:60px;padding:0 16px}
+.sx-word{height:20px}
+.sx-dlp b span{display:none}
+.sx-cta{height:40px;padding:0 16px;font-size:14px}
+.cd-top{background-size:auto 340px}
+.cd-grid{padding:24px 20px 0}
+.cd-crumb{display:none}
+.cd-hero{gap:12px;padding-bottom:24px}
+.cd-h1{font-size:30px;letter-spacing:-.8px}
+.cd-sub{font-size:15px}
+.cd-by{gap:10px 14px;font-size:13px}
+.cd-sep{display:none}
+.cd-who{width:100%}
+.cd-card{border-radius:20px}
+.cd-vis{display:none}
+.cd-cbody{padding:18px 18px 20px;gap:14px}
+.cd-amt b{font-size:28px}
+.cd-btn{height:52px;font-size:15px}
+.cd-btn i{width:38px;height:38px}
+.cd-inc{display:none}
+.cd-card .cd-btn{display:none}
+.cd-vid span + span::before{display:none}
+.cd-tabs{margin:0 -20px 4px;padding:0 20px;gap:22px;overflow-x:auto;scrollbar-width:none}
+.cd-tabs::-webkit-scrollbar{display:none}
+.cd-tab{height:48px;font-size:14px;flex-shrink:0}
+.cd-sec{padding-top:32px;gap:16px}
+.cd-h2{font-size:21px;letter-spacing:-.4px}
+.cd-outs{grid-template-columns:minmax(0,1fr);gap:12px}
+.cd-outs li{font-size:14px}
+.cd-for{padding:14px;font-size:13px;align-items:flex-start}
+.cd-mh{padding:12px 14px;gap:12px;min-height:60px}
+.cd-mn{width:28px;height:28px;font-size:12px}
+.cd-mt{font-size:15px}
+.cd-mm{display:none}
+.cd-ls{padding:0 14px 12px 54px}
+.cd-l{font-size:13px}
+.cd-route{grid-template-columns:minmax(0,1fr);gap:0;padding:18px 18px 4px}
+.cd-step{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:14px;row-gap:2px;padding-bottom:18px;position:relative}
+.cd-step::before{content:"";position:absolute;left:19px;top:40px;bottom:0;width:2px;background:#C9D7FA}
+.cd-step:last-child::before{display:none}
+.cd-node{grid-row:1 / span 3;width:40px;height:40px;margin:0}
+.cd-sk,.cd-stt,.cd-std{grid-column:2}
+.cd-val{grid-template-columns:minmax(0,1fr);gap:14px;padding:20px}
+.cd-seal{width:52px;height:52px}
+.cd-checks{grid-template-columns:minmax(0,1fr);gap:8px}
+.cd-cr{gap:14px}
+.cd-cav{width:56px;height:56px;font-size:18px}
+.cd-cb{font-size:14px}
+.cd-revs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 4px;gap:12px;scrollbar-width:none}
+.cd-revs::-webkit-scrollbar{display:none}
+.cd-revs > *{flex:0 0 84%;box-sizing:border-box;scroll-snap-align:start}
+.cd-score{flex:0 0 auto !important;flex-direction:column;align-items:flex-start;min-width:136px}
+.cd-score b{font-size:36px}
+.cd-path{grid-template-columns:minmax(0,1fr);gap:18px;padding:22px 20px;margin-top:36px;border-radius:20px}
+.cd-pt{font-size:19px}
+.cd-pgo{justify-self:start}
+.cd-bar{display:flex;order:9;position:sticky;bottom:0;z-index:20;align-items:center;justify-content:space-between;gap:12px;margin:28px -20px 0;padding:12px 16px 12px 20px;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid #E6EAF3}
+.cd-bar b{display:block;font-size:17px;font-weight:600;color:#0B1433}
+.cd-bar > div > span{font-size:12px;color:#0F6B45;font-weight:500}
+.cd-bar .cd-btn{height:48px;font-size:15px;gap:12px}
+.cd-bar .cd-btn i{width:34px;height:34px}
+.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}
+.cd-tip:hover::after,.cd-tip:focus::after{width:200px}
+}
+</style>
+</helmet>
+<div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
+<div class="cd-top">
+<header class="sx-nav">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav class="sx-links" aria-label="Main">
+<a class="sx-link sx-link-on" href="#" aria-current="page">Explore learning</a>
+<a class="sx-link" href="#">Career paths</a>
+<a class="sx-link" href="#">Certifications</a>
+<a class="sx-link" href="#">Pricing</a>
+<a class="sx-link" href="#">For creators</a>
+<a class="sx-link" href="#">For institutions</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
+<sc-if value="{{guest}}" hint-placeholder-val="{{ true }}">
+<a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
+<a class="sx-cta" href="#">Create account</a>
+</sc-if>
+<sc-if value="{{learner}}" hint-placeholder-val="{{ false }}">
+<a class="sx-dlp" href="#" aria-label="1,460 DLP available. View usage"><i>DLP</i><b style="font-weight: 600">1,460<span style="font-weight: 500; color: #5B6582"> available</span></b></a>
+<span class="sx-av" aria-label="Your account">MR</span>
+</sc-if>
+<button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+</header>
+
+<div class="cd-grid">
+<div class="cd-main">
+<div class="cd-hero">
+<nav class="cd-crumb" aria-label="Breadcrumb"><a href="#">Explore learning</a><span aria-hidden="true">/</span><a href="#">Courses</a><span aria-hidden="true">/</span><span>Data Analytics</span></nav>
+<div class="cd-tags">
+<span class="cd-tag"><span class="cd-dot"></span>Gold Validated</span>
+<span class="cd-tag">CEI <b>91</b><span class="cd-tip" tabindex="0" data-tip="Credalio Excellence Index: how well this course is built, scored by independent validators out of 100.">i</span></span>
+</div>
+<h1 class="cd-h1">Data Foundations: Spreadsheets to SQL</h1>
+<p class="cd-sub">Go from spreadsheets to confident SQL queries, using real business data.</p>
+<div class="cd-by">
+<span class="cd-who"><span class="cd-av" aria-hidden="true">AO</span><span><b>Amara Okafor</b> · Independent creator</span></span>
+<span class="cd-sep" aria-hidden="true"></span>
+<span class="cd-fact"><svg class="cd-star" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><b>4.8</b> (3.4k reviews)</span>
+<span class="cd-fact"><b>Beginner</b></span>
+<span class="cd-fact"><b>12 hrs</b></span>
+<span class="cd-fact">English</span>
+</div>
+</div>
+
+<div class="cd-tabs" role="tablist" aria-label="Course sections">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="6">
+<button class="cd-tab {{t.cls}}" type="button" role="tab" aria-selected="{{t.on}}" onClick="{{t.go}}">{{t.label}}</button>
+</sc-for>
+</div>
+
+<section class="cd-sec" ref="{{refOverview}}" aria-labelledby="cd-o">
+<h2 id="cd-o" class="cd-h2">What you’ll be able to do</h2>
+<ul class="cd-outs">
+<sc-for list="{{outs}}" as="o" hint-placeholder-count="6">
+<li><span class="cd-ck" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>{{o}}</li>
+</sc-for>
+</ul>
+<div class="cd-skills"><span class="cd-skl">Skills</span><span class="cd-chip">Excel</span><span class="cd-chip">SQL</span><span class="cd-chip">Data cleaning</span><span class="cd-chip">Joins</span><span class="cd-chip">Aggregation</span></div>
+<div class="cd-for"><span class="cd-fi" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg></span><span><b>Made for beginners.</b> No coding needed; basic spreadsheet use is enough.</span></div>
+</section>
+
+<section class="cd-sec" ref="{{refCurriculum}}" aria-labelledby="cd-cu">
+<div class="cd-sh"><h2 id="cd-cu" class="cd-h2">Curriculum</h2><span class="cd-sm">6 modules · 24 lessons · 12 hrs</span></div>
+<div class="cd-mods">
+<sc-for list="{{mods}}" as="m" hint-placeholder-count="6">
+<div class="cd-mod {{m.cls}}">
+<button class="cd-mh" type="button" aria-expanded="{{m.exp}}" onClick="{{m.toggle}}">
+<span class="cd-mn">{{m.n}}</span>
+<span class="cd-mt">{{m.t}}</span>
+<span class="cd-mm">4 lessons · 2 hrs</span>
+<svg class="cd-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+</button>
+<sc-if value="{{m.open}}" hint-placeholder-val="{{ false }}">
+<ul class="cd-ls">
+<sc-for list="{{m.ls}}" as="l" hint-placeholder-count="4">
+<li class="cd-l"><span class="cd-li" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z" style="display: {{l.i0}}"></path><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16" style="display: {{l.i1}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{l.i2}}"></path><path d="M9 9a3 3 0 1 1 4 2.8c-.7.3-1 .9-1 1.7M12 17h.01" style="display: {{l.i3}}"></path><path d="M3 7h18v13H3zM8 7V4h8v3" style="display: {{l.i4}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{l.i5}}"></path></svg></span><span class="cd-lt">{{l.t}}</span><span class="cd-lk">{{l.k}}</span></li>
+</sc-for>
+</ul>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section class="cd-sec" ref="{{refProject}}" aria-labelledby="cd-pr">
+<h2 id="cd-pr" class="cd-h2">Prove it as you go<span class="cd-tip" tabindex="0" data-tip="Your project and certificate are reviewed, then added to your Digital Backpack so anyone can check them.">i</span></h2>
+<div class="cd-route">
+<div class="cd-step"><span class="cd-node" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9a3 3 0 1 1 4 2.8c-.7.3-1 .9-1 1.7M12 17h.01"></path></svg></span><span class="cd-sk">After each module</span><span class="cd-stt">5 short checks</span><span class="cd-std">Quick quizzes that show what has stuck.</span></div>
+<div class="cd-step"><span class="cd-node" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v13H3zM8 7V4h8v3"></path></svg></span><span class="cd-sk">Project</span><span class="cd-stt">Analyse real sales data</span><span class="cd-std">Clean it, query it, explain it. Reviewed by a mentor.</span></div>
+<div class="cd-step"><span class="cd-node" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"></path></svg></span><span class="cd-sk">Final assessment</span><span class="cd-stt">Practical SQL test</span><span class="cd-std">Hands-on, not multiple choice. Pass mark 70%.</span></div>
+<div class="cd-step"><span class="cd-node cd-node-end" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span class="cd-sk">You earn</span><span class="cd-stt">Verified certificate</span><span class="cd-std">Saved to your Digital Backpack.</span></div>
+</div>
+</section>
+
+<section class="cd-sec" ref="{{refValidation}}" aria-labelledby="cd-va">
+<h2 id="cd-va" class="cd-h2">Checked before you start</h2>
+<div class="cd-val">
+<svg class="cd-seal" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="cdGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9C46A"></stop><stop offset=".55" stop-color="#C8961E"></stop><stop offset="1" stop-color="#A87A12"></stop></linearGradient></defs><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="url(#cdGold)"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<div>
+<div class="cd-vt">Gold Validated</div>
+<div class="cd-vd">Independent experts checked every layer before it was published.</div>
+<div class="cd-checks">
+<div class="cd-chk"><b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Content</b><span>Accurate and current for the field</span></div>
+<div class="cd-chk"><b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Learning design</b><span>Lessons and practice add up to the outcome</span></div>
+<div class="cd-chk"><b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Assessment</b><span>Fair, and measures what it claims</span></div>
+</div>
+<div class="cd-vf"><span class="cd-vid"><span>Version 2.1 · validated 24 Sep 2026</span><span>VAL-CRD-004821</span></span><a class="cd-link" href="#">View record →</a></div>
+</div>
+</div>
+</section>
+
+<section class="cd-sec" ref="{{refCreator}}" aria-labelledby="cd-cr">
+<h2 id="cd-cr" class="cd-h2">Your creator</h2>
+<div class="cd-cr">
+<span class="cd-cav" aria-hidden="true">AO</span>
+<div>
+<div class="cd-cn">Amara Okafor</div>
+<div class="cd-ct">Senior Data Analyst · 6 courses on Credalio</div>
+<p class="cd-cb">Ten years turning messy retail data into decisions. Amara built this course for the version of herself who was scared of SQL.</p>
+</div>
+</div>
+</section>
+
+<section class="cd-sec" ref="{{refReviews}}" aria-labelledby="cd-re">
+<h2 id="cd-re" class="cd-h2">What learners say</h2>
+<div class="cd-revs">
+<div class="cd-score"><b>4.8</b><span class="cd-stars" aria-label="4.8 out of 5"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg></span><span>3,412 verified learners</span></div>
+<div class="cd-rev"><p class="cd-rq">“I’d avoided SQL for years. By module four I was joining tables at work without asking anyone for help.”</p><div class="cd-rb"><span class="cd-rav" aria-hidden="true">DR</span><span><b>Daniel R.</b> · Operations lead</span></div></div>
+<div class="cd-rev"><p class="cd-rq">“The sales project was the bit that clicked. It’s now the first thing I show in interviews.”</p><div class="cd-rb"><span class="cd-rav" aria-hidden="true">SM</span><span><b>Sofia M.</b> · Junior analyst</span></div></div>
+</div>
+</section>
+
+<a class="cd-path" href="#">
+<div>
+<div class="cd-pk">Step 1 of the Data Analyst career path</div>
+<div class="cd-pt">Keep going after this course.</div>
+<div class="cd-pd">Personalise the path and skip anything you already know.</div>
+</div>
+<span class="cd-pgo">See the path<i aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></span>
+</a>
+</div>
+
+<aside class="cd-side" aria-label="Start this course">
+<div class="cd-card">
+<div class="cd-vis">
+<button class="cd-prev" type="button"><i aria-hidden="true"><svg width="10" height="10" viewBox="0 0 24 24" fill="#1652F0"><path d="M7 4v16l13-8z"></path></svg></i>Preview lesson 1</button>
+<button class="cd-wish {{wishCls}}" type="button" aria-pressed="{{wishOn}}" aria-label="Save to wishlist" onClick="{{toggleWish}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="{{wishFill}}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></button>
+</div>
+<div class="cd-cbody">
+<span class="cd-req">Learning requirement<span class="cd-tip" tabindex="0" data-tip="DLP is your learning allowance, not a price. This course uses 200 DLP, and you keep access for life.">i</span></span>
+<div class="cd-amt"><b>200</b><span>DLP</span></div>
+<div class="cd-fit"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>{{fit}}</div>
+<sc-if value="{{notEnrolled}}" hint-placeholder-val="{{ true }}">
+<button class="cd-btn" type="button" onClick="{{enrol}}">{{cta}}<i aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></button>
+</sc-if>
+<sc-if value="{{enrolled}}" hint-placeholder-val="{{ false }}">
+<div class="cd-done" role="status"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>You’re in. Lesson 1 is ready.</div>
+<a class="cd-btn" href="#">Start lesson 1<i aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></a>
+</sc-if>
+<a class="cd-ask" href="#"><span class="cd-orb" aria-hidden="true"></span>Ask your AI Coach if it fits</a>
+<ul class="cd-inc">
+<li><span class="cd-ii" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16"></path></svg></span>6 modules · 24 lessons</li>
+<li><span class="cd-ii" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v13H3zM8 7V4h8v3"></path></svg></span>1 real-world project</li>
+<li><span class="cd-ii" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"></path></svg></span>AI Coach in every lesson</li>
+<li><span class="cd-ii" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c1-3.5 3.5-5 6.5-5s5.5 1.5 6.5 5M16 4.5a3.5 3.5 0 0 1 0 7M18 15c2 .6 3.2 2.2 3.5 5"></path></svg></span>Human tutor when you need one</li>
+<li><span class="cd-ii" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>Verified certificate</li>
+</ul>
+</div>
+</div>
+</aside>
+
+<div class="cd-bar">
+<div><b>200 DLP</b><span>{{fitShort}}</span></div>
+<button class="cd-btn" type="button" onClick="{{enrol}}">{{barCta}}<i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></button>
+</div>
+</div>
+</div>
+
+<footer class="sx-foot">
+<div class="sx-fin">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="#">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+<span>© 2026 magnummeta. All rights reserved.</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"viewer":{"editor":"enum","options":["guest","learner"],"default":"guest"},"$preview":{"width":1440,"height":3029}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tab: 'Overview', open: 0, enrolled: false, wish: false };
+    var self = this;
+    this.secs = {};
+    this.mk = function (k) { return function (e) { self.secs[k] = e; }; };
+    this.R = { Overview: this.mk('Overview'), Curriculum: this.mk('Curriculum'), Project: this.mk('Project'), Validation: this.mk('Validation'), Creator: this.mk('Creator'), Reviews: this.mk('Reviews') };
+    this.OUT = ['Organise and clean messy spreadsheet data', 'Write SQL queries that select and filter data', 'Join tables to answer real business questions', 'Summarise data with grouping and aggregation', 'Check your results for accuracy', 'Present your findings clearly to others'];
+    this.M = [
+      ['Working with spreadsheet data', [['Why data skills matter', 'Video', 0], ['Structuring a clean table', 'Lesson', 1], ['Sorting and filtering', 'Practice', 2], ['Module check', 'Quiz', 3]]],
+      ['Cleaning messy data', [['Spotting common errors', 'Lesson', 1], ['Fixing duplicates and blanks', 'Practice', 2], ['Text and date formats', 'Lesson', 1], ['Module check', 'Quiz', 3]]],
+      ['Your first SQL queries', [['From spreadsheet to database', 'Video', 0], ['SELECT and WHERE', 'Lesson', 1], ['Sorting results', 'Practice', 2], ['Module check', 'Quiz', 3]]],
+      ['Joining tables with SQL', [['How tables relate', 'Lesson', 1], ['INNER and LEFT JOIN', 'Lesson', 1], ['Joining real sales data', 'Practice', 2], ['Module check', 'Quiz', 3]]],
+      ['Summarising with aggregation', [['COUNT, SUM and AVG', 'Lesson', 1], ['GROUP BY', 'Lesson', 1], ['Filtering groups', 'Practice', 2], ['Module check', 'Quiz', 3]]],
+      ['Project and final assessment', [['Project brief', 'Project', 4], ['Analyse the sales dataset', 'Project', 4], ['Present your findings', 'Project', 4], ['Practical SQL assessment', 'Assessment', 5]]]
+    ];
+  }
+  renderVals() {
+    var self = this, S = this.state, me = this.props.viewer === 'learner';
+    var names = ['Overview', 'Curriculum', 'Project', 'Validation', 'Creator', 'Reviews'];
+    var enrol = function () { self.setState({ enrolled: true }); };
+    return {
+      guest: !me, learner: me,
+      refOverview: this.R.Overview, refCurriculum: this.R.Curriculum, refProject: this.R.Project, refValidation: this.R.Validation, refCreator: this.R.Creator, refReviews: this.R.Reviews,
+      tabs: names.map(function (n) { var on = S.tab === n; return { label: n, on: on ? 'true' : 'false', cls: on ? 'cd-tab-on' : '', go: function () { self.setState({ tab: n }); var el = self.secs[n]; if (el && el.scrollIntoView) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }; }),
+      outs: this.OUT,
+      mods: this.M.map(function (m, i) { var open = S.open === i; return { n: i + 1, t: m[0], open: open, exp: open ? 'true' : 'false', cls: open ? 'cd-mod-open' : '', toggle: function () { self.setState({ open: open ? -1 : i }); },
+        ls: m[1].map(function (l) { var v = { t: l[0], k: l[1] }; for (var j = 0; j < 6; j++) v['i' + j] = l[2] === j ? 'inline' : 'none'; return v; }) }; }),
+      fit: me ? 'Covered by your 1,460 DLP' : 'Covered by the free plan',
+      fitShort: me ? 'Covered by your DLP' : 'Covered by the free plan',
+      cta: me ? 'Start learning' : 'Start free',
+      barCta: S.enrolled ? 'Start lesson 1' : (me ? 'Start learning' : 'Start free'),
+      enrolled: S.enrolled, notEnrolled: !S.enrolled, enrol: enrol,
+      wishOn: S.wish ? 'true' : 'false', wishCls: S.wish ? 'cd-wish-on' : '', wishFill: S.wish ? 'currentColor' : 'none', toggleWish: function () { self.setState({ wish: !S.wish }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

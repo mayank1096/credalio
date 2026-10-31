@@ -4,7 +4,7 @@ d=open('design/demo/landing/index.html').read()
 M={'bbd33f9ce984750cfa6abea29b7528de':'hero-wide-1600','e6967fe2b7132bfebac7f5321a83e34a':'hero-wide-2800','130e1caa8d9077a42c20869730d8434e':'hero-1024','59cb50235121b8ea88ff562a72bc1e63':'hero-1536','41ff0a4f2d85266cb38bf7eb56bfd49e':'footer-1440','eb2e20d6cbd3a76832bd7baba973357a':'footer-2000','8d1041b4dd08fd7406351fcbbd98b97a':'learner-700'}
 for k,v in M.items(): s=s.replace('/_blob/'+k,'img/%s.webp'%v)
 s=s.replace('/_blob/8ef03b46dfef084b5a8501cb87efcad2','img/pricing-clouds.webp').replace('/_blob/6d413632692b3ddab8bd438b7e97a664','img/pricing-clouds-m.webp')
-s=s.replace('/_blob/3d4d999db1912d0cb0084365c58434d3','img/dark-card-wave.webp')
+s=s.replace('/_blob/3d4d999db1912d0cb0084365c58434d3','img/dark-card-wave.webp').replace('/_blob/020f1a8593e80e5fcee9e0f06637f153','img/hero-clouds.webp')
 s=s.replace('/_blob/8acabcff7ece53343d63205e8b7321a2','img/wordmark.png').replace('/_blob/f81e36d31295a0d0737959589ec1abd4','img/mark.png')
 assert '_blob' not in s
 av=lambda x:x.replace('.webp','.avif')

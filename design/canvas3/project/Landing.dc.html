@@ -644,6 +644,77 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ec-d{display:none}
 .ec-here{height:22px;font-size:11px;padding:0 8px}
 }
+.pr-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;max-width:720px;margin:0 auto}
+.pr-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
+.pr-fit{display:flex;align-items:center;gap:20px;max-width:760px;width:100%;margin:0 auto;padding:16px 22px;box-sizing:border-box;border-radius:18px;background:#F5F8FF;border:1px solid #E6EAF3}
+.pr-fq{font-size:14px;font-weight:500;color:#3A4566;white-space:nowrap}
+.pr-range{flex:1;-webkit-appearance:none;appearance:none;height:6px;border-radius:9px;background:linear-gradient(90deg,#1652F0 var(--p),#DCE5FB var(--p));outline:none;cursor:pointer;margin:0}
+.pr-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:999px;background:#FFFFFF;border:2px solid #1652F0;box-shadow:0 6px 14px -6px rgba(22,82,240,.6);cursor:grab}
+.pr-range::-moz-range-thumb{width:22px;height:22px;border-radius:999px;background:#FFFFFF;border:2px solid #1652F0;cursor:grab}
+.pr-range:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 5px rgba(22,82,240,.25)}
+.pr-fv{min-width:118px;text-align:right;font-size:14px;color:#5B6582;white-space:nowrap}
+.pr-fv b{font-size:18px;font-weight:600;color:#0B1433}
+.pr-tabs{display:none}
+.pr-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;align-items:stretch}
+.pr-card{position:relative;display:flex;flex-direction:column;gap:14px;padding:26px 26px 24px;border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3;transition:border-color .4s ease,box-shadow .4s ease,transform .4s cubic-bezier(.2,.7,.2,1),opacity .4s ease}
+.pr-card-fit{border-color:#1652F0;box-shadow:0 0 0 6px rgba(22,82,240,.08),0 30px 60px -36px rgba(22,82,240,.55);transform:translateY(-4px)}
+.pr-pro{background:radial-gradient(90% 70% at 100% 0%,#1C3AA8 0%,#0B1433 70%);border-color:#0B1433;color:#FFFFFF}
+.pr-pro.pr-card-fit{border-color:#4C7DFF;box-shadow:0 0 0 6px rgba(22,82,240,.14),0 36px 70px -36px rgba(11,20,51,.8)}
+.pr-badge{position:absolute;top:22px;right:22px;height:26px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.14);color:#FFFFFF;display:inline-flex;align-items:center;font-size:12px;font-weight:500}
+.pr-name{font-size:13px;font-weight:600;letter-spacing:1.6px;color:#8A93AD}
+.pr-pro .pr-name{color:#9DB8F7}
+.pr-dlp{display:flex;align-items:baseline;gap:8px}
+.pr-big{font-size:40px;font-weight:600;letter-spacing:-1.2px;line-height:1}
+.pr-unit{font-size:14px;opacity:.7}
+.pr-hrs{font-size:14px;opacity:.75;margin-top:-6px}
+.pr-price{font-size:15px;font-weight:600;padding-top:14px;border-top:1px solid #EEF1F7}
+.pr-pro .pr-price{border-top-color:rgba(255,255,255,.12)}
+.pr-desc{font-size:14px;line-height:1.55;opacity:.78;min-height:44px}
+.pr-feat{display:flex;flex-direction:column;gap:9px;margin:2px 0 6px;padding:0;list-style:none}
+.pr-feat li{display:flex;align-items:center;gap:9px;font-size:14px}
+.pr-ck{width:18px;height:18px;border-radius:999px;background:#EAF0FF;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pr-pro .pr-ck{background:rgba(255,255,255,.14)}
+.pr-btn{margin-top:auto;height:46px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:15px;font-weight:600;text-decoration:none;border:1.5px solid #D6DDEE;color:#0B1433;background:#FFFFFF;transition:background .2s ease,border-color .2s ease,color .2s ease}
+.pr-btn:hover{border-color:#1652F0}
+.pr-card-fit .pr-btn{background:#1652F0;border-color:#1652F0;color:#FFFFFF}
+.pr-card-fit .pr-btn:hover{background:#0E3BB8}
+.pr-pro .pr-btn{background:transparent;color:#FFFFFF;border-color:rgba(255,255,255,.3)}
+.pr-pro.pr-card-fit .pr-btn{background:#FFFFFF;color:#0B1433;border-color:#FFFFFF}
+.pr-btn:focus-visible,.pr-more:focus-visible,.pr-tab:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.pr-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.pr-ent{font-size:15px;color:#3A4566}
+.pr-ent a{color:#1652F0;font-weight:600;text-decoration:none}
+.pr-more{height:42px;padding:0 16px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.pr-more svg{transition:transform .3s ease}
+.pr-open svg{transform:rotate(180deg)}
+.pr-table{width:100%;border-collapse:collapse;font-size:14px}
+.pr-table th,.pr-table td{padding:12px 14px;text-align:left;border-bottom:1px solid #EEF1F7}
+.pr-table th{font-size:12px;font-weight:600;letter-spacing:1px;color:#8A93AD}
+.pr-table td:not(:first-child),.pr-table th:not(:first-child){text-align:center}
+.pr-table td:first-child{color:#3A4566}
+.pr-tip{position:relative;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;margin-left:4px;border-radius:999px;border:1.5px solid currentColor;font-size:11px;font-weight:600;opacity:.6;cursor:help;vertical-align:2px}
+.pr-tip:hover::after,.pr-tip:focus::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);width:220px;padding:10px 12px;border-radius:10px;background:#0B1433;color:#FFFFFF;font-size:12px;font-weight:400;line-height:1.45;text-align:left;z-index:5;opacity:1}
+@media (max-width: 1080px){.pr-card{padding:22px 20px}.pr-big{font-size:34px}}
+@media (max-width: 760px){
+.pr-wrap{padding:80px 20px !important;gap:22px !important}
+.pr-h2{font-size:30px !important;letter-spacing:-.8px !important}
+.pr-p{font-size:15px !important}
+.pr-fit{flex-wrap:wrap;gap:10px 12px;padding:14px 16px}
+.pr-fq{width:100%;font-size:13px}
+.pr-fv{min-width:0}
+.pr-tabs{display:flex;gap:4px;padding:4px;border-radius:999px;background:#F1F3F8}
+.pr-tab{flex:1;height:38px;border:none;border-radius:999px;background:transparent;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:500;color:#5B6582;cursor:pointer}
+.pr-tab-on{background:#FFFFFF;color:#0B1433;box-shadow:0 4px 10px -6px rgba(11,20,51,.3)}
+.pr-cards{grid-template-columns:minmax(0,1fr)}
+.pr-card{display:none;padding:22px 20px;gap:12px}
+.pr-card-show{display:flex}
+.pr-card-fit{transform:none}
+.pr-desc{min-height:0}
+.pr-foot{flex-direction:column;align-items:stretch;text-align:center}
+.pr-more{justify-content:center}
+.pr-tablewrap{overflow-x:auto;margin:0 -20px;padding:0 20px}
+.pr-table{font-size:13px;min-width:460px}
+}
 </style>
 </helmet>
 <div class="lh-root" style="box-sizing: border-box; padding: 16px; background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
@@ -1445,6 +1516,67 @@ Not sure which? Ask your AI Coach
 </div>
 </section>
 </section>
+<section class="lh-eng" aria-label="Pricing">
+<section aria-labelledby="pr-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<div class="pr-wrap" style="max-width: 1312px; margin: 0 auto; padding: 112px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
+<div class="pr-head">
+<span style="font-size: 14px; font-weight: 500; color: #1652F0">Flexible learning</span>
+<h2 id="pr-h" class="pr-h2">Start free. Choose how far you want to go.</h2>
+<p class="pr-p" style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">Every plan comes with a learning allowance<span class="pr-tip" tabindex="0" data-tip="Your allowance is measured in DLP. About 100 DLP covers one hour of eligible learning. Change plans any time.">i</span>. Pick one for how much you want to learn, and change it as you grow.</p>
+</div>
+
+<div class="pr-fit">
+<label class="pr-fq" for="pr-range">How much do you want to learn each month?</label>
+<input id="pr-range" class="pr-range" type="range" min="1" max="60" step="1" value="{{pr.hours}}" onInput="{{pr.onRange}}" style="--p: {{pr.pct}}">
+<span class="pr-fv"><b>{{pr.hoursLabel}}</b> a month</span>
+</div>
+
+<div class="pr-tabs" role="tablist" aria-label="Plans">
+<sc-for list="{{pr.plans}}" as="p" hint-placeholder-count="3">
+<button class="pr-tab {{p.tabCls}}" type="button" role="tab" aria-selected="{{p.sel}}" onClick="{{p.pick}}">{{p.label}}</button>
+</sc-for>
+</div>
+
+<div class="pr-cards">
+<sc-for list="{{pr.plans}}" as="p" hint-placeholder-count="3">
+<div class="pr-card {{p.cls}}">
+<sc-if value="{{p.best}}" hint-placeholder-val="{{ false }}"><span class="pr-badge">Best for deeper learning</span></sc-if>
+<span class="pr-name">{{p.name}}</span>
+<div class="pr-dlp"><span class="pr-big">{{p.dlp}}</span><span class="pr-unit">{{p.unit}}</span></div>
+<span class="pr-hrs">≈ {{p.hrs}} of eligible learning</span>
+<span class="pr-price">{{p.price}}</span>
+<span class="pr-desc">{{p.desc}}</span>
+<ul class="pr-feat">
+<sc-for list="{{p.feats}}" as="f" hint-placeholder-count="3">
+<li><span class="pr-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="{{p.ckC}}" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>{{f}}</li>
+</sc-for>
+</ul>
+<a class="pr-btn" href="#">{{p.cta}}</a>
+</div>
+</sc-for>
+</div>
+
+<div class="pr-foot">
+<span class="pr-ent">Need learning for your organisation? <a href="#">Explore Enterprise →</a></span>
+<button class="pr-more {{pr.moreCls}}" type="button" aria-expanded="{{pr.open}}" onClick="{{pr.toggle}}">{{pr.moreLabel}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+</div>
+
+<sc-if value="{{pr.showTable}}" hint-placeholder-val="{{ false }}">
+<div class="pr-tablewrap">
+<table class="pr-table">
+<thead><tr><th>FEATURE</th><th>FREE</th><th>BASIC</th><th>PRO</th></tr></thead>
+<tbody>
+<sc-for list="{{pr.rows}}" as="r" hint-placeholder-count="10">
+<tr><td>{{r.f}}</td><td>{{r.a}}</td><td>{{r.b}}</td><td>{{r.c}}</td></tr>
+</sc-for>
+</tbody>
+</table>
+<p style="margin: 10px 0 0; font-size: 12px; color: #8A93AD">Basic rollover and maximum balance follow the Basic plan policy, which is being finalised.</p>
+</div>
+</sc-if>
+</div>
+</section>
+</section>
 <footer class="lh-eng ft" aria-label="Footer">
 <div class="ft-top">
 <div class="ft-brand">
@@ -1469,7 +1601,7 @@ Not sure which? Ask your AI Coach
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":9520}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":10569}}'>
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }
   setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }
@@ -2066,11 +2198,41 @@ class EcoPart extends Part {
     };
   }
 }
+class PricePart extends Part {
+  constructor(host) {
+    super(host);
+    this.state = { hours: 20, open: false };
+  }
+  renderVals() {
+    var self = this, h = this.state.hours, fit = h <= 2 ? 0 : (h <= 20 ? 1 : 2);
+    var P = [
+      { label: 'Free', name: 'FREE', dlp: '200', unit: 'DLP', hrs: '2 hours', price: 'Free', desc: 'Explore Credalio and start learning.', feats: ['AI Goal Discovery', 'Basic AI Coach', 'Digital Backpack'], cta: 'Start free', set: 2 },
+      { label: 'Basic', name: 'BASIC', dlp: '2,000', unit: 'DLP / month', hrs: '20 hours', price: '~$19 / month', desc: 'For consistent learning and skill development.', feats: ['Expanded AI Coach', 'Practice and assessments', 'Learner rewards'], cta: 'Choose Basic', set: 20 },
+      { label: 'Pro', name: 'PRO', dlp: '6,000', unit: 'DLP / month', hrs: '60 hours', price: '~$39 / month', desc: 'For deeper learning, career journeys and professional development.', feats: ['Highest AI Coach access', 'Career Paths and Certifications', 'Full DLP rollover'], cta: 'Choose Pro', set: 60, pro: true }
+    ];
+    var R = [['Monthly DLP', '200', '2,000', '6,000'], ['Approx. learning hours', '2', '20', '60'], ['AI Goal Discovery', '✓', '✓', '✓'], ['AI Coach', 'Basic', 'Expanded', 'Higher access'], ['Marketplace access', '✓', '✓', '✓'], ['Practice and assessments', 'Limited', '✓', '✓'], ['Career Paths and Certifications', 'Explore', 'Where allowance permits', 'Designed for deeper use'], ['Digital Backpack', '✓', '✓', '✓'], ['Learner rewards', '—', '✓', '✓'], ['DLP rollover', '—', '✓*', '✓'], ['Maximum DLP balance', '200', 'Basic policy*', '18,000']];
+    return {
+      hours: h, pct: ((h - 1) / 59 * 100).toFixed(1) + '%', hoursLabel: h + (h === 1 ? ' hour' : ' hours'),
+      onRange: function (e) { self.setState({ hours: parseInt(e.target.value, 10) }); },
+      plans: P.map(function (p, k) {
+        return { label: p.label, name: p.name, dlp: p.dlp, unit: p.unit, hrs: p.hrs, price: p.price, desc: p.desc, feats: p.feats, cta: p.cta, best: !!p.pro,
+          ckC: p.pro ? '#FFFFFF' : '#1652F0',
+          cls: (p.pro ? 'pr-pro ' : '') + (k === fit ? 'pr-card-fit pr-card-show' : ''),
+          tabCls: k === fit ? 'pr-tab-on' : '', sel: k === fit ? 'true' : 'false',
+          pick: function () { self.setState({ hours: p.set }); } };
+      }),
+      open: this.state.open ? 'true' : 'false', showTable: this.state.open, moreCls: this.state.open ? 'pr-open' : '',
+      moreLabel: this.state.open ? 'Hide comparison' : 'Compare all features',
+      toggle: function () { self.setState({ open: !self.state.open }); },
+      rows: R.map(function (r) { return { f: r[0], a: r[1], b: r[2], c: r[3] }; })
+    };
+  }
+}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
     this.state = { v: 0 };
-    this.parts = { hero: new HeroPart(this), eng: new EnginePart(this), grow: new GrowPart(this), coach: new CoachPart(this), tv: new TrustPart(this), ld: new LearnPart(this), bp: new BackpackPart(this), mk: new MarketPart(this), ec: new EcoPart(this) };
+    this.parts = { hero: new HeroPart(this), eng: new EnginePart(this), grow: new GrowPart(this), coach: new CoachPart(this), tv: new TrustPart(this), ld: new LearnPart(this), bp: new BackpackPart(this), mk: new MarketPart(this), ec: new EcoPart(this), pr: new PricePart(this) };
     this.parts.hero.sync = true;
   }
   bump(now) {

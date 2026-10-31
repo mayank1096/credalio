@@ -93,7 +93,7 @@ body{margin:0;background:#FFFFFF}
 .cs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .cs-card{position:relative;display:flex;flex-direction:column;border-radius:18px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 22px 44px -38px rgba(11,20,51,.45);overflow:hidden;text-decoration:none;color:#0B1433;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,border-color .3s ease}
 .cs-card:hover{transform:translateY(-4px);border-color:#D6DDEE;box-shadow:0 34px 60px -38px rgba(22,82,240,.45)}
-.cs-th{position:relative;height:132px;overflow:hidden;display:flex;align-items:flex-start;justify-content:space-between;padding:14px;box-sizing:border-box}
+.cs-th{position:relative;height:112px;overflow:hidden;display:flex;align-items:flex-start;justify-content:space-between;padding:14px;box-sizing:border-box}
 .cs-th::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1.3px);background-size:12px 12px}
 .cs-ico{position:absolute;right:-12px;bottom:-16px;width:116px;height:116px;opacity:.22}
 .cs-cat{position:relative;height:26px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.2);color:#FFFFFF;display:inline-flex;align-items:center;font-size:12px;font-weight:500;backdrop-filter:blur(4px)}
@@ -102,7 +102,7 @@ body{margin:0;background:#FFFFFF}
 .cs-heart:hover{color:#0B1433;transform:scale(1.06)}
 .cs-heart-on{color:#1652F0}
 .cs-cb{display:flex;flex-direction:column;gap:10px;padding:16px 16px 0;flex:1}
-.cs-ct{font-size:16px;font-weight:600;letter-spacing:-.2px;line-height:1.3;min-height:42px}
+.cs-ct{font-size:16px;font-weight:600;letter-spacing:-.2px;line-height:1.3;min-height:42px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .cs-by{display:flex;align-items:center;gap:8px;font-size:13px;color:#3A4566}
 .cs-cav{width:24px;height:24px;border-radius:999px;background:#DCE5FB;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:600;flex-shrink:0}
 .cs-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:13px;color:#5B6582}
@@ -124,6 +124,10 @@ body{margin:0;background:#FFFFFF}
 .cs-skills{display:flex;flex-wrap:wrap;gap:10px}
 .cs-skill{height:40px;padding:0 16px;border-radius:999px;border:1.5px solid #E3E8F3;background:#FFFFFF;display:inline-flex;align-items:center;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:500;color:#0B1433;cursor:pointer;transition:border-color .2s ease,background .2s ease}
 .cs-skill:hover{border-color:#1652F0;background:#F5F8FF}
+.cs-ptip{margin-left:6px;width:15px;height:15px;font-size:9.5px;vertical-align:1px;border-color:#B5BDD3;color:#8A93AD}
+.cs-ptip:hover::after,.cs-ptip:focus::after{left:auto;right:-8px;top:auto;bottom:calc(100% + 8px)}
+.cs-tipw{position:relative;cursor:help}
+.cs-tipw:hover::after,.cs-tipw:focus::after{content:attr(data-tip);position:absolute;left:0;bottom:calc(100% + 8px);width:220px;padding:10px 12px;border-radius:10px;background:#0B1433;color:#FFFFFF;font-size:12px;font-weight:400;line-height:1.45;z-index:20;white-space:normal}
 .cs-sheetbg{display:none}
 .cs-show{display:none}
 .sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
@@ -131,9 +135,15 @@ body{margin:0;background:#FFFFFF}
 .sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
 .sx-fin a{color:#3A4566;text-decoration:none}
 .sx-fin a:hover{color:#1652F0}
-@media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}.cs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}.cs-res{grid-template-columns:repeat(2,minmax(0,1fr)) !important}.cs-grid:not(.cs-res){grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(280px,42%);overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -48px;padding:4px 48px 10px;scroll-padding:0 48px;scrollbar-width:none}.cs-grid:not(.cs-res)::-webkit-scrollbar{display:none}.cs-grid:not(.cs-res) > *{scroll-snap-align:start}}
 @media (max-width: 960px){
 .cs-hin{grid-template-columns:minmax(0,1fr);gap:24px}
+.cs-bal{flex-direction:row;align-items:center;gap:10px;padding:0;border:none;background:none;box-shadow:none;border-radius:0}
+.cs-bal .cs-bk{display:none}
+.cs-bal .cs-meter{display:none}
+.cs-bvn{font-size:16px !important}
+.cs-bvu{font-size:14px}
+.cs-blink{margin-left:auto}
 .cs-body{grid-template-columns:minmax(0,1fr)}
 .cs-side{display:none;position:fixed;left:0;right:0;bottom:0;top:auto;z-index:60;max-height:82%;overflow-y:auto;padding:8px 20px 20px;background:#FFFFFF;border-radius:22px 22px 0 0;box-shadow:0 -30px 60px -20px rgba(11,20,51,.35)}
 .cs-side-open{display:flex}
@@ -143,6 +153,7 @@ body{margin:0;background:#FFFFFF}
 .cs-filt{display:inline-flex;height:40px;padding:0 16px 0 12px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;align-items:center;gap:8px;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:600;color:#0B1433;cursor:pointer}
 .cs-filt i{min-width:20px;height:20px;padding:0 5px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:11px}
 }
+@media (max-width: 520px){.sx-login{display:none !important}}
 @media (max-width: 760px){
 .sx-nav{height:60px;padding:0 16px}
 .sx-word{height:20px}
@@ -155,16 +166,21 @@ body{margin:0;background:#FFFFFF}
 .cs-search{height:52px;padding:4px 4px 4px 16px}
 .cs-input{font-size:15px}
 .cs-go{height:42px;padding:0 16px;font-size:14px}
-.cs-bal{flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:14px 16px;border-radius:16px}
-.cs-bal .cs-bk{width:100%}
-.cs-bvn{font-size:20px}
+.cs-bal{flex-direction:row;align-items:center;gap:10px;padding:0;border:none;background:none;box-shadow:none;border-radius:0}
+.cs-bal .cs-bk{display:none}
+.cs-bvn{font-size:15px !important}
+.cs-bvu{font-size:13px}
+.cs-skills{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px;padding:0 20px 4px;scrollbar-width:none}
+.cs-skills::-webkit-scrollbar{display:none}
+.cs-skill{flex-shrink:0;height:38px}
+.cs-hin{padding-bottom:22px !important}
 .cs-meter{display:none}
 .cs-blink{margin-left:auto;font-size:13px}
 .cs-body{padding:24px 20px 72px;gap:0}
 .cs-main{gap:36px}
 .cs-bar{margin-bottom:-16px;gap:10px}
 .cs-sortw > span{display:none}
-.cs-grid{grid-template-columns:repeat(4,78%);overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:4px 20px 8px;gap:12px;scrollbar-width:none}
+.cs-grid:not(.cs-res){grid-auto-columns:80%;margin:0 -20px;padding:4px 20px 8px;scroll-padding:0 20px;gap:12px}
 .cs-grid::-webkit-scrollbar{display:none}
 .cs-grid > *{scroll-snap-align:start}
 .cs-res{grid-template-columns:minmax(0,1fr) !important;overflow:visible !important;margin:0 !important;padding:0 !important}
@@ -193,7 +209,7 @@ body{margin:0;background:#FFFFFF}
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
 <sc-if value="{{guest}}" hint-placeholder-val="{{ true }}">
-<a class="sx-link" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
+<a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
 <a class="sx-cta" href="#">Create account</a>
 </sc-if>
 <sc-if value="{{learner}}" hint-placeholder-val="{{ false }}">
@@ -211,7 +227,7 @@ body{margin:0;background:#FFFFFF}
 <form class="cs-search" role="search" onSubmit="{{onSubmit}}">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B6582" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
 <label for="cs-q" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search courses</label>
-<input id="cs-q" class="cs-input" type="search" placeholder="What do you want to learn?" value="{{q}}" onInput="{{onQ}}" autocomplete="off">
+<input id="cs-q" class="cs-input" type="search" placeholder="Search courses or skills" value="{{q}}" onInput="{{onQ}}" autocomplete="off">
 <button class="cs-go" type="submit">Search</button>
 </form>
 </div>
@@ -264,12 +280,6 @@ body{margin:0;background:#FFFFFF}
 <button class="cs-opt {{f.cls}}" type="button" role="radio" aria-checked="{{f.on}}" onClick="{{f.pick}}"><span class="cs-box cs-rad"></span>{{f.label}}</button>
 </sc-for>
 </div>
-<div class="cs-grp" style="border-bottom: none">
-<span class="cs-gl">OTHER FORMATS</span>
-<a class="cs-fmt" href="#">Professional Certifications<span>Browse →</span></a>
-<a class="cs-fmt" href="#">Career Paths<span>Browse →</span></a>
-<a class="cs-fmt" href="#">Learning Programs<span>Browse →</span></a>
-</div>
 <button class="cs-show" type="button" onClick="{{closeSheet}}">{{showLabel}}</button>
 </aside>
 
@@ -303,10 +313,9 @@ body{margin:0;background:#FFFFFF}
 <span class="cs-ct">{{c.t}}</span>
 <span class="cs-by"><span class="cs-cav">{{c.ini}}</span>{{c.by}}</span>
 <span class="cs-meta"><span class="cs-star" aria-hidden="true">★</span><b>{{c.rating}}</b><span>({{c.reviews}})</span><span class="cs-dot"></span><span>{{c.lvl}}</span><span class="cs-dot"></span><span>{{c.hrs}}</span></span>
-<span class="cs-tags"><span class="cs-tier"><span class="cs-tdot" style="background: {{c.tierDot}}"></span>{{c.tierLabel}}</span><span class="cs-cei" title="Creator Expertise Index, based on validated subject knowledge, practical experience and industry recognition">CEI <b>{{c.cei}}</b></span></span>
+<span class="cs-tags"><span class="cs-tier"><span class="cs-tdot" style="background: {{c.tierDot}}"></span>{{c.tierLabel}}</span><span class="cs-cei cs-tipw" tabindex="0" data-tip="Creator Expertise Index: the creator’s validated subject knowledge, experience and recognition, out of 100.">CEI <b>{{c.cei}}</b></span></span>
 <div class="cs-acc">
-<span class="cs-ar"><span>{{c.accK}}</span><b class="{{c.accCls}}">{{c.accV}}</b></span>
-<sc-if value="{{c.hasLife}}" hint-placeholder-val="{{ false }}"><span class="cs-ar"><span>Lifetime access</span><b>{{c.life}}</b></span></sc-if>
+<span class="cs-ar"><span>{{c.accK}}</span><b class="{{c.accCls}}">{{c.accV}}<sc-if value="{{c.hasLife}}" hint-placeholder-val="{{ false }}"><span class="cs-tip cs-ptip" tabindex="0" data-tip="{{c.lifeTip}}" onClick="{{c.stop}}">i</span></sc-if></b></span>
 <sc-if value="{{c.showFit}}" hint-placeholder-val="{{ false }}"><span class="cs-fit {{c.fitCls}}">{{c.fit}}</span></sc-if>
 </div>
 </div>
@@ -327,7 +336,7 @@ body{margin:0;background:#FFFFFF}
 <sc-if value="{{browse}}" hint-placeholder-val="{{ true }}">
 <sc-for list="{{rails}}" as="r" hint-placeholder-count="4">
 <section class="cs-rail" aria-label="{{r.t}}">
-<div class="cs-rh"><div><div class="cs-rt">{{r.t}}</div><div class="cs-rs">{{r.s}}</div></div><a class="cs-all" href="#">View all</a></div>
+<div class="cs-rh"><div><div class="cs-rt">{{r.t}}</div><sc-if value="{{r.hasS}}" hint-placeholder-val="{{ false }}"><div class="cs-rs">{{r.s}}</div></sc-if></div><a class="cs-all" href="#">View all</a></div>
 <div class="cs-grid">
 <sc-for list="{{r.items}}" as="c" hint-placeholder-count="3">
 <a class="cs-card" href="#" aria-label="{{c.t}}">
@@ -340,10 +349,9 @@ body{margin:0;background:#FFFFFF}
 <span class="cs-ct">{{c.t}}</span>
 <span class="cs-by"><span class="cs-cav">{{c.ini}}</span>{{c.by}}</span>
 <span class="cs-meta"><span class="cs-star" aria-hidden="true">★</span><b>{{c.rating}}</b><span>({{c.reviews}})</span><span class="cs-dot"></span><span>{{c.lvl}}</span><span class="cs-dot"></span><span>{{c.hrs}}</span></span>
-<span class="cs-tags"><span class="cs-tier"><span class="cs-tdot" style="background: {{c.tierDot}}"></span>{{c.tierLabel}}</span><span class="cs-cei" title="Creator Expertise Index, based on validated subject knowledge, practical experience and industry recognition">CEI <b>{{c.cei}}</b></span></span>
+<span class="cs-tags"><span class="cs-tier"><span class="cs-tdot" style="background: {{c.tierDot}}"></span>{{c.tierLabel}}</span><span class="cs-cei cs-tipw" tabindex="0" data-tip="Creator Expertise Index: the creator’s validated subject knowledge, experience and recognition, out of 100.">CEI <b>{{c.cei}}</b></span></span>
 <div class="cs-acc">
-<span class="cs-ar"><span>{{c.accK}}</span><b class="{{c.accCls}}">{{c.accV}}</b></span>
-<sc-if value="{{c.hasLife}}" hint-placeholder-val="{{ false }}"><span class="cs-ar"><span>Lifetime access</span><b>{{c.life}}</b></span></sc-if>
+<span class="cs-ar"><span>{{c.accK}}</span><b class="{{c.accCls}}">{{c.accV}}<sc-if value="{{c.hasLife}}" hint-placeholder-val="{{ false }}"><span class="cs-tip cs-ptip" tabindex="0" data-tip="{{c.lifeTip}}" onClick="{{c.stop}}">i</span></sc-if></b></span>
 <sc-if value="{{c.showFit}}" hint-placeholder-val="{{ false }}"><span class="cs-fit {{c.fitCls}}">{{c.fit}}</span></sc-if>
 </div>
 </div>
@@ -353,7 +361,7 @@ body{margin:0;background:#FFFFFF}
 </section>
 </sc-for>
 <section class="cs-rail" aria-label="Browse by skill">
-<div class="cs-rh"><div><div class="cs-rt">Browse by skill</div><div class="cs-rs">Jump straight to what you need.</div></div></div>
+<div class="cs-rh"><div class="cs-rt">Browse by skill</div></div>
 <div class="cs-skills">
 <sc-for list="{{skills}}" as="s" hint-placeholder-count="10">
 <button class="cs-skill" type="button" onClick="{{s.pick}}">{{s.label}}</button>
@@ -420,7 +428,7 @@ class Component extends DCLogic {
     var v = { t: c.t, by: c.by, cat: c.cat, lvl: c.lvl, rating: c.rating, reviews: c.reviews, hrs: c.hrs + (c.hrs === 1 ? ' hr' : ' hrs'), cei: c.cei, ini: ini,
       bg: tn[0], icoC: tn[1], light: tn[2], tierLabel: this.TIER[c.tier][0], tierDot: this.TIER[c.tier][1],
       accK: c.free ? 'Access' : 'Learn with DLP', accV: c.free ? 'Free to learn' : c.dlp.toLocaleString('en-GB') + ' DLP', accCls: c.free ? 'cs-free' : '',
-      hasLife: c.life > 0, life: c.life.toLocaleString('en-GB') + ' credits',
+      hasLife: c.life > 0, lifeTip: 'Or keep it for life: ' + c.life.toLocaleString('en-GB') + ' credits, one-off.', stop: function (e) { e.preventDefault(); e.stopPropagation(); },
       showFit: me && !c.free, fit: c.free ? '✓ Free, no DLP needed' : (c.dlp <= this.BAL ? '✓ Covered by your DLP' : (c.dlp - this.BAL).toLocaleString('en-GB') + ' more DLP needed'),
       fitCls: c.free || c.dlp <= this.BAL ? 'cs-fit-ok' : 'cs-fit-need',
       wished: w ? 'true' : 'false', heartCls: w ? 'cs-heart-on' : '', heartFill: w ? 'currentColor' : 'none', heartLabel: w ? 'Remove from wishlist' : 'Add to wishlist',
@@ -450,11 +458,10 @@ class Component extends DCLogic {
     if (S.q) active.push({ label: '“' + S.q + '”', drop: function () { set({ q: '' }); } });
     var pick = function (idx) { return idx.map(function (i) { return self.card(L[i]); }); };
     var rails = [];
-    if (me) rails.push({ t: 'Recommended for you', s: 'Picked for your goal: Data Analyst.', items: pick([0, 6, 3]) });
-    rails.push({ t: 'Popular right now', s: 'What learners are choosing this month.', items: pick(me ? [1, 2, 10] : [0, 1, 2]) });
-    rails.push({ t: 'Recently added', s: 'New on Credalio.', items: pick([8, 11, 7]) });
-    rails.push({ t: 'Gold Validated', s: 'The highest validation tier.', items: pick(me ? [10, 8, 3] : [10, 3, 8]) });
-    rails.push({ t: 'Short courses', s: 'Under five hours.', items: pick([9, 3, 11]) });
+    if (me) rails.push({ t: 'Recommended for you', s: 'Picked for your goal: Data Analyst', hasS: true, items: pick([0, 6, 3]) });
+    rails.push({ t: 'Popular right now', s: '', hasS: false, items: pick(me ? [1, 2, 10] : [0, 1, 2]) });
+    if (!me) rails.push({ t: 'Gold Validated', s: '', hasS: false, items: pick([10, 3, 8]) });
+    rails.push({ t: 'Under five hours', s: '', hasS: false, items: pick([9, 3, 11]) });
     var topics = ['Any topic', 'Data Analytics', 'Design', 'AI', 'Software', 'Cybersecurity', 'Business', 'Finance'];
     return {
       guest: !me, learner: me,

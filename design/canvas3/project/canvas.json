@@ -44,7 +44,7 @@
       "x": 0,
       "y": 14400,
       "w": 1440,
-      "h": 2715,
+      "h": 2675,
       "title": "EXP-001 Explore Learning · Desktop",
       "page": "main",
       "expand": "fill",
@@ -54,14 +54,14 @@
       "x": 1520,
       "y": 14400,
       "w": 390,
-      "h": 2821,
+      "h": 2442,
       "title": "EXP-001 Explore Learning · Mobile",
       "page": "main",
       "is_interactive": true
     },
     "Courses.dc.html": {
       "x": 0,
-      "y": 17461,
+      "y": 17315,
       "w": 1440,
       "h": 2081,
       "title": "COURSES-001 Browse Courses · Guest · Desktop",
@@ -71,7 +71,7 @@
     },
     "Courses-Mobile.dc.html": {
       "x": 1520,
-      "y": 17461,
+      "y": 17315,
       "w": 390,
       "h": 1949,
       "title": "COURSES-001 Browse Courses · Guest · Mobile",
@@ -80,7 +80,7 @@
     },
     "Courses-Learner.dc.html": {
       "x": 0,
-      "y": 19782,
+      "y": 19636,
       "w": 1440,
       "h": 2209,
       "title": "COURSES-001 Browse Courses · Signed in (1,460 DLP) · Desktop",
@@ -90,7 +90,7 @@
     },
     "Courses-Learner-Mobile.dc.html": {
       "x": 1520,
-      "y": 19782,
+      "y": 19636,
       "w": 390,
       "h": 2076,
       "title": "COURSES-001 Browse Courses · Signed in (1,460 DLP) · Mobile",

@@ -70,7 +70,8 @@ h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 .ex-card{position:relative;display:flex;flex-direction:column;border-radius:18px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 22px 44px -38px rgba(11,20,51,.45);overflow:hidden;text-decoration:none;color:#0B1433;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,border-color .3s ease}
 .ex-card:hover{transform:translateY(-4px);border-color:#D6DDEE;box-shadow:0 34px 60px -38px rgba(22,82,240,.45)}
 .ex-path{padding:22px 24px 20px;gap:12px}
-.ex-path-feat{background:radial-gradient(90% 90% at 100% 0%,#1C3AA8 0%,#0B1433 70%);border-color:#0B1433;color:#FFFFFF}
+.ex-path-feat{background:#0B1433;border-color:#0B1433;color:#FFFFFF;isolation:isolate}
+.ex-path-feat::after{content:"";position:absolute;inset:0;z-index:-1;background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat;transform:scale(1.5);transform-origin:0 35%;pointer-events:none}
 .ex-pk{display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:500;color:#8A93AD}
 .ex-path-feat .ex-pk{color:#9DB8F7}
 .ex-pt{font-size:22px;font-weight:600;letter-spacing:-.4px}

@@ -191,6 +191,82 @@
       "title": "PATH-002 Career Path Detail · Signed in (1,460 DLP) · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Certifications.dc.html": {
+      "x": 0,
+      "y": 37362,
+      "w": 1440,
+      "h": 1602,
+      "title": "CERT-001 Certifications · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Certifications-Mobile.dc.html": {
+      "x": 1520,
+      "y": 37362,
+      "w": 390,
+      "h": 2529,
+      "title": "CERT-001 Certifications · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "CertDetail.dc.html": {
+      "x": 0,
+      "y": 40131,
+      "w": 1440,
+      "h": 2635,
+      "title": "CERT-002 Certification Detail · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "CertDetail-Mobile.dc.html": {
+      "x": 1520,
+      "y": 40131,
+      "w": 390,
+      "h": 3088,
+      "title": "CERT-002 Certification Detail · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Programs.dc.html": {
+      "x": 0,
+      "y": 43459,
+      "w": 1440,
+      "h": 2022,
+      "title": "PROG-001 Learning Programs · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Programs-Mobile.dc.html": {
+      "x": 1520,
+      "y": 43459,
+      "w": 390,
+      "h": 2093,
+      "title": "PROG-001 Learning Programs · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "ProgramDetail.dc.html": {
+      "x": 0,
+      "y": 45792,
+      "w": 1440,
+      "h": 2244,
+      "title": "PROG-002 Program Detail · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "ProgramDetail-Mobile.dc.html": {
+      "x": 1520,
+      "y": 45792,
+      "w": 390,
+      "h": 3018,
+      "title": "PROG-002 Program Detail · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -206,7 +282,8 @@
     "row-hero-b",
     "row-hero-c",
     "row-b1",
-    "row-b2"
+    "row-b2",
+    "row-b3"
   ],
   "notes": {
     "new-hero": {
@@ -250,6 +327,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b3": {
+      "x": 0,
+      "y": 37062,
+      "text": "Batch 3 · Certifications and Learning Programs",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -272,7 +357,15 @@
     "PathDetail.dc.html",
     "PathDetail-Mobile.dc.html",
     "PathDetail-Learner.dc.html",
-    "PathDetail-Learner-Mobile.dc.html"
+    "PathDetail-Learner-Mobile.dc.html",
+    "Certifications.dc.html",
+    "Certifications-Mobile.dc.html",
+    "CertDetail.dc.html",
+    "CertDetail-Mobile.dc.html",
+    "Programs.dc.html",
+    "Programs-Mobile.dc.html",
+    "ProgramDetail.dc.html",
+    "ProgramDetail-Mobile.dc.html"
   ],
   "pages": [
     {

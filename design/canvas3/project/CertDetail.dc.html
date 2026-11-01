@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Certification Detail</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+h1,h2,h3,p{text-wrap:pretty}
+@media (min-width: 761px){p{text-wrap:balance}}
+.sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sx-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.sx-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
+.sx-word{display:block;height:24px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}
+.sx-links{display:flex;align-items:center;gap:4px}
+.sx-link{height:40px;padding:0 12px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:500;color:#3A4566;text-decoration:none;white-space:nowrap;transition:color .2s ease,background .2s ease}
+.sx-link:hover{color:#0B1433;background:#F5F8FF}
+.sx-link-on{color:#0B1433;background:#EAF0FF}
+.sx-cta{height:44px;padding:0 20px;border-radius:999px;display:flex;align-items:center;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease}
+.sx-cta:hover{background:#0E3BB8}
+.sx-menu{display:none;width:44px;height:44px;border-radius:999px;border:none;background:transparent;color:#0B1433;align-items:center;justify-content:center;cursor:pointer}
+.sx-link:focus-visible,.sx-cta:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.sx-tip{position:relative;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:999px;border:1.5px solid #B5BDD3;font-size:11px;font-weight:600;color:#8A93AD;letter-spacing:0;cursor:help;flex-shrink:0;font-style:normal}
+.sx-tip:hover::after,.sx-tip:focus::after{content:attr(data-tip);position:absolute;left:-10px;top:calc(100% + 8px);width:240px;padding:10px 12px;border-radius:10px;background:#0B1433;color:#FFFFFF;font-size:12px;font-weight:400;line-height:1.45;text-align:left;white-space:normal;z-index:30}
+.sx-tip-r:hover::after,.sx-tip-r:focus::after{left:auto;right:-10px}
+.sx-tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.sx-orb{border-radius:999px;flex-shrink:0;background:radial-gradient(circle at 34% 28%,#DCE7FF 0%,#7FA4FF 24%,#1652F0 62%,#0B2A8F 100%)}
+.sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
+.sx-fin{max-width:1312px;margin:0 auto;padding:40px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#5B6582}
+.sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
+.sx-fin a{color:#3A4566;text-decoration:none}
+.sx-fin a:hover{color:#1652F0}
+@media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}}
+@media (max-width: 520px){.sx-login{display:none !important}}
+@media (max-width: 760px){.sx-nav{height:60px;padding:0 16px}.sx-word{height:20px}.sx-cta{height:40px;padding:0 16px;font-size:14px}.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}.sx-tip:hover::after,.sx-tip:focus::after{width:200px}}
+.dt-top{background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / max(1440px,100%) auto no-repeat}
+.dt-grid{max-width:1312px;margin:0 auto;padding:40px 48px 96px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:0 64px;align-items:start}
+.dt-main{min-width:0;display:flex;flex-direction:column}
+.dt-hero{display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding-bottom:40px}
+.dt-crumb{display:flex;align-items:center;gap:8px;font-size:13px;color:#8A93AD}
+.dt-crumb a{color:#5B6582;text-decoration:none}
+.dt-crumb a:hover{color:#1652F0}
+.dt-tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.dt-tag{height:28px;padding:0 11px 0 9px;border-radius:999px;background:rgba(255,255,255,.85);border:1px solid #E3E8F3;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:#0B1433;white-space:nowrap}
+.dt-h1{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px;color:#0B1433;max-width:780px}
+.dt-sub{margin:0;font-size:18px;line-height:1.55;color:#4A5578;max-width:680px}
+.dt-by{display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px;margin-top:4px;font-size:14px;color:#5B6582}
+.dt-who{display:flex;align-items:center;gap:10px}
+.dt-who b{font-weight:600;color:#0B1433}
+.dt-av{width:36px;height:36px;border-radius:999px;background:#DCE5FB;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0}
+.dt-sep{width:1px;height:18px;background:#D6DDEE}
+.dt-fact{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.dt-fact b{font-weight:600;color:#0B1433}
+.dt-tabs{position:sticky;top:0;z-index:5;display:flex;gap:28px;background:#FFFFFF;border-bottom:1px solid #E6EAF3;margin-bottom:8px}
+.dt-tab{position:relative;height:52px;padding:0 2px;border:none;background:none;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;font-weight:500;color:#5B6582;cursor:pointer;white-space:nowrap;transition:color .2s ease}
+.dt-tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2.5px;border-radius:3px;background:#1652F0;transform:scaleX(0);transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.dt-tab:hover{color:#0B1433}
+.dt-tab-on{color:#0B1433;font-weight:600}
+.dt-tab-on::after{transform:scaleX(1)}
+.dt-sec{display:flex;flex-direction:column;gap:20px;padding:40px 0 8px;scroll-margin-top:56px}
+.dt-h2{margin:0;font-size:26px;line-height:1.15;font-weight:600;letter-spacing:-.6px;color:#0B1433;display:flex;align-items:center;gap:8px}
+.dt-sh{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.dt-sm{font-size:14px;color:#5B6582}
+.dt-p{margin:0;font-size:16px;line-height:1.6;color:#3A4566;max-width:720px}
+.dt-chips{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.dt-chl{font-size:13px;font-weight:500;color:#8A93AD;margin-right:4px;white-space:nowrap}
+.dt-chip{height:32px;padding:0 13px;border-radius:999px;background:#F5F8FF;border:1px solid #E3E8F3;display:inline-flex;align-items:center;font-size:13px;font-weight:500;color:#0B1433;white-space:nowrap}
+.dt-side{position:sticky;top:24px;z-index:6}
+.dt-card{border-radius:22px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 40px 80px -48px rgba(11,20,51,.45);overflow:hidden}
+.dt-cbody{display:flex;flex-direction:column;gap:16px;padding:22px 24px 24px}
+.dt-lab{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:#8A93AD}
+.dt-amt{display:flex;align-items:baseline;gap:8px;margin-top:-8px}
+.dt-amt b{font-size:34px;font-weight:600;letter-spacing:-1px;color:#0B1433}
+.dt-amt span{font-size:15px;font-weight:500;color:#5B6582}
+.dt-btn{white-space:nowrap;height:56px;padding:0 8px 0 24px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:space-between;font-family:'Google Sans',system-ui,sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;transition:background .2s ease}
+.dt-btn:hover{background:#0E3BB8}
+.dt-btn i{width:40px;height:40px;border-radius:999px;background:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.dt-done{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:#E7F5EE;color:#0F6B45;font-size:14px;font-weight:500}
+.dt-ask{display:flex;align-items:center;justify-content:center;gap:10px;height:44px;border-radius:999px;font-size:14px;font-weight:600;color:#0B1433;text-decoration:none;border:1.5px solid #D6DDEE;transition:border-color .2s ease}
+.dt-ask:hover{border-color:#1652F0}
+.dt-btn:focus-visible,.dt-tab:focus-visible,.dt-ask:focus-visible,.dt-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.dt-link{font-size:14px;font-weight:600;color:#1652F0;text-decoration:none;white-space:nowrap}
+.dt-link:hover{color:#0E3BB8}
+.dt-bar{display:none}
+.dt-faq{border-radius:20px;border:1.5px solid #E6EAF3;overflow:hidden}
+.dt-fq + .dt-fq{border-top:1px solid #EEF1F7}
+.dt-fh{width:100%;min-height:60px;padding:12px 20px;border:none;background:#FFFFFF;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;font-family:'Google Sans',system-ui,sans-serif;font-size:16px;font-weight:600;color:#0B1433;cursor:pointer}
+.dt-fh:hover{background:#FAFBFE}
+.dt-fh:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:-3px}
+.dt-chev{color:#8A93AD;transition:transform .3s ease;flex-shrink:0}
+.dt-fq-open .dt-chev{transform:rotate(180deg)}
+.dt-fa{margin:0;padding:0 20px 18px;font-size:15px;line-height:1.6;color:#3A4566;text-wrap:pretty !important}
+@media (max-width: 1180px){.dt-grid{grid-template-columns:minmax(0,1fr) 340px;gap:0 40px}}
+@media (max-width: 960px){
+.dt-grid{grid-template-columns:minmax(0,1fr);padding-top:32px}
+.dt-main{display:contents}
+.dt-main > *{order:3}
+.dt-hero{order:1;padding-bottom:28px}
+.dt-side{order:2;position:static;margin-bottom:12px}
+.dt-card{max-width:520px}
+.dt-hide-t{display:none !important}
+}
+@media (max-width: 760px){
+.dt-top{background-size:auto 340px}
+.dt-grid{padding:24px 20px 0}
+.dt-crumb{display:none}
+.dt-hero{gap:12px;padding-bottom:24px}
+.dt-h1{font-size:30px;letter-spacing:-.8px}
+.dt-sub{font-size:15px}
+.dt-by{gap:10px 14px;font-size:13px}
+.dt-sep{display:none}
+.dt-who{width:100%}
+.dt-card{border-radius:20px}
+.dt-cbody{padding:18px 18px 20px;gap:14px}
+.dt-amt b{font-size:28px}
+.dt-card .dt-btn{display:none}
+.dt-tabs{margin:0 -20px 4px;padding:0 20px;gap:22px;overflow-x:auto;scrollbar-width:none}
+.dt-tabs::-webkit-scrollbar{display:none}
+.dt-tab{height:48px;font-size:14px;flex-shrink:0}
+.dt-sec{padding-top:32px;gap:16px}
+.dt-h2{font-size:21px;letter-spacing:-.4px}
+.dt-p{font-size:15px}
+.dt-chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px;padding:0 20px;scrollbar-width:none}
+.dt-chips::-webkit-scrollbar{display:none}
+.dt-fh{padding:12px 16px;font-size:15px}
+.dt-fa{padding:0 16px 16px;font-size:14px}
+.dt-bar{display:flex;order:9;position:sticky;bottom:0;z-index:20;align-items:center;justify-content:space-between;gap:12px;margin:28px -20px 0;padding:12px 16px 12px 20px;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid #E6EAF3}
+.dt-bar > div > b{display:block;font-size:17px;font-weight:600;color:#0B1433}
+.dt-bar > div > span{font-size:12px;color:#5B6582}
+.dt-bar .dt-btn{height:48px;font-size:15px;gap:12px}
+.dt-bar .dt-btn i{width:34px;height:34px}
+}
+
+.ce-seal{width:16px;height:16px}
+.ce-comp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ce-cp{display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:16px;background:#F5F8FF}
+.ce-ci{width:34px;height:34px;border-radius:10px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+.ce-cp b{font-size:15px;font-weight:600;color:#0B1433}
+.ce-cp span{font-size:13px;line-height:1.5;color:#5B6582;text-wrap:pretty}
+.ce-steps{position:relative;display:flex;flex-direction:column;gap:12px}
+.ce-st:not(:last-child)::before{content:"";position:absolute;left:21px;top:44px;bottom:-12px;width:2px;background:#1652F0}
+.ce-st{position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:18px}
+.ce-num{position:relative;z-index:1;width:44px;height:44px;border-radius:999px;background:#FFFFFF;border:2px solid #1652F0;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;box-sizing:border-box}
+.ce-st:last-child .ce-num{background:#1652F0;color:#FFFFFF;box-shadow:0 0 0 6px rgba(22,82,240,.12)}
+.ce-sc{padding:16px 20px;border-radius:18px;border:1.5px solid #E6EAF3;background:#FFFFFF;display:flex;flex-direction:column;gap:10px}
+.ce-shd{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.ce-sn{font-size:17px;font-weight:600;letter-spacing:-.3px;color:#0B1433;display:flex;align-items:center;gap:8px}
+.ce-sd{font-size:14px;line-height:1.5;color:#5B6582;margin-top:3px;text-wrap:pretty}
+.ce-pm{height:26px;padding:0 10px;border-radius:999px;background:#F5F8FF;border:1px solid #E3E8F3;display:inline-flex;align-items:center;font-size:12px;font-weight:500;color:#3A4566;white-space:nowrap;flex-shrink:0}
+.ce-cs{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.ce-cs li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:12px;background:#F5F8FF;font-size:14px;color:#0B1433}
+.ce-cs li span{font-size:12px;color:#8A93AD;white-space:nowrap}
+.ce-also{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:2px;font-size:13px;color:#8A93AD}
+.ce-also span{height:30px;padding:0 12px 0 10px;border-radius:999px;border:1px solid #E3E8F3;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:#3A4566}
+.ce-also svg{color:#1652F0}
+.ce-cred{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center;padding:28px;border-radius:22px;background:linear-gradient(180deg,#F5F8FF,#FFFFFF);border:1.5px solid #E6EAF3}
+.ce-paper{position:relative;aspect-ratio:1.42;border-radius:12px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 30px 60px -40px rgba(11,20,51,.5);padding:22px 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:6px;transform:rotate(-2deg)}
+.ce-paper::before{content:"";position:absolute;inset:8px;border:1px solid #DCE5FB;border-radius:7px;pointer-events:none}
+.ce-ppl{font-size:9.5px;font-weight:600;letter-spacing:1.8px;color:#8A93AD}
+.ce-ppn{font-size:22px;font-weight:600;letter-spacing:-.4px;line-height:1.15;color:#0B1433}
+.ce-ppt{font-size:12px;color:#5B6582}
+.ce-ppt b{display:block;font-size:15px;font-weight:600;color:#0B1433;margin-top:2px}
+.ce-pps{position:absolute;right:20px;bottom:18px;width:56px;height:56px;filter:drop-shadow(0 8px 12px rgba(22,82,240,.3))}
+.ce-ppf{margin-top:auto;display:flex;gap:18px;font-size:10px;color:#8A93AD}
+.ce-cl{display:flex;flex-direction:column;gap:12px}
+.ce-ct{font-size:20px;font-weight:600;letter-spacing:-.4px;color:#0B1433}
+.ce-cl ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.ce-cl li{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.5;color:#3A4566}
+.ce-ck{width:20px;height:20px;border-radius:999px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.ce-prev{position:relative;margin:12px 12px 0;height:140px;border-radius:14px;background:linear-gradient(180deg,#FFFFFF,#F5F8FF);border:1px solid #E3E8F3;padding:18px 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:5px;overflow:hidden}
+.ce-prev::before{content:"";position:absolute;inset:7px;border:1px solid #DCE5FB;border-radius:9px;pointer-events:none}
+.ce-prog{display:flex;flex-direction:column;gap:8px}
+.ce-pb{height:8px;border-radius:9px;background:#E6EAF3;overflow:hidden}
+.ce-pb span{display:block;height:100%;width:8%;border-radius:9px;background:#1652F0}
+.ce-pl{display:flex;justify-content:space-between;font-size:13px;color:#5B6582}
+.ce-pl b{font-weight:600;color:#0B1433}
+@media (max-width: 1180px){.ce-comp{grid-template-columns:repeat(2,minmax(0,1fr))}.ce-cs{grid-template-columns:minmax(0,1fr)}.ce-cred{grid-template-columns:minmax(0,1fr)}.ce-paper{max-width:380px}}
+@media (max-width: 960px){.ce-prev{display:none}}
+@media (max-width: 760px){
+.ce-comp{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
+.ce-cp{padding:14px;gap:4px}
+.ce-cp span{display:none}
+.ce-ci{width:30px;height:30px}
+.ce-cp b{font-size:14px}
+.ce-st:not(:last-child)::before{left:15px;top:32px}
+.ce-st{grid-template-columns:32px minmax(0,1fr);gap:12px}
+.ce-num{width:32px;height:32px;font-size:13px}
+.ce-sc{padding:14px}
+.ce-shd{flex-direction:column;gap:8px}
+.ce-sn{font-size:16px}
+.ce-sd{font-size:13px}
+.ce-cred{padding:18px;gap:18px}
+.ce-ppn{font-size:18px}
+.ce-paper{max-width:280px;transform:rotate(-1.5deg)}
+.ce-pps{width:44px;height:44px}
+}
+</style>
+</helmet>
+<div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
+
+<div class="dt-top">
+<header class="sx-nav">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav class="sx-links" aria-label="Main">
+<a class="sx-link" href="#">Explore learning</a>
+<a class="sx-link" href="#">Career paths</a>
+<a class="sx-link sx-link-on" href="#" aria-current="page">Certifications</a>
+<a class="sx-link" href="#">Pricing</a>
+<a class="sx-link" href="#">For creators</a>
+<a class="sx-link" href="#">For institutions</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
+<a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
+<a class="sx-cta" href="#">Create account</a>
+<button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+</header>
+<div class="dt-grid">
+<div class="dt-main">
+<div class="dt-hero">
+<nav class="dt-crumb" aria-label="Breadcrumb"><a href="#">Certifications</a><span aria-hidden="true">/</span><span>Data</span></nav>
+<div class="dt-tags">
+<span class="dt-tag"><svg class="ce-seal" viewBox="0 0 100 100" aria-hidden="true"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg> Credalio Validated</span>
+<span class="dt-tag">Professional</span>
+</div>
+<h1 class="dt-h1">Professional Certificate in Data Analysis</h1>
+<p class="dt-sub">Proof you can clean, query, analyse and present data to a professional standard.</p>
+<div class="dt-by">
+<span class="dt-who"><span class="dt-av" aria-hidden="true">NU</span><span><b>Northgate University</b></span></span>
+<span class="dt-sep" aria-hidden="true"></span>
+<span class="dt-fact"><b>Exam + case study</b></span>
+<span class="dt-fact"><b>3–4 months</b></span>
+</div>
+</div>
+<div class="dt-tabs" role="tablist" aria-label="Sections">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="4">
+<button class="dt-tab {{t.cls}}" type="button" role="tab" aria-selected="{{t.on}}" onClick="{{t.go}}">{{t.label}}</button>
+</sc-for>
+</div>
+<section class="dt-sec" ref="{{refOverview}}" aria-labelledby="ce-o">
+<h2 id="ce-o" class="dt-h2">What it proves</h2>
+<p class="dt-p">That you can run the whole analysis cycle: prepare data, query it, find the pattern and explain what it means. It’s assessed, not just completed, so employers can trust it.</p>
+<div class="ce-comp">
+<div class="ce-cp"><span class="ce-ci"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h7"></path></svg></span><b>Data preparation</b><span>Clean, structure and validate raw data.</span></div>
+<div class="ce-cp"><span class="ce-ci"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"></path></svg></span><b>Querying</b><span>Accurate SQL, including joins and aggregation.</span></div>
+<div class="ce-cp"><span class="ce-ci"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20"></path></svg></span><b>Analysis</b><span>Find trends and answer business questions.</span></div>
+<div class="ce-cp"><span class="ce-ci"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9v9z"></path><path d="M14 3.5A9 9 0 0 1 20.5 10H14z"></path></svg></span><b>Visualisation</b><span>Clear charts and dashboards.</span></div>
+<div class="ce-cp"><span class="ce-ci"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17c3-8 5-12 9-12s6 4 9 12"></path><path d="M3 21h18"></path></svg></span><b>Statistical reasoning</b><span>Apply basic statistics correctly.</span></div>
+<div class="ce-cp"><span class="ce-ci"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg></span><b>Communication</b><span>Present findings to people outside data.</span></div>
+</div>
+<div class="dt-chips"><span class="dt-chl">Made for</span><span class="dt-chip">Career changers</span><span class="dt-chip">Early-career analysts</span><span class="dt-chip">Anyone formalising data skills</span></div>
+</section>
+
+<section class="dt-sec" ref="{{refEarn}}" aria-labelledby="ce-e">
+<h2 id="ce-e" class="dt-h2">How you earn it</h2>
+<div class="ce-steps">
+<div class="ce-st"><span class="ce-num" aria-hidden="true">1</span><div class="ce-sc">
+<div class="ce-shd"><div><div class="ce-sn">Required learning<i class="sx-tip" tabindex="0" data-tip="Already know some of this? Your AI Coach checks equivalent learning so you don’t repeat it.">i</i></div><div class="ce-sd">Four validated courses that cover every competency.</div></div><span class="ce-pm">36 hrs</span></div>
+<ul class="ce-cs"><li>Data Foundations: Spreadsheets to SQL<span>12 hrs</span></li><li>SQL for Data Analysis<span>10 hrs</span></li><li>Data Visualisation with Power BI<span>6 hrs</span></li><li>Statistics Essentials<span>8 hrs</span></li></ul>
+</div></div>
+<div class="ce-st"><span class="ce-num" aria-hidden="true">2</span><div class="ce-sc"><div class="ce-shd"><div><div class="ce-sn">Core knowledge exam</div><div class="ce-sd">Timed, 60 questions on the six competencies.</div></div><span class="ce-pm">Pass mark 70%</span></div></div></div>
+<div class="ce-st"><span class="ce-num" aria-hidden="true">3</span><div class="ce-sc"><div class="ce-shd"><div><div class="ce-sn">Practical case study</div><div class="ce-sd">Clean a real dataset, analyse it, build a dashboard and recommend what to do. An assessor reviews it.</div></div><span class="ce-pm">Pass mark 70%</span></div></div></div>
+<div class="ce-st"><span class="ce-num" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><div class="ce-sc"><div class="ce-shd"><div><div class="ce-sn">Final review</div><div class="ce-sd">A short conversation about your case study with an assessor.</div></div><span class="ce-pm">Pass or not yet</span></div>
+<div class="ce-also">Also needed<span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg> Verify your identity</span><span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg> Agree to the code of conduct</span></div>
+</div></div>
+</div>
+</section>
+
+<section class="dt-sec" ref="{{refCredential}}" aria-labelledby="ce-c">
+<h2 id="ce-c" class="dt-h2">What you get</h2>
+<div class="ce-cred">
+<div class="ce-paper" aria-hidden="true"><span class="ce-ppl">PROFESSIONAL CERTIFICATE</span><span class="ce-ppn">Data Analysis</span><span class="ce-ppt">Awarded to<b>Your name</b></span><span class="ce-ppf"><span>Northgate University</span><span>Credential ID 7F2-91</span></span><svg class="ce-pps" viewBox="0 0 100 100" aria-hidden="true"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+<div class="ce-cl"><div class="ce-ct">A credential anyone can check</div>
+<ul>
+<li><span class="ce-ck"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Verifiable certificate and digital badge</li>
+<li><span class="ce-ck"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Saved to your Digital Backpack with a share link</li>
+<li><span class="ce-ck"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Valid for 3 years<i class="sx-tip" tabindex="0" data-tip="Renew with a short review of recent work. Placeholder period, to be confirmed by the issuer.">i</i></li>
+<li><span class="ce-ck"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Completes the Data Analyst career path</li>
+</ul></div>
+</div>
+</section>
+
+<section class="dt-sec" ref="{{refFaq}}" aria-labelledby="ce-f">
+<h2 id="ce-f" class="dt-h2">Questions</h2>
+<div class="dt-faq">
+<sc-for list="{{faqs}}" as="f" hint-placeholder-count="4">
+<div class="dt-fq {{f.cls}}"><button class="dt-fh" type="button" aria-expanded="{{f.exp}}" onClick="{{f.toggle}}">{{f.q}}<svg class="dt-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button><sc-if value="{{f.open}}" hint-placeholder-val="{{ false }}"><p class="dt-fa">{{f.a}}</p></sc-if></div>
+</sc-for>
+</div>
+</section>
+</div>
+
+<aside class="dt-side" aria-label="Start this certification">
+<div class="dt-card">
+<div class="ce-prev" aria-hidden="true"><span class="ce-ppl">PROFESSIONAL CERTIFICATE</span><span class="ce-ppn" style="font-size: 19px">Data Analysis</span><span class="ce-ppt" style="margin-top: auto">Northgate University</span><svg class="ce-pps" viewBox="0 0 100 100" aria-hidden="true"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+<div class="dt-cbody">
+<span class="dt-lab">Certification fee<i class="sx-tip" tabindex="0" data-tip="Includes every assessment, the practical review, your credential and one resit. Courses use your DLP as usual. Blockchain-anchored certificate: optional $10 add-on on Pro.">i</i></span>
+<div class="dt-amt"><b>$149</b><span>one time</span></div>
+<sc-if value="{{notStarted}}" hint-placeholder-val="{{ true }}">
+<button class="dt-btn" type="button" onClick="{{start}}">Start certification<i aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></button>
+</sc-if>
+<sc-if value="{{started}}" hint-placeholder-val="{{ false }}">
+<div class="ce-prog" role="status"><div class="ce-pl"><span>Your progress</span><b>1 of 6 in progress</b></div><div class="ce-pb"><span></span></div></div>
+<a class="dt-btn" href="#">Continue<i aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></a>
+</sc-if>
+<a class="dt-ask" href="#"><span class="sx-orb" style="width: 22px; height: 22px" aria-hidden="true"></span>Check my readiness</a>
+</div>
+</div>
+</aside>
+
+<div class="dt-bar">
+<div><b>$149</b><span>One time</span></div>
+<button class="dt-btn" type="button" onClick="{{start}}">{{barCta}}<i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></button>
+</div>
+</div>
+</div>
+<footer class="sx-foot">
+<div class="sx-fin">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="#">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+<span>© 2026 magnummeta. All rights reserved.</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2635}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tab: 'Overview', started: false, faq: 0 };
+    var self = this;
+    this.secs = {};
+    this.mk = function (k) { return function (e) { self.secs[k] = e; }; };
+    this.R = { Overview: this.mk('Overview'), 'How you earn it': this.mk('How you earn it'), 'What you get': this.mk('What you get'), Questions: this.mk('Questions') };
+    this.F = [['Do I have to take the four courses?', 'Only if you need them. Your AI Coach compares what you already know with each competency and skips anything you can show evidence for.'], ['What if I don’t pass first time?', 'One resit of each assessment is included. You get written feedback on what to work on before you try again.'], ['How long does it take?', 'Most people finish in three to four months at around five hours a week, including the courses.'], ['Can my employer pay?', 'Yes. Choose employer invoicing at checkout and we send the invoice to them directly.']];
+  }
+  renderVals() {
+    var self = this, S = this.state;
+    var names = ['Overview', 'How you earn it', 'What you get', 'Questions'];
+    var start = function () { self.setState({ started: true }); };
+    return {
+      tabs: names.map(function (n) { var on = S.tab === n; return { label: n, on: on ? 'true' : 'false', cls: on ? 'dt-tab-on' : '', go: function () { self.setState({ tab: n }); var el = self.secs[n]; if (el && el.scrollIntoView) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }; }),
+      refOverview: this.R.Overview, refEarn: this.R['How you earn it'], refCredential: this.R['What you get'], refFaq: this.R.Questions,
+      faqs: this.F.map(function (f, i) { var open = S.faq === i; return { q: f[0], a: f[1], open: open, exp: open ? 'true' : 'false', cls: open ? 'dt-fq-open' : '', toggle: function () { self.setState({ faq: open ? -1 : i }); } }; }),
+      started: S.started, notStarted: !S.started, start: start, barCta: S.started ? 'Continue' : 'Start certification'
+    };
+  }
+}
+</script>
+</body>
+</html>

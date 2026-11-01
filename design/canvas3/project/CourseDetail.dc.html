@@ -65,12 +65,6 @@ h1,h2,h3,p{text-wrap:pretty}
 .cd-outs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 28px;margin:0;padding:0;list-style:none}
 .cd-outs li{display:flex;align-items:flex-start;gap:12px;font-size:15px;line-height:1.5;color:#3A4566}
 .cd-ck{width:22px;height:22px;border-radius:999px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.cd-skills{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.cd-skl{font-size:13px;font-weight:500;color:#8A93AD;margin-right:4px}
-.cd-chip{height:32px;padding:0 13px;border-radius:999px;background:#F5F8FF;border:1px solid #E3E8F3;display:inline-flex;align-items:center;font-size:13px;font-weight:500;color:#0B1433}
-.cd-for{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:16px;background:#F5F8FF;font-size:14px;line-height:1.5;color:#3A4566}
-.cd-for b{font-weight:600;color:#0B1433}
-.cd-fi{width:36px;height:36px;border-radius:11px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .cd-mods{border-radius:20px;border:1.5px solid #E6EAF3;overflow:hidden;background:#FFFFFF}
 .cd-mod + .cd-mod{border-top:1px solid #EEF1F7}
 .cd-mh{width:100%;min-height:68px;padding:12px 20px;border:none;background:#FFFFFF;display:flex;align-items:center;gap:16px;text-align:left;font-family:'Google Sans',system-ui,sans-serif;cursor:pointer;transition:background .2s ease}
@@ -79,7 +73,6 @@ h1,h2,h3,p{text-wrap:pretty}
 .cd-mn{width:32px;height:32px;border-radius:10px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0;transition:background .2s ease,color .2s ease}
 .cd-mod-open .cd-mn{background:#1652F0;color:#FFFFFF}
 .cd-mt{flex:1;min-width:0;font-size:16px;font-weight:600;letter-spacing:-.2px;color:#0B1433}
-.cd-mm{font-size:13px;color:#8A93AD;white-space:nowrap}
 .cd-chev{color:#8A93AD;transition:transform .3s ease;flex-shrink:0}
 .cd-mod-open .cd-chev{transform:rotate(180deg)}
 .cd-ls{margin:0;padding:0 20px 14px 68px;list-style:none;display:flex;flex-direction:column}
@@ -99,15 +92,13 @@ h1,h2,h3,p{text-wrap:pretty}
 .cd-val{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;padding:26px 28px;border-radius:20px;border:1.5px solid #E6EAF3;background:#FFFFFF}
 .cd-seal{width:64px;height:64px;filter:drop-shadow(0 12px 16px rgba(200,150,30,.3))}
 .cd-vt{font-size:20px;font-weight:600;letter-spacing:-.4px;color:#0B1433}
-.cd-vd{font-size:14px;line-height:1.5;color:#5B6582;margin-top:4px}
+.cd-vd{font-size:14px;line-height:1.5;color:#5B6582;margin-top:4px;text-wrap:pretty}
 .cd-checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
 .cd-chk{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border-radius:14px;background:#F5F8FF}
 .cd-chk b{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:#0B1433}
 .cd-chk span{font-size:13px;line-height:1.45;color:#5B6582;text-wrap:pretty}
 .cd-vf{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid #EEF1F7;font-size:13px;color:#8A93AD}
-.cd-vid{display:flex;flex-wrap:wrap;gap:2px 10px}
-.cd-vid span{white-space:nowrap}
-.cd-vid span + span::before{content:"·";margin-right:10px}
+.cd-vid{display:inline-flex;align-items:center;gap:6px}
 .cd-link{font-size:14px;font-weight:600;color:#1652F0;text-decoration:none;white-space:nowrap}
 .cd-link:hover{color:#0E3BB8}
 .cd-cr{display:flex;align-items:flex-start;gap:20px}
@@ -201,7 +192,6 @@ h1,h2,h3,p{text-wrap:pretty}
 .cd-btn i{width:38px;height:38px}
 .cd-inc{display:none}
 .cd-card .cd-btn{display:none}
-.cd-vid span + span::before{display:none}
 .cd-tabs{margin:0 -20px 4px;padding:0 20px;gap:22px;overflow-x:auto;scrollbar-width:none}
 .cd-tabs::-webkit-scrollbar{display:none}
 .cd-tab{height:48px;font-size:14px;flex-shrink:0}
@@ -209,11 +199,9 @@ h1,h2,h3,p{text-wrap:pretty}
 .cd-h2{font-size:21px;letter-spacing:-.4px}
 .cd-outs{grid-template-columns:minmax(0,1fr);gap:12px}
 .cd-outs li{font-size:14px}
-.cd-for{padding:14px;font-size:13px;align-items:flex-start}
 .cd-mh{padding:12px 14px;gap:12px;min-height:60px}
 .cd-mn{width:28px;height:28px;font-size:12px}
 .cd-mt{font-size:15px}
-.cd-mm{display:none}
 .cd-ls{padding:0 14px 12px 54px}
 .cd-l{font-size:13px}
 .cd-route{grid-template-columns:minmax(0,1fr);gap:0;padding:18px 18px 4px}
@@ -224,7 +212,10 @@ h1,h2,h3,p{text-wrap:pretty}
 .cd-sk,.cd-stt,.cd-std{grid-column:2}
 .cd-val{grid-template-columns:minmax(0,1fr);gap:14px;padding:20px}
 .cd-seal{width:52px;height:52px}
-.cd-checks{grid-template-columns:minmax(0,1fr);gap:8px}
+.cd-checks{display:flex;flex-wrap:wrap;gap:8px}
+.cd-chk{padding:8px 12px;border-radius:999px}
+.cd-chk span{display:none}
+.cd-chk b{font-size:13px}
 .cd-cr{gap:14px}
 .cd-cav{width:56px;height:56px;font-size:18px}
 .cd-cb{font-size:14px}
@@ -282,12 +273,11 @@ h1,h2,h3,p{text-wrap:pretty}
 <h1 class="cd-h1">Data Foundations: Spreadsheets to SQL</h1>
 <p class="cd-sub">Go from spreadsheets to confident SQL queries, using real business data.</p>
 <div class="cd-by">
-<span class="cd-who"><span class="cd-av" aria-hidden="true">AO</span><span><b>Amara Okafor</b> · Independent creator</span></span>
+<span class="cd-who"><span class="cd-av" aria-hidden="true">AO</span><span><b>Amara Okafor</b></span></span>
 <span class="cd-sep" aria-hidden="true"></span>
 <span class="cd-fact"><svg class="cd-star" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><b>4.8</b> (3.4k reviews)</span>
-<span class="cd-fact"><b>Beginner</b></span>
+<span class="cd-fact"><b>Beginner</b><span class="cd-tip" tabindex="0" data-tip="Made for beginners. No coding needed; basic spreadsheet use is enough.">i</span></span>
 <span class="cd-fact"><b>12 hrs</b></span>
-<span class="cd-fact">English</span>
 </div>
 </div>
 
@@ -304,8 +294,6 @@ h1,h2,h3,p{text-wrap:pretty}
 <li><span class="cd-ck" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>{{o}}</li>
 </sc-for>
 </ul>
-<div class="cd-skills"><span class="cd-skl">Skills</span><span class="cd-chip">Excel</span><span class="cd-chip">SQL</span><span class="cd-chip">Data cleaning</span><span class="cd-chip">Joins</span><span class="cd-chip">Aggregation</span></div>
-<div class="cd-for"><span class="cd-fi" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg></span><span><b>Made for beginners.</b> No coding needed; basic spreadsheet use is enough.</span></div>
 </section>
 
 <section class="cd-sec" ref="{{refCurriculum}}" aria-labelledby="cd-cu">
@@ -316,7 +304,6 @@ h1,h2,h3,p{text-wrap:pretty}
 <button class="cd-mh" type="button" aria-expanded="{{m.exp}}" onClick="{{m.toggle}}">
 <span class="cd-mn">{{m.n}}</span>
 <span class="cd-mt">{{m.t}}</span>
-<span class="cd-mm">4 lessons · 2 hrs</span>
 <svg class="cd-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
 </button>
 <sc-if value="{{m.open}}" hint-placeholder-val="{{ false }}">
@@ -353,7 +340,7 @@ h1,h2,h3,p{text-wrap:pretty}
 <div class="cd-chk"><b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Learning design</b><span>Lessons and practice add up to the outcome</span></div>
 <div class="cd-chk"><b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Assessment</b><span>Fair, and measures what it claims</span></div>
 </div>
-<div class="cd-vf"><span class="cd-vid"><span>Version 2.1 · validated 24 Sep 2026</span><span>VAL-CRD-004821</span></span><a class="cd-link" href="#">View record →</a></div>
+<div class="cd-vf"><span class="cd-vid">Validated 24 Sep 2026<span class="cd-tip" tabindex="0" data-tip="Version 2.1 · record VAL-CRD-004821. Every update is checked again before it goes live.">i</span></span><a class="cd-link" href="#">View record →</a></div>
 </div>
 </div>
 </section>
@@ -408,11 +395,8 @@ h1,h2,h3,p{text-wrap:pretty}
 </sc-if>
 <a class="cd-ask" href="#"><span class="cd-orb" aria-hidden="true"></span>Ask your AI Coach if it fits</a>
 <ul class="cd-inc">
-<li><span class="cd-ii" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16"></path></svg></span>6 modules · 24 lessons</li>
-<li><span class="cd-ii" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v13H3zM8 7V4h8v3"></path></svg></span>1 real-world project</li>
 <li><span class="cd-ii" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"></path></svg></span>AI Coach in every lesson</li>
 <li><span class="cd-ii" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c1-3.5 3.5-5 6.5-5s5.5 1.5 6.5 5M16 4.5a3.5 3.5 0 0 1 0 7M18 15c2 .6 3.2 2.2 3.5 5"></path></svg></span>Human tutor when you need one</li>
-<li><span class="cd-ii" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>Verified certificate</li>
 </ul>
 </div>
 </div>
@@ -434,7 +418,7 @@ h1,h2,h3,p{text-wrap:pretty}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"viewer":{"editor":"enum","options":["guest","learner"],"default":"guest"},"$preview":{"width":1440,"height":3029}}'>
+<script type="text/x-dc" data-dc-script data-props='{"viewer":{"editor":"enum","options":["guest","learner"],"default":"guest"},"$preview":{"width":1440,"height":2889}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);

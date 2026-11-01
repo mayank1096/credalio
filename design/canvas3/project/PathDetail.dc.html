@@ -35,14 +35,12 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd-crumb{display:flex;align-items:center;gap:8px;font-size:13px;color:#8A93AD}
 .pd-crumb a{color:#5B6582;text-decoration:none}
 .pd-crumb a:hover{color:#1652F0}
-.pd-k{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:#1652F0}
 .pd-h1{margin:0;font-size:52px;line-height:1.04;font-weight:600;letter-spacing:-1.7px;color:#0B1433}
 .pd-sub{margin:0;max-width:660px;font-size:18px;line-height:1.55;color:#4A5578}
-.pd-facts{display:grid;grid-template-columns:repeat(4,auto);gap:0;margin-top:8px;border-radius:18px;background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid #E3E8F3;box-shadow:0 20px 44px -36px rgba(11,20,51,.45)}
-.pd-fact{display:flex;flex-direction:column;gap:3px;padding:14px 22px}
-.pd-fact + .pd-fact{border-left:1px solid #EEF1F7}
-.pd-fl{font-size:12px;font-weight:500;color:#8A93AD;white-space:nowrap}
-.pd-fv{font-size:15px;font-weight:600;color:#0B1433;white-space:nowrap}
+.pd-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px 0;font-size:15px;color:#5B6582}
+.pd-meta > *{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.pd-meta > * + *::before{content:"";width:4px;height:4px;border-radius:9px;background:#B5BDD3;margin:0 14px}
+.pd-meta b{font-weight:600;color:#0B1433}
 .pd-save{height:44px;padding:0 18px 0 14px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;display:inline-flex;align-items:center;gap:8px;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:600;color:#0B1433;cursor:pointer;transition:border-color .2s ease}
 .pd-save:hover{border-color:#1652F0}
 .pd-save-on{border-color:#1652F0;color:#1652F0;background:#F5F8FF}
@@ -80,7 +78,6 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd-skip{opacity:.6}
 .pd-skip .pd-tt{text-decoration:line-through;text-decoration-color:#8A93AD;color:#5B6582}
 .pd-sk{height:24px;padding:0 9px;border-radius:999px;background:#E7F5EE;color:#0F6B45;display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;white-space:nowrap;flex-shrink:0}
-.pd-kind{font-size:12px;font-weight:500;color:#8A93AD;white-space:nowrap}
 .pd-proof{position:relative;isolation:isolate;overflow:hidden;border-radius:20px;background:#0B1433;color:#FFFFFF;padding:20px 22px 22px}
 .pd-proof::after{content:"";position:absolute;inset:0;z-index:-1;background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat;transform:scale(1.5);transform-origin:0 35%;pointer-events:none}
 .pd-proof .pd-snote{color:rgba(255,255,255,.65)}
@@ -120,14 +117,13 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd-btn{height:56px;padding:0 8px 0 24px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:space-between;font-family:'Google Sans',system-ui,sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;transition:background .2s ease}
 .pd-btn:hover{background:#0E3BB8}
 .pd-btn i{width:40px;height:40px;border-radius:999px;background:#FFFFFF;display:flex;align-items:center;justify-content:center}
-.pd-small{font-size:12px;color:#8A93AD;text-align:center;margin-top:-8px}
 .pd-mbar{display:none}
 .sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
 .sx-fin{max-width:1312px;margin:0 auto;padding:40px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#5B6582}
 .sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
 .sx-fin a{color:#3A4566;text-decoration:none}
 .sx-fin a:hover{color:#1652F0}
-@media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}.pd-grid{grid-template-columns:minmax(0,1fr) 360px;gap:0 36px}.pd-facts{grid-template-columns:repeat(2,auto)}.pd-fact:nth-child(3){border-left:none}.pd-fact:nth-child(n+3){border-top:1px solid #EEF1F7}.pd-pg{grid-template-columns:minmax(0,1fr)}}
+@media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}.pd-grid{grid-template-columns:minmax(0,1fr) 360px;gap:0 36px}.pd-pg{grid-template-columns:minmax(0,1fr)}}
 @media (max-width: 960px){
 .pd-grid{grid-template-columns:minmax(0,1fr);padding-top:32px}
 .pd-main{display:contents}
@@ -135,9 +131,6 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd-hero{order:1;padding-bottom:28px}
 .pd-side{order:2;position:static;margin-bottom:40px}
 .pd-panel{max-width:560px}
-.pd-facts{grid-template-columns:repeat(4,auto)}
-.pd-fact:nth-child(3){border-left:1px solid #EEF1F7}
-.pd-fact:nth-child(n+3){border-top:none}
 .pd-pg{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media (max-width: 520px){.sx-login{display:none !important}}
@@ -152,18 +145,16 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd-hero{gap:12px;padding-bottom:24px}
 .pd-h1{font-size:32px;letter-spacing:-.9px}
 .pd-sub{font-size:15px}
-.pd-facts{grid-template-columns:1fr 1fr;align-self:stretch;margin-top:4px}
-.pd-fact{padding:11px 14px}
-.pd-fact:nth-child(3){border-left:none}
-.pd-fact:nth-child(n+3){border-top:1px solid #EEF1F7}
-.pd-fv{font-size:13px}
-.pd-plus{display:none}
+.pd-meta{font-size:13px}
+.pd-meta > * + *::before{margin:0 9px}
+.pd-meta > b{flex-basis:100%}
+.pd-meta > b + *::before{display:none}
 .pd-acts{width:100%}
 .pd-panel{padding:18px;gap:16px;border-radius:20px}
 .pd-pt{font-size:18px}
 .pd-chip{height:36px;font-size:13px}
 .pd-sv b{font-size:18px}
-.pd-panel .pd-btn,.pd-panel .pd-small{display:none}
+.pd-panel .pd-btn{display:none}
 .pd-side{margin-bottom:32px}
 .pd-h2{font-size:22px;letter-spacing:-.5px}
 .pd-sh{flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:18px}
@@ -177,7 +168,6 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd-it{gap:10px;padding:6px 10px;min-height:48px}
 .pd-ti{width:28px;height:28px;border-radius:9px}
 .pd-tt{font-size:14px}
-.pd-kind{display:none}
 .pd-proof{padding:16px}
 .pd-pg{grid-template-columns:minmax(0,1fr);gap:8px}
 .pd-pi{flex-direction:row;align-items:center;gap:12px;padding:10px 12px}
@@ -220,15 +210,9 @@ h1,h2,h3,p{text-wrap:pretty}
 <div class="pd-main">
 <div class="pd-hero">
 <nav class="pd-crumb" aria-label="Breadcrumb"><a href="#">Career paths</a><span aria-hidden="true">/</span><span>Data Analyst</span></nav>
-<span class="pd-k">Career Path · Data &amp; AI</span>
 <h1 class="pd-h1">Become a Data Analyst</h1>
 <p class="pd-sub">A designed route from beginner to job-ready, built from validated courses, real projects and a professional certification.</p>
-<div class="pd-facts">
-<div class="pd-fact"><span class="pd-fl">Level</span><span class="pd-fv">Beginner → Job-ready</span></div>
-<div class="pd-fact"><span class="pd-fl">Time</span><span class="pd-fv">{{time}}</span></div>
-<div class="pd-fact"><span class="pd-fl">Includes</span><span class="pd-fv">{{nCourses}} courses · 4 projects</span></div>
-<div class="pd-fact"><span class="pd-fl">You earn</span><span class="pd-fv">Certification<span class="pd-plus"> + portfolio</span></span></div>
-</div>
+<div class="pd-meta"><b>Beginner → Job-ready</b><span><b>{{nCourses}}</b> courses</span><span><b>4</b> projects</span><span><b>1</b> certification</span></div>
 <div class="pd-acts">
 <button class="pd-save {{saveCls}}" type="button" aria-pressed="{{saveOn}}" onClick="{{toggleSave}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="{{saveFill}}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg>{{saveLabel}}</button>
 <span class="pd-note">12,480 learners on this path</span>
@@ -259,7 +243,6 @@ h1,h2,h3,p{text-wrap:pretty}
 <span class="pd-ti" style="background: {{it.bg}}; color: {{it.fg}}" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16" style="display: {{it.i0}}"></path><path d="M3 7h18v13H3zM8 7V4h8v3" style="display: {{it.i1}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{it.i2}}"></path></svg></span>
 <span class="pd-tc"><span class="pd-tt">{{it.t}}</span><span class="pd-tm">{{it.meta}}</span></span>
 <sc-if value="{{it.skipped}}" hint-placeholder-val="{{ false }}"><span class="pd-sk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>You know this</span></sc-if>
-<sc-if value="{{it.kept}}" hint-placeholder-val="{{ true }}"><span class="pd-kind">{{it.kind}}</span></sc-if>
 </li>
 </sc-for>
 </ul>
@@ -304,7 +287,6 @@ h1,h2,h3,p{text-wrap:pretty}
 <div class="pd-ct">{{covText}} <a class="pd-link" href="#">{{covLink}} →</a></div>
 </div>
 <a class="pd-btn" href="#">Build my journey<i aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></a>
-<sc-if value="{{guest}}" hint-placeholder-val="{{ true }}"><div class="pd-small">Free to start · No card needed</div></sc-if>
 </div>
 </aside>
 
@@ -324,7 +306,7 @@ h1,h2,h3,p{text-wrap:pretty}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"viewer":{"editor":"enum","options":["guest","learner"],"default":"guest"},"$preview":{"width":1440,"height":2266}}'>
+<script type="text/x-dc" data-dc-script data-props='{"viewer":{"editor":"enum","options":["guest","learner"],"default":"guest"},"$preview":{"width":1440,"height":2176}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
@@ -334,7 +316,7 @@ class Component extends DCLogic {
       { name: 'Foundation', note: 'Start here', items: [['Data Foundations: Spreadsheets to SQL', 'Course', '12 hrs · Gold Validated', 200, 'Excel'], ['Statistics Essentials', 'Course', '10 hrs · Silver Validated', 300, 'Statistics']] },
       { name: 'Core skills', note: 'The analyst toolkit', items: [['SQL for Data Analysis', 'Course', '10 hrs · Gold Validated', 800, 'SQL'], ['Data Cleaning in Practice', 'Course', '8 hrs · Gold Validated', 300, 'SQL'], ['Python for Data Analysis', 'Course', '14 hrs · Silver Validated', 400, 'Python']] },
       { name: 'Applied learning', note: 'Using your skills in context', items: [['Data Visualisation with Power BI', 'Course', '6 hrs · Silver Validated', 400, 'Power BI'], ['Storytelling with Data', 'Course', '5 hrs · Gold Validated', 250, ''], ['Analytics in a Business Context', 'Course', '6 hrs · Silver Validated', 250, '']] },
-      { name: 'Projects', note: 'Real work, reviewed by mentors', items: [['Clean and analyse a real sales dataset', 'Project', 'Reviewed by a mentor', 100, ''], ['Build a KPI dashboard', 'Project', 'Reviewed by a mentor', 100, ''], ['Customer segmentation analysis', 'Project', 'Reviewed by a mentor', 100, ''], ['Forecasting project', 'Project', 'Capstone', 100, '']] },
+      { name: 'Projects', note: 'Real work, reviewed by mentors', items: [['Clean and analyse a real sales dataset', 'Project', 'Retail data · 1 week', 100, ''], ['Build a KPI dashboard', 'Project', 'Power BI · 1 week', 100, ''], ['Customer segmentation analysis', 'Project', 'Python · 2 weeks', 100, ''], ['Forecasting project', 'Project', 'Capstone · 3 weeks', 100, '']] },
       { name: 'Certification', note: 'Assessed to a professional standard', items: [['Professional Certificate in Data Analysis', 'Certification', '30 hrs · 1 practical exam', 500, '']] }
     ];
     this.KIND = { Course: ['#EAF0FF', '#1652F0', 0], Project: ['#E7F5EE', '#0F6B45', 1], Certification: ['#FFF6E5', '#8A4F00', 2] };
@@ -364,7 +346,7 @@ class Component extends DCLogic {
       if (me && !ok && r.cost > 0 && firstNeed < 0) { firstNeed = k; need = true; }
       return { n: k + 1, name: r.st.name, note: r.st.note, cost: fmt(r.cost), ok: ok, need: need, cls: 'pd-stage-' + k,
         items: r.items.map(function (x) {
-          var kd = self.KIND[x.it[1]], v = { t: x.it[0], meta: x.sk ? 'Skipped: you already know ' + x.it[4] : x.it[2], kind: x.it[1], skipped: x.sk, kept: !x.sk, cls: x.sk ? 'pd-skip' : '', bg: kd[0], fg: kd[1] };
+          var kd = self.KIND[x.it[1]], v = { t: x.it[0], meta: x.sk ? 'Skipped: you already know ' + x.it[4] : x.it[2], skipped: x.sk, cls: x.sk ? 'pd-skip' : '', bg: kd[0], fg: kd[1] };
           for (var i = 0; i < 3; i++) v['i' + i] = kd[2] === i ? 'inline' : 'none';
           return v;
         }) };
@@ -378,7 +360,7 @@ class Component extends DCLogic {
     } else {
       var allow = this.PLAN[S.plan], months = Math.ceil(total / allow);
       covW = Math.min(100, Math.round(allow / Math.max(1, total) * 100)) + '%';
-      covText = months <= 1 ? S.plan + ' (' + fmt(allow) + ' DLP a month) covers the whole route in your first month.' : (months <= 4 ? S.plan + ' (' + fmt(allow) + ' DLP a month) covers the whole route in ' + months + ' months.' : 'Free (200 DLP a month) starts you on the first course.');
+      covText = months <= 1 ? S.plan + ' covers the whole route in your first month.' : (months <= 4 ? S.plan + ' covers the whole route in ' + months + ' months.' : 'Free starts you on the first course.');
       covLink = 'Compare plans';
     }
     return {

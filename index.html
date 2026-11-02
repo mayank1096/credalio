@@ -17,6 +17,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
+.dlp-c{position:relative;display:inline-block;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;background:#1652F0;box-shadow:inset 0 0 0 1.5px #0E3BB8,inset 0 0 0 3px #4C7DFF;overflow:hidden;vertical-align:-3px;animation:dlpFlip 6s ease-in-out infinite}
+.dlp-c::before{content:"D";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Google Sans',system-ui,sans-serif;font-size:10px;font-weight:700;line-height:1;color:#FFFFFF}
+.dlp-c::after{content:"";position:absolute;top:-30%;bottom:-30%;left:-70%;width:45%;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.7),rgba(255,255,255,0));transform:skewX(-18deg);animation:dlpShine 6s ease-in-out infinite}
+.dlp-lg{width:26px;height:26px;vertical-align:-5px;box-shadow:inset 0 0 0 2px #0E3BB8,inset 0 0 0 4px #4C7DFF}
+.dlp-lg::before{font-size:14px}
+@keyframes dlpFlip{0%,70%{transform:rotateY(0)}82%{transform:rotateY(180deg)}94%,100%{transform:rotateY(360deg)}}
+@keyframes dlpShine{0%,30%{left:-70%}48%,100%{left:130%}}
+@media (prefers-reduced-motion: reduce){.dlp-c,.dlp-c::after{animation:none}}
 h1,h2,h3,p,.ci-d{text-wrap:pretty}
 .fd-h3{text-wrap:balance}
 @media (min-width: 761px){p,.ci-d{text-wrap:balance}}
@@ -207,7 +215,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ac-a{background:#FFFFFF;color:#0B1433;border:1px solid #E6EAF3;border-top-left-radius:4px;padding:16px 18px;box-shadow:0 20px 40px -30px rgba(11,20,51,.35)}
 .ac-caret{display:inline-block;width:2px;height:1.05em;margin-left:2px;vertical-align:-2px;background:currentColor;animation:acBlink .9s steps(1) infinite}
 @keyframes acBlink{50%{opacity:0}}
-.ac-orb{position:relative;width:44px;height:44px;flex-shrink:0;border-radius:999px;background:radial-gradient(circle at 34% 28%,#DCE7FF 0%,#7FA4FF 24%,#1652F0 62%,#0B2A8F 100%);box-shadow:0 10px 24px -10px rgba(22,82,240,.7)}
+.ac-orb{position:relative;width:44px;height:44px;flex-shrink:0;border-radius:999px;background:#FFFFFF url(img/mark.png) center / 60% no-repeat;box-shadow:0 0 0 1.5px #DCE5FB,0 10px 24px -12px rgba(22,82,240,.45)}
 .ac-orb-ring{position:absolute;inset:-6px;border-radius:999px;background:conic-gradient(from 0deg,rgba(22,82,240,0),#4C7DFF,rgba(22,82,240,0) 60%);-webkit-mask:radial-gradient(closest-side,transparent 78%,#000 80%);mask:radial-gradient(closest-side,transparent 78%,#000 80%);animation:acSpin 1s linear infinite}
 @keyframes acSpin{to{transform:rotate(360deg)}}
 .ac-shimmer{background:linear-gradient(90deg,#8A93AD 0%,#8A93AD 35%,#1652F0 50%,#8A93AD 65%,#8A93AD 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:acShim 1.6s linear infinite}
@@ -950,7 +958,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 <div style="display: flex; flex-direction: column; gap: 18px; padding-bottom: 6px">
 <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">Each format is built for a different kind of progress. Use one, or combine them into a single plan.</p>
 <a class="gc-coach" href="#" style="align-self: flex-start; height: 48px; padding: 0 18px 0 6px; border-radius: 999px; border: 1.5px solid #D6DDEE; background: #FFFFFF; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #0B1433; font-size: 14px; font-weight: 500">
-<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 999px; background: radial-gradient(circle at 34% 28%, #DCE7FF 0%, #7FA4FF 25%, #1652F0 62%, #0B2A8F 100%); box-shadow: 0 0 0 3px #EAF0FF"></span>
+<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 999px; background: #FFFFFF url(img/mark.png) center / 62% no-repeat; box-shadow: 0 0 0 1.5px #DCE5FB"></span>
 Not sure which? Ask your AI Coach
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
 </a>
@@ -997,7 +1005,7 @@ Not sure which? Ask your AI Coach
 </div>
 <div class="gc-float gc-f3" style="position: absolute; right: 22px; top: 40px; width: 104px; height: 104px">
 <svg class="gc-spin" viewBox="0 0 104 104" style="position: absolute; inset: 0; width: 100%; height: 100%"><defs><path id="gcSeal" d="M52,52 m-41,0 a41,41 0 1,1 82,0 a41,41 0 1,1 -82,0"></path></defs><text font-family="Google Sans, system-ui, sans-serif" font-size="8.6" font-weight="600" letter-spacing="2.4" fill="#1652F0"><textPath href="#gcSeal">ASSESSED · VERIFIED · RECOGNISED ·</textPath></text></svg>
-<span style="position: absolute; inset: 22px; border-radius: 999px; background: radial-gradient(circle at 34% 28%, #DCE7FF 0%, #7FA4FF 22%, #1652F0 60%, #0B2A8F 100%); box-shadow: 0 0 0 4px #FFFFFF, 0 14px 26px -12px rgba(22,82,240,.7); display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+<span style="position: absolute; inset: 22px; border-radius: 999px; background: #1652F0; box-shadow: 0 0 0 4px #FFFFFF, 0 14px 26px -12px rgba(22,82,240,.7); display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
 </div>
 <span class="gc-float gc-f1" style="position: absolute; left: 26px; bottom: 30px; height: 30px; padding: 0 11px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: #0F6B45; box-shadow: 0 12px 24px -16px rgba(11,20,51,.4)"><span style="width: 7px; height: 7px; border-radius: 9px; background: #0F6B45"></span>Practical exam passed</span>
 </div>
@@ -1538,7 +1546,7 @@ Not sure which? Ask your AI Coach
 <div class="ci-row"><span>Educators</span><b style="margin-left: auto; font-weight: 600; color: #0B1433">6</b></div>
 <div style="height: 30px"></div>
 </div>
-<div class="ci-float" style="left: -128px; top: 128px"><span style="width: 32px; height: 32px; border-radius: 999px; background: radial-gradient(circle at 34% 28%, #DCE7FF 0%, #7FA4FF 24%, #1652F0 62%, #0B2A8F 100%); display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">Verifiable credentials</span><span style="font-size: 15px; font-weight: 600">186 issued</span></span></div>
+<div class="ci-float" style="left: -128px; top: 128px"><span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">Verifiable credentials</span><span style="font-size: 15px; font-weight: 600">186 issued</span></span></div>
 </div>
 </a>
 </div>
@@ -1599,7 +1607,7 @@ Not sure which? Ask your AI Coach
 <sc-for list="{{pr.plans}}" as="p" hint-placeholder-count="3">
 <div class="pr-card {{p.cls}}">
 <div class="pr-top"><span class="pr-name">{{p.name}}</span><sc-if value="{{p.best}}" hint-placeholder-val="{{ false }}"><span class="pr-badge">Best for deeper learning</span></sc-if></div>
-<div class="pr-dlp"><span class="pr-big">{{p.dlp}}</span><span class="pr-unit">{{p.unit}}</span></div>
+<div class="pr-dlp"><span class="dlp-c dlp-lg"></span><span class="pr-big">{{p.dlp}}</span><span class="pr-unit">{{p.unit}}</span></div>
 <span class="pr-hrs">≈ {{p.hrs}} of eligible learning</span>
 <span class="pr-price">{{p.price}}</span>
 <span class="pr-desc">{{p.desc}}</span>

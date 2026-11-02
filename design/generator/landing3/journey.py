@@ -29,25 +29,22 @@ css=r'''
 .jy-goal input{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:'Google Sans',system-ui,sans-serif;font-size:17px;color:#0B1433}
 .jy-goal input::placeholder{color:#8A93AD}
 .jy-sugs{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
-.jy-sl{font-size:13px;color:#8A93AD;margin-right:2px}
 .jy-chip{height:38px;padding:0 15px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:500;color:#0B1433;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:border-color .2s ease,background .2s ease}
 .jy-chip:hover{border-color:#9DB8F7}
 .jy-chip-on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
 .jy-chip svg{display:none}
 .jy-chip-on svg{display:block}
 .jy-opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.jy-opt{position:relative;display:flex;align-items:flex-start;gap:14px;padding:18px;border-radius:14px;border:1.5px solid #E3E8F3;background:#FFFFFF;text-align:left;font-family:'Google Sans',system-ui,sans-serif;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.jy-opt{position:relative;display:flex;align-items:center;gap:14px;min-height:60px;box-sizing:border-box;padding:14px 18px;border-radius:14px;border:1.5px solid #E3E8F3;background:#FFFFFF;text-align:left;font-family:'Google Sans',system-ui,sans-serif;cursor:pointer;transition:border-color .2s ease,background .2s ease}
 .jy-opt:hover{border-color:#C9D7FA}
 .jy-opt-on{background:#EAF0FF;border-color:#1652F0}
-.jy-rad{width:20px;height:20px;border-radius:999px;border:1.5px solid #CBD3E6;background:#FFFFFF;box-sizing:border-box;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.jy-rad{width:20px;height:20px;border-radius:999px;border:1.5px solid #CBD3E6;background:#FFFFFF;box-sizing:border-box;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
 .jy-opt-on .jy-rad{background:#1652F0;border-color:#1652F0}
 .jy-ot{display:block;font-size:15px;font-weight:600;color:#0B1433}
-.jy-od{display:block;margin-top:3px;font-size:13px;line-height:1.45;color:#5B6582}
 .jy-err{font-size:13px;color:#B42318}
 .jy-date{height:44px;box-sizing:border-box;padding:0 14px;border-radius:12px;border:1.5px solid #D6DDEE;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;color:#0B1433;align-self:flex-start}
 .jy-acts{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:48px;padding-top:24px;border-top:1px solid #EEF1F7}
 .jy-back{height:52px;padding:0 20px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;font-weight:600;color:#0B1433;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
-.jy-ghost{font-size:14px;color:#5B6582}
 .jy-btn{box-sizing:border-box;height:56px;padding:0 8px 0 26px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;display:inline-flex;align-items:center;gap:16px;font-family:'Google Sans',system-ui,sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .2s ease}
 .jy-btn:hover{background:#0E3BB8}
 .jy-btn i{width:40px;height:40px;border-radius:999px;background:#FFFFFF;display:flex;align-items:center;justify-content:center}
@@ -88,12 +85,10 @@ css=r'''
 .jy-ready{max-width:680px;margin:0 auto;padding:56px 24px 96px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
 .jy-glow{position:absolute;left:50%;top:-40px;width:720px;height:360px;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 50%,rgba(30,158,99,.16),rgba(30,158,99,0));pointer-events:none}
 .jy-emb{position:relative;width:84px;height:84px;border-radius:999px;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(15,107,69,.1),0 24px 48px -20px rgba(15,107,69,.6)}
-.jy-pill{position:relative;margin-top:24px;height:30px;padding:0 12px;border-radius:999px;background:#E7F5EE;color:#0F6B45;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500}
-.jy-pill i{width:7px;height:7px;border-radius:999px;background:#1E9E63;display:block}
-.jy-rh{position:relative;margin:16px 0 0;font-size:42px;line-height:1.08;font-weight:600;letter-spacing:-1.3px;color:#0B1433}
+.jy-rh{position:relative;margin:24px 0 0;font-size:42px;line-height:1.08;font-weight:600;letter-spacing:-1.3px;color:#0B1433}
 .jy-rs{position:relative;margin:12px 0 0;font-size:17px;line-height:1.55;color:#4A5578}
 .jy-card{position:relative;width:100%;margin-top:32px;padding:24px;border-radius:22px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 40px 80px -52px rgba(11,20,51,.5);box-sizing:border-box;text-align:left}
-.jy-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-radius:16px;background:#F5F8FF}
+.jy-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-radius:16px;background:#F5F8FF}
 .jy-sv{display:flex;flex-direction:column;gap:3px;padding:14px 18px}
 .jy-sv + .jy-sv{border-left:1px solid #E3E8F3}
 .jy-sv > span{font-size:12px;font-weight:500;color:#8A93AD}
@@ -128,16 +123,18 @@ css=r'''
 .jy-goal input{font-size:16px}
 .jy-sugs{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px;padding:0 20px;scrollbar-width:none}
 .jy-sugs::-webkit-scrollbar{display:none}
-.jy-sl{display:none}
 .jy-chip{flex-shrink:0;height:38px;font-size:14px}
-.jy-opts{grid-template-columns:minmax(0,1fr);gap:10px}
-.jy-opt{padding:14px 16px;gap:12px}
+.jy-row{flex-wrap:nowrap !important;overflow-x:auto;margin:0 -20px !important;padding:0 20px !important;scrollbar-width:none}
+.jy-row::-webkit-scrollbar{display:none}
+.jy-opts{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.jy-opt{padding:12px;gap:10px;min-height:64px;align-items:flex-start}
+.jy-opt .jy-rad{margin-top:1px}
+.jy-ot{font-size:14px;line-height:1.3}
 .jy-acts{position:sticky;bottom:0;z-index:10;margin:40px -20px 0;padding:12px 16px;border-top:1px solid #E6EAF3;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 .jy-acts .jy-btn{flex:1;justify-content:space-between;height:52px}
 .jy-acts .jy-btn i{width:38px;height:38px}
 .jy-back{height:52px;width:52px;padding:0;justify-content:center}
 .jy-back span{display:none}
-.jy-ghost{display:none}
 .jy-lr{flex-direction:column;align-items:stretch;gap:10px;padding:14px}
 .jy-seg button{flex:1}
 .jy-cv{flex-wrap:wrap;padding:14px;gap:12px}
@@ -154,14 +151,12 @@ css=r'''
 .jy-rh{font-size:28px;letter-spacing:-.8px}
 .jy-rs{font-size:15px}
 .jy-card{padding:16px;border-radius:20px;margin-top:28px}
-.jy-stats{grid-template-columns:minmax(0,1fr)}
-.jy-sv{flex-direction:row;justify-content:space-between;align-items:center;padding:12px 14px}
-.jy-sv + .jy-sv{border-left:none;border-top:1px solid #E3E8F3}
-.jy-sv b{font-size:15px}
-.jy-route{grid-template-columns:minmax(0,1fr);gap:0;margin-top:18px}
-.jy-route::before{display:none}
-.jy-rt{flex-direction:row;gap:12px;min-height:40px;font-size:14px;text-align:left;position:relative}
-.jy-rt:not(:last-child)::after{content:"";position:absolute;left:13px;top:34px;bottom:-6px;width:2px;background:#C9D7FA}
+.jy-sv{padding:12px 14px}
+.jy-sv b{font-size:16px}
+.jy-route{margin-top:18px}
+.jy-rt{font-size:10.5px;gap:6px}
+.jy-rn{width:26px;height:26px;font-size:11px}
+.jy-route::before{top:12px}
 .jy-cta{position:sticky;bottom:0;z-index:10;align-self:stretch;margin:28px -20px 0;padding:12px 16px 14px;box-sizing:border-box;border-top:1px solid #E6EAF3;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);gap:4px}
 .jy-cta .jy-btn{width:100%;justify-content:space-between;height:52px}
 .jy-cta .jy-link{min-height:40px}
@@ -185,29 +180,29 @@ body='''<div class="jy-page">
 <main class="jy-main">
 <div class="jy-coach"><span class="jy-av" aria-hidden="true"></span>Your AI Coach</div>
 <h1 class="jy-h1">Let’s see where you’re starting from.</h1>
-<p class="jy-sub">Four quick answers. I’ll build a journey around them.</p>
+<p class="jy-sub">Four quick answers, then I build your journey.</p>
 <div class="jy-q">
 <label class="jy-ql" for="jy-goal">Who do you want to become?</label>
 <div class="jy-goal"><input id="jy-goal" type="text" placeholder="I want to become…" value="{{goalText}}" onInput="{{onGoal}}" autocomplete="off"></div>
-<div class="jy-sugs"><span class="jy-sl">Popular</span><sc-for list="{{sugs}}" as="c" hint-placeholder-count="4"><button class="jy-chip {{c.cls}}" type="button" aria-pressed="{{c.on}}" onClick="{{c.pick}}">%(ck)s{{c.label}}</button></sc-for></div>
+<div class="jy-sugs"><sc-for list="{{sugs}}" as="c" hint-placeholder-count="4"><button class="jy-chip {{c.cls}}" type="button" aria-pressed="{{c.on}}" onClick="{{c.pick}}">%(ck)s{{c.label}}</button></sc-for></div>
 </div>
 <div class="jy-q" role="radiogroup" aria-labelledby="jy-lvl">
 <span class="jy-ql" id="jy-lvl">Where are you starting from?</span>
 <div class="jy-opts">
-<sc-for list="{{levels}}" as="o" hint-placeholder-count="4"><button class="jy-opt {{o.cls}}" type="button" role="radio" aria-checked="{{o.on}}" onClick="{{o.pick}}"><span class="jy-rad">%(ck11)s</span><span><span class="jy-ot">{{o.title}}</span><span class="jy-od">{{o.desc}}</span></span></button></sc-for>
+<sc-for list="{{levels}}" as="o" hint-placeholder-count="4"><button class="jy-opt {{o.cls}}" type="button" role="radio" aria-checked="{{o.on}}" onClick="{{o.pick}}"><span class="jy-rad">%(ck11)s</span><span class="jy-ot">{{o.title}}</span></button></sc-for>
 </div>
 <sc-if value="{{showErr}}" hint-placeholder-val="{{ false }}"><span class="jy-err" role="alert">{{errText}}</span></sc-if>
 </div>
 <div class="jy-q">
 <span class="jy-ql">What do you want from it?<em>Choose any</em></span>
-<div class="jy-sugs" style="flex-wrap: wrap; margin: 0; padding: 0"><sc-for list="{{aims}}" as="a" hint-placeholder-count="6"><button class="jy-chip {{a.cls}}" type="button" aria-pressed="{{a.on}}" onClick="{{a.pick}}">%(ck)s{{a.label}}</button></sc-for></div>
+<div class="jy-sugs jy-row" style="flex-wrap: wrap; margin: 0; padding: 0"><sc-for list="{{aims}}" as="a" hint-placeholder-count="6"><button class="jy-chip {{a.cls}}" type="button" aria-pressed="{{a.on}}" onClick="{{a.pick}}">%(ck)s{{a.label}}</button></sc-for></div>
 </div>
 <div class="jy-q">
 <span class="jy-ql">How soon would you like to get there?</span>
-<div class="jy-sugs" style="flex-wrap: wrap; margin: 0; padding: 0"><sc-for list="{{paces}}" as="p" hint-placeholder-count="5"><button class="jy-chip {{p.cls}}" type="button" aria-pressed="{{p.on}}" onClick="{{p.pick}}">%(ck)s{{p.label}}</button></sc-for></div>
+<div class="jy-sugs jy-row" style="flex-wrap: wrap; margin: 0; padding: 0"><sc-for list="{{paces}}" as="p" hint-placeholder-count="5"><button class="jy-chip {{p.cls}}" type="button" aria-pressed="{{p.on}}" onClick="{{p.pick}}">%(ck)s{{p.label}}</button></sc-for></div>
 <sc-if value="{{pickDate}}" hint-placeholder-val="{{ false }}"><input class="jy-date" type="date" aria-label="Target date"></sc-if>
 </div>
-<div class="jy-acts"><span class="jy-ghost">You can change any of this later.</span><button class="jy-btn" type="button" onClick="{{toKnow}}">Continue<i aria-hidden="true">%(arr)s</i></button></div>
+<div class="jy-acts"><span></span><button class="jy-btn" type="button" onClick="{{toKnow}}">Continue<i aria-hidden="true">%(arr)s</i></button></div>
 </main>
 </sc-if>
 
@@ -229,10 +224,6 @@ body='''<div class="jy-page">
 </div>
 </sc-if>
 <div class="jy-q">
-<span class="jy-ql">Have you studied this before?</span>
-<div class="jy-sugs" style="flex-wrap: wrap; margin: 0; padding: 0"><sc-for list="{{studied}}" as="s" hint-placeholder-count="3"><button class="jy-chip {{s.cls}}" type="button" aria-pressed="{{s.on}}" onClick="{{s.pick}}">%(ck)s{{s.label}}</button></sc-for></div>
-</div>
-<div class="jy-q">
 <div class="jy-cv {{cvCls}}">
 <span class="jy-cvi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M12 18v-6M9 15l3-3 3 3"></path></svg></span>
 <span class="jy-cvt"><b>{{cvTitle}}<sc-if value="{{noCv}}" hint-placeholder-val="{{ true }}"><i class="sx-tip" tabindex="0" data-tip="Your AI Coach reads your experience to set a fairer starting point. Only you can see it.">i</i></sc-if></b><span>{{cvSub}}</span></span>
@@ -247,9 +238,8 @@ body='''<div class="jy-page">
 <main class="jy-build" aria-live="polite">
 <div class="jy-ring" aria-hidden="true"><svg viewBox="0 0 112 112" width="100%%" height="100%%"><circle cx="56" cy="56" r="52" fill="none" stroke="#E6EAF3" stroke-width="4"></circle><circle class="jy-arc" cx="56" cy="56" r="52" fill="none" stroke="#1652F0" stroke-width="4" stroke-linecap="round" stroke-dasharray="326.7" style="stroke-dashoffset: {{arc}}"></circle></svg><span class="jy-ring-c"></span></div>
 <h1 class="jy-bh">Building your journey to becoming {{roleA}}</h1>
-<p class="jy-bs">Matching your goal and skills with trusted, validated learning.</p>
 <ol class="jy-list">
-<sc-for list="{{stages}}" as="g" hint-placeholder-count="7"><li class="jy-li {{g.cls}}"><span class="jy-dot">%(ck11)s</span><span class="{{g.tcls}}">{{g.label}}</span></li></sc-for>
+<sc-for list="{{stages}}" as="g" hint-placeholder-count="6"><li class="jy-li {{g.cls}}"><span class="jy-dot">%(ck11)s</span><span class="{{g.tcls}}">{{g.label}}</span></li></sc-for>
 </ol>
 </main>
 </sc-if>
@@ -259,14 +249,12 @@ body='''<div class="jy-page">
 <span class="jy-glow" aria-hidden="true"></span>
 <span aria-hidden="true">%(conf)s</span>
 <span class="jy-emb" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
-<span class="jy-pill"><i></i>Journey ready</span>
 <h1 class="jy-rh">Your journey is ready.</h1>
 <p class="jy-rs">Built around your goal, what you already know and the outcome you want.</p>
 <div class="jy-card">
 <div class="jy-stats">
 <div class="jy-sv"><span>Time</span><b>{{time}}</b></div>
 <div class="jy-sv"><span>Each week</span><b>{{commit}} hours</b></div>
-<div class="jy-sv"><span>You start at</span><b>{{startPt}}</b></div>
 </div>
 <div class="jy-route" aria-label="Your five steps">
 <sc-for list="{{route}}" as="r" hint-placeholder-count="5"><span class="jy-rt"><span class="jy-rn">{{r.n}}</span>{{r.label}}</span></sc-for>
@@ -289,7 +277,7 @@ class Component extends DCLogic {
     if (st === 'building') st = 'build';
     var pre = st !== 'goal';
     this.state = { step: st, goalText: 'I want to become a data analyst', goalKey: 'data', level: pre ? 'related' : '', aims: pre ? { 'Change careers': true } : {}, pace: pre ? '3–6 months' : '', showErr: false,
-      skills: (st === 'know' || pre) ? { Excel: 'Comfortable', SQL: 'Basic' } : {}, none: false, studied: pre ? 'Yes, at school or work' : '', cv: false, buildStep: st === 'build' ? 4 : (st === 'ready' ? 7 : 0) };
+      skills: (st === 'know' || pre) ? { Excel: 'Comfortable', SQL: 'Basic' } : {}, none: false, cv: false, buildStep: st === 'build' ? 3 : (st === 'ready' ? 6 : 0) };
     this.G = {
       data: { chip: 'Data analyst', title: 'Data Analyst', a: 'a data analyst', text: 'I want to become a data analyst', skills: ['Excel', 'SQL', 'Python', 'Statistics', 'Power BI', 'Tableau', 'Data cleaning'], core: 'SQL' },
       design: { chip: 'Product designer', title: 'Product Designer', a: 'a product designer', text: 'I want to become a product designer', skills: ['Figma', 'User research', 'Wireframing', 'Prototyping', 'Visual design', 'Usability testing', 'Design systems'], core: 'Figma' },
@@ -304,7 +292,7 @@ class Component extends DCLogic {
     this.setState({ step: 'build', buildStep: n });
     this.timer = setInterval(function () {
       n++; self.setState({ buildStep: n });
-      if (n >= 7) { clearInterval(self.timer); self.timer = null; setTimeout(function () { self.setState({ step: 'ready' }); }, 700); }
+      if (n >= 6) { clearInterval(self.timer); self.timer = null; setTimeout(function () { self.setState({ step: 'ready' }); }, 700); }
     }, 750);
   }
   keyFor(t) { t = (t || '').toLowerCase(); if (/data\s*analy/.test(t)) return 'data'; if (/product\s*design|ux|ui\s*design/.test(t)) return 'design'; if (/cyber|security/.test(t)) return 'cyber'; if (/project\s*manag/.test(t)) return 'pm'; return ''; }
@@ -319,7 +307,7 @@ class Component extends DCLogic {
     var base = { 'new': [4, 6], basics: [3, 5], related: [3, 4], working: [2, 3] }[S.level || 'new'], lo = base[0], hi = base[1];
     if (strong >= 2) { lo = Math.max(1, lo - 1); hi = Math.max(lo + 1, hi - 1); }
     var commit = { 'No deadline': 5, '1–3 months': 10, '3–6 months': 6, '6–12 months': 4, 'Pick a date': 6 }[S.pace] || 5;
-    var stageLabels = ['Understanding your goal', 'Reviewing the skills you have', 'Finding the gaps', 'Choosing trusted learning', 'Adding real practice', 'Lining up proof and credentials', 'Putting your journey together'];
+    var stageLabels = ['Understanding your goal', 'Reviewing the skills you have', 'Finding the gaps', 'Choosing trusted, validated learning', 'Adding practice and proof', 'Putting your journey together'];
     var step = S.step, idx = { goal: 1, know: 2, build: 3, ready: 3 }[step];
     return {
       isGoal: step === 'goal', isKnow: step === 'know', isBuild: step === 'build', isReady: step === 'ready',
@@ -329,7 +317,7 @@ class Component extends DCLogic {
       sugs: Object.keys(G).map(function (k) { var on = S.goalKey === k; return { label: G[k].chip, on: on ? 'true' : 'false', cls: chk(on), pick: function () { set({ goalKey: k, goalText: G[k].text, skills: {} }); } }; }),
       levels: lv.map(function (l) { var on = S.level === l[0]; return { title: l[1], desc: l[2], on: on ? 'true' : 'false', cls: on ? 'jy-opt-on' : '', pick: function () { set({ level: l[0], showErr: false }); } }; }),
       showErr: S.showErr, errText: !S.goalText.trim() ? 'Tell me who you want to become first.' : 'Choose where you’re starting from.',
-      aims: ['Get my first job', 'Change careers', 'Grow in my current role', 'Learn one specific skill', 'Earn a recognised credential', 'Build a portfolio'].map(function (a) { var on = !!S.aims[a]; return { label: a, on: on ? 'true' : 'false', cls: chk(on), pick: function () { var n = Object.assign({}, S.aims); if (on) delete n[a]; else n[a] = true; set({ aims: n }); } }; }),
+      aims: ['Get my first job', 'Change careers', 'Grow in my current role', 'Earn a recognised credential'].map(function (a) { var on = !!S.aims[a]; return { label: a, on: on ? 'true' : 'false', cls: chk(on), pick: function () { var n = Object.assign({}, S.aims); if (on) delete n[a]; else n[a] = true; set({ aims: n }); } }; }),
       paces: ['No deadline', '1–3 months', '3–6 months', '6–12 months', 'Pick a date'].map(function (p) { var on = S.pace === p; return { label: p, on: on ? 'true' : 'false', cls: chk(on), pick: function () { set({ pace: p }); } }; }),
       pickDate: S.pace === 'Pick a date',
       toKnow: function () { if (!S.goalText.trim() || !S.level) { set({ showErr: true }); return; } set({ step: 'know', showErr: false }); },
@@ -337,13 +325,12 @@ class Component extends DCLogic {
       skills: g.skills.map(function (k) { var on = !!S.skills[k]; return { label: k, on: on ? 'true' : 'false', cls: chk(on), pick: function () { var n = Object.assign({}, S.skills); if (on) delete n[k]; else n[k] = 'Basic'; set({ skills: n, none: false }); } }; }),
       hasSkills: sel.length > 0,
       rows: sel.map(function (k) { return { name: k, levels: ['Basic', 'Comfortable', 'Advanced'].map(function (l) { var on = S.skills[k] === l; return { label: l, on: on ? 'true' : 'false', cls: on ? 'jy-seg-on' : '', pick: function () { var n = Object.assign({}, S.skills); n[k] = l; set({ skills: n }); } }; }) }; }),
-      studied: ['Yes, on another platform', 'Yes, at school or work', 'Not yet'].map(function (o) { var on = S.studied === o; return { label: o, on: on ? 'true' : 'false', cls: chk(on), pick: function () { set({ studied: o }); } }; }),
       cvCls: S.cv ? 'jy-cv-on' : '', noCv: !S.cv, cvTitle: S.cv ? 'Maya_Rahman_CV.pdf' : 'Add your CV', cvSub: S.cv ? 'Added. Your AI Coach will read it.' : 'Optional. PDF or Word, up to 5 MB.', cvBtn: S.cv ? 'Remove' : 'Choose file', toggleCv: function () { set({ cv: !S.cv }); },
       toGoal: function () { if (self.timer) clearInterval(self.timer); set({ step: 'goal' }); },
       toBuild: function () { self.run(0); },
-      arc: (326.7 * (1 - Math.min(7, S.buildStep) / 7)).toFixed(1),
-      stages: stageLabels.map(function (l, i) { var done = i < S.buildStep, now = i === S.buildStep && S.buildStep < 7; return { label: l, cls: done ? 'jy-li-done' : (now ? 'jy-li-now' : ''), tcls: now ? 'jy-shim' : '' }; }),
-      time: lo + '–' + hi + ' months', commit: commit, startPt: { 'new': 'Foundation', basics: 'Early learner', related: 'Transferable skills', working: 'Advancing' }[S.level || 'new'],
+      arc: (326.7 * (1 - Math.min(6, S.buildStep) / 6)).toFixed(1),
+      stages: stageLabels.map(function (l, i) { var done = i < S.buildStep, now = i === S.buildStep && S.buildStep < 6; return { label: l, cls: done ? 'jy-li-done' : (now ? 'jy-li-now' : ''), tcls: now ? 'jy-shim' : '' }; }),
+      time: lo + '–' + hi + ' months', commit: commit,
       route: ['Foundation', 'Core skills', 'Practice', 'Certification', 'Portfolio'].map(function (l, i) { return { n: i + 1, label: l }; })
     };
   }

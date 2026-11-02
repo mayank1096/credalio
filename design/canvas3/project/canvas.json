@@ -272,7 +272,7 @@
       "x": 0,
       "y": 48302,
       "w": 1440,
-      "h": 1194,
+      "h": 1113,
       "title": "JNY-001 Understand your goal · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -282,16 +282,16 @@
       "x": 1520,
       "y": 48302,
       "w": 390,
-      "h": 1340,
+      "h": 937,
       "title": "JNY-001 Understand your goal · Mobile",
       "page": "main",
       "is_interactive": true
     },
     "Journey-Know.dc.html": {
       "x": 0,
-      "y": 49882,
+      "y": 49655,
       "w": 1440,
-      "h": 1043,
+      "h": 926,
       "title": "JNY-002 What you already know · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -299,16 +299,16 @@
     },
     "Journey-Know-Mobile.dc.html": {
       "x": 1520,
-      "y": 49882,
+      "y": 49655,
       "w": 390,
-      "h": 1107,
+      "h": 955,
       "title": "JNY-002 What you already know · Mobile",
       "page": "main",
       "is_interactive": true
     },
     "Journey-Building.dc.html": {
       "x": 0,
-      "y": 51229,
+      "y": 50850,
       "w": 1440,
       "h": 900,
       "title": "JNY-003 AI builds your journey · building · Desktop",
@@ -318,7 +318,7 @@
     },
     "Journey-Building-Mobile.dc.html": {
       "x": 1520,
-      "y": 51229,
+      "y": 50850,
       "w": 390,
       "h": 844,
       "title": "JNY-003 AI builds your journey · building · Mobile",
@@ -327,7 +327,7 @@
     },
     "Journey-Ready.dc.html": {
       "x": 0,
-      "y": 52369,
+      "y": 51990,
       "w": 1440,
       "h": 900,
       "title": "JNY-003 AI builds your journey · ready · Desktop",
@@ -337,9 +337,9 @@
     },
     "Journey-Ready-Mobile.dc.html": {
       "x": 1520,
-      "y": 52369,
+      "y": 51990,
       "w": 390,
-      "h": 886,
+      "h": 844,
       "title": "JNY-003 AI builds your journey · ready · Mobile",
       "page": "main",
       "is_interactive": true

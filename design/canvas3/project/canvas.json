@@ -343,6 +343,82 @@
       "title": "JNY-003 AI builds your journey · ready · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "JourneyPlan.dc.html": {
+      "x": 0,
+      "y": 53430,
+      "w": 1440,
+      "h": 1537,
+      "title": "JNY-004 Your journey · guest · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "JourneyPlan-Mobile.dc.html": {
+      "x": 1520,
+      "y": 53430,
+      "w": 390,
+      "h": 1938,
+      "title": "JNY-004 Your journey · guest · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "JourneyPlan-Saved.dc.html": {
+      "x": 0,
+      "y": 55608,
+      "w": 1440,
+      "h": 1537,
+      "title": "JNY-004 Your journey · saved · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "JourneyPlan-Saved-Mobile.dc.html": {
+      "x": 1520,
+      "y": 55608,
+      "w": 390,
+      "h": 1921,
+      "title": "JNY-004 Your journey · saved · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "JourneyPlan-Step1.dc.html": {
+      "x": 0,
+      "y": 57769,
+      "w": 1440,
+      "h": 900,
+      "title": "JNY-005 Step 1 started · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "JourneyPlan-Step1-Mobile.dc.html": {
+      "x": 1520,
+      "y": 57769,
+      "w": 390,
+      "h": 844,
+      "title": "JNY-005 Step 1 started · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "JourneyPlan-Returning.dc.html": {
+      "x": 0,
+      "y": 58909,
+      "w": 1440,
+      "h": 918,
+      "title": "RTN-001 Returning learner · new goal · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "JourneyPlan-Returning-Mobile.dc.html": {
+      "x": 1520,
+      "y": 58909,
+      "w": 390,
+      "h": 1092,
+      "title": "RTN-001 Returning learner · new goal · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -360,7 +436,8 @@
     "row-b1",
     "row-b2",
     "row-b3",
-    "row-b4"
+    "row-b4",
+    "row-b5"
   ],
   "notes": {
     "new-hero": {
@@ -420,6 +497,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b5": {
+      "x": 0,
+      "y": 53130,
+      "text": "Batch 5 · Your journey (guest, saved, step 1 started, returning learner)",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -458,7 +543,15 @@
     "Journey-Building.dc.html",
     "Journey-Building-Mobile.dc.html",
     "Journey-Ready.dc.html",
-    "Journey-Ready-Mobile.dc.html"
+    "Journey-Ready-Mobile.dc.html",
+    "JourneyPlan.dc.html",
+    "JourneyPlan-Mobile.dc.html",
+    "JourneyPlan-Saved.dc.html",
+    "JourneyPlan-Saved-Mobile.dc.html",
+    "JourneyPlan-Step1.dc.html",
+    "JourneyPlan-Step1-Mobile.dc.html",
+    "JourneyPlan-Returning.dc.html",
+    "JourneyPlan-Returning-Mobile.dc.html"
   ],
   "pages": [
     {

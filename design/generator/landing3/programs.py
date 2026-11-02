@@ -129,7 +129,7 @@ body='''<div class="pg-body">
 <sc-if value="{{none}}" hint-placeholder-val="{{ false }}"><div class="pg-empty">No programs of this type are open right now.</div></sc-if>
 </div>
 <section class="pg-ai" aria-labelledby="pg-ai-h">
-<div class="pg-al"><span class="sx-orb" style="width: 44px; height: 44px; box-shadow: 0 0 0 6px rgba(22,82,240,.08),0 10px 24px -8px rgba(22,82,240,.6)" aria-hidden="true"></span><div><h2 id="pg-ai-h" class="pg-ah">Is a program right for you?</h2><p class="pg-ap">Your AI Coach compares programs with self‑paced options for your time and goal.</p></div></div>
+<div class="pg-al"><div><h2 id="pg-ai-h" class="pg-ah">Is a program right for you?</h2><p class="pg-ap">Your AI Coach compares programs with self‑paced options for your time and goal.</p></div></div>
 <form class="pg-af" onSubmit="{{onSubmit}}"><label for="pg-goal" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your goal</label><input id="pg-goal" class="pg-in" type="text" placeholder="I have about 5 hours a week…" autocomplete="off"><button class="pg-ab" type="submit">Compare for me<span aria-hidden="true">%s</span></button></form>
 </section>
 </div>

@@ -115,7 +115,7 @@ body='''<div class="ct-body">
 <sc-if value="{{none}}" hint-placeholder-val="{{ false }}"><div class="ct-empty">No certifications match yet. Try another field, or ask your AI Coach.</div></sc-if>
 </div>
 <section class="ct-ai" aria-labelledby="ct-ai-h">
-<div class="ct-al"><span class="sx-orb" style="width: 44px; height: 44px; box-shadow: 0 0 0 6px rgba(22,82,240,.08),0 10px 24px -8px rgba(22,82,240,.6)" aria-hidden="true"></span><div><h2 id="ct-ai-h" class="ct-ah">Not sure which one fits?</h2><p class="ct-ap">Your AI Coach checks your readiness and plans what to learn first.</p></div></div>
+<div class="ct-al"><div><h2 id="ct-ai-h" class="ct-ah">Not sure which one fits?</h2><p class="ct-ap">Your AI Coach checks your readiness and plans what to learn first.</p></div></div>
 <form class="ct-af" onSubmit="{{onSubmit}}"><label for="ct-goal" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your goal</label><input id="ct-goal" class="ct-in" type="text" placeholder="I want to prove I can…" autocomplete="off"><button class="ct-ab" type="submit">Check my readiness<span aria-hidden="true">%s</span></button></form>
 </section>
 </div>

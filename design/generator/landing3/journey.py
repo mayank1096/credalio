@@ -56,7 +56,16 @@ css=r'''
 .jy-seg button{height:34px;padding:0 14px;border:none;border-radius:999px;background:transparent;font-family:'Google Sans',system-ui,sans-serif;font-size:13px;font-weight:500;color:#5B6582;cursor:pointer}
 .jy-seg .jy-seg-on{background:#FFFFFF;color:#0E3BB8;box-shadow:0 4px 10px -6px rgba(11,20,51,.3)}
 .jy-cv{display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:16px;border:1.5px dashed #C9D7FA;background:rgba(245,248,255,.7)}
-.jy-cvi{width:44px;height:44px;border-radius:12px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.jy-cvi{position:relative;width:44px;height:44px;border-radius:12px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 18px -12px rgba(22,82,240,.6)}
+.jy-cvi::after{content:"";position:absolute;inset:-1px;border-radius:13px;border:1.5px solid rgba(22,82,240,.35);animation:jyHalo 2.4s ease-out infinite;pointer-events:none}
+.jy-cv-on .jy-cvi::after{display:none}
+.jy-up{animation:jyUp 1.6s ease-in-out infinite}
+.jy-pop{animation:jyPop .5s cubic-bezier(.2,.9,.3,1.3) both}
+.jy-tick{stroke-dasharray:12;stroke-dashoffset:12;animation:jyTick .45s .2s ease-out forwards}
+@keyframes jyUp{0%,100%{transform:translateY(1.5px);opacity:.55}50%{transform:translateY(-2px);opacity:1}}
+@keyframes jyHalo{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+@keyframes jyPop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes jyTick{to{stroke-dashoffset:0}}
 .jy-cvt{flex:1;min-width:0}
 .jy-cvt b{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:#0B1433}
 .jy-cvt span{display:block;margin-top:2px;font-size:13px;color:#5B6582}
@@ -104,7 +113,7 @@ css=r'''
 .jy-cf{position:absolute;width:8px;height:12px;border-radius:2px;top:0;opacity:0;animation:jyConf 2.4s cubic-bezier(.2,.7,.2,1) .2s 1 both}
 @keyframes jyConf{0%{opacity:0;transform:translate(0,0) rotate(0)}12%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--r))}}
 .jy-opt:focus-visible,.jy-chip:focus-visible,.jy-btn:focus-visible,.jy-back:focus-visible,.jy-seg button:focus-visible,.jy-file:focus-visible,.jy-x:focus-visible,.jy-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-@media (prefers-reduced-motion: reduce){.jy-li-now .jy-dot,.jy-shim,.jy-cf{animation:none}.jy-shim{color:#0B1433;background:none}}
+@media (prefers-reduced-motion: reduce){.jy-li-now .jy-dot,.jy-shim,.jy-cf,.jy-up,.jy-cvi::after,.jy-pop{animation:none}.jy-tick{animation:none;stroke-dashoffset:0}.jy-shim{color:#0B1433;background:none}}
 @media (max-width: 760px){
 .jy-page{background-size:auto 300px}
 .jy-bar{height:60px;padding:0 16px;grid-template-columns:auto 1fr auto}
@@ -225,7 +234,7 @@ body='''<div class="jy-page">
 </sc-if>
 <div class="jy-q">
 <div class="jy-cv {{cvCls}}">
-<span class="jy-cvi" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M12 18v-6M9 15l3-3 3 3"></path></svg></span>
+<span class="jy-cvi" aria-hidden="true"><sc-if value="{{noCv}}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><g class="jy-up"><path d="M12 18v-6M9 15l3-3 3 3"></path></g></svg></sc-if><sc-if value="{{hasCv}}" hint-placeholder-val="{{ false }}"><svg class="jy-pop" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><path class="jy-tick" d="M8.5 14.5l2.5 2.5 4.5-5"></path></svg></sc-if></span>
 <span class="jy-cvt"><b>{{cvTitle}}<sc-if value="{{noCv}}" hint-placeholder-val="{{ true }}"><i class="sx-tip" tabindex="0" data-tip="Your AI Coach reads your experience to set a fairer starting point. Only you can see it.">i</i></sc-if></b><span>{{cvSub}}</span></span>
 <button class="jy-file" type="button" onClick="{{toggleCv}}">{{cvBtn}}</button>
 </div>
@@ -325,7 +334,7 @@ class Component extends DCLogic {
       skills: g.skills.map(function (k) { var on = !!S.skills[k]; return { label: k, on: on ? 'true' : 'false', cls: chk(on), pick: function () { var n = Object.assign({}, S.skills); if (on) delete n[k]; else n[k] = 'Basic'; set({ skills: n, none: false }); } }; }),
       hasSkills: sel.length > 0,
       rows: sel.map(function (k) { return { name: k, levels: ['Basic', 'Comfortable', 'Advanced'].map(function (l) { var on = S.skills[k] === l; return { label: l, on: on ? 'true' : 'false', cls: on ? 'jy-seg-on' : '', pick: function () { var n = Object.assign({}, S.skills); n[k] = l; set({ skills: n }); } }; }) }; }),
-      cvCls: S.cv ? 'jy-cv-on' : '', noCv: !S.cv, cvTitle: S.cv ? 'Maya_Rahman_CV.pdf' : 'Add your CV', cvSub: S.cv ? 'Added. Your AI Coach will read it.' : 'Optional. PDF or Word, up to 5 MB.', cvBtn: S.cv ? 'Remove' : 'Choose file', toggleCv: function () { set({ cv: !S.cv }); },
+      cvCls: S.cv ? 'jy-cv-on' : '', noCv: !S.cv, hasCv: S.cv, cvTitle: S.cv ? 'Maya_Rahman_CV.pdf' : 'Add your CV', cvSub: S.cv ? 'Added. Your AI Coach will read it.' : 'Optional. PDF or Word, up to 5 MB.', cvBtn: S.cv ? 'Remove' : 'Choose file', toggleCv: function () { set({ cv: !S.cv }); },
       toGoal: function () { if (self.timer) clearInterval(self.timer); set({ step: 'goal' }); },
       toBuild: function () { self.run(0); },
       arc: (326.7 * (1 - Math.min(6, S.buildStep) / 6)).toFixed(1),

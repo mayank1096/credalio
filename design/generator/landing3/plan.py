@@ -1,7 +1,8 @@
 from shell import *
 import re
 CLOUD='/_blob/020f1a8593e80e5fcee9e0f06637f153'; MARK='/_blob/f81e36d31295a0d0737959589ec1abd4'; WAVE='/_blob/3d4d999db1912d0cb0084365c58434d3'
-COIN=open('/tmp/scratch/coin.css').read()
+import os
+COIN=open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'coin.css')).read()
 CK='<svg width="%d" height="%d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>'
 ARR=ARROW%(16,16,'#1652F0')
 css=COIN+r'''

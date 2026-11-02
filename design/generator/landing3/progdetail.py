@@ -68,7 +68,7 @@ css=CSS+r'''
 .pd2-p:last-child::before{display:none}
 .pd2-pn{grid-row:1 / span 4;width:36px;height:36px;font-size:13px;margin:0}
 .pd2-pw,.pd2-pt,.pd2-pd,.pd2-pj{grid-column:2}
-.pd2-pj{justify-self:start}
+.pd2-pj{justify-self:start;margin-top:8px}
 .pd2-ppl{display:flex;overflow-x:auto;margin:0 -20px;padding:0 20px;gap:8px;scrollbar-width:none}
 .pd2-ppl::-webkit-scrollbar{display:none}
 .pd2-pp{flex:0 0 auto}

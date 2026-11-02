@@ -53,7 +53,7 @@ css=CSS+r'''
 .ce-st{grid-template-columns:32px minmax(0,1fr);gap:12px}
 .ce-num{width:32px;height:32px;font-size:13px}
 .ce-sc{padding:14px}
-.ce-shd{flex-direction:column;gap:8px}
+.ce-shd{flex-direction:column;gap:12px}
 .ce-sn{font-size:16px}
 .ce-sd{font-size:13px}
 .ce-cred{padding:18px;gap:18px}

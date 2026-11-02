@@ -105,6 +105,7 @@ top='''<div class="dt-top">
 <span class="dt-fact"><b>12 weeks</b></span>
 <span class="dt-fact"><b>About 8 hrs a week</b></span>
 </div>
+<a class="dt-askm" href="#"><span class="sx-orb" style="width: 22px; height: 22px" aria-hidden="true"></span>Is this right for my goal? →</a>
 </div>
 %(tabs)s
 <section class="dt-sec" ref="{{refOverview}}" aria-labelledby="pr-o">
@@ -162,7 +163,7 @@ top='''<div class="dt-top">
 </section>
 </div>
 
-<aside class="dt-side" aria-label="Apply to this program">
+<aside class="dt-side {{sideCls}}" aria-label="Apply to this program">
 <div class="dt-card" ref="{{refCard}}">
 <div class="pd2-when"><span class="pd2-cal" aria-hidden="true"><b>18</b><span>JAN</span></span><div><b>Cohort starts 18 January</b><span>Applications close 8 January</span></div></div>
 <div class="dt-cbody">
@@ -216,7 +217,7 @@ class Component extends DCLogic {
       ''' + TABS_JS + r'''
       refOverview: this.R.Overview, refCurriculum: this.R.Curriculum, refWeek: this.R['Your week'], refPeople: this.R.People, refFaq: this.R.Questions, refCard: this.cardRef,
       faqs: this.F.map(function (f, i) { var open = S.faq === i; return { q: f[0], a: f[1], open: open, exp: open ? 'true' : 'false', cls: open ? 'dt-fq-open' : '', toggle: function () { self.setState({ faq: open ? -1 : i }); } }; }),
-      idle: S.stage === 'idle', form: S.stage === 'form', done: S.stage === 'done',
+      sideCls: S.stage === 'idle' ? '' : 'dt-side-show', idle: S.stage === 'idle', form: S.stage === 'form', done: S.stage === 'done',
       barCta: S.stage === 'done' ? 'Application sent' : 'Apply',
       openForm: openForm, cancel: function () { self.setState({ stage: 'idle', err: '', bad: '' }); },
       fName: S.fName, fEmail: S.fEmail, fWhy: S.fWhy, err: S.err, hasErr: !!S.err,

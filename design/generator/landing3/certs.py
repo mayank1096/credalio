@@ -64,7 +64,7 @@ css=r'''
 @media (max-width: 960px){.ct-ai{grid-template-columns:minmax(0,1fr);gap:22px;padding:30px}}
 @media (max-width: 760px){
 .ct-hero{background-size:auto 340px}
-.ct-hin{padding:44px 20px 24px;gap:14px}
+.ct-hin{padding:48px 20px 28px;gap:18px}
 .ct-h1{font-size:32px;letter-spacing:-.9px;text-wrap:balance}
 .ct-sub{font-size:15px}
 .ct-search{height:54px;padding:4px 4px 4px 16px}

@@ -54,7 +54,7 @@
       "x": 1520,
       "y": 14400,
       "w": 390,
-      "h": 2272,
+      "h": 2282,
       "title": "EXP-001 Explore Learning · Mobile",
       "page": "main",
       "is_interactive": true
@@ -73,7 +73,7 @@
       "x": 1520,
       "y": 16987,
       "w": 390,
-      "h": 1774,
+      "h": 1788,
       "title": "COURSES-001 Browse Courses · Guest · Mobile",
       "page": "main",
       "is_interactive": true
@@ -92,7 +92,7 @@
       "x": 1520,
       "y": 19189,
       "w": 390,
-      "h": 1901,
+      "h": 1915,
       "title": "COURSES-001 Browse Courses · Signed in (1,460 DLP) · Mobile",
       "page": "main",
       "is_interactive": true
@@ -111,14 +111,14 @@
       "x": 1520,
       "y": 21753,
       "w": 390,
-      "h": 3329,
+      "h": 3258,
       "title": "COURSES-002 Course Detail · Guest · Mobile",
       "page": "main",
       "is_interactive": true
     },
     "CourseDetail-Learner.dc.html": {
       "x": 0,
-      "y": 25322,
+      "y": 25251,
       "w": 1440,
       "h": 2889,
       "title": "COURSES-002 Course Detail · Signed in (1,460 DLP) · Desktop",
@@ -128,16 +128,16 @@
     },
     "CourseDetail-Learner-Mobile.dc.html": {
       "x": 1520,
-      "y": 25322,
+      "y": 25251,
       "w": 390,
-      "h": 3329,
+      "h": 3258,
       "title": "COURSES-002 Course Detail · Signed in (1,460 DLP) · Mobile",
       "page": "main",
       "is_interactive": true
     },
     "CareerPaths.dc.html": {
       "x": 0,
-      "y": 28891,
+      "y": 28749,
       "w": 1440,
       "h": 1430,
       "title": "PATH-001 Career Paths · Desktop",
@@ -147,16 +147,16 @@
     },
     "CareerPaths-Mobile.dc.html": {
       "x": 1520,
-      "y": 28891,
+      "y": 28749,
       "w": 390,
-      "h": 2276,
+      "h": 2292,
       "title": "PATH-001 Career Paths · Mobile",
       "page": "main",
       "is_interactive": true
     },
     "PathDetail.dc.html": {
       "x": 0,
-      "y": 31407,
+      "y": 31281,
       "w": 1440,
       "h": 2176,
       "title": "PATH-002 Career Path Detail · Guest · Desktop",
@@ -166,16 +166,16 @@
     },
     "PathDetail-Mobile.dc.html": {
       "x": 1520,
-      "y": 31407,
+      "y": 31281,
       "w": 390,
-      "h": 2593,
+      "h": 2670,
       "title": "PATH-002 Career Path Detail · Guest · Mobile",
       "page": "main",
       "is_interactive": true
     },
     "PathDetail-Learner.dc.html": {
       "x": 0,
-      "y": 34240,
+      "y": 34191,
       "w": 1440,
       "h": 2176,
       "title": "PATH-002 Career Path Detail · Signed in (1,460 DLP) · Desktop",
@@ -185,16 +185,16 @@
     },
     "PathDetail-Learner-Mobile.dc.html": {
       "x": 1520,
-      "y": 34240,
+      "y": 34191,
       "w": 390,
-      "h": 2582,
+      "h": 2640,
       "title": "PATH-002 Career Path Detail · Signed in (1,460 DLP) · Mobile",
       "page": "main",
       "is_interactive": true
     },
     "Certifications.dc.html": {
       "x": 0,
-      "y": 37362,
+      "y": 37371,
       "w": 1440,
       "h": 1602,
       "title": "CERT-001 Certifications · Desktop",
@@ -204,16 +204,16 @@
     },
     "Certifications-Mobile.dc.html": {
       "x": 1520,
-      "y": 37362,
+      "y": 37371,
       "w": 390,
-      "h": 2529,
+      "h": 2545,
       "title": "CERT-001 Certifications · Mobile",
       "page": "main",
       "is_interactive": true
     },
     "CertDetail.dc.html": {
       "x": 0,
-      "y": 40131,
+      "y": 40156,
       "w": 1440,
       "h": 2635,
       "title": "CERT-002 Certification Detail · Desktop",
@@ -223,16 +223,16 @@
     },
     "CertDetail-Mobile.dc.html": {
       "x": 1520,
-      "y": 40131,
+      "y": 40156,
       "w": 390,
-      "h": 3088,
+      "h": 3047,
       "title": "CERT-002 Certification Detail · Mobile",
       "page": "main",
       "is_interactive": true
     },
     "Programs.dc.html": {
       "x": 0,
-      "y": 43459,
+      "y": 43443,
       "w": 1440,
       "h": 2022,
       "title": "PROG-001 Learning Programs · Desktop",
@@ -242,9 +242,9 @@
     },
     "Programs-Mobile.dc.html": {
       "x": 1520,
-      "y": 43459,
+      "y": 43443,
       "w": 390,
-      "h": 2093,
+      "h": 2109,
       "title": "PROG-001 Learning Programs · Mobile",
       "page": "main",
       "is_interactive": true
@@ -263,7 +263,7 @@
       "x": 1520,
       "y": 45792,
       "w": 390,
-      "h": 3018,
+      "h": 2905,
       "title": "PROG-002 Program Detail · Mobile",
       "page": "main",
       "is_interactive": true
@@ -330,7 +330,7 @@
     },
     "row-b3": {
       "x": 0,
-      "y": 37062,
+      "y": 37071,
       "text": "Batch 3 · Certifications and Learning Programs",
       "kind": "title1",
       "maxW": 1910,

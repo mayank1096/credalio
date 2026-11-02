@@ -52,6 +52,7 @@ CSS=r'''
 .dt-link{font-size:14px;font-weight:600;color:#1652F0;text-decoration:none;white-space:nowrap}
 .dt-link:hover{color:#0E3BB8}
 .dt-bar{display:none}
+.dt-askm{display:none;align-items:center;gap:10px;min-height:44px;font-size:14px;font-weight:600;color:#1652F0;text-decoration:none}
 .dt-faq{border-radius:20px;border:1.5px solid #E6EAF3;overflow:hidden}
 .dt-fq + .dt-fq{border-top:1px solid #EEF1F7}
 .dt-fh{width:100%;min-height:60px;padding:12px 20px;border:none;background:#FFFFFF;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;font-family:'Google Sans',system-ui,sans-serif;font-size:16px;font-weight:600;color:#0B1433;cursor:pointer}
@@ -72,9 +73,12 @@ CSS=r'''
 }
 @media (max-width: 760px){
 .dt-top{background-size:auto 340px}
-.dt-grid{padding:24px 20px 0}
+.dt-grid{padding:40px 20px 0}
 .dt-crumb{display:none}
-.dt-hero{gap:12px;padding-bottom:24px}
+.dt-hero{gap:16px;padding-bottom:28px}
+.dt-side{display:none}
+.dt-side.dt-side-show{display:block;margin-bottom:32px}
+.dt-askm{display:inline-flex;margin-top:-4px}
 .dt-h1{font-size:30px;letter-spacing:-.8px}
 .dt-sub{font-size:15px}
 .dt-by{gap:10px 14px;font-size:13px}
@@ -87,7 +91,7 @@ CSS=r'''
 .dt-tabs{margin:0 -20px 4px;padding:0 20px;gap:22px;overflow-x:auto;scrollbar-width:none}
 .dt-tabs::-webkit-scrollbar{display:none}
 .dt-tab{height:48px;font-size:14px;flex-shrink:0}
-.dt-sec{padding-top:32px;gap:16px}
+.dt-sec{padding-top:40px;gap:18px}
 .dt-h2{font-size:21px;letter-spacing:-.4px}
 .dt-p{font-size:15px}
 .dt-chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px;padding:0 20px;scrollbar-width:none}

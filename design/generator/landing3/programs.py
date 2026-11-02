@@ -64,7 +64,7 @@ css=r'''
 @media (max-width: 960px){.pg-ai{grid-template-columns:minmax(0,1fr);gap:22px;padding:30px}.pg-feat{grid-template-columns:minmax(0,1fr);gap:22px}.pg-fgo{justify-self:start}}
 @media (max-width: 760px){
 .pg-hero{background-size:auto 340px}
-.pg-hin{padding:44px 20px 24px;gap:14px}
+.pg-hin{padding:48px 20px 28px;gap:18px}
 .pg-h1{font-size:32px;letter-spacing:-.9px}
 .pg-sub{font-size:15px}
 .pg-types{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;align-self:stretch;margin:6px -20px 0;padding:0 20px;scrollbar-width:none}

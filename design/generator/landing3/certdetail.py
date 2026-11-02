@@ -94,6 +94,7 @@ top='''<div class="dt-top">
 <span class="dt-fact"><b>Exam + case study</b></span>
 <span class="dt-fact"><b>3–4 months</b></span>
 </div>
+<a class="dt-askm" href="#"><span class="sx-orb" style="width: 22px; height: 22px" aria-hidden="true"></span>Check my readiness →</a>
 </div>
 %s
 <section class="dt-sec" ref="{{refOverview}}" aria-labelledby="ce-o">
@@ -144,7 +145,7 @@ top='''<div class="dt-top">
 </section>
 </div>
 
-<aside class="dt-side" aria-label="Start this certification">
+<aside class="dt-side {{sideCls}}" aria-label="Start this certification">
 <div class="dt-card">
 <div class="ce-prev" aria-hidden="true"><span class="ce-ppl">PROFESSIONAL CERTIFICATE</span><span class="ce-ppn" style="font-size: 19px">Data Analysis</span><span class="ce-ppt" style="margin-top: auto">Northgate University</span>%s</div>
 <div class="dt-cbody">
@@ -188,7 +189,7 @@ class Component extends DCLogic {
       ''' + TABS_JS + r'''
       refOverview: this.R.Overview, refEarn: this.R['How you earn it'], refCredential: this.R['What you get'], refFaq: this.R.Questions,
       faqs: this.F.map(function (f, i) { var open = S.faq === i; return { q: f[0], a: f[1], open: open, exp: open ? 'true' : 'false', cls: open ? 'dt-fq-open' : '', toggle: function () { self.setState({ faq: open ? -1 : i }); } }; }),
-      started: S.started, notStarted: !S.started, start: start, barCta: S.started ? 'Continue' : 'Start certification'
+      sideCls: S.started ? 'dt-side-show' : '', started: S.started, notStarted: !S.started, start: start, barCta: S.started ? 'Continue' : 'Start certification'
     };
   }
 }

@@ -70,7 +70,7 @@ css=r'''
 .jy-arc{transition:stroke-dashoffset .6s cubic-bezier(.2,.7,.2,1)}
 .jy-bh{margin:28px 0 0;font-size:34px;line-height:1.12;font-weight:600;letter-spacing:-1px;color:#0B1433}
 .jy-bs{margin:10px 0 0;font-size:16px;line-height:1.55;color:#4A5578}
-.jy-list{width:100%;max-width:440px;margin:36px auto 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0;text-align:left}
+.jy-list{width:fit-content;max-width:100%;margin:36px auto 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0;text-align:left}
 .jy-li{position:relative;display:flex;align-items:center;gap:14px;min-height:46px;font-size:15px;font-weight:500;color:#8A93AD;transition:color .3s ease}
 .jy-li:not(:last-child)::before{content:"";position:absolute;left:11px;top:34px;bottom:-12px;width:2px;background:#E6EAF3}
 .jy-li-done:not(:last-child)::before{background:#1652F0}

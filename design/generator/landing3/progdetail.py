@@ -10,11 +10,6 @@ def ic(k,s=18): return '<svg width="%d" height="%d" viewBox="0 0 24 24" fill="no
 css=CSS+r'''
 .pd2-ok{height:28px;padding:0 11px;border-radius:999px;background:#E7F5EE;color:#0F6B45;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500}
 .pd2-ok i{width:7px;height:7px;border-radius:999px;background:#1E9E63;display:block}
-.pd2-pil{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.pd2-pi{display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:18px;background:#F5F8FF}
-.pd2-pii{width:38px;height:38px;border-radius:12px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;margin-bottom:6px}
-.pd2-pi b{font-size:16px;font-weight:600;color:#0B1433}
-.pd2-pi span{font-size:14px;line-height:1.5;color:#5B6582;text-wrap:pretty}
 .pd2-ph{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .pd2-ph::before{content:"";position:absolute;left:22px;right:calc(25% - 31px);top:21px;height:2px;background:linear-gradient(90deg,#1652F0,#9DB8F7)}
 .pd2-p{position:relative;display:flex;flex-direction:column;gap:8px}
@@ -24,7 +19,7 @@ css=CSS+r'''
 .pd2-pt{font-size:16px;font-weight:600;letter-spacing:-.2px;color:#0B1433}
 .pd2-pd{font-size:13px;line-height:1.5;color:#5B6582;text-wrap:pretty}
 .pd2-pj{align-self:flex-start;margin-top:4px;height:26px;padding:0 10px 0 8px;border-radius:999px;background:#E7F5EE;color:#0F6B45;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500}
-.pd2-leave{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:8px}
+.pd2-leave{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:8px}
 .pd2-lv{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;border:1.5px solid #E6EAF3}
 .pd2-lvi{width:36px;height:36px;border-radius:11px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .pd2-lv b{display:block;font-size:14px;font-weight:600;color:#0B1433}
@@ -64,12 +59,9 @@ css=CSS+r'''
 .pd2-done{display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:16px;background:#E7F5EE;color:#0F6B45}
 .pd2-done b{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600}
 .pd2-done span{font-size:13px;line-height:1.5;color:#1E5A45}
-@media (max-width: 1180px){.pd2-ph{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}.pd2-ph::before{display:none}.pd2-week{grid-template-columns:repeat(2,minmax(0,1fr))}.pd2-ppl,.pd2-leave{grid-template-columns:minmax(0,1fr)}.pd2-pil{grid-template-columns:minmax(0,1fr)}.pd2-pi{flex-direction:row;align-items:center;gap:14px}.pd2-pii{margin:0;flex-shrink:0}}
+@media (max-width: 1180px){.pd2-ph{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}.pd2-ph::before{display:none}.pd2-week{grid-template-columns:repeat(2,minmax(0,1fr))}.pd2-ppl{grid-template-columns:minmax(0,1fr)}}
 @media (max-width: 960px){.pd2-when{margin:0;border-radius:0;background:#F5F8FF}}
 @media (max-width: 760px){
-.pd2-pi{padding:14px;gap:12px}
-.pd2-pi b{font-size:15px}
-.pd2-pi span{font-size:13px}
 .pd2-ph{grid-template-columns:minmax(0,1fr);row-gap:0}
 .pd2-p{display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:12px;row-gap:2px;padding-bottom:18px;position:relative}
 .pd2-p::before{content:"";position:absolute;left:17px;top:36px;bottom:0;width:2px;background:#C9D7FA}
@@ -108,16 +100,6 @@ top='''<div class="dt-top">
 <a class="dt-askm" href="#"><span class="sx-orb" style="width: 22px; height: 22px" aria-hidden="true"></span>Is this right for my goal? →</a>
 </div>
 %(tabs)s
-<section class="dt-sec" ref="{{refOverview}}" aria-labelledby="pr-o">
-<h2 id="pr-o" class="dt-h2">Learn it live, with people</h2>
-<div class="pd2-pil">
-<div class="pd2-pi"><span class="pd2-pii">%(live)s</span><div><b>Live every week</b><br><span>Expert-led sessions you can join or replay.</span></div></div>
-<div class="pd2-pi"><span class="pd2-pii">%(build)s</span><div><b>Build, don’t just watch</b><br><span>A reviewed project in every phase.</span></div></div>
-<div class="pd2-pi"><span class="pd2-pii">%(mentor)s</span><div><b>Mentored</b><br><span>Small-group support all the way through.</span></div></div>
-</div>
-<div class="dt-chips"><span class="dt-chl">Before you join</span><span class="dt-chip">Comfortable with spreadsheets</span><span class="dt-chip">A short application</span></div>
-</section>
-
 <section class="dt-sec" ref="{{refCurriculum}}" aria-labelledby="pr-c">
 <h2 id="pr-c" class="dt-h2">Twelve weeks, four phases</h2>
 <div class="pd2-ph">
@@ -128,7 +110,6 @@ top='''<div class="dt-top">
 </div>
 <div class="pd2-leave">
 <div class="pd2-lv"><span class="pd2-lvi">%(cert)s</span><div><b>Program certificate</b><span>In your Digital Backpack</span></div></div>
-<div class="pd2-lv"><span class="pd2-lvi">%(projb)s</span><div><b>3 verified projects</b><span>Portfolio evidence</span></div></div>
 <div class="pd2-lv"><span class="pd2-lvi">%(path)s</span><div><b>Counts toward</b><span>Professional Certificate in Data Analysis</span></div></div>
 </div>
 </section>
@@ -201,21 +182,21 @@ script=r'''
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { tab: 'Overview', faq: 0, stage: 'idle', fName: '', fEmail: '', fWhy: '', err: '', bad: '' };
+    this.state = { tab: 'Curriculum', faq: 0, stage: 'idle', fName: '', fEmail: '', fWhy: '', err: '', bad: '' };
     var self = this;
     this.secs = {};
     this.mk = function (k) { return function (e) { self.secs[k] = e; }; };
     this.cardRef = this.mk('card');
-    this.R = { Overview: this.mk('Overview'), Curriculum: this.mk('Curriculum'), 'Your week': this.mk('Your week'), People: this.mk('People'), Questions: this.mk('Questions') };
-    this.F = [['Do I need a technical background?', 'No. You need to be comfortable with spreadsheets. Everything else is taught from the start.'], ['What if I miss a live session?', 'Every session is recorded, and mentors help you catch up in their weekly hours.'], ['Is the certificate recognised?', 'Your program certificate is verifiable, and the program counts toward the Professional Certificate in Data Analysis.'], ['Can my employer pay?', 'Yes. Choose employer invoicing when you accept your place.']];
+    this.R = { Curriculum: this.mk('Curriculum'), 'Your week': this.mk('Your week'), People: this.mk('People'), Questions: this.mk('Questions') };
+    this.F = [['Do I need a technical background?', 'No. You need to be comfortable with spreadsheets. Everything else is taught from the start.'], ['What if I miss a live session?', 'Every session is recorded, and mentors help you catch up in their weekly hours.'], ['Can my employer pay?', 'Yes. Choose employer invoicing when you accept your place.']];
   }
   renderVals() {
     var self = this, S = this.state;
-    var names = ['Overview', 'Curriculum', 'Your week', 'People', 'Questions'];
+    var names = ['Curriculum', 'Your week', 'People', 'Questions'];
     var openForm = function () { if (S.stage === 'idle') self.setState({ stage: 'form' }); if (self.secs.card && self.secs.card.scrollIntoView) self.secs.card.scrollIntoView({ block: 'center' }); };
     return {
       ''' + TABS_JS + r'''
-      refOverview: this.R.Overview, refCurriculum: this.R.Curriculum, refWeek: this.R['Your week'], refPeople: this.R.People, refFaq: this.R.Questions, refCard: this.cardRef,
+      refCurriculum: this.R.Curriculum, refWeek: this.R['Your week'], refPeople: this.R.People, refFaq: this.R.Questions, refCard: this.cardRef,
       faqs: this.F.map(function (f, i) { var open = S.faq === i; return { q: f[0], a: f[1], open: open, exp: open ? 'true' : 'false', cls: open ? 'dt-fq-open' : '', toggle: function () { self.setState({ faq: open ? -1 : i }); } }; }),
       sideCls: S.stage === 'idle' ? '' : 'dt-side-show', idle: S.stage === 'idle', form: S.stage === 'form', done: S.stage === 'done',
       barCta: S.stage === 'done' ? 'Application sent' : 'Apply',

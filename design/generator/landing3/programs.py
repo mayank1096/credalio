@@ -31,7 +31,7 @@ css=r'''
 .pg-st{font-size:22px;font-weight:600;letter-spacing:-.4px;color:#0B1433}
 .pg-n{font-size:14px;color:#8A93AD}
 .pg-list{display:flex;flex-direction:column;gap:10px}
-.pg-row{display:grid;grid-template-columns:72px minmax(0,1fr) auto 170px 40px;align-items:center;gap:24px;padding:16px 20px 16px 16px;border-radius:18px;background:#FFFFFF;border:1px solid #E3E8F3;text-decoration:none;color:#0B1433;transition:border-color .3s ease,box-shadow .4s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
+.pg-row{display:grid;grid-template-columns:72px minmax(0,1fr) 170px 40px;align-items:center;gap:24px;padding:16px 20px 16px 16px;border-radius:18px;background:#FFFFFF;border:1px solid #E3E8F3;text-decoration:none;color:#0B1433;transition:border-color .3s ease,box-shadow .4s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
 .pg-row:hover{border-color:#C9D7FA;box-shadow:0 24px 48px -36px rgba(22,82,240,.5);transform:translateY(-2px)}
 .pg-date{width:72px;height:72px;border-radius:16px;background:#F5F8FF;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
 .pg-date b{font-size:26px;font-weight:600;letter-spacing:-.6px;color:#0B1433}
@@ -39,10 +39,6 @@ css=r'''
 .pg-any b{font-size:13px;letter-spacing:0}
 .pg-rt{font-size:18px;font-weight:600;letter-spacing:-.3px;line-height:1.25}
 .pg-rm{font-size:14px;color:#5B6582;margin-top:4px}
-.pg-inc{display:flex;gap:6px}
-.pg-ic{position:relative;width:34px;height:34px;border-radius:10px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
-.pg-ic-off{background:transparent;color:#CBD3E6}
-.pg-ic:hover::after{content:attr(aria-label);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);padding:6px 10px;border-radius:8px;background:#0B1433;color:#FFFFFF;font-size:12px;white-space:nowrap;z-index:20}
 .pg-stat{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;white-space:nowrap}
 .pg-stat i{width:8px;height:8px;border-radius:999px;display:block}
 .pg-go{width:40px;height:40px;border-radius:999px;border:1.5px solid #D6DDEE;display:flex;align-items:center;justify-content:center;color:#1652F0;transition:background .2s ease,border-color .2s ease}
@@ -60,7 +56,6 @@ css=r'''
 .pg-ab:hover{background:#0E3BB8}
 .pg-ab span{width:32px;height:32px;border-radius:999px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
 .pg-t:focus-visible,.pg-feat:focus-visible,.pg-row:focus-visible,.pg-ab:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-@media (max-width: 1180px){.pg-row{grid-template-columns:72px minmax(0,1fr) 160px 40px}.pg-inc{display:none}}
 @media (max-width: 960px){.pg-ai{grid-template-columns:minmax(0,1fr);gap:22px;padding:30px}.pg-feat{grid-template-columns:minmax(0,1fr);gap:22px}.pg-fgo{justify-self:start}}
 @media (max-width: 760px){
 .pg-hero{background-size:auto 340px}
@@ -99,7 +94,6 @@ css=r'''
 }
 '''.replace('CLOUD',CLOUD).replace('WAVE',WAVE)
 def ic(k): return '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">%s</svg>'%I[k]
-inc=''.join('<span class="pg-ic {{p.%s}}" role="img" aria-label="%s">%s</span>'%(k,lab,ic(k)) for k,lab in [('live','Live sessions'),('proj','Projects'),('mentor','Mentorship'),('cert','Certificate')])
 top='''<div class="pg-hero">
 %s
 <div class="pg-hin">
@@ -122,13 +116,12 @@ body='''<div class="pg-body">
 <span class="pg-fgo">See program<i aria-hidden="true">%s</i></span>
 </a>
 </sc-if>
-<div class="pg-sh"><span class="pg-st">Upcoming programs</span><span class="pg-n">{{count}}</span></div>
+<div class="pg-sh"><span class="pg-st">{{listTitle}}</span><span class="pg-n">{{count}}</span></div>
 <div class="pg-list">
 <sc-for list="{{progs}}" as="p" hint-placeholder-count="8">
 <a class="pg-row" href="#">
 <span class="pg-date {{p.dcls}}" aria-label="{{p.when}}"><b>{{p.d}}</b><span>{{p.m}}</span></span>
 <span><span class="pg-rt" style="display: block">{{p.t}}</span><span class="pg-rm" style="display: block">{{p.meta}}<span class="pg-by"> · {{p.by}}</span></span></span>
-<span class="pg-inc">%s</span>
 <span class="pg-stat" style="color: {{p.sc}}"><i style="background: {{p.sd}}"></i>{{p.status}}</span>
 <span class="pg-go" aria-hidden="true">%s</span>
 </a>
@@ -140,7 +133,7 @@ body='''<div class="pg-body">
 <form class="pg-af" onSubmit="{{onSubmit}}"><label for="pg-goal" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your goal</label><input id="pg-goal" class="pg-in" type="text" placeholder="I have about 5 hours a week…" autocomplete="off"><button class="pg-ab" type="submit">Compare for me<span aria-hidden="true">%s</span></button></form>
 </section>
 </div>
-%s'''%(ARROW%(15,15,'#FFFFFF'), inc, ARROW%(15,15,'currentColor'), ARROW%(14,14,'#FFFFFF'), FOOT)
+%s'''%(ARROW%(15,15,'#FFFFFF'), ARROW%(15,15,'currentColor'), ARROW%(14,14,'#FFFFFF'), FOOT)
 script=r'''
 class Component extends DCLogic {
   constructor(props) {
@@ -162,13 +155,13 @@ class Component extends DCLogic {
   }
   renderVals() {
     var self = this, S = this.state;
-    var list = this.L.filter(function (p) { return S.type === 'All' || p.type === S.type; });
+    var showFeat = S.type === 'All' || S.type === 'Accelerator';
+    var list = this.L.filter(function (p) { return (S.type === 'All' || p.type === S.type) && !(showFeat && p.t === 'AI & Data Analytics Accelerator'); });
     return {
       types: ['All', 'Cohort', 'Bootcamp', 'Accelerator', 'Institution', 'Executive', 'Self-paced'].map(function (t) { var on = S.type === t; return { label: t === 'All' ? 'All programs' : t, on: on ? 'true' : 'false', cls: on ? 'pg-t-on' : '', pick: function () { self.setState({ type: t }); } }; }),
-      showFeat: S.type === 'All' || S.type === 'Accelerator',
+      showFeat: showFeat, listTitle: showFeat ? 'More upcoming programs' : 'Upcoming programs',
       count: list.length + (list.length === 1 ? ' program' : ' programs'),
-      progs: list.map(function (p) { var st = self.ST[p.st]; return { t: p.t, meta: self.NAMES[p.type] + ' · ' + p.len, by: p.by, d: p.d || 'Any', m: p.m || 'TIME', dcls: p.d ? '' : 'pg-any', when: p.d ? 'Starts ' + p.d + ' ' + p.m : 'Start any time', status: st[0], sc: st[1], sd: st[2],
-        live: p.inc.indexOf('l') > -1 ? '' : 'pg-ic-off', proj: p.inc.indexOf('p') > -1 ? '' : 'pg-ic-off', mentor: p.inc.indexOf('m') > -1 ? '' : 'pg-ic-off', cert: p.inc.indexOf('c') > -1 ? '' : 'pg-ic-off' }; }),
+      progs: list.map(function (p) { var st = self.ST[p.st]; return { t: p.t, meta: self.NAMES[p.type] + ' · ' + p.len, by: p.by, d: p.d || 'Any', m: p.m || 'TIME', dcls: p.d ? '' : 'pg-any', when: p.d ? 'Starts ' + p.d + ' ' + p.m : 'Start any time', status: st[0], sc: st[1], sd: st[2] }; }),
       none: list.length === 0,
       onSubmit: function (e) { e.preventDefault(); }
     };

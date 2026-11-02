@@ -37,15 +37,12 @@ css=CSS+r'''
 .ce-cl ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
 .ce-cl li{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.5;color:#3A4566}
 .ce-ck{width:20px;height:20px;border-radius:999px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.ce-prev{position:relative;margin:12px 12px 0;height:140px;border-radius:14px;background:linear-gradient(180deg,#FFFFFF,#F5F8FF);border:1px solid #E3E8F3;padding:18px 20px;box-sizing:border-box;display:flex;flex-direction:column;gap:5px;overflow:hidden}
-.ce-prev::before{content:"";position:absolute;inset:7px;border:1px solid #DCE5FB;border-radius:9px;pointer-events:none}
 .ce-prog{display:flex;flex-direction:column;gap:8px}
 .ce-pb{height:8px;border-radius:9px;background:#E6EAF3;overflow:hidden}
 .ce-pb span{display:block;height:100%;width:8%;border-radius:9px;background:#1652F0}
 .ce-pl{display:flex;justify-content:space-between;font-size:13px;color:#5B6582}
 .ce-pl b{font-weight:600;color:#0B1433}
 @media (max-width: 1180px){.ce-comp{grid-template-columns:repeat(2,minmax(0,1fr))}.ce-cs{grid-template-columns:minmax(0,1fr)}.ce-cred{grid-template-columns:minmax(0,1fr)}.ce-paper{max-width:380px}}
-@media (max-width: 960px){.ce-prev{display:none}}
 @media (max-width: 760px){
 .ce-comp{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}
 .ce-cp{padding:14px;gap:4px}
@@ -99,11 +96,9 @@ top='''<div class="dt-top">
 %s
 <section class="dt-sec" ref="{{refOverview}}" aria-labelledby="ce-o">
 <h2 id="ce-o" class="dt-h2">What it proves</h2>
-<p class="dt-p">That you can run the whole analysis cycle: prepare data, query it, find the pattern and explain what it means. It’s assessed, not just completed, so employers can trust it.</p>
 <div class="ce-comp">
 %s
 </div>
-<div class="dt-chips"><span class="dt-chl">Made for</span><span class="dt-chip">Career changers</span><span class="dt-chip">Early-career analysts</span><span class="dt-chip">Anyone formalising data skills</span></div>
 </section>
 
 <section class="dt-sec" ref="{{refEarn}}" aria-labelledby="ce-e">
@@ -147,7 +142,6 @@ top='''<div class="dt-top">
 
 <aside class="dt-side {{sideCls}}" aria-label="Start this certification">
 <div class="dt-card">
-<div class="ce-prev" aria-hidden="true"><span class="ce-ppl">PROFESSIONAL CERTIFICATE</span><span class="ce-ppn" style="font-size: 19px">Data Analysis</span><span class="ce-ppt" style="margin-top: auto">Northgate University</span>%s</div>
 <div class="dt-cbody">
 <span class="dt-lab">Certification fee<i class="sx-tip" tabindex="0" data-tip="Includes every assessment, the practical review, your credential and one resit. Courses use your DLP as usual. Blockchain-anchored certificate: optional $10 add-on on Pro.">i</i></span>
 <div class="dt-amt"><b>$149</b><span>one time</span></div>
@@ -169,7 +163,7 @@ top='''<div class="dt-top">
 </div>
 </div>
 </div>
-%s'''%(nav('Certifications'), seal_big%'ce-seal', TABS_HTML, comp_html, CHECK%(16,16), CHECK%(12,12), CHECK%(12,12), seal_big%'ce-pps', CHECK%(11,11),CHECK%(11,11),CHECK%(11,11),CHECK%(11,11), CHEV, seal_big%'ce-pps', ARROW%(16,16,'#1652F0'), ARROW%(16,16,'#1652F0'), ARROW%(15,15,'#1652F0'), FOOT)
+%s'''%(nav('Certifications'), seal_big%'ce-seal', TABS_HTML, comp_html, CHECK%(16,16), CHECK%(12,12), CHECK%(12,12), seal_big%'ce-pps', CHECK%(11,11),CHECK%(11,11),CHECK%(11,11),CHECK%(11,11), CHEV, ARROW%(16,16,'#1652F0'), ARROW%(16,16,'#1652F0'), ARROW%(15,15,'#1652F0'), FOOT)
 script=r'''
 class Component extends DCLogic {
   constructor(props) {
@@ -179,7 +173,7 @@ class Component extends DCLogic {
     this.secs = {};
     this.mk = function (k) { return function (e) { self.secs[k] = e; }; };
     this.R = { Overview: this.mk('Overview'), 'How you earn it': this.mk('How you earn it'), 'What you get': this.mk('What you get'), Questions: this.mk('Questions') };
-    this.F = [['Do I have to take the four courses?', 'Only if you need them. Your AI Coach compares what you already know with each competency and skips anything you can show evidence for.'], ['What if I don’t pass first time?', 'One resit of each assessment is included. You get written feedback on what to work on before you try again.'], ['How long does it take?', 'Most people finish in three to four months at around five hours a week, including the courses.'], ['Can my employer pay?', 'Yes. Choose employer invoicing at checkout and we send the invoice to them directly.']];
+    this.F = [['Do I have to take the four courses?', 'Only if you need them. Your AI Coach compares what you already know with each competency and skips anything you can show evidence for.'], ['What if I don’t pass first time?', 'One resit of each assessment is included. You get written feedback on what to work on before you try again.'], ['Can my employer pay?', 'Yes. Choose employer invoicing at checkout and we send the invoice to them directly.']];
   }
   renderVals() {
     var self = this, S = this.state;

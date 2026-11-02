@@ -267,6 +267,82 @@
       "title": "PROG-002 Program Detail · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Journey.dc.html": {
+      "x": 0,
+      "y": 48302,
+      "w": 1440,
+      "h": 1194,
+      "title": "JNY-001 Understand your goal · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Journey-Mobile.dc.html": {
+      "x": 1520,
+      "y": 48302,
+      "w": 390,
+      "h": 1340,
+      "title": "JNY-001 Understand your goal · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Journey-Know.dc.html": {
+      "x": 0,
+      "y": 49882,
+      "w": 1440,
+      "h": 1043,
+      "title": "JNY-002 What you already know · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Journey-Know-Mobile.dc.html": {
+      "x": 1520,
+      "y": 49882,
+      "w": 390,
+      "h": 1107,
+      "title": "JNY-002 What you already know · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Journey-Building.dc.html": {
+      "x": 0,
+      "y": 51229,
+      "w": 1440,
+      "h": 900,
+      "title": "JNY-003 AI builds your journey · building · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Journey-Building-Mobile.dc.html": {
+      "x": 1520,
+      "y": 51229,
+      "w": 390,
+      "h": 844,
+      "title": "JNY-003 AI builds your journey · building · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Journey-Ready.dc.html": {
+      "x": 0,
+      "y": 52369,
+      "w": 1440,
+      "h": 900,
+      "title": "JNY-003 AI builds your journey · ready · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Journey-Ready-Mobile.dc.html": {
+      "x": 1520,
+      "y": 52369,
+      "w": 390,
+      "h": 886,
+      "title": "JNY-003 AI builds your journey · ready · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -283,7 +359,8 @@
     "row-hero-c",
     "row-b1",
     "row-b2",
-    "row-b3"
+    "row-b3",
+    "row-b4"
   ],
   "notes": {
     "new-hero": {
@@ -335,6 +412,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b4": {
+      "x": 0,
+      "y": 48002,
+      "text": "Batch 4 · Start your journey (goal, what you know, AI builds it)",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -365,7 +450,15 @@
     "Programs.dc.html",
     "Programs-Mobile.dc.html",
     "ProgramDetail.dc.html",
-    "ProgramDetail-Mobile.dc.html"
+    "ProgramDetail-Mobile.dc.html",
+    "Journey.dc.html",
+    "Journey-Mobile.dc.html",
+    "Journey-Know.dc.html",
+    "Journey-Know-Mobile.dc.html",
+    "Journey-Building.dc.html",
+    "Journey-Building-Mobile.dc.html",
+    "Journey-Ready.dc.html",
+    "Journey-Ready-Mobile.dc.html"
   ],
   "pages": [
     {

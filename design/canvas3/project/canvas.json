@@ -628,6 +628,82 @@
       "title": "ONB-008 What you already know (= JNY-002, onboarding mode) · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "OnbBuilding.dc.html": {
+      "x": 0,
+      "y": 28686,
+      "w": 1440,
+      "h": 820,
+      "title": "ONB-009 Nova builds your journey (= JNY-003 building, onboarding) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbBuilding-Mobile.dc.html": {
+      "x": 1520,
+      "y": 28686,
+      "w": 390,
+      "h": 844,
+      "title": "ONB-009 Nova builds your journey (= JNY-003 building, onboarding) · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "OnbReady.dc.html": {
+      "x": 2150,
+      "y": 28686,
+      "w": 1440,
+      "h": 911,
+      "title": "ONB-009b Your journey is ready (= JNY-003 ready, onboarding) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbReady-Mobile.dc.html": {
+      "x": 3670,
+      "y": 28686,
+      "w": 390,
+      "h": 961,
+      "title": "ONB-009b Your journey is ready (= JNY-003 ready, onboarding) · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "OnbJourneyPro.dc.html": {
+      "x": 4300,
+      "y": 28686,
+      "w": 1440,
+      "h": 1539,
+      "title": "ONB-010 Your starting journey · arrived from Pro pricing (= JNY-004 saved, Pro) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbJourneyPro-Mobile.dc.html": {
+      "x": 5820,
+      "y": 28686,
+      "w": 390,
+      "h": 1987,
+      "title": "ONB-010 Your starting journey · arrived from Pro pricing (= JNY-004 saved, Pro) · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "OnbSaved.dc.html": {
+      "x": 6450,
+      "y": 28686,
+      "w": 1440,
+      "h": 820,
+      "title": "ONB-011 Progress saved (Save & exit) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbSaved-Mobile.dc.html": {
+      "x": 7970,
+      "y": 28686,
+      "w": 390,
+      "h": 844,
+      "title": "ONB-011 Progress saved (Save & exit) · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -648,7 +724,8 @@
     "row-b5",
     "row-b6",
     "row-b7",
-    "row-b8"
+    "row-b8",
+    "row-b9"
   ],
   "notes": {
     "new-hero": {
@@ -731,6 +808,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b9": {
+      "x": 0,
+      "y": 28386,
+      "text": "Batch 9 · Nova builds, ready, starting journey (ONB-010 = the JNY-004 saved board above), from Pro pricing, progress saved",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -799,7 +884,15 @@
     "OnbPrefs.dc.html",
     "OnbPrefs-Mobile.dc.html",
     "OnbStart.dc.html",
-    "OnbStart-Mobile.dc.html"
+    "OnbStart-Mobile.dc.html",
+    "OnbBuilding.dc.html",
+    "OnbBuilding-Mobile.dc.html",
+    "OnbReady.dc.html",
+    "OnbReady-Mobile.dc.html",
+    "OnbJourneyPro.dc.html",
+    "OnbJourneyPro-Mobile.dc.html",
+    "OnbSaved.dc.html",
+    "OnbSaved-Mobile.dc.html"
   ],
   "pages": [
     {

@@ -171,7 +171,7 @@ def coin(lg=False):
     return '<span class="dlp-c%s" aria-hidden="true"></span>' % (' dlp-lg' if lg else '')
 
 WAVE = '/_blob/3d4d999db1912d0cb0084365c58434d3'
-AUR_CSS = '.aur{position:relative;isolation:isolate;overflow:hidden;background:#0B1433}\n.aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}\n.aur-off{background:#0B1433 url(' + WAVE + ') center / cover no-repeat}'
+AUR_CSS = '.aur{position:relative;isolation:isolate;overflow:hidden;background:#0B1433}\n.aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}\n.aur-off{background:#0B1433 url(' + WAVE + ') center / cover no-repeat}\n.aur.aur-lt,.aur-off-lt{background:linear-gradient(160deg,#F6F9FF,#E4ECFF)}'
 AURORA_JS = open(os.path.join(HERE, 'aurora.js')).read().rstrip() + """
   aurScan() {
     var self = this, q = 0;

@@ -11,6 +11,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-tag .tip{margin-left:0}
+.ds-in.err{border-color:#D92D20}
+.ds-in.err:focus{box-shadow:0 0 0 4px rgba(217,45,32,.12)}
 .ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
 .ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
 .ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
@@ -58,6 +62,7 @@ body{margin:0;background:#FFFFFF}
 .nv-av.lg{width:56px;height:56px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
 .nv-av.sm{width:28px;height:28px}
 @media (max-width: 960px){
+.dt-lab .tip-b.r{left:-12px;right:auto}
 .ds-btn{height:48px;font-size:15px}
 .ds-btn .ob-arrow{width:36px;height:36px}
 .ds-btn.sm{height:42px;font-size:14px}
@@ -73,9 +78,14 @@ body{margin:0;background:#FFFFFF}
 .ko-disc{width:48px;height:48px}
 .ko-disc svg{width:24px;height:24px}
 }
-@media (prefers-reduced-motion: reduce){.cf{display:none}.ko-tick path{animation:none;stroke-dashoffset:0}}
+@media (prefers-reduced-motion: reduce){
+.cf{display:none}
+.ko-tick path{animation:none;stroke-dashoffset:0}
+}
 h1,h2,h3,p{text-wrap:pretty}
-@media (min-width: 761px){p{text-wrap:balance}}
+@media (min-width: 761px){
+p{text-wrap:balance}
+}
 .sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .sx-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
 .sx-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
@@ -91,9 +101,18 @@ h1,h2,h3,p{text-wrap:pretty}
 .sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
 .sx-fin a{color:#3A4566;text-decoration:none}
 .sx-fin a:hover{color:#1652F0}
-@media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}}
-@media (max-width: 520px){.sx-login{display:none !important}}
-@media (max-width: 760px){.sx-nav{height:60px;padding:0 16px}.sx-word{height:20px}.sx-nav .ds-btn.np{padding:0 16px}.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}}
+@media (max-width: 1180px){
+.sx-links{display:none}
+.sx-menu{display:flex}
+}
+@media (max-width: 520px){
+.sx-login{display:none !important}
+}
+@media (max-width: 760px){
+.sx-nav{height:60px;padding:0 16px}
+.sx-word{height:20px}
+.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}
+}
 .dt-top{overflow-x:clip;background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / max(1440px,100%) auto no-repeat}
 .dt-grid{max-width:1312px;margin:0 auto;padding:40px 48px 96px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:0 64px;align-items:start}
 .dt-main{min-width:0;display:flex;flex-direction:column}
@@ -130,6 +149,7 @@ h1,h2,h3,p{text-wrap:pretty}
 .dt-card .ds-ghost{display:flex}
 .dt-tab:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .dt-askm{display:none}
+.dt-lab > .tip,.dt-h2 > .tip{margin-left:0}
 .dt-faq{border-radius:20px;border:1.5px solid #E6EAF3;overflow:hidden}
 .dt-fq + .dt-fq{border-top:1px solid #EEF1F7}
 .dt-fh{width:100%;min-height:60px;padding:12px 20px;border:none;background:#FFFFFF;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;font-family:'Google Sans',system-ui,sans-serif;font-size:16px;font-weight:600;color:#0B1433;cursor:pointer}
@@ -138,19 +158,19 @@ h1,h2,h3,p{text-wrap:pretty}
 .dt-chev{color:#8A93AD;transition:transform .3s ease;flex-shrink:0}
 .dt-fq-open .dt-chev{transform:rotate(180deg)}
 .dt-fa{margin:0;padding:0 20px 18px;font-size:15px;line-height:1.6;color:#3A4566;text-wrap:pretty !important}
-@media (max-width: 1180px){.dt-grid{grid-template-columns:minmax(0,1fr) 340px;gap:0 40px}}
+@media (max-width: 1180px){
+.dt-grid{grid-template-columns:minmax(0,1fr) 340px;gap:0 40px}
+}
 @media (max-width: 960px){
 .dt-grid{grid-template-columns:minmax(0,1fr);padding-top:32px}
 .dt-main{display:contents}
 .dt-main > *{order:3}
 .dt-hero{order:1;padding-bottom:28px}
 .dt-side{order:2;position:static;margin-bottom:12px}
-.dt-lab .tip-b.r{left:-12px;right:auto}
 .dt-card{max-width:520px}
 }
 @media (max-width: 760px){
 .dt-top{background-size:auto 340px}
-.tip-b{width:190px}
 .dt-grid{padding:40px 20px 0}
 .dt-crumb{display:none}
 .dt-hero{gap:16px;padding-bottom:28px}
@@ -177,6 +197,7 @@ h1,h2,h3,p{text-wrap:pretty}
 .dt-bar > div > b{display:block;font-size:17px;font-weight:600;color:#0B1433}
 .dt-bar > div > span{font-size:12px;color:#5B6582}
 .dt-bar .ds-btn{width:auto}
+.dt-bar.dt-bar-off{display:none}
 }
 .pd2-ph{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .pd2-ph::before{content:"";position:absolute;left:22px;right:calc(25% - 31px);top:21px;height:2px;background:linear-gradient(90deg,#1652F0,#9DB8F7)}
@@ -225,8 +246,15 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd2-done{display:flex;flex-direction:column;align-items:center;text-align:center;padding:6px 0 2px}
 .pd2-dh{margin-top:14px;font-size:19px;font-weight:600;letter-spacing:-.3px;color:#0B1433}
 .pd2-dp{margin:4px 0 0;font-size:14px;line-height:1.5;color:#5B6582}
-@media (max-width: 1180px){.pd2-ph{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}.pd2-ph::before{display:none}.pd2-week{grid-template-columns:repeat(2,minmax(0,1fr))}.pd2-ppl{grid-template-columns:minmax(0,1fr)}}
-@media (max-width: 960px){.pd2-when{margin:0;border-radius:20.5px 20.5px 0 0;background:#F5F8FF}}
+@media (max-width: 1180px){
+.pd2-ph{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}
+.pd2-ph::before{display:none}
+.pd2-week{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pd2-ppl{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width: 960px){
+.pd2-when{margin:0;border-radius:20.5px 20.5px 0 0;background:#F5F8FF}
+}
 @media (max-width: 760px){
 .pd2-ph{grid-template-columns:minmax(0,1fr);row-gap:0}
 .pd2-p{display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:12px;row-gap:2px;padding-bottom:18px;position:relative}
@@ -245,6 +273,10 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd2-av{width:44px;height:44px;font-size:14px}
 .pd2-cohort{align-items:flex-start;font-size:13px}
 .pd2-when{padding:14px;border-radius:18.5px 18.5px 0 0}
+.ds-btn.sm.np{padding:0 16px}
+.tip-b{display:none;width:min(250px,calc(100vw - 48px))}
+.tip:hover .tip-b,.tip:focus .tip-b{display:block}
+.tip .tip-b{width:190px}
 }
 </style>
 </helmet>
@@ -358,7 +390,7 @@ h1,h2,h3,p{text-wrap:pretty}
 </div>
 </aside>
 
-<div class="ds-mbar dt-bar">
+<div class="ds-mbar dt-bar {{barCls}}">
 <div><b>Starts 18 Jan</b><span>$1,200 · places available</span></div>
 <button class="ds-btn" type="button" onClick="{{openForm}}"><span>{{barCta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button>
 </div>
@@ -394,7 +426,7 @@ class Component extends DCLogic {
       refCurriculum: this.R.Curriculum, refWeek: this.R['Your week'], refPeople: this.R.People, refFaq: this.R.Questions, refCard: this.cardRef,
       faqs: this.F.map(function (f, i) { var open = S.faq === i; return { q: f[0], a: f[1], open: open, exp: open ? 'true' : 'false', cls: open ? 'dt-fq-open' : '', toggle: function () { self.setState({ faq: open ? -1 : i }); } }; }),
       sideCls: S.stage === 'idle' ? '' : 'dt-side-show', idle: S.stage === 'idle', form: S.stage === 'form', done: S.stage === 'done',
-      barCta: S.stage === 'done' ? 'Application sent' : 'Apply',
+      barCta: 'Apply', barCls: S.stage === 'idle' ? '' : 'dt-bar-off',
       openForm: openForm, cancel: function () { self.setState({ stage: 'idle', err: '', bad: '' }); },
       fName: S.fName, fEmail: S.fEmail, fWhy: S.fWhy, err: S.err, hasErr: !!S.err,
       nameBad: S.bad === 'name' ? 'pd2-fi-bad' : '', emailBad: S.bad === 'email' ? 'pd2-fi-bad' : '', whyBad: S.bad === 'why' ? 'pd2-fi-bad' : '',

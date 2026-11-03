@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
+.ds-link.off{opacity:.45;pointer-events:none}
+.ds-tag .tip{margin-left:0}
 .ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
 .ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
 .ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
@@ -60,7 +62,9 @@ body{margin:0;background:#FFFFFF}
 .ds-ask input{font-size:15px}
 }
 h1,h2,h3,p{text-wrap:pretty}
-@media (min-width: 761px){p{text-wrap:balance}}
+@media (min-width: 761px){
+p{text-wrap:balance}
+}
 .sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .sx-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
 .sx-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
@@ -76,9 +80,18 @@ h1,h2,h3,p{text-wrap:pretty}
 .sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
 .sx-fin a{color:#3A4566;text-decoration:none}
 .sx-fin a:hover{color:#1652F0}
-@media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}}
-@media (max-width: 520px){.sx-login{display:none !important}}
-@media (max-width: 760px){.sx-nav{height:60px;padding:0 16px}.sx-word{height:20px}.sx-nav .ds-btn.np{padding:0 16px}.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}}
+@media (max-width: 1180px){
+.sx-links{display:none}
+.sx-menu{display:flex}
+}
+@media (max-width: 520px){
+.sx-login{display:none !important}
+}
+@media (max-width: 760px){
+.sx-nav{height:60px;padding:0 16px}
+.sx-word{height:20px}
+.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}
+}
 .ct-hero{background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / max(1440px,100%) auto no-repeat}
 .ct-hin{max-width:960px;margin:0 auto;padding:72px 24px 40px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
 .ct-h1{margin:0;font-size:56px;line-height:1.04;font-weight:600;letter-spacing:-1.8px;color:#0B1433}
@@ -110,8 +123,13 @@ h1,h2,h3,p{text-wrap:pretty}
 .ct-ah{margin:0;font-size:26px;line-height:1.15;font-weight:600;letter-spacing:-.6px;color:#0B1433}
 .ct-ap{margin:6px 0 0;font-size:15px;line-height:1.55;color:#4A5578}
 .ct-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-@media (max-width: 1180px){.ct-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ct-ai{grid-template-columns:minmax(0,1fr) minmax(0,430px)}}
-@media (max-width: 960px){.ct-ai{grid-template-columns:minmax(0,1fr);gap:22px;padding:30px}}
+@media (max-width: 1180px){
+.ct-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ct-ai{grid-template-columns:minmax(0,1fr) minmax(0,430px)}
+}
+@media (max-width: 960px){
+.ct-ai{grid-template-columns:minmax(0,1fr);gap:22px;padding:30px}
+}
 @media (max-width: 760px){
 .ct-hero{background-size:auto 340px}
 .ct-hin{padding:48px 20px 28px;gap:18px}
@@ -130,13 +148,16 @@ h1,h2,h3,p{text-wrap:pretty}
 .ct-ai{padding:24px 20px 20px;border-radius:20px}
 .ct-ah{font-size:21px}
 .ct-ap{font-size:14px}
-.ct-sub .tip-b,.ct-meta .tip-b{width:200px}
 .ct-af{flex-direction:column;align-items:stretch;height:auto;padding:0;gap:10px;border:none;background:none;box-shadow:none;border-radius:0}
 .ds-ask.ct-af:focus-within{box-shadow:none}
 .ct-af input{flex:none;height:50px;box-sizing:border-box;padding:0 18px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE}
 .ct-af input:focus{border-color:#1652F0}
 .ct-af .ds-btn{height:48px;justify-content:space-between;font-size:15px}
 .ct-af .ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm.np{padding:0 16px}
+.tip-b{display:none;width:min(250px,calc(100vw - 48px))}
+.tip:hover .tip-b,.tip:focus .tip-b{display:block}
+.ct-sub .tip-b,.ct-meta .tip-b{width:200px}
 }
 </style>
 </helmet>

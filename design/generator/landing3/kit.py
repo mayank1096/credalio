@@ -37,6 +37,15 @@ KIT_CSS = r'''.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radi
 .ds-ghost.dk:hover{background:rgba(255,255,255,.18);border-color:#FFFFFF}
 .ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
 .ds-link:hover{color:#0E3BB8}
+.ds-btn.wh{background:#FFFFFF;color:#0B1433;box-shadow:0 10px 24px rgba(11,20,51,.24)}
+.ds-btn.wh .ob-arrow{background:#1652F0;color:#FFFFFF}
+.ds-btn.wh:hover{background:#EAF0FF;color:#0B1433}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-link.off{opacity:.45;pointer-events:none}
+.ds-tag.solid{background:#1652F0;color:#FFFFFF}
+.ds-tag .tip{margin-left:0}
+.ds-in.err{border-color:#D92D20}
+.ds-in.err:focus{box-shadow:0 0 0 4px rgba(217,45,32,.12)}
 .ds-chip{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:40px;padding:0 16px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:border-color .2s ease,background .2s ease}
 .ds-chip:hover{border-color:#1652F0;background:#F5F8FF}
 .ds-chip .ck{display:none}
@@ -123,6 +132,9 @@ COINCSS
 .cf{--k:.56}
 }
 @media (max-width: 760px){
+.ds-btn.sm.np{padding:0 16px}
+.tip-b{display:none;width:min(250px,calc(100vw - 48px))}
+.tip:hover .tip-b,.tip:focus .tip-b{display:block}
 .ds-x{width:40px;height:40px}
 .ds-ask{height:54px;padding:5px 5px 5px 18px}
 .ds-ask input{font-size:15px}

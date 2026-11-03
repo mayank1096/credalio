@@ -171,7 +171,7 @@ class Component extends DCLogic {
       };
     });
     const pans = {"learn": 147, "create": 83, "validate": -37, "institution": -122};
-    return { c, is, not, ctaLabel: ctas[sel], panX: pans[sel], ctaHref: sel === 'learn' ? 'OnbAccount.dc.html' : '#' };
+    return { c, is, not, ctaLabel: ctas[sel], panX: pans[sel], ctaHref: sel === 'learn' ? 'OnbAccount.dc.html' : (sel === 'institution' ? 'InstCode.dc.html' : '#') };
   }
 }
 </script>

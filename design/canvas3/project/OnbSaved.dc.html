@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ONB-011 Progress saved (Save &amp; exit)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-link.off{opacity:.45;pointer-events:none}
+.ds-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.ko-v{--k:#0F6B45;--kb:#E7F5EE}
+.ko-emb{position:relative;width:84px;height:84px;display:flex;align-items:center;justify-content:center}
+.ko-halo{position:absolute;inset:0;border-radius:50%;background:var(--kb);z-index:1}
+.ko-disc{position:relative;z-index:1;width:58px;height:58px;border-radius:50%;background:var(--k);color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(11,20,51,.16)}
+.ko-tick path{stroke-dasharray:1;stroke-dashoffset:1;animation:koDraw .6s ease .3s forwards}
+@keyframes koDraw{to{stroke-dashoffset:0}}
+.ko-pill{margin-top:14px;display:inline-flex;align-items:center;height:30px;padding:0 13px;border-radius:999px;background:var(--kb);color:var(--k);font-size:13px;font-weight:500}
+@media (max-width: 760px){
+.ko-emb{width:72px;height:72px}
+.ko-disc{width:48px;height:48px}
+.ko-disc svg{width:24px;height:24px}
+}
+@media (prefers-reduced-motion: reduce){.ko-tick path{animation:none;stroke-dashoffset:0}}
+@media (max-width: 960px){.ob-saved{position:relative !important;top:0 !important;padding:40px 0 230px}}
+@media (max-width: 760px){.ob-saved > div{width:calc(100% - 40px) !important}.ob-saved .ob-btn{align-self:stretch;justify-content:space-between}}
+body{margin:0;background:#FFFFFF}
+a{color:#1652F0}a:hover{color:#0E3BB8}
+.ob-btn{transition:background .2s ease,transform .2s ease}
+.ob-btn:hover{background:#0E3BB8 !important;color:#FFFFFF;transform:translateY(-1px)}
+.ob-btn:active{transform:scale(.98)}
+.ob-arrow{transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ob-btn:hover .ob-arrow{transform:translateX(4px)}
+.ob-btn:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+@media (max-width: 960px){
+.ob-root{height:auto !important;min-height:100vh !important;display:flex;flex-direction:column}
+.ob-header{position:relative !important;height:64px !important;padding:0 20px !important;flex-shrink:0;order:0}
+.ob-brand{font-size:18px !important}
+.ob-main{order:3;position:relative !important;top:0 !important;padding:8px 20px 32px 20px;box-sizing:border-box}
+.ob-h1{font-size:30px !important}
+.ob-h1{width:auto !important}
+.ob-btn{justify-content:space-between !important;align-self:stretch !important}
+}
+@media (max-height: 760px) and (min-width: 961px){.ob-header{height:72px !important}.ob-main{top:120px !important}}
+.lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}.lg-mark{display:none;width:30px;height:30px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}@media (max-width: 960px){.lg-word{height:22px}}
+.ob-root{isolation:isolate}
+.ob-scene{position:absolute;left:0;right:0;bottom:0;height:min(48vh,44vw);background:url(/_blob/b44efb91ce3cd99afc73fcc268d866ee) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
+@media (max-width: 760px){.ob-scene{height:190px;background-size:auto 100%;background-position:50% 100%}}
+</style>
+</helmet>
+<div class="ob-root" style="width: 100%; height: 100vh; min-height: 680px; position: relative; overflow: hidden; background: #FFFFFF; font-family: 'Google Sans', 'Google Sans Text', 'Helvetica Neue', system-ui, sans-serif; color: #0B1433">
+<div class="ob-scene" aria-hidden="true"></div>
+<header class="ob-header" style="position: absolute; left: 0; top: 0; width: 100%; height: 88px; box-sizing: border-box; padding: 0 clamp(24px, 6.67vw, 96px); display: flex; align-items: center; justify-content: space-between; z-index: 3">
+<div style="display: flex; align-items: center; gap: 10px">
+<span class="lg-mark" aria-hidden="true"></span><span class="lg-word ob-brand" role="img" aria-label="Credalio"></span>
+</div>
+<span></span>
+</header>
+<main class="ob-main ob-saved" style="position: absolute; z-index: 2; left: 0; top: clamp(130px, 20vh, 190px); width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center"><div class="ko-v" style="display: flex; flex-direction: column; align-items: center; width: min(560px, calc(100% - 48px))"><div class="ko-emb ko-v" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc"><svg class="ko-tick" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" pathLength="1"></path></svg></span></div><span class="ko-pill">Saved</span><h1 class="ob-h1" style="margin: 12px 0 0 0; font-size: clamp(36px, 6vh, 52px); line-height: 1.1; font-weight: 600; letter-spacing: -0.035em; color: #0B1433">Your progress is saved.</h1><p style="margin: 12px 0 0 0; font-size: 16px; line-height: 1.55; color: #4A5578; text-wrap: balance">Pick up exactly where you left off whenever you’re ready. Anything optional can wait until later.</p><a href="OnbCoach.dc.html" class="ob-btn" style="margin-top: clamp(22px, 3.6vh, 30px); display: flex; align-items: center; gap: 16px; height: 56px; padding: 0 6px 0 28px; box-sizing: border-box; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-size: 16px; font-weight: 600; text-decoration: none; white-space: nowrap; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 12px 28px rgba(22, 82, 240, 0.28)">Resume setup<span class="ob-arrow" style="width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; color: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><a class="ds-link" href="Landing.dc.html" style="margin-top: 12px; min-height: 40px">Back to homepage</a></div></main>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

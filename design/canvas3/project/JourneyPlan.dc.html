@@ -15,7 +15,6 @@ body{margin:0;background:#FFFFFF}
 .ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
 .ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
 .ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
-.ds-acts.c{justify-content:center}
 .ds-link.off{opacity:.45;pointer-events:none}
 .ds-tag.solid{background:#1652F0;color:#FFFFFF}
 .ds-tag .tip{margin-left:0}
@@ -137,7 +136,7 @@ p{text-wrap:balance}
 .jp-head{margin-top:36px}
 .jp-k{font-size:14px;font-weight:500;color:#1652F0}
 .jp-h1{margin:8px 0 0;font-size:44px;line-height:1.06;font-weight:600;letter-spacing:-1.4px;color:#0B1433}
-.jp-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:20px;border-radius:16px;background:rgba(255,255,255,.85);border:1.5px solid #E6EAF3}
+.jp-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:20px;border-radius:16px;background:rgba(255,255,255,.85);border:1.5px solid #E6EAF3}
 .jp-sv{display:flex;flex-direction:column;gap:3px;padding:14px 18px;transition:background .4s ease}
 .jp-sv + .jp-sv{border-left:1px solid #EEF1F7}
 .jp-sv > span{font-size:12px;font-weight:500;color:#8A93AD}
@@ -185,13 +184,11 @@ p{text-wrap:balance}
 .jp-dh{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 .jp-dh b{display:block;font-size:22px;font-weight:600;letter-spacing:-.4px;color:#0B1433}
 .jp-dh > div > span{display:block;margin-top:4px;font-size:14px;color:#5B6582}
-.jp-fl{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:500;color:#3A4566}
 .jp-err{font-size:13px;color:#B42318}
 .jp-sm{font-size:13px;color:#5B6582;text-align:center}
 .jp-sm a{color:#1652F0;font-weight:600;text-decoration:none}
 .jp-one{max-width:760px;margin:0 auto;padding:48px 24px 96px;box-sizing:border-box}
 .jp-chips{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.jp-coachl{gap:10px;font-size:13px;font-weight:500;color:#5B6582}
 .jp-h1c{margin:18px 0 0;font-size:40px;line-height:1.08;font-weight:600;letter-spacing:-1.2px;color:#0B1433}
 .jp-sub{margin:10px 0 0;font-size:16px;line-height:1.55;color:#4A5578}
 .jp-ph{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:32px}
@@ -208,25 +205,12 @@ p{text-wrap:balance}
 .jp-wt{flex:1;min-width:0;font-size:15px;color:#0B1433}
 .jp-wm{font-size:13px;color:#8A93AD;white-space:nowrap}
 .jp-q{margin-top:40px;display:flex;flex-direction:column;gap:14px}
-.jp-ql{font-size:17px;font-weight:600;letter-spacing:-.2px;color:#0B1433}
-.jp-one-w{max-width:928px}
-.jp-know{display:grid;grid-template-columns:1.3fr 1fr 1fr;border-radius:20px;border:1.5px solid #E6EAF3;background:#FFFFFF}
-.jp-kc{display:flex;flex-direction:column;gap:10px;padding:18px 20px}
-.jp-kc + .jp-kc{border-left:1px solid #EEF1F7}
-.jp-kh{display:flex;align-items:baseline;gap:8px;font-size:13px;font-weight:500;color:#8A93AD}
-.jp-kh b{font-size:24px;font-weight:600;letter-spacing:-.5px;color:#0B1433}
-.jp-kl{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:13px;line-height:1.4;color:#3A4566}
-.jp-kl li{display:flex;gap:8px;align-items:flex-start}
-.jp-kl svg{color:#0F6B45;flex-shrink:0;margin-top:2px}
-.jp-ks{display:flex;flex-wrap:wrap;gap:6px}
 @media (max-width: 1180px){
 .jp-wrap{grid-template-columns:minmax(0,1fr) 340px;gap:0 36px}
 }
 @media (max-width: 960px){
 .jp-wrap{grid-template-columns:minmax(0,1fr)}
 .jp-side{position:static;margin-top:40px}
-.jp-know{grid-template-columns:minmax(0,1fr)}
-.jp-kc + .jp-kc{border-left:none;border-top:1px solid #EEF1F7}
 .ds-ghost{height:44px;font-size:14.5px}
 }
 @media (max-width: 760px){
@@ -238,7 +222,9 @@ p{text-wrap:balance}
 .jp-save .ds-btn,.jp-ok .ds-btn{display:none}
 .jp-head{margin-top:28px}
 .jp-h1{font-size:28px;letter-spacing:-.8px}
-.jp-stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+.jp-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.jp-sv:nth-child(3){border-left:none}
+.jp-sv:nth-child(n+3){border-top:1px solid #EEF1F7}
 .jp-sv{padding:10px 12px}
 .jp-sv b{font-size:14px}
 .jp-sv > span{font-size:11px}
@@ -272,7 +258,6 @@ p{text-wrap:balance}
 .jp-wi{padding:8px 16px;gap:12px}
 .jp-wt{font-size:14px}
 .jp-q{margin-top:32px}
-.jp-row{display:grid;grid-template-columns:1fr 1fr}
 .tip-b{display:none;width:min(250px,calc(100vw - 48px))}
 .tip:hover .tip-b,.tip:focus .tip-b{display:block}
 }
@@ -286,6 +271,9 @@ p{text-wrap:balance}
 @media (max-width: 420px){
 .jp-ssos{grid-template-columns:minmax(0,1fr)}
 }
+.jp-sv > span{display:flex;align-items:center}
+.jp-sv .tip{margin-left:4px}
+.jp-dlp{display:inline-flex;align-items:center;gap:7px}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
@@ -306,7 +294,7 @@ p{text-wrap:balance}
 <div class="jp-save"><div><b>This journey isn’t saved yet</b><span>Save it free to start learning and keep every change.</span></div><button class="ds-btn" type="button" onClick="{{openSave}}"><span>Save my journey</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div>
 </sc-if>
 <sc-if value="{{member}}" hint-placeholder-val="{{ false }}">
-<div class="jp-ok"><div><span class="jp-okc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><div><b>Saved to your account</b><span>Nova keeps adapting it as you learn.</span></div></div><button class="ds-btn" type="button" onClick="{{toStep1}}"><span>Start step 1</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div>
+<div class="jp-ok"><div><span class="jp-okc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><div><b>{{okT}}</b><span>{{okS}}</span></div></div><button class="ds-btn" type="button" onClick="{{toStep1}}"><span>{{okCta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div>
 </sc-if>
 <div class="jp-head">
 <span class="jp-k">Your journey</span>
@@ -315,6 +303,7 @@ p{text-wrap:balance}
 <div class="jp-sv {{upCls}}"><span>Time</span><b>{{time}}</b></div>
 <div class="jp-sv {{upCls}}"><span>Each week</span><b>{{commit}} hrs</b></div>
 <div class="jp-sv"><span>You start at</span><b>Related skills</b></div>
+<div class="jp-sv"><span>Learning needed<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">You start with 200 DLP free, enough for step 1. A plan adds more as you go.</span></span></span><b class="jp-dlp"><span class="dlp-c" aria-hidden="true"></span>3,800 DLP</b></div>
 </div>
 </div>
 <div class="jp-steps">
@@ -378,7 +367,7 @@ p{text-wrap:balance}
 </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"view":{"editor":"enum","options":["guest","saved","step1"],"default":"guest"},"$preview":{"width":1440,"height":1539}}'>
+<script type="text/x-dc" data-dc-script data-props='{"view":{"editor":"enum","options":["guest","saved","step1"],"default":"guest"},"plan":{"editor":"enum","options":["none","pro"],"default":"none"},"$preview":{"width":1440,"height":1539}}'>
 class Component extends DCLogic {
   auroraMount(el) {
     var host = window;
@@ -526,6 +515,7 @@ class Component extends DCLogic {
       ['What jobs could this lead to?', function (q) { say(q, 'Junior data analyst, business analyst and reporting analyst roles. Your portfolio and certificate are what make you stand out.'); }]
     ].filter(function (q) { var key = { 'Can I finish faster?': 'faster', 'I already know SQL': 'skip', 'Make it more practical': 'practical' }[q[0]]; var last = S.log[S.log.length - 1]; return (!key || !A[key]) && !(S.thinking && last && last.t === q[0]); }).slice(0, 4);
     var intro = S.member ? 'Your journey is saved. I’ll keep adapting it as you learn. Ask me anything, or tell me what to change.' : 'I built this around becoming a data analyst, using the related skills you already have. Ask me anything, or tell me what to change.';
+    var pro = !!(this.props && this.props.plan === 'pro');
     var v = S.view, member = S.member || v !== 'guest';
     return {
       guest: !member, member: member,
@@ -545,8 +535,9 @@ class Component extends DCLogic {
       onName: function (e) { set({ fName: e.target.value }); }, onEmail: function (e) { set({ fEmail: e.target.value }); }, onPw: function (e) { set({ fPw: e.target.value }); },
       create: function (e) { var ok = /^\S+@\S+\.\S+$/.test(S.fEmail); if (e && (e.type === 'submit' || !ok)) e.preventDefault(); if (!ok) { set({ err: 'Enter a valid email address.' }); return; } if (e && e.type === 'submit') location.assign('OnbInbox.dc.html'); },
       sso: function () { set({ modal: false, member: true, view: 'saved', err: '', log: [] }); },
-      toStep1: function () { set({ view: 'step1' }); }, toPlan: function (e) { if (e) e.preventDefault(); set({ view: 'saved' }); },
-      mainLabel: member ? 'Start step 1' : 'Save my journey', mainAct: function () { if (member) set({ view: 'step1' }); else set({ modal: true }); },
+      toStep1: function () { set({ view: 'step1' }); },
+      okT: pro ? 'Saved · Pro selected' : 'Saved to your account', okS: pro ? 'You chose Pro. We’ll take you to finish your plan when you start.' : 'Nova keeps adapting it as you learn.', okCta: pro ? 'Start with Pro' : 'Start step 1', toPlan: function (e) { if (e) e.preventDefault(); set({ view: 'saved' }); },
+      mainLabel: member ? (pro ? 'Start with Pro' : 'Start step 1') : 'Save my journey', mainAct: function () { if (member) set({ view: 'step1' }); else set({ modal: true }); },
       paces: ['No deadline', '1–3 months', '3–6 months', '6–12 months'].map(function (p) { var on = S.pace === p; return { label: p, on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { set({ pace: p }); } }; })
     };
   }

@@ -495,6 +495,82 @@
       "title": "ONB-003c Choose a password · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "OnbAbout.dc.html": {
+      "x": 0,
+      "y": 25042,
+      "w": 1440,
+      "h": 820,
+      "title": "ONB-004 About you · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbAbout-Mobile.dc.html": {
+      "x": 1520,
+      "y": 25042,
+      "w": 390,
+      "h": 914,
+      "title": "ONB-004 About you · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "OnbChoice.dc.html": {
+      "x": 2150,
+      "y": 25042,
+      "w": 1440,
+      "h": 820,
+      "title": "ONB-004b Personalise or explore now · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbChoice-Mobile.dc.html": {
+      "x": 3670,
+      "y": 25042,
+      "w": 390,
+      "h": 844,
+      "title": "ONB-004b Personalise or explore now · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "OnbCoach.dc.html": {
+      "x": 4300,
+      "y": 25042,
+      "w": 1440,
+      "h": 820,
+      "title": "ONB-005 Meet your AI Coach · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbCoach-Mobile.dc.html": {
+      "x": 5820,
+      "y": 25042,
+      "w": 390,
+      "h": 844,
+      "title": "ONB-005 Meet your AI Coach · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "OnbCoachStyle.dc.html": {
+      "x": 6450,
+      "y": 25042,
+      "w": 1440,
+      "h": 820,
+      "title": "ONB-005b How should Nova help? · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbCoachStyle-Mobile.dc.html": {
+      "x": 7970,
+      "y": 25042,
+      "w": 390,
+      "h": 844,
+      "title": "ONB-005b How should Nova help? · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -513,7 +589,8 @@
     "row-b3",
     "row-b4",
     "row-b5",
-    "row-b6"
+    "row-b6",
+    "row-b7"
   ],
   "notes": {
     "new-hero": {
@@ -580,6 +657,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b7": {
+      "x": 0,
+      "y": 24742,
+      "text": "Batch 7 · Learner onboarding: about you, personalise or explore, meet your AI Coach (same screens as Link 1)",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -634,7 +719,15 @@
     "OnbVerified.dc.html",
     "OnbVerified-Mobile.dc.html",
     "OnbPassword.dc.html",
-    "OnbPassword-Mobile.dc.html"
+    "OnbPassword-Mobile.dc.html",
+    "OnbAbout.dc.html",
+    "OnbAbout-Mobile.dc.html",
+    "OnbChoice.dc.html",
+    "OnbChoice-Mobile.dc.html",
+    "OnbCoach.dc.html",
+    "OnbCoach-Mobile.dc.html",
+    "OnbCoachStyle.dc.html",
+    "OnbCoachStyle-Mobile.dc.html"
   ],
   "pages": [
     {

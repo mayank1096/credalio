@@ -58,6 +58,7 @@
   - success screens add confetti (`confetti.py` / `conf1013c.py`)
 
 ## Layout
+- **Reuse, never rebuild, shared elements** (designer 2026-11-03). The Landing canvas uses `design/generator/landing3/kit.py` (same values as Links 1/2): `ds-btn` / `ds-ghost` / `ds-link` / `ds-chip` / `ds-tag` / `ds-opt` / `ds-in` / `ds-ask` / `ds-x` / `ds-acts`, the tipx tooltip, the `ko-*` success emblem with the shared `cf` confetti, Nova (`nv-av`, `nova-card`, `nv-think`) and the one 3D gold coin `.dlp-c`. New screens use only these for those elements; if something is missing, add it to the kit first.
 - **One responsive source file per screen.** Mobile/laptop boards only `dc-import` it.
 - **States are variants** of one source (`dc-import name=… variant=…`, `renderVals()` / `<sc-if>`).
 - **Breakpoints:** about 1080, 960 (sidebar becomes a drawer), 760/860. Touch targets ≥44px; small text links get an invisible 44px `::after` hit area on mobile.

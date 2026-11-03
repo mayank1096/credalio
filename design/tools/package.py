@@ -47,7 +47,7 @@ for b in sorted(B, key=key):
     if b.endswith('-Mobile.dc.html') or b not in files: continue
     s = open(os.path.join(D, b), encoding='utf-8').read()
     m = re.search(r'<dc-import name="([^"]+)"(?: variant="([^"]+)")?', s)
-    mob = b.replace('.dc.html', '-Mobile.dc.html')
+    mob = 'CR-ONB-001-Mobile.dc.html' if b == 'Main.dc.html' else b.replace('.dc.html', '-Mobile.dc.html')
     links = sorted(set(re.findall(r'href="(CR-[^"#{]+\.dc\.html|Main\.dc\.html)"', open(os.path.join(D, (m.group(1) + '.dc.html') if m else b), encoding='utf-8').read())))
     rows.append([B[b].get('title', b), b, mob if mob in B else '', (m.group(1) + '.dc.html') if m else b, (m.group(2) or '') if m else '',
                  'shared source' if B[b].get('page') == 'p2' else 'screen', ' '.join(links)])

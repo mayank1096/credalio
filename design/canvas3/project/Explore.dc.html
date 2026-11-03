@@ -11,6 +11,53 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-btn.np{padding:0 22px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-chip{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:40px;padding:0 16px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:border-color .2s ease,background .2s ease}
+.ds-chip:hover{border-color:#1652F0;background:#F5F8FF}
+.ds-chip .ck{display:none}
+.ds-chip.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-chip.on .ck{display:block}
+.ds-chip.sm{height:34px;padding:0 13px;font-size:13px}
+.ds-chip i{font-style:normal;font-size:12px;color:#8A93AD}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-ask{display:flex;align-items:center;gap:10px;height:60px;box-sizing:border-box;padding:6px 6px 6px 22px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;box-shadow:0 20px 40px -30px rgba(11,20,51,.5);transition:border-color .2s ease,box-shadow .2s ease}
+.ds-ask:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.ds-ask input{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:inherit;font-size:16px;color:#0B1433}
+.ds-ask input::placeholder{color:#8A93AD}
+.ds-ask .ds-btn{flex-shrink:0}
+.ds-ask.sm{height:50px;padding:4px 4px 4px 16px}
+.ds-ask.sm input{font-size:14px}
+.ds-btn:focus-visible,.ds-link:focus-visible,.ds-chip:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.nova-card{background:#FFFFFF url(/_blob/0b29db2e4cd6f4a89dc7ba8f12e59c8d) center / cover no-repeat}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.sm{width:28px;height:28px}
+@media (max-width: 960px){
+.ds-chip{height:36px;font-size:13.5px;padding:0 14px}
+.ds-chip.sm{height:32px;font-size:12.5px;padding:0 12px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+}
+@media (max-width: 760px){
+.ds-ask{height:54px;padding:5px 5px 5px 18px}
+.ds-ask input{font-size:15px}
+}
 h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 @media (min-width: 761px){p,.ex-nm,.ex-cp{text-wrap:balance}}
 .sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -21,23 +68,17 @@ h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 .sx-link{height:40px;padding:0 12px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:500;color:#3A4566;text-decoration:none;white-space:nowrap;transition:color .2s ease,background .2s ease}
 .sx-link:hover{color:#0B1433;background:#F5F8FF}
 .sx-link-on{color:#0B1433;background:#EAF0FF}
-.sx-cta{height:44px;padding:0 20px;border-radius:999px;display:flex;align-items:center;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease}
-.sx-cta:hover{background:#0E3BB8}
 .sx-menu{display:none;width:44px;height:44px;border-radius:999px;border:none;background:transparent;color:#0B1433;align-items:center;justify-content:center;cursor:pointer}
-.sx-link:focus-visible,.sx-cta:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.sx-link:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .ex-hero{position:relative;overflow:hidden;background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / max(1440px,100%) auto no-repeat}
 .ex-hin{max-width:960px;margin:0 auto;padding:72px 24px 56px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
 .ex-h1{margin:0;font-size:56px;line-height:1.04;font-weight:600;letter-spacing:-1.8px;color:#0B1433}
 .ex-h1 em{font-style:normal;color:#1652F0}
-.ex-search{position:relative;width:100%;max-width:720px;height:62px;box-sizing:border-box;padding:6px 6px 6px 20px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE;display:flex;align-items:center;gap:12px;box-shadow:0 24px 50px -32px rgba(11,20,51,.55);transition:border-color .2s ease,box-shadow .2s ease;margin-top:6px}
-.ex-search:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12),0 24px 50px -32px rgba(11,20,51,.55)}
-.ex-input{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:'Google Sans',system-ui,sans-serif;font-size:17px;color:#0B1433;text-align:left}
-.ex-input::placeholder{color:#8A93AD}
-.ex-go{height:50px;padding:0 22px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;font-weight:600;cursor:pointer}
-.ex-go:hover{background:#0E3BB8}
 .ex-ai{display:flex;align-items:center;gap:10px;min-height:40px;padding:0 6px 0 8px;border-radius:999px;background:#FFFFFF;border:1px solid #DCE5FB;font-size:14px;color:#3A4566;text-decoration:none;box-shadow:0 12px 24px -20px rgba(22,82,240,.6)}
 .ex-ai b{font-weight:600;color:#1652F0}
-.ex-orb{width:26px;height:26px;border-radius:999px;flex-shrink:0;background:#FFFFFF url(/_blob/f81e36d31295a0d0737959589ec1abd4) center / 62% no-repeat;box-shadow:0 0 0 1.5px #DCE5FB}
+.ex-q{position:relative;width:100%;max-width:720px;margin-top:6px}
+.ds-ask.ex-goal{width:100%;max-width:500px;margin-top:8px}
+.ex-path-feat .ds-link{color:#FFFFFF}
 .ex-tabs{display:flex;gap:28px;margin-top:6px;border-bottom:1px solid rgba(203,211,230,.8)}
 .ex-tab{position:relative;height:44px;padding:0 2px;border:none;background:none;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;font-weight:500;color:#5B6582;cursor:pointer;white-space:nowrap;transition:color .2s ease}
 .ex-tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2.5px;border-radius:3px;background:#1652F0;transform:scaleX(0);transition:transform .3s cubic-bezier(.2,.7,.2,1)}
@@ -45,29 +86,18 @@ h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 .ex-tab-on{color:#0B1433;font-weight:600}
 .ex-tab-on::after{transform:scaleX(1)}
 .ex-topics{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-.ex-tp{height:32px;padding:0 13px;border-radius:10px;border:1px solid transparent;background:rgba(255,255,255,.7);font-family:'Google Sans',system-ui,sans-serif;font-size:13px;font-weight:500;color:#3A4566;cursor:pointer;transition:border-color .2s ease,background .2s ease}
-.ex-tp:hover{border-color:#C9D7FA}
-.ex-tp-on{background:#0B1433;border-color:#0B1433;color:#FFFFFF}
-.ex-tab:focus-visible,.ex-tp:focus-visible,.ex-go:focus-visible,.ex-ai:focus-visible,.ex-card:focus-visible,.ex-all:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.ex-tab:focus-visible,.ex-ai:focus-visible,.ex-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .ex-body{max-width:1312px;margin:0 auto;padding:40px 48px 96px;box-sizing:border-box;display:flex;flex-direction:column;gap:56px}
 .ex-note{display:flex;align-items:center;gap:10px;font-size:14px;color:#5B6582;margin-bottom:-28px}
 .ex-note b{font-weight:600;color:#0B1433}
-.ex-note button{border:none;background:none;padding:0;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:600;color:#1652F0;cursor:pointer}
 .ex-sec{display:flex;flex-direction:column;gap:18px}
 .ex-sh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
 .ex-st{font-size:24px;font-weight:600;letter-spacing:-.5px;color:#0B1433}
-.ex-ss{font-size:14px;color:#5B6582;margin-top:3px}
-.ex-st{display:flex;align-items:center;gap:8px}
-.ex-tip{position:relative;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:999px;border:1.5px solid #B5BDD3;font-size:11px;font-weight:600;color:#8A93AD;letter-spacing:0;cursor:help}
-.ex-tip:hover::after,.ex-tip:focus::after{content:attr(data-tip);position:absolute;left:-10px;top:calc(100% + 8px);width:240px;padding:10px 12px;border-radius:10px;background:#0B1433;color:#FFFFFF;font-size:12px;font-weight:400;line-height:1.45;z-index:20}
-.ex-tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
 .ex-sh{align-items:center}
-.ex-all{font-size:14px;font-weight:600;color:#1652F0;text-decoration:none;white-space:nowrap}
-.ex-all:hover{color:#0E3BB8}
 .ex-g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .ex-g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .ex-g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.ex-card{position:relative;display:flex;flex-direction:column;border-radius:18px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 22px 44px -38px rgba(11,20,51,.45);overflow:hidden;text-decoration:none;color:#0B1433;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,border-color .3s ease}
+.ex-card{position:relative;display:flex;flex-direction:column;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 22px 44px -38px rgba(11,20,51,.45);overflow:hidden;text-decoration:none;color:#0B1433;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,border-color .3s ease}
 .ex-card:hover{transform:translateY(-4px);border-color:#D6DDEE;box-shadow:0 34px 60px -38px rgba(22,82,240,.45)}
 .ex-path{padding:22px 24px 20px;gap:12px}
 .ex-path-feat{background:#0B1433;border-color:#0B1433;color:#FFFFFF;isolation:isolate}
@@ -88,15 +118,12 @@ h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 .ex-path-feat .ex-node-end{background:#4C7DFF;border-color:#4C7DFF;color:#FFFFFF}
 .ex-pf{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:4px;padding-top:14px;border-top:1px solid #EEF1F7;font-size:13px;color:#5B6582}
 .ex-path-feat .ex-pf{border-top-color:rgba(255,255,255,.12);color:rgba(255,255,255,.7)}
-.ex-pgo{font-size:14px;font-weight:600;color:#1652F0;white-space:nowrap}
-.ex-path-feat .ex-pgo{color:#FFFFFF}
 .ex-th{position:relative;height:104px;overflow:hidden;padding:12px;box-sizing:border-box}
 .ex-th::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1.3px);background-size:12px 12px}
 .ex-ico{position:absolute;right:-10px;bottom:-14px;width:104px;height:104px;opacity:.22}
 .ex-cb{display:flex;flex-direction:column;gap:12px;padding:16px 16px 18px;flex:1}
 .ex-ct{font-size:15px;font-weight:600;letter-spacing:-.2px;line-height:1.3;min-height:40px}
 .ex-by{font-size:13px;color:#5B6582}
-.ex-tier{align-self:flex-start;margin-top:auto;height:24px;padding:0 9px 0 7px;border-radius:999px;background:#F5F8FF;border:1px solid #E3E8F3;display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:500;color:#0B1433}
 .ex-tdot{width:9px;height:9px;border-radius:999px}
 .ex-cert{padding:20px 18px;gap:12px}
 .ex-paper{position:relative;height:104px;border-radius:10px;background:linear-gradient(180deg,#FFFFFF,#F5F8FF);border:1px solid #E3E8F3;padding:14px 16px;box-sizing:border-box;display:flex;flex-direction:column;gap:7px;overflow:hidden}
@@ -105,26 +132,15 @@ h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 .ex-bars{display:flex;flex-direction:column;gap:6px;margin-top:4px}
 .ex-bars span{height:5px;border-radius:9px;background:#E6EBF5}
 .ex-seal{position:absolute;right:14px;bottom:12px;width:44px;height:44px}
-.ex-cmeta{font-size:13px;color:#5B6582;line-height:1.5}
 .ex-prog{padding:20px;gap:12px}
-.ex-kind{align-self:flex-start;height:26px;padding:0 10px;border-radius:999px;background:#EAF0FF;color:#1652F0;display:inline-flex;align-items:center;font-size:12px;font-weight:500}
-.ex-coach{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,480px);gap:48px;align-items:center;padding:48px;border-radius:24px;background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / cover no-repeat;border:1px solid #E3E8F3}
+.ex-coach{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,480px);gap:48px;align-items:center;padding:48px;border-radius:24px;border:1.5px solid #E6EAF3}
 .ex-cl{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
-.ex-norb{width:26px;height:26px;border-radius:999px;flex-shrink:0;background:#FFFFFF url(/_blob/f81e36d31295a0d0737959589ec1abd4) center / 62% no-repeat;box-shadow:0 0 0 1.5px #DCE5FB}
 .ex-ch{margin:0;font-size:36px;line-height:1.1;font-weight:600;letter-spacing:-1px;color:#0B1433}
 .ex-cp{margin:0;max-width:560px;font-size:16px;line-height:1.6;color:#4A5578}
-.ex-cf{width:100%;max-width:500px;height:56px;margin-top:8px;box-sizing:border-box;padding:5px 5px 5px 18px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE;display:flex;align-items:center;gap:10px;box-shadow:0 20px 40px -30px rgba(11,20,51,.5);transition:border-color .2s ease,box-shadow .2s ease}
-.ex-cf:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
-.ex-ci{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;color:#0B1433}
-.ex-ci::placeholder{color:#8A93AD}
-.ex-cb2{height:44px;padding:0 6px 0 18px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px;cursor:pointer;white-space:nowrap;flex-shrink:0}
-.ex-cb2:hover{background:#0E3BB8}
-.ex-cb2 span{width:32px;height:32px;border-radius:999px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
-.ex-cb2:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .ex-chat{position:relative;display:flex;flex-direction:column;gap:12px;padding:22px;border-radius:20px;background:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.95);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 30px 60px -38px rgba(22,82,240,.55)}
 .ex-um{align-self:flex-end;max-width:90%;padding:11px 14px;border-radius:16px 16px 4px 16px;background:#0B1433;color:#FFFFFF;font-size:14px;line-height:1.5}
 .ex-nr{display:flex;align-items:flex-end;gap:8px}
-.ex-nm{max-width:100%;padding:11px 14px;border-radius:16px 16px 16px 4px;background:#FFFFFF;border:1px solid #E3E8F3;font-size:14px;line-height:1.5;color:#0B1433}
+.ex-nm{max-width:100%;padding:11px 14px;border-radius:16px 16px 16px 4px;background:#FFFFFF;border:1.5px solid #E6EAF3;font-size:14px;line-height:1.5;color:#0B1433}
 .ex-rt{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:6px 0 2px;padding:14px 4px 0}
 .ex-rt::before{content:"";position:absolute;left:12.5%;right:12.5%;top:27px;height:2px;background:linear-gradient(90deg,#1652F0 0 33%,#DCE5FB 33% 100%)}
 .ex-rs{position:relative;display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12px;font-weight:500;color:#5B6582}
@@ -144,29 +160,25 @@ h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 @media (max-width: 760px){
 .sx-nav{height:60px;padding:0 16px}
 .sx-word{height:20px}
-.sx-cta{height:40px;padding:0 16px;font-size:14px}
+.sx-nav .ds-btn.np{padding:0 16px}
 .ex-hin{padding:48px 20px 32px;gap:18px}
 .ex-hero{background-size:auto 340px;background-position:center top}
 .ex-h1{font-size:32px;letter-spacing:-.9px}
-.ex-search{height:54px;padding:4px 4px 4px 16px}
-.ex-input{font-size:15px}
-.ex-go{height:44px;padding:0 16px;font-size:14px}
 .ex-ai{font-size:13px;text-align:left}
 .ex-tabs{max-width:100vw;box-sizing:border-box;align-self:stretch;overflow-x:auto;scrollbar-width:none;margin:4px -20px 0;padding:0 20px;gap:22px}
 .ex-tabs::-webkit-scrollbar{display:none}
 .ex-tab{height:42px;font-size:14px;flex-shrink:0}
 .ex-topics{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;margin:0 -20px;padding:0 20px;max-width:100vw;box-sizing:border-box;scrollbar-width:none;align-self:stretch}
 .ex-topics::-webkit-scrollbar{display:none}
-.ex-tp{flex-shrink:0}
 .ex-body{padding:28px 20px 72px;gap:40px}
 .ex-note{margin-bottom:-20px;font-size:13px}
 .ex-st{font-size:20px}
-.ex-ss{font-size:13px}
+.ex-sh{position:relative}
+.ex-st .tip{position:static}
+.ex-st .tip-b{left:0;right:0;width:auto}
 .ex-g2,.ex-g3,.ex-g4{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:80%;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:4px 20px 8px;scroll-padding:0 20px;gap:12px;scrollbar-width:none}
 .ex-g2{grid-auto-columns:86%}
 .ex-step{font-size:10.5px}
-
-.ex-tip:hover::after,.ex-tip:focus::after{width:200px}
 .ex-g2::-webkit-scrollbar,.ex-g3::-webkit-scrollbar,.ex-g4::-webkit-scrollbar{display:none}
 .ex-g4{grid-auto-columns:62%}
 .ex-card{scroll-snap-align:start}
@@ -178,16 +190,15 @@ h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 .ex-ct{font-size:14px;min-height:36px}
 .ex-pf{font-size:12px}
 .sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}
-.ex-coach{padding:28px 20px 22px;border-radius:20px;gap:24px;background-size:auto 300px}
+.ex-coach{padding:28px 20px 22px;border-radius:20px;gap:24px}
 .ex-ch{font-size:24px;letter-spacing:-.6px}
 .ex-chat{display:none !important}
 .ex-cp{font-size:15px}
-.ex-cf{flex-direction:column;align-items:stretch;height:auto;padding:0;gap:10px;border:none;background:none;box-shadow:none;border-radius:0}
-.ex-cf:focus-within{box-shadow:none}
-.ex-ci{flex:none;height:50px;box-sizing:border-box;padding:0 18px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE}
-.ex-ci:focus{border-color:#1652F0}
-.ex-cb2{height:50px;justify-content:space-between;padding:0 6px 0 20px;font-size:15px}
-.ex-cb2 span{width:38px;height:38px}
+.ds-ask.ex-goal{flex-direction:column;align-items:stretch;height:auto;padding:0;gap:10px;border:none;background:none;box-shadow:none;border-radius:0}
+.ds-ask.ex-goal:focus-within{box-shadow:none}
+.ex-goal input{flex:none;height:50px;box-sizing:border-box;padding:0 18px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE}
+.ex-goal input:focus{border-color:#1652F0}
+.ex-goal .ds-btn{justify-content:space-between;height:48px;font-size:15px}
 .ex-chat{padding:16px;gap:10px}
 .ex-um,.ex-nm{font-size:13px;padding:10px 12px}
 .ex-rs{font-size:10.5px}
@@ -208,20 +219,20 @@ h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
 <a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
-<a class="sx-cta" href="#">Create account</a>
+<a class="ds-btn sm np" href="#">Create account</a>
 <button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 </div>
 </header>
 <div class="ex-hin">
 <h1 class="ex-h1">What would you like to <em>learn</em>?</h1>
-<form class="ex-search" role="search" onSubmit="{{onSubmit}}">
+<form class="ds-ask ex-q" role="search" onSubmit="{{onSubmit}}">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B6582" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
 <label for="ex-q" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search Credalio</label>
-<input id="ex-q" class="ex-input" type="search" placeholder="Search Credalio" value="{{q}}" onInput="{{onQ}}" autocomplete="off">
-<button class="ex-go" type="submit">Search</button>
+<input id="ex-q" type="search" placeholder="Search Credalio" value="{{q}}" onInput="{{onQ}}" autocomplete="off">
+<button class="ds-btn sm" type="submit"><span>Search</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button>
 </form>
 <sc-if value="{{hasQ}}" hint-placeholder-val="{{ false }}">
-<a class="ex-ai" href="#"><span class="ex-orb" aria-hidden="true"></span><span>Want more than search results? <b>Let your AI Coach build a journey around “{{q}}” →</b></span></a>
+<a class="ex-ai" href="#"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span><span>Want more than search results? <b>Let Nova, your AI Coach, build a journey around “{{q}}” →</b></span></a>
 </sc-if>
 <div class="ex-tabs" role="tablist" aria-label="Learning format">
 <sc-for list="{{tabs}}" as="t" hint-placeholder-count="5">
@@ -230,7 +241,7 @@ h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 </div>
 <div class="ex-topics" role="group" aria-label="Topic">
 <sc-for list="{{topics}}" as="t" hint-placeholder-count="9">
-<button class="ex-tp {{t.cls}}" type="button" aria-pressed="{{t.on}}" onClick="{{t.pick}}">{{t.label}}</button>
+<button class="ds-chip sm {{t.cls}}" type="button" aria-pressed="{{t.on}}" onClick="{{t.pick}}"><svg class="ck" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>{{t.label}}</button>
 </sc-for>
 </div>
 </div>
@@ -238,11 +249,11 @@ h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 
 <div class="ex-body">
 <sc-if value="{{hasTopic}}" hint-placeholder-val="{{ false }}">
-<div class="ex-note" aria-live="polite">Showing learning in <b>{{topic}}</b><span aria-hidden="true">·</span><button type="button" onClick="{{clearTopic}}">Clear</button></div>
+<div class="ex-note" aria-live="polite">Showing learning in <b>{{topic}}</b><span aria-hidden="true">·</span><button class="ds-link" type="button" onClick="{{clearTopic}}">Clear</button></div>
 </sc-if>
 
 <section class="ex-sec {{pathsCls}}" aria-labelledby="ex-p">
-<div class="ex-sh"><div><div id="ex-p" class="ex-st">Popular Career Paths<span class="ex-tip" tabindex="0" data-tip="A sequenced route of learning, practice and proof toward a role.">i</span></div></div><a class="ex-all" href="#">View all</a></div>
+<div class="ex-sh"><div><div id="ex-p" class="ex-st">Popular Career Paths<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">A sequenced route of learning, practice and proof toward a role.</span></span></div></div><a class="ds-link" href="#">View all</a></div>
 <div class="ex-g2">
 <sc-for list="{{paths}}" as="p" hint-placeholder-count="4">
 <a class="ex-card ex-path {{p.cls}}" href="#">
@@ -255,14 +266,14 @@ h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 <span class="ex-step"><span class="ex-node"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path></svg></span>Certification</span>
 <span class="ex-step"><span class="ex-node ex-node-end"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Proof</span>
 </span>
-<span class="ex-pf" style="justify-content: flex-end"><span class="ex-pgo">Start this path →</span></span>
+<span class="ex-pf" style="justify-content: flex-end"><span class="ds-link">Start this path →</span></span>
 </a>
 </sc-for>
 </div>
 </section>
 
 <section class="ex-sec {{coursesCls}}" aria-labelledby="ex-c">
-<div class="ex-sh"><div><div id="ex-c" class="ex-st">Courses<span class="ex-tip" tabindex="0" data-tip="Focused learning that builds one skill, at your own pace.">i</span></div></div><a class="ex-all" href="#">View all</a></div>
+<div class="ex-sh"><div><div id="ex-c" class="ex-st">Courses<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Focused learning that builds one skill, at your own pace.</span></span></div></div><a class="ds-link" href="#">View all</a></div>
 <div class="ex-g4">
 <sc-for list="{{courses}}" as="c" hint-placeholder-count="4">
 <a class="ex-card" href="#">
@@ -272,7 +283,7 @@ h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 <div class="ex-cb">
 <span class="ex-ct">{{c.t}}</span>
 <span class="ex-by">{{c.by}} · {{c.lvl}}</span>
-<span class="ex-tier"><span class="ex-tdot" style="background: {{c.tierDot}}"></span>{{c.tier}}</span>
+<span class="ds-tag blue" style="align-self: flex-start; margin-top: auto"><span class="ex-tdot" style="background: {{c.tierDot}}"></span>{{c.tier}}</span>
 </div>
 </a>
 </sc-for>
@@ -280,7 +291,7 @@ h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 </section>
 
 <section class="ex-sec {{certsCls}}" aria-labelledby="ex-ce">
-<div class="ex-sh"><div><div id="ex-ce" class="ex-st">Professional Certifications<span class="ex-tip" tabindex="0" data-tip="Assessed proof that you meet a professional standard. Earned certifications go straight to your Digital Backpack.">i</span></div></div><a class="ex-all" href="#">View all</a></div>
+<div class="ex-sh"><div><div id="ex-ce" class="ex-st">Professional Certifications<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Assessed proof that you meet a professional standard. Earned certifications go straight to your Digital Backpack.</span></span></div></div><a class="ds-link" href="#">View all</a></div>
 <div class="ex-g3">
 <sc-for list="{{certs}}" as="c" hint-placeholder-count="3">
 <a class="ex-card ex-cert" href="#">
@@ -290,36 +301,36 @@ h1,h2,h3,p,.ex-pd{text-wrap:pretty}
 <svg class="ex-seal" viewBox="0 0 100 100"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </div>
 <span style="font-size: 16px; font-weight: 600; letter-spacing: -.2px; line-height: 1.3">{{c.t}}</span>
-<span class="ex-pf" style="margin-top: auto"><span>{{c.meta}}</span><span class="ex-pgo">View →</span></span>
+<span class="ex-pf" style="margin-top: auto"><span>{{c.meta}}</span><span class="ds-link">View →</span></span>
 </a>
 </sc-for>
 </div>
 </section>
 
 <section class="ex-sec {{progsCls}}" aria-labelledby="ex-pr">
-<div class="ex-sh"><div><div id="ex-pr" class="ex-st">Learning Programs<span class="ex-tip" tabindex="0" data-tip="Deep, guided learning with experts and a cohort.">i</span></div></div><a class="ex-all" href="#">View all</a></div>
+<div class="ex-sh"><div><div id="ex-pr" class="ex-st">Learning Programs<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Deep, guided learning with experts and a cohort.</span></span></div></div><a class="ds-link" href="#">View all</a></div>
 <div class="ex-g3">
 <sc-for list="{{progs}}" as="g" hint-placeholder-count="3">
 <a class="ex-card ex-prog" href="#">
-<span style="display: flex; align-items: center; justify-content: space-between"><span class="ex-kind">{{g.kind}}</span><span style="font-size: 12px; color: #8A93AD">{{g.when}}</span></span>
+<span style="display: flex; align-items: center; justify-content: space-between"><span class="ds-tag blue">{{g.kind}}</span><span style="font-size: 12px; color: #8A93AD">{{g.when}}</span></span>
 <span style="font-size: 18px; font-weight: 600; letter-spacing: -.3px; line-height: 1.25">{{g.t}}</span>
 <span class="ex-by">{{g.by}}</span>
-<span class="ex-pf" style="margin-top: auto; justify-content: flex-end"><span class="ex-pgo">See program →</span></span>
+<span class="ex-pf" style="margin-top: auto; justify-content: flex-end"><span class="ds-link">See program →</span></span>
 </a>
 </sc-for>
 </div>
 </section>
 
 
-<section class="ex-coach" aria-labelledby="ex-co">
+<section class="ex-coach nova-card" aria-labelledby="ex-co">
 <div class="ex-cl">
 <h2 id="ex-co" class="ex-ch">Not sure where to begin?</h2>
-<p class="ex-cp">Tell us where you want to go. We’ll map every step, from your first lesson to proof you can show.</p>
-<form class="ex-cf" onSubmit="{{onSubmit}}"><label for="ex-goal" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your goal</label><input id="ex-goal" class="ex-ci" type="text" placeholder="I want to…" autocomplete="off"><button class="ex-cb2" type="submit">Build my journey<span aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></button></form>
+<p class="ex-cp">Tell Nova, your AI Coach, where you want to go. Nova maps every step, from your first lesson to proof you can show.</p>
+<form class="ds-ask sm ex-goal" onSubmit="{{onSubmit}}"><label for="ex-goal" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your goal</label><input id="ex-goal" type="text" placeholder="I want to…" autocomplete="off"><button class="ds-btn sm" type="submit"><span>Build my journey</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></form>
 </div>
 <div class="ex-chat" aria-hidden="true">
 <div class="ex-um">I want to move into data, but I’m starting from zero.</div>
-<div class="ex-nr"><span class="ex-norb"></span><div class="ex-nm">Your route: about five months, two hours a week.</div></div>
+<div class="ex-nr"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span><div class="ex-nm">Your route: about five months, two hours a week.</div></div>
 <div class="ex-rt">
 <span class="ex-rs ex-rs-ok"><i><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></i>Spreadsheets</span>
 <span class="ex-rs ex-rs-now"><i>2</i>SQL</span>
@@ -388,7 +399,7 @@ class Component extends DCLogic {
     return {
       q: S.q, hasQ: !!S.q, onQ: function (e) { set({ q: e.target.value }); }, onSubmit: function (e) { e.preventDefault(); },
       tabs: tabs.map(function (t) { var on = S.tab === t[0]; return { label: t[1], on: on ? 'true' : 'false', cls: on ? 'ex-tab-on' : '', pick: function () { set({ tab: t[0] }); } }; }),
-      topics: topics.map(function (t) { var on = S.topic === t; return { label: t === 'All' ? 'All topics' : t, on: on ? 'true' : 'false', cls: on ? 'ex-tp-on' : '', pick: function () { set({ topic: t }); } }; }),
+      topics: topics.map(function (t) { var on = S.topic === t; return { label: t === 'All' ? 'All topics' : t, on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { set({ topic: t }); } }; }),
       hasTopic: S.topic !== 'All', topic: S.topic, clearTopic: function () { set({ topic: 'All' }); },
       pathsCls: show('paths', paths), coursesCls: show('courses', courses), certsCls: show('certs', certs), progsCls: show('programs', progs),
       paths: paths.map(function (p, k) { return { t: p.t, topic: p.topic, d: p.d, len: p.len, meta: p.meta, cls: k === 0 ? 'ex-path-feat' : '' }; }),

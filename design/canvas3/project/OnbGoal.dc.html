@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ONB-006 Your goal</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-link.off{opacity:.45;pointer-events:none}
+.ds-in.err{border-color:#D92D20}
+.ds-in.err:focus{box-shadow:0 0 0 4px rgba(217,45,32,.12)}
+.ds-chip{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:40px;padding:0 16px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:border-color .2s ease,background .2s ease}
+.ds-chip:hover{border-color:#1652F0;background:#F5F8FF}
+.ds-chip .ck{display:none}
+.ds-chip.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-chip.on .ck{display:block}
+.ds-chip.sm{height:34px;padding:0 13px;font-size:13px}
+.ds-chip i{font-style:normal;font-size:12px;color:#8A93AD}
+.ds-in{height:48px;width:100%;box-sizing:border-box;padding:0 14px;border-radius:12px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;font-size:15px;color:#0B1433;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.ds-in.lg{height:56px;padding:0 18px;border-radius:14px;font-size:17px}
+.ds-in::placeholder{color:#8A93AD}
+.ds-in:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.ds-link:focus-visible,.ds-chip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.lg{width:56px;height:56px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
+.nv-av.sm{width:28px;height:28px}
+@media (max-width: 960px){
+.ds-chip{height:36px;font-size:13.5px;padding:0 14px}
+.ds-chip.sm{height:32px;font-size:12.5px;padding:0 12px}
+}
+.ob-nova{display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;font-size:13.5px;color:#5B6582}
+.ob-nova b{font-weight:600;color:#0B1433}
+.ob-q{width:100%;margin-top:clamp(18px,3vh,26px);display:flex;flex-direction:column;gap:10px;text-align:left}
+.ob-ql{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:15px;font-weight:600;color:#0B1433}
+.ob-ql em{font-style:normal;font-size:13px;font-weight:500;color:#8A93AD}
+.ob-chips{display:flex;flex-wrap:wrap;gap:8px}
+.ob-skip{margin-top:12px;min-height:40px}
+.ob-err{font-size:13px;color:#B42318}
+.ob-cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:100%}
+@media (max-width: 960px){.ob-cards3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 760px){.ob-cards3{grid-template-columns:minmax(0,1fr);gap:10px}.ob-q{margin-top:20px}.ob-chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px;padding:0 20px 2px;scrollbar-width:none}.ob-chips::-webkit-scrollbar{display:none}}
+body{margin:0;background:#FFFFFF}
+a{color:#1652F0}a:hover{color:#0E3BB8}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ob-in{animation:obIn .5s ease both}
+.ob-in2{animation:obIn .5s ease .08s both}
+.ob-in3{animation:obIn .5s ease .16s both}
+.ob-btn{transition:background .2s ease,transform .2s ease}
+.ob-btn:hover{background:#0E3BB8 !important;color:#FFFFFF;transform:translateY(-1px)}
+.ob-btn:active{transform:scale(.98)}
+.ob-arrow{transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ob-btn:hover .ob-arrow{transform:translateX(4px)}
+.ob-ghost{transition:border-color .2s ease,background .2s ease}
+.ob-ghost:hover{border-color:#1652F0 !important;background:#F5F8FF !important;color:#0B1433}
+.ob-btn:focus-visible,.ob-ghost:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2,.ob-in3{animation:none}}
+@media (max-width: 960px){
+.ob-root{height:auto !important;min-height:100vh !important;display:flex;flex-direction:column}
+.ob-header{position:relative !important;height:64px !important;padding:0 20px !important;flex-shrink:0;order:0}
+.ob-brand{font-size:18px !important}
+.ob-track{position:relative !important;top:0 !important;height:auto !important;padding:4px 20px 0 20px !important;justify-content:flex-start !important;gap:12px;flex-shrink:0;order:1}
+.ob-back{position:static !important;width:44px;height:44px !important;padding:0 !important;justify-content:center;flex-shrink:0}
+.ob-back-t{display:none}
+.ob-steps{width:auto !important;flex-grow:1;align-items:flex-start !important}
+.ob-main{order:3;position:relative !important;top:0 !important;padding:8px 20px 32px 20px;box-sizing:border-box}
+.ob-col{width:100% !important}
+.ob-h1{font-size:30px !important}
+.ob-h1{width:auto !important}
+.ob-btn{justify-content:space-between !important;align-self:stretch !important}
+}
+@media (max-height: 760px) and (min-width: 961px){.ob-header{height:72px !important}.ob-track{top:68px !important}.ob-main{top:120px !important}}
+.lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}.lg-mark{display:none;width:30px;height:30px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}@media (max-width: 960px){.lg-word{height:22px}}
+.ob-root{isolation:isolate}
+</style>
+</helmet>
+<div class="ob-root" style="width: 100%; height: 100vh; min-height: 680px; position: relative; overflow: hidden; background: #FFFFFF; font-family: 'Google Sans', 'Google Sans Text', 'Helvetica Neue', system-ui, sans-serif; color: #0B1433">
+<header class="ob-header" style="position: absolute; left: 0; top: 0; width: 100%; height: 88px; box-sizing: border-box; padding: 0 clamp(24px, 6.67vw, 96px); display: flex; align-items: center; justify-content: space-between; z-index: 3">
+<div style="display: flex; align-items: center; gap: 10px">
+<span class="lg-mark" aria-hidden="true"></span><span class="lg-word ob-brand" role="img" aria-label="Credalio"></span>
+</div>
+<span></span>
+</header>
+<div class="ob-track" style="position: absolute; left: 0; top: 88px; width: 100%; height: 44px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; z-index: 3">
+<a href="OnbCoachStyle.dc.html" class="ob-ghost ob-back" aria-label="Back" style="position: absolute; left: clamp(24px, 6.67vw, 96px); top: 2px; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px 0 12px; box-sizing: border-box; border-radius: 999px; border: 1.5px solid #E6EAF3; background: #FFFFFF; color: #3A4566; font-size: 14px; font-weight: 500; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span class="ob-back-t">Back</span></a>
+<div class="ob-steps" role="group" aria-label="Step 3 of 4: Personalise" style="width: 320px; display: flex; flex-direction: column; align-items: center; gap: 8px">
+<div aria-hidden="true" style="width: 100%; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px"><span style="height: 4px; border-radius: 4px; background: #1652F0"></span><span style="height: 4px; border-radius: 4px; background: #1652F0"></span><span style="height: 4px; border-radius: 4px; background: #1652F0"></span><span style="height: 4px; border-radius: 4px; background: #E6EAF3"></span></div>
+<span style="font-size: 13px; color: #5B6582">Step 3 of 4 · <span style="color: #0B1433; font-weight: 600">Personalise</span></span>
+</div>
+</div>
+<main class="ob-main" style="position: absolute; z-index: 2; left: 0; top: clamp(140px, 19vh, 176px); width: 100%; display: flex; flex-direction: column; align-items: center">
+<div class="ob-col" style="width: min(840px, calc(100% - 48px)); display: flex; flex-direction: column; align-items: center">
+<div class="ob-nova ob-in"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span><span><b>Nova</b> · your AI Coach</span></div>
+<h1 class="ob-h1 ob-in" style="margin: 0; font-size: clamp(36px, 6vh, 52px); line-height: 1.1; font-weight: 600; letter-spacing: -0.035em; color: #0B1433; text-align: center; width: max-content; max-width: calc(100vw - 48px); text-wrap: balance">What would you like to become?</h1>
+<p class="ob-in2" style="margin: 12px 0 0 0; max-width: 520px; font-size: 16px; line-height: 1.55; color: #4A5578; text-align: center">Tell me in your own words. You don’t need to know exactly yet.</p>
+<div class="ob-q ob-in3"><sc-if value="{{notDisc}}" hint-placeholder-val="{{ true }}"><input class="ds-in lg" type="text" aria-label="Your goal" placeholder="I want to become…" value="{{goal}}" onInput="{{onGoal}}" autocomplete="off"></sc-if><sc-if value="{{disc}}" hint-placeholder-val="{{ false }}"><div class="ob-ql">No problem. What do you enjoy most?</div></sc-if><div class="ob-chips"><sc-for list="{{gchips}}" as="c" hint-placeholder-count="5"><button type="button" class="ds-chip {{c.cls}}" aria-pressed="{{c.on}}" onClick="{{c.pick}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>{{c.label}}</button></sc-for></div><sc-if value="{{hasIdeas}}" hint-placeholder-val="{{ false }}"><div class="ob-cards3"><sc-for list="{{ideas}}" as="o" hint-placeholder-count="3"><button type="button" class="cd-card" role="radio" onClick="{{o.pick}}" aria-checked="{{o.pressed}}" style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; min-height: 72px; border-radius: 18px; border: 1.5px solid {{o.border}}; background: {{o.bg}}; box-shadow: {{o.shadow}}; cursor: pointer; text-align: left; font-family: inherit; transition: all .25s ease"><div style="display: flex; flex-direction: column; gap: 3px; flex-grow: 1; min-width: 0"><span style="font-size: 16px; font-weight: 600; color: #0B1433; letter-spacing: -0.01em">{{o.title}}</span><span style="font-size: 13.5px; line-height: 1.4; color: #4A5578">{{o.desc}}</span></div><div style="width: 22px; height: 22px; flex-shrink: 0; border-radius: {{o.rad}}; border: 1.5px solid {{o.radioBorder}}; background: {{o.radioBg}}; display: flex; align-items: center; justify-content: center; transition: all .25s ease"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity: {{o.ck}}"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></div></button></sc-for></div></sc-if></div><div class="ob-q ob-in3"><span class="ob-ql">How soon would you like to get there?</span><div class="ob-chips"><sc-for list="{{paces}}" as="c" hint-placeholder-count="5"><button type="button" class="ds-chip {{c.cls}}" aria-pressed="{{c.on}}" onClick="{{c.pick}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>{{c.label}}</button></sc-for></div></div><sc-if value="{{showErr}}" hint-placeholder-val="{{ false }}"><span class="ob-err" role="alert" style="margin-top: 10px">{{err}}</span></sc-if>
+<a href="OnbPrefs.dc.html" onClick="{{onCta}}" class="ob-btn" style="margin-top: clamp(20px, 3.4vh, 28px); display: flex; align-items: center; gap: 16px; height: 56px; padding: 0 6px 0 28px; box-sizing: border-box; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-size: 16px; font-weight: 600; letter-spacing: -0.005em; text-decoration: none; white-space: nowrap; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 12px 28px rgba(22, 82, 240, 0.28)">Continue<span class="ob-arrow" style="width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF; color: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+<a class="ds-link ob-skip" href="OnbPrefs.dc.html">Skip for now</a>
+</div>
+</main>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { goal: 'I want to become a data analyst', disc: false, interest: null, pace: '3–6 months', err: '' }; }
+  card(on, multi) {
+    return { pressed: on ? 'true' : 'false', border: on ? '#1652F0' : '#E6EAF3', bg: on ? '#F5F8FF' : '#FFFFFF',
+      shadow: on ? '0 0 0 4px rgba(22, 82, 240, 0.12), 0 12px 28px rgba(22, 82, 240, 0.16)' : '0 1px 2px rgba(11, 20, 51, 0.04)',
+      iconBg: on ? '#1652F0' : '#EAF0FF', iconFg: on ? '#FFFFFF' : '#1652F0', radioBorder: on ? '#1652F0' : '#CBD3E6', radioBg: on ? '#1652F0' : '#FFFFFF', ck: on ? 1 : 0, rad: multi ? '7px' : '50%' };
+  }
+  renderVals() {
+    const S = this.state, set = (p) => this.setState(p);
+    const chip = (label, on, pick) => ({ label, on: on ? 'true' : 'false', cls: on ? 'on' : '', pick });
+    const sug = [['Data analyst', 'I want to become a data analyst'], ['Product designer', 'I want to become a product designer'], ['Project manager', 'I want to become a project manager'], ['Cybersecurity analyst', 'I want to become a cybersecurity analyst']];
+    const ints = [['numbers', 'Working with numbers'], ['design', 'Designing things'], ['people', 'Helping people'], ['build', 'Building things']];
+    const ideaData = { numbers: [['Data Analyst', 'Turn data into decisions', 'I want to become a data analyst'], ['Financial Analyst', 'Explain how a business performs', 'I want to become a financial analyst'], ['Operations Analyst', 'Improve how organisations run', 'I want to become an operations analyst']],
+      design: [['Product Designer', 'Shape digital products people use', 'I want to become a product designer'], ['Graphic Designer', 'Communicate visually', 'I want to become a graphic designer'], ['UX Researcher', 'Understand what people need', 'I want to become a UX researcher']],
+      people: [['Customer Success Manager', 'Help customers get value', 'I want to become a customer success manager'], ['HR Specialist', 'Support people at work', 'I want to become an HR specialist'], ['Project Manager', 'Bring teams and plans together', 'I want to become a project manager']],
+      build: [['Frontend Developer', 'Build what people click', 'I want to become a frontend developer'], ['Cybersecurity Analyst', 'Keep systems safe', 'I want to become a cybersecurity analyst'], ['AI Engineer', 'Build with machine learning', 'I want to become an AI engineer']] };
+    const gchips = S.disc
+      ? ints.map(([k, l]) => chip(l, S.interest === k, () => set({ interest: k }))).concat([chip('Back to my own words', false, () => set({ disc: false, interest: null }))])
+      : sug.map(([l, g]) => chip(l, S.goal === g, () => set({ goal: g, err: '' }))).concat([chip('I’m not sure yet', false, () => set({ disc: true, goal: '', err: '' }))]);
+    const ideas = S.disc && S.interest ? ideaData[S.interest].map(([t, d, g]) => Object.assign(this.card(false, false), { title: t, desc: d, pick: () => set({ goal: g, disc: false, interest: null, err: '' }) })) : [];
+    return {
+      goal: S.goal, onGoal: (e) => set({ goal: e.target.value, err: '' }), disc: S.disc, notDisc: !S.disc, gchips, hasIdeas: ideas.length > 0, ideas,
+      paces: ['No deadline', '1–3 months', '3–6 months', '6–12 months', 'Pick a date'].map((p) => chip(p, S.pace === p, () => set({ pace: p }))),
+      showErr: !!S.err, err: S.err,
+      onCta: (e) => { if (!S.goal.trim()) { e.preventDefault(); set({ err: 'Tell Nova where you’d like to go, or tap “I’m not sure yet”.' }); } }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -181,7 +181,7 @@ css=COIN+r'''
 .jp-sub{font-size:15px}
 .jp-ph{margin-top:28px}
 .jp-pp{font-size:11.5px}
-.jp-week{margin-top:28px}
+.jp-week{margin:28px -20px 0;border-radius:0;border-left:none;border-right:none}
 .jp-wi{padding:8px 16px;gap:12px}
 .jp-wt{font-size:14px}
 .jp-acts{position:sticky;bottom:0;z-index:20;flex-direction:column;gap:4px;margin:28px -20px 0;padding:12px 16px 10px;border-top:1px solid #E6EAF3;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}

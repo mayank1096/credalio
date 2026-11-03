@@ -25,7 +25,7 @@
       "x": 0,
       "y": 9000,
       "w": 1440,
-      "h": 2359,
+      "h": 2722,
       "title": "EXP-001 Explore Learning · Desktop",
       "page": "main",
       "expand": "fill",
@@ -35,7 +35,7 @@
       "x": 1520,
       "y": 9000,
       "w": 390,
-      "h": 2292,
+      "h": 2475,
       "title": "EXP-001 Explore Learning · Mobile",
       "page": "main",
       "is_interactive": true
@@ -80,7 +80,7 @@
     },
     "CourseDetail.dc.html": {
       "x": 0,
-      "y": 11959,
+      "y": 12322,
       "w": 1440,
       "h": 2887,
       "title": "COURSES-002 Course Detail · Guest · Desktop",
@@ -90,7 +90,7 @@
     },
     "CourseDetail-Mobile.dc.html": {
       "x": 1520,
-      "y": 11959,
+      "y": 12322,
       "w": 390,
       "h": 3259,
       "title": "COURSES-002 Course Detail · Guest · Mobile",
@@ -99,7 +99,7 @@
     },
     "CourseDetail-Learner.dc.html": {
       "x": 2150,
-      "y": 11959,
+      "y": 12322,
       "w": 1440,
       "h": 2887,
       "title": "COURSES-002 Course Detail · Signed in (1,460 DLP) · Desktop",
@@ -109,7 +109,7 @@
     },
     "CourseDetail-Learner-Mobile.dc.html": {
       "x": 3670,
-      "y": 11959,
+      "y": 12322,
       "w": 390,
       "h": 3259,
       "title": "COURSES-002 Course Detail · Signed in (1,460 DLP) · Mobile",
@@ -118,7 +118,7 @@
     },
     "CareerPaths.dc.html": {
       "x": 4300,
-      "y": 11959,
+      "y": 12322,
       "w": 1440,
       "h": 1450,
       "title": "PATH-001 Career Paths · Desktop",
@@ -128,7 +128,7 @@
     },
     "CareerPaths-Mobile.dc.html": {
       "x": 5820,
-      "y": 11959,
+      "y": 12322,
       "w": 390,
       "h": 2409,
       "title": "PATH-001 Career Paths · Mobile",
@@ -137,7 +137,7 @@
     },
     "PathDetail.dc.html": {
       "x": 6450,
-      "y": 11959,
+      "y": 12322,
       "w": 1440,
       "h": 2176,
       "title": "PATH-002 Career Path Detail · Guest · Desktop",
@@ -147,7 +147,7 @@
     },
     "PathDetail-Mobile.dc.html": {
       "x": 7970,
-      "y": 11959,
+      "y": 12322,
       "w": 390,
       "h": 2690,
       "title": "PATH-002 Career Path Detail · Guest · Mobile",
@@ -156,7 +156,7 @@
     },
     "PathDetail-Learner.dc.html": {
       "x": 8600,
-      "y": 11959,
+      "y": 12322,
       "w": 1440,
       "h": 2176,
       "title": "PATH-002 Career Path Detail · Signed in (1,460 DLP) · Desktop",
@@ -166,7 +166,7 @@
     },
     "PathDetail-Learner-Mobile.dc.html": {
       "x": 10120,
-      "y": 11959,
+      "y": 12322,
       "w": 390,
       "h": 2660,
       "title": "PATH-002 Career Path Detail · Signed in (1,460 DLP) · Mobile",
@@ -175,7 +175,7 @@
     },
     "Certifications.dc.html": {
       "x": 0,
-      "y": 15818,
+      "y": 16181,
       "w": 1440,
       "h": 1389,
       "title": "CERT-001 Certifications · Desktop",
@@ -185,7 +185,7 @@
     },
     "Certifications-Mobile.dc.html": {
       "x": 1520,
-      "y": 15818,
+      "y": 16181,
       "w": 390,
       "h": 2272,
       "title": "CERT-001 Certifications · Mobile",
@@ -194,7 +194,7 @@
     },
     "CertDetail.dc.html": {
       "x": 2150,
-      "y": 15818,
+      "y": 16181,
       "w": 1440,
       "h": 2447,
       "title": "CERT-002 Certification Detail · Desktop",
@@ -204,7 +204,7 @@
     },
     "CertDetail-Mobile.dc.html": {
       "x": 3670,
-      "y": 15818,
+      "y": 16181,
       "w": 390,
       "h": 2824,
       "title": "CERT-002 Certification Detail · Mobile",
@@ -213,7 +213,7 @@
     },
     "Programs.dc.html": {
       "x": 4300,
-      "y": 15818,
+      "y": 16181,
       "w": 1440,
       "h": 1922,
       "title": "PROG-001 Learning Programs · Desktop",
@@ -223,7 +223,7 @@
     },
     "Programs-Mobile.dc.html": {
       "x": 5820,
-      "y": 15818,
+      "y": 16181,
       "w": 390,
       "h": 2087,
       "title": "PROG-001 Learning Programs · Mobile",
@@ -232,7 +232,7 @@
     },
     "ProgramDetail.dc.html": {
       "x": 6450,
-      "y": 15818,
+      "y": 16181,
       "w": 1440,
       "h": 1859,
       "title": "PROG-002 Program Detail · Desktop",
@@ -242,7 +242,7 @@
     },
     "ProgramDetail-Mobile.dc.html": {
       "x": 7970,
-      "y": 15818,
+      "y": 16181,
       "w": 390,
       "h": 2382,
       "title": "PROG-002 Program Detail · Mobile",
@@ -251,7 +251,7 @@
     },
     "Journey.dc.html": {
       "x": 0,
-      "y": 19242,
+      "y": 19605,
       "w": 1440,
       "h": 1107,
       "title": "JNY-001 Understand your goal · Desktop",
@@ -261,7 +261,7 @@
     },
     "Journey-Mobile.dc.html": {
       "x": 1520,
-      "y": 19242,
+      "y": 19605,
       "w": 390,
       "h": 913,
       "title": "JNY-001 Understand your goal · Mobile",
@@ -270,7 +270,7 @@
     },
     "Journey-Know.dc.html": {
       "x": 2150,
-      "y": 19242,
+      "y": 19605,
       "w": 1440,
       "h": 920,
       "title": "JNY-002 What you already know · Desktop",
@@ -280,7 +280,7 @@
     },
     "Journey-Know-Mobile.dc.html": {
       "x": 3670,
-      "y": 19242,
+      "y": 19605,
       "w": 390,
       "h": 927,
       "title": "JNY-002 What you already know · Mobile",
@@ -289,7 +289,7 @@
     },
     "Journey-Building.dc.html": {
       "x": 4300,
-      "y": 19242,
+      "y": 19605,
       "w": 1440,
       "h": 900,
       "title": "JNY-003 AI builds your journey · building · Desktop",
@@ -299,7 +299,7 @@
     },
     "Journey-Building-Mobile.dc.html": {
       "x": 5820,
-      "y": 19242,
+      "y": 19605,
       "w": 390,
       "h": 844,
       "title": "JNY-003 AI builds your journey · building · Mobile",
@@ -308,7 +308,7 @@
     },
     "Journey-Ready.dc.html": {
       "x": 6450,
-      "y": 19242,
+      "y": 19605,
       "w": 1440,
       "h": 900,
       "title": "JNY-003 AI builds your journey · ready · Desktop",
@@ -318,7 +318,7 @@
     },
     "Journey-Ready-Mobile.dc.html": {
       "x": 7970,
-      "y": 19242,
+      "y": 19605,
       "w": 390,
       "h": 909,
       "title": "JNY-003 AI builds your journey · ready · Mobile",
@@ -327,7 +327,7 @@
     },
     "JourneyPlan.dc.html": {
       "x": 0,
-      "y": 20949,
+      "y": 21312,
       "w": 1440,
       "h": 1539,
       "title": "JNY-004 Your journey · guest · Desktop",
@@ -337,7 +337,7 @@
     },
     "JourneyPlan-Mobile.dc.html": {
       "x": 1520,
-      "y": 20949,
+      "y": 21312,
       "w": 390,
       "h": 1913,
       "title": "JNY-004 Your journey · guest · Mobile",
@@ -346,7 +346,7 @@
     },
     "JourneyPlan-Saved.dc.html": {
       "x": 2150,
-      "y": 20949,
+      "y": 21312,
       "w": 1440,
       "h": 1539,
       "title": "JNY-004 Your journey · saved · Desktop",
@@ -356,7 +356,7 @@
     },
     "JourneyPlan-Saved-Mobile.dc.html": {
       "x": 3670,
-      "y": 20949,
+      "y": 21312,
       "w": 390,
       "h": 1913,
       "title": "JNY-004 Your journey · saved · Mobile",
@@ -365,7 +365,7 @@
     },
     "JourneyPlan-Step1.dc.html": {
       "x": 4300,
-      "y": 20949,
+      "y": 21312,
       "w": 1440,
       "h": 900,
       "title": "JNY-005 Step 1 started · Desktop",
@@ -375,7 +375,7 @@
     },
     "JourneyPlan-Step1-Mobile.dc.html": {
       "x": 5820,
-      "y": 20949,
+      "y": 21312,
       "w": 390,
       "h": 844,
       "title": "JNY-005 Step 1 started · Mobile",
@@ -384,7 +384,7 @@
     },
     "JourneyPlan-Returning.dc.html": {
       "x": 6450,
-      "y": 20949,
+      "y": 21312,
       "w": 1440,
       "h": 1187,
       "title": "RTN-001 Returning learner · new goal (= JNY-001, returning mode) · Desktop",
@@ -394,7 +394,7 @@
     },
     "JourneyPlan-Returning-Mobile.dc.html": {
       "x": 7970,
-      "y": 20949,
+      "y": 21312,
       "w": 390,
       "h": 1169,
       "title": "RTN-001 Returning learner · new goal (= JNY-001, returning mode) · Mobile",
@@ -403,7 +403,7 @@
     },
     "OnbWelcome.dc.html": {
       "x": 0,
-      "y": 23462,
+      "y": 23825,
       "w": 1440,
       "h": 820,
       "title": "ONB-001 Welcome · how are you joining? · Desktop",
@@ -413,7 +413,7 @@
     },
     "OnbWelcome-Mobile.dc.html": {
       "x": 1520,
-      "y": 23462,
+      "y": 23825,
       "w": 390,
       "h": 920,
       "title": "ONB-001 Welcome · how are you joining? · Mobile",
@@ -422,7 +422,7 @@
     },
     "OnbAccount.dc.html": {
       "x": 2150,
-      "y": 23462,
+      "y": 23825,
       "w": 1440,
       "h": 820,
       "title": "ONB-002 Create your account · Desktop",
@@ -432,7 +432,7 @@
     },
     "OnbAccount-Mobile.dc.html": {
       "x": 3670,
-      "y": 23462,
+      "y": 23825,
       "w": 390,
       "h": 980,
       "title": "ONB-002 Create your account · Mobile",
@@ -441,7 +441,7 @@
     },
     "OnbInbox.dc.html": {
       "x": 4300,
-      "y": 23462,
+      "y": 23825,
       "w": 1440,
       "h": 820,
       "title": "ONB-003 Check your inbox · Desktop",
@@ -451,7 +451,7 @@
     },
     "OnbInbox-Mobile.dc.html": {
       "x": 5820,
-      "y": 23462,
+      "y": 23825,
       "w": 390,
       "h": 844,
       "title": "ONB-003 Check your inbox · Mobile",
@@ -460,7 +460,7 @@
     },
     "OnbVerified.dc.html": {
       "x": 6450,
-      "y": 23462,
+      "y": 23825,
       "w": 1440,
       "h": 820,
       "title": "ONB-003v Email verified · Desktop",
@@ -470,7 +470,7 @@
     },
     "OnbVerified-Mobile.dc.html": {
       "x": 7970,
-      "y": 23462,
+      "y": 23825,
       "w": 390,
       "h": 844,
       "title": "ONB-003v Email verified · Mobile",
@@ -479,7 +479,7 @@
     },
     "OnbPassword.dc.html": {
       "x": 8600,
-      "y": 23462,
+      "y": 23825,
       "w": 1440,
       "h": 820,
       "title": "ONB-003c Choose a password · Desktop",
@@ -489,7 +489,7 @@
     },
     "OnbPassword-Mobile.dc.html": {
       "x": 10120,
-      "y": 23462,
+      "y": 23825,
       "w": 390,
       "h": 844,
       "title": "ONB-003c Choose a password · Mobile",
@@ -498,7 +498,7 @@
     },
     "OnbAbout.dc.html": {
       "x": 0,
-      "y": 25042,
+      "y": 25405,
       "w": 1440,
       "h": 820,
       "title": "ONB-004 About you · Desktop",
@@ -508,7 +508,7 @@
     },
     "OnbAbout-Mobile.dc.html": {
       "x": 1520,
-      "y": 25042,
+      "y": 25405,
       "w": 390,
       "h": 914,
       "title": "ONB-004 About you · Mobile",
@@ -517,7 +517,7 @@
     },
     "OnbChoice.dc.html": {
       "x": 2150,
-      "y": 25042,
+      "y": 25405,
       "w": 1440,
       "h": 820,
       "title": "ONB-004b Personalise or explore now · Desktop",
@@ -527,7 +527,7 @@
     },
     "OnbChoice-Mobile.dc.html": {
       "x": 3670,
-      "y": 25042,
+      "y": 25405,
       "w": 390,
       "h": 844,
       "title": "ONB-004b Personalise or explore now · Mobile",
@@ -536,7 +536,7 @@
     },
     "OnbCoach.dc.html": {
       "x": 4300,
-      "y": 25042,
+      "y": 25405,
       "w": 1440,
       "h": 820,
       "title": "ONB-005 Meet your AI Coach · Desktop",
@@ -546,7 +546,7 @@
     },
     "OnbCoach-Mobile.dc.html": {
       "x": 5820,
-      "y": 25042,
+      "y": 25405,
       "w": 390,
       "h": 844,
       "title": "ONB-005 Meet your AI Coach · Mobile",
@@ -555,7 +555,7 @@
     },
     "OnbCoachStyle.dc.html": {
       "x": 6450,
-      "y": 25042,
+      "y": 25405,
       "w": 1440,
       "h": 820,
       "title": "ONB-005b How should Nova help? · Desktop",
@@ -565,7 +565,7 @@
     },
     "OnbCoachStyle-Mobile.dc.html": {
       "x": 7970,
-      "y": 25042,
+      "y": 25405,
       "w": 390,
       "h": 844,
       "title": "ONB-005b How should Nova help? · Mobile",
@@ -574,7 +574,7 @@
     },
     "OnbGoal.dc.html": {
       "x": 0,
-      "y": 26556,
+      "y": 26919,
       "w": 1440,
       "h": 1167,
       "title": "ONB-006 Your goal (= JNY-001, onboarding mode) · Desktop",
@@ -584,7 +584,7 @@
     },
     "OnbGoal-Mobile.dc.html": {
       "x": 1520,
-      "y": 26556,
+      "y": 26919,
       "w": 390,
       "h": 965,
       "title": "ONB-006 Your goal (= JNY-001, onboarding mode) · Mobile",
@@ -593,7 +593,7 @@
     },
     "OnbPrefs.dc.html": {
       "x": 2150,
-      "y": 26556,
+      "y": 26919,
       "w": 1440,
       "h": 820,
       "title": "ONB-007 How you like to learn · Desktop",
@@ -603,7 +603,7 @@
     },
     "OnbPrefs-Mobile.dc.html": {
       "x": 3670,
-      "y": 26556,
+      "y": 26919,
       "w": 390,
       "h": 1047,
       "title": "ONB-007 How you like to learn · Mobile",
@@ -612,7 +612,7 @@
     },
     "OnbStart.dc.html": {
       "x": 4300,
-      "y": 26556,
+      "y": 26919,
       "w": 1440,
       "h": 980,
       "title": "ONB-008 What you already know (= JNY-002, onboarding mode) · Desktop",
@@ -622,7 +622,7 @@
     },
     "OnbStart-Mobile.dc.html": {
       "x": 5820,
-      "y": 26556,
+      "y": 26919,
       "w": 390,
       "h": 935,
       "title": "ONB-008 What you already know (= JNY-002, onboarding mode) · Mobile",
@@ -678,7 +678,7 @@
     },
     "row-b2": {
       "x": 0,
-      "y": 11659,
+      "y": 12022,
       "text": "Batch 2 · Course detail and Career Paths",
       "kind": "title1",
       "maxW": 1910,
@@ -686,7 +686,7 @@
     },
     "row-b3": {
       "x": 0,
-      "y": 15518,
+      "y": 15881,
       "text": "Batch 3 · Certifications and Learning Programs",
       "kind": "title1",
       "maxW": 1910,
@@ -694,7 +694,7 @@
     },
     "row-b4": {
       "x": 0,
-      "y": 18942,
+      "y": 19305,
       "text": "Batch 4 · Start your journey (goal, what you know, AI builds it)",
       "kind": "title1",
       "maxW": 1910,
@@ -702,7 +702,7 @@
     },
     "row-b5": {
       "x": 0,
-      "y": 20649,
+      "y": 21012,
       "text": "Batch 5 · Your journey (guest, saved, step 1 started, returning learner)",
       "kind": "title1",
       "maxW": 1910,
@@ -710,7 +710,7 @@
     },
     "row-b6": {
       "x": 0,
-      "y": 23162,
+      "y": 23525,
       "text": "Batch 6 · Learner onboarding: welcome, account, inbox, verified (same screens as Link 1)",
       "kind": "title1",
       "maxW": 1910,
@@ -718,7 +718,7 @@
     },
     "row-b7": {
       "x": 0,
-      "y": 24742,
+      "y": 25105,
       "text": "Batch 7 · Learner onboarding: about you, personalise or explore, meet your AI Coach (same screens as Link 1)",
       "kind": "title1",
       "maxW": 1910,
@@ -726,7 +726,7 @@
     },
     "row-b8": {
       "x": 0,
-      "y": 26256,
+      "y": 26619,
       "text": "Batch 8 · Onboarding: goal and what you know reuse the Journey screens (onboarding mode); how you like to learn is new",
       "kind": "title1",
       "maxW": 1910,

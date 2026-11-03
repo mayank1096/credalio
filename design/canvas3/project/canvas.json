@@ -386,8 +386,8 @@
       "x": 6450,
       "y": 20949,
       "w": 1440,
-      "h": 914,
-      "title": "RTN-001 Returning learner · new goal · Desktop",
+      "h": 1187,
+      "title": "RTN-001 Returning learner · new goal (= JNY-001, returning mode) · Desktop",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -396,8 +396,8 @@
       "x": 7970,
       "y": 20949,
       "w": 390,
-      "h": 1086,
-      "title": "RTN-001 Returning learner · new goal · Mobile",
+      "h": 1169,
+      "title": "RTN-001 Returning learner · new goal (= JNY-001, returning mode) · Mobile",
       "page": "main",
       "is_interactive": true
     },
@@ -576,8 +576,8 @@
       "x": 0,
       "y": 26556,
       "w": 1440,
-      "h": 820,
-      "title": "ONB-006 Your goal · Desktop",
+      "h": 1167,
+      "title": "ONB-006 Your goal (= JNY-001, onboarding mode) · Desktop",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -586,8 +586,8 @@
       "x": 1520,
       "y": 26556,
       "w": 390,
-      "h": 844,
-      "title": "ONB-006 Your goal · Mobile",
+      "h": 965,
+      "title": "ONB-006 Your goal (= JNY-001, onboarding mode) · Mobile",
       "page": "main",
       "is_interactive": true
     },
@@ -614,8 +614,8 @@
       "x": 4300,
       "y": 26556,
       "w": 1440,
-      "h": 820,
-      "title": "ONB-008 Where you’re starting from · Desktop",
+      "h": 980,
+      "title": "ONB-008 What you already know (= JNY-002, onboarding mode) · Desktop",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -624,8 +624,8 @@
       "x": 5820,
       "y": 26556,
       "w": 390,
-      "h": 921,
-      "title": "ONB-008 Where you’re starting from · Mobile",
+      "h": 935,
+      "title": "ONB-008 What you already know (= JNY-002, onboarding mode) · Mobile",
       "page": "main",
       "is_interactive": true
     }
@@ -727,7 +727,7 @@
     "row-b8": {
       "x": 0,
       "y": 26256,
-      "text": "Batch 8 · Learner onboarding: your goal, how you like to learn, where you’re starting",
+      "text": "Batch 8 · Onboarding: goal and what you know reuse the Journey screens (onboarding mode); how you like to learn is new",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"

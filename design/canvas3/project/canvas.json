@@ -571,6 +571,63 @@
       "title": "ONB-005b How should Nova help? · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "OnbGoal.dc.html": {
+      "x": 0,
+      "y": 26556,
+      "w": 1440,
+      "h": 820,
+      "title": "ONB-006 Your goal · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbGoal-Mobile.dc.html": {
+      "x": 1520,
+      "y": 26556,
+      "w": 390,
+      "h": 844,
+      "title": "ONB-006 Your goal · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "OnbPrefs.dc.html": {
+      "x": 2150,
+      "y": 26556,
+      "w": 1440,
+      "h": 820,
+      "title": "ONB-007 How you like to learn · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbPrefs-Mobile.dc.html": {
+      "x": 3670,
+      "y": 26556,
+      "w": 390,
+      "h": 1047,
+      "title": "ONB-007 How you like to learn · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "OnbStart.dc.html": {
+      "x": 4300,
+      "y": 26556,
+      "w": 1440,
+      "h": 820,
+      "title": "ONB-008 Where you’re starting from · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbStart-Mobile.dc.html": {
+      "x": 5820,
+      "y": 26556,
+      "w": 390,
+      "h": 921,
+      "title": "ONB-008 Where you’re starting from · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -590,7 +647,8 @@
     "row-b4",
     "row-b5",
     "row-b6",
-    "row-b7"
+    "row-b7",
+    "row-b8"
   ],
   "notes": {
     "new-hero": {
@@ -665,6 +723,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b8": {
+      "x": 0,
+      "y": 26256,
+      "text": "Batch 8 · Learner onboarding: your goal, how you like to learn, where you’re starting",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -727,7 +793,13 @@
     "OnbCoach.dc.html",
     "OnbCoach-Mobile.dc.html",
     "OnbCoachStyle.dc.html",
-    "OnbCoachStyle-Mobile.dc.html"
+    "OnbCoachStyle-Mobile.dc.html",
+    "OnbGoal.dc.html",
+    "OnbGoal-Mobile.dc.html",
+    "OnbPrefs.dc.html",
+    "OnbPrefs-Mobile.dc.html",
+    "OnbStart.dc.html",
+    "OnbStart-Mobile.dc.html"
   ],
   "pages": [
     {

@@ -163,32 +163,13 @@
       "x": 14490,
       "y": 31816
     },
-    "CR-CREATE-001-Mobile.dc.html": {
-      "h": 844,
-      "is_interactive": true,
-      "page": "p1",
-      "title": "CR-CREATE-001 · Mobile",
-      "w": 390,
-      "x": 3590,
-      "y": 4840
-    },
-    "CR-CREATE-001.dc.html": {
-      "expand": "fill",
-      "h": 820,
-      "is_interactive": true,
-      "page": "p1",
-      "title": "CR-CREATE-001 · How would you like to build it? · Desktop",
-      "w": 1440,
-      "x": 2070,
-      "y": 4840
-    },
     "CR-CREATE-002A-Mobile.dc.html": {
       "h": 844,
       "is_interactive": true,
       "page": "p1",
       "title": "CR-CREATE-002A · Mobile",
       "w": 390,
-      "x": 5660,
+      "x": 3590,
       "y": 4840
     },
     "CR-CREATE-002A.dc.html": {
@@ -198,7 +179,7 @@
       "page": "p1",
       "title": "CR-CREATE-002A · New course with Nova (chat) · Desktop",
       "w": 1440,
-      "x": 4140,
+      "x": 2070,
       "y": 4840
     },
     "CR-CREATE-002Ab-Mobile.dc.html": {
@@ -207,7 +188,7 @@
       "page": "p1",
       "title": "CR-CREATE-002Ab · Mobile",
       "w": 390,
-      "x": 7730,
+      "x": 5660,
       "y": 4840
     },
     "CR-CREATE-002Ab.dc.html": {
@@ -216,7 +197,7 @@
       "page": "p1",
       "title": "CR-CREATE-002Ab · Review Nova’s draft · Desktop",
       "w": 1440,
-      "x": 6210,
+      "x": 4140,
       "y": 4840
     },
     "CR-CREATE-002B-Mobile.dc.html": {
@@ -225,7 +206,7 @@
       "page": "p1",
       "title": "CR-CREATE-002B · Mobile",
       "w": 390,
-      "x": 9800,
+      "x": 7730,
       "y": 4840
     },
     "CR-CREATE-002B.dc.html": {
@@ -235,7 +216,7 @@
       "page": "p1",
       "title": "CR-CREATE-002B · Build from scratch · Desktop",
       "w": 1440,
-      "x": 8280,
+      "x": 6210,
       "y": 4840
     },
     "CR-CRED-001-Mobile.dc.html": {
@@ -510,7 +491,7 @@
       "y": 6660
     },
     "CR-DASH-NEW-Mobile.dc.html": {
-      "h": 980,
+      "h": 844,
       "is_interactive": true,
       "page": "p1",
       "title": "CR-DASH-NEW · Mobile",
@@ -783,13 +764,13 @@
       "h": 900,
       "is_interactive": true,
       "page": "p1",
-      "title": "CR-HOME-EXP · My learning experiences · Desktop",
+      "title": "CR-HOME-EXP · My creations · Desktop",
       "w": 1440,
       "x": 12420,
       "y": 29676
     },
     "CR-HOME-NEW-Mobile.dc.html": {
-      "h": 1100,
+      "h": 844,
       "is_interactive": true,
       "page": "p1",
       "title": "CR-HOME-NEW · Mobile",
@@ -1272,7 +1253,7 @@
       "y": 2920
     },
     "CR-ONB-001L-Mobile.dc.html": {
-      "h": 980,
+      "h": 1080,
       "is_interactive": true,
       "page": "p1",
       "title": "CR-ONB-001L · Mobile",
@@ -1281,6 +1262,7 @@
       "y": 2920
     },
     "CR-ONB-001L.dc.html": {
+      "expand": "fill",
       "h": 820,
       "is_interactive": true,
       "page": "p1",
@@ -1290,7 +1272,7 @@
       "y": 2920
     },
     "CR-ONB-001V-Mobile.dc.html": {
-      "h": 980,
+      "h": 1200,
       "is_interactive": true,
       "page": "p1",
       "title": "CR-ONB-001V · Mobile",
@@ -1299,6 +1281,7 @@
       "y": 2920
     },
     "CR-ONB-001V.dc.html": {
+      "expand": "fill",
       "h": 820,
       "is_interactive": true,
       "page": "p1",
@@ -1327,7 +1310,7 @@
       "y": 2920
     },
     "CR-ONB-002S-Mobile.dc.html": {
-      "h": 980,
+      "h": 1070,
       "is_interactive": true,
       "page": "p1",
       "title": "CR-ONB-002S · Mobile",
@@ -3266,7 +3249,7 @@
       "kind": "title1",
       "maxW": 8000,
       "page": "p1",
-      "text": "Link 1 · Start creating: first dashboard → choose how to start → Copilot or scratch",
+      "text": "Link 1 · Start creating: first dashboard → Nova chat or build it yourself",
       "w": 240,
       "x": 0,
       "y": 4520
@@ -3331,7 +3314,7 @@
       "text": "NEW · just made · CR-ONB-001L",
       "w": 1910,
       "x": 6210,
-      "y": 3930
+      "y": 4110
     },
     "new-CR-ONB-001V": {
       "fill": "red",
@@ -3339,7 +3322,7 @@
       "text": "NEW · just made · CR-ONB-001V",
       "w": 1910,
       "x": 8280,
-      "y": 3930
+      "y": 4180
     },
     "new-CR-ONB-005b": {
       "fill": "red",
@@ -3445,8 +3428,6 @@
     "CR-ONB-008-Mobile.dc.html",
     "CR-DASH-NEW.dc.html",
     "CR-DASH-NEW-Mobile.dc.html",
-    "CR-CREATE-001.dc.html",
-    "CR-CREATE-001-Mobile.dc.html",
     "CR-CREATE-002A.dc.html",
     "CR-CREATE-002A-Mobile.dc.html",
     "CR-CREATE-002Ab.dc.html",

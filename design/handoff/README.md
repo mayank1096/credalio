@@ -47,7 +47,20 @@ Press Play in the canvas to click through. Animations only run in Play mode.
   orientation progress and dates, and attempts left are all dynamic in the product.
 - **`href="#"`** marks an action that is designed but not wired to another board. Real links between boards are file names.
   Everything that leads to a phase 2 screen (wallet, earnings, discussions, calendar, analytics, help, course studio) is `#` on purpose.
-- **Role picker (ONB-001):** all four cards are selectable; only Creator (→ ONB-002) and Organization (→ "coming soon") continue in phase 1.
+- **Role picker (ONB-001):** all four cards are selectable. Creator → ONB-002; Learner, Validator and Organization each go to a short waitlist form
+  (`CR-ONB-001L`, `CR-ONB-001V`, `CR-ONB-002S`: one shared source with variants) that ends on a "We’re cooking something good." screen.
+
+## Latest changes (onboarding and start creating)
+
+- **What will you create first?** (`CR-DASH-NEW`, first visit) is a short chat with Nova: idea (30–250 characters) → Nova thinks → skills (1–5) →
+  Nova’s format pick → Start with Nova (`CR-CREATE-002A`). "Build without Nova" goes to `CR-CREATE-002B`.
+- **Create something new** (`CR-HOME-NEW`) works the same way, with the four format cards below; a format card on its own leads to Build it myself.
+- **Nova chat** (`CR-CREATE-002A`) continues from the idea, format and skills already given and does not ask for them again.
+- **Removed:** `CR-CREATE-001` "How would you like to build it?". Every link to it now goes to `CR-HOME-NEW` or `CR-CREATE-002B`.
+- **Renamed:** "My learning experiences" → **My creations**; search reads "Search your creations, learners, discussions…".
+- **Expertise** (`CR-ONB-005`): Industry → Domain dropdowns (21 industries, 149 domains, "Other" at both levels); the next screen shows the chosen domain.
+- **Meet your Copilot** (`CR-ONB-006`): "Prefer a different Copilot? They all help the same way."
+- **Waitlists:** see Role picker above. Join stays disabled until the required fields are valid (Validator needs a LinkedIn profile link).
 
 ## Foundations
 

@@ -22,7 +22,9 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 
 - [x] D [x] M  `CR-ONB-001` CR-ONB-001 · Choose participation: Create
 - [x] D [x] M  `CR-ONB-002` CR-ONB-002 · Creator type
-- [x] D [x] M  `CR-ONB-002S` CR-ONB-002S · With an institution / As an organisation: coming soon
+- [x] D [x] M  `CR-ONB-002S` CR-ONB-002S · Organization waitlist (shared source; 001L learner, 001V validator)
+- [x] D [x] M  `CR-ONB-001L` CR-ONB-001L · Learner waitlist
+- [x] D [x] M  `CR-ONB-001V` CR-ONB-001V · Validator waitlist
 - [x] D [x] M  `CR-ONB-003` CR-ONB-003 · Create account: email first, Google & Apple below, no password
 - [x] D [x] M  `CR-ONB-003b` CR-ONB-003 · Check your inbox (verification link)
 - [x] D [x] M  `CR-ONB-003v` CR-ONB-003V · Email verified → create password
@@ -33,10 +35,9 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-ONB-007` CR-ONB-007 · Copilot working style
 - [x] D [x] M  `CR-ONB-008` CR-ONB-008 · Creator setup complete → Dashboard (no auto course)
 
-## 02. Start creating: first dashboard → choose how to start → Copilot or scratch (5)
+## 02. Start creating: first dashboard → Nova chat or build it yourself (4)
 
-- [x] D [x] M  `CR-DASH-NEW` Creator Dashboard entry: choose what to create (full dashboard next batch)
-- [x] D [x] M  `CR-CREATE-001` CR-CREATE-001 · Start with your Copilot or from scratch
+- [x] D [x] M  `CR-DASH-NEW` What will you create first? (idea → skills → format with Nova)
 - [x] D [x] M  `CR-CREATE-002A` CR-CREATE-002A · Start with Copilot: the outcome question lives here
 - [x] D [x] M  `CR-CREATE-002Ab` CR-CREATE-002A · Copilot proposal: review & accept before the Studio
 - [x] D [x] M  `CR-CREATE-002B` CR-CREATE-002B · Build from scratch → existing setup flow
@@ -100,7 +101,7 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-DASH-S09` STATE-09 · Established creator
 - [x] D [x] M  `CR-NOT-001` CR-NOT-001 · Notification Centre (categories, deep links)
 - [x] D [x] M  `CR-NOT-bell` Notification bell dropdown
-- [x] D [x] M  `CR-HOME-EXP` CREATE · My Learning Experiences
+- [x] D [x] M  `CR-HOME-EXP` CREATE · My creations
 - [x] D [x] M  `CR-HOME-NEW` CREATE · Create New
 - [x] D [x] M  `CR-HOME-SET` Settings · AI preferences (Copilot name & style)
 - [x] D [x] M  `CR-HOME-SOON` Not-yet-built destination (example: Validation Centre)

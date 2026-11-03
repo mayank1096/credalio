@@ -53,6 +53,14 @@ body{margin:0;background:#F7F9FD}
 .fx-who em{font-style:normal;font-weight:500;font-size:12px;color:#1652F0;background:#EAF0FF;border-radius:999px;padding:2px 8px}
 .fx-nova p{margin:0;font-size:16.5px;line-height:1.6;color:#0B1433}
 .fx-me{justify-content:flex-end;align-items:center}
+.fx-seed{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.fx-seed p{margin:0;max-width:78%;padding:11px 16px;border-radius:18px 18px 6px 18px;background:#EAF0FF;font-size:15.5px;line-height:1.5;color:#0B1433}
+.fx-seedtags{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px;max-width:78%}
+.fx-seedtags .fx-fmttag{gap:6px;background:#EAF0FF !important;border-color:#1652F0 !important;color:#0E3BB8 !important;font-weight:500 !important}
+.fx-seedtags > span{display:inline-flex;align-items:center;height:28px;padding:0 11px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE;font-size:12.5px;font-weight:500;color:#0E3BB8}
+.fx-seedmeta{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#5B6582}
+.fx-seedmeta a{color:#1652F0;font-weight:600;text-decoration:none}
+.fx-seedmeta a:hover{text-decoration:underline}
 .fx-me p{margin:0;max-width:78%;padding:11px 16px;border-radius:18px 18px 6px 18px;background:#EAF0FF;font-size:15.5px;line-height:1.5;color:#0B1433}
 .fx-edit{width:30px;height:30px;flex-shrink:0;border:0;border-radius:50%;background:transparent;color:#8A93AD;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .2s ease,background .2s ease}
 .fx-me:hover .fx-edit,.fx-edit:focus-visible{opacity:1}
@@ -235,8 +243,8 @@ body{margin:0;background:#F7F9FD}
 </helmet>
 <div class="fx-root">
 <header class="fx-top">
-<a href="CR-CREATE-001.dc.html" class="fx-x" aria-label="Close and go back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
-<div class="fx-title"><span class="fx-t1">New course</span><span class="fx-t2">{{stageLabel}}</span></div>
+<a href="CR-HOME-NEW.dc.html" class="fx-x" aria-label="Close and go back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
+<div class="fx-title"><span class="fx-t1">{{titleFmt}}</span><span class="fx-t2">{{stageLabel}}</span></div>
 <div class="fx-steps" aria-label="{{progress}}"><sc-for list="{{segs}}" as="s" hint-placeholder-count="5"><span style="background: {{s.c}}"></span></sc-for><em>{{progress}}</em></div>
 <span style="flex-grow: 1"></span>
 <button type="button" class="fx-bpbtn" onClick="{{toggleBp}}" aria-expanded="{{bpOpen}}" style="visibility: {{bpBtnV}}"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"></rect><path d="M9 8h6M9 12h6M9 16h3"></path></svg><span>Blueprint</span><b>{{bpCount}}</b></button>
@@ -246,7 +254,9 @@ body{margin:0;background:#F7F9FD}
 <div class="fx-body">
 <section class="fx-chat" aria-label="Conversation with Nova">
 <div class="fx-scroll"><div class="fx-col fx-msgs" aria-live="polite">
-<div class="fx-hello"><span aria-hidden="true" style="position: relative; flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; overflow: hidden; background: #EAF0FF; box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 4.5px #D6DDEE; display: block"><img src="/_blob/b8f0756720795e1bd3b02e9c2655cb25" alt="" style="position: absolute; left: -87.50%; top: -57.81%; width: 294.06%; max-width: none; height: auto; mix-blend-mode: multiply"></span><h1>Let’s sketch your course</h1><p>Answer five questions. I’ll sketch a draft for you to review.</p></div>
+<div class="fx-hello"><span aria-hidden="true" style="position: relative; flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; overflow: hidden; background: #EAF0FF; box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 4.5px #D6DDEE; display: block"><img src="/_blob/b8f0756720795e1bd3b02e9c2655cb25" alt="" style="position: absolute; left: -87.50%; top: -57.81%; width: 294.06%; max-width: none; height: auto; mix-blend-mode: multiply"></span><h1>Let’s build on your idea</h1><p>{{helloSub}}</p></div>
+<div class="fx-seed cp-pop"><sc-if value="{{fromDash}}" hint-placeholder-val="{{true}}"><span class="fx-seedmeta">You, from your Studio · <a href="CR-DASH-NEW.dc.html">Edit</a></span></sc-if><sc-if value="{{fromCreate}}" hint-placeholder-val="{{false}}"><span class="fx-seedmeta">You, from Create something new · <a href="CR-HOME-NEW.dc.html">Edit</a></span></sc-if><p>{{seedIdea}}</p><div class="fx-seedtags"><span class="fx-fmttag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 3 7.5l9 4.5 9-4.5z"></path><path d="m3 12 9 4.5 9-4.5"></path><path d="m3 16.5 9 4.5 9-4.5"></path></svg>{{seedFormat}}</span><sc-if value="{{seedHasSkills}}" hint-placeholder-val="{{true}}"><sc-for list="{{seedSkills}}" as="sk" hint-placeholder-count="2"><span>{{sk.label}}</span></sc-for></sc-if></div></div>
+<div class="fx-msg fx-nova cp-pop"><span aria-hidden="true" style="position: relative; flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; background: #EAF0FF; display: block"><img src="/_blob/b8f0756720795e1bd3b02e9c2655cb25" alt="" style="position: absolute; left: -87.50%; top: -57.81%; width: 294.06%; max-width: none; height: auto; mix-blend-mode: multiply"></span><div class="fx-mb"><span class="fx-who">Nova</span><p>{{ack}}</p></div></div>
 <sc-for list="{{msgs}}" as="m" hint-placeholder-count="3"><div class="fx-msg fx-nova cp-pop" style="display: {{m.nd}}"><span aria-hidden="true" style="position: relative; flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; background: #EAF0FF; display: block"><img src="/_blob/b8f0756720795e1bd3b02e9c2655cb25" alt="" style="position: absolute; left: -87.50%; top: -57.81%; width: 294.06%; max-width: none; height: auto; mix-blend-mode: multiply"></span><div class="fx-mb"><span class="fx-who">Nova<em style="display: {{m.qd}}">{{m.ql}}</em></span><p>{{m.text}}</p></div></div><div class="fx-msg fx-me cp-pop" style="display: {{m.md}}"><button type="button" class="fx-edit" onClick="{{m.edit}}" aria-label="Edit this answer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"></path><path d="m13.5 6.5 4 4"></path></svg></button><p>{{m.text}}</p></div><div class="fx-msg fx-nova" style="display: {{m.dd}}"><span class="nv-ava" aria-hidden="true" style="position: relative; flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; background: #EAF0FF; display: block"><img src="/_blob/b8f0756720795e1bd3b02e9c2655cb25" alt="" style="position: absolute; left: -87.50%; top: -57.81%; width: 294.06%; max-width: none; height: auto; mix-blend-mode: multiply"></span><div class="fx-mb"><span class="fx-who">Nova</span><span class="nv-bub"><span class="nv-think" role="status"><span class="nv-orb" aria-hidden="true"><i></i></span><span class="nv-tt">{{m.think}}</span></span></span></div></div></sc-for>
 </div></div>
 <div class="fx-dock">
@@ -264,11 +274,11 @@ body{margin:0;background:#F7F9FD}
 <aside class="fx-bp {{bpCls}}" aria-label="What Nova has so far">
 <div class="fx-bph"><span style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #0B1433"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2.5"></rect><path d="M9 8h6M9 12h6M9 16h3"></path></svg>What Nova has so far</span><span class="fx-live"><i></i>{{bpState}}</span><button type="button" class="fx-bpclose" onClick="{{toggleBp}}" aria-label="Close blueprint"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div>
 <div class="fx-sheet">
-<span style="display: block; font-size: 12px; color: #8A93AD">Course title</span>
+<span style="display: block; font-size: 12px; color: #8A93AD">Title</span>
 <span style="display: block; margin-top: 6px; font-size: 17px; font-weight: 600; color: #B4BCD0">Nova names it at the end</span>
 <ul style="list-style: none; margin: 16px 0 0 0; padding: 0"><sc-for list="{{facts}}" as="f" hint-placeholder-count="5"><li class="fx-fact"><span class="fx-fdot" style="background: {{f.dot}}; border-color: {{f.dbd}}"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span style="display: flex; flex-direction: column; gap: 3px; min-width: 0; flex-grow: 1"><span class="fx-fl">{{f.label}}</span><span class="fx-fv c2-new" style="display: {{f.vd}}">{{f.value}}</span><span class="c2-shim" style="display: {{f.sd}}; height: 9px; width: {{f.w}}; margin-top: 4px"></span></span></li></sc-for></ul>
 </div>
-<p class="fx-bpnote"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg>From these five answers Nova drafts a title, description, outcomes and a first curriculum.</p>
+<p class="fx-bpnote"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg>From your idea and these answers Nova drafts a title, description, outcomes and a first curriculum.</p>
 </aside>
 <div class="fx-scrim {{bpCls}}" onClick="{{toggleBp}}"></div>
 </div>
@@ -288,18 +298,47 @@ class Component extends DCLogic {
       { q: 'Which skills should they build?', k: 'Skills', chips: ['SQL', 'Data cleaning', 'Data storytelling'], demo: 'SQL, data cleaning, data storytelling' },
       { q: 'Which subject does it sit in?', k: 'Subject', chips: ['Data & Analytics', 'Business', 'Technology'], demo: 'Data & Analytics' }
     ];
+    this.Qall = this.Q;
+    this.memo = {};
+    this.applySeed(this.readSeed());
     this.K = [['title', 'Title'], ['desc', 'Description'], ['aud', 'Who it’s for'], ['pre', 'Before you start'], ['skills', 'Skills'], ['out', 'Outcomes'], ['cur', 'Curriculum']];
     const full = (props || {}).variant === 'proposal';
     this.state = { answers: full ? this.Q.map((x) => x.demo) : [], text: '', typing: false, phase: full ? 'proposal' : 'chat', dec: full ? { title: 'a', desc: 'a', aud: 'a', pre: 'e' } : {}, err: false, bp: false, notes: false };
   }
+  readSeed() {
+    let from = 'dashboard', seed = null;
+    try { from = sessionStorage.getItem('credalio.novaFrom') || 'dashboard'; seed = JSON.parse(sessionStorage.getItem('credalio.novaSeed.' + from) || 'null'); } catch (e) { seed = null; }
+    if (!seed || !seed.idea) seed = { idea: 'SQL for analysts who only know spreadsheets, so they can pull their own reports.', skills: ['SQL basics', 'Excel to SQL'], format: 'Course', source: 'dashboard' };
+    if (!seed.source) seed.source = from;
+    return seed;
+  }
+  seedKey(s) { return [s.source, s.idea, (s.skills || []).join('|'), s.format].join('~'); }
+  applySeed(seed) {
+    this.seed = seed; this.sk = this.seedKey(seed);
+    this.Q = (seed.skills && seed.skills.length) ? this.Qall.filter((x) => x.k !== 'Skills') : this.Qall;
+    this.N = this.Q.length;
+  }
   componentDidMount() {
-    if (this.state.phase !== 'chat' || this.state.answers.length) return;
     const start = () => {
       clearTimeout(this.ti); clearInterval(this.ts);
       this.setState({ intro: true, step: 0 });
       this.ts = setInterval(() => this.setState({ step: Math.min((this.state.step || 0) + 1, 2) }), 1300);
       this.ti = setTimeout(() => { clearInterval(this.ts); this.setState({ intro: false }); }, 4000);
     };
+    if ((this.props || {}).variant !== 'proposal') {
+      this.watch = setInterval(() => {
+        const s = this.readSeed(); const k = this.seedKey(s);
+        if (k === this.sk) return;
+        const st = this.state;
+        this.memo[this.sk] = { answers: st.answers, phase: st.phase === 'drafting' ? 'chat' : st.phase, dec: st.dec };
+        clearTimeout(this.t); clearTimeout(this.ti); clearInterval(this.ts);
+        this.applySeed(s);
+        const m = this.memo[k];
+        if (m) this.setState({ ...m, text: '', typing: false, intro: false, err: false, bp: false });
+        else { this.setState({ answers: [], phase: 'chat', dec: {}, text: '', typing: false, err: false, bp: false }); start(); }
+      }, 500);
+    }
+    if (this.state.phase !== 'chat' || this.state.answers.length) return;
     if (typeof IntersectionObserver !== 'function') { start(); return; }
     let shown = false;
     this.io = new IntersectionObserver((es) => {
@@ -308,10 +347,10 @@ class Component extends DCLogic {
     }, { threshold: [0, 0.05, 0.5] });
     this.io.observe(document.querySelector('.fx-msgs') || document.documentElement);
   }
-  componentWillUnmount() { if (this.io) this.io.disconnect(); clearTimeout(this.t); clearTimeout(this.ti); clearInterval(this.ts); }
+  componentWillUnmount() { clearInterval(this.watch); if (this.io) this.io.disconnect(); clearTimeout(this.t); clearTimeout(this.ti); clearInterval(this.ts); }
   send(v) {
     const t = (v || '').trim();
-    if (!t || this.state.typing || this.state.answers.length >= 5) return;
+    if (!t || this.state.typing || this.state.answers.length >= this.N) return;
     this.setState({ answers: [...this.state.answers, t], text: '', typing: true, step: 0 });
     clearInterval(this.ts); this.ts = setInterval(() => this.setState({ step: Math.min((this.state.step || 0) + 1, 2) }), 1100);
     this.t = setTimeout(() => { clearInterval(this.ts); this.setState({ typing: false }); }, 3300);
@@ -319,15 +358,16 @@ class Component extends DCLogic {
   renderVals() {
     const { answers, typing, phase, dec, err, text, bp, notes } = this.state;
     const n = answers.length;
+    const N = this.N;
     const msgs = [];
     const nova = (t, ql) => ({ text: t, nd: 'flex', md: 'none', dd: 'none', qd: ql ? 'inline' : 'none', ql: ql || '', edit: () => {} });
     answers.forEach((a, i) => {
-      msgs.push(nova(this.Q[i].q, 'Question ' + (i + 1) + ' of 5'));
+      msgs.push(nova(this.Q[i].q, 'Question ' + (i + 1) + ' of ' + N));
       msgs.push({ text: a, nd: 'none', md: 'flex', dd: 'none', qd: 'none', ql: '', edit: () => this.setState({ answers: answers.slice(0, i), text: a, phase: 'chat', typing: false }) });
     });
     const intro = this.state.intro && n === 0 && phase === 'chat';
     if (typing || intro) msgs.push({ text: '', nd: 'none', md: 'none', dd: 'flex', qd: 'none', ql: '', edit: () => {} });
-    else if (n < 5) msgs.push(nova(this.Q[n].q, 'Question ' + (n + 1) + ' of 5'));
+    else if (n < N) msgs.push(nova(this.Q[n].q, 'Question ' + (n + 1) + ' of ' + N));
     else msgs.push(nova('That’s everything I need. I’ll draft a title, description, skills, outcomes and a first curriculum. You review every part.', ''));
     const reviewed = this.K.filter(([k]) => dec[k]).length;
     const d = {};
@@ -343,20 +383,27 @@ class Component extends DCLogic {
     const widths = ['82%', '64%', '72%', '58%', '46%'];
     msgs.forEach((m) => { m.think = (intro ? ['Getting to know your field…', 'Planning a few questions…', 'Writing the first one…'] : ['Reading your answer…', 'Thinking it through…', 'Writing…'])[this.state.step || 0]; });
     return {
+      fromDash: this.seed.source !== 'create', fromCreate: this.seed.source === 'create',
+      titleFmt: 'New ' + (this.seed.format || 'Course').toLowerCase(),
+      helloSub: 'Picking up where we left off. ' + N + ' quick questions, then I’ll sketch a draft for you to review.',
+      seedIdea: this.seed.idea, seedHasSkills: !!(this.seed.skills && this.seed.skills.length),
+      seedSkills: (this.seed.skills || []).map((label) => ({ label })),
+      seedFormat: this.seed.format || 'Course',
+      ack: 'Great starting point. I’ll build a ' + (this.seed.format || 'course').toLowerCase() + ' around this' + ((this.seed.skills && this.seed.skills.length) ? ' and the ' + this.seed.skills.length + (this.seed.skills.length === 1 ? ' skill' : ' skills') + ' you picked' : '') + '. I just need a bit more detail.',
       chatView: phase === 'chat' || phase === 'drafting', reviewView: phase === 'proposal', doneView: phase === 'done',
       stageLabel: phase === 'proposal' ? 'Review Nova’s draft' : (phase === 'done' ? 'Draft ready' : 'Sketch it with Nova'),
-      progress: phase === 'proposal' || phase === 'done' ? 'Draft ready' : (n < 5 ? 'Question ' + (n + 1) + ' of 5' : 'All five answered'),
-      segs: [0, 1, 2, 3, 4].map((i) => ({ c: (i < n || phase !== 'chat') ? '#1652F0' : (i === n ? '#AFC1F5' : '#E6EAF3') })),
-      msgs, composerShown: n < 5 && phase === 'chat', readyShown: n === 5 && !typing && phase === 'chat', draftingShown: phase === 'drafting',
-      chips: (n < 5 && !typing && !intro) ? this.Q[n].chips.map((label) => ({ label, pick: () => this.send(label) })) : [],
+      progress: phase === 'proposal' || phase === 'done' ? 'Draft ready' : (n < 5 ? 'Question ' + (n + 1) + ' of ' + N : 'All ' + N + ' answered'),
+      segs: this.Q.map((q, i) => i).map((i) => ({ c: (i < n || phase !== 'chat') ? '#1652F0' : (i === n ? '#AFC1F5' : '#E6EAF3') })),
+      msgs, composerShown: n < N && phase === 'chat', readyShown: n === N && !typing && phase === 'chat', draftingShown: phase === 'drafting',
+      chips: (n < N && !typing && !intro) ? this.Q[n].chips.map((label) => ({ label, pick: () => this.send(label) })) : [],
       text, onText: (e) => this.setState({ text: e.target.value }),
       onKey: (e) => { if (e.key === 'Enter') { e.preventDefault(); this.send(this.state.text); } },
       sendText: () => this.send(this.state.text), sendBg: text.trim() ? '#1652F0' : '#CBD3E6',
       draft: () => { this.setState({ phase: 'drafting', step: 0 }); clearInterval(this.ts); this.ts = setInterval(() => this.setState({ step: Math.min((this.state.step || 0) + 1, 2) }), 1400); this.t = setTimeout(() => { clearInterval(this.ts); this.setState({ phase: 'proposal' }); }, 4200); },
       draftText: ['Nova is reading your answers…', 'Nova is shaping the chapters…', 'Nova is writing your draft…'][this.state.step || 0],
-      bpBtnV: (phase === 'chat' || phase === 'drafting') ? 'visible' : 'hidden', bpState: phase === 'drafting' ? 'Drafting' : 'Taking shape', bpCount: n + '/5',
+      bpBtnV: (phase === 'chat' || phase === 'drafting') ? 'visible' : 'hidden', bpState: phase === 'drafting' ? 'Drafting' : 'Taking shape', bpCount: n + '/' + N,
       bpCls: bp ? 'fx-open' : '', bpOpen: bp ? 'true' : 'false', toggleBp: () => this.setState({ bp: !this.state.bp }),
-      facts: this.Q.map((q, i) => ({ label: q.k, value: answers[i] || '', vd: answers[i] ? 'block' : 'none', sd: answers[i] ? 'none' : 'block', w: widths[i], dot: answers[i] ? '#0F6B45' : '#FFFFFF', dbd: answers[i] ? '#0F6B45' : '#CBD3E6' })),
+      facts: [{ label: 'Format', value: this.seed.format || 'Course', vd: 'block', sd: 'none', w: '40%', dot: '#0F6B45', dbd: '#0F6B45' }, { label: 'Your idea', value: this.seed.idea, vd: 'block', sd: 'none', w: '80%', dot: '#0F6B45', dbd: '#0F6B45' }].concat((this.seed.skills && this.seed.skills.length) ? [{ label: 'Skills', value: this.seed.skills.join(', '), vd: 'block', sd: 'none', w: '60%', dot: '#0F6B45', dbd: '#0F6B45' }] : []).concat(this.Q.map((q, i) => ({ label: q.k, value: answers[i] || '', vd: answers[i] ? 'block' : 'none', sd: answers[i] ? 'none' : 'block', w: widths[i], dot: answers[i] ? '#0F6B45' : '#FFFFFF', dbd: answers[i] ? '#0F6B45' : '#CBD3E6' }))),
       backToChat: () => this.setState({ phase: 'chat' }),
       d, reviewed, pctDeg: Math.round(reviewed / 7 * 360) + 'deg', errShown: err,
       parts: this.K.map(([k, label]) => { const v = dec[k]; return { label, href: '#rv-' + k, st: v ? col[v][2] : 'To review', sc: v ? col[v][1] : '#8A93AD', dot: v ? col[v][1] : '#FFFFFF', dbd: v ? col[v][1] : '#CBD3E6' }; }),

@@ -419,6 +419,101 @@
       "title": "RTN-001 Returning learner · new goal · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "OnbWelcome.dc.html": {
+      "x": 0,
+      "y": 60508,
+      "w": 1440,
+      "h": 820,
+      "title": "ONB-001 Welcome · how are you joining? · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbWelcome-Mobile.dc.html": {
+      "x": 1520,
+      "y": 60508,
+      "w": 390,
+      "h": 920,
+      "title": "ONB-001 Welcome · how are you joining? · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "OnbAccount.dc.html": {
+      "x": 0,
+      "y": 61668,
+      "w": 1440,
+      "h": 820,
+      "title": "ONB-002 Create your account · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbAccount-Mobile.dc.html": {
+      "x": 1520,
+      "y": 61668,
+      "w": 390,
+      "h": 980,
+      "title": "ONB-002 Create your account · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "OnbInbox.dc.html": {
+      "x": 0,
+      "y": 62888,
+      "w": 1440,
+      "h": 820,
+      "title": "ONB-003 Check your inbox · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbInbox-Mobile.dc.html": {
+      "x": 1520,
+      "y": 62888,
+      "w": 390,
+      "h": 844,
+      "title": "ONB-003 Check your inbox · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "OnbVerified.dc.html": {
+      "x": 0,
+      "y": 63972,
+      "w": 1440,
+      "h": 820,
+      "title": "ONB-003v Email verified · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbVerified-Mobile.dc.html": {
+      "x": 1520,
+      "y": 63972,
+      "w": 390,
+      "h": 844,
+      "title": "ONB-003v Email verified · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "OnbPassword.dc.html": {
+      "x": 0,
+      "y": 65056,
+      "w": 1440,
+      "h": 820,
+      "title": "ONB-003c Choose a password · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OnbPassword-Mobile.dc.html": {
+      "x": 1520,
+      "y": 65056,
+      "w": 390,
+      "h": 844,
+      "title": "ONB-003c Choose a password · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -437,7 +532,8 @@
     "row-b2",
     "row-b3",
     "row-b4",
-    "row-b5"
+    "row-b5",
+    "row-b6"
   ],
   "notes": {
     "new-hero": {
@@ -505,6 +601,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b6": {
+      "x": 0,
+      "y": 60208,
+      "text": "Batch 6 · Learner onboarding: welcome, account, inbox, verified (same screens as Link 1)",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -551,7 +655,17 @@
     "JourneyPlan-Step1.dc.html",
     "JourneyPlan-Step1-Mobile.dc.html",
     "JourneyPlan-Returning.dc.html",
-    "JourneyPlan-Returning-Mobile.dc.html"
+    "JourneyPlan-Returning-Mobile.dc.html",
+    "OnbWelcome.dc.html",
+    "OnbWelcome-Mobile.dc.html",
+    "OnbAccount.dc.html",
+    "OnbAccount-Mobile.dc.html",
+    "OnbInbox.dc.html",
+    "OnbInbox-Mobile.dc.html",
+    "OnbVerified.dc.html",
+    "OnbVerified-Mobile.dc.html",
+    "OnbPassword.dc.html",
+    "OnbPassword-Mobile.dc.html"
   ],
   "pages": [
     {

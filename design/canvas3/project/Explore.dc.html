@@ -474,7 +474,7 @@ class Component extends DCLogic {
       if (gl) {
         var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
         var fs = [
-          'precision mediump float;uniform vec2 R;uniform float T;uniform vec3 A;uniform vec3 B;uniform vec3 C;uniform vec3 G0;uniform vec3 G1;',
+          'precision mediump float;uniform vec2 R;uniform float T;uniform float L;uniform vec3 A;uniform vec3 B;uniform vec3 C;uniform vec3 G0;uniform vec3 G1;',
           'float hp(float s,float k,float b){return fract(sin(s*k)*b)*6.2831853;}',
           'float h3(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}',
           'float vn(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);',
@@ -497,7 +497,7 @@ class Component extends DCLogic {
           'float av=pow(ws/(tot+.001),bal);vec3 col=mix(mix(A,B,smoothstep(0.,.2,av)),C,smoothstep(.4,.85,av));',
           'float br=tot*ins;vec3 glow=clamp(col*br,0.,1.);',
           'vec3 base=mix(G0,G1,smoothstep(0.,1.,uv.y*.7+(1.-uv.x)*.3));',
-          'gl_FragColor=vec4(base*(1.-clamp(br*.5,0.,1.)*.35)+glow,1.);}'
+          'gl_FragColor=L>.5?vec4(mix(base,col,clamp(br*.42,0.,.62)),1.):vec4(base*(1.-clamp(br*.5,0.,1.)*.35)+glow,1.);}'
         ].join('');
         var mk = function (t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
         var pr = gl.createProgram();
@@ -509,8 +509,8 @@ class Component extends DCLogic {
           var lp = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
           var u = function (n) { return gl.getUniformLocation(pr, n); };
           var hex = function (h) { return [parseInt(h.substr(1, 2), 16) / 255, parseInt(h.substr(3, 2), 16) / 255, parseInt(h.substr(5, 2), 16) / 255]; };
-          gl.uniform3fv(u('A'), hex('#0E3BB8')); gl.uniform3fv(u('B'), hex('#2E63FF')); gl.uniform3fv(u('C'), hex('#9DB8F7'));
-          gl.uniform3fv(u('G0'), hex('#050A20')); gl.uniform3fv(u('G1'), hex('#0B1A4D'));
+          R.pal = { dark: [hex('#0E3BB8'), hex('#2E63FF'), hex('#9DB8F7'), hex('#050A20'), hex('#0B1A4D'), 0], light: [hex('#B9CCFF'), hex('#7FA4FF'), hex('#4F80FF'), hex('#F6F9FF'), hex('#E4ECFF'), 1] };
+          R.u = { A: u('A'), B: u('B'), C: u('C'), G0: u('G0'), G1: u('G1'), L: u('L') };
           R.uR = u('R'); R.uT = u('T');
         }
       }
@@ -519,6 +519,7 @@ class Component extends DCLogic {
       R.paint = function (it, now) {
         var g = R.gl, w = it.cv.width, h = it.cv.height;
         if (R.gc.width !== w || R.gc.height !== h) { R.gc.width = w; R.gc.height = h; }
+        var pl = R.pal[it.light ? 'light' : 'dark']; g.uniform3fv(R.u.A, pl[0]); g.uniform3fv(R.u.B, pl[1]); g.uniform3fv(R.u.C, pl[2]); g.uniform3fv(R.u.G0, pl[3]); g.uniform3fv(R.u.G1, pl[4]); g.uniform1f(R.u.L, pl[5]);
         g.viewport(0, 0, w, h); g.uniform2f(R.uR, w, h); g.uniform1f(R.uT, it.seed + (R.still ? 0 : (now - R.t0) / 1000));
         g.drawArrays(g.TRIANGLE_STRIP, 0, 4);
         it.ctx.drawImage(R.gc, 0, 0);
@@ -546,13 +547,13 @@ class Component extends DCLogic {
       };
       R.wake = function () { if (!R.raf) R.raf = host.requestAnimationFrame(R.tick); };
     }
-    if (!R.gl) { el.classList.add('aur-off'); return function () {}; }
+    if (!R.gl) { el.classList.add(el.classList.contains('aur-lt') ? 'aur-off-lt' : 'aur-off'); return function () {}; }
     var cv = el.ownerDocument.createElement('canvas');
     cv.className = 'aur-c';
     cv.setAttribute('aria-hidden', 'true');
     el.insertBefore(cv, el.firstChild);
     el.__aurC = cv;
-    var it = { el: el, cv: cv, ctx: cv.getContext('2d'), seed: Math.random() * 40, vis: true, fresh: true };
+    var it = { el: el, cv: cv, ctx: cv.getContext('2d'), seed: Math.random() * 40, vis: true, fresh: true, light: el.classList.contains('aur-lt') };
     R.items.push(it);
     var view = el.ownerDocument.defaultView || window;
     var io = view.IntersectionObserver ? new view.IntersectionObserver(function (e) { it.vis = e[0].isIntersecting; if (it.vis) R.wake(); }) : null;
@@ -566,6 +567,7 @@ class Component extends DCLogic {
     go();
     if (!this._aurMo && window.MutationObserver) { this._aurMo = new MutationObserver(function () { if (!q) q = requestAnimationFrame(go); }); this._aurMo.observe(document.body, { childList: true, subtree: true }); }
   }
+
 
 
   componentWillUnmount() { if (this._aurMo) this._aurMo.disconnect(); }

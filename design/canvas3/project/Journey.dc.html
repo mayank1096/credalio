@@ -265,6 +265,7 @@ p{text-wrap:balance}
 .aur{position:relative;isolation:isolate;overflow:hidden;background:#0B1433}
 .aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
 .aur-off{background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat}
+.aur.aur-lt,.aur-off-lt{background:linear-gradient(160deg,#F6F9FF,#E4ECFF)}
 .ob-ghost{transition:border-color .2s ease,background .2s ease}
 .ob-ghost:hover{border-color:#1652F0 !important;background:#F5F8FF !important;color:#0B1433}
 .ob-ghost:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
@@ -304,6 +305,16 @@ p{text-wrap:balance}
 .ob-save{display:inline-flex;align-items:center;min-height:44px;color:#1652F0;font-size:14.5px;font-weight:600;text-decoration:none}
 .ob-save:hover{color:#0E3BB8}
 .ob-save:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.jy-jc.aur-lt{color:#0B1433;border:1.5px solid #DCE5FB;box-shadow:0 30px 60px -44px rgba(22,82,240,.4)}
+.jy-jc.aur-lt .jy-jk{color:#1652F0}
+.jy-jc.aur-lt .jy-jr::before{background:linear-gradient(90deg,#1652F0,#C9D7FA)}
+.jy-jc.aur-lt .jy-jn{background:#FFFFFF;border-color:#9DB8F7;color:#1652F0}
+.jy-jc.aur-lt .jy-js:first-child .jy-jn{background:#1652F0;border-color:#1652F0;color:#FFFFFF;box-shadow:0 0 0 6px rgba(22,82,240,.14)}
+.jy-jc.aur-lt .jy-js:last-child .jy-jn{background:#0B1433;border-color:#0B1433;color:#FFFFFF}
+.jy-jc.aur-lt .jy-jd{color:#4A5578}
+@media (max-width: 760px){
+.jy-jc.aur-lt .jy-js:not(:last-child)::after{background:rgba(22,82,240,.28)}
+}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
@@ -407,8 +418,8 @@ p{text-wrap:balance}
 <span class="ko-pill">Journey built</span>
 <h1 class="jy-rh">Your journey is ready.</h1>
 <p class="jy-rs">Built around your goal, what you already know and the outcome you want.</p>
-<div class="jy-jc aur">
-<div class="jy-jh"><div><span class="jy-jk">Your journey to becoming</span><span class="jy-jt">{{roleT}}</span></div><div class="jy-jm"><span class="ds-tag glass lg"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span>{{time}}</span></span><span class="ds-tag glass lg"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg><span>{{commit}} hrs a week</span></span></div></div>
+<div class="jy-jc aur aur-lt">
+<div class="jy-jh"><div><span class="jy-jk">Your journey to becoming</span><span class="jy-jt">{{roleT}}</span></div><div class="jy-jm"><span class="ds-tag line lg"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span>{{time}}</span></span><span class="ds-tag line lg"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg><span>{{commit}} hrs a week</span></span></div></div>
 <ol class="jy-jr" aria-label="Your five steps">
 <sc-for list="{{route}}" as="r" hint-placeholder-count="5"><li class="jy-js"><span class="jy-jn">{{r.mark}}</span><span class="jy-jl">{{r.label}}</span><span class="jy-jd">{{r.note}}</span><sc-if value="{{r.first}}" hint-placeholder-val="{{ false }}"><span class="ds-tag blue jy-here">You start here</span></sc-if></li></sc-for>
 </ol>
@@ -433,7 +444,7 @@ class Component extends DCLogic {
       if (gl) {
         var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
         var fs = [
-          'precision mediump float;uniform vec2 R;uniform float T;uniform vec3 A;uniform vec3 B;uniform vec3 C;uniform vec3 G0;uniform vec3 G1;',
+          'precision mediump float;uniform vec2 R;uniform float T;uniform float L;uniform vec3 A;uniform vec3 B;uniform vec3 C;uniform vec3 G0;uniform vec3 G1;',
           'float hp(float s,float k,float b){return fract(sin(s*k)*b)*6.2831853;}',
           'float h3(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}',
           'float vn(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);',
@@ -456,7 +467,7 @@ class Component extends DCLogic {
           'float av=pow(ws/(tot+.001),bal);vec3 col=mix(mix(A,B,smoothstep(0.,.2,av)),C,smoothstep(.4,.85,av));',
           'float br=tot*ins;vec3 glow=clamp(col*br,0.,1.);',
           'vec3 base=mix(G0,G1,smoothstep(0.,1.,uv.y*.7+(1.-uv.x)*.3));',
-          'gl_FragColor=vec4(base*(1.-clamp(br*.5,0.,1.)*.35)+glow,1.);}'
+          'gl_FragColor=L>.5?vec4(mix(base,col,clamp(br*.42,0.,.62)),1.):vec4(base*(1.-clamp(br*.5,0.,1.)*.35)+glow,1.);}'
         ].join('');
         var mk = function (t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
         var pr = gl.createProgram();
@@ -468,8 +479,8 @@ class Component extends DCLogic {
           var lp = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
           var u = function (n) { return gl.getUniformLocation(pr, n); };
           var hex = function (h) { return [parseInt(h.substr(1, 2), 16) / 255, parseInt(h.substr(3, 2), 16) / 255, parseInt(h.substr(5, 2), 16) / 255]; };
-          gl.uniform3fv(u('A'), hex('#0E3BB8')); gl.uniform3fv(u('B'), hex('#2E63FF')); gl.uniform3fv(u('C'), hex('#9DB8F7'));
-          gl.uniform3fv(u('G0'), hex('#050A20')); gl.uniform3fv(u('G1'), hex('#0B1A4D'));
+          R.pal = { dark: [hex('#0E3BB8'), hex('#2E63FF'), hex('#9DB8F7'), hex('#050A20'), hex('#0B1A4D'), 0], light: [hex('#B9CCFF'), hex('#7FA4FF'), hex('#4F80FF'), hex('#F6F9FF'), hex('#E4ECFF'), 1] };
+          R.u = { A: u('A'), B: u('B'), C: u('C'), G0: u('G0'), G1: u('G1'), L: u('L') };
           R.uR = u('R'); R.uT = u('T');
         }
       }
@@ -478,6 +489,7 @@ class Component extends DCLogic {
       R.paint = function (it, now) {
         var g = R.gl, w = it.cv.width, h = it.cv.height;
         if (R.gc.width !== w || R.gc.height !== h) { R.gc.width = w; R.gc.height = h; }
+        var pl = R.pal[it.light ? 'light' : 'dark']; g.uniform3fv(R.u.A, pl[0]); g.uniform3fv(R.u.B, pl[1]); g.uniform3fv(R.u.C, pl[2]); g.uniform3fv(R.u.G0, pl[3]); g.uniform3fv(R.u.G1, pl[4]); g.uniform1f(R.u.L, pl[5]);
         g.viewport(0, 0, w, h); g.uniform2f(R.uR, w, h); g.uniform1f(R.uT, it.seed + (R.still ? 0 : (now - R.t0) / 1000));
         g.drawArrays(g.TRIANGLE_STRIP, 0, 4);
         it.ctx.drawImage(R.gc, 0, 0);
@@ -505,13 +517,13 @@ class Component extends DCLogic {
       };
       R.wake = function () { if (!R.raf) R.raf = host.requestAnimationFrame(R.tick); };
     }
-    if (!R.gl) { el.classList.add('aur-off'); return function () {}; }
+    if (!R.gl) { el.classList.add(el.classList.contains('aur-lt') ? 'aur-off-lt' : 'aur-off'); return function () {}; }
     var cv = el.ownerDocument.createElement('canvas');
     cv.className = 'aur-c';
     cv.setAttribute('aria-hidden', 'true');
     el.insertBefore(cv, el.firstChild);
     el.__aurC = cv;
-    var it = { el: el, cv: cv, ctx: cv.getContext('2d'), seed: Math.random() * 40, vis: true, fresh: true };
+    var it = { el: el, cv: cv, ctx: cv.getContext('2d'), seed: Math.random() * 40, vis: true, fresh: true, light: el.classList.contains('aur-lt') };
     R.items.push(it);
     var view = el.ownerDocument.defaultView || window;
     var io = view.IntersectionObserver ? new view.IntersectionObserver(function (e) { it.vis = e[0].isIntersecting; if (it.vis) R.wake(); }) : null;
@@ -525,6 +537,7 @@ class Component extends DCLogic {
     go();
     if (!this._aurMo && window.MutationObserver) { this._aurMo = new MutationObserver(function () { if (!q) q = requestAnimationFrame(go); }); this._aurMo.observe(document.body, { childList: true, subtree: true }); }
   }
+
 
 
   componentDidMount() { this.aurScan(); }

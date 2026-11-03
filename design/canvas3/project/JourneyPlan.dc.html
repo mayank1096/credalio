@@ -11,6 +11,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-acts.c{justify-content:center}
 .ds-link.off{opacity:.45;pointer-events:none}
 .ds-tag.solid{background:#1652F0;color:#FFFFFF}
 .ds-tag .tip{margin-left:0}
@@ -222,6 +227,7 @@ p{text-wrap:balance}
 .jp-side{position:static;margin-top:40px}
 .jp-know{grid-template-columns:minmax(0,1fr)}
 .jp-kc + .jp-kc{border-left:none;border-top:1px solid #EEF1F7}
+.ds-ghost{height:44px;font-size:14.5px}
 }
 @media (max-width: 760px){
 .jp-page{background-size:auto 300px}
@@ -273,6 +279,13 @@ p{text-wrap:balance}
 .aur{position:relative;isolation:isolate;overflow:hidden;background:#0B1433}
 .aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
 .aur-off{background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat}
+.jp-or{display:flex;align-items:center;gap:12px;font-size:13px;color:#8A93AD}
+.jp-or::before,.jp-or::after{content:"";flex:1;height:1px;background:#E6EAF3}
+.jp-ssos{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.jp-sso{gap:10px}
+@media (max-width: 420px){
+.jp-ssos{grid-template-columns:minmax(0,1fr)}
+}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
@@ -357,48 +370,15 @@ p{text-wrap:balance}
 </main>
 </sc-if>
 
-<sc-if value="{{isBack}}" hint-placeholder-val="{{ false }}">
-<main class="jp-one jp-one-w">
-<div class="jp-chips jp-coachl"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span>Nova, your AI Coach</div>
-<h1 class="jp-h1c">Welcome back, Maya.</h1>
-<p class="jp-sub">You’re already on your way. Tell me your new goal and I’ll build on what you’ve proven.</p>
-<div class="jp-q">
-<label class="jp-ql" for="jp-goal">What’s your new goal?</label>
-<input class="ds-in lg" id="jp-goal" type="text" value="I want to become a data analyst" autocomplete="off">
-</div>
-<div class="jp-q">
-<span class="jp-ql">What I already know about you</span>
-<div class="jp-know">
-<div class="jp-kc"><span class="jp-kh"><b>4</b>completed courses</span><ul class="jp-kl"><li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Business Communication Essentials</li><li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Data Foundations: Spreadsheets to SQL</li><li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Agile Foundations</li><li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Presenting with Impact</li></ul></div>
-<div class="jp-kc"><span class="jp-kh"><b>2</b>verified projects</span><ul class="jp-kl"><li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Customer insights report</li><li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Team process improvement plan</li></ul></div>
-<div class="jp-kc"><span class="jp-kh"><b>4</b>verified skills</span><div class="jp-ks"><span class="ds-tag green">Excel</span><span class="ds-tag green">SQL basics</span><span class="ds-tag green">Agile basics</span><span class="ds-tag green">Stakeholder communication</span></div></div>
-</div>
-</div>
-<div class="jp-q">
-<span class="jp-ql">How soon would you like to get there?</span>
-<div class="jp-chips jp-row"><sc-for list="{{paces}}" as="p" hint-placeholder-count="5"><button class="ds-chip {{p.cls}}" type="button" aria-pressed="{{p.on}}" onClick="{{p.pick}}"><svg class="ck" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>{{p.label}}</button></sc-for></div>
-</div>
-<div class="ds-acts"><a class="ds-btn" href="#"><span>See my recommended journey</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
-</main>
-</sc-if>
-
 <sc-if value="{{modal}}" hint-placeholder-val="{{ false }}">
 <div class="jp-modal" role="dialog" aria-modal="true" aria-labelledby="jp-dt">
-<form class="jp-dlg" onSubmit="{{create}}" novalidate>
-<div class="jp-dh"><div><b id="jp-dt">Save your journey</b><span>Create a free account. No card needed.</span></div><button class="ds-x" type="button" aria-label="Close" onClick="{{closeSave}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div>
-<label class="jp-fl">Full name<input class="ds-in" type="text" value="{{fName}}" onInput="{{onName}}" autocomplete="name"></label>
-<label class="jp-fl">Email<input class="ds-in" type="email" value="{{fEmail}}" onInput="{{onEmail}}" autocomplete="email"></label>
-<label class="jp-fl">Password<input class="ds-in" type="password" value="{{fPw}}" onInput="{{onPw}}" autocomplete="new-password" placeholder="At least 8 characters"></label>
-<sc-if value="{{hasErr}}" hint-placeholder-val="{{ false }}"><span class="jp-err" role="alert">{{err}}</span></sc-if>
-<button class="ds-btn" type="submit"><span>Create free account</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button>
-<span class="jp-sm">Already have an account? <a href="#">Log in</a></span>
-</form>
+<form class="jp-dlg" onSubmit="{{create}}" novalidate><div class="jp-dh"><div><b id="jp-dt">Let’s save your place.</b><span>Save your journey and pick it up anywhere.</span></div><button class="ds-x" type="button" aria-label="Close" onClick="{{closeSave}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div><input class="ds-in" type="email" aria-label="Your email address" placeholder="Your email address" value="{{fEmail}}" onInput="{{onEmail}}" autocomplete="email"><sc-if value="{{hasErr}}" hint-placeholder-val="{{ false }}"><span class="jp-err" role="alert">{{err}}</span></sc-if><a class="ds-btn" href="OnbInbox.dc.html" onClick="{{create}}"><span>Continue with Email</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><span class="jp-or">or</span><div class="jp-ssos"><button type="button" class="ds-ghost jp-sso" onClick="{{sso}}"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"></path><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"></path><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"></path><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"></path></svg>Continue with Google</button><button type="button" class="ds-ghost jp-sso" onClick="{{sso}}"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#0B1433" d="M16.37 12.63c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.19-1.73-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.19-1.54 2.67-.39 6.62 1.11 8.79.73 1.06 1.6 2.25 2.75 2.21 1.1-.04 1.52-.71 2.86-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.08 2.67-2.15.84-1.23 1.19-2.42 1.21-2.48-.03-.01-2.32-.89-2.34-3.54zM14.17 6.15c.61-.74 1.02-1.76.91-2.78-.88.04-1.94.59-2.57 1.32-.56.65-1.06 1.69-.93 2.69.98.08 1.98-.5 2.59-1.23z"></path></svg>Continue with Apple</button></div><span class="jp-sm">By continuing, you agree to Credalio’s <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</span></form>
 </div>
 </sc-if>
 </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"view":{"editor":"enum","options":["guest","saved","step1","returning"],"default":"guest"},"$preview":{"width":1440,"height":1539}}'>
+<script type="text/x-dc" data-dc-script data-props='{"view":{"editor":"enum","options":["guest","saved","step1"],"default":"guest"},"$preview":{"width":1440,"height":1539}}'>
 class Component extends DCLogic {
   auroraMount(el) {
     var host = window;
@@ -563,7 +543,8 @@ class Component extends DCLogic {
       openSave: function () { set({ modal: true }); }, closeSave: function () { set({ modal: false, err: '' }); }, modal: S.modal,
       fName: S.fName, fEmail: S.fEmail, fPw: S.fPw, err: S.err, hasErr: !!S.err,
       onName: function (e) { set({ fName: e.target.value }); }, onEmail: function (e) { set({ fEmail: e.target.value }); }, onPw: function (e) { set({ fPw: e.target.value }); },
-      create: function (e) { e.preventDefault(); var err = !S.fName.trim() ? 'Add your full name.' : !/^\S+@\S+\.\S+$/.test(S.fEmail) ? 'Check your email address.' : (S.fPw.length < 8 ? 'Use at least 8 characters for your password.' : ''); if (err) { set({ err: err }); return; } set({ modal: false, member: true, view: 'saved', err: '', log: [] }); },
+      create: function (e) { var ok = /^\S+@\S+\.\S+$/.test(S.fEmail); if (e && (e.type === 'submit' || !ok)) e.preventDefault(); if (!ok) { set({ err: 'Enter a valid email address.' }); return; } if (e && e.type === 'submit') location.assign('OnbInbox.dc.html'); },
+      sso: function () { set({ modal: false, member: true, view: 'saved', err: '', log: [] }); },
       toStep1: function () { set({ view: 'step1' }); }, toPlan: function (e) { if (e) e.preventDefault(); set({ view: 'saved' }); },
       mainLabel: member ? 'Start step 1' : 'Save my journey', mainAct: function () { if (member) set({ view: 'step1' }); else set({ modal: true }); },
       paces: ['No deadline', '1–3 months', '3–6 months', '6–12 months'].map(function (p) { var on = S.pace === p; return { label: p, on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { set({ pace: p }); } }; })

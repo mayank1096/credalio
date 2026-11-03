@@ -3,7 +3,7 @@
 ## How we work
 - The designer directs and Claude builds. Keep chat replies SHORT; if the designer says "tldr", the reply was too long.
 - Give complete, honest answers up front, including what is missing or not done. Never say "enough" without listing what is not covered.
-- Commit and push after each change (`git push -u origin <current branch>`).
+- Commit and push after each change (`git push -u origin <current branch>`). Always commit as mayank1096: set `GIT_AUTHOR_NAME=mayank1096 GIT_AUTHOR_EMAIL=mayank1096@users.noreply.github.com` and the same `GIT_COMMITTER_*`, with no trailers. History was rewritten on 2026-11-03, so `git pull --rebase` before pushing.
 - Start each session by reading `docs/link3-plan.md`, which says what's done and what's next. Update it at the end of each batch.
 - Full build log (every generator, blob id, past decision, by topic): see `docs/history.md` for how to open it. Grep it for details; never read it whole.
 

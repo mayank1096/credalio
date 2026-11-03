@@ -245,7 +245,6 @@ a:hover{color:#0E3BB8}
 .gc-feat{background:#0B1433;isolation:isolate;border-color:#0B1433;color:#FFFFFF;box-shadow:0 40px 80px -48px rgba(11,20,51,.8)}
 .gc-feat:hover{border-color:#0B1433;box-shadow:0 50px 90px -44px rgba(22,82,240,.7)}
 .gc-feat .gc-vis{background:none}
-.gc-feat::after,.ci-cr::after,.pr-pro::after,.ec-l3::after{content:"";position:absolute;inset:0;z-index:-1;background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat;transform:scale(1.5);transform-origin:0 35%;pointer-events:none}
 .gc-feat .gc-vis::before{background-image:radial-gradient(rgba(127,164,255,.35) 1.1px,transparent 1.4px)}
 .gc-feat .gc-label{color:rgba(255,255,255,.65)}
 .gc-feat .gc-ico{background:rgba(255,255,255,.1)}
@@ -902,6 +901,9 @@ a:hover{color:#0E3BB8}
 .tip-b{display:none;width:min(250px,calc(100vw - 48px))}
 .tip:hover .tip-b,.tip:focus .tip-b{display:block}
 }
+.aur{position:relative;isolation:isolate;overflow:hidden;background:#0B1433}
+.aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
+.aur-off{background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat}
 </style>
 </helmet>
 <div class="lh-root" style="box-sizing: border-box; padding: 16px; background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
@@ -1139,7 +1141,7 @@ Not sure? Ask Nova, your AI Coach
 </div>
 </a>
 
-<a class="gc-card gc-feat gc-in gc-in-3" href="#" aria-label="Career Paths: find your path">
+<a class="gc-card gc-feat gc-in gc-in-3 aur" href="#" aria-label="Career Paths: find your path">
 <div class="gc-vis" aria-hidden="true">
 <div class="gc-scene" style="position: absolute; inset: 0">
 <svg viewBox="0 0 400 300" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible">
@@ -1632,7 +1634,7 @@ Not sure? Ask Nova, your AI Coach
 </div>
 
 <div class="ci-doors">
-<a class="ci-door ci-cr" href="#" aria-label="For creators and experts: start creating">
+<a class="ci-door ci-cr aur" href="#" aria-label="For creators and experts: start creating">
 <div class="ci-copy">
 <span class="ci-k">For creators and experts</span>
 <span class="ci-t">Share what you know.<br class="ci-br"> Earn from it.</span>
@@ -2397,7 +2399,7 @@ class EcoPart extends Part {
       layers: L.map(function (l, k) {
         return { n: l.n, r: l.r, d: l.d, here: !!l.here, mark: !!l.mark, svg: !l.mark, icoBg: l.icoBg, icoFg: l.icoFg || '#1652F0',
           i1: l.i === 1 ? 'inline' : 'none', i2: l.i === 2 ? 'inline' : 'none', i3: l.i === 3 ? 'inline' : 'none',
-          cls: 'ec-l' + k + (k === on ? ' ec-slab-on' : ''), ref: self.refs4[k],
+          cls: 'ec-l' + k + (k === 3 ? ' aur' : '') + (k === on ? ' ec-slab-on' : ''), ref: self.refs4[k],
           enter: function () { self.setState({ hover: k }); }, leave: function () { self.setState({ hover: -1 }); } };
       })
     };
@@ -2422,7 +2424,7 @@ class PricePart extends Part {
       plans: P.map(function (p, k) {
         return { label: p.label, name: p.name, dlp: p.dlp, unit: p.unit, hrs: p.hrs, price: p.price, desc: p.desc, feats: p.feats, cta: p.cta, best: !!p.pro,
           ckC: p.pro ? '#FFFFFF' : '#1652F0',
-          cls: (p.pro ? 'pr-pro ' : '') + (k === fit ? 'pr-card-fit pr-card-show' : ''),
+          cls: (p.pro ? 'pr-pro aur ' : '') + (k === fit ? 'pr-card-fit pr-card-show' : ''),
           tabCls: k === fit ? 'on' : '', sel: k === fit ? 'true' : 'false', fit: k === fit, nofit: k !== fit, ghCls: p.pro ? 'ds-ghost dk' : 'ds-ghost',
           pick: function () { self.setState({ hours: p.set }); } };
       }),
@@ -2461,6 +2463,75 @@ class FinalPart extends Part {
   }
 }
 class Component extends DCLogic {
+  auroraMount(el) {
+    var cv = document.createElement('canvas');
+    cv.className = 'aur-c';
+    cv.setAttribute('aria-hidden', 'true');
+    el.insertBefore(cv, el.firstChild);
+    el.__aurC = cv;
+    var gl = cv.getContext('webgl', { premultipliedAlpha: false, antialias: false });
+    if (!gl) { el.classList.add('aur-off'); return function () {}; }
+    var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+    var fs = [
+      'precision highp float;uniform vec2 R;uniform float T;uniform vec3 A;uniform vec3 B;uniform vec3 C;uniform vec3 G0;uniform vec3 G1;',
+      'float hp(float s,float k,float b){return fract(sin(s*k)*b)*6.2831853;}',
+      'float h3(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}',
+      'float vn(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);',
+      'float a=mix(mix(h3(i),h3(i+vec3(1,0,0)),f.x),mix(h3(i+vec3(0,1,0)),h3(i+vec3(1,1,0)),f.x),f.y);',
+      'float b=mix(mix(h3(i+vec3(0,0,1)),h3(i+vec3(1,0,1)),f.x),mix(h3(i+vec3(0,1,1)),h3(i+vec3(1,1,1)),f.x),f.y);',
+      'return mix(a,b,f.z)*2.-1.;}',
+      'void main(){vec2 uv=gl_FragCoord.xy/R;float asp=R.x/max(R.y,1.);',
+      'float wav=.6,ray=.25,H=1.1,ins=1.12,bal=mix(2.5,.4,.5),cx=.62,cy=.18;',
+      'float ws=0.,tot=0.;',
+      'for(int i=0;i<4;i++){float fi=float(i);',
+      'float to=fi==0.?0.:fi==1.?3.1:fi==2.?6.7:9.4;float w=fi==0.?1.:fi==1.?.65:fi==2.?.45:.3;',
+      'float ts=T*.06+to;float ls=fi*31.7;float wx=(uv.x-cx)*asp*2.;',
+      'float arc=.15*sin(wx*.7+ts*.4+hp(ls,12.9,4758.5))+.08*sin(wx*1.6+ts*.65+hp(ls,78.2,2847.1))+.04*sin(wx*2.9+ts*.3+hp(ls,41.6,1593.7));',
+      'float nw=vn(vec3(wx*.5,ts*.25,ls*.1));float py=cy+arc*wav+nw*.14*wav;',
+      'float rays=pow(sin((wx+nw*2.5)*mix(6.,20.,ray)*.15+ts*.1+hp(ls,53.7,3847.2))*.5+.5,1.5);',
+      'float lh=H*mix(.4,1.,rays);float d=uv.y-py;float top=lh*(rays*.4+.6);',
+      'float env=smoothstep(-.04,.015,d)*(1.-smoothstep(0.,top,d));',
+      'float ct=clamp(d/(top+.001),0.,1.);float sb=mix(.4,1.,nw*.5+.5);float cd=ct-.2;float cb=exp(cd*cd*-6.)*.3+1.;',
+      'float al=env*rays*sb*cb*w;ws+=ct*al;tot+=al;}',
+      'float av=pow(ws/(tot+.001),bal);vec3 col=mix(mix(A,B,smoothstep(0.,.2,av)),C,smoothstep(.4,.85,av));',
+      'float br=tot*ins;vec3 glow=clamp(col*br,0.,1.);',
+      'vec3 base=mix(G0,G1,smoothstep(0.,1.,uv.y*.7+(1.-uv.x)*.3));',
+      'gl_FragColor=vec4(base*(1.-clamp(br*.5,0.,1.)*.35)+glow,1.);}'
+    ].join('');
+    var mk = function (t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
+    var pr = gl.createProgram();
+    gl.attachShader(pr, mk(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, mk(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr);
+    if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { el.classList.add('aur-off'); return function () {}; }
+    gl.useProgram(pr);
+    var bf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, bf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+    var lp = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
+    var u = function (n) { return gl.getUniformLocation(pr, n); };
+    var hex = function (h) { return [parseInt(h.substr(1, 2), 16) / 255, parseInt(h.substr(3, 2), 16) / 255, parseInt(h.substr(5, 2), 16) / 255]; };
+    gl.uniform3fv(u('A'), hex('#0E3BB8')); gl.uniform3fv(u('B'), hex('#2E63FF')); gl.uniform3fv(u('C'), hex('#9DB8F7'));
+    gl.uniform3fv(u('G0'), hex('#050A20')); gl.uniform3fv(u('G1'), hex('#0B1A4D'));
+    var uR = u('R'), uT = u('T'), raf = 0, on = true, t0 = performance.now(), seed = Math.random() * 40;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var draw = function () {
+      var r = Math.min(window.devicePixelRatio || 1, 1.5), w = Math.max(1, Math.round(el.clientWidth * r)), h = Math.max(1, Math.round(el.clientHeight * r));
+      if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; gl.viewport(0, 0, w, h); }
+      gl.uniform2f(uR, w, h); gl.uniform1f(uT, seed + (still ? 0 : (performance.now() - t0) / 1000));
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    };
+    var loop = function () { draw(); if (on && !still) raf = requestAnimationFrame(loop); };
+    var io = window.IntersectionObserver ? new IntersectionObserver(function (e) {
+      var vis = e[0].isIntersecting; if (vis && !on) { on = true; loop(); } else if (!vis) { on = false; cancelAnimationFrame(raf); }
+    }) : null;
+    if (io) io.observe(el);
+    loop();
+    return function () { on = false; cancelAnimationFrame(raf); if (io) io.disconnect(); };
+  }
+  aurScan() {
+    var self = this, q = 0;
+    var go = function () { q = 0; document.querySelectorAll('.aur').forEach(function (el) { if (!el.__aurC || el.__aurC.parentNode !== el) { if (el.__aur) el.__aur(); el.__aur = self.auroraMount(el); } }); };
+    go();
+    if (!this._aurMo && window.MutationObserver) { this._aurMo = new MutationObserver(function () { if (!q) q = requestAnimationFrame(go); }); this._aurMo.observe(document.body, { childList: true, subtree: true }); }
+  }
   constructor(props) {
     super(props);
     this.state = { v: 0 };
@@ -2474,8 +2545,8 @@ class Component extends DCLogic {
     this.pend = true;
     requestAnimationFrame(function () { self.pend = false; self.setState({ v: self.state.v + 1 }); });
   }
-  componentDidMount() { for (var k in this.parts) if (this.parts[k].componentDidMount) this.parts[k].componentDidMount(); }
-  componentWillUnmount() { for (var k in this.parts) if (this.parts[k].componentWillUnmount) this.parts[k].componentWillUnmount(); }
+  componentDidMount() { this.aurScan(); for (var k in this.parts) if (this.parts[k].componentDidMount) this.parts[k].componentDidMount(); }
+  componentWillUnmount() { if (this._aurMo) this._aurMo.disconnect(); for (var k in this.parts) if (this.parts[k].componentWillUnmount) this.parts[k].componentWillUnmount(); }
   renderVals() { var o = {}; for (var k in this.parts) o[k] = this.parts[k].renderVals(); return o; }
 }
 </script>

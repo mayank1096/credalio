@@ -42,9 +42,13 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 @media (max-height: 760px) and (min-width: 961px){.ob-grid2{row-gap:10px !important}.ob-header{height:72px !important}.ob-track{top:68px !important}.ob-main{top:120px !important}}
 @media (max-width: 960px){.ob-grid2{grid-template-columns:minmax(0,1fr) !important}}
 .lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}.lg-mark{display:none;width:30px;height:30px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}@media (max-width: 960px){.lg-word{height:22px}}
+.ob-root{isolation:isolate}
+.ob-scene{position:absolute;left:0;right:0;bottom:0;height:min(48vh,44vw);background:url(/_blob/b44efb91ce3cd99afc73fcc268d866ee) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
+@media (max-width: 760px){.ob-scene{height:190px;background-size:auto 100%;background-position:50% 100%}}
 </style>
 </helmet>
 <div class="ob-root" style="width: 100%; height: 100vh; min-height: 680px; position: relative; overflow: hidden; background: #FFFFFF; font-family: 'Google Sans', 'Google Sans Text', 'Helvetica Neue', system-ui, sans-serif; color: #0B1433">
+<div class="ob-scene" aria-hidden="true"></div>
 <header class="ob-header" style="position: absolute; left: 0; top: 0; width: 100%; height: 88px; box-sizing: border-box; padding: 0 clamp(24px, 6.67vw, 96px); display: flex; align-items: center; justify-content: space-between; z-index: 3">
 <div style="display: flex; align-items: center; gap: 10px">
 <span class="lg-mark" aria-hidden="true"></span><span class="lg-word ob-brand" role="img" aria-label="Credalio"></span>

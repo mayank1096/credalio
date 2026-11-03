@@ -11,6 +11,69 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-btn.np{padding:0 22px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.line{background:#FFFFFF;box-shadow:inset 0 0 0 1px #E6EAF3}
+.ds-tag.lg{height:30px;padding:0 12px;font-size:13px}
+.ds-in{height:48px;width:100%;box-sizing:border-box;padding:0 14px;border-radius:12px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;font-size:15px;color:#0B1433;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.ds-in.lg{height:56px;padding:0 18px;border-radius:14px;font-size:17px}
+.ds-in::placeholder{color:#8A93AD}
+.ds-in:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.ds-mbar{display:none}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip-b.dn{bottom:auto;top:calc(100% + 10px)}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.ko-v{--k:#0F6B45;--kb:#E7F5EE}
+.ko-emb{position:relative;width:84px;height:84px;display:flex;align-items:center;justify-content:center}
+.ko-halo{position:absolute;inset:0;border-radius:50%;background:var(--kb);z-index:1}
+.ko-disc{position:relative;z-index:1;width:58px;height:58px;border-radius:50%;background:var(--k);color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(11,20,51,.16)}
+.ko-tick path{stroke-dasharray:1;stroke-dashoffset:1;animation:koDraw .6s ease .3s forwards}
+@keyframes koDraw{to{stroke-dashoffset:0}}
+.ko-pill{margin-top:14px;display:inline-flex;align-items:center;height:30px;padding:0 13px;border-radius:999px;background:var(--kb);color:var(--k);font-size:13px;font-weight:500}
+.cf{position:absolute;left:50%;top:50%;width:0;height:0;pointer-events:none;z-index:0;--k:1}
+.cf i{position:absolute;left:0;top:0;display:block;opacity:0;animation:cfPath var(--d) var(--dl) both}
+.cf b{display:block;animation:cfSway var(--sd) ease-in-out infinite alternate}
+.cf s{display:block;transform:rotate(var(--r));animation:cfFlip var(--fd) linear infinite}
+@keyframes cfPath{0%{opacity:0;transform:translate(-50%,-50%);animation-timing-function:cubic-bezier(.1,.7,.25,1)}5%{opacity:1}24%{transform:translate(calc(var(--x) * var(--k) * 1px - 50%),calc(var(--y) * 1px - 50%));animation-timing-function:cubic-bezier(.42,.08,.7,.92)}86%{opacity:1}100%{opacity:0;transform:translate(calc(var(--x) * var(--k) * 1.22px - 50%),calc((var(--y) + var(--f)) * 1px))}}
+@keyframes cfSway{from{transform:translateX(calc(var(--sw) * -1)) rotate(-12deg)}to{transform:translateX(var(--sw)) rotate(12deg)}}
+@keyframes cfFlip{from{transform:rotate(var(--r)) rotate3d(var(--rx),1,0,0deg)}to{transform:rotate(var(--r)) rotate3d(var(--rx),1,0,360deg)}}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.lg{width:56px;height:56px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
+.nv-av.sm{width:28px;height:28px}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
+.cf{--k:.56}
+}
+@media (max-width: 760px){
+.ds-mbar{display:flex;flex-direction:column-reverse;align-items:stretch;gap:4px;position:sticky;bottom:0;z-index:20;margin:28px -20px 0;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7}
+.ds-mbar .ds-btn{width:100%;justify-content:space-between}
+.ds-mbar .ds-link{justify-content:center;min-height:40px}
+.ko-emb{width:72px;height:72px}
+.ko-disc{width:48px;height:48px}
+.ko-disc svg{width:24px;height:24px}
+}
+@media (prefers-reduced-motion: reduce){.cf{display:none}.ko-tick path{animation:none;stroke-dashoffset:0}}
 h1,h2,h3,p{text-wrap:pretty}
 @media (min-width: 761px){p{text-wrap:balance}}
 .sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -21,15 +84,8 @@ h1,h2,h3,p{text-wrap:pretty}
 .sx-link{height:40px;padding:0 12px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:500;color:#3A4566;text-decoration:none;white-space:nowrap;transition:color .2s ease,background .2s ease}
 .sx-link:hover{color:#0B1433;background:#F5F8FF}
 .sx-link-on{color:#0B1433;background:#EAF0FF}
-.sx-cta{height:44px;padding:0 20px;border-radius:999px;display:flex;align-items:center;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease}
-.sx-cta:hover{background:#0E3BB8}
 .sx-menu{display:none;width:44px;height:44px;border-radius:999px;border:none;background:transparent;color:#0B1433;align-items:center;justify-content:center;cursor:pointer}
-.sx-link:focus-visible,.sx-cta:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-.sx-tip{position:relative;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:999px;border:1.5px solid #B5BDD3;font-size:11px;font-weight:600;color:#8A93AD;letter-spacing:0;cursor:help;flex-shrink:0;font-style:normal}
-.sx-tip:hover::after,.sx-tip:focus::after{content:attr(data-tip);position:absolute;left:-10px;top:calc(100% + 8px);width:240px;padding:10px 12px;border-radius:10px;background:#0B1433;color:#FFFFFF;font-size:12px;font-weight:400;line-height:1.45;text-align:left;white-space:normal;z-index:30}
-.sx-tip-r:hover::after,.sx-tip-r:focus::after{left:auto;right:-10px}
-.sx-tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
-.sx-orb{border-radius:999px;flex-shrink:0;background:#FFFFFF url(/_blob/f81e36d31295a0d0737959589ec1abd4) center / 62% no-repeat;box-shadow:0 0 0 1.5px #DCE5FB}
+.sx-link:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
 .sx-fin{max-width:1312px;margin:0 auto;padding:40px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#5B6582}
 .sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
@@ -37,8 +93,8 @@ h1,h2,h3,p{text-wrap:pretty}
 .sx-fin a:hover{color:#1652F0}
 @media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}}
 @media (max-width: 520px){.sx-login{display:none !important}}
-@media (max-width: 760px){.sx-nav{height:60px;padding:0 16px}.sx-word{height:20px}.sx-cta{height:40px;padding:0 16px;font-size:14px}.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}.sx-tip:hover::after,.sx-tip:focus::after{width:200px}}
-.dt-top{background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / max(1440px,100%) auto no-repeat}
+@media (max-width: 760px){.sx-nav{height:60px;padding:0 16px}.sx-word{height:20px}.sx-nav .ds-btn.np{padding:0 16px}.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}}
+.dt-top{overflow-x:clip;background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / max(1440px,100%) auto no-repeat}
 .dt-grid{max-width:1312px;margin:0 auto;padding:40px 48px 96px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:0 64px;align-items:start}
 .dt-main{min-width:0;display:flex;flex-direction:column}
 .dt-hero{display:flex;flex-direction:column;align-items:flex-start;gap:16px;padding-bottom:40px}
@@ -46,7 +102,6 @@ h1,h2,h3,p{text-wrap:pretty}
 .dt-crumb a{color:#5B6582;text-decoration:none}
 .dt-crumb a:hover{color:#1652F0}
 .dt-tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.dt-tag{height:28px;padding:0 11px 0 9px;border-radius:999px;background:rgba(255,255,255,.85);border:1px solid #E3E8F3;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:#0B1433;white-space:nowrap}
 .dt-h1{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px;color:#0B1433;max-width:780px}
 .dt-sub{margin:0;font-size:18px;line-height:1.55;color:#4A5578;max-width:680px}
 .dt-by{display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px;margin-top:4px;font-size:14px;color:#5B6582}
@@ -64,30 +119,17 @@ h1,h2,h3,p{text-wrap:pretty}
 .dt-tab-on::after{transform:scaleX(1)}
 .dt-sec{display:flex;flex-direction:column;gap:20px;padding:40px 0 8px;scroll-margin-top:56px}
 .dt-h2{margin:0;font-size:26px;line-height:1.15;font-weight:600;letter-spacing:-.6px;color:#0B1433;display:flex;align-items:center;gap:8px}
-.dt-sh{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.dt-sm{font-size:14px;color:#5B6582}
-.dt-p{margin:0;font-size:16px;line-height:1.6;color:#3A4566;max-width:720px}
-.dt-chips{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
-.dt-chl{font-size:13px;font-weight:500;color:#8A93AD;margin-right:4px;white-space:nowrap}
-.dt-chip{height:32px;padding:0 13px;border-radius:999px;background:#F5F8FF;border:1px solid #E3E8F3;display:inline-flex;align-items:center;font-size:13px;font-weight:500;color:#0B1433;white-space:nowrap}
 .dt-side{position:sticky;top:24px;z-index:6}
-.dt-card{border-radius:22px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 40px 80px -48px rgba(11,20,51,.45);overflow:hidden}
+.dt-card{border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 40px 80px -48px rgba(11,20,51,.45)}
 .dt-cbody{display:flex;flex-direction:column;gap:16px;padding:22px 24px 24px}
 .dt-lab{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:#8A93AD}
 .dt-amt{display:flex;align-items:baseline;gap:8px;margin-top:-8px}
 .dt-amt b{font-size:34px;font-weight:600;letter-spacing:-1px;color:#0B1433}
 .dt-amt span{font-size:15px;font-weight:500;color:#5B6582}
-.dt-btn{white-space:nowrap;height:56px;padding:0 8px 0 24px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:space-between;font-family:'Google Sans',system-ui,sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;transition:background .2s ease}
-.dt-btn:hover{background:#0E3BB8}
-.dt-btn i{width:40px;height:40px;border-radius:999px;background:#FFFFFF;display:flex;align-items:center;justify-content:center}
-.dt-done{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:#E7F5EE;color:#0F6B45;font-size:14px;font-weight:500}
-.dt-ask{display:flex;align-items:center;justify-content:center;gap:10px;height:44px;border-radius:999px;font-size:14px;font-weight:600;color:#0B1433;text-decoration:none;border:1.5px solid #D6DDEE;transition:border-color .2s ease}
-.dt-ask:hover{border-color:#1652F0}
-.dt-btn:focus-visible,.dt-tab:focus-visible,.dt-ask:focus-visible,.dt-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-.dt-link{font-size:14px;font-weight:600;color:#1652F0;text-decoration:none;white-space:nowrap}
-.dt-link:hover{color:#0E3BB8}
-.dt-bar{display:none}
-.dt-askm{display:none;align-items:center;gap:10px;min-height:44px;font-size:14px;font-weight:600;color:#1652F0;text-decoration:none}
+.dt-card .ds-btn{display:flex;justify-content:space-between}
+.dt-card .ds-ghost{display:flex}
+.dt-tab:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.dt-askm{display:none}
 .dt-faq{border-radius:20px;border:1.5px solid #E6EAF3;overflow:hidden}
 .dt-fq + .dt-fq{border-top:1px solid #EEF1F7}
 .dt-fh{width:100%;min-height:60px;padding:12px 20px;border:none;background:#FFFFFF;display:flex;align-items:center;justify-content:space-between;gap:16px;text-align:left;font-family:'Google Sans',system-ui,sans-serif;font-size:16px;font-weight:600;color:#0B1433;cursor:pointer}
@@ -103,17 +145,18 @@ h1,h2,h3,p{text-wrap:pretty}
 .dt-main > *{order:3}
 .dt-hero{order:1;padding-bottom:28px}
 .dt-side{order:2;position:static;margin-bottom:12px}
+.dt-lab .tip-b.r{left:-12px;right:auto}
 .dt-card{max-width:520px}
-.dt-hide-t{display:none !important}
 }
 @media (max-width: 760px){
 .dt-top{background-size:auto 340px}
+.tip-b{width:190px}
 .dt-grid{padding:40px 20px 0}
 .dt-crumb{display:none}
 .dt-hero{gap:16px;padding-bottom:28px}
 .dt-side{display:none}
 .dt-side.dt-side-show{display:block;margin-bottom:32px}
-.dt-askm{display:inline-flex;margin-top:-4px}
+.dt-askm{display:inline-flex;min-height:44px;margin-top:-4px}
 .dt-h1{font-size:30px;letter-spacing:-.8px}
 .dt-sub{font-size:15px}
 .dt-by{gap:10px 14px;font-size:13px}
@@ -122,26 +165,19 @@ h1,h2,h3,p{text-wrap:pretty}
 .dt-card{border-radius:20px}
 .dt-cbody{padding:18px 18px 20px;gap:14px}
 .dt-amt b{font-size:28px}
-.dt-card .dt-btn{display:none}
+.dt-card .dt-cta{display:none}
 .dt-tabs{margin:0 -20px 4px;padding:0 20px;gap:22px;overflow-x:auto;scrollbar-width:none}
 .dt-tabs::-webkit-scrollbar{display:none}
 .dt-tab{height:48px;font-size:14px;flex-shrink:0}
 .dt-sec{padding-top:40px;gap:18px}
 .dt-h2{font-size:21px;letter-spacing:-.4px}
-.dt-p{font-size:15px}
-.dt-chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px;padding:0 20px;scrollbar-width:none}
-.dt-chips::-webkit-scrollbar{display:none}
 .dt-fh{padding:12px 16px;font-size:15px}
 .dt-fa{padding:0 16px 16px;font-size:14px}
-.dt-bar{display:flex;order:9;position:sticky;bottom:0;z-index:20;align-items:center;justify-content:space-between;gap:12px;margin:28px -20px 0;padding:12px 16px 12px 20px;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid #E6EAF3}
+.dt-bar{order:9;flex-direction:row;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px 12px 20px}
 .dt-bar > div > b{display:block;font-size:17px;font-weight:600;color:#0B1433}
 .dt-bar > div > span{font-size:12px;color:#5B6582}
-.dt-bar .dt-btn{height:48px;font-size:15px;gap:12px}
-.dt-bar .dt-btn i{width:34px;height:34px}
+.dt-bar .ds-btn{width:auto}
 }
-
-.pd2-ok{height:28px;padding:0 11px;border-radius:999px;background:#E7F5EE;color:#0F6B45;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500}
-.pd2-ok i{width:7px;height:7px;border-radius:999px;background:#1E9E63;display:block}
 .pd2-ph{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .pd2-ph::before{content:"";position:absolute;left:22px;right:calc(25% - 31px);top:21px;height:2px;background:linear-gradient(90deg,#1652F0,#9DB8F7)}
 .pd2-p{position:relative;display:flex;flex-direction:column;gap:8px}
@@ -150,7 +186,7 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd2-pw{font-size:12px;font-weight:500;color:#8A93AD}
 .pd2-pt{font-size:16px;font-weight:600;letter-spacing:-.2px;color:#0B1433}
 .pd2-pd{font-size:13px;line-height:1.5;color:#5B6582;text-wrap:pretty}
-.pd2-pj{align-self:flex-start;margin-top:4px;height:26px;padding:0 10px 0 8px;border-radius:999px;background:#E7F5EE;color:#0F6B45;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500}
+.pd2-pj{align-self:flex-start;margin-top:4px}
 .pd2-leave{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:8px}
 .pd2-lv{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;border:1.5px solid #E6EAF3}
 .pd2-lvi{width:36px;height:36px;border-radius:11px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -182,17 +218,15 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd2-when > div > span{font-size:13px;color:#5B6582}
 .pd2-form{display:flex;flex-direction:column;gap:10px}
 .pd2-fl{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:500;color:#3A4566}
-.pd2-fi{height:46px;box-sizing:border-box;padding:0 14px;border-radius:12px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;color:#0B1433;outline:none}
 .pd2-ta{height:84px;padding:10px 14px;resize:none;line-height:1.45}
-.pd2-fi:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
 .pd2-err{font-size:13px;color:#B42318}
 .pd2-fi-bad{border-color:#D92D20}
-.pd2-cancel{height:40px;border:none;background:none;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:600;color:#5B6582;cursor:pointer}
-.pd2-done{display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:16px;background:#E7F5EE;color:#0F6B45}
-.pd2-done b{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600}
-.pd2-done span{font-size:13px;line-height:1.5;color:#1E5A45}
+.pd2-cancel{justify-content:center;min-height:40px}
+.pd2-done{display:flex;flex-direction:column;align-items:center;text-align:center;padding:6px 0 2px}
+.pd2-dh{margin-top:14px;font-size:19px;font-weight:600;letter-spacing:-.3px;color:#0B1433}
+.pd2-dp{margin:4px 0 0;font-size:14px;line-height:1.5;color:#5B6582}
 @media (max-width: 1180px){.pd2-ph{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}.pd2-ph::before{display:none}.pd2-week{grid-template-columns:repeat(2,minmax(0,1fr))}.pd2-ppl{grid-template-columns:minmax(0,1fr)}}
-@media (max-width: 960px){.pd2-when{margin:0;border-radius:0;background:#F5F8FF}}
+@media (max-width: 960px){.pd2-when{margin:0;border-radius:20.5px 20.5px 0 0;background:#F5F8FF}}
 @media (max-width: 760px){
 .pd2-ph{grid-template-columns:minmax(0,1fr);row-gap:0}
 .pd2-p{display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:12px;row-gap:2px;padding-bottom:18px;position:relative}
@@ -210,7 +244,7 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd2-pp{padding:12px}
 .pd2-av{width:44px;height:44px;font-size:14px}
 .pd2-cohort{align-items:flex-start;font-size:13px}
-.pd2-when{padding:14px}
+.pd2-when{padding:14px;border-radius:18.5px 18.5px 0 0}
 }
 </style>
 </helmet>
@@ -229,7 +263,7 @@ h1,h2,h3,p{text-wrap:pretty}
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
 <a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
-<a class="sx-cta" href="#">Create account</a>
+<a class="ds-btn sm np" href="#">Create account</a>
 <button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 </div>
 </header>
@@ -237,7 +271,7 @@ h1,h2,h3,p{text-wrap:pretty}
 <div class="dt-main">
 <div class="dt-hero">
 <nav class="dt-crumb" aria-label="Breadcrumb"><a href="#">Learning programs</a><span aria-hidden="true">/</span><span>Accelerator</span></nav>
-<div class="dt-tags"><span class="pd2-ok"><i></i>Places available</span><span class="dt-tag">Accelerator</span></div>
+<div class="dt-tags"><span class="ds-tag green lg">Places available</span><span class="ds-tag line lg">Accelerator</span></div>
 <h1 class="dt-h1">AI &amp; Data Analytics Accelerator</h1>
 <p class="dt-sub">Twelve weeks of live, mentored learning, from data basics to applied AI, ending with a capstone you can show employers.</p>
 <div class="dt-by">
@@ -246,7 +280,7 @@ h1,h2,h3,p{text-wrap:pretty}
 <span class="dt-fact"><b>12 weeks</b></span>
 <span class="dt-fact"><b>About 8 hrs a week</b></span>
 </div>
-<a class="dt-askm" href="#"><span class="sx-orb" style="width: 22px; height: 22px" aria-hidden="true"></span>Is this right for my goal? →</a>
+<a class="ds-link dt-askm" href="#"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span>Ask Nova if it’s right for me →</a>
 </div>
 <div class="dt-tabs" role="tablist" aria-label="Sections">
 <sc-for list="{{tabs}}" as="t" hint-placeholder-count="4">
@@ -257,9 +291,9 @@ h1,h2,h3,p{text-wrap:pretty}
 <h2 id="pr-c" class="dt-h2">Twelve weeks, four phases</h2>
 <div class="pd2-ph">
 <div class="pd2-p"><span class="pd2-pn">1</span><span class="pd2-pw">Weeks 1–3</span><span class="pd2-pt">Foundations</span><span class="pd2-pd">Data literacy, spreadsheets and SQL basics.</span></div>
-<div class="pd2-p"><span class="pd2-pn">2</span><span class="pd2-pw">Weeks 4–6</span><span class="pd2-pt">Analysis in practice</span><span class="pd2-pd">SQL, visualisation and telling the story.</span><span class="pd2-pj"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3zM8 7V4h8v3"></path></svg>Sales dashboard</span></div>
-<div class="pd2-p"><span class="pd2-pn">3</span><span class="pd2-pw">Weeks 7–9</span><span class="pd2-pt">Applied AI</span><span class="pd2-pd">Machine learning concepts, AI tools and evaluation.</span><span class="pd2-pj"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3zM8 7V4h8v3"></path></svg>Customer insights</span></div>
-<div class="pd2-p"><span class="pd2-pn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span class="pd2-pw">Weeks 10–12</span><span class="pd2-pt">Capstone</span><span class="pd2-pd">Solve a real business problem and present it.</span><span class="pd2-pj"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3zM8 7V4h8v3"></path></svg>Business case</span></div>
+<div class="pd2-p"><span class="pd2-pn">2</span><span class="pd2-pw">Weeks 4–6</span><span class="pd2-pt">Analysis in practice</span><span class="pd2-pd">SQL, visualisation and telling the story.</span><span class="ds-tag green pd2-pj"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3zM8 7V4h8v3"></path></svg>Sales dashboard</span></div>
+<div class="pd2-p"><span class="pd2-pn">3</span><span class="pd2-pw">Weeks 7–9</span><span class="pd2-pt">Applied AI</span><span class="pd2-pd">Machine learning concepts, AI tools and evaluation.</span><span class="ds-tag green pd2-pj"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3zM8 7V4h8v3"></path></svg>Customer insights</span></div>
+<div class="pd2-p"><span class="pd2-pn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span class="pd2-pw">Weeks 10–12</span><span class="pd2-pt">Capstone</span><span class="pd2-pd">Solve a real business problem and present it.</span><span class="ds-tag green pd2-pj"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v13H3zM8 7V4h8v3"></path></svg>Business case</span></div>
 </div>
 <div class="pd2-leave">
 <div class="pd2-lv"><span class="pd2-lvi"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span><div><b>Program certificate</b><span>In your Digital Backpack</span></div></div>
@@ -268,7 +302,7 @@ h1,h2,h3,p{text-wrap:pretty}
 </section>
 
 <section class="dt-sec" ref="{{refWeek}}" aria-labelledby="pr-w">
-<h2 id="pr-w" class="dt-h2">Your week<i class="sx-tip" tabindex="0" data-tip="Times are shown in your time zone. Every live session is recorded.">i</i></h2>
+<h2 id="pr-w" class="dt-h2">Your week<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Times are shown in your time zone. Every live session is recorded.</span></span></h2>
 <div class="pd2-week">
 <div class="pd2-day pd2-day-k"><span class="pd2-dn">TUESDAY</span><span class="pd2-dt">Live session</span><span class="pd2-dd">90 minutes</span></div>
 <div class="pd2-day"><span class="pd2-dn">THURSDAY</span><span class="pd2-dt">Mentor hours</span><span class="pd2-dd">60 minutes</span></div>
@@ -301,32 +335,32 @@ h1,h2,h3,p{text-wrap:pretty}
 <div class="dt-card" ref="{{refCard}}">
 <div class="pd2-when"><span class="pd2-cal" aria-hidden="true"><b>18</b><span>JAN</span></span><div><b>Cohort starts 18 January</b><span>Applications close 8 January</span></div></div>
 <div class="dt-cbody">
-<span class="dt-lab">Program fee<i class="sx-tip" tabindex="0" data-tip="Pay in full or in three monthly instalments. Scholarships cover up to half the fee for 10 learners per cohort. Placeholder figures to confirm.">i</i></span>
+<span class="dt-lab">Program fee<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r dn" role="tooltip">Pay in full or in three monthly instalments. Scholarships cover up to half the fee for 10 learners per cohort. Placeholder figures to confirm.</span></span></span>
 <div class="dt-amt"><b>$1,200</b><span>or 3 × $400</span></div>
 <sc-if value="{{idle}}" hint-placeholder-val="{{ true }}">
-<button class="dt-btn" type="button" onClick="{{openForm}}">Apply<i aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></button>
-<a class="dt-ask" href="#"><span class="sx-orb" style="width: 22px; height: 22px" aria-hidden="true"></span>Is this right for my goal?</a>
+<button class="ds-btn dt-cta" type="button" onClick="{{openForm}}"><span>Apply</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button>
+<a class="ds-ghost sm" href="#"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span><span>Ask Nova if it’s right for me</span></a>
 </sc-if>
 <sc-if value="{{form}}" hint-placeholder-val="{{ false }}">
 <form class="pd2-form" onSubmit="{{submit}}" novalidate>
-<label class="pd2-fl">Full name<input class="pd2-fi {{nameBad}}" type="text" value="{{fName}}" onInput="{{onName}}" autocomplete="name"></label>
-<label class="pd2-fl">Email<input class="pd2-fi {{emailBad}}" type="email" value="{{fEmail}}" onInput="{{onEmail}}" autocomplete="email"></label>
-<label class="pd2-fl">What do you want to achieve?<textarea class="pd2-fi pd2-ta {{whyBad}}" onInput="{{onWhy}}">{{fWhy}}</textarea></label>
+<label class="pd2-fl">Full name<input class="ds-in {{nameBad}}" type="text" value="{{fName}}" onInput="{{onName}}" autocomplete="name"></label>
+<label class="pd2-fl">Email<input class="ds-in {{emailBad}}" type="email" value="{{fEmail}}" onInput="{{onEmail}}" autocomplete="email"></label>
+<label class="pd2-fl">What do you want to achieve?<textarea class="ds-in pd2-ta {{whyBad}}" onInput="{{onWhy}}">{{fWhy}}</textarea></label>
 <sc-if value="{{hasErr}}" hint-placeholder-val="{{ false }}"><span class="pd2-err" role="alert">{{err}}</span></sc-if>
-<button class="dt-btn" type="submit">Send application<i aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></button>
-<button class="pd2-cancel" type="button" onClick="{{cancel}}">Cancel</button>
+<button class="ds-btn" type="submit"><span>Send application</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button>
+<button class="ds-link pd2-cancel" type="button" onClick="{{cancel}}">Cancel</button>
 </form>
 </sc-if>
 <sc-if value="{{done}}" hint-placeholder-val="{{ false }}">
-<div class="pd2-done" role="status"><b><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg> Application sent</b><span>We’ll email {{fEmail}} with next steps before the cohort starts.</span></div>
+<div class="pd2-done ko-v" role="status"><div class="ko-emb ko-v" aria-hidden="true"><span class="cf" aria-hidden="true"><i style="--x:271;--y:-84;--f:438;--d:2.82s;--dl:0.34s;--sw:12px;--sd:0.81s;--fd:0.62s;--rx:-0.39;--r:-57deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:61;--y:-94;--f:453;--d:3.38s;--dl:0.38s;--sw:14px;--sd:0.48s;--fd:0.58s;--rx:0.76;--r:73deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:177;--y:-104;--f:399;--d:2.88s;--dl:0.27s;--sw:6px;--sd:0.49s;--fd:1.04s;--rx:-0.19;--r:61deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:132;--y:-105;--f:408;--d:2.68s;--dl:0.43s;--sw:10px;--sd:0.83s;--fd:0.84s;--rx:0.92;--r:-80deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-185;--y:-22;--f:478;--d:3.08s;--dl:0.20s;--sw:12px;--sd:0.80s;--fd:0.75s;--rx:-0.83;--r:5deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:297;--y:-43;--f:404;--d:2.72s;--dl:0.20s;--sw:13px;--sd:0.53s;--fd:0.97s;--rx:-0.11;--r:-32deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#AFC1F5"></s></b></i><i style="--x:-67;--y:-11;--f:466;--d:3.77s;--dl:0.37s;--sw:15px;--sd:0.46s;--fd:0.69s;--rx:0.99;--r:74deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-293;--y:-129;--f:380;--d:3.33s;--dl:0.45s;--sw:9px;--sd:0.48s;--fd:0.71s;--rx:0.27;--r:-77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-82;--y:-86;--f:428;--d:3.29s;--dl:0.46s;--sw:7px;--sd:0.52s;--fd:1.23s;--rx:0.64;--r:-17deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-218;--y:-61;--f:448;--d:3.07s;--dl:0.33s;--sw:6px;--sd:0.47s;--fd:0.63s;--rx:0.02;--r:-15deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:153;--y:-95;--f:470;--d:3.19s;--dl:0.35s;--sw:15px;--sd:0.89s;--fd:0.64s;--rx:-0.04;--r:77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-140;--y:-21;--f:381;--d:2.92s;--dl:0.32s;--sw:6px;--sd:0.53s;--fd:0.83s;--rx:0.14;--r:-47deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-88;--y:-25;--f:445;--d:3.43s;--dl:0.37s;--sw:7px;--sd:0.47s;--fd:0.56s;--rx:0.82;--r:-1deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-306;--y:-60;--f:453;--d:2.98s;--dl:0.50s;--sw:6px;--sd:0.70s;--fd:1.10s;--rx:0.80;--r:-47deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-94;--y:-54;--f:467;--d:3.10s;--dl:0.43s;--sw:14px;--sd:0.71s;--fd:1.02s;--rx:-0.24;--r:69deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:69;--y:-138;--f:479;--d:3.66s;--dl:0.41s;--sw:9px;--sd:0.78s;--fd:0.99s;--rx:-0.12;--r:58deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-121;--y:-137;--f:475;--d:2.74s;--dl:0.43s;--sw:12px;--sd:0.67s;--fd:1.22s;--rx:-0.26;--r:-44deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-100;--y:-19;--f:404;--d:3.09s;--dl:0.26s;--sw:12px;--sd:0.81s;--fd:1.12s;--rx:-0.60;--r:-26deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-179;--y:-21;--f:393;--d:3.02s;--dl:0.47s;--sw:6px;--sd:0.48s;--fd:1.29s;--rx:0.64;--r:-52deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:211;--y:-96;--f:447;--d:3.46s;--dl:0.45s;--sw:12px;--sd:0.59s;--fd:1.17s;--rx:-0.44;--r:75deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:114;--y:-110;--f:444;--d:3.28s;--dl:0.39s;--sw:10px;--sd:0.54s;--fd:1.13s;--rx:-0.47;--r:-44deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:309;--y:-133;--f:433;--d:3.37s;--dl:0.30s;--sw:6px;--sd:0.54s;--fd:1.17s;--rx:-0.49;--r:-78deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-175;--y:-40;--f:474;--d:3.20s;--dl:0.50s;--sw:7px;--sd:0.83s;--fd:1.07s;--rx:-0.55;--r:25deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-236;--y:-86;--f:470;--d:3.05s;--dl:0.36s;--sw:14px;--sd:0.81s;--fd:1.26s;--rx:-0.07;--r:-28deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:142;--y:-35;--f:451;--d:2.86s;--dl:0.47s;--sw:15px;--sd:0.89s;--fd:0.95s;--rx:0.58;--r:2deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#0F6B45"></s></b></i><i style="--x:262;--y:-30;--f:388;--d:3.13s;--dl:0.36s;--sw:13px;--sd:0.67s;--fd:0.57s;--rx:0.62;--r:-64deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:191;--y:-125;--f:458;--d:2.77s;--dl:0.23s;--sw:11px;--sd:0.78s;--fd:1.18s;--rx:0.38;--r:46deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:165;--y:-88;--f:463;--d:3.27s;--dl:0.23s;--sw:11px;--sd:0.86s;--fd:0.74s;--rx:0.34;--r:76deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-125;--y:-130;--f:407;--d:3.20s;--dl:0.31s;--sw:7px;--sd:0.45s;--fd:0.83s;--rx:0.08;--r:-69deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-241;--y:-136;--f:473;--d:3.15s;--dl:0.47s;--sw:14px;--sd:0.63s;--fd:0.73s;--rx:-0.01;--r:6deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#1652F0"></s></b></i><i style="--x:256;--y:-19;--f:432;--d:2.73s;--dl:0.31s;--sw:6px;--sd:0.57s;--fd:1.08s;--rx:0.95;--r:-71deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-220;--y:-148;--f:452;--d:2.89s;--dl:0.34s;--sw:10px;--sd:0.71s;--fd:1.19s;--rx:0.25;--r:-30deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-305;--y:-61;--f:441;--d:3.25s;--dl:0.46s;--sw:11px;--sd:0.55s;--fd:0.71s;--rx:0.09;--r:70deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#AFC1F5"></s></b></i><i style="--x:-171;--y:-46;--f:470;--d:2.98s;--dl:0.28s;--sw:15px;--sd:0.55s;--fd:1.30s;--rx:0.78;--r:-46deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i></span><span class="ko-halo"></span><span class="ko-disc"><svg class="ko-tick" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" pathLength="1"></path></svg></span></div><span class="ko-pill">Application sent</span><b class="pd2-dh">Look out for our email</b><p class="pd2-dp">We’ll send next steps to {{fEmail}} before the cohort starts.</p></div>
 </sc-if>
 </div>
 </div>
 </aside>
 
-<div class="dt-bar">
+<div class="ds-mbar dt-bar">
 <div><b>Starts 18 Jan</b><span>$1,200 · places available</span></div>
-<button class="dt-btn" type="button" onClick="{{openForm}}">{{barCta}}<i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></button>
+<button class="ds-btn" type="button" onClick="{{openForm}}"><span>{{barCta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button>
 </div>
 </div>
 </div>

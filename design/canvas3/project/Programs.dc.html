@@ -11,6 +11,51 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-btn.np{padding:0 22px}
+.ds-chip{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:40px;padding:0 16px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:border-color .2s ease,background .2s ease}
+.ds-chip:hover{border-color:#1652F0;background:#F5F8FF}
+.ds-chip .ck{display:none}
+.ds-chip.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-chip.on .ck{display:block}
+.ds-chip.sm{height:34px;padding:0 13px;font-size:13px}
+.ds-chip i{font-style:normal;font-size:12px;color:#8A93AD}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-tag.glass{background:rgba(255,255,255,.14);color:#FFFFFF;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.ds-tag.lg{height:30px;padding:0 12px;font-size:13px}
+.ds-ask{display:flex;align-items:center;gap:10px;height:60px;box-sizing:border-box;padding:6px 6px 6px 22px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;box-shadow:0 20px 40px -30px rgba(11,20,51,.5);transition:border-color .2s ease,box-shadow .2s ease}
+.ds-ask:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.ds-ask input{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:inherit;font-size:16px;color:#0B1433}
+.ds-ask input::placeholder{color:#8A93AD}
+.ds-ask .ds-btn{flex-shrink:0}
+.ds-ask.sm{height:50px;padding:4px 4px 4px 16px}
+.ds-ask.sm input{font-size:14px}
+.ds-btn:focus-visible,.ds-chip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.nova-card{background:#FFFFFF url(/_blob/0b29db2e4cd6f4a89dc7ba8f12e59c8d) center / cover no-repeat}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.lg{width:56px;height:56px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
+.nv-av.sm{width:28px;height:28px}
+@media (max-width: 960px){
+.ds-chip{height:36px;font-size:13.5px;padding:0 14px}
+.ds-chip.sm{height:32px;font-size:12.5px;padding:0 12px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+}
+@media (max-width: 760px){
+.ds-ask{height:54px;padding:5px 5px 5px 18px}
+.ds-ask input{font-size:15px}
+}
 h1,h2,h3,p{text-wrap:pretty}
 @media (min-width: 761px){p{text-wrap:balance}}
 .sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -21,15 +66,8 @@ h1,h2,h3,p{text-wrap:pretty}
 .sx-link{height:40px;padding:0 12px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:500;color:#3A4566;text-decoration:none;white-space:nowrap;transition:color .2s ease,background .2s ease}
 .sx-link:hover{color:#0B1433;background:#F5F8FF}
 .sx-link-on{color:#0B1433;background:#EAF0FF}
-.sx-cta{height:44px;padding:0 20px;border-radius:999px;display:flex;align-items:center;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease}
-.sx-cta:hover{background:#0E3BB8}
 .sx-menu{display:none;width:44px;height:44px;border-radius:999px;border:none;background:transparent;color:#0B1433;align-items:center;justify-content:center;cursor:pointer}
-.sx-link:focus-visible,.sx-cta:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-.sx-tip{position:relative;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:999px;border:1.5px solid #B5BDD3;font-size:11px;font-weight:600;color:#8A93AD;letter-spacing:0;cursor:help;flex-shrink:0;font-style:normal}
-.sx-tip:hover::after,.sx-tip:focus::after{content:attr(data-tip);position:absolute;left:-10px;top:calc(100% + 8px);width:240px;padding:10px 12px;border-radius:10px;background:#0B1433;color:#FFFFFF;font-size:12px;font-weight:400;line-height:1.45;text-align:left;white-space:normal;z-index:30}
-.sx-tip-r:hover::after,.sx-tip-r:focus::after{left:auto;right:-10px}
-.sx-tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
-.sx-orb{border-radius:999px;flex-shrink:0;background:#FFFFFF url(/_blob/f81e36d31295a0d0737959589ec1abd4) center / 62% no-repeat;box-shadow:0 0 0 1.5px #DCE5FB}
+.sx-link:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
 .sx-fin{max-width:1312px;margin:0 auto;padding:40px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#5B6582}
 .sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
@@ -37,34 +75,31 @@ h1,h2,h3,p{text-wrap:pretty}
 .sx-fin a:hover{color:#1652F0}
 @media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}}
 @media (max-width: 520px){.sx-login{display:none !important}}
-@media (max-width: 760px){.sx-nav{height:60px;padding:0 16px}.sx-word{height:20px}.sx-cta{height:40px;padding:0 16px;font-size:14px}.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}.sx-tip:hover::after,.sx-tip:focus::after{width:200px}}
+@media (max-width: 760px){.sx-nav{height:60px;padding:0 16px}.sx-word{height:20px}.sx-nav .ds-btn.np{padding:0 16px}.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}}
 .pg-hero{background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / max(1440px,100%) auto no-repeat}
 .pg-hin{max-width:960px;margin:0 auto;padding:72px 24px 40px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
 .pg-h1{margin:0;font-size:56px;line-height:1.04;font-weight:600;letter-spacing:-1.8px;color:#0B1433}
 .pg-h1 em{font-style:normal;color:#1652F0}
 .pg-sub{margin:0;max-width:640px;font-size:18px;line-height:1.55;color:#4A5578}
 .pg-types{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:10px}
-.pg-t{height:36px;padding:0 15px;border-radius:10px;border:1px solid #E3E8F3;background:rgba(255,255,255,.8);font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:500;color:#3A4566;cursor:pointer;transition:border-color .2s ease}
-.pg-t:hover{border-color:#C9D7FA}
-.pg-t-on{background:#0B1433;border-color:#0B1433;color:#FFFFFF}
 .pg-body{max-width:1312px;margin:0 auto;padding:16px 48px 96px;box-sizing:border-box;display:flex;flex-direction:column;gap:20px}
 .pg-feat{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:32px;padding:36px 40px;border-radius:24px;background:#0B1433;color:#FFFFFF;text-decoration:none;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 .pg-feat::after{content:"";position:absolute;inset:0;z-index:-1;background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat;transform:scale(1.5);transform-origin:0 35%;pointer-events:none}
 .pg-feat:hover{transform:translateY(-3px)}
 .pg-fk{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;font-weight:500;color:#9DB8F7}
-.pg-fk span{height:26px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.14);color:#FFFFFF;display:inline-flex;align-items:center;gap:6px}
-.pg-fk i{width:7px;height:7px;border-radius:999px;background:#5FD49B;display:block}
+.pg-fk .ds-tag > i{width:7px;height:7px;border-radius:999px;background:#5FD49B;display:block}
 .pg-ft{margin:12px 0 0;font-size:34px;line-height:1.1;font-weight:600;letter-spacing:-1px}
 .pg-fd{margin:10px 0 0;max-width:620px;font-size:16px;line-height:1.55;color:rgba(255,255,255,.78)}
 .pg-fm{display:flex;align-items:center;gap:18px;margin-top:18px;font-size:14px;color:rgba(255,255,255,.8)}
 .pg-fm b{font-weight:600;color:#FFFFFF}
-.pg-fgo{height:52px;padding:0 8px 0 22px;border-radius:999px;background:#FFFFFF;color:#0B1433;display:inline-flex;align-items:center;gap:12px;font-size:15px;font-weight:600;white-space:nowrap}
-.pg-fgo i{width:38px;height:38px;border-radius:999px;background:#1652F0;display:flex;align-items:center;justify-content:center}
+.pg-feat .ds-btn{background:#FFFFFF;color:#0B1433;box-shadow:none}
+.pg-feat .ds-btn .ob-arrow{background:#1652F0;color:#FFFFFF}
+.pg-feat:hover .ds-btn,.pg-feat .ds-btn:hover{background:#F5F8FF;color:#0B1433}
 .pg-sh{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
 .pg-st{font-size:22px;font-weight:600;letter-spacing:-.4px;color:#0B1433}
 .pg-n{font-size:14px;color:#8A93AD}
 .pg-list{display:flex;flex-direction:column;gap:12px}
-.pg-row{display:grid;grid-template-columns:72px minmax(0,1fr) 170px 40px;align-items:center;gap:24px;padding:16px 20px 16px 16px;border-radius:18px;background:#FFFFFF;border:1px solid #E3E8F3;text-decoration:none;color:#0B1433;transition:border-color .3s ease,box-shadow .4s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
+.pg-row{display:grid;grid-template-columns:72px minmax(0,1fr) 170px 40px;align-items:center;gap:24px;padding:16px 20px 16px 16px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;text-decoration:none;color:#0B1433;transition:border-color .3s ease,box-shadow .4s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
 .pg-row:hover{border-color:#C9D7FA;box-shadow:0 24px 48px -36px rgba(22,82,240,.5);transform:translateY(-2px)}
 .pg-date{width:72px;height:72px;border-radius:16px;background:#F5F8FF;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
 .pg-date b{font-size:26px;font-weight:600;letter-spacing:-.6px;color:#0B1433}
@@ -72,23 +107,15 @@ h1,h2,h3,p{text-wrap:pretty}
 .pg-any b{font-size:13px;letter-spacing:0}
 .pg-rt{font-size:18px;font-weight:600;letter-spacing:-.3px;line-height:1.25}
 .pg-rm{font-size:14px;color:#5B6582;margin-top:4px}
-.pg-stat{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;white-space:nowrap}
-.pg-stat i{width:8px;height:8px;border-radius:999px;display:block}
+.pg-stat{justify-self:start}
 .pg-go{width:40px;height:40px;border-radius:999px;border:1.5px solid #D6DDEE;display:flex;align-items:center;justify-content:center;color:#1652F0;transition:background .2s ease,border-color .2s ease}
 .pg-row:hover .pg-go{background:#1652F0;border-color:#1652F0;color:#FFFFFF}
 .pg-empty{padding:40px;border-radius:20px;background:#F5F8FF;text-align:center;font-size:15px;color:#5B6582}
-.pg-ai{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:40px;align-items:center;margin-top:28px;padding:36px 40px;border-radius:24px;background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / cover no-repeat;border:1px solid #E3E8F3}
+.pg-ai{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:40px;align-items:center;margin-top:28px;padding:36px 40px;border-radius:22px;border:1.5px solid #E6EAF3}
 .pg-al{display:flex;align-items:flex-start;gap:16px}
 .pg-ah{margin:0;font-size:26px;line-height:1.15;font-weight:600;letter-spacing:-.6px;color:#0B1433}
 .pg-ap{margin:6px 0 0;font-size:15px;line-height:1.55;color:#4A5578}
-.pg-af{height:56px;box-sizing:border-box;padding:5px 5px 5px 20px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE;display:flex;align-items:center;gap:10px;box-shadow:0 20px 40px -30px rgba(11,20,51,.5)}
-.pg-af:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
-.pg-in{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;color:#0B1433}
-.pg-in::placeholder{color:#8A93AD}
-.pg-ab{height:44px;padding:0 6px 0 18px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px;cursor:pointer;white-space:nowrap;flex-shrink:0}
-.pg-ab:hover{background:#0E3BB8}
-.pg-ab span{width:32px;height:32px;border-radius:999px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
-.pg-t:focus-visible,.pg-feat:focus-visible,.pg-row:focus-visible,.pg-ab:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.pg-feat:focus-visible,.pg-row:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 @media (max-width: 960px){.pg-ai{grid-template-columns:minmax(0,1fr);gap:22px;padding:30px}.pg-feat{grid-template-columns:minmax(0,1fr);gap:22px}.pg-fgo{justify-self:start}}
 @media (max-width: 760px){
 .pg-hero{background-size:auto 340px}
@@ -97,14 +124,11 @@ h1,h2,h3,p{text-wrap:pretty}
 .pg-sub{font-size:15px}
 .pg-types{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;align-self:stretch;margin:6px -20px 0;padding:0 20px;scrollbar-width:none}
 .pg-types::-webkit-scrollbar{display:none}
-.pg-t{flex-shrink:0;height:34px;font-size:13px}
 .pg-body{padding:12px 20px 72px;gap:12px}
 .pg-feat{padding:22px 20px;border-radius:20px;gap:18px}
 .pg-ft{font-size:24px;letter-spacing:-.6px}
 .pg-fd{font-size:14px}
 .pg-fm{gap:12px;font-size:13px;flex-wrap:wrap}
-.pg-fgo{height:48px;font-size:14px}
-.pg-fgo i{width:34px;height:34px}
 .pg-sh{margin-top:12px}
 .pg-st{font-size:19px}
 .pg-row{grid-template-columns:56px minmax(0,1fr);gap:14px;padding:12px 14px 12px 12px;border-radius:16px}
@@ -113,17 +137,18 @@ h1,h2,h3,p{text-wrap:pretty}
 .pg-date > span{font-size:10px;margin-top:3px}
 .pg-rt{font-size:15px}
 .pg-rm{font-size:12.5px;margin-top:2px}
-.pg-stat{grid-column:2;font-size:12px;margin-top:-10px}
+.pg-stat{grid-column:2;margin-top:-6px}
 .pg-go{display:none}
 .pg-by{display:none}
-.pg-ai{padding:24px 20px 20px;border-radius:20px;background-size:auto 300px;margin-top:16px}
+.pg-ai{padding:24px 20px 20px;border-radius:20px;margin-top:16px}
+.pg-al .nv-av{width:44px;height:44px}
 .pg-ah{font-size:21px}
 .pg-ap{font-size:14px}
-.pg-af{flex-direction:column;align-items:stretch;height:auto;padding:0;gap:10px;border:none;background:none;box-shadow:none;border-radius:0}
-.pg-af:focus-within{box-shadow:none}
-.pg-in{flex:none;height:50px;box-sizing:border-box;padding:0 18px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE}
-.pg-ab{height:50px;justify-content:space-between;padding:0 6px 0 20px;font-size:15px}
-.pg-ab span{width:38px;height:38px}
+.pg-ai .ds-ask{flex-direction:column;align-items:stretch;height:auto;padding:0;gap:10px;border:none;border-radius:0;background:none;box-shadow:none}
+.pg-ai .ds-ask input{flex:none;height:50px;box-sizing:border-box;padding:0 18px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE}
+.pg-ai .ds-ask input:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.pg-ai .ds-ask .ds-btn{height:48px;justify-content:space-between;font-size:15px}
+.pg-ai .ds-ask .ob-arrow{width:36px;height:36px}
 }
 </style>
 </helmet>
@@ -142,7 +167,7 @@ h1,h2,h3,p{text-wrap:pretty}
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
 <a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
-<a class="sx-cta" href="#">Create account</a>
+<a class="ds-btn sm np" href="#">Create account</a>
 <button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 </div>
 </header>
@@ -150,7 +175,7 @@ h1,h2,h3,p{text-wrap:pretty}
 <h1 class="pg-h1">Go deeper, <em>together</em>.</h1>
 <p class="pg-sub">Live, expert-led programs with real projects and a cohort beside you.</p>
 <div class="pg-types" role="group" aria-label="Program type">
-<sc-for list="{{types}}" as="t" hint-placeholder-count="7"><button class="pg-t {{t.cls}}" type="button" aria-pressed="{{t.on}}" onClick="{{t.pick}}">{{t.label}}</button></sc-for>
+<sc-for list="{{types}}" as="t" hint-placeholder-count="7"><button class="ds-chip {{t.cls}}" type="button" aria-pressed="{{t.on}}" onClick="{{t.pick}}"><svg class="ck" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>{{t.label}}</button></sc-for>
 </div>
 </div>
 </div>
@@ -158,12 +183,12 @@ h1,h2,h3,p{text-wrap:pretty}
 <sc-if value="{{showFeat}}" hint-placeholder-val="{{ true }}">
 <a class="pg-feat" href="#">
 <div>
-<div class="pg-fk">Next cohort<span><i></i>Places available</span></div>
+<div class="pg-fk">Next cohort<span class="ds-tag glass"><i></i>Places available</span></div>
 <h2 class="pg-ft">AI &amp; Data Analytics Accelerator</h2>
 <p class="pg-fd">Twelve weeks of live, mentored learning, from data basics to applied AI, ending with a capstone you can show employers.</p>
 <div class="pg-fm"><span>Starts <b>18 January</b></span><span><b>12 weeks</b></span><span>Northgate University</span></div>
 </div>
-<span class="pg-fgo">See program<i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></span>
+<span class="ds-btn pg-fgo"><span>See program</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></span>
 </a>
 </sc-if>
 <div class="pg-sh"><span class="pg-st">{{listTitle}}</span><span class="pg-n">{{count}}</span></div>
@@ -172,15 +197,15 @@ h1,h2,h3,p{text-wrap:pretty}
 <a class="pg-row" href="#">
 <span class="pg-date {{p.dcls}}" aria-label="{{p.when}}"><b>{{p.d}}</b><span>{{p.m}}</span></span>
 <span><span class="pg-rt" style="display: block">{{p.t}}</span><span class="pg-rm" style="display: block">{{p.meta}}<span class="pg-by"> · {{p.by}}</span></span></span>
-<span class="pg-stat" style="color: {{p.sc}}"><i style="background: {{p.sd}}"></i>{{p.status}}</span>
+<span class="ds-tag pg-stat {{p.sc}}">{{p.status}}</span>
 <span class="pg-go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
 </a>
 </sc-for>
 <sc-if value="{{none}}" hint-placeholder-val="{{ false }}"><div class="pg-empty">No programs of this type are open right now.</div></sc-if>
 </div>
-<section class="pg-ai" aria-labelledby="pg-ai-h">
-<div class="pg-al"><div><h2 id="pg-ai-h" class="pg-ah">Is a program right for you?</h2><p class="pg-ap">Your AI Coach compares programs with self‑paced options for your time and goal.</p></div></div>
-<form class="pg-af" onSubmit="{{onSubmit}}"><label for="pg-goal" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your goal</label><input id="pg-goal" class="pg-in" type="text" placeholder="I have about 5 hours a week…" autocomplete="off"><button class="pg-ab" type="submit">Compare for me<span aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></button></form>
+<section class="pg-ai nova-card" aria-labelledby="pg-ai-h">
+<div class="pg-al"><span class="nv-av lg" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span><div><h2 id="pg-ai-h" class="pg-ah">Is a program right for you?</h2><p class="pg-ap">Nova, your AI Coach, compares programs with self‑paced options for your time and goal.</p></div></div>
+<form class="ds-ask" onSubmit="{{onSubmit}}"><label for="pg-goal" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your goal</label><input id="pg-goal" type="text" placeholder="I have about 5 hours a week…" autocomplete="off"><button class="ds-btn sm" type="submit"><span>Compare for me</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></form>
 </section>
 </div>
 <footer class="sx-foot">
@@ -208,7 +233,7 @@ class Component extends DCLogic {
       P('Executive Leadership in the AI Era', 'Executive', '6 weeks', 'Westbridge Institute', '23', 'FEB', 'lc', 'wait'),
       P('Cloud & Security Pathway', 'Self-paced', '5 courses', 'Westbridge Institute', '', '', 'pc', 'any')
     ];
-    this.ST = { open: ['Places available', '#0F6B45', '#1E9E63'], apps: ['Applications open', '#1652F0', '#1652F0'], wait: ['Waitlist open', '#8A4F00', '#D9A21B'], any: ['Start any time', '#1652F0', '#1652F0'] };
+    this.ST = { open: ['Places available', 'green'], apps: ['Applications open', 'blue'], wait: ['Waitlist open', 'amber'], any: ['Start any time', 'blue'] };
     this.NAMES = { Accelerator: 'Accelerator', Institution: 'Institution program', Bootcamp: 'Bootcamp', Cohort: 'Cohort program', Executive: 'Executive learning', 'Self-paced': 'Self-paced program' };
   }
   renderVals() {
@@ -216,10 +241,10 @@ class Component extends DCLogic {
     var showFeat = S.type === 'All' || S.type === 'Accelerator';
     var list = this.L.filter(function (p) { return (S.type === 'All' || p.type === S.type) && !(showFeat && p.t === 'AI & Data Analytics Accelerator'); });
     return {
-      types: ['All', 'Cohort', 'Bootcamp', 'Accelerator', 'Institution', 'Executive', 'Self-paced'].map(function (t) { var on = S.type === t; return { label: t === 'All' ? 'All programs' : t, on: on ? 'true' : 'false', cls: on ? 'pg-t-on' : '', pick: function () { self.setState({ type: t }); } }; }),
+      types: ['All', 'Cohort', 'Bootcamp', 'Accelerator', 'Institution', 'Executive', 'Self-paced'].map(function (t) { var on = S.type === t; return { label: t === 'All' ? 'All programs' : t, on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { self.setState({ type: t }); } }; }),
       showFeat: showFeat, listTitle: showFeat ? 'More upcoming programs' : 'Upcoming programs',
       count: list.length + (list.length === 1 ? ' program' : ' programs'),
-      progs: list.map(function (p) { var st = self.ST[p.st]; return { t: p.t, meta: self.NAMES[p.type] + ' · ' + p.len, by: p.by, d: p.d || 'Any', m: p.m || 'TIME', dcls: p.d ? '' : 'pg-any', when: p.d ? 'Starts ' + p.d + ' ' + p.m : 'Start any time', status: st[0], sc: st[1], sd: st[2] }; }),
+      progs: list.map(function (p) { var st = self.ST[p.st]; return { t: p.t, meta: self.NAMES[p.type] + ' · ' + p.len, by: p.by, d: p.d || 'Any', m: p.m || 'TIME', dcls: p.d ? '' : 'pg-any', when: p.d ? 'Starts ' + p.d + ' ' + p.m : 'Start any time', status: st[0], sc: st[1] }; }),
       none: list.length === 0,
       onSubmit: function (e) { e.preventDefault(); }
     };

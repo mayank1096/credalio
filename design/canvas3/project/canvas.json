@@ -780,6 +780,63 @@
       "title": "INST-003 You’re in, linked to your institution · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Dash-A.dc.html": {
+      "x": 0,
+      "y": 32853,
+      "w": 1440,
+      "h": 1623,
+      "title": "LRN-A Skipped everything: what would you like to learn? · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-A-Mobile.dc.html": {
+      "x": 1520,
+      "y": 32853,
+      "w": 390,
+      "h": 1882,
+      "title": "LRN-A Skipped everything: what would you like to learn? · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-A-Coach.dc.html": {
+      "x": 2150,
+      "y": 32853,
+      "w": 1440,
+      "h": 900,
+      "title": "LRN-A Unnamed AI Coach: naming from the header · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-A-Coach-Mobile.dc.html": {
+      "x": 3670,
+      "y": 32853,
+      "w": 390,
+      "h": 844,
+      "title": "LRN-A Unnamed AI Coach: naming from the header · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-R.dc.html": {
+      "x": 4300,
+      "y": 32853,
+      "w": 1440,
+      "h": 1820,
+      "title": "LRN-001 Journey ready (just finished onboarding with Nova) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-R-Mobile.dc.html": {
+      "x": 5820,
+      "y": 32853,
+      "w": 390,
+      "h": 2193,
+      "title": "LRN-001 Journey ready (just finished onboarding with Nova) · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -802,7 +859,8 @@
     "row-b7",
     "row-b8",
     "row-b9",
-    "row-b10"
+    "row-b10",
+    "row-b11"
   ],
   "notes": {
     "new-hero": {
@@ -901,6 +959,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b11": {
+      "x": 0,
+      "y": 32553,
+      "text": "Batch 11 · Learner dashboard: new learner (skipped everything), unnamed AI Coach, journey ready",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -985,7 +1051,13 @@
     "InstAccount.dc.html",
     "InstAccount-Mobile.dc.html",
     "InstDone.dc.html",
-    "InstDone-Mobile.dc.html"
+    "InstDone-Mobile.dc.html",
+    "Dash-A.dc.html",
+    "Dash-A-Mobile.dc.html",
+    "Dash-A-Coach.dc.html",
+    "Dash-A-Coach-Mobile.dc.html",
+    "Dash-R.dc.html",
+    "Dash-R-Mobile.dc.html"
   ],
   "pages": [
     {

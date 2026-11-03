@@ -169,3 +169,13 @@ def think(text):
     return '<span class="nv-think" role="status"><span class="nv-orb" aria-hidden="true"><i></i></span><span class="nv-tt">%s</span></span>' % text
 def coin(lg=False):
     return '<span class="dlp-c%s" aria-hidden="true"></span>' % (' dlp-lg' if lg else '')
+
+WAVE = '/_blob/3d4d999db1912d0cb0084365c58434d3'
+AUR_CSS = '.aur{position:relative;isolation:isolate;overflow:hidden;background:#0B1433}\n.aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}\n.aur-off{background:#0B1433 url(' + WAVE + ') center / cover no-repeat}'
+AURORA_JS = open(os.path.join(HERE, 'aurora.js')).read().rstrip() + """
+  aurScan() {
+    var self = this, q = 0;
+    var go = function () { q = 0; document.querySelectorAll('.aur').forEach(function (el) { if (!el.__aurC || el.__aurC.parentNode !== el) { if (el.__aur) el.__aur(); el.__aur = self.auroraMount(el); } }); };
+    go();
+    if (!this._aurMo && window.MutationObserver) { this._aurMo = new MutationObserver(function () { if (!q) q = requestAnimationFrame(go); }); this._aurMo.observe(document.body, { childList: true, subtree: true }); }
+  }"""

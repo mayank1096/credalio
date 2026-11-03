@@ -31,6 +31,16 @@ body{margin:0;background:#FFFFFF}
 .ds-chip i{font-style:normal;font-size:12px;color:#8A93AD}
 .ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
 .ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-tag.line{background:#FFFFFF;box-shadow:inset 0 0 0 1px #E6EAF3}
+.ds-tag.glass{background:rgba(255,255,255,.14);color:#FFFFFF;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.dlp-c{position:relative;display:inline-block;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(0,0,0,0) 61%,rgba(150,96,0,.5) 64%,rgba(0,0,0,0) 69%),radial-gradient(circle at 34% 28%,#FFF6CF 0%,#F9DC7A 30%,#EAB534 62%,#C38712 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),inset 0 -1.5px 1px rgba(130,80,0,.35),0 1.5px 0 #A86F06,0 3px 5px -2px rgba(110,70,0,.55);vertical-align:-3px;animation:dlpFlip 6s ease-in-out infinite}
+.dlp-c::before{content:"D";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Google Sans',system-ui,sans-serif;font-size:10px;font-weight:700;line-height:1;transform:translateY(.6px);box-sizing:border-box;color:#8A5A00;text-shadow:0 1px 0 rgba(255,246,207,.85)}
+.dlp-c::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.75) 48%,rgba(255,255,255,0) 60%);background-size:250% 100%;background-position:120% 0;animation:dlpShine 6s ease-in-out infinite;pointer-events:none}
+@keyframes dlpFlip{0%,70%{transform:rotateY(0)}82%{transform:rotateY(180deg)}94%,100%{transform:rotateY(360deg)}}
+@keyframes dlpShine{0%,30%{background-position:120% 0}48%,100%{background-position:-20% 0}}
+@media (prefers-reduced-motion: reduce){.dlp-c,.dlp-c::after{animation:none}}
 .ds-ask{display:flex;align-items:center;gap:10px;height:60px;box-sizing:border-box;padding:6px 6px 6px 22px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;box-shadow:0 20px 40px -30px rgba(11,20,51,.5);transition:border-color .2s ease,box-shadow .2s ease}
 .ds-ask:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
 .ds-ask input{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:inherit;font-size:16px;color:#0B1433}
@@ -60,7 +70,7 @@ body{margin:0;background:#FFFFFF}
 .ds-ask{height:54px;padding:5px 5px 5px 18px}
 .ds-ask input{font-size:15px}
 }
-h1,h2,h3,p,.ex-pd{text-wrap:pretty}
+h1,h2,h3,p{text-wrap:pretty}
 @media (min-width: 761px){
 p,.ex-nm,.ex-cp{text-wrap:balance}
 }
@@ -82,7 +92,6 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 .ex-ai b{font-weight:600;color:#1652F0}
 .ex-q{position:relative;width:100%;max-width:720px;margin-top:6px}
 .ds-ask.ex-goal{width:100%;max-width:500px;margin-top:8px}
-.ex-path-feat .ds-link{color:#FFFFFF}
 .ex-tabs{display:flex;gap:28px;margin-top:6px;border-bottom:1px solid rgba(203,211,230,.8)}
 .ex-tab{position:relative;height:44px;padding:0 2px;border:none;background:none;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;font-weight:500;color:#5B6582;cursor:pointer;white-space:nowrap;transition:color .2s ease}
 .ex-tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2.5px;border-radius:3px;background:#1652F0;transform:scaleX(0);transition:transform .3s cubic-bezier(.2,.7,.2,1)}
@@ -90,7 +99,7 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 .ex-tab-on{color:#0B1433;font-weight:600}
 .ex-tab-on::after{transform:scaleX(1)}
 .ex-topics{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-.ex-tab:focus-visible,.ex-ai:focus-visible,.ex-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.ex-tab:focus-visible,.ex-ai:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .ex-body{max-width:1312px;margin:0 auto;padding:40px 48px 96px;box-sizing:border-box;display:flex;flex-direction:column;gap:56px}
 .ex-note{display:flex;align-items:center;gap:10px;font-size:14px;color:#5B6582;margin-bottom:-28px}
 .ex-note b{font-weight:600;color:#0B1433}
@@ -101,41 +110,6 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 .ex-g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .ex-g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .ex-g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.ex-card{position:relative;display:flex;flex-direction:column;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 22px 44px -38px rgba(11,20,51,.45);overflow:hidden;text-decoration:none;color:#0B1433;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,border-color .3s ease}
-.ex-card:hover{transform:translateY(-4px);border-color:#D6DDEE;box-shadow:0 34px 60px -38px rgba(22,82,240,.45)}
-.ex-path{padding:22px 24px 20px;gap:12px}
-.ex-path-feat{background:#0B1433;border-color:#0B1433;color:#FFFFFF;isolation:isolate}
-.ex-pk{display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:500;color:#8A93AD}
-.ex-path-feat .ex-pk{color:#9DB8F7}
-.ex-pt{font-size:22px;font-weight:600;letter-spacing:-.4px}
-.ex-pd{font-size:14px;line-height:1.55;color:#5B6582}
-.ex-path-feat .ex-pd{color:rgba(255,255,255,.72)}
-.ex-route{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:8px 0 2px}
-.ex-route::before{content:"";position:absolute;left:12.5%;right:12.5%;top:13px;border-top:2px dashed #C9D7FA}
-.ex-path-feat .ex-route::before{border-top-color:rgba(157,184,247,.45)}
-.ex-step{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px;font-weight:500;color:#3A4566}
-.ex-path-feat .ex-step{color:rgba(255,255,255,.8)}
-.ex-node{width:28px;height:28px;border-radius:999px;background:#FFFFFF;border:2px solid #C9D7FA;box-sizing:border-box;display:flex;align-items:center;justify-content:center;color:#1652F0}
-.ex-node-end{background:#1652F0;border-color:#1652F0;color:#FFFFFF}
-.ex-path-feat .ex-node{background:#14286E;border-color:#4C7DFF;color:#9DB8F7}
-.ex-path-feat .ex-node-end{background:#4C7DFF;border-color:#4C7DFF;color:#FFFFFF}
-.ex-pf{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:4px;padding-top:14px;border-top:1px solid #EEF1F7;font-size:13px;color:#5B6582}
-.ex-path-feat .ex-pf{border-top-color:rgba(255,255,255,.12);color:rgba(255,255,255,.7)}
-.ex-th{position:relative;height:104px;overflow:hidden;padding:12px;box-sizing:border-box}
-.ex-th::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1.3px);background-size:12px 12px}
-.ex-ico{position:absolute;right:-10px;bottom:-14px;width:104px;height:104px;opacity:.22}
-.ex-cb{display:flex;flex-direction:column;gap:12px;padding:16px 16px 18px;flex:1}
-.ex-ct{font-size:15px;font-weight:600;letter-spacing:-.2px;line-height:1.3;min-height:40px}
-.ex-by{font-size:13px;color:#5B6582}
-.ex-tdot{width:9px;height:9px;border-radius:999px}
-.ex-cert{padding:20px 18px;gap:12px}
-.ex-paper{position:relative;height:104px;border-radius:10px;background:linear-gradient(180deg,#FFFFFF,#F5F8FF);border:1px solid #E3E8F3;padding:14px 16px;box-sizing:border-box;display:flex;flex-direction:column;gap:7px;overflow:hidden}
-.ex-paper::before{content:"";position:absolute;inset:6px;border:1px solid #DCE5FB;border-radius:6px;pointer-events:none}
-.ex-pl{font-size:9.5px;font-weight:600;letter-spacing:1.6px;color:#8A93AD}
-.ex-bars{display:flex;flex-direction:column;gap:6px;margin-top:4px}
-.ex-bars span{height:5px;border-radius:9px;background:#E6EBF5}
-.ex-seal{position:absolute;right:14px;bottom:12px;width:44px;height:44px}
-.ex-prog{padding:20px;gap:12px}
 .ex-coach{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,480px);gap:48px;align-items:center;padding:48px;border-radius:24px;border:1.5px solid #E6EAF3}
 .ex-cl{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
 .ex-ch{margin:0;font-size:36px;line-height:1.1;font-weight:600;letter-spacing:-1px;color:#0B1433}
@@ -192,17 +166,7 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 .ex-sh{position:relative}
 .ex-g2,.ex-g3,.ex-g4{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:80%;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:4px 20px 8px;scroll-padding:0 20px;gap:12px;scrollbar-width:none}
 .ex-g2{grid-auto-columns:86%}
-.ex-step{font-size:10.5px}
 .ex-g2::-webkit-scrollbar,.ex-g3::-webkit-scrollbar,.ex-g4::-webkit-scrollbar{display:none}
-.ex-g4{grid-auto-columns:62%}
-.ex-card{scroll-snap-align:start}
-.ex-path{padding:18px 18px 16px}
-.ex-pt{font-size:19px}
-.ex-pd{font-size:13px}
-.ex-step{font-size:11px}
-.ex-th{height:92px}
-.ex-ct{font-size:14px;min-height:36px}
-.ex-pf{font-size:12px}
 .sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}
 .ex-coach{padding:28px 20px 22px;border-radius:20px;gap:24px}
 .ex-ch{font-size:24px;letter-spacing:-.6px}
@@ -221,6 +185,114 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 .tip:hover .tip-b,.tip:focus .tip-b{display:block}
 .ex-st .tip{position:static}
 .ex-st .tip-b{left:0;right:0;width:auto}
+}
+.cp-card{position:relative;display:flex;flex-direction:column;gap:14px;padding:24px 24px 20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 22px 44px -38px rgba(11,20,51,.45);text-decoration:none;color:#0B1433;overflow:hidden;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,border-color .3s ease}
+.cp-card:hover{transform:translateY(-4px);border-color:#D6DDEE;box-shadow:0 34px 60px -38px rgba(22,82,240,.45)}
+.cp-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.cp-feat{background:#0B1433;border-color:#0B1433;color:#FFFFFF;isolation:isolate}
+.cp-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.cp-ico{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cp-feat .cp-ico{background:rgba(255,255,255,.14) !important;color:#FFFFFF !important}
+.cp-name{font-size:23px;font-weight:600;letter-spacing:-.5px;line-height:1.15;margin-top:4px}
+.cp-lvl{font-size:13px;color:#5B6582;margin-top:-8px}
+.cp-feat .cp-lvl{color:rgba(255,255,255,.7)}
+.cp-route{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:8px;margin:6px 0 0}
+.cp-route::before{content:"";position:absolute;left:12.5%;right:12.5%;top:13px;border-top:2px dashed #C9D7FA}
+.cp-feat .cp-route::before{border-top-color:rgba(157,184,247,.45)}
+.cp-step{position:relative;display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12px;font-weight:500;color:#3A4566;text-align:center;white-space:nowrap}
+.cp-feat .cp-step{color:rgba(255,255,255,.85)}
+.cp-node{width:28px;height:28px;border-radius:999px;background:#FFFFFF;border:2px solid #C9D7FA;box-sizing:border-box;display:flex;align-items:center;justify-content:center;color:#1652F0}
+.cp-node-end{background:#1652F0;border-color:#1652F0;color:#FFFFFF}
+.cp-feat .cp-node{background:#14286E;border-color:#4C7DFF;color:#9DB8F7}
+.cp-feat .cp-node-end{background:#4C7DFF;border-color:#4C7DFF;color:#FFFFFF}
+.cp-skills{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.cp-foot{display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:auto;padding-top:14px;border-top:1px solid #EEF1F7;font-size:13px;color:#8A93AD}
+.cp-feat .cp-foot{border-top-color:rgba(255,255,255,.12);color:rgba(255,255,255,.6)}
+.cp-feat .ds-link,.cp-feat .ds-link:hover{color:#FFFFFF}
+.cs-tags .tip{margin-left:0}
+.cs-tags .tip-b{left:auto;right:-12px}
+.cs-tdot{width:10px;height:10px;border-radius:999px;flex-shrink:0}
+.cs-card:focus-visible,.cs-heart:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.cs-card{position:relative;display:flex;flex-direction:column;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 22px 44px -38px rgba(11,20,51,.45);text-decoration:none;color:#0B1433;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,border-color .3s ease}
+.cs-card:hover{transform:translateY(-4px);border-color:#D6DDEE;box-shadow:0 34px 60px -38px rgba(22,82,240,.45)}
+.cs-th{position:relative;height:112px;overflow:hidden;border-radius:16.5px 16.5px 0 0;display:flex;align-items:flex-start;justify-content:space-between;padding:14px;box-sizing:border-box}
+.cs-th::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1.3px);background-size:12px 12px}
+.cs-ico{position:absolute;right:-12px;bottom:-16px;width:116px;height:116px;opacity:.22}
+.cs-heart{position:relative;margin-left:auto;width:36px;height:36px;border-radius:999px;border:none;background:rgba(255,255,255,.92);color:#5B6582;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:color .2s ease,transform .2s ease}
+.cs-heart:hover{color:#0B1433;transform:scale(1.06)}
+.cs-heart-on{color:#1652F0}
+.cs-cb{display:flex;flex-direction:column;gap:12px;padding:16px 16px 0;flex:1}
+.cs-ct{font-size:16px;font-weight:600;letter-spacing:-.25px;line-height:1.3;min-height:42px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cs-by{display:flex;align-items:center;gap:8px;font-size:13px;color:#3A4566}
+.cs-cav{width:24px;height:24px;border-radius:999px;background:#DCE5FB;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:600;flex-shrink:0}
+.cs-meta{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:13px;color:#5B6582}
+.cs-meta b{font-weight:600;color:#0B1433}
+.cs-star{color:#0B1433}
+.cs-dot{width:3px;height:3px;border-radius:9px;background:#CBD3E6}
+.cs-tags{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.cs-acc{margin-top:auto;display:flex;flex-direction:column;gap:8px;padding:14px 16px 16px;box-sizing:border-box;margin-left:-16px;margin-right:-16px;border-top:1px solid #EEF1F7}
+.cs-ar{display:flex;align-items:center;font-size:14px;color:#5B6582}
+.cs-ar b{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:#0B1433}
+.cs-free{color:#0F6B45 !important}
+.ct-card{display:flex;flex-direction:column;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 22px 44px -38px rgba(11,20,51,.45);text-decoration:none;color:#0B1433;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,border-color .3s ease}
+.ct-card:hover{transform:translateY(-4px);border-color:#D6DDEE;box-shadow:0 34px 60px -38px rgba(22,82,240,.45)}
+.ct-paper{position:relative;margin:12px 12px 0;height:150px;border-radius:12px;background:linear-gradient(180deg,#FFFFFF,#F5F8FF);border:1px solid #E3E8F3;padding:20px 22px;box-sizing:border-box;display:flex;flex-direction:column;gap:6px;overflow:hidden}
+.ct-paper::before{content:"";position:absolute;inset:7px;border:1px solid #DCE5FB;border-radius:7px;pointer-events:none}
+.ct-pl{font-size:9.5px;font-weight:600;letter-spacing:1.8px;color:#8A93AD}
+.ct-pn{font-size:21px;font-weight:600;letter-spacing:-.4px;line-height:1.15;color:#0B1433;max-width:80%}
+.ct-pi{margin-top:auto;font-size:12px;color:#5B6582}
+.ct-seal{position:absolute;right:18px;bottom:16px;width:52px;height:52px;filter:drop-shadow(0 8px 12px rgba(22,82,240,.3))}
+.ct-rev{position:absolute;right:16px;top:16px}
+.ct-rev i{width:9px;height:9px;border-radius:999px;border:1.5px dashed #8A93AD;box-sizing:border-box}
+.ct-cb{display:flex;flex-direction:column;gap:12px;padding:16px 20px 18px;flex:1}
+.ct-meta{display:flex;align-items:center;gap:8px;font-size:14px;color:#5B6582}
+.ct-meta b{font-weight:600;color:#0B1433}
+.ct-meta .tip{margin-left:0}
+.ct-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid #EEF1F7;font-size:13px;color:#5B6582}
+.ct-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.pg-list{display:flex;flex-direction:column;gap:12px}
+.pg-row{display:grid;grid-template-columns:72px minmax(0,1fr) 170px 40px;align-items:center;gap:24px;padding:16px 20px 16px 16px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;text-decoration:none;color:#0B1433;transition:border-color .3s ease,box-shadow .4s ease,transform .4s cubic-bezier(.2,.7,.2,1)}
+.pg-row:hover{border-color:#C9D7FA;box-shadow:0 24px 48px -36px rgba(22,82,240,.5);transform:translateY(-2px)}
+.pg-date{width:72px;height:72px;border-radius:16px;background:#F5F8FF;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.pg-date b{font-size:26px;font-weight:600;letter-spacing:-.6px;color:#0B1433}
+.pg-date > span{font-size:11px;font-weight:600;letter-spacing:1.4px;color:#1652F0;margin-top:5px}
+.pg-any b{font-size:13px;letter-spacing:0}
+.pg-rt{font-size:18px;font-weight:600;letter-spacing:-.3px;line-height:1.25}
+.pg-rm{font-size:14px;color:#5B6582;margin-top:4px}
+.pg-stat{justify-self:start}
+.pg-go{width:40px;height:40px;border-radius:999px;border:1.5px solid #D6DDEE;display:flex;align-items:center;justify-content:center;color:#1652F0;transition:background .2s ease,border-color .2s ease}
+.pg-row:hover .pg-go{background:#1652F0;border-color:#1652F0;color:#FFFFFF}
+.pg-row:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+@media (max-width: 1180px){
+.cp-step{font-size:11.5px}
+}
+@media (max-width: 760px){
+.cp-card{padding:18px 18px 14px;gap:12px;border-radius:18px}
+.cp-ico{width:38px;height:38px;border-radius:11px}
+.cp-name{font-size:20px}
+.cp-step{font-size:11px}
+.cp-skills{display:none}
+.cp-route{margin-top:4px}
+.cp-foot{padding-top:12px;margin-top:6px}
+.cs-th{height:96px}
+.cs-acc .cs-ar + .cs-ar{display:none}
+.cs-ico{width:96px;height:96px}
+.cs-ct{font-size:15px;min-height:0}
+.ct-paper{height:118px;padding:16px 18px}
+.ct-pn{font-size:18px}
+.ct-seal{width:42px;height:42px}
+.ct-cb{padding:14px 16px 14px;gap:10px}
+.ct-foot{padding-top:0;border-top:none}
+.ct-meta .tip-b{width:200px}
+.pg-row{grid-template-columns:56px minmax(0,1fr);gap:14px;padding:12px 14px 12px 12px;border-radius:16px}
+.pg-date{width:56px;height:56px;border-radius:13px}
+.pg-date b{font-size:20px}
+.pg-date > span{font-size:10px;margin-top:3px}
+.pg-rt{font-size:15px}
+.pg-rm{font-size:12.5px;margin-top:2px}
+.pg-stat{grid-column:2;margin-top:-10px}
+.pg-go{display:none}
+.pg-by{display:none}
 }
 .aur{position:relative;isolation:isolate;overflow:hidden;background:#0B1433}
 .aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
@@ -278,17 +350,23 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 <div class="ex-sh"><div><div id="ex-p" class="ex-st">Popular Career Paths<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">A sequenced route of learning, practice and proof toward a role.</span></span></div></div><a class="ds-link" href="#">View all</a></div>
 <div class="ex-g2">
 <sc-for list="{{paths}}" as="p" hint-placeholder-count="4">
-<a class="ex-card ex-path {{p.cls}}" href="#">
-<span class="ex-pk"><span>Career Path · {{p.topic}}</span><span>{{p.len}}</span></span>
-<span class="ex-pt">{{p.t}}</span>
-<span class="ex-pd">{{p.d}}</span>
-<span class="ex-route" aria-label="Courses, then practice, then certification, then proof">
-<span class="ex-step"><span class="ex-node"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16"></path></svg></span>Courses</span>
-<span class="ex-step"><span class="ex-node"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"></path></svg></span>Practice</span>
-<span class="ex-step"><span class="ex-node"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path></svg></span>Certification</span>
-<span class="ex-step"><span class="ex-node ex-node-end"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Proof</span>
+<a class="cp-card {{p.cls}}" href="#">
+<span class="cp-top">
+<span class="cp-ico" style="background: {{p.icoBg}}; color: {{p.icoFg}}" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20" style="display: {{p.i0}}"></path><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" style="display: {{p.i1}}"></path><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" style="display: {{p.i2}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{p.i3}}"></path><path d="M9 4h6M4 8h16v12H4zM9 12h6" style="display: {{p.i4}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{p.i5}}"></path></svg></span>
+<sc-if value="{{p.feat}}" hint-placeholder-val="{{ false }}"><span class="ds-tag glass">Most chosen</span></sc-if>
 </span>
-<span class="ex-pf" style="justify-content: flex-end"><span class="ds-link">Start this path →</span></span>
+<span>
+<span class="cp-name" style="display: block">{{p.t}}</span>
+</span>
+<span class="cp-lvl">{{p.lvl}} · {{p.time}}</span>
+<span class="cp-route" aria-label="{{p.aria}}">
+<span class="cp-step"><span class="cp-node"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16"></path></svg></span><span>{{p.courses}} courses</span></span>
+<span class="cp-step"><span class="cp-node"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"></path></svg></span><span>{{p.proj}}</span></span>
+<span class="cp-step"><span class="cp-node"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path></svg></span>Certification</span>
+<span class="cp-step"><span class="cp-node cp-node-end"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Portfolio</span>
+</span>
+<span class="cp-skills"><sc-for list="{{p.skills}}" as="s" hint-placeholder-count="4"><span class="ds-tag {{p.tag}}">{{s}}</span></sc-for></span>
+<span class="cp-foot"><span class="ds-link">Explore path →</span></span>
 </a>
 </sc-for>
 </div>
@@ -298,14 +376,20 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 <div class="ex-sh"><div><div id="ex-c" class="ex-st">Courses<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Focused learning that builds one skill, at your own pace.</span></span></div></div><a class="ds-link" href="#">View all</a></div>
 <div class="ex-g4">
 <sc-for list="{{courses}}" as="c" hint-placeholder-count="4">
-<a class="ex-card" href="#">
-<div class="ex-th {{c.light}}" style="background: {{c.bg}}">
-<svg class="ex-ico" viewBox="0 0 24 24" fill="none" stroke="{{c.icoC}}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20" style="display: {{c.i0}}"></path><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" style="display: {{c.i1}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{c.i2}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{c.i3}}"></path><path d="M7 7h10v10H7zM10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4" style="display: {{c.i4}}"></path><path d="M12 3v18M17 7H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6" style="display: {{c.i5}}"></path></svg>
+<a class="cs-card" href="#" aria-label="{{c.t}}">
+<div class="cs-th {{c.light}}" style="background: {{c.bg}}">
+<svg class="cs-ico" viewBox="0 0 24 24" fill="none" stroke="{{c.icoC}}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20" style="display: {{c.i0}}"></path><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" style="display: {{c.i1}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{c.i2}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{c.i3}}"></path><path d="M3 7h18v13H3zM8 7V4h8v3" style="display: {{c.i4}}"></path><path d="M12 3v18M17 7H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6" style="display: {{c.i5}}"></path><path d="M7 7h10v10H7zM10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4" style="display: {{c.i6}}"></path></svg>
+<button class="cs-heart {{c.heartCls}}" type="button" aria-pressed="{{c.wished}}" aria-label="{{c.heartLabel}}" onClick="{{c.wish}}"><svg width="17" height="17" viewBox="0 0 24 24" fill="{{c.heartFill}}" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></button>
 </div>
-<div class="ex-cb">
-<span class="ex-ct">{{c.t}}</span>
-<span class="ex-by">{{c.by}} · {{c.lvl}}</span>
-<span class="ds-tag blue" style="align-self: flex-start; margin-top: auto"><span class="ex-tdot" style="background: {{c.tierDot}}"></span>{{c.tier}}</span>
+<div class="cs-cb">
+<span class="cs-ct">{{c.t}}</span>
+<span class="cs-by"><span class="cs-cav">{{c.ini}}</span>{{c.by}}</span>
+<span class="cs-meta"><span class="cs-star" aria-hidden="true">★</span><b>{{c.rating}}</b><span>({{c.reviews}})</span><span class="cs-dot"></span><span>{{c.lvl}}</span><span class="cs-dot"></span><span>{{c.hrs}}</span></span>
+<span class="cs-tags"><span class="ds-tag blue"><span class="cs-tdot" style="background: {{c.tierDot}}"></span>{{c.tierLabel}}</span><span class="ds-tag line">CEI {{c.cei}}<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Creator Expertise Index: the creator’s validated subject knowledge, experience and recognition, out of 100.</span></span></span></span>
+<div class="cs-acc">
+<span class="cs-ar"><b class="{{c.accCls}}"><sc-if value="{{c.paid}}" hint-placeholder-val="{{ true }}"><span class="dlp-c"></span></sc-if>{{c.accV}}<sc-if value="{{c.hasLife}}" hint-placeholder-val="{{ false }}"><span class="tip" tabindex="0" onClick="{{c.stop}}" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">{{c.lifeTip}}</span></span></sc-if></b></span>
+<sc-if value="{{c.showFit}}" hint-placeholder-val="{{ false }}"><span class="ds-tag {{c.fitCls}}" style="align-self: flex-start">{{c.fit}}</span></sc-if>
+</div>
 </div>
 </a>
 </sc-for>
@@ -316,14 +400,18 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 <div class="ex-sh"><div><div id="ex-ce" class="ex-st">Professional Certifications<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Assessed proof that you meet a professional standard. Earned certifications go straight to your Digital Backpack.</span></span></div></div><a class="ds-link" href="#">View all</a></div>
 <div class="ex-g3">
 <sc-for list="{{certs}}" as="c" hint-placeholder-count="3">
-<a class="ex-card ex-cert" href="#">
-<div class="ex-paper" aria-hidden="true">
-<span class="ex-pl">PROFESSIONAL CERTIFICATE</span>
-<span class="ex-bars"><span style="width: 62%"></span><span style="width: 44%"></span></span>
-<svg class="ex-seal" viewBox="0 0 100 100"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<a class="ct-card" href="#">
+<div class="ct-paper">
+<span class="ct-pl">PROFESSIONAL CERTIFICATE</span>
+<span class="ct-pn">{{c.short}}</span>
+<span class="ct-pi">{{c.issuer}}</span>
+<sc-if value="{{c.ok}}" hint-placeholder-val="{{ true }}"><svg class="ct-seal" viewBox="0 0 100 100" aria-label="Credalio Validated"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg></sc-if>
+<sc-if value="{{c.rev}}" hint-placeholder-val="{{ false }}"><span class="ds-tag ct-rev"><i></i>In review</span></sc-if>
 </div>
-<span style="font-size: 16px; font-weight: 600; letter-spacing: -.2px; line-height: 1.3">{{c.t}}</span>
-<span class="ex-pf" style="margin-top: auto"><span>{{c.meta}}</span><span class="ds-link">View →</span></span>
+<div class="ct-cb">
+<span class="ct-meta"><b>{{c.level}}</b><span aria-hidden="true">·</span>{{c.time}}<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">{{c.pre}}</span></span></span>
+<span class="ct-foot"><span>{{c.format}}</span><span class="ds-link">View →</span></span>
+</div>
 </a>
 </sc-for>
 </div>
@@ -331,13 +419,13 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 
 <section class="ex-sec {{progsCls}}" aria-labelledby="ex-pr">
 <div class="ex-sh"><div><div id="ex-pr" class="ex-st">Learning Programs<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Deep, guided learning with experts and a cohort.</span></span></div></div><a class="ds-link" href="#">View all</a></div>
-<div class="ex-g3">
-<sc-for list="{{progs}}" as="g" hint-placeholder-count="3">
-<a class="ex-card ex-prog" href="#">
-<span style="display: flex; align-items: center; justify-content: space-between"><span class="ds-tag blue">{{g.kind}}</span><span style="font-size: 12px; color: #8A93AD">{{g.when}}</span></span>
-<span style="font-size: 18px; font-weight: 600; letter-spacing: -.3px; line-height: 1.25">{{g.t}}</span>
-<span class="ex-by">{{g.by}}</span>
-<span class="ex-pf" style="margin-top: auto; justify-content: flex-end"><span class="ds-link">See program →</span></span>
+<div class="pg-list">
+<sc-for list="{{progs}}" as="p" hint-placeholder-count="3">
+<a class="pg-row" href="#">
+<span class="pg-date {{p.dcls}}" aria-label="{{p.when}}"><b>{{p.d}}</b><span>{{p.m}}</span></span>
+<span><span class="pg-rt" style="display: block">{{p.t}}</span><span class="pg-rm" style="display: block">{{p.meta}}<span class="pg-by"> · {{p.by}}</span></span></span>
+<span class="ds-tag pg-stat {{p.sc}}">{{p.status}}</span>
+<span class="pg-go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
 </a>
 </sc-for>
 </div>
@@ -484,37 +572,52 @@ class Component extends DCLogic {
   componentDidMount() { this.aurScan(); }
   constructor(props) {
     super(props);
-    this.state = { q: '', tab: 'you', topic: 'All' };
+    this.state = { q: '', tab: 'you', topic: 'All', wish: {} };
     this.P = [
-      { t: 'Data Analyst', topic: 'Data', d: 'Turn raw data into decisions using spreadsheets, SQL and visualisation.', len: '6–8 months', meta: '8 courses · 4 projects · 1 certification' },
-      { t: 'Product Designer', topic: 'Design', d: 'Research, design and test digital products people love to use.', len: '7–9 months', meta: '7 courses · 4 projects · 1 certification' },
-      { t: 'AI Engineer', topic: 'Software', d: 'Build, evaluate and ship applications powered by machine learning.', len: '8–10 months', meta: '8 courses · 4 projects · 1 certification' },
-      { t: 'Cybersecurity Analyst', topic: 'Cybersecurity', d: 'Detect, investigate and respond to threats that put organisations at risk.', len: '8–10 months', meta: '7 courses · 3 simulations · 1 certification' }
+      { t: 'Data Analyst', topic: 'Data', d: 'Turn raw data into decisions using spreadsheets, SQL and visualisation.', lvl: 'Beginner → Job-ready', time: '6–8 months', courses: 8, proj: '4 projects', skills: ['SQL', 'Excel', 'Power BI', 'Statistics'], ico: 0 },
+      { t: 'Product Designer', topic: 'Design', d: 'Research, design and test digital products people love to use.', lvl: 'Beginner → Job-ready', time: '7–9 months', courses: 7, proj: '4 projects', skills: ['Figma', 'User research', 'Prototyping', 'Design systems'], ico: 1 },
+      { t: 'AI Engineer', topic: 'Software', d: 'Build, evaluate and ship applications powered by machine learning.', lvl: 'Intermediate → Job-ready', time: '8–10 months', courses: 8, proj: '4 projects', skills: ['Python', 'Machine learning', 'LLM apps', 'Evaluation'], ico: 2 },
+      { t: 'Cybersecurity Analyst', topic: 'Cybersecurity', d: 'Detect, investigate and respond to threats that put organisations at risk.', lvl: 'Beginner → Job-ready', time: '8–10 months', courses: 7, proj: '3 simulations', skills: ['Networking', 'Linux', 'SIEM', 'Incident response'], ico: 3 }
     ];
+    var C = function (t, topic, by, lvl, tier, cei, rating, reviews, hrs, dlp, life, free) { return { t: t, topic: topic, by: by, lvl: lvl, tier: tier, cei: cei, rating: rating, reviews: reviews, hrs: hrs, dlp: dlp, life: life, free: !!free }; };
     this.C = [
-      { t: 'Data Foundations: Spreadsheets to SQL', topic: 'Data', by: 'Amara Okafor', lvl: 'Beginner', tier: 'gold' },
-      { t: 'UX and Product Design Foundations', topic: 'Design', by: 'Lena Fischer', lvl: 'Beginner', tier: 'silver' },
-      { t: 'Python for Everyday Automation', topic: 'Software', by: 'Priya Nair', lvl: 'Beginner', tier: 'bronze' },
-      { t: 'Networking and Security Fundamentals', topic: 'Cybersecurity', by: 'Northgate University', lvl: 'Beginner', tier: 'bronze' },
-      { t: 'Financial Modelling Essentials', topic: 'Finance', by: 'Harbour School of Finance', lvl: 'Intermediate', tier: 'silver' },
-      { t: 'Stakeholder Communication', topic: 'Business', by: 'Grace Adeyemi', lvl: 'Beginner', tier: 'silver' },
-      { t: 'Digital Health Essentials', topic: 'Health', by: 'Dr Sara Ali', lvl: 'Beginner', tier: 'gold' },
-      { t: 'Leading Remote Teams', topic: 'Leadership', by: 'Tom Hughes', lvl: 'Intermediate', tier: 'silver' }
+      C('Data Foundations: Spreadsheets to SQL', 'Data', 'Amara Okafor', 'Beginner', 'gold', 91, '4.8', '3.4k', 12, 200, 0),
+      C('UX and Product Design Foundations', 'Design', 'Lena Fischer', 'Beginner', 'silver', 86, '4.7', '1.2k', 12, 900, 1800),
+      C('Python for Everyday Automation', 'Software', 'Priya Nair', 'Beginner', 'bronze', 78, '4.6', '1.6k', 9, 800, 0),
+      C('Networking and Security Fundamentals', 'Cybersecurity', 'Northgate University', 'Beginner', 'bronze', 81, '4.6', '740', 11, 0, 0, true),
+      C('Financial Modelling Essentials', 'Finance', 'Harbour School of Finance', 'Intermediate', 'silver', 88, '4.8', '620', 14, 1800, 2800),
+      C('Stakeholder Communication', 'Business', 'Grace Adeyemi', 'Beginner', 'silver', 83, '4.7', '890', 3, 300, 0),
+      C('Digital Health Essentials', 'Health', 'Dr Sara Ali', 'Beginner', 'gold', 89, '4.8', '520', 7, 500, 1000),
+      C('Leading Remote Teams', 'Leadership', 'Tom Hughes', 'Intermediate', 'silver', 84, '4.7', '460', 5, 600, 1200)
     ];
     this.CE = [
-      { t: 'Professional Certificate in Data Analysis', short: 'Data Analysis', topic: 'Data', meta: '30 hrs · 1 practical exam' },
-      { t: 'Professional Certificate in Product Design', short: 'Product Design', topic: 'Design', meta: '34 hrs · portfolio review' },
-      { t: 'Professional Certification in Security Operations', short: 'Security Operations', topic: 'Cybersecurity', meta: '40 hrs · simulation exam' },
-      { t: 'Professional Certificate in Financial Analysis', short: 'Financial Analysis', topic: 'Finance', meta: '32 hrs · 1 practical exam' }
+      { t: 'Professional Certificate in Data Analysis', short: 'Data Analysis', topic: 'Data', issuer: 'Northgate University', level: 'Professional', time: '30 hrs', format: '1 practical exam', pre: 'Recommended first: Data Foundations or equivalent. Nova can check what you already know.', ok: true },
+      { t: 'Professional Certificate in Product Design', short: 'Product Design', topic: 'Design', issuer: 'Lena Fischer', level: 'Professional', time: '34 hrs', format: 'Portfolio review', pre: 'Recommended first: UX and Product Design Foundations.', ok: true },
+      { t: 'Professional Certification in Security Operations', short: 'Security Operations', topic: 'Cybersecurity', issuer: 'Westbridge Institute', level: 'Professional', time: '40 hrs', format: 'Simulation exam', pre: 'Recommended first: Networking and Security Fundamentals.', ok: true },
+      { t: 'Professional Certificate in Financial Analysis', short: 'Financial Analysis', topic: 'Finance', issuer: 'Harbour School of Finance', level: 'Professional', time: '32 hrs', format: '1 practical exam', pre: 'Recommended first: Financial Modelling Essentials.', ok: true }
     ];
     this.G = [
-      { t: 'Applied Project Leadership', topic: 'Leadership', by: 'Westbridge Institute · Cohort-based', kind: 'Program', when: 'Starts 12 Jan', seats: '+20 learners' },
-      { t: 'AI for Business Leaders', topic: 'Business', by: 'Northgate University · Cohort-based', kind: 'Program', when: 'Starts 2 Feb', seats: '+34 learners' },
-      { t: 'Frontend Engineering Bootcamp', topic: 'Software', by: 'Mia Lopez · Cohort-based', kind: 'Bootcamp', when: 'Starts 19 Jan', seats: '+18 learners' },
-      { t: 'Clinical Data Programme', topic: 'Health', by: 'City University · Cohort-based', kind: 'Program', when: 'Starts 9 Feb', seats: '+12 learners' }
+      { t: 'Applied Project Leadership', topic: 'Leadership', by: 'Westbridge Institute', type: 'Institution', len: '10 weeks', d: '12', m: 'JAN', st: 'apps' },
+      { t: 'AI for Business Leaders', topic: 'Business', by: 'Northgate University', type: 'Executive', len: '6 weeks', d: '2', m: 'FEB', st: 'wait' },
+      { t: 'Frontend Engineering Bootcamp', topic: 'Software', by: 'Mia Lopez', type: 'Bootcamp', len: '16 weeks', d: '19', m: 'JAN', st: 'open' },
+      { t: 'Clinical Data Programme', topic: 'Health', by: 'City University', type: 'Institution', len: '24 weeks', d: '9', m: 'FEB', st: 'apps' }
     ];
-    this.TONE = { Data: ['linear-gradient(150deg,#1C3AA8,#0B1433)', '#FFFFFF', '', 0], Design: ['linear-gradient(150deg,#7FA4FF,#4C7DFF)', '#FFFFFF', '', 1], Software: ['linear-gradient(150deg,#4C7DFF,#1652F0)', '#FFFFFF', '', 2], Cybersecurity: ['linear-gradient(150deg,#14286E,#0B1433)', '#FFFFFF', '', 3], Business: ['linear-gradient(150deg,#DCE5FB,#EAF0FF)', '#1652F0', 'ex-light', 4], Finance: ['linear-gradient(150deg,#C9D7FA,#EAF0FF)', '#1652F0', 'ex-light', 5], Health: ['linear-gradient(150deg,#2A55E8,#14286E)', '#FFFFFF', '', 3], Leadership: ['linear-gradient(150deg,#9DB8F7,#4C7DFF)', '#FFFFFF', '', 4] };
+    this.ST = { open: ['Places available', 'green'], apps: ['Applications open', 'blue'], wait: ['Waitlist open', 'amber'], any: ['Start any time', 'blue'] };
+    this.NAMES = { Accelerator: 'Accelerator', Institution: 'Institution program', Bootcamp: 'Bootcamp', Cohort: 'Cohort program', Executive: 'Executive learning', 'Self-paced': 'Self-paced program' };
+    this.TONE = { Data: ['linear-gradient(150deg,#1C3AA8,#0B1433)', '#FFFFFF', '', 0], Design: ['linear-gradient(150deg,#7FA4FF,#4C7DFF)', '#FFFFFF', '', 1], Software: ['linear-gradient(150deg,#4C7DFF,#1652F0)', '#FFFFFF', '', 2], Cybersecurity: ['linear-gradient(150deg,#14286E,#0B1433)', '#FFFFFF', '', 3], Business: ['linear-gradient(150deg,#DCE5FB,#EAF0FF)', '#1652F0', 'cs-light', 4], Finance: ['linear-gradient(150deg,#C9D7FA,#EAF0FF)', '#1652F0', 'cs-light', 5], Health: ['linear-gradient(150deg,#2A55E8,#14286E)', '#FFFFFF', '', 3], Leadership: ['linear-gradient(150deg,#9DB8F7,#4C7DFF)', '#FFFFFF', '', 4] };
     this.TIER = { gold: ['Gold Validated', '#C8961E'], silver: ['Silver Validated', '#8E9BB0'], bronze: ['Bronze Validated', '#A8683A'] };
+  }
+  card(c) {
+    var self = this, S = this.state, tn = this.TONE[c.topic], ini = c.by.split(' ').map(function (w) { return w[0]; }).slice(0, 2).join(''), w = !!S.wish[c.t];
+    var v = { t: c.t, by: c.by, lvl: c.lvl, rating: c.rating, reviews: c.reviews, hrs: c.hrs + (c.hrs === 1 ? ' hr' : ' hrs'), cei: c.cei, ini: ini,
+      bg: tn[0], icoC: tn[1], light: tn[2], tierLabel: this.TIER[c.tier][0], tierDot: this.TIER[c.tier][1],
+      accV: c.free ? 'Free to learn' : c.dlp.toLocaleString('en-GB') + ' DLP', accCls: c.free ? 'cs-free' : '', paid: !c.free,
+      hasLife: c.life > 0, lifeTip: 'Or keep it for life: ' + c.life.toLocaleString('en-GB') + ' credits, one-off.', stop: function (e) { e.preventDefault(); e.stopPropagation(); },
+      showFit: false, fit: '', fitCls: '',
+      wished: w ? 'true' : 'false', heartCls: w ? 'cs-heart-on' : '', heartFill: w ? 'currentColor' : 'none', heartLabel: w ? 'Remove from wishlist' : 'Add to wishlist',
+      wish: function (e) { e.preventDefault(); e.stopPropagation(); var o = Object.assign({}, self.state.wish); o[c.t] = !o[c.t]; self.setState({ wish: o }); } };
+    for (var i = 0; i < 7; i++) v['i' + i] = tn[3] === i ? 'inline' : 'none';
+    return v;
   }
   renderVals() {
     var self = this, S = this.state, set = function (p) { self.setState(p); };
@@ -532,10 +635,16 @@ class Component extends DCLogic {
       topics: topics.map(function (t) { var on = S.topic === t; return { label: t === 'All' ? 'All topics' : t, on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { set({ topic: t }); } }; }),
       hasTopic: S.topic !== 'All', topic: S.topic, clearTopic: function () { set({ topic: 'All' }); },
       pathsCls: show('paths', paths), coursesCls: show('courses', courses), certsCls: show('certs', certs), progsCls: show('programs', progs),
-      paths: paths.map(function (p, k) { return { t: p.t, topic: p.topic, d: p.d, len: p.len, meta: p.meta, cls: k === 0 ? 'ex-path-feat aur' : '' }; }),
-      courses: courses.map(function (c) { var tn = self.TONE[c.topic], v = { t: c.t, topic: c.topic, by: c.by, lvl: c.lvl, bg: tn[0], icoC: tn[1], light: tn[2], tier: self.TIER[c.tier][0], tierDot: self.TIER[c.tier][1] }; for (var i = 0; i < 6; i++) v['i' + i] = tn[3] === i ? 'inline' : 'none'; return v; }),
-      certs: certs.map(function (c) { return { t: c.t, short: c.short, meta: c.meta }; }),
-      progs: progs.map(function (g) { return { t: g.t, by: g.by, kind: g.kind, when: g.when }; })
+      paths: paths.map(function (p, k) {
+        var feat = k === 0;
+        var v = { t: p.t, lvl: p.lvl, time: p.time, courses: p.courses, proj: p.proj, skills: p.skills.slice(0, 3), feat: feat, cls: feat ? 'cp-feat aur' : '', tag: feat ? 'glass' : '', icoBg: '#EAF0FF', icoFg: '#1652F0',
+          aria: p.courses + ' courses, ' + p.proj + ', a professional certification and a portfolio' };
+        for (var i = 0; i < 6; i++) v['i' + i] = p.ico === i ? 'inline' : 'none';
+        return v;
+      }),
+      courses: courses.map(function (c) { return self.card(c); }),
+      certs: certs.map(function (c) { return { short: c.short, issuer: c.issuer, level: c.level, time: c.time, format: c.format, pre: c.pre, ok: c.ok, rev: !c.ok }; }),
+      progs: progs.map(function (p) { var st = self.ST[p.st]; return { t: p.t, meta: self.NAMES[p.type] + ' · ' + p.len, by: p.by, d: p.d || 'Any', m: p.m || 'TIME', dcls: p.d ? '' : 'pg-any', when: p.d ? 'Starts ' + p.d + ' ' + p.m : 'Start any time', status: st[0], sc: st[1] }; })
     };
   }
 }

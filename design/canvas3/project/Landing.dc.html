@@ -11,6 +11,64 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-btn.np{padding:0 22px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-ghost.dk{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.32);color:#FFFFFF}
+.ds-ghost.dk:hover{background:rgba(255,255,255,.18);border-color:#FFFFFF}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-chip{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:40px;padding:0 16px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:border-color .2s ease,background .2s ease}
+.ds-chip:hover{border-color:#1652F0;background:#F5F8FF}
+.ds-chip .ck{display:none}
+.ds-chip.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-chip.on .ck{display:block}
+.ds-chip.sm{height:34px;padding:0 13px;font-size:13px}
+.ds-chip i{font-style:normal;font-size:12px;color:#8A93AD}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-tag.line{background:#FFFFFF;box-shadow:inset 0 0 0 1px #E6EAF3}
+.ds-tag.glass{background:rgba(255,255,255,.14);color:#FFFFFF;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.ds-tag.lg{height:30px;padding:0 12px;font-size:13px}
+.ds-ask{display:flex;align-items:center;gap:10px;height:60px;box-sizing:border-box;padding:6px 6px 6px 22px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;box-shadow:0 20px 40px -30px rgba(11,20,51,.5);transition:border-color .2s ease,box-shadow .2s ease}
+.ds-ask:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.ds-ask input{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:inherit;font-size:16px;color:#0B1433}
+.ds-ask input::placeholder{color:#8A93AD}
+.ds-ask .ds-btn{flex-shrink:0}
+.ds-ask.sm{height:50px;padding:4px 4px 4px 16px}
+.ds-ask.sm input{font-size:14px}
+.ds-send{width:40px;height:40px;border-radius:999px;border:none;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .2s ease}
+.ds-send:hover{background:#0E3BB8}
+.ds-x{width:44px;height:44px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;text-decoration:none;transition:border-color .2s ease}
+.ds-x:hover{border-color:#1652F0}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.ds-chip:focus-visible,.ds-x:focus-visible,.ds-send:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.nova-card{background:#FFFFFF url(/_blob/0b29db2e4cd6f4a89dc7ba8f12e59c8d) center / cover no-repeat}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.lg{width:56px;height:56px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
+.nv-av.sm{width:28px;height:28px}
+@keyframes nvSpin{to{transform:rotate(360deg)}}
+@keyframes nvPulse{0%,100%{transform:scale(.65);opacity:.65}50%{transform:scale(1);opacity:1}}
+@keyframes nvShim{from{background-position:100% 0}to{background-position:-100% 0}}
+.nv-think{display:inline-flex;align-items:center;gap:10px;min-height:24px}
+.nv-orb{position:relative;width:22px;height:22px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.nv-orb::before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,#1652F0,#6E96FF,#DCE5FB,#1652F0);-webkit-mask:radial-gradient(circle,transparent 6.5px,#000 7.5px);mask:radial-gradient(circle,transparent 6.5px,#000 7.5px);animation:nvSpin 1.1s linear infinite}
+.nv-orb i{width:7px;height:7px;border-radius:50%;background:#1652F0;animation:nvPulse 1.1s ease-in-out infinite}
+.nv-tt{font-size:15px;font-weight:400;line-height:1.4;background:linear-gradient(90deg,#5B6582 0%,#5B6582 35%,#1652F0 50%,#5B6582 65%,#5B6582 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:nvShim 1.6s linear infinite}
 .dlp-c{position:relative;display:inline-block;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(0,0,0,0) 61%,rgba(150,96,0,.5) 64%,rgba(0,0,0,0) 69%),radial-gradient(circle at 34% 28%,#FFF6CF 0%,#F9DC7A 30%,#EAB534 62%,#C38712 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),inset 0 -1.5px 1px rgba(130,80,0,.35),0 1.5px 0 #A86F06,0 3px 5px -2px rgba(110,70,0,.55);vertical-align:-3px;animation:dlpFlip 6s ease-in-out infinite}
 .dlp-c::before{content:"D";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Google Sans',system-ui,sans-serif;font-size:10px;font-weight:700;line-height:1;transform:translateY(.6px);box-sizing:border-box;color:#8A5A00;text-shadow:0 1px 0 rgba(255,246,207,.85)}
 .dlp-c::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.75) 48%,rgba(255,255,255,0) 60%);background-size:250% 100%;background-position:120% 0;animation:dlpShine 6s ease-in-out infinite;pointer-events:none}
@@ -19,6 +77,21 @@ body{margin:0;background:#FFFFFF}
 @keyframes dlpFlip{0%,70%{transform:rotateY(0)}82%{transform:rotateY(180deg)}94%,100%{transform:rotateY(360deg)}}
 @keyframes dlpShine{0%,30%{background-position:120% 0}48%,100%{background-position:-20% 0}}
 @media (prefers-reduced-motion: reduce){.dlp-c,.dlp-c::after{animation:none}}
+@media (max-width: 960px){
+.ds-chip{height:36px;font-size:13.5px;padding:0 14px}
+.ds-chip.sm{height:32px;font-size:12.5px;padding:0 12px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
+}
+@media (max-width: 760px){
+.ds-x{width:40px;height:40px}
+.ds-ask{height:54px;padding:5px 5px 5px 18px}
+.ds-ask input{font-size:15px}
+}
+@media (prefers-reduced-motion: reduce){.nv-orb::before,.nv-orb i,.nv-tt{animation:none}.nv-tt{color:#5B6582}}
 h1,h2,h3,p,.ci-d{text-wrap:pretty}
 .fd-h3{text-wrap:balance}
 @media (min-width: 761px){p,.ci-d{text-wrap:balance}}
@@ -29,15 +102,9 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
 .lh-link{white-space:nowrap;transition:color .2s ease,background .2s ease}
 .lh-link:hover{color:#0B1433 !important;background:#F5F8FF}
-.lh-cta{transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
-.lh-cta:hover{background:#0E3BB8 !important;color:#FFFFFF;transform:translateY(-1px)}
-.lh-cta:active{transform:translateY(0) scale(.98)}
-.lh-arrow{transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
-.lh-cta:hover .lh-arrow{transform:translateX(3px)}
-.lh-search{transition:border-color .2s ease,box-shadow .2s ease}
-.lh-search:focus-within{border-color:#1652F0 !important;box-shadow:0 0 0 4px rgba(22,82,240,.14),0 24px 60px -24px rgba(22,82,240,.45) !important}
-.lh-input::placeholder{color:#8A93AD}
-.lh-cta:focus-visible,.lh-link:focus-visible,.lh-menu:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.lh-link:focus-visible,.lh-menu:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.lh-search{box-shadow:0 24px 60px -24px rgba(22,82,240,.4)}
+.lh-search:focus-within{box-shadow:0 0 0 4px rgba(22,82,240,.12),0 24px 60px -24px rgba(22,82,240,.4)}
 .lh-stage{position:absolute;z-index:2;left:50%;--h:var(--ih);height:var(--h);top:calc(var(--sb) + 28px - var(--h) * .115);aspect-ratio:2800/681;transform:translateX(-50%);pointer-events:none}
 @media (min-width: 761px){.lh-hero{container-type:size}}
 @media (min-width: 1600px){.lh-hero{--sb:318px}}
@@ -89,14 +156,15 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-nav{margin:8px 16px 0 !important;width:calc(100% - 32px) !important;height:56px !important}
 .lh-word{display:none}
 .lh-login{display:none !important}
-.lh-join{height:40px !important;padding:0 16px !important;font-size:14px !important}
 .lh-content{margin-top:40px !important;padding:0 16px !important}
 .lh-h1{font-size:40px !important;letter-spacing:-1.2px !important;margin-top:18px !important;white-space:normal !important}
 .lh-sub{font-size:15px !important;margin-top:14px !important}
 .lh-search{flex-direction:column !important;align-items:stretch !important;height:auto !important;border-radius:24px !important;padding:6px !important;margin-top:24px !important}
 .lh-field{padding:0 12px !important}
+.lh-search{gap:0 !important}
 .lh-input{height:52px !important;font-size:16px !important}
-.lh-cta-main{justify-content:center !important;height:52px !important}
+.lh-search .ds-btn{justify-content:space-between;height:52px;font-size:15px}
+.lh-search .ds-btn .ob-arrow{width:40px;height:40px}
 .lh-hero{position:relative !important;top:auto !important}
 .lh-stage{position:relative !important;left:auto !important;bottom:auto !important;top:auto !important;transform:none !important;height:auto !important;width:180%;flex-shrink:0;margin:calc(50px - 47.4%) 0 calc(36px - 18.1%);aspect-ratio:3/2 !important}
 .lh-figure{-webkit-mask-image:none;mask-image:none}
@@ -111,10 +179,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .lh-card-t{font-size:10px !important}
 .lh-alt{display:none !important}
 }
-
-
 .fd-card{position:absolute;left:0;top:0;transform-origin:50% 100%;will-change:transform,opacity;transition:opacity .5s ease}
-.fd-btn{transition:border-color .2s ease}
 @media (max-width: 760px){
 .fd-ui{padding:32px 20px 24px !important}
 .fd-h2{font-size:28px !important;letter-spacing:-.8px !important}
@@ -123,12 +188,9 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .fd-panel p{font-size:14px !important}
 .fd-br{display:none}
 }
-.fd-btn:hover{border-color:#1652F0 !important}
-.fd-btn:focus-visible,.fd-dot:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-
-
+.fd-dot:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .gc-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-.gc-card{position:relative;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:#FFFFFF;border:1px solid #E6EAF3;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 30px 60px -50px rgba(11,20,51,.4);text-decoration:none;color:#0B1433;transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .55s cubic-bezier(.2,.7,.2,1),border-color .4s ease}
+.gc-card{position:relative;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 30px 60px -50px rgba(11,20,51,.4);text-decoration:none;color:#0B1433;transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .55s cubic-bezier(.2,.7,.2,1),border-color .4s ease}
 .gc-card:hover{transform:translateY(-6px);border-color:#D6DDEE;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 44px 80px -46px rgba(22,82,240,.5)}
 .gc-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:4px}
 .gc-vis{position:relative;height:270px;flex-shrink:0;overflow:hidden;background:radial-gradient(120% 100% at 50% 0%,#EAF0FF 0%,#F5F8FF 50%,#FFFFFF 100%)}
@@ -175,9 +237,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .gc-day{animation:gcDay 3.2s ease-in-out infinite;transform-origin:bottom}
 @keyframes gcDay{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
 @keyframes gcBeat{0%,70%,100%{box-shadow:0 0 0 6px rgba(127,164,255,.18)}80%{box-shadow:0 0 0 14px rgba(127,164,255,.28),0 0 30px rgba(76,125,255,.6)}}
-.gc-coach{transition:border-color .2s ease,background .2s ease}
-.gc-coach:hover{border-color:#1652F0 !important;background:#F5F8FF !important}
-.gc-coach:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.gc-coach{align-self:flex-start;gap:10px;padding:0 18px 0 6px}
 @supports (animation-timeline: view()){
 .gc-in{animation:gcIn linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
 .gc-in-2{animation-range:entry 5% cover 35%}.gc-in-3{animation-range:entry 10% cover 40%}.gc-in-4{animation-range:entry 15% cover 45%}
@@ -195,35 +255,27 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .gc-body{padding:22px 22px 20px}
 .gc-title{font-size:23px !important}
 }
-
-
 .ac-tab{position:relative;flex:1;min-width:0;height:auto;padding:0 0 14px;background:none;border:none;text-align:left;cursor:pointer;font-family:'Google Sans',system-ui,sans-serif;font-size:13px;font-weight:500;color:#8A93AD;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .3s ease}
 .ac-tab:hover{color:#3A4566}
-.ac-tab:focus-visible,.ac-btn:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px;border-radius:6px}
+.ac-tab:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px;border-radius:6px}
 .ac-seg{position:absolute;left:0;right:0;bottom:0;height:3px;border-radius:9px;background:#E6EAF3;overflow:hidden}
 .ac-seg span{display:block;height:100%;width:0;background:#1652F0;border-radius:9px}
-.ac-stage{position:relative;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#F5F8FF 0%,#FFFFFF 70%);border:1px solid #E6EAF3}
+.ac-stage{position:relative;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#F5F8FF 0%,#FFFFFF 70%);border:1.5px solid #E6EAF3}
 .ac-stage::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#DCE5FB 1.1px,transparent 1.4px);background-size:18px 18px;-webkit-mask-image:radial-gradient(70% 80% at 30% 30%,#000 20%,transparent 75%);mask-image:radial-gradient(70% 80% at 30% 30%,#000 20%,transparent 75%);pointer-events:none}
 .ac-bubble{position:relative;border-radius:16px;font-size:16px;line-height:1.55}
 .ac-q{background:#0B1433;color:#FFFFFF;border-bottom-left-radius:4px;padding:16px 18px;box-shadow:0 20px 40px -26px rgba(11,20,51,.6)}
-.ac-a{background:#FFFFFF;color:#0B1433;border:1px solid #E6EAF3;border-top-left-radius:4px;padding:16px 18px;box-shadow:0 20px 40px -30px rgba(11,20,51,.35)}
+.ac-a{background:#FFFFFF;color:#0B1433;border:1.5px solid #E6EAF3;border-top-left-radius:4px;padding:16px 18px;box-shadow:0 20px 40px -30px rgba(11,20,51,.35)}
 .ac-caret{display:inline-block;width:2px;height:1.05em;margin-left:2px;vertical-align:-2px;background:currentColor;animation:acBlink .9s steps(1) infinite}
 @keyframes acBlink{50%{opacity:0}}
-.ac-orb{position:relative;width:44px;height:44px;flex-shrink:0;border-radius:999px;background:#FFFFFF url(/_blob/f81e36d31295a0d0737959589ec1abd4) center / 60% no-repeat;box-shadow:0 0 0 1.5px #DCE5FB,0 10px 24px -12px rgba(22,82,240,.45)}
-.ac-orb-ring{position:absolute;inset:-6px;border-radius:999px;background:conic-gradient(from 0deg,rgba(22,82,240,0),#4C7DFF,rgba(22,82,240,0) 60%);-webkit-mask:radial-gradient(closest-side,transparent 78%,#000 80%);mask:radial-gradient(closest-side,transparent 78%,#000 80%);animation:acSpin 1s linear infinite}
-@keyframes acSpin{to{transform:rotate(360deg)}}
-.ac-shimmer{background:linear-gradient(90deg,#8A93AD 0%,#8A93AD 35%,#1652F0 50%,#8A93AD 65%,#8A93AD 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:acShim 1.6s linear infinite}
-@keyframes acShim{from{background-position:100% 0}to{background-position:-120% 0}}
 .ac-think-b{border:1.5px solid transparent;background:linear-gradient(#FFFFFF,#FFFFFF) padding-box,linear-gradient(120deg,#C9D7FA,#1652F0,#C9D7FA) border-box;background-size:100% 100%,200% 100%;animation:acBorder 1.6s linear infinite;box-shadow:0 0 0 6px rgba(22,82,240,.06),0 20px 40px -28px rgba(22,82,240,.6)}
 @keyframes acBorder{to{background-position:0 0,-200% 0}}
 .ac-rise{transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
-.ac-art{background:#FFFFFF;border:1px solid #E6EAF3;border-radius:16px;box-shadow:0 30px 60px -36px rgba(11,20,51,.45);padding:22px;display:flex;flex-direction:column;gap:14px}
+.ac-art > .ds-btn{align-self:flex-start}
+.ac-art{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:16px;box-shadow:0 30px 60px -36px rgba(11,20,51,.45);padding:22px;display:flex;flex-direction:column;gap:14px}
 .ac-k{font-size:12px;font-weight:500;color:#8A93AD}
-.ac-btn{align-self:flex-start;height:42px;padding:0 18px;border-radius:999px;border:none;background:#1652F0;color:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;cursor:pointer;white-space:nowrap}
-.ac-ghost{background:#FFFFFF;color:#0B1433;border:1.5px solid #D6DDEE}
 .ac-mini{background:url(/_blob/8d1041b4dd08fd7406351fcbbd98b97a) 35% 4% / 330% no-repeat}
 .ac-learner{height:auto;position:absolute;left:12px;bottom:0;width:340px;pointer-events:none;user-select:none;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
-@media (prefers-reduced-motion: reduce){.ac-caret,.ac-orb-ring,.ac-shimmer,.ac-think-b{animation:none}.ac-rise{transition:none}}
+@media (prefers-reduced-motion: reduce){.ac-caret,.ac-think-b{animation:none}.ac-rise{transition:none}}
 @media (max-width: 1240px){.ac-tabs{overflow-x:auto;scrollbar-width:none;gap:24px !important}.ac-tabs::-webkit-scrollbar{display:none}.ac-tab{flex:0 0 auto;overflow:visible}}
 @media (max-width: 1080px){.ac-grid{grid-template-columns:200px minmax(0,1fr) !important}.ac-artcol{grid-column:1 / -1}.ac-learner{width:220px}}
 @media (max-width: 760px){
@@ -243,17 +295,13 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ac-qrow{flex-direction:row-reverse;align-items:flex-end !important}
 .ac-q{max-width:84%;border-bottom-left-radius:16px;border-bottom-right-radius:4px}
 .ac-mini{display:block !important;width:36px !important;height:36px !important}
-.ac-orb{width:36px;height:36px}
 .ac-arow{gap:10px !important}
 .ac-bubble{font-size:15px;padding:14px 16px}
 .ac-artcol{justify-content:flex-start !important}
 .ac-art{padding:20px;gap:16px}
-.ac-btn{height:40px;padding:0 16px;font-size:13px}
 .ac-plan{grid-template-columns:38px 74px minmax(0,1fr) !important;gap:8px !important}
 .ac-hand{padding:10px !important;gap:6px !important;font-size:12.5px !important}
 }
-
-
 .tx-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,700px);gap:40px;align-items:center}
 .tx-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
 .tx-steps{display:flex;flex-direction:column;gap:2px;margin-top:14px}
@@ -265,20 +313,15 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .tx-step-done .tx-num{background:#E7F5EE;border-color:#CFE8DC;color:#0F6B45}
 .tx-st{font-size:16px;font-weight:600}
 .tx-sd{font-size:14px;color:#5B6582}
-.tx-link{align-self:flex-start;margin-top:12px;height:46px;padding:0 8px 0 20px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:12px;text-decoration:none;transition:border-color .2s ease,background .2s ease}
-.tx-link:hover{border-color:#1652F0;background:#F5F8FF}
-.tx-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.tx-link{align-self:flex-start;margin-top:12px}
 .tx-stage{position:relative;height:660px;perspective:1800px;perspective-origin:50% 30%}
 .tx-stage::before{content:"";position:absolute;inset:6% 0 0;background:radial-gradient(50% 45% at 50% 55%,#EAF0FF 0%,rgba(234,240,255,0) 100%);pointer-events:none}
-.tx-pill{position:absolute;right:20px;top:18px;z-index:3;height:34px;padding:0 14px 0 11px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#5B6582;transition:background .5s ease,border-color .5s ease,color .5s ease}
-.tx-pill-run{color:#1652F0;border-color:#C9D7FA;background:#F5F8FF}
-.tx-pill-ok{background:#E7F5EE;border-color:#CFE8DC;color:#0F6B45}
+.tx-pill{position:absolute;right:20px;top:18px;z-index:3;transition:background .5s ease,color .5s ease}
 .tx-spin{width:13px;height:13px;border-radius:999px;border:2px solid currentColor;border-right-color:transparent;box-sizing:border-box;animation:txSpin .9s linear infinite}
 @keyframes txSpin{to{transform:rotate(360deg)}}
 .tx-idle{position:absolute;left:50%;top:54%;width:0;height:0;transform-style:preserve-3d;transform:rotateX(55deg) rotateZ(-34deg)}
-
 .tx-floor{position:absolute;left:-250px;top:-170px;width:500px;height:340px;background:radial-gradient(closest-side,rgba(11,20,51,.10),rgba(11,20,51,.04) 60%,rgba(11,20,51,0));transform:translateZ(-30px)}
-.tx-layer{position:absolute;left:-200px;top:-135px;width:400px;height:270px;box-sizing:border-box;padding:20px 22px;border-radius:18px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 24px 40px -32px rgba(11,20,51,.28);transform-style:preserve-3d;will-change:transform;backface-visibility:hidden;transition:transform 1.4s cubic-bezier(.65,0,.35,1),border-color .5s ease;font-family:'Google Sans',system-ui,sans-serif;color:#0B1433}
+.tx-layer{position:absolute;left:-200px;top:-135px;width:400px;height:270px;box-sizing:border-box;padding:20px 22px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 24px 40px -32px rgba(11,20,51,.28);transform-style:preserve-3d;will-change:transform;backface-visibility:hidden;transition:transform 1.4s cubic-bezier(.65,0,.35,1),border-color .5s ease;font-family:'Google Sans',system-ui,sans-serif;color:#0B1433}
 .tx-layer-run{border-color:#9DB8F7}
 .tx-clip{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none}
 .tx-scan{position:absolute;top:0;bottom:0;left:0;width:30%;background:linear-gradient(90deg,rgba(22,82,240,0),rgba(22,82,240,.07) 75%,rgba(22,82,240,.28) 99%,rgba(22,82,240,0));opacity:0;will-change:transform}
@@ -306,7 +349,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .tx-stage{height:450px;margin:0 -20px;width:calc(100% + 40px);perspective:1300px}
 .tx-idle{top:60%}
 .tx-scale{transform:scale(.62)}
-.tx-pill{right:50%;transform:translateX(50%);top:0;font-size:13px;height:32px}
+.tx-pill{right:50%;transform:translateX(50%);top:0}
 .tx-cap{bottom:6px;font-size:14px}
 }
 .ft{font-family:'Google Sans',system-ui,sans-serif;color:#0B1433}
@@ -317,14 +360,9 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ft-h{font-size:14px;font-weight:600;color:#0B1433;margin-bottom:4px}
 .ft-a{font-size:14px;color:#4A5578;text-decoration:none;transition:color .2s ease;width:max-content}
 .ft-a:hover{color:#1652F0}
-.ft-a:focus-visible,.ft-soc:focus-visible,.ft-btn:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px;border-radius:6px}
+.ft-a:focus-visible,.ft-soc:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px;border-radius:6px}
 .ft-news{display:flex;flex-direction:column;gap:12px}
-.ft-form{position:relative;display:flex;align-items:center;height:52px;margin-top:6px;padding:4px 4px 4px 18px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;box-sizing:border-box;transition:border-color .2s ease,box-shadow .2s ease}
-.ft-form:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
-.ft-input{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;color:#0B1433}
-.ft-input::placeholder{color:#8A93AD}
-.ft-btn{width:42px;height:42px;flex-shrink:0;border:none;border-radius:999px;background:#1652F0;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s ease}
-.ft-btn:hover{background:#0E3BB8}
+.ft-form{margin-top:6px}
 .ft-art{position:relative;margin-top:4px;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 18%);mask-image:linear-gradient(180deg,transparent 0,#000 18%);pointer-events:none}
 .ft-img{height:auto;position:relative;left:50%;width:max(1440px,100%);transform:translateX(-50%);display:block}
 .ft-bar{position:relative;max-width:1312px;margin:-72px auto 0;padding:0 48px 28px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px}
@@ -359,11 +397,11 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ld-proof{position:absolute;inset:0;background:radial-gradient(70% 90% at 70% 0%,#EAF0FF 0%,#F5F8FF 45%,#FFFFFF 100%)}
 .ld-proof::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#D3DEFA 1.1px,transparent 1.4px);background-size:18px 18px;-webkit-mask-image:radial-gradient(80% 80% at 70% 40%,#000 25%,transparent 80%);mask-image:radial-gradient(80% 80% at 70% 40%,#000 25%,transparent 80%)}
 .ld-bento{position:absolute;inset:84px 32px 32px;display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:16px}
-.ld-card{position:relative;display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:16px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 24px 44px -34px rgba(11,20,51,.35);min-width:0;min-height:0;overflow:hidden}
+.ld-card{position:relative;display:flex;flex-direction:column;gap:10px;padding:18px;border-radius:16px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 24px 44px -34px rgba(11,20,51,.35);min-width:0;min-height:0;overflow:hidden}
 .ld-c1{grid-column:1;grid-row:1 / 3}.ld-c2{grid-column:2;grid-row:1}.ld-c3{grid-column:3;grid-row:1}.ld-c4{grid-column:2;grid-row:2}.ld-c5{grid-column:3;grid-row:2}.ld-c6{grid-column:4;grid-row:1 / 3}
 .ld-k{display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:500;color:#8A93AD}
 .ld-t{font-size:16px;font-weight:600;letter-spacing:-.2px;color:#0B1433}
-.ld-ok{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:999px;background:#E7F5EE;color:#0F6B45;font-size:12px;font-weight:500;align-self:flex-start;white-space:nowrap}
+.ld-card > .ds-tag{align-self:flex-start}
 .ld-done{position:absolute;inset:0;background:#F3F4F7;clip-path:inset(0 calc(100% - var(--x)) 0 0);-webkit-clip-path:inset(0 calc(100% - var(--x)) 0 0)}
 .ld-done::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(11,20,51,.025) 0 2px,transparent 2px 12px)}
 .ld-g{background:#FAFAFB;border-color:#E1E4EA;box-shadow:none;color:#9A9FAF}
@@ -376,7 +414,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ld-grow .ld-gtick{align-self:center}
 .ld-play{width:22px;height:22px;border-radius:7px;background:#ECEEF2;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ld-tag{position:absolute;top:22px;z-index:2;display:flex;align-items:center;gap:10px;white-space:nowrap}
-.ld-pill{height:32px;padding:0 13px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500}
+.ld-pf{background:#1652F0;color:#FFFFFF}
 .ld-sub{font-size:14px;color:#5B6582}
 .ld-line{position:absolute;top:0;bottom:0;left:var(--x);width:2px;margin-left:-1px;background:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.08);z-index:3;pointer-events:none}
 .ld-knob{position:absolute;top:50%;left:var(--x);z-index:4;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:999px;background:#FFFFFF;border:2px solid #1652F0;box-shadow:0 14px 30px -12px rgba(22,82,240,.55);display:flex;align-items:center;justify-content:center;gap:2px;color:#1652F0;cursor:ew-resize;padding:0}
@@ -389,7 +427,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ld-bar{height:8px;border-radius:9px;background:#E3E8F3;overflow:hidden}
 .ld-bar span{display:block;height:100%;border-radius:9px;background:#1652F0}
 @media (prefers-reduced-motion: reduce){.ld-knob::after{animation:none}}
-@media (max-width: 1080px){.ld-head{grid-template-columns:minmax(0,1fr) !important;gap:16px !important}.ld-bento{grid-template-columns:1.25fr 1fr !important;grid-template-rows:1fr 1fr 1fr !important}.ld-c3,.ld-c5{display:none !important}.ld-card{grid-column:auto !important;grid-row:auto !important}.ld-c1{grid-row:span 2 !important}.ld-c6{grid-column:span 2 !important;flex-direction:row !important;gap:16px !important;text-align:left !important;justify-content:flex-start !important;padding:16px 22px !important}.ld-c6 .ld-k{display:none}.ld-c6 svg,.ld-g.ld-c6 > span:first-of-type{width:60px !important;height:60px !important;flex-shrink:0}.ld-c6 .ld-t{margin-top:0 !important;flex-shrink:0;white-space:nowrap}.ld-c6 .ld-ok{margin-left:auto !important}.ld-bento{grid-template-rows:1fr 1fr .62fr !important}.ld-stage{height:640px}}
+@media (max-width: 1080px){.ld-head{grid-template-columns:minmax(0,1fr) !important;gap:16px !important}.ld-bento{grid-template-columns:1.25fr 1fr !important;grid-template-rows:1fr 1fr 1fr !important}.ld-c3,.ld-c5{display:none !important}.ld-card{grid-column:auto !important;grid-row:auto !important}.ld-c1{grid-row:span 2 !important}.ld-c6{grid-column:span 2 !important;flex-direction:row !important;gap:16px !important;text-align:left !important;justify-content:flex-start !important;padding:16px 22px !important}.ld-c6 .ld-k{display:none}.ld-c6 svg,.ld-g.ld-c6 > span:first-of-type{width:60px !important;height:60px !important;flex-shrink:0}.ld-c6 .ld-t{margin-top:0 !important;flex-shrink:0;white-space:nowrap}.ld-bento{grid-template-rows:1fr 1fr .62fr !important}.ld-stage{height:640px}}
 @media (max-width: 760px){
 .ld-wrap{padding:72px 20px 72px !important;gap:24px !important}
 .ld-head{gap:12px !important}
@@ -398,8 +436,8 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ld-stage{height:336px;margin:0 -4px;border-radius:18px}
 .ld-bento{display:none !important}
 .ld-mob{display:flex;position:absolute;left:14px;right:14px;top:58px;bottom:14px;flex-direction:column;gap:9px;padding:16px;border-radius:16px;box-sizing:border-box}
-.ld-mob-p{background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 24px 44px -34px rgba(11,20,51,.35)}
-.ld-mob-d{background:#FAFAFB;border:1px solid #E1E4EA;color:#9A9FAF}
+.ld-mob-p{background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 24px 44px -34px rgba(11,20,51,.35)}
+.ld-mob-d{background:#FAFAFB;border:1.5px solid #E1E4EA;color:#9A9FAF}
 .ld-mob .ld-k{font-size:12px}
 .ld-mstats{margin-top:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
 .ld-mstats span{display:flex;flex-direction:column;gap:2px;padding:8px 9px;border-radius:10px;background:#F5F8FF;font-size:11px;color:#5B6582}
@@ -409,19 +447,17 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ld-mob-d > span:last-child{margin-top:auto;font-size:12px}
 .ld-tag{top:12px}
 .ld-tag[style*="left"]{left:14px !important}.ld-tag[style*="right"]{right:14px !important}
-.ld-pill{height:28px;font-size:12px;padding:0 11px}
+.ld-tag .ds-tag{height:28px;font-size:12px;padding:0 11px}
 .ld-tag .ld-sub{display:none}
 .ld-knob{width:44px;height:44px;margin:-22px 0 0 -22px}
 .ld-hint{top:calc(50% + 32px)}
 }
-
-
 .bp-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;max-width:760px;margin:0 auto}
 .bp-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
 .bp-stage{position:relative;display:grid;grid-template-columns:420px minmax(0,1fr) 380px;align-items:center;gap:0;padding:40px 56px 36px;border-radius:20px;background:radial-gradient(60% 80% at 30% 40%,#EAF0FF 0%,#F5F8FF 45%,#FFFFFF 100%);border:1.5px solid #E6EAF3;overflow:hidden}
 .bp-stage::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#DCE5FB 1.1px,transparent 1.4px);background-size:18px 18px;-webkit-mask-image:radial-gradient(60% 70% at 50% 50%,#000 25%,transparent 80%);mask-image:radial-gradient(60% 70% at 50% 50%,#000 25%,transparent 80%);pointer-events:none}
 .bp-wallet{position:relative;height:452px}
-.bp-whead{position:absolute;left:50%;top:0;transform:translateX(-50%);z-index:15;display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px 0 5px;border-radius:999px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 10px 24px -16px rgba(11,20,51,.35);font-size:13px;color:#5B6582;white-space:nowrap}
+.bp-whead{position:absolute;left:50%;top:0;transform:translateX(-50%);z-index:15;display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px 0 5px;border-radius:999px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 10px 24px -16px rgba(11,20,51,.35);font-size:13px;color:#5B6582;white-space:nowrap}
 .bp-whead b{font-size:13px;font-weight:600;color:#0B1433}
 .bp-whead .bp-av{width:26px;height:26px;font-size:10px}
 .bp-wsep{width:1px;height:14px;background:#E3E8F3}
@@ -429,7 +465,6 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .bp-card{position:absolute;left:0;right:0;bottom:0;height:236px;box-sizing:border-box;padding:13px 20px 20px;border-radius:18px;display:flex;flex-direction:column;gap:8px;transform-origin:50% 0;transition:transform .9s cubic-bezier(.65,0,.35,1),box-shadow .6s ease,filter .6s ease;will-change:transform;box-shadow:0 30px 50px -34px rgba(11,20,51,.55)}
 .bp-card-front{box-shadow:0 40px 70px -36px rgba(11,20,51,.6)}
 .bp-type{display:flex;align-items:center;justify-content:space-between;min-height:24px;font-size:12px;font-weight:500;opacity:.85}
-.bp-vchip{height:24px;padding:0 9px;border-radius:999px;display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500}
 .bp-title{margin-top:auto;font-size:21px;font-weight:600;letter-spacing:-.4px;line-height:1.2}
 .bp-meta{display:flex;align-items:center;justify-content:space-between;min-height:34px;font-size:12px;opacity:.75}
 .bp-share{position:absolute;right:16px;bottom:14px;height:34px;padding:0 14px 0 12px;border-radius:999px;background:#FFFFFF;color:#1652F0;border:1.5px solid #C9D7FA;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;opacity:0;transform:translateY(6px) scale(.96);transition:opacity .4s ease,transform .4s ease,background .3s ease,color .3s ease}
@@ -442,7 +477,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .bp-go .bp-trail{width:100%}
 .bp-go .bp-link{left:100%;transform:translate(-90%,-50%)}
 .bp-link-on{opacity:1}
-.bp-dest{position:relative;border-radius:16px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 30px 60px -38px rgba(11,20,51,.45);overflow:hidden;transition:box-shadow .6s ease,border-color .6s ease}
+.bp-dest{position:relative;border-radius:16px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 30px 60px -38px rgba(11,20,51,.45);overflow:hidden;transition:box-shadow .6s ease,border-color .6s ease}
 .bp-dest-ok{border-color:#CFE8DC;box-shadow:0 0 0 6px rgba(15,107,69,.06),0 30px 60px -34px rgba(15,107,69,.4)}
 .bp-bar{display:flex;align-items:center;gap:6px;height:36px;padding:0 12px;background:#F5F8FF;border-bottom:1px solid #E6EAF3}
 .bp-bar i{width:8px;height:8px;border-radius:999px;background:#D6DDEE}
@@ -483,7 +518,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .bp-card{height:150px;padding:10px 14px 12px;border-radius:15px;gap:4px}
 .bp-deep{opacity:0}
 .bp-type{min-height:20px;font-size:10px}
-.bp-vchip{height:20px;padding:0 7px;font-size:9.5px}
+.bp-vchip{height:20px;padding:0 7px;font-size:9.5px;gap:5px}
 .bp-title{font-size:15px;letter-spacing:-.2px}
 .bp-meta{min-height:28px;font-size:10px}
 .bp-share{bottom:12px;right:12px;height:28px;font-size:11px;padding:0 11px 0 9px}
@@ -513,40 +548,28 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .bp-bs{display:block;font-size:13px;font-weight:600;letter-spacing:-.1px;white-space:nowrap}
 .bp-bd{display:none}
 }
-
 .mk-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:64px;align-items:end}
 .mk-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
-.mk-link{align-self:flex-start;height:46px;padding:0 8px 0 20px;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:12px;text-decoration:none;transition:background .2s ease}
-.mk-link:hover{background:#0E3BB8}
-.mk-link:focus-visible,.mk-chip:focus-visible,.mk-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.mk-link{align-self:flex-start}
+.mk-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .mk-chips{display:flex;flex-wrap:wrap;gap:8px}
-.mk-chip{height:40px;padding:0 16px;border-radius:999px;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#3A4566;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease}
-.mk-chip:hover{border-color:#C9D7FA}
-.mk-chip-on{background:#EAF0FF;border-color:#1652F0;color:#0B1433}
-.mk-n{font-size:12px;color:#8A93AD}
-.mk-chip-on .mk-n{color:#1652F0}
 .mk-shelf{position:relative;display:flex;flex-direction:column;gap:20px;margin:0 -48px;padding:8px 0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
 .mk-row{display:flex;gap:20px;width:max-content;animation:mkL 110s linear infinite}
-.mk-row-r{animation-name:mkR;animation-duration:80s}
 .mk-shelf:hover .mk-row{animation-play-state:paused}
 @keyframes mkL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@keyframes mkR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-.mk-card{flex-shrink:0;width:300px;display:flex;flex-direction:column;border-radius:18px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 24px 44px -36px rgba(11,20,51,.4);overflow:hidden;text-decoration:none;color:#0B1433;transition:opacity .45s ease,filter .45s ease,transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease}
+.mk-card{flex-shrink:0;width:300px;display:flex;flex-direction:column;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 24px 44px -36px rgba(11,20,51,.4);overflow:hidden;text-decoration:none;color:#0B1433;transition:opacity .45s ease,filter .45s ease,transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease}
 .mk-card:hover{transform:translateY(-4px);box-shadow:0 34px 60px -36px rgba(22,82,240,.45)}
 .mk-dim{opacity:.28;filter:grayscale(.6)}
 .mk-thumb{position:relative;height:118px;display:flex;align-items:flex-end;padding:14px;box-sizing:border-box;overflow:hidden}
 .mk-thumb::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.18) 1px,transparent 1.3px);background-size:12px 12px}
 .mk-ico{position:absolute;right:-10px;top:-10px;width:110px;height:110px;opacity:.22}
-.mk-fmt{position:relative;height:26px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.2);color:#FFFFFF;display:inline-flex;align-items:center;font-size:12px;font-weight:500;backdrop-filter:blur(4px)}
-.mk-light .mk-fmt{background:#FFFFFF;color:#1652F0}
+.mk-fmt{position:relative;backdrop-filter:blur(4px)}
+.mk-light .mk-fmt{background:#FFFFFF;color:#1652F0;box-shadow:none}
 .mk-body{display:flex;flex-direction:column;gap:10px;padding:16px 16px 14px;flex:1}
 .mk-t{font-size:16px;font-weight:600;letter-spacing:-.2px;line-height:1.3;min-height:42px}
 .mk-by{display:flex;align-items:center;gap:8px;font-size:12px;color:#5B6582;min-width:0}
 .mk-av{width:24px;height:24px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:600}
 .mk-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:10px;border-top:1px solid #EEF1F7;font-size:12px;color:#5B6582}
-.mk-st{height:24px;padding:0 9px 0 6px;border-radius:999px;display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;white-space:nowrap}
-.mk-ok{background:#EAF0FF;color:#1652F0}
-.mk-rv{background:#F1F3F8;color:#5B6582}
 @media (prefers-reduced-motion: reduce){.mk-row{animation:none}}
 @media (max-width: 1080px){.mk-head{grid-template-columns:minmax(0,1fr) !important;gap:16px !important}}
 @media (max-width: 760px){
@@ -556,10 +579,8 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .mk-p{font-size:15px !important}
 .mk-chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -20px;padding:2px 20px;scrollbar-width:none}
 .mk-chips::-webkit-scrollbar{display:none}
-.mk-chip{flex-shrink:0;height:36px;font-size:13px;padding:0 14px}
 .mk-shelf{margin:0 -20px;gap:14px;-webkit-mask-image:none;mask-image:none}
 .mk-row{gap:12px}
-.mk-row-r{display:none}
 .mk-card{width:236px;border-radius:16px}
 .mk-thumb{height:88px;padding:11px}
 .mk-ico{width:84px;height:84px}
@@ -577,28 +598,23 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ci-doors:hover .ci-door{flex:.82}
 .ci-doors .ci-door:hover{flex:1.18}
 .ci-cr{background:#0B1433;isolation:isolate;color:#FFFFFF;box-shadow:0 40px 80px -50px rgba(11,20,51,.8)}
-.ci-in{background:radial-gradient(90% 90% at 85% 100%,#DCE5FB 0%,#EAF0FF 50%,#F5F8FF 100%);color:#0B1433;border:1px solid #DCE5FB}
+.ci-in{background:radial-gradient(90% 90% at 85% 100%,#DCE5FB 0%,#EAF0FF 50%,#F5F8FF 100%);color:#0B1433;border:1.5px solid #DCE5FB}
 .ci-cr::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,164,255,.22) 1px,transparent 1.3px);background-size:16px 16px;-webkit-mask-image:linear-gradient(200deg,#000,transparent 70%);mask-image:linear-gradient(200deg,#000,transparent 70%);pointer-events:none}
 .ci-copy{position:relative;z-index:2;display:flex;flex-direction:column;gap:12px;padding:36px 36px 0;max-width:430px}
 .ci-k{font-size:13px;font-weight:500;opacity:.75}
 .ci-t{font-size:30px;font-weight:600;letter-spacing:-.8px;line-height:1.12}
 .ci-d{font-size:15px;line-height:1.6;opacity:.78}
-.ci-btn{align-self:flex-start;margin-top:6px;height:44px;padding:0 6px 0 18px;border-radius:999px;display:inline-flex;align-items:center;gap:12px;font-size:15px;font-weight:600;transition:transform .3s ease}
-.ci-cr .ci-btn{background:#FFFFFF;color:#0B1433}
-.ci-in .ci-btn{background:#1652F0;color:#FFFFFF}
-.ci-arr{width:32px;height:32px;border-radius:999px;display:flex;align-items:center;justify-content:center;transition:transform .35s cubic-bezier(.3,1.4,.5,1)}
-.ci-cr .ci-arr{background:#1652F0}
-.ci-in .ci-arr{background:#FFFFFF}
-.ci-door:hover .ci-arr{transform:translateX(3px)}
+.ci-btn{align-self:flex-start;margin-top:6px}
+.ci-door:hover .ob-arrow{transform:translateX(3px)}
+.ci-door:hover .ds-ghost{border-color:#1652F0}
 .ci-door:focus-visible{outline:3px solid rgba(22,82,240,.5);outline-offset:4px}
 .ci-vis{position:absolute;right:28px;bottom:-26px;width:340px;z-index:1;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
 .ci-door:hover .ci-vis{transform:translateY(-14px)}
-.ci-win{border-radius:16px;background:#FFFFFF;color:#0B1433;border:1px solid #E3E8F3;box-shadow:0 30px 60px -30px rgba(11,20,51,.5);padding:16px;display:flex;flex-direction:column;gap:10px}
+.ci-win{border-radius:16px;background:#FFFFFF;color:#0B1433;border:1.5px solid #E6EAF3;box-shadow:0 30px 60px -30px rgba(11,20,51,.5);padding:16px;display:flex;flex-direction:column;gap:10px}
 .ci-wk{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:500;color:#8A93AD}
 .ci-row{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;background:#F5F8FF;font-size:12px;color:#3A4566}
 .ci-ck{width:18px;height:18px;border-radius:999px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.ci-chip{height:24px;padding:0 9px;border-radius:999px;display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;white-space:nowrap}
-.ci-float{position:absolute;z-index:3;border-radius:14px;background:#FFFFFF;color:#0B1433;border:1px solid #E3E8F3;box-shadow:0 24px 40px -22px rgba(11,20,51,.5);padding:10px 12px;display:flex;align-items:center;gap:10px;animation:ciBob 5s ease-in-out infinite}
+.ci-float{position:absolute;z-index:3;border-radius:16px;background:#FFFFFF;color:#0B1433;border:1.5px solid #E6EAF3;box-shadow:0 24px 40px -22px rgba(11,20,51,.5);padding:10px 12px;display:flex;align-items:center;gap:10px;animation:ciBob 5s ease-in-out infinite}
 @keyframes ciBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .ci-bars{display:flex;align-items:flex-end;gap:3px;height:26px}
 .ci-bars span{width:6px;border-radius:2px;background:#C9D7FA}
@@ -616,14 +632,13 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ci-k{font-size:12px}
 .ci-t{font-size:22px;letter-spacing:-.5px}
 .ci-d{font-size:14px}
-.ci-btn{height:40px;font-size:14px;padding:0 5px 0 16px;margin-top:4px}
-.ci-arr{width:30px;height:30px}
+.ci-btn{margin-top:4px}
 .ci-vis{display:none}
 .ci-float{display:none}
 }
 .ec-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,640px);gap:72px;align-items:center}
 .ec-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
-.ec-mm{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px 0 6px;border-radius:999px;background:#F5F8FF;border:1px solid #E6EAF3;font-size:13px;color:#3A4566}
+.ec-mm{align-self:flex-start;gap:8px;padding:0 12px 0 4px}
 .ec-mm i{width:22px;height:22px;border-radius:7px;background:#0B1433;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12px;font-weight:600}
 .ec-stack{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;padding:22px 0 8px}
 .ec-beam{position:absolute;left:50%;top:0;bottom:40px;width:2px;margin-left:-1px;background:linear-gradient(180deg,rgba(22,82,240,.0),rgba(22,82,240,.25) 20%,rgba(22,82,240,.25) 80%,rgba(22,82,240,0));z-index:0}
@@ -641,7 +656,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ec-n{font-size:17px;font-weight:600;letter-spacing:-.2px}
 .ec-r{font-size:12px;font-weight:500;opacity:.7}
 .ec-d{font-size:13px;line-height:1.45;opacity:.78;margin-top:2px}
-.ec-here{height:26px;padding:0 10px;border-radius:999px;background:#1652F0;color:#FFFFFF;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;white-space:nowrap}
+.ec-here{background:#1652F0;color:#FFFFFF}
 .ec-here i{width:6px;height:6px;border-radius:999px;background:#FFFFFF;display:block;animation:ecBlink 1.6s ease-in-out infinite}
 @keyframes ecBlink{50%{opacity:.3}}
 @media (prefers-reduced-motion: reduce){.ec-here i{animation:none}.ec-pulse{display:none}}
@@ -662,7 +677,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 }
 .pr-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;max-width:720px;margin:0 auto}
 .pr-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
-.pr-fit{display:flex;align-items:center;gap:20px;max-width:760px;width:100%;margin:0 auto;padding:16px 22px;box-sizing:border-box;border-radius:18px;background:#F5F8FF;border:1px solid #E6EAF3}
+.pr-fit{display:flex;align-items:center;gap:20px;max-width:760px;width:100%;margin:0 auto;padding:16px 22px;box-sizing:border-box;border-radius:18px;background:#F5F8FF;border:1.5px solid #E6EAF3}
 .pr-fq{font-size:14px;font-weight:500;color:#3A4566;white-space:nowrap}
 .pr-range{flex:1;-webkit-appearance:none;appearance:none;height:6px;border-radius:9px;background:linear-gradient(90deg,#1652F0 var(--p),#DCE5FB var(--p));outline:none;cursor:pointer;margin:0}
 .pr-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:999px;background:#FFFFFF;border:2px solid #1652F0;box-shadow:0 6px 14px -6px rgba(22,82,240,.6);cursor:grab}
@@ -677,7 +692,6 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .pr-pro{background:#0B1433;isolation:isolate;overflow:hidden;border-color:#0B1433;color:#FFFFFF}
 .pr-pro.pr-card-fit{border-color:#4C7DFF;box-shadow:0 0 0 6px rgba(22,82,240,.14),0 36px 70px -36px rgba(11,20,51,.8)}
 .pr-top{display:flex;align-items:center;justify-content:space-between;gap:6px 8px;min-height:26px;margin:-2px 0 -4px}
-.pr-badge{height:26px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.14);color:#FFFFFF;display:inline-flex;align-items:center;font-size:12px;font-weight:500}
 .pr-name{font-size:13px;font-weight:600;letter-spacing:1.6px;color:#8A93AD}
 .pr-pro .pr-name{color:#9DB8F7}
 .pr-dlp{display:flex;align-items:baseline;gap:8px}
@@ -691,17 +705,10 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .pr-feat li{display:flex;align-items:center;gap:9px;font-size:14px}
 .pr-ck{width:18px;height:18px;border-radius:999px;background:#EAF0FF;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .pr-pro .pr-ck{background:rgba(255,255,255,.14)}
-.pr-btn{margin-top:auto;height:46px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:10px;font-size:15px;font-weight:600;text-decoration:none;border:1.5px solid #D6DDEE;color:#0B1433;background:#FFFFFF;transition:background .2s ease,border-color .2s ease,color .2s ease}
-.pr-btn:hover{border-color:#1652F0}
-.pr-card-fit .pr-btn{background:#1652F0;border-color:#1652F0;color:#FFFFFF}
-.pr-card-fit .pr-btn:hover{background:#0E3BB8}
-.pr-pro .pr-btn{background:transparent;color:#FFFFFF;border-color:rgba(255,255,255,.3)}
-.pr-pro.pr-card-fit .pr-btn{background:#FFFFFF;color:#0B1433;border-color:#FFFFFF}
-.pr-btn:focus-visible,.pr-more:focus-visible,.pr-tab:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.pr-btn{margin-top:auto;width:100%}
+.pr-btn.ds-btn{justify-content:space-between}
 .pr-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .pr-ent{font-size:15px;color:#3A4566}
-.pr-ent a{color:#1652F0;font-weight:600;text-decoration:none}
-.pr-more{height:42px;padding:0 16px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;cursor:pointer}
 .pr-more svg{transition:transform .3s ease}
 .pr-open svg{transform:rotate(180deg)}
 .pr-table{width:100%;border-collapse:collapse;font-size:14px}
@@ -709,11 +716,9 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .pr-table th{font-size:12px;font-weight:600;letter-spacing:1px;color:#8A93AD}
 .pr-table td:not(:first-child),.pr-table th:not(:first-child){text-align:center}
 .pr-table td:first-child{color:#3A4566}
-.pr-tip{position:relative;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;margin-left:4px;border-radius:999px;border:1.5px solid currentColor;font-size:11px;font-weight:600;opacity:.6;cursor:help;vertical-align:2px}
-.pr-tip:hover::after,.pr-tip:focus::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);width:220px;padding:10px 12px;border-radius:10px;background:#0B1433;color:#FFFFFF;font-size:12px;font-weight:400;line-height:1.45;text-align:left;z-index:5;opacity:1}
 @media (max-width: 1080px){.pr-card{padding:22px 20px}.pr-big{font-size:34px}.pr-top{flex-wrap:wrap}.tx-sub,.ec-p{max-width:none !important}}
 @media (max-width: 860px) and (min-width: 761px){.ci-br{display:none}}
-@media (max-width: 960px) and (min-width: 761px){.pr-badge{padding:0 8px;font-size:11px}.pr-hrs{letter-spacing:-.1px}.pr-cards{gap:12px}.pr-card{padding:22px 18px}.pr-feat li{font-size:13px}}
+@media (max-width: 960px) and (min-width: 761px){.pr-top .ds-tag{padding:0 8px;font-size:11px}.pr-hrs{letter-spacing:-.1px}.pr-cards{gap:12px}.pr-card{padding:22px 18px}.pr-feat li{font-size:13px}}
 @media (max-width: 760px){
 .pr-wrap{padding:80px 20px !important;gap:22px !important}
 .pr-h2{font-size:30px !important;letter-spacing:-.8px !important}
@@ -721,16 +726,14 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .pr-fit{flex-wrap:wrap;gap:10px 12px;padding:14px 16px}
 .pr-fq{width:100%;font-size:13px}
 .pr-fv{min-width:0}
-.pr-tabs{display:flex;gap:4px;padding:4px;border-radius:999px;background:#F1F3F8}
-.pr-tab{flex:1;height:38px;border:none;border-radius:999px;background:transparent;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:500;color:#5B6582;cursor:pointer}
-.pr-tab-on{background:#FFFFFF;color:#0B1433;box-shadow:0 4px 10px -6px rgba(11,20,51,.3)}
+.pr-tabs{display:flex;gap:8px}
+.pr-tabs .ds-chip{flex:1}
 .pr-cards{grid-template-columns:minmax(0,1fr)}
 .pr-card{display:none;padding:22px 20px;gap:12px}
 .pr-card-show{display:flex}
 .pr-card-fit{transform:none}
 .pr-desc{min-height:0}
 .pr-foot{flex-direction:column;align-items:stretch;text-align:center}
-.pr-more{justify-content:center}
 .pr-tablewrap{overflow-x:auto;margin:0 -20px;padding:0 20px}
 .pr-table{font-size:13px;min-width:460px}
 }
@@ -750,13 +753,9 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 @keyframes fcRing{from{transform:scale(1);opacity:.8}to{transform:scale(1.7);opacity:0}}
 .fc-h2{position:relative;margin:10px 0 0;font-size:56px;line-height:1.04;font-weight:600;letter-spacing:-1.8px}
 .fc-sub{position:relative;margin:0;font-size:18px;line-height:1.6;color:rgba(255,255,255,.72)}
-.fc-form{position:relative;z-index:2;margin-top:14px;width:min(600px,100%);height:62px;box-sizing:border-box;padding:6px 6px 6px 22px;border-radius:999px;background:#FFFFFF;display:flex;align-items:center;gap:12px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6);transition:box-shadow .2s ease}
-.fc-form:focus-within{box-shadow:0 0 0 5px rgba(157,184,247,.45),0 30px 60px -30px rgba(0,0,0,.6)}
-.fc-input{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:'Google Sans',system-ui,sans-serif;font-size:17px;color:#0B1433}
-.fc-input::placeholder{color:#8A93AD}
-.fc-btn{height:50px;padding:0 6px 0 20px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:16px;font-weight:600;display:flex;align-items:center;gap:12px;cursor:pointer;flex-shrink:0;transition:background .2s ease}
-.fc-btn:hover{background:#0E3BB8}
-.fc-btn:focus-visible{outline:3px solid #FFFFFF;outline-offset:3px}
+.fc-form{position:relative;z-index:2;margin-top:14px;width:min(600px,100%);border-color:#FFFFFF;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.fc-form:focus-within{border-color:#FFFFFF;box-shadow:0 0 0 5px rgba(157,184,247,.45),0 30px 60px -30px rgba(0,0,0,.6)}
+.fc-form .ds-btn:focus-visible{outline-color:#FFFFFF}
 .fc-note{position:relative;z-index:2;display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.75)}
 .fc-note i{width:4px;height:4px;border-radius:9px;background:rgba(255,255,255,.45);display:block}
 @media (prefers-reduced-motion: reduce){.fc-horizon,.fc-mark::before{animation:none}}
@@ -768,11 +767,12 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .fc-mark img{width:30px;height:30px}
 .fc-h2{font-size:32px;letter-spacing:-.9px;margin-top:8px}
 .fc-sub{font-size:15px;max-width:300px}
-.fc-form{flex-direction:column;align-items:stretch;height:auto;padding:0;gap:10px;background:none;box-shadow:none;border-radius:0;margin-top:10px}
-.fc-form:focus-within{box-shadow:none}
-.fc-input{flex:none;height:52px;box-sizing:border-box;padding:0 20px;border-radius:999px;background:#FFFFFF;font-size:15px;box-shadow:0 20px 40px -24px rgba(0,0,0,.6)}
-.fc-input:focus{box-shadow:0 0 0 4px rgba(157,184,247,.45)}
-.fc-btn{justify-content:space-between;height:52px;padding:0 6px 0 22px;font-size:15px}
+.fc-form{flex-direction:column;align-items:stretch;height:auto;padding:0;gap:10px;background:none;border:none;box-shadow:none;border-radius:0;margin-top:10px}
+.fc-form:focus-within{border:none;box-shadow:none}
+.fc-form input{flex:none;height:52px;box-sizing:border-box;padding:0 20px;border-radius:999px;background:#FFFFFF;font-size:15px;box-shadow:0 20px 40px -24px rgba(0,0,0,.6)}
+.fc-form input:focus{box-shadow:0 0 0 4px rgba(157,184,247,.45)}
+.fc-form .ds-btn{justify-content:space-between;height:52px;padding:0 6px 0 22px;font-size:15px}
+.fc-form .ds-btn .ob-arrow{width:40px;height:40px}
 .fc-note{font-size:13px;margin-top:4px}
 }
 </style>
@@ -792,7 +792,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </nav>
 <div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0">
 <a class="lh-link lh-login" href="#" style="height: 44px; padding: 0 14px; border-radius: 999px; display: flex; align-items: center; font-size: 15px; font-weight: 600; color: #0B1433; text-decoration: none">Log in</a>
-<a class="lh-cta lh-join" href="#" style="height: 46px; padding: 0 20px; border-radius: 999px; display: flex; align-items: center; background: #1652F0; color: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none">Create account</a>
+<a class="ds-btn sm np" href="#">Create account</a>
 <button class="lh-menu" type="button" aria-label="Open menu" style="display: none; width: 44px; height: 44px; border-radius: 999px; border: none; background: transparent; color: #0B1433; align-items: center; justify-content: center; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 </div>
 </header>
@@ -802,13 +802,13 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 
 <p class="lh-sub lh-r3" style="margin: 12px 0 0; max-width: 720px; font-size: 18px; line-height: 1.55; color: #4A5578">Tell us your goal. We’ll build the path and help you prove it.</p>
 
-<form class="lh-search lh-r4" role="search" onSubmit="{{hero.onStart}}" style="margin-top: 24px; width: 100%; max-width: 660px; height: 62px; box-sizing: border-box; padding: 0 8px 0 0; display: flex; align-items: center; gap: 8px; background: #FFFFFF; border: 1.5px solid #D6DDEE; border-radius: 999px; box-shadow: 0 24px 60px -24px rgba(22,82,240,.4)">
-<label class="lh-field" for="lh-goal" style="flex-grow: 1; min-width: 0; display: flex; align-items: center; gap: 12px; padding: 0 0 0 24px; cursor: text">
+<form class="ds-ask lh-search lh-r4" role="search" onSubmit="{{hero.onStart}}" style="margin-top: 24px; width: 100%; max-width: 660px">
+<label class="lh-field" for="lh-goal" style="flex-grow: 1; min-width: 0; align-self: stretch; display: flex; align-items: center; gap: 12px; cursor: text">
 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M15.5 8.5l-2 5-5 2 2-5z"></path></svg>
 <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Who do you want to become?</span>
-<input class="lh-input" id="lh-goal" type="text" autocomplete="off" value="{{hero.goal}}" onChange="{{hero.onGoal}}" placeholder="Describe who you want to become" style="flex-grow: 1; min-width: 0; height: 48px; border: none; outline: none; background: transparent; font-family: 'Google Sans', system-ui, sans-serif; font-size: 17px; color: #0B1433">
+<input class="lh-input" id="lh-goal" type="text" autocomplete="off" value="{{hero.goal}}" onChange="{{hero.onGoal}}" placeholder="Describe who you want to become">
 </label>
-<button class="lh-cta lh-cta-main" type="submit" style="height: 48px; padding: 0 6px 0 20px; flex-shrink: 0; border: none; border-radius: 999px; background: #1652F0; color: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 12px; cursor: pointer">Start your journey<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg class="lh-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></button>
+<button class="ds-btn sm" type="submit"><span>Start your journey</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button>
 </form>
 
 
@@ -860,7 +860,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 
 <sc-if value="{{eng.mo.s3}}" hint-placeholder-val="{{ false }}">
 <div style="display: flex; gap: 8px; align-items: flex-start">
-<span aria-hidden="true" style="width: 28px; height: 28px; border-radius: 999px; flex-shrink: 0; background: radial-gradient(circle at 35% 30%, #8FB0FF, #1652F0 70%); box-shadow: 0 0 0 3px #EAF0FF"></span>
+<span class="nv-av sm" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span>
 <div style="flex: 1; min-width: 0; padding: 9px 11px; border-radius: 4px 14px 14px 14px; background: #F5F8FF; border: 1.5px solid #E6EAF3; font-size: 12px; line-height: 1.45; color: #0B1433">Here’s your route: foundations first, then real projects. I’ll adjust as you go.</div>
 </div>
 </sc-if>
@@ -909,7 +909,7 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 <span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 10px; background: #EAF0FF; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h16v11H4zM9 8V5h6v3"></path></svg></span>
 <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 13px; font-weight: 600">Junior Data Analyst</span><span style="font-size: 11px; color: #5B6582">Your next role</span></div>
 </div>
-<span style="align-self: flex-start; height: 26px; padding: 0 10px; border-radius: 999px; background: #F5F8FF; border: 1.5px solid #E6EAF3; display: inline-flex; align-items: center; font-size: 11px; font-weight: 500; color: #1652F0">Set a new goal</span>
+<span class="ds-tag blue" style="align-self: flex-start">Set a new goal</span>
 </div>
 </sc-if>
 </div>
@@ -927,8 +927,8 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">{{eng.cur.detail}}</p>
 </div>
 <div style="display: flex; align-items: center; gap: 12px">
-<button class="fd-btn" type="button" onClick="{{eng.prev}}" aria-label="Previous stage" style="width: 44px; height: 44px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #D6DDEE; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B1433" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
-<button class="fd-btn" type="button" onClick="{{eng.next}}" style="height: 44px; padding: 0 16px 0 18px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #D6DDEE; display: flex; align-items: center; gap: 8px; cursor: pointer; font-family: 'Google Sans', system-ui, sans-serif; font-size: 14px; font-weight: 600; color: #0B1433; white-space: nowrap">{{eng.nextLabel}}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B1433" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+<button class="ds-x" type="button" onClick="{{eng.prev}}" aria-label="Previous stage"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<button class="ds-ghost sm" type="button" onClick="{{eng.next}}">{{eng.nextLabel}}<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
 <div style="display: flex; gap: 4px; margin-left: 6px">
 <sc-for list="{{eng.stages}}" as="st" hint-placeholder-count="8">
 <button class="fd-dot" type="button" onClick="{{st.pick}}" aria-label="Stage {{st.n}}: {{st.name}}" style="width: {{st.barW}}; height: 8px; padding: 0; border: none; border-radius: 999px; background: {{st.bar}}; cursor: pointer; transition: width .35s ease, background .35s ease"></button>
@@ -951,9 +951,9 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 </div>
 <div style="display: flex; flex-direction: column; gap: 18px; padding-bottom: 6px">
 <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">Each format is built for a different kind of progress. Use one, or combine them into a single plan.</p>
-<a class="gc-coach" href="#" style="align-self: flex-start; height: 48px; padding: 0 18px 0 6px; border-radius: 999px; border: 1.5px solid #D6DDEE; background: #FFFFFF; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #0B1433; font-size: 14px; font-weight: 500">
-<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 999px; background: #FFFFFF url(/_blob/f81e36d31295a0d0737959589ec1abd4) center / 62% no-repeat; box-shadow: 0 0 0 1.5px #DCE5FB"></span>
-Not sure which? Ask your AI Coach
+<a class="ds-ghost nova-card gc-coach" href="#">
+<span class="nv-av" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span>
+Not sure? Ask Nova, your AI Coach
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
 </a>
 </div>
@@ -1080,11 +1080,11 @@ Not sure which? Ask your AI Coach
 <span style="font-size: 14px; font-weight: 500; color: #1652F0">AI learning experience</span>
 <h2 id="ac-h" class="ac-h2" style="margin: 0; font-size: 48px; line-height: 1.06; font-weight: 600; letter-spacing: -1.5px">AI woven into every step. Not a chatbot bolted on.</h2>
 </div>
-<p class="ac-sub" style="margin: 0 0 6px; font-size: 18px; line-height: 1.6; color: #4A5578">Your AI Coach knows your goal, your progress and the lesson in front of you. When a person would help more, it brings one in.</p>
+<p class="ac-sub" style="margin: 0 0 6px; font-size: 18px; line-height: 1.6; color: #4A5578">Nova knows your goal, your progress and the lesson in front of you, and brings in a person when that would help more.</p>
 </div>
 
 <div class="ac-tabwrap" style="display: flex; flex-direction: column; gap: 24px">
-<div class="ac-tabs" role="tablist" aria-label="What your AI Coach can do" style="display: flex; gap: 14px">
+<div class="ac-tabs" role="tablist" aria-label="What Nova can do" style="display: flex; gap: 14px">
 <sc-for list="{{coach.caps}}" as="c" hint-placeholder-count="7">
 <button class="ac-tab" type="button" role="tab" aria-selected="{{c.sel}}" onClick="{{c.pick}}" style="color: {{c.fg}}">{{c.label}}<span class="ac-seg"><span ref="{{c.seg}}" style="width: {{c.fill}}"></span></span></button>
 </sc-for>
@@ -1103,11 +1103,11 @@ Not sure which? Ask your AI Coach
 <div class="ac-bubble ac-q">{{coach.qShown}}<sc-if value="{{coach.typingQ}}" hint-placeholder-val="{{ false }}"><span class="ac-caret"></span></sc-if></div>
 </div>
 <div class="ac-rise ac-arow" style="display: flex; align-items: flex-start; gap: 12px; opacity: {{coach.aOp}}; transform: translateY({{coach.aY}})">
-<span class="ac-orb" aria-hidden="true"><sc-if value="{{coach.thinking}}" hint-placeholder-val="{{ false }}"><span class="ac-orb-ring"></span></sc-if></span>
+<span class="nv-av" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span>
 <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 13px; font-weight: 500; color: #8A93AD">Nova · your AI Coach</span>
+<span style="font-size: 13px; font-weight: 500; color: #8A93AD">Nova · Your AI Coach</span>
 <sc-if value="{{coach.thinking}}" hint-placeholder-val="{{ false }}">
-<div class="ac-bubble ac-a ac-think-b" style="padding: 14px 18px"><span class="ac-shimmer" style="font-size: 15px; font-weight: 500">{{coach.status}}</span></div>
+<div class="ac-bubble ac-a ac-think-b" style="padding: 14px 18px"><span class="nv-think" role="status"><span class="nv-orb" aria-hidden="true"><i></i></span><span class="nv-tt">{{coach.status}}</span></span></div>
 </sc-if>
 <sc-if value="{{coach.answered}}" hint-placeholder-val="{{ true }}">
 <div class="ac-bubble ac-a">{{coach.aShown}}<sc-if value="{{coach.typingA}}" hint-placeholder-val="{{ false }}"><span class="ac-caret" style="color: #1652F0"></span></sc-if></div>
@@ -1126,7 +1126,7 @@ Not sure which? Ask your AI Coach
 <div style="display: grid; grid-template-columns: 130px minmax(0, 1fr) 38px; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; color: #3A4566">Financial analyst<span style="height: 8px; border-radius: 9px; background: #EEF1F7; overflow: hidden"><span style="display: block; width: 81%; height: 100%; background: #7FA4FF; border-radius: 9px"></span></span><span style="font-size: 13px; color: #5B6582">81%</span></div>
 <div style="display: grid; grid-template-columns: 130px minmax(0, 1fr) 38px; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; color: #3A4566">Operations<span style="height: 8px; border-radius: 9px; background: #EEF1F7; overflow: hidden"><span style="display: block; width: 74%; height: 100%; background: #A9C2FF; border-radius: 9px"></span></span><span style="font-size: 13px; color: #5B6582">74%</span></div>
 </div>
-<div style="display: flex; gap: 8px"><span class="ac-btn" style="cursor: default">Set as my goal</span><span class="ac-btn ac-ghost" style="cursor: default">Compare roles</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="ds-btn sm np" style="cursor: default">Set as my goal</span><span class="ds-ghost sm" style="cursor: default">Compare roles</span></div>
 </div>
 </sc-if>
 
@@ -1141,7 +1141,7 @@ Not sure which? Ask your AI Coach
 <span style="display: flex; justify-content: space-between">You already know<span style="font-weight: 600; color: #0B1433">Spreadsheets</span></span>
 <span style="display: flex; justify-content: space-between">This unlocks<span style="font-weight: 600; color: #1652F0">Most analysis work</span></span>
 </div>
-<span class="ac-btn" style="cursor: default">Add to my journey</span>
+<span class="ds-btn sm np" style="cursor: default">Add to my journey</span>
 </div>
 </sc-if>
 
@@ -1155,7 +1155,7 @@ Not sure which? Ask your AI Coach
 <div style="display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #C9D7FA; background: #EAF0FF; color: #0B1433; font-weight: 600"><span style="padding: 10px 14px">Tunde</span><span style="padding: 10px 14px; color: #1652F0">NULL · no orders</span></div>
 </div>
 <span style="font-size: 13px; line-height: 1.5; color: #5B6582">The highlighted row is the one an INNER JOIN would drop.</span>
-<div style="display: flex; gap: 8px"><span class="ac-btn ac-ghost" style="cursor: default">Show me visually</span><span class="ac-btn ac-ghost" style="cursor: default">Give me an example</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="ds-ghost sm" style="cursor: default">Show me visually</span><span class="ds-ghost sm" style="cursor: default">Give me an example</span></div>
 </div>
 </sc-if>
 
@@ -1167,7 +1167,7 @@ Not sure which? Ask your AI Coach
 <div class="ac-plan" style="display: grid; grid-template-columns: 44px 90px minmax(0, 1fr); align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; background: {{r.bg}}; border: 1px solid {{r.bd}}; font-size: 13px"><span style="font-weight: 600; color: {{r.day}}">{{r.d}}</span><span style="color: #5B6582">{{r.t}}</span><span style="color: #0B1433">{{r.w}}</span></div>
 </sc-for>
 </div>
-<span class="ac-btn" style="cursor: default">Add to my calendar</span>
+<span class="ds-btn sm np" style="cursor: default">Add to my calendar</span>
 </div>
 </sc-if>
 
@@ -1176,7 +1176,7 @@ Not sure which? Ask your AI Coach
 <span class="ac-k">Your attempt · Total sales by region, 2025</span>
 <div style="padding: 14px 16px; border-radius: 12px; background: #0B1433; font-family: ui-monospace, Menlo, monospace; font-size: 13px; line-height: 1.75; color: #C9D7FA">SELECT region, SUM(total)<br>FROM orders<br>WHERE order_year = 2025<br><span style="display: inline-block; margin: 0 -6px; padding: 0 6px; border-radius: 4px; background: rgba(245,180,60,.18); color: #FFD27A">GROUP BY customer_id;</span></div>
 <div style="display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 12px; background: #FFF6E5; border: 1px solid #F4D98E; font-size: 13px; line-height: 1.5; color: #7A4B00"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B26A00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 1px"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5v.5"></path></svg>Filtering is right. Each row should represent a region, not a customer.</div>
-<div style="display: flex; gap: 8px"><span class="ac-btn ac-ghost" style="cursor: default">Give me a hint</span><span class="ac-btn ac-ghost" style="cursor: default">Try again</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="ds-ghost sm" style="cursor: default">Give me a hint</span><span class="ds-ghost sm" style="cursor: default">Try again</span></div>
 </div>
 </sc-if>
 
@@ -1185,10 +1185,10 @@ Not sure which? Ask your AI Coach
 <span class="ac-k">Your readiness, from your progress</span>
 <div style="display: flex; flex-direction: column; gap: 10px">
 <sc-for list="{{coach.ready}}" as="r" hint-placeholder-count="3">
-<div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; border-radius: 12px; border: 1px solid #E6EAF3; font-size: 14px"><span style="font-weight: 500">{{r.topic}}</span><span style="height: 26px; padding: 0 10px; border-radius: 999px; background: {{r.bg}}; color: {{r.fg}}; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500"><span style="width: 6px; height: 6px; border-radius: 9px; background: {{r.fg}}"></span>{{r.status}}</span></div>
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; border-radius: 12px; border: 1.5px solid #E6EAF3; font-size: 14px"><span style="font-weight: 500">{{r.topic}}</span><span class="ds-tag {{r.cls}}"><span style="width: 6px; height: 6px; border-radius: 9px; background: currentColor"></span>{{r.status}}</span></div>
 </sc-for>
 </div>
-<div style="display: flex; gap: 8px"><span class="ac-btn" style="cursor: default">Start practice quiz</span><span class="ac-btn ac-ghost" style="cursor: default">Review weak areas</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><span class="ds-btn sm np" style="cursor: default">Start practice quiz</span><span class="ds-ghost sm" style="cursor: default">Review weak areas</span></div>
 </div>
 </sc-if>
 
@@ -1204,7 +1204,7 @@ Not sure which? Ask your AI Coach
 <span class="ac-hand" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 10px; background: #F5F8FF; font-size: 13px; color: #3A4566"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>{{h}}</span>
 </sc-for>
 </div>
-<span class="ac-btn" style="cursor: default">Ask Tutor</span>
+<span class="ds-btn sm np" style="cursor: default">Ask Tutor</span>
 </div>
 </sc-if>
 
@@ -1228,11 +1228,11 @@ Not sure which? Ask your AI Coach
 <div class="tx-step {{s.cls}}" role="listitem"><span class="tx-num">{{s.n}}</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">{{s.t}}</span><span class="tx-sd">{{s.d}}</span></span></div>
 </sc-for>
 </div>
-<a class="tx-link" href="#">How validation works<span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+<a class="ds-ghost tx-link" href="#">How validation works<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 
 <div class="tx-stage" role="img" aria-label="A course comes apart into three layers, content, learning design and assessment. Each is checked, then the layers close and the Credalio seal is applied.">
-<span class="tx-pill {{tv.pillCls}}" aria-hidden="true">
+<span class="ds-tag lg tx-pill {{tv.pillCls}}" aria-hidden="true">
 <sc-if value="{{tv.pRun}}" hint-placeholder-val="{{ false }}"><span class="tx-spin"></span></sc-if>
 <sc-if value="{{tv.pOk}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if>
 <sc-if value="{{tv.pNone}}" hint-placeholder-val="{{ true }}"><span style="width: 12px; height: 12px; border-radius: 999px; border: 2px solid #CBD3E6; box-sizing: border-box"></span></sc-if>
@@ -1309,9 +1309,9 @@ Not sure which? Ask your AI Coach
 <div class="ld-stage" ref="{{ld.stageRef}}" role="group" aria-label="Completion compared with proof">
 
 <div class="ld-proof">
-<div class="ld-tag" style="right: 24px"><span class="ld-sub">Shows what you can actually do</span><span class="ld-pill" style="background: #1652F0; color: #FFFFFF">Proof</span></div>
+<div class="ld-tag" style="right: 24px"><span class="ld-sub">Shows what you can actually do</span><span class="ds-tag lg ld-pf">Proof</span></div>
 <div class="ld-mob ld-mob-p">
-<div class="ld-k"><span>Project · real brief</span><span class="ld-ok" style="height: 22px">Reviewed</span></div>
+<div class="ld-k"><span>Project · real brief</span><span class="ds-tag green" style="height: 22px">Reviewed</span></div>
 <span class="ld-t" style="font-size: 17px">Retail sales analysis</span>
 <svg viewBox="0 0 260 70" preserveAspectRatio="none" aria-hidden="true" style="width: 100%; height: 64px; display: block"><g fill="#C9D7FA"><rect x="6" y="38" width="34" height="32" rx="6"></rect><rect x="58" y="26" width="34" height="44" rx="6"></rect><rect x="110" y="32" width="34" height="38" rx="6"></rect><rect x="162" y="16" width="34" height="54" rx="6"></rect></g><rect x="214" y="4" width="34" height="66" rx="6" fill="#1652F0"></rect></svg>
 <div class="ld-mstats">
@@ -1339,20 +1339,20 @@ Not sure which? Ask your AI Coach
 <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0"><circle cx="32" cy="32" r="26" fill="none" stroke="#EAF0FF" stroke-width="7"></circle><circle cx="32" cy="32" r="26" fill="none" stroke="#1652F0" stroke-width="7" stroke-linecap="round" stroke-dasharray="140.5 163.4" transform="rotate(-90 32 32)"></circle><text x="32" y="37" text-anchor="middle" font-family="Google Sans, system-ui, sans-serif" font-size="15" font-weight="600" fill="#0B1433">86%</text></svg>
 <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0"><span class="ld-t">Data analysis test</span><span class="ld-hide-m" style="font-size: 12px; color: #5B6582">Pass mark 70%</span></span>
 </div>
-<span class="ld-ok">Passed</span>
+<span class="ds-tag green">Passed</span>
 </div>
 
 <div class="ld-card ld-c3">
 <div class="ld-k"><span>Practical activity</span></div>
 <div style="flex: 1; border-radius: 10px; background: #F5F8FF; border: 1px solid #E6EAF3; padding: 10px 12px; font-family: ui-monospace, Menlo, monospace; font-size: 12px; line-height: 1.7; color: #3A4566">SELECT region,<br>  SUM(total)<br>FROM orders<br><span style="color: #1652F0; font-weight: 600">GROUP BY</span> region;</div>
-<span class="ld-ok">Query runs</span>
+<span class="ds-tag green">Query runs</span>
 </div>
 
 <div class="ld-card ld-c4">
 <div class="ld-k"><span>Simulation</span></div>
 <span style="align-self: flex-start; max-width: 92%; padding: 8px 11px; border-radius: 12px 12px 12px 4px; background: #F1F3F8; font-size: 12px; line-height: 1.45; color: #3A4566">“Can you have the report by Monday?”</span>
 <span style="align-self: flex-end; max-width: 92%; padding: 8px 11px; border-radius: 12px 12px 4px 12px; background: #1652F0; color: #FFFFFF; font-size: 12px; line-height: 1.45">“Wednesday, with the data checked.”</span>
-<span class="ld-ok" style="margin-top: auto">Handled well</span>
+<span class="ds-tag green" style="margin-top: auto">Handled well</span>
 </div>
 
 <div class="ld-card ld-c5">
@@ -1370,14 +1370,14 @@ Not sure which? Ask your AI Coach
 <svg width="104" height="104" viewBox="0 0 100 100" aria-hidden="true" style="filter: drop-shadow(0 16px 18px rgba(22,82,240,.3))"><defs><linearGradient id="ldSg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C7DFF"></stop><stop offset=".55" stop-color="#1652F0"></stop><stop offset="1" stop-color="#0E3BB8"></stop></linearGradient></defs><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="url(#ldSg)"></path><circle cx="50" cy="50" r="22" fill="#FFFFFF"></circle><path d="M40 50.5l7 7 13-13.5" fill="none" stroke="#1652F0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 <span class="ld-t" style="font-size: 18px; margin-top: 6px">SQL Practitioner</span>
 <span class="ld-hide-m" style="font-size: 12px; color: #5B6582">Issued by Credalio · Oct 2026</span>
-<span class="ld-ok" style="align-self: center">Verified<span class="ld-hide-m">· anyone can check</span></span>
+<span class="ds-tag green" style="align-self: center">Verified<span class="ld-hide-m">· anyone can check</span></span>
 </div>
 
 </div>
 </div>
 
 <div class="ld-done" aria-hidden="true">
-<div class="ld-tag" style="left: 24px"><span class="ld-pill" style="background: #FFFFFF; color: #5B6582; border: 1px solid #DFE2EA">Completion</span><span class="ld-sub" style="color: #8A90A3">Says you showed up</span></div>
+<div class="ld-tag" style="left: 24px"><span class="ds-tag lg line" style="color: #5B6582">Completion</span><span class="ld-sub" style="color: #8A90A3">Says you showed up</span></div>
 <div class="ld-mob ld-mob-d">
 <div class="ld-k"><span>Course</span><span class="ld-gtick"><span class="ld-gt"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9AA0B1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Completed</span></div>
 <span class="ld-t ld-gtx" style="font-size: 17px">Data Foundations</span>
@@ -1416,8 +1416,8 @@ Not sure which? Ask your AI Coach
 <div class="bp-wallet">
 <div class="bp-whead"><span class="bp-av" style="background: #EAF0FF; color: #1652F0">MR</span><b>Maya’s Backpack</b><span class="bp-wsep"></span><span class="bp-wok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>5 items, all verified</span></div>
 <sc-for list="{{bp.cards}}" as="c" hint-placeholder-count="5">
-<div class="bp-card {{c.cls}}" style="transform: {{c.tf}}; z-index: {{c.z}}; background: {{c.bg}}; color: {{c.fg}}; border: 1px solid {{c.bd}}">
-<div class="bp-type"><span>{{c.type}}</span><span class="bp-vchip" style="background: {{c.chipBg}}; color: {{c.chipFg}}"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Verified</span></div>
+<div class="bp-card {{c.cls}}" style="transform: {{c.tf}}; z-index: {{c.z}}; background: {{c.bg}}; color: {{c.fg}}; border: 1.5px solid {{c.bd}}">
+<div class="bp-type"><span>{{c.type}}</span><span class="ds-tag {{c.chipCls}} bp-vchip"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Verified</span></div>
 <span class="bp-title">{{c.title}}</span>
 <div class="bp-meta"><span>{{c.meta}}</span><span style="font-weight: 600; letter-spacing: .2px">credalio</span></div>
 </div>
@@ -1459,13 +1459,13 @@ Not sure which? Ask your AI Coach
 </div>
 <div style="display: flex; flex-direction: column; gap: 20px; padding-bottom: 6px">
 <p class="mk-p" style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">Courses, programs and simulations from people who do the work, each showing who made it and its validation status.</p>
-<a class="mk-link mk-link-d" href="#">Explore the marketplace<span style="width: 32px; height: 32px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+<a class="ds-btn mk-link" href="#"><span>Explore the marketplace</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
 </div>
 </div>
 
 <div class="mk-chips" role="group" aria-label="Browse by area">
 <sc-for list="{{mk.chips}}" as="c" hint-placeholder-count="8">
-<button class="mk-chip {{c.cls}}" type="button" aria-pressed="{{c.on}}" onClick="{{c.pick}}">{{c.label}}<span class="mk-n">{{c.n}}</span></button>
+<button class="ds-chip {{c.cls}}" type="button" aria-pressed="{{c.on}}" onClick="{{c.pick}}"><svg class="ck" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>{{c.label}}<i>{{c.n}}</i></button>
 </sc-for>
 </div>
 
@@ -1476,14 +1476,14 @@ Not sure which? Ask your AI Coach
 <a class="mk-card {{k.dim}}" href="#" tabIndex="{{k.tab}}" aria-hidden="{{k.hide}}">
 <div class="mk-thumb {{k.light}}" style="background: {{k.bg}}">
 <svg class="mk-ico" viewBox="0 0 24 24" fill="none" stroke="{{k.icoC}}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20" style="display: {{k.idata}}"></path><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" style="display: {{k.idesign}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{k.itech}}"></path><path d="M3 7h18v13H3zM8 7V4h8v3" style="display: {{k.ibiz}}"></path><path d="M12 3v18M17 7H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6" style="display: {{k.ifin}}"></path><path d="M3 12h4l2-5 4 10 2-5h6" style="display: {{k.ihealth}}"></path><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2 8 12.7 4 8.8l5.5-.8z" style="display: {{k.ilead}}"></path></svg>
-<span class="mk-fmt">{{k.fmt}}</span>
+<span class="ds-tag glass mk-fmt">{{k.fmt}}</span>
 </div>
 <div class="mk-body">
 <span class="mk-t">{{k.t}}</span>
 <span class="mk-by"><span class="mk-av" style="border-radius: {{k.avR}}; background: {{k.avBg}}; color: {{k.avFg}}">{{k.ini}}</span><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap"><b style="font-weight: 600; color: #0B1433">{{k.by}}</b> · {{k.kind}}</span></span>
 <div class="mk-foot"><span>{{k.meta}}</span>
-<sc-if value="{{k.ok}}" hint-placeholder-val="{{ true }}"><span class="mk-st mk-ok"><svg width="13" height="13" viewBox="0 0 100 100" aria-hidden="true"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>Validated</span></sc-if>
-<sc-if value="{{k.rv}}" hint-placeholder-val="{{ false }}"><span class="mk-st mk-rv"><span style="width: 10px; height: 10px; border-radius: 999px; border: 1.5px dashed #8A93AD; box-sizing: border-box; margin-left: 2px"></span>In review</span></sc-if>
+<sc-if value="{{k.ok}}" hint-placeholder-val="{{ true }}"><span class="ds-tag blue"><svg width="13" height="13" viewBox="0 0 100 100" aria-hidden="true"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>Validated</span></sc-if>
+<sc-if value="{{k.rv}}" hint-placeholder-val="{{ false }}"><span class="ds-tag"><span style="width: 10px; height: 10px; border-radius: 999px; border: 1.5px dashed #8A93AD; box-sizing: border-box; margin-left: 2px"></span>In review</span></sc-if>
 </div>
 </div>
 </a>
@@ -1510,11 +1510,11 @@ Not sure which? Ask your AI Coach
 <span class="ci-k">For creators and experts</span>
 <span class="ci-t">Share what you know.<br class="ci-br"> Earn from it.</span>
 <span class="ci-d">Build courses, certifications and career paths with AI help, get them validated, and earn when people learn.</span>
-<span class="ci-btn">Start creating<span class="ci-arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+<span class="ds-btn ci-btn"><span>Start creating</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></span>
 </div>
 <div class="ci-vis" aria-hidden="true">
 <div class="ci-win">
-<div class="ci-wk"><span>Creator Studio</span><span class="ci-chip" style="background: #EAF0FF; color: #1652F0"><svg width="11" height="11" viewBox="0 0 100 100"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>Validated</span></div>
+<div class="ci-wk"><span>Creator Studio</span><span class="ds-tag blue"><svg width="11" height="11" viewBox="0 0 100 100"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>Validated</span></div>
 <span style="font-size: 16px; font-weight: 600; letter-spacing: -.2px">SQL for Data Analysis</span>
 <div class="ci-row"><span class="ci-ck" style="background: #0F6B45"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Module 1 · Querying tables</div>
 <div class="ci-row"><span class="ci-ck" style="background: #0F6B45"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Module 2 · Joins</div>
@@ -1530,11 +1530,11 @@ Not sure which? Ask your AI Coach
 <span class="ci-k" style="color: #1652F0; opacity: 1">For institutions</span>
 <span class="ci-t">Bring your programs to Credalio.</span>
 <span class="ci-d" style="color: #3A4566; opacity: 1">Deliver programs, manage learners and educators, and issue verifiable credentials at scale.</span>
-<span class="ci-btn">Partner with Credalio<span class="ci-arr"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+<span class="ds-ghost ci-btn">Partner with Credalio<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
 </div>
 <div class="ci-vis" aria-hidden="true">
 <div class="ci-win">
-<div class="ci-wk"><span>Cohort 12 · Data Analysis</span><span class="ci-chip" style="background: #E7F5EE; color: #0F6B45"><span style="width: 6px; height: 6px; border-radius: 9px; background: #0F6B45"></span>Live</span></div>
+<div class="ci-wk"><span>Cohort 12 · Data Analysis</span><span class="ds-tag green"><span style="width: 6px; height: 6px; border-radius: 9px; background: #0F6B45"></span>Live</span></div>
 <div style="display: flex; align-items: center; justify-content: space-between"><span style="display: flex; padding-left: 7px"><span class="ci-av" style="background: #DCE5FB; color: #1652F0">AK</span><span class="ci-av" style="background: #1652F0; color: #FFFFFF">MS</span><span class="ci-av" style="background: #0B1433; color: #FFFFFF">PL</span><span class="ci-av" style="background: #EAF0FF; color: #1652F0; width: auto; padding: 0 7px">+245</span></span><span style="font-size: 12px; color: #5B6582">248 learners</span></div>
 <div style="display: flex; flex-direction: column; gap: 6px"><div style="display: flex; justify-content: space-between; font-size: 12px; color: #5B6582"><span>Average progress</span><b style="color: #0B1433; font-weight: 600">72%</b></div><div style="height: 8px; border-radius: 9px; background: #EEF1F7; overflow: hidden"><span style="display: block; width: 72%; height: 100%; background: #1652F0; border-radius: 9px"></span></div></div>
 <div class="ci-row"><span>Educators</span><b style="margin-left: auto; font-weight: 600; color: #0B1433">6</b></div>
@@ -1555,7 +1555,7 @@ Not sure which? Ask your AI Coach
 <span style="font-size: 14px; font-weight: 500; color: #1652F0">The Credalio ecosystem</span>
 <h2 id="ec-h" class="ec-h2">Built on infrastructure designed to last.</h2>
 <p class="ec-p" style="margin: 0; max-width: 470px; font-size: 18px; line-height: 1.6; color: #4A5578">You only need Credalio to learn. Underneath, three connected layers keep your identity secure, your learning delivered and the ecosystem running.</p>
-<span class="ec-mm" style="margin-top: 6px"><i>m</i>Part of the magnummeta ecosystem</span>
+<span class="ds-tag lg line ec-mm" style="margin-top: 6px"><i>m</i>Part of the magnummeta ecosystem</span>
 </div>
 
 <div class="ec-stack" ref="{{ec.stackRef}}" role="list" aria-label="The four layers of the ecosystem">
@@ -1568,7 +1568,7 @@ Not sure which? Ask your AI Coach
 <sc-if value="{{l.svg}}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="{{l.icoFg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{l.i1}}"></path><path d="M10 12.5l1.5 1.5 3-3" style="display: {{l.i1}}"></path><path d="M12 5v4M12 15v4M5 12h4M15 12h4M6.5 6.5l2.5 2.5M15 15l2.5 2.5M17.5 6.5L15 9M9 15l-2.5 2.5" style="display: {{l.i2}}"></path><circle cx="12" cy="12" r="2.2" style="display: {{l.i2}}"></circle><path d="M12 2l8.5 5v10L12 22l-8.5-5V7z" style="display: {{l.i3}}"></path><path d="M12 8l3.5 2v4L12 16l-3.5-2v-4z" style="display: {{l.i3}}"></path></svg></sc-if>
 </span>
 <span style="display: flex; flex-direction: column; gap: 1px; min-width: 0"><span style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap"><span class="ec-n">{{l.n}}</span><span class="ec-r">{{l.r}}</span></span><span class="ec-d">{{l.d}}</span></span>
-<sc-if value="{{l.here}}" hint-placeholder-val="{{ false }}"><span class="ec-here"><i></i>You are here</span></sc-if>
+<sc-if value="{{l.here}}" hint-placeholder-val="{{ false }}"><span class="ds-tag ec-here"><i></i>You are here</span></sc-if>
 </div>
 </sc-for>
 </div>
@@ -1582,7 +1582,7 @@ Not sure which? Ask your AI Coach
 <div class="pr-head">
 <span style="font-size: 14px; font-weight: 500; color: #1652F0">Flexible learning</span>
 <h2 id="pr-h" class="pr-h2">Start free. Choose how far you want to go.</h2>
-<p class="pr-p" style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">Every plan comes with a learning allowance<span class="pr-tip" tabindex="0" data-tip="Your allowance is measured in DLP. About 100 DLP covers one hour of eligible learning. Change plans any time.">i</span>. Pick one for how much you want to learn, and change it as you grow.</p>
+<p class="pr-p" style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">Every plan comes with a learning allowance<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Your allowance is measured in DLP. About 100 DLP covers one hour of eligible learning. Change plans any time.</span></span>. Pick one for how much you want to learn, and change it as you grow.</p>
 </div>
 
 <div class="pr-fit">
@@ -1593,14 +1593,14 @@ Not sure which? Ask your AI Coach
 
 <div class="pr-tabs" role="tablist" aria-label="Plans">
 <sc-for list="{{pr.plans}}" as="p" hint-placeholder-count="3">
-<button class="pr-tab {{p.tabCls}}" type="button" role="tab" aria-selected="{{p.sel}}" onClick="{{p.pick}}">{{p.label}}</button>
+<button class="ds-chip {{p.tabCls}}" type="button" role="tab" aria-selected="{{p.sel}}" onClick="{{p.pick}}"><svg class="ck" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>{{p.label}}</button>
 </sc-for>
 </div>
 
 <div class="pr-cards">
 <sc-for list="{{pr.plans}}" as="p" hint-placeholder-count="3">
 <div class="pr-card {{p.cls}}">
-<div class="pr-top"><span class="pr-name">{{p.name}}</span><sc-if value="{{p.best}}" hint-placeholder-val="{{ false }}"><span class="pr-badge">Best for deeper learning</span></sc-if></div>
+<div class="pr-top"><span class="pr-name">{{p.name}}</span><sc-if value="{{p.best}}" hint-placeholder-val="{{ false }}"><span class="ds-tag glass">Best for deeper learning</span></sc-if></div>
 <div class="pr-dlp"><span class="dlp-c dlp-lg"></span><span class="pr-big">{{p.dlp}}</span><span class="pr-unit">{{p.unit}}</span></div>
 <span class="pr-hrs">≈ {{p.hrs}} of eligible learning</span>
 <span class="pr-price">{{p.price}}</span>
@@ -1610,14 +1610,15 @@ Not sure which? Ask your AI Coach
 <li><span class="pr-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="{{p.ckC}}" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>{{f}}</li>
 </sc-for>
 </ul>
-<a class="pr-btn" href="#">{{p.cta}}</a>
+<sc-if value="{{p.fit}}" hint-placeholder-val="{{ false }}"><a class="ds-btn pr-btn" href="#"><span>{{p.cta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></sc-if>
+<sc-if value="{{p.nofit}}" hint-placeholder-val="{{ true }}"><a class="{{p.ghCls}} pr-btn" href="#">{{p.cta}}</a></sc-if>
 </div>
 </sc-for>
 </div>
 
 <div class="pr-foot">
-<span class="pr-ent">Need learning for your organisation? <a href="#">Explore Enterprise →</a></span>
-<button class="pr-more {{pr.moreCls}}" type="button" aria-expanded="{{pr.open}}" onClick="{{pr.toggle}}">{{pr.moreLabel}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+<span class="pr-ent">Need learning for your organisation? <a class="ds-link" href="#">Explore Enterprise →</a></span>
+<button class="ds-ghost sm pr-more {{pr.moreCls}}" type="button" aria-expanded="{{pr.open}}" onClick="{{pr.toggle}}">{{pr.moreLabel}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
 </div>
 
 <sc-if value="{{pr.showTable}}" hint-placeholder-val="{{ false }}">
@@ -1644,10 +1645,10 @@ Not sure which? Ask your AI Coach
 <span class="fc-mark" aria-hidden="true"><img src="/_blob/f81e36d31295a0d0737959589ec1abd4" alt="" width="42" height="42"></span>
 <h2 id="fc-h" class="fc-h2">Your next version starts here.</h2>
 <p class="fc-sub">Tell Credalio who you want to become. We’ll help you build the path.</p>
-<form class="fc-form" onSubmit="{{fc.onStart}}">
+<form class="ds-ask fc-form" onSubmit="{{fc.onStart}}">
 <label for="fc-goal" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Who do you want to become?</label>
-<input id="fc-goal" class="fc-input" type="text" placeholder="{{fc.ph}}" value="{{fc.goal}}" onInput="{{fc.onGoal}}" autocomplete="off">
-<button class="fc-btn" type="submit">Start your journey<span style="width: 38px; height: 38px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></button>
+<input id="fc-goal" type="text" placeholder="{{fc.ph}}" value="{{fc.goal}}" onInput="{{fc.onGoal}}" autocomplete="off">
+<button class="ds-btn sm" type="submit"><span>Start your journey</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button>
 </form>
 <span class="fc-note">Free to start<i></i>No card needed</span>
 </div>
@@ -1664,7 +1665,7 @@ Not sure which? Ask your AI Coach
 <div class="ft-news">
 <span class="ft-h">Stay in the loop</span>
 <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #4A5578">New courses, career paths and stories from people becoming who they want to be.</p>
-<form class="ft-form" onSubmit="{{hero.onStart}}"><label for="ft-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Email address</label><input id="ft-email" class="ft-input" type="email" placeholder="Your email address" autocomplete="email"><button class="ft-btn" type="submit" aria-label="Subscribe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></form>
+<form class="ds-ask sm ft-form" onSubmit="{{hero.onStart}}"><label for="ft-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Email address</label><input id="ft-email" type="email" placeholder="Your email address" autocomplete="email"><button class="ds-send" type="submit" aria-label="Subscribe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></form>
 </div>
 </div>
 <div class="ft-art" aria-hidden="true">
@@ -1994,13 +1995,13 @@ class CoachPart extends Part {
     var self = this;
     this.segRefs = [0, 1, 2, 3, 4, 5, 6].map(function (k) { return function (e) { self.segs[k] = e; }; });
     this.D = [
-      { label: 'Identify goals', q: 'I like working with numbers, but I’m not sure which career fits me.', a: 'Let’s narrow it down. Three directions stand out from what you enjoy. Data analysis is the strongest match.', st: ['Reading what you enjoy…', 'Matching roles to your strengths…', 'Ranking the best fits…'] },
-      { label: 'Recommend learning', q: 'I want to become a data analyst. What should I learn next?', a: 'SQL is your strongest next step. You already know spreadsheets, and SQL unlocks most of the analysis work you’ll do.', st: ['Checking your goal…', 'Looking at your current skills…', 'Finding the best next course…'] },
-      { label: 'Explain lessons', q: 'I don’t understand why we’re using a LEFT JOIN here.', a: 'A LEFT JOIN keeps every customer, even those with no orders yet. An INNER JOIN would drop them, and you’d lose sight of who hasn’t bought.', st: ['Opening lesson 4…', 'Reading the query…', 'Building an example…'] },
-      { label: 'Create study plans', q: 'I have six hours a week and want to finish this course in a month.', a: 'That works. Shorter lessons on weekdays, a longer session on Saturday, and Sunday for practice so it sticks.', st: ['Checking what’s left in the course…', 'Fitting it into six hours a week…', 'Balancing lessons and practice…'] },
-      { label: 'Support practice', q: 'Here’s my attempt. Can you check it?', a: 'You’re close. Your filtering is correct, but look again at how you’re grouping the results.', st: ['Running your query…', 'Comparing it with the task…', 'Finding the one thing to fix…'] },
-      { label: 'Prepare for assessments', q: 'I have my assessment tomorrow. Help me prepare.', a: 'From your modules and practice results, I’d focus on these three areas tonight.', st: ['Reviewing your modules…', 'Checking your practice scores…', 'Spotting your weak areas…'] },
-      { label: 'Escalate to a human tutor', q: 'I’m still confused.', a: 'We’ve tried two explanations and a worked example. A tutor may help more here. I’ll pass everything on.', st: ['Looking at what we’ve tried…', 'Finding an available tutor…', 'Preparing your handover…'] }
+      { label: 'Identify goals', q: 'I like working with numbers, but I’m not sure which career fits me.', a: 'Let’s narrow it down. Three directions stand out from what you enjoy. Data analysis is the strongest match.', st: ['Nova is reading what you enjoy…', 'Nova is matching roles to your strengths…', 'Nova is ranking the best fits…'] },
+      { label: 'Recommend learning', q: 'I want to become a data analyst. What should I learn next?', a: 'SQL is your strongest next step. You already know spreadsheets, and SQL unlocks most of the analysis work you’ll do.', st: ['Nova is checking your goal…', 'Nova is looking at your current skills…', 'Nova is finding the best next course…'] },
+      { label: 'Explain lessons', q: 'I don’t understand why we’re using a LEFT JOIN here.', a: 'A LEFT JOIN keeps every customer, even those with no orders yet. An INNER JOIN would drop them, and you’d lose sight of who hasn’t bought.', st: ['Nova is opening lesson 4…', 'Nova is reading the query…', 'Nova is building an example…'] },
+      { label: 'Create study plans', q: 'I have six hours a week and want to finish this course in a month.', a: 'That works. Shorter lessons on weekdays, a longer session on Saturday, and Sunday for practice so it sticks.', st: ['Nova is checking what’s left in the course…', 'Nova is fitting it into six hours a week…', 'Nova is balancing lessons and practice…'] },
+      { label: 'Support practice', q: 'Here’s my attempt. Can you check it?', a: 'You’re close. Your filtering is correct, but look again at how you’re grouping the results.', st: ['Nova is running your query…', 'Nova is comparing it with the task…', 'Nova is finding the one thing to fix…'] },
+      { label: 'Prepare for assessments', q: 'I have my assessment tomorrow. Help me prepare.', a: 'From your modules and practice results, I’d focus on these three areas tonight.', st: ['Nova is reviewing your modules…', 'Nova is checking your practice scores…', 'Nova is spotting your weak areas…'] },
+      { label: 'Escalate to a human tutor', q: 'I’m still confused.', a: 'We’ve tried two explanations and a worked example. A tutor may help more here. I’ll pass everything on.', st: ['Nova is looking at what we’ve tried…', 'Nova is finding an available tutor…', 'Nova is preparing your handover…'] }
     ];
   }
   componentDidMount() {
@@ -2035,7 +2036,7 @@ class CoachPart extends Part {
       artOp: ph === 'show' ? 1 : 0, artY: ph === 'show' ? '0px' : '20px', artS: ph === 'show' ? 1 : 0.98,
       girlY: ph === 'think' ? '-6px' : '0px',
       plan: [['Mon', '45 min', 'Lesson 5 and a short quiz'], ['Wed', '60 min', 'Lessons 6 and 7'], ['Sat', '2 hrs', 'Module project'], ['Sun', '2 hrs 15 min', 'Practice and review']].map(function (r, k) { return { d: r[0], t: r[1], w: r[2], bg: k === 2 ? '#EAF0FF' : '#FFFFFF', bd: k === 2 ? '#C9D7FA' : '#E6EAF3', day: k === 2 ? '#1652F0' : '#0B1433' }; }),
-      ready: [['Joins', 'Ready', '#E7F5EE', '#0F6B45'], ['GROUP BY', 'Review', '#FFF6E5', '#B26A00'], ['Subqueries', 'Practise more', '#FFF6E5', '#B26A00']].map(function (r) { return { topic: r[0], status: r[1], bg: r[2], fg: r[3] }; }),
+      ready: [['Joins', 'Ready', 'green'], ['GROUP BY', 'Review', 'amber'], ['Subqueries', 'Practise more', 'amber']].map(function (r) { return { topic: r[0], status: r[1], cls: r[2] }; }),
       handoff: ['Your question', 'Our conversation', 'The lesson you’re on', 'What we’ve tried']
     };
     for (var k = 1; k <= 7; k++) v['k' + k] = S.i === k - 1;
@@ -2080,7 +2081,7 @@ class TrustPart extends Part {
       sealCls: s === 6 ? 'tx-seal-on' : '',
       steps: S.map(function (r, k) { var c = k + 2; return { n: k + 1, t: r[0], d: r[1], cls: s === c ? 'tx-step-run' : (s > c ? 'tx-step-done' : 'tx-step-wait') }; }),
       pill: s === 0 ? 'Not yet validated' : (s < 6 ? 'Review in progress' : 'Credalio Validated'),
-      pillCls: s === 0 ? '' : (s < 6 ? 'tx-pill-run' : 'tx-pill-ok'), pNone: s === 0, pRun: s > 0 && s < 6, pOk: s === 6,
+      pillCls: s === 0 ? 'line' : (s < 6 ? 'blue' : 'green'), pNone: s === 0, pRun: s > 0 && s < 6, pOk: s === 6,
       cap: caps[s], capFg: s === 6 ? '#0F6B45' : '#5B6582'
     };
   }
@@ -2130,11 +2131,11 @@ class BackpackPart extends Part {
     var self = this;
     this.setRoot = function (e) { self.root = e; };
     this.C = [
-      { type: 'Professional credential', title: 'Professional Certificate in Data Analysis', meta: 'Issued 14 Oct 2026', bg: 'linear-gradient(150deg,#1C3AA8 0%,#0B1433 100%)', fg: '#FFFFFF', bd: 'rgba(255,255,255,.08)', chipBg: 'rgba(255,255,255,.14)', chipFg: '#FFFFFF', id: '4F2-91' },
-      { type: 'Certificate', title: 'Data Foundations: spreadsheets to SQL', meta: 'Course · 10 hrs', bg: 'linear-gradient(150deg,#4C7DFF 0%,#1652F0 100%)', fg: '#FFFFFF', bd: 'rgba(255,255,255,.12)', chipBg: 'rgba(255,255,255,.18)', chipFg: '#FFFFFF', id: '7C1-04' },
-      { type: 'Badge', title: 'SQL Practitioner', meta: 'Skill badge · Oct 2026', bg: '#FFFFFF', fg: '#0B1433', bd: '#E3E8F3', chipBg: '#E7F5EE', chipFg: '#0F6B45', id: '2B8-55' },
-      { type: 'Completed project', title: 'Retail sales analysis', meta: 'Reviewed by a mentor', bg: 'linear-gradient(150deg,#EAF0FF 0%,#DCE5FB 100%)', fg: '#0B1433', bd: '#C9D7FA', chipBg: '#FFFFFF', chipFg: '#0F6B45', id: '9D3-12' },
-      { type: 'Verified achievement', title: 'Practical assessment: data cleaning', meta: 'Validated assessment · 91%', bg: '#FFFFFF', fg: '#0B1433', bd: '#E3E8F3', chipBg: '#E7F5EE', chipFg: '#0F6B45', id: '5A6-38' }
+      { type: 'Professional credential', title: 'Professional Certificate in Data Analysis', meta: 'Issued 14 Oct 2026', bg: 'linear-gradient(150deg,#1C3AA8 0%,#0B1433 100%)', fg: '#FFFFFF', bd: 'rgba(255,255,255,.08)', chipCls: 'glass', id: '4F2-91' },
+      { type: 'Certificate', title: 'Data Foundations: spreadsheets to SQL', meta: 'Course · 10 hrs', bg: 'linear-gradient(150deg,#4C7DFF 0%,#1652F0 100%)', fg: '#FFFFFF', bd: 'rgba(255,255,255,.12)', chipCls: 'glass', id: '7C1-04' },
+      { type: 'Badge', title: 'SQL Practitioner', meta: 'Skill badge · Oct 2026', bg: '#FFFFFF', fg: '#0B1433', bd: '#E6EAF3', chipCls: 'green', id: '2B8-55' },
+      { type: 'Completed project', title: 'Retail sales analysis', meta: 'Reviewed by a mentor', bg: 'linear-gradient(150deg,#EAF0FF 0%,#DCE5FB 100%)', fg: '#0B1433', bd: '#C9D7FA', chipCls: 'green', id: '9D3-12' },
+      { type: 'Verified achievement', title: 'Practical assessment: data cleaning', meta: 'Validated assessment · 91%', bg: '#FFFFFF', fg: '#0B1433', bd: '#E6EAF3', chipCls: 'green', id: '5A6-38' }
     ];
     this.D = [
       { who: 'Hiring manager', org: 'Northwind Analytics', ini: 'NA', avBg: '#0B1433', avFg: '#FFFFFF' },
@@ -2165,7 +2166,7 @@ class BackpackPart extends Part {
     var cards = this.C.map(function (c, k) {
       var d = (k - S.front + 5) % 5;
       var tf = 'translateY(' + (-d * peek) + 'px) scale(' + (1 - d * 0.045).toFixed(3) + ')';
-      return { type: c.type, title: c.title, meta: c.meta, bg: c.bg, fg: c.fg, bd: c.bd, chipBg: c.chipBg, chipFg: c.chipFg, tf: tf, z: 10 - d, cls: (d === 0 ? 'bp-card-front' : '') + (d >= 3 ? ' bp-deep' : '') };
+      return { type: c.type, title: c.title, meta: c.meta, bg: c.bg, fg: c.fg, bd: c.bd, chipCls: c.chipCls, tf: tf, z: 10 - d, cls: (d === 0 ? 'bp-card-front' : '') + (d >= 3 ? ' bp-deep' : '') };
     });
     var fc = this.C[S.front], dd = this.D[S.dest];
     var beatOn = S.step <= 1 ? 0 : (S.step === 2 ? 1 : 2);
@@ -2218,7 +2219,7 @@ class MarketPart extends Part {
     var r1 = this.L;
     var row = function (list, cls) { return { cls: cls, items: list.map(function (c) { return card(c, false); }).concat(list.map(function (c) { return card(c, true); })) }; };
     return {
-      chips: areas.map(function (a) { var n = a === 'All' ? self.L.length : self.L.filter(function (c) { return c.a === a; }).length; return { label: a, n: n, on: a === A ? 'true' : 'false', cls: a === A ? 'mk-chip-on' : '', pick: function () { self.setState({ area: a }); } }; }),
+      chips: areas.map(function (a) { var n = a === 'All' ? self.L.length : self.L.filter(function (c) { return c.a === a; }).length; return { label: a, n: n, on: a === A ? 'true' : 'false', cls: a === A ? 'on' : '', pick: function () { self.setState({ area: a }); } }; }),
       rows: [row(r1, '')]
     };
   }
@@ -2295,7 +2296,7 @@ class PricePart extends Part {
         return { label: p.label, name: p.name, dlp: p.dlp, unit: p.unit, hrs: p.hrs, price: p.price, desc: p.desc, feats: p.feats, cta: p.cta, best: !!p.pro,
           ckC: p.pro ? '#FFFFFF' : '#1652F0',
           cls: (p.pro ? 'pr-pro ' : '') + (k === fit ? 'pr-card-fit pr-card-show' : ''),
-          tabCls: k === fit ? 'pr-tab-on' : '', sel: k === fit ? 'true' : 'false',
+          tabCls: k === fit ? 'on' : '', sel: k === fit ? 'true' : 'false', fit: k === fit, nofit: k !== fit, ghCls: p.pro ? 'ds-ghost dk' : 'ds-ghost',
           pick: function () { self.setState({ hours: p.set }); } };
       }),
       open: this.state.open ? 'true' : 'false', showTable: this.state.open, moreCls: this.state.open ? 'pr-open' : '',

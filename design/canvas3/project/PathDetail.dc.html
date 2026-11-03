@@ -11,14 +11,55 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-btn.np{padding:0 22px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-chip{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:40px;padding:0 16px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:border-color .2s ease,background .2s ease}
+.ds-chip:hover{border-color:#1652F0;background:#F5F8FF}
+.ds-chip .ck{display:none}
+.ds-chip.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-chip.on .ck{display:block}
+.ds-chip.sm{height:34px;padding:0 13px;font-size:13px}
+.ds-chip i{font-style:normal;font-size:12px;color:#8A93AD}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-mbar{display:none}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.ds-chip:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
 .dlp-c{position:relative;display:inline-block;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(0,0,0,0) 61%,rgba(150,96,0,.5) 64%,rgba(0,0,0,0) 69%),radial-gradient(circle at 34% 28%,#FFF6CF 0%,#F9DC7A 30%,#EAB534 62%,#C38712 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),inset 0 -1.5px 1px rgba(130,80,0,.35),0 1.5px 0 #A86F06,0 3px 5px -2px rgba(110,70,0,.55);vertical-align:-3px;animation:dlpFlip 6s ease-in-out infinite}
 .dlp-c::before{content:"D";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Google Sans',system-ui,sans-serif;font-size:10px;font-weight:700;line-height:1;transform:translateY(.6px);box-sizing:border-box;color:#8A5A00;text-shadow:0 1px 0 rgba(255,246,207,.85)}
 .dlp-c::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.75) 48%,rgba(255,255,255,0) 60%);background-size:250% 100%;background-position:120% 0;animation:dlpShine 6s ease-in-out infinite;pointer-events:none}
-.dlp-lg{width:26px;height:26px;vertical-align:-5px}
-.dlp-lg::before{font-size:14px;transform:none}
 @keyframes dlpFlip{0%,70%{transform:rotateY(0)}82%{transform:rotateY(180deg)}94%,100%{transform:rotateY(360deg)}}
 @keyframes dlpShine{0%,30%{background-position:120% 0}48%,100%{background-position:-20% 0}}
 @media (prefers-reduced-motion: reduce){.dlp-c,.dlp-c::after{animation:none}}
+@media (max-width: 960px){
+.ds-chip{height:36px;font-size:13.5px;padding:0 14px}
+.ds-chip.sm{height:32px;font-size:12.5px;padding:0 12px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
+}
+@media (max-width: 760px){
+.ds-mbar{display:flex;flex-direction:column-reverse;align-items:stretch;gap:4px;position:sticky;bottom:0;z-index:20;margin:28px -20px 0;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7}
+.ds-mbar .ds-btn{width:100%;justify-content:space-between}
+.ds-mbar .ds-link{justify-content:center;min-height:40px}
+}
 h1,h2,h3,p{text-wrap:pretty}
 @media (min-width: 761px){p{text-wrap:balance}}
 .sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -29,12 +70,10 @@ h1,h2,h3,p{text-wrap:pretty}
 .sx-link{height:40px;padding:0 12px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:500;color:#3A4566;text-decoration:none;white-space:nowrap;transition:color .2s ease,background .2s ease}
 .sx-link:hover{color:#0B1433;background:#F5F8FF}
 .sx-link-on{color:#0B1433;background:#EAF0FF}
-.sx-cta{height:44px;padding:0 20px;border-radius:999px;display:flex;align-items:center;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease}
-.sx-cta:hover{background:#0E3BB8}
 .sx-dlp{height:36px;padding:0 12px 0 8px;border-radius:999px;background:#F5F8FF;border:1px solid #DCE5FB;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#0B1433;text-decoration:none;white-space:nowrap}
 .sx-av{width:40px;height:40px;border-radius:999px;background:#DCE5FB;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
 .sx-menu{display:none;width:44px;height:44px;border-radius:999px;border:none;background:transparent;color:#0B1433;align-items:center;justify-content:center;cursor:pointer}
-.sx-link:focus-visible,.sx-cta:focus-visible,.sx-menu:focus-visible,.sx-dlp:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.sx-link:focus-visible,.sx-menu:focus-visible,.sx-dlp:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .pd-top{background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / max(1440px,100%) auto no-repeat}
 .pd-grid{max-width:1312px;margin:0 auto;padding:40px 48px 96px;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:0 56px;align-items:start}
 .pd-main{min-width:0;display:flex;flex-direction:column}
@@ -48,16 +87,11 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd-meta > *{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
 .pd-meta > * + *::before{content:"";width:4px;height:4px;border-radius:9px;background:#B5BDD3;margin:0 14px}
 .pd-meta b{font-weight:600;color:#0B1433}
-.pd-save{height:44px;padding:0 18px 0 14px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;display:inline-flex;align-items:center;gap:8px;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:600;color:#0B1433;cursor:pointer;transition:border-color .2s ease}
-.pd-save:hover{border-color:#1652F0}
-.pd-save-on{border-color:#1652F0;color:#1652F0;background:#F5F8FF}
+.ds-ghost.pd-save-on{border-color:#1652F0;color:#1652F0;background:#F5F8FF}
 .pd-acts{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:4px}
 .pd-note{font-size:13px;color:#5B6582}
 .pd-sh{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}
 .pd-h2{margin:0;font-size:28px;line-height:1.15;font-weight:600;letter-spacing:-.7px;color:#0B1433;display:flex;align-items:center;gap:8px}
-.pd-tip{position:relative;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:999px;border:1.5px solid #B5BDD3;font-size:11px;font-weight:600;color:#8A93AD;letter-spacing:0;cursor:help;flex-shrink:0}
-.pd-tip:hover::after,.pd-tip:focus::after{content:attr(data-tip);position:absolute;left:-10px;top:calc(100% + 8px);width:240px;padding:10px 12px;border-radius:10px;background:#0B1433;color:#FFFFFF;font-size:12px;font-weight:400;line-height:1.45;text-align:left;z-index:20}
-.pd-tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
 .pd-legend{display:flex;align-items:center;gap:14px;font-size:13px;color:#5B6582}
 .pd-legend span{display:inline-flex;align-items:center;gap:6px}
 .pd-legend i{width:8px;height:8px;border-radius:999px;display:block}
@@ -72,9 +106,6 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd-snote{font-size:13px;color:#8A93AD;margin-top:2px}
 .pd-sr{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .pd-cost{font-size:13px;font-weight:600;color:#3A4566;white-space:nowrap}
-.pd-st{height:26px;padding:0 10px;border-radius:999px;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;white-space:nowrap}
-.pd-st-ok{background:#E7F5EE;color:#0F6B45}
-.pd-st-need{background:#FFF6E5;color:#8A4F00}
 .pd-items{margin:0;padding:0 8px 8px;list-style:none;display:flex;flex-direction:column}
 .pd-it{display:flex;align-items:center;gap:14px;min-height:52px;padding:6px 12px;border-radius:12px;transition:background .2s ease,opacity .3s ease}
 .pd-it:hover{background:#FAFBFE}
@@ -84,7 +115,7 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd-tm{font-size:12px;color:#8A93AD}
 .pd-skip{opacity:.6}
 .pd-skip .pd-tt{text-decoration:line-through;text-decoration-color:#8A93AD;color:#5B6582}
-.pd-sk{height:24px;padding:0 9px;border-radius:999px;background:#E7F5EE;color:#0F6B45;display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;white-space:nowrap;flex-shrink:0}
+.pd-it .ds-tag{flex-shrink:0}
 .pd-proof{position:relative;isolation:isolate;overflow:hidden;border-radius:20px;background:#0B1433;color:#FFFFFF;padding:20px 22px 22px}
 .pd-proof::after{content:"";position:absolute;inset:0;z-index:-1;background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat;transform:scale(1.5);transform-origin:0 35%;pointer-events:none}
 .pd-proof .pd-snote{color:rgba(255,255,255,.65)}
@@ -94,17 +125,12 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd-pi div > span{font-size:12px;color:rgba(255,255,255,.7)}
 .pd-pii{width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center}
 .pd-side{position:sticky;top:24px;z-index:6}
-.pd-panel{display:flex;flex-direction:column;gap:18px;padding:24px;border-radius:22px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 40px 80px -48px rgba(11,20,51,.45)}
+.pd-panel{display:flex;flex-direction:column;gap:18px;padding:24px;border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 40px 80px -48px rgba(11,20,51,.45)}
 .pd-ph{display:flex;align-items:flex-start;gap:12px}
 .pd-pt{font-size:20px;font-weight:600;letter-spacing:-.4px;color:#0B1433}
 .pd-pd{font-size:14px;line-height:1.5;color:#5B6582;margin-top:2px}
 .pd-chips{display:flex;flex-wrap:wrap;gap:8px}
-.pd-chip{height:38px;padding:0 14px 0 10px;border-radius:14px;border:1.5px solid #D6DDEE;background:#FFFFFF;display:inline-flex;align-items:center;gap:8px;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:500;color:#0B1433;cursor:pointer;transition:border-color .2s ease,background .2s ease}
-.pd-chip:hover{border-color:#9DB8F7}
-.pd-box{width:18px;height:18px;border-radius:6px;border:1.5px solid #CBD3E6;box-sizing:border-box;display:flex;align-items:center;justify-content:center;color:#FFFFFF;transition:background .2s ease,border-color .2s ease}
-.pd-chip-on{background:#EAF0FF;border-color:#1652F0}
-.pd-chip-on .pd-box{background:#1652F0;border-color:#1652F0}
-.pd-chip:focus-visible,.pd-seg button:focus-visible,.pd-btn:focus-visible,.pd-save:focus-visible,.pd-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.pd-seg button:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .pd-sum{display:grid;grid-template-columns:1fr 1fr;border-radius:16px;background:#F5F8FF}
 .pd-sv{display:flex;flex-direction:column;gap:2px;padding:14px 16px}
 .pd-sv + .pd-sv{border-left:1px solid #E3E8F3}
@@ -119,11 +145,8 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd-bar span{display:block;height:100%;border-radius:9px;background:#1652F0;transition:width .5s cubic-bezier(.2,.7,.2,1)}
 .pd-ct{font-size:13px;line-height:1.5;color:#3A4566}
 .pd-ct b{font-weight:600;color:#0B1433}
-.pd-link{font-size:13px;font-weight:600;color:#1652F0;text-decoration:none;white-space:nowrap}
-.pd-btn{height:56px;padding:0 8px 0 24px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:space-between;font-family:'Google Sans',system-ui,sans-serif;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;transition:background .2s ease}
-.pd-btn:hover{background:#0E3BB8}
-.pd-btn i{width:40px;height:40px;border-radius:999px;background:#FFFFFF;display:flex;align-items:center;justify-content:center}
-.pd-mbar{display:none}
+.pd-ct .ds-link{display:inline;font-size:inherit}
+.pd-panel .ds-btn{justify-content:space-between}
 .sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
 .sx-fin{max-width:1312px;margin:0 auto;padding:40px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#5B6582}
 .sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
@@ -143,8 +166,8 @@ h1,h2,h3,p{text-wrap:pretty}
 @media (max-width: 760px){
 .sx-nav{height:60px;padding:0 16px}
 .sx-word{height:20px}
+.sx-nav .ds-btn.np{padding:0 16px}
 .sx-dlp b span{display:none}
-.sx-cta{height:40px;padding:0 16px;font-size:14px}
 .pd-top{background-size:auto 340px}
 .pd-grid{padding:40px 20px 0}
 .pd-crumb{display:none}
@@ -158,11 +181,11 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd-acts{width:100%}
 .pd-panel{padding:20px;gap:18px;border-radius:20px}
 .pd-pt{font-size:18px}
-.pd-chip{height:36px;font-size:13px}
 .pd-sv b{font-size:18px}
-.pd-panel .pd-btn{display:none}
+.pd-panel .ds-btn{display:none}
 .pd-side{margin-bottom:44px}
 .pd-h2{font-size:22px;letter-spacing:-.5px}
+.pd-h2 .tip-b{width:200px}
 .pd-sh{flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:18px}
 .pd-stage:not(:last-child)::before{left:15px;top:32px}
 .pd-stage{grid-template-columns:32px minmax(0,1fr);gap:12px}
@@ -177,13 +200,11 @@ h1,h2,h3,p{text-wrap:pretty}
 .pd-proof{padding:16px}
 .pd-pg{grid-template-columns:minmax(0,1fr);gap:8px}
 .pd-pi{flex-direction:row;align-items:center;gap:12px;padding:10px 12px}
-.pd-mbar{display:flex;order:9;position:sticky;bottom:0;z-index:20;align-items:center;justify-content:space-between;gap:12px;margin:28px -20px 0;padding:12px 16px 12px 20px;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid #E6EAF3}
+.pd-mbar{order:9;flex-direction:row;align-items:center;justify-content:space-between;gap:12px;padding-left:20px}
+.pd-mbar .ds-btn{width:auto}
 .pd-mbar > div > b{display:block;font-size:16px;font-weight:600;color:#0B1433}
 .pd-mbar > div > span{font-size:12px;color:#5B6582}
-.pd-mbar .pd-btn{height:48px;font-size:15px;gap:12px}
-.pd-mbar .pd-btn i{width:34px;height:34px}
 .sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}
-.pd-tip:hover::after,.pd-tip:focus::after{width:200px}
 }
 </style>
 </helmet>
@@ -202,7 +223,7 @@ h1,h2,h3,p{text-wrap:pretty}
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
 <sc-if value="{{guest}}" hint-placeholder-val="{{ true }}">
 <a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
-<a class="sx-cta" href="#">Create account</a>
+<a class="ds-btn sm np" href="#">Create account</a>
 </sc-if>
 <sc-if value="{{learner}}" hint-placeholder-val="{{ false }}">
 <a class="sx-dlp" href="#" aria-label="1,460 DLP available. View usage"><span class="dlp-c"></span><b style="font-weight: 600">1,460<span style="font-weight: 500; color: #5B6582"> available</span></b></a>
@@ -220,14 +241,14 @@ h1,h2,h3,p{text-wrap:pretty}
 <p class="pd-sub">A designed route from beginner to job-ready, built from validated courses, real projects and a professional certification.</p>
 <div class="pd-meta"><b>Beginner → Job-ready</b><span><b>{{nCourses}}</b> courses</span><span><b>4</b> projects</span><span><b>1</b> certification</span></div>
 <div class="pd-acts">
-<button class="pd-save {{saveCls}}" type="button" aria-pressed="{{saveOn}}" onClick="{{toggleSave}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="{{saveFill}}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg>{{saveLabel}}</button>
+<button class="ds-ghost sm {{saveCls}}" type="button" aria-pressed="{{saveOn}}" onClick="{{toggleSave}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="{{saveFill}}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg>{{saveLabel}}</button>
 <span class="pd-note">12,480 learners on this path</span>
 </div>
 </div>
 
 <section aria-labelledby="pd-r">
 <div class="pd-sh">
-<h2 id="pd-r" class="pd-h2">The route<span class="pd-tip" tabindex="0" data-tip="A Career Path is the designed route. Your journey is yours: tick what you already know and it skips ahead.">i</span></h2>
+<h2 id="pd-r" class="pd-h2">The route<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">A Career Path is the designed route. Your journey is yours: tick what you already know and it skips ahead.</span></span></h2>
 <sc-if value="{{learner}}" hint-placeholder-val="{{ false }}"><span class="pd-legend"><span><i style="background: #0F6B45"></i>Covered by your DLP</span><span><i style="background: #D9A21B"></i>Needs more DLP</span></span></sc-if>
 </div>
 <div class="pd-map">
@@ -238,8 +259,8 @@ h1,h2,h3,p{text-wrap:pretty}
 <div class="pd-shd">
 <div><div class="pd-sn">{{s.name}}</div><div class="pd-snote">{{s.note}}</div></div>
 <div class="pd-sr">
-<sc-if value="{{s.ok}}" hint-placeholder-val="{{ false }}"><span class="pd-st pd-st-ok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Covered</span></sc-if>
-<sc-if value="{{s.need}}" hint-placeholder-val="{{ false }}"><span class="pd-st pd-st-need">Needs more DLP</span></sc-if>
+<sc-if value="{{s.ok}}" hint-placeholder-val="{{ false }}"><span class="ds-tag green"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Covered</span></sc-if>
+<sc-if value="{{s.need}}" hint-placeholder-val="{{ false }}"><span class="ds-tag amber">Needs more DLP</span></sc-if>
 <span class="pd-cost"><span class="dlp-c"></span> {{s.cost}} DLP</span>
 </div>
 </div>
@@ -248,7 +269,7 @@ h1,h2,h3,p{text-wrap:pretty}
 <li class="pd-it {{it.cls}}">
 <span class="pd-ti" style="background: {{it.bg}}; color: {{it.fg}}" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16" style="display: {{it.i0}}"></path><path d="M3 7h18v13H3zM8 7V4h8v3" style="display: {{it.i1}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{it.i2}}"></path></svg></span>
 <span class="pd-tc"><span class="pd-tt">{{it.t}}</span><span class="pd-tm">{{it.meta}}</span></span>
-<sc-if value="{{it.skipped}}" hint-placeholder-val="{{ false }}"><span class="pd-sk"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>You know this</span></sc-if>
+<sc-if value="{{it.skipped}}" hint-placeholder-val="{{ false }}"><span class="ds-tag green"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>You know this</span></sc-if>
 </li>
 </sc-for>
 </ul>
@@ -276,12 +297,12 @@ h1,h2,h3,p{text-wrap:pretty}
 <div class="pd-ph"><div><div class="pd-pt">Make it yours</div><div class="pd-pd">Tick what you already know. We’ll skip it.</div></div></div>
 <div class="pd-chips" role="group" aria-label="Skills you already know">
 <sc-for list="{{skills}}" as="k" hint-placeholder-count="5">
-<button class="pd-chip {{k.cls}}" type="button" aria-pressed="{{k.on}}" onClick="{{k.pick}}"><span class="pd-box" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>{{k.label}}</button>
+<button class="ds-chip {{k.cls}}" type="button" aria-pressed="{{k.on}}" onClick="{{k.pick}}"><svg class="ck" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>{{k.label}}</button>
 </sc-for>
 </div>
 <div class="pd-sum">
 <div class="pd-sv"><span>Time</span><b>{{time}}</b><sc-if value="{{changed}}" hint-placeholder-val="{{ false }}"><s>6–8 months</s></sc-if></div>
-<div class="pd-sv"><span>Learning<span class="pd-tip" tabindex="0" data-tip="DLP is your learning allowance, not a price for the path. Each course uses DLP as you take it.">i</span></span><b><span class="dlp-c"></span> {{req}} DLP</b><sc-if value="{{changed}}" hint-placeholder-val="{{ false }}"><s>3,800 DLP</s></sc-if></div>
+<div class="pd-sv"><span>Learning<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">DLP is your learning allowance, not a price for the path. Each course uses DLP as you take it.</span></span></span><b><span class="dlp-c"></span> {{req}} DLP</b><sc-if value="{{changed}}" hint-placeholder-val="{{ false }}"><s>3,800 DLP</s></sc-if></div>
 </div>
 <div class="pd-cov">
 <sc-if value="{{guest}}" hint-placeholder-val="{{ true }}">
@@ -290,15 +311,15 @@ h1,h2,h3,p{text-wrap:pretty}
 </div>
 </sc-if>
 <div class="pd-bar" aria-hidden="true"><span style="width: {{covW}}"></span></div>
-<div class="pd-ct">{{covText}} <a class="pd-link" href="#">{{covLink}} →</a></div>
+<div class="pd-ct">{{covText}} <a class="ds-link" href="#">{{covLink}} →</a></div>
 </div>
-<a class="pd-btn" href="#">Build my journey<i aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></a>
+<a class="ds-btn" href="#"><span>Build my journey</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
 </div>
 </aside>
 
-<div class="pd-mbar">
+<div class="ds-mbar pd-mbar">
 <div><b>{{time}}</b><span>{{req}} DLP of learning</span></div>
-<a class="pd-btn" href="#">Build my journey<i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></i></a>
+<a class="ds-btn" href="#"><span>Build my journey</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
 </div>
 </div>
 </div>
@@ -373,7 +394,7 @@ class Component extends DCLogic {
       guest: !me, learner: me,
       time: time, req: fmt(total), nCourses: courses, changed: skipped > 0,
       stages: stages,
-      skills: this.SK.map(function (k) { var on = !!S.known[k]; return { label: k, on: on ? 'true' : 'false', cls: on ? 'pd-chip-on' : '', pick: function () { var n = Object.assign({}, S.known); if (on) delete n[k]; else n[k] = true; self.setState({ known: n }); } }; }),
+      skills: this.SK.map(function (k) { var on = !!S.known[k]; return { label: k, on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { var n = Object.assign({}, S.known); if (on) delete n[k]; else n[k] = true; self.setState({ known: n }); } }; }),
       plans: ['Free', 'Basic', 'Pro'].map(function (p) { var on = S.plan === p; return { label: p, on: on ? 'true' : 'false', cls: on ? 'pd-seg-on' : '', pick: function () { self.setState({ plan: p }); } }; }),
       covW: covW, covText: covText, covLink: covLink,
       saveOn: S.saved ? 'true' : 'false', saveCls: S.saved ? 'pd-save-on' : '', saveFill: S.saved ? 'currentColor' : 'none', saveLabel: S.saved ? 'Saved' : 'Save path', toggleSave: function () { self.setState({ saved: !S.saved }); }

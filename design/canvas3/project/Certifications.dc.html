@@ -11,6 +11,54 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-btn.np{padding:0 22px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-chip{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:40px;padding:0 16px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:border-color .2s ease,background .2s ease}
+.ds-chip:hover{border-color:#1652F0;background:#F5F8FF}
+.ds-chip .ck{display:none}
+.ds-chip.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-chip.on .ck{display:block}
+.ds-chip.sm{height:34px;padding:0 13px;font-size:13px}
+.ds-chip i{font-style:normal;font-size:12px;color:#8A93AD}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.lg{height:30px;padding:0 12px;font-size:13px}
+.ds-ask{display:flex;align-items:center;gap:10px;height:60px;box-sizing:border-box;padding:6px 6px 6px 22px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;box-shadow:0 20px 40px -30px rgba(11,20,51,.5);transition:border-color .2s ease,box-shadow .2s ease}
+.ds-ask:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.ds-ask input{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:inherit;font-size:16px;color:#0B1433}
+.ds-ask input::placeholder{color:#8A93AD}
+.ds-ask .ds-btn{flex-shrink:0}
+.ds-ask.sm{height:50px;padding:4px 4px 4px 16px}
+.ds-ask.sm input{font-size:14px}
+.ds-btn:focus-visible,.ds-link:focus-visible,.ds-chip:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.nova-card{background:#FFFFFF url(/_blob/0b29db2e4cd6f4a89dc7ba8f12e59c8d) center / cover no-repeat}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.lg{width:56px;height:56px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
+.nv-av.sm{width:28px;height:28px}
+@media (max-width: 960px){
+.ds-chip{height:36px;font-size:13.5px;padding:0 14px}
+.ds-chip.sm{height:32px;font-size:12.5px;padding:0 12px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+}
+@media (max-width: 760px){
+.ds-ask{height:54px;padding:5px 5px 5px 18px}
+.ds-ask input{font-size:15px}
+}
 h1,h2,h3,p{text-wrap:pretty}
 @media (min-width: 761px){p{text-wrap:balance}}
 .sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -21,15 +69,8 @@ h1,h2,h3,p{text-wrap:pretty}
 .sx-link{height:40px;padding:0 12px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:500;color:#3A4566;text-decoration:none;white-space:nowrap;transition:color .2s ease,background .2s ease}
 .sx-link:hover{color:#0B1433;background:#F5F8FF}
 .sx-link-on{color:#0B1433;background:#EAF0FF}
-.sx-cta{height:44px;padding:0 20px;border-radius:999px;display:flex;align-items:center;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease}
-.sx-cta:hover{background:#0E3BB8}
 .sx-menu{display:none;width:44px;height:44px;border-radius:999px;border:none;background:transparent;color:#0B1433;align-items:center;justify-content:center;cursor:pointer}
-.sx-link:focus-visible,.sx-cta:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-.sx-tip{position:relative;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:999px;border:1.5px solid #B5BDD3;font-size:11px;font-weight:600;color:#8A93AD;letter-spacing:0;cursor:help;flex-shrink:0;font-style:normal}
-.sx-tip:hover::after,.sx-tip:focus::after{content:attr(data-tip);position:absolute;left:-10px;top:calc(100% + 8px);width:240px;padding:10px 12px;border-radius:10px;background:#0B1433;color:#FFFFFF;font-size:12px;font-weight:400;line-height:1.45;text-align:left;white-space:normal;z-index:30}
-.sx-tip-r:hover::after,.sx-tip-r:focus::after{left:auto;right:-10px}
-.sx-tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
-.sx-orb{border-radius:999px;flex-shrink:0;background:#FFFFFF url(/_blob/f81e36d31295a0d0737959589ec1abd4) center / 62% no-repeat;box-shadow:0 0 0 1.5px #DCE5FB}
+.sx-link:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
 .sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
 .sx-fin{max-width:1312px;margin:0 auto;padding:40px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#5B6582}
 .sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
@@ -37,26 +78,18 @@ h1,h2,h3,p{text-wrap:pretty}
 .sx-fin a:hover{color:#1652F0}
 @media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}}
 @media (max-width: 520px){.sx-login{display:none !important}}
-@media (max-width: 760px){.sx-nav{height:60px;padding:0 16px}.sx-word{height:20px}.sx-cta{height:40px;padding:0 16px;font-size:14px}.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}.sx-tip:hover::after,.sx-tip:focus::after{width:200px}}
+@media (max-width: 760px){.sx-nav{height:60px;padding:0 16px}.sx-word{height:20px}.sx-nav .ds-btn.np{padding:0 16px}.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}}
 .ct-hero{background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / max(1440px,100%) auto no-repeat}
 .ct-hin{max-width:960px;margin:0 auto;padding:72px 24px 40px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
 .ct-h1{margin:0;font-size:56px;line-height:1.04;font-weight:600;letter-spacing:-1.8px;color:#0B1433}
 .ct-h1 em{font-style:normal;color:#1652F0}
 .ct-sub{margin:0;max-width:640px;font-size:18px;line-height:1.55;color:#4A5578}
-.ct-search{width:100%;max-width:640px;height:58px;box-sizing:border-box;margin-top:6px;padding:6px 6px 6px 20px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE;display:flex;align-items:center;gap:12px;box-shadow:0 24px 50px -32px rgba(11,20,51,.55);transition:border-color .2s ease,box-shadow .2s ease}
-.ct-search:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12),0 24px 50px -32px rgba(11,20,51,.55)}
-.ct-in{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:'Google Sans',system-ui,sans-serif;font-size:16px;color:#0B1433}
-.ct-in::placeholder{color:#8A93AD}
-.ct-go{height:46px;padding:0 22px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:15px;font-weight:600;cursor:pointer}
-.ct-go:hover{background:#0E3BB8}
+.ct-search{width:100%;max-width:640px;margin-top:6px}
 .ct-body{max-width:1312px;margin:0 auto;padding:24px 48px 96px;box-sizing:border-box;display:flex;flex-direction:column;gap:28px}
 .ct-bar{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;min-width:0}
 .ct-fields{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;min-width:0}
-.ct-f{height:36px;padding:0 15px;border-radius:10px;border:1px solid #E3E8F3;background:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:500;color:#3A4566;cursor:pointer;transition:border-color .2s ease}
-.ct-f:hover{border-color:#C9D7FA}
-.ct-f-on{background:#0B1433;border-color:#0B1433;color:#FFFFFF}
 .ct-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.ct-card{display:flex;flex-direction:column;border-radius:20px;background:#FFFFFF;border:1px solid #E3E8F3;box-shadow:0 22px 44px -38px rgba(11,20,51,.45);overflow:hidden;text-decoration:none;color:#0B1433;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,border-color .3s ease}
+.ct-card{display:flex;flex-direction:column;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 22px 44px -38px rgba(11,20,51,.45);text-decoration:none;color:#0B1433;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,border-color .3s ease}
 .ct-card:hover{transform:translateY(-4px);border-color:#D6DDEE;box-shadow:0 34px 60px -38px rgba(22,82,240,.45)}
 .ct-paper{position:relative;margin:12px 12px 0;height:150px;border-radius:12px;background:linear-gradient(180deg,#FFFFFF,#F5F8FF);border:1px solid #E3E8F3;padding:20px 22px;box-sizing:border-box;display:flex;flex-direction:column;gap:6px;overflow:hidden}
 .ct-paper::before{content:"";position:absolute;inset:7px;border:1px solid #DCE5FB;border-radius:7px;pointer-events:none}
@@ -64,53 +97,46 @@ h1,h2,h3,p{text-wrap:pretty}
 .ct-pn{font-size:21px;font-weight:600;letter-spacing:-.4px;line-height:1.15;color:#0B1433;max-width:80%}
 .ct-pi{margin-top:auto;font-size:12px;color:#5B6582}
 .ct-seal{position:absolute;right:18px;bottom:16px;width:52px;height:52px;filter:drop-shadow(0 8px 12px rgba(22,82,240,.3))}
-.ct-rev{position:absolute;right:16px;top:16px;height:24px;padding:0 9px;border-radius:999px;background:#F1F3F8;color:#5B6582;display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:500}
+.ct-rev{position:absolute;right:16px;top:16px}
 .ct-rev i{width:9px;height:9px;border-radius:999px;border:1.5px dashed #8A93AD;box-sizing:border-box}
 .ct-cb{display:flex;flex-direction:column;gap:12px;padding:16px 20px 18px;flex:1}
 .ct-meta{display:flex;align-items:center;gap:8px;font-size:14px;color:#5B6582}
 .ct-meta b{font-weight:600;color:#0B1433}
+.ct-meta .tip{margin-left:0}
 .ct-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:14px;border-top:1px solid #EEF1F7;font-size:13px;color:#5B6582}
-.ct-go2{font-size:14px;font-weight:600;color:#1652F0;white-space:nowrap}
 .ct-empty{grid-column:1 / -1;padding:40px;border-radius:20px;background:#F5F8FF;text-align:center;font-size:15px;color:#5B6582}
-.ct-ai{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:40px;align-items:center;margin-top:16px;padding:36px 40px;border-radius:24px;background:#FFFFFF url(/_blob/020f1a8593e80e5fcee9e0f06637f153) center top / cover no-repeat;border:1px solid #E3E8F3}
+.ct-ai{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:40px;align-items:center;margin-top:16px;padding:36px 40px;border-radius:22px;border:1.5px solid #E6EAF3}
 .ct-al{display:flex;align-items:flex-start;gap:16px}
 .ct-ah{margin:0;font-size:26px;line-height:1.15;font-weight:600;letter-spacing:-.6px;color:#0B1433}
 .ct-ap{margin:6px 0 0;font-size:15px;line-height:1.55;color:#4A5578}
-.ct-af{height:56px;box-sizing:border-box;padding:5px 5px 5px 20px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE;display:flex;align-items:center;gap:10px;box-shadow:0 20px 40px -30px rgba(11,20,51,.5)}
-.ct-af:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
-.ct-ab{height:44px;padding:0 6px 0 18px;border:none;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:600;display:flex;align-items:center;gap:10px;cursor:pointer;white-space:nowrap;flex-shrink:0}
-.ct-ab:hover{background:#0E3BB8}
-.ct-ab span{width:32px;height:32px;border-radius:999px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
-.ct-card:focus-visible,.ct-f:focus-visible,.ct-go:focus-visible,.ct-ab:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-@media (max-width: 1180px){.ct-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ct-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+@media (max-width: 1180px){.ct-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ct-ai{grid-template-columns:minmax(0,1fr) minmax(0,430px)}}
 @media (max-width: 960px){.ct-ai{grid-template-columns:minmax(0,1fr);gap:22px;padding:30px}}
 @media (max-width: 760px){
 .ct-hero{background-size:auto 340px}
 .ct-hin{padding:48px 20px 28px;gap:18px}
 .ct-h1{font-size:32px;letter-spacing:-.9px;text-wrap:balance}
 .ct-sub{font-size:15px}
-.ct-search{height:54px;padding:4px 4px 4px 16px}
-.ct-in{font-size:15px}
-.ct-go{height:44px;padding:0 16px;font-size:14px}
 .ct-body{padding:12px 20px 72px;gap:20px}
 .ct-bar{flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:12px}
 .ct-fields{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;margin:0 -20px;padding:0 20px;scrollbar-width:none}
 .ct-fields::-webkit-scrollbar{display:none}
-.ct-f{flex-shrink:0;height:34px;font-size:13px}
 .ct-grid{grid-template-columns:minmax(0,1fr);gap:12px}
 .ct-paper{height:118px;padding:16px 18px}
 .ct-pn{font-size:18px}
 .ct-seal{width:42px;height:42px}
 .ct-cb{padding:14px 16px 14px;gap:10px}
 .ct-foot{padding-top:0;border-top:none}
-.ct-ai{padding:24px 20px 20px;border-radius:20px;background-size:auto 300px}
+.ct-ai{padding:24px 20px 20px;border-radius:20px}
 .ct-ah{font-size:21px}
 .ct-ap{font-size:14px}
+.ct-sub .tip-b,.ct-meta .tip-b{width:200px}
 .ct-af{flex-direction:column;align-items:stretch;height:auto;padding:0;gap:10px;border:none;background:none;box-shadow:none;border-radius:0}
-.ct-af:focus-within{box-shadow:none}
-.ct-af .ct-in{flex:none;height:50px;box-sizing:border-box;padding:0 18px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE}
-.ct-ab{height:50px;justify-content:space-between;padding:0 6px 0 20px;font-size:15px}
-.ct-ab span{width:38px;height:38px}
+.ds-ask.ct-af:focus-within{box-shadow:none}
+.ct-af input{flex:none;height:50px;box-sizing:border-box;padding:0 18px;border-radius:999px;background:#FFFFFF;border:1.5px solid #D6DDEE}
+.ct-af input:focus{border-color:#1652F0}
+.ct-af .ds-btn{height:48px;justify-content:space-between;font-size:15px}
+.ct-af .ds-btn .ob-arrow{width:36px;height:36px}
 }
 </style>
 </helmet>
@@ -128,25 +154,25 @@ h1,h2,h3,p{text-wrap:pretty}
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
 <a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
-<a class="sx-cta" href="#">Create account</a>
+<a class="ds-btn sm np" href="#">Create account</a>
 <button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 </div>
 </header>
 <div class="ct-hin">
 <h1 class="ct-h1">Prove you meet the <em>standard</em>.</h1>
-<p class="ct-sub">Assessed credentials that employers can check in one click.<i class="sx-tip" tabindex="0" style="margin-left: 8px; vertical-align: 2px" data-tip="How it works: finish the required learning and practical work, pass the assessments, and your credential goes straight to your Digital Backpack.">i</i></p>
-<form class="ct-search" role="search" onSubmit="{{onSubmit}}">
+<p class="ct-sub">Assessed credentials that employers can check in one click.<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">How it works: finish the required learning and practical work, pass the assessments, and your credential goes straight to your Digital Backpack.</span></span></p>
+<form class="ds-ask ct-search" role="search" onSubmit="{{onSubmit}}">
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B6582" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
 <label for="ct-q" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search certifications</label>
-<input id="ct-q" class="ct-in" type="search" placeholder="Search certifications" value="{{q}}" onInput="{{onQ}}" autocomplete="off">
-<button class="ct-go" type="submit">Search</button>
+<input id="ct-q" type="search" placeholder="Search certifications" value="{{q}}" onInput="{{onQ}}" autocomplete="off">
+<button class="ds-btn sm np" type="submit">Search</button>
 </form>
 </div>
 </div>
 <div class="ct-body">
 <div class="ct-bar">
 <div class="ct-fields" role="group" aria-label="Field">
-<sc-for list="{{fields}}" as="f" hint-placeholder-count="6"><button class="ct-f {{f.cls}}" type="button" aria-pressed="{{f.on}}" onClick="{{f.pick}}">{{f.label}}</button></sc-for>
+<sc-for list="{{fields}}" as="f" hint-placeholder-count="6"><button class="ds-chip {{f.cls}}" type="button" aria-pressed="{{f.on}}" onClick="{{f.pick}}"><svg class="ck" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>{{f.label}}</button></sc-for>
 </div>
 </div>
 <div class="ct-grid">
@@ -157,19 +183,19 @@ h1,h2,h3,p{text-wrap:pretty}
 <span class="ct-pn">{{c.short}}</span>
 <span class="ct-pi">{{c.issuer}}</span>
 <sc-if value="{{c.ok}}" hint-placeholder-val="{{ true }}"><svg class="ct-seal" viewBox="0 0 100 100" aria-label="Credalio Validated"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg></sc-if>
-<sc-if value="{{c.rev}}" hint-placeholder-val="{{ false }}"><span class="ct-rev"><i></i>In review</span></sc-if>
+<sc-if value="{{c.rev}}" hint-placeholder-val="{{ false }}"><span class="ds-tag ct-rev"><i></i>In review</span></sc-if>
 </div>
 <div class="ct-cb">
-<span class="ct-meta"><b>{{c.level}}</b><span aria-hidden="true">·</span>{{c.time}}<i class="sx-tip" tabindex="0" data-tip="{{c.pre}}">i</i></span>
-<span class="ct-foot"><span>{{c.format}}</span><span class="ct-go2">View →</span></span>
+<span class="ct-meta"><b>{{c.level}}</b><span aria-hidden="true">·</span>{{c.time}}<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">{{c.pre}}</span></span></span>
+<span class="ct-foot"><span>{{c.format}}</span><span class="ds-link">View →</span></span>
 </div>
 </a>
 </sc-for>
-<sc-if value="{{none}}" hint-placeholder-val="{{ false }}"><div class="ct-empty">No certifications match yet. Try another field, or ask your AI Coach.</div></sc-if>
+<sc-if value="{{none}}" hint-placeholder-val="{{ false }}"><div class="ct-empty">No certifications match yet. Try another field, or ask Nova.</div></sc-if>
 </div>
-<section class="ct-ai" aria-labelledby="ct-ai-h">
-<div class="ct-al"><div><h2 id="ct-ai-h" class="ct-ah">Not sure which one fits?</h2><p class="ct-ap">Your AI Coach checks your readiness and plans what to learn first.</p></div></div>
-<form class="ct-af" onSubmit="{{onSubmit}}"><label for="ct-goal" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your goal</label><input id="ct-goal" class="ct-in" type="text" placeholder="I want to prove I can…" autocomplete="off"><button class="ct-ab" type="submit">Check my readiness<span aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></button></form>
+<section class="ct-ai nova-card" aria-labelledby="ct-ai-h">
+<div class="ct-al"><span class="nv-av lg" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span><div><h2 id="ct-ai-h" class="ct-ah">Not sure which one fits?</h2><p class="ct-ap">Nova, your AI Coach, checks your readiness and plans what to learn first.</p></div></div>
+<form class="ds-ask ct-af" onSubmit="{{onSubmit}}"><label for="ct-goal" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Your goal</label><input id="ct-goal" type="text" placeholder="I want to prove I can…" autocomplete="off"><button class="ds-btn sm" type="submit"><span>Check my readiness</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></form>
 </section>
 </div>
 <footer class="sx-foot">
@@ -188,7 +214,7 @@ class Component extends DCLogic {
     this.state = { q: '', field: 'All' };
     var R = function (t, short, field, issuer, type, level, time, format, skills, pre, ok) { return { t: t, short: short, field: field, issuer: issuer, type: type, level: level, time: time, format: format, skills: skills, pre: pre, ok: ok }; };
     this.L = [
-      R('Professional Certificate in Data Analysis', 'Data Analysis', 'Data', 'Northgate University', 'Institutions', 'Professional', '3–4 months', 'Timed exam + case study', ['SQL', 'Data cleaning', 'Statistics'], 'Recommended first: Data Foundations or equivalent. Your AI Coach can check what you already know.', true),
+      R('Professional Certificate in Data Analysis', 'Data Analysis', 'Data', 'Northgate University', 'Institutions', 'Professional', '3–4 months', 'Timed exam + case study', ['SQL', 'Data cleaning', 'Statistics'], 'Recommended first: Data Foundations or equivalent. Nova can check what you already know.', true),
       R('Professional Certificate in Product Design', 'Product Design', 'Design', 'Lena Fischer', 'Creators', 'Professional', '4–5 months', 'Portfolio review + design challenge', ['User research', 'Interaction design', 'Prototyping'], 'Recommended first: UX and Product Design Foundations.', true),
       R('Professional Certification in Security Operations', 'Security Operations', 'Cybersecurity', 'Westbridge Institute', 'Institutions', 'Professional', '4–6 months', 'Simulation lab + exam', ['Threat detection', 'Incident response', 'SIEM'], 'Recommended first: Networking and Security Fundamentals.', true),
       R('Professional Certificate in Project Management', 'Project Management', 'Business', 'Westbridge Institute', 'Institutions', 'Foundation', '3 months', 'Scenario exam + project plan', ['Planning', 'Risk', 'Agile'], 'No prerequisites. Open to anyone.', true),
@@ -201,7 +227,7 @@ class Component extends DCLogic {
     var list = this.L.filter(function (c) { return (S.field === 'All' || c.field === S.field) && (!q || (c.t + ' ' + c.skills.join(' ') + ' ' + c.issuer).toLowerCase().indexOf(q) > -1); });
     return {
       q: S.q, onQ: function (e) { self.setState({ q: e.target.value }); }, onSubmit: function (e) { e.preventDefault(); },
-      fields: ['All', 'Data', 'Design', 'Cybersecurity', 'Business', 'AI', 'Finance'].map(function (f) { var on = S.field === f; return { label: f === 'All' ? 'All fields' : f, on: on ? 'true' : 'false', cls: on ? 'ct-f-on' : '', pick: function () { self.setState({ field: f }); } }; }),
+      fields: ['All', 'Data', 'Design', 'Cybersecurity', 'Business', 'AI', 'Finance'].map(function (f) { var on = S.field === f; return { label: f === 'All' ? 'All fields' : f, on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { self.setState({ field: f }); } }; }),
       certs: list.map(function (c) { return { short: c.short, issuer: c.issuer, level: c.level, time: c.time, format: c.format, pre: c.pre, ok: c.ok, rev: !c.ok }; }),
       none: list.length === 0
     };

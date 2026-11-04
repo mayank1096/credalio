@@ -249,7 +249,7 @@ class Component extends DCLogic {
     var self = this, k = (this.props || {}).kind || 'freeCourse';
     var D = {
       freeCourse: { course: 'SQL for Data Analysis', th: '', need: 500, have: 200, h1: 'You need 300 more DLP for this course.', sub: 'Your progress is saved, so nothing is lost while you decide.', more: 'Compare plans', moreHref: '#',
-        opts: [['Upgrade to Basic', '2,000 DLP every month. Covers this course and what comes next.', 'Upgrade', '#', 1], ['Top up instead', 'Stay on Free and add just what this course needs.', 'Add 300 DLP', '#', 0]] },
+        opts: [['Upgrade to Basic', '2,000 DLP every month. Covers this course and what comes next.', 'Upgrade', 'Chk-003.dc.html', 1], ['Top up instead', 'Stay on Free and add just what this course needs.', 'Add 300 DLP', '#', 0]] },
       proCourse: { course: 'Advanced Analytics with Python', th: 'py', need: 400, have: 150, h1: 'You need 250 more DLP for this course.', sub: 'You’re on Pro, so there’s no bigger plan. Add what you need, or wait for your refresh.', more: 'See my usage', moreHref: 'Usage.dc.html',
         opts: [['Top up now', 'Added straight away. Your plan stays the same.', 'Add 250 DLP', '#', 1], ['Wait for your refresh', 'Your next 6,000 DLP arrives on 12 October. We’ll remind you.', 'Remind me', '#', 0]] },
       zero: { h1: 'You’re ready for the next step.', sub: 'You’ve used this month’s learning allowance. Your progress is saved exactly where you stopped.', more: 'Explore learning that needs no DLP', moreHref: 'Explore.dc.html',

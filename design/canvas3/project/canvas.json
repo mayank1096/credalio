@@ -1369,6 +1369,101 @@
       "title": "CHK-004 Done: Pro, back to the journey · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Chk-003.dc.html": {
+      "x": 0,
+      "y": 60843,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-003 Upgrade from the allowance moment · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-003-Mobile.dc.html": {
+      "x": 1520,
+      "y": 60843,
+      "w": 390,
+      "h": 960,
+      "title": "CHK-003 Upgrade from the allowance moment · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Chk-005.dc.html": {
+      "x": 2150,
+      "y": 60843,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-005 Done: Basic, continue to the next stage · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-005-Mobile.dc.html": {
+      "x": 3670,
+      "y": 60843,
+      "w": 390,
+      "h": 844,
+      "title": "CHK-005 Done: Basic, continue to the next stage · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Chk-006.dc.html": {
+      "x": 4300,
+      "y": 60843,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-006 Basic from the Data Analyst path · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-006-Mobile.dc.html": {
+      "x": 5820,
+      "y": 60843,
+      "w": 390,
+      "h": 960,
+      "title": "CHK-006 Basic from the Data Analyst path · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Chk-006p.dc.html": {
+      "x": 6450,
+      "y": 60843,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-006 Pro from the Data Analyst path · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-006p-Mobile.dc.html": {
+      "x": 7970,
+      "y": 60843,
+      "w": 390,
+      "h": 960,
+      "title": "CHK-006 Pro from the Data Analyst path · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Chk-008.dc.html": {
+      "x": 8600,
+      "y": 60843,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-008 Plan updated: return to the Data Analyst path · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-008-Mobile.dc.html": {
+      "x": 10120,
+      "y": 60843,
+      "w": 390,
+      "h": 844,
+      "title": "CHK-008 Plan updated: return to the Data Analyst path · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -1399,7 +1494,8 @@
     "row-b15",
     "row-b16",
     "row-b17",
-    "row-b18"
+    "row-b18",
+    "row-b19"
   ],
   "notes": {
     "new-hero": {
@@ -1562,6 +1658,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b19": {
+      "x": 0,
+      "y": 60543,
+      "text": "Batch 19 · Checkout from the allowance moment and from the Data Analyst path",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -1708,7 +1812,17 @@
     "Chk-Processing.dc.html",
     "Chk-Processing-Mobile.dc.html",
     "Chk-004.dc.html",
-    "Chk-004-Mobile.dc.html"
+    "Chk-004-Mobile.dc.html",
+    "Chk-003.dc.html",
+    "Chk-003-Mobile.dc.html",
+    "Chk-005.dc.html",
+    "Chk-005-Mobile.dc.html",
+    "Chk-006.dc.html",
+    "Chk-006-Mobile.dc.html",
+    "Chk-006p.dc.html",
+    "Chk-006p-Mobile.dc.html",
+    "Chk-008.dc.html",
+    "Chk-008-Mobile.dc.html"
   ],
   "pages": [
     {

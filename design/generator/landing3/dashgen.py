@@ -173,7 +173,7 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-nova .nv-av{width:64px;height:64px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
 .lr-nova-b{flex:1;min-width:0}
 .lr-nova-k{font-size:13px;font-weight:500;color:#1652F0}
-.lr-nova-b p{margin:4px 0 0;font-size:17px;line-height:1.45;font-weight:500;letter-spacing:-.1px}
+.lr-nova-b p{margin:4px 0 0;font-size:16px;line-height:1.5;font-weight:500;letter-spacing:-.1px}
 .lr-nova-a{display:flex;align-items:center;gap:18px;flex-shrink:0}
 .lr-g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
 .lr-card{padding:26px 28px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-sizing:border-box;display:flex;flex-direction:column}
@@ -288,21 +288,22 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-leg span + span i{background:#9DB8F7}
 .lr-rw{display:flex;flex-direction:column;margin-top:8px}
 .lr-rw div{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #EEF1F7;font-size:14px}
-.lr-bpf{padding:26px 28px}
-.lr-bpb{display:flex;align-items:center;justify-content:space-between;gap:28px;margin-top:6px}
-.lr-bpn{display:flex;align-items:center;gap:32px}
-.lr-bps{display:flex}
-.lr-bps span{display:flex;flex-direction:column;gap:2px;padding:0 20px;font-size:13px;color:#5B6582}
-.lr-bps span + span{border-left:1px solid #EEF1F7}
-.lr-bps b{font-size:18px;font-weight:600;color:#0B1433}
-.lr-cred{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:16px;background:#F7F9FD;border:1.5px solid #E6EAF3;min-width:0}
-.lr-cred-i{width:44px;height:44px;border-radius:14px;background:#E7F5EE;color:#0F6B45;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.lr-cred b{display:block;font-size:15px;font-weight:600}
-.lr-cred small{display:block;margin-top:2px;font-size:13px;color:#5B6582}
 .lr-tut{display:flex;align-items:center;gap:12px;padding-left:22px;border-left:1.5px solid rgba(22,82,240,.16)}
 .lr-tut .cs-cav{width:40px;height:40px;font-size:13px;background:#FFFFFF;box-shadow:inset 0 0 0 1.5px #DCE5FB}
 .lr-tut small{display:block;font-size:12.5px;color:#4A5578}
 .lr-tut .ds-link{font-size:14px}
+.lr-pfs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.lr-pf{display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;text-decoration:none;color:#0B1433;transition:border-color .2s ease,transform .3s ease,box-shadow .3s ease}
+.lr-pf:hover{border-color:#AFC1F5;transform:translateY(-2px);box-shadow:0 20px 40px -30px rgba(22,82,240,.45)}
+.lr-pf:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.lr-pf-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+.lr-pf-i{width:44px;height:44px;border-radius:14px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.lr-pf-ok{width:22px;height:22px;border-radius:999px;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.lr-pf b{font-size:15.5px;font-weight:600;line-height:1.3}
+.lr-pf small{font-size:13px;color:#5B6582}
+.lr-pf-sum{background:#EAF0FF;border-color:#DCE5FB;justify-content:flex-end}
+.lr-pf-n{font-size:44px;line-height:1;font-weight:600;letter-spacing:-1.5px;color:#1652F0;margin-bottom:6px}
+.lr-pf-sum small{color:#3A4566;line-height:1.45}
 @keyframes lrIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
 @keyframes lrFade{from{opacity:0}to{opacity:1}}
 @keyframes lrUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -312,7 +313,7 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-g4{grid-template-columns:repeat(3,minmax(0,1fr))}
 .lr-g4 > :nth-child(4){display:none}
 }
-@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}.lr-disc{grid-template-columns:minmax(0,1fr) 300px;gap:28px}.lr-goal{grid-template-columns:minmax(0,1fr)}.lr-gv{display:none}.lr-mr{grid-template-columns:40px minmax(0,1fr) 160px 20px}.lr-bpb{flex-direction:column;align-items:stretch}.lr-nova{flex-wrap:wrap}.lr-tut{padding-left:0;border-left:0;width:100%}}
+@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}.lr-disc{grid-template-columns:minmax(0,1fr) 300px;gap:28px}.lr-goal{grid-template-columns:minmax(0,1fr)}.lr-gv{display:none}.lr-mr{grid-template-columns:40px minmax(0,1fr) 160px 20px}.lr-nova{flex-wrap:wrap}.lr-tut{padding-left:0;border-left:0;width:100%}}
 @media (max-width: 960px){
 .ds-root{grid-template-columns:minmax(0,1fr);overflow-x:hidden}
 .ds-side{position:fixed;left:0;top:0;width:288px;max-width:86vw;transform:translateX(-102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 64px rgba(11,20,51,.18)}
@@ -333,6 +334,7 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .ds-main{padding:8px 16px 32px}
 .lr-disc{grid-template-columns:minmax(0,1fr)}
 .lr-g2,.lr-posts{grid-template-columns:minmax(0,1fr)}
+.lr-pfs{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width: 760px){
 .lr-head{margin:4px 0 18px;gap:14px}
@@ -373,11 +375,6 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .cs-th{height:96px}
 .cs-ico{width:96px;height:96px}
 .cs-ct{font-size:15px;min-height:0}
-.lr-nova{flex-wrap:wrap;gap:14px;padding:20px 18px}
-.lr-nova .nv-av{width:48px;height:48px}
-.lr-nova-b{flex:1 1 calc(100% - 64px)}
-.lr-nova-b p{font-size:15px}
-.lr-nova-a{width:100%;justify-content:space-between}
 .lr-card{padding:20px 18px}
 .lr-posts{display:flex;overflow-x:auto;gap:12px;margin:0 -16px;padding:0 16px;scrollbar-width:none}
 .lr-posts::-webkit-scrollbar{display:none}
@@ -404,12 +401,21 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-mr-p{grid-column:2;grid-row:2}
 .lr-chev{grid-column:3;grid-row:1 / span 2}
 .lr-big{font-size:30px}
-.lr-bpf{padding:20px 18px}
-.lr-bpn{flex-direction:column;align-items:flex-start;gap:14px}
-.lr-bps span{padding:0 12px}
-.lr-bps span:first-child{padding-left:0}
-.lr-cred{padding:12px 14px}
 .lr-sh .ds-tag.lg{height:28px;font-size:12px}
+.lr-pfs{display:flex;overflow-x:auto;gap:12px;margin:0 -16px;padding:2px 16px 6px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.lr-pfs::-webkit-scrollbar{display:none}
+.lr-pfs > *{flex:0 0 46%;scroll-snap-align:start;padding:16px}
+.lr-pf-n{font-size:38px}
+.lr-nova{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:12px;row-gap:14px;align-items:center;padding:20px 18px}
+.lr-nova > .nv-av{width:40px;height:40px;box-shadow:0 0 0 2px #FFFFFF,0 0 0 3.5px #D6DDEE}
+.lr-nova-b{display:contents}
+.lr-nova-k{grid-column:2;grid-row:1}
+.lr-nova-b p{grid-column:1 / -1;margin:0;font-size:16px;line-height:1.5}
+.lr-nova-a{grid-column:1 / -1;width:auto;justify-content:flex-start}
+.lr-tut{grid-column:1 / -1;padding:14px 0 0;border-left:0;border-top:1px solid rgba(22,82,240,.14);gap:10px}
+.lr-tut .cs-cav{width:30px;height:30px;font-size:11px}
+.lr-tut > div{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:6px}
+.lr-tut small{font-size:13.5px}
 .lr-panel{width:100vw}
 .lr-pb{padding:18px 16px}
 }
@@ -612,11 +618,11 @@ MARKUP = '''<div class="ds-root">
 </sc-if>
 
 <sc-if value="{{isActive}}" hint-placeholder-val="{{ false }}">
-<section class="lr-sec lr-card lr-bpf" aria-labelledby="lr-bpf">
-<div class="lr-ch"><h3 id="lr-bpf">Digital Backpack''' + tip('Your verified proof: credentials, projects and skills you earn on Credalio, ready to share.') + '''</h3><a class="ds-link" href="#">Open Backpack</a></div>
-<div class="lr-bpb">
-<div class="lr-bpn"><span class="lr-big">12<small>verified achievements</small></span><div class="lr-bps"><span><b>4</b>Credentials</span><span><b>3</b>Projects</span><span><b>8</b>Skills</span><span><b>1</b>Career</span></div></div>
-<div class="lr-cred"><span class="lr-cred-i">''' + ic(I['cred'], 22) + '''</span><div><b>Data Foundations</b><small>Course credential · issued 24 September</small></div><span class="ds-tag green">Verified</span></div>
+<section class="lr-sec" aria-labelledby="lr-bpf">
+<div class="lr-sh"><h2 id="lr-bpf">Digital Backpack''' + tip('Your verified proof: credentials, projects and skills you earn on Credalio, ready to share with anyone.') + '''</h2><a class="ds-link" href="#">Open Backpack</a></div>
+<div class="lr-pfs">
+<a class="lr-pf lr-pf-sum" href="#"><span class="lr-pf-n">12</span><b>verified achievements</b><small>4 credentials · 3 projects<br>8 skills · 1 milestone</small></a>
+<sc-for list="{{proofs}}" as="p" hint-placeholder-count="3"><a class="lr-pf" href="#"><span class="lr-pf-top"><span class="lr-pf-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g style="display: {{p.i0}}">''' + I['cred'] + '''</g><g style="display: {{p.i1}}">''' + I['proj'] + '''</g><g style="display: {{p.i2}}">''' + I['skill'] + '''</g></svg></span><span class="lr-pf-ok" title="Verified" aria-label="Verified">''' + ck(11, 3.4) + '''</span></span><b>{{p.t}}</b><small>{{p.k}} · {{p.d}}</small></a></sc-for>
 </div>
 </section>
 </sc-if>
@@ -800,6 +806,7 @@ class Component extends DCLogic {
       novaLink: named ? 'Ask ' + name : 'Ask a question',
       novaCta: named ? nv[1] : 'Name your coach', novaIsBtn: !named || !nv[2], novaIsLink: named && !!nv[2], novaHref: nv[2] || '#',
       showTutor: ['D', 'E', 'I', 'W'].indexOf(st) > -1,
+      proofs: [['Data Foundations', 'Credential', '24 Sep', 0], ['Sales dashboard', 'Project', '18 Sep', 1], ['SQL querying', 'Skill', '12 Sep', 2]].map(function (p) { return { t: p[0], k: p[1], d: p[2], i0: p[3] === 0 ? 'inline' : 'none', i1: p[3] === 1 ? 'inline' : 'none', i2: p[3] === 2 ? 'inline' : 'none' }; }),
       posts: posts, showBand: !named || (st !== 'A' && st !== 'B')
     };
   }

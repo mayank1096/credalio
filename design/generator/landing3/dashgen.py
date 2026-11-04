@@ -311,7 +311,7 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-crs-m{display:flex;flex-direction:column;min-width:0}
 .lr-crs-m .lr-jf{margin-top:auto}
 .lr-crs-m .lr-ft{margin-top:8px}
-.lr-crs-by{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:14px;color:#3A4566}
+.lr-crs-by{display:flex;align-items:center;flex-wrap:wrap;row-gap:4px;white-space:nowrap;gap:8px;margin-top:12px;font-size:14px;color:#3A4566}
 .lr-lsn{margin:28px 0 30px}
 .lr-lsn-t{display:block;font-size:13.5px;color:#4A5578}
 .lr-lsn-t b{font-weight:600;color:#0B1433}
@@ -332,6 +332,33 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-ldl .lr-row-i{width:36px;height:36px;border-radius:11px}
 .lr-ldl .lr-chev{margin-left:auto}
 .lr-lead > .ds-link{margin-top:auto;padding-top:12px;align-self:flex-start}
+.lr-cert-h{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
+.lr-cert-h .lr-ft{margin-top:8px}
+.lr-req{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
+.lr-rq{display:flex;flex-direction:column;gap:12px;padding:16px 18px;border-radius:16px;background:rgba(255,255,255,.72);border:1.5px solid rgba(255,255,255,.9)}
+.lr-rq-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.lr-rq-h b{font-size:14px;font-weight:600}
+.lr-rq-h > span{font-size:13px;font-weight:600;color:#1652F0;white-space:nowrap}
+.lr-rq.zero .lr-rq-h > span{color:#5B6582}
+.lr-rq.lock{background:rgba(255,255,255,.45)}
+.lr-rq.lock .lr-rq-h b{color:#5B6582}
+.lr-rq-l{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#5B6582}
+.lr-rq .lr-lsn-r{margin-top:0}
+.lr-nx-m .ds-tag{height:22px;font-size:11.5px}
+.lr-coh{display:flex;flex-direction:column;padding:22px}
+.lr-stack{display:flex;margin-top:16px}
+.lr-stack .cs-cav{width:36px;height:36px;font-size:12px;box-shadow:0 0 0 2.5px #FFFFFF}
+.lr-stack .cs-cav + .cs-cav{margin-left:-8px}
+.lr-stack .lr-more{background:#0B1433;color:#FFFFFF;font-size:11.5px}
+.lr-on{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px;color:#4A5578}
+.lr-on i{width:8px;height:8px;border-radius:9px;background:#0F6B45;box-shadow:0 0 0 3px #E7F5EE}
+.lr-mentor{display:flex;align-items:center;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid #EEF1F7;text-decoration:none;color:#0B1433}
+.lr-mentor .cs-cav{width:36px;height:36px;font-size:12px;background:#0B1433;color:#FFFFFF}
+.lr-mentor b{display:block;font-size:14.5px;font-weight:600}
+.lr-mentor small{display:block;margin-top:2px;font-size:12.5px;color:#5B6582}
+.lr-mentor .lr-chev{margin-left:auto}
+.lr-mentor:hover b{color:#1652F0}
+.lr-coh > .ds-link{margin-top:auto;padding-top:14px;align-self:flex-start}
 @keyframes lrIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
 @keyframes lrFade{from{opacity:0}to{opacity:1}}
 @keyframes lrUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -341,7 +368,7 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-g4{grid-template-columns:repeat(3,minmax(0,1fr))}
 .lr-g4 > :nth-child(4){display:none}
 }
-@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}.lr-disc{grid-template-columns:minmax(0,1fr) 300px;gap:28px}.lr-goal{grid-template-columns:minmax(0,1fr)}.lr-crs{grid-template-columns:minmax(0,1fr);gap:28px}.lr-ldl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}.lr-ldl a{border:1.5px solid #EEF1F7;border-radius:14px;padding:12px}.lr-ldl li:first-child a{border-top:1.5px solid #EEF1F7}.lr-ldl .lr-chev{display:none}.lr-gv{display:none}.lr-mr{grid-template-columns:40px minmax(0,1fr) 160px 20px}.lr-nova{flex-wrap:wrap}.lr-tut{padding-left:0;border-left:0;width:100%}}
+@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}.lr-disc{grid-template-columns:minmax(0,1fr) 300px;gap:28px}.lr-req{grid-template-columns:repeat(2,minmax(0,1fr))}.lr-goal{grid-template-columns:minmax(0,1fr)}.lr-crs{grid-template-columns:minmax(0,1fr);gap:28px}.lr-ldl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}.lr-ldl a{border:1.5px solid #EEF1F7;border-radius:14px;padding:12px}.lr-ldl li:first-child a{border-top:1.5px solid #EEF1F7}.lr-ldl .lr-chev{display:none}.lr-gv{display:none}.lr-mr{grid-template-columns:40px minmax(0,1fr) 160px 20px}.lr-nova{flex-wrap:wrap}.lr-tut{padding-left:0;border-left:0;width:100%}}
 @media (max-width: 960px){
 .ds-root{grid-template-columns:minmax(0,1fr);overflow-x:hidden}
 .ds-side{position:fixed;left:0;top:0;width:288px;max-width:86vw;transform:translateX(-102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 64px rgba(11,20,51,.18)}
@@ -445,6 +472,13 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-tut > div{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:6px}
 .lr-tut small{font-size:13.5px}
 .lr-lsn{margin:22px 0 0}
+.lr-cert-h .ds-tag{display:none}
+.lr-req{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:22px}
+.lr-rq{padding:12px 14px;gap:10px}
+.lr-rq-h{flex-direction:column;align-items:flex-start;gap:2px}
+.lr-rq-l{align-items:flex-start;line-height:1.35}
+.lr-rq-l svg{flex-shrink:0;margin-top:1px}
+.lr-coh{padding:18px}
 .lr-ldl{display:block;margin-top:10px}
 .lr-ldl a{border:0;border-top:1px solid #EEF1F7;border-radius:0;padding:11px 0}
 .lr-ldl li:first-child a{border-top:0}
@@ -588,7 +622,7 @@ MARKUP = '''<div class="ds-root">
 <span class="lr-k">Your current course</span>
 <h2 id="lr-ct" class="lr-ft">Python Fundamentals</h2>
 <span class="lr-crs-by"><span class="cs-cav">PN</span>Priya Nair<span class="cs-dot"></span>Beginner<span class="cs-dot"></span>9 hrs</span>
-<div class="lr-lsn" role="img" aria-label="Lesson 3 of 18"><span class="lr-lsn-t"><b>Lesson 3</b> of 18</span><span class="lr-lsn-r"><sc-for list="{{lessons}}" as="x" hint-placeholder-count="18"><i class="{{x.c}}"></i></sc-for></span></div>
+<div class="lr-lsn" role="img" aria-label="{{lsnB}} {{lsnOf}}"><span class="lr-lsn-t"><b>{{lsnB}}</b> {{lsnOf}}</span><span class="lr-lsn-r" style="grid-template-columns: repeat({{lsnN}}, minmax(0, 1fr))"><sc-for list="{{lessons}}" as="x" hint-placeholder-count="18"><i class="{{x.c}}"></i></sc-for></span></div>
 <div class="lr-jf">
 <div class="lr-nx"><span class="lr-nx-i">''' + ic(I['learn'], 24) + '''</span><div><small>Next up</small><b>Variables and data types</b><span class="lr-nx-m">About 18 min</span></div></div>
 <div class="ds-acts"><a class="ds-link" href="CourseDetail-Learner.dc.html">Course overview</a>''' + btn('Continue', 'CourseDetail-Learner.dc.html') + '''</div>
@@ -598,6 +632,39 @@ MARKUP = '''<div class="ds-root">
 <h3 id="lr-ld" class="lr-ld-h">Where this could lead''' + tip('Python Fundamentals is part of these Career Paths. Everything you finish here counts towards them.', 'r') + '''</h3>
 <ul class="lr-ldl"><sc-for list="{{lead}}" as="l" hint-placeholder-count="3"><li><a href="{{l.href}}"><span class="lr-row-i">''' + ic(I['path'], 18) + '''</span><span><b>{{l.t}}</b><small>{{l.d}}</small></span><span class="lr-chev" aria-hidden="true">''' + ic('<path d="m9 6 6 6-6 6"></path>', 18, 2.2) + '''</span></a></li></sc-for></ul>
 <a class="ds-link" href="CareerPaths.dc.html">Compare career paths''' + ARR_S + '''</a>
+</aside>
+</section>
+</sc-if>
+
+<sc-if value="{{fCert}}" hint-placeholder-val="{{ false }}">
+<section class="lr-focus lr-cert aur aur-lt" aria-labelledby="lr-cet">
+<div class="lr-cert-h"><div><span class="lr-k">Your certification</span><h2 id="lr-cet" class="lr-ft">Professional Certificate in Data Analysis</h2><span class="lr-crs-by"><span class="cs-cav">NU</span>Northgate University<span class="cs-dot"></span>Professional<span class="cs-dot"></span>About 30 hrs</span></div><span class="ds-tag line lg">18% complete</span></div>
+<div class="lr-req"><sc-for list="{{reqs}}" as="q" hint-placeholder-count="4"><div class="lr-rq {{q.cls}}"><span class="lr-rq-h"><b>{{q.t}}</b><span>{{q.n}}</span></span><sc-if value="{{q.open}}" hint-placeholder-val="{{ true }}"><span class="lr-lsn-r" style="grid-template-columns: repeat({{q.of}}, minmax(0, 1fr))"><sc-for list="{{q.seg}}" as="x" hint-placeholder-count="3"><i class="{{x.c}}"></i></sc-for></span></sc-if><sc-if value="{{q.lock}}" hint-placeholder-val="{{ false }}"><span class="lr-rq-l">''' + ic(I['lock'], 14, 2) + '''Opens when the rest are done</span></sc-if></div></sc-for></div>
+<div class="lr-jf">
+<div class="lr-nx"><span class="lr-nx-i">''' + ic(I['assign'], 24) + '''</span><div><small>Next up · Required learning 3 of 6</small><b>Knowledge Check · SQL for Data Analysis</b><span class="lr-nx-m"><span class="ds-tag amber">Due tomorrow</span>About 15 min</span></div></div>
+<div class="ds-acts"><a class="ds-link" href="CertDetail.dc.html">View requirements</a>''' + btn('Continue', 'CertDetail.dc.html') + '''</div>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{fProg}}" hint-placeholder-val="{{ false }}">
+<section class="lr-focus lr-crs aur aur-lt" aria-labelledby="lr-pgt">
+<div class="lr-crs-m">
+<span class="lr-k">Your learning program · September cohort</span>
+<h2 id="lr-pgt" class="lr-ft">Applied AI Cohort</h2>
+<span class="lr-crs-by"><span class="cs-cav">NU</span>Northgate University<span class="cs-dot"></span>12 weeks<span class="cs-dot"></span>Live sessions</span>
+<div class="lr-lsn" role="img" aria-label="{{lsnB}} {{lsnOf}}"><span class="lr-lsn-t"><b>{{lsnB}}</b> {{lsnOf}}</span><span class="lr-lsn-r" style="grid-template-columns: repeat({{lsnN}}, minmax(0, 1fr))"><sc-for list="{{lessons}}" as="x" hint-placeholder-count="18"><i class="{{x.c}}"></i></sc-for></span></div>
+<div class="lr-jf">
+<div class="lr-nx"><span class="lr-nx-i">''' + ic(I['cal'], 24) + '''</span><div><small>Next live session</small><b>Querying real datasets</b><span class="lr-nx-m">Tomorrow · 6:00 PM · 90 min</span></div></div>
+<div class="ds-acts"><a class="ds-link" href="ProgramDetail.dc.html">Program overview</a>''' + btn('Continue', 'ProgramDetail.dc.html') + '''</div>
+</div>
+</div>
+<aside class="lr-nv lr-coh" aria-labelledby="lr-coh">
+<h3 id="lr-coh" class="lr-ld-h">Your cohort''' + tip('The people learning this program with you. Your mentor runs weekly check-ins and reviews your project work.', 'r') + '''</h3>
+<div class="lr-stack"><span class="cs-cav">DR</span><span class="cs-cav">PN</span><span class="cs-cav">GA</span><span class="cs-cav">TH</span><span class="cs-cav">LF</span><span class="cs-cav lr-more">+19</span></div>
+<span class="lr-on"><i></i>24 learners · 6 online now</span>
+<a class="lr-mentor" href="#"><span class="cs-cav">SA</span><span><b>Dr Sara Ali</b><small>Mentor · check-in Wednesday</small></span><span class="lr-chev" aria-hidden="true">''' + ic('<path d="m9 6 6 6-6 6"></path>', 18, 2.2) + '''</span></a>
+<a class="ds-link" href="ProgramDetail.dc.html">Open cohort space''' + ARR_S + '''</a>
 </aside>
 </section>
 </sc-if>
@@ -729,6 +796,14 @@ class Component extends DCLogic {
     this.TIER = { gold: ['Gold Validated', '#C8961E'], silver: ['Silver Validated', '#8E9BB0'], bronze: ['Bronze Validated', '#A8683A'] };
     var C = function (t, topic, by, lvl, tier, rating, reviews, hrs, dlp, why) { return { t: t, topic: topic, by: by, lvl: lvl, tier: tier, rating: rating, reviews: reviews, hrs: hrs, dlp: dlp, why: why }; };
     this.REC = {
+      cert: [C('Statistics for Analysts', 'Business', 'Northgate University', 'Intermediate', 'silver', '4.7', '980', 12, 600, 'Required learning 4 of 6.'),
+        C('Data Visualisation with Power BI', 'Software', 'Mia Lopez', 'Beginner', 'silver', '4.7', '1.4k', 10, 600, 'Required learning 5 of 6.'),
+        C('Advanced SQL', 'Data', 'Daniel Reyes', 'Intermediate', 'gold', '4.8', '1.3k', 12, 1200, 'Helps with the final evaluation.'),
+        C('Python for Data Analysis', 'Design', 'Priya Nair', 'Intermediate', 'silver', '4.7', '1.6k', 16, 900, 'Popular with certificate holders.')],
+      program: [C('Data Visualisation with Power BI', 'Software', 'Mia Lopez', 'Beginner', 'silver', '4.7', '1.4k', 10, 600, 'For your sales dashboard project.'),
+        C('Statistics for Analysts', 'Business', 'Northgate University', 'Intermediate', 'silver', '4.7', '980', 12, 600, 'Gets you ready for Week 5.'),
+        C('Prompt Writing for Work', 'Design', 'Priya Nair', 'Beginner', 'silver', '4.7', '1.8k', 4, 300, 'Handy for Week 6 on AI assistants.'),
+        C('Introduction to AI', 'Data', 'Northgate University', 'Beginner', 'gold', '4.8', '2.6k', 8, 400, 'A refresher on the cohort basics.')],
       course: [C('Python for Data Analysis', 'Design', 'Priya Nair', 'Intermediate', 'silver', '4.7', '1.6k', 16, 900, 'The natural next step after Python Fundamentals.'),
         C('Python for Everyday Automation', 'Software', 'Priya Nair', 'Beginner', 'bronze', '4.6', '1.6k', 9, 800, 'Put your Python to work straight away.'),
         C('Prototyping in Figma', 'Software', 'Lena Fischer', 'Beginner', 'silver', '4.7', '1.1k', 6, 500, 'Builds on your UI/UX course.'),
@@ -774,7 +849,7 @@ class Component extends DCLogic {
     var allow = { free: 200, basic: 2000, pro: 6000 }[tierK];
     var fmt = function (n) { return n.toLocaleString('en-GB'); };
     var tone = this.TONE, tier = this.TIER;
-    var recKey = { R: 'ready', B: 'interests', C: 'goal', F: 'course' }[st] || (isActive ? 'active' : 'start');
+    var recKey = { R: 'ready', B: 'interests', C: 'goal', F: 'course', G: 'cert', H: 'program' }[st] || (isActive ? 'active' : 'start');
     var recs = this.REC[recKey].map(function (c) {
       var tn = tone[c.topic], v = { t: c.t, by: c.by, lvl: c.lvl, rating: c.rating, reviews: c.reviews, hrs: c.hrs + ' hrs', dlp: fmt(c.dlp), why: c.why, href: c.dlp === 200 ? 'CourseDetail-Learner.dc.html' : 'CourseDetail.dc.html',
         ini: c.by.split(' ').map(function (w) { return w[0]; }).slice(0, 2).join(''), bg: tn[0], icoC: tn[1], tierLabel: tier[c.tier][0], tierDot: tier[c.tier][1] };
@@ -798,6 +873,8 @@ class Component extends DCLogic {
       D: ['You’re 62% through SQL for Data Analysis. Your last quiz suggests JOINs need a little more practice before you move on.', 'Practise with ' + (named ? name : 'your coach'), '']
     };
     NOVA.E = ['Eighteen days in a row. Two more short sessions this week and you’ll reach your 6-hour goal.', 'Plan my week', ''];
+    NOVA.G = ['Practice labs are the quickest way to get ready for the final evaluation. Lab 2 takes about 45 minutes.', 'Start a practice lab', 'CertDetail.dc.html'];
+    NOVA.H = ['Your sales dashboard draft is due Friday. Want a checklist so nothing slips?', 'Get a checklist', ''];
     NOVA.F = ['Stuck on a lesson? I can explain it using exactly what you’re studying right now.', 'Explain this lesson', ''];
     NOVA.B = NOVA.A; NOVA.I = NOVA.D; NOVA.W = NOVA.D;
     var nv = NOVA[st] || NOVA.A;
@@ -805,7 +882,9 @@ class Component extends DCLogic {
     var postsData = [['Data Analytics', 'How I finally understood JOINs', 'Daniel Reyes', 'DR', 12], ['Career change', 'From classroom to analyst in eight months', 'Priya Nair', 'PN', 28], ['SQL', 'Weekly SQL practice group: join us', 'Tom Hughes', 'TH', 9]];
     var postsLead = [['Leadership', 'The one-to-one question that changed my team', 'Tom Hughes', 'TH', 22], ['Feedback', 'Giving feedback without the dread', 'Grace Adeyemi', 'GA', 17], ['New managers', 'My first 90 days leading people', 'Priya Nair', 'PN', 26]];
     var postsPy = [['', 'How I got unstuck on Python loops', 'Daniel Reyes', 'DR', 14], ['', 'Five wireframing habits that saved me hours', 'Lena Fischer', 'LF', 21], ['', 'Python study group: Thursdays, all welcome', 'Tom Hughes', 'TH', 8]];
-    var posts = (st === 'C' ? postsLead : (st === 'F' ? postsPy : (isNew && st !== 'R' ? postsNew : postsData))).map(function (x) { return { tag: x[0], t: x[1], by: x[2], ini: x[3], n: x[4] }; });
+    var postsCert = [['', 'How I prepared for the final evaluation', 'Amara Okafor', 'AO', 19], ['', 'Practice labs: which ones helped most', 'Daniel Reyes', 'DR', 11], ['', 'Certificate study group: Tuesdays', 'Tom Hughes', 'TH', 7]];
+    var postsCoh = [['', 'Week 4 dashboards: share your drafts', 'Dr Sara Ali', 'SA', 23], ['', 'Notes from the live session on datasets', 'Priya Nair', 'PN', 16], ['', 'Anyone up for a study room on Thursday?', 'Grace Adeyemi', 'GA', 9]];
+    var posts = (st === 'C' ? postsLead : (st === 'G' ? postsCert : (st === 'H' ? postsCoh : (st === 'F' ? postsPy : (isNew && st !== 'R' ? postsNew : postsData))))).map(function (x) { return { tag: x[0], t: x[1], by: x[2], ini: x[3], n: x[4] }; });
     var CHN = this.CH;
     var ROUTES = {
       R: [['1', 'Foundation', '2 courses', 'now', 'You start here'], ['2', 'Core skills', '3 courses'], ['3', 'Practice', '2 projects'], ['4', 'Certification', '1 exam'], ['✓', 'Job-ready', 'Your portfolio', 'end']],
@@ -829,7 +908,21 @@ class Component extends DCLogic {
         proofs: [['HTML and CSS Basics', 'Credential', '2 Sep', 0], ['Personal portfolio site', 'Project', '28 Aug', 1], ['Python basics', 'Skill', '20 Sep', 2]], bp: ['5', '2 credentials · 1 project', '2 skills'],
         hello: 'Hi Ada. You’re on Lesson 3 of Python Fundamentals. Want me to explain anything before you start?', ask: [['Explain variables with an example', '#'], ['Quiz me on Lesson 2', '#'], ['Where could Python take me?', 'CareerPaths.dc.html']] }
     };
-    ACT.E = ACT.D; ACT.I = ACT.D; ACT.W = ACT.D; ACT.G = ACT.D; ACT.H = ACT.D;
+    ACT.G = { counts: [3, 5], streak: 11, wg: [3, 5],
+      ml: [['Professional Certificate in Data Analysis', 'Certification', 18, 'Required learning 2 of 6'], ['SQL for Data Analysis', 'Course', 45, 'Required learning · Module 3 of 8'], ['Data Foundations', 'Course', 100, 'Completed']],
+      ev: [[1, 'Today', '7:00 PM', 'SQL for Data Analysis · Module 3'], [1, 'Tuesday 29', '6:00 PM', 'Practice lab: Cleaning messy data'], [1, 'Thursday 1', '5:00 PM', 'Live Q&A: The final evaluation']],
+      dots: [2, 4],
+      as: [['Knowledge Check', 'SQL for Data Analysis', 'Due tomorrow', 'amber', '~15 min', 'Start'], ['Practice lab 2', 'Professional Certificate', 'Due Fri 2 Oct', '', '~45 min', 'Start']],
+      proofs: [['Data Foundations', 'Credential', '24 Sep', 0], ['Cleaning a retail dataset', 'Project', '16 Sep', 1], ['Spreadsheets', 'Skill', '10 Sep', 2]], bp: ['7', '2 credentials · 2 projects', '3 skills'],
+      hello: 'Hi Ada. You’re 18% through your certificate. Want help with the Knowledge Check due tomorrow?', ask: [['Quiz me before the Knowledge Check', '#'], ['What’s in the final evaluation?', 'CertDetail.dc.html'], ['How long until I can sit it?', '#']] };
+    ACT.H = { counts: [2, 6], streak: 22, wg: [5, 8],
+      ml: [['Applied AI Cohort', 'Learning Program', 33, 'Week 4 of 12'], ['Python for Data Analysis', 'Course', 50, 'Program course · Module 4 of 8']],
+      ev: [[1, 'Today', '7:00 PM', 'Week 4 reading: Analysis in practice'], [1, 'Tomorrow', '6:00 PM', 'Live session: Querying real datasets'], [1, 'Wednesday 30', '1:00 PM', 'Mentor check-in with Dr Ali'], [1, 'Thursday 1', '6:30 PM', 'Cohort study room']],
+      dots: [1, 3, 4],
+      as: [['Sales dashboard draft', 'Applied AI Cohort', 'Due Fri 2 Oct', '', '~2 hrs', 'Continue'], ['Peer review: two dashboards', 'Applied AI Cohort', 'Due Sun 4 Oct', '', '~40 min', 'Start']],
+      proofs: [['Python for Data Analysis', 'Credential', '12 Sep', 0], ['Churn analysis notebook', 'Project', '20 Sep', 1], ['Prompt design', 'Skill', '5 Sep', 2]], bp: ['9', '3 credentials · 2 projects', '4 skills'],
+      hello: 'Hi Ada. Week 4 is about analysis in practice. Want a checklist for your sales dashboard draft?', ask: [['Make me a checklist for the draft', '#'], ['Recap last week’s live session', '#'], ['What’s coming in Week 5?', 'ProgramDetail.dc.html']] };
+    ACT.E = ACT.D; ACT.I = ACT.D; ACT.W = ACT.D;
     var AD = ACT[st] || ACT.D;
     var counts = AD.counts, ML = {}; ML[st] = isActive ? AD.ml : [];
     var items = ML[st] || [];
@@ -864,7 +957,7 @@ class Component extends DCLogic {
       hasAsg: isActive, asgN: AS.length,
       isNew: isNew, isActive: isActive, gs: gsv, gsDone: gs.filter(function (g) { return g[1] === 'd'; }).length,
       stats: [stat('In progress', counts[0], '', '#'), stat('Completed', counts[1], '', '#'), stat('Streak', AD.streak, 'days', '#')],
-      fDisc: st === 'A' || st === 'B', fGoal: st === 'C', fReady: st === 'R', fJourney: ['D', 'E', 'I', 'W'].indexOf(st) > -1, fCourse: st === 'F', jAdapted: st === 'E',
+      fDisc: st === 'A' || st === 'B', fGoal: st === 'C', fReady: st === 'R', fJourney: ['D', 'E', 'I', 'W'].indexOf(st) > -1, fCourse: st === 'F', fCert: st === 'G', fProg: st === 'H', jAdapted: st === 'E',
       dKicker: 'Welcome to Credalio', dSub: discSub, hasDSub: !!discSub, dNova: dNova, dNovaCta: 'Build my journey',
       q: S.q, onQ: function (e) { self.setState({ q: e.target.value }); },
       disc: [['Courses', 'Courses.dc.html'], ['Career paths', 'CareerPaths.dc.html'], ['Certifications', 'Certifications.dc.html'], ['Programs', 'Programs.dc.html']].map(function (d) { return { t: d[0], h: d[1] }; }),
@@ -887,7 +980,10 @@ class Component extends DCLogic {
       showTutor: ['D', 'E', 'I', 'W'].indexOf(st) > -1,
       bpN: AD.bp[0], bpL1: AD.bp[1], bpL2: AD.bp[2],
       proofs: AD.proofs.map(function (p) { return { t: p[0], k: p[1], d: p[2], i0: p[3] === 0 ? 'inline' : 'none', i1: p[3] === 1 ? 'inline' : 'none', i2: p[3] === 2 ? 'inline' : 'none' }; }),
-      lessons: Array.apply(null, Array(18)).map(function (x, i) { return { c: i < 2 ? 'd' : (i === 2 ? 'n' : '') }; }),
+      lsnB: st === 'H' ? 'Week 4' : 'Lesson 3', lsnOf: st === 'H' ? 'of 12' : 'of 18', lsnN: st === 'H' ? 12 : 18,
+      lessons: Array.apply(null, Array(st === 'H' ? 12 : 18)).map(function (x, i) { var cur = st === 'H' ? 3 : 2; return { c: i < cur ? 'd' : (i === cur ? 'n' : '') }; }),
+      reqs: [['Required learning', 2, 6], ['Practice labs', 1, 3], ['Assessments', 0, 2], ['Final evaluation', 0, 1, 1]].map(function (q) { return { t: q[0], n: q[3] ? '' : q[1] + ' of ' + q[2], of: q[2], open: !q[3], lock: !!q[3], cls: q[3] ? 'lock' : (q[1] ? '' : 'zero'),
+        seg: Array.apply(null, Array(q[2])).map(function (x, i) { return { c: i < q[1] ? 'd' : '' }; }) }; }),
       lead: [['Data Analyst', '6–8 months · 8 courses', 'PathDetail.dc.html'], ['AI Engineer', '8–10 months · 8 courses', 'PathDetail.dc.html'], ['Data Scientist', '9–12 months · 9 courses', 'CareerPaths.dc.html']].map(function (l) { return { t: l[0], d: l[1], href: l[2] }; }),
       posts: posts, showBand: !named || (st !== 'A' && st !== 'B')
     };

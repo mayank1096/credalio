@@ -970,6 +970,44 @@
       "title": "LRN-H Learning Program learner (Pro) · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Dash-I.dc.html": {
+      "x": 0,
+      "y": 47424,
+      "w": 1440,
+      "h": 2793,
+      "title": "LRN-I Returning learner (9 days away) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-I-Mobile.dc.html": {
+      "x": 1520,
+      "y": 47424,
+      "w": 390,
+      "h": 3263,
+      "title": "LRN-I Returning learner (9 days away) · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-E-Nova.dc.html": {
+      "x": 2150,
+      "y": 47424,
+      "w": 1440,
+      "h": 900,
+      "title": "LRN-E Ask Nova: Do I have enough DLP to finish my path? · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-E-Nova-Mobile.dc.html": {
+      "x": 3670,
+      "y": 47424,
+      "w": 390,
+      "h": 844,
+      "title": "LRN-E Ask Nova: Do I have enough DLP to finish my path? · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -996,7 +1034,8 @@
     "row-b11",
     "row-b12",
     "row-b13",
-    "row-b14"
+    "row-b14",
+    "row-b15"
   ],
   "notes": {
     "new-hero": {
@@ -1127,6 +1166,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b15": {
+      "x": 0,
+      "y": 47124,
+      "text": "Batch 15 · Learner dashboard: returning learner, Ask Nova (DLP answer)",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -1231,7 +1278,11 @@
     "Dash-G.dc.html",
     "Dash-G-Mobile.dc.html",
     "Dash-H.dc.html",
-    "Dash-H-Mobile.dc.html"
+    "Dash-H-Mobile.dc.html",
+    "Dash-I.dc.html",
+    "Dash-I-Mobile.dc.html",
+    "Dash-E-Nova.dc.html",
+    "Dash-E-Nova-Mobile.dc.html"
   ],
   "pages": [
     {

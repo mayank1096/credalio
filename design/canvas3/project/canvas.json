@@ -823,7 +823,7 @@
       "x": 4300,
       "y": 32853,
       "w": 1440,
-      "h": 1644,
+      "h": 1634,
       "title": "LRN-001 Journey ready (just finished onboarding with Nova) · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -833,7 +833,7 @@
       "x": 5820,
       "y": 32853,
       "w": 390,
-      "h": 1971,
+      "h": 2007,
       "title": "LRN-001 Journey ready (just finished onboarding with Nova) · Mobile",
       "page": "main",
       "is_interactive": true
@@ -871,7 +871,7 @@
       "x": 3670,
       "y": 35646,
       "w": 390,
-      "h": 1787,
+      "h": 1824,
       "title": "LRN-C Goal captured, no path yet · Mobile",
       "page": "main",
       "is_interactive": true
@@ -892,6 +892,44 @@
       "w": 390,
       "h": 3324,
       "title": "LRN-D Career Path selected (no AI journey) · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-E.dc.html": {
+      "x": 0,
+      "y": 39570,
+      "w": 1440,
+      "h": 2830,
+      "title": "LRN-E Active journey built with Nova (full dashboard) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-E-Mobile.dc.html": {
+      "x": 1520,
+      "y": 39570,
+      "w": 390,
+      "h": 3324,
+      "title": "LRN-E Active journey built with Nova (full dashboard) · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-F.dc.html": {
+      "x": 2150,
+      "y": 39570,
+      "w": 1440,
+      "h": 2662,
+      "title": "LRN-F Course-only learner · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-F-Mobile.dc.html": {
+      "x": 3670,
+      "y": 39570,
+      "w": 390,
+      "h": 3328,
+      "title": "LRN-F Course-only learner · Mobile",
       "page": "main",
       "is_interactive": true
     }
@@ -918,7 +956,8 @@
     "row-b9",
     "row-b10",
     "row-b11",
-    "row-b12"
+    "row-b12",
+    "row-b13"
   ],
   "notes": {
     "new-hero": {
@@ -1033,6 +1072,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b13": {
+      "x": 0,
+      "y": 39270,
+      "text": "Batch 13 · Learner dashboard: active journey built with Nova, course-only learner",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -1129,7 +1176,11 @@
     "Dash-C.dc.html",
     "Dash-C-Mobile.dc.html",
     "Dash-D.dc.html",
-    "Dash-D-Mobile.dc.html"
+    "Dash-D-Mobile.dc.html",
+    "Dash-E.dc.html",
+    "Dash-E-Mobile.dc.html",
+    "Dash-F.dc.html",
+    "Dash-F-Mobile.dc.html"
   ],
   "pages": [
     {

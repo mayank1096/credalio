@@ -837,6 +837,63 @@
       "title": "LRN-001 Journey ready (just finished onboarding with Nova) · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Dash-B.dc.html": {
+      "x": 0,
+      "y": 35646,
+      "w": 1440,
+      "h": 1623,
+      "title": "LRN-B Interests only · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-B-Mobile.dc.html": {
+      "x": 1520,
+      "y": 35646,
+      "w": 390,
+      "h": 1882,
+      "title": "LRN-B Interests only · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-C.dc.html": {
+      "x": 2150,
+      "y": 35646,
+      "w": 1440,
+      "h": 1751,
+      "title": "LRN-C Goal captured, no path yet · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-C-Mobile.dc.html": {
+      "x": 3670,
+      "y": 35646,
+      "w": 390,
+      "h": 1856,
+      "title": "LRN-C Goal captured, no path yet · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-D.dc.html": {
+      "x": 4300,
+      "y": 35646,
+      "w": 1440,
+      "h": 3094,
+      "title": "LRN-D Career Path selected (no AI journey) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-D-Mobile.dc.html": {
+      "x": 5820,
+      "y": 35646,
+      "w": 390,
+      "h": 4041,
+      "title": "LRN-D Career Path selected (no AI journey) · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -860,7 +917,8 @@
     "row-b8",
     "row-b9",
     "row-b10",
-    "row-b11"
+    "row-b11",
+    "row-b12"
   ],
   "notes": {
     "new-hero": {
@@ -967,6 +1025,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b12": {
+      "x": 0,
+      "y": 35346,
+      "text": "Batch 12 · Learner dashboard: interests only, goal without a path, Career Path in progress",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -1057,7 +1123,13 @@
     "Dash-A-Coach.dc.html",
     "Dash-A-Coach-Mobile.dc.html",
     "Dash-R.dc.html",
-    "Dash-R-Mobile.dc.html"
+    "Dash-R-Mobile.dc.html",
+    "Dash-B.dc.html",
+    "Dash-B-Mobile.dc.html",
+    "Dash-C.dc.html",
+    "Dash-C-Mobile.dc.html",
+    "Dash-D.dc.html",
+    "Dash-D-Mobile.dc.html"
   ],
   "pages": [
     {

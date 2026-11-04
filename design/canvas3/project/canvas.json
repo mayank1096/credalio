@@ -1773,7 +1773,7 @@
       "x": 0,
       "y": 96765,
       "w": 1440,
-      "h": 1060,
+      "h": 1080,
       "title": "TRST-006 Public Validation Record · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -1783,7 +1783,7 @@
       "x": 1520,
       "y": 96765,
       "w": 390,
-      "h": 1600,
+      "h": 1630,
       "title": "TRST-006 Public Validation Record · Mobile",
       "page": "main",
       "is_interactive": true
@@ -1922,7 +1922,12 @@
     "row-b25",
     "row-b26",
     "row-b27",
-    "row-b28"
+    "row-b28",
+    "wow-cert",
+    "wow-jar",
+    "wow-holo",
+    "wow-vault",
+    "wow-baton"
   ],
   "notes": {
     "new-hero": {
@@ -2165,6 +2170,46 @@
       "kind": "title1",
       "maxW": 10500,
       "page": "main"
+    },
+    "wow-cert": {
+      "fill": "red",
+      "page": "main",
+      "text": "NEW · WOW · Certificate assembles as you progress (ink fills per requirement). Press Play, then “See it finished”: the seal stamps on.",
+      "w": 1910,
+      "x": 0,
+      "y": 43388
+    },
+    "wow-jar": {
+      "fill": "red",
+      "page": "main",
+      "text": "NEW · WOW · Gold jar: pick a top-up and gold pours in past “Course needs 400”. Pick 2,500 to see it overflow.",
+      "w": 1910,
+      "x": 4300,
+      "y": 62293
+    },
+    "wow-holo": {
+      "fill": "red",
+      "page": "main",
+      "text": "NEW · WOW · Holographic gold seal: moves with the pointer, rainbow sheen and glint, certificate paper texture.",
+      "w": 1910,
+      "x": 0,
+      "y": 96655
+    },
+    "wow-vault": {
+      "fill": "red",
+      "page": "main",
+      "text": "NEW · WOW · TruVault lock: “Set up TruVault” sends the credential into a 3D vault; the lock clicks shut (also from “Connect” on the Later board).",
+      "w": 1910,
+      "x": 0,
+      "y": 99155
+    },
+    "wow-baton": {
+      "fill": "red",
+      "page": "main",
+      "text": "NEW · WOW · Nova → tutor baton: the summary card travels from Nova to Tobi along the cobalt line, then the chat opens.",
+      "w": 1910,
+      "x": 8600,
+      "y": 99155
     }
   },
   "order": [

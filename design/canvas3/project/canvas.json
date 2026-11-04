@@ -1236,6 +1236,139 @@
       "title": "ACC-004 Low DLP during a lesson (non-blocking) · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Chk-001.dc.html": {
+      "x": 0,
+      "y": 59283,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-001 Choose Basic from Pricing: create account first · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-001-Mobile.dc.html": {
+      "x": 1520,
+      "y": 59283,
+      "w": 390,
+      "h": 844,
+      "title": "CHK-001 Choose Basic from Pricing: create account first · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Chk-001p.dc.html": {
+      "x": 2150,
+      "y": 59283,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-001 Choose Pro from Pricing: create account first · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-001p-Mobile.dc.html": {
+      "x": 3670,
+      "y": 59283,
+      "w": 390,
+      "h": 844,
+      "title": "CHK-001 Choose Pro from Pricing: create account first · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Chk-002.dc.html": {
+      "x": 4300,
+      "y": 59283,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-002 Pro after onboarding: plan · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-002-Mobile.dc.html": {
+      "x": 5820,
+      "y": 59283,
+      "w": 390,
+      "h": 900,
+      "title": "CHK-002 Pro after onboarding: plan · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Chk-002-Pay.dc.html": {
+      "x": 6450,
+      "y": 59283,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-002 Pro after onboarding: payment · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-002-Pay-Mobile.dc.html": {
+      "x": 7970,
+      "y": 59283,
+      "w": 390,
+      "h": 960,
+      "title": "CHK-002 Pro after onboarding: payment · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Chk-002-Review.dc.html": {
+      "x": 8600,
+      "y": 59283,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-002 Pro after onboarding: review and pay · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-002-Review-Mobile.dc.html": {
+      "x": 10120,
+      "y": 59283,
+      "w": 390,
+      "h": 844,
+      "title": "CHK-002 Pro after onboarding: review and pay · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Chk-Processing.dc.html": {
+      "x": 10750,
+      "y": 59283,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK Processing payment (shared) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-Processing-Mobile.dc.html": {
+      "x": 12270,
+      "y": 59283,
+      "w": 390,
+      "h": 844,
+      "title": "CHK Processing payment (shared) · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Chk-004.dc.html": {
+      "x": 12900,
+      "y": 59283,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-004 Done: Pro, back to the journey · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-004-Mobile.dc.html": {
+      "x": 14420,
+      "y": 59283,
+      "w": 390,
+      "h": 844,
+      "title": "CHK-004 Done: Pro, back to the journey · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -1265,7 +1398,8 @@
     "row-b14",
     "row-b15",
     "row-b16",
-    "row-b17"
+    "row-b17",
+    "row-b18"
   ],
   "notes": {
     "new-hero": {
@@ -1420,6 +1554,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b18": {
+      "x": 0,
+      "y": 58983,
+      "text": "Batch 18 · Checkout: account first (Basic / Pro from pricing), Pro after onboarding (plan, payment, review), processing, done",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -1552,7 +1694,21 @@
     "Acc-Zero.dc.html",
     "Acc-Zero-Mobile.dc.html",
     "Acc-Low.dc.html",
-    "Acc-Low-Mobile.dc.html"
+    "Acc-Low-Mobile.dc.html",
+    "Chk-001.dc.html",
+    "Chk-001-Mobile.dc.html",
+    "Chk-001p.dc.html",
+    "Chk-001p-Mobile.dc.html",
+    "Chk-002.dc.html",
+    "Chk-002-Mobile.dc.html",
+    "Chk-002-Pay.dc.html",
+    "Chk-002-Pay-Mobile.dc.html",
+    "Chk-002-Review.dc.html",
+    "Chk-002-Review-Mobile.dc.html",
+    "Chk-Processing.dc.html",
+    "Chk-Processing-Mobile.dc.html",
+    "Chk-004.dc.html",
+    "Chk-004-Mobile.dc.html"
   ],
   "pages": [
     {

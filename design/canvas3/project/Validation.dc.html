@@ -309,6 +309,15 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-ticks i{width:20px;height:20px;border-radius:999px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 #cx-make{overflow:clip}
 .cx-fb{position:relative;z-index:2;margin-top:14px}
+.cx-fc .fc-wrap{padding-bottom:56px}
+.cx-fc .fc-band{flex-direction:row;align-items:center;text-align:left;gap:28px;padding:40px 48px}
+.cx-fc .fc-horizon{bottom:-590px;opacity:.85}
+.cx-fc .fc-mark{width:60px;height:60px;flex-shrink:0}
+.cx-fc .fc-mark img{width:34px;height:34px}
+.cx-fct{position:relative;display:flex;flex-direction:column;gap:8px;flex:1;min-width:0}
+.cx-fc .fc-h2{margin:0;font-size:34px;letter-spacing:-1px;line-height:1.12}
+.cx-fc .fc-sub{font-size:16px}
+.cx-fc .cx-fb{margin:0;flex-shrink:0}
 @media (max-width: 960px){
 .cx-studio{grid-template-columns:minmax(0,1fr);gap:24px}
 .cx-win{height:auto;min-height:440px}
@@ -323,6 +332,13 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-pp .ds-tag{display:none}
 .cx-ticks li{font-size:14.5px}
 .cx-fb{align-self:stretch;justify-content:space-between}
+.cx-fc .fc-band{flex-direction:column;text-align:center;gap:14px;padding:36px 20px 40px}
+.cx-fct{align-items:center}
+.cx-fc .fc-h2{font-size:26px}
+.cx-fc .fc-sub{font-size:15px}
+.cx-fc .fc-mark{width:48px;height:48px}
+.cx-fc .fc-mark img{width:28px;height:28px}
+.cx-fc .cx-fb{align-self:stretch}
 }
 .in-steps .tx-step{padding:13px 0}
 .in-ai{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center}
@@ -636,13 +652,14 @@ h1,h2,h3,p{text-wrap:pretty}
 </div>
 </a>
 </div></section>
-<section aria-labelledby="fc-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif">
+<section class="cx-fc" aria-labelledby="fc-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif">
 <div class="fc-wrap" style="max-width: 1360px; margin: 0 auto; padding: 32px 24px 64px; box-sizing: border-box">
 <div class="fc-band">
 <span class="fc-horizon" aria-hidden="true"></span>
 <span class="fc-mark" aria-hidden="true"><img src="/_blob/f81e36d31295a0d0737959589ec1abd4" alt="" width="42" height="42"></span>
-<h2 id="fc-h" class="fc-h2">Learn with confidence.</h2>
+<div class="cx-fct"><h2 id="fc-h" class="fc-h2">Learn with confidence.</h2>
 <p class="fc-sub">Look for the seal, then check the record behind it.</p>
+</div>
 <a class="ds-btn cx-fb" href="Courses.dc.html"><span>Explore validated learning</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
 </div>
 </div>
@@ -656,7 +673,7 @@ h1,h2,h3,p{text-wrap:pretty}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5120}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4880}}'>
 var J = [["Submit", "Submission", [["Experience", "Data Foundations: Spreadsheets to SQL", null], ["Version", "v2.1", null], ["Submitted", "2 September 2026", null]], null], ["Scope", "Standard course · required reviews", [["Educational", "Required", "green"], ["Subject matter", "Required", "green"], ["Assessment", "Where applicable", "green"], ["AI · Security & Privacy", "Added where needed", ""]], null], ["Assign", "Review team", null, [["EV", "Educational Validator", "Learning design"], ["SM", "Subject Matter Validator", "Data analytics"], ["AV", "Assessment Validator", "Assessment design"]]], ["Review", "Example checklist", [["Learning outcomes are clear", "Meets standard", "green"], ["Module 3 benchmark is sourced", "Clarification required", "blue"], ["Practice activity difficulty", "Revision required", "amber"], ["Final assessment matches outcomes", "Meets standard", "green"]], null], ["Clarify", "Finding #3", [["Clarification requested", "Evidence requested", "blue"], ["Creator response", "Source attached", ""], ["Validator review", "Finding resolved", "green"]], null], ["Decide", "Possible outcomes", [["All requirements met", "Credalio Validated", "green"], ["Requirements outstanding", "Revisions first", "amber"]], null], ["Publish", "Published", [["Validation ID", "VAL-CRD-004821", null], ["Version validated", "v2.1", null], ["Seal", "Credalio Validated", "green"], ["Record", "Public", null]], null], ["Revalidate", "Version status", [["v2.1", "Validated", "green"], ["v3.0 · major update", "Revalidation required", "amber"]], null]];
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }

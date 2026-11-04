@@ -289,21 +289,6 @@ a:hover{color:#0E3BB8}
 .tip:hover .tip-b,.tip:focus .tip-b{display:block}
 }
 h1,h2,h3,p{text-wrap:pretty}
-.lr-nova{display:flex;align-items:center;gap:22px;padding:26px 28px;border-radius:22px;border:1.5px solid #DCE5FB}
-.lr-nova .nv-av{width:64px;height:64px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
-.lr-nova-b{flex:1;min-width:0}
-.lr-nova-k{font-size:13px;font-weight:500;color:#1652F0}
-.lr-nova-b p{margin:4px 0 0;font-size:16px;line-height:1.5;font-weight:500;letter-spacing:-.1px}
-@media (max-width: 1180px){
-.lr-nova{flex-wrap:wrap}
-}
-@media (max-width: 760px){
-.lr-nova{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:12px;row-gap:14px;align-items:center;padding:20px 18px}
-.lr-nova > .nv-av{width:40px;height:40px;box-shadow:0 0 0 2px #FFFFFF,0 0 0 3.5px #D6DDEE}
-.lr-nova-b{display:contents}
-.lr-nova-k{grid-column:2;grid-row:1}
-.lr-nova-b p{grid-column:1 / -1;margin:0;font-size:16px;line-height:1.5}
-}
 .pc-sec{max-width:1312px;margin:0 auto;padding:0 48px 96px;box-sizing:border-box;font-family:'Google Sans',system-ui,sans-serif;color:#0B1433}
 .pc-sh{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px}
 .pc-k{display:block;font-size:14px;font-weight:500;color:#1652F0}
@@ -342,8 +327,20 @@ h1,h2,h3,p{text-wrap:pretty}
 .pc-scale{padding:22px 18px}
 }
 .cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:border-box}
-.cx-hero{flex:none;height:640px;border-radius:28px}
-.cx-hero .ci-copy{max-width:560px;padding:72px 0 0 64px;gap:18px}
+.cx-hero{flex:none;height:700px;border-radius:28px}
+.sx-in{position:relative;z-index:4;max-width:none;width:100%;height:84px;padding:0 28px 0 40px;flex-shrink:0}
+.sx-dk .sx-word,.sx-dk .sx-mark{filter:brightness(0) invert(1)}
+.ci-cr.cx-hero .tip{color:#FFFFFF}
+.ci-cr.cx-hero .tip:hover,.ci-cr.cx-hero .tip:focus{color:#C9D7FB}
+.sx-dk .sx-link{color:rgba(255,255,255,.78)}
+.sx-dk .sx-link:hover{color:#FFFFFF;background:rgba(255,255,255,.1)}
+.sx-dk .sx-link-on{color:#FFFFFF;background:rgba(255,255,255,.14)}
+.sx-dk .sx-login{color:#FFFFFF !important}
+.sx-dk .sx-cta{background:#FFFFFF;color:#0B1433}
+.sx-dk .sx-cta:hover{background:#EAF0FF}
+.sx-dk .sx-menu{color:#FFFFFF}
+.sx-dk .sx-link:focus-visible,.sx-dk .sx-cta:focus-visible,.sx-dk .sx-menu:focus-visible,.sx-dk .sx-logo:focus-visible{outline-color:rgba(255,255,255,.6)}
+.cx-hero .ci-copy{max-width:560px;padding:44px 0 0 64px;gap:18px}
 .cx-hero .ci-t{margin:0;font-size:54px;line-height:1.04;letter-spacing:-1.8px}
 .cx-hero .ci-d{margin:0;font-size:18px;max-width:500px}
 .cx-acts{display:flex;align-items:center;gap:22px;margin-top:10px}
@@ -351,7 +348,7 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-wl{position:relative;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;opacity:.9}
 .cx-wl:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
 .cx-note{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;color:rgba(255,255,255,.7)}
-.cx-hero .ci-vis{right:64px;bottom:auto;top:104px;width:470px}
+.cx-hero .ci-vis{right:64px;bottom:auto;top:168px;width:470px}
 .cx-hero:hover .ci-vis{transform:none}
 .cx-hero .ci-win{padding:20px;gap:10px}
 .cx-wt{font-size:17px;font-weight:600;letter-spacing:-.2px;margin:2px 0 4px}
@@ -369,8 +366,22 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-win{height:472px;box-sizing:border-box;padding:24px;gap:10px;border-radius:22px;box-shadow:0 40px 80px -50px rgba(11,20,51,.45);background:linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 70%,#F7F9FD 100%)}
 .cx-win .ci-row{padding:12px 14px;font-size:13.5px;border-radius:12px}
 .cx-win .ci-ck{width:20px;height:20px}
-.cx-sug{margin:8px 0 0}
-.cx-sug .lr-nova-b p{margin:4px 0 0}
+.cx-ol{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column}
+.cx-ol li{position:relative;display:flex;align-items:flex-start;gap:14px;padding:0 0 22px}
+.cx-ol li:not(:last-child)::before{content:"";position:absolute;left:11px;top:26px;bottom:2px;width:2px;border-radius:2px;background:#0F6B45}
+.cx-ol li.d + li.n::before,.cx-ol li:nth-child(2)::before{background:linear-gradient(#0F6B45,#9DB8F7)}
+.cx-ol li > i{width:24px;height:24px;flex-shrink:0;box-sizing:border-box;border-radius:999px;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.cx-ol li.d > i{background:#0F6B45}
+.cx-ol li.n > i{border:2px dashed #9DB8F7;background:#FFFFFF}
+.cx-ol li > span{display:flex;flex-direction:column;gap:2px;padding-top:2px}
+.cx-ol b{font-size:15px;font-weight:600;color:#0B1433}
+.cx-ol small{font-size:13px;color:#5B6582}
+.cx-ol li.n small{color:#1652F0}
+.cx-ol li:last-child{padding-bottom:0}
+.cx-sug{position:relative;display:flex;align-items:flex-start;gap:14px;margin:18px 0 0 38px;padding:18px 20px;border-radius:18px}
+.cx-sug::before{content:"";position:absolute;left:-15px;top:-14px;width:14px;height:24px;border-left:2px dashed #9DB8F7;border-bottom:2px dashed #9DB8F7;border-bottom-left-radius:12px}
+.cx-sug .nv-av{width:40px;height:40px;flex-shrink:0}
+.cx-sug p{margin:2px 0 0;font-size:14.5px;line-height:1.55;color:#0B1433}
 .cx-sa{display:flex;align-items:center;gap:16px;margin-top:12px}
 .cx-blk .cx-bi{width:30px;height:30px;border-radius:9px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .cx-bt{font-weight:600;color:#0B1433}
@@ -383,6 +394,10 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-pp .ds-tag{margin-left:auto}
 .cx-amb{background:#FFF8EC}
 .cx-path{grid-template-columns:repeat(6,minmax(0,1fr))}
+.cx-vh{justify-content:center;text-align:center;margin-bottom:44px}
+.cx-vh > div{display:flex;flex-direction:column;align-items:center}
+.cx-vh .pc-p{margin-left:auto;margin-right:auto}
+.cx-vb{display:flex;justify-content:center;margin-top:44px}
 .cx-path .ko-dot{background:#FFFFFF}
 .cx-path li:first-child .ko-dot{background:#1652F0}
 .cx-path .cx-ok .ko-dot{border:0;background:none}
@@ -413,8 +428,18 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-sub{margin-left:auto;height:40px;padding:0 18px;border-radius:999px;background:#EEF1F7;color:#8A93AD;font-size:14px;font-weight:600;display:inline-flex;align-items:center}
 #cx-make{overflow:clip}
 .cx-fb{position:relative;z-index:2;margin-top:14px}
+.cx-fc .fc-wrap{padding-bottom:56px}
+.cx-fc .fc-band{flex-direction:row;align-items:center;text-align:left;gap:28px;padding:40px 48px}
+.cx-fc .fc-horizon{bottom:-590px;opacity:.85}
+.cx-fc .fc-mark{width:60px;height:60px;flex-shrink:0}
+.cx-fc .fc-mark img{width:34px;height:34px}
+.cx-fct{position:relative;display:flex;flex-direction:column;gap:8px;flex:1;min-width:0}
+.cx-fc .fc-h2{margin:0;font-size:34px;letter-spacing:-1px;line-height:1.12}
+.cx-fc .fc-sub{font-size:16px}
+.cx-fc .fc-note{margin-top:4px;font-size:13px}
+.cx-fc .cx-fb{margin:0;flex-shrink:0}
 @media (max-width: 1180px){
-.cx-hero .ci-copy{padding:56px 0 0 44px;max-width:470px}
+.cx-hero .ci-copy{padding:36px 0 0 44px;max-width:470px}
 .cx-hero .ci-t{font-size:44px}
 .cx-hero .ci-vis{right:36px;width:400px}
 .cx-path{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:32px}
@@ -427,7 +452,8 @@ h1,h2,h3,p{text-wrap:pretty}
 @media (max-width: 960px){
 .cx-top{padding:8px 12px 0}
 .cx-hero{height:auto;padding-bottom:0}
-.cx-hero .ci-copy{padding:40px 24px 0;max-width:none;gap:14px}
+.cx-hero .ci-copy{padding:20px 24px 0;max-width:none;gap:14px}
+.sx-in{height:72px;padding:0 20px 0 24px}
 .cx-hero .ci-t{font-size:34px;letter-spacing:-1px}
 .cx-hero .ci-d{font-size:15.5px}
 .cx-hero .ci-vis{display:block;position:relative;top:auto;right:auto;width:auto;margin:32px 20px -1px}
@@ -436,6 +462,10 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-studio{grid-template-columns:minmax(0,1fr);gap:24px}
 .cx-win{height:auto;min-height:440px}
 .cx-path{grid-template-columns:minmax(0,1fr);row-gap:0}
+.cx-vh{text-align:left;margin-bottom:22px}
+.cx-vh > div{align-items:flex-start}
+.cx-vh .pc-p{margin-left:0}
+.cx-vb{justify-content:flex-start;margin-top:28px}
 .cx-path li:nth-child(3)::before{display:block}
 .cx-path .cx-ok .ko-dot svg{width:28px;height:28px}
 .cx-ec{grid-template-columns:minmax(0,1fr)}
@@ -444,7 +474,8 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-wt2{flex:0 0 220px;scroll-snap-align:start}
 }
 @media (max-width: 760px){
-.cx-hero .ci-copy{padding:32px 20px 0}
+.cx-hero .ci-copy{padding:16px 20px 0}
+.sx-in{height:64px;padding:0 10px 0 18px}
 .cx-hero .ci-t{font-size:30px}
 .cx-acts{flex-direction:column;align-items:stretch;gap:6px}
 .cx-acts .ds-btn{justify-content:space-between;align-self:stretch}
@@ -460,18 +491,30 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-win .ci-row{padding:10px 12px;font-size:13px}
 .cx-blk .cx-rm{display:none}
 .cx-pp .ds-tag{display:none}
-.cx-sa{gap:12px}
+.cx-sa{gap:12px;flex-wrap:wrap}
+.cx-sug{margin-left:0;padding:14px;gap:10px}
+.cx-sug::before{display:none}
+.cx-sug .nv-av{width:32px;height:32px}
 .cx-earn,.cx-svc{padding:24px 18px}
 .cx-eh{flex-direction:column;gap:16px}
 .cx-earn .pc-units{grid-template-columns:minmax(0,1fr)}
 .cx-svc .pc-rate{font-size:22px}
 .cx-ticks li{font-size:14.5px}
 .cx-fb{align-self:stretch;justify-content:space-between}
+.cx-fc .fc-band{flex-direction:column;text-align:center;gap:14px;padding:36px 20px 40px}
+.cx-fct{align-items:center}
+.cx-fc .fc-h2{font-size:26px}
+.cx-fc .fc-sub{font-size:15px}
+.cx-fc .fc-mark{width:48px;height:48px}
+.cx-fc .fc-mark img{width:28px;height:28px}
+.cx-fc .cx-fb{align-self:stretch}
 }
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
-<header class="sx-nav">
+<section class="cx-top" aria-labelledby="cx-h">
+<div class="ci-door ci-cr aur cx-hero">
+<header class="sx-nav sx-in sx-dk">
 <a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
 <nav class="sx-links" aria-label="Main">
 <a class="sx-link" href="#">Explore learning</a>
@@ -487,8 +530,6 @@ h1,h2,h3,p{text-wrap:pretty}
 <button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 </div>
 </header>
-<section class="cx-top" aria-labelledby="cx-h">
-<div class="ci-door ci-cr aur cx-hero">
 <div class="ci-copy">
 <span class="ci-k">For creators and experts</span>
 <h1 id="cx-h" class="ci-t">Turn what you know into learning that moves people forward.</h1>
@@ -644,16 +685,17 @@ Not sure where to start? Ask Nova
 <div class="cx-sl">
 <span class="pc-k">Creator Studio</span>
 <h2 id="cx-st" class="pc-h2">Everything you need to build great learning.</h2>
-<div class="tx-steps cx-steps" role="tablist" aria-label="Studio areas"><button type="button" role="tab" class="tx-step {{st.s0.cls}}" aria-selected="{{st.s0.sel}}" onClick="{{st.s0.pick}}"><span class="tx-num">1</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Shape it with AI</span><span class="tx-sd">Nova drafts structure, objectives and first questions.</span></span></button><button type="button" role="tab" class="tx-step {{st.s1.cls}}" aria-selected="{{st.s1.sel}}" onClick="{{st.s1.pick}}"><span class="tx-num">2</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Build rich learning</span><span class="tx-sd">Video, text, quizzes, projects and practical work.</span></span></button><button type="button" role="tab" class="tx-step {{st.s2.cls}}" aria-selected="{{st.s2.sel}}" onClick="{{st.s2.pick}}"><span class="tx-num">3</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Create together</span><span class="tx-sd">Invite co-creators and experts with clear roles.</span></span></button><button type="button" role="tab" class="tx-step {{st.s3.cls}}" aria-selected="{{st.s3.sel}}" onClick="{{st.s3.pick}}"><span class="tx-num">4</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Check before you submit</span><span class="tx-sd">Pre-check finds gaps before validators do.</span></span></button></div>
+<div class="tx-steps cx-steps" role="tablist" aria-label="Studio areas"><button type="button" role="tab" class="tx-step {{st.s0.cls}}" aria-selected="{{st.s0.sel}}" onClick="{{st.s0.pick}}"><span class="tx-num">1</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Shape it with AI</span><span class="tx-sd">Nova drafts structure and questions. You decide.</span></span></button><button type="button" role="tab" class="tx-step {{st.s1.cls}}" aria-selected="{{st.s1.sel}}" onClick="{{st.s1.pick}}"><span class="tx-num">2</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Build rich learning</span><span class="tx-sd">Video, text, quizzes, projects and practical work.</span></span></button><button type="button" role="tab" class="tx-step {{st.s2.cls}}" aria-selected="{{st.s2.sel}}" onClick="{{st.s2.pick}}"><span class="tx-num">3</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Create together</span><span class="tx-sd">Invite co-creators and experts with clear roles.</span></span></button><button type="button" role="tab" class="tx-step {{st.s3.cls}}" aria-selected="{{st.s3.sel}}" onClick="{{st.s3.pick}}"><span class="tx-num">4</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Check before you submit</span><span class="tx-sd">Pre-check finds gaps before validators do.</span></span></button></div>
 </div>
 <div class="ci-win cx-win" role="tabpanel" aria-label="{{st.name}}">
 <div class="ci-wk"><span>Creator Studio · Data Foundations</span><span class="ds-tag {{st.tagCls}}">{{st.tag}}</span></div>
 <sc-if value="{{st.a0}}" hint-placeholder-val="{{ true }}">
-<span class="cx-wt">Course outline</span>
-<div class="ci-row"><span class="ci-ck" style="background: #0F6B45"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Module 1 · Working with spreadsheet data<span class="cx-rm">4 lessons</span></div>
-<div class="ci-row"><span class="ci-ck" style="background: #0F6B45"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Module 2 · Cleaning messy data<span class="cx-rm">4 lessons</span></div>
-<div class="ci-row"><span class="ci-ck" style="background: #EAF0FF; border: 1.5px dashed #9DB8F7; box-sizing: border-box"></span>Module 3 · Your first SQL queries<span class="cx-rm" style="color: #1652F0">AI draft</span></div>
-<div class="lr-nova nova-card cx-sug"><span class="nv-av" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span><div class="lr-nova-b"><span class="lr-nova-k">Nova · Creator Copilot<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">AI suggests. You decide. Creators remain responsible for the learning they publish.</span></span></span><p>{{st.sug}}</p><div class="cx-sa"><button type="button" class="ds-ghost sm" onClick="{{st.accept}}">{{st.acceptLabel}}</button><button type="button" class="ds-link" onClick="{{st.skip}}">Not now</button></div></div></div>
+<ol class="cx-ol">
+<li class="d"><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span><b>Working with spreadsheet data</b><small>Module 1 · 4 lessons</small></span></li>
+<li class="d"><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span><b>Cleaning messy data</b><small>Module 2 · 4 lessons</small></span></li>
+<li class="n"><i></i><span><b>Your first SQL queries</b><small>Module 3 · drafted with Nova</small></span></li>
+</ol>
+<div class="nova-card cx-sug"><span class="nv-av" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span><div><p>{{st.sug}}</p><div class="cx-sa"><button type="button" class="ds-ghost sm" onClick="{{st.accept}}">{{st.acceptLabel}}</button><button type="button" class="ds-link" onClick="{{st.skip}}">Not now</button></div></div></div>
 </sc-if>
 <sc-if value="{{st.a1}}" hint-placeholder-val="{{ false }}">
 <span class="cx-wt">Lesson 2.3 · Removing duplicates</span>
@@ -678,8 +720,9 @@ Not sure where to start? Ask Nova
 </div>
 </section>
 <section class="pc-sec cx-sec" aria-labelledby="cx-va">
-<div class="pc-sh"><div><span class="pc-k">Validation</span><h2 id="cx-va" class="pc-h2">Build it. Then prove the quality behind it.</h2><p class="pc-p">Independent experts review your work. Validated learning carries the Credalio seal, linked to a public Validation Record.</p></div><a class="ds-ghost" href="Validation.dc.html">How validation works<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+<div class="pc-sh cx-vh"><div><span class="pc-k">Validation</span><h2 id="cx-va" class="pc-h2">Build it. Then prove the quality behind it.</h2><p class="pc-p">Independent experts review your work. Validated learning carries the Credalio seal, linked to a public Validation Record.</p></div></div>
 <ol class="ko-path cx-path"><li><span class="ko-dot">1</span><span><b>Pre-check</b><span>Fix gaps before anyone else sees them.</span></span></li><li><span class="ko-dot">2</span><span><b>Submit</b><span>The cost is shown before anything is charged.</span></span></li><li><span class="ko-dot">3</span><span><b>Expert review</b><span>Independent validators check content, design and assessment.</span></span></li><li><span class="ko-dot">4</span><span><b>Resolve findings</b><span>Answer questions and update your work in the Studio.</span></span></li><li class="cx-ok"><span class="ko-dot"><svg width="28" height="28" viewBox="0 0 100 100"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span><b>Validated</b><span>Your work earns the seal and a public record.</span></span></li><li><span class="ko-dot">6</span><span><b>Publish</b><span>Learners find it across Credalio.</span></span></li></ol>
+<div class="cx-vb"><a class="ds-ghost" href="Validation.dc.html">How validation works<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
 </section>
 <section class="pc-sec cx-sec" aria-label="Earnings and creator services">
 <div class="cx-ec">
@@ -706,15 +749,16 @@ Not sure where to start? Ask Nova
 <div class="pc-sh"><div><span class="pc-k">Who can create</span><h2 id="cx-wh" class="pc-h2">Expertise comes in many forms.</h2></div></div>
 <div class="cx-who"><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"></path></svg></span><b>Independent experts</b><small>Share professional expertise.</small></div><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><b>Educators</b><small>Turn experience into structured digital learning.</small></div><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"></rect><path d="M3 9h18M8 13h3M8 16h6"></path></svg></span><b>Industry professionals</b><small>Pass on practical, current skills.</small></div><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg></span><b>Teams</b><small>Co-create learning together.</small></div><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M7.5 14h3M7.5 17h6"></path></svg></span><b>Institutions</b><small>Publish under your institution’s name.</small></div></div>
 </section>
-<section aria-labelledby="fc-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif">
+<section class="cx-fc" aria-labelledby="fc-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif">
 <div class="fc-wrap" style="max-width: 1360px; margin: 0 auto; padding: 32px 24px 64px; box-sizing: border-box">
 <div class="fc-band">
 <span class="fc-horizon" aria-hidden="true"></span>
 <span class="fc-mark" aria-hidden="true"><img src="/_blob/f81e36d31295a0d0737959589ec1abd4" alt="" width="42" height="42"></span>
-<h2 id="fc-h" class="fc-h2">Ready to share what you know?</h2>
+<div class="cx-fct"><h2 id="fc-h" class="fc-h2">Ready to share what you know?</h2>
 <p class="fc-sub">Start free. Nova helps you shape your first course in minutes.</p>
-<a class="ds-btn cx-fb" href="OnbWelcome.dc.html"><span>Start creating</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
 <span class="fc-note">No subscription<i></i>Pay as you go</span>
+</div>
+<a class="ds-btn cx-fb" href="OnbWelcome.dc.html"><span>Start creating</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
 </div>
 </div>
 </section>
@@ -727,7 +771,7 @@ Not sure where to start? Ask Nova
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4540}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4390}}'>
 var AREAS = ["Shape it with AI", "Build rich learning", "Create together", "Check before you submit"];
 class Component extends DCLogic {
 auroraMount(el) {
@@ -843,7 +887,7 @@ auroraMount(el) {
     for (var i = 0; i < 4; i++) (function (k) { st['s' + k] = { cls: k === t ? 'tx-step-run' : 'tx-step-wait', sel: k === t ? 'true' : 'false', pick: function () { self.setState({ tab: k }); } }; st['a' + k] = k === t; })(i);
     var tags = [['blue', 'Draft'], ['blue', 'Draft'], ['blue', '4 people'], ['amber', '1 to fix']];
     st.tagCls = tags[t][0]; st.tag = tags[t][1];
-    st.sug = this.state.drafted ? 'Done. Three questions are in Module 3, ready for you to review and edit.' : (this.state.skipped ? 'No problem. I’ll keep it on your Pre-check list.' : 'Module 3 has no knowledge check yet. Want me to draft three questions for you to review?');
+    st.sug = this.state.drafted ? 'Done. Three questions are in Module 3, ready for you to review and edit.' : (this.state.skipped ? 'No problem. I’ll keep it on your Pre-check list.' : 'Module 3 has no knowledge check yet. Shall I draft three questions for you to review?');
     st.acceptLabel = this.state.drafted ? 'Review questions' : 'Draft 3 questions';
     st.accept = function () { if (self.state.drafted) self.setState({ tab: 1 }); else self.setState({ drafted: true, skipped: false }); };
     st.skip = function () { self.setState({ skipped: true, drafted: false }); };

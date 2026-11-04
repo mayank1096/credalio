@@ -84,7 +84,7 @@ for a, b in [
 
 # ---------- Creator Studio: Landing step list + studio window ----------
 AREAS = [
-    ('Shape it with AI', 'Nova drafts structure, objectives and first questions.'),
+    ('Shape it with AI', 'Nova drafts structure and questions. You decide.'),
     ('Build rich learning', 'Video, text, quizzes, projects and practical work.'),
     ('Create together', 'Invite co-creators and experts with clear roles.'),
     ('Check before you submit', 'Pre-check finds gaps before validators do.'),
@@ -107,11 +107,12 @@ def person(ini, bg, fg, name, role, perm):
 WIN = '''<div class="ci-win cx-win" role="tabpanel" aria-label="{{st.name}}">
 <div class="ci-wk"><span>Creator Studio · Data Foundations</span><span class="ds-tag {{st.tagCls}}">{{st.tag}}</span></div>
 <sc-if value="{{st.a0}}" hint-placeholder-val="{{ true }}">
-<span class="cx-wt">Course outline</span>
-<div class="ci-row">''' + DONE + '''Module 1 · Working with spreadsheet data<span class="cx-rm">4 lessons</span></div>
-<div class="ci-row">''' + DONE + '''Module 2 · Cleaning messy data<span class="cx-rm">4 lessons</span></div>
-<div class="ci-row">''' + TODO + '''Module 3 · Your first SQL queries<span class="cx-rm" style="color: #1652F0">AI draft</span></div>
-<div class="lr-nova nova-card cx-sug">''' + AVN + '''<div class="lr-nova-b"><span class="lr-nova-k">Nova · Creator Copilot''' + tip('AI suggests. You decide. Creators remain responsible for the learning they publish.', 'r') + '''</span><p>{{st.sug}}</p><div class="cx-sa"><button type="button" class="ds-ghost sm" onClick="{{st.accept}}">{{st.acceptLabel}}</button><button type="button" class="ds-link" onClick="{{st.skip}}">Not now</button></div></div></div>
+<ol class="cx-ol">
+<li class="d"><i>''' + ck(11, 3.4) + '''</i><span><b>Working with spreadsheet data</b><small>Module 1 · 4 lessons</small></span></li>
+<li class="d"><i>''' + ck(11, 3.4) + '''</i><span><b>Cleaning messy data</b><small>Module 2 · 4 lessons</small></span></li>
+<li class="n"><i></i><span><b>Your first SQL queries</b><small>Module 3 · drafted with Nova</small></span></li>
+</ol>
+<div class="nova-card cx-sug">''' + AVN + '''<div><p>{{st.sug}}</p><div class="cx-sa"><button type="button" class="ds-ghost sm" onClick="{{st.accept}}">{{st.acceptLabel}}</button><button type="button" class="ds-link" onClick="{{st.skip}}">Not now</button></div></div></div>
 </sc-if>
 <sc-if value="{{st.a1}}" hint-placeholder-val="{{ false }}">
 <span class="cx-wt">Lesson 2.3 · Removing duplicates</span>
@@ -148,8 +149,9 @@ STUDIO = '''<section class="pc-sec cx-sec" aria-labelledby="cx-st">
 # ---------- validation: Link 2 step track ----------
 VSTEPS = [('Pre-check', 'Fix gaps before anyone else sees them.'), ('Submit', 'The cost is shown before anything is charged.'), ('Expert review', 'Independent validators check content, design and assessment.'), ('Resolve findings', 'Answer questions and update your work in the Studio.'), ('Validated', 'Your work earns the seal and a public record.'), ('Publish', 'Learners find it across Credalio.')]
 VAL = '''<section class="pc-sec cx-sec" aria-labelledby="cx-va">
-<div class="pc-sh"><div><span class="pc-k">Validation</span><h2 id="cx-va" class="pc-h2">Build it. Then prove the quality behind it.</h2><p class="pc-p">Independent experts review your work. Validated learning carries the Credalio seal, linked to a public Validation Record.</p></div><a class="ds-ghost" href="Validation.dc.html">How validation works''' + ARR.replace('currentColor', '#1652F0').replace('18', '16') + '''</a></div>
+<div class="pc-sh cx-vh"><div><span class="pc-k">Validation</span><h2 id="cx-va" class="pc-h2">Build it. Then prove the quality behind it.</h2><p class="pc-p">Independent experts review your work. Validated learning carries the Credalio seal, linked to a public Validation Record.</p></div></div>
 <ol class="ko-path cx-path">''' + ''.join('<li%s><span class="ko-dot">%s</span><span><b>%s</b><span>%s</span></span></li>' % (' class="cx-ok"' if i == 4 else '', SEAL.replace('width="11" height="11"', 'width="28" height="28"') if i == 4 else str(i + 1), t, d) for i, (t, d) in enumerate(VSTEPS)) + '''</ol>
+<div class="cx-vb"><a class="ds-ghost" href="Validation.dc.html">How validation works''' + ARR.replace('currentColor', '#1652F0').replace('18', '16') + '''</a></div>
 </section>'''
 
 # ---------- earnings + creator services ----------
@@ -187,16 +189,39 @@ WHOS = '''<section class="pc-sec cx-sec" aria-labelledby="cx-wh">
 </section>'''
 
 # ---------- final CTA: Landing band ----------
+
+def compact_fc(fc):
+    """Landing final CTA band as a compact one-row band (mark · text · button)."""
+    fc = fc.replace('<section aria-labelledby="fc-h"', '<section class="cx-fc" aria-labelledby="fc-h"', 1)
+    m = re.search(r'(<h2 id="fc-h" class="fc-h2">.*?</h2>\n<p class="fc-sub">.*?</p>\n)', fc, re.S)
+    note = re.search(r'<span class="fc-note">.*?</span>\n', fc, re.S)
+    inner = m.group(1) + (note.group(0) if note else '')
+    if note: fc = fc.replace(note.group(0), '')
+    return fc.replace(m.group(1), '<div class="cx-fct">' + inner + '</div>\n')
 FC = block(L, '<section aria-labelledby="fc-h"')
 FC = re.sub(r'<form class="ds-ask fc-form".*?</form>', btn('Start creating', 'OnbWelcome.dc.html', 'cx-fb'), FC, flags=re.S)
 FC = FC.replace('Your next version starts here.', 'Ready to share what you know?').replace('Tell Credalio who you want to become. We’ll help you build the path.', 'Start free. Nova helps you shape your first course in minutes.')
 FC = FC.replace('Free to start<i></i>No card needed', 'No subscription<i></i>Pay as you go')
+FC = compact_fc(FC)
 
 NAVH = nav('For creators').replace('<a class="sx-cta" href="#">Create account</a>', '<a class="sx-cta" href="OnbWelcome.dc.html">Create account</a>')
+HERO = HERO.replace('<div class="ci-door ci-cr aur cx-hero">', '<div class="ci-door ci-cr aur cx-hero">\n' + NAVH.replace('<header class="sx-nav">', '<header class="sx-nav sx-in sx-dk">'), 1)
 
 CSS = r'''.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:border-box}
-.cx-hero{flex:none;height:640px;border-radius:28px}
-.cx-hero .ci-copy{max-width:560px;padding:72px 0 0 64px;gap:18px}
+.cx-hero{flex:none;height:700px;border-radius:28px}
+.sx-in{position:relative;z-index:4;max-width:none;width:100%;height:84px;padding:0 28px 0 40px;flex-shrink:0}
+.sx-dk .sx-word,.sx-dk .sx-mark{filter:brightness(0) invert(1)}
+.ci-cr.cx-hero .tip{color:#FFFFFF}
+.ci-cr.cx-hero .tip:hover,.ci-cr.cx-hero .tip:focus{color:#C9D7FB}
+.sx-dk .sx-link{color:rgba(255,255,255,.78)}
+.sx-dk .sx-link:hover{color:#FFFFFF;background:rgba(255,255,255,.1)}
+.sx-dk .sx-link-on{color:#FFFFFF;background:rgba(255,255,255,.14)}
+.sx-dk .sx-login{color:#FFFFFF !important}
+.sx-dk .sx-cta{background:#FFFFFF;color:#0B1433}
+.sx-dk .sx-cta:hover{background:#EAF0FF}
+.sx-dk .sx-menu{color:#FFFFFF}
+.sx-dk .sx-link:focus-visible,.sx-dk .sx-cta:focus-visible,.sx-dk .sx-menu:focus-visible,.sx-dk .sx-logo:focus-visible{outline-color:rgba(255,255,255,.6)}
+.cx-hero .ci-copy{max-width:560px;padding:44px 0 0 64px;gap:18px}
 .cx-hero .ci-t{margin:0;font-size:54px;line-height:1.04;letter-spacing:-1.8px}
 .cx-hero .ci-d{margin:0;font-size:18px;max-width:500px}
 .cx-acts{display:flex;align-items:center;gap:22px;margin-top:10px}
@@ -204,7 +229,7 @@ CSS = r'''.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:
 .cx-wl{position:relative;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;opacity:.9}
 .cx-wl:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
 .cx-note{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;color:rgba(255,255,255,.7)}
-.cx-hero .ci-vis{right:64px;bottom:auto;top:104px;width:470px}
+.cx-hero .ci-vis{right:64px;bottom:auto;top:168px;width:470px}
 .cx-hero:hover .ci-vis{transform:none}
 .cx-hero .ci-win{padding:20px;gap:10px}
 .cx-wt{font-size:17px;font-weight:600;letter-spacing:-.2px;margin:2px 0 4px}
@@ -222,8 +247,22 @@ CSS = r'''.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:
 .cx-win{height:472px;box-sizing:border-box;padding:24px;gap:10px;border-radius:22px;box-shadow:0 40px 80px -50px rgba(11,20,51,.45);background:linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 70%,#F7F9FD 100%)}
 .cx-win .ci-row{padding:12px 14px;font-size:13.5px;border-radius:12px}
 .cx-win .ci-ck{width:20px;height:20px}
-.cx-sug{margin:8px 0 0}
-.cx-sug .lr-nova-b p{margin:4px 0 0}
+.cx-ol{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column}
+.cx-ol li{position:relative;display:flex;align-items:flex-start;gap:14px;padding:0 0 22px}
+.cx-ol li:not(:last-child)::before{content:"";position:absolute;left:11px;top:26px;bottom:2px;width:2px;border-radius:2px;background:#0F6B45}
+.cx-ol li.d + li.n::before,.cx-ol li:nth-child(2)::before{background:linear-gradient(#0F6B45,#9DB8F7)}
+.cx-ol li > i{width:24px;height:24px;flex-shrink:0;box-sizing:border-box;border-radius:999px;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.cx-ol li.d > i{background:#0F6B45}
+.cx-ol li.n > i{border:2px dashed #9DB8F7;background:#FFFFFF}
+.cx-ol li > span{display:flex;flex-direction:column;gap:2px;padding-top:2px}
+.cx-ol b{font-size:15px;font-weight:600;color:#0B1433}
+.cx-ol small{font-size:13px;color:#5B6582}
+.cx-ol li.n small{color:#1652F0}
+.cx-ol li:last-child{padding-bottom:0}
+.cx-sug{position:relative;display:flex;align-items:flex-start;gap:14px;margin:18px 0 0 38px;padding:18px 20px;border-radius:18px}
+.cx-sug::before{content:"";position:absolute;left:-15px;top:-14px;width:14px;height:24px;border-left:2px dashed #9DB8F7;border-bottom:2px dashed #9DB8F7;border-bottom-left-radius:12px}
+.cx-sug .nv-av{width:40px;height:40px;flex-shrink:0}
+.cx-sug p{margin:2px 0 0;font-size:14.5px;line-height:1.55;color:#0B1433}
 .cx-sa{display:flex;align-items:center;gap:16px;margin-top:12px}
 .cx-blk .cx-bi{width:30px;height:30px;border-radius:9px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .cx-bt{font-weight:600;color:#0B1433}
@@ -236,6 +275,10 @@ CSS = r'''.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:
 .cx-pp .ds-tag{margin-left:auto}
 .cx-amb{background:#FFF8EC}
 .cx-path{grid-template-columns:repeat(6,minmax(0,1fr))}
+.cx-vh{justify-content:center;text-align:center;margin-bottom:44px}
+.cx-vh > div{display:flex;flex-direction:column;align-items:center}
+.cx-vh .pc-p{margin-left:auto;margin-right:auto}
+.cx-vb{display:flex;justify-content:center;margin-top:44px}
 .cx-path .ko-dot{background:#FFFFFF}
 .cx-path li:first-child .ko-dot{background:#1652F0}
 .cx-path .cx-ok .ko-dot{border:0;background:none}
@@ -266,8 +309,18 @@ CSS = r'''.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:
 .cx-sub{margin-left:auto;height:40px;padding:0 18px;border-radius:999px;background:#EEF1F7;color:#8A93AD;font-size:14px;font-weight:600;display:inline-flex;align-items:center}
 #cx-make{overflow:clip}
 .cx-fb{position:relative;z-index:2;margin-top:14px}
+.cx-fc .fc-wrap{padding-bottom:56px}
+.cx-fc .fc-band{flex-direction:row;align-items:center;text-align:left;gap:28px;padding:40px 48px}
+.cx-fc .fc-horizon{bottom:-590px;opacity:.85}
+.cx-fc .fc-mark{width:60px;height:60px;flex-shrink:0}
+.cx-fc .fc-mark img{width:34px;height:34px}
+.cx-fct{position:relative;display:flex;flex-direction:column;gap:8px;flex:1;min-width:0}
+.cx-fc .fc-h2{margin:0;font-size:34px;letter-spacing:-1px;line-height:1.12}
+.cx-fc .fc-sub{font-size:16px}
+.cx-fc .fc-note{margin-top:4px;font-size:13px}
+.cx-fc .cx-fb{margin:0;flex-shrink:0}
 @media (max-width: 1180px){
-.cx-hero .ci-copy{padding:56px 0 0 44px;max-width:470px}
+.cx-hero .ci-copy{padding:36px 0 0 44px;max-width:470px}
 .cx-hero .ci-t{font-size:44px}
 .cx-hero .ci-vis{right:36px;width:400px}
 .cx-path{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:32px}
@@ -280,7 +333,8 @@ CSS = r'''.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:
 @media (max-width: 960px){
 .cx-top{padding:8px 12px 0}
 .cx-hero{height:auto;padding-bottom:0}
-.cx-hero .ci-copy{padding:40px 24px 0;max-width:none;gap:14px}
+.cx-hero .ci-copy{padding:20px 24px 0;max-width:none;gap:14px}
+.sx-in{height:72px;padding:0 20px 0 24px}
 .cx-hero .ci-t{font-size:34px;letter-spacing:-1px}
 .cx-hero .ci-d{font-size:15.5px}
 .cx-hero .ci-vis{display:block;position:relative;top:auto;right:auto;width:auto;margin:32px 20px -1px}
@@ -289,6 +343,10 @@ CSS = r'''.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:
 .cx-studio{grid-template-columns:minmax(0,1fr);gap:24px}
 .cx-win{height:auto;min-height:440px}
 .cx-path{grid-template-columns:minmax(0,1fr);row-gap:0}
+.cx-vh{text-align:left;margin-bottom:22px}
+.cx-vh > div{align-items:flex-start}
+.cx-vh .pc-p{margin-left:0}
+.cx-vb{justify-content:flex-start;margin-top:28px}
 .cx-path li:nth-child(3)::before{display:block}
 .cx-path .cx-ok .ko-dot svg{width:28px;height:28px}
 .cx-ec{grid-template-columns:minmax(0,1fr)}
@@ -297,7 +355,8 @@ CSS = r'''.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:
 .cx-wt2{flex:0 0 220px;scroll-snap-align:start}
 }
 @media (max-width: 760px){
-.cx-hero .ci-copy{padding:32px 20px 0}
+.cx-hero .ci-copy{padding:16px 20px 0}
+.sx-in{height:64px;padding:0 10px 0 18px}
 .cx-hero .ci-t{font-size:30px}
 .cx-acts{flex-direction:column;align-items:stretch;gap:6px}
 .cx-acts .ds-btn{justify-content:space-between;align-self:stretch}
@@ -313,18 +372,27 @@ CSS = r'''.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:
 .cx-win .ci-row{padding:10px 12px;font-size:13px}
 .cx-blk .cx-rm{display:none}
 .cx-pp .ds-tag{display:none}
-.cx-sa{gap:12px}
+.cx-sa{gap:12px;flex-wrap:wrap}
+.cx-sug{margin-left:0;padding:14px;gap:10px}
+.cx-sug::before{display:none}
+.cx-sug .nv-av{width:32px;height:32px}
 .cx-earn,.cx-svc{padding:24px 18px}
 .cx-eh{flex-direction:column;gap:16px}
 .cx-earn .pc-units{grid-template-columns:minmax(0,1fr)}
 .cx-svc .pc-rate{font-size:22px}
 .cx-ticks li{font-size:14.5px}
 .cx-fb{align-self:stretch;justify-content:space-between}
+.cx-fc .fc-band{flex-direction:column;text-align:center;gap:14px;padding:36px 20px 40px}
+.cx-fct{align-items:center}
+.cx-fc .fc-h2{font-size:26px}
+.cx-fc .fc-sub{font-size:15px}
+.cx-fc .fc-mark{width:48px;height:48px}
+.cx-fc .fc-mark img{width:28px;height:28px}
+.cx-fc .cx-fb{align-self:stretch}
 }
 '''
 
 BODY = '''<div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
-''' + NAVH + '''
 ''' + HERO + '''
 ''' + GC + '''
 ''' + STUDIO + '''
@@ -347,7 +415,7 @@ class Component extends DCLogic {
     for (var i = 0; i < 4; i++) (function (k) { st['s' + k] = { cls: k === t ? 'tx-step-run' : 'tx-step-wait', sel: k === t ? 'true' : 'false', pick: function () { self.setState({ tab: k }); } }; st['a' + k] = k === t; })(i);
     var tags = [['blue', 'Draft'], ['blue', 'Draft'], ['blue', '4 people'], ['amber', '1 to fix']];
     st.tagCls = tags[t][0]; st.tag = tags[t][1];
-    st.sug = this.state.drafted ? 'Done. Three questions are in Module 3, ready for you to review and edit.' : (this.state.skipped ? 'No problem. I’ll keep it on your Pre-check list.' : 'Module 3 has no knowledge check yet. Want me to draft three questions for you to review?');
+    st.sug = this.state.drafted ? 'Done. Three questions are in Module 3, ready for you to review and edit.' : (this.state.skipped ? 'No problem. I’ll keep it on your Pre-check list.' : 'Module 3 has no knowledge check yet. Shall I draft three questions for you to review?');
     st.acceptLabel = this.state.drafted ? 'Review questions' : 'Draft 3 questions';
     st.accept = function () { if (self.state.drafted) self.setState({ tab: 1 }); else self.setState({ drafted: true, skipped: false }); };
     st.skip = function () { self.setState({ skipped: true, drafted: false }); };

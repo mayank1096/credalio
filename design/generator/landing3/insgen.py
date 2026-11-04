@@ -149,12 +149,16 @@ FC = block(L, '<section aria-labelledby="fc-h"')
 FC = re.sub(r'<form class="ds-ask fc-form".*?</form>', btn('Talk to Credalio', TALK, 'cx-fb'), FC, flags=re.S)
 FC = FC.replace('Your next version starts here.', 'Let’s shape Credalio around your institution.').replace('Tell Credalio who you want to become. We’ll help you build the path.', 'Tell us about your organisation. We’ll show you a workspace that fits.')
 FC = re.sub(r'<span class="fc-note">.*?</span>\n', '', FC, flags=re.S)
+FC = cregen.compact_fc(FC)
 
 NAVH = nav('For institutions').replace('<a class="sx-cta" href="#">Create account</a>', '<a class="sx-cta" href="OnbWelcome.dc.html">Create account</a>')
+HERO = HERO.replace('<div class="ci-door ci-in cx-hero in-hero">', '<div class="ci-door ci-in cx-hero in-hero">\n' + NAVH.replace('<header class="sx-nav">', '<header class="sx-nav sx-in">'), 1)
 
 CSS = r'''.in-hero .cx-wl{color:#1652F0}
 .in-hero .ci-copy{max-width:540px}
-.in-hero .ci-vis{top:96px}
+.in-hero .ci-vis{top:156px}
+.in-hero .sx-link:hover{background:rgba(255,255,255,.7)}
+.in-hero .sx-link-on{background:#FFFFFF}
 .in-hero .cx-f1{left:-110px;bottom:-34px}
 .in-kp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .in-k{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:12px;background:#F5F8FF;font-size:11.5px;color:#5B6582}
@@ -207,7 +211,7 @@ CSS = r'''.in-hero .cx-wl{color:#1652F0}
 .in-int{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .in-i{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:18px;border:1.5px solid #E6EAF3;font-size:15px;font-weight:600}
 @media (min-width: 961px){
-.in-hero{height:600px}
+.in-hero{height:660px}
 }
 @media (max-width: 1180px){
 .in-int{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -245,7 +249,6 @@ CSS = r'''.in-hero .cx-wl{color:#1652F0}
 '''
 
 BODY = '''<div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
-''' + NAVH + '''
 ''' + HERO + '''
 ''' + WHOS + '''
 ''' + DO + '''

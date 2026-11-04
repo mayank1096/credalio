@@ -272,7 +272,10 @@ CSS = r'''.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:
 .cx-hero .ci-vis{right:36px;width:400px}
 .cx-path{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:32px}
 .cx-path li:nth-child(3)::before{display:none}
-.cx-who{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cx-who{gap:10px}
+.cx-wt2{padding:18px 16px}
+.cx-wt2 b{font-size:15px}
+.cx-wt2 small{font-size:13.5px}
 }
 @media (max-width: 960px){
 .cx-top{padding:8px 12px 0}

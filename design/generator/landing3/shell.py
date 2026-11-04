@@ -28,7 +28,7 @@ h1,h2,h3,p{text-wrap:pretty}
 @media (max-width: 760px){.sx-nav{height:60px;padding:0 16px}.sx-word{height:20px}.sx-cta{height:40px;padding:0 16px;font-size:14px}.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}.sx-tip:hover::after,.sx-tip:focus::after{width:200px}}
 '''
 LINKS=['Explore learning','Career paths','Certifications','Pricing','For creators','For institutions']
-HREFS={'For creators':'Creators.dc.html'}
+HREFS={'For creators':'Creators.dc.html','For institutions':'Institutions.dc.html'}
 def nav(active):
     ls='\n'.join('<a class="sx-link%s" href="%s"%s>%s</a>'%(' sx-link-on' if l==active else '',HREFS.get(l,'#'),' aria-current="page"' if l==active else '',l) for l in LINKS)
     return '''<header class="sx-nav">

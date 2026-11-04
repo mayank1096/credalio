@@ -12,7 +12,9 @@
 <style>
 body{margin:0;background:#FFFFFF}
 h1,h2,h3,p{text-wrap:pretty}
-@media (min-width: 761px){p{text-wrap:balance}}
+@media (min-width: 761px){
+p{text-wrap:balance}
+}
 .sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .sx-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
 .sx-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
@@ -30,9 +32,19 @@ h1,h2,h3,p{text-wrap:pretty}
 .sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
 .sx-fin a{color:#3A4566;text-decoration:none}
 .sx-fin a:hover{color:#1652F0}
-@media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}}
-@media (max-width: 520px){.sx-login{display:none !important}}
-@media (max-width: 760px){.sx-nav{height:60px;padding:0 16px}.sx-word{height:20px}.sx-cta{height:40px;padding:0 16px;font-size:14px}.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}}
+@media (max-width: 1180px){
+.sx-links{display:none}
+.sx-menu{display:flex}
+}
+@media (max-width: 520px){
+.sx-login{display:none !important}
+}
+@media (max-width: 760px){
+.sx-nav{height:60px;padding:0 16px}
+.sx-word{height:20px}
+.sx-cta{height:40px;padding:0 16px;font-size:14px}
+.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}
+}
 body{margin:0;background:#FFFFFF}
 .ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
 .ds-tag.solid{background:#1652F0;color:#FFFFFF}
@@ -282,7 +294,9 @@ h1,h2,h3,p{text-wrap:pretty}
 .lr-nova-b{flex:1;min-width:0}
 .lr-nova-k{font-size:13px;font-weight:500;color:#1652F0}
 .lr-nova-b p{margin:4px 0 0;font-size:16px;line-height:1.5;font-weight:500;letter-spacing:-.1px}
-@media (max-width: 1180px){.lr-nova{flex-wrap:wrap}}
+@media (max-width: 1180px){
+.lr-nova{flex-wrap:wrap}
+}
 @media (max-width: 760px){
 .lr-nova{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:12px;row-gap:14px;align-items:center;padding:20px 18px}
 .lr-nova > .nv-av{width:40px;height:40px;box-shadow:0 0 0 2px #FFFFFF,0 0 0 3.5px #D6DDEE}
@@ -405,7 +419,10 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-hero .ci-vis{right:36px;width:400px}
 .cx-path{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:32px}
 .cx-path li:nth-child(3)::before{display:none}
-.cx-who{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cx-who{gap:10px}
+.cx-wt2{padding:18px 16px}
+.cx-wt2 b{font-size:15px}
+.cx-wt2 small{font-size:13.5px}
 }
 @media (max-width: 960px){
 .cx-top{padding:8px 12px 0}
@@ -462,7 +479,7 @@ h1,h2,h3,p{text-wrap:pretty}
 <a class="sx-link" href="#">Certifications</a>
 <a class="sx-link" href="#">Pricing</a>
 <a class="sx-link sx-link-on" href="Creators.dc.html" aria-current="page">For creators</a>
-<a class="sx-link" href="#">For institutions</a>
+<a class="sx-link" href="Institutions.dc.html">For institutions</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
 <a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>

@@ -257,7 +257,7 @@ BODY = '''<div style="font-family: 'Google Sans', system-ui, sans-serif; color: 
 ''' + VAL + '''
 ''' + INTS + '''
 ''' + FC + '''
-''' + FOOT + '''
+''' + cregen.LFOOT + '''
 </div>'''
 
 DATA = [[a[0], a[2], a[3], a[4], a[5]] for a in AREAS]
@@ -272,7 +272,7 @@ class Component extends DCLogic {
     ws.kpis = a[3].map(function (k) { return { v: k[0], k: k[1] }; });
     ws.rows = a[4].map(function (r) { return { a: r[0], pct: r[1] + '%', tag: r[2], cls: r[3] }; });
     var rows = AIS.map(function (x, i) { var on = self.state.ai[i]; return { t: x[0], d: i === 4 && !on ? 'Off by your policy. ' + x[1] : x[1], on: on ? 'true' : 'false', cls: on ? 'on' : '', flip: function () { var n = self.state.ai.slice(); n[i] = !n[i]; self.setState({ ai: n }); } }; });
-    return { ws: ws, ai: { rows: rows } };
+    return { ws: ws, ai: { rows: rows }, ''' + cregen.FTSUB + ''' };
   }
 }
 '''

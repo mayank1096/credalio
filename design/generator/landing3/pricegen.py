@@ -45,6 +45,7 @@ DOOR = block(L, '<a class="ci-door ci-in"', 'a')
 DOOR = DOOR.replace('<span class="ci-t">Bring your programs to Credalio.</span>', '<span class="ci-t">Learning for your organisation.</span>')
 DOOR = DOOR.replace('Deliver programs, manage learners and educators, and issue verifiable credentials at scale.', 'Give teams, students or members access with central admin, AI settings and reporting. From 5,000 to 10,000 DLP per person, depending on your plan.')
 DOOR = DOOR.replace('Partner with Credalio', 'Talk to Credalio')
+LFOOT = block(L, '<footer class="lh-eng ft"', 'footer').replace('onSubmit="{{hero.onStart}}"', 'onSubmit="{{ftSub}}"')
 FAQ_CSS = '\n'.join(l for l in style(CD).split('\n') if re.match(r'\.dt-(faq|fq|fh|fa|chev)|\.dt-fq-open', l))
 
 
@@ -293,7 +294,7 @@ BODY = '''<div style="font-family: 'Google Sans', system-ui, sans-serif; color: 
 <sc-if value="{{pr.guest}}" hint-placeholder-val="{{ true }}">
 ''' + FC + '''
 </sc-if>
-''' + FOOT + '''
+''' + LFOOT + '''
 </div>'''
 
 def jsblock(name):
@@ -335,7 +336,7 @@ class Component extends DCLogic {
   }
   componentDidMount() { this.aurScan(); for (var k in this.parts) if (this.parts[k].componentDidMount) this.parts[k].componentDidMount(); }
   componentWillUnmount() { if (this._aurMo) this._aurMo.disconnect(); for (var k in this.parts) if (this.parts[k].componentWillUnmount) this.parts[k].componentWillUnmount(); }
-  renderVals() { var o = {}; for (var k in this.parts) o[k] = this.parts[k].renderVals(); return o; }
+  renderVals() { var o = {}; for (var k in this.parts) o[k] = this.parts[k].renderVals(); o.ftSub = function (e) { if (e && e.preventDefault) e.preventDefault(); }; return o; }
 }
 '''
 

@@ -271,7 +271,7 @@ BODY = '''<div style="font-family: 'Google Sans', system-ui, sans-serif; color: 
 ''' + DEC + '''
 ''' + DOORS_SEC + '''
 ''' + FC + '''
-''' + FOOT + '''
+''' + cregen.LFOOT + '''
 </div>'''
 
 JD = [[a[0], a[2], a[3], a[4]] for a in J]
@@ -310,7 +310,7 @@ class Component extends DCLogic {
   }
   componentDidMount() { this.aurScan(); for (var k in this.parts) if (this.parts[k].componentDidMount) this.parts[k].componentDidMount(); }
   componentWillUnmount() { if (this._aurMo) this._aurMo.disconnect(); for (var k in this.parts) if (this.parts[k].componentWillUnmount) this.parts[k].componentWillUnmount(); }
-  renderVals() { var o = {}; for (var k in this.parts) o[k] = this.parts[k].renderVals(); return o; }
+  renderVals() { var o = {}; for (var k in this.parts) o[k] = this.parts[k].renderVals(); o.ftSub = function (e) { if (e && e.preventDefault) e.preventDefault(); }; return o; }
 }
 '''
 

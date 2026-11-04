@@ -928,7 +928,7 @@
       "x": 3670,
       "y": 39570,
       "w": 390,
-      "h": 3328,
+      "h": 3210,
       "title": "LRN-F Course-only learner · Mobile",
       "page": "main",
       "is_interactive": true
@@ -937,7 +937,7 @@
       "x": 0,
       "y": 43498,
       "w": 1440,
-      "h": 2752,
+      "h": 2747,
       "title": "LRN-G Certification-first learner · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -947,7 +947,7 @@
       "x": 1520,
       "y": 43498,
       "w": 390,
-      "h": 3331,
+      "h": 3326,
       "title": "LRN-G Certification-first learner · Mobile",
       "page": "main",
       "is_interactive": true
@@ -966,7 +966,7 @@
       "x": 3670,
       "y": 43498,
       "w": 390,
-      "h": 3346,
+      "h": 3284,
       "title": "LRN-H Learning Program learner (Pro) · Mobile",
       "page": "main",
       "is_interactive": true

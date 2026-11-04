@@ -304,9 +304,6 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-pf-sum{background:#EAF0FF;border-color:#DCE5FB;justify-content:flex-end}
 .lr-pf-n{font-size:44px;line-height:1;font-weight:600;letter-spacing:-1.5px;color:#1652F0;margin-bottom:6px}
 .lr-pf-sum small{color:#3A4566;line-height:1.45}
-.lr-adp{padding-left:4px}
-.lr-adp .nv-av{width:22px;height:22px}
-.lr-adp .tip{margin-left:0}
 .lr-crs{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:36px;align-items:stretch}
 .lr-crs-m{display:flex;flex-direction:column;min-width:0}
 .lr-crs-m .lr-jf{margin-top:auto}
@@ -320,6 +317,8 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-lsn-r i.d{background:#1652F0}
 .lr-lsn-r i.n{background:#1652F0;box-shadow:0 0 0 3px rgba(22,82,240,.2);animation:lrPulse 1.8s ease-in-out infinite}
 @keyframes lrPulse{50%{box-shadow:0 0 0 5px rgba(22,82,240,.08)}}
+.lr-lead,.lr-coh{align-self:center}
+.lr-lead .ds-link,.lr-coh .ds-link{font-size:14px}
 .lr-lead{display:flex;flex-direction:column;padding:22px}
 .lr-ld-h{display:flex;align-items:center;margin:0;font-size:15.5px;font-weight:600}
 .lr-ldl{list-style:none;margin:10px 0 0;padding:0}
@@ -331,7 +330,6 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-ldl small{display:block;margin-top:2px;font-size:12.5px;color:#5B6582}
 .lr-ldl .lr-row-i{width:36px;height:36px;border-radius:11px}
 .lr-ldl .lr-chev{margin-left:auto}
-.lr-lead > .ds-link{margin-top:auto;padding-top:12px;align-self:flex-start}
 .lr-cert-h{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
 .lr-cert-h .lr-ft{margin-top:8px}
 .lr-req{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
@@ -344,7 +342,6 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-rq.lock .lr-rq-h b{color:#5B6582}
 .lr-rq-l{display:flex;align-items:center;gap:6px;font-size:12.5px;color:#5B6582}
 .lr-rq .lr-lsn-r{margin-top:0}
-.lr-nx-m .ds-tag{height:22px;font-size:11.5px}
 .lr-coh{display:flex;flex-direction:column;padding:22px}
 .lr-stack{display:flex;margin-top:16px}
 .lr-stack .cs-cav{width:36px;height:36px;font-size:12px;box-shadow:0 0 0 2.5px #FFFFFF}
@@ -358,7 +355,6 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-mentor small{display:block;margin-top:2px;font-size:12.5px;color:#5B6582}
 .lr-mentor .lr-chev{margin-left:auto}
 .lr-mentor:hover b{color:#1652F0}
-.lr-coh > .ds-link{margin-top:auto;padding-top:14px;align-self:flex-start}
 @keyframes lrIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
 @keyframes lrFade{from{opacity:0}to{opacity:1}}
 @keyframes lrUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -368,7 +364,7 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-g4{grid-template-columns:repeat(3,minmax(0,1fr))}
 .lr-g4 > :nth-child(4){display:none}
 }
-@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}.lr-disc{grid-template-columns:minmax(0,1fr) 300px;gap:28px}.lr-req{grid-template-columns:repeat(2,minmax(0,1fr))}.lr-goal{grid-template-columns:minmax(0,1fr)}.lr-crs{grid-template-columns:minmax(0,1fr);gap:28px}.lr-ldl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}.lr-ldl a{border:1.5px solid #EEF1F7;border-radius:14px;padding:12px}.lr-ldl li:first-child a{border-top:1.5px solid #EEF1F7}.lr-ldl .lr-chev{display:none}.lr-gv{display:none}.lr-mr{grid-template-columns:40px minmax(0,1fr) 160px 20px}.lr-nova{flex-wrap:wrap}.lr-tut{padding-left:0;border-left:0;width:100%}}
+@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}.lr-disc{grid-template-columns:minmax(0,1fr) 300px;gap:28px}.lr-req{grid-template-columns:repeat(2,minmax(0,1fr))}.lr-goal{grid-template-columns:minmax(0,1fr)}.lr-crs{grid-template-columns:minmax(0,1fr);gap:28px}.lr-lead,.lr-coh{align-self:stretch}.lr-ldl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}.lr-ldl a,.lr-ldl li:first-child a{border-top:0;padding:8px 0}.lr-ldl .lr-chev{display:none}.lr-coh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:24px;align-items:center}.lr-coh .lr-ch{grid-column:1 / -1}.lr-coh .lr-mentor{margin-top:16px;padding-top:0;border-top:0}.lr-gv{display:none}.lr-mr{grid-template-columns:40px minmax(0,1fr) 160px 20px}.lr-nova{flex-wrap:wrap}.lr-tut{padding-left:0;border-left:0;width:100%}}
 @media (max-width: 960px){
 .ds-root{grid-template-columns:minmax(0,1fr);overflow-x:hidden}
 .ds-side{position:fixed;left:0;top:0;width:288px;max-width:86vw;transform:translateX(-102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 64px rgba(11,20,51,.18)}
@@ -479,13 +475,19 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-rq-l{align-items:flex-start;line-height:1.35}
 .lr-rq-l svg{flex-shrink:0;margin-top:1px}
 .lr-coh{padding:18px}
-.lr-ldl{display:block;margin-top:10px}
-.lr-ldl a{border:0;border-top:1px solid #EEF1F7;border-radius:0;padding:11px 0}
-.lr-ldl li:first-child a{border-top:0}
-.lr-ldl .lr-chev{display:flex}
+.lr-coh{display:flex;align-items:stretch}
+.lr-ldl{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.lr-ldl a,.lr-ldl li:first-child a{height:36px;padding:0 14px;border:1.5px solid #DCE5FB;border-radius:999px;background:#FFFFFF}
+.lr-ldl .lr-row-i,.lr-ldl small,.lr-ldl .lr-chev{display:none}
+.lr-ldl b{font-size:13.5px;font-weight:500}
+.lr-coh-r{display:flex;align-items:center;gap:14px;margin-top:14px}
+.lr-coh-r .lr-stack,.lr-coh-r .lr-on{margin-top:0}
+.lr-stack .cs-cav{width:32px;height:32px;font-size:11px}
+.lr-on{align-items:flex-start;line-height:1.35}
+.lr-on i{flex-shrink:0;margin-top:5px}
+.lr-coh .lr-mentor{margin-top:14px;padding-top:14px;border-top:1px solid #EEF1F7}
 .lr-crs .lr-jf{margin-top:24px}
 .lr-lead{padding:18px}
-.lr-adp{display:none}
 .lr-panel{width:100vw}
 .lr-pb{padding:18px 16px}
 }
@@ -605,7 +607,7 @@ MARKUP = '''<div class="ds-root">
 <sc-if value="{{fJourney}}" hint-placeholder-val="{{ false }}">
 <section class="lr-focus lr-jy lr-jp aur aur-lt" aria-labelledby="lr-jn">
 <div class="jy-jh"><div><span class="jy-jk">{{jKicker}}</span><h2 id="lr-jn" class="jy-jt" style="margin: 6px 0 0">{{jTitle}}</h2></div>
-<div class="jy-jm"><sc-if value="{{jAdapted}}" hint-placeholder-val="{{ false }}"><span class="ds-tag line lg lr-adp">''' + av() + '''Updated by {{coachTitle}}''' + tip('After your last quiz, {{coachTitle}} added a short JOINs practice to Core skills. You can undo it from your journey.', 'r') + '''</span></sc-if><span class="ds-tag line lg">{{jPct}} complete</span></div></div>
+<div class="jy-jm"><span class="ds-tag line lg">{{jPct}} complete</span></div></div>
 <ol class="jy-jr" aria-label="Your five stages">
 <sc-for list="{{route}}" as="r" hint-placeholder-count="5"><li class="jy-js {{r.cls}}"><span class="jy-jn">{{r.mark}}</span><span class="jy-jl">{{r.label}}</span><span class="jy-jd">{{r.note}}</span><sc-if value="{{r.here}}" hint-placeholder-val="{{ false }}"><span class="ds-tag blue jy-here">{{r.hereT}}</span></sc-if></li></sc-for>
 </ol>
@@ -629,9 +631,8 @@ MARKUP = '''<div class="ds-root">
 </div>
 </div>
 <aside class="lr-nv lr-lead" aria-labelledby="lr-ld">
-<h3 id="lr-ld" class="lr-ld-h">Where this could lead''' + tip('Python Fundamentals is part of these Career Paths. Everything you finish here counts towards them.', 'r') + '''</h3>
+<div class="lr-ch"><h3 id="lr-ld" class="lr-ld-h">Where this could lead''' + tip('Python Fundamentals is part of these Career Paths. Everything you finish here counts towards them.', 'r') + '''</h3><a class="ds-link" href="CareerPaths.dc.html">Compare</a></div>
 <ul class="lr-ldl"><sc-for list="{{lead}}" as="l" hint-placeholder-count="3"><li><a href="{{l.href}}"><span class="lr-row-i">''' + ic(I['path'], 18) + '''</span><span><b>{{l.t}}</b><small>{{l.d}}</small></span><span class="lr-chev" aria-hidden="true">''' + ic('<path d="m9 6 6 6-6 6"></path>', 18, 2.2) + '''</span></a></li></sc-for></ul>
-<a class="ds-link" href="CareerPaths.dc.html">Compare career paths''' + ARR_S + '''</a>
 </aside>
 </section>
 </sc-if>
@@ -641,7 +642,7 @@ MARKUP = '''<div class="ds-root">
 <div class="lr-cert-h"><div><span class="lr-k">Your certification</span><h2 id="lr-cet" class="lr-ft">Professional Certificate in Data Analysis</h2><span class="lr-crs-by"><span class="cs-cav">NU</span>Northgate University<span class="cs-dot"></span>Professional<span class="cs-dot"></span>About 30 hrs</span></div><span class="ds-tag line lg">18% complete</span></div>
 <div class="lr-req"><sc-for list="{{reqs}}" as="q" hint-placeholder-count="4"><div class="lr-rq {{q.cls}}"><span class="lr-rq-h"><b>{{q.t}}</b><span>{{q.n}}</span></span><sc-if value="{{q.open}}" hint-placeholder-val="{{ true }}"><span class="lr-lsn-r" style="grid-template-columns: repeat({{q.of}}, minmax(0, 1fr))"><sc-for list="{{q.seg}}" as="x" hint-placeholder-count="3"><i class="{{x.c}}"></i></sc-for></span></sc-if><sc-if value="{{q.lock}}" hint-placeholder-val="{{ false }}"><span class="lr-rq-l">''' + ic(I['lock'], 14, 2) + '''Opens when the rest are done</span></sc-if></div></sc-for></div>
 <div class="lr-jf">
-<div class="lr-nx"><span class="lr-nx-i">''' + ic(I['assign'], 24) + '''</span><div><small>Next up · Required learning 3 of 6</small><b>Knowledge Check · SQL for Data Analysis</b><span class="lr-nx-m"><span class="ds-tag amber">Due tomorrow</span>About 15 min</span></div></div>
+<div class="lr-nx"><span class="lr-nx-i">''' + ic(I['learn'], 24) + '''</span><div><small>Next up</small><b>SQL for Data Analysis · Module 3</b><span class="lr-nx-m"><span class="lr-bar"><i style="width: 45%"></i></span>45% · ~25 min</span></div></div>
 <div class="ds-acts"><a class="ds-link" href="CertDetail.dc.html">View requirements</a>''' + btn('Continue', 'CertDetail.dc.html') + '''</div>
 </div>
 </section>
@@ -660,11 +661,10 @@ MARKUP = '''<div class="ds-root">
 </div>
 </div>
 <aside class="lr-nv lr-coh" aria-labelledby="lr-coh">
-<h3 id="lr-coh" class="lr-ld-h">Your cohort''' + tip('The people learning this program with you. Your mentor runs weekly check-ins and reviews your project work.', 'r') + '''</h3>
-<div class="lr-stack"><span class="cs-cav">DR</span><span class="cs-cav">PN</span><span class="cs-cav">GA</span><span class="cs-cav">TH</span><span class="cs-cav">LF</span><span class="cs-cav lr-more">+19</span></div>
-<span class="lr-on"><i></i>24 learners · 6 online now</span>
+<div class="lr-ch"><h3 id="lr-coh" class="lr-ld-h">Your cohort''' + tip('The people learning this program with you. Your mentor runs weekly check-ins and reviews your project work.', 'r') + '''</h3><a class="ds-link" href="ProgramDetail.dc.html">Open</a></div>
+<div class="lr-coh-r"><div class="lr-stack"><span class="cs-cav">DR</span><span class="cs-cav">PN</span><span class="cs-cav">GA</span><span class="cs-cav">TH</span><span class="cs-cav">LF</span><span class="cs-cav lr-more">+19</span></div>
+<span class="lr-on"><i></i><span>24 learners · 6 online now</span></span></div>
 <a class="lr-mentor" href="#"><span class="cs-cav">SA</span><span><b>Dr Sara Ali</b><small>Mentor · check-in Wednesday</small></span><span class="lr-chev" aria-hidden="true">''' + ic('<path d="m9 6 6 6-6 6"></path>', 18, 2.2) + '''</span></a>
-<a class="ds-link" href="ProgramDetail.dc.html">Open cohort space''' + ARR_S + '''</a>
 </aside>
 </section>
 </sc-if>
@@ -872,7 +872,7 @@ class Component extends DCLogic {
       R: ['I’ll adapt your journey as you learn. If something feels too easy, too slow or not for you, just tell me.', 'Ask about my journey', ''],
       D: ['You’re 62% through SQL for Data Analysis. Your last quiz suggests JOINs need a little more practice before you move on.', 'Practise with ' + (named ? name : 'your coach'), '']
     };
-    NOVA.E = ['Eighteen days in a row. Two more short sessions this week and you’ll reach your 6-hour goal.', 'Plan my week', ''];
+    NOVA.E = ['After your last quiz I added a short JOINs practice to Core skills. It takes about ten minutes.', 'Try it now', ''];
     NOVA.G = ['Practice labs are the quickest way to get ready for the final evaluation. Lab 2 takes about 45 minutes.', 'Start a practice lab', 'CertDetail.dc.html'];
     NOVA.H = ['Your sales dashboard draft is due Friday. Want a checklist so nothing slips?', 'Get a checklist', ''];
     NOVA.F = ['Stuck on a lesson? I can explain it using exactly what you’re studying right now.', 'Explain this lesson', ''];
@@ -957,7 +957,7 @@ class Component extends DCLogic {
       hasAsg: isActive, asgN: AS.length,
       isNew: isNew, isActive: isActive, gs: gsv, gsDone: gs.filter(function (g) { return g[1] === 'd'; }).length,
       stats: [stat('In progress', counts[0], '', '#'), stat('Completed', counts[1], '', '#'), stat('Streak', AD.streak, 'days', '#')],
-      fDisc: st === 'A' || st === 'B', fGoal: st === 'C', fReady: st === 'R', fJourney: ['D', 'E', 'I', 'W'].indexOf(st) > -1, fCourse: st === 'F', fCert: st === 'G', fProg: st === 'H', jAdapted: st === 'E',
+      fDisc: st === 'A' || st === 'B', fGoal: st === 'C', fReady: st === 'R', fJourney: ['D', 'E', 'I', 'W'].indexOf(st) > -1, fCourse: st === 'F', fCert: st === 'G', fProg: st === 'H',
       dKicker: 'Welcome to Credalio', dSub: discSub, hasDSub: !!discSub, dNova: dNova, dNovaCta: 'Build my journey',
       q: S.q, onQ: function (e) { self.setState({ q: e.target.value }); },
       disc: [['Courses', 'Courses.dc.html'], ['Career paths', 'CareerPaths.dc.html'], ['Certifications', 'Certifications.dc.html'], ['Programs', 'Programs.dc.html']].map(function (d) { return { t: d[0], h: d[1] }; }),

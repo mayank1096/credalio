@@ -120,6 +120,8 @@ HOLO_CSS = r'''.rc-main .cd-val{position:relative;overflow:hidden;background:rad
 .rc-main .cd-val::before{content:"";position:absolute;inset:8px;border:1px solid #F1E6C9;border-radius:14px;pointer-events:none}
 .rc-main .cd-val::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:repeating-radial-gradient(circle at 0 100%,transparent 0 13px,rgba(200,150,30,.07) 13px 14px),repeating-radial-gradient(circle at 100% 0,transparent 0 17px,rgba(22,82,240,.05) 17px 18px)}
 .rc-main .cd-val > *{position:relative;z-index:1}
+.rc-main .cd-chk{background:linear-gradient(180deg,#FFFAEB,#FFF3D6);box-shadow:inset 0 0 0 1px #F4E3B5}
+.rc-main .cd-chk span{color:#6B5A33}
 .hl{position:relative;width:76px;height:76px;align-self:start;perspective:500px}
 .hl-in{position:absolute;inset:0;transform:rotateX(var(--ry,0deg)) rotateY(var(--rx,0deg));transform-style:preserve-3d;transition:transform .25s ease-out}
 .hl .cd-seal{width:100%;height:100%;filter:drop-shadow(0 10px 16px rgba(168,122,18,.35))}

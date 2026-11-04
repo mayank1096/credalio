@@ -4,7 +4,7 @@
 import os, sys, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from kit import KIT_CSS, AUR_CSS, AURORA_JS, ARROW, CLOSE, NOVA, INFO, btn, tip, coin, credit, mforge, ck, think
+from kit import KIT_CSS, AUR_CSS, AURORA_JS, ARROW, CLOSE, NOVA, INFO, btn, tip, coin, credit, mforge, ck, think, opts
 
 OUT = os.path.join(HERE, '../../canvas3/project/Dashboard.dc.html')
 
@@ -418,6 +418,19 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 .lr-led .tot b{font-size:16px}
 .lr-ok-s{margin-top:auto;padding-top:14px;font-size:14px}
 .lr-ok-s i{width:20px;height:20px}
+.lr-pill.low{background:#FFFAEB;border-color:#F4D98E}
+.lr-pill.low > span{color:#8A5A00}
+.lr-low{display:flex;align-items:center;gap:14px;margin:0 0 18px;padding:14px 16px 14px 18px;border-radius:18px;background:#FFF8EB;border:1.5px solid #F4D98E}
+.lr-low-i{width:28px;height:28px;border-radius:999px;background:#B97A10;color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;font-weight:700}
+.lr-low p{flex:1;margin:0;font-size:14.5px;line-height:1.45;color:#3A4566}
+.lr-low p b{font-weight:600;color:#0B1433}
+.lr-low-a{display:flex;align-items:center;gap:18px;flex-shrink:0}
+.lr-low .ds-ghost{background:#FFFFFF}
+.lr-alw{padding:38px 44px 34px}
+.lr-alw .lr-k .ds-tag{margin-right:2px}
+.lr-alw .lr-fs{max-width:620px}
+.lr-alw-o{margin-top:34px}
+.lr-alw-f{margin-top:22px}
 @keyframes lrIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
 @keyframes lrFade{from{opacity:0}to{opacity:1}}
 @keyframes lrUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -558,6 +571,11 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 .lr-use-a{flex-direction:column-reverse}
 .lr-use-a .ds-ghost{width:100%}
 .lr-lr{grid-template-columns:minmax(0,1fr) 64px 40px}
+.lr-low{flex-wrap:wrap;align-items:flex-start;padding:14px 16px}
+.lr-low p{flex:1 1 calc(100% - 42px)}
+.lr-low-a{width:100%;justify-content:space-between;padding-left:42px;box-sizing:border-box}
+.lr-alw{padding:32px 16px 28px}
+.lr-alw-o{margin-top:30px}
 .lr-panel{width:100vw}
 .lr-pb{padding:18px 16px}
 }
@@ -606,7 +624,7 @@ MARKUP = '''<div class="ds-root">
 <a class="ds-mlogo lr-mlogo" href="Dashboard.dc.html" aria-label="Credalio home"><span class="lr-word"></span></a>
 <label class="ds-search">''' + ic(I['search'], 18) + '''<span class="sr-only">Search</span><input placeholder="Search courses, career paths, certifications…"></label>
 <span class="ds-hide-sm" style="flex-grow: 1"></span>
-<span class="lr-walw"><button type="button" class="lr-pill" aria-expanded="{{walExp}}" aria-label="{{dlp}} DLP available. Show balances" onClick="{{toggleWal}}">''' + coin() + '''<span>{{dlp}}</span><i class="ds-hide-sm">DLP</i></button>
+<span class="lr-walw"><button type="button" class="lr-pill {{pillCls}}" aria-expanded="{{walExp}}" aria-label="{{dlp}} DLP available. Show balances" onClick="{{toggleWal}}">''' + coin() + '''<span>{{dlp}}</span><i class="ds-hide-sm">DLP</i></button>
 <sc-if value="{{walOpen}}" hint-placeholder-val="{{ false }}"><div class="lr-wal" role="dialog" aria-label="Your balances">
 <div class="lr-wal-h"><b>Your balances''' + tip('LAS is a score, not a balance, so you’ll find it in Learning rewards.', 'r') + '''</b><button type="button" class="ds-x" onClick="{{toggleWal}}" aria-label="Close">''' + CLOSE + '''</button></div>
 <a class="lr-wr" href="Usage.dc.html">''' + coin(True) + '''<span><b>DLP</b><small>{{walDlpSub}}</small></span><strong>{{dlp}}</strong></a>
@@ -627,10 +645,24 @@ MARKUP = '''<div class="ds-root">
 <sc-for list="{{gs}}" as="g" hint-placeholder-count="3">''' + STEP + '''</sc-for>
 </ol></div>
 </sc-if>
-<sc-if value="{{isActive}}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{showStrip}}" hint-placeholder-val="{{ false }}">
 <div class="lr-strip"><sc-for list="{{stats}}" as="s" hint-placeholder-count="3"><a class="lr-st" href="{{s.href}}"><small>{{s.k}}</small><b>{{s.v}}<i>{{s.of}}</i></b></a></sc-for></div>
 </sc-if>
 </div>
+
+<sc-if value="{{lowNote}}" hint-placeholder-val="{{ false }}">
+<div class="lr-low" role="status"><span class="lr-low-i" aria-hidden="true">!</span><p><b>You’re running low on DLP.</b> 180 left, and your next lesson uses about 200.''' + tip('Your Basic allowance of 2,000 DLP refreshes on 12 October. Until then, a top-up keeps you moving.') + '''</p><div class="lr-low-a"><a class="ds-link" href="Usage.dc.html">See usage</a><a class="ds-ghost sm" href="#">Get more DLP</a></div></div>
+</sc-if>
+
+<sc-if value="{{fAllow}}" hint-placeholder-val="{{ false }}">
+<section class="lr-focus lr-alw aur aur-lt" aria-labelledby="lr-alt">
+<span class="lr-k"><span class="ds-tag green">Stage 1 complete</span>Data Analyst journey</span>
+<h2 id="lr-alt" class="lr-ft">You’re ready for the next step.</h2>
+<p class="lr-fs">You’ve used this month’s learning allowance. Your progress is saved exactly where you stopped.</p>
+<div class="lr-alw-o">''' + opts() + '''</div>
+<a class="ds-link lr-alw-f" href="Explore.dc.html">Explore learning that needs no DLP''' + ARR_S + '''</a>
+</section>
+</sc-if>
 
 <sc-if value="{{fDisc}}" hint-placeholder-val="{{ true }}">
 <section class="lr-focus lr-disc aur aur-lt" aria-labelledby="lr-ft">
@@ -761,7 +793,9 @@ MARKUP = '''<div class="ds-root">
 <div class="lr-goalw"><div><span>Weekly goal</span><b>{{wgDone}} of {{wgAll}} hours</b></div><span class="lr-bar lg"><i style="width: {{wgPct}}"></i></span></div>
 </div>
 </section>
+</sc-if>
 
+<sc-if value="{{showML}}" hint-placeholder-val="{{ false }}">
 <section class="lr-sec" aria-labelledby="lr-ml">
 <div class="lr-sh"><h2 id="lr-ml">My learning</h2><a class="ds-link" href="#">View all</a></div>
 <div class="lr-card lr-mlc">
@@ -803,7 +837,7 @@ MARKUP = '''<div class="ds-root">
 </section>
 </sc-if>
 
-<sc-if value="{{isNew}}" hint-placeholder-val="{{ true }}">
+<sc-if value="{{showLocked}}" hint-placeholder-val="{{ true }}">
 <div class="lr-sec lr-g2">
 <section class="lr-card" aria-labelledby="lr-rw">
 <div class="lr-ch"><h3 id="lr-rw">Learning rewards''' + tip('Each Learning Season, verified learning activity on a paid plan earns rewards such as Marketplace Credits. Learning always comes first.') + '''</h3><span class="ds-tag">Paid plans</span></div>
@@ -812,7 +846,7 @@ MARKUP = '''<div class="ds-root">
 </section>
 <section class="lr-card" aria-labelledby="lr-bp">
 <div class="lr-ch"><h3 id="lr-bp">Digital Backpack''' + tip('Your verified proof: credentials, projects and skills you earn on Credalio, ready to share.') + '''</h3></div>
-<div class="lr-cb"><span class="lr-ico">''' + ic(I['pack'], 22) + '''</span><div><h4>Your proof starts here.</h4><p>What you earn lands here, verified and ready to share.</p></div></div>
+<div class="lr-cb"><span class="lr-ico">''' + ic(I['pack'], 22) + '''</span><div><h4>{{bpH}}</h4><p>{{bpP}}</p></div></div>
 <a class="ds-link" href="#">Open Backpack''' + ARR_S + '''</a>
 </section>
 </div>
@@ -973,7 +1007,7 @@ class Component extends DCLogic {
     var allow = { free: 200, basic: 2000, pro: 6000 }[tierK];
     var fmt = function (n) { return n.toLocaleString('en-GB'); };
     var tone = this.TONE, tier = this.TIER;
-    var recKey = { R: 'ready', B: 'interests', C: 'goal', F: 'course', G: 'cert', H: 'program' }[st] || (isActive ? 'active' : 'start');
+    var recKey = { R: 'ready', B: 'interests', C: 'goal', F: 'course', G: 'cert', H: 'program', L: 'active' }[st] || (isActive ? 'active' : 'start');
     var recs = this.REC[recKey].map(function (c) {
       var tn = tone[c.topic], v = { t: c.t, by: c.by, lvl: c.lvl, rating: c.rating, reviews: c.reviews, hrs: c.hrs + ' hrs', dlp: fmt(c.dlp), why: c.why, href: c.dlp === 200 ? 'CourseDetail-Learner.dc.html' : 'CourseDetail.dc.html',
         ini: c.by.split(' ').map(function (w) { return w[0]; }).slice(0, 2).join(''), bg: tn[0], icoC: tn[1], tierLabel: tier[c.tier][0], tierDot: tier[c.tier][1] };
@@ -1001,7 +1035,9 @@ class Component extends DCLogic {
     NOVA.H = ['Your sales dashboard draft is due Friday. Want a checklist so nothing slips?', 'Get a checklist', ''];
     NOVA.F = ['Stuck on a lesson? I can explain it using exactly what you’re studying right now.', 'Explain this lesson', ''];
     NOVA.I = ['It’s been nine days. A three-minute recap of JOINs will make Lesson 4 much easier.', 'Recap with ' + (named ? name : 'your coach'), ''];
-    NOVA.B = NOVA.A; NOVA.W = NOVA.D;
+    NOVA.W = ['Want me to put the free practice first this week, so you keep going while you decide on DLP?', 'Reorder my week', ''];
+    NOVA.L = ['While you decide, there’s free practice that keeps your SQL sharp. Want me to line it up?', 'Show free learning', 'Explore.dc.html'];
+    NOVA.B = NOVA.A;
     var nv = NOVA[st] || NOVA.A;
     var postsNew = [['Getting started', 'What I wish I’d known in my first week', 'Priya Nair', 'PN', 31], ['Choosing a path', 'Course, path or certification: how I decided', 'Daniel Reyes', 'DR', 18], ['Learning habits', 'Twenty minutes a day changed everything', 'Grace Adeyemi', 'GA', 24]];
     var postsData = [['Data Analytics', 'How I finally understood JOINs', 'Daniel Reyes', 'DR', 12], ['Career change', 'From classroom to analyst in eight months', 'Priya Nair', 'PN', 28], ['SQL', 'Weekly SQL practice group: join us', 'Tom Hughes', 'TH', 9]];
@@ -1052,9 +1088,11 @@ class Component extends DCLogic {
       dots: [1, 4],
       as: [['SQL Data Cleaning Project', 'Data Analyst Career Path', 'Overdue · was due 25 Sep', 'amber', '~1 hr 30 min', 'Continue'], ['Knowledge Check', 'SQL for Data Analysis', 'Due Wed 30 Sep', '', '~15 min', 'Start']],
       hello: 'Welcome back, Ada. You stopped six minutes into SQL JOINs. Want a quick recap before you carry on?', ask: [['Give me a 3-minute recap of JOINs', '#'], ['Can I move my project deadline?', '#'], ['Do I have enough DLP to finish my path?', '#dlp']] });
-    ACT.E = ACT.D; ACT.W = ACT.D;
+    ACT.L = { counts: [1, 1], streak: 5, wg: [0, 3], ml: [['Data Analyst', 'Career Path', 20, 'Stage 1 complete'], ['Data Foundations', 'Course', 100, 'Completed']], ev: [], dots: [], as: [], proofs: [], bp: ['1', '', ''], hello: 'Hi Ada. You finished Stage 1, nice work. Want me to show you learning that needs no DLP while you decide?', ask: [['Show me free learning', 'Explore.dc.html'], ['Which option suits me?', '#'], ['When does my allowance refresh?', '#']] };
+    ACT.E = ACT.D;
+    ACT.W = Object.assign({}, ACT.D, { hello: 'Hi Ada. You have 180 DLP and your next lesson uses about 200. Want me to put free practice first this week?', ask: [['Put free practice first', '#'], ['Do I have enough DLP to finish my path?', '#dlp'], ['Explain today’s lesson simply', '#']] });
     var AD = ACT[st] || ACT.D;
-    var counts = AD.counts, ML = {}; ML[st] = isActive ? AD.ml : [];
+    var counts = AD.counts, ML = {}; ML[st] = (isActive || st === 'L') ? AD.ml : [];
     var items = ML[st] || [];
     var TI = { 'Career Path': 0, Course: 1, Certification: 2, 'Learning Program': 3 };
     var mlItems = items.map(function (m) { var v = { t: m[0], sub: m[1] + ' · ' + m[3], pct: (m[2] < 0 ? 0 : m[2]) + '%', pctLabel: m[2] < 0 ? 'Upcoming' : m[2] + '%', barCls: m[2] === 100 ? 'ok' : '',
@@ -1065,7 +1103,7 @@ class Component extends DCLogic {
     var AS = AD.as;
     var discSub = { B: 'You picked Data, Business and AI.' }[st] || '';
     var dNova = { B: 'I can turn your interests into a starting journey. It takes about two minutes.' }[st] || 'Not sure yet? Tell me where you’d like to be, and I’ll build a journey around it.';
-    var REC_T = { R: ['Next on your journey', 'Picked by ' + coachN + ' for your Data Analyst journey.'], B: ['Picked for your interests', 'Based on Data, Business and AI.'], C: ['For your goal', 'Learning that builds towards becoming a stronger leader.'], active: ['Recommended for you', 'Picked by ' + coachN + ' from your path and progress.'], start: ['Good places to start', 'Popular first steps while you find your direction.'] }[st === 'R' || st === 'B' || st === 'C' ? st : (isActive ? 'active' : 'start')];
+    var REC_T = { L: ['Next on your journey', 'Stage 2 of your Data Analyst journey, ready when you are.'], R: ['Next on your journey', 'Picked by ' + coachN + ' for your Data Analyst journey.'], B: ['Picked for your interests', 'Based on Data, Business and AI.'], C: ['For your goal', 'Learning that builds towards becoming a stronger leader.'], active: ['Recommended for you', 'Picked by ' + coachN + ' from your path and progress.'], start: ['Good places to start', 'Popular first steps while you find your direction.'] }[st === 'R' || st === 'B' || st === 'C' || st === 'L' ? st : (isActive ? 'active' : 'start')];
     return {
       navCls: S.nav ? 'ds-open' : '', toggleNav: function () { self.setState({ nav: !S.nav }); },
       date: 'Sunday 27 September',
@@ -1135,7 +1173,11 @@ class Component extends DCLogic {
       rw: (S.season === 'ready' ? [['Marketplace Credits', 'cr', '+18.40'], ['MFORGE', 'mf', '1,850']] : (S.season === 'calculating' ? [['Marketplace Credits', 'sk'], ['Scholarship', 'sk'], ['MFORGE', 'sk']]
         : [['Marketplace Credits', 'tag', 'Pending', ''], ['Scholarship', 'tag', 'Pending', ''], S.mf === 'not' ? ['MFORGE', 'tag', '3 of 4 met', 'amber', 'Still needed: connect TruVault so MFORGE can reach you. Everything else is done.'] : ['MFORGE', 'tag', 'Eligible', 'green']]))
         .map(function (r) { return { k: r[0], isTag: r[1] === 'tag', tag: r[2] || '', tc: r[3] || '', hasTip: !!r[4], tipT: r[4] || '', sk: r[1] === 'sk', isCr: r[1] === 'cr', isMf: r[1] === 'mf', v: r[2] || '' }; }),
-      posts: posts, showBand: !named || (st !== 'A' && st !== 'B')
+      showStrip: isActive || st === 'L', showML: isActive || st === 'L', showLocked: isNew || st === 'L', lowNote: st === 'W', fAllow: st === 'L', pillCls: (st === 'W' || st === 'L') ? 'low' : '',
+      bpH: st === 'L' ? 'Your first credential is in.' : 'Your proof starts here.', bpP: st === 'L' ? 'Data Foundations is verified and ready to share.' : 'What you earn lands here, verified and ready to share.',
+      optN: 3, opts: [['Upgrade to Basic', '2,000 DLP every month, enough for Stage 2 and most of Stage 3.', 'Upgrade', '#', 1], ['Top up instead', 'Stay on Free and add only what Stage 2 needs.', 'Add DLP', '#', 0], ['Wait for your refresh', 'Your next 200 DLP arrives on 1 October. We’ll remind you.', 'Remind me', '#', 0]]
+        .map(function (o) { return { t: o[0], d: o[1], cta: o[2], href: o[3], rec: !!o[4], plain: !o[4], cls: o[4] ? 'rec' : '' }; }),
+      posts: posts, showBand: !named || (st !== 'A' && st !== 'B' && st !== 'L')
     };
   }
 ''' + AURORA_JS + '''

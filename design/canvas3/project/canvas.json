@@ -1654,6 +1654,25 @@
       "title": "PRC Mode 3 · Plan options for the Data Analyst path · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Creators.dc.html": {
+      "x": 0,
+      "y": 76155,
+      "w": 1440,
+      "h": 4540,
+      "title": "CRE-001 → 007 For Creators: hero, what you can create, Creator Studio, validation, earnings, creator services, who can create · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Creators-Mobile.dc.html": {
+      "x": 1520,
+      "y": 76155,
+      "w": 390,
+      "h": 5720,
+      "title": "CRE-001 → 007 For Creators: hero, what you can create, Creator Studio, validation, earnings, creator services, who can create · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -1689,7 +1708,8 @@
     "row-b20",
     "row-b21",
     "row-b22",
-    "row-b23"
+    "row-b23",
+    "row-b24"
   ],
   "notes": {
     "new-hero": {
@@ -1892,6 +1912,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b24": {
+      "x": 0,
+      "y": 75855,
+      "text": "Batch 24 · For Creators (one responsive source; Studio areas are clickable)",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -2068,7 +2096,9 @@
     "Prc-M-pro.dc.html",
     "Prc-M-pro-Mobile.dc.html",
     "Prc-C-path.dc.html",
-    "Prc-C-path-Mobile.dc.html"
+    "Prc-C-path-Mobile.dc.html",
+    "Creators.dc.html",
+    "Creators-Mobile.dc.html"
   ],
   "pages": [
     {

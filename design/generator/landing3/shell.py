@@ -28,8 +28,9 @@ h1,h2,h3,p{text-wrap:pretty}
 @media (max-width: 760px){.sx-nav{height:60px;padding:0 16px}.sx-word{height:20px}.sx-cta{height:40px;padding:0 16px;font-size:14px}.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}.sx-tip:hover::after,.sx-tip:focus::after{width:200px}}
 '''
 LINKS=['Explore learning','Career paths','Certifications','Pricing','For creators','For institutions']
+HREFS={'For creators':'Creators.dc.html'}
 def nav(active):
-    ls='\n'.join('<a class="sx-link%s" href="#"%s>%s</a>'%(' sx-link-on' if l==active else '',' aria-current="page"' if l==active else '',l) for l in LINKS)
+    ls='\n'.join('<a class="sx-link%s" href="%s"%s>%s</a>'%(' sx-link-on' if l==active else '',HREFS.get(l,'#'),' aria-current="page"' if l==active else '',l) for l in LINKS)
     return '''<header class="sx-nav">
 <a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
 <nav class="sx-links" aria-label="Main">
@@ -44,7 +45,7 @@ def nav(active):
 FOOT='''<footer class="sx-foot">
 <div class="sx-fin">
 <a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
-<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="#">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="Creators.dc.html">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
 <span>© 2026 magnummeta. All rights reserved.</span>
 </div>
 </footer>'''

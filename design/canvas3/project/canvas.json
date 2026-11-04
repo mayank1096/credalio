@@ -1564,8 +1564,8 @@
       "x": 0,
       "y": 65347,
       "w": 1440,
-      "h": 4130,
-      "title": "PRC-001 → 004 Pricing: plans, compare, Enterprise, top-ups, DLP · Desktop",
+      "h": 5569,
+      "title": "PRC-001 → 011 Pricing: plans, compare, Enterprise, top-ups, DLP, rollover, AI, rewards, FAQ · Desktop",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -1574,8 +1574,84 @@
       "x": 1520,
       "y": 65347,
       "w": 390,
-      "h": 4440,
-      "title": "PRC-001 → 004 Pricing: plans, compare, Enterprise, top-ups, DLP · Mobile",
+      "h": 6600,
+      "title": "PRC-001 → 011 Pricing: plans, compare, Enterprise, top-ups, DLP, rollover, AI, rewards, FAQ · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Prc-M-free.dc.html": {
+      "x": 0,
+      "y": 72547,
+      "w": 1440,
+      "h": 2292,
+      "title": "PRC Mode 2 · Signed-in Free learner · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Prc-M-free-Mobile.dc.html": {
+      "x": 1520,
+      "y": 72547,
+      "w": 390,
+      "h": 2708,
+      "title": "PRC Mode 2 · Signed-in Free learner · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Prc-M-basic.dc.html": {
+      "x": 2150,
+      "y": 72547,
+      "w": 1440,
+      "h": 2292,
+      "title": "PRC Mode 2 · Signed-in Basic learner · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Prc-M-basic-Mobile.dc.html": {
+      "x": 3670,
+      "y": 72547,
+      "w": 390,
+      "h": 2708,
+      "title": "PRC Mode 2 · Signed-in Basic learner · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Prc-M-pro.dc.html": {
+      "x": 4300,
+      "y": 72547,
+      "w": 1440,
+      "h": 2302,
+      "title": "PRC Mode 2 · Signed-in Pro learner (no upgrade push) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Prc-M-pro-Mobile.dc.html": {
+      "x": 5820,
+      "y": 72547,
+      "w": 390,
+      "h": 2708,
+      "title": "PRC Mode 2 · Signed-in Pro learner (no upgrade push) · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Prc-C-path.dc.html": {
+      "x": 6450,
+      "y": 72547,
+      "w": 1440,
+      "h": 2105,
+      "title": "PRC Mode 3 · Plan options for the Data Analyst path · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Prc-C-path-Mobile.dc.html": {
+      "x": 7970,
+      "y": 72547,
+      "w": 390,
+      "h": 2464,
+      "title": "PRC Mode 3 · Plan options for the Data Analyst path · Mobile",
       "page": "main",
       "is_interactive": true
     }
@@ -1612,7 +1688,8 @@
     "row-b19",
     "row-b20",
     "row-b21",
-    "row-b22"
+    "row-b22",
+    "row-b23"
   ],
   "notes": {
     "new-hero": {
@@ -1807,6 +1884,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b23": {
+      "x": 0,
+      "y": 72247,
+      "text": "Batch 23 · Pricing for signed-in learners and from the Data Analyst path (same Pricing source, mode prop)",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -1975,7 +2060,15 @@
     "Chk-Failed.dc.html",
     "Chk-Failed-Mobile.dc.html",
     "Pricing.dc.html",
-    "Pricing-Mobile.dc.html"
+    "Pricing-Mobile.dc.html",
+    "Prc-M-free.dc.html",
+    "Prc-M-free-Mobile.dc.html",
+    "Prc-M-basic.dc.html",
+    "Prc-M-basic-Mobile.dc.html",
+    "Prc-M-pro.dc.html",
+    "Prc-M-pro-Mobile.dc.html",
+    "Prc-C-path.dc.html",
+    "Prc-C-path-Mobile.dc.html"
   ],
   "pages": [
     {

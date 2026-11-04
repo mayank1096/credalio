@@ -795,7 +795,7 @@
       "x": 1520,
       "y": 32853,
       "w": 390,
-      "h": 1768,
+      "h": 1778,
       "title": "LRN-A Skipped everything: what would you like to learn? · Mobile",
       "page": "main",
       "is_interactive": true
@@ -833,7 +833,7 @@
       "x": 5820,
       "y": 32853,
       "w": 390,
-      "h": 1925,
+      "h": 1971,
       "title": "LRN-001 Journey ready (just finished onboarding with Nova) · Mobile",
       "page": "main",
       "is_interactive": true
@@ -852,7 +852,7 @@
       "x": 1520,
       "y": 35646,
       "w": 390,
-      "h": 1804,
+      "h": 1814,
       "title": "LRN-B Interests only · Mobile",
       "page": "main",
       "is_interactive": true
@@ -871,7 +871,7 @@
       "x": 3670,
       "y": 35646,
       "w": 390,
-      "h": 1777,
+      "h": 1787,
       "title": "LRN-C Goal captured, no path yet · Mobile",
       "page": "main",
       "is_interactive": true
@@ -890,7 +890,7 @@
       "x": 5820,
       "y": 35646,
       "w": 390,
-      "h": 3336,
+      "h": 3380,
       "title": "LRN-D Career Path selected (no AI journey) · Mobile",
       "page": "main",
       "is_interactive": true

@@ -580,7 +580,7 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 .lr-tut > div{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:6px}
 .lr-tut small{font-size:13.5px}
 .lr-lsn{margin:22px 0 0}
-.lr-cert-h{flex-direction:column;gap:18px}
+.lr-cert-h .ds-tag{display:none}
 .lr-req{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:22px}
 .lr-rq{padding:12px 14px;gap:10px}
 .lr-rq-h{flex-direction:column;align-items:flex-start;gap:2px}
@@ -794,7 +794,7 @@ MARKUP = '''<div class="ds-root">
 
 <sc-if value="{{fCert}}" hint-placeholder-val="{{ false }}">
 <section class="lr-focus lr-cert aur aur-lt" aria-labelledby="lr-cet">
-<div class="lr-cert-h"><div><span class="lr-k">Your certification</span><h2 id="lr-cet" class="lr-ft">Professional Certificate in Data Analysis</h2><span class="lr-crs-by"><span class="cs-cav">NU</span>Northgate University<span class="cs-dot"></span>Professional<span class="cs-dot"></span>About 30 hrs</span></div>''' + wow.cert_paper() + '''</div>
+<div class="lr-cert-h"><div><span class="lr-k">Your certification</span><h2 id="lr-cet" class="lr-ft">Professional Certificate in Data Analysis</h2><span class="lr-crs-by"><span class="cs-cav">NU</span>Northgate University<span class="cs-dot"></span>Professional<span class="cs-dot"></span>About 30 hrs</span></div><span class="ds-tag line lg">18% complete</span></div>
 <div class="lr-req"><sc-for list="{{reqs}}" as="q" hint-placeholder-count="4"><div class="lr-rq {{q.cls}}"><span class="lr-rq-h"><b>{{q.t}}</b><span>{{q.n}}</span></span><sc-if value="{{q.open}}" hint-placeholder-val="{{ true }}"><span class="lr-lsn-r" style="grid-template-columns: repeat({{q.of}}, minmax(0, 1fr))"><sc-for list="{{q.seg}}" as="x" hint-placeholder-count="3"><i class="{{x.c}}"></i></sc-for></span></sc-if><sc-if value="{{q.lock}}" hint-placeholder-val="{{ false }}"><span class="lr-rq-l">''' + ic(I['lock'], 14, 2) + '''Opens when the rest are done</span></sc-if></div></sc-for></div>
 <div class="lr-jf">
 <div class="lr-nx"><span class="lr-nx-i">''' + ic(I['learn'], 24) + '''</span><div><small>Next up</small><b>SQL for Data Analysis · Module 3</b><span class="lr-nx-m"><span class="lr-bar"><i style="width: 45%"></i></span>45% · ~25 min</span></div></div>
@@ -978,7 +978,7 @@ class Component extends DCLogic {
   constructor(props) {
     super(props);
     var p = props || {};
-    this.state = { st: p.state || 'A', coach: p.coach === undefined || p.coach === null ? 'Nova' : p.coach, panel: p.panel === true || p.panel === 'true', nav: false, draft: '', q: '', thinking: false, ti: 0, wk: 'sch', intro: false, dlpQ: false, ask: p.ask || '', wal: p.wallets === true || p.wallets === 'true', las: p.las === true || p.las === 'true', page: p.page || 'home', season: p.season || 'active', mf: p.mforge || 'eligible', cpFull: false, ''' + lpages.JS_STATE + r''' };
+    this.state = { st: p.state || 'A', coach: p.coach === undefined || p.coach === null ? 'Nova' : p.coach, panel: p.panel === true || p.panel === 'true', nav: false, draft: '', q: '', thinking: false, ti: 0, wk: 'sch', intro: false, dlpQ: false, ask: p.ask || '', wal: p.wallets === true || p.wallets === 'true', las: p.las === true || p.las === 'true', page: p.page || 'home', season: p.season || 'active', mf: p.mforge || 'eligible', ''' + lpages.JS_STATE + r''' };
     this.CH = { Nova: ['/_blob/398ca91d2832bb0ab6b0af61319676f4', '-87.50%', '-57.81%', '294.06%'], Maya: ['/_blob/a1da64159da9c302c3a1835dea8e5266', '-68.75%', '-105.00%', '235.25%'], Alex: ['/_blob/22972224648e9b26d4acac7cc3f7c3a8', '-72.97%', '-112.16%', '254.32%'], Sage: ['/_blob/343a6c48a0cc4849f5a082d9a10a83a4', '-75.68%', '-114.86%', '254.32%'] };
     this.TONE = { Data: ['linear-gradient(150deg,#1C3AA8,#0B1433)', '#FFFFFF', 0], Design: ['linear-gradient(150deg,#7FA4FF,#4C7DFF)', '#FFFFFF', 1], Software: ['linear-gradient(150deg,#4C7DFF,#1652F0)', '#FFFFFF', 2], Business: ['linear-gradient(150deg,#DCE5FB,#EAF0FF)', '#1652F0', 4], Leadership: ['linear-gradient(150deg,#9DB8F7,#4C7DFF)', '#FFFFFF', 4] };
     this.TIER = { gold: ['Gold Validated', '#C8961E'], silver: ['Silver Validated', '#8E9BB0'], bronze: ['Bronze Validated', '#A8683A'] };
@@ -1020,7 +1020,7 @@ class Component extends DCLogic {
   }
 ''' + wow.WOW_JS + r'''
   componentDidMount() { this.aurScan(); this.wowScan(); if (this.state.panel) { if (this.state.ask === 'dlp') this.askDlp(); else this.think(); } }
-  componentWillUnmount() { if (this._aurMo) this._aurMo.disconnect(); clearTimeout(this._t); clearTimeout(this._cpT); this.wowStop(); }
+  componentWillUnmount() { if (this._aurMo) this._aurMo.disconnect(); clearTimeout(this._t); this.wowStop(); }
   think(list) {
     var self = this, steps = list || ['Reading your profile…', 'Checking what you’ve picked so far…', 'Getting ready to help…'];
     clearTimeout(this._t);
@@ -1191,8 +1191,6 @@ class Component extends DCLogic {
       reqs: [['Required learning', 2, 6], ['Practice labs', 1, 3], ['Assessments', 0, 2], ['Final evaluation', 0, 1, 1]].map(function (q) { return { t: q[0], n: q[3] ? '' : q[1] + ' of ' + q[2], of: q[2], open: !q[3], lock: !!q[3], cls: q[3] ? 'lock' : (q[1] ? '' : 'zero'),
         seg: Array.apply(null, Array(q[2])).map(function (x, i) { return { c: i < q[1] ? 'd' : '' }; }) }; }),
       lead: [['Data Analyst', '6–8 months · 8 courses', 'PathDetail.dc.html'], ['AI Engineer', '8–10 months · 8 courses', 'PathDetail.dc.html'], ['Data Scientist', '9–12 months · 9 courses', 'CareerPaths.dc.html']].map(function (l) { return { t: l[0], d: l[1], href: l[2] }; }),
-      cp0: S.cpFull ? '100%' : '33%', cp1: S.cpFull ? '100%' : '33%', cp2: S.cpFull ? '100%' : '0%', cpCls: S.cpFull ? 'full' : '', cpPct: S.cpFull ? 'Preview when finished' : '18% complete', cpPlayT: S.cpFull ? 'Back to my progress' : 'See it finished',
-      cpPlay: function () { clearTimeout(self._cpT); if (S.cpFull) { self.setState({ cpFull: false }); return; } self.setState({ cpFull: true }); self._cpT = setTimeout(function () { self.setState({ cpFull: false }); }, 5200); },
       pHome: !S.page || S.page === 'home', pUsage: S.page === 'usage',''' + lpages.JS_VALS + r'''
       navDash: !S.page || S.page === 'home' ? 'ds-on' : '', navDashCur: !S.page || S.page === 'home' ? 'page' : 'false', navWal: S.page === 'usage' ? 'ds-on' : '', navWalCur: S.page === 'usage' ? 'page' : 'false',
       walOpen: S.wal, walExp: S.wal ? 'true' : 'false', pillOn: S.wal ? 'tp-on' : '', isLow: st === 'W' || st === 'L', lowT: st === 'L' ? 'You’ve used this month’s allowance. Your next 200 arrives on 1 October.' : 'Running low. Your next lesson uses about 200.', toggleWal: function () { self.setState({ wal: !S.wal }); },
@@ -1235,7 +1233,7 @@ HTML = '''<!doctype html>
 <helmet>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
-''' + KIT_CSS + '\n' + AUR_CSS + '\n' + CSS + '\n' + lpages.CSS + '\n' + wow.CERT_CSS + wow.VAULT_CSS + wow.BATON_CSS + '''</style>
+''' + KIT_CSS + '\n' + AUR_CSS + '\n' + CSS + '\n' + lpages.CSS + '\n' + wow.VAULT_CSS + '''</style>
 </helmet>
 ''' + MARKUP + '''
 </x-dc>

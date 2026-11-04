@@ -144,34 +144,68 @@ HOLO_JS = r'''
   holoOut() { var h = document.querySelector('.hl'); if (h) { h.style.setProperty('--rx', '0deg'); h.style.setProperty('--ry', '0deg'); } }
 '''
 
-# ---------- 4 · TruVault lock (Backpack dialog) ----------
-VAULT = ('<div class="vt" aria-hidden="true">'
-         '<span class="vt-card"><span class="lr-pf-i">CREDI</span></span>'
-         '<span class="vt-sh"><svg viewBox="0 0 120 136" width="120" height="136"><defs><linearGradient id="vtG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1B2A63"></stop><stop offset="1" stop-color="#0B1433"></stop></linearGradient><linearGradient id="vtE" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4C7DFF"></stop><stop offset="1" stop-color="#1652F0"></stop></linearGradient></defs>'
-         '<path d="M60 8 106 24v38c0 33-19 56-46 66C33 118 14 95 14 62V24z" fill="#060B1F" transform="translate(0 6)"></path>'
-         '<path d="M60 8 106 24v38c0 33-19 56-46 66C33 118 14 95 14 62V24z" fill="url(#vtG)" stroke="url(#vtE)" stroke-width="3"></path>'
-         '<path d="M60 20 94 32v30c0 25-14 43-34 51-20-8-34-26-34-51V32z" fill="none" stroke="rgba(157,184,247,.28)" stroke-width="1.5"></path>'
-         '<g class="vt-lock"><path class="vt-shk" d="M48 66V58a12 12 0 0 1 24 0v8" fill="none" stroke="#9DB8F7" stroke-width="6" stroke-linecap="round"></path><rect x="42" y="64" width="36" height="28" rx="7" fill="#9DB8F7"></rect><circle cx="60" cy="76" r="4" fill="#0B1433"></circle><path d="M60 78v6" stroke="#0B1433" stroke-width="3" stroke-linecap="round"></path></g></svg>'
-         '<span class="vt-ring"></span><span class="vt-ok">CKI</span></span>'
-         '</div>')
-VAULT_CSS = r'''.vt{position:relative;width:200px;height:160px;margin:4px auto 0}
-.vt-sh{position:absolute;left:40px;top:12px;width:120px;height:136px;animation:vtIn .5s cubic-bezier(.2,1.2,.4,1) both}
-.vt-sh svg{display:block;filter:drop-shadow(0 18px 24px rgba(11,20,51,.35))}
-.vt-card{position:absolute;left:4px;top:30px;width:58px;height:42px;border-radius:9px;background:#FFFFFF;border:1.5px solid #DCE5FB;box-shadow:0 10px 20px -8px rgba(11,20,51,.35);display:flex;align-items:center;justify-content:center;z-index:2;animation:vtFly 1s cubic-bezier(.6,0,.3,1) .35s both}
-.vt-card .lr-pf-i{width:30px;height:30px;border-radius:9px}
-.vt-card .lr-pf-i svg{width:16px;height:16px}
-.vt-shk{transform:translateY(-9px);animation:vtShut .28s cubic-bezier(.5,0,.5,1.6) 1.4s both}
-.vt-lock{transform-origin:60px 78px;animation:vtClick .35s ease 1.66s both}
-.vt-ring{position:absolute;left:50%;top:52%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;border:2px solid #9DB8F7;opacity:0;animation:vtRing .8s ease-out 1.66s both}
-.vt-ok{position:absolute;right:6px;bottom:8px;width:28px;height:28px;border-radius:50%;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #FFFFFF;animation:vtOk .4s cubic-bezier(.2,1.6,.4,1) 1.9s both}
-@keyframes vtIn{from{opacity:0;transform:translateY(10px) scale(.9)}}
-@keyframes vtFly{0%{transform:translate(0,0) rotate(-6deg)}55%{transform:translate(52px,-26px) rotate(4deg) scale(.9)}100%{transform:translate(66px,26px) scale(.25);opacity:0}}
-@keyframes vtShut{from{transform:translateY(-9px)}to{transform:translateY(0)}}
-@keyframes vtClick{50%{transform:scale(1.08)}}
-@keyframes vtRing{from{opacity:.9;transform:scale(.7)}to{opacity:0;transform:scale(1.6)}}
+# ---------- 4 · TruVault vault door (Backpack dialog) ----------
+def _bolts():
+    import math
+    out = ''
+    for k in range(12):
+        a = k * 30
+        out += '<rect x="-3" y="-66" width="6" height="11" rx="3" transform="rotate(%d)"></rect>' % a
+    return out
+def _rivets():
+    out = ''
+    for k in range(24):
+        out += '<circle cx="0" cy="-47" r="1.3" transform="rotate(%g)"></circle>' % (k * 15)
+    return out
+VAULT = ('<div class="vt" aria-hidden="true"><div class="vt-st">'
+         '<div class="vt-fr"><span class="vt-scr s1"></span><span class="vt-scr s2"></span><span class="vt-scr s3"></span><span class="vt-scr s4"></span>'
+         '<span class="vt-hole"><span class="vt-in"></span></span>'
+         '<span class="vt-card"><span class="lr-pf-i">CREDI</span><i></i><i></i></span>'
+         '<div class="vt-door"><svg viewBox="-70 -70 140 140" width="140" height="140">'
+         '<defs><radialGradient id="vdF" cx="38%" cy="32%" r="80%"><stop offset="0" stop-color="#2C3F86"></stop><stop offset=".55" stop-color="#16245E"></stop><stop offset="1" stop-color="#0B1433"></stop></radialGradient>'
+         '<linearGradient id="vdR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9D7FB"></stop><stop offset=".45" stop-color="#4C7DFF"></stop><stop offset="1" stop-color="#1B2A63"></stop></linearGradient>'
+         '<linearGradient id="vdS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".22"></stop><stop offset=".5" stop-color="#FFFFFF" stop-opacity="0"></stop></linearGradient></defs>'
+         '<g class="vt-bolts" fill="#9DB8F7">' + _bolts() + '</g>'
+         '<circle r="60" fill="url(#vdF)" stroke="url(#vdR)" stroke-width="3.5"></circle>'
+         '<circle r="52" fill="none" stroke="rgba(157,184,247,.22)" stroke-width="1"></circle>'
+         '<g fill="rgba(157,184,247,.55)">' + _rivets() + '</g>'
+         '<circle r="40" fill="none" stroke="rgba(157,184,247,.14)" stroke-width="8"></circle>'
+         '<g class="vt-dial"><g stroke="#C9D7FB" stroke-width="3.5" stroke-linecap="round"><path d="M0 0V-30M0 0 26 15M0 0-26 15"></path></g>'
+         '<g fill="#C9D7FB"><circle cx="0" cy="-30" r="4.5"></circle><circle cx="26" cy="15" r="4.5"></circle><circle cx="-26" cy="15" r="4.5"></circle></g>'
+         '<circle r="11" fill="#0B1433" stroke="url(#vdR)" stroke-width="2.5"></circle><circle r="4" fill="#4C7DFF"></circle></g>'
+         '<ellipse cx="-14" cy="-30" rx="40" ry="20" fill="url(#vdS)" transform="rotate(-24)"></ellipse>'
+         '</svg></div>'
+         '<span class="vt-glow"></span></div>'
+         '<span class="vt-ok">CKI</span>'
+         '</div></div>')
+VAULT_CSS = r'''.vt{position:relative;width:220px;height:178px;margin:2px auto 0}
+.vt-st{position:absolute;inset:0;perspective:720px}
+.vt-fr{position:absolute;left:24px;top:8px;width:172px;height:162px;border-radius:30px;background:linear-gradient(155deg,#22327A 0%,#0F1A45 55%,#0B1433 100%);box-shadow:0 26px 44px -20px rgba(11,20,51,.6),inset 0 1px 0 rgba(255,255,255,.12),inset 0 -2px 0 rgba(0,0,0,.35);transform-style:preserve-3d;animation:vtIn .45s cubic-bezier(.2,1.2,.4,1) both}
+.vt-fr::before{content:"";position:absolute;inset:8px;border-radius:24px;border:1px solid rgba(157,184,247,.16)}
+.vt-scr{position:absolute;width:7px;height:7px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#C9D7FB,#4C6BB8 70%);box-shadow:0 1px 0 rgba(0,0,0,.4)}
+.vt-scr.s1{left:16px;top:16px}.vt-scr.s2{right:16px;top:16px}.vt-scr.s3{left:16px;bottom:16px}.vt-scr.s4{right:16px;bottom:16px}
+.vt-hole{position:absolute;left:50%;top:50%;width:136px;height:136px;margin:-68px 0 0 -68px;border-radius:50%;background:#050A1C;box-shadow:inset 0 0 0 3px #0B1433,inset 0 10px 24px rgba(0,0,0,.8)}
+.vt-in{position:absolute;inset:18px;border-radius:50%;background:radial-gradient(circle,rgba(76,125,255,.35),transparent 70%);animation:vtPulse 1.6s ease-in-out infinite}
+.vt-card{position:absolute;left:-58px;top:52px;width:62px;height:44px;box-sizing:border-box;padding:6px;border-radius:10px;background:#FFFFFF;border:1.5px solid #DCE5FB;box-shadow:0 12px 22px -8px rgba(11,20,51,.45);display:grid;grid-template-columns:28px 1fr;grid-template-rows:1fr 1fr;column-gap:5px;align-items:center;z-index:2;animation:vtFly .75s cubic-bezier(.6,0,.3,1) .3s both}
+.vt-card .lr-pf-i{grid-row:1 / span 2;width:28px;height:28px;border-radius:8px}
+.vt-card .lr-pf-i svg{width:15px;height:15px}
+.vt-card i{display:block;height:3px;border-radius:3px;background:#DCE5FB}
+.vt-card i:last-child{width:70%}
+.vt-door{position:absolute;left:16px;top:11px;width:140px;height:140px;z-index:3;transform-origin:0 50%;transform:rotateY(-108deg);animation:vtShut .55s cubic-bezier(.3,1.25,.5,1) 1s both;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45))}
+.vt-door svg{display:block}
+.vt-dial{transform-box:fill-box;transform-origin:center;animation:vtSpin .7s cubic-bezier(.5,0,.3,1) 1.5s both}
+.vt-bolts{transform-box:view-box;transform-origin:0 0;transform:scale(.86);animation:vtBolt .22s cubic-bezier(.4,1.6,.6,1) 2.15s both}
+.vt-glow{position:absolute;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;box-shadow:0 0 0 2px #4C7DFF,0 0 30px rgba(76,125,255,.7);opacity:0;z-index:4;pointer-events:none;animation:vtGlow .9s ease-out 2.2s both}
+.vt-ok{position:absolute;right:16px;bottom:2px;width:32px;height:32px;border-radius:50%;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px #FFFFFF,0 8px 16px -6px rgba(15,107,69,.6);z-index:5;animation:vtOk .4s cubic-bezier(.2,1.6,.4,1) 2.35s both}
+@keyframes vtIn{from{opacity:0;transform:translateY(10px) scale(.94)}}
+@keyframes vtPulse{50%{opacity:.4}}
+@keyframes vtFly{0%{transform:translate(0,0) rotate(-8deg)}50%{transform:translate(58px,-14px) rotate(3deg)}100%{transform:translate(112px,6px) scale(.35);opacity:0}}
+@keyframes vtShut{from{transform:rotateY(-108deg)}to{transform:rotateY(0)}}
+@keyframes vtSpin{from{transform:rotate(0)}to{transform:rotate(-240deg)}}
+@keyframes vtBolt{to{transform:scale(1)}}
+@keyframes vtGlow{0%{opacity:0;transform:scale(.9)}35%{opacity:1}100%{opacity:0;transform:scale(1.12)}}
 @keyframes vtOk{from{opacity:0;transform:scale(0)}}
-.vt-cap{margin-top:14px;font-size:14.5px;font-weight:500;color:#3A4566}
-@media (prefers-reduced-motion: reduce){.vt-sh,.vt-card,.vt-shk,.vt-lock,.vt-ring,.vt-ok{animation:none}.vt-card{opacity:0}.vt-shk{transform:none}}
+@media (prefers-reduced-motion: reduce){.vt-fr,.vt-in,.vt-card,.vt-door,.vt-dial,.vt-bolts,.vt-glow,.vt-ok{animation:none}.vt-card{opacity:0}.vt-door{transform:none}.vt-bolts{transform:none}}
 '''
 
 # ---------- 5 · Nova -> tutor baton (Ask Tutor) ----------

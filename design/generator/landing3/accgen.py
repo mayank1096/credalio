@@ -154,7 +154,7 @@ MARKUP = '''<div class="ac-root">
 </article>
 </div>
 <sc-if value="{{showToast}}" hint-placeholder-val="{{ true }}">
-<div class="ac-toast" role="status"><span class="ac-ti" aria-hidden="true">!</span><div><b>Your allowance is running low.</b><p>You have 120 DLP, and your next lesson uses about 200.</p></div><div class="ac-toast-a"><button type="button" class="ds-link" onClick="{{dismiss}}">Continue for now</button><a class="ds-ghost sm" href="#">Get more DLP</a></div></div>
+<div class="ac-toast" role="status"><span class="ac-ti" aria-hidden="true">!</span><div><b>Your allowance is running low.</b><p>You have 120 DLP, and your next lesson uses about 200.</p></div><div class="ac-toast-a"><button type="button" class="ds-link" onClick="{{dismiss}}">Continue for now</button><a class="ds-ghost sm" href="Chk-TOP.dc.html">Get more DLP</a></div></div>
 </sc-if>
 </sc-if>
 </main>
@@ -167,11 +167,11 @@ class Component extends DCLogic {
     var self = this, k = (this.props || {}).kind || 'freeCourse';
     var D = {
       freeCourse: { course: 'SQL for Data Analysis', th: '', need: 500, have: 200, h1: 'You need 300 more DLP for this course.', sub: 'Your progress is saved, so nothing is lost while you decide.', more: 'Compare plans', moreHref: '#',
-        opts: [['Upgrade to Basic', '2,000 DLP every month. Covers this course and what comes next.', 'Upgrade', 'Chk-003.dc.html', 1], ['Top up instead', 'Stay on Free and add just what this course needs.', 'Add 300 DLP', '#', 0]] },
+        opts: [['Upgrade to Basic', '2,000 DLP every month. Covers this course and what comes next.', 'Upgrade', 'Chk-003.dc.html', 1], ['Top up instead', 'Stay on Free and add just what this course needs.', 'Add 300 DLP', 'Chk-TOP.dc.html', 0]] },
       proCourse: { course: 'Advanced Analytics with Python', th: 'py', need: 400, have: 150, h1: 'You need 250 more DLP for this course.', sub: 'You’re on Pro, so there’s no bigger plan. Add what you need, or wait for your refresh.', more: 'See my usage', moreHref: 'Usage.dc.html',
-        opts: [['Top up now', 'Added straight away. Your plan stays the same.', 'Add 250 DLP', '#', 1], ['Wait for your refresh', 'Your next 6,000 DLP arrives on 12 October. We’ll remind you.', 'Remind me', '#', 0]] },
+        opts: [['Top up now', 'Added straight away. Your plan stays the same.', 'Add 250 DLP', 'Chk-TOP.dc.html', 1], ['Wait for your refresh', 'Your next 6,000 DLP arrives on 12 October. We’ll remind you.', 'Remind me', '#', 0]] },
       zero: { h1: 'You’re ready for the next step.', sub: 'You’ve used this month’s learning allowance. Your progress is saved exactly where you stopped.', more: 'Explore learning that needs no DLP', moreHref: 'Explore.dc.html',
-        opts: [['Upgrade to Pro', '6,000 DLP every month, for learning at full pace.', 'Upgrade', '#', 1], ['Top up instead', 'Keep Basic and add only what you need.', 'Add DLP', '#', 0], ['Wait for your refresh', 'Your next 2,000 DLP arrives on 12 October.', 'Remind me', '#', 0]] }
+        opts: [['Upgrade to Pro', '6,000 DLP every month, for learning at full pace.', 'Upgrade', 'Chk-007p.dc.html', 1], ['Top up instead', 'Keep Basic and add only what you need.', 'Add DLP', 'Chk-TOP.dc.html', 0], ['Wait for your refresh', 'Your next 2,000 DLP arrives on 12 October.', 'Remind me', '#', 0]] }
     };
     var d = D[k] || D.freeCourse, isCourse = k === 'freeCourse' || k === 'proCourse', f = function (n) { return n.toLocaleString('en-GB'); };
     var pill = { freeCourse: 200, proCourse: 150, zero: 0, low: 120 }[k];

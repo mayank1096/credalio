@@ -1692,6 +1692,82 @@
       "title": "ENT-001 → 009 For Institutions: hero, who it’s for, what you can do, AI settings, structure, credentials, validation, integration · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Partner.dc.html": {
+      "x": 0,
+      "y": 89675,
+      "w": 1440,
+      "h": 1740,
+      "title": "ENT-010 Partner inquiry: form · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Partner-Mobile.dc.html": {
+      "x": 1520,
+      "y": 89675,
+      "w": 390,
+      "h": 2050,
+      "title": "ENT-010 Partner inquiry: form · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Partner-Error.dc.html": {
+      "x": 2150,
+      "y": 89675,
+      "w": 1440,
+      "h": 1940,
+      "title": "ENT-010 Partner inquiry: missing details · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Partner-Error-Mobile.dc.html": {
+      "x": 3670,
+      "y": 89675,
+      "w": 390,
+      "h": 2250,
+      "title": "ENT-010 Partner inquiry: missing details · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Partner-Done.dc.html": {
+      "x": 4300,
+      "y": 89675,
+      "w": 1440,
+      "h": 1060,
+      "title": "ENT-010 Partner inquiry: request sent · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Partner-Done-Mobile.dc.html": {
+      "x": 5820,
+      "y": 89675,
+      "w": 390,
+      "h": 1060,
+      "title": "ENT-010 Partner inquiry: request sent · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Validation.dc.html": {
+      "x": 6450,
+      "y": 89675,
+      "w": 1440,
+      "h": 4580,
+      "title": "TRST-001 → 008 How Validation Works: hero, statuses, review areas, journey, clarification, decision, versioning · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Validation-Mobile.dc.html": {
+      "x": 7970,
+      "y": 89675,
+      "w": 390,
+      "h": 5610,
+      "title": "TRST-001 → 008 How Validation Works: hero, statuses, review areas, journey, clarification, decision, versioning · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -1729,7 +1805,8 @@
     "row-b22",
     "row-b23",
     "row-b24",
-    "row-b25"
+    "row-b25",
+    "row-b26"
   ],
   "notes": {
     "new-hero": {
@@ -1948,6 +2025,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b26": {
+      "x": 0,
+      "y": 89375,
+      "text": "Batch 26 · Partner inquiry (form, missing details, sent) and How Validation Works (journey steps are clickable)",
+      "kind": "title1",
+      "maxW": 8400,
+      "page": "main"
     }
   },
   "order": [
@@ -2128,7 +2213,15 @@
     "Creators.dc.html",
     "Creators-Mobile.dc.html",
     "Institutions.dc.html",
-    "Institutions-Mobile.dc.html"
+    "Institutions-Mobile.dc.html",
+    "Partner.dc.html",
+    "Partner-Mobile.dc.html",
+    "Partner-Error.dc.html",
+    "Partner-Error-Mobile.dc.html",
+    "Partner-Done.dc.html",
+    "Partner-Done-Mobile.dc.html",
+    "Validation.dc.html",
+    "Validation-Mobile.dc.html"
   ],
   "pages": [
     {

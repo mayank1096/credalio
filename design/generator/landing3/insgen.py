@@ -16,7 +16,7 @@ OUT = P + 'Institutions.dc.html'
 L = cregen.L
 block, style, ic = pricegen.block, pricegen.style, dashgen.ic
 AVN = cregen.AVN
-TALK = '#'  # Partner inquiry page arrives in batch 26
+TALK = 'Partner.dc.html'
 
 # ---------- hero: the Landing institutions door, opened up ----------
 DOOR = block(L, '<a class="ci-door ci-in"', 'a')

@@ -196,6 +196,7 @@ CSS = r'''body{margin:0;background:#FFFFFF}
 .ko-r .ko-cta{position:static;margin:24px 0 0 0;padding:0;border-top:0;background:none}
 .ko-r .ko-links{margin-top:auto;padding-top:28px}
 }
+.tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/b7fe5c1a1e0ae23ab09139f1d05e4281) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
 @media (max-width: 760px){.tk-scene{height:240px;background-size:250% auto;background-position:52% 100%}}
 .wo-one{max-width:560px}
 .ko-cta:not(:has(.ds-btn)){margin-top:14px}
@@ -407,6 +408,7 @@ MARKUP = '''<div class="tk-root">
 <div class="ko-links ob-in4"><a href="{{l1h}}">{{l1}}</a><span aria-hidden="true">·</span><a href="{{l2h}}">{{l2}}</a></div>
 </main>
 </sc-if>
+<div class="tk-scene" aria-hidden="true"></div>
 </div>'''
 
 JS = r'''

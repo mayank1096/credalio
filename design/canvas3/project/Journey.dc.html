@@ -42,7 +42,6 @@ body{margin:0;background:#FFFFFF}
 .ds-chip i{font-style:normal;font-size:12px;color:#8A93AD}
 .ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
 .ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
-.ds-tag.glass{background:rgba(255,255,255,.14);color:#FFFFFF;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
 .ds-tag.lg{height:30px;padding:0 12px;font-size:13px}
 .ds-opt{position:relative;display:flex;align-items:center;gap:14px;width:100%;box-sizing:border-box;padding:16px 18px;border-radius:14px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;text-align:left;cursor:pointer;transition:border-color .2s ease,background .2s ease}
 .ds-opt:hover{border-color:#9DB8F7}
@@ -315,11 +314,15 @@ p{text-wrap:balance}
 @media (max-width: 760px){
 .jy-jc.aur-lt .jy-js:not(:last-child)::after{background:rgba(22,82,240,.28)}
 }
+.tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/b7fe5c1a1e0ae23ab09139f1d05e4281) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
+@media (max-width: 760px){.tk-scene{height:240px;background-size:250% auto;background-position:52% 100%}}
+.jy-page{position:relative;isolation:isolate;min-height:100vh}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
 
 <div class="jy-page {{pageCls}}">
+<sc-if value="{{isReady}}" hint-placeholder-val="{{ false }}"><div class="tk-scene" aria-hidden="true"></div></sc-if>
 <sc-if value="{{isGuest}}" hint-placeholder-val="{{ true }}"><header class="jy-bar">
 <a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
 <sc-if value="{{isPlainGuest}}" hint-placeholder-val="{{ true }}"><div class="jy-steps" aria-label="Progress">

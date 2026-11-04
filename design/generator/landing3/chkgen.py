@@ -68,6 +68,7 @@ CSS = r'''body{margin:0;background:#FFFFFF}
 .cb-d{margin-top:8px;font-size:12.5px !important;color:#5B6582 !important;line-height:1.4}
 .cb-pop{position:absolute;top:-11px;left:14px;height:22px;padding:0 10px;border-radius:999px;background:#FFF1CF;border:1.5px solid #F4D98E;color:#6B4E16;font-size:11.5px;font-weight:500;font-style:normal;display:inline-flex;align-items:center;white-space:nowrap}
 .ck-get{display:inline-flex;align-items:center;gap:8px}
+.ck-fsum,.ck-more{display:none}
 .wf-usd{margin-left:auto;font-size:16px;font-weight:600;color:#0B1433}
 .ck-p .hp-lab{font-size:13px;color:#5B6582}
 .ck-p b .dlp-c{width:22px;height:22px}
@@ -281,6 +282,7 @@ CSS = r'''body{margin:0;background:#FFFFFF}
 .cl-ph{font-size:18px}
 .cl-foot{position:sticky;bottom:0;z-index:4;margin:28px -16px 0 -16px;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7}
 .cl-foot .ds-btn{flex-grow:1;justify-content:space-between}
+.cl-foot{flex-wrap:wrap;row-gap:10px}
 .ck-pl.n3{grid-template-columns:minmax(0,1fr)}
 .wf-ml{grid-template-columns:minmax(0,1fr)}
 .wf-m{flex-direction:row;align-items:center;padding:14px}
@@ -292,7 +294,7 @@ CSS = r'''body{margin:0;background:#FFFFFF}
 .ck-sso{flex-direction:column}
 .ck-sso a{flex:none}
 }
-@media (max-width: 760px){.ck-perks{grid-template-columns:minmax(0,1fr)}.ck-pl,.ck-pl.n3{grid-template-columns:minmax(0,1fr);gap:18px}.cb-o{flex-direction:row;align-items:baseline;gap:10px;padding:16px 16px 14px}.cb-o b{font-size:19px}.cb-d{display:none}.wf-tot{flex-wrap:wrap}}
+@media (max-width: 760px){.ck-perks{grid-template-columns:minmax(0,1fr)}.ck-pl,.ck-pl.n3{grid-template-columns:minmax(0,1fr);gap:18px}.cb-o{flex-direction:row;align-items:baseline;gap:10px;padding:22px 18px 20px}.ck-pl .cb-o:has(.cb-pop){padding-top:30px}.ck-pl,.ck-pl.n3{gap:22px !important}.ck-perks{background:none;padding:4px 2px 0;gap:12px}.ck-perks:not(.all) li:nth-child(n+4){display:none}.ck-more{display:inline-flex;margin-top:12px;font-size:14px}.wf-tot{display:none}.ck-fsum{display:flex;width:100%;align-items:center;justify-content:space-between;gap:12px;font-size:14px;color:#3A4566}.ck-fsum b{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:600;color:#0B1433}.ck-fsum > span{font-weight:600;color:#0B1433}.cb-o b{font-size:19px}.cb-d{display:none}.wf-tot{flex-wrap:wrap}}
 '''
 
 STEPS = '<ol class="cl-steps" aria-label="Steps"><sc-for list="{{steps}}" as="s" hint-placeholder-count="3"><li class="{{s.cls}}"><i></i><span>{{s.t}}</span></li></sc-for></ol>'
@@ -331,10 +333,10 @@ MARKUP = '''<div class="tk-root">
 <section class="cl-panel ob-in2" aria-labelledby="ck-hp">
 <h2 id="ck-hp" class="cl-ph">{{planH}}</h2>
 <div class="ck-pl {{plCls}}" role="radiogroup" aria-label="{{planH}}"><sc-for list="{{tiles}}" as="o" hint-placeholder-count="2"><button type="button" role="radio" aria-checked="{{o.on}}" class="wf-o cb-o ck-p {{o.cls}}" onClick="{{o.pick}}"><sc-if value="{{o.hasTag}}" hint-placeholder-val="{{ false }}"><em class="cb-pop">{{o.tag}}</em></sc-if><b>''' + coin() + '''{{o.dlp}}</b><span>{{o.sub}}</span><span class="cb-d">{{o.desc}}</span>''' + CKS + '''</button></sc-for></div>
-<sc-if value="{{hasPerks}}" hint-placeholder-val="{{ true }}"><ul class="ck-perks" aria-label="Included"><sc-for list="{{perks}}" as="k" hint-placeholder-count="4"><li><i>''' + ck(10, 3.4) + '''</i>{{k.t}}</li></sc-for></ul></sc-if>
+<sc-if value="{{hasPerks}}" hint-placeholder-val="{{ true }}"><ul class="ck-perks {{perksCls}}" aria-label="Included"><sc-for list="{{perks}}" as="k" hint-placeholder-count="4"><li><i>''' + ck(10, 3.4) + '''</i>{{k.t}}</li></sc-for></ul><button type="button" class="ds-link ck-more" aria-expanded="{{perksExp}}" onClick="{{togglePerks}}">{{perksMore}}</button></sc-if>
 <sc-if value="{{hasFit}}" hint-placeholder-val="{{ false }}"><p class="ck-fit {{fitCls}}"><i><sc-if value="{{fitOk}}" hint-placeholder-val="{{ true }}">''' + ck(11, 3.4) + '''</sc-if><sc-if value="{{fitPart}}" hint-placeholder-val="{{ false }}">!</sc-if></i><span>{{fit}}</span></p></sc-if>
 <div class="wf-tot"><span>You’ll get</span><b class="ck-get">''' + coin() + '''{{getT}}</b><span class="wf-usd">{{payT}}</span></div>
-<div class="cl-foot"><sc-if value="{{canBackPlan}}" hint-placeholder-val="{{ false }}"><button type="button" class="cl-bk" aria-label="Back" onClick="{{toAccount}}">''' + BACK + '''</button></sc-if>''' + btn('Choose payment', '#', '', 'onClick="{{toPay}}"', 'button') + '''</div>
+<div class="cl-foot"><span class="ck-fsum"><b>''' + coin() + '''{{getT}}</b><span>{{payT}}</span></span><sc-if value="{{canBackPlan}}" hint-placeholder-val="{{ false }}"><button type="button" class="cl-bk" aria-label="Back" onClick="{{toAccount}}">''' + BACK + '''</button></sc-if>''' + btn('Choose payment', '#', '', 'onClick="{{toPay}}"', 'button') + '''</div>
 </section>
 </sc-if>
 
@@ -457,7 +459,7 @@ class Component extends DCLogic {
       steps: flow.map(function (t, i) { return { t: t, cls: i < idx ? 'dn' : (i === idx ? 'on' : '') }; }),
       email: S.email, onEmail: function (e) { self.setState({ email: e.target.value }); }, toPlan: go('plan'), toAccount: go('account'), canBackPlan: signedOut && !top,
       planH: top ? 'How much DLP?' : 'Which plan?', plCls: top ? 'n3' : '', tiles: tiles,
-      hasPerks: !top, perks: (top ? [] : pl.perks).map(function (t) { return { t: t }; }),
+      hasPerks: !top, perks: (top ? [] : pl.perks).map(function (t) { return { t: t }; }), perksCls: S.perksAll ? 'all' : '', perksExp: S.perksAll ? 'true' : 'false', perksMore: S.perksAll ? 'Show less' : 'Everything in ' + pl.name + ' (' + pl.perks.length + ')', togglePerks: function () { self.setState({ perksAll: !S.perksAll }); },
       getT: f(add) + ' DLP' + (top ? '' : ' a month'), payT: '$' + price + '.00' + (top ? '' : ' a month'),
       today: '$' + price + '.00', then: top ? 'One time · your plan stays the same' : 'then $' + price + ' every month',
       toPay: go('pay'), toPlanBack: go('plan'), toReview: go('review'), toPayBack: go('pay'),

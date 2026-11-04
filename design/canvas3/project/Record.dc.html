@@ -134,7 +134,7 @@ p{text-wrap:balance}
 .rc-copy.on svg{color:#0F6B45}
 .rc-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start;margin-top:32px}
 .rc-main{display:flex;flex-direction:column;gap:16px}
-.cd-seal{width:64px;height:64px}
+.cd-seal{width:76px;height:76px}
 .rc-card{padding:26px 28px;border-radius:20px}
 .rc-h2{margin:0;display:flex;align-items:center;font-size:18px;font-weight:600;letter-spacing:-.2px}
 .rc-not{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 20px}
@@ -173,6 +173,26 @@ p{text-wrap:balance}
 .rc-rep::after{content:'';position:absolute;inset:-12px -4px}
 .cd-seal{width:52px;height:52px}
 }
+.rc-main .cd-val{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 100% 0%,#FFFBF0 0%,#FFFFFF 46%),#FFFFFF;border-color:#EADFC2}
+.rc-main .cd-val::before{content:"";position:absolute;inset:8px;border:1px solid #F1E6C9;border-radius:14px;pointer-events:none}
+.rc-main .cd-val::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:repeating-radial-gradient(circle at 0 100%,transparent 0 13px,rgba(200,150,30,.07) 13px 14px),repeating-radial-gradient(circle at 100% 0,transparent 0 17px,rgba(22,82,240,.05) 17px 18px)}
+.rc-main .cd-val > *{position:relative;z-index:1}
+.hl{position:relative;width:76px;height:76px;align-self:start;perspective:500px}
+.hl-in{position:absolute;inset:0;transform:rotateX(var(--ry,0deg)) rotateY(var(--rx,0deg));transform-style:preserve-3d;transition:transform .25s ease-out}
+.hl .cd-seal{width:100%;height:100%;filter:drop-shadow(0 10px 16px rgba(168,122,18,.35))}
+.hl-sh{position:absolute;inset:4%;border-radius:50%;pointer-events:none;mix-blend-mode:color-dodge;opacity:.85;-webkit-mask:radial-gradient(circle,#000 62%,transparent 63%);mask:radial-gradient(circle,#000 62%,transparent 63%);background:conic-gradient(from var(--ha,0deg) at var(--hx,30%) var(--hy,30%),rgba(255,120,200,.0),rgba(120,220,255,.75),rgba(255,255,160,.7),rgba(255,140,220,.65),rgba(120,255,200,.6),rgba(255,120,200,.0));animation:hlSpin 6s linear infinite}
+.hl-gl{position:absolute;inset:4%;border-radius:50%;pointer-events:none;-webkit-mask:radial-gradient(circle,#000 62%,transparent 63%);mask:radial-gradient(circle,#000 62%,transparent 63%);background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.85) 48%,transparent 60%);background-size:260% 100%;animation:hlGlint 3.4s ease-in-out infinite}
+@property --ha{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes hlSpin{to{--ha:360deg}}
+@keyframes hlGlint{0%,35%{background-position:130% 0}70%,100%{background-position:-60% 0}}
+.hl-cap{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:12px;font-weight:500;color:#8A6A1E}
+.hl-cap i{width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,#7FD6FF,#FF9AD5,#FFE27A)}
+@media (prefers-reduced-motion: reduce){
+.hl-sh,.hl-gl{animation:none}
+}
+@media (max-width: 760px){
+.hl{width:60px;height:60px}
+}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
@@ -200,12 +220,13 @@ p{text-wrap:balance}
 </header>
 <div class="rc-grid">
 <div class="rc-main">
-<section class="cd-val" aria-label="Validation result">
-<svg class="cd-seal" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="cdGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9C46A"></stop><stop offset=".55" stop-color="#C8961E"></stop><stop offset="1" stop-color="#A87A12"></stop></linearGradient></defs><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="url(#cdGold)"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<section class="cd-val" aria-label="Validation result" onMouseMove="{{holoMove}}" onMouseLeave="{{holoOut}}">
+<span class="hl"><span class="hl-in"><svg class="cd-seal" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="cdGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9C46A"></stop><stop offset=".55" stop-color="#C8961E"></stop><stop offset="1" stop-color="#A87A12"></stop></linearGradient></defs><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="url(#cdGold)"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="hl-sh"></span><span class="hl-gl"></span></span></span>
 <div>
 <div class="cd-vt">Gold Validated</div>
 <div class="cd-vd">This version completed every review that applies to it.</div>
 <div class="cd-checks"><div class="cd-chk"><b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Content</b><span>Subject Matter Validator · Completed</span></div><div class="cd-chk"><b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Learning design</b><span>Educational Validator · Completed</span></div><div class="cd-chk"><b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Assessment</b><span>Assessment Validator · Completed</span></div></div>
+<span class="hl-cap"><i></i>Holographic seal</span>
 <div class="cd-vf"><span class="cd-vid">AI and Security &amp; Privacy reviews: not applicable<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">These reviews are only added when the learning uses AI features or handles personal data.</span></span></span></div>
 </div>
 </section>
@@ -233,13 +254,21 @@ p{text-wrap:balance}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1060}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1080}}'>
 class Component extends DCLogic {
+
+  holoMove(e) {
+    var el = document.querySelector('.rc-main .cd-val'), h = document.querySelector('.hl'); if (!el || !h) return;
+    var r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    h.style.setProperty('--rx', ((x - .5) * 26).toFixed(1) + 'deg'); h.style.setProperty('--ry', ((.5 - y) * 26).toFixed(1) + 'deg'); h.style.setProperty('--hx', (x * 100).toFixed(0) + '%'); h.style.setProperty('--hy', (y * 100).toFixed(0) + '%');
+  }
+  holoOut() { var h = document.querySelector('.hl'); if (h) { h.style.setProperty('--rx', '0deg'); h.style.setProperty('--ry', '0deg'); } }
+
   constructor(props) { super(props); this.state = { copied: false }; }
   componentWillUnmount() { if (this.t) clearTimeout(this.t); }
   renderVals() {
     var self = this, on = this.state.copied;
-    return { copyLabel: on ? 'Link copied' : 'Copy record link', copyCls: on ? 'on' : '', copied: on, notCopied: !on,
+    return { holoMove: function (e) { self.holoMove(e); }, holoOut: function () { self.holoOut(); }, copyLabel: on ? 'Link copied' : 'Copy record link', copyCls: on ? 'on' : '', copied: on, notCopied: !on,
       copy: function () { self.setState({ copied: true }); if (self.t) clearTimeout(self.t); self.t = setTimeout(function () { self.setState({ copied: false }); }, 2000); } };
   }
 }

@@ -4,6 +4,7 @@ import os, sys, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from kit import KIT_CSS, btn, tip, coin, ck, emblem, CLOSE
+import wow
 
 OUT = os.path.join(HERE, '../../canvas3/project/Checkout.dc.html')
 
@@ -332,6 +333,7 @@ MARKUP = '''<div class="tk-root">
 <h2 id="ck-hp" class="cl-ph">{{planH}}</h2>
 <div class="ck-pl {{plCls}}" role="radiogroup" aria-label="{{planH}}"><sc-for list="{{tiles}}" as="o" hint-placeholder-count="2"><button type="button" role="radio" aria-checked="{{o.on}}" class="wf-o cb-o ck-p {{o.cls}}" onClick="{{o.pick}}"><sc-if value="{{o.hasTag}}" hint-placeholder-val="{{ false }}"><em class="cb-pop">{{o.tag}}</em></sc-if><b>''' + coin() + '''{{o.dlp}}</b><span>{{o.sub}}</span><span class="cb-d">{{o.desc}}</span>''' + CKS + '''</button></sc-for></div>
 <sc-if value="{{hasPerks}}" hint-placeholder-val="{{ true }}"><ul class="ck-perks" aria-label="Included"><sc-for list="{{perks}}" as="k" hint-placeholder-count="4"><li><i>''' + ck(10, 3.4) + '''</i>{{k.t}}</li></sc-for></ul></sc-if>
+<sc-if value="{{hasJar}}" hint-placeholder-val="{{ false }}">''' + wow.JAR + '''</sc-if>
 <sc-if value="{{hasFit}}" hint-placeholder-val="{{ false }}"><p class="ck-fit {{fitCls}}"><i><sc-if value="{{fitOk}}" hint-placeholder-val="{{ true }}">''' + ck(11, 3.4) + '''</sc-if><sc-if value="{{fitPart}}" hint-placeholder-val="{{ false }}">!</sc-if></i><span>{{fit}}</span></p></sc-if>
 <div class="wf-tot"><span>You’ll get</span><b class="ck-get">''' + coin() + '''{{getT}}</b><span class="wf-usd">{{payT}}</span></div>
 <div class="cl-foot"><sc-if value="{{canBackPlan}}" hint-placeholder-val="{{ false }}"><button type="button" class="cl-bk" aria-label="Back" onClick="{{toAccount}}">''' + BACK + '''</button></sc-if>''' + btn('Choose payment', '#', '', 'onClick="{{toPay}}"', 'button') + '''</div>
@@ -467,7 +469,10 @@ class Component extends DCLogic {
       totTip: top ? 'Added to your balance straight away. Your plan stays the same.' : 'Cancel anytime from your account. You keep your DLP until the end of the month.',
       payLabel: top ? 'Pay $' + price + ' and add DLP' : 'Pay $' + price + ' and start ' + pl.name,
       pay: function () { self.setState({ step: 'processing' }); clearTimeout(self._t); self._t = setTimeout(function () { self.setState({ step: 'done' }); }, 1800); },
-      hasFit: (!top && (from === 'path' || from === 'allowance')) || (top && from === 'course'), fitOk: !(from === 'path' && S.plan === 'basic'), fitPart: from === 'path' && S.plan === 'basic', fitCls: (from === 'path' && S.plan === 'basic') ? 'part' : '',
+      hasFit: !top && (from === 'path' || from === 'allowance'), hasJar: top && from === 'course',
+      jrBase: (150 / 1200 * 100).toFixed(2) + '%', jrAdd: (Math.min(S.pkg, 1050) / 1200 * 100).toFixed(2) + '%', jrEnd: ((150 + Math.min(S.pkg, 1050)) / 1200 * 100).toFixed(2) + '%', jrNeedL: (400 / 1200 * 100).toFixed(2) + '%',
+      jrOk: 150 + S.pkg >= 400 ? 'ok' : '', jrNeedT: 150 + S.pkg >= 400 ? 'Course needs 400 · covered' : 'Course needs 400', jrPour: 'p' + S.pkg, jrSpill: S.pkg > 1050, jrNow: '150', jrAfter: f(150 + S.pkg),
+      jrAria: 'Balance 150 DLP. The course needs 400. After this top-up you’ll have ' + f(150 + S.pkg) + ' DLP.', fitOk: !(from === 'path' && S.plan === 'basic'), fitPart: from === 'path' && S.plan === 'basic', fitCls: (from === 'path' && S.plan === 'basic') ? 'part' : '',
       fit: top ? (S.pkg >= 250 ? 'You need 250 more for this course. ' + f(S.pkg) + ' covers it, with ' + f(S.pkg - 250) + ' to spare.' : '') : from === 'allowance' ? (S.plan === 'basic' ? 'Stage 2 needs about 1,400 DLP. Basic covers it, with room to spare.' : 'Pro covers Stage 2 and most of what comes after it.') : (S.plan === 'basic' ? 'The path needs about 3,800 DLP. Basic covers it over about two months.' : 'The path needs about 3,800 DLP. Pro covers it in your first month.'),
       oPill: { processing: 'Processing', failed: 'Not charged' }[st] || (top ? 'Added' : ((from === 'path' || from === 'account') ? 'Plan updated' : 'Plan active')),
       oH: st === 'processing' ? 'Processing your payment' : (st === 'failed' ? 'Your payment didn’t go through' : (top ? f(add) + ' DLP added' : 'You’re on ' + pl.name)),
@@ -497,7 +502,7 @@ HTML = '''<!doctype html>
 <helmet>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
-''' + KIT_CSS + '\n' + CSS + '''</style>
+''' + KIT_CSS + '\n' + CSS + '\n' + wow.JAR_CSS + '''</style>
 </helmet>
 ''' + MARKUP + '''
 </x-dc>

@@ -380,6 +380,49 @@ body{margin:0;background:#FFFFFF}
 .cb-d{display:none}
 .wf-tot{flex-wrap:wrap}
 }
+.jr{position:relative;margin:22px 0 4px;padding-top:30px}
+.jr-tube{position:relative;height:44px;border-radius:999px;background:linear-gradient(180deg,#FBFCFF,#F1F4FB);box-shadow:inset 0 2px 6px rgba(11,20,51,.08),inset 0 0 0 1.5px #E3E8F3}
+.jr-base,.jr-add{position:absolute;top:4px;bottom:4px;transition:width .9s cubic-bezier(.3,.8,.3,1),left .9s cubic-bezier(.3,.8,.3,1)}
+.jr-base{left:4px;border-radius:999px 0 0 999px;background:linear-gradient(180deg,#E9C46A,#C8961E);box-shadow:inset 0 -3px 0 rgba(120,80,10,.18)}
+.jr-add{border-radius:0 999px 999px 0;overflow:hidden;background:linear-gradient(180deg,#FFF1CF,#F4D98E 55%,#E9C46A);box-shadow:inset 0 -3px 0 rgba(120,80,10,.12)}
+.jr-wave{position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.75) 46%,transparent 62%);background-size:220% 100%;animation:jrShine 2.6s linear infinite}
+@keyframes jrShine{from{background-position:120% 0}to{background-position:-120% 0}}
+.jr-glass{position:absolute;left:14px;right:14px;top:7px;height:7px;border-radius:999px;background:linear-gradient(90deg,rgba(255,255,255,.85),rgba(255,255,255,.2));pointer-events:none}
+.jr-need{position:absolute;top:0;bottom:22px;width:0;border-left:2px dashed #B97A10;transition:left .4s ease;z-index:2}
+.jr-nl{position:absolute;bottom:calc(100% - 26px);left:-1px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px;border-radius:999px;background:#FFF4E0;color:#8A5A00;font-size:12px;font-weight:600;white-space:nowrap;transition:background .3s ease,color .3s ease}
+.jr-ck{display:none;width:16px;height:16px;border-radius:999px;background:#0F6B45;color:#FFFFFF;align-items:center;justify-content:center}
+.jr-need.ok{border-left-color:#0F6B45}
+.jr-need.ok .jr-nl{background:#E7F5EE;color:#0F6B45}
+.jr-need.ok .jr-ck{display:inline-flex;animation:jrPop .4s cubic-bezier(.2,1.6,.4,1) .7s both}
+@keyframes jrPop{from{transform:scale(0)}}
+.jr-ax{display:flex;justify-content:space-between;margin-top:10px;font-size:13px;color:#5B6582}
+.jr-ax b{font-weight:600;color:#0B1433}
+.jr-drops{position:absolute;top:-34px;width:28px;height:30px;pointer-events:none;transition:left .9s cubic-bezier(.3,.8,.3,1)}
+.jr-drops .dlp-c,.jr-spill .dlp-c{position:absolute;left:4px;top:0;width:20px;height:20px;opacity:0}
+.jr-drops.p500 .dlp-c{animation:jrDropA .8s cubic-bezier(.5,0,.8,.4) both}
+.jr-drops.p1000 .dlp-c{animation:jrDropB .8s cubic-bezier(.5,0,.8,.4) both}
+.jr-drops.p2500 .dlp-c{animation:jrDropC .8s cubic-bezier(.5,0,.8,.4) both}
+.jr-drops .dlp-c:nth-child(2){animation-delay:.12s !important}
+.jr-drops .dlp-c:nth-child(3){animation-delay:.24s !important}
+@keyframes jrDropA{0%{opacity:0;transform:translateY(-10px)}20%{opacity:1}100%{opacity:0;transform:translateY(46px) scale(.7)}}
+@keyframes jrDropB{0%{opacity:0;transform:translateY(-10px)}20%{opacity:1}100%{opacity:0;transform:translateY(46px) scale(.7)}}
+@keyframes jrDropC{0%{opacity:0;transform:translateY(-10px)}20%{opacity:1}100%{opacity:0;transform:translateY(46px) scale(.7)}}
+.jr-spill{position:absolute;right:6px;top:-6px;width:30px;height:30px;pointer-events:none}
+.jr-spill .dlp-c{left:5px;top:6px;animation:jrSpill 1.2s cubic-bezier(.2,.7,.3,1) .7s both}
+.jr-spill .dlp-c:nth-child(2){--sx:26px;--sy:-34px;animation-delay:.78s}
+.jr-spill .dlp-c:nth-child(3){--sx:-14px;--sy:-42px;animation-delay:.86s}
+.jr-spill .dlp-c:nth-child(4){--sx:40px;--sy:-14px;animation-delay:.94s}
+@keyframes jrSpill{0%{opacity:0;transform:translate(0,0) scale(.6)}30%{opacity:1}100%{opacity:0;transform:translate(var(--sx,10px),var(--sy,-30px)) rotate(200deg) scale(1)}}
+.jr[data-go] .jr-base{animation:jrFill .9s cubic-bezier(.3,.8,.3,1) .1s both}
+@keyframes jrFill{from{width:0}}
+@media (prefers-reduced-motion: reduce){
+.jr-wave,.jr-drops .dlp-c,.jr-spill .dlp-c,.jr[data-go] .jr-base{animation:none}
+}
+@media (max-width: 760px){
+.jr{margin-top:18px}
+.jr-tube{height:38px}
+.jr-nl{font-size:11.5px;height:22px;padding:0 8px}
+}
 </style>
 </helmet>
 <div class="tk-root">
@@ -417,6 +460,7 @@ body{margin:0;background:#FFFFFF}
 <h2 id="ck-hp" class="cl-ph">{{planH}}</h2>
 <div class="ck-pl {{plCls}}" role="radiogroup" aria-label="{{planH}}"><sc-for list="{{tiles}}" as="o" hint-placeholder-count="2"><button type="button" role="radio" aria-checked="{{o.on}}" class="wf-o cb-o ck-p {{o.cls}}" onClick="{{o.pick}}"><sc-if value="{{o.hasTag}}" hint-placeholder-val="{{ false }}"><em class="cb-pop">{{o.tag}}</em></sc-if><b><span class="dlp-c" aria-hidden="true"></span>{{o.dlp}}</b><span>{{o.sub}}</span><span class="cb-d">{{o.desc}}</span><i class="xb-ck" aria-hidden="true"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i></button></sc-for></div>
 <sc-if value="{{hasPerks}}" hint-placeholder-val="{{ true }}"><ul class="ck-perks" aria-label="Included"><sc-for list="{{perks}}" as="k" hint-placeholder-count="4"><li><i><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>{{k.t}}</li></sc-for></ul></sc-if>
+<sc-if value="{{hasJar}}" hint-placeholder-val="{{ false }}"><div class="jr" data-wow="1" data-go="1" role="img" aria-label="{{jrAria}}"><div class="jr-need {{jrOk}}" style="left: {{jrNeedL}}"><span class="jr-nl"><span class="jr-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>{{jrNeedT}}</span></div><div class="jr-tube"><span class="jr-base" style="width: {{jrBase}}"></span><span class="jr-add {{jrPour}}" style="left: {{jrBase}}; width: {{jrAdd}}"><i class="jr-wave"></i></span><span class="jr-glass"></span><span class="jr-drops {{jrPour}}" style="left: calc({{jrEnd}} - 14px)" aria-hidden="true"><span class="dlp-c"></span><span class="dlp-c"></span><span class="dlp-c"></span></span><sc-if value="{{jrSpill}}" hint-placeholder-val="{{ false }}"><span class="jr-spill {{jrPour}}" aria-hidden="true"><span class="dlp-c"></span><span class="dlp-c"></span><span class="dlp-c"></span><span class="dlp-c"></span></span></sc-if></div><div class="jr-ax"><span>Now <b>{{jrNow}}</b></span><span>After top-up <b>{{jrAfter}} DLP</b></span></div></div></sc-if>
 <sc-if value="{{hasFit}}" hint-placeholder-val="{{ false }}"><p class="ck-fit {{fitCls}}"><i><sc-if value="{{fitOk}}" hint-placeholder-val="{{ true }}"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></sc-if><sc-if value="{{fitPart}}" hint-placeholder-val="{{ false }}">!</sc-if></i><span>{{fit}}</span></p></sc-if>
 <div class="wf-tot"><span>You’ll get</span><b class="ck-get"><span class="dlp-c" aria-hidden="true"></span>{{getT}}</b><span class="wf-usd">{{payT}}</span></div>
 <div class="cl-foot"><sc-if value="{{canBackPlan}}" hint-placeholder-val="{{ false }}"><button type="button" class="cl-bk" aria-label="Back" onClick="{{toAccount}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg></button></sc-if><button class="ds-btn" type="button" onClick="{{toPay}}"><span>Choose payment</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div>
@@ -552,7 +596,10 @@ class Component extends DCLogic {
       totTip: top ? 'Added to your balance straight away. Your plan stays the same.' : 'Cancel anytime from your account. You keep your DLP until the end of the month.',
       payLabel: top ? 'Pay $' + price + ' and add DLP' : 'Pay $' + price + ' and start ' + pl.name,
       pay: function () { self.setState({ step: 'processing' }); clearTimeout(self._t); self._t = setTimeout(function () { self.setState({ step: 'done' }); }, 1800); },
-      hasFit: (!top && (from === 'path' || from === 'allowance')) || (top && from === 'course'), fitOk: !(from === 'path' && S.plan === 'basic'), fitPart: from === 'path' && S.plan === 'basic', fitCls: (from === 'path' && S.plan === 'basic') ? 'part' : '',
+      hasFit: !top && (from === 'path' || from === 'allowance'), hasJar: top && from === 'course',
+      jrBase: (150 / 1200 * 100).toFixed(2) + '%', jrAdd: (Math.min(S.pkg, 1050) / 1200 * 100).toFixed(2) + '%', jrEnd: ((150 + Math.min(S.pkg, 1050)) / 1200 * 100).toFixed(2) + '%', jrNeedL: (400 / 1200 * 100).toFixed(2) + '%',
+      jrOk: 150 + S.pkg >= 400 ? 'ok' : '', jrNeedT: 150 + S.pkg >= 400 ? 'Course needs 400 · covered' : 'Course needs 400', jrPour: 'p' + S.pkg, jrSpill: S.pkg > 1050, jrNow: '150', jrAfter: f(150 + S.pkg),
+      jrAria: 'Balance 150 DLP. The course needs 400. After this top-up you’ll have ' + f(150 + S.pkg) + ' DLP.', fitOk: !(from === 'path' && S.plan === 'basic'), fitPart: from === 'path' && S.plan === 'basic', fitCls: (from === 'path' && S.plan === 'basic') ? 'part' : '',
       fit: top ? (S.pkg >= 250 ? 'You need 250 more for this course. ' + f(S.pkg) + ' covers it, with ' + f(S.pkg - 250) + ' to spare.' : '') : from === 'allowance' ? (S.plan === 'basic' ? 'Stage 2 needs about 1,400 DLP. Basic covers it, with room to spare.' : 'Pro covers Stage 2 and most of what comes after it.') : (S.plan === 'basic' ? 'The path needs about 3,800 DLP. Basic covers it over about two months.' : 'The path needs about 3,800 DLP. Pro covers it in your first month.'),
       oPill: { processing: 'Processing', failed: 'Not charged' }[st] || (top ? 'Added' : ((from === 'path' || from === 'account') ? 'Plan updated' : 'Plan active')),
       oH: st === 'processing' ? 'Processing your payment' : (st === 'failed' ? 'Your payment didn’t go through' : (top ? f(add) + ' DLP added' : 'You’re on ' + pl.name)),

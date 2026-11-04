@@ -8,7 +8,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from kit import KIT_CSS, tip, ck
 from shell import BASE_CSS, nav, FOOT
-import pricegen, partgen
+import pricegen, partgen, wow
 
 P = os.path.join(HERE, '../../canvas3/project/')
 OUT = P + 'Record.dc.html'
@@ -74,12 +74,13 @@ BODY = '''<div style="font-family: 'Google Sans', system-ui, sans-serif; color: 
 </header>
 <div class="rc-grid">
 <div class="rc-main">
-<section class="cd-val" aria-label="Validation result">
-''' + SEAL + '''
+<section class="cd-val" aria-label="Validation result" onMouseMove="{{holoMove}}" onMouseLeave="{{holoOut}}">
+<span class="hl"><span class="hl-in">''' + SEAL + '''<span class="hl-sh"></span><span class="hl-gl"></span></span></span>
 <div>
 <div class="cd-vt">Gold Validated</div>
 <div class="cd-vd">This version completed every review that applies to it.</div>
 <div class="cd-checks">''' + ''.join('<div class="cd-chk"><b>%s%s</b><span>%s · Completed</span></div>' % (CHKI, t, r) for t, r, _ in AREAS) + '''</div>
+<span class="hl-cap"><i></i>Holographic seal</span>
 <div class="cd-vf"><span class="cd-vid">AI and Security &amp; Privacy reviews: not applicable''' + tip('These reviews are only added when the learning uses AI features or handles personal data.') + '''</span></div>
 </div>
 </section>
@@ -113,7 +114,7 @@ CSS = CDCSS + r'''
 .rc-copy.on svg{color:#0F6B45}
 .rc-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start;margin-top:32px}
 .rc-main{display:flex;flex-direction:column;gap:16px}
-.cd-seal{width:64px;height:64px}
+.cd-seal{width:76px;height:76px}
 .rc-card{padding:26px 28px;border-radius:20px}
 .rc-h2{margin:0;display:flex;align-items:center;font-size:18px;font-weight:600;letter-spacing:-.2px}
 .rc-not{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 20px}
@@ -156,11 +157,12 @@ CSS = CDCSS + r'''
 
 JS = '''
 class Component extends DCLogic {
+''' + wow.HOLO_JS + '''
   constructor(props) { super(props); this.state = { copied: false }; }
   componentWillUnmount() { if (this.t) clearTimeout(this.t); }
   renderVals() {
     var self = this, on = this.state.copied;
-    return { copyLabel: on ? 'Link copied' : 'Copy record link', copyCls: on ? 'on' : '', copied: on, notCopied: !on,
+    return { holoMove: function (e) { self.holoMove(e); }, holoOut: function () { self.holoOut(); }, copyLabel: on ? 'Link copied' : 'Copy record link', copyCls: on ? 'on' : '', copied: on, notCopied: !on,
       copy: function () { self.setState({ copied: true }); if (self.t) clearTimeout(self.t); self.t = setTimeout(function () { self.setState({ copied: false }); }, 2000); } };
   }
 }
@@ -178,11 +180,11 @@ HTML = '''<!doctype html>
 <helmet>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
-''' + BASE_CSS + KIT_CSS + '\n' + pricegen.CSS + '\n' + partgen.CSS + '\n' + CSS + '''</style>
+''' + BASE_CSS + KIT_CSS + '\n' + pricegen.CSS + '\n' + partgen.CSS + '\n' + CSS + '\n' + wow.HOLO_CSS + '''</style>
 </helmet>
 ''' + BODY + '''
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1060}}'>''' + JS + '''</script>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1080}}'>''' + JS + '''</script>
 </body>
 </html>
 '''

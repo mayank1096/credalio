@@ -328,7 +328,7 @@ p{text-wrap:balance}
 </div>
 </sc-if>
 <div class="pd-bar" aria-hidden="true"><span style="width: {{covW}}"></span></div>
-<div class="pd-ct">{{covText}} <a class="ds-link" href="#">{{covLink}} →</a></div>
+<div class="pd-ct">{{covText}} <a class="ds-link" href="{{covHref}}">{{covLink}} →</a></div>
 </div>
 <a class="ds-btn" href="#"><span>Build my journey</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
 </div>
@@ -505,17 +505,17 @@ class Component extends DCLogic {
           return v;
         }) };
     });
-    var covW, covText, covLink;
+    var covW, covText, covLink, covHref;
     if (me) {
       var coveredNames = stages.filter(function (s) { return s.ok; }).map(function (s) { return s.name; });
       covW = Math.min(100, Math.round(bal / Math.max(1, total) * 100)) + '%';
       covText = bal >= total ? 'Your 1,460 DLP covers the whole route.' : (coveredNames.length ? 'Your 1,460 DLP covers ' + coveredNames.join(' and ') + '.' : 'Your 1,460 DLP gets you started.');
-      covLink = bal >= total ? 'See usage' : 'Add DLP';
+      covLink = bal >= total ? 'See usage' : 'Upgrade to Pro'; covHref = bal >= total ? 'Usage.dc.html' : 'Chk-006p.dc.html';
     } else {
       var allow = this.PLAN[S.plan], months = Math.ceil(total / allow);
       covW = Math.min(100, Math.round(allow / Math.max(1, total) * 100)) + '%';
       covText = months <= 1 ? S.plan + ' covers the whole route in your first month.' : (months <= 4 ? S.plan + ' covers the whole route in ' + months + ' months.' : 'Free starts you on the first course.');
-      covLink = 'Compare plans';
+      covLink = 'Compare plans'; covHref = '#';
     }
     return {
       guest: !me, learner: me,
@@ -523,7 +523,7 @@ class Component extends DCLogic {
       stages: stages,
       skills: this.SK.map(function (k) { var on = !!S.known[k]; return { label: k, on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { var n = Object.assign({}, S.known); if (on) delete n[k]; else n[k] = true; self.setState({ known: n }); } }; }),
       plans: ['Free', 'Basic', 'Pro'].map(function (p) { var on = S.plan === p; return { label: p, on: on ? 'true' : 'false', cls: on ? 'pd-seg-on' : '', pick: function () { self.setState({ plan: p }); } }; }),
-      covW: covW, covText: covText, covLink: covLink,
+      covW: covW, covText: covText, covLink: covLink, covHref: covHref,
       saveOn: S.saved ? 'true' : 'false', saveCls: S.saved ? 'pd-save-on' : '', saveFill: S.saved ? 'currentColor' : 'none', saveLabel: S.saved ? 'Saved' : 'Save path', toggleSave: function () { self.setState({ saved: !S.saved }); }
     };
   }

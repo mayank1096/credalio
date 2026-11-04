@@ -69,6 +69,9 @@ CSS = r'''body{margin:0;background:#FFFFFF}
 .ck-perks{margin:16px 0 0;padding:16px 18px;list-style:none;border-radius:16px;background:#F7F9FD;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px}
 .ck-perks li{display:flex;align-items:flex-start;gap:9px;font-size:14px;line-height:1.4;color:#3A4566}
 .ck-perks li i{width:18px;height:18px;border-radius:999px;background:#E7F5EE;color:#0F6B45;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.ck-fit{margin:14px 0 0;display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.5;color:#3A4566}
+.ck-fit i{width:20px;height:20px;border-radius:999px;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:12px;font-weight:700;color:#FFFFFF;background:#0F6B45}
+.ck-fit.part i{background:#B97A10}
 .wf-tot{margin-top:16px;display:flex;align-items:baseline;gap:10px;padding:14px 18px;border-radius:16px;background:#F5F8FF}
 .wf-tot > span:first-child{font-size:14px;color:#3A4566}
 .wf-tot b{font-size:20px;font-weight:600}
@@ -185,6 +188,7 @@ MARKUP = '''<div class="tk-root">
 <h2 id="ck-hp" class="cl-ph">{{planH}}</h2>
 <div class="ck-pl {{plCls}}" role="radiogroup" aria-label="{{planH}}"><sc-for list="{{tiles}}" as="o" hint-placeholder-count="2"><button type="button" role="radio" aria-checked="{{o.on}}" class="wf-o ck-p {{o.cls}}" onClick="{{o.pick}}"><sc-if value="{{o.hasTag}}" hint-placeholder-val="{{ false }}"><span class="ds-tag solid">{{o.tag}}</span></sc-if><span class="hp-lab">{{o.name}}</span><b>''' + coin() + '''{{o.dlp}}</b><span class="ck-pr">{{o.sub}}</span>''' + CKS + '''</button></sc-for></div>
 <sc-if value="{{hasPerks}}" hint-placeholder-val="{{ true }}"><ul class="ck-perks" aria-label="Included"><sc-for list="{{perks}}" as="k" hint-placeholder-count="4"><li><i>''' + ck(10, 3.4) + '''</i>{{k.t}}</li></sc-for></ul></sc-if>
+<sc-if value="{{hasFit}}" hint-placeholder-val="{{ false }}"><p class="ck-fit {{fitCls}}"><i><sc-if value="{{fitOk}}" hint-placeholder-val="{{ true }}">''' + ck(11, 3.4) + '''</sc-if><sc-if value="{{fitPart}}" hint-placeholder-val="{{ false }}">!</sc-if></i><span>{{fit}}</span></p></sc-if>
 <div class="wf-tot"><span>Today you pay</span><b>{{today}}</b><small>{{then}}</small></div>
 <div class="cl-foot"><sc-if value="{{canBackPlan}}" hint-placeholder-val="{{ false }}"><button type="button" class="cl-bk" aria-label="Back" onClick="{{toAccount}}">''' + BACK + '''</button></sc-if>''' + btn('Choose payment', '#', '', 'onClick="{{toPay}}"', 'button') + '''</div>
 </section>
@@ -292,7 +296,9 @@ class Component extends DCLogic {
       payLabel: top ? 'Pay $' + price + ' and add DLP' : 'Pay $' + price + ' and start ' + pl.name,
       pay: function () { self.setState({ step: 'processing' }); clearTimeout(self._t); self._t = setTimeout(function () { self.setState({ step: 'done' }); }, 1800); },
       procT: top ? 'Adding ' + f(add) + ' DLP…' : 'Setting up your ' + pl.name + ' plan…',
-      donePill: top ? 'DLP added' : 'Plan active', doneT: top ? f(add) + ' DLP added.' : 'You’re on ' + pl.name + '.',
+      hasFit: !top && (from === 'path' || from === 'allowance'), fitOk: !(from === 'path' && S.plan === 'basic'), fitPart: from === 'path' && S.plan === 'basic', fitCls: (from === 'path' && S.plan === 'basic') ? 'part' : '',
+      fit: from === 'allowance' ? (S.plan === 'basic' ? 'Stage 2 needs about 1,400 DLP. Basic covers it, with room to spare.' : 'Pro covers Stage 2 and most of what comes after it.') : (S.plan === 'basic' ? 'The path needs about 3,800 DLP. Basic covers it over about two months.' : 'The path needs about 3,800 DLP. Pro covers it in your first month.'),
+      donePill: top ? 'DLP added' : ((from === 'path' || from === 'account') ? 'Plan updated' : 'Plan active'), doneT: top ? f(add) + ' DLP added.' : 'You’re on ' + pl.name + '.',
       doneB: top ? 'Your plan hasn’t changed. The extra DLP is ready to use now.' : ({ pricing: 'Next, tell us a little about what you want to learn, or explore straight away.', onboarding: 'Your starting journey is waiting for you.', allowance: 'Your Data Analyst journey is ready to continue.', path: 'Your Data Analyst path is ready to continue.', account: 'Your new allowance is ready to use.' }[from] || ''),
       walN: f(base + add), walSub: 'About ' + Math.round((base + add) / 100) + ' learning hours', walTag: top ? 'Plan unchanged' : pl.name + ' plan',
       nextL: NEXT[0], nextH: NEXT[1]

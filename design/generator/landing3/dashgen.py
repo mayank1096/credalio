@@ -1175,7 +1175,7 @@ class Component extends DCLogic {
         .map(function (r) { return { k: r[0], isTag: r[1] === 'tag', tag: r[2] || '', tc: r[3] || '', hasTip: !!r[4], tipT: r[4] || '', sk: r[1] === 'sk', isCr: r[1] === 'cr', isMf: r[1] === 'mf', v: r[2] || '' }; }),
       showStrip: isActive || st === 'L', showML: isActive || st === 'L', showLocked: isNew || st === 'L', lowNote: st === 'W', fAllow: st === 'L', pillCls: (st === 'W' || st === 'L') ? 'low' : '',
       bpH: st === 'L' ? 'Your first credential is in.' : 'Your proof starts here.', bpP: st === 'L' ? 'Data Foundations is verified and ready to share.' : 'What you earn lands here, verified and ready to share.',
-      optN: 3, opts: [['Upgrade to Basic', '2,000 DLP every month, enough for Stage 2 and most of Stage 3.', 'Upgrade', '#', 1], ['Top up instead', 'Stay on Free and add only what Stage 2 needs.', 'Add DLP', '#', 0], ['Wait for your refresh', 'Your next 200 DLP arrives on 1 October. We’ll remind you.', 'Remind me', '#', 0]]
+      optN: 3, opts: [['Upgrade to Basic', '2,000 DLP every month, enough for Stage 2 and most of Stage 3.', 'Upgrade', 'Chk-003.dc.html', 1], ['Top up instead', 'Stay on Free and add only what Stage 2 needs.', 'Add DLP', '#', 0], ['Wait for your refresh', 'Your next 200 DLP arrives on 1 October. We’ll remind you.', 'Remind me', '#', 0]]
         .map(function (o) { return { t: o[0], d: o[1], cta: o[2], href: o[3], rec: !!o[4], plain: !o[4], cls: o[4] ? 'rec' : '' }; }),
       posts: posts, showBand: !named || (st !== 'A' && st !== 'B' && st !== 'L')
     };

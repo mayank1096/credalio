@@ -1574,7 +1574,7 @@
       "x": 41200,
       "y": 9104,
       "w": 390,
-      "h": 7300,
+      "h": 7340,
       "title": "PRC-001 → 011 Pricing: plans, compare, Enterprise, top-ups, DLP, rollover, AI, rewards, FAQ · Mobile",
       "page": "main",
       "is_interactive": true
@@ -1593,7 +1593,7 @@
       "x": 41200,
       "y": 17004,
       "w": 390,
-      "h": 3525,
+      "h": 3565,
       "title": "PRC Mode 2 · Signed-in Free learner · Mobile",
       "page": "main",
       "is_interactive": true
@@ -1612,7 +1612,7 @@
       "x": 43350,
       "y": 17004,
       "w": 390,
-      "h": 3525,
+      "h": 3565,
       "title": "PRC Mode 2 · Signed-in Basic learner · Mobile",
       "page": "main",
       "is_interactive": true
@@ -1631,7 +1631,7 @@
       "x": 45500,
       "y": 17004,
       "w": 390,
-      "h": 3525,
+      "h": 3565,
       "title": "PRC Mode 2 · Signed-in Pro learner (no upgrade push) · Mobile",
       "page": "main",
       "is_interactive": true
@@ -1650,7 +1650,7 @@
       "x": 47650,
       "y": 17004,
       "w": 390,
-      "h": 3285,
+      "h": 3325,
       "title": "PRC Mode 3 · Plan options for the Data Analyst path · Mobile",
       "page": "main",
       "is_interactive": true
@@ -1669,7 +1669,7 @@
       "x": 58010,
       "y": 300,
       "w": 390,
-      "h": 6080,
+      "h": 6160,
       "title": "CRE-001 → 007 For Creators: hero, what you can create, Creator Studio, validation, earnings, creator services, who can create · Mobile",
       "page": "main",
       "is_interactive": true
@@ -1688,7 +1688,7 @@
       "x": 58010,
       "y": 7320,
       "w": 390,
-      "h": 6560,
+      "h": 6630,
       "title": "ENT-001 → 009 For Institutions: hero, who it’s for, what you can do, AI settings, structure, credentials, validation, integration · Mobile",
       "page": "main",
       "is_interactive": true
@@ -1764,7 +1764,7 @@
       "x": 64460,
       "y": 14620,
       "w": 390,
-      "h": 6795,
+      "h": 6835,
       "title": "TRST-001 → 008 How Validation Works: hero, statuses, review areas, journey, clarification, decision, versioning, for creators and validators · Mobile",
       "page": "main",
       "is_interactive": true

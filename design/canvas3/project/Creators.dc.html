@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>For Creators</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+h1,h2,h3,p{text-wrap:pretty}
+@media (min-width: 761px){p{text-wrap:balance}}
+.sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sx-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.sx-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
+.sx-word{display:block;height:24px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}
+.sx-links{display:flex;align-items:center;gap:4px}
+.sx-link{height:40px;padding:0 12px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:500;color:#3A4566;text-decoration:none;white-space:nowrap;transition:color .2s ease,background .2s ease}
+.sx-link:hover{color:#0B1433;background:#F5F8FF}
+.sx-link-on{color:#0B1433;background:#EAF0FF}
+.sx-cta{height:44px;padding:0 20px;border-radius:999px;display:flex;align-items:center;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease}
+.sx-cta:hover{background:#0E3BB8}
+.sx-menu{display:none;width:44px;height:44px;border-radius:999px;border:none;background:transparent;color:#0B1433;align-items:center;justify-content:center;cursor:pointer}
+.sx-link:focus-visible,.sx-cta:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
+.sx-fin{max-width:1312px;margin:0 auto;padding:40px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#5B6582}
+.sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
+.sx-fin a{color:#3A4566;text-decoration:none}
+.sx-fin a:hover{color:#1652F0}
+@media (max-width: 1180px){.sx-links{display:none}.sx-menu{display:flex}}
+@media (max-width: 520px){.sx-login{display:none !important}}
+@media (max-width: 760px){.sx-nav{height:60px;padding:0 16px}.sx-word{height:20px}.sx-cta{height:40px;padding:0 16px;font-size:14px}.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}}
+body{margin:0;background:#FFFFFF}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-tag.solid{background:#1652F0;color:#FFFFFF}
+.ds-tag .tip{margin-left:0}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-tag.lg{height:30px;padding:0 12px;font-size:13px}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.nova-card{background:#FFFFFF url(/_blob/0b29db2e4cd6f4a89dc7ba8f12e59c8d) center / cover no-repeat}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.lg{width:56px;height:56px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
+.nv-av.sm{width:28px;height:28px}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
+}
+h1,h2,h3,p,.ci-d{text-wrap:pretty}
+@media (min-width: 761px){
+p,.ci-d{text-wrap:balance}
+}
+@media (max-width: 760px){
+h2{text-wrap:balance}
+}
+a{color:#1652F0}
+a:hover{color:#0E3BB8}
+.gc-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.gc-card{position:relative;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 30px 60px -50px rgba(11,20,51,.4);text-decoration:none;color:#0B1433;transition:transform .55s cubic-bezier(.2,.7,.2,1),box-shadow .55s cubic-bezier(.2,.7,.2,1),border-color .4s ease}
+.gc-card:hover{transform:translateY(-6px);border-color:#D6DDEE;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 44px 80px -46px rgba(22,82,240,.5)}
+.gc-card:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:4px}
+.gc-vis{position:relative;height:270px;flex-shrink:0;overflow:hidden;background:radial-gradient(120% 100% at 50% 0%,#EAF0FF 0%,#F5F8FF 50%,#FFFFFF 100%)}
+.gc-vis::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#C9D7FA 1.1px,transparent 1.4px);background-size:16px 16px;-webkit-mask-image:radial-gradient(75% 80% at 50% 30%,#000 25%,transparent 80%);mask-image:radial-gradient(75% 80% at 50% 30%,#000 25%,transparent 80%);opacity:.75}
+.gc-body{flex:1;display:flex;flex-direction:column;gap:10px;padding:22px 22px 20px}
+.gc-scene{transform:scale(.86);transform-origin:50% 50%}
+.gc-label{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#5B6582}
+.gc-ico{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;background:#EAF0FF}
+.gc-meta{margin-top:auto;padding-top:18px;border-top:1px solid #EEF1F7;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.gc-facts{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#5B6582;white-space:nowrap}
+.gc-feat .gc-facts{color:rgba(255,255,255,.7)}
+.gc-go{width:44px;height:44px;flex-shrink:0;border-radius:999px;border:1.5px solid #D6DDEE;display:flex;align-items:center;justify-content:center;color:#0B1433;transition:background .3s ease,border-color .3s ease,color .3s ease}
+.gc-card:hover .gc-go{background:#1652F0;border-color:#1652F0;color:#FFFFFF}
+.gc-go svg{transition:transform .35s cubic-bezier(.3,1.4,.5,1)}
+.gc-card:hover .gc-go svg{transform:translateX(2px) rotate(-45deg)}
+.gc-float{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.gc-card:hover .gc-f1{transform:translate(-6px,-8px)}
+.gc-card:hover .gc-f2{transform:translate(8px,-4px) rotate(2deg)}
+.gc-card:hover .gc-f3{transform:translateY(-10px)}
+.gc-feat{background:#0B1433;isolation:isolate;border-color:#0B1433;color:#FFFFFF;box-shadow:0 40px 80px -48px rgba(11,20,51,.8)}
+.gc-feat:hover{border-color:#0B1433;box-shadow:0 50px 90px -44px rgba(22,82,240,.7)}
+.gc-feat .gc-vis{background:none}
+.gc-feat .gc-vis::before{background-image:radial-gradient(rgba(127,164,255,.35) 1.1px,transparent 1.4px)}
+.gc-feat .gc-label{color:rgba(255,255,255,.65)}
+.gc-feat .gc-ico{background:rgba(255,255,255,.1)}
+.gc-feat .gc-meta{border-top-color:rgba(255,255,255,.1)}
+.gc-feat .gc-go{border-color:rgba(255,255,255,.25);color:#FFFFFF}
+.gc-fill{animation:gcFill 3.6s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes gcFill{0%{width:20%}60%,100%{width:66%}}
+.gc-pop{animation:gcPop 3.6s cubic-bezier(.3,1.4,.5,1) infinite}
+@keyframes gcPop{0%,55%{transform:scale(0);opacity:0}65%,90%{transform:scale(1);opacity:1}100%{transform:scale(.9);opacity:0}}
+.gc-sheen{animation:gcSheen 4.4s ease-in-out infinite}
+@keyframes gcSheen{0%,55%{transform:translateX(-180%) rotate(20deg)}85%,100%{transform:translateX(220%) rotate(20deg)}}
+.gc-spin{animation:gcSpin 20s linear infinite;transform-origin:50% 50%}
+@keyframes gcSpin{to{transform:rotate(360deg)}}
+.gc-comet{stroke-dasharray:.1 1.2;stroke-dashoffset:.1;animation:gcComet 3.4s cubic-bezier(.45,0,.3,1) infinite}
+@keyframes gcComet{0%{stroke-dashoffset:.1;opacity:0}10%{opacity:1}85%{opacity:1}100%{stroke-dashoffset:-1;opacity:0}}
+.gc-beat{animation:gcBeat 3.4s ease-in-out infinite}
+.gc-live{animation:gcLive 1.8s ease-out infinite}
+@keyframes gcLive{0%{box-shadow:0 0 0 0 rgba(22,82,240,.5)}100%{box-shadow:0 0 0 9px rgba(22,82,240,0)}}
+.gc-day{animation:gcDay 3.2s ease-in-out infinite;transform-origin:bottom}
+@keyframes gcDay{0%,100%{transform:scaleY(.55)}50%{transform:scaleY(1)}}
+@keyframes gcBeat{0%,70%,100%{box-shadow:0 0 0 6px rgba(127,164,255,.18)}80%{box-shadow:0 0 0 14px rgba(127,164,255,.28),0 0 30px rgba(76,125,255,.6)}}
+.gc-coach{align-self:flex-start;gap:10px;padding:0 18px 0 6px}
+@supports (animation-timeline: view()){
+.gc-in{animation:gcIn linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+.gc-in-2{animation-range:entry 5% cover 35%}.gc-in-3{animation-range:entry 10% cover 40%}.gc-in-4{animation-range:entry 15% cover 45%}
+@keyframes gcIn{from{opacity:0;transform:translateY(56px)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion: reduce){
+.gc-fill,.gc-pop,.gc-sheen,.gc-spin,.gc-comet,.gc-beat,.gc-live,.gc-day,.gc-in{animation:none !important}
+.gc-pop{opacity:1;transform:none}
+}
+@media (max-width: 1080px){
+.gc-head{grid-template-columns:minmax(0,1fr) !important;gap:20px !important}
+.gc-row{grid-template-columns:repeat(4,minmax(300px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -48px;padding:4px 48px 24px;scrollbar-width:none}
+.gc-row::-webkit-scrollbar{display:none}
+.gc-card{scroll-snap-align:start}
+}
+@media (max-width: 760px){
+.gc-wrap{padding:80px 20px 72px !important;gap:40px !important}
+.gc-head p{font-size:16px !important}
+.gc-h2{font-size:32px !important;letter-spacing:-.9px !important}
+.gc-row{grid-template-columns:repeat(4,86%);gap:14px;margin:0 -20px;padding:4px 20px 20px;scroll-padding:0 20px}
+.gc-vis{height:240px}
+.gc-scene{transform:scale(.9)}
+.gc-body{padding:22px 22px 20px}
+.gc-title{font-size:23px !important}
+}
+.tx-steps{display:flex;flex-direction:column;gap:2px;margin-top:14px}
+.tx-step{display:grid;grid-template-columns:32px minmax(0,1fr);gap:14px;align-items:center;padding:12px 0;border-top:1px solid #EEF1F7;transition:opacity .5s ease}
+.tx-step:first-child{border-top:none}
+.tx-step-wait{opacity:.45}
+.tx-num{width:32px;height:32px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;border:1.5px solid #D6DDEE;color:#5B6582;box-sizing:border-box;transition:background .4s ease,border-color .4s ease,color .4s ease}
+.tx-step-run .tx-num{border-color:#1652F0;color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.1)}
+.tx-st{font-size:16px;font-weight:600}
+.tx-sd{font-size:14px;color:#5B6582}
+@media (max-width: 760px){
+.tx-steps{order:3}
+}
+.ci-door{position:relative;flex:1;display:flex;flex-direction:column;border-radius:22px;overflow:hidden;text-decoration:none;transition:flex .7s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease}
+.ci-cr{background:#0B1433;isolation:isolate;color:#FFFFFF;box-shadow:0 40px 80px -50px rgba(11,20,51,.8)}
+.ci-cr::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,164,255,.22) 1px,transparent 1.3px);background-size:16px 16px;-webkit-mask-image:linear-gradient(200deg,#000,transparent 70%);mask-image:linear-gradient(200deg,#000,transparent 70%);pointer-events:none}
+.ci-copy{position:relative;z-index:2;display:flex;flex-direction:column;gap:12px;padding:36px 36px 0;max-width:430px}
+.ci-k{font-size:13px;font-weight:500;opacity:.75}
+.ci-t{font-size:30px;font-weight:600;letter-spacing:-.8px;line-height:1.12}
+.ci-d{font-size:15px;line-height:1.6;opacity:.78}
+.ci-btn{align-self:flex-start;margin-top:6px}
+.ci-door:hover .ob-arrow{transform:translateX(3px)}
+.ci-door:hover .ds-ghost{border-color:#1652F0}
+.ci-door:focus-visible{outline:3px solid rgba(22,82,240,.5);outline-offset:4px}
+.ci-vis{position:absolute;right:28px;bottom:-26px;width:340px;z-index:1;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.ci-door:hover .ci-vis{transform:translateY(-14px)}
+.ci-win{border-radius:16px;background:#FFFFFF;color:#0B1433;border:1.5px solid #E6EAF3;box-shadow:0 30px 60px -30px rgba(11,20,51,.5);padding:16px;display:flex;flex-direction:column;gap:10px}
+.ci-wk{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:500;color:#8A93AD}
+.ci-row{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;background:#F5F8FF;font-size:12px;color:#3A4566}
+.ci-ck{width:18px;height:18px;border-radius:999px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ci-float{position:absolute;z-index:3;border-radius:16px;background:#FFFFFF;color:#0B1433;border:1.5px solid #E6EAF3;box-shadow:0 24px 40px -22px rgba(11,20,51,.5);padding:10px 12px;display:flex;align-items:center;gap:10px;animation:ciBob 5s ease-in-out infinite}
+@keyframes ciBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.ci-bars{display:flex;align-items:flex-end;gap:3px;height:26px}
+.ci-bars span{width:6px;border-radius:2px;background:#C9D7FA}
+.ci-av{width:26px;height:26px;margin-left:-7px;border-radius:999px;border:2px solid #FFFFFF;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600}
+@media (prefers-reduced-motion: reduce){
+.ci-float{animation:none}
+.ci-door,.ci-vis{transition:none}
+}
+@media (max-width: 1080px){
+.ci-vis{width:290px;right:20px}
+.ci-t{font-size:26px}
+.ci-copy{padding:30px 28px 0}
+}
+@media (max-width: 860px){
+.ci-door{height:auto;border-radius:20px;padding-bottom:24px}
+.ci-copy{padding:24px 22px 0;gap:8px;max-width:none}
+.ci-k{font-size:12px}
+.ci-t{font-size:22px;letter-spacing:-.5px}
+.ci-d{font-size:14px}
+.ci-btn{margin-top:4px}
+.ci-vis{display:none}
+.ci-float{display:none}
+}
+.fc-band{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(180deg,#0B1433 0%,#0E1D55 55%,#14287A 100%);color:#FFFFFF;padding:64px 40px 120px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+.fc-band::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(157,184,247,.18) 1px,transparent 1.3px);background-size:22px 22px;-webkit-mask-image:radial-gradient(60% 60% at 50% 30%,#000 10%,transparent 80%);mask-image:radial-gradient(60% 60% at 50% 30%,#000 10%,transparent 80%);pointer-events:none}
+.fc-horizon{position:absolute;left:50%;bottom:-520px;width:1500px;height:620px;margin-left:-750px;border-radius:50%;background:radial-gradient(50% 50% at 50% 50%,#2F5BF0 0%,#1C43C9 45%,#122E92 70%,rgba(18,46,146,0) 100%);border-top:1.5px solid rgba(190,208,255,.85);box-shadow:0 -10px 40px -6px rgba(110,150,255,.7),0 -60px 140px -20px rgba(60,110,255,.55);pointer-events:none;animation:fcRise 7s ease-in-out infinite}
+@keyframes fcRise{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.fc-mark{position:relative;width:64px;height:64px;border-radius:999px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(255,255,255,.06),0 0 48px 6px rgba(76,125,255,.55)}
+.fc-mark img{width:36px;height:36px}
+.fc-mark::before{content:"";position:absolute;inset:-8px;border-radius:999px;border:1.5px solid rgba(157,184,247,.5);animation:fcRing 3.2s ease-out infinite}
+@keyframes fcRing{from{transform:scale(1);opacity:.8}to{transform:scale(1.7);opacity:0}}
+.fc-h2{position:relative;margin:10px 0 0;font-size:56px;line-height:1.04;font-weight:600;letter-spacing:-1.8px}
+.fc-sub{position:relative;margin:0;font-size:18px;line-height:1.6;color:rgba(255,255,255,.72)}
+.fc-note{position:relative;z-index:2;display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,.75)}
+.fc-note i{width:4px;height:4px;border-radius:9px;background:rgba(255,255,255,.45);display:block}
+@media (prefers-reduced-motion: reduce){
+.fc-horizon,.fc-mark::before{animation:none}
+}
+@media (max-width: 760px){
+.fc-wrap{padding:24px 12px 40px !important}
+.fc-band{border-radius:22px;padding:48px 20px 92px;gap:12px}
+.fc-horizon{width:900px;margin-left:-450px;height:420px;bottom:-350px}
+.fc-mark{width:52px;height:52px}
+.fc-mark img{width:30px;height:30px}
+.fc-h2{font-size:32px;letter-spacing:-.9px;margin-top:8px}
+.fc-sub{font-size:15px;max-width:300px}
+.fc-note{font-size:13px;margin-top:4px}
+.tip-b{display:none;width:min(250px,calc(100vw - 48px))}
+.tip:hover .tip-b,.tip:focus .tip-b{display:block}
+}
+.aur{position:relative;isolation:isolate;overflow:hidden;background:#0B1433}
+.aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
+.aur-off{background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat}
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-tag.solid{background:#1652F0;color:#FFFFFF}
+.ds-tag .tip{margin-left:0}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-tag.lg{height:30px;padding:0 12px;font-size:13px}
+.cr-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
+.cr-c{background:#1652F0}
+.cr-c.lg{width:26px;height:26px;font-size:13px}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.nova-card{background:#FFFFFF url(/_blob/0b29db2e4cd6f4a89dc7ba8f12e59c8d) center / cover no-repeat}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.lg{width:56px;height:56px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
+.nv-av.sm{width:28px;height:28px}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
+}
+@media (max-width: 760px){
+.tip-b{display:none;width:min(250px,calc(100vw - 48px))}
+.tip:hover .tip-b,.tip:focus .tip-b{display:block}
+}
+h1,h2,h3,p{text-wrap:pretty}
+.lr-nova{display:flex;align-items:center;gap:22px;padding:26px 28px;border-radius:22px;border:1.5px solid #DCE5FB}
+.lr-nova .nv-av{width:64px;height:64px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
+.lr-nova-b{flex:1;min-width:0}
+.lr-nova-k{font-size:13px;font-weight:500;color:#1652F0}
+.lr-nova-b p{margin:4px 0 0;font-size:16px;line-height:1.5;font-weight:500;letter-spacing:-.1px}
+@media (max-width: 1180px){.lr-nova{flex-wrap:wrap}}
+@media (max-width: 760px){
+.lr-nova{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:12px;row-gap:14px;align-items:center;padding:20px 18px}
+.lr-nova > .nv-av{width:40px;height:40px;box-shadow:0 0 0 2px #FFFFFF,0 0 0 3.5px #D6DDEE}
+.lr-nova-b{display:contents}
+.lr-nova-k{grid-column:2;grid-row:1}
+.lr-nova-b p{grid-column:1 / -1;margin:0;font-size:16px;line-height:1.5}
+}
+.pc-sec{max-width:1312px;margin:0 auto;padding:0 48px 96px;box-sizing:border-box;font-family:'Google Sans',system-ui,sans-serif;color:#0B1433}
+.pc-sh{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px}
+.pc-k{display:block;font-size:14px;font-weight:500;color:#1652F0}
+.pc-h2{margin:8px 0 0;display:flex;align-items:center;font-size:36px;line-height:1.15;font-weight:600;letter-spacing:-.03em}
+.pc-p{margin:10px 0 0;max-width:620px;font-size:17px;line-height:1.6;color:#4A5578}
+.pc-units{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.pc-u{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:18px;border:1.5px solid #E6EAF3;background:#FFFFFF}
+.pc-u .cr-c{width:36px;height:36px;font-size:15px}
+.pc-u b{display:block;font-size:16px;font-weight:600}
+.pc-u small{display:block;margin-top:2px;font-size:14px;line-height:1.45;color:#4A5578}
+.pc-scale{border-radius:22px;padding:28px;background:linear-gradient(160deg,#F5F8FF 0%,#FFFFFF 70%);border:1.5px solid #DCE5FB}
+.pc-rate{display:flex;align-items:center;gap:12px;font-size:28px;font-weight:600;letter-spacing:-.02em}
+.pc-rate span{color:#8A93AD;font-weight:500}
+.ko-path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ko-path li{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;padding:0 16px;text-align:center}
+.ko-path li:not(:last-child)::before{content:'';position:absolute;left:calc(50% + 22px);right:calc(-50% + 22px);top:13px;height:2px;border-radius:2px;background:#1652F0}
+.ko-dot{width:28px;height:28px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:2px solid #1652F0;background:#FFFFFF;display:flex;align-items:center;justify-content:center;color:#1652F0;font-size:12.5px;font-weight:600}
+.ko-path li:first-child .ko-dot{background:#1652F0;color:#FFFFFF}
+.ko-path li > span:last-child{display:flex;flex-direction:column;gap:4px;align-items:center}
+.ko-path b{font-size:16px;font-weight:600}
+.ko-path li > span:last-child > span{font-size:14px;line-height:1.5;color:#4A5578;max-width:240px}
+@media (max-width: 960px){
+.pc-sec{padding:0 20px 72px}
+.pc-sh{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:22px}
+.pc-h2{font-size:28px}
+.pc-p{font-size:15.5px}
+.ko-path{grid-template-columns:minmax(0,1fr);gap:0}
+.ko-path li{flex-direction:row;align-items:flex-start;text-align:left;gap:14px;padding:0 0 22px}
+.ko-path li:last-child{padding-bottom:0}
+.ko-path li:not(:last-child)::before{left:13px;right:auto;top:30px;bottom:2px;width:2px;height:auto}
+.ko-path li > span:last-child{align-items:flex-start}
+}
+@media (max-width: 760px){
+.pc-h2{font-size:24px}
+.pc-rate{font-size:20px;flex-wrap:wrap;gap:8px}
+.pc-scale{padding:22px 18px}
+}
+.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:border-box}
+.cx-hero{flex:none;height:640px;border-radius:28px}
+.cx-hero .ci-copy{max-width:560px;padding:72px 0 0 64px;gap:18px}
+.cx-hero .ci-t{margin:0;font-size:54px;line-height:1.04;letter-spacing:-1.8px}
+.cx-hero .ci-d{margin:0;font-size:18px;max-width:500px}
+.cx-acts{display:flex;align-items:center;gap:22px;margin-top:10px}
+.cx-acts .ci-btn{margin:0}
+.cx-wl{position:relative;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;opacity:.9}
+.cx-wl:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.cx-note{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;color:rgba(255,255,255,.7)}
+.cx-hero .ci-vis{right:64px;bottom:auto;top:104px;width:470px}
+.cx-hero:hover .ci-vis{transform:none}
+.cx-hero .ci-win{padding:20px;gap:10px}
+.cx-wt{font-size:17px;font-weight:600;letter-spacing:-.2px;margin:2px 0 4px}
+.cx-rm{margin-left:auto;font-size:11.5px;color:#8A93AD;white-space:nowrap}
+.cx-nv{display:flex;align-items:flex-start;gap:10px;padding:12px;border-radius:14px;font-size:13px;line-height:1.5;color:#0B1433;margin-top:4px}
+.cx-nv .nv-av{width:30px;height:30px;flex-shrink:0}
+.cx-hero .cx-f1{left:-96px;bottom:-30px}
+.cx-hero .cx-f2{right:-26px;top:-24px;animation-delay:-2.5s}
+.cx-sec{padding-top:0}
+.cx-studio{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:center}
+.cx-steps{margin-top:28px}
+.cx-steps .tx-step{font-family:inherit;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0;color:#0B1433;cursor:pointer;padding:16px 0}
+.cx-steps .tx-step:hover{opacity:1}
+.cx-steps .tx-step-run .tx-num{background:#1652F0;color:#FFFFFF}
+.cx-win{height:472px;box-sizing:border-box;padding:24px;gap:10px;border-radius:22px;box-shadow:0 40px 80px -50px rgba(11,20,51,.45);background:linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 70%,#F7F9FD 100%)}
+.cx-win .ci-row{padding:12px 14px;font-size:13.5px;border-radius:12px}
+.cx-win .ci-ck{width:20px;height:20px}
+.cx-sug{margin:8px 0 0}
+.cx-sug .lr-nova-b p{margin:4px 0 0}
+.cx-sa{display:flex;align-items:center;gap:16px;margin-top:12px}
+.cx-blk .cx-bi{width:30px;height:30px;border-radius:9px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cx-bt{font-weight:600;color:#0B1433}
+.cx-add{margin-top:8px;font-size:12.5px;font-weight:500;color:#8A93AD}
+.cx-types{display:flex;flex-wrap:wrap;gap:6px}
+.cx-pp{gap:12px}
+.cx-pn{display:flex;flex-direction:column;gap:1px;min-width:0}
+.cx-pn b{font-weight:600;color:#0B1433}
+.cx-pn small{font-size:12px;color:#5B6582}
+.cx-pp .ds-tag{margin-left:auto}
+.cx-amb{background:#FFF8EC}
+.cx-path{grid-template-columns:repeat(6,minmax(0,1fr))}
+.cx-path .ko-dot{background:#FFFFFF}
+.cx-path li:first-child .ko-dot{background:#1652F0}
+.cx-path .cx-ok .ko-dot{border:0;background:none}
+.cx-ec{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:18px}
+.cx-earn{padding:32px;border-radius:22px;display:flex;flex-direction:column}
+.cx-eh{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.cx-ef{position:relative;animation:none;flex-shrink:0}
+.cx-earn .pc-units{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px 28px;margin:30px 0 28px}
+.cx-earn .pc-u{align-items:flex-start;border:0;padding:0;background:none}
+.cx-earn > .ds-link{margin-top:auto}
+.cx-ui{width:40px;height:40px;border-radius:12px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cx-svc{display:flex;flex-direction:column;gap:0;padding:32px}
+.cx-svc .pc-rate{margin-top:24px}
+.cx-svc .pc-rate .cr-c{width:32px;height:32px;font-size:15px}
+.cx-ticks{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.cx-ticks li{display:flex;align-items:center;gap:10px;font-size:15px;color:#3A4566}
+.cx-ticks i{width:20px;height:20px;border-radius:999px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cx-who{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.cx-wt2{display:flex;flex-direction:column;gap:6px;padding:22px 20px;border-radius:18px;border:1.5px solid #E6EAF3;background:#FFFFFF}
+.cx-wt2 .cx-ui{margin-bottom:10px}
+.cx-wt2 b{font-size:16px;font-weight:600}
+.cx-wt2 small{font-size:14px;line-height:1.5;color:#4A5578}
+.cx-wf{margin-top:auto;display:flex;align-items:center;gap:14px;padding-top:14px;border-top:1px solid #EEF1F7}
+.cx-wf .cx-add{margin:0}
+.cx-wf .ds-ghost{margin-left:auto;pointer-events:none}
+.cx-bar{flex:1;max-width:180px;height:8px;border-radius:999px;background:#EEF1F7;overflow:hidden}
+.cx-bar i{display:block;height:100%;border-radius:999px;background:#1652F0}
+.cx-sub{margin-left:auto;height:40px;padding:0 18px;border-radius:999px;background:#EEF1F7;color:#8A93AD;font-size:14px;font-weight:600;display:inline-flex;align-items:center}
+#cx-make{overflow:clip}
+.cx-fb{position:relative;z-index:2;margin-top:14px}
+@media (max-width: 1180px){
+.cx-hero .ci-copy{padding:56px 0 0 44px;max-width:470px}
+.cx-hero .ci-t{font-size:44px}
+.cx-hero .ci-vis{right:36px;width:400px}
+.cx-path{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:32px}
+.cx-path li:nth-child(3)::before{display:none}
+.cx-who{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width: 960px){
+.cx-top{padding:8px 12px 0}
+.cx-hero{height:auto;padding-bottom:0}
+.cx-hero .ci-copy{padding:40px 24px 0;max-width:none;gap:14px}
+.cx-hero .ci-t{font-size:34px;letter-spacing:-1px}
+.cx-hero .ci-d{font-size:15.5px}
+.cx-hero .ci-vis{display:block;position:relative;top:auto;right:auto;width:auto;margin:32px 20px -1px}
+.cx-hero .ci-win{border-radius:18px 18px 0 0;border-bottom:0}
+.cx-hero .ci-float{display:none}
+.cx-studio{grid-template-columns:minmax(0,1fr);gap:24px}
+.cx-win{height:auto;min-height:440px}
+.cx-path{grid-template-columns:minmax(0,1fr);row-gap:0}
+.cx-path li:nth-child(3)::before{display:block}
+.cx-path .cx-ok .ko-dot svg{width:28px;height:28px}
+.cx-ec{grid-template-columns:minmax(0,1fr)}
+.cx-who{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 4px;scroll-padding:0 20px;scrollbar-width:none}
+.cx-who::-webkit-scrollbar{display:none}
+.cx-wt2{flex:0 0 220px;scroll-snap-align:start}
+}
+@media (max-width: 760px){
+.cx-hero .ci-copy{padding:32px 20px 0}
+.cx-hero .ci-t{font-size:30px}
+.cx-acts{flex-direction:column;align-items:stretch;gap:6px}
+.cx-acts .ds-btn{justify-content:space-between;align-self:stretch}
+.cx-wl{align-self:center;padding:12px 0}
+.cx-note{align-self:center}
+.cx-hero .ci-vis{margin:28px 12px -1px}
+.cx-hero .ci-win{padding:16px;gap:8px}
+.cx-hero .ci-row{font-size:12px}
+.cx-hero .cx-rm{display:none}
+.cx-steps{margin-top:18px}
+.cx-steps .tx-step{padding:12px 0}
+.cx-win{padding:16px;min-height:0;border-radius:18px}
+.cx-win .ci-row{padding:10px 12px;font-size:13px}
+.cx-blk .cx-rm{display:none}
+.cx-pp .ds-tag{display:none}
+.cx-sa{gap:12px}
+.cx-earn,.cx-svc{padding:24px 18px}
+.cx-eh{flex-direction:column;gap:16px}
+.cx-earn .pc-units{grid-template-columns:minmax(0,1fr)}
+.cx-svc .pc-rate{font-size:22px}
+.cx-ticks li{font-size:14.5px}
+.cx-fb{align-self:stretch;justify-content:space-between}
+}
+</style>
+</helmet>
+<div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
+<header class="sx-nav">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav class="sx-links" aria-label="Main">
+<a class="sx-link" href="#">Explore learning</a>
+<a class="sx-link" href="#">Career paths</a>
+<a class="sx-link" href="#">Certifications</a>
+<a class="sx-link" href="#">Pricing</a>
+<a class="sx-link sx-link-on" href="Creators.dc.html" aria-current="page">For creators</a>
+<a class="sx-link" href="#">For institutions</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
+<a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
+<a class="sx-cta" href="OnbWelcome.dc.html">Create account</a>
+<button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+</header>
+<section class="cx-top" aria-labelledby="cx-h">
+<div class="ci-door ci-cr aur cx-hero">
+<div class="ci-copy">
+<span class="ci-k">For creators and experts</span>
+<h1 id="cx-h" class="ci-t">Turn what you know into learning that moves people forward.</h1>
+<p class="ci-d">Build courses, certifications, career paths and programs with AI help. Get them validated, then reach learners across Credalio.</p>
+<div class="cx-acts"><a class="ds-btn ci-btn" href="OnbWelcome.dc.html"><span>Start creating</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><a class="cx-wl" href="#cx-make">See what you can create</a></div>
+<span class="cx-note">No creator subscription<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">You only pay for services you choose, such as validation. Costs are always shown first.</span></span></span>
+</div>
+<div class="ci-vis" aria-hidden="true">
+<div class="ci-win">
+<div class="ci-wk"><span>Creator Studio · Draft</span><span class="ds-tag blue">Draft</span></div>
+<span class="cx-wt">Data Foundations: Spreadsheets to SQL</span>
+<div class="ci-row"><span class="ci-ck" style="background: #0F6B45"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Module 1 · Working with spreadsheet data<span class="cx-rm">4 lessons</span></div>
+<div class="ci-row"><span class="ci-ck" style="background: #0F6B45"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Module 2 · Cleaning messy data<span class="cx-rm">4 lessons</span></div>
+<div class="ci-row"><span class="ci-ck" style="background: #EAF0FF; border: 1.5px dashed #9DB8F7; box-sizing: border-box"></span>Module 3 · Your first SQL queries<span class="cx-rm" style="color: #1652F0">AI draft</span></div>
+<div class="cx-nv nova-card"><span class="nv-av" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span><span>Module 3 has no knowledge check yet. Want me to draft three questions for you to review?</span></div>
+</div>
+<div class="ci-float cx-f1"><div class="ci-bars"><span style="height: 40%"></span><span style="height: 55%"></span><span style="height: 48%"></span><span style="height: 72%"></span><span style="height: 100%; background: #1652F0"></span></div><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">This month</span><span style="font-size: 15px; font-weight: 600">£1,240 earned</span></span></div>
+<div class="ci-float cx-f2"><span style="display: flex; padding-left: 7px"><span class="ci-av" style="background: #DCE5FB; color: #1652F0">PS</span><span class="ci-av" style="background: #0B1433; color: #FFFFFF">TR</span></span><span style="font-size: 13px; font-weight: 600">2 collaborators</span></div>
+</div>
+</div>
+</section>
+<section id="cx-make" aria-labelledby="gc-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
+<div class="gc-wrap" style="max-width: 1312px; margin: 0 auto; padding: 112px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 56px">
+
+<div class="gc-head gc-in" style="display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 64px; align-items: end">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 500; color: #1652F0">What you can create</span>
+<h2 id="gc-h" class="gc-h2" style="margin: 0; font-size: 48px; line-height: 1.06; font-weight: 600; letter-spacing: -1.5px">Four ways to share what you know.</h2>
+</div>
+<div style="display: flex; flex-direction: column; gap: 18px; padding-bottom: 6px">
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #4A5578">The same formats learners find on Credalio, built from your side of the studio.</p>
+<a class="ds-ghost nova-card gc-coach" href="OnbWelcome.dc.html">
+<span class="nv-av" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span>
+Not sure where to start? Ask Nova
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+</div>
+</div>
+
+<div class="gc-row">
+
+<a class="gc-card gc-in" href="OnbWelcome.dc.html" aria-label="Create a course">
+<div class="gc-vis" aria-hidden="true">
+<div class="gc-scene" style="position: absolute; inset: 0">
+<div class="gc-float gc-f2" style="position: absolute; left: 50%; top: 50%; width: 252px; margin: -92px 0 0 -126px; box-sizing: border-box; padding: 12px; border-radius: 12px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 26px 48px -28px rgba(11,20,51,.45); display: flex; flex-direction: column; gap: 10px">
+<div style="position: relative; height: 92px; border-radius: 8px; overflow: hidden; background: linear-gradient(135deg, #1652F0, #0B1433); display: flex; align-items: center; justify-content: center">
+<span style="position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.18) 1px, transparent 1.3px); background-size: 12px 12px"></span>
+<span style="position: relative; width: 38px; height: 38px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 6px rgba(255,255,255,.18)"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1652F0"><path d="M8 5v14l11-7z"></path></svg></span>
+<span style="position: absolute; right: 8px; bottom: 8px; height: 20px; padding: 0 7px; border-radius: 999px; background: rgba(11,20,51,.55); color: #FFFFFF; display: inline-flex; align-items: center; font-size: 10px; font-weight: 500">12:04</span>
+</div>
+<span style="font-size: 13px; font-weight: 600">Joining tables with SQL</span>
+<div style="display: flex; align-items: center; gap: 8px"><span style="flex: 1; height: 6px; border-radius: 9px; background: #EEF1F7; position: relative; overflow: hidden"><span class="gc-fill" style="position: absolute; left: 0; top: 0; bottom: 0; width: 60%; border-radius: 9px; background: #1652F0"></span></span><span style="font-size: 11px; font-weight: 500; color: #5B6582">Lesson 4 of 12</span></div>
+</div>
+<span class="gc-float gc-f1" style="position: absolute; left: 24px; bottom: 30px; height: 30px; padding: 0 11px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: #3A4566; box-shadow: 0 12px 24px -16px rgba(11,20,51,.4)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Your pace</span>
+<span class="gc-float gc-f3" style="position: absolute; right: 22px; top: 26px"><span class="gc-pop" style="display: inline-flex; height: 32px; padding: 0 12px 0 6px; border-radius: 999px; background: #0B1433; color: #FFFFFF; align-items: center; gap: 8px; font-size: 12px; font-weight: 500"><span style="width: 22px; height: 22px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>New skill: SQL joins</span></span>
+</div>
+</div>
+<div class="gc-body">
+<span class="gc-label"><span class="gc-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16"></path></svg></span>For one specific skill</span>
+<h3 class="gc-title" style="margin: 0; font-size: 22px; line-height: 1.18; font-weight: 600; letter-spacing: -.5px">Courses</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">Lessons, activities, quizzes and projects built around one skill.</p>
+<div class="gc-meta"><span class="gc-facts">Create a course</span><span class="gc-go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+</a>
+
+<a class="gc-card gc-in gc-in-2" href="OnbWelcome.dc.html" aria-label="Create a certification">
+<div class="gc-vis" aria-hidden="true">
+<div class="gc-scene" style="position: absolute; inset: 0">
+<div class="gc-float gc-f2" style="position: absolute; left: 50%; top: 50%; width: 236px; height: 166px; margin: -100px 0 0 -158px; box-sizing: border-box; padding: 18px; border-radius: 10px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 26px 48px -28px rgba(11,20,51,.45); display: flex; flex-direction: column; gap: 9px; overflow: hidden">
+<span style="position: absolute; inset: 7px; border: 1px solid #DCE5FB; border-radius: 6px; pointer-events: none"></span>
+<span class="gc-sheen" style="position: absolute; top: -30%; bottom: -30%; width: 30%; background: linear-gradient(90deg, rgba(234,240,255,0), rgba(234,240,255,.95), rgba(234,240,255,0))"></span>
+<span style="position: relative; font-size: 10px; font-weight: 500; letter-spacing: 1.6px; color: #8A93AD">PROFESSIONAL CERTIFICATE</span>
+<span style="position: relative; font-size: 16px; font-weight: 600; letter-spacing: -.3px">Data Analysis</span>
+<span style="position: relative; width: 70%; height: 6px; border-radius: 9px; background: #EEF1F7"></span>
+<span style="position: relative; width: 52%; height: 6px; border-radius: 9px; background: #EEF1F7"></span>
+<span style="position: relative; margin-top: auto; display: flex; justify-content: space-between; font-size: 10px; color: #8A93AD"><span>Credalio</span><span>ID 4F2-91</span></span>
+</div>
+<div class="gc-float gc-f3" style="position: absolute; right: 22px; top: 40px; width: 104px; height: 104px">
+<svg class="gc-spin" viewBox="0 0 104 104" style="position: absolute; inset: 0; width: 100%; height: 100%"><defs><path id="gcSeal" d="M52,52 m-41,0 a41,41 0 1,1 82,0 a41,41 0 1,1 -82,0"></path></defs><text font-family="Google Sans, system-ui, sans-serif" font-size="8.6" font-weight="600" letter-spacing="2.4" fill="#1652F0"><textPath href="#gcSeal">ASSESSED · VERIFIED · RECOGNISED ·</textPath></text></svg>
+<span style="position: absolute; inset: 22px; border-radius: 999px; background: #1652F0; box-shadow: 0 0 0 4px #FFFFFF, 0 14px 26px -12px rgba(22,82,240,.7); display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+</div>
+<span class="gc-float gc-f1" style="position: absolute; left: 26px; bottom: 30px; height: 30px; padding: 0 11px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: #0F6B45; box-shadow: 0 12px 24px -16px rgba(11,20,51,.4)"><span style="width: 7px; height: 7px; border-radius: 9px; background: #0F6B45"></span>Practical exam passed</span>
+</div>
+</div>
+<div class="gc-body">
+<span class="gc-label"><span class="gc-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path></svg></span>For proof of competence</span>
+<h3 class="gc-title" style="margin: 0; font-size: 22px; line-height: 1.18; font-weight: 600; letter-spacing: -.5px">Professional Certifications</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">Set the competencies, assessments and criteria someone must meet.</p>
+<div class="gc-meta"><span class="gc-facts">Create a certification</span><span class="gc-go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+</a>
+
+<a class="gc-card gc-feat gc-in gc-in-3 aur" href="OnbWelcome.dc.html" aria-label="Create a career path">
+<div class="gc-vis" aria-hidden="true">
+<div class="gc-scene" style="position: absolute; inset: 0">
+<svg viewBox="0 0 400 300" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible">
+<path d="M36 250 C 110 250, 100 170, 170 170 S 250 210, 290 150 S 340 70, 368 58" fill="none" stroke="rgba(127,164,255,.35)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 8"></path>
+<path class="gc-comet" pathLength="1" d="M36 250 C 110 250, 100 170, 170 170 S 250 210, 290 150 S 340 70, 368 58" fill="none" stroke="#7FA4FF" stroke-width="5" stroke-linecap="round"></path>
+</svg>
+<span style="position: absolute; left: 9%; top: 83%; transform: translate(-20%, -50%); height: 28px; padding: 0 11px; border-radius: 999px; background: #FFFFFF; color: #0B1433; display: inline-flex; align-items: center; font-size: 11px; font-weight: 600; white-space: nowrap">You, today</span>
+<span style="position: absolute; left: 42.5%; top: 56.7%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="width: 34px; height: 34px; border-radius: 999px; background: #1652F0; border: 2px solid #7FA4FF; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 5v16"></path></svg></span><span style="font-size: 11px; font-weight: 500; color: rgba(255,255,255,.75)">Courses</span></span>
+<span style="position: absolute; left: 72.5%; top: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 6px"><span style="width: 34px; height: 34px; border-radius: 999px; background: #1652F0; border: 2px solid #7FA4FF; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"></path></svg></span><span style="font-size: 11px; font-weight: 500; color: rgba(255,255,255,.75)">Projects</span></span>
+<span class="gc-float gc-f1" style="position: absolute; right: 18px; top: 22px; padding: 9px 12px 9px 9px; border-radius: 10px; background: #FFFFFF; color: #0B1433; display: flex; align-items: center; gap: 9px; white-space: nowrap"><span class="gc-beat" style="width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(150deg, #4C7DFF, #1652F0); display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16v11H4zM9 8V5h6v3"></path></svg></span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 10px; color: #8A93AD">Your goal</span><span style="font-size: 13px; font-weight: 600">Data analyst</span></span></span>
+</div>
+</div>
+<div class="gc-body">
+<span class="gc-label"><span class="gc-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7FA4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"></path></svg></span>For a whole new role</span>
+<h3 class="gc-title" style="margin: 0; font-size: 22px; line-height: 1.18; font-weight: 600; letter-spacing: -.5px">Career Paths</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,.72)">Combine learning, practice and credentials into a route toward a role.</p>
+<div class="gc-meta"><span class="gc-facts">Create a career path</span><span class="gc-go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+</a>
+
+<a class="gc-card gc-in gc-in-4" href="OnbWelcome.dc.html" aria-label="Create a program">
+<div class="gc-vis" aria-hidden="true">
+<div class="gc-scene" style="position: absolute; inset: 0">
+<div class="gc-float gc-f2" style="position: absolute; left: 50%; top: 50%; width: 252px; margin: -78px 0 0 -126px; box-sizing: border-box; padding: 14px; border-radius: 12px; background: #FFFFFF; border: 1px solid #E6EAF3; box-shadow: 0 26px 48px -28px rgba(11,20,51,.45); display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span style="display: flex; padding-left: 8px">
+<span style="width: 30px; height: 30px; margin-left: -8px; border-radius: 999px; border: 2.5px solid #FFFFFF; background: #DCE5FB; color: #1652F0; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600">AK</span>
+<span style="width: 30px; height: 30px; margin-left: -8px; border-radius: 999px; border: 2.5px solid #FFFFFF; background: #1652F0; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600">MS</span>
+<span style="width: 30px; height: 30px; margin-left: -8px; border-radius: 999px; border: 2.5px solid #FFFFFF; background: #0B1433; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600">PL</span>
+<span style="height: 30px; margin-left: -8px; padding: 0 9px; box-sizing: border-box; border-radius: 999px; border: 2.5px solid #FFFFFF; background: #EAF0FF; color: #1652F0; display: flex; align-items: center; font-size: 10px; font-weight: 600">+20</span>
+</span>
+<span style="font-size: 11px; font-weight: 500; color: #8A93AD">Cohort 12</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; align-items: end; height: 54px">
+<span class="gc-day" style="height: 40%; border-radius: 4px; background: #EAF0FF; animation-delay: 0s"></span>
+<span class="gc-day" style="height: 65%; border-radius: 4px; background: #DCE5FB; animation-delay: .2s"></span>
+<span class="gc-day" style="height: 50%; border-radius: 4px; background: #EAF0FF; animation-delay: .4s"></span>
+<span class="gc-day" style="height: 100%; border-radius: 4px; background: linear-gradient(180deg, #4C7DFF, #1652F0); animation-delay: .6s"></span>
+<span class="gc-day" style="height: 58%; border-radius: 4px; background: #DCE5FB; animation-delay: .8s"></span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; font-size: 10px; font-weight: 500; color: #8A93AD; text-align: center"><span>Mon</span><span>Tue</span><span>Wed</span><span style="color: #1652F0">Thu</span><span>Fri</span></div>
+</div>
+<span class="gc-float gc-f1" style="position: absolute; left: 22px; top: 26px; height: 30px; padding: 0 11px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6EAF3; display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 500; color: #0B1433; box-shadow: 0 12px 24px -16px rgba(11,20,51,.4)"><span class="gc-live" style="width: 7px; height: 7px; border-radius: 9px; background: #1652F0"></span>Live · Thu 18:00</span>
+<span class="gc-float gc-f3" style="position: absolute; right: 20px; bottom: 26px; height: 32px; padding: 0 12px 0 5px; border-radius: 999px; background: #0B1433; color: #FFFFFF; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500"><span style="width: 22px; height: 22px; border-radius: 999px; background: #DCE5FB; color: #0B1433; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 600">DR</span>Led by Dr Rahman</span>
+</div>
+</div>
+<div class="gc-body">
+<span class="gc-label"><span class="gc-ico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21v-1a6 6 0 0 1 12 0v1M16 3.5a4 4 0 0 1 0 7M22 21v-1a6 6 0 0 0-4-5.6"></path></svg></span>For learning over time</span>
+<h3 class="gc-title" style="margin: 0; font-size: 22px; line-height: 1.18; font-weight: 600; letter-spacing: -.5px">Learning Programs</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A5578">Run cohort-based or guided learning with schedules and instructors.</p>
+<div class="gc-meta"><span class="gc-facts">Create a program</span><span class="gc-go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div>
+</div>
+</a>
+
+</div>
+</div>
+</section>
+<section class="pc-sec cx-sec" aria-labelledby="cx-st">
+<div class="cx-studio">
+<div class="cx-sl">
+<span class="pc-k">Creator Studio</span>
+<h2 id="cx-st" class="pc-h2">Everything you need to build great learning.</h2>
+<div class="tx-steps cx-steps" role="tablist" aria-label="Studio areas"><button type="button" role="tab" class="tx-step {{st.s0.cls}}" aria-selected="{{st.s0.sel}}" onClick="{{st.s0.pick}}"><span class="tx-num">1</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Shape it with AI</span><span class="tx-sd">Nova drafts structure, objectives and first questions.</span></span></button><button type="button" role="tab" class="tx-step {{st.s1.cls}}" aria-selected="{{st.s1.sel}}" onClick="{{st.s1.pick}}"><span class="tx-num">2</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Build rich learning</span><span class="tx-sd">Video, text, quizzes, projects and practical work.</span></span></button><button type="button" role="tab" class="tx-step {{st.s2.cls}}" aria-selected="{{st.s2.sel}}" onClick="{{st.s2.pick}}"><span class="tx-num">3</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Create together</span><span class="tx-sd">Invite co-creators and experts with clear roles.</span></span></button><button type="button" role="tab" class="tx-step {{st.s3.cls}}" aria-selected="{{st.s3.sel}}" onClick="{{st.s3.pick}}"><span class="tx-num">4</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Check before you submit</span><span class="tx-sd">Pre-check finds gaps before validators do.</span></span></button></div>
+</div>
+<div class="ci-win cx-win" role="tabpanel" aria-label="{{st.name}}">
+<div class="ci-wk"><span>Creator Studio · Data Foundations</span><span class="ds-tag {{st.tagCls}}">{{st.tag}}</span></div>
+<sc-if value="{{st.a0}}" hint-placeholder-val="{{ true }}">
+<span class="cx-wt">Course outline</span>
+<div class="ci-row"><span class="ci-ck" style="background: #0F6B45"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Module 1 · Working with spreadsheet data<span class="cx-rm">4 lessons</span></div>
+<div class="ci-row"><span class="ci-ck" style="background: #0F6B45"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Module 2 · Cleaning messy data<span class="cx-rm">4 lessons</span></div>
+<div class="ci-row"><span class="ci-ck" style="background: #EAF0FF; border: 1.5px dashed #9DB8F7; box-sizing: border-box"></span>Module 3 · Your first SQL queries<span class="cx-rm" style="color: #1652F0">AI draft</span></div>
+<div class="lr-nova nova-card cx-sug"><span class="nv-av" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span><div class="lr-nova-b"><span class="lr-nova-k">Nova · Creator Copilot<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">AI suggests. You decide. Creators remain responsible for the learning they publish.</span></span></span><p>{{st.sug}}</p><div class="cx-sa"><button type="button" class="ds-ghost sm" onClick="{{st.accept}}">{{st.acceptLabel}}</button><button type="button" class="ds-link" onClick="{{st.skip}}">Not now</button></div></div></div>
+</sc-if>
+<sc-if value="{{st.a1}}" hint-placeholder-val="{{ false }}">
+<span class="cx-wt">Lesson 2.3 · Removing duplicates</span>
+<div class="ci-row cx-blk"><span class="cx-bi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9 5 3-5 3z"></path></svg></span><span class="cx-bt">Video</span><span class="cx-rm">6 min</span></div><div class="ci-row cx-blk"><span class="cx-bi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6h14M5 11h14M5 16h9"></path></svg></span><span class="cx-bt">Text</span><span class="cx-rm">Why duplicates happen</span></div><div class="ci-row cx-blk"><span class="cx-bi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.3M12 17h.01"></path></svg></span><span class="cx-bt">Knowledge check</span><span class="cx-rm">3 questions</span></div><div class="ci-row cx-blk"><span class="cx-bi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16v12H4z"></path><path d="M9 7V5h6v2"></path></svg></span><span class="cx-bt">Practical activity</span><span class="cx-rm">Clean a sales sheet</span></div>
+<span class="cx-add">Add a block</span>
+<div class="cx-types"><span class="ds-tag">Video</span><span class="ds-tag">Text</span><span class="ds-tag">Document</span><span class="ds-tag">Interactive</span><span class="ds-tag">Quiz</span><span class="ds-tag">Knowledge check</span><span class="ds-tag">Exam</span><span class="ds-tag">Assignment</span><span class="ds-tag">Project</span><span class="ds-tag">Practical activity</span><span class="ds-tag">Resources</span></div>
+</sc-if>
+<sc-if value="{{st.a2}}" hint-placeholder-val="{{ false }}">
+<span class="cx-wt">People on this course</span>
+<div class="ci-row cx-pp"><span class="ci-av" style="margin: 0; width: 32px; height: 32px; font-size: 11px; background: #1652F0; color: #FFFFFF">AO</span><span class="cx-pn"><b>You</b><small>Full control</small></span><span class="ds-tag">Lead</span></div><div class="ci-row cx-pp"><span class="ci-av" style="margin: 0; width: 32px; height: 32px; font-size: 11px; background: #DCE5FB; color: #1652F0">PS</span><span class="cx-pn"><b>Priya Shah</b><small>Edits content · shares revenue</small></span><span class="ds-tag">Co-creator</span></div><div class="ci-row cx-pp"><span class="ci-av" style="margin: 0; width: 32px; height: 32px; font-size: 11px; background: #0B1433; color: #FFFFFF">TR</span><span class="cx-pn"><b>Tom Reed</b><small>Runs live sessions · sees learners</small></span><span class="ds-tag">Co-teacher</span></div><div class="ci-row cx-pp"><span class="ci-av" style="margin: 0; width: 32px; height: 32px; font-size: 11px; background: #E7F5EE; color: #0F6B45">LO</span><span class="cx-pn"><b>Dr Lena Ortiz</b><small>Reviews and comments</small></span><span class="ds-tag">Subject expert</span></div>
+<div class="cx-wf"><span class="cx-add">Everyone gets only the access their role needs.</span><span class="ds-ghost sm">Invite</span></div>
+</sc-if>
+<sc-if value="{{st.a3}}" hint-placeholder-val="{{ false }}">
+<span class="cx-wt">Pre-check</span>
+<div class="ci-row"><span class="ci-ck" style="background: #0F6B45"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Objectives for every module</div>
+<div class="ci-row"><span class="ci-ck" style="background: #0F6B45"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Assessments match the objectives</div>
+<div class="ci-row"><span class="ci-ck" style="background: #0F6B45"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Captions on every video</div>
+<div class="ci-row cx-amb"><span class="ci-ck" style="background: #FFF4E5; color: #B54708; font-size: 11px; font-weight: 600">!</span>Module 3 needs a knowledge check<span class="cx-rm" style="color: #B54708">Fix</span></div>
+<div class="cx-wf"><span class="cx-bar"><i style="width: 75%"></i></span><span class="cx-add">3 of 4 ready</span><span class="cx-sub">Submit for validation</span></div>
+</sc-if>
+</div>
+</div>
+</section>
+<section class="pc-sec cx-sec" aria-labelledby="cx-va">
+<div class="pc-sh"><div><span class="pc-k">Validation</span><h2 id="cx-va" class="pc-h2">Build it. Then prove the quality behind it.</h2><p class="pc-p">Independent experts review your work. Validated learning carries the Credalio seal, linked to a public Validation Record.</p></div><a class="ds-ghost" href="#">How validation works<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+<ol class="ko-path cx-path"><li><span class="ko-dot">1</span><span><b>Pre-check</b><span>Fix gaps before anyone else sees them.</span></span></li><li><span class="ko-dot">2</span><span><b>Submit</b><span>The cost is shown before anything is charged.</span></span></li><li><span class="ko-dot">3</span><span><b>Expert review</b><span>Independent validators check content, design and assessment.</span></span></li><li><span class="ko-dot">4</span><span><b>Resolve findings</b><span>Answer questions and update your work in the Studio.</span></span></li><li class="cx-ok"><span class="ko-dot"><svg width="28" height="28" viewBox="0 0 100 100"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span><b>Validated</b><span>Your work earns the seal and a public record.</span></span></li><li><span class="ko-dot">6</span><span><b>Publish</b><span>Learners find it across Credalio.</span></span></li></ol>
+</section>
+<section class="pc-sec cx-sec" aria-label="Earnings and creator services">
+<div class="cx-ec">
+<div class="ds-card cx-earn">
+<div class="cx-eh"><div><span class="pc-k">Creator economics</span><h2 class="pc-h2">Build knowledge. Create value.</h2></div>
+<div class="ci-float cx-ef"><div class="ci-bars"><span style="height: 40%"></span><span style="height: 55%"></span><span style="height: 48%"></span><span style="height: 72%"></span><span style="height: 100%; background: #1652F0"></span></div><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">This month</span><span style="font-size: 15px; font-weight: 600">£1,240 earned</span></span></div></div>
+<div class="pc-units"><div class="pc-u"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg></span><div><b>Marketplace sales</b><small>Earn when learners buy your eligible learning.</small></div></div><div class="pc-u"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M7.5 14h3M7.5 17h6"></path></svg></span><div><b>Organisations</b><small>Offer your learning to institutions and teams, where eligible.</small></div></div><div class="pc-u"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span><div><b>Referrals</b><small>Introduce learners to your learning, or other eligible learning.</small></div></div><div class="pc-u"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0z"></path><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 21h7M10 17h4"></path></svg></span><div><b>Creator rewards<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Open to eligible creators, based on qualified contribution and platform rules.</span></span></b><small>Take part in Credalio’s creator reward economy.</small></div></div></div>
+<a class="ds-link" href="#">How creator earnings work<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
+</div>
+<div class="pc-scale cx-svc">
+<span class="pc-k">Creator services</span>
+<h2 class="pc-h2">No monthly creator subscription.</h2>
+<p class="pc-p">Add Credits only when you need a paid service, like validation or some AI tools.</p>
+<span class="pc-rate">$1 <span>=</span> <i class="cr-c lg" aria-hidden="true">C</i>10 Credits<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Creator Service Credits are your creator wallet. They are separate from learner DLP.</span></span></span>
+<ul class="cx-ticks">
+<li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Pay only for the services you use</li>
+<li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>See the cost before you’re charged</li>
+<li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Estimates live in your creator dashboard</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="pc-sec cx-sec" aria-labelledby="cx-wh">
+<div class="pc-sh"><div><span class="pc-k">Who can create</span><h2 id="cx-wh" class="pc-h2">Expertise comes in many forms.</h2></div></div>
+<div class="cx-who"><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"></path></svg></span><b>Independent experts</b><small>Share professional expertise.</small></div><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><b>Educators</b><small>Turn experience into structured digital learning.</small></div><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"></rect><path d="M3 9h18M8 13h3M8 16h6"></path></svg></span><b>Industry professionals</b><small>Pass on practical, current skills.</small></div><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg></span><b>Teams</b><small>Co-create learning together.</small></div><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M7.5 14h3M7.5 17h6"></path></svg></span><b>Institutions</b><small>Publish under your institution’s name.</small></div></div>
+</section>
+<section aria-labelledby="fc-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif">
+<div class="fc-wrap" style="max-width: 1360px; margin: 0 auto; padding: 32px 24px 64px; box-sizing: border-box">
+<div class="fc-band">
+<span class="fc-horizon" aria-hidden="true"></span>
+<span class="fc-mark" aria-hidden="true"><img src="/_blob/f81e36d31295a0d0737959589ec1abd4" alt="" width="42" height="42"></span>
+<h2 id="fc-h" class="fc-h2">Ready to share what you know?</h2>
+<p class="fc-sub">Start free. Nova helps you shape your first course in minutes.</p>
+<a class="ds-btn cx-fb" href="OnbWelcome.dc.html"><span>Start creating</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+<span class="fc-note">No subscription<i></i>Pay as you go</span>
+</div>
+</div>
+</section>
+<footer class="sx-foot">
+<div class="sx-fin">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="Creators.dc.html">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+<span>© 2026 magnummeta. All rights reserved.</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4540}}'>
+var AREAS = ["Shape it with AI", "Build rich learning", "Create together", "Check before you submit"];
+class Component extends DCLogic {
+auroraMount(el) {
+    var host = window;
+    try { if (window.top && window.top.document) host = window.top; } catch (e) { host = window; }
+    var R = host.__credAurora;
+    if (!R) {
+      R = host.__credAurora = { items: [], raf: 0, last: 0, cur: 0 };
+      var gc = host.document.createElement('canvas');
+      var gl = gc.getContext('webgl', { premultipliedAlpha: false, antialias: false, preserveDrawingBuffer: true, powerPreference: 'low-power' });
+      R.gl = gl; R.gc = gc;
+      if (gl) {
+        var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+        var fs = [
+          'precision mediump float;uniform vec2 R;uniform float T;uniform float L;uniform vec3 A;uniform vec3 B;uniform vec3 C;uniform vec3 G0;uniform vec3 G1;',
+          'float hp(float s,float k,float b){return fract(sin(s*k)*b)*6.2831853;}',
+          'float h3(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}',
+          'float vn(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);',
+          'float a=mix(mix(h3(i),h3(i+vec3(1,0,0)),f.x),mix(h3(i+vec3(0,1,0)),h3(i+vec3(1,1,0)),f.x),f.y);',
+          'float b=mix(mix(h3(i+vec3(0,0,1)),h3(i+vec3(1,0,1)),f.x),mix(h3(i+vec3(0,1,1)),h3(i+vec3(1,1,1)),f.x),f.y);',
+          'return mix(a,b,f.z)*2.-1.;}',
+          'void main(){vec2 uv=gl_FragCoord.xy/R;float asp=R.x/max(R.y,1.);',
+          'float wav=.6,ray=.25,H=1.1,ins=1.12,bal=mix(2.5,.4,.5),cx=.62,cy=.18;',
+          'float ws=0.,tot=0.;',
+          'for(int i=0;i<4;i++){float fi=float(i);',
+          'float to=fi==0.?0.:fi==1.?3.1:fi==2.?6.7:9.4;float w=fi==0.?1.:fi==1.?.65:fi==2.?.45:.3;',
+          'float ts=T*.06+to;float ls=fi*31.7;float wx=(uv.x-cx)*asp*2.;',
+          'float arc=.15*sin(wx*.7+ts*.4+hp(ls,12.9,4758.5))+.08*sin(wx*1.6+ts*.65+hp(ls,78.2,2847.1))+.04*sin(wx*2.9+ts*.3+hp(ls,41.6,1593.7));',
+          'float nw=vn(vec3(wx*.5,ts*.25,ls*.1));float py=cy+arc*wav+nw*.14*wav;',
+          'float rays=pow(sin((wx+nw*2.5)*mix(6.,20.,ray)*.15+ts*.1+hp(ls,53.7,3847.2))*.5+.5,1.5);',
+          'float lh=H*mix(.4,1.,rays);float d=uv.y-py;float top=lh*(rays*.4+.6);',
+          'float env=smoothstep(-.04,.015,d)*(1.-smoothstep(0.,top,d));',
+          'float ct=clamp(d/(top+.001),0.,1.);float sb=mix(.4,1.,nw*.5+.5);float cd=ct-.2;float cb=exp(cd*cd*-6.)*.3+1.;',
+          'float al=env*rays*sb*cb*w;ws+=ct*al;tot+=al;}',
+          'float av=pow(ws/(tot+.001),bal);vec3 col=mix(mix(A,B,smoothstep(0.,.2,av)),C,smoothstep(.4,.85,av));',
+          'float br=tot*ins;vec3 glow=clamp(col*br,0.,1.);',
+          'vec3 base=mix(G0,G1,smoothstep(0.,1.,uv.y*.7+(1.-uv.x)*.3));',
+          'gl_FragColor=L>.5?vec4(mix(base,col,clamp(br*.42,0.,.62)),1.):vec4(base*(1.-clamp(br*.5,0.,1.)*.35)+glow,1.);}'
+        ].join('');
+        var mk = function (t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
+        var pr = gl.createProgram();
+        gl.attachShader(pr, mk(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, mk(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr);
+        if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { R.gl = null; } else {
+          gl.useProgram(pr);
+          var bf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, bf);
+          gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+          var lp = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
+          var u = function (n) { return gl.getUniformLocation(pr, n); };
+          var hex = function (h) { return [parseInt(h.substr(1, 2), 16) / 255, parseInt(h.substr(3, 2), 16) / 255, parseInt(h.substr(5, 2), 16) / 255]; };
+          R.pal = { dark: [hex('#0E3BB8'), hex('#2E63FF'), hex('#9DB8F7'), hex('#050A20'), hex('#0B1A4D'), 0], light: [hex('#B9CCFF'), hex('#7FA4FF'), hex('#4F80FF'), hex('#F6F9FF'), hex('#E4ECFF'), 1] };
+          R.u = { A: u('A'), B: u('B'), C: u('C'), G0: u('G0'), G1: u('G1'), L: u('L') };
+          R.uR = u('R'); R.uT = u('T');
+        }
+      }
+      R.still = !!(host.matchMedia && host.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      R.t0 = host.performance.now();
+      R.paint = function (it, now) {
+        var g = R.gl, w = it.cv.width, h = it.cv.height;
+        if (R.gc.width !== w || R.gc.height !== h) { R.gc.width = w; R.gc.height = h; }
+        var pl = R.pal[it.light ? 'light' : 'dark']; g.uniform3fv(R.u.A, pl[0]); g.uniform3fv(R.u.B, pl[1]); g.uniform3fv(R.u.C, pl[2]); g.uniform3fv(R.u.G0, pl[3]); g.uniform3fv(R.u.G1, pl[4]); g.uniform1f(R.u.L, pl[5]);
+        g.viewport(0, 0, w, h); g.uniform2f(R.uR, w, h); g.uniform1f(R.uT, it.seed + (R.still ? 0 : (now - R.t0) / 1000));
+        g.drawArrays(g.TRIANGLE_STRIP, 0, 4);
+        it.ctx.drawImage(R.gc, 0, 0);
+      };
+      R.size = function (it) {
+        var cw = it.el.clientWidth, ch = it.el.clientHeight;
+        if (!cw || !ch) return false;
+        var s = Math.min(0.4, 320 / cw), w = Math.max(16, Math.round(cw * s)), h = Math.max(16, Math.round(ch * s));
+        if (it.cv.width !== w || it.cv.height !== h) { it.cv.width = w; it.cv.height = h; it.fresh = true; }
+        return true;
+      };
+      R.tick = function (now) {
+        R.raf = 0;
+        if (now - R.last > 33) {
+          R.last = now;
+          R.items = R.items.filter(function (it) { return it.el.isConnected; });
+          var n = R.items.length, st = host.performance.now();
+          for (var k = 0; k < n; k++) {
+            var it = R.items[(R.cur + k) % n];
+            if ((it.vis || it.fresh) && R.size(it)) { R.paint(it, now); it.fresh = false; }
+            if (host.performance.now() - st > 6) { R.cur = (R.cur + k + 1) % n; break; }
+          }
+        }
+        if (!R.still && R.items.some(function (it) { return it.vis; })) R.raf = host.requestAnimationFrame(R.tick);
+      };
+      R.wake = function () { if (!R.raf) R.raf = host.requestAnimationFrame(R.tick); };
+    }
+    if (!R.gl) { el.classList.add(el.classList.contains('aur-lt') ? 'aur-off-lt' : 'aur-off'); return function () {}; }
+    var cv = el.ownerDocument.createElement('canvas');
+    cv.className = 'aur-c';
+    cv.setAttribute('aria-hidden', 'true');
+    el.insertBefore(cv, el.firstChild);
+    el.__aurC = cv;
+    var it = { el: el, cv: cv, ctx: cv.getContext('2d'), seed: Math.random() * 40, vis: true, fresh: true, light: el.classList.contains('aur-lt') };
+    R.items.push(it);
+    var view = el.ownerDocument.defaultView || window;
+    var io = view.IntersectionObserver ? new view.IntersectionObserver(function (e) { it.vis = e[0].isIntersecting; if (it.vis) R.wake(); }) : null;
+    if (io) io.observe(el);
+    R.wake();
+    return function () { if (io) io.disconnect(); R.items = R.items.filter(function (x) { return x !== it; }); };
+  }
+  aurScan() {
+    var self = this, q = 0;
+    var go = function () { q = 0; document.querySelectorAll('.aur').forEach(function (el) { if (!el.__aurC || el.__aurC.parentNode !== el) { if (el.__aur) el.__aur(); el.__aur = self.auroraMount(el); } }); };
+    go();
+    if (!this._aurMo && window.MutationObserver) { this._aurMo = new MutationObserver(function () { if (!q) q = requestAnimationFrame(go); }); this._aurMo.observe(document.body, { childList: true, subtree: true }); }
+  }
+  constructor(props) { super(props); this.state = { tab: 0, drafted: false, skipped: false }; }
+  componentDidMount() { this.aurScan(); }
+  componentWillUnmount() { if (this._aurMo) this._aurMo.disconnect(); }
+  renderVals() {
+    var self = this, t = this.state.tab, st = { name: AREAS[t] };
+    for (var i = 0; i < 4; i++) (function (k) { st['s' + k] = { cls: k === t ? 'tx-step-run' : 'tx-step-wait', sel: k === t ? 'true' : 'false', pick: function () { self.setState({ tab: k }); } }; st['a' + k] = k === t; })(i);
+    var tags = [['blue', 'Draft'], ['blue', 'Draft'], ['blue', '4 people'], ['amber', '1 to fix']];
+    st.tagCls = tags[t][0]; st.tag = tags[t][1];
+    st.sug = this.state.drafted ? 'Done. Three questions are in Module 3, ready for you to review and edit.' : (this.state.skipped ? 'No problem. I’ll keep it on your Pre-check list.' : 'Module 3 has no knowledge check yet. Want me to draft three questions for you to review?');
+    st.acceptLabel = this.state.drafted ? 'Review questions' : 'Draft 3 questions';
+    st.accept = function () { if (self.state.drafted) self.setState({ tab: 1 }); else self.setState({ drafted: true, skipped: false }); };
+    st.skip = function () { self.setState({ skipped: true, drafted: false }); };
+    return { st: st };
+  }
+}
+</script>
+</body>
+</html>

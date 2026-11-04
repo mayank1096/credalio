@@ -31,11 +31,9 @@ FLOAT = re.search(r'<div class="ci-float".*?</div></div>|<div class="ci-float".*
 HERO = '''<section class="cx-top" aria-labelledby="cx-h">
 <div class="ci-door ci-cr aur cx-hero">
 <div class="ci-copy">
-<span class="ci-k">For creators and experts</span>
-<h1 id="cx-h" class="ci-t">Turn what you know into learning that moves people forward.</h1>
-<p class="ci-d">Build courses, certifications, career paths and programs with AI help. Get them validated, then reach learners across Credalio.</p>
+<h1 id="cx-h" class="ci-t">Share what you know.<br class="cx-br"> Earn from it.</h1>
+<p class="ci-d">Create with AI, get validated, and reach learners across Credalio.</p>
 <div class="cx-acts">''' + btn('Start creating', 'OnbWelcome.dc.html', 'ci-btn') + '''<a class="cx-wl" href="#cx-make">See what you can create</a></div>
-<span class="cx-note">No creator subscription''' + tip('You only pay for services you choose, such as validation. Costs are always shown first.') + '''</span>
 </div>
 <div class="ci-vis" aria-hidden="true">
 <div class="ci-win">
@@ -211,8 +209,8 @@ FC = compact_fc(FC)
 NAVH = nav('For creators').replace('<a class="sx-cta" href="#">Create account</a>', '<a class="sx-cta" href="OnbWelcome.dc.html">Create account</a>')
 HERO = HERO.replace('<div class="ci-door ci-cr aur cx-hero">', '<div class="ci-door ci-cr aur cx-hero">\n' + NAVH.replace('<header class="sx-nav">', '<header class="sx-nav sx-in sx-dk">'), 1)
 
-CSS = r'''.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:border-box}
-.cx-hero{flex:none;height:700px;border-radius:28px}
+CSS = r'''.cx-top{padding:16px 16px 0;box-sizing:border-box}
+.cx-hero{flex:none;height:620px;border-radius:28px}
 .sx-in{position:relative;z-index:4;max-width:none;width:100%;height:84px;padding:0 28px 0 40px;flex-shrink:0}
 .sx-dk .sx-word,.sx-dk .sx-mark{filter:brightness(0) invert(1)}
 .ci-cr.cx-hero .tip{color:#FFFFFF}
@@ -225,15 +223,15 @@ CSS = r'''.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:
 .sx-dk .sx-cta:hover{background:#EAF0FF}
 .sx-dk .sx-menu{color:#FFFFFF}
 .sx-dk .sx-link:focus-visible,.sx-dk .sx-cta:focus-visible,.sx-dk .sx-menu:focus-visible,.sx-dk .sx-logo:focus-visible{outline-color:rgba(255,255,255,.6)}
-.cx-hero .ci-copy{max-width:560px;padding:44px 0 0 64px;gap:18px}
-.cx-hero .ci-t{margin:0;font-size:54px;line-height:1.04;letter-spacing:-1.8px}
+.cx-hero .ci-copy{max-width:660px;padding:72px 0 0 64px;gap:20px}
+.cx-hero .ci-t{margin:0;font-size:60px;line-height:1.04;letter-spacing:-2px}
 .cx-hero .ci-d{margin:0;font-size:18px;max-width:500px}
 .cx-acts{display:flex;align-items:center;gap:22px;margin-top:10px}
 .cx-acts .ci-btn{margin:0}
 .cx-wl{position:relative;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;opacity:.9}
 .cx-wl:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
 .cx-note{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;color:rgba(255,255,255,.7)}
-.cx-hero .ci-vis{right:64px;bottom:auto;top:168px;width:470px}
+.cx-hero .ci-vis{right:64px;bottom:auto;top:150px;width:470px}
 .cx-hero:hover .ci-vis{transform:none}
 .cx-hero .ci-win{padding:20px;gap:10px}
 .cx-wt{font-size:17px;font-weight:600;letter-spacing:-.2px;margin:2px 0 4px}
@@ -335,7 +333,7 @@ CSS = r'''.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:
 .cx-wt2 small{font-size:13.5px}
 }
 @media (max-width: 960px){
-.cx-top{padding:8px 12px 0}
+.cx-top{padding:12px 12px 0}
 .cx-hero{height:auto;padding-bottom:0}
 .cx-hero .ci-copy{padding:20px 24px 0;max-width:none;gap:14px}
 .sx-in{height:72px;padding:0 20px 0 24px}

@@ -53,6 +53,7 @@
 .ds-acts{display:flex;align-items:center;justify-content:flex-end;gap:20px;margin-top:32px}
 .ds-acts.c{justify-content:center}
 .ds-acts.sb{justify-content:space-between}
+.ko-v.cb{--k:#1652F0;--kb:#EAF0FF}
 .al-opts{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:14px}
 .al-o{position:relative;display:flex;flex-direction:column;gap:6px;padding:20px 20px 18px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;text-align:left;box-sizing:border-box}
 .al-o.rec{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.08),0 20px 40px -30px rgba(22,82,240,.5)}
@@ -75,6 +76,20 @@
 .tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
 .tip-b.r{left:auto;right:-12px}
 .tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.ko-v{--k:#0F6B45;--kb:#E7F5EE}
+.ko-emb{position:relative;width:84px;height:84px;display:flex;align-items:center;justify-content:center}
+.ko-halo{position:absolute;inset:0;border-radius:50%;background:var(--kb);z-index:1}
+.ko-disc{position:relative;z-index:1;width:58px;height:58px;border-radius:50%;background:var(--k);color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(11,20,51,.16)}
+.ko-tick path{stroke-dasharray:1;stroke-dashoffset:1;animation:koDraw .6s ease .3s forwards}
+@keyframes koDraw{to{stroke-dashoffset:0}}
+.ko-pill{margin-top:14px;display:inline-flex;align-items:center;height:30px;padding:0 13px;border-radius:999px;background:var(--kb);color:var(--k);font-size:13px;font-weight:500}
+.cf{position:absolute;left:50%;top:50%;width:0;height:0;pointer-events:none;z-index:0;--k:1}
+.cf i{position:absolute;left:0;top:0;display:block;opacity:0;animation:cfPath var(--d) var(--dl) both}
+.cf b{display:block;animation:cfSway var(--sd) ease-in-out infinite alternate}
+.cf s{display:block;transform:rotate(var(--r));animation:cfFlip var(--fd) linear infinite}
+@keyframes cfPath{0%{opacity:0;transform:translate(-50%,-50%);animation-timing-function:cubic-bezier(.1,.7,.25,1)}5%{opacity:1}24%{transform:translate(calc(var(--x) * var(--k) * 1px - 50%),calc(var(--y) * 1px - 50%));animation-timing-function:cubic-bezier(.42,.08,.7,.92)}86%{opacity:1}100%{opacity:0;transform:translate(calc(var(--x) * var(--k) * 1.22px - 50%),calc((var(--y) + var(--f)) * 1px))}}
+@keyframes cfSway{from{transform:translateX(calc(var(--sw) * -1)) rotate(-12deg)}to{transform:translateX(var(--sw)) rotate(12deg)}}
+@keyframes cfFlip{from{transform:rotate(var(--r)) rotate3d(var(--rx),1,0,0deg)}to{transform:rotate(var(--r)) rotate3d(var(--rx),1,0,360deg)}}
 .nova-card{background:#FFFFFF url(/_blob/0b29db2e4cd6f4a89dc7ba8f12e59c8d) center / cover no-repeat}
 .nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
 .nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
@@ -106,6 +121,7 @@
 .ds-btn.sm{height:42px;font-size:14px}
 .ds-btn.sm .ob-arrow{width:32px;height:32px}
 .ds-ghost{height:44px;font-size:14.5px}
+.cf{--k:.56}
 }
 @media (max-width: 760px){
 .al-opts{grid-template-columns:minmax(0,1fr);gap:10px}
@@ -122,8 +138,13 @@
 .ds-acts{display:flex;flex-direction:column-reverse;align-items:stretch;gap:4px;position:sticky;bottom:0;z-index:20;margin:28px -20px 0;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7}
 .ds-acts .ds-btn{width:100%;justify-content:space-between}
 .ds-acts .ds-link{justify-content:center;min-height:40px}
+.ko-emb{width:72px;height:72px}
+.ko-disc{width:48px;height:48px}
+.ko-disc svg{width:24px;height:24px}
 }
 @media (prefers-reduced-motion: reduce){
+.cf{display:none}
+.ko-tick path{animation:none;stroke-dashoffset:0}
 .nv-orb::before,.nv-orb i,.nv-tt{animation:none}
 .nv-tt{color:#5B6582}
 }
@@ -727,6 +748,184 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 .tp-go{justify-content:center}
 .tp-u{align-self:center;padding:10px 0}
 }
+.hp-lab{display:block;font-size:12.5px;font-weight:500;color:#8A93AD}
+.hp-rb{display:inline-flex;align-items:center;height:38px;padding:0 15px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:13.5px;font-weight:600;text-decoration:none;flex-shrink:0;font-family:inherit;cursor:pointer;white-space:nowrap}
+.se{display:grid;grid-template-columns:240px minmax(0,1fr);gap:24px;align-items:start}
+.se-nav{position:sticky;top:96px;display:flex;flex-direction:column;gap:2px}
+.se-n{display:flex;align-items:center;gap:12px;height:44px;padding:0 14px;border-radius:12px;color:#3A4566;font-size:14.5px;font-weight:500;text-decoration:none}
+.se-n svg{color:#5B6582}
+.se-n.on{background:#EAF0FF;color:#0E3BB8;font-weight:600}
+.se-n.on svg{color:#1652F0}
+.se-p{padding:6px 28px 22px 28px}
+.se-ph{padding:20px 0 18px 0;border-bottom:1.5px solid #F0F2F8}
+.se-ph h2{margin:0;font-size:20px;font-weight:600;letter-spacing:-0.01em}
+.se-ph p{margin:4px 0 0 0;font-size:14px;color:#5B6582}
+@media (max-width: 960px){
+.se{grid-template-columns:minmax(0,1fr);gap:14px}
+.se-nav{position:static;flex-direction:row;overflow-x:auto;margin:0 -16px;padding:0 16px;gap:6px;scrollbar-width:none}
+.se-n{flex-shrink:0;height:40px;border:1.5px solid #E6EAF3;background:#FFFFFF;border-radius:999px;font-size:14px}
+.se-n.on{border-color:#1652F0}
+.se-p{padding:2px 16px 18px 16px}
+.se-ph{padding:16px 0 14px 0}
+}
+.st{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 11px;border-radius:999px;font-size:12.5px;font-weight:500;white-space:nowrap}
+.se-p{padding:6px 32px 28px 32px}
+.se-ph{padding:22px 0 14px 0}
+.ss-l{list-style:none;margin:10px 0 0 0;padding:0}
+.ss-r{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1.5px solid #F0F2F8}
+.ss-r:last-child{border-bottom:0;padding-bottom:0}
+.ss-ic{width:42px;height:42px;flex-shrink:0;border-radius:12px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.ss-t{flex-grow:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.ss-t b{font-size:15px;font-weight:600}
+.ss-t span{font-size:13.5px;color:#5B6582}
+.so-t{flex-grow:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.so-t b{font-size:15px;font-weight:600}
+.so-t span{font-size:13.5px;color:#5B6582}
+.dl-ov{position:fixed;inset:0;z-index:40;background:rgba(11,20,51,.42)}
+.dl{position:fixed;z-index:41;left:50%;top:50%;transform:translate(-50%,-50%);width:min(560px,calc(100vw - 32px));box-sizing:border-box;padding:32px 32px 24px 32px;border-radius:24px;background:#FFFFFF;box-shadow:0 30px 80px rgba(11,20,51,.28)}
+.dl-x{position:absolute;right:18px;top:18px;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#5B6582}
+.dl-x:hover{background:#F1F3F8}
+.dl h2{margin:0;padding-right:40px;font-size:22px;font-weight:600;letter-spacing:-0.02em}
+.dl > p{margin:8px 0 0 0;font-size:14.5px;line-height:1.5;color:#4A5578}
+.dl-ft{margin-top:28px;display:flex;justify-content:flex-end;gap:10px}
+@media (max-width: 960px){
+.se-p{padding:2px 18px 22px 18px}
+.se-ph{padding:18px 0 8px 0}
+.ss-r{gap:12px}
+.ss-ic{width:38px;height:38px}
+.ss-r .hp-rb{height:36px;padding:0 13px;font-size:13px}
+.dl{left:0;right:0;top:auto;bottom:0;transform:none;width:100%;padding:28px 18px 22px 18px;border-radius:24px 24px 0 0}
+.dl h2{font-size:20px}
+.dl-ft{flex-direction:column-reverse;gap:8px}
+}
+.se-lc{position:sticky;top:72px;display:flex;flex-direction:column}
+.se-lc .se-nav{position:static}
+.se > .se-p{margin-top:22px}
+@media (max-width: 960px){
+.se-lc{position:static}
+.se > .se-p{margin-top:0}
+}
+.pg-back{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:#4A5578;text-decoration:none}
+.pg-back:hover{color:#0B1433}
+.sg-l{margin-top:8px}
+.sg-l .ss-r{padding:16px 0}
+.sg-ic{background:#FFFFFF;border:1.5px solid #E6EAF3;color:#3A4566}
+.sg-l .st{margin-right:4px}
+.sg-sm{display:none}
+@media (max-width: 960px){
+.sg-l .st{display:none}
+.sg-lg{display:none}
+.sg-sm{display:inline}
+.sg-l .ss-t span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sg-l .hp-rb{height:36px;padding:0 13px;font-size:13px}
+}
+.av{width:36px;height:36px;border-radius:50%;background:#EAF0FF;color:#0E3BB8;display:inline-flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:600;flex-shrink:0}
+.sc-g{margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;align-items:start}
+.sc-chat{padding:0;display:flex;flex-direction:column;height:calc(100vh - 280px);min-height:560px;overflow:hidden}
+.sc-hd{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1.5px solid #F0F2F8}
+.sc-hd > span:nth-child(2){flex:1;display:flex;flex-direction:column;gap:2px}
+.sc-hd b{font-size:15.5px;font-weight:600}
+.sc-hd > span > span{font-size:13px;color:#5B6582}
+.sc-body{flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:16px;padding:20px 24px;overflow:auto}
+.sc-sum{padding:16px 18px;border-radius:16px;background:#F5F8FF;border:1.5px solid #E2E9FB}
+.sc-sl{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:#0E3BB8}
+.sc-sum p{margin:8px 0 0 0;font-size:14px;line-height:1.55;color:#3A4566}
+.sc-day{align-self:center;font-size:12px;font-weight:500;color:#8A93AD}
+.sc-msg{display:flex;gap:12px;max-width:620px}
+.sc-msg .av{width:32px;height:32px;font-size:11.5px}
+.sc-msg > div{padding:14px 16px;border-radius:4px 18px 18px 18px;background:#F1F3F8}
+.sc-msg p{margin:0;font-size:14.5px;line-height:1.55}
+.sc-msg pre{margin:10px 0 0 0;padding:12px 14px;border-radius:12px;background:#0B1433;color:#DCE4FF;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;line-height:1.55;white-space:pre-wrap}
+.sc-cmp{display:flex;align-items:center;gap:10px;margin:0 16px 16px 16px;padding:8px 8px 8px 18px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF}
+.sc-send{width:40px;height:40px;border:0;border-radius:50%;background:#1652F0;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.sc-side{padding:22px 24px;display:flex;flex-direction:column;gap:4px}
+.sc-side b{margin-top:8px;font-size:15.5px;font-weight:600}
+.sc-side > span:not(.hp-lab){font-size:13.5px;color:#5B6582}
+.sc-side .ds-link{margin-top:18px;font-size:14px;font-weight:600}
+@media (max-width: 1080px){
+.sc-g{grid-template-columns:minmax(0,1fr)}
+.sc-side{display:none}
+}
+@media (max-width: 960px){
+.sc-chat{height:auto;min-height:0;border-radius:18px}
+.sc-hd{padding:14px 14px}
+.sc-hd .hp-rb{display:inline-flex !important;height:34px;padding:0 12px;font-size:13px}
+.sc-body{padding:16px 14px}
+.sc-cmp{margin:0 12px 12px 12px}
+}
+.lr-pf-top .bk-new{margin-left:auto;margin-right:8px;align-self:center}
+.bk-tv{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:20px;margin-bottom:20px}
+.bk-tvi,.tv-ic{width:44px;height:44px;flex-shrink:0;border-radius:14px;background:#0B1433;color:#9DB8F7;display:flex;align-items:center;justify-content:center}
+.tv-ic{width:42px;height:42px;border-radius:12px;margin:-1.5px}
+.bk-tvt{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.bk-tvt b{display:flex;align-items:center;font-size:15.5px;font-weight:600}
+.bk-tvt > span{font-size:13.5px;color:#5B6582}
+.bk-tva{display:flex;align-items:center;gap:18px;flex-shrink:0}
+.bk-go.busy{background:#C9D3EC;box-shadow:none;pointer-events:none}
+.bk-ok{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding:12px 16px;border-radius:16px;background:#E7F5EE;color:#0F6B45;font-size:14.5px;font-weight:500}
+.bk-ok i{width:22px;height:22px;border-radius:999px;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bk-ok span{flex:1}
+.bk-pfs{grid-template-columns:repeat(4,minmax(0,1fr))}
+.bk-dl{display:flex;flex-direction:column;align-items:center;text-align:center;padding:36px 32px 28px}
+.bk-dl h2{margin-top:14px;padding:0}
+.bk-dl > p{max-width:420px}
+.bk-cred{display:flex;align-items:center;gap:14px;width:100%;box-sizing:border-box;margin-top:22px;padding:14px 16px;border-radius:16px;border:1.5px solid #E6EAF3;text-align:left}
+.bk-cred .lr-pf-i{width:42px;height:42px;flex-shrink:0}
+.bk-ft{width:100%;justify-content:center}
+.tv-h{display:flex;align-items:center}
+.tv-lab{display:flex;align-items:center;margin-top:26px}
+.tv-roles{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
+.tv-roles .ds-chip{text-decoration:none}
+.tv-st{margin-right:2px}
+.tv-lk{font-size:13px;font-weight:500;color:#8A93AD;white-space:nowrap;padding:0 4px}
+.dl-x{border:0;background:none;cursor:pointer}
+.tu-av{background:#0B1433;color:#FFFFFF}
+.tu-chat{height:auto;min-height:600px}
+.tu-nv{width:22px !important;height:22px !important}
+.sc-sum .sc-sl{gap:8px}
+.tu-tg{margin-top:10px;font-size:13.5px}
+.tu-tr{list-style:none;margin:12px 0 0;padding:12px 0 0;border-top:1.5px solid #E2E9FB;display:flex;flex-direction:column;gap:8px}
+.tu-tr li{display:grid;grid-template-columns:72px minmax(0,1fr);gap:10px;font-size:13.5px;line-height:1.45;color:#3A4566}
+.tu-tr b{font-weight:600;color:#1652F0}
+.tu-tr b.nv{color:#5B6582}
+.sc-msg.me{align-self:flex-end}
+.sc-msg.me > div{border-radius:18px 4px 18px 18px;background:#EAF0FF}
+.tu-typ{display:flex;align-items:center;gap:5px;padding:16px 18px !important}
+.tu-typ i{width:7px;height:7px;border-radius:50%;background:#8A93AD;animation:tuDot 1.2s ease-in-out infinite}
+.tu-typ i:nth-child(2){animation-delay:.15s}
+.tu-typ i:nth-child(3){animation-delay:.3s}
+@keyframes tuDot{0%,60%,100%{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+.tu-in{flex:1;min-width:0;border:0;outline:none;background:none;font-family:inherit;font-size:15px;color:#0B1433}
+.tu-in::placeholder{color:#8A93AD}
+.sc-cmp:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.1)}
+.tu-side{gap:6px}
+.tu-code{margin:14px 0 0;padding:12px 14px;border-radius:12px;background:#0B1433;color:#DCE4FF;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:1.6;white-space:pre-wrap}
+.tu-code b{color:#9DB8F7;font-weight:600}
+.tu-lab{margin-top:20px}
+.tu-sh{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+.tu-sh li{display:flex;align-items:center;gap:9px;font-size:13.5px;color:#3A4566}
+.tu-sh i{width:18px;height:18px;border-radius:999px;background:#E7F5EE;color:#0F6B45;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+@media (prefers-reduced-motion: reduce){
+.tu-typ i{animation:none}
+}
+@media (max-width: 1080px){
+.bk-pfs{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width: 760px){
+.bk-tv{flex-wrap:wrap;padding:16px}
+.bk-tva{width:100%;flex-direction:row-reverse;justify-content:space-between}
+.bk-tva .ds-btn{flex:1;justify-content:space-between}
+.bk-ok{align-items:flex-start;font-size:14px}
+.bk-dl{padding:28px 18px 20px}
+.bk-ft .ds-btn{justify-content:space-between}
+.tv-roles{gap:6px}
+.sg-l .tv-st{display:none}
+.tu-tr li{grid-template-columns:minmax(0,1fr);gap:2px}
+.sc-hd .hp-rb{white-space:nowrap}
+.sc-hd > span:nth-child(2) > span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sc-hd > span:nth-child(2){min-width:0}
+.tu-chat{min-height:0}
+}
 </style>
 </helmet>
 <div class="ds-root">
@@ -734,12 +933,12 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 <nav class="ds-side {{navCls}}" aria-label="Main">
 <a class="lr-logo" href="Dashboard.dc.html" aria-label="Credalio home"><span class="lr-word"></span></a>
 <button type="button" class="ds-icon-btn ds-close" onClick="{{toggleNav}}" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
-<a href="Dashboard.dc.html" class="ds-item {{navDash}}" aria-current="{{navDashCur}}"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2"></rect></svg><span>Dashboard</span></a><a href="Explore.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m15.5 8.5-2 5-5 2 2-5z"></path></svg><span>Explore learning</span></a><span class="ds-glab">Learning</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg><span>My learning</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 3.5h6v3H9zM9 12h6M9 16h4"></path></svg><span>Assignments</span><sc-if value="{{hasAsg}}" hint-placeholder-val="{{ false }}"><span class="ds-badge" aria-label="{{asgN}} due soon">{{asgN}}</span></sc-if></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span>Schedule</span></a><span class="ds-glab">Proof</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2M4 13h16M11 13v2h2v-2"></path></svg><span>Digital Backpack</span></a><span class="ds-glab">Rewards</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0z"></path><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 21h7M10 17h4"></path></svg><span>Learning rewards</span></a><a href="Usage.dc.html" class="ds-item {{navWal}}" aria-current="{{navWalCur}}"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg><span>Wallets</span></a><span class="ds-glab">People</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span>Community</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span>Messages</span></a>
+<a href="Dashboard.dc.html" class="ds-item {{navDash}}" aria-current="{{navDashCur}}"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2"></rect></svg><span>Dashboard</span></a><a href="Explore.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m15.5 8.5-2 5-5 2 2-5z"></path></svg><span>Explore learning</span></a><span class="ds-glab">Learning</span><a href="#" class="ds-item {{navLearn}}" aria-current="{{navLearnCur}}"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg><span>My learning</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 3.5h6v3H9zM9 12h6M9 16h4"></path></svg><span>Assignments</span><sc-if value="{{hasAsg}}" hint-placeholder-val="{{ false }}"><span class="ds-badge" aria-label="{{asgN}} due soon">{{asgN}}</span></sc-if></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span>Schedule</span></a><span class="ds-glab">Proof</span><a href="Dash-Backpack-Later.dc.html" class="ds-item {{navPack}}" aria-current="{{navPackCur}}"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2M4 13h16M11 13v2h2v-2"></path></svg><span>Digital Backpack</span></a><span class="ds-glab">Rewards</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0z"></path><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 21h7M10 17h4"></path></svg><span>Learning rewards</span></a><a href="Usage.dc.html" class="ds-item {{navWal}}" aria-current="{{navWalCur}}"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg><span>Wallets</span></a><span class="ds-glab">People</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span>Community</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span>Messages</span></a>
 <div class="lr-sfoot">
 <div class="lr-plan"><div><b>{{planName}}</b><span>{{planSub}}</span></div><a class="ds-link" href="{{planHref}}">{{planCta}}</a></div>
 <button type="button" class="ds-item" onClick="{{openPanel}}"><span class="nv-av sm" aria-hidden="true"><img src="{{coachSrc}}" alt="" style="left: {{coachL}}; top: {{coachT}}; width: {{coachW}}"></span><span>{{coachNav}}</span></button>
 <a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"></path></svg><span>Help &amp; support</span></a>
-<a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg><span>Settings</span></a>
+<a href="Dash-Settings.dc.html" class="ds-item {{navSet}}" aria-current="{{navSetCur}}"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg><span>Settings</span></a>
 <a href="#" class="ds-item lr-acct"><span class="cs-cav">AO</span><span>Ada Ononuju</span></a>
 </div>
 </nav>
@@ -1024,7 +1223,68 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 <div class="lr-nova-a"><button type="button" class="ds-ghost sm" onClick="{{openDlp}}">See the breakdown</button></div>
 </section>
 </sc-if>
-
+<sc-if value="{{pBack}}" hint-placeholder-val="{{ false }}">
+<div class="lr-head"><div><h1 class="lr-h1">Digital Backpack</h1></div></div>
+<sc-if value="{{tvBand}}" hint-placeholder-val="{{ true }}">
+<section class="ds-card bk-tv" aria-labelledby="bk-tvh"><span class="bk-tvi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><circle cx="12" cy="11" r="2.2"></circle><path d="M12 13.2V16"></path></svg></span><div class="bk-tvt"><b id="bk-tvh">Secure your Backpack with TruVault<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">TruVault manages eligible verifiable credentials, your ecosystem identity and supported digital assets. It’s optional: your credentials are already safe here.</span></span></b><span>Optional. Your credentials are already safe here.</span></div>
+<div class="bk-tva"><button type="button" class="ds-link" onClick="{{tvLater}}">Later</button><button class="ds-btn sm bk-go {{tvBusyCls}}" type="button" onClick="{{tvConnect}}"><span>{{tvCta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div></section>
+</sc-if>
+<sc-if value="{{tvDone}}" hint-placeholder-val="{{ false }}"><div class="bk-ok" role="status"><i><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>TruVault connected. Your eligible credentials are secured.</span><a class="ds-link" href="Dash-TV-Set.dc.html">Manage</a></div></sc-if>
+<div class="lr-pfs bk-pfs"><div class="lr-pf lr-pf-sum"><span class="lr-pf-n">3</span><b>verified achievements</b><small>From Data Foundations<br>and its project</small></div><div class="lr-pf"><span class="lr-pf-top"><span class="lr-pf-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg></span><span class="ds-tag blue bk-new">New</span><span class="lr-pf-ok" title="Verified" aria-label="Verified"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></span><b>Data Foundations: Spreadsheets to SQL</b><small>Certificate · Issued 25 Sep 2026</small></div><div class="lr-pf"><span class="lr-pf-top"><span class="lr-pf-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"></rect><path d="M3 9h18M8 13h3M8 16h6"></path></svg></span><span class="lr-pf-ok" title="Verified" aria-label="Verified"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></span><b>Retail sales analysis</b><small>Verified project · Issued 25 Sep 2026</small></div><div class="lr-pf"><span class="lr-pf-top"><span class="lr-pf-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"></path></svg></span><span class="lr-pf-ok" title="Verified" aria-label="Verified"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></span><b>SQL Practitioner</b><small>Competency badge · Issued 25 Sep 2026</small></div></div>
+<sc-if value="{{tvModal}}" hint-placeholder-val="{{ false }}">
+<div class="dl-ov" onClick="{{tvLater}}"></div>
+<div class="dl bk-dl ko-v" role="dialog" aria-modal="true" aria-labelledby="bk-dh"><button type="button" class="dl-x" onClick="{{tvLater}}" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<div class="ko-emb ko-v" aria-hidden="true"><span class="cf" aria-hidden="true"><i style="--x:271;--y:-84;--f:438;--d:2.82s;--dl:0.34s;--sw:12px;--sd:0.81s;--fd:0.62s;--rx:-0.39;--r:-57deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:61;--y:-94;--f:453;--d:3.38s;--dl:0.38s;--sw:14px;--sd:0.48s;--fd:0.58s;--rx:0.76;--r:73deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:177;--y:-104;--f:399;--d:2.88s;--dl:0.27s;--sw:6px;--sd:0.49s;--fd:1.04s;--rx:-0.19;--r:61deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:132;--y:-105;--f:408;--d:2.68s;--dl:0.43s;--sw:10px;--sd:0.83s;--fd:0.84s;--rx:0.92;--r:-80deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-185;--y:-22;--f:478;--d:3.08s;--dl:0.20s;--sw:12px;--sd:0.80s;--fd:0.75s;--rx:-0.83;--r:5deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:297;--y:-43;--f:404;--d:2.72s;--dl:0.20s;--sw:13px;--sd:0.53s;--fd:0.97s;--rx:-0.11;--r:-32deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#AFC1F5"></s></b></i><i style="--x:-67;--y:-11;--f:466;--d:3.77s;--dl:0.37s;--sw:15px;--sd:0.46s;--fd:0.69s;--rx:0.99;--r:74deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-293;--y:-129;--f:380;--d:3.33s;--dl:0.45s;--sw:9px;--sd:0.48s;--fd:0.71s;--rx:0.27;--r:-77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-82;--y:-86;--f:428;--d:3.29s;--dl:0.46s;--sw:7px;--sd:0.52s;--fd:1.23s;--rx:0.64;--r:-17deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-218;--y:-61;--f:448;--d:3.07s;--dl:0.33s;--sw:6px;--sd:0.47s;--fd:0.63s;--rx:0.02;--r:-15deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:153;--y:-95;--f:470;--d:3.19s;--dl:0.35s;--sw:15px;--sd:0.89s;--fd:0.64s;--rx:-0.04;--r:77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-140;--y:-21;--f:381;--d:2.92s;--dl:0.32s;--sw:6px;--sd:0.53s;--fd:0.83s;--rx:0.14;--r:-47deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-88;--y:-25;--f:445;--d:3.43s;--dl:0.37s;--sw:7px;--sd:0.47s;--fd:0.56s;--rx:0.82;--r:-1deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-306;--y:-60;--f:453;--d:2.98s;--dl:0.50s;--sw:6px;--sd:0.70s;--fd:1.10s;--rx:0.80;--r:-47deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-94;--y:-54;--f:467;--d:3.10s;--dl:0.43s;--sw:14px;--sd:0.71s;--fd:1.02s;--rx:-0.24;--r:69deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:69;--y:-138;--f:479;--d:3.66s;--dl:0.41s;--sw:9px;--sd:0.78s;--fd:0.99s;--rx:-0.12;--r:58deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-121;--y:-137;--f:475;--d:2.74s;--dl:0.43s;--sw:12px;--sd:0.67s;--fd:1.22s;--rx:-0.26;--r:-44deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-100;--y:-19;--f:404;--d:3.09s;--dl:0.26s;--sw:12px;--sd:0.81s;--fd:1.12s;--rx:-0.60;--r:-26deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-179;--y:-21;--f:393;--d:3.02s;--dl:0.47s;--sw:6px;--sd:0.48s;--fd:1.29s;--rx:0.64;--r:-52deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:211;--y:-96;--f:447;--d:3.46s;--dl:0.45s;--sw:12px;--sd:0.59s;--fd:1.17s;--rx:-0.44;--r:75deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:114;--y:-110;--f:444;--d:3.28s;--dl:0.39s;--sw:10px;--sd:0.54s;--fd:1.13s;--rx:-0.47;--r:-44deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:309;--y:-133;--f:433;--d:3.37s;--dl:0.30s;--sw:6px;--sd:0.54s;--fd:1.17s;--rx:-0.49;--r:-78deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-175;--y:-40;--f:474;--d:3.20s;--dl:0.50s;--sw:7px;--sd:0.83s;--fd:1.07s;--rx:-0.55;--r:25deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-236;--y:-86;--f:470;--d:3.05s;--dl:0.36s;--sw:14px;--sd:0.81s;--fd:1.26s;--rx:-0.07;--r:-28deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:142;--y:-35;--f:451;--d:2.86s;--dl:0.47s;--sw:15px;--sd:0.89s;--fd:0.95s;--rx:0.58;--r:2deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#0F6B45"></s></b></i><i style="--x:262;--y:-30;--f:388;--d:3.13s;--dl:0.36s;--sw:13px;--sd:0.67s;--fd:0.57s;--rx:0.62;--r:-64deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:191;--y:-125;--f:458;--d:2.77s;--dl:0.23s;--sw:11px;--sd:0.78s;--fd:1.18s;--rx:0.38;--r:46deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:165;--y:-88;--f:463;--d:3.27s;--dl:0.23s;--sw:11px;--sd:0.86s;--fd:0.74s;--rx:0.34;--r:76deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-125;--y:-130;--f:407;--d:3.20s;--dl:0.31s;--sw:7px;--sd:0.45s;--fd:0.83s;--rx:0.08;--r:-69deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-241;--y:-136;--f:473;--d:3.15s;--dl:0.47s;--sw:14px;--sd:0.63s;--fd:0.73s;--rx:-0.01;--r:6deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#1652F0"></s></b></i><i style="--x:256;--y:-19;--f:432;--d:2.73s;--dl:0.31s;--sw:6px;--sd:0.57s;--fd:1.08s;--rx:0.95;--r:-71deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-220;--y:-148;--f:452;--d:2.89s;--dl:0.34s;--sw:10px;--sd:0.71s;--fd:1.19s;--rx:0.25;--r:-30deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-305;--y:-61;--f:441;--d:3.25s;--dl:0.46s;--sw:11px;--sd:0.55s;--fd:0.71s;--rx:0.09;--r:70deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#AFC1F5"></s></b></i><i style="--x:-171;--y:-46;--f:470;--d:2.98s;--dl:0.28s;--sw:15px;--sd:0.55s;--fd:1.30s;--rx:0.78;--r:-46deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i></span><span class="ko-halo"></span><span class="ko-disc"><svg class="ko-tick" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" pathLength="1"></path></svg></span></div>
+<span class="ko-pill">New credential</span>
+<h2 id="bk-dh">You’ve earned your first verified credential.</h2>
+<p>It’s already safe in your Backpack. TruVault lets you manage it across the ecosystem. It’s optional.</p>
+<div class="bk-cred"><span class="lr-pf-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg></span><span class="so-t"><b>Data Foundations: Spreadsheets to SQL</b><span>Certificate · Issued 25 Sep 2026</span></span><span class="lr-pf-ok" aria-label="Verified"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></div>
+<div class="dl-ft bk-ft"><button type="button" class="ds-ghost" onClick="{{tvLater}}">I’ll do this later</button><button class="ds-btn bk-go {{tvBusyCls}}" type="button" onClick="{{tvConnect}}"><span>{{tvCta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div>
+</div>
+</sc-if>
+</sc-if>
+<sc-if value="{{pSet}}" hint-placeholder-val="{{ false }}">
+<div class="se"><div class="se-lc"><div class="lr-head"><div><h1 class="lr-h1">Settings</h1></div></div>
+<nav class="se-nav" aria-label="Settings"><a href="#" class="se-n"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg><span>Profile</span></a><a href="#" class="se-n"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"></path></svg><span>Account &amp; sign-in</span></a><a href="#" class="se-n"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span>Roles</span></a><a href="#" class="se-n"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"></path></svg><span>AI Coach</span></a><a href="#" class="se-n"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16z"></path><path d="M10 21h4"></path></svg><span>Notifications</span></a><a href="#" class="se-n on" aria-current="page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"></path><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg><span>TruVault &amp; connections</span></a><a href="#" class="se-n"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg><span>Privacy</span></a></nav></div>
+<section class="ds-card se-p" aria-labelledby="tv-h">
+<div class="se-ph"><div><h2 id="tv-h" class="tv-h">TruVault &amp; connections<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Connections add capabilities to your one Credalio account. They aren’t separate identities.</span></span></h2></div></div>
+<span class="hp-lab tv-lab">Your roles</span>
+<div class="tv-roles"><span class="ds-tag blue lg">Learner</span><a class="ds-chip sm" href="Creators.dc.html">+ Add Creator</a><a class="ds-chip sm" href="#">+ Apply as Validator</a></div>
+<span class="hp-lab tv-lab">Sign-in<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Signing in always works with email, Google or Apple. Wallets never replace your sign-in.</span></span></span>
+<ul class="ss-l sg-l"><li class="ss-r"><span class="ss-ic sg-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><path d="m4 7 8 6 8-6"></path></svg></span><span class="ss-t"><b>Email and password</b><span>ada.ononuju@example.com</span></span><sc-if value="{{cn.email.tag}}" hint-placeholder-val="{{ false }}"><span class="ds-tag green tv-st">Connected</span></sc-if><sc-if value="{{cn.email.btn}}" hint-placeholder-val="{{ true }}"><button type="button" class="hp-rb {{cn.email.cls}}" onClick="{{cn.email.flip}}" aria-label="{{cn.email.aria}}">{{cn.email.label}}</button></sc-if><sc-if value="{{cn.email.lock}}" hint-placeholder-val="{{ false }}"><span class="tv-lk">{{cn.email.label}}</span></sc-if></li><li class="ss-r"><span class="ss-ic sg-ic"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/><path fill="#FBBC05" d="M6.4 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.4H3.1a10 10 0 0 0 0 9.2L6.4 14z"/><path fill="#EA4335" d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.4L6.4 10c.8-2.4 3-4.1 5.6-4.1z"/></svg></span><span class="ss-t"><b>Google</b><span>ada.ononuju@gmail.com</span></span><sc-if value="{{cn.google.tag}}" hint-placeholder-val="{{ false }}"><span class="ds-tag green tv-st">Connected</span></sc-if><sc-if value="{{cn.google.btn}}" hint-placeholder-val="{{ true }}"><button type="button" class="hp-rb {{cn.google.cls}}" onClick="{{cn.google.flip}}" aria-label="{{cn.google.aria}}">{{cn.google.label}}</button></sc-if><sc-if value="{{cn.google.lock}}" hint-placeholder-val="{{ false }}"><span class="tv-lk">{{cn.google.label}}</span></sc-if></li><li class="ss-r"><span class="ss-ic sg-ic"><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path fill="#0B1433" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.5-1-2.5-3.9zM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"/></svg></span><span class="ss-t"><b>Apple</b><span>Not connected</span></span><sc-if value="{{cn.apple.tag}}" hint-placeholder-val="{{ false }}"><span class="ds-tag green tv-st">Connected</span></sc-if><sc-if value="{{cn.apple.btn}}" hint-placeholder-val="{{ true }}"><button type="button" class="hp-rb {{cn.apple.cls}}" onClick="{{cn.apple.flip}}" aria-label="{{cn.apple.aria}}">{{cn.apple.label}}</button></sc-if><sc-if value="{{cn.apple.lock}}" hint-placeholder-val="{{ false }}"><span class="tv-lk">{{cn.apple.label}}</span></sc-if></li></ul>
+<span class="hp-lab tv-lab">Wallets &amp; identity</span>
+<ul class="ss-l sg-l"><li class="ss-r"><span class="ss-ic sg-ic"><span class="tv-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><circle cx="12" cy="11" r="2.2"></circle><path d="M12 13.2V16"></path></svg></span></span><span class="ss-t"><b>TruVault</b><span>Credentials, ecosystem identity and digital assets</span></span><sc-if value="{{cn.truvault.tag}}" hint-placeholder-val="{{ false }}"><span class="ds-tag green tv-st">Connected</span></sc-if><sc-if value="{{cn.truvault.btn}}" hint-placeholder-val="{{ true }}"><button type="button" class="hp-rb {{cn.truvault.cls}}" onClick="{{cn.truvault.flip}}" aria-label="{{cn.truvault.aria}}">{{cn.truvault.label}}</button></sc-if><sc-if value="{{cn.truvault.lock}}" hint-placeholder-val="{{ false }}"><span class="tv-lk">{{cn.truvault.label}}</span></sc-if></li><li class="ss-r"><span class="ss-ic sg-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="3"></rect><path d="M3 10h18M16 14.5h2"></path></svg></span><span class="ss-t"><b>MetaMask</b><span>External wallet</span></span><sc-if value="{{cn.metamask.tag}}" hint-placeholder-val="{{ false }}"><span class="ds-tag green tv-st">Connected</span></sc-if><sc-if value="{{cn.metamask.btn}}" hint-placeholder-val="{{ true }}"><button type="button" class="hp-rb {{cn.metamask.cls}}" onClick="{{cn.metamask.flip}}" aria-label="{{cn.metamask.aria}}">{{cn.metamask.label}}</button></sc-if><sc-if value="{{cn.metamask.lock}}" hint-placeholder-val="{{ false }}"><span class="tv-lk">{{cn.metamask.label}}</span></sc-if></li><li class="ss-r"><span class="ss-ic sg-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"></path><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg></span><span class="ss-t"><b>WalletConnect</b><span>Supported wallet providers</span></span><sc-if value="{{cn.wc.tag}}" hint-placeholder-val="{{ false }}"><span class="ds-tag green tv-st">Connected</span></sc-if><sc-if value="{{cn.wc.btn}}" hint-placeholder-val="{{ true }}"><button type="button" class="hp-rb {{cn.wc.cls}}" onClick="{{cn.wc.flip}}" aria-label="{{cn.wc.aria}}">{{cn.wc.label}}</button></sc-if><sc-if value="{{cn.wc.lock}}" hint-placeholder-val="{{ false }}"><span class="tv-lk">{{cn.wc.label}}</span></sc-if></li><li class="ss-r"><span class="ss-ic sg-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5z"></path><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"></path></svg></span><span class="ss-t"><b>Institution SSO</b><span>Added when an institution invites you</span></span><sc-if value="{{cn.sso.tag}}" hint-placeholder-val="{{ false }}"><span class="ds-tag green tv-st">Connected</span></sc-if><sc-if value="{{cn.sso.btn}}" hint-placeholder-val="{{ true }}"><button type="button" class="hp-rb {{cn.sso.cls}}" onClick="{{cn.sso.flip}}" aria-label="{{cn.sso.aria}}">{{cn.sso.label}}</button></sc-if><sc-if value="{{cn.sso.lock}}" hint-placeholder-val="{{ false }}"><span class="tv-lk">{{cn.sso.label}}</span></sc-if></li></ul>
+</section></div>
+</sc-if>
+<sc-if value="{{pTut}}" hint-placeholder-val="{{ false }}">
+<a href="#" class="pg-back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg>Lesson 4 · Joining tables with SQL</a>
+<div class="sc-g">
+<section class="ds-card sc-chat tu-chat" aria-label="Conversation with your tutor">
+<header class="sc-hd"><span class="av tu-av">TA</span><span><b>Tobi Adeyemi</b><span>SQL tutor · Data Foundations · Active now</span></span><a href="#" class="hp-rb"><span class="sg-lg">Book a live session</span><span class="sg-sm">Book</span></a></header>
+<div class="sc-body">
+<div class="sc-sum"><span class="sc-sl"><span class="nv-av tu-nv" aria-hidden="true"><img src="{{coachSrc}}" alt="" style="left: {{coachL}}; top: {{coachT}}; width: {{coachW}}"></span><span>Handed over by {{coachName}}</span><span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">You chose to share this. Your tutor sees the summary, the lesson and what you’ve tried, not the rest of your account.</span></span></span>
+<p>You asked why the LEFT JOIN leaves some customers with an empty total. {{coachName}} tried two explanations and a worked example, and you were still unsure.</p>
+<button type="button" class="ds-link tu-tg" aria-expanded="{{tOpen}}" onClick="{{toggleT}}">{{tLabel}}</button>
+<sc-if value="{{showT}}" hint-placeholder-val="{{ false }}"><ol class="tu-tr"><sc-for list="{{tr}}" as="t" hint-placeholder-count="4"><li><b class="{{t.cls}}">{{t.who}}</b><span>{{t.text}}</span></li></sc-for></ol></sc-if>
+</div>
+<span class="sc-day">Today</span>
+<sc-for list="{{msgs}}" as="m" hint-placeholder-count="2"><div class="sc-msg {{m.cls}}"><sc-if value="{{m.tutor}}" hint-placeholder-val="{{ true }}"><span class="av tu-av">TA</span></sc-if><div><p>{{m.text}}</p></div></div></sc-for>
+<sc-if value="{{typing}}" hint-placeholder-val="{{ false }}"><div class="sc-msg"><span class="av tu-av">TA</span><div class="tu-typ" role="status"><i></i><i></i><i></i><span class="sr-only">Tobi is typing</span></div></div></sc-if>
+</div>
+<form class="sc-cmp" onSubmit="{{send}}"><label for="tu-in" class="sr-only">Message your tutor</label><input id="tu-in" class="tu-in" placeholder="Message Tobi…" value="{{tdraft}}" onInput="{{onTDraft}}" autocomplete="off"><button type="submit" class="sc-send" aria-label="Send"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></button></form>
+</section>
+<aside class="ds-card sc-side tu-side" aria-label="Shared with your tutor">
+<span class="hp-lab">You’re viewing</span><b>Lesson 4 · Joining tables with SQL</b><span>Data Foundations · Module 4 of 6</span>
+<pre class="tu-code"><b>SELECT</b> c.name, o.total
+<b>FROM</b> customers c
+<b>LEFT JOIN</b> orders o
+  <b>ON</b> o.customer_id = c.id;</pre>
+<span class="hp-lab tu-lab">Shared with Tobi</span>
+<ul class="tu-sh"><li><i><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Your question</span></li><li><i><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Your conversation with {{coachName}}</span></li><li><i><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>This lesson</span></li><li><i><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>What you’ve tried</span></li></ul>
+<a href="#" class="ds-link">Back to lesson</a>
+</aside>
+</div>
+</sc-if>
 </main>
 </div>
 </div>
@@ -1067,12 +1327,14 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 </aside>
 </sc-if>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"state": {"editor": "enum", "options": ["A", "B", "C", "R", "D", "E", "F", "G", "H", "I", "L", "W"], "default": "A"}, "coach": {"editor": "text", "default": "Nova"}, "panel": {"editor": "boolean", "default": false}, "ask": {"editor": "enum", "options": ["", "dlp"], "default": ""}, "page": {"editor": "enum", "options": ["home", "usage"], "default": "home"}, "season": {"editor": "enum", "options": ["active", "calculating", "ready"], "default": "active"}, "mforge": {"editor": "enum", "options": ["eligible", "not"], "default": "eligible"}, "wallets": {"editor": "boolean", "default": false}, "las": {"editor": "boolean", "default": false}, "$preview": {"width": 1440, "height": 2000}}'>
+<script type="text/x-dc" data-dc-script data-props='{"state": {"editor": "enum", "options": ["A", "B", "C", "R", "D", "E", "F", "G", "H", "I", "L", "W"], "default": "A"}, "coach": {"editor": "text", "default": "Nova"}, "panel": {"editor": "boolean", "default": false}, "ask": {"editor": "enum", "options": ["", "dlp"], "default": ""}, "page": {"editor": "enum", "options": ["home", "usage", "backpack", "settings", "tutor"], "default": "home"}, "tv": {"editor": "enum", "options": ["new", "later", "connected"], "default": "new"}, "season": {"editor": "enum", "options": ["active", "calculating", "ready"], "default": "active"}, "mforge": {"editor": "enum", "options": ["eligible", "not"], "default": "eligible"}, "wallets": {"editor": "boolean", "default": false}, "las": {"editor": "boolean", "default": false}, "$preview": {"width": 1440, "height": 2000}}'>var TR = [["You", "I don’t understand why we use a LEFT JOIN here."], ["Coach", "LEFT JOIN keeps every customer; INNER JOIN drops the ones with no orders."], ["You", "Show me visually."], ["Coach", "Shared a results table with a customer whose total is NULL."], ["You", "Give me an example."], ["Coach", "Worked example: a shop’s full customer list, including people who haven’t bought yet."], ["You", "I’m still confused."], ["Coach", "Suggested a tutor and prepared this handover."]];
+var CANNED = ["Exactly: you’d still write their name and leave the amount blank. That blank is the NULL you saw. A LEFT JOIN does the same: keep everyone from the first list, fill in what matches.", "Try it: open the practice editor, swap LEFT JOIN for INNER JOIN and compare the row counts. I’ll stay here.", "Great. Tell me what you find, or book a live session if you’d like to walk through it together."];
+
 class Component extends DCLogic {
   constructor(props) {
     super(props);
     var p = props || {};
-    this.state = { st: p.state || 'A', coach: p.coach === undefined || p.coach === null ? 'Nova' : p.coach, panel: p.panel === true || p.panel === 'true', nav: false, draft: '', q: '', thinking: false, ti: 0, wk: 'sch', intro: false, dlpQ: false, ask: p.ask || '', wal: p.wallets === true || p.wallets === 'true', las: p.las === true || p.las === 'true', page: p.page || 'home', season: p.season || 'active', mf: p.mforge || 'eligible' };
+    this.state = { st: p.state || 'A', coach: p.coach === undefined || p.coach === null ? 'Nova' : p.coach, panel: p.panel === true || p.panel === 'true', nav: false, draft: '', q: '', thinking: false, ti: 0, wk: 'sch', intro: false, dlpQ: false, ask: p.ask || '', wal: p.wallets === true || p.wallets === 'true', las: p.las === true || p.las === 'true', page: p.page || 'home', season: p.season || 'active', mf: p.mforge || 'eligible', tv: p.tv || 'new', tvBusy: false, cn: { email: true, google: true, apple: false, truvault: p.tv === 'connected', metamask: false, wc: false }, showT: false, tdraft: '', typing: false, replies: 0, msgs: [{ f: 't', x: 'Hi Ada, I’m Tobi. I’ve read your conversation with your AI Coach, so no need to repeat anything. Let’s try another angle: if you had a customer list and a separate order list, what would you write for someone who hasn’t ordered yet?' }] };
     this.CH = { Nova: ['/_blob/398ca91d2832bb0ab6b0af61319676f4', '-87.50%', '-57.81%', '294.06%'], Maya: ['/_blob/a1da64159da9c302c3a1835dea8e5266', '-68.75%', '-105.00%', '235.25%'], Alex: ['/_blob/22972224648e9b26d4acac7cc3f7c3a8', '-72.97%', '-112.16%', '254.32%'], Sage: ['/_blob/343a6c48a0cc4849f5a082d9a10a83a4', '-75.68%', '-114.86%', '254.32%'] };
     this.TONE = { Data: ['linear-gradient(150deg,#1C3AA8,#0B1433)', '#FFFFFF', 0], Design: ['linear-gradient(150deg,#7FA4FF,#4C7DFF)', '#FFFFFF', 1], Software: ['linear-gradient(150deg,#4C7DFF,#1652F0)', '#FFFFFF', 2], Business: ['linear-gradient(150deg,#DCE5FB,#EAF0FF)', '#1652F0', 4], Leadership: ['linear-gradient(150deg,#9DB8F7,#4C7DFF)', '#FFFFFF', 4] };
     this.TIER = { gold: ['Gold Validated', '#C8961E'], silver: ['Silver Validated', '#8E9BB0'], bronze: ['Bronze Validated', '#A8683A'] };
@@ -1284,8 +1546,27 @@ class Component extends DCLogic {
       reqs: [['Required learning', 2, 6], ['Practice labs', 1, 3], ['Assessments', 0, 2], ['Final evaluation', 0, 1, 1]].map(function (q) { return { t: q[0], n: q[3] ? '' : q[1] + ' of ' + q[2], of: q[2], open: !q[3], lock: !!q[3], cls: q[3] ? 'lock' : (q[1] ? '' : 'zero'),
         seg: Array.apply(null, Array(q[2])).map(function (x, i) { return { c: i < q[1] ? 'd' : '' }; }) }; }),
       lead: [['Data Analyst', '6–8 months · 8 courses', 'PathDetail.dc.html'], ['AI Engineer', '8–10 months · 8 courses', 'PathDetail.dc.html'], ['Data Scientist', '9–12 months · 9 courses', 'CareerPaths.dc.html']].map(function (l) { return { t: l[0], d: l[1], href: l[2] }; }),
-      pHome: S.page !== 'usage', pUsage: S.page === 'usage',
-      navDash: S.page === 'usage' ? '' : 'ds-on', navDashCur: S.page === 'usage' ? 'false' : 'page', navWal: S.page === 'usage' ? 'ds-on' : '', navWalCur: S.page === 'usage' ? 'page' : 'false',
+      pHome: !S.page || S.page === 'home', pUsage: S.page === 'usage',
+      pBack: S.page === 'backpack', pSet: S.page === 'settings', pTut: S.page === 'tutor',
+      navPack: S.page === 'backpack' ? 'ds-on' : '', navPackCur: S.page === 'backpack' ? 'page' : 'false',
+      navSet: S.page === 'settings' ? 'ds-on' : '', navSetCur: S.page === 'settings' ? 'page' : 'false',
+      navLearn: S.page === 'tutor' ? 'ds-on' : '', navLearnCur: S.page === 'tutor' ? 'page' : 'false',
+      tvModal: S.tv === 'new', tvBand: S.tv === 'new' || S.tv === 'later', tvDone: S.tv === 'connected',
+      tvCta: S.tvBusy ? 'Opening TruVault…' : (S.tv === 'new' ? 'Set up TruVault' : 'Connect TruVault'), tvBusyCls: S.tvBusy ? 'busy' : '',
+      tvLater: function () { if (!S.tvBusy) self.setState({ tv: 'later' }); },
+      tvConnect: function () { if (S.tvBusy) return; self.setState({ tvBusy: true }); clearTimeout(self._tvT); self._tvT = setTimeout(function () { var c = Object.assign({}, self.state.cn); c.truvault = true; self.setState({ tvBusy: false, tv: 'connected', cn: c }); }, 1600); },
+      cn: (function () { var o = {}; [['email', 1], ['google', 0], ['apple', 0], ['truvault', 0], ['metamask', 0], ['wc', 0], ['sso', 2]].forEach(function (r) { var k = r[0], on = !!S.cn[k], lock = r[1] > 0;
+        o[k] = { tag: on && k !== 'email', btn: !lock, lock: lock, label: k === 'email' ? 'Primary' : (k === 'sso' ? 'Via invite' : (on ? 'Disconnect' : 'Connect')), cls: '', aria: (on ? 'Disconnect ' : 'Connect ') + k,
+          flip: function () { if (lock) return; var c = Object.assign({}, self.state.cn); c[k] = !on; self.setState({ cn: c }); } }; }); return o; })(),
+      coachName: (S.coach || 'Nova'), showT: S.showT, tOpen: S.showT ? 'true' : 'false', tLabel: S.showT ? 'Hide your ' + (S.coach || 'Nova') + ' conversation' : 'View your ' + (S.coach || 'Nova') + ' conversation',
+      toggleT: function () { self.setState({ showT: !S.showT }); },
+      tr: TR.map(function (t) { return { who: t[0] === 'Coach' ? (S.coach || 'Nova') : t[0], text: t[1], cls: t[0] === 'Coach' ? 'nv' : '' }; }),
+      msgs: S.msgs.map(function (m) { return { tutor: m.f === 't', cls: m.f === 't' ? '' : 'me', text: m.x }; }),
+      typing: S.typing, tdraft: S.tdraft, onTDraft: function (e) { self.setState({ tdraft: e.target.value }); },
+      send: function (e) { if (e && e.preventDefault) e.preventDefault(); var t = (self.state.tdraft || '').trim(); if (!t || self.state.typing) return;
+        self.setState({ tdraft: '', typing: true, msgs: self.state.msgs.concat([{ f: 'm', x: t }]) }); clearTimeout(self._tuT);
+        self._tuT = setTimeout(function () { var n = self.state.replies; self.setState({ typing: false, replies: n + 1, msgs: self.state.msgs.concat([{ f: 't', x: CANNED[Math.min(n, CANNED.length - 1)] }]) }); }, 1400); },
+      navDash: !S.page || S.page === 'home' ? 'ds-on' : '', navDashCur: !S.page || S.page === 'home' ? 'page' : 'false', navWal: S.page === 'usage' ? 'ds-on' : '', navWalCur: S.page === 'usage' ? 'page' : 'false',
       walOpen: S.wal, walExp: S.wal ? 'true' : 'false', pillOn: S.wal ? 'tp-on' : '', isLow: st === 'W' || st === 'L', lowT: st === 'L' ? 'You’ve used this month’s allowance. Your next 200 arrives on 1 October.' : 'Running low. Your next lesson uses about 200.', toggleWal: function () { self.setState({ wal: !S.wal }); },
       walDlpSub: 'About ' + Math.round(dlpN / 100) + ' learning hours · refreshes ' + (paid ? '12 Oct' : '1 Oct'), walCr: paid ? '62.40' : '0.00',
       walMf: paid ? '4,820' : 'Connect', walMfCls: paid ? '' : 'off', walMfSub: paid ? 'Connected through TruVault' : 'Link TruVault to see it',

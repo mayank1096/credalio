@@ -38,6 +38,7 @@ I = {
 }
 ARR_S = ic('<path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path>', 16, 2.2)
 
+import lpages
 NAV = [(None, [('dash', 'Dashboard', 'Dashboard.dc.html'), ('explore', 'Explore learning', 'Explore.dc.html')]),
        ('Learning', [('learn', 'My learning', '#'), ('assign', 'Assignments', '#'), ('cal', 'Schedule', '#')]),
        ('Proof', [('pack', 'Digital Backpack', '#')]),
@@ -49,11 +50,12 @@ def sidebar():
     for g, items in NAV:
         if g: h += '<span class="ds-glab">%s</span>' % g
         for k, label, href in items:
-            hole = {'Dashboard': 'navDash', 'Wallets': 'navWal'}.get(label)
+            hole = {'Dashboard': 'navDash', 'Wallets': 'navWal', 'Digital Backpack': 'navPack', 'My learning': 'navLearn'}.get(label)
             bad = '<sc-if value="{{hasAsg}}" hint-placeholder-val="{{ false }}"><span class="ds-badge" aria-label="{{asgN}} due soon">{{asgN}}</span></sc-if>' if label == 'Assignments' else ''
             cls = (' {{%s}}' % hole) if hole else ''
             cur = (' aria-current="{{%sCur}}"' % hole) if hole else ''
             if label == 'Wallets': href = 'Usage.dc.html'
+            if label == 'Digital Backpack': href = 'Dash-Backpack-Later.dc.html'
             h += '<a href="%s" class="ds-item%s"%s>%s<span>%s</span>%s</a>' % (href, cls, cur, ic(I[k], 19), label, bad)
     return h
 
@@ -657,7 +659,7 @@ MARKUP = '''<div class="ds-root">
 <div class="lr-plan"><div><b>{{planName}}</b><span>{{planSub}}</span></div><a class="ds-link" href="{{planHref}}">{{planCta}}</a></div>
 <button type="button" class="ds-item" onClick="{{openPanel}}">''' + av('sm') + '''<span>{{coachNav}}</span></button>
 <a href="#" class="ds-item">''' + ic(I['help'], 19) + '''<span>Help &amp; support</span></a>
-<a href="#" class="ds-item">''' + ic(I['settings'], 19) + '''<span>Settings</span></a>
+<a href="Dash-Settings.dc.html" class="ds-item {{navSet}}" aria-current="{{navSetCur}}">''' + ic(I['settings'], 19) + '''<span>Settings</span></a>
 <a href="#" class="ds-item lr-acct"><span class="cs-cav">AO</span><span>Ada Ononuju</span></a>
 </div>
 </nav>
@@ -928,7 +930,7 @@ MARKUP = '''<div class="ds-root">
 <div class="lr-nova-a"><button type="button" class="ds-ghost sm" onClick="{{openDlp}}">See the breakdown</button></div>
 </section>
 </sc-if>
-
+''' + lpages.pages(I, av) + '''
 </main>
 </div>
 </div>
@@ -971,12 +973,12 @@ MARKUP = '''<div class="ds-root">
 </aside>
 </sc-if>'''
 
-JS = r'''
+JS = lpages.JS_DATA + r'''
 class Component extends DCLogic {
   constructor(props) {
     super(props);
     var p = props || {};
-    this.state = { st: p.state || 'A', coach: p.coach === undefined || p.coach === null ? 'Nova' : p.coach, panel: p.panel === true || p.panel === 'true', nav: false, draft: '', q: '', thinking: false, ti: 0, wk: 'sch', intro: false, dlpQ: false, ask: p.ask || '', wal: p.wallets === true || p.wallets === 'true', las: p.las === true || p.las === 'true', page: p.page || 'home', season: p.season || 'active', mf: p.mforge || 'eligible' };
+    this.state = { st: p.state || 'A', coach: p.coach === undefined || p.coach === null ? 'Nova' : p.coach, panel: p.panel === true || p.panel === 'true', nav: false, draft: '', q: '', thinking: false, ti: 0, wk: 'sch', intro: false, dlpQ: false, ask: p.ask || '', wal: p.wallets === true || p.wallets === 'true', las: p.las === true || p.las === 'true', page: p.page || 'home', season: p.season || 'active', mf: p.mforge || 'eligible', ''' + lpages.JS_STATE + r''' };
     this.CH = { Nova: ['/_blob/398ca91d2832bb0ab6b0af61319676f4', '-87.50%', '-57.81%', '294.06%'], Maya: ['/_blob/a1da64159da9c302c3a1835dea8e5266', '-68.75%', '-105.00%', '235.25%'], Alex: ['/_blob/22972224648e9b26d4acac7cc3f7c3a8', '-72.97%', '-112.16%', '254.32%'], Sage: ['/_blob/343a6c48a0cc4849f5a082d9a10a83a4', '-75.68%', '-114.86%', '254.32%'] };
     this.TONE = { Data: ['linear-gradient(150deg,#1C3AA8,#0B1433)', '#FFFFFF', 0], Design: ['linear-gradient(150deg,#7FA4FF,#4C7DFF)', '#FFFFFF', 1], Software: ['linear-gradient(150deg,#4C7DFF,#1652F0)', '#FFFFFF', 2], Business: ['linear-gradient(150deg,#DCE5FB,#EAF0FF)', '#1652F0', 4], Leadership: ['linear-gradient(150deg,#9DB8F7,#4C7DFF)', '#FFFFFF', 4] };
     this.TIER = { gold: ['Gold Validated', '#C8961E'], silver: ['Silver Validated', '#8E9BB0'], bronze: ['Bronze Validated', '#A8683A'] };
@@ -1188,8 +1190,8 @@ class Component extends DCLogic {
       reqs: [['Required learning', 2, 6], ['Practice labs', 1, 3], ['Assessments', 0, 2], ['Final evaluation', 0, 1, 1]].map(function (q) { return { t: q[0], n: q[3] ? '' : q[1] + ' of ' + q[2], of: q[2], open: !q[3], lock: !!q[3], cls: q[3] ? 'lock' : (q[1] ? '' : 'zero'),
         seg: Array.apply(null, Array(q[2])).map(function (x, i) { return { c: i < q[1] ? 'd' : '' }; }) }; }),
       lead: [['Data Analyst', '6–8 months · 8 courses', 'PathDetail.dc.html'], ['AI Engineer', '8–10 months · 8 courses', 'PathDetail.dc.html'], ['Data Scientist', '9–12 months · 9 courses', 'CareerPaths.dc.html']].map(function (l) { return { t: l[0], d: l[1], href: l[2] }; }),
-      pHome: S.page !== 'usage', pUsage: S.page === 'usage',
-      navDash: S.page === 'usage' ? '' : 'ds-on', navDashCur: S.page === 'usage' ? 'false' : 'page', navWal: S.page === 'usage' ? 'ds-on' : '', navWalCur: S.page === 'usage' ? 'page' : 'false',
+      pHome: !S.page || S.page === 'home', pUsage: S.page === 'usage',''' + lpages.JS_VALS + r'''
+      navDash: !S.page || S.page === 'home' ? 'ds-on' : '', navDashCur: !S.page || S.page === 'home' ? 'page' : 'false', navWal: S.page === 'usage' ? 'ds-on' : '', navWalCur: S.page === 'usage' ? 'page' : 'false',
       walOpen: S.wal, walExp: S.wal ? 'true' : 'false', pillOn: S.wal ? 'tp-on' : '', isLow: st === 'W' || st === 'L', lowT: st === 'L' ? 'You’ve used this month’s allowance. Your next 200 arrives on 1 October.' : 'Running low. Your next lesson uses about 200.', toggleWal: function () { self.setState({ wal: !S.wal }); },
       walDlpSub: 'About ' + Math.round(dlpN / 100) + ' learning hours · refreshes ' + (paid ? '12 Oct' : '1 Oct'), walCr: paid ? '62.40' : '0.00',
       walMf: paid ? '4,820' : 'Connect', walMfCls: paid ? '' : 'off', walMfSub: paid ? 'Connected through TruVault' : 'Link TruVault to see it',
@@ -1215,7 +1217,7 @@ class Component extends DCLogic {
 '''
 
 PROPS = {"state": {"editor": "enum", "options": ["A", "B", "C", "R", "D", "E", "F", "G", "H", "I", "L", "W"], "default": "A"},
-         "coach": {"editor": "text", "default": "Nova"}, "panel": {"editor": "boolean", "default": False}, "ask": {"editor": "enum", "options": ["", "dlp"], "default": ""}, "page": {"editor": "enum", "options": ["home", "usage"], "default": "home"}, "season": {"editor": "enum", "options": ["active", "calculating", "ready"], "default": "active"}, "mforge": {"editor": "enum", "options": ["eligible", "not"], "default": "eligible"}, "wallets": {"editor": "boolean", "default": False}, "las": {"editor": "boolean", "default": False},
+         "coach": {"editor": "text", "default": "Nova"}, "panel": {"editor": "boolean", "default": False}, "ask": {"editor": "enum", "options": ["", "dlp"], "default": ""}, "page": {"editor": "enum", "options": ["home", "usage", "backpack", "settings", "tutor"], "default": "home"}, "tv": {"editor": "enum", "options": ["new", "later", "connected"], "default": "new"}, "season": {"editor": "enum", "options": ["active", "calculating", "ready"], "default": "active"}, "mforge": {"editor": "enum", "options": ["eligible", "not"], "default": "eligible"}, "wallets": {"editor": "boolean", "default": False}, "las": {"editor": "boolean", "default": False},
          "$preview": {"width": 1440, "height": 2000}}
 
 HTML = '''<!doctype html>
@@ -1230,7 +1232,7 @@ HTML = '''<!doctype html>
 <helmet>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
-''' + KIT_CSS + '\n' + AUR_CSS + '\n' + CSS + '''</style>
+''' + KIT_CSS + '\n' + AUR_CSS + '\n' + CSS + '\n' + lpages.CSS + '''</style>
 </helmet>
 ''' + MARKUP + '''
 </x-dc>

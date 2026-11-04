@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TV-002 · Settings → TruVault & Connected Accounts</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&amp;family=Sora:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 1160px; box-sizing: border-box; background: #F5F7FC; font-family: 'Sora', system-ui, sans-serif; color: #0B1433; overflow: hidden">
+<header style="height: 72px; box-sizing: border-box; padding: 0 40px; background: #ffffff; border-bottom: 1px solid #E3E7F1; display: flex; align-items: center; justify-content: space-between">
+<a href="Main.dc.html" aria-label="Credalio home" style="display: flex; align-items: center; gap: 10px; color: #0B1433; text-decoration: none"><svg width="30" height="30" viewBox="0 0 34 34" fill="none" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#1652F0"></rect><path d="M22.5 11.5a8 8 0 1 0 0 11" stroke="#fff" stroke-width="3" stroke-linecap="round"></path><circle cx="24" cy="17" r="2.2" fill="#fff"></circle></svg><span style="font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 600">Credalio</span></a>
+<nav aria-label="Account" style="display: flex; gap: 28px; font-size: 14px; font-weight: 600"><a href="#learn" style="color: #3A4566; text-decoration: none">My learning</a><a href="TV-001.dc.html" style="color: #3A4566; text-decoration: none">Digital Backpack</a><a href="TV-002.dc.html" style="color: #3A4566; text-decoration: none">Settings</a></nav>
+<span aria-label="Your account" style="width: 40px; height: 40px; border-radius: 99px; background: #0B1433; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700">A</span>
+</header>
+<div style="width: 1120px; margin: 0 auto; padding: 40px 0; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px">
+<nav aria-label="Settings" style="display: flex; flex-direction: column; gap: 2px"><a href="#s" aria-current="false" style="padding: 12px 14px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; background: transparent; color: #3A4566">Profile</a><a href="#s" aria-current="false" style="padding: 12px 14px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; background: transparent; color: #3A4566">Roles</a><a href="#s" aria-current="false" style="padding: 12px 14px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; background: transparent; color: #3A4566">AI Coach</a><a href="#s" aria-current="false" style="padding: 12px 14px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; background: transparent; color: #3A4566">Notifications</a><a href="#s" aria-current="page" style="padding: 12px 14px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; background: #EAF0FF; color: #0E3BB8">TruVault &amp; Connected Accounts</a><a href="#s" aria-current="false" style="padding: 12px 14px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; background: transparent; color: #3A4566">Privacy</a></nav>
+<main style="display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px"><h1 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; letter-spacing: -1.6px; font-size: 40px; letter-spacing: -1px">TruVault &amp; Connected Accounts</h1><p style="margin: 0; font-size: 15px; color: #3A4566">Connections add capabilities to your one Credalio account. They are not separate identities.</p></div>
+<section style="padding: 24px; border-radius: 20px; background: #ffffff; border: 1px solid #E3E7F1; display: flex; flex-direction: column; gap: 6px">
+<h2 style="margin: 0 0 8px; font-size: 18px; font-weight: 600">Your roles</h2>
+<div style="display: flex; gap: 8px; flex-wrap: wrap"><span style="padding: 8px 12px; border-radius: 999px; background: #1652F0; color: #ffffff; font-size: 14px; font-weight: 600">Learner</span><span style="padding: 8px 12px; border-radius: 999px; border: 1px dashed #9FB4F5; color: #0E3BB8; font-size: 14px; font-weight: 600">+ Add Creator</span><span style="padding: 8px 12px; border-radius: 999px; border: 1px dashed #9FB4F5; color: #0E3BB8; font-size: 14px; font-weight: 600">+ Apply as Validator</span></div>
+</section>
+<section style="padding: 8px 24px; border-radius: 20px; background: #ffffff; border: 1px solid #E3E7F1">
+<sc-for list="{{conns}}" as="c" hint-placeholder-count="6">
+<div style="display: flex; align-items: center; gap: 16px; padding: 18px 0; border-top: 1px solid {{c.div}}">
+<span style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 12px; background: {{c.iconBg}}; color: {{c.iconFg}}; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700">{{c.mono}}</span>
+<div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1"><span style="font-size: 16px; font-weight: 600">{{c.name}}</span><span style="font-size: 13px; color: #5B6582">{{c.desc}}</span></div>
+<span style="font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: {{c.stBg}}; color: {{c.stFg}}">{{c.status}}</span>
+<button type="button" onClick="{{c.toggle}}" aria-label="{{c.aria}}" style="height: 40px; min-width: 116px; padding: 0 14px; border-radius: 10px; border: 1px solid {{c.btnBorder}}; background: {{c.btnBg}}; color: {{c.btnFg}}; font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer">{{c.btn}}</button>
+</div>
+</sc-for>
+</section>
+<span style="font-size: 13px; color: #5B6582">Signing in always works with email, Google or Apple. Wallets never replace your account sign-in.</span>
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1160}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { on: { google: true, email: true } }; }
+  renderVals() {
+    var self = this, S = this.state;
+    var C = [['email', 'Email', 'ada@example.com \u00b7 sign-in method', '@', '#F5F7FC', '#3A4566', true], ['google', 'Google', 'Sign-in method', 'G', '#EAF0FF', '#1652F0', false], ['apple', 'Apple', 'Sign-in method', 'A', '#F5F7FC', '#0B1433', false],
+      ['truvault', 'TruVault', 'Verifiable credentials, ecosystem identity and supported digital assets', 'TV', '#0B1433', '#8FB0FF', false], ['metamask', 'MetaMask', 'External wallet', 'MM', '#FFF3E0', '#8A4F00', false], ['walletconnect', 'WalletConnect', 'Supported wallet providers', 'WC', '#EAF0FF', '#0E3BB8', false], ['sso', 'Institution SSO', 'Added automatically when an institution invites you', 'SSO', '#F1ECFB', '#5A3A99', true]];
+    return { conns: C.map(function (c, i) {
+      var on = !!S.on[c[0]], locked = c[6];
+      var status = c[0] === 'sso' ? 'Not linked' : (on ? 'Connected' : 'Not connected');
+      return { name: c[1], desc: c[2], mono: c[3], iconBg: c[4], iconFg: c[5], div: i === 0 ? 'transparent' : '#E3E7F1', status: status,
+        stBg: on ? '#E7F6EF' : '#F5F7FC', stFg: on ? '#0F6B45' : '#5B6582',
+        btn: locked ? (c[0] === 'email' ? 'Primary' : 'Via invite') : (on ? 'Disconnect' : 'Connect'), aria: (on ? 'Disconnect ' : 'Connect ') + c[1],
+        btnBg: (!on && !locked) ? '#1652F0' : '#FFFFFF', btnFg: (!on && !locked) ? '#FFFFFF' : '#3A4566', btnBorder: (!on && !locked) ? '#1652F0' : '#CBD3E6',
+        toggle: function () { if (locked) return; var o = Object.assign({}, S.on); o[c[0]] = !on; self.setState({ on: o }); } }; }) };
+  }
+}
+</script>
+</body>
+</html>

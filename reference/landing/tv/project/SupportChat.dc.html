@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TUT-001 Student Support Chat with AI handover</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,500&amp;family=Sora:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div style="position: relative; width: 1440px; height: 1240px; box-sizing: border-box; background: #F5F7FC; font-family: 'Sora', system-ui, sans-serif; color: #0B1433; overflow: hidden">
+
+<header style="height: 72px; box-sizing: border-box; padding: 0 32px; background: #ffffff; border-bottom: 1px solid #E3E7F1; display: flex; align-items: center; justify-content: space-between">
+<div style="display: flex; align-items: center; gap: 24px">
+<a href="Main.dc.html" aria-label="Credalio home" style="display: flex; align-items: center; gap: 10px; color: #0B1433; text-decoration: none"><svg width="30" height="30" viewBox="0 0 34 34" fill="none" aria-hidden="true"><rect width="34" height="34" rx="9" fill="#1652F0"></rect><path d="M22.5 11.5a8 8 0 1 0 0 11" stroke="#fff" stroke-width="3" stroke-linecap="round"></path><circle cx="24" cy="17" r="2.2" fill="#fff"></circle></svg><span style="font-family: 'Fraunces', Georgia, serif; font-size: 22px; font-weight: 600">Credalio</span></a>
+<span style="font-size: 15px; font-weight: 600; color: #3A4566">Student Support</span>
+</div>
+<span aria-label="Your account" style="width: 40px; height: 40px; border-radius: 99px; background: #0B1433; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700">L</span>
+</header>
+<div style="height: 1168px; display: grid; grid-template-columns: 290px minmax(0, 1fr) 360px">
+
+<nav aria-label="Conversations" style="background: #ffffff; border-right: 1px solid #E3E7F1; padding: 20px 16px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #5B6582; padding: 0 8px 10px">Conversations</span>
+<a href="#tutor" aria-current="page" style="padding: 14px; border-radius: 14px; background: #EAF0FF; display: flex; gap: 12px; align-items: center; color: #0B1433; text-decoration: none"><span style="width: 40px; height: 40px; border-radius: 99px; background: #F3D7A6; color: #6B3F00; display: flex; align-items: center; justify-content: center; font-weight: 700">T</span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 600">[Tutor name]</span><span style="font-size: 12px; color: #0E3BB8; font-weight: 600">SQL tutor · Active now</span></span></a>
+<a href="Main.dc.html#ai" style="padding: 14px; border-radius: 14px; display: flex; gap: 12px; align-items: center; color: #0B1433; text-decoration: none"><span style="width: 40px; height: 40px; border-radius: 12px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg></span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 600">AI Coach</span><span style="font-size: 12px; color: #5B6582">Handed over to tutor</span></span></a>
+<a href="#course" style="padding: 14px; border-radius: 14px; display: flex; gap: 12px; align-items: center; color: #0B1433; text-decoration: none"><span style="width: 40px; height: 40px; border-radius: 12px; background: #F5F7FC; color: #3A4566; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px">DF</span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 600">Course support</span><span style="font-size: 12px; color: #5B6582">Data Foundations</span></span></a>
+</nav>
+
+<section aria-label="Chat with your tutor" style="display: flex; flex-direction: column; min-width: 0">
+<div style="padding: 18px 28px; background: #ffffff; border-bottom: 1px solid #E3E7F1; display: flex; justify-content: space-between; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 600">[Tutor name]</span><span style="font-size: 13px; color: #5B6582">SQL tutor · Data Foundations · Lesson 4</span></div>
+<button type="button" style="height: 42px; padding: 0 16px; border-radius: 10px; border: 1px solid #CBD3E6; background: #ffffff; font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 600; color: #0B1433; cursor: pointer">Book a live session</button>
+</div>
+<div style="flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column-reverse; padding: 24px 28px">
+<div aria-live="polite" style="display: flex; flex-direction: column; gap: 16px">
+<div style="padding: 20px; border-radius: 18px; border: 1.5px solid #E8A33D; background: #FFF7EA; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 10px"><span style="width: 32px; height: 32px; border-radius: 10px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg></span><span style="font-size: 15px; font-weight: 700">Handed over by your AI Coach</span></div>
+<div style="display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 8px 16px; font-size: 14px; line-height: 1.5">
+<span style="font-weight: 600">Your question</span><span>Why does the LEFT JOIN give some customers an empty total? “I’m still confused.”</span>
+<span style="font-weight: 600">Lesson</span><span>Data Foundations · Lesson 4 — Joining Tables with SQL</span>
+<span style="font-weight: 600">What we tried</span><span>Two explanations (LEFT vs INNER JOIN, and a results table) and one worked example (a shop’s customer list)</span>
+</div>
+<button type="button" onClick="{{toggleT}}" aria-expanded="{{tExpanded}}" style="align-self: flex-start; border: none; background: none; padding: 0; font-family: 'Sora', sans-serif; font-size: 14px; font-weight: 700; color: #8A4F00; cursor: pointer">{{tLabel}}</button>
+<sc-if value="{{showT}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 14px 16px; border-radius: 12px; background: #ffffff; display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{transcript}}" as="t" hint-placeholder-count="4"><div style="display: grid; grid-template-columns: 80px minmax(0, 1fr); gap: 10px; font-size: 13px; line-height: 1.5"><span style="font-weight: 700; color: {{t.fg}}">{{t.who}}</span><span style="color: #3A4566">{{t.text}}</span></div></sc-for>
+</div>
+</sc-if>
+</div>
+<sc-for list="{{msgs}}" as="m" hint-placeholder-count="1">
+<sc-if value="{{m.tutor}}" hint-placeholder-val="{{ true }}"><div style="display: flex; gap: 10px; align-items: flex-start; max-width: 82%"><span style="width: 34px; height: 34px; flex-shrink: 0; border-radius: 99px; background: #F3D7A6; color: #6B3F00; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px">T</span><p style="margin: 0; padding: 14px 16px; border-radius: 4px 16px 16px 16px; background: #ffffff; border: 1px solid #E3E7F1; font-size: 15px; line-height: 1.6">{{m.text}}</p></div></sc-if>
+<sc-if value="{{m.me}}" hint-placeholder-val="{{ false }}"><p style="margin: 0; align-self: flex-end; max-width: 72%; padding: 12px 16px; border-radius: 16px 16px 4px 16px; background: #1652F0; color: #ffffff; font-size: 15px; line-height: 1.55">{{m.text}}</p></sc-if>
+</sc-for>
+<sc-if value="{{typing}}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; color: #5B6582; font-style: italic">[Tutor name] is typing…</span></sc-if>
+</div>
+</div>
+<div style="padding: 16px 28px 24px; background: #ffffff; border-top: 1px solid #E3E7F1; display: flex; gap: 10px; align-items: center">
+<label for="tut-msg" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Message your tutor</label>
+<input id="tut-msg" type="text" value="{{draft}}" onChange="{{onDraft}}" onKeyDown="{{onKey}}" placeholder="Reply to [Tutor name]…" style="flex-grow: 1; min-width: 0; height: 50px; padding: 0 16px; border-radius: 12px; border: 1px solid #CBD3E6; font-family: 'Sora', sans-serif; font-size: 15px; color: #0B1433; outline: none">
+<button type="button" onClick="{{send}}" aria-label="Send message" style="width: 50px; height: 50px; border: none; border-radius: 12px; background: #1652F0; color: #ffffff; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</section>
+
+<aside aria-label="Lesson context" style="background: #ffffff; border-left: 1px solid #E3E7F1; padding: 24px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #5B6582">You’re viewing</span><span style="font-size: 17px; font-weight: 600">Lesson 4 — Joining Tables with SQL</span><span style="font-size: 14px; color: #5B6582">Data Foundations · Module 4 of 6</span></div>
+<div style="border-radius: 14px; background: #0B1433; padding: 16px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 13px; line-height: 1.7; color: #C7D0E8"><div><span style="color: #8FB0FF">SELECT</span> c.name, o.total</div><div><span style="color: #8FB0FF">FROM</span> customers c</div><div><span style="color: #8FB0FF">LEFT JOIN</span> orders o</div><div>&#160;&#160;<span style="color: #8FB0FF">ON</span> o.customer_id = c.id;</div></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-size: 12px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #5B6582">Shared with your tutor</span>
+<span style="display: flex; gap: 10px; font-size: 14px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Your question</span><span style="display: flex; gap: 10px; font-size: 14px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Your AI Coach conversation</span><span style="display: flex; gap: 10px; font-size: 14px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>The lesson you’re viewing</span><span style="display: flex; gap: 10px; font-size: 14px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>What you’ve already tried</span>
+</div>
+<div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px">
+<a href="CourseDetail.dc.html" style="height: 52px; padding: 0 22px; box-sizing: border-box; border: 1px solid #CBD3E6; border-radius: 12px; background: #ffffff; color: #0B1433; font-family: 'Sora', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; height: 48px; font-size: 14px">Back to lesson</a>
+<a href="Main.dc.html#ai" style="height: 44px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; font-weight: 600; color: #0E3BB8; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path></svg>Return to AI Coach</a>
+</div>
+</aside>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1240}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { showT: false, draft: '', typing: false, replies: 0,
+      msgs: [{ from: 'tutor', text: 'Hi, I\u2019m [Tutor name]. I\u2019ve read your conversation with the AI Coach, so there\u2019s no need to repeat anything. Let\u2019s try a different angle. Forget SQL for a second: if you had a customer list and a separate order list, and had to write down every customer with what they spent, what would you write for someone who hasn\u2019t ordered?' }] };
+  }
+  componentWillUnmount() { if (this.t) clearTimeout(this.t); }
+  renderVals() {
+    var self = this, S = this.state;
+    var canned = ['Exactly: you\u2019d still write their name and leave the amount blank. That blank is the NULL you saw. A LEFT JOIN is SQL doing the same thing: keep everyone from the first list, fill in what matches.',
+      'Want to see it for yourself? Open the practice editor, swap LEFT JOIN for INNER JOIN, and compare how many rows you get. I\u2019ll stay here.',
+      'Great. Tell me what you find, or book a live session if you\u2019d like to walk through it together.'];
+    var send = function () {
+      var t = (self.state.draft || '').trim(); if (!t || self.state.typing) return;
+      self.setState({ draft: '', typing: true, msgs: self.state.msgs.concat([{ from: 'me', text: t }]) });
+      self.t = setTimeout(function () {
+        var n = self.state.replies;
+        self.setState({ typing: false, replies: n + 1, msgs: self.state.msgs.concat([{ from: 'tutor', text: canned[Math.min(n, canned.length - 1)] }]) });
+      }, 1400);
+    };
+    var tr = [['You', 'I don\u2019t understand why we\u2019re using a LEFT JOIN here.'], ['AI Coach', 'Explained that LEFT JOIN keeps every customer, while INNER JOIN drops those with no orders.'], ['You', 'Show me visually.'], ['AI Coach', 'Shared a results table with a customer who has a NULL total.'], ['You', 'Give me an example.'], ['AI Coach', 'Worked example: a shop\u2019s full customer list, including people who haven\u2019t bought yet.'], ['You', 'I\u2019m still confused.'], ['AI Coach', 'Suggested a tutor and prepared this handover.']];
+    return {
+      showT: S.showT, tExpanded: S.showT ? 'true' : 'false', tLabel: S.showT ? 'Hide AI conversation' : 'View full AI conversation',
+      toggleT: function () { self.setState({ showT: !S.showT }); },
+      transcript: tr.map(function (x) { return { who: x[0], text: x[1], fg: x[0] === 'You' ? '#1652F0' : '#8A4F00' }; }),
+      msgs: S.msgs.map(function (m) { return { tutor: m.from === 'tutor', me: m.from === 'me', text: m.text }; }),
+      typing: S.typing, draft: S.draft, onDraft: function (e) { self.setState({ draft: e.target.value }); },
+      onKey: function (e) { if (e.key === 'Enter') send(); }, send: send
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1787,6 +1787,101 @@
       "title": "TRST-006 Public Validation Record · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Dash-Backpack.dc.html": {
+      "x": 0,
+      "y": 99265,
+      "w": 1440,
+      "h": 900,
+      "title": "TV-001 Digital Backpack · first credential, set up TruVault · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-Backpack-Mobile.dc.html": {
+      "x": 1520,
+      "y": 99265,
+      "w": 390,
+      "h": 900,
+      "title": "TV-001 Digital Backpack · first credential, set up TruVault · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-Backpack-Later.dc.html": {
+      "x": 2150,
+      "y": 99265,
+      "w": 1440,
+      "h": 900,
+      "title": "TV-001 Digital Backpack · TruVault later · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-Backpack-Later-Mobile.dc.html": {
+      "x": 3670,
+      "y": 99265,
+      "w": 390,
+      "h": 900,
+      "title": "TV-001 Digital Backpack · TruVault later · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-Backpack-TV.dc.html": {
+      "x": 4300,
+      "y": 99265,
+      "w": 1440,
+      "h": 900,
+      "title": "TV-001 Digital Backpack · TruVault connected · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-Backpack-TV-Mobile.dc.html": {
+      "x": 5820,
+      "y": 99265,
+      "w": 390,
+      "h": 900,
+      "title": "TV-001 Digital Backpack · TruVault connected · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-Settings.dc.html": {
+      "x": 6450,
+      "y": 99265,
+      "w": 1440,
+      "h": 990,
+      "title": "TV-002 Settings · TruVault & connections · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-Settings-Mobile.dc.html": {
+      "x": 7970,
+      "y": 99265,
+      "w": 390,
+      "h": 1030,
+      "title": "TV-002 Settings · TruVault & connections · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-Tutor.dc.html": {
+      "x": 8600,
+      "y": 99265,
+      "w": 1440,
+      "h": 900,
+      "title": "TUT-001 Ask Tutor · handover from the AI Coach · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-Tutor-Mobile.dc.html": {
+      "x": 10120,
+      "y": 99265,
+      "w": 390,
+      "h": 900,
+      "title": "TUT-001 Ask Tutor · handover from the AI Coach · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -1826,7 +1921,8 @@
     "row-b24",
     "row-b25",
     "row-b26",
-    "row-b27"
+    "row-b27",
+    "row-b28"
   ],
   "notes": {
     "new-hero": {
@@ -2061,6 +2157,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b28": {
+      "x": 0,
+      "y": 98965,
+      "text": "Batch 28 · TruVault (first credential, later, connected, settings) and Ask Tutor (inside the learner dashboard; Dashboard source, page prop)",
+      "kind": "title1",
+      "maxW": 10500,
+      "page": "main"
     }
   },
   "order": [
@@ -2251,7 +2355,17 @@
     "Validation.dc.html",
     "Validation-Mobile.dc.html",
     "Record.dc.html",
-    "Record-Mobile.dc.html"
+    "Record-Mobile.dc.html",
+    "Dash-Backpack.dc.html",
+    "Dash-Backpack-Mobile.dc.html",
+    "Dash-Backpack-Later.dc.html",
+    "Dash-Backpack-Later-Mobile.dc.html",
+    "Dash-Backpack-TV.dc.html",
+    "Dash-Backpack-TV-Mobile.dc.html",
+    "Dash-Settings.dc.html",
+    "Dash-Settings-Mobile.dc.html",
+    "Dash-Tutor.dc.html",
+    "Dash-Tutor-Mobile.dc.html"
   ],
   "pages": [
     {

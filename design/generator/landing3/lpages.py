@@ -78,7 +78,7 @@ def pages(I, av):
 <sc-if value="{{tvModal}}" hint-placeholder-val="{{ false }}">
 <div class="dl-ov" onClick="{{tvLater}}"></div>
 <div class="dl bk-dl ko-v" role="dialog" aria-modal="true" aria-labelledby="bk-dh"><button type="button" class="dl-x" onClick="{{tvLater}}" aria-label="Close">''' + CLOSE + '''</button>
-<sc-if value="{{tvBusy}}" hint-placeholder-val="{{ false }}">''' + wow.VAULT.replace('CREDI', pf('cred')).replace('CKI', ck(14, 3.2)) + '''<h2 id="bk-dh" class="vt-h">Securing your credential…</h2><p>Connecting TruVault to your Backpack.</p></sc-if>
+<sc-if value="{{tvBusy}}" hint-placeholder-val="{{ false }}">''' + wow.VAULT.replace('CREDI', pf('cred')).replace('CKI', ck(14, 3.2)) + '''<h2 id="bk-dh" class="vt-h"><span class="vt-a">Securing your credential…</span><span class="vt-b">Secured in TruVault.</span></h2><p>Connecting TruVault to your Backpack.</p></sc-if>
 <sc-if value="{{tvIdle}}" hint-placeholder-val="{{ true }}">''' + emblem() + '''
 <span class="ko-pill">New credential</span>
 <h2 id="bk-dh">You’ve earned your first verified credential.</h2>
@@ -116,7 +116,7 @@ def pages(I, av):
 <section class="ds-card sc-chat tu-chat" aria-label="Conversation with your tutor">
 <header class="sc-hd"><span class="av tu-av">TA</span><span><b>Tobi Adeyemi</b><span>SQL tutor · Data Foundations · Active now</span></span><a href="#" class="hp-rb"><span class="sg-lg">Book a live session</span><span class="sg-sm">Book</span></a></header>
 <div class="sc-body">
-<div class="sc-sum">''' + wow.baton(av('')) + '''<span class="sc-sl">''' + av('tu-nv') + '''<span>Handed over by {{coachName}}</span>''' + tip('You chose to share this. Your tutor sees the summary, the lesson and what you’ve tried, not the rest of your account.', 'r') + '''</span>
+<div class="sc-sum"><span class="sc-sl">''' + av('tu-nv') + '''<span>Handed over by {{coachName}}</span>''' + tip('You chose to share this. Your tutor sees the summary, the lesson and what you’ve tried, not the rest of your account.', 'r') + '''</span>
 <p>You asked why the LEFT JOIN leaves some customers with an empty total. {{coachName}} tried two explanations and a worked example, and you were still unsure.</p>
 <button type="button" class="ds-link tu-tg" aria-expanded="{{tOpen}}" onClick="{{toggleT}}">{{tLabel}}</button>
 <sc-if value="{{showT}}" hint-placeholder-val="{{ false }}"><ol class="tu-tr"><sc-for list="{{tr}}" as="t" hint-placeholder-count="4"><li><b class="{{t.cls}}">{{t.who}}</b><span>{{t.text}}</span></li></sc-for></ol></sc-if>
@@ -162,6 +162,12 @@ CSS = SETCSS + '\n' + SUPCSS + r'''
 .bk-cred .lr-pf-i{width:42px;height:42px;flex-shrink:0}
 .bk-ft{width:100%;justify-content:center}
 .vt-h{margin-top:6px !important}
+.vt-h{display:grid}
+.vt-h > span{grid-area:1 / 1}
+.vt-a{animation:vtOut .25s ease 2.3s forwards}
+.vt-b{opacity:0;color:#0F6B45;animation:vtIn2 .3s ease 2.4s forwards}
+@keyframes vtOut{to{opacity:0;transform:translateY(-6px)}}
+@keyframes vtIn2{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .tv-h{display:flex;align-items:center}
 .tv-lab{display:flex;align-items:center;margin-top:26px}
 .tv-roles{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
@@ -228,7 +234,7 @@ JS_VALS = r'''
       tvModal: S.tv === 'new' || S.tvBusy, tvBusy: S.tvBusy, tvIdle: !S.tvBusy, tvBand: S.tv === 'new' || S.tv === 'later', tvDone: S.tv === 'connected',
       tvCta: S.tvBusy ? 'Opening TruVault…' : (S.tv === 'new' ? 'Set up TruVault' : 'Connect TruVault'), tvBusyCls: S.tvBusy ? 'busy' : '',
       tvLater: function () { if (!S.tvBusy) self.setState({ tv: 'later' }); },
-      tvConnect: function () { if (S.tvBusy) return; self.setState({ tvBusy: true }); clearTimeout(self._tvT); self._tvT = setTimeout(function () { var c = Object.assign({}, self.state.cn); c.truvault = true; self.setState({ tvBusy: false, tv: 'connected', cn: c }); }, 2600); },
+      tvConnect: function () { if (S.tvBusy) return; self.setState({ tvBusy: true }); clearTimeout(self._tvT); self._tvT = setTimeout(function () { var c = Object.assign({}, self.state.cn); c.truvault = true; self.setState({ tvBusy: false, tv: 'connected', cn: c }); }, 3000); },
       cn: (function () { var o = {}; [['email', 1], ['google', 0], ['apple', 0], ['truvault', 0], ['metamask', 0], ['wc', 0], ['sso', 2]].forEach(function (r) { var k = r[0], on = !!S.cn[k], lock = r[1] > 0;
         o[k] = { tag: on && k !== 'email', btn: !lock, lock: lock, label: k === 'email' ? 'Primary' : (k === 'sso' ? 'Via invite' : (on ? 'Disconnect' : 'Connect')), cls: '', aria: (on ? 'Disconnect ' : 'Connect ') + k,
           flip: function () { if (lock) return; var c = Object.assign({}, self.state.cn); c[k] = !on; self.setState({ cn: c }); } }; }); return o; })(),

@@ -704,7 +704,7 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 .lr-tut > div{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:6px}
 .lr-tut small{font-size:13.5px}
 .lr-lsn{margin:22px 0 0}
-.lr-cert-h{flex-direction:column;gap:18px}
+.lr-cert-h .ds-tag{display:none}
 .lr-req{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:22px}
 .lr-rq{padding:12px 14px;gap:10px}
 .lr-rq-h{flex-direction:column;align-items:flex-start;gap:2px}
@@ -873,6 +873,12 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 .bk-cred .lr-pf-i{width:42px;height:42px;flex-shrink:0}
 .bk-ft{width:100%;justify-content:center}
 .vt-h{margin-top:6px !important}
+.vt-h{display:grid}
+.vt-h > span{grid-area:1 / 1}
+.vt-a{animation:vtOut .25s ease 2.3s forwards}
+.vt-b{opacity:0;color:#0F6B45;animation:vtIn2 .3s ease 2.4s forwards}
+@keyframes vtOut{to{opacity:0;transform:translateY(-6px)}}
+@keyframes vtIn2{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .tv-h{display:flex;align-items:center}
 .tv-lab{display:flex;align-items:center;margin-top:26px}
 .tv-roles{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
@@ -927,93 +933,41 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 .sc-hd > span:nth-child(2){min-width:0}
 .tu-chat{min-height:0}
 }
-.cpw{flex-shrink:0;width:300px;display:flex;flex-direction:column;gap:10px}
-.cpp{margin:0;height:156px;box-shadow:0 18px 40px -26px rgba(11,20,51,.35)}
-.ct-paper{position:relative;border-radius:12px;background:linear-gradient(180deg,#FFFFFF,#F5F8FF);border:1px solid #E3E8F3;padding:20px 22px;box-sizing:border-box;display:flex;flex-direction:column;gap:6px;overflow:hidden}
-.ct-paper::before{content:"";position:absolute;inset:7px;border:1px solid #DCE5FB;border-radius:7px;pointer-events:none}
-.cpz{position:relative;display:block;width:max-content;max-width:100%}
-.cpz-g{color:#E3E8F3}
-.cpz-s{position:absolute;left:0;top:0;white-space:nowrap;clip-path:inset(0 calc(100% - var(--p)) 0 0);transition:clip-path 1s cubic-bezier(.3,.8,.3,1)}
-.cpz-l{font-size:9.5px;font-weight:600;letter-spacing:1.8px}
-.cpz-l .cpz-s{color:#8A93AD}
-.cpz-n{font-size:21px;font-weight:600;letter-spacing:-.4px;line-height:1.15}
-.cpz-n .cpz-s{color:#0B1433}
-.cpz-i{margin-top:auto;font-size:12px}
-.cpz-i .cpz-s{color:#5B6582}
-.cpz-g,.cpz-s{white-space:nowrap}
-.cpw[data-go] .cpz-s{animation:cpInk 1.1s cubic-bezier(.3,.8,.3,1) both}
-.cpw[data-go] .cpz-n .cpz-s{animation-delay:.35s}
-.cpw[data-go] .cpz-i .cpz-s{animation-delay:.7s}
-@keyframes cpInk{from{clip-path:inset(0 100% 0 0)}}
-.cps{position:absolute;right:16px;bottom:14px;width:52px;height:52px}
-.cps-g{position:absolute;inset:2px;border-radius:50%;border:1.5px dashed #CBD3E6}
-.cps-s{position:absolute;inset:0;width:100%;height:100%;opacity:0;transform:scale(1.8) rotate(-18deg);filter:drop-shadow(0 8px 12px rgba(22,82,240,.3))}
-.cps-r{position:absolute;inset:-6px;border-radius:50%;border:2px solid #1652F0;opacity:0}
-.cpp.full .cps-s{animation:cpStamp .55s cubic-bezier(.2,1.4,.4,1) 1.15s forwards}
-.cpp.full .cps-r{animation:cpRing .7s ease-out 1.45s}
-.cpp.full .cps-g{opacity:0;transition:opacity .2s 1.15s}
-.cpp.full{animation:cpThud .35s ease 1.4s}
-@keyframes cpStamp{0%{opacity:0;transform:scale(1.8) rotate(-18deg)}60%{opacity:1;transform:scale(.92) rotate(3deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
-@keyframes cpRing{from{opacity:.7;transform:scale(.8)}to{opacity:0;transform:scale(1.5)}}
-@keyframes cpThud{40%{transform:translateY(2px) scale(.995)}}
-.cpf{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;font-weight:500;color:#3A4566}
-.cpb{font-size:13.5px}
-@media (prefers-reduced-motion: reduce){
-.cpw[data-go] .cpz-s,.cpp.full,.cpp.full .cps-s,.cpp.full .cps-r{animation:none}
-.cpp.full .cps-s{opacity:1;transform:none}
-}
-@media (max-width: 960px){
-.cpw{width:100%}
-}
-@media (max-width: 760px){
-.cpp{height:124px;padding:16px 18px}
-.cpz-n{font-size:18px}
-.cps{width:42px;height:42px}
-}
-.vt{position:relative;width:200px;height:160px;margin:4px auto 0}
-.vt-sh{position:absolute;left:40px;top:12px;width:120px;height:136px;animation:vtIn .5s cubic-bezier(.2,1.2,.4,1) both}
-.vt-sh svg{display:block;filter:drop-shadow(0 18px 24px rgba(11,20,51,.35))}
-.vt-card{position:absolute;left:4px;top:30px;width:58px;height:42px;border-radius:9px;background:#FFFFFF;border:1.5px solid #DCE5FB;box-shadow:0 10px 20px -8px rgba(11,20,51,.35);display:flex;align-items:center;justify-content:center;z-index:2;animation:vtFly 1s cubic-bezier(.6,0,.3,1) .35s both}
-.vt-card .lr-pf-i{width:30px;height:30px;border-radius:9px}
-.vt-card .lr-pf-i svg{width:16px;height:16px}
-.vt-shk{transform:translateY(-9px);animation:vtShut .28s cubic-bezier(.5,0,.5,1.6) 1.4s both}
-.vt-lock{transform-origin:60px 78px;animation:vtClick .35s ease 1.66s both}
-.vt-ring{position:absolute;left:50%;top:52%;width:84px;height:84px;margin:-42px 0 0 -42px;border-radius:50%;border:2px solid #9DB8F7;opacity:0;animation:vtRing .8s ease-out 1.66s both}
-.vt-ok{position:absolute;right:6px;bottom:8px;width:28px;height:28px;border-radius:50%;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #FFFFFF;animation:vtOk .4s cubic-bezier(.2,1.6,.4,1) 1.9s both}
-@keyframes vtIn{from{opacity:0;transform:translateY(10px) scale(.9)}}
-@keyframes vtFly{0%{transform:translate(0,0) rotate(-6deg)}55%{transform:translate(52px,-26px) rotate(4deg) scale(.9)}100%{transform:translate(66px,26px) scale(.25);opacity:0}}
-@keyframes vtShut{from{transform:translateY(-9px)}to{transform:translateY(0)}}
-@keyframes vtClick{50%{transform:scale(1.08)}}
-@keyframes vtRing{from{opacity:.9;transform:scale(.7)}to{opacity:0;transform:scale(1.6)}}
+.vt{position:relative;width:220px;height:178px;margin:2px auto 0}
+.vt-st{position:absolute;inset:0;perspective:720px}
+.vt-fr{position:absolute;left:24px;top:8px;width:172px;height:162px;border-radius:30px;background:linear-gradient(155deg,#22327A 0%,#0F1A45 55%,#0B1433 100%);box-shadow:0 26px 44px -20px rgba(11,20,51,.6),inset 0 1px 0 rgba(255,255,255,.12),inset 0 -2px 0 rgba(0,0,0,.35);transform-style:preserve-3d;animation:vtIn .45s cubic-bezier(.2,1.2,.4,1) both}
+.vt-fr::before{content:"";position:absolute;inset:8px;border-radius:24px;border:1px solid rgba(157,184,247,.16)}
+.vt-scr{position:absolute;width:7px;height:7px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#C9D7FB,#4C6BB8 70%);box-shadow:0 1px 0 rgba(0,0,0,.4)}
+.vt-scr.s1{left:16px;top:16px}
+.vt-scr.s2{right:16px;top:16px}
+.vt-scr.s3{left:16px;bottom:16px}
+.vt-scr.s4{right:16px;bottom:16px}
+.vt-hole{position:absolute;left:50%;top:50%;width:136px;height:136px;margin:-68px 0 0 -68px;border-radius:50%;background:#050A1C;box-shadow:inset 0 0 0 3px #0B1433,inset 0 10px 24px rgba(0,0,0,.8)}
+.vt-in{position:absolute;inset:18px;border-radius:50%;background:radial-gradient(circle,rgba(76,125,255,.35),transparent 70%);animation:vtPulse 1.6s ease-in-out infinite}
+.vt-card{position:absolute;left:-58px;top:52px;width:62px;height:44px;box-sizing:border-box;padding:6px;border-radius:10px;background:#FFFFFF;border:1.5px solid #DCE5FB;box-shadow:0 12px 22px -8px rgba(11,20,51,.45);display:grid;grid-template-columns:28px 1fr;grid-template-rows:1fr 1fr;column-gap:5px;align-items:center;z-index:2;animation:vtFly .75s cubic-bezier(.6,0,.3,1) .3s both}
+.vt-card .lr-pf-i{grid-row:1 / span 2;width:28px;height:28px;border-radius:8px}
+.vt-card .lr-pf-i svg{width:15px;height:15px}
+.vt-card i{display:block;height:3px;border-radius:3px;background:#DCE5FB}
+.vt-card i:last-child{width:70%}
+.vt-door{position:absolute;left:16px;top:11px;width:140px;height:140px;z-index:3;transform-origin:0 50%;transform:rotateY(-108deg);animation:vtShut .55s cubic-bezier(.3,1.25,.5,1) 1s both;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45))}
+.vt-door svg{display:block}
+.vt-dial{transform-box:fill-box;transform-origin:center;animation:vtSpin .7s cubic-bezier(.5,0,.3,1) 1.5s both}
+.vt-bolts{transform-box:view-box;transform-origin:0 0;transform:scale(.86);animation:vtBolt .22s cubic-bezier(.4,1.6,.6,1) 2.15s both}
+.vt-glow{position:absolute;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;box-shadow:0 0 0 2px #4C7DFF,0 0 30px rgba(76,125,255,.7);opacity:0;z-index:4;pointer-events:none;animation:vtGlow .9s ease-out 2.2s both}
+.vt-ok{position:absolute;right:16px;bottom:2px;width:32px;height:32px;border-radius:50%;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px #FFFFFF,0 8px 16px -6px rgba(15,107,69,.6);z-index:5;animation:vtOk .4s cubic-bezier(.2,1.6,.4,1) 2.35s both}
+@keyframes vtIn{from{opacity:0;transform:translateY(10px) scale(.94)}}
+@keyframes vtPulse{50%{opacity:.4}}
+@keyframes vtFly{0%{transform:translate(0,0) rotate(-8deg)}50%{transform:translate(58px,-14px) rotate(3deg)}100%{transform:translate(112px,6px) scale(.35);opacity:0}}
+@keyframes vtShut{from{transform:rotateY(-108deg)}to{transform:rotateY(0)}}
+@keyframes vtSpin{from{transform:rotate(0)}to{transform:rotate(-240deg)}}
+@keyframes vtBolt{to{transform:scale(1)}}
+@keyframes vtGlow{0%{opacity:0;transform:scale(.9)}35%{opacity:1}100%{opacity:0;transform:scale(1.12)}}
 @keyframes vtOk{from{opacity:0;transform:scale(0)}}
 @media (prefers-reduced-motion: reduce){
-.vt-sh,.vt-card,.vt-shk,.vt-lock,.vt-ring,.vt-ok{animation:none}
+.vt-fr,.vt-in,.vt-card,.vt-door,.vt-dial,.vt-bolts,.vt-glow,.vt-ok{animation:none}
 .vt-card{opacity:0}
-.vt-shk{transform:none}
-}
-.bt{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.bt .nv-av{width:30px !important;height:30px !important;flex-shrink:0}
-.bt-tr{position:relative;flex:1;height:30px;max-width:260px}
-.bt-ln{position:absolute;left:0;right:0;top:50%;height:0;border-top:2px dashed #C9D7FB}
-.bt[data-go] .bt-ln{background:none}
-.bt-ln::after{content:"";position:absolute;left:0;top:-2px;height:2px;width:0;background:#1652F0;border-radius:2px}
-.bt[data-go] .bt-ln::after{animation:btLine 1.5s cubic-bezier(.5,0,.3,1) .2s forwards}
-.bt-card{position:absolute;left:0;top:50%;width:30px;height:22px;margin-top:-11px;border-radius:6px;background:#FFFFFF;border:1.5px solid #9DB8F7;box-shadow:0 0 0 4px rgba(22,82,240,.12),0 0 18px rgba(22,82,240,.45);display:flex;flex-direction:column;justify-content:center;gap:2px;padding:0 5px;box-sizing:border-box}
-.bt-card i{display:block;height:2px;border-radius:2px;background:#9DB8F7}
-.bt-card i:nth-child(2){width:70%}
-.bt-card i:nth-child(3){width:45%}
-.bt[data-go] .bt-card{animation:btRun 1.5s cubic-bezier(.5,0,.3,1) .2s both}
-.bt .bt-to{width:30px;height:30px;font-size:11px}
-.bt[data-go] .bt-to{animation:btGet .6s ease 1.65s both}
-.bt[data-go] .nv-av{animation:btGive .5s ease .1s both}
-@keyframes btLine{to{width:100%}}
-@keyframes btRun{0%{left:0;transform:scale(.6);opacity:0}12%{opacity:1;transform:scale(1)}85%{left:calc(100% - 30px);transform:scale(1)}100%{left:calc(100% - 30px);transform:scale(.4);opacity:0}}
-@keyframes btGet{0%{box-shadow:0 0 0 0 rgba(22,82,240,.55)}100%{box-shadow:0 0 0 12px rgba(22,82,240,0)}}
-@keyframes btGive{0%{box-shadow:0 0 0 0 rgba(22,82,240,.45)}100%{box-shadow:0 0 0 10px rgba(22,82,240,0)}}
-@media (prefers-reduced-motion: reduce){
-.bt[data-go] .bt-card,.bt[data-go] .bt-ln::after,.bt[data-go] .bt-to,.bt[data-go] .nv-av{animation:none}
-.bt-ln::after{width:100%}
-.bt-card{display:none}
+.vt-door{transform:none}
+.vt-bolts{transform:none}
 }
 </style>
 </helmet>
@@ -1162,7 +1116,7 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 
 <sc-if value="{{fCert}}" hint-placeholder-val="{{ false }}">
 <section class="lr-focus lr-cert aur aur-lt" aria-labelledby="lr-cet">
-<div class="lr-cert-h"><div><span class="lr-k">Your certification</span><h2 id="lr-cet" class="lr-ft">Professional Certificate in Data Analysis</h2><span class="lr-crs-by"><span class="cs-cav">NU</span>Northgate University<span class="cs-dot"></span>Professional<span class="cs-dot"></span>About 30 hrs</span></div><div class="cpw" data-wow="1" data-go="1"><div class="ct-paper cpp {{cpCls}}" role="img" aria-label="Your certificate, {{cpPct}}"><span class="cpz cpz-l"><span class="cpz-g" aria-hidden="true">PROFESSIONAL CERTIFICATE</span><span class="cpz-s" style="--p: {{cp0}}">PROFESSIONAL CERTIFICATE</span></span><span class="cpz cpz-n"><span class="cpz-g" aria-hidden="true">Data Analysis</span><span class="cpz-s" style="--p: {{cp1}}">Data Analysis</span></span><span class="cpz cpz-i"><span class="cpz-g" aria-hidden="true">Ada Ononuju · Northgate University</span><span class="cpz-s" style="--p: {{cp2}}">Ada Ononuju · Northgate University</span></span><span class="cps" aria-hidden="true"><span class="cps-g"></span><svg class="cps-s" viewBox="0 0 100 100"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="cps-r"></span></span></div><div class="cpf"><span>{{cpPct}}</span><button type="button" class="ds-link cpb" onClick="{{cpPlay}}">{{cpPlayT}}</button></div></div></div>
+<div class="lr-cert-h"><div><span class="lr-k">Your certification</span><h2 id="lr-cet" class="lr-ft">Professional Certificate in Data Analysis</h2><span class="lr-crs-by"><span class="cs-cav">NU</span>Northgate University<span class="cs-dot"></span>Professional<span class="cs-dot"></span>About 30 hrs</span></div><span class="ds-tag line lg">18% complete</span></div>
 <div class="lr-req"><sc-for list="{{reqs}}" as="q" hint-placeholder-count="4"><div class="lr-rq {{q.cls}}"><span class="lr-rq-h"><b>{{q.t}}</b><span>{{q.n}}</span></span><sc-if value="{{q.open}}" hint-placeholder-val="{{ true }}"><span class="lr-lsn-r" style="grid-template-columns: repeat({{q.of}}, minmax(0, 1fr))"><sc-for list="{{q.seg}}" as="x" hint-placeholder-count="3"><i class="{{x.c}}"></i></sc-for></span></sc-if><sc-if value="{{q.lock}}" hint-placeholder-val="{{ false }}"><span class="lr-rq-l"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"></path></svg>Opens when the rest are done</span></sc-if></div></sc-for></div>
 <div class="lr-jf">
 <div class="lr-nx"><span class="lr-nx-i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><div><small>Next up</small><b>SQL for Data Analysis · Module 3</b><span class="lr-nx-m"><span class="lr-bar"><i style="width: 45%"></i></span>45% · ~25 min</span></div></div>
@@ -1323,7 +1277,7 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 <sc-if value="{{tvModal}}" hint-placeholder-val="{{ false }}">
 <div class="dl-ov" onClick="{{tvLater}}"></div>
 <div class="dl bk-dl ko-v" role="dialog" aria-modal="true" aria-labelledby="bk-dh"><button type="button" class="dl-x" onClick="{{tvLater}}" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
-<sc-if value="{{tvBusy}}" hint-placeholder-val="{{ false }}"><div class="vt" aria-hidden="true"><span class="vt-card"><span class="lr-pf-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg></span></span><span class="vt-sh"><svg viewBox="0 0 120 136" width="120" height="136"><defs><linearGradient id="vtG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1B2A63"></stop><stop offset="1" stop-color="#0B1433"></stop></linearGradient><linearGradient id="vtE" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4C7DFF"></stop><stop offset="1" stop-color="#1652F0"></stop></linearGradient></defs><path d="M60 8 106 24v38c0 33-19 56-46 66C33 118 14 95 14 62V24z" fill="#060B1F" transform="translate(0 6)"></path><path d="M60 8 106 24v38c0 33-19 56-46 66C33 118 14 95 14 62V24z" fill="url(#vtG)" stroke="url(#vtE)" stroke-width="3"></path><path d="M60 20 94 32v30c0 25-14 43-34 51-20-8-34-26-34-51V32z" fill="none" stroke="rgba(157,184,247,.28)" stroke-width="1.5"></path><g class="vt-lock"><path class="vt-shk" d="M48 66V58a12 12 0 0 1 24 0v8" fill="none" stroke="#9DB8F7" stroke-width="6" stroke-linecap="round"></path><rect x="42" y="64" width="36" height="28" rx="7" fill="#9DB8F7"></rect><circle cx="60" cy="76" r="4" fill="#0B1433"></circle><path d="M60 78v6" stroke="#0B1433" stroke-width="3" stroke-linecap="round"></path></g></svg><span class="vt-ring"></span><span class="vt-ok"><svg class="ck" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></span></div><h2 id="bk-dh" class="vt-h">Securing your credential…</h2><p>Connecting TruVault to your Backpack.</p></sc-if>
+<sc-if value="{{tvBusy}}" hint-placeholder-val="{{ false }}"><div class="vt" aria-hidden="true"><div class="vt-st"><div class="vt-fr"><span class="vt-scr s1"></span><span class="vt-scr s2"></span><span class="vt-scr s3"></span><span class="vt-scr s4"></span><span class="vt-hole"><span class="vt-in"></span></span><span class="vt-card"><span class="lr-pf-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg></span><i></i><i></i></span><div class="vt-door"><svg viewBox="-70 -70 140 140" width="140" height="140"><defs><radialGradient id="vdF" cx="38%" cy="32%" r="80%"><stop offset="0" stop-color="#2C3F86"></stop><stop offset=".55" stop-color="#16245E"></stop><stop offset="1" stop-color="#0B1433"></stop></radialGradient><linearGradient id="vdR" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C9D7FB"></stop><stop offset=".45" stop-color="#4C7DFF"></stop><stop offset="1" stop-color="#1B2A63"></stop></linearGradient><linearGradient id="vdS" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".22"></stop><stop offset=".5" stop-color="#FFFFFF" stop-opacity="0"></stop></linearGradient></defs><g class="vt-bolts" fill="#9DB8F7"><rect x="-3" y="-66" width="6" height="11" rx="3" transform="rotate(0)"></rect><rect x="-3" y="-66" width="6" height="11" rx="3" transform="rotate(30)"></rect><rect x="-3" y="-66" width="6" height="11" rx="3" transform="rotate(60)"></rect><rect x="-3" y="-66" width="6" height="11" rx="3" transform="rotate(90)"></rect><rect x="-3" y="-66" width="6" height="11" rx="3" transform="rotate(120)"></rect><rect x="-3" y="-66" width="6" height="11" rx="3" transform="rotate(150)"></rect><rect x="-3" y="-66" width="6" height="11" rx="3" transform="rotate(180)"></rect><rect x="-3" y="-66" width="6" height="11" rx="3" transform="rotate(210)"></rect><rect x="-3" y="-66" width="6" height="11" rx="3" transform="rotate(240)"></rect><rect x="-3" y="-66" width="6" height="11" rx="3" transform="rotate(270)"></rect><rect x="-3" y="-66" width="6" height="11" rx="3" transform="rotate(300)"></rect><rect x="-3" y="-66" width="6" height="11" rx="3" transform="rotate(330)"></rect></g><circle r="60" fill="url(#vdF)" stroke="url(#vdR)" stroke-width="3.5"></circle><circle r="52" fill="none" stroke="rgba(157,184,247,.22)" stroke-width="1"></circle><g fill="rgba(157,184,247,.55)"><circle cx="0" cy="-47" r="1.3" transform="rotate(0)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(15)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(30)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(45)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(60)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(75)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(90)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(105)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(120)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(135)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(150)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(165)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(180)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(195)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(210)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(225)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(240)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(255)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(270)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(285)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(300)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(315)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(330)"></circle><circle cx="0" cy="-47" r="1.3" transform="rotate(345)"></circle></g><circle r="40" fill="none" stroke="rgba(157,184,247,.14)" stroke-width="8"></circle><g class="vt-dial"><g stroke="#C9D7FB" stroke-width="3.5" stroke-linecap="round"><path d="M0 0V-30M0 0 26 15M0 0-26 15"></path></g><g fill="#C9D7FB"><circle cx="0" cy="-30" r="4.5"></circle><circle cx="26" cy="15" r="4.5"></circle><circle cx="-26" cy="15" r="4.5"></circle></g><circle r="11" fill="#0B1433" stroke="url(#vdR)" stroke-width="2.5"></circle><circle r="4" fill="#4C7DFF"></circle></g><ellipse cx="-14" cy="-30" rx="40" ry="20" fill="url(#vdS)" transform="rotate(-24)"></ellipse></svg></div><span class="vt-glow"></span></div><span class="vt-ok"><svg class="ck" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></div></div><h2 id="bk-dh" class="vt-h"><span class="vt-a">Securing your credential…</span><span class="vt-b">Secured in TruVault.</span></h2><p>Connecting TruVault to your Backpack.</p></sc-if>
 <sc-if value="{{tvIdle}}" hint-placeholder-val="{{ true }}"><div class="ko-emb ko-v" aria-hidden="true"><span class="cf" aria-hidden="true"><i style="--x:271;--y:-84;--f:438;--d:2.82s;--dl:0.34s;--sw:12px;--sd:0.81s;--fd:0.62s;--rx:-0.39;--r:-57deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:61;--y:-94;--f:453;--d:3.38s;--dl:0.38s;--sw:14px;--sd:0.48s;--fd:0.58s;--rx:0.76;--r:73deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:177;--y:-104;--f:399;--d:2.88s;--dl:0.27s;--sw:6px;--sd:0.49s;--fd:1.04s;--rx:-0.19;--r:61deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:132;--y:-105;--f:408;--d:2.68s;--dl:0.43s;--sw:10px;--sd:0.83s;--fd:0.84s;--rx:0.92;--r:-80deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-185;--y:-22;--f:478;--d:3.08s;--dl:0.20s;--sw:12px;--sd:0.80s;--fd:0.75s;--rx:-0.83;--r:5deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:297;--y:-43;--f:404;--d:2.72s;--dl:0.20s;--sw:13px;--sd:0.53s;--fd:0.97s;--rx:-0.11;--r:-32deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#AFC1F5"></s></b></i><i style="--x:-67;--y:-11;--f:466;--d:3.77s;--dl:0.37s;--sw:15px;--sd:0.46s;--fd:0.69s;--rx:0.99;--r:74deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-293;--y:-129;--f:380;--d:3.33s;--dl:0.45s;--sw:9px;--sd:0.48s;--fd:0.71s;--rx:0.27;--r:-77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-82;--y:-86;--f:428;--d:3.29s;--dl:0.46s;--sw:7px;--sd:0.52s;--fd:1.23s;--rx:0.64;--r:-17deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-218;--y:-61;--f:448;--d:3.07s;--dl:0.33s;--sw:6px;--sd:0.47s;--fd:0.63s;--rx:0.02;--r:-15deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:153;--y:-95;--f:470;--d:3.19s;--dl:0.35s;--sw:15px;--sd:0.89s;--fd:0.64s;--rx:-0.04;--r:77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-140;--y:-21;--f:381;--d:2.92s;--dl:0.32s;--sw:6px;--sd:0.53s;--fd:0.83s;--rx:0.14;--r:-47deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-88;--y:-25;--f:445;--d:3.43s;--dl:0.37s;--sw:7px;--sd:0.47s;--fd:0.56s;--rx:0.82;--r:-1deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-306;--y:-60;--f:453;--d:2.98s;--dl:0.50s;--sw:6px;--sd:0.70s;--fd:1.10s;--rx:0.80;--r:-47deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-94;--y:-54;--f:467;--d:3.10s;--dl:0.43s;--sw:14px;--sd:0.71s;--fd:1.02s;--rx:-0.24;--r:69deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:69;--y:-138;--f:479;--d:3.66s;--dl:0.41s;--sw:9px;--sd:0.78s;--fd:0.99s;--rx:-0.12;--r:58deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-121;--y:-137;--f:475;--d:2.74s;--dl:0.43s;--sw:12px;--sd:0.67s;--fd:1.22s;--rx:-0.26;--r:-44deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-100;--y:-19;--f:404;--d:3.09s;--dl:0.26s;--sw:12px;--sd:0.81s;--fd:1.12s;--rx:-0.60;--r:-26deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-179;--y:-21;--f:393;--d:3.02s;--dl:0.47s;--sw:6px;--sd:0.48s;--fd:1.29s;--rx:0.64;--r:-52deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:211;--y:-96;--f:447;--d:3.46s;--dl:0.45s;--sw:12px;--sd:0.59s;--fd:1.17s;--rx:-0.44;--r:75deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:114;--y:-110;--f:444;--d:3.28s;--dl:0.39s;--sw:10px;--sd:0.54s;--fd:1.13s;--rx:-0.47;--r:-44deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:309;--y:-133;--f:433;--d:3.37s;--dl:0.30s;--sw:6px;--sd:0.54s;--fd:1.17s;--rx:-0.49;--r:-78deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-175;--y:-40;--f:474;--d:3.20s;--dl:0.50s;--sw:7px;--sd:0.83s;--fd:1.07s;--rx:-0.55;--r:25deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-236;--y:-86;--f:470;--d:3.05s;--dl:0.36s;--sw:14px;--sd:0.81s;--fd:1.26s;--rx:-0.07;--r:-28deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:142;--y:-35;--f:451;--d:2.86s;--dl:0.47s;--sw:15px;--sd:0.89s;--fd:0.95s;--rx:0.58;--r:2deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#0F6B45"></s></b></i><i style="--x:262;--y:-30;--f:388;--d:3.13s;--dl:0.36s;--sw:13px;--sd:0.67s;--fd:0.57s;--rx:0.62;--r:-64deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:191;--y:-125;--f:458;--d:2.77s;--dl:0.23s;--sw:11px;--sd:0.78s;--fd:1.18s;--rx:0.38;--r:46deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:165;--y:-88;--f:463;--d:3.27s;--dl:0.23s;--sw:11px;--sd:0.86s;--fd:0.74s;--rx:0.34;--r:76deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-125;--y:-130;--f:407;--d:3.20s;--dl:0.31s;--sw:7px;--sd:0.45s;--fd:0.83s;--rx:0.08;--r:-69deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-241;--y:-136;--f:473;--d:3.15s;--dl:0.47s;--sw:14px;--sd:0.63s;--fd:0.73s;--rx:-0.01;--r:6deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#1652F0"></s></b></i><i style="--x:256;--y:-19;--f:432;--d:2.73s;--dl:0.31s;--sw:6px;--sd:0.57s;--fd:1.08s;--rx:0.95;--r:-71deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-220;--y:-148;--f:452;--d:2.89s;--dl:0.34s;--sw:10px;--sd:0.71s;--fd:1.19s;--rx:0.25;--r:-30deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-305;--y:-61;--f:441;--d:3.25s;--dl:0.46s;--sw:11px;--sd:0.55s;--fd:0.71s;--rx:0.09;--r:70deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#AFC1F5"></s></b></i><i style="--x:-171;--y:-46;--f:470;--d:2.98s;--dl:0.28s;--sw:15px;--sd:0.55s;--fd:1.30s;--rx:0.78;--r:-46deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i></span><span class="ko-halo"></span><span class="ko-disc"><svg class="ko-tick" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" pathLength="1"></path></svg></span></div>
 <span class="ko-pill">New credential</span>
 <h2 id="bk-dh">You’ve earned your first verified credential.</h2>
@@ -1353,7 +1307,7 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 <section class="ds-card sc-chat tu-chat" aria-label="Conversation with your tutor">
 <header class="sc-hd"><span class="av tu-av">TA</span><span><b>Tobi Adeyemi</b><span>SQL tutor · Data Foundations · Active now</span></span><a href="#" class="hp-rb"><span class="sg-lg">Book a live session</span><span class="sg-sm">Book</span></a></header>
 <div class="sc-body">
-<div class="sc-sum"><div class="bt" data-wow="1" data-go="1" aria-hidden="true"><span class="nv-av" aria-hidden="true"><img src="{{coachSrc}}" alt="" style="left: {{coachL}}; top: {{coachT}}; width: {{coachW}}"></span><span class="bt-tr"><span class="bt-ln"></span><span class="bt-card"><i></i><i></i><i></i></span></span><span class="av tu-av bt-to">TA</span></div><span class="sc-sl"><span class="nv-av tu-nv" aria-hidden="true"><img src="{{coachSrc}}" alt="" style="left: {{coachL}}; top: {{coachT}}; width: {{coachW}}"></span><span>Handed over by {{coachName}}</span><span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">You chose to share this. Your tutor sees the summary, the lesson and what you’ve tried, not the rest of your account.</span></span></span>
+<div class="sc-sum"><span class="sc-sl"><span class="nv-av tu-nv" aria-hidden="true"><img src="{{coachSrc}}" alt="" style="left: {{coachL}}; top: {{coachT}}; width: {{coachW}}"></span><span>Handed over by {{coachName}}</span><span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">You chose to share this. Your tutor sees the summary, the lesson and what you’ve tried, not the rest of your account.</span></span></span>
 <p>You asked why the LEFT JOIN leaves some customers with an empty total. {{coachName}} tried two explanations and a worked example, and you were still unsure.</p>
 <button type="button" class="ds-link tu-tg" aria-expanded="{{tOpen}}" onClick="{{toggleT}}">{{tLabel}}</button>
 <sc-if value="{{showT}}" hint-placeholder-val="{{ false }}"><ol class="tu-tr"><sc-for list="{{tr}}" as="t" hint-placeholder-count="4"><li><b class="{{t.cls}}">{{t.who}}</b><span>{{t.text}}</span></li></sc-for></ol></sc-if>
@@ -1425,7 +1379,7 @@ class Component extends DCLogic {
   constructor(props) {
     super(props);
     var p = props || {};
-    this.state = { st: p.state || 'A', coach: p.coach === undefined || p.coach === null ? 'Nova' : p.coach, panel: p.panel === true || p.panel === 'true', nav: false, draft: '', q: '', thinking: false, ti: 0, wk: 'sch', intro: false, dlpQ: false, ask: p.ask || '', wal: p.wallets === true || p.wallets === 'true', las: p.las === true || p.las === 'true', page: p.page || 'home', season: p.season || 'active', mf: p.mforge || 'eligible', cpFull: false, tv: p.tv || 'new', tvBusy: false, cn: { email: true, google: true, apple: false, truvault: p.tv === 'connected', metamask: false, wc: false }, showT: false, tdraft: '', typing: false, replies: 0, msgs: [{ f: 't', x: 'Hi Ada, I’m Tobi. I’ve read your conversation with your AI Coach, so no need to repeat anything. Let’s try another angle: if you had a customer list and a separate order list, what would you write for someone who hasn’t ordered yet?' }] };
+    this.state = { st: p.state || 'A', coach: p.coach === undefined || p.coach === null ? 'Nova' : p.coach, panel: p.panel === true || p.panel === 'true', nav: false, draft: '', q: '', thinking: false, ti: 0, wk: 'sch', intro: false, dlpQ: false, ask: p.ask || '', wal: p.wallets === true || p.wallets === 'true', las: p.las === true || p.las === 'true', page: p.page || 'home', season: p.season || 'active', mf: p.mforge || 'eligible', tv: p.tv || 'new', tvBusy: false, cn: { email: true, google: true, apple: false, truvault: p.tv === 'connected', metamask: false, wc: false }, showT: false, tdraft: '', typing: false, replies: 0, msgs: [{ f: 't', x: 'Hi Ada, I’m Tobi. I’ve read your conversation with your AI Coach, so no need to repeat anything. Let’s try another angle: if you had a customer list and a separate order list, what would you write for someone who hasn’t ordered yet?' }] };
     this.CH = { Nova: ['/_blob/398ca91d2832bb0ab6b0af61319676f4', '-87.50%', '-57.81%', '294.06%'], Maya: ['/_blob/a1da64159da9c302c3a1835dea8e5266', '-68.75%', '-105.00%', '235.25%'], Alex: ['/_blob/22972224648e9b26d4acac7cc3f7c3a8', '-72.97%', '-112.16%', '254.32%'], Sage: ['/_blob/343a6c48a0cc4849f5a082d9a10a83a4', '-75.68%', '-114.86%', '254.32%'] };
     this.TONE = { Data: ['linear-gradient(150deg,#1C3AA8,#0B1433)', '#FFFFFF', 0], Design: ['linear-gradient(150deg,#7FA4FF,#4C7DFF)', '#FFFFFF', 1], Software: ['linear-gradient(150deg,#4C7DFF,#1652F0)', '#FFFFFF', 2], Business: ['linear-gradient(150deg,#DCE5FB,#EAF0FF)', '#1652F0', 4], Leadership: ['linear-gradient(150deg,#9DB8F7,#4C7DFF)', '#FFFFFF', 4] };
     this.TIER = { gold: ['Gold Validated', '#C8961E'], silver: ['Silver Validated', '#8E9BB0'], bronze: ['Bronze Validated', '#A8683A'] };
@@ -1480,7 +1434,7 @@ class Component extends DCLogic {
   wowStop() { if (this._wowIO) this._wowIO.disconnect(); if (this._wowMo) this._wowMo.disconnect(); }
 
   componentDidMount() { this.aurScan(); this.wowScan(); if (this.state.panel) { if (this.state.ask === 'dlp') this.askDlp(); else this.think(); } }
-  componentWillUnmount() { if (this._aurMo) this._aurMo.disconnect(); clearTimeout(this._t); clearTimeout(this._cpT); this.wowStop(); }
+  componentWillUnmount() { if (this._aurMo) this._aurMo.disconnect(); clearTimeout(this._t); this.wowStop(); }
   think(list) {
     var self = this, steps = list || ['Reading your profile…', 'Checking what you’ve picked so far…', 'Getting ready to help…'];
     clearTimeout(this._t);
@@ -1651,8 +1605,6 @@ class Component extends DCLogic {
       reqs: [['Required learning', 2, 6], ['Practice labs', 1, 3], ['Assessments', 0, 2], ['Final evaluation', 0, 1, 1]].map(function (q) { return { t: q[0], n: q[3] ? '' : q[1] + ' of ' + q[2], of: q[2], open: !q[3], lock: !!q[3], cls: q[3] ? 'lock' : (q[1] ? '' : 'zero'),
         seg: Array.apply(null, Array(q[2])).map(function (x, i) { return { c: i < q[1] ? 'd' : '' }; }) }; }),
       lead: [['Data Analyst', '6–8 months · 8 courses', 'PathDetail.dc.html'], ['AI Engineer', '8–10 months · 8 courses', 'PathDetail.dc.html'], ['Data Scientist', '9–12 months · 9 courses', 'CareerPaths.dc.html']].map(function (l) { return { t: l[0], d: l[1], href: l[2] }; }),
-      cp0: S.cpFull ? '100%' : '33%', cp1: S.cpFull ? '100%' : '33%', cp2: S.cpFull ? '100%' : '0%', cpCls: S.cpFull ? 'full' : '', cpPct: S.cpFull ? 'Preview when finished' : '18% complete', cpPlayT: S.cpFull ? 'Back to my progress' : 'See it finished',
-      cpPlay: function () { clearTimeout(self._cpT); if (S.cpFull) { self.setState({ cpFull: false }); return; } self.setState({ cpFull: true }); self._cpT = setTimeout(function () { self.setState({ cpFull: false }); }, 5200); },
       pHome: !S.page || S.page === 'home', pUsage: S.page === 'usage',
       pBack: S.page === 'backpack', pSet: S.page === 'settings', pTut: S.page === 'tutor',
       navPack: S.page === 'backpack' ? 'ds-on' : '', navPackCur: S.page === 'backpack' ? 'page' : 'false',
@@ -1661,7 +1613,7 @@ class Component extends DCLogic {
       tvModal: S.tv === 'new' || S.tvBusy, tvBusy: S.tvBusy, tvIdle: !S.tvBusy, tvBand: S.tv === 'new' || S.tv === 'later', tvDone: S.tv === 'connected',
       tvCta: S.tvBusy ? 'Opening TruVault…' : (S.tv === 'new' ? 'Set up TruVault' : 'Connect TruVault'), tvBusyCls: S.tvBusy ? 'busy' : '',
       tvLater: function () { if (!S.tvBusy) self.setState({ tv: 'later' }); },
-      tvConnect: function () { if (S.tvBusy) return; self.setState({ tvBusy: true }); clearTimeout(self._tvT); self._tvT = setTimeout(function () { var c = Object.assign({}, self.state.cn); c.truvault = true; self.setState({ tvBusy: false, tv: 'connected', cn: c }); }, 2600); },
+      tvConnect: function () { if (S.tvBusy) return; self.setState({ tvBusy: true }); clearTimeout(self._tvT); self._tvT = setTimeout(function () { var c = Object.assign({}, self.state.cn); c.truvault = true; self.setState({ tvBusy: false, tv: 'connected', cn: c }); }, 3000); },
       cn: (function () { var o = {}; [['email', 1], ['google', 0], ['apple', 0], ['truvault', 0], ['metamask', 0], ['wc', 0], ['sso', 2]].forEach(function (r) { var k = r[0], on = !!S.cn[k], lock = r[1] > 0;
         o[k] = { tag: on && k !== 'email', btn: !lock, lock: lock, label: k === 'email' ? 'Primary' : (k === 'sso' ? 'Via invite' : (on ? 'Disconnect' : 'Connect')), cls: '', aria: (on ? 'Disconnect ' : 'Connect ') + k,
           flip: function () { if (lock) return; var c = Object.assign({}, self.state.cn); c[k] = !on; self.setState({ cn: c }); } }; }); return o; })(),

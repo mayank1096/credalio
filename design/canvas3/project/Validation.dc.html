@@ -78,9 +78,9 @@ body{margin:0;background:#FFFFFF}
 .ds-btn.sm .ob-arrow{width:32px;height:32px}
 .ds-ghost{height:44px;font-size:14.5px}
 }
-h1,h2,h3,p{text-wrap:pretty}
+h1,h2,h3,p,.ci-d{text-wrap:pretty}
 @media (min-width: 761px){
-p{text-wrap:balance}
+p,.ci-d{text-wrap:balance}
 }
 @media (max-width: 760px){
 h2{text-wrap:balance}
@@ -144,12 +144,51 @@ a:hover{color:#0E3BB8}
 .tx-pill{right:50%;transform:translateX(50%);top:0}
 .tx-cap{bottom:6px;font-size:14px}
 }
+.ci-doors{display:flex;gap:16px;height:440px}
+.ci-door{position:relative;flex:1;display:flex;flex-direction:column;border-radius:22px;overflow:hidden;text-decoration:none;transition:flex .7s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease}
+.ci-doors:hover .ci-door{flex:.82}
+.ci-doors .ci-door:hover{flex:1.18}
+.ci-cr{background:#0B1433;isolation:isolate;color:#FFFFFF;box-shadow:0 40px 80px -50px rgba(11,20,51,.8)}
+.ci-in{background:radial-gradient(90% 90% at 85% 100%,#DCE5FB 0%,#EAF0FF 50%,#F5F8FF 100%);color:#0B1433;border:1.5px solid #DCE5FB}
+.ci-cr::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(127,164,255,.22) 1px,transparent 1.3px);background-size:16px 16px;-webkit-mask-image:linear-gradient(200deg,#000,transparent 70%);mask-image:linear-gradient(200deg,#000,transparent 70%);pointer-events:none}
+.ci-copy{position:relative;z-index:2;display:flex;flex-direction:column;gap:12px;padding:36px 36px 0;max-width:430px}
+.ci-k{font-size:13px;font-weight:500;opacity:.75}
+.ci-t{font-size:30px;font-weight:600;letter-spacing:-.8px;line-height:1.12}
+.ci-d{font-size:15px;line-height:1.6;opacity:.78}
 .ci-btn{align-self:flex-start;margin-top:6px}
+.ci-door:hover .ob-arrow{transform:translateX(3px)}
+.ci-door:hover .ds-ghost{border-color:#1652F0}
+.ci-door:focus-visible{outline:3px solid rgba(22,82,240,.5);outline-offset:4px}
+.ci-vis{position:absolute;right:28px;bottom:-26px;width:340px;z-index:1;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.ci-door:hover .ci-vis{transform:translateY(-14px)}
 .ci-win{border-radius:16px;background:#FFFFFF;color:#0B1433;border:1.5px solid #E6EAF3;box-shadow:0 30px 60px -30px rgba(11,20,51,.5);padding:16px;display:flex;flex-direction:column;gap:10px}
 .ci-wk{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:500;color:#8A93AD}
 .ci-row{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;background:#F5F8FF;font-size:12px;color:#3A4566}
+.ci-ck{width:18px;height:18px;border-radius:999px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ci-float{position:absolute;z-index:3;border-radius:16px;background:#FFFFFF;color:#0B1433;border:1.5px solid #E6EAF3;box-shadow:0 24px 40px -22px rgba(11,20,51,.5);padding:10px 12px;display:flex;align-items:center;gap:10px;animation:ciBob 5s ease-in-out infinite}
+@keyframes ciBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.ci-bars{display:flex;align-items:flex-end;gap:3px;height:26px}
+.ci-bars span{width:6px;border-radius:2px;background:#C9D7FA}
+@media (prefers-reduced-motion: reduce){
+.ci-float{animation:none}
+.ci-door,.ci-vis{transition:none}
+}
+@media (max-width: 1080px){
+.ci-vis{width:290px;right:20px}
+.ci-t{font-size:26px}
+.ci-copy{padding:30px 28px 0}
+}
 @media (max-width: 860px){
+.ci-doors{flex-direction:column;height:auto;gap:12px}
+.ci-doors:hover .ci-door,.ci-doors .ci-door:hover{flex:none}
+.ci-door{height:auto;border-radius:20px;padding-bottom:24px}
+.ci-copy{padding:24px 22px 0;gap:8px;max-width:none}
+.ci-k{font-size:12px}
+.ci-t{font-size:22px;letter-spacing:-.5px}
+.ci-d{font-size:14px}
 .ci-btn{margin-top:4px}
+.ci-vis{display:none}
+.ci-float{display:none}
 }
 @media (max-width: 1080px){
 .tx-sub{max-width:none !important}
@@ -178,6 +217,9 @@ a:hover{color:#0E3BB8}
 .tip-b{display:none;width:min(250px,calc(100vw - 48px))}
 .tip:hover .tip-b,.tip:focus .tip-b{display:block}
 }
+.aur{position:relative;isolation:isolate;overflow:hidden;background:#0B1433}
+.aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
+.aur-off{background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat}
 .ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
 .ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
 .ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
@@ -255,6 +297,7 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-steps .tx-step-run .tx-num{background:#1652F0;color:#FFFFFF}
 .cx-win{height:472px;box-sizing:border-box;padding:24px;gap:10px;border-radius:22px;box-shadow:0 40px 80px -50px rgba(11,20,51,.45);background:linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 70%,#F7F9FD 100%)}
 .cx-win .ci-row{padding:12px 14px;font-size:13.5px;border-radius:12px}
+.cx-win .ci-ck{width:20px;height:20px}
 .cx-pp{gap:12px}
 .cx-pn{display:flex;flex-direction:column;gap:1px;min-width:0}
 .cx-pn b{font-weight:600;color:#0B1433}
@@ -314,6 +357,7 @@ h1,h2,h3,p{text-wrap:pretty}
 .rq-att{margin-top:10px;display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 12px;border-radius:10px;background:#FFFFFF;border:1.5px solid #E6EAF3;font-size:13.5px;font-weight:500;color:#0E3BB8}
 .rq-att i{font-style:normal;color:#8A93AD;font-weight:400;margin-left:4px}
 .vx-hero .tx-h2{margin:0}
+.vx-sr{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-weight:600}
 .vx-acts{margin-top:16px}
 .vx-acts .ds-link{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:600}
 .vx-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
@@ -524,7 +568,7 @@ h1,h2,h3,p{text-wrap:pretty}
 </section>
 <section class="pc-sec cx-sec" aria-labelledby="vx-cl">
 <div class="in-ai vx-cl">
-<div><span class="pc-k">Clarification & revision</span><h2 id="vx-cl" class="pc-h2">Validation isn’t just a checkbox.</h2><p class="pc-p">Findings are raised, answered with evidence and resolved on the record. Nobody simply presses Approve.</p></div>
+<div><span class="pc-k">Clarification & revision</span><h2 id="vx-cl" class="pc-h2">Validation isn’t just a checkbox.</h2><p class="pc-p">Findings are raised, answered with evidence and resolved on the record. Nobody simply presses Approve.</p><a class="ds-link vx-sr" href="Record.dc.html">See a published record<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></div>
 <div class="ds-card vx-th">
 <div class="vx-thh"><span class="ds-tag">Finding #3 · Subject matter</span><span class="ds-tag green">Resolved</span></div>
 <div class="rq-thread">
@@ -542,7 +586,7 @@ h1,h2,h3,p{text-wrap:pretty}
 <p class="pc-p">Given when every applicable requirement is met.</p>
 <dl class="vx-dl"><div><dt>Validation ID</dt><dd>VAL-CRD-004821</dd></div><div><dt>Experience</dt><dd>Data Foundations</dd></div><div><dt>Version reviewed</dt><dd>v2.1</dd></div><div><dt>Validated</dt><dd>24 September 2026</dd></div></dl>
 <div class="vx-sc"><span class="vx-k">Scope</span><span class="ds-tag">Educational quality</span><span class="ds-tag">Subject matter</span><span class="ds-tag">Assessment</span></div>
-<a class="ds-link" href="#">View Validation Record<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
+<a class="ds-link" href="Record.dc.html">View Validation Record<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
 </div>
 <div class="ds-card in-card vx-ver">
 <span class="pc-k">Versioning</span>
@@ -553,6 +597,45 @@ h1,h2,h3,p{text-wrap:pretty}
 </div>
 </div>
 </section>
+<section class="pc-sec cx-sec" aria-label="For creators and validators"><div class="ci-doors">
+<a class="ci-door ci-cr aur" href="Creators.dc.html" aria-label="For creators: start creating">
+<div class="ci-copy">
+<span class="ci-k">For creators</span>
+<span class="ci-t">Built something worth trusting?</span>
+<span class="ci-d">Submit your learning for independent review and give learners a clearer signal.</span>
+<span class="ds-btn ci-btn"><span>Start creating</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></span>
+</div>
+<div class="ci-vis" aria-hidden="true">
+<div class="ci-win">
+<div class="ci-wk"><span>Creator Studio</span><span class="ds-tag blue"><svg width="11" height="11" viewBox="0 0 100 100"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path></svg>Validated</span></div>
+<span style="font-size: 16px; font-weight: 600; letter-spacing: -.2px">SQL for Data Analysis</span>
+<div class="ci-row"><span class="ci-ck" style="background: #0F6B45"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Module 1 · Querying tables</div>
+<div class="ci-row"><span class="ci-ck" style="background: #0F6B45"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Module 2 · Joins</div>
+<div class="ci-row"><span class="ci-ck" style="background: #EAF0FF; border: 1.5px dashed #9DB8F7; box-sizing: border-box"></span>Module 3 · Aggregation<span style="margin-left: auto; font-size: 11px; color: #1652F0">AI draft</span></div>
+<div style="height: 30px"></div>
+</div>
+<div class="ci-float" style="left: -128px; top: 128px"><div class="ci-bars"><span style="height: 40%"></span><span style="height: 55%"></span><span style="height: 48%"></span><span style="height: 72%"></span><span style="height: 100%; background: #1652F0"></span></div><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">This month</span><span style="font-size: 15px; font-weight: 600">£1,240 earned</span></span></div>
+</div>
+</a>
+
+<a class="ci-door ci-in" href="#" aria-label="For validators: become a validator">
+<div class="ci-copy">
+<span class="ci-k" style="color: #1652F0; opacity: 1">For validators</span>
+<span class="ci-t">Help raise the quality of learning.</span>
+<span class="ci-d" style="color: #3A4566; opacity: 1">Qualified professionals review learning in their own area of expertise.</span>
+<span class="ds-ghost ci-btn">Become a validator<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+</div>
+<div class="ci-vis" aria-hidden="true">
+<div class="ci-win"><div class="ci-wk"><span>Validator profile</span><span class="ds-tag green">Qualified</span></div>
+<span style="font-size: 16px; font-weight: 600; letter-spacing: -.2px">Subject Matter · Data analytics</span>
+<div class="ci-row"><span>Findings resolved</span><b style="margin-left: auto; font-weight: 600; color: #0B1433">96%</b></div>
+<div class="ci-row"><span>Reviews this term</span><b style="margin-left: auto; font-weight: 600; color: #0B1433">18</b></div>
+<div style="height: 30px"></div>
+</div>
+<div class="ci-float" style="left: -128px; top: 128px"><span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">Review submitted</span><span style="font-size: 15px; font-weight: 600">Data Foundations v2.1</span></span></div>
+</div>
+</a>
+</div></section>
 <section aria-labelledby="fc-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif">
 <div class="fc-wrap" style="max-width: 1360px; margin: 0 auto; padding: 32px 24px 64px; box-sizing: border-box">
 <div class="fc-band">
@@ -573,7 +656,7 @@ h1,h2,h3,p{text-wrap:pretty}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4580}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5120}}'>
 var J = [["Submit", "Submission", [["Experience", "Data Foundations: Spreadsheets to SQL", null], ["Version", "v2.1", null], ["Submitted", "2 September 2026", null]], null], ["Scope", "Standard course · required reviews", [["Educational", "Required", "green"], ["Subject matter", "Required", "green"], ["Assessment", "Where applicable", "green"], ["AI · Security & Privacy", "Added where needed", ""]], null], ["Assign", "Review team", null, [["EV", "Educational Validator", "Learning design"], ["SM", "Subject Matter Validator", "Data analytics"], ["AV", "Assessment Validator", "Assessment design"]]], ["Review", "Example checklist", [["Learning outcomes are clear", "Meets standard", "green"], ["Module 3 benchmark is sourced", "Clarification required", "blue"], ["Practice activity difficulty", "Revision required", "amber"], ["Final assessment matches outcomes", "Meets standard", "green"]], null], ["Clarify", "Finding #3", [["Clarification requested", "Evidence requested", "blue"], ["Creator response", "Source attached", ""], ["Validator review", "Finding resolved", "green"]], null], ["Decide", "Possible outcomes", [["All requirements met", "Credalio Validated", "green"], ["Requirements outstanding", "Revisions first", "amber"]], null], ["Publish", "Published", [["Validation ID", "VAL-CRD-004821", null], ["Version validated", "v2.1", null], ["Seal", "Credalio Validated", "green"], ["Record", "Public", null]], null], ["Revalidate", "Version status", [["v2.1", "Validated", "green"], ["v3.0 · major update", "Revalidation required", "amber"]], null]];
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }
@@ -636,6 +719,111 @@ class JourneyPart extends Part {
   }
 }
 class Component extends DCLogic {
+auroraMount(el) {
+    var host = window;
+    try { if (window.top && window.top.document) host = window.top; } catch (e) { host = window; }
+    var R = host.__credAurora;
+    if (!R) {
+      R = host.__credAurora = { items: [], raf: 0, last: 0, cur: 0 };
+      var gc = host.document.createElement('canvas');
+      var gl = gc.getContext('webgl', { premultipliedAlpha: false, antialias: false, preserveDrawingBuffer: true, powerPreference: 'low-power' });
+      R.gl = gl; R.gc = gc;
+      if (gl) {
+        var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+        var fs = [
+          'precision mediump float;uniform vec2 R;uniform float T;uniform float L;uniform vec3 A;uniform vec3 B;uniform vec3 C;uniform vec3 G0;uniform vec3 G1;',
+          'float hp(float s,float k,float b){return fract(sin(s*k)*b)*6.2831853;}',
+          'float h3(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}',
+          'float vn(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);',
+          'float a=mix(mix(h3(i),h3(i+vec3(1,0,0)),f.x),mix(h3(i+vec3(0,1,0)),h3(i+vec3(1,1,0)),f.x),f.y);',
+          'float b=mix(mix(h3(i+vec3(0,0,1)),h3(i+vec3(1,0,1)),f.x),mix(h3(i+vec3(0,1,1)),h3(i+vec3(1,1,1)),f.x),f.y);',
+          'return mix(a,b,f.z)*2.-1.;}',
+          'void main(){vec2 uv=gl_FragCoord.xy/R;float asp=R.x/max(R.y,1.);',
+          'float wav=.6,ray=.25,H=1.1,ins=1.12,bal=mix(2.5,.4,.5),cx=.62,cy=.18;',
+          'float ws=0.,tot=0.;',
+          'for(int i=0;i<4;i++){float fi=float(i);',
+          'float to=fi==0.?0.:fi==1.?3.1:fi==2.?6.7:9.4;float w=fi==0.?1.:fi==1.?.65:fi==2.?.45:.3;',
+          'float ts=T*.06+to;float ls=fi*31.7;float wx=(uv.x-cx)*asp*2.;',
+          'float arc=.15*sin(wx*.7+ts*.4+hp(ls,12.9,4758.5))+.08*sin(wx*1.6+ts*.65+hp(ls,78.2,2847.1))+.04*sin(wx*2.9+ts*.3+hp(ls,41.6,1593.7));',
+          'float nw=vn(vec3(wx*.5,ts*.25,ls*.1));float py=cy+arc*wav+nw*.14*wav;',
+          'float rays=pow(sin((wx+nw*2.5)*mix(6.,20.,ray)*.15+ts*.1+hp(ls,53.7,3847.2))*.5+.5,1.5);',
+          'float lh=H*mix(.4,1.,rays);float d=uv.y-py;float top=lh*(rays*.4+.6);',
+          'float env=smoothstep(-.04,.015,d)*(1.-smoothstep(0.,top,d));',
+          'float ct=clamp(d/(top+.001),0.,1.);float sb=mix(.4,1.,nw*.5+.5);float cd=ct-.2;float cb=exp(cd*cd*-6.)*.3+1.;',
+          'float al=env*rays*sb*cb*w;ws+=ct*al;tot+=al;}',
+          'float av=pow(ws/(tot+.001),bal);vec3 col=mix(mix(A,B,smoothstep(0.,.2,av)),C,smoothstep(.4,.85,av));',
+          'float br=tot*ins;vec3 glow=clamp(col*br,0.,1.);',
+          'vec3 base=mix(G0,G1,smoothstep(0.,1.,uv.y*.7+(1.-uv.x)*.3));',
+          'gl_FragColor=L>.5?vec4(mix(base,col,clamp(br*.42,0.,.62)),1.):vec4(base*(1.-clamp(br*.5,0.,1.)*.35)+glow,1.);}'
+        ].join('');
+        var mk = function (t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
+        var pr = gl.createProgram();
+        gl.attachShader(pr, mk(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, mk(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr);
+        if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { R.gl = null; } else {
+          gl.useProgram(pr);
+          var bf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, bf);
+          gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+          var lp = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
+          var u = function (n) { return gl.getUniformLocation(pr, n); };
+          var hex = function (h) { return [parseInt(h.substr(1, 2), 16) / 255, parseInt(h.substr(3, 2), 16) / 255, parseInt(h.substr(5, 2), 16) / 255]; };
+          R.pal = { dark: [hex('#0E3BB8'), hex('#2E63FF'), hex('#9DB8F7'), hex('#050A20'), hex('#0B1A4D'), 0], light: [hex('#B9CCFF'), hex('#7FA4FF'), hex('#4F80FF'), hex('#F6F9FF'), hex('#E4ECFF'), 1] };
+          R.u = { A: u('A'), B: u('B'), C: u('C'), G0: u('G0'), G1: u('G1'), L: u('L') };
+          R.uR = u('R'); R.uT = u('T');
+        }
+      }
+      R.still = !!(host.matchMedia && host.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      R.t0 = host.performance.now();
+      R.paint = function (it, now) {
+        var g = R.gl, w = it.cv.width, h = it.cv.height;
+        if (R.gc.width !== w || R.gc.height !== h) { R.gc.width = w; R.gc.height = h; }
+        var pl = R.pal[it.light ? 'light' : 'dark']; g.uniform3fv(R.u.A, pl[0]); g.uniform3fv(R.u.B, pl[1]); g.uniform3fv(R.u.C, pl[2]); g.uniform3fv(R.u.G0, pl[3]); g.uniform3fv(R.u.G1, pl[4]); g.uniform1f(R.u.L, pl[5]);
+        g.viewport(0, 0, w, h); g.uniform2f(R.uR, w, h); g.uniform1f(R.uT, it.seed + (R.still ? 0 : (now - R.t0) / 1000));
+        g.drawArrays(g.TRIANGLE_STRIP, 0, 4);
+        it.ctx.drawImage(R.gc, 0, 0);
+      };
+      R.size = function (it) {
+        var cw = it.el.clientWidth, ch = it.el.clientHeight;
+        if (!cw || !ch) return false;
+        var s = Math.min(0.4, 320 / cw), w = Math.max(16, Math.round(cw * s)), h = Math.max(16, Math.round(ch * s));
+        if (it.cv.width !== w || it.cv.height !== h) { it.cv.width = w; it.cv.height = h; it.fresh = true; }
+        return true;
+      };
+      R.tick = function (now) {
+        R.raf = 0;
+        if (now - R.last > 33) {
+          R.last = now;
+          R.items = R.items.filter(function (it) { return it.el.isConnected; });
+          var n = R.items.length, st = host.performance.now();
+          for (var k = 0; k < n; k++) {
+            var it = R.items[(R.cur + k) % n];
+            if ((it.vis || it.fresh) && R.size(it)) { R.paint(it, now); it.fresh = false; }
+            if (host.performance.now() - st > 6) { R.cur = (R.cur + k + 1) % n; break; }
+          }
+        }
+        if (!R.still && R.items.some(function (it) { return it.vis; })) R.raf = host.requestAnimationFrame(R.tick);
+      };
+      R.wake = function () { if (!R.raf) R.raf = host.requestAnimationFrame(R.tick); };
+    }
+    if (!R.gl) { el.classList.add(el.classList.contains('aur-lt') ? 'aur-off-lt' : 'aur-off'); return function () {}; }
+    var cv = el.ownerDocument.createElement('canvas');
+    cv.className = 'aur-c';
+    cv.setAttribute('aria-hidden', 'true');
+    el.insertBefore(cv, el.firstChild);
+    el.__aurC = cv;
+    var it = { el: el, cv: cv, ctx: cv.getContext('2d'), seed: Math.random() * 40, vis: true, fresh: true, light: el.classList.contains('aur-lt') };
+    R.items.push(it);
+    var view = el.ownerDocument.defaultView || window;
+    var io = view.IntersectionObserver ? new view.IntersectionObserver(function (e) { it.vis = e[0].isIntersecting; if (it.vis) R.wake(); }) : null;
+    if (io) io.observe(el);
+    R.wake();
+    return function () { if (io) io.disconnect(); R.items = R.items.filter(function (x) { return x !== it; }); };
+  }
+  aurScan() {
+    var self = this, q = 0;
+    var go = function () { q = 0; document.querySelectorAll('.aur').forEach(function (el) { if (!el.__aurC || el.__aurC.parentNode !== el) { if (el.__aur) el.__aur(); el.__aur = self.auroraMount(el); } }); };
+    go();
+    if (!this._aurMo && window.MutationObserver) { this._aurMo = new MutationObserver(function () { if (!q) q = requestAnimationFrame(go); }); this._aurMo.observe(document.body, { childList: true, subtree: true }); }
+  }
   constructor(props) {
     super(props);
     this.state = { v: 0 };
@@ -648,8 +836,8 @@ class Component extends DCLogic {
     this.pend = true;
     requestAnimationFrame(function () { self.pend = false; self.setState({ v: self.state.v + 1 }); });
   }
-  componentDidMount() { for (var k in this.parts) if (this.parts[k].componentDidMount) this.parts[k].componentDidMount(); }
-  componentWillUnmount() { for (var k in this.parts) if (this.parts[k].componentWillUnmount) this.parts[k].componentWillUnmount(); }
+  componentDidMount() { this.aurScan(); for (var k in this.parts) if (this.parts[k].componentDidMount) this.parts[k].componentDidMount(); }
+  componentWillUnmount() { if (this._aurMo) this._aurMo.disconnect(); for (var k in this.parts) if (this.parts[k].componentWillUnmount) this.parts[k].componentWillUnmount(); }
   renderVals() { var o = {}; for (var k in this.parts) o[k] = this.parts[k].renderVals(); return o; }
 }
 </script>

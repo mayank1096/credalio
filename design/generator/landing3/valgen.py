@@ -105,7 +105,7 @@ JOUR = '''<section class="pc-sec cx-sec" aria-labelledby="vx-jh">
 PDF = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg>'
 CLAR = '''<section class="pc-sec cx-sec" aria-labelledby="vx-cl">
 <div class="in-ai vx-cl">
-<div><span class="pc-k">Clarification & revision</span><h2 id="vx-cl" class="pc-h2">Validation isn’t just a checkbox.</h2><p class="pc-p">Findings are raised, answered with evidence and resolved on the record. Nobody simply presses Approve.</p></div>
+<div><span class="pc-k">Clarification & revision</span><h2 id="vx-cl" class="pc-h2">Validation isn’t just a checkbox.</h2><p class="pc-p">Findings are raised, answered with evidence and resolved on the record. Nobody simply presses Approve.</p><a class="ds-link vx-sr" href="Record.dc.html">See a published record''' + dashgen.ARR_S + '''</a></div>
 <div class="ds-card vx-th">
 <div class="vx-thh"><span class="ds-tag">Finding #3 · Subject matter</span><span class="ds-tag green">Resolved</span></div>
 <div class="rq-thread">
@@ -126,7 +126,7 @@ DEC = '''<section class="pc-sec cx-sec" aria-label="Decision and versioning">
 <p class="pc-p">Given when every applicable requirement is met.</p>
 <dl class="vx-dl"><div><dt>Validation ID</dt><dd>VAL-CRD-004821</dd></div><div><dt>Experience</dt><dd>Data Foundations</dd></div><div><dt>Version reviewed</dt><dd>v2.1</dd></div><div><dt>Validated</dt><dd>24 September 2026</dd></div></dl>
 <div class="vx-sc"><span class="vx-k">Scope</span><span class="ds-tag">Educational quality</span><span class="ds-tag">Subject matter</span><span class="ds-tag">Assessment</span></div>
-<a class="ds-link" href="#">View Validation Record''' + dashgen.ARR_S + '''</a>
+<a class="ds-link" href="Record.dc.html">View Validation Record''' + dashgen.ARR_S + '''</a>
 </div>
 <div class="ds-card in-card vx-ver">
 <span class="pc-k">Versioning</span>
@@ -138,6 +138,27 @@ DEC = '''<section class="pc-sec cx-sec" aria-label="Decision and versioning">
 </div>
 </section>'''
 
+
+# ---------- for creators / for validators: Landing doors ----------
+DOORS = block(L, '<div class="ci-doors"', 'div')
+for a, b in [
+    ('<span class="ci-k">For creators and experts</span>', '<span class="ci-k">For creators</span>'),
+    ('<span class="ci-t">Share what you know.<br class="ci-br"> Earn from it.</span>', '<span class="ci-t">Built something worth trusting?</span>'),
+    ('Build courses, certifications and career paths with AI help, get them validated, and earn when people learn.', 'Submit your learning for independent review and give learners a clearer signal.'),
+    ('aria-label="For creators and experts: start creating"', 'aria-label="For creators: start creating"'),
+    ('<a class="ci-door ci-in" href="Institutions.dc.html" aria-label="For institutions: partner with Credalio">', '<a class="ci-door ci-in" href="#" aria-label="For validators: become a validator">'),
+    ('<span class="ci-k" style="color: #1652F0; opacity: 1">For institutions</span>', '<span class="ci-k" style="color: #1652F0; opacity: 1">For validators</span>'),
+    ('<span class="ci-t">Bring your programs to Credalio.</span>', '<span class="ci-t">Help raise the quality of learning.</span>'),
+    ('Deliver programs, manage learners and educators, and issue verifiable credentials at scale.', 'Qualified professionals review learning in their own area of expertise.'),
+    ('Partner with Credalio<svg', 'Become a validator<svg'),
+    ('Verifiable credentials</span><span style="font-size: 15px; font-weight: 600">186 issued</span>', 'Review submitted</span><span style="font-size: 15px; font-weight: 600">Data Foundations v2.1</span>'),
+]:
+    assert DOORS.count(a) == 1, a
+    DOORS = DOORS.replace(a, b)
+win = re.search(r'(<a class="ci-door ci-in".*?<div class="ci-win">)(.*?)(<div style="height: 30px"></div>\n</div>)', DOORS, re.S)
+DOORS = DOORS.replace(win.group(2), '<div class="ci-wk"><span>Validator profile</span><span class="ds-tag green">Qualified</span></div>\n<span style="font-size: 16px; font-weight: 600; letter-spacing: -.2px">Subject Matter · Data analytics</span>\n<div class="ci-row"><span>Findings resolved</span><b style="margin-left: auto; font-weight: 600; color: #0B1433">96%</b></div>\n<div class="ci-row"><span>Reviews this term</span><b style="margin-left: auto; font-weight: 600; color: #0B1433">18</b></div>\n')
+DOORS = DOORS.replace('<div class="ci-float" style="left: -128px; top: 128px"><span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0', '<div class="ci-float" style="left: -128px; top: 128px"><span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0')
+DOORS_SEC = '<section class="pc-sec cx-sec" aria-label="For creators and validators">' + DOORS + '</section>'
 # ---------- final CTA ----------
 FC = block(L, '<section aria-labelledby="fc-h"')
 FC = re.sub(r'<form class="ds-ask fc-form".*?</form>', btn('Explore validated learning', 'Courses.dc.html', 'cx-fb'), FC, flags=re.S)
@@ -148,6 +169,9 @@ NAVH = nav('').replace('<a class="sx-cta" href="#">Create account</a>', '<a clas
 
 CSS = RQCSS + r'''
 .vx-hero .tx-h2{margin:0}
+.vx-dt{display:flex;flex-wrap:wrap;gap:6px}
+.vx-sr{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-weight:600}
+.vx-dt .ds-tag{background:#F5F8FF;color:#3A4566}
 .vx-acts{margin-top:16px}
 .vx-acts .ds-link{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:600}
 .vx-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
@@ -244,6 +268,7 @@ BODY = '''<div style="font-family: 'Google Sans', system-ui, sans-serif; color: 
 ''' + JOUR + '''
 ''' + CLAR + '''
 ''' + DEC + '''
+''' + DOORS_SEC + '''
 ''' + FC + '''
 ''' + FOOT + '''
 </div>'''
@@ -269,6 +294,7 @@ class JourneyPart extends Part {
   }
 }
 class Component extends DCLogic {
+''' + AURORA_JS + '''
   constructor(props) {
     super(props);
     this.state = { v: 0 };
@@ -281,8 +307,8 @@ class Component extends DCLogic {
     this.pend = true;
     requestAnimationFrame(function () { self.pend = false; self.setState({ v: self.state.v + 1 }); });
   }
-  componentDidMount() { for (var k in this.parts) if (this.parts[k].componentDidMount) this.parts[k].componentDidMount(); }
-  componentWillUnmount() { for (var k in this.parts) if (this.parts[k].componentWillUnmount) this.parts[k].componentWillUnmount(); }
+  componentDidMount() { this.aurScan(); for (var k in this.parts) if (this.parts[k].componentDidMount) this.parts[k].componentDidMount(); }
+  componentWillUnmount() { if (this._aurMo) this._aurMo.disconnect(); for (var k in this.parts) if (this.parts[k].componentWillUnmount) this.parts[k].componentWillUnmount(); }
   renderVals() { var o = {}; for (var k in this.parts) o[k] = this.parts[k].renderVals(); return o; }
 }
 '''
@@ -303,7 +329,7 @@ HTML = '''<!doctype html>
 </helmet>
 ''' + BODY + '''
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4580}}'>''' + JS + '''</script>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5120}}'>''' + JS + '''</script>
 </body>
 </html>
 '''

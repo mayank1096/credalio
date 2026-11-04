@@ -1559,6 +1559,25 @@
       "title": "CHK Payment didn’t go through (not charged) · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Pricing.dc.html": {
+      "x": 0,
+      "y": 65347,
+      "w": 1440,
+      "h": 4130,
+      "title": "PRC-001 → 004 Pricing: plans, compare, Enterprise, top-ups, DLP · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Pricing-Mobile.dc.html": {
+      "x": 1520,
+      "y": 65347,
+      "w": 390,
+      "h": 4440,
+      "title": "PRC-001 → 004 Pricing: plans, compare, Enterprise, top-ups, DLP · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -1592,7 +1611,8 @@
     "row-b18",
     "row-b19",
     "row-b20",
-    "row-b21"
+    "row-b21",
+    "row-b22"
   ],
   "notes": {
     "new-hero": {
@@ -1779,6 +1799,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b22": {
+      "x": 0,
+      "y": 65047,
+      "text": "Batch 22 · Pricing page: plans, compare, Enterprise, top-ups, what DLP is, how DLP works",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -1945,7 +1973,9 @@
     "Chk-TOP-done.dc.html",
     "Chk-TOP-done-Mobile.dc.html",
     "Chk-Failed.dc.html",
-    "Chk-Failed-Mobile.dc.html"
+    "Chk-Failed-Mobile.dc.html",
+    "Pricing.dc.html",
+    "Pricing-Mobile.dc.html"
   ],
   "pages": [
     {

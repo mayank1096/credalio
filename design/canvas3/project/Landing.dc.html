@@ -1751,14 +1751,14 @@ Not sure? Ask Nova, your AI Coach
 <li><span class="pr-ck"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="{{p.ckC}}" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>{{f}}</li>
 </sc-for>
 </ul>
-<sc-if value="{{p.fit}}" hint-placeholder-val="{{ false }}"><a class="ds-btn pr-btn" href="#"><span>{{p.cta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></sc-if>
-<sc-if value="{{p.nofit}}" hint-placeholder-val="{{ true }}"><a class="{{p.ghCls}} pr-btn" href="#">{{p.cta}}</a></sc-if>
+<sc-if value="{{p.fit}}" hint-placeholder-val="{{ false }}"><a class="ds-btn pr-btn" href="{{p.href}}"><span>{{p.cta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></sc-if>
+<sc-if value="{{p.nofit}}" hint-placeholder-val="{{ true }}"><a class="{{p.ghCls}} pr-btn" href="{{p.href}}">{{p.cta}}</a></sc-if>
 </div>
 </sc-for>
 </div>
 
 <div class="pr-foot">
-<span class="pr-ent">Need learning for your organisation? <a class="ds-link" href="#">Explore Enterprise →</a></span>
+<span class="pr-ent">Need learning for your organisation? <a class="ds-link" href="Pricing.dc.html#pc-ent">Explore Enterprise →</a></span>
 <button class="ds-ghost sm pr-more {{pr.moreCls}}" type="button" aria-expanded="{{pr.open}}" onClick="{{pr.toggle}}">{{pr.moreLabel}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
 </div>
 
@@ -2445,7 +2445,7 @@ class PricePart extends Part {
           ckC: p.pro ? '#FFFFFF' : '#1652F0',
           cls: (p.pro ? 'pr-pro aur ' : '') + (k === fit ? 'pr-card-fit pr-card-show' : ''),
           tabCls: k === fit ? 'on' : '', sel: k === fit ? 'true' : 'false', fit: k === fit, nofit: k !== fit, ghCls: p.pro ? 'ds-ghost dk' : 'ds-ghost',
-          pick: function () { self.setState({ hours: p.set }); } };
+          href: ['OnbWelcome.dc.html', 'Chk-001.dc.html', 'Chk-001p.dc.html'][k], pick: function () { self.setState({ hours: p.set }); } };
       }),
       open: this.state.open ? 'true' : 'false', showTable: this.state.open, moreCls: this.state.open ? 'pr-open' : '',
       moreLabel: this.state.open ? 'Hide comparison' : 'Compare all features',

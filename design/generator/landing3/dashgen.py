@@ -4,7 +4,7 @@
 import os, sys, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from kit import KIT_CSS, AUR_CSS, AURORA_JS, ARROW, CLOSE, NOVA, INFO, btn, tip, coin, ck, think
+from kit import KIT_CSS, AUR_CSS, AURORA_JS, ARROW, CLOSE, NOVA, INFO, btn, tip, coin, credit, mforge, ck, think
 
 OUT = os.path.join(HERE, '../../canvas3/project/Dashboard.dc.html')
 
@@ -49,9 +49,12 @@ def sidebar():
     for g, items in NAV:
         if g: h += '<span class="ds-glab">%s</span>' % g
         for k, label, href in items:
-            on = label == 'Dashboard'
+            hole = {'Dashboard': 'navDash', 'Wallets': 'navWal'}.get(label)
             bad = '<sc-if value="{{hasAsg}}" hint-placeholder-val="{{ false }}"><span class="ds-badge" aria-label="{{asgN}} due soon">{{asgN}}</span></sc-if>' if label == 'Assignments' else ''
-            h += '<a href="%s" class="ds-item%s"%s>%s<span>%s</span>%s</a>' % (href, ' ds-on' if on else '', ' aria-current="page"' if on else '', ic(I[k], 19), label, bad)
+            cls = (' {{%s}}' % hole) if hole else ''
+            cur = (' aria-current="{{%sCur}}"' % hole) if hole else ''
+            if label == 'Wallets': href = 'Usage.dc.html'
+            h += '<a href="%s" class="ds-item%s"%s>%s<span>%s</span>%s</a>' % (href, cls, cur, ic(I[k], 19), label, bad)
     return h
 
 CSS = r'''body{margin:0;background:#F7F9FD}
@@ -363,10 +366,62 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-dlp b{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:#0B1433}
 .lr-ans-a{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
 .lr-ans-a .ds-link{font-size:14px}
+.lr-walw{position:relative;display:inline-flex}
+button.lr-pill{font-family:inherit;cursor:pointer}
+.lr-wal{position:absolute;right:0;top:calc(100% + 10px);z-index:30;width:360px;box-sizing:border-box;padding:16px 18px 14px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 30px 60px -24px rgba(11,20,51,.35);animation:lrUp .25s ease both}
+.lr-wal-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.lr-wal-h b{display:flex;align-items:center;font-size:15.5px;font-weight:600}
+.lr-wal-h .ds-x{width:36px;height:36px}
+.lr-wr{display:grid;grid-template-columns:26px minmax(0,1fr) auto;align-items:center;gap:12px;padding:12px 0;border-top:1px solid #EEF1F7;text-decoration:none;color:#0B1433}
+.lr-wal-h + .lr-wr{border-top:0}
+.lr-wr b{display:block;font-size:14.5px;font-weight:600}
+.lr-wr small{display:block;margin-top:2px;font-size:12.5px;color:#5B6582}
+.lr-wr strong{font-size:16px;font-weight:600}
+.lr-wr strong.off{font-size:13px;font-weight:500;color:#8A93AD}
+.lr-wr:hover b{color:#1652F0}
+.lr-wal-f{display:flex;justify-content:space-between;gap:12px;padding-top:12px;border-top:1px solid #EEF1F7}
+.lr-wal-f .ds-link{font-size:14px}
+.lr-rwv{display:inline-flex;align-items:center;gap:6px}
+.lr-rwv .tip{margin-left:0}
+.lr-rwv b{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+.lr-sk{display:block;width:72px;height:12px;border-radius:9px;background:linear-gradient(90deg,#EEF1F7 0%,#DCE5FB 50%,#EEF1F7 100%);background-size:200% 100%;animation:nvShim 1.4s linear infinite}
+.lr-rwc.ready{background:linear-gradient(180deg,#F1FAF5,#FFFFFF 60%);border-color:#BFE3CF;box-shadow:0 24px 48px -36px rgba(15,107,69,.5)}
+.lr-rwa{display:flex;align-items:center;gap:18px;margin-top:auto;padding-top:16px}
+.lr-lasp .lr-ico{width:36px;height:36px;border-radius:12px}
+.lr-lt{display:flex;align-items:baseline;gap:4px}
+.lr-lt .lr-big{margin-top:0}
+.lr-lasp .lr-split{margin-top:4px}
+.lr-lg{padding:16px 18px;border-radius:16px;background:#FFFFFF;border:1.5px solid #EEF1F7}
+.lr-lg-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.lr-lg-h b{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600}
+.lr-lg-h i{width:8px;height:8px;border-radius:9px;background:#1652F0}
+.lr-lg-h i.lt{background:#9DB8F7}
+.lr-lg-h span{font-size:15px;font-weight:600}
+.lr-lr{display:grid;grid-template-columns:minmax(0,1fr) 90px 44px;align-items:center;gap:12px;padding:8px 0;font-size:14px;color:#3A4566}
+.lr-lr b{text-align:right;font-weight:600;color:#0B1433}
+.lr-lr .lr-bar{width:auto}
+.lr-h1t{display:flex;align-items:center}
+.lr-h1t .tip{margin-left:10px}
+.lr-use{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;padding:34px 40px}
+.lr-use-m{flex:1;max-width:560px}
+.lr-use-n{display:flex;align-items:center;gap:12px;margin-top:10px;font-size:52px;line-height:1;font-weight:600;letter-spacing:-1.5px}
+.lr-use-n .dlp-c{width:40px;height:40px;vertical-align:0}
+.lr-use-n small{align-self:flex-end;margin-bottom:6px;font-size:18px;font-weight:500;letter-spacing:0;color:#3A4566}
+.lr-use .lr-bar.lg{margin-top:22px}
+.lr-use-l{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:13.5px;color:#4A5578}
+.lr-use-a{margin-top:0;flex-shrink:0}
+.lr-led{display:flex;flex-direction:column;margin-top:10px}
+.lr-led div{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EEF1F7;font-size:14.5px;color:#3A4566}
+.lr-led b{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:#0B1433}
+.lr-led b.up{color:#0F6B45}
+.lr-led .tot{border-bottom:0;padding-top:14px;font-weight:600;color:#0B1433}
+.lr-led .tot b{font-size:16px}
+.lr-ok-s{margin-top:auto;padding-top:14px;font-size:14px}
+.lr-ok-s i{width:20px;height:20px}
 @keyframes lrIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
 @keyframes lrFade{from{opacity:0}to{opacity:1}}
 @keyframes lrUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion: reduce){.lr-panel,.lr-scrim,.lr-msg,.lr-name,.lr-gv-p,.lr-lsn-r i.n{animation:none}}
+@media (prefers-reduced-motion: reduce){.lr-panel,.lr-scrim,.lr-msg,.lr-name,.lr-gv-p,.lr-lsn-r i.n,.lr-wal,.lr-sk{animation:none}}
 @media (max-width: 1280px){
 .lr-head{flex-direction:column;align-items:flex-start;gap:16px}
 .lr-g4{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -496,6 +551,13 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-coh .lr-mentor{margin-top:14px;padding-top:14px;border-top:1px solid #EEF1F7}
 .lr-crs .lr-jf{margin-top:24px}
 .lr-lead{padding:18px}
+.lr-wal{position:fixed;left:12px;right:12px;top:68px;width:auto}
+.lr-use{flex-direction:column;align-items:stretch;gap:24px;padding:28px 16px}
+.lr-use-n{font-size:40px}
+.lr-use-n .dlp-c{width:32px;height:32px}
+.lr-use-a{flex-direction:column-reverse}
+.lr-use-a .ds-ghost{width:100%}
+.lr-lr{grid-template-columns:minmax(0,1fr) 64px 40px}
 .lr-panel{width:100vw}
 .lr-pb{padding:18px 16px}
 }
@@ -544,13 +606,20 @@ MARKUP = '''<div class="ds-root">
 <a class="ds-mlogo lr-mlogo" href="Dashboard.dc.html" aria-label="Credalio home"><span class="lr-word"></span></a>
 <label class="ds-search">''' + ic(I['search'], 18) + '''<span class="sr-only">Search</span><input placeholder="Search courses, career paths, certifications…"></label>
 <span class="ds-hide-sm" style="flex-grow: 1"></span>
-<a href="#" class="lr-pill" aria-label="{{dlp}} DLP available">''' + coin() + '''<span>{{dlp}}</span><i class="ds-hide-sm">DLP</i></a>
+<span class="lr-walw"><button type="button" class="lr-pill" aria-expanded="{{walExp}}" aria-label="{{dlp}} DLP available. Show balances" onClick="{{toggleWal}}">''' + coin() + '''<span>{{dlp}}</span><i class="ds-hide-sm">DLP</i></button>
+<sc-if value="{{walOpen}}" hint-placeholder-val="{{ false }}"><div class="lr-wal" role="dialog" aria-label="Your balances">
+<div class="lr-wal-h"><b>Your balances''' + tip('LAS is a score, not a balance, so you’ll find it in Learning rewards.', 'r') + '''</b><button type="button" class="ds-x" onClick="{{toggleWal}}" aria-label="Close">''' + CLOSE + '''</button></div>
+<a class="lr-wr" href="Usage.dc.html">''' + coin(True) + '''<span><b>DLP</b><small>{{walDlpSub}}</small></span><strong>{{dlp}}</strong></a>
+<a class="lr-wr" href="#">''' + credit(True) + '''<span><b>Marketplace Credits</b><small>For lifetime access and more</small></span><strong>{{walCr}}</strong></a>
+<a class="lr-wr" href="#">''' + mforge(True) + '''<span><b>MFORGE</b><small>{{walMfSub}}</small></span><strong class="{{walMfCls}}">{{walMf}}</strong></a>
+<div class="lr-wal-f"><a class="ds-link" href="Usage.dc.html">Usage and activity</a><a class="ds-link" href="#">Get more DLP</a></div>
+</div></sc-if></span>
 <button type="button" class="lr-coach" onClick="{{openPanel}}" aria-label="{{coachBtn}}">''' + av() + '''<span>{{coachBtn}}</span></button>
 <a href="#" class="ds-icon-btn" aria-label="Notifications, 1 new">''' + ic(I['bell'], 19) + '''<span class="lr-dot"></span></a>
 <a href="#" class="lr-av" aria-label="Your account">AO</a>
 </header>
 <main class="ds-main">
-
+<sc-if value="{{pHome}}" hint-placeholder-val="{{ true }}">
 <div class="lr-head">
 <div><span class="lr-date">{{date}}</span><h1 class="lr-h1">{{greeting}}, Ada.</h1></div>
 <sc-if value="{{isNew}}" hint-placeholder-val="{{ true }}">
@@ -719,16 +788,17 @@ MARKUP = '''<div class="ds-root">
 
 <sc-if value="{{seasonOn}}" hint-placeholder-val="{{ false }}">
 <section class="lr-sec" aria-labelledby="lr-sn">
-<div class="lr-sh"><h2 id="lr-sn">Learning Season''' + tip('Learning comes first. Your LAS and rewards are worked out when the season closes.') + '''</h2><span class="ds-tag blue lg">September · 3 days left</span></div>
+<div class="lr-sh"><h2 id="lr-sn">Learning Season''' + tip('Learning comes first. Your LAS and rewards are worked out when the season closes.') + '''</h2><span class="ds-tag {{snTagCls}} lg">{{snTag}}</span></div>
 <div class="lr-g2">
 <section class="lr-card" aria-labelledby="lr-las"><div class="lr-ch"><h3 id="lr-las">Season LAS''' + tip('Your verified learning activity this season. It’s a score, not money, and has no fixed cash value.') + '''</h3></div>
 <span class="lr-big">1,240<small>LAS</small></span>
 <span class="lr-split" aria-hidden="true"><i style="width: 85%"></i><i style="width: 15%"></i></span>
 <span class="lr-leg"><span><i></i>Learning 1,050</span><span><i></i>Community 190</span></span>
-<a class="ds-link" href="#">View breakdown''' + ARR_S + '''</a></section>
-<section class="lr-card" aria-labelledby="lr-sr"><div class="lr-ch"><h3 id="lr-sr">Season rewards''' + tip('Rewards are worked out when the season closes. Credits reach your Wallets only after that.', 'r') + '''</h3><span class="ds-tag blue">Accumulating</span></div>
-<div class="lr-rw"><div><span>Marketplace Credits</span><span class="ds-tag">Pending</span></div><div><span>Scholarship</span><span class="ds-tag">Pending</span></div><div><span>MFORGE</span><span class="ds-tag green">Eligible</span></div></div>
-<a class="ds-link" href="#">View rewards''' + ARR_S + '''</a></section>
+<button type="button" class="ds-link" onClick="{{openLas}}">View breakdown''' + ARR_S + '''</button></section>
+<section class="lr-card lr-rwc {{rwCls}}" aria-labelledby="lr-sr"><div class="lr-ch"><h3 id="lr-sr">Season rewards<span class="tip" tabindex="0" aria-label="More info">''' + INFO + '''<span class="tip-b r" role="tooltip">{{rwTip}}</span></span></h3><span class="ds-tag {{rwTagCls}}">{{rwTag}}</span></div>
+<div class="lr-rw"><sc-for list="{{rw}}" as="r" hint-placeholder-count="3"><div><span>{{r.k}}</span><span class="lr-rwv"><sc-if value="{{r.isTag}}" hint-placeholder-val="{{ true }}"><span class="ds-tag {{r.tc}}">{{r.tag}}</span></sc-if><sc-if value="{{r.hasTip}}" hint-placeholder-val="{{ false }}"><span class="tip" tabindex="0" aria-label="What’s missing">''' + INFO + '''<span class="tip-b r" role="tooltip">{{r.tipT}}</span></span></sc-if><sc-if value="{{r.sk}}" hint-placeholder-val="{{ false }}"><span class="lr-sk" aria-label="Calculating"></span></sc-if><sc-if value="{{r.isCr}}" hint-placeholder-val="{{ false }}"><b>''' + credit() + '''{{r.v}}</b></sc-if><sc-if value="{{r.isMf}}" hint-placeholder-val="{{ false }}"><b>''' + mforge() + '''{{r.v}}</b></sc-if></span></div></sc-for></div>
+<sc-if value="{{rwReady}}" hint-placeholder-val="{{ false }}"><div class="lr-rwa"><a class="ds-ghost sm" href="#">Claim MFORGE</a><a class="ds-link" href="#">Reward details</a></div></sc-if>
+<sc-if value="{{rwLink}}" hint-placeholder-val="{{ true }}"><a class="ds-link" href="#">View rewards''' + ARR_S + '''</a></sc-if></section>
 </div>
 </section>
 </sc-if>
@@ -763,10 +833,52 @@ MARKUP = '''<div class="ds-root">
 <div class="lr-posts"><sc-for list="{{posts}}" as="p" hint-placeholder-count="3"><a class="lr-post" href="#"><b>{{p.t}}</b><small><span class="cs-cav">{{p.ini}}</span>{{p.by}} · {{p.n}} replies</small></a></sc-for></div>
 </section>
 
+</sc-if>
+<sc-if value="{{pUsage}}" hint-placeholder-val="{{ false }}">
+<div class="lr-head">
+<div><span class="lr-date">Account · Plan and DLP</span><h1 class="lr-h1 lr-h1t">Your learning allowance''' + tip('DLP is used as you open eligible learning. Marketplace Credits are kept separately.') + '''</h1></div>
+<div class="lr-strip"><span class="lr-st"><small>Plan</small><b>Basic</b></span><span class="lr-st"><small>Each month</small><b>2,000<i>DLP</i></b></span><span class="lr-st"><small>Refreshes</small><b>12 Oct</b></span></div>
+</div>
+<section class="lr-focus lr-use aur aur-lt" aria-labelledby="lr-ua">
+<div class="lr-use-m">
+<span class="lr-k" id="lr-ua">Available now</span>
+<span class="lr-use-n">''' + coin(True) + '''1,460<small>DLP</small></span>
+<span class="lr-bar lg"><i style="width: 73%"></i></span>
+<span class="lr-use-l"><span>1,460 of 2,000 left</span><span>540 used this month</span></span>
+</div>
+<div class="lr-fa lr-use-a"><a class="ds-ghost" href="#">Manage plan</a>''' + btn('Get more DLP', '#') + '''</div>
+</section>
+<div class="lr-sec lr-g2">
+<section class="lr-card" aria-labelledby="lr-u1"><div class="lr-ch"><h3 id="lr-u1">This month</h3></div>
+<div class="lr-led"><div><span>Monthly allowance</span><b class="up">+2,000</b></div><div><span>Data Foundations</span><b>−320</b></div><div><span>SQL for Data Analysis</span><b>−220</b></div><div class="tot"><span>Balance</span><b>''' + coin() + '''1,460</b></div></div>
+</section>
+<section class="lr-card" aria-labelledby="lr-u2"><div class="lr-ch"><h3 id="lr-u2">Coming up''' + tip('What your current plans are likely to use. Estimates update as you learn.', 'r') + '''</h3></div>
+<div class="lr-led"><div><span>Rest of SQL for Data Analysis</span><b>~280</b></div><div><span>Data cleaning project</span><b>~300</b></div><div class="tot"><span>Likely to use</span><b>''' + coin() + '''~580</b></div></div>
+<span class="lr-ok lr-ok-s"><i>''' + ck(12, 3.2) + '''</i><span>Your balance covers this.</span></span>
+</section>
+</div>
+<section class="lr-sec lr-nova nova-card" aria-label="Your AI Coach">
+''' + av() + '''
+<div class="lr-nova-b"><span class="lr-nova-k">{{novaKicker}}</span><p>You’re covered this month. For the whole Data Analyst journey you’ll need about 2,700 more, mostly around Certification.</p></div>
+<div class="lr-nova-a"><button type="button" class="ds-ghost sm" onClick="{{openDlp}}">See the breakdown</button></div>
+</section>
+</sc-if>
+
 </main>
 </div>
 </div>
 
+<sc-if value="{{lasOpen}}" hint-placeholder-val="{{ false }}">
+<div class="lr-scrim" onClick="{{closeLas}}"></div>
+<aside class="lr-panel lr-lasp" role="dialog" aria-modal="true" aria-labelledby="lr-lph">
+<div class="lr-ph"><span class="lr-ico">''' + ic(I['reward'], 20) + '''</span><div><b id="lr-lph">September learning activity</b><span>Learning Season · LAS</span></div><button type="button" class="ds-x" onClick="{{closeLas}}" aria-label="Close">''' + CLOSE + '''</button></div>
+<div class="lr-pb">
+<div class="lr-lt"><span class="lr-big">1,240<small>LAS</small></span>''' + tip('LAS measures eligible learning activity during the season. It isn’t money and has no fixed cash value.', 'r') + '''</div>
+<span class="lr-split" aria-hidden="true"><i style="width: 85%"></i><i style="width: 15%"></i></span>
+<sc-for list="{{lasG}}" as="g" hint-placeholder-count="2"><div class="lr-lg"><div class="lr-lg-h"><b><i class="{{g.dot}}"></i>{{g.t}}</b><span>{{g.v}}</span></div><sc-for list="{{g.rows}}" as="r" hint-placeholder-count="4"><div class="lr-lr"><span>{{r.k}}</span><span class="lr-bar"><i style="width: {{r.w}}"></i></span><b>{{r.v}}</b></div></sc-for></div></sc-for>
+</div>
+</aside>
+</sc-if>
 <sc-if value="{{panelOpen}}" hint-placeholder-val="{{ false }}">
 <div class="lr-scrim" onClick="{{closePanel}}"></div>
 <aside class="lr-panel" role="dialog" aria-modal="true" aria-label="{{coachTitle}}, your AI Coach">
@@ -785,7 +897,7 @@ MARKUP = '''<div class="ds-root">
 <div class="lr-msg">''' + av() + '''<div class="lr-bub">{{hello}}</div></div>
 <sc-if value="{{showQs}}" hint-placeholder-val="{{ true }}"><div class="lr-qs"><sc-for list="{{askSug}}" as="a" hint-placeholder-count="3"><sc-if value="{{a.link}}" hint-placeholder-val="{{ true }}"><a class="ds-chip" href="{{a.href}}">{{a.t}}</a></sc-if><sc-if value="{{a.q}}" hint-placeholder-val="{{ false }}"><button type="button" class="ds-chip" onClick="{{askDlp}}">{{a.t}}</button></sc-if></sc-for></div></sc-if>
 <sc-if value="{{dlpQ}}" hint-placeholder-val="{{ false }}"><div class="lr-me">{{dlpQText}}</div></sc-if>
-<sc-if value="{{dlpA}}" hint-placeholder-val="{{ false }}"><div class="lr-msg">''' + av() + '''<div class="lr-bub lr-ans"><p>{{dlpLead}}</p><div class="lr-dlp"><div><span>Your balance</span><b>''' + coin() + '''{{dlp}}</b></div><div><span>{{dlpStageL}}</span><b>''' + coin() + '''{{dlpStage}}</b></div><div><span>Rest of the journey</span><b>''' + coin() + '''{{dlpRest}}</b></div></div><p>{{dlpTail}}</p><div class="lr-ans-a"><a class="ds-link" href="#">View my usage</a><a class="ds-link" href="#">See plan options</a></div></div></div></sc-if>
+<sc-if value="{{dlpA}}" hint-placeholder-val="{{ false }}"><div class="lr-msg">''' + av() + '''<div class="lr-bub lr-ans"><p>{{dlpLead}}</p><div class="lr-dlp"><div><span>Your balance</span><b>''' + coin() + '''{{dlp}}</b></div><div><span>{{dlpStageL}}</span><b>''' + coin() + '''{{dlpStage}}</b></div><div><span>Rest of the journey</span><b>''' + coin() + '''{{dlpRest}}</b></div></div><p>{{dlpTail}}</p><div class="lr-ans-a"><a class="ds-link" href="Usage.dc.html">View my usage</a><a class="ds-link" href="#">See plan options</a></div></div></div></sc-if>
 </sc-if>
 <sc-if value="{{thinking}}" hint-placeholder-val="{{ false }}"><div class="lr-msg">''' + av() + think('{{thinkText}}') + '''</div></sc-if>
 </div>
@@ -800,7 +912,7 @@ class Component extends DCLogic {
   constructor(props) {
     super(props);
     var p = props || {};
-    this.state = { st: p.state || 'A', coach: p.coach === undefined || p.coach === null ? 'Nova' : p.coach, panel: p.panel === true || p.panel === 'true', nav: false, draft: '', q: '', thinking: false, ti: 0, wk: 'sch', intro: false, dlpQ: false, ask: p.ask || '' };
+    this.state = { st: p.state || 'A', coach: p.coach === undefined || p.coach === null ? 'Nova' : p.coach, panel: p.panel === true || p.panel === 'true', nav: false, draft: '', q: '', thinking: false, ti: 0, wk: 'sch', intro: false, dlpQ: false, ask: p.ask || '', wal: p.wallets === true || p.wallets === 'true', las: p.las === true || p.las === 'true', page: p.page || 'home', season: p.season || 'active', mf: p.mforge || 'eligible' };
     this.CH = { Nova: ['/_blob/398ca91d2832bb0ab6b0af61319676f4', '-87.50%', '-57.81%', '294.06%'], Maya: ['/_blob/a1da64159da9c302c3a1835dea8e5266', '-68.75%', '-105.00%', '235.25%'], Alex: ['/_blob/22972224648e9b26d4acac7cc3f7c3a8', '-72.97%', '-112.16%', '254.32%'], Sage: ['/_blob/343a6c48a0cc4849f5a082d9a10a83a4', '-75.68%', '-114.86%', '254.32%'] };
     this.TONE = { Data: ['linear-gradient(150deg,#1C3AA8,#0B1433)', '#FFFFFF', 0], Design: ['linear-gradient(150deg,#7FA4FF,#4C7DFF)', '#FFFFFF', 1], Software: ['linear-gradient(150deg,#4C7DFF,#1652F0)', '#FFFFFF', 2], Business: ['linear-gradient(150deg,#DCE5FB,#EAF0FF)', '#1652F0', 4], Leadership: ['linear-gradient(150deg,#9DB8F7,#4C7DFF)', '#FFFFFF', 4] };
     this.TIER = { gold: ['Gold Validated', '#C8961E'], silver: ['Silver Validated', '#8E9BB0'], bronze: ['Bronze Validated', '#A8683A'] };
@@ -1008,6 +1120,21 @@ class Component extends DCLogic {
       reqs: [['Required learning', 2, 6], ['Practice labs', 1, 3], ['Assessments', 0, 2], ['Final evaluation', 0, 1, 1]].map(function (q) { return { t: q[0], n: q[3] ? '' : q[1] + ' of ' + q[2], of: q[2], open: !q[3], lock: !!q[3], cls: q[3] ? 'lock' : (q[1] ? '' : 'zero'),
         seg: Array.apply(null, Array(q[2])).map(function (x, i) { return { c: i < q[1] ? 'd' : '' }; }) }; }),
       lead: [['Data Analyst', '6–8 months · 8 courses', 'PathDetail.dc.html'], ['AI Engineer', '8–10 months · 8 courses', 'PathDetail.dc.html'], ['Data Scientist', '9–12 months · 9 courses', 'CareerPaths.dc.html']].map(function (l) { return { t: l[0], d: l[1], href: l[2] }; }),
+      pHome: S.page !== 'usage', pUsage: S.page === 'usage',
+      navDash: S.page === 'usage' ? '' : 'ds-on', navDashCur: S.page === 'usage' ? 'false' : 'page', navWal: S.page === 'usage' ? 'ds-on' : '', navWalCur: S.page === 'usage' ? 'page' : 'false',
+      walOpen: S.wal, walExp: S.wal ? 'true' : 'false', toggleWal: function () { self.setState({ wal: !S.wal }); },
+      walDlpSub: paid ? 'Learning allowance · refreshes 12 Oct' : 'Free allowance · refreshes 1 Oct', walCr: paid ? '62.40' : '0.00',
+      walMf: paid ? '4,820' : 'Connect', walMfCls: paid ? '' : 'off', walMfSub: paid ? 'Connected through TruVault' : 'Link TruVault to see it',
+      lasOpen: S.las, openLas: function () { self.setState({ las: true }); }, closeLas: function () { self.setState({ las: false }); },
+      openDlp: function () { self.setState({ panel: true }); self.askDlp(); },
+      lasG: [['Learning', '1,050', '', [['Course completions', 620], ['Career paths', 180], ['Certifications', 120], ['Projects', 80], ['Assessments', 50]]], ['Community', '190', 'lt', [['Learning streak', 80], ['Peer reviews', 40], ['Mentoring', 40], ['Tutor reviews', 30]]]].map(function (g) { return { t: g[0], v: g[1], dot: g[2], rows: g[3].map(function (r) { return { k: r[0], v: r[1], w: Math.round(r[1] / 620 * 100) + '%' }; }) }; }),
+      snTag: { active: 'September · 3 days left', calculating: 'September · closed', ready: 'September · rewards ready' }[S.season], snTagCls: { active: 'blue', calculating: '', ready: 'green' }[S.season],
+      rwTag: { active: 'Accumulating', calculating: 'Calculating', ready: 'Ready' }[S.season], rwTagCls: { active: 'blue', calculating: '', ready: 'green' }[S.season], rwCls: S.season === 'ready' ? 'ready' : '',
+      rwTip: { active: 'Rewards are worked out when the season closes. Credits reach your Wallets only after that.', calculating: 'We’re checking eligible activity from the whole season. It usually takes two or three days.', ready: 'Your September rewards. Credits are already in your Wallets; claim MFORGE to send it to TruVault.' }[S.season],
+      rwReady: S.season === 'ready', rwLink: S.season === 'active',
+      rw: (S.season === 'ready' ? [['Marketplace Credits', 'cr', '+18.40'], ['MFORGE', 'mf', '1,850']] : (S.season === 'calculating' ? [['Marketplace Credits', 'sk'], ['Scholarship', 'sk'], ['MFORGE', 'sk']]
+        : [['Marketplace Credits', 'tag', 'Pending', ''], ['Scholarship', 'tag', 'Pending', ''], S.mf === 'not' ? ['MFORGE', 'tag', '3 of 4 met', 'amber', 'Still needed: connect TruVault so MFORGE can reach you. Everything else is done.'] : ['MFORGE', 'tag', 'Eligible', 'green']]))
+        .map(function (r) { return { k: r[0], isTag: r[1] === 'tag', tag: r[2] || '', tc: r[3] || '', hasTip: !!r[4], tipT: r[4] || '', sk: r[1] === 'sk', isCr: r[1] === 'cr', isMf: r[1] === 'mf', v: r[2] || '' }; }),
       posts: posts, showBand: !named || (st !== 'A' && st !== 'B')
     };
   }
@@ -1016,7 +1143,7 @@ class Component extends DCLogic {
 '''
 
 PROPS = {"state": {"editor": "enum", "options": ["A", "B", "C", "R", "D", "E", "F", "G", "H", "I", "L", "W"], "default": "A"},
-         "coach": {"editor": "text", "default": "Nova"}, "panel": {"editor": "boolean", "default": False}, "ask": {"editor": "enum", "options": ["", "dlp"], "default": ""},
+         "coach": {"editor": "text", "default": "Nova"}, "panel": {"editor": "boolean", "default": False}, "ask": {"editor": "enum", "options": ["", "dlp"], "default": ""}, "page": {"editor": "enum", "options": ["home", "usage"], "default": "home"}, "season": {"editor": "enum", "options": ["active", "calculating", "ready"], "default": "active"}, "mforge": {"editor": "enum", "options": ["eligible", "not"], "default": "eligible"}, "wallets": {"editor": "boolean", "default": False}, "las": {"editor": "boolean", "default": False},
          "$preview": {"width": 1440, "height": 2000}}
 
 HTML = '''<!doctype html>

@@ -1008,6 +1008,120 @@
       "title": "LRN-E Ask Nova: Do I have enough DLP to finish my path? · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Usage.dc.html": {
+      "x": 0,
+      "y": 51287,
+      "w": 1440,
+      "h": 1038,
+      "title": "DLP usage · My learning allowance · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Usage-Mobile.dc.html": {
+      "x": 1520,
+      "y": 51287,
+      "w": 390,
+      "h": 1361,
+      "title": "DLP usage · My learning allowance · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-E-Wallets.dc.html": {
+      "x": 2150,
+      "y": 51287,
+      "w": 1440,
+      "h": 900,
+      "title": "LRN-E Wallets open: DLP, Marketplace Credits, MFORGE · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-E-Wallets-Mobile.dc.html": {
+      "x": 3670,
+      "y": 51287,
+      "w": 390,
+      "h": 844,
+      "title": "LRN-E Wallets open: DLP, Marketplace Credits, MFORGE · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-E-LAS.dc.html": {
+      "x": 4300,
+      "y": 51287,
+      "w": 1440,
+      "h": 900,
+      "title": "LRN-E LAS breakdown · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-E-LAS-Mobile.dc.html": {
+      "x": 5820,
+      "y": 51287,
+      "w": 390,
+      "h": 844,
+      "title": "LRN-E LAS breakdown · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-S2.dc.html": {
+      "x": 6450,
+      "y": 51287,
+      "w": 1440,
+      "h": 2777,
+      "title": "LRN-S2 Season closed: calculating rewards · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-S2-Mobile.dc.html": {
+      "x": 7970,
+      "y": 51287,
+      "w": 390,
+      "h": 3264,
+      "title": "LRN-S2 Season closed: calculating rewards · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-S3.dc.html": {
+      "x": 8600,
+      "y": 51287,
+      "w": 1440,
+      "h": 2791,
+      "title": "LRN-S3 Season rewards ready · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-S3-Mobile.dc.html": {
+      "x": 10120,
+      "y": 51287,
+      "w": 390,
+      "h": 3285,
+      "title": "LRN-S3 Season rewards ready · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-M.dc.html": {
+      "x": 10750,
+      "y": 51287,
+      "w": 1440,
+      "h": 2830,
+      "title": "LRN-M MFORGE not yet eligible (3 of 4) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-M-Mobile.dc.html": {
+      "x": 12270,
+      "y": 51287,
+      "w": 390,
+      "h": 3324,
+      "title": "LRN-M MFORGE not yet eligible (3 of 4) · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -1035,7 +1149,8 @@
     "row-b12",
     "row-b13",
     "row-b14",
-    "row-b15"
+    "row-b15",
+    "row-b16"
   ],
   "notes": {
     "new-hero": {
@@ -1174,6 +1289,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b16": {
+      "x": 0,
+      "y": 50987,
+      "text": "Batch 16 · Season and usage: wallets, LAS breakdown, season calculating / rewards ready, MFORGE not yet eligible, DLP usage",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -1282,7 +1405,19 @@
     "Dash-I.dc.html",
     "Dash-I-Mobile.dc.html",
     "Dash-E-Nova.dc.html",
-    "Dash-E-Nova-Mobile.dc.html"
+    "Dash-E-Nova-Mobile.dc.html",
+    "Usage.dc.html",
+    "Usage-Mobile.dc.html",
+    "Dash-E-Wallets.dc.html",
+    "Dash-E-Wallets-Mobile.dc.html",
+    "Dash-E-LAS.dc.html",
+    "Dash-E-LAS-Mobile.dc.html",
+    "Dash-S2.dc.html",
+    "Dash-S2-Mobile.dc.html",
+    "Dash-S3.dc.html",
+    "Dash-S3-Mobile.dc.html",
+    "Dash-M.dc.html",
+    "Dash-M-Mobile.dc.html"
   ],
   "pages": [
     {

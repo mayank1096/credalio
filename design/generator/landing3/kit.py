@@ -86,6 +86,10 @@ KIT_CSS = r'''.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radi
 .ds-acts.c{justify-content:center}
 .ds-acts.sb{justify-content:space-between}
 .ds-mbar{display:none}
+.cr-c,.mf-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
+.cr-c{background:#1652F0}
+.mf-c{background:#0B1433}
+.cr-c.lg,.mf-c.lg{width:26px;height:26px;font-size:13px}
 .ds-seg{display:flex;gap:4px;padding:4px;border-radius:999px;background:#F1F3F8}
 .ds-seg button{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 14px;border:0;border-radius:999px;background:transparent;font-family:inherit;font-size:14px;font-weight:500;color:#3A4566;cursor:pointer;transition:background .2s ease,color .2s ease}
 .ds-seg button.on{background:#FFFFFF;color:#0B1433;box-shadow:0 1px 2px rgba(11,20,51,.08),0 6px 14px -8px rgba(11,20,51,.25)}
@@ -172,6 +176,11 @@ def nova_av(cls=''):
     return '<span class="nv-av%s" aria-hidden="true"><img src="%s" alt=""></span>' % ((' ' + cls) if cls else '', NOVA)
 def think(text):
     return '<span class="nv-think" role="status"><span class="nv-orb" aria-hidden="true"><i></i></span><span class="nv-tt">%s</span></span>' % text
+def credit(lg=False):
+    """Marketplace Credits: cobalt C coin (never gold)."""
+    return '<i class="cr-c%s" aria-hidden="true">C</i>' % (' lg' if lg else '')
+def mforge(lg=False):
+    return '<i class="mf-c%s" aria-hidden="true">M</i>' % (' lg' if lg else '')
 def coin(lg=False):
     return '<span class="dlp-c%s" aria-hidden="true"></span>' % (' dlp-lg' if lg else '')
 

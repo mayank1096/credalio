@@ -4,7 +4,7 @@
   "boards": {
     "Landing.dc.html": {
       "x": 0,
-      "y": 400,
+      "y": 660,
       "w": 1440,
       "h": 8000,
       "title": "Landing page · Desktop",
@@ -14,7 +14,7 @@
     },
     "Landing-Mobile.dc.html": {
       "x": 1520,
-      "y": 400,
+      "y": 660,
       "w": 390,
       "h": 8000,
       "title": "Landing page · Mobile",
@@ -23,7 +23,7 @@
     },
     "Explore.dc.html": {
       "x": 0,
-      "y": 9000,
+      "y": 9960,
       "w": 1440,
       "h": 2722,
       "title": "EXP-001 Explore Learning · Desktop",
@@ -33,7 +33,7 @@
     },
     "Explore-Mobile.dc.html": {
       "x": 1520,
-      "y": 9000,
+      "y": 9960,
       "w": 390,
       "h": 2475,
       "title": "EXP-001 Explore Learning · Mobile",
@@ -42,7 +42,7 @@
     },
     "Courses.dc.html": {
       "x": 2150,
-      "y": 9000,
+      "y": 9960,
       "w": 1440,
       "h": 1915,
       "title": "COURSES-001 Browse Courses · Guest · Desktop",
@@ -52,7 +52,7 @@
     },
     "Courses-Mobile.dc.html": {
       "x": 3670,
-      "y": 9000,
+      "y": 9960,
       "w": 390,
       "h": 1803,
       "title": "COURSES-001 Browse Courses · Guest · Mobile",
@@ -61,7 +61,7 @@
     },
     "Courses-Learner.dc.html": {
       "x": 4300,
-      "y": 9000,
+      "y": 9960,
       "w": 1440,
       "h": 2037,
       "title": "COURSES-001 Browse Courses · Signed in (1,460 DLP) · Desktop",
@@ -71,7 +71,7 @@
     },
     "Courses-Learner-Mobile.dc.html": {
       "x": 5820,
-      "y": 9000,
+      "y": 9960,
       "w": 390,
       "h": 1924,
       "title": "COURSES-001 Browse Courses · Signed in (1,460 DLP) · Mobile",
@@ -80,7 +80,7 @@
     },
     "CourseDetail.dc.html": {
       "x": 0,
-      "y": 12322,
+      "y": 13982,
       "w": 1440,
       "h": 2887,
       "title": "COURSES-002 Course Detail · Guest · Desktop",
@@ -90,7 +90,7 @@
     },
     "CourseDetail-Mobile.dc.html": {
       "x": 1520,
-      "y": 12322,
+      "y": 13982,
       "w": 390,
       "h": 3259,
       "title": "COURSES-002 Course Detail · Guest · Mobile",
@@ -99,7 +99,7 @@
     },
     "CourseDetail-Learner.dc.html": {
       "x": 2150,
-      "y": 12322,
+      "y": 13982,
       "w": 1440,
       "h": 2887,
       "title": "COURSES-002 Course Detail · Signed in (1,460 DLP) · Desktop",
@@ -109,7 +109,7 @@
     },
     "CourseDetail-Learner-Mobile.dc.html": {
       "x": 3670,
-      "y": 12322,
+      "y": 13982,
       "w": 390,
       "h": 3259,
       "title": "COURSES-002 Course Detail · Signed in (1,460 DLP) · Mobile",
@@ -118,7 +118,7 @@
     },
     "CareerPaths.dc.html": {
       "x": 4300,
-      "y": 12322,
+      "y": 13982,
       "w": 1440,
       "h": 1450,
       "title": "PATH-001 Career Paths · Desktop",
@@ -128,7 +128,7 @@
     },
     "CareerPaths-Mobile.dc.html": {
       "x": 5820,
-      "y": 12322,
+      "y": 13982,
       "w": 390,
       "h": 2409,
       "title": "PATH-001 Career Paths · Mobile",
@@ -137,7 +137,7 @@
     },
     "PathDetail.dc.html": {
       "x": 6450,
-      "y": 12322,
+      "y": 13982,
       "w": 1440,
       "h": 2176,
       "title": "PATH-002 Career Path Detail · Guest · Desktop",
@@ -147,7 +147,7 @@
     },
     "PathDetail-Mobile.dc.html": {
       "x": 7970,
-      "y": 12322,
+      "y": 13982,
       "w": 390,
       "h": 2690,
       "title": "PATH-002 Career Path Detail · Guest · Mobile",
@@ -156,7 +156,7 @@
     },
     "PathDetail-Learner.dc.html": {
       "x": 8600,
-      "y": 12322,
+      "y": 13982,
       "w": 1440,
       "h": 2176,
       "title": "PATH-002 Career Path Detail · Signed in (1,460 DLP) · Desktop",
@@ -166,7 +166,7 @@
     },
     "PathDetail-Learner-Mobile.dc.html": {
       "x": 10120,
-      "y": 12322,
+      "y": 13982,
       "w": 390,
       "h": 2660,
       "title": "PATH-002 Career Path Detail · Signed in (1,460 DLP) · Mobile",
@@ -175,7 +175,7 @@
     },
     "Certifications.dc.html": {
       "x": 0,
-      "y": 16181,
+      "y": 18541,
       "w": 1440,
       "h": 1389,
       "title": "CERT-001 Certifications · Desktop",
@@ -185,7 +185,7 @@
     },
     "Certifications-Mobile.dc.html": {
       "x": 1520,
-      "y": 16181,
+      "y": 18541,
       "w": 390,
       "h": 2272,
       "title": "CERT-001 Certifications · Mobile",
@@ -194,7 +194,7 @@
     },
     "CertDetail.dc.html": {
       "x": 2150,
-      "y": 16181,
+      "y": 18541,
       "w": 1440,
       "h": 2447,
       "title": "CERT-002 Certification Detail · Desktop",
@@ -204,7 +204,7 @@
     },
     "CertDetail-Mobile.dc.html": {
       "x": 3670,
-      "y": 16181,
+      "y": 18541,
       "w": 390,
       "h": 2824,
       "title": "CERT-002 Certification Detail · Mobile",
@@ -213,7 +213,7 @@
     },
     "Programs.dc.html": {
       "x": 4300,
-      "y": 16181,
+      "y": 18541,
       "w": 1440,
       "h": 1922,
       "title": "PROG-001 Learning Programs · Desktop",
@@ -223,7 +223,7 @@
     },
     "Programs-Mobile.dc.html": {
       "x": 5820,
-      "y": 16181,
+      "y": 18541,
       "w": 390,
       "h": 2087,
       "title": "PROG-001 Learning Programs · Mobile",
@@ -232,7 +232,7 @@
     },
     "ProgramDetail.dc.html": {
       "x": 6450,
-      "y": 16181,
+      "y": 18541,
       "w": 1440,
       "h": 1859,
       "title": "PROG-002 Program Detail · Desktop",
@@ -242,7 +242,7 @@
     },
     "ProgramDetail-Mobile.dc.html": {
       "x": 7970,
-      "y": 16181,
+      "y": 18541,
       "w": 390,
       "h": 2382,
       "title": "PROG-002 Program Detail · Mobile",
@@ -250,8 +250,8 @@
       "is_interactive": true
     },
     "Journey.dc.html": {
-      "x": 0,
-      "y": 19605,
+      "x": 12510,
+      "y": 300,
       "w": 1440,
       "h": 1107,
       "title": "JNY-001 Understand your goal · Desktop",
@@ -260,8 +260,8 @@
       "expand": "fill"
     },
     "Journey-Mobile.dc.html": {
-      "x": 1520,
-      "y": 19605,
+      "x": 14030,
+      "y": 300,
       "w": 390,
       "h": 913,
       "title": "JNY-001 Understand your goal · Mobile",
@@ -269,8 +269,8 @@
       "is_interactive": true
     },
     "Journey-Know.dc.html": {
-      "x": 2150,
-      "y": 19605,
+      "x": 14660,
+      "y": 300,
       "w": 1440,
       "h": 920,
       "title": "JNY-002 What you already know · Desktop",
@@ -279,8 +279,8 @@
       "expand": "fill"
     },
     "Journey-Know-Mobile.dc.html": {
-      "x": 3670,
-      "y": 19605,
+      "x": 16180,
+      "y": 300,
       "w": 390,
       "h": 927,
       "title": "JNY-002 What you already know · Mobile",
@@ -288,8 +288,8 @@
       "is_interactive": true
     },
     "Journey-Building.dc.html": {
-      "x": 4300,
-      "y": 19605,
+      "x": 16810,
+      "y": 300,
       "w": 1440,
       "h": 900,
       "title": "JNY-003 AI builds your journey · building · Desktop",
@@ -298,8 +298,8 @@
       "expand": "fill"
     },
     "Journey-Building-Mobile.dc.html": {
-      "x": 5820,
-      "y": 19605,
+      "x": 18330,
+      "y": 300,
       "w": 390,
       "h": 844,
       "title": "JNY-003 AI builds your journey · building · Mobile",
@@ -307,8 +307,8 @@
       "is_interactive": true
     },
     "Journey-Ready.dc.html": {
-      "x": 6450,
-      "y": 19605,
+      "x": 18960,
+      "y": 300,
       "w": 1440,
       "h": 900,
       "title": "JNY-003 AI builds your journey · ready · Desktop",
@@ -317,8 +317,8 @@
       "expand": "fill"
     },
     "Journey-Ready-Mobile.dc.html": {
-      "x": 7970,
-      "y": 19605,
+      "x": 20480,
+      "y": 300,
       "w": 390,
       "h": 909,
       "title": "JNY-003 AI builds your journey · ready · Mobile",
@@ -326,8 +326,8 @@
       "is_interactive": true
     },
     "JourneyPlan.dc.html": {
-      "x": 0,
-      "y": 21312,
+      "x": 12510,
+      "y": 2707,
       "w": 1440,
       "h": 1539,
       "title": "JNY-004 Your journey · guest · Desktop",
@@ -336,8 +336,8 @@
       "expand": "fill"
     },
     "JourneyPlan-Mobile.dc.html": {
-      "x": 1520,
-      "y": 21312,
+      "x": 14030,
+      "y": 2707,
       "w": 390,
       "h": 1913,
       "title": "JNY-004 Your journey · guest · Mobile",
@@ -345,8 +345,8 @@
       "is_interactive": true
     },
     "JourneyPlan-Saved.dc.html": {
-      "x": 2150,
-      "y": 21312,
+      "x": 14660,
+      "y": 2707,
       "w": 1440,
       "h": 1539,
       "title": "JNY-004 Your journey · saved · Desktop",
@@ -355,8 +355,8 @@
       "expand": "fill"
     },
     "JourneyPlan-Saved-Mobile.dc.html": {
-      "x": 3670,
-      "y": 21312,
+      "x": 16180,
+      "y": 2707,
       "w": 390,
       "h": 1913,
       "title": "JNY-004 Your journey · saved · Mobile",
@@ -364,8 +364,8 @@
       "is_interactive": true
     },
     "JourneyPlan-Step1.dc.html": {
-      "x": 4300,
-      "y": 21312,
+      "x": 16810,
+      "y": 2707,
       "w": 1440,
       "h": 900,
       "title": "JNY-005 Step 1 started · Desktop",
@@ -374,8 +374,8 @@
       "expand": "fill"
     },
     "JourneyPlan-Step1-Mobile.dc.html": {
-      "x": 5820,
-      "y": 21312,
+      "x": 18330,
+      "y": 2707,
       "w": 390,
       "h": 844,
       "title": "JNY-005 Step 1 started · Mobile",
@@ -383,8 +383,8 @@
       "is_interactive": true
     },
     "JourneyPlan-Returning.dc.html": {
-      "x": 6450,
-      "y": 21312,
+      "x": 18960,
+      "y": 2707,
       "w": 1440,
       "h": 1187,
       "title": "RTN-001 Returning learner · new goal (= JNY-001, returning mode) · Desktop",
@@ -393,8 +393,8 @@
       "expand": "fill"
     },
     "JourneyPlan-Returning-Mobile.dc.html": {
-      "x": 7970,
-      "y": 21312,
+      "x": 20480,
+      "y": 2707,
       "w": 390,
       "h": 1169,
       "title": "RTN-001 Returning learner · new goal (= JNY-001, returning mode) · Mobile",
@@ -402,8 +402,8 @@
       "is_interactive": true
     },
     "OnbWelcome.dc.html": {
-      "x": 0,
-      "y": 23825,
+      "x": 12510,
+      "y": 5920,
       "w": 1440,
       "h": 820,
       "title": "ONB-001 Welcome · how are you joining? · Desktop",
@@ -412,8 +412,8 @@
       "expand": "fill"
     },
     "OnbWelcome-Mobile.dc.html": {
-      "x": 1520,
-      "y": 23825,
+      "x": 14030,
+      "y": 5920,
       "w": 390,
       "h": 920,
       "title": "ONB-001 Welcome · how are you joining? · Mobile",
@@ -421,8 +421,8 @@
       "is_interactive": true
     },
     "OnbAccount.dc.html": {
-      "x": 2150,
-      "y": 23825,
+      "x": 14660,
+      "y": 5920,
       "w": 1440,
       "h": 820,
       "title": "ONB-002 Create your account · Desktop",
@@ -431,8 +431,8 @@
       "expand": "fill"
     },
     "OnbAccount-Mobile.dc.html": {
-      "x": 3670,
-      "y": 23825,
+      "x": 16180,
+      "y": 5920,
       "w": 390,
       "h": 980,
       "title": "ONB-002 Create your account · Mobile",
@@ -440,8 +440,8 @@
       "is_interactive": true
     },
     "OnbInbox.dc.html": {
-      "x": 4300,
-      "y": 23825,
+      "x": 16810,
+      "y": 5920,
       "w": 1440,
       "h": 820,
       "title": "ONB-003 Check your inbox · Desktop",
@@ -450,8 +450,8 @@
       "expand": "fill"
     },
     "OnbInbox-Mobile.dc.html": {
-      "x": 5820,
-      "y": 23825,
+      "x": 18330,
+      "y": 5920,
       "w": 390,
       "h": 844,
       "title": "ONB-003 Check your inbox · Mobile",
@@ -459,8 +459,8 @@
       "is_interactive": true
     },
     "OnbVerified.dc.html": {
-      "x": 6450,
-      "y": 23825,
+      "x": 18960,
+      "y": 5920,
       "w": 1440,
       "h": 820,
       "title": "ONB-003v Email verified · Desktop",
@@ -469,8 +469,8 @@
       "expand": "fill"
     },
     "OnbVerified-Mobile.dc.html": {
-      "x": 7970,
-      "y": 23825,
+      "x": 20480,
+      "y": 5920,
       "w": 390,
       "h": 844,
       "title": "ONB-003v Email verified · Mobile",
@@ -478,8 +478,8 @@
       "is_interactive": true
     },
     "OnbPassword.dc.html": {
-      "x": 8600,
-      "y": 23825,
+      "x": 21110,
+      "y": 5920,
       "w": 1440,
       "h": 820,
       "title": "ONB-003c Choose a password · Desktop",
@@ -488,8 +488,8 @@
       "expand": "fill"
     },
     "OnbPassword-Mobile.dc.html": {
-      "x": 10120,
-      "y": 23825,
+      "x": 22630,
+      "y": 5920,
       "w": 390,
       "h": 844,
       "title": "ONB-003c Choose a password · Mobile",
@@ -497,8 +497,8 @@
       "is_interactive": true
     },
     "OnbAbout.dc.html": {
-      "x": 0,
-      "y": 25405,
+      "x": 12510,
+      "y": 8200,
       "w": 1440,
       "h": 820,
       "title": "ONB-004 About you · Desktop",
@@ -507,8 +507,8 @@
       "expand": "fill"
     },
     "OnbAbout-Mobile.dc.html": {
-      "x": 1520,
-      "y": 25405,
+      "x": 14030,
+      "y": 8200,
       "w": 390,
       "h": 914,
       "title": "ONB-004 About you · Mobile",
@@ -516,8 +516,8 @@
       "is_interactive": true
     },
     "OnbChoice.dc.html": {
-      "x": 2150,
-      "y": 25405,
+      "x": 14660,
+      "y": 8200,
       "w": 1440,
       "h": 820,
       "title": "ONB-004b Personalise or explore now · Desktop",
@@ -526,8 +526,8 @@
       "expand": "fill"
     },
     "OnbChoice-Mobile.dc.html": {
-      "x": 3670,
-      "y": 25405,
+      "x": 16180,
+      "y": 8200,
       "w": 390,
       "h": 844,
       "title": "ONB-004b Personalise or explore now · Mobile",
@@ -535,8 +535,8 @@
       "is_interactive": true
     },
     "OnbCoach.dc.html": {
-      "x": 4300,
-      "y": 25405,
+      "x": 16810,
+      "y": 8200,
       "w": 1440,
       "h": 820,
       "title": "ONB-005 Meet your AI Coach · Desktop",
@@ -545,8 +545,8 @@
       "expand": "fill"
     },
     "OnbCoach-Mobile.dc.html": {
-      "x": 5820,
-      "y": 25405,
+      "x": 18330,
+      "y": 8200,
       "w": 390,
       "h": 844,
       "title": "ONB-005 Meet your AI Coach · Mobile",
@@ -554,8 +554,8 @@
       "is_interactive": true
     },
     "OnbCoachStyle.dc.html": {
-      "x": 6450,
-      "y": 25405,
+      "x": 18960,
+      "y": 8200,
       "w": 1440,
       "h": 820,
       "title": "ONB-005b How should Nova help? · Desktop",
@@ -564,8 +564,8 @@
       "expand": "fill"
     },
     "OnbCoachStyle-Mobile.dc.html": {
-      "x": 7970,
-      "y": 25405,
+      "x": 20480,
+      "y": 8200,
       "w": 390,
       "h": 844,
       "title": "ONB-005b How should Nova help? · Mobile",
@@ -573,8 +573,8 @@
       "is_interactive": true
     },
     "OnbGoal.dc.html": {
-      "x": 0,
-      "y": 26919,
+      "x": 12510,
+      "y": 10414,
       "w": 1440,
       "h": 1167,
       "title": "ONB-006 Your goal (= JNY-001, onboarding mode) · Desktop",
@@ -583,8 +583,8 @@
       "expand": "fill"
     },
     "OnbGoal-Mobile.dc.html": {
-      "x": 1520,
-      "y": 26919,
+      "x": 14030,
+      "y": 10414,
       "w": 390,
       "h": 965,
       "title": "ONB-006 Your goal (= JNY-001, onboarding mode) · Mobile",
@@ -592,8 +592,8 @@
       "is_interactive": true
     },
     "OnbPrefs.dc.html": {
-      "x": 2150,
-      "y": 26919,
+      "x": 14660,
+      "y": 10414,
       "w": 1440,
       "h": 820,
       "title": "ONB-007 How you like to learn · Desktop",
@@ -602,8 +602,8 @@
       "expand": "fill"
     },
     "OnbPrefs-Mobile.dc.html": {
-      "x": 3670,
-      "y": 26919,
+      "x": 16180,
+      "y": 10414,
       "w": 390,
       "h": 1047,
       "title": "ONB-007 How you like to learn · Mobile",
@@ -611,8 +611,8 @@
       "is_interactive": true
     },
     "OnbStart.dc.html": {
-      "x": 4300,
-      "y": 26919,
+      "x": 16810,
+      "y": 10414,
       "w": 1440,
       "h": 980,
       "title": "ONB-008 What you already know (= JNY-002, onboarding mode) · Desktop",
@@ -621,8 +621,8 @@
       "expand": "fill"
     },
     "OnbStart-Mobile.dc.html": {
-      "x": 5820,
-      "y": 26919,
+      "x": 18330,
+      "y": 10414,
       "w": 390,
       "h": 935,
       "title": "ONB-008 What you already know (= JNY-002, onboarding mode) · Mobile",
@@ -630,8 +630,8 @@
       "is_interactive": true
     },
     "OnbBuilding.dc.html": {
-      "x": 0,
-      "y": 28686,
+      "x": 12510,
+      "y": 12881,
       "w": 1440,
       "h": 820,
       "title": "ONB-009 Nova builds your journey (= JNY-003 building, onboarding) · Desktop",
@@ -640,8 +640,8 @@
       "expand": "fill"
     },
     "OnbBuilding-Mobile.dc.html": {
-      "x": 1520,
-      "y": 28686,
+      "x": 14030,
+      "y": 12881,
       "w": 390,
       "h": 844,
       "title": "ONB-009 Nova builds your journey (= JNY-003 building, onboarding) · Mobile",
@@ -649,8 +649,8 @@
       "is_interactive": true
     },
     "OnbReady.dc.html": {
-      "x": 2150,
-      "y": 28686,
+      "x": 14660,
+      "y": 12881,
       "w": 1440,
       "h": 911,
       "title": "ONB-009b Your journey is ready (= JNY-003 ready, onboarding) · Desktop",
@@ -659,8 +659,8 @@
       "expand": "fill"
     },
     "OnbReady-Mobile.dc.html": {
-      "x": 3670,
-      "y": 28686,
+      "x": 16180,
+      "y": 12881,
       "w": 390,
       "h": 961,
       "title": "ONB-009b Your journey is ready (= JNY-003 ready, onboarding) · Mobile",
@@ -668,8 +668,8 @@
       "is_interactive": true
     },
     "OnbJourneyPro.dc.html": {
-      "x": 4300,
-      "y": 28686,
+      "x": 16810,
+      "y": 12881,
       "w": 1440,
       "h": 1539,
       "title": "ONB-010 Your starting journey · arrived from Pro pricing (= JNY-004 saved, Pro) · Desktop",
@@ -678,8 +678,8 @@
       "expand": "fill"
     },
     "OnbJourneyPro-Mobile.dc.html": {
-      "x": 5820,
-      "y": 28686,
+      "x": 18330,
+      "y": 12881,
       "w": 390,
       "h": 1987,
       "title": "ONB-010 Your starting journey · arrived from Pro pricing (= JNY-004 saved, Pro) · Mobile",
@@ -687,8 +687,8 @@
       "is_interactive": true
     },
     "OnbSaved.dc.html": {
-      "x": 6450,
-      "y": 28686,
+      "x": 18960,
+      "y": 12881,
       "w": 1440,
       "h": 820,
       "title": "ONB-011 Progress saved (Save & exit) · Desktop",
@@ -697,8 +697,8 @@
       "expand": "fill"
     },
     "OnbSaved-Mobile.dc.html": {
-      "x": 7970,
-      "y": 28686,
+      "x": 20480,
+      "y": 12881,
       "w": 390,
       "h": 844,
       "title": "ONB-011 Progress saved (Save & exit) · Mobile",
@@ -706,8 +706,8 @@
       "is_interactive": true
     },
     "InstCode.dc.html": {
-      "x": 0,
-      "y": 31273,
+      "x": 12510,
+      "y": 16168,
       "w": 1440,
       "h": 820,
       "title": "INST-001 Joining through your institution (= ONB-002, code variant) · Desktop",
@@ -716,8 +716,8 @@
       "expand": "fill"
     },
     "InstCode-Mobile.dc.html": {
-      "x": 1520,
-      "y": 31273,
+      "x": 14030,
+      "y": 16168,
       "w": 390,
       "h": 844,
       "title": "INST-001 Joining through your institution (= ONB-002, code variant) · Mobile",
@@ -725,8 +725,8 @@
       "is_interactive": true
     },
     "InstInvite.dc.html": {
-      "x": 2150,
-      "y": 31273,
+      "x": 14660,
+      "y": 16168,
       "w": 1440,
       "h": 820,
       "title": "INST-002 You’ve been invited · Desktop",
@@ -735,8 +735,8 @@
       "expand": "fill"
     },
     "InstInvite-Mobile.dc.html": {
-      "x": 3670,
-      "y": 31273,
+      "x": 16180,
+      "y": 16168,
       "w": 390,
       "h": 844,
       "title": "INST-002 You’ve been invited · Mobile",
@@ -744,8 +744,8 @@
       "is_interactive": true
     },
     "InstAccount.dc.html": {
-      "x": 4300,
-      "y": 31273,
+      "x": 16810,
+      "y": 16168,
       "w": 1440,
       "h": 820,
       "title": "INST-002b Create your account (= ONB-002, invite variant) · Desktop",
@@ -754,8 +754,8 @@
       "expand": "fill"
     },
     "InstAccount-Mobile.dc.html": {
-      "x": 5820,
-      "y": 31273,
+      "x": 18330,
+      "y": 16168,
       "w": 390,
       "h": 980,
       "title": "INST-002b Create your account (= ONB-002, invite variant) · Mobile",
@@ -763,8 +763,8 @@
       "is_interactive": true
     },
     "InstDone.dc.html": {
-      "x": 6450,
-      "y": 31273,
+      "x": 18960,
+      "y": 16168,
       "w": 1440,
       "h": 820,
       "title": "INST-003 You’re in, linked to your institution · Desktop",
@@ -773,8 +773,8 @@
       "expand": "fill"
     },
     "InstDone-Mobile.dc.html": {
-      "x": 7970,
-      "y": 31273,
+      "x": 20480,
+      "y": 16168,
       "w": 390,
       "h": 844,
       "title": "INST-003 You’re in, linked to your institution · Mobile",
@@ -782,8 +782,8 @@
       "is_interactive": true
     },
     "Dash-A.dc.html": {
-      "x": 0,
-      "y": 32853,
+      "x": 25020,
+      "y": 300,
       "w": 1440,
       "h": 1385,
       "title": "LRN-A Skipped everything: what would you like to learn? · Desktop",
@@ -792,8 +792,8 @@
       "expand": "fill"
     },
     "Dash-A-Mobile.dc.html": {
-      "x": 1520,
-      "y": 32853,
+      "x": 26540,
+      "y": 300,
       "w": 390,
       "h": 1778,
       "title": "LRN-A Skipped everything: what would you like to learn? · Mobile",
@@ -801,8 +801,8 @@
       "is_interactive": true
     },
     "Dash-A-Coach.dc.html": {
-      "x": 2150,
-      "y": 32853,
+      "x": 27170,
+      "y": 300,
       "w": 1440,
       "h": 900,
       "title": "LRN-A Unnamed AI Coach: naming from the header · Desktop",
@@ -811,8 +811,8 @@
       "expand": "fill"
     },
     "Dash-A-Coach-Mobile.dc.html": {
-      "x": 3670,
-      "y": 32853,
+      "x": 28690,
+      "y": 300,
       "w": 390,
       "h": 844,
       "title": "LRN-A Unnamed AI Coach: naming from the header · Mobile",
@@ -820,8 +820,8 @@
       "is_interactive": true
     },
     "Dash-R.dc.html": {
-      "x": 4300,
-      "y": 32853,
+      "x": 29320,
+      "y": 300,
       "w": 1440,
       "h": 1634,
       "title": "LRN-001 Journey ready (just finished onboarding with Nova) · Desktop",
@@ -830,8 +830,8 @@
       "expand": "fill"
     },
     "Dash-R-Mobile.dc.html": {
-      "x": 5820,
-      "y": 32853,
+      "x": 30840,
+      "y": 300,
       "w": 390,
       "h": 2007,
       "title": "LRN-001 Journey ready (just finished onboarding with Nova) · Mobile",
@@ -839,8 +839,8 @@
       "is_interactive": true
     },
     "Dash-B.dc.html": {
-      "x": 0,
-      "y": 35646,
+      "x": 25020,
+      "y": 3607,
       "w": 1440,
       "h": 1422,
       "title": "LRN-B Interests only · Desktop",
@@ -849,8 +849,8 @@
       "expand": "fill"
     },
     "Dash-B-Mobile.dc.html": {
-      "x": 1520,
-      "y": 35646,
+      "x": 26540,
+      "y": 3607,
       "w": 390,
       "h": 1814,
       "title": "LRN-B Interests only · Mobile",
@@ -858,8 +858,8 @@
       "is_interactive": true
     },
     "Dash-C.dc.html": {
-      "x": 2150,
-      "y": 35646,
+      "x": 27170,
+      "y": 3607,
       "w": 1440,
       "h": 1574,
       "title": "LRN-C Goal captured, no path yet · Desktop",
@@ -868,8 +868,8 @@
       "expand": "fill"
     },
     "Dash-C-Mobile.dc.html": {
-      "x": 3670,
-      "y": 35646,
+      "x": 28690,
+      "y": 3607,
       "w": 390,
       "h": 1824,
       "title": "LRN-C Goal captured, no path yet · Mobile",
@@ -877,8 +877,8 @@
       "is_interactive": true
     },
     "Dash-D.dc.html": {
-      "x": 4300,
-      "y": 35646,
+      "x": 29320,
+      "y": 3607,
       "w": 1440,
       "h": 2830,
       "title": "LRN-D Career Path selected (no AI journey) · Desktop",
@@ -887,8 +887,8 @@
       "expand": "fill"
     },
     "Dash-D-Mobile.dc.html": {
-      "x": 5820,
-      "y": 35646,
+      "x": 30840,
+      "y": 3607,
       "w": 390,
       "h": 3324,
       "title": "LRN-D Career Path selected (no AI journey) · Mobile",
@@ -896,8 +896,8 @@
       "is_interactive": true
     },
     "Dash-E.dc.html": {
-      "x": 0,
-      "y": 39570,
+      "x": 25020,
+      "y": 8231,
       "w": 1440,
       "h": 2830,
       "title": "LRN-E Active journey built with Nova (full dashboard) · Desktop",
@@ -906,8 +906,8 @@
       "expand": "fill"
     },
     "Dash-E-Mobile.dc.html": {
-      "x": 1520,
-      "y": 39570,
+      "x": 26540,
+      "y": 8231,
       "w": 390,
       "h": 3324,
       "title": "LRN-E Active journey built with Nova (full dashboard) · Mobile",
@@ -915,8 +915,8 @@
       "is_interactive": true
     },
     "Dash-F.dc.html": {
-      "x": 2150,
-      "y": 39570,
+      "x": 27170,
+      "y": 8231,
       "w": 1440,
       "h": 2662,
       "title": "LRN-F Course-only learner · Desktop",
@@ -925,8 +925,8 @@
       "expand": "fill"
     },
     "Dash-F-Mobile.dc.html": {
-      "x": 3670,
-      "y": 39570,
+      "x": 28690,
+      "y": 8231,
       "w": 390,
       "h": 3210,
       "title": "LRN-F Course-only learner · Mobile",
@@ -934,8 +934,8 @@
       "is_interactive": true
     },
     "Dash-G.dc.html": {
-      "x": 0,
-      "y": 43498,
+      "x": 25020,
+      "y": 12855,
       "w": 1440,
       "h": 2747,
       "title": "LRN-G Certification-first learner · Desktop",
@@ -944,8 +944,8 @@
       "expand": "fill"
     },
     "Dash-G-Mobile.dc.html": {
-      "x": 1520,
-      "y": 43498,
+      "x": 26540,
+      "y": 12855,
       "w": 390,
       "h": 3326,
       "title": "LRN-G Certification-first learner · Mobile",
@@ -953,8 +953,8 @@
       "is_interactive": true
     },
     "Dash-H.dc.html": {
-      "x": 2150,
-      "y": 43498,
+      "x": 27170,
+      "y": 12855,
       "w": 1440,
       "h": 2707,
       "title": "LRN-H Learning Program learner (Pro) · Desktop",
@@ -963,8 +963,8 @@
       "expand": "fill"
     },
     "Dash-H-Mobile.dc.html": {
-      "x": 3670,
-      "y": 43498,
+      "x": 28690,
+      "y": 12855,
       "w": 390,
       "h": 3284,
       "title": "LRN-H Learning Program learner (Pro) · Mobile",
@@ -972,8 +972,8 @@
       "is_interactive": true
     },
     "Dash-I.dc.html": {
-      "x": 0,
-      "y": 47424,
+      "x": 25020,
+      "y": 17481,
       "w": 1440,
       "h": 2793,
       "title": "LRN-I Returning learner (9 days away) · Desktop",
@@ -982,8 +982,8 @@
       "expand": "fill"
     },
     "Dash-I-Mobile.dc.html": {
-      "x": 1520,
-      "y": 47424,
+      "x": 26540,
+      "y": 17481,
       "w": 390,
       "h": 3263,
       "title": "LRN-I Returning learner (9 days away) · Mobile",
@@ -991,8 +991,8 @@
       "is_interactive": true
     },
     "Dash-E-Nova.dc.html": {
-      "x": 2150,
-      "y": 47424,
+      "x": 27170,
+      "y": 17481,
       "w": 1440,
       "h": 900,
       "title": "LRN-E Ask Nova: Do I have enough DLP to finish my path? · Desktop",
@@ -1001,8 +1001,8 @@
       "expand": "fill"
     },
     "Dash-E-Nova-Mobile.dc.html": {
-      "x": 3670,
-      "y": 47424,
+      "x": 28690,
+      "y": 17481,
       "w": 390,
       "h": 844,
       "title": "LRN-E Ask Nova: Do I have enough DLP to finish my path? · Mobile",
@@ -1010,8 +1010,8 @@
       "is_interactive": true
     },
     "Usage.dc.html": {
-      "x": 0,
-      "y": 51287,
+      "x": 25020,
+      "y": 22044,
       "w": 1440,
       "h": 900,
       "title": "DLP usage · My learning allowance · Desktop",
@@ -1020,8 +1020,8 @@
       "expand": "fill"
     },
     "Usage-Mobile.dc.html": {
-      "x": 1520,
-      "y": 51287,
+      "x": 26540,
+      "y": 22044,
       "w": 390,
       "h": 1100,
       "title": "DLP usage · My learning allowance · Mobile",
@@ -1029,8 +1029,8 @@
       "is_interactive": true
     },
     "Dash-E-Wallets.dc.html": {
-      "x": 2150,
-      "y": 51287,
+      "x": 27170,
+      "y": 22044,
       "w": 1440,
       "h": 900,
       "title": "LRN-E Wallets open: DLP, Marketplace Credits, MFORGE · Desktop",
@@ -1039,8 +1039,8 @@
       "expand": "fill"
     },
     "Dash-E-Wallets-Mobile.dc.html": {
-      "x": 3670,
-      "y": 51287,
+      "x": 28690,
+      "y": 22044,
       "w": 390,
       "h": 844,
       "title": "LRN-E Wallets open: DLP, Marketplace Credits, MFORGE · Mobile",
@@ -1048,8 +1048,8 @@
       "is_interactive": true
     },
     "Dash-E-LAS.dc.html": {
-      "x": 4300,
-      "y": 51287,
+      "x": 29320,
+      "y": 22044,
       "w": 1440,
       "h": 900,
       "title": "LRN-E LAS breakdown · Desktop",
@@ -1058,8 +1058,8 @@
       "expand": "fill"
     },
     "Dash-E-LAS-Mobile.dc.html": {
-      "x": 5820,
-      "y": 51287,
+      "x": 30840,
+      "y": 22044,
       "w": 390,
       "h": 844,
       "title": "LRN-E LAS breakdown · Mobile",
@@ -1067,8 +1067,8 @@
       "is_interactive": true
     },
     "Dash-S2.dc.html": {
-      "x": 6450,
-      "y": 51287,
+      "x": 31470,
+      "y": 22044,
       "w": 1440,
       "h": 2777,
       "title": "LRN-S2 Season closed: calculating rewards · Desktop",
@@ -1077,8 +1077,8 @@
       "expand": "fill"
     },
     "Dash-S2-Mobile.dc.html": {
-      "x": 7970,
-      "y": 51287,
+      "x": 32990,
+      "y": 22044,
       "w": 390,
       "h": 3264,
       "title": "LRN-S2 Season closed: calculating rewards · Mobile",
@@ -1086,8 +1086,8 @@
       "is_interactive": true
     },
     "Dash-S3.dc.html": {
-      "x": 8600,
-      "y": 51287,
+      "x": 33620,
+      "y": 22044,
       "w": 1440,
       "h": 2791,
       "title": "LRN-S3 Season rewards ready · Desktop",
@@ -1096,8 +1096,8 @@
       "expand": "fill"
     },
     "Dash-S3-Mobile.dc.html": {
-      "x": 10120,
-      "y": 51287,
+      "x": 35140,
+      "y": 22044,
       "w": 390,
       "h": 3285,
       "title": "LRN-S3 Season rewards ready · Mobile",
@@ -1105,8 +1105,8 @@
       "is_interactive": true
     },
     "Dash-M.dc.html": {
-      "x": 10750,
-      "y": 51287,
+      "x": 35770,
+      "y": 22044,
       "w": 1440,
       "h": 2830,
       "title": "LRN-M MFORGE not yet eligible (3 of 4) · Desktop",
@@ -1115,8 +1115,8 @@
       "expand": "fill"
     },
     "Dash-M-Mobile.dc.html": {
-      "x": 12270,
-      "y": 51287,
+      "x": 37290,
+      "y": 22044,
       "w": 390,
       "h": 3324,
       "title": "LRN-M MFORGE not yet eligible (3 of 4) · Mobile",
@@ -1124,8 +1124,8 @@
       "is_interactive": true
     },
     "Dash-W.dc.html": {
-      "x": 0,
-      "y": 55211,
+      "x": 25020,
+      "y": 26668,
       "w": 1440,
       "h": 2922,
       "title": "LRN-W Running low on DLP · Desktop",
@@ -1134,8 +1134,8 @@
       "expand": "fill"
     },
     "Dash-W-Mobile.dc.html": {
-      "x": 1520,
-      "y": 55211,
+      "x": 26540,
+      "y": 26668,
       "w": 390,
       "h": 3472,
       "title": "LRN-W Running low on DLP · Mobile",
@@ -1143,8 +1143,8 @@
       "is_interactive": true
     },
     "Dash-L.dc.html": {
-      "x": 2150,
-      "y": 55211,
+      "x": 27170,
+      "y": 26668,
       "w": 1440,
       "h": 1786,
       "title": "LRN-L Allowance used: ready for the next step · Desktop",
@@ -1153,8 +1153,8 @@
       "expand": "fill"
     },
     "Dash-L-Mobile.dc.html": {
-      "x": 3670,
-      "y": 55211,
+      "x": 28690,
+      "y": 26668,
       "w": 390,
       "h": 2201,
       "title": "LRN-L Allowance used: ready for the next step · Mobile",
@@ -1162,8 +1162,8 @@
       "is_interactive": true
     },
     "Acc-Free.dc.html": {
-      "x": 4300,
-      "y": 55211,
+      "x": 29320,
+      "y": 26668,
       "w": 1440,
       "h": 900,
       "title": "ACC-001 Course needs more DLP (Free learner) · Desktop",
@@ -1172,8 +1172,8 @@
       "expand": "fill"
     },
     "Acc-Free-Mobile.dc.html": {
-      "x": 5820,
-      "y": 55211,
+      "x": 30840,
+      "y": 26668,
       "w": 390,
       "h": 980,
       "title": "ACC-001 Course needs more DLP (Free learner) · Mobile",
@@ -1181,8 +1181,8 @@
       "is_interactive": true
     },
     "Acc-Pro.dc.html": {
-      "x": 6450,
-      "y": 55211,
+      "x": 31470,
+      "y": 26668,
       "w": 1440,
       "h": 900,
       "title": "ACC-002 Course needs more DLP (Pro learner: top up, not upgrade) · Desktop",
@@ -1191,8 +1191,8 @@
       "expand": "fill"
     },
     "Acc-Pro-Mobile.dc.html": {
-      "x": 7970,
-      "y": 55211,
+      "x": 32990,
+      "y": 26668,
       "w": 390,
       "h": 980,
       "title": "ACC-002 Course needs more DLP (Pro learner: top up, not upgrade) · Mobile",
@@ -1200,8 +1200,8 @@
       "is_interactive": true
     },
     "Acc-Zero.dc.html": {
-      "x": 8600,
-      "y": 55211,
+      "x": 33620,
+      "y": 26668,
       "w": 1440,
       "h": 900,
       "title": "ACC-003 Zero DLP: you’re ready for the next step · Desktop",
@@ -1210,8 +1210,8 @@
       "expand": "fill"
     },
     "Acc-Zero-Mobile.dc.html": {
-      "x": 10120,
-      "y": 55211,
+      "x": 35140,
+      "y": 26668,
       "w": 390,
       "h": 970,
       "title": "ACC-003 Zero DLP: you’re ready for the next step · Mobile",
@@ -1219,8 +1219,8 @@
       "is_interactive": true
     },
     "Acc-Low.dc.html": {
-      "x": 10750,
-      "y": 55211,
+      "x": 35770,
+      "y": 26668,
       "w": 1440,
       "h": 900,
       "title": "ACC-004 Low DLP during a lesson (non-blocking) · Desktop",
@@ -1229,8 +1229,8 @@
       "expand": "fill"
     },
     "Acc-Low-Mobile.dc.html": {
-      "x": 12270,
-      "y": 55211,
+      "x": 37290,
+      "y": 26668,
       "w": 390,
       "h": 844,
       "title": "ACC-004 Low DLP during a lesson (non-blocking) · Mobile",
@@ -1238,8 +1238,8 @@
       "is_interactive": true
     },
     "Chk-001.dc.html": {
-      "x": 0,
-      "y": 59283,
+      "x": 39680,
+      "y": 300,
       "w": 1440,
       "h": 820,
       "title": "CHK-001 Choose Basic from Pricing: create account first · Desktop",
@@ -1248,8 +1248,8 @@
       "expand": "fill"
     },
     "Chk-001-Mobile.dc.html": {
-      "x": 1520,
-      "y": 59283,
+      "x": 41200,
+      "y": 300,
       "w": 390,
       "h": 844,
       "title": "CHK-001 Choose Basic from Pricing: create account first · Mobile",
@@ -1257,8 +1257,8 @@
       "is_interactive": true
     },
     "Chk-001p.dc.html": {
-      "x": 2150,
-      "y": 59283,
+      "x": 41830,
+      "y": 300,
       "w": 1440,
       "h": 820,
       "title": "CHK-001 Choose Pro from Pricing: create account first · Desktop",
@@ -1267,8 +1267,8 @@
       "expand": "fill"
     },
     "Chk-001p-Mobile.dc.html": {
-      "x": 3670,
-      "y": 59283,
+      "x": 43350,
+      "y": 300,
       "w": 390,
       "h": 844,
       "title": "CHK-001 Choose Pro from Pricing: create account first · Mobile",
@@ -1276,8 +1276,8 @@
       "is_interactive": true
     },
     "Chk-002.dc.html": {
-      "x": 4300,
-      "y": 59283,
+      "x": 43980,
+      "y": 300,
       "w": 1440,
       "h": 820,
       "title": "CHK-002 Pro after onboarding: plan · Desktop",
@@ -1286,8 +1286,8 @@
       "expand": "fill"
     },
     "Chk-002-Mobile.dc.html": {
-      "x": 5820,
-      "y": 59283,
+      "x": 45500,
+      "y": 300,
       "w": 390,
       "h": 900,
       "title": "CHK-002 Pro after onboarding: plan · Mobile",
@@ -1295,8 +1295,8 @@
       "is_interactive": true
     },
     "Chk-002-Pay.dc.html": {
-      "x": 6450,
-      "y": 59283,
+      "x": 46130,
+      "y": 300,
       "w": 1440,
       "h": 820,
       "title": "CHK-002 Pro after onboarding: payment · Desktop",
@@ -1305,8 +1305,8 @@
       "expand": "fill"
     },
     "Chk-002-Pay-Mobile.dc.html": {
-      "x": 7970,
-      "y": 59283,
+      "x": 47650,
+      "y": 300,
       "w": 390,
       "h": 960,
       "title": "CHK-002 Pro after onboarding: payment · Mobile",
@@ -1314,8 +1314,8 @@
       "is_interactive": true
     },
     "Chk-002-Review.dc.html": {
-      "x": 8600,
-      "y": 59283,
+      "x": 48280,
+      "y": 300,
       "w": 1440,
       "h": 820,
       "title": "CHK-002 Pro after onboarding: review and pay · Desktop",
@@ -1324,8 +1324,8 @@
       "expand": "fill"
     },
     "Chk-002-Review-Mobile.dc.html": {
-      "x": 10120,
-      "y": 59283,
+      "x": 49800,
+      "y": 300,
       "w": 390,
       "h": 844,
       "title": "CHK-002 Pro after onboarding: review and pay · Mobile",
@@ -1333,8 +1333,8 @@
       "is_interactive": true
     },
     "Chk-Processing.dc.html": {
-      "x": 10750,
-      "y": 59283,
+      "x": 50430,
+      "y": 300,
       "w": 1440,
       "h": 820,
       "title": "CHK Processing payment (shared) · Desktop",
@@ -1343,8 +1343,8 @@
       "expand": "fill"
     },
     "Chk-Processing-Mobile.dc.html": {
-      "x": 12270,
-      "y": 59283,
+      "x": 51950,
+      "y": 300,
       "w": 390,
       "h": 844,
       "title": "CHK Processing payment (shared) · Mobile",
@@ -1352,8 +1352,8 @@
       "is_interactive": true
     },
     "Chk-004.dc.html": {
-      "x": 12900,
-      "y": 59283,
+      "x": 52580,
+      "y": 300,
       "w": 1440,
       "h": 820,
       "title": "CHK-004 Done: Pro, back to the journey · Desktop",
@@ -1362,8 +1362,8 @@
       "expand": "fill"
     },
     "Chk-004-Mobile.dc.html": {
-      "x": 14420,
-      "y": 59283,
+      "x": 54100,
+      "y": 300,
       "w": 390,
       "h": 844,
       "title": "CHK-004 Done: Pro, back to the journey · Mobile",
@@ -1371,8 +1371,8 @@
       "is_interactive": true
     },
     "Chk-003.dc.html": {
-      "x": 0,
-      "y": 60843,
+      "x": 39680,
+      "y": 2560,
       "w": 1440,
       "h": 820,
       "title": "CHK-003 Upgrade from the allowance moment · Desktop",
@@ -1381,8 +1381,8 @@
       "expand": "fill"
     },
     "Chk-003-Mobile.dc.html": {
-      "x": 1520,
-      "y": 60843,
+      "x": 41200,
+      "y": 2560,
       "w": 390,
       "h": 900,
       "title": "CHK-003 Upgrade from the allowance moment · Mobile",
@@ -1390,8 +1390,8 @@
       "is_interactive": true
     },
     "Chk-005.dc.html": {
-      "x": 2150,
-      "y": 60843,
+      "x": 41830,
+      "y": 2560,
       "w": 1440,
       "h": 820,
       "title": "CHK-005 Done: Basic, continue to the next stage · Desktop",
@@ -1400,8 +1400,8 @@
       "expand": "fill"
     },
     "Chk-005-Mobile.dc.html": {
-      "x": 3670,
-      "y": 60843,
+      "x": 43350,
+      "y": 2560,
       "w": 390,
       "h": 844,
       "title": "CHK-005 Done: Basic, continue to the next stage · Mobile",
@@ -1409,8 +1409,8 @@
       "is_interactive": true
     },
     "Chk-006.dc.html": {
-      "x": 4300,
-      "y": 60843,
+      "x": 43980,
+      "y": 2560,
       "w": 1440,
       "h": 820,
       "title": "CHK-006 Basic from the Data Analyst path · Desktop",
@@ -1419,8 +1419,8 @@
       "expand": "fill"
     },
     "Chk-006-Mobile.dc.html": {
-      "x": 5820,
-      "y": 60843,
+      "x": 45500,
+      "y": 2560,
       "w": 390,
       "h": 900,
       "title": "CHK-006 Basic from the Data Analyst path · Mobile",
@@ -1428,8 +1428,8 @@
       "is_interactive": true
     },
     "Chk-006p.dc.html": {
-      "x": 6450,
-      "y": 60843,
+      "x": 46130,
+      "y": 2560,
       "w": 1440,
       "h": 820,
       "title": "CHK-006 Pro from the Data Analyst path · Desktop",
@@ -1438,8 +1438,8 @@
       "expand": "fill"
     },
     "Chk-006p-Mobile.dc.html": {
-      "x": 7970,
-      "y": 60843,
+      "x": 47650,
+      "y": 2560,
       "w": 390,
       "h": 900,
       "title": "CHK-006 Pro from the Data Analyst path · Mobile",
@@ -1447,8 +1447,8 @@
       "is_interactive": true
     },
     "Chk-008.dc.html": {
-      "x": 8600,
-      "y": 60843,
+      "x": 48280,
+      "y": 2560,
       "w": 1440,
       "h": 820,
       "title": "CHK-008 Plan updated: return to the Data Analyst path · Desktop",
@@ -1457,8 +1457,8 @@
       "expand": "fill"
     },
     "Chk-008-Mobile.dc.html": {
-      "x": 10120,
-      "y": 60843,
+      "x": 49800,
+      "y": 2560,
       "w": 390,
       "h": 844,
       "title": "CHK-008 Plan updated: return to the Data Analyst path · Mobile",
@@ -1466,8 +1466,8 @@
       "is_interactive": true
     },
     "Chk-007.dc.html": {
-      "x": 0,
-      "y": 62403,
+      "x": 39680,
+      "y": 4760,
       "w": 1440,
       "h": 820,
       "title": "CHK-007 Choose Basic from your plan page · Desktop",
@@ -1476,8 +1476,8 @@
       "expand": "fill"
     },
     "Chk-007-Mobile.dc.html": {
-      "x": 1520,
-      "y": 62403,
+      "x": 41200,
+      "y": 4760,
       "w": 390,
       "h": 900,
       "title": "CHK-007 Choose Basic from your plan page · Mobile",
@@ -1485,8 +1485,8 @@
       "is_interactive": true
     },
     "Chk-007p.dc.html": {
-      "x": 2150,
-      "y": 62403,
+      "x": 41830,
+      "y": 4760,
       "w": 1440,
       "h": 820,
       "title": "CHK-007 Choose Pro from your plan page · Desktop",
@@ -1495,8 +1495,8 @@
       "expand": "fill"
     },
     "Chk-007p-Mobile.dc.html": {
-      "x": 3670,
-      "y": 62403,
+      "x": 43350,
+      "y": 4760,
       "w": 390,
       "h": 900,
       "title": "CHK-007 Choose Pro from your plan page · Mobile",
@@ -1504,8 +1504,8 @@
       "is_interactive": true
     },
     "Chk-TOP.dc.html": {
-      "x": 4300,
-      "y": 62403,
+      "x": 43980,
+      "y": 4760,
       "w": 1440,
       "h": 820,
       "title": "CHK-TOP Add DLP without changing plan · Desktop",
@@ -1514,8 +1514,8 @@
       "expand": "fill"
     },
     "Chk-TOP-Mobile.dc.html": {
-      "x": 5820,
-      "y": 62403,
+      "x": 45500,
+      "y": 4760,
       "w": 390,
       "h": 844,
       "title": "CHK-TOP Add DLP without changing plan · Mobile",
@@ -1523,8 +1523,8 @@
       "is_interactive": true
     },
     "Chk-TOP-done.dc.html": {
-      "x": 6450,
-      "y": 62403,
+      "x": 46130,
+      "y": 4760,
       "w": 1440,
       "h": 820,
       "title": "CHK-TOP Top-up done: back to the course · Desktop",
@@ -1533,8 +1533,8 @@
       "expand": "fill"
     },
     "Chk-TOP-done-Mobile.dc.html": {
-      "x": 7970,
-      "y": 62403,
+      "x": 47650,
+      "y": 4760,
       "w": 390,
       "h": 844,
       "title": "CHK-TOP Top-up done: back to the course · Mobile",
@@ -1542,8 +1542,8 @@
       "is_interactive": true
     },
     "Chk-Failed.dc.html": {
-      "x": 0,
-      "y": 63903,
+      "x": 39680,
+      "y": 6960,
       "w": 1440,
       "h": 820,
       "title": "CHK Payment didn’t go through (not charged) · Desktop",
@@ -1552,8 +1552,8 @@
       "expand": "fill"
     },
     "Chk-Failed-Mobile.dc.html": {
-      "x": 1520,
-      "y": 63903,
+      "x": 41200,
+      "y": 6960,
       "w": 390,
       "h": 844,
       "title": "CHK Payment didn’t go through (not charged) · Mobile",
@@ -1561,8 +1561,8 @@
       "is_interactive": true
     },
     "Pricing.dc.html": {
-      "x": 0,
-      "y": 65347,
+      "x": 39680,
+      "y": 9104,
       "w": 1440,
       "h": 5569,
       "title": "PRC-001 → 011 Pricing: plans, compare, Enterprise, top-ups, DLP, rollover, AI, rewards, FAQ · Desktop",
@@ -1571,8 +1571,8 @@
       "expand": "fill"
     },
     "Pricing-Mobile.dc.html": {
-      "x": 1520,
-      "y": 65347,
+      "x": 41200,
+      "y": 9104,
       "w": 390,
       "h": 6600,
       "title": "PRC-001 → 011 Pricing: plans, compare, Enterprise, top-ups, DLP, rollover, AI, rewards, FAQ · Mobile",
@@ -1580,8 +1580,8 @@
       "is_interactive": true
     },
     "Prc-M-free.dc.html": {
-      "x": 0,
-      "y": 72547,
+      "x": 39680,
+      "y": 17004,
       "w": 1440,
       "h": 2292,
       "title": "PRC Mode 2 · Signed-in Free learner · Desktop",
@@ -1590,8 +1590,8 @@
       "expand": "fill"
     },
     "Prc-M-free-Mobile.dc.html": {
-      "x": 1520,
-      "y": 72547,
+      "x": 41200,
+      "y": 17004,
       "w": 390,
       "h": 2708,
       "title": "PRC Mode 2 · Signed-in Free learner · Mobile",
@@ -1599,8 +1599,8 @@
       "is_interactive": true
     },
     "Prc-M-basic.dc.html": {
-      "x": 2150,
-      "y": 72547,
+      "x": 41830,
+      "y": 17004,
       "w": 1440,
       "h": 2292,
       "title": "PRC Mode 2 · Signed-in Basic learner · Desktop",
@@ -1609,8 +1609,8 @@
       "expand": "fill"
     },
     "Prc-M-basic-Mobile.dc.html": {
-      "x": 3670,
-      "y": 72547,
+      "x": 43350,
+      "y": 17004,
       "w": 390,
       "h": 2708,
       "title": "PRC Mode 2 · Signed-in Basic learner · Mobile",
@@ -1618,8 +1618,8 @@
       "is_interactive": true
     },
     "Prc-M-pro.dc.html": {
-      "x": 4300,
-      "y": 72547,
+      "x": 43980,
+      "y": 17004,
       "w": 1440,
       "h": 2302,
       "title": "PRC Mode 2 · Signed-in Pro learner (no upgrade push) · Desktop",
@@ -1628,8 +1628,8 @@
       "expand": "fill"
     },
     "Prc-M-pro-Mobile.dc.html": {
-      "x": 5820,
-      "y": 72547,
+      "x": 45500,
+      "y": 17004,
       "w": 390,
       "h": 2708,
       "title": "PRC Mode 2 · Signed-in Pro learner (no upgrade push) · Mobile",
@@ -1637,8 +1637,8 @@
       "is_interactive": true
     },
     "Prc-C-path.dc.html": {
-      "x": 6450,
-      "y": 72547,
+      "x": 46130,
+      "y": 17004,
       "w": 1440,
       "h": 2105,
       "title": "PRC Mode 3 · Plan options for the Data Analyst path · Desktop",
@@ -1647,8 +1647,8 @@
       "expand": "fill"
     },
     "Prc-C-path-Mobile.dc.html": {
-      "x": 7970,
-      "y": 72547,
+      "x": 47650,
+      "y": 17004,
       "w": 390,
       "h": 2464,
       "title": "PRC Mode 3 · Plan options for the Data Analyst path · Mobile",
@@ -1656,8 +1656,8 @@
       "is_interactive": true
     },
     "Creators.dc.html": {
-      "x": 0,
-      "y": 76155,
+      "x": 56490,
+      "y": 300,
       "w": 1440,
       "h": 4540,
       "title": "CRE-001 → 007 For Creators: hero, what you can create, Creator Studio, validation, earnings, creator services, who can create · Desktop",
@@ -1666,8 +1666,8 @@
       "expand": "fill"
     },
     "Creators-Mobile.dc.html": {
-      "x": 1520,
-      "y": 76155,
+      "x": 58010,
+      "y": 300,
       "w": 390,
       "h": 5720,
       "title": "CRE-001 → 007 For Creators: hero, what you can create, Creator Studio, validation, earnings, creator services, who can create · Mobile",
@@ -1675,8 +1675,8 @@
       "is_interactive": true
     },
     "Institutions.dc.html": {
-      "x": 0,
-      "y": 82775,
+      "x": 56490,
+      "y": 7320,
       "w": 1440,
       "h": 4680,
       "title": "ENT-001 → 009 For Institutions: hero, who it’s for, what you can do, AI settings, structure, credentials, validation, integration · Desktop",
@@ -1685,8 +1685,8 @@
       "expand": "fill"
     },
     "Institutions-Mobile.dc.html": {
-      "x": 1520,
-      "y": 82775,
+      "x": 58010,
+      "y": 7320,
       "w": 390,
       "h": 6000,
       "title": "ENT-001 → 009 For Institutions: hero, who it’s for, what you can do, AI settings, structure, credentials, validation, integration · Mobile",
@@ -1694,8 +1694,8 @@
       "is_interactive": true
     },
     "Partner.dc.html": {
-      "x": 0,
-      "y": 89675,
+      "x": 56490,
+      "y": 14620,
       "w": 1440,
       "h": 1740,
       "title": "ENT-010 Partner inquiry: form · Desktop",
@@ -1704,8 +1704,8 @@
       "expand": "fill"
     },
     "Partner-Mobile.dc.html": {
-      "x": 1520,
-      "y": 89675,
+      "x": 58010,
+      "y": 14620,
       "w": 390,
       "h": 2050,
       "title": "ENT-010 Partner inquiry: form · Mobile",
@@ -1713,8 +1713,8 @@
       "is_interactive": true
     },
     "Partner-Error.dc.html": {
-      "x": 2150,
-      "y": 89675,
+      "x": 58640,
+      "y": 14620,
       "w": 1440,
       "h": 1940,
       "title": "ENT-010 Partner inquiry: missing details · Desktop",
@@ -1723,8 +1723,8 @@
       "expand": "fill"
     },
     "Partner-Error-Mobile.dc.html": {
-      "x": 3670,
-      "y": 89675,
+      "x": 60160,
+      "y": 14620,
       "w": 390,
       "h": 2250,
       "title": "ENT-010 Partner inquiry: missing details · Mobile",
@@ -1732,8 +1732,8 @@
       "is_interactive": true
     },
     "Partner-Done.dc.html": {
-      "x": 4300,
-      "y": 89675,
+      "x": 60790,
+      "y": 14620,
       "w": 1440,
       "h": 1060,
       "title": "ENT-010 Partner inquiry: request sent · Desktop",
@@ -1742,8 +1742,8 @@
       "expand": "fill"
     },
     "Partner-Done-Mobile.dc.html": {
-      "x": 5820,
-      "y": 89675,
+      "x": 62310,
+      "y": 14620,
       "w": 390,
       "h": 1060,
       "title": "ENT-010 Partner inquiry: request sent · Mobile",
@@ -1751,8 +1751,8 @@
       "is_interactive": true
     },
     "Validation.dc.html": {
-      "x": 6450,
-      "y": 89675,
+      "x": 62940,
+      "y": 14620,
       "w": 1440,
       "h": 5120,
       "title": "TRST-001 → 008 How Validation Works: hero, statuses, review areas, journey, clarification, decision, versioning, for creators and validators · Desktop",
@@ -1761,8 +1761,8 @@
       "expand": "fill"
     },
     "Validation-Mobile.dc.html": {
-      "x": 7970,
-      "y": 89675,
+      "x": 64460,
+      "y": 14620,
       "w": 390,
       "h": 6190,
       "title": "TRST-001 → 008 How Validation Works: hero, statuses, review areas, journey, clarification, decision, versioning, for creators and validators · Mobile",
@@ -1770,8 +1770,8 @@
       "is_interactive": true
     },
     "Record.dc.html": {
-      "x": 0,
-      "y": 96765,
+      "x": 56490,
+      "y": 22110,
       "w": 1440,
       "h": 1080,
       "title": "TRST-006 Public Validation Record · Desktop",
@@ -1780,8 +1780,8 @@
       "expand": "fill"
     },
     "Record-Mobile.dc.html": {
-      "x": 1520,
-      "y": 96765,
+      "x": 58010,
+      "y": 22110,
       "w": 390,
       "h": 1630,
       "title": "TRST-006 Public Validation Record · Mobile",
@@ -1789,8 +1789,8 @@
       "is_interactive": true
     },
     "Dash-Backpack.dc.html": {
-      "x": 0,
-      "y": 99265,
+      "x": 56490,
+      "y": 25040,
       "w": 1440,
       "h": 900,
       "title": "TV-001 Digital Backpack · first credential, set up TruVault · Desktop",
@@ -1799,8 +1799,8 @@
       "expand": "fill"
     },
     "Dash-Backpack-Mobile.dc.html": {
-      "x": 1520,
-      "y": 99265,
+      "x": 58010,
+      "y": 25040,
       "w": 390,
       "h": 900,
       "title": "TV-001 Digital Backpack · first credential, set up TruVault · Mobile",
@@ -1808,8 +1808,8 @@
       "is_interactive": true
     },
     "Dash-Backpack-Later.dc.html": {
-      "x": 2150,
-      "y": 99265,
+      "x": 58640,
+      "y": 25040,
       "w": 1440,
       "h": 900,
       "title": "TV-001 Digital Backpack · TruVault later · Desktop",
@@ -1818,8 +1818,8 @@
       "expand": "fill"
     },
     "Dash-Backpack-Later-Mobile.dc.html": {
-      "x": 3670,
-      "y": 99265,
+      "x": 60160,
+      "y": 25040,
       "w": 390,
       "h": 900,
       "title": "TV-001 Digital Backpack · TruVault later · Mobile",
@@ -1827,8 +1827,8 @@
       "is_interactive": true
     },
     "Dash-Backpack-TV.dc.html": {
-      "x": 4300,
-      "y": 99265,
+      "x": 60790,
+      "y": 25040,
       "w": 1440,
       "h": 900,
       "title": "TV-001 Digital Backpack · TruVault connected · Desktop",
@@ -1837,8 +1837,8 @@
       "expand": "fill"
     },
     "Dash-Backpack-TV-Mobile.dc.html": {
-      "x": 5820,
-      "y": 99265,
+      "x": 62310,
+      "y": 25040,
       "w": 390,
       "h": 900,
       "title": "TV-001 Digital Backpack · TruVault connected · Mobile",
@@ -1846,8 +1846,8 @@
       "is_interactive": true
     },
     "Dash-Settings.dc.html": {
-      "x": 6450,
-      "y": 99265,
+      "x": 62940,
+      "y": 25040,
       "w": 1440,
       "h": 990,
       "title": "TV-002 Settings · TruVault & connections · Desktop",
@@ -1856,8 +1856,8 @@
       "expand": "fill"
     },
     "Dash-Settings-Mobile.dc.html": {
-      "x": 7970,
-      "y": 99265,
+      "x": 64460,
+      "y": 25040,
       "w": 390,
       "h": 1030,
       "title": "TV-002 Settings · TruVault & connections · Mobile",
@@ -1865,8 +1865,8 @@
       "is_interactive": true
     },
     "Dash-Tutor.dc.html": {
-      "x": 8600,
-      "y": 99265,
+      "x": 65090,
+      "y": 25040,
       "w": 1440,
       "h": 900,
       "title": "TUT-001 Ask Tutor · handover from the AI Coach · Desktop",
@@ -1875,8 +1875,8 @@
       "expand": "fill"
     },
     "Dash-Tutor-Mobile.dc.html": {
-      "x": 10120,
-      "y": 99265,
+      "x": 66610,
+      "y": 25040,
       "w": 390,
       "h": 900,
       "title": "TUT-001 Ask Tutor · handover from the AI Coach · Mobile",
@@ -1893,6 +1893,11 @@
     "view": "canvas"
   },
   "noteOrder": [
+    "col-1",
+    "col-2",
+    "col-3",
+    "col-4",
+    "col-5",
     "new-hero",
     "row-hero-c",
     "row-b1",
@@ -1933,7 +1938,7 @@
       "text": "NEW · hero v1 with planet illustration",
       "w": 260,
       "x": 0,
-      "y": -260
+      "y": 0
     },
     "row-hero-c": {
       "kind": "title1",
@@ -1942,11 +1947,11 @@
       "text": "Landing page · complete (12 sections + footer)",
       "w": 240,
       "x": 0,
-      "y": 100
+      "y": 360
     },
     "row-b1": {
       "x": 0,
-      "y": 8700,
+      "y": 9660,
       "text": "Batch 1 · Explore Learning and Browse Courses",
       "kind": "title1",
       "maxW": 1910,
@@ -1954,7 +1959,7 @@
     },
     "row-b2": {
       "x": 0,
-      "y": 12022,
+      "y": 13682,
       "text": "Batch 2 · Course detail and Career Paths",
       "kind": "title1",
       "maxW": 1910,
@@ -1962,207 +1967,207 @@
     },
     "row-b3": {
       "x": 0,
-      "y": 15881,
+      "y": 18241,
       "text": "Batch 3 · Certifications and Learning Programs",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b4": {
-      "x": 0,
-      "y": 19305,
+      "x": 12510,
+      "y": 0,
       "text": "Batch 4 · Start your journey (goal, what you know, AI builds it)",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b5": {
-      "x": 0,
-      "y": 21012,
+      "x": 12510,
+      "y": 2407,
       "text": "Batch 5 · Your journey (guest, saved, step 1 started, returning learner)",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b6": {
-      "x": 0,
-      "y": 23525,
+      "x": 12510,
+      "y": 5620,
       "text": "Batch 6 · Learner onboarding: welcome, account, inbox, verified (same screens as Link 1)",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b7": {
-      "x": 0,
-      "y": 25105,
+      "x": 12510,
+      "y": 7900,
       "text": "Batch 7 · Learner onboarding: about you, personalise or explore, meet your AI Coach (same screens as Link 1)",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b8": {
-      "x": 0,
-      "y": 26619,
+      "x": 12510,
+      "y": 10114,
       "text": "Batch 8 · Onboarding: goal and what you know reuse the Journey screens (onboarding mode); how you like to learn is new",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b9": {
-      "x": 0,
-      "y": 28386,
+      "x": 12510,
+      "y": 12581,
       "text": "Batch 9 · Nova builds, ready, starting journey (ONB-010 = the JNY-004 saved board above), from Pro pricing, progress saved",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b10": {
-      "x": 0,
-      "y": 30973,
+      "x": 12510,
+      "y": 15868,
       "text": "Batch 10 · Institution invite: code, invitation, create account, linked",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b11": {
-      "x": 0,
-      "y": 32553,
+      "x": 25020,
+      "y": 0,
       "text": "Batch 11 · Learner dashboard: new learner (skipped everything), unnamed AI Coach, journey ready",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b12": {
-      "x": 0,
-      "y": 35346,
+      "x": 25020,
+      "y": 3307,
       "text": "Batch 12 · Learner dashboard: interests only, goal without a path, Career Path in progress",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b13": {
-      "x": 0,
-      "y": 39270,
+      "x": 25020,
+      "y": 7931,
       "text": "Batch 13 · Learner dashboard: active journey built with Nova, course-only learner",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b14": {
-      "x": 0,
-      "y": 43198,
+      "x": 25020,
+      "y": 12555,
       "text": "Batch 14 · Learner dashboard: certification-first, learning program (Pro)",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b15": {
-      "x": 0,
-      "y": 47124,
+      "x": 25020,
+      "y": 17181,
       "text": "Batch 15 · Learner dashboard: returning learner, Ask Nova (DLP answer)",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b16": {
-      "x": 0,
-      "y": 50987,
+      "x": 25020,
+      "y": 21744,
       "text": "Batch 16 · Season and usage: wallets, LAS breakdown, season calculating / rewards ready, MFORGE not yet eligible, DLP usage",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b17": {
-      "x": 0,
-      "y": 54911,
+      "x": 25020,
+      "y": 26368,
       "text": "Batch 17 · Allowance shortfall: running low, allowance used, course needs more DLP (Free / Pro), zero DLP, low DLP in a lesson",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b18": {
-      "x": 0,
-      "y": 58983,
+      "x": 39680,
+      "y": 0,
       "text": "Batch 18 · Checkout: account first (Basic / Pro from pricing), Pro after onboarding (plan, payment, review), processing, done",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b19": {
-      "x": 0,
-      "y": 60543,
+      "x": 39680,
+      "y": 2260,
       "text": "Batch 19 · Checkout from the allowance moment and from the Data Analyst path",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b20": {
-      "x": 0,
-      "y": 62103,
+      "x": 39680,
+      "y": 4460,
       "text": "Batch 20 · Checkout from your plan page, and adding DLP without changing plan",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b21": {
-      "x": 0,
-      "y": 63603,
+      "x": 39680,
+      "y": 6660,
       "text": "Batch 21 · Checkout: payment didn’t go through (receipt prints on the done screens)",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b22": {
-      "x": 0,
-      "y": 65047,
+      "x": 39680,
+      "y": 8804,
       "text": "Batch 22 · Pricing page: plans, compare, Enterprise, top-ups, what DLP is, how DLP works",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b23": {
-      "x": 0,
-      "y": 72247,
+      "x": 39680,
+      "y": 16704,
       "text": "Batch 23 · Pricing for signed-in learners and from the Data Analyst path (same Pricing source, mode prop)",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b24": {
-      "x": 0,
-      "y": 75855,
+      "x": 56490,
+      "y": 0,
       "text": "Batch 24 · For Creators (one responsive source; Studio areas are clickable)",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b25": {
-      "x": 0,
-      "y": 82475,
+      "x": 56490,
+      "y": 7020,
       "text": "Batch 25 · For Institutions (one responsive source; workspace areas and AI switches are clickable)",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b26": {
-      "x": 0,
-      "y": 89375,
+      "x": 56490,
+      "y": 14320,
       "text": "Batch 26 · Partner inquiry (form, missing details, sent) and How Validation Works (journey steps are clickable)",
       "kind": "title1",
       "maxW": 8400,
       "page": "main"
     },
     "row-b27": {
-      "x": 0,
-      "y": 96465,
+      "x": 56490,
+      "y": 21810,
       "text": "Batch 27 · Public Validation Record (opened from the course page and How Validation Works)",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
     },
     "row-b28": {
-      "x": 0,
-      "y": 98965,
+      "x": 56490,
+      "y": 24740,
       "text": "Batch 28 · TruVault (first credential, later, connected, settings) and Ask Tutor (inside the learner dashboard; Dashboard source, page prop)",
       "kind": "title1",
       "maxW": 10500,
@@ -2173,16 +2178,56 @@
       "page": "main",
       "text": "NEW · WOW · Holographic gold seal: moves with the pointer, rainbow sheen and glint, certificate paper texture.",
       "w": 1910,
-      "x": 0,
-      "y": 96655
+      "x": 56490,
+      "y": 22000
     },
     "wow-vault": {
       "fill": "red",
       "page": "main",
       "text": "NEW · WOW · TruVault vault door: “Set up TruVault” (or Connect on the Later board) slides the credential into a 3D vault, the door swings shut, the wheel spins, bolts lock, glow + green check, “Secured in TruVault.”",
       "w": 1910,
+      "x": 56490,
+      "y": 24930
+    },
+    "col-1": {
       "x": 0,
-      "y": 99155
+      "y": -900,
+      "text": "1 · Landing page, discovery and course pages",
+      "kind": "title1",
+      "maxW": 10510,
+      "page": "main"
+    },
+    "col-2": {
+      "x": 12510,
+      "y": -900,
+      "text": "2 · Journey, onboarding and institution invite",
+      "kind": "title1",
+      "maxW": 10510,
+      "page": "main"
+    },
+    "col-3": {
+      "x": 25020,
+      "y": -900,
+      "text": "3 · Learner dashboard",
+      "kind": "title1",
+      "maxW": 12660,
+      "page": "main"
+    },
+    "col-4": {
+      "x": 39680,
+      "y": -900,
+      "text": "4 · Checkout and pricing",
+      "kind": "title1",
+      "maxW": 14810,
+      "page": "main"
+    },
+    "col-5": {
+      "x": 56490,
+      "y": -900,
+      "text": "5 · Creators, institutions, validation, TruVault and Ask Tutor",
+      "kind": "title1",
+      "maxW": 10510,
+      "page": "main"
     }
   },
   "order": [

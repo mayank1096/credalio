@@ -39,7 +39,6 @@ I = {
 ARR_S = ic('<path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path>', 16, 2.2)
 
 import lpages, wow
-SCENE_CSS = '.tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/b7fe5c1a1e0ae23ab09139f1d05e4281) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}\n.ds-main:has(.ds-scene){position:relative;isolation:isolate;flex:1}\n.ds-scene{-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 45%);mask-image:linear-gradient(180deg,transparent 0,#000 45%);opacity:.9;height:min(40vh,34vw);right:auto;width:calc(100vw - 264px)}\n@media (max-width: 1180px){.ds-scene{width:calc(100vw - 232px)}}\n@media (max-width: 960px){.ds-scene{width:100vw;left:-16px}}\n@media (max-width: 760px){.tk-scene{height:240px;background-size:250% auto;background-position:52% 100%}}'
 NAV = [(None, [('dash', 'Dashboard', 'Dashboard.dc.html'), ('explore', 'Explore learning', 'Explore.dc.html')]),
        ('Learning', [('learn', 'My learning', '#'), ('assign', 'Assignments', '#'), ('cal', 'Schedule', '#')]),
        ('Proof', [('pack', 'Digital Backpack', '#')]),
@@ -684,7 +683,6 @@ MARKUP = '''<div class="ds-root">
 <a href="#" class="lr-av" aria-label="Your account">AO</a>
 </header>
 <main class="ds-main">
-<sc-if value="{{pScene}}" hint-placeholder-val="{{ false }}"><div class="tk-scene ds-scene" aria-hidden="true"></div></sc-if>
 <sc-if value="{{pHome}}" hint-placeholder-val="{{ true }}">
 <div class="lr-head">
 <div><span class="lr-date">{{date}}</span><h1 class="lr-h1">{{greeting}}, Ada.</h1></div>
@@ -1193,7 +1191,6 @@ class Component extends DCLogic {
       reqs: [['Required learning', 2, 6], ['Practice labs', 1, 3], ['Assessments', 0, 2], ['Final evaluation', 0, 1, 1]].map(function (q) { return { t: q[0], n: q[3] ? '' : q[1] + ' of ' + q[2], of: q[2], open: !q[3], lock: !!q[3], cls: q[3] ? 'lock' : (q[1] ? '' : 'zero'),
         seg: Array.apply(null, Array(q[2])).map(function (x, i) { return { c: i < q[1] ? 'd' : '' }; }) }; }),
       lead: [['Data Analyst', '6–8 months · 8 courses', 'PathDetail.dc.html'], ['AI Engineer', '8–10 months · 8 courses', 'PathDetail.dc.html'], ['Data Scientist', '9–12 months · 9 courses', 'CareerPaths.dc.html']].map(function (l) { return { t: l[0], d: l[1], href: l[2] }; }),
-      pScene: S.page === 'backpack' || S.page === 'usage',
       pHome: !S.page || S.page === 'home', pUsage: S.page === 'usage',''' + lpages.JS_VALS + r'''
       navDash: !S.page || S.page === 'home' ? 'ds-on' : '', navDashCur: !S.page || S.page === 'home' ? 'page' : 'false', navWal: S.page === 'usage' ? 'ds-on' : '', navWalCur: S.page === 'usage' ? 'page' : 'false',
       walOpen: S.wal, walExp: S.wal ? 'true' : 'false', pillOn: S.wal ? 'tp-on' : '', isLow: st === 'W' || st === 'L', lowT: st === 'L' ? 'You’ve used this month’s allowance. Your next 200 arrives on 1 October.' : 'Running low. Your next lesson uses about 200.', toggleWal: function () { self.setState({ wal: !S.wal }); },
@@ -1236,7 +1233,7 @@ HTML = '''<!doctype html>
 <helmet>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
-''' + KIT_CSS + '\n' + AUR_CSS + '\n' + CSS + '\n' + lpages.CSS + '\n' + wow.VAULT_CSS + '\n' + SCENE_CSS + '''</style>
+''' + KIT_CSS + '\n' + AUR_CSS + '\n' + CSS + '\n' + lpages.CSS + '\n' + wow.VAULT_CSS + '''</style>
 </helmet>
 ''' + MARKUP + '''
 </x-dc>

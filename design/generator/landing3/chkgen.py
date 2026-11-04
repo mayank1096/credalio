@@ -148,7 +148,7 @@ CSS = r'''body{margin:0;background:#FFFFFF}
 .ck-out h1{font-size:28px}
 .ck-out .ds-acts{position:static;margin:24px 0 0;padding:0;border:0;width:100%}
 }
-@media (max-width: 760px){.ck-pl{grid-template-columns:minmax(0,1fr);gap:16px}}
+@media (max-width: 760px){.ck-pl{grid-template-columns:minmax(0,1fr);gap:16px}.ck-pl.n3{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:22px}.ck-pl.n3 .ck-p{padding:14px 10px 12px;align-items:center;text-align:center}.ck-pl.n3 .hp-lab{display:none}.ck-pl.n3 .ck-p b{flex-direction:column;gap:6px;font-size:19px}.ck-pl.n3 .ck-p > .ds-tag{left:50%;transform:translateX(-50%);font-size:11px;height:22px;padding:0 8px}.ck-pl.n3 .xb-ck{top:8px;right:8px;width:18px;height:18px}.ck-pl.n3 .ck-pr{font-size:12.5px}.wf-tot{flex-wrap:wrap;row-gap:2px}.wf-tot small{width:100%;margin-left:0}}
 '''
 
 STEPS = '<ol class="cl-steps" aria-label="Steps"><sc-for list="{{steps}}" as="s" hint-placeholder-count="3"><li class="{{s.cls}}"><i></i><span>{{s.t}}</span></li></sc-for></ol>'
@@ -256,7 +256,7 @@ JS = r'''
 class Component extends DCLogic {
   constructor(props) {
     super(props); var p = props || {};
-    this.state = { step: p.step || 'plan', plan: p.plan || 'pro', pkg: 1000, method: 'card', email: '' };
+    this.state = { step: p.step || 'plan', plan: p.plan || 'pro', pkg: p.from === 'course' ? 500 : 1000, method: 'card', email: '' };
   }
   componentWillUnmount() { clearTimeout(this._t); }
   renderVals() {
@@ -272,11 +272,11 @@ class Component extends DCLogic {
     var CTX = { pricing: ['Pick a plan and create your account. It takes about a minute.', 'Then a few quick questions'], onboarding: ['You chose Pro while building your journey. Set up your plan, then start learning.', 'Then back to your journey'],
       allowance: ['Upgrade to keep going with your Data Analyst journey. Your progress is saved.', 'Then back to SQL for Data Analysis'], path: ['Pick the plan that fits your Data Analyst path. The whole path needs about 3,800 DLP.', 'Then back to the Data Analyst path'],
       account: ['Change your plan. The new allowance starts straight away.', 'Then back to your allowance'], course: ['Add the DLP you need for Advanced Analytics with Python. Your plan stays the same.', 'Then back to your course'] }[from] || ['', ''];
-    var NEXT = { pricing: ['Personalise Credalio', 'OnbAbout.dc.html'], onboarding: ['Start my journey', 'Dash-R.dc.html'], allowance: ['Continue to SQL for Data Analysis', 'Dash-E.dc.html'], path: ['Back to the Data Analyst path', 'PathDetail-Learner.dc.html'], account: ['Back to my allowance', 'Usage.dc.html'], course: ['Back to Advanced Analytics with Python', 'CourseDetail-Learner.dc.html'] }[from];
-    var base = { course: 150, allowance: 0, account: 1460 }[from]; if (base === undefined) base = 200;
+    var NEXT = { pricing: ['Personalise Credalio', 'OnbAbout.dc.html'], onboarding: ['Start my journey', 'Dash-R.dc.html'], allowance: ['Continue to SQL for Data Analysis', 'Dash-E.dc.html'], path: ['Back to the Data Analyst path', 'PathDetail-Learner.dc.html'], account: ['Back to my allowance', 'Usage.dc.html'], course: ['Back to the course', 'CourseDetail-Learner.dc.html'] }[from];
+    var base = { course: 150, allowance: 0 }[from]; if (base === undefined) base = 200;
     var pl = P[S.plan] || P.pro, price = top ? TOP[S.pkg] : pl.price, add = top ? S.pkg : pl.dlp;
     var go = function (s) { return function (e) { if (e && e.preventDefault) e.preventDefault(); self.setState({ step: s }); }; };
-    var tiles = top ? [500, 1000, 2500].map(function (n) { var on = S.pkg === n; return { name: f(n) + ' DLP', dlp: f(n), sub: '$' + TOP[n] + ' · one time', on: on ? 'true' : 'false', cls: on ? 'xb-on' : '', hasTag: n === 1000, tag: 'Most chosen', pick: function () { self.setState({ pkg: n }); } }; })
+    var tiles = top ? [500, 1000, 2500].map(function (n) { var on = S.pkg === n; return { name: 'About ' + (n / 100) + ' hours', dlp: f(n), sub: '$' + TOP[n] + ' · one time', on: on ? 'true' : 'false', cls: on ? 'xb-on' : '', hasTag: n === 1000, tag: 'Most chosen', pick: function () { self.setState({ pkg: n }); } }; })
       : ['basic', 'pro'].map(function (k) { var q = P[k], on = S.plan === k; return { name: q.name, dlp: f(q.dlp) + ' a month', sub: '$' + q.price + ' a month · about ' + q.hrs + ' learning hours', on: on ? 'true' : 'false', cls: on ? 'xb-on' : '', hasTag: k === 'pro', tag: 'Best for career paths', pick: function () { self.setState({ plan: k }); } }; });
     var ME = [['card', 'Card', 'Visa, Mastercard, Verve'], ['local', 'Local payment', 'Bank app, USSD or mobile money'], ['mforge', 'MFORGE', 'Pay from your TruVault']];
     return {
@@ -296,8 +296,8 @@ class Component extends DCLogic {
       payLabel: top ? 'Pay $' + price + ' and add DLP' : 'Pay $' + price + ' and start ' + pl.name,
       pay: function () { self.setState({ step: 'processing' }); clearTimeout(self._t); self._t = setTimeout(function () { self.setState({ step: 'done' }); }, 1800); },
       procT: top ? 'Adding ' + f(add) + ' DLP…' : 'Setting up your ' + pl.name + ' plan…',
-      hasFit: !top && (from === 'path' || from === 'allowance'), fitOk: !(from === 'path' && S.plan === 'basic'), fitPart: from === 'path' && S.plan === 'basic', fitCls: (from === 'path' && S.plan === 'basic') ? 'part' : '',
-      fit: from === 'allowance' ? (S.plan === 'basic' ? 'Stage 2 needs about 1,400 DLP. Basic covers it, with room to spare.' : 'Pro covers Stage 2 and most of what comes after it.') : (S.plan === 'basic' ? 'The path needs about 3,800 DLP. Basic covers it over about two months.' : 'The path needs about 3,800 DLP. Pro covers it in your first month.'),
+      hasFit: (!top && (from === 'path' || from === 'allowance')) || (top && from === 'course'), fitOk: !(from === 'path' && S.plan === 'basic'), fitPart: from === 'path' && S.plan === 'basic', fitCls: (from === 'path' && S.plan === 'basic') ? 'part' : '',
+      fit: top ? (S.pkg >= 250 ? 'You need 250 more for this course. ' + f(S.pkg) + ' covers it, with ' + f(S.pkg - 250) + ' to spare.' : '') : from === 'allowance' ? (S.plan === 'basic' ? 'Stage 2 needs about 1,400 DLP. Basic covers it, with room to spare.' : 'Pro covers Stage 2 and most of what comes after it.') : (S.plan === 'basic' ? 'The path needs about 3,800 DLP. Basic covers it over about two months.' : 'The path needs about 3,800 DLP. Pro covers it in your first month.'),
       donePill: top ? 'DLP added' : ((from === 'path' || from === 'account') ? 'Plan updated' : 'Plan active'), doneT: top ? f(add) + ' DLP added.' : 'You’re on ' + pl.name + '.',
       doneB: top ? 'Your plan hasn’t changed. The extra DLP is ready to use now.' : ({ pricing: 'Next, tell us a little about what you want to learn, or explore straight away.', onboarding: 'Your starting journey is waiting for you.', allowance: 'Your Data Analyst journey is ready to continue.', path: 'Your Data Analyst path is ready to continue.', account: 'Your new allowance is ready to use.' }[from] || ''),
       walN: f(base + add), walSub: 'About ' + Math.round((base + add) / 100) + ' learning hours', walTag: top ? 'Plan unchanged' : pl.name + ' plan',

@@ -611,7 +611,7 @@ MARKUP = '''<div class="ds-root">
 <button type="button" class="ds-icon-btn ds-close" onClick="{{toggleNav}}" aria-label="Close menu">''' + ic('<path d="M6 6l12 12M18 6 6 18"></path>', 18, 2) + '''</button>
 ''' + sidebar() + '''
 <div class="lr-sfoot">
-<div class="lr-plan"><div><b>{{planName}}</b><span>{{planSub}}</span></div><a class="ds-link" href="#">{{planCta}}</a></div>
+<div class="lr-plan"><div><b>{{planName}}</b><span>{{planSub}}</span></div><a class="ds-link" href="{{planHref}}">{{planCta}}</a></div>
 <button type="button" class="ds-item" onClick="{{openPanel}}">''' + av('sm') + '''<span>{{coachNav}}</span></button>
 <a href="#" class="ds-item">''' + ic(I['help'], 19) + '''<span>Help &amp; support</span></a>
 <a href="#" class="ds-item">''' + ic(I['settings'], 19) + '''<span>Settings</span></a>
@@ -630,7 +630,7 @@ MARKUP = '''<div class="ds-root">
 <a class="lr-wr" href="Usage.dc.html">''' + coin(True) + '''<span><b>DLP</b><small>{{walDlpSub}}</small></span><strong>{{dlp}}</strong></a>
 <a class="lr-wr" href="#">''' + credit(True) + '''<span><b>Marketplace Credits</b><small>For lifetime access and more</small></span><strong>{{walCr}}</strong></a>
 <a class="lr-wr" href="#">''' + mforge(True) + '''<span><b>MFORGE</b><small>{{walMfSub}}</small></span><strong class="{{walMfCls}}">{{walMf}}</strong></a>
-<div class="lr-wal-f"><a class="ds-link" href="Usage.dc.html">Usage and activity</a><a class="ds-link" href="#">Get more DLP</a></div>
+<div class="lr-wal-f"><a class="ds-link" href="Usage.dc.html">Usage and activity</a><a class="ds-link" href="Chk-TOP.dc.html">Get more DLP</a></div>
 </div></sc-if></span>
 <button type="button" class="lr-coach" onClick="{{openPanel}}" aria-label="{{coachBtn}}">''' + av() + '''<span>{{coachBtn}}</span></button>
 <a href="#" class="ds-icon-btn" aria-label="Notifications, 1 new">''' + ic(I['bell'], 19) + '''<span class="lr-dot"></span></a>
@@ -651,7 +651,7 @@ MARKUP = '''<div class="ds-root">
 </div>
 
 <sc-if value="{{lowNote}}" hint-placeholder-val="{{ false }}">
-<div class="lr-low" role="status"><span class="lr-low-i" aria-hidden="true">!</span><p><b>You’re running low on DLP.</b> 180 left, and your next lesson uses about 200.''' + tip('Your Basic allowance of 2,000 DLP refreshes on 12 October. Until then, a top-up keeps you moving.') + '''</p><div class="lr-low-a"><a class="ds-link" href="Usage.dc.html">See usage</a><a class="ds-ghost sm" href="#">Get more DLP</a></div></div>
+<div class="lr-low" role="status"><span class="lr-low-i" aria-hidden="true">!</span><p><b>You’re running low on DLP.</b> 180 left, and your next lesson uses about 200.''' + tip('Your Basic allowance of 2,000 DLP refreshes on 12 October. Until then, a top-up keeps you moving.') + '''</p><div class="lr-low-a"><a class="ds-link" href="Usage.dc.html">See usage</a><a class="ds-ghost sm" href="Chk-TOP.dc.html">Get more DLP</a></div></div>
 </sc-if>
 
 <sc-if value="{{fAllow}}" hint-placeholder-val="{{ false }}">
@@ -880,7 +880,7 @@ MARKUP = '''<div class="ds-root">
 <span class="lr-bar lg"><i style="width: 73%"></i></span>
 <span class="lr-use-l"><span>1,460 of 2,000 left</span><span>540 used this month</span></span>
 </div>
-<div class="lr-fa lr-use-a"><a class="ds-ghost" href="#">Manage plan</a>''' + btn('Get more DLP', '#') + '''</div>
+<div class="lr-fa lr-use-a"><a class="ds-ghost" href="Chk-007p.dc.html">Manage plan</a>''' + btn('Get more DLP', 'Chk-TOP.dc.html') + '''</div>
 </section>
 <div class="lr-sec lr-g2">
 <section class="lr-card" aria-labelledby="lr-u1"><div class="lr-ch"><h3 id="lr-u1">This month</h3></div>
@@ -1126,7 +1126,7 @@ class Component extends DCLogic {
       nameSug: ['Nova', 'Maya', 'Alex', 'Sage'].map(function (n) { var on = S.draft.trim() === n, c = CHN[n]; return { label: n, src: c[0], l: c[1], t: c[2], w: c[3], on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { self.setState({ draft: n }); } }; }),
       saveName: function () { self.setState({ coach: S.draft.trim() || 'Nova', draft: '' }); },
       dlp: fmt(dlpN),
-      planName: { free: 'Free plan', basic: 'Basic plan', pro: 'Pro plan' }[tierK], planSub: fmt(allow) + ' DLP a month', planCta: tierK === 'pro' ? 'Manage' : 'Upgrade',
+      planName: { free: 'Free plan', basic: 'Basic plan', pro: 'Pro plan' }[tierK], planSub: fmt(allow) + ' DLP a month', planCta: tierK === 'pro' ? 'Manage' : 'Upgrade', planHref: tierK === 'free' ? 'Chk-007.dc.html' : 'Chk-007p.dc.html',
       hasAsg: isActive, asgN: AS.length,
       isNew: isNew, isActive: isActive, gs: gsv, gsDone: gs.filter(function (g) { return g[1] === 'd'; }).length,
       stats: [stat('In progress', counts[0], '', '#'), stat('Completed', counts[1], '', '#'), (st === 'I' ? stat('Last active', '9', 'days ago', '#') : stat('Streak', AD.streak, 'days', '#'))],
@@ -1175,7 +1175,7 @@ class Component extends DCLogic {
         .map(function (r) { return { k: r[0], isTag: r[1] === 'tag', tag: r[2] || '', tc: r[3] || '', hasTip: !!r[4], tipT: r[4] || '', sk: r[1] === 'sk', isCr: r[1] === 'cr', isMf: r[1] === 'mf', v: r[2] || '' }; }),
       showStrip: isActive || st === 'L', showML: isActive || st === 'L', showLocked: isNew || st === 'L', lowNote: st === 'W', fAllow: st === 'L', pillCls: (st === 'W' || st === 'L') ? 'low' : '',
       bpH: st === 'L' ? 'Your first credential is in.' : 'Your proof starts here.', bpP: st === 'L' ? 'Data Foundations is verified and ready to share.' : 'What you earn lands here, verified and ready to share.',
-      optN: 3, opts: [['Upgrade to Basic', '2,000 DLP every month, enough for Stage 2 and most of Stage 3.', 'Upgrade', 'Chk-003.dc.html', 1], ['Top up instead', 'Stay on Free and add only what Stage 2 needs.', 'Add DLP', '#', 0], ['Wait for your refresh', 'Your next 200 DLP arrives on 1 October. We’ll remind you.', 'Remind me', '#', 0]]
+      optN: 3, opts: [['Upgrade to Basic', '2,000 DLP every month, enough for Stage 2 and most of Stage 3.', 'Upgrade', 'Chk-003.dc.html', 1], ['Top up instead', 'Stay on Free and add only what Stage 2 needs.', 'Add DLP', 'Chk-TOP.dc.html', 0], ['Wait for your refresh', 'Your next 200 DLP arrives on 1 October. We’ll remind you.', 'Remind me', '#', 0]]
         .map(function (o) { return { t: o[0], d: o[1], cta: o[2], href: o[3], rec: !!o[4], plain: !o[4], cls: o[4] ? 'rec' : '' }; }),
       posts: posts, showBand: !named || (st !== 'A' && st !== 'B' && st !== 'L')
     };

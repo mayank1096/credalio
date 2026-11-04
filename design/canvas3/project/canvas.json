@@ -1464,6 +1464,82 @@
       "title": "CHK-008 Plan updated: return to the Data Analyst path · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Chk-007.dc.html": {
+      "x": 0,
+      "y": 62403,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-007 Choose Basic from your plan page · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-007-Mobile.dc.html": {
+      "x": 1520,
+      "y": 62403,
+      "w": 390,
+      "h": 900,
+      "title": "CHK-007 Choose Basic from your plan page · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Chk-007p.dc.html": {
+      "x": 2150,
+      "y": 62403,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-007 Choose Pro from your plan page · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-007p-Mobile.dc.html": {
+      "x": 3670,
+      "y": 62403,
+      "w": 390,
+      "h": 900,
+      "title": "CHK-007 Choose Pro from your plan page · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Chk-TOP.dc.html": {
+      "x": 4300,
+      "y": 62403,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-TOP Add DLP without changing plan · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-TOP-Mobile.dc.html": {
+      "x": 5820,
+      "y": 62403,
+      "w": 390,
+      "h": 844,
+      "title": "CHK-TOP Add DLP without changing plan · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Chk-TOP-done.dc.html": {
+      "x": 6450,
+      "y": 62403,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK-TOP Top-up done: back to the course · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-TOP-done-Mobile.dc.html": {
+      "x": 7970,
+      "y": 62403,
+      "w": 390,
+      "h": 844,
+      "title": "CHK-TOP Top-up done: back to the course · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -1495,7 +1571,8 @@
     "row-b16",
     "row-b17",
     "row-b18",
-    "row-b19"
+    "row-b19",
+    "row-b20"
   ],
   "notes": {
     "new-hero": {
@@ -1666,6 +1743,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b20": {
+      "x": 0,
+      "y": 62103,
+      "text": "Batch 20 · Checkout from your plan page, and adding DLP without changing plan",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -1822,7 +1907,15 @@
     "Chk-006p.dc.html",
     "Chk-006p-Mobile.dc.html",
     "Chk-008.dc.html",
-    "Chk-008-Mobile.dc.html"
+    "Chk-008-Mobile.dc.html",
+    "Chk-007.dc.html",
+    "Chk-007-Mobile.dc.html",
+    "Chk-007p.dc.html",
+    "Chk-007p-Mobile.dc.html",
+    "Chk-TOP.dc.html",
+    "Chk-TOP-Mobile.dc.html",
+    "Chk-TOP-done.dc.html",
+    "Chk-TOP-done-Mobile.dc.html"
   ],
   "pages": [
     {

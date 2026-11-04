@@ -28,24 +28,34 @@ WARN = '<span class="ci-ck" style="background: #FFF4E5; color: #B54708; font-siz
 DOOR = block(L, '<a class="ci-door ci-cr', 'a')
 SEAL = re.search(r'<svg width="11" height="11" viewBox="0 0 100 100">.*?</svg>', DOOR, re.S).group(0)
 FLOAT = re.search(r'<div class="ci-float".*?</div></div>|<div class="ci-float".*?£1,240 earned</span></span></div>', DOOR, re.S).group(0)
+CDH = open(P + 'CourseDetail.dc.html').read()
+GSEAL = re.search(r'<svg class="cd-seal".*?</svg>', CDH, re.S).group(0).replace('class="cd-seal"', 'class="cx-seal"').replace('cdGold', 'cxGold')
 HERO = '''<section class="cx-top" aria-labelledby="cx-h">
 <div class="ci-door ci-cr aur cx-hero">
 <div class="ci-copy">
 <h1 id="cx-h" class="ci-t">Share what you know.<br class="cx-br"> Earn from it.</h1>
 <p class="ci-d">Create with AI, get validated, and reach learners across Credalio.</p>
-<div class="cx-acts">''' + btn('Start creating', 'OnbWelcome.dc.html', 'ci-btn') + '''<a class="cx-wl" href="#cx-make">See what you can create</a></div>
+<div class="cx-acts">''' + btn('Start creating', 'OnbWelcome.dc.html', 'ci-btn wh') + '''<a class="cx-wl" href="#cx-make">See what you can create</a></div>
 </div>
-<div class="ci-vis" aria-hidden="true">
-<div class="ci-win">
-<div class="ci-wk"><span>Creator Studio · Draft</span><span class="ds-tag blue">Draft</span></div>
-<span class="cx-wt">Data Foundations: Spreadsheets to SQL</span>
-<div class="ci-row">''' + DONE + '''Module 1 · Working with spreadsheet data<span class="cx-rm">4 lessons</span></div>
-<div class="ci-row">''' + DONE + '''Module 2 · Cleaning messy data<span class="cx-rm">4 lessons</span></div>
-<div class="ci-row">''' + TODO + '''Module 3 · Your first SQL queries<span class="cx-rm" style="color: #1652F0">AI draft</span></div>
-<div class="cx-nv nova-card">''' + AVN + '''<span>Module 3 has no knowledge check yet. Want me to draft three questions for you to review?</span></div>
+<div class="cx-vis" aria-hidden="true">
+<div class="cx-back">
+<div class="cx-bk-h"><span>Creator Studio</span><span class="cx-bk-dots"><i></i><i></i><i></i></span></div>
+<span class="cx-sk" style="width: 72%; height: 10px"></span><span class="cx-sk" style="width: 46%"></span>
+<div class="cx-bk-r"><span class="ci-ck" style="background: #0F6B45">''' + CKW + '''</span><span class="cx-sk" style="width: 62%"></span></div>
+<div class="cx-bk-r"><span class="ci-ck" style="background: #0F6B45">''' + CKW + '''</span><span class="cx-sk" style="width: 50%"></span></div>
+<div class="cx-bk-r"><span class="ci-ck" style="background: #EAF0FF; border: 1.5px dashed #9DB8F7; box-sizing: border-box"></span><span class="cx-sk" style="width: 40%"></span><span class="cx-ai">AI draft</span></div>
 </div>
-''' + FLOAT.replace(' style="left: -128px; top: 128px"', ' class="cx-f1"').replace('<div class="ci-float" class="cx-f1">', '<div class="ci-float cx-f1">') + '''
-<div class="ci-float cx-f2"><span style="display: flex; padding-left: 7px"><span class="ci-av" style="background: #DCE5FB; color: #1652F0">PS</span><span class="ci-av" style="background: #0B1433; color: #FFFFFF">TR</span></span><span style="font-size: 13px; font-weight: 600">2 collaborators</span></div>
+<div class="cs-card cx-cc">
+<div class="cs-th cx-cov"><svg class="cs-ico" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20"></path></svg><span class="ds-tag glass">Course</span>''' + GSEAL + '''</div>
+<div class="cs-cb">
+<span class="cs-ct">Data Foundations: Spreadsheets to SQL</span>
+<span class="cs-by"><span class="cs-cav">AO</span>Amara Okafor</span>
+<span class="cs-meta"><span class="cs-star">★</span><b>4.8</b><span>(3.4k)</span><span class="cs-dot"></span><span>Beginner</span><span class="cs-dot"></span><span>12 hrs</span></span>
+<div class="cx-lrn"><span class="cx-avs"><span class="ci-av" style="background: #DCE5FB; color: #1652F0">KB</span><span class="ci-av" style="background: #0B1433; color: #FFFFFF">JM</span><span class="ci-av" style="background: #E7F5EE; color: #0F6B45">SL</span></span><span><b>2,140</b> learners</span><span class="ds-tag blue cx-gt"><span class="cs-tdot" style="background: #C8961E"></span>Gold</span></div>
+</div>
+</div>
+<div class="ci-float cx-nvf">''' + AVN + '''<span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">Nova · just now</span><span style="font-size: 13.5px; font-weight: 600">Drafted 3 questions</span></span></div>
+<div class="ci-float cx-ern"><div class="ci-bars cx-bars"><span style="height: 40%"></span><span style="height: 55%"></span><span style="height: 48%"></span><span style="height: 72%"></span><span style="height: 100%; background: #1652F0"></span></div><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">This month</span><span style="font-size: 16px; font-weight: 600">£1,240 <i class="cx-up">+18%</i></span></span></div>
 </div>
 </div>
 </section>'''
@@ -311,6 +321,44 @@ CSS = r'''.cx-top{padding:16px 16px 0;box-sizing:border-box}
 .cx-sub{margin-left:auto;height:40px;padding:0 18px;border-radius:999px;background:#EEF1F7;color:#8A93AD;font-size:14px;font-weight:600;display:inline-flex;align-items:center}
 #cx-make{overflow:clip}
 .cx-fb{position:relative;z-index:2;margin-top:14px}
+.cx-vis{position:absolute;right:56px;top:128px;width:500px;height:420px;z-index:1}
+.cx-back{position:absolute;left:0;top:0;width:290px;box-sizing:border-box;padding:16px 18px 18px;border-radius:18px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;flex-direction:column;gap:10px;transform:rotate(-6deg);box-shadow:0 30px 60px -30px rgba(0,0,0,.5);animation:cxBack .7s cubic-bezier(.2,.8,.2,1) .1s both}
+.cx-bk-h{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:500;color:rgba(255,255,255,.7);margin-bottom:4px}
+.cx-bk-dots{display:flex;gap:4px}
+.cx-bk-dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35)}
+.cx-sk{display:block;height:8px;border-radius:6px;background:rgba(255,255,255,.28)}
+.cx-bk-r{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.08)}
+.cx-bk-r .cx-sk{background:rgba(255,255,255,.4);height:7px}
+.cx-ai{margin-left:auto;font-size:10.5px;font-weight:500;color:#C9D7FB}
+.cx-cc{position:absolute;left:176px;top:58px;width:300px;transform:rotate(2deg);box-shadow:0 40px 70px -30px rgba(0,0,0,.6);animation:cxCard .8s cubic-bezier(.2,.8,.2,1) .3s both}
+.cx-cc:hover{transform:rotate(2deg)}
+.cx-cov{height:118px;background:linear-gradient(135deg,#2C5BFF 0%,#1652F0 35%,#0B1433 100%);align-items:flex-start}
+.cx-cov .ds-tag{position:relative;z-index:1}
+.cx-seal{position:absolute;right:12px;top:12px;width:58px;height:58px;z-index:2;filter:drop-shadow(0 8px 14px rgba(0,0,0,.35));animation:cxStamp .5s cubic-bezier(.2,1.5,.4,1) 1.15s both}
+.cx-cc .cs-cb{padding-bottom:16px}
+.cx-lrn{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#5B6582;padding-top:12px;border-top:1px solid #EEF1F7}
+.cx-lrn b{font-weight:600;color:#0B1433}
+.cx-avs{display:flex;padding-left:7px}
+.cx-avs .ci-av{width:24px;height:24px;font-size:8.5px}
+.cx-gt{margin-left:auto}
+.cx-nvf{left:-12px;top:236px;animation-delay:-1.5s}
+.cx-nvf .nv-av{width:34px;height:34px;flex-shrink:0}
+.cx-ern{right:-18px;bottom:6px;animation-delay:-3s}
+.cx-up{font-style:normal;font-size:11.5px;font-weight:600;color:#0F6B45;background:#E7F5EE;border-radius:999px;padding:2px 6px;margin-left:4px;vertical-align:2px}
+.cx-bars span{transform-origin:bottom;animation:cxBar .6s cubic-bezier(.2,.8,.2,1) both}
+.cx-bars span:nth-child(1){animation-delay:1.3s}
+.cx-bars span:nth-child(2){animation-delay:1.38s}
+.cx-bars span:nth-child(3){animation-delay:1.46s}
+.cx-bars span:nth-child(4){animation-delay:1.54s}
+.cx-bars span:nth-child(5){animation-delay:1.62s}
+@keyframes cxBack{from{opacity:0;transform:rotate(-12deg) translate(-20px,20px)}}
+@keyframes cxCard{from{opacity:0;transform:rotate(8deg) translateY(40px)}}
+@keyframes cxStamp{0%{opacity:0;transform:scale(2) rotate(-25deg)}60%{opacity:1;transform:scale(.9) rotate(4deg)}100%{opacity:1;transform:none}}
+@keyframes cxBar{from{transform:scaleY(0)}}
+@media (prefers-reduced-motion: reduce){.cx-back,.cx-cc,.cx-seal,.cx-bars span{animation:none}}
+@media (max-width: 1180px){.cx-vis{right:20px;transform:scale(.86);transform-origin:top right}}
+@media (max-width: 960px){.cx-vis{position:relative;right:auto;top:auto;width:300px;height:auto;margin:32px auto 32px;transform:none}.cx-back,.cx-nvf,.cx-ern{display:none}.cx-cc{position:relative;left:auto;top:auto;transform:none;width:100%}}
+
 .cx-fc .fc-wrap{padding-bottom:56px}
 .cx-fc .fc-band{flex-direction:row;align-items:center;text-align:left;gap:28px;padding:40px 48px}
 .cx-fc .fc-horizon{bottom:-590px;opacity:.85}
@@ -335,7 +383,7 @@ CSS = r'''.cx-top{padding:16px 16px 0;box-sizing:border-box}
 @media (max-width: 960px){
 .cx-top{padding:12px 12px 0}
 .cx-hero{height:auto;padding-bottom:0}
-.cx-hero .ci-copy{padding:20px 24px 0;max-width:none;gap:14px}
+.cx-hero .ci-copy{padding:44px 24px 0;max-width:none;gap:16px}
 .sx-in{height:72px;padding:0 20px 0 24px}
 .cx-hero .ci-t{font-size:34px;letter-spacing:-1px}
 .cx-hero .ci-d{font-size:15.5px}
@@ -357,7 +405,7 @@ CSS = r'''.cx-top{padding:16px 16px 0;box-sizing:border-box}
 .cx-wt2{flex:0 0 220px;scroll-snap-align:start}
 }
 @media (max-width: 760px){
-.cx-hero .ci-copy{padding:16px 20px 0}
+.cx-hero .ci-copy{padding:40px 20px 0}
 .sx-in{height:64px;padding:0 10px 0 18px}
 .cx-hero .ci-t{font-size:30px}
 .cx-acts{flex-direction:column;align-items:stretch;gap:6px}

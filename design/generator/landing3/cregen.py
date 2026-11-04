@@ -29,7 +29,7 @@ DOOR = block(L, '<a class="ci-door ci-cr', 'a')
 SEAL = re.search(r'<svg width="11" height="11" viewBox="0 0 100 100">.*?</svg>', DOOR, re.S).group(0)
 FLOAT = re.search(r'<div class="ci-float".*?</div></div>|<div class="ci-float".*?£1,240 earned</span></span></div>', DOOR, re.S).group(0)
 CDH = open(P + 'CourseDetail.dc.html').read()
-GSEAL = re.search(r'<svg class="cd-seal".*?</svg>', CDH, re.S).group(0).replace('class="cd-seal"', 'class="cx-seal"').replace('cdGold', 'cxGold')
+GSEAL = re.search(r'<svg class="cd-seal".*?</svg>', CDH, re.S).group(0).replace('class="cd-seal"', 'class="cx-seal"').replace('cdGold', 'cxGold').replace('stroke="#FFFFFF" stroke-width="9"', 'stroke="#6B4E16" stroke-width="9"')
 HERO = '''<section class="cx-top" aria-labelledby="cx-h">
 <div class="ci-door ci-cr aur cx-hero">
 <div class="ci-copy">
@@ -428,7 +428,15 @@ CSS = r'''.cx-top{padding:16px 16px 0;box-sizing:border-box}
 .cx-sug .nv-av{width:32px;height:32px}
 .cx-earn,.cx-svc{padding:24px 18px}
 .cx-eh{flex-direction:column;gap:16px}
-.cx-earn .pc-units{grid-template-columns:minmax(0,1fr)}
+.cx-ec{gap:24px}
+.cx-earn .pc-units{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin:24px 0 24px}
+.cx-earn .pc-u{flex-direction:column;align-items:flex-start;gap:12px;padding:16px 14px;border-radius:16px;background:#F7F9FD}
+.cx-earn .pc-u small{display:none}
+.cx-earn .pc-u b{font-size:14.5px;line-height:1.3}
+.cx-earn .cx-ui{width:36px;height:36px;border-radius:11px;background:#FFFFFF}
+.cx-svc .pc-rate{margin-top:20px}
+.cx-svc .pc-p{margin-top:12px}
+.cx-ticks{gap:14px;margin-top:24px}
 .cx-svc .pc-rate{font-size:22px}
 .cx-ticks li{font-size:14.5px}
 .cx-fb{align-self:stretch;justify-content:space-between}

@@ -1673,6 +1673,25 @@
       "title": "CRE-001 → 007 For Creators: hero, what you can create, Creator Studio, validation, earnings, creator services, who can create · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Institutions.dc.html": {
+      "x": 0,
+      "y": 82775,
+      "w": 1440,
+      "h": 4680,
+      "title": "ENT-001 → 009 For Institutions: hero, who it’s for, what you can do, AI settings, structure, credentials, validation, integration · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Institutions-Mobile.dc.html": {
+      "x": 1520,
+      "y": 82775,
+      "w": 390,
+      "h": 6000,
+      "title": "ENT-001 → 009 For Institutions: hero, who it’s for, what you can do, AI settings, structure, credentials, validation, integration · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -1709,7 +1728,8 @@
     "row-b21",
     "row-b22",
     "row-b23",
-    "row-b24"
+    "row-b24",
+    "row-b25"
   ],
   "notes": {
     "new-hero": {
@@ -1920,6 +1940,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b25": {
+      "x": 0,
+      "y": 82475,
+      "text": "Batch 25 · For Institutions (one responsive source; workspace areas and AI switches are clickable)",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -2098,7 +2126,9 @@
     "Prc-C-path.dc.html",
     "Prc-C-path-Mobile.dc.html",
     "Creators.dc.html",
-    "Creators-Mobile.dc.html"
+    "Creators-Mobile.dc.html",
+    "Institutions.dc.html",
+    "Institutions-Mobile.dc.html"
   ],
   "pages": [
     {

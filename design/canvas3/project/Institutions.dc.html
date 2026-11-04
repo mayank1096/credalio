@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>For Institutions</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+h1,h2,h3,p{text-wrap:pretty}
+@media (min-width: 761px){
+p{text-wrap:balance}
+}
+.sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sx-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.sx-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
+.sx-word{display:block;height:24px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}
+.sx-links{display:flex;align-items:center;gap:4px}
+.sx-link{height:40px;padding:0 12px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:500;color:#3A4566;text-decoration:none;white-space:nowrap;transition:color .2s ease,background .2s ease}
+.sx-link:hover{color:#0B1433;background:#F5F8FF}
+.sx-link-on{color:#0B1433;background:#EAF0FF}
+.sx-cta{height:44px;padding:0 20px;border-radius:999px;display:flex;align-items:center;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease}
+.sx-cta:hover{background:#0E3BB8}
+.sx-menu{display:none;width:44px;height:44px;border-radius:999px;border:none;background:transparent;color:#0B1433;align-items:center;justify-content:center;cursor:pointer}
+.sx-link:focus-visible,.sx-cta:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
+.sx-fin{max-width:1312px;margin:0 auto;padding:40px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#5B6582}
+.sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
+.sx-fin a{color:#3A4566;text-decoration:none}
+.sx-fin a:hover{color:#1652F0}
+@media (max-width: 1180px){
+.sx-links{display:none}
+.sx-menu{display:flex}
+}
+@media (max-width: 520px){
+.sx-login{display:none !important}
+}
+@media (max-width: 760px){
+.sx-nav{height:60px;padding:0 16px}
+.sx-word{height:20px}
+.sx-cta{height:40px;padding:0 16px;font-size:14px}
+.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}
+}
+body{margin:0;background:#FFFFFF}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-tag .tip{margin-left:0}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.nova-card{background:#FFFFFF url(/_blob/0b29db2e4cd6f4a89dc7ba8f12e59c8d) center / cover no-repeat}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
+}
+h1,h2,h3,p,.ci-d{text-wrap:pretty}
+@media (min-width: 761px){
+p,.ci-d{text-wrap:balance}
+}
+@media (max-width: 760px){
+h2{text-wrap:balance}
+}
+a{color:#1652F0}
+a:hover{color:#0E3BB8}
+.tx-steps{display:flex;flex-direction:column;gap:2px;margin-top:14px}
+.tx-step{display:grid;grid-template-columns:32px minmax(0,1fr);gap:14px;align-items:center;padding:12px 0;border-top:1px solid #EEF1F7;transition:opacity .5s ease}
+.tx-step:first-child{border-top:none}
+.tx-step-wait{opacity:.45}
+.tx-num{width:32px;height:32px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;border:1.5px solid #D6DDEE;color:#5B6582;box-sizing:border-box;transition:background .4s ease,border-color .4s ease,color .4s ease}
+.tx-step-run .tx-num{border-color:#1652F0;color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.1)}
+.tx-st{font-size:16px;font-weight:600}
+.tx-sd{font-size:14px;color:#5B6582}
+@media (max-width: 760px){
+.tx-steps{order:3}
+}
+.ci-door{position:relative;flex:1;display:flex;flex-direction:column;border-radius:22px;overflow:hidden;text-decoration:none;transition:flex .7s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease}
+.ci-in{background:radial-gradient(90% 90% at 85% 100%,#DCE5FB 0%,#EAF0FF 50%,#F5F8FF 100%);color:#0B1433;border:1.5px solid #DCE5FB}
+.ci-copy{position:relative;z-index:2;display:flex;flex-direction:column;gap:12px;padding:36px 36px 0;max-width:430px}
+.ci-k{font-size:13px;font-weight:500;opacity:.75}
+.ci-t{font-size:30px;font-weight:600;letter-spacing:-.8px;line-height:1.12}
+.ci-d{font-size:15px;line-height:1.6;opacity:.78}
+.ci-btn{align-self:flex-start;margin-top:6px}
+.ci-door:hover .ob-arrow{transform:translateX(3px)}
+.ci-door:hover .ds-ghost{border-color:#1652F0}
+.ci-door:focus-visible{outline:3px solid rgba(22,82,240,.5);outline-offset:4px}
+.ci-vis{position:absolute;right:28px;bottom:-26px;width:340px;z-index:1;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.ci-door:hover .ci-vis{transform:translateY(-14px)}
+.ci-win{border-radius:16px;background:#FFFFFF;color:#0B1433;border:1.5px solid #E6EAF3;box-shadow:0 30px 60px -30px rgba(11,20,51,.5);padding:16px;display:flex;flex-direction:column;gap:10px}
+.ci-wk{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:500;color:#8A93AD}
+.ci-row{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;background:#F5F8FF;font-size:12px;color:#3A4566}
+.ci-float{position:absolute;z-index:3;border-radius:16px;background:#FFFFFF;color:#0B1433;border:1.5px solid #E6EAF3;box-shadow:0 24px 40px -22px rgba(11,20,51,.5);padding:10px 12px;display:flex;align-items:center;gap:10px;animation:ciBob 5s ease-in-out infinite}
+@keyframes ciBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media (prefers-reduced-motion: reduce){
+.ci-float{animation:none}
+.ci-door,.ci-vis{transition:none}
+}
+@media (max-width: 1080px){
+.ci-vis{width:290px;right:20px}
+.ci-t{font-size:26px}
+.ci-copy{padding:30px 28px 0}
+}
+@media (max-width: 860px){
+.ci-door{height:auto;border-radius:20px;padding-bottom:24px}
+.ci-copy{padding:24px 22px 0;gap:8px;max-width:none}
+.ci-k{font-size:12px}
+.ci-t{font-size:22px;letter-spacing:-.5px}
+.ci-d{font-size:14px}
+.ci-btn{margin-top:4px}
+.ci-vis{display:none}
+.ci-float{display:none}
+}
+.fc-band{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(180deg,#0B1433 0%,#0E1D55 55%,#14287A 100%);color:#FFFFFF;padding:64px 40px 120px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+.fc-band::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(157,184,247,.18) 1px,transparent 1.3px);background-size:22px 22px;-webkit-mask-image:radial-gradient(60% 60% at 50% 30%,#000 10%,transparent 80%);mask-image:radial-gradient(60% 60% at 50% 30%,#000 10%,transparent 80%);pointer-events:none}
+.fc-horizon{position:absolute;left:50%;bottom:-520px;width:1500px;height:620px;margin-left:-750px;border-radius:50%;background:radial-gradient(50% 50% at 50% 50%,#2F5BF0 0%,#1C43C9 45%,#122E92 70%,rgba(18,46,146,0) 100%);border-top:1.5px solid rgba(190,208,255,.85);box-shadow:0 -10px 40px -6px rgba(110,150,255,.7),0 -60px 140px -20px rgba(60,110,255,.55);pointer-events:none;animation:fcRise 7s ease-in-out infinite}
+@keyframes fcRise{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.fc-mark{position:relative;width:64px;height:64px;border-radius:999px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(255,255,255,.06),0 0 48px 6px rgba(76,125,255,.55)}
+.fc-mark img{width:36px;height:36px}
+.fc-mark::before{content:"";position:absolute;inset:-8px;border-radius:999px;border:1.5px solid rgba(157,184,247,.5);animation:fcRing 3.2s ease-out infinite}
+@keyframes fcRing{from{transform:scale(1);opacity:.8}to{transform:scale(1.7);opacity:0}}
+.fc-h2{position:relative;margin:10px 0 0;font-size:56px;line-height:1.04;font-weight:600;letter-spacing:-1.8px}
+.fc-sub{position:relative;margin:0;font-size:18px;line-height:1.6;color:rgba(255,255,255,.72)}
+@media (prefers-reduced-motion: reduce){
+.fc-horizon,.fc-mark::before{animation:none}
+}
+@media (max-width: 760px){
+.fc-wrap{padding:24px 12px 40px !important}
+.fc-band{border-radius:22px;padding:48px 20px 92px;gap:12px}
+.fc-horizon{width:900px;margin-left:-450px;height:420px;bottom:-350px}
+.fc-mark{width:52px;height:52px}
+.fc-mark img{width:30px;height:30px}
+.fc-h2{font-size:32px;letter-spacing:-.9px;margin-top:8px}
+.fc-sub{font-size:15px;max-width:300px}
+.tip-b{display:none;width:min(250px,calc(100vw - 48px))}
+.tip:hover .tip-b,.tip:focus .tip-b{display:block}
+}
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-tag .tip{margin-left:0}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.nova-card{background:#FFFFFF url(/_blob/0b29db2e4cd6f4a89dc7ba8f12e59c8d) center / cover no-repeat}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
+}
+@media (max-width: 760px){
+.tip-b{display:none;width:min(250px,calc(100vw - 48px))}
+.tip:hover .tip-b,.tip:focus .tip-b{display:block}
+}
+h1,h2,h3,p{text-wrap:pretty}
+.lr-pfs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.lr-pf{display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;text-decoration:none;color:#0B1433;transition:border-color .2s ease,transform .3s ease,box-shadow .3s ease}
+.lr-pf:hover{border-color:#AFC1F5;transform:translateY(-2px);box-shadow:0 20px 40px -30px rgba(22,82,240,.45)}
+.lr-pf:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.lr-pf-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+.lr-pf-i{width:44px;height:44px;border-radius:14px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.lr-pf-ok{width:22px;height:22px;border-radius:999px;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.lr-pf b{font-size:15.5px;font-weight:600;line-height:1.3}
+.lr-pf small{font-size:13px;color:#5B6582}
+@media (max-width: 960px){
+.lr-pfs{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width: 760px){
+.lr-pfs{display:flex;overflow-x:auto;gap:12px;margin:0 -16px;padding:2px 16px 6px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.lr-pfs::-webkit-scrollbar{display:none}
+.lr-pfs > *{flex:0 0 46%;scroll-snap-align:start;padding:16px}
+}
+.pc-sec{max-width:1312px;margin:0 auto;padding:0 48px 96px;box-sizing:border-box;font-family:'Google Sans',system-ui,sans-serif;color:#0B1433}
+.pc-sh{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px}
+.pc-k{display:block;font-size:14px;font-weight:500;color:#1652F0}
+.pc-h2{margin:8px 0 0;display:flex;align-items:center;font-size:36px;line-height:1.15;font-weight:600;letter-spacing:-.03em}
+.pc-p{margin:10px 0 0;max-width:620px;font-size:17px;line-height:1.6;color:#4A5578}
+.ko-path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ko-path li{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;padding:0 16px;text-align:center}
+.ko-path li:not(:last-child)::before{content:'';position:absolute;left:calc(50% + 22px);right:calc(-50% + 22px);top:13px;height:2px;border-radius:2px;background:#1652F0}
+.ko-dot{width:28px;height:28px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:2px solid #1652F0;background:#FFFFFF;display:flex;align-items:center;justify-content:center;color:#1652F0;font-size:12.5px;font-weight:600}
+.ko-path li:first-child .ko-dot{background:#1652F0;color:#FFFFFF}
+.ko-path li > span:last-child{display:flex;flex-direction:column;gap:4px;align-items:center}
+.ko-path b{font-size:16px;font-weight:600}
+.ko-path li > span:last-child > span{font-size:14px;line-height:1.5;color:#4A5578;max-width:240px}
+@media (max-width: 960px){
+.pc-sec{padding:0 20px 72px}
+.pc-sh{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:22px}
+.pc-h2{font-size:28px}
+.pc-p{font-size:15.5px}
+.ko-path{grid-template-columns:minmax(0,1fr);gap:0}
+.ko-path li{flex-direction:row;align-items:flex-start;text-align:left;gap:14px;padding:0 0 22px}
+.ko-path li:last-child{padding-bottom:0}
+.ko-path li:not(:last-child)::before{left:13px;right:auto;top:30px;bottom:2px;width:2px;height:auto}
+.ko-path li > span:last-child{align-items:flex-start}
+}
+@media (max-width: 760px){
+.pc-h2{font-size:24px}
+}
+.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:border-box}
+.cx-hero{flex:none;height:640px;border-radius:28px}
+.cx-hero .ci-copy{max-width:560px;padding:72px 0 0 64px;gap:18px}
+.cx-hero .ci-t{margin:0;font-size:54px;line-height:1.04;letter-spacing:-1.8px}
+.cx-hero .ci-d{margin:0;font-size:18px;max-width:500px}
+.cx-acts{display:flex;align-items:center;gap:22px;margin-top:10px}
+.cx-acts .ci-btn{margin:0}
+.cx-wl{position:relative;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;opacity:.9}
+.cx-wl:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.cx-hero .ci-vis{right:64px;bottom:auto;top:104px;width:470px}
+.cx-hero:hover .ci-vis{transform:none}
+.cx-hero .ci-win{padding:20px;gap:10px}
+.cx-wt{font-size:17px;font-weight:600;letter-spacing:-.2px;margin:2px 0 4px}
+.cx-hero .cx-f1{left:-96px;bottom:-30px}
+.cx-sec{padding-top:0}
+.cx-studio{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:center}
+.cx-steps{margin-top:28px}
+.cx-steps .tx-step{font-family:inherit;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0;color:#0B1433;cursor:pointer;padding:16px 0}
+.cx-steps .tx-step:hover{opacity:1}
+.cx-steps .tx-step-run .tx-num{background:#1652F0;color:#FFFFFF}
+.cx-win{height:472px;box-sizing:border-box;padding:24px;gap:10px;border-radius:22px;box-shadow:0 40px 80px -50px rgba(11,20,51,.45);background:linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 70%,#F7F9FD 100%)}
+.cx-win .ci-row{padding:12px 14px;font-size:13.5px;border-radius:12px}
+.cx-add{margin-top:8px;font-size:12.5px;font-weight:500;color:#8A93AD}
+.cx-path{grid-template-columns:repeat(6,minmax(0,1fr))}
+.cx-path .ko-dot{background:#FFFFFF}
+.cx-path li:first-child .ko-dot{background:#1652F0}
+.cx-path .cx-ok .ko-dot{border:0;background:none}
+.cx-ui{width:40px;height:40px;border-radius:12px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cx-who{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.cx-wt2{display:flex;flex-direction:column;gap:6px;padding:22px 20px;border-radius:18px;border:1.5px solid #E6EAF3;background:#FFFFFF}
+.cx-wt2 .cx-ui{margin-bottom:10px}
+.cx-wt2 b{font-size:16px;font-weight:600}
+.cx-wt2 small{font-size:14px;line-height:1.5;color:#4A5578}
+#cx-make{overflow:clip}
+.cx-fb{position:relative;z-index:2;margin-top:14px}
+@media (max-width: 1180px){
+.cx-hero .ci-copy{padding:56px 0 0 44px;max-width:470px}
+.cx-hero .ci-t{font-size:44px}
+.cx-hero .ci-vis{right:36px;width:400px}
+.cx-path{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:32px}
+.cx-path li:nth-child(3)::before{display:none}
+.cx-who{gap:10px}
+.cx-wt2{padding:18px 16px}
+.cx-wt2 b{font-size:15px}
+.cx-wt2 small{font-size:13.5px}
+}
+@media (max-width: 960px){
+.cx-top{padding:8px 12px 0}
+.cx-hero{height:auto;padding-bottom:0}
+.cx-hero .ci-copy{padding:40px 24px 0;max-width:none;gap:14px}
+.cx-hero .ci-t{font-size:34px;letter-spacing:-1px}
+.cx-hero .ci-d{font-size:15.5px}
+.cx-hero .ci-vis{display:block;position:relative;top:auto;right:auto;width:auto;margin:32px 20px -1px}
+.cx-hero .ci-win{border-radius:18px 18px 0 0;border-bottom:0}
+.cx-hero .ci-float{display:none}
+.cx-studio{grid-template-columns:minmax(0,1fr);gap:24px}
+.cx-win{height:auto;min-height:440px}
+.cx-path{grid-template-columns:minmax(0,1fr);row-gap:0}
+.cx-path li:nth-child(3)::before{display:block}
+.cx-path .cx-ok .ko-dot svg{width:28px;height:28px}
+.cx-who{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 4px;scroll-padding:0 20px;scrollbar-width:none}
+.cx-who::-webkit-scrollbar{display:none}
+.cx-wt2{flex:0 0 220px;scroll-snap-align:start}
+}
+@media (max-width: 760px){
+.cx-hero .ci-copy{padding:32px 20px 0}
+.cx-hero .ci-t{font-size:30px}
+.cx-acts{flex-direction:column;align-items:stretch;gap:6px}
+.cx-acts .ds-btn{justify-content:space-between;align-self:stretch}
+.cx-wl{align-self:center;padding:12px 0}
+.cx-hero .ci-vis{margin:28px 12px -1px}
+.cx-hero .ci-win{padding:16px;gap:8px}
+.cx-hero .ci-row{font-size:12px}
+.cx-steps{margin-top:18px}
+.cx-steps .tx-step{padding:12px 0}
+.cx-win{padding:16px;min-height:0;border-radius:18px}
+.cx-win .ci-row{padding:10px 12px;font-size:13px}
+.cx-fb{align-self:stretch;justify-content:space-between}
+}
+.in-hero .cx-wl{color:#1652F0}
+.in-hero .ci-copy{max-width:540px}
+.in-hero .ci-vis{top:96px}
+.in-hero .cx-f1{left:-110px;bottom:-34px}
+.in-kp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.in-k{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:12px;background:#F5F8FF;font-size:11.5px;color:#5B6582}
+.in-kp b{font-size:18px;font-weight:600;color:#0B1433;letter-spacing:-.3px}
+.in-bar{display:flex;flex-direction:column;gap:6px;padding:4px 2px}
+.in-bar span{display:flex;justify-content:space-between;font-size:12px;color:#5B6582}
+.in-bar b{font-weight:600;color:#0B1433}
+.in-bar i,.in-rb{display:block;height:8px;border-radius:9px;background:#EEF1F7;overflow:hidden}
+.in-bar s,.in-rb s{display:block;height:100%;border-radius:9px;background:#1652F0}
+.in-rv{margin-left:auto;font-weight:600;color:#0B1433}
+.in-first{padding-top:96px}
+.in-steps .tx-step{padding:13px 0}
+.in-win{height:auto;min-height:0}
+.in-win .in-kp b{font-size:20px}
+.in-r{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 116px;gap:14px}
+.in-rn{font-weight:500;color:#0B1433;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.in-r .ds-tag{justify-self:end}
+.in-ill{margin-top:auto;padding-top:6px}
+.in-ai{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.in-aic{border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.in-aih{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.in-aih .nv-av{width:44px;height:44px}
+.in-aih span{display:flex;flex-direction:column}
+.in-aih b,.in-air b{font-size:15px;font-weight:600}
+.in-aih small,.in-air small{font-size:13px;color:#5B6582}
+.in-air{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.82)}
+.in-air > span{display:flex;flex-direction:column;gap:2px}
+.hp-sw{position:relative;width:44px;height:26px;flex-shrink:0;border-radius:999px;border:0;background:#CBD3E6;cursor:pointer;transition:background .2s ease}
+.hp-sw::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#FFFFFF;box-shadow:0 1px 3px rgba(11,20,51,.2);transition:left .2s ease}
+.hp-sw.on{background:#1652F0}
+.hp-sw.on::after{left:21px}
+.in-sc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
+.in-card{padding:32px;border-radius:22px;display:flex;flex-direction:column}
+.in-card .pc-h2{font-size:30px}
+.in-tree{margin-top:26px}
+.in-root{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 16px 0 6px;border-radius:999px;background:#0B1433;color:#FFFFFF;font-size:14px;font-weight:600}
+.in-rm{width:32px;height:32px;border-radius:999px;background:#1652F0;display:flex;align-items:center;justify-content:center;font-size:11px}
+.in-tree ul{list-style:none;margin:0 0 0 21px;padding:8px 0 0;border-left:2px solid #1652F0;display:flex;flex-direction:column;gap:10px}
+.in-tree li{position:relative;margin-left:22px;padding:12px 14px;border-radius:14px;background:#F5F8FF;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.in-tree li::before{content:'';position:absolute;left:-24px;top:50%;width:22px;height:2px;background:#1652F0}
+.in-tree li:last-child::after{content:'';position:absolute;left:-26px;top:calc(50% + 2px);bottom:-12px;width:4px;background:#FFFFFF}
+.in-gt{display:flex;flex-direction:column;gap:1px}
+.in-gt b{font-size:15px;font-weight:600}
+.in-gt small{font-size:13px;color:#5B6582}
+.in-gc{display:flex;flex-wrap:wrap;gap:6px}
+.in-gc .ds-tag{background:#FFFFFF}
+.in-pfs{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:24px}
+.in-pfs .lr-pf{padding:18px}
+.in-pfs .lr-pf:hover{transform:none;box-shadow:none;border-color:#E6EAF3}
+.in-int{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.in-i{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:18px;border:1.5px solid #E6EAF3;font-size:15px;font-weight:600}
+@media (min-width: 961px){
+.in-hero{height:600px}
+}
+@media (max-width: 1180px){
+.in-int{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width: 960px){
+.in-first{padding-top:64px}
+.in-ai,.in-sc{grid-template-columns:minmax(0,1fr);gap:24px}
+.in-hero .ci-vis{top:auto}
+}
+@media (max-width: 760px){
+.in-hero .cx-wl{align-self:center}
+.in-hero .ci-row,.in-hero .in-bar{display:none}
+.in-steps{flex-direction:row;gap:8px;overflow-x:auto;margin:20px -20px 0;padding:2px 20px 4px;scroll-padding:0 20px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.in-steps::-webkit-scrollbar{display:none}
+.in-steps .tx-step{flex:0 0 auto;display:flex;align-items:center;gap:8px;height:44px;padding:0 16px 0 6px !important;border:1.5px solid #E6EAF3 !important;border-radius:999px;scroll-snap-align:start;opacity:1}
+.in-steps .tx-step-run{border-color:#1652F0 !important;background:#EAF0FF}
+.in-steps .tx-num{width:30px;height:30px;font-size:12px;box-shadow:none !important}
+.in-steps .tx-sd{display:none}
+.in-steps .tx-st{font-size:14.5px;font-weight:500;white-space:nowrap}
+.in-kp{grid-template-columns:repeat(2,minmax(0,1fr))}
+.in-r{grid-template-columns:minmax(0,1fr) auto}
+.in-rb{display:none !important}
+.in-aic{padding:18px 14px}
+.in-air{padding:12px}
+.in-card{padding:24px 18px}
+.in-card .pc-h2{font-size:24px}
+.in-tree li{margin-left:18px}
+.in-tree li::before{left:-20px;width:18px}
+.in-tree li:last-child::after{left:-22px}
+.in-pfs{display:grid;overflow:visible;margin:20px 0 0;padding:0;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.in-pfs > *{padding:14px}
+.in-int{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.in-i{flex-direction:column;align-items:flex-start;gap:10px;padding:14px;font-size:14px}
+}
+</style>
+</helmet>
+<div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
+<header class="sx-nav">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav class="sx-links" aria-label="Main">
+<a class="sx-link" href="#">Explore learning</a>
+<a class="sx-link" href="#">Career paths</a>
+<a class="sx-link" href="#">Certifications</a>
+<a class="sx-link" href="#">Pricing</a>
+<a class="sx-link" href="Creators.dc.html">For creators</a>
+<a class="sx-link sx-link-on" href="Institutions.dc.html" aria-current="page">For institutions</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
+<a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
+<a class="sx-cta" href="OnbWelcome.dc.html">Create account</a>
+<button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+</header>
+<section class="cx-top" aria-labelledby="in-h">
+<div class="ci-door ci-in cx-hero in-hero">
+<div class="ci-copy">
+<span class="ci-k" style="color: #1652F0; opacity: 1">Credalio for Institutions</span>
+<h1 id="in-h" class="ci-t">Build learning that moves your people forward.</h1>
+<p class="ci-d" style="color: #3A4566; opacity: 1">Create and deliver learning, manage people, set up AI, validate quality and issue verifiable credentials. All in one place.</p>
+<div class="cx-acts"><a class="ds-btn ci-btn" href="#"><span>Talk to Credalio</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><a class="cx-wl" href="#in-do">See what you can do</a></div>
+</div>
+<div class="ci-vis" aria-hidden="true">
+<div class="ci-win">
+<div class="ci-wk"><span>Meridian University · Workspace</span><span class="ds-tag green"><span style="width: 6px; height: 6px; border-radius: 9px; background: #0F6B45"></span>Live</span></div>
+<span class="cx-wt">Autumn term</span>
+<div class="in-kp"><span class="in-k"><b>4,820</b>Learners</span><span class="in-k"><b>126</b>Creators</span><span class="in-k"><b>84</b>Programs</span><span class="in-k"><b>72%</b>Active learning</span></div>
+<div class="in-bar"><span>Learner progress<b>68%</b></span><i><s style="width: 68%"></s></i></div>
+<div class="ci-row"><span>Programs in delivery</span><b class="in-rv">84 live</b></div>
+<div class="ci-row"><span>Validation</span><b class="in-rv" style="color: #B54708">12 in review</b></div>
+</div>
+<div class="ci-float cx-f1"><span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">Verifiable credentials</span><span style="font-size: 15px; font-weight: 600">2,214 issued this term</span></span></div>
+</div>
+</div>
+</section>
+<section class="pc-sec cx-sec in-first" aria-labelledby="in-wh">
+<div class="pc-sh"><div><span class="pc-k">Who it’s for</span><h2 id="in-wh" class="pc-h2">Built for organisations that grow people.</h2></div></div>
+<div class="cx-who"><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5z"></path><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"></path></svg></span><b>Universities & colleges</b><small>Extend learning beyond the classroom.</small></div><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><b>Training providers</b><small>Create and run professional learning at scale.</small></div><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2.5"></rect><path d="M9 7V5h6v2"></path></svg></span><b>Companies</b><small>Upskill and reskill your people.</small></div><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><b>Professional bodies</b><small>Deliver assessed CPD and credentials.</small></div><div class="cx-wt2"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M5 10h14M12 4l8 4H4z"></path><path d="M7 10v7M12 10v7M17 10v7"></path></svg></span><b>Government & workforce</b><small>Coordinate learning across large groups.</small></div></div>
+</section>
+<section class="pc-sec cx-sec" id="in-do" aria-labelledby="in-dh">
+<div class="cx-studio">
+<div class="cx-sl">
+<span class="pc-k">What you can do</span>
+<h2 id="in-dh" class="pc-h2">One place for your whole learning ecosystem.</h2>
+<div class="tx-steps cx-steps in-steps" role="tablist" aria-label="What institutions can do"><button type="button" role="tab" class="tx-step {{ws.s0.cls}}" aria-selected="{{ws.s0.sel}}" onClick="{{ws.s0.pick}}"><span class="tx-num">1</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Create</span><span class="tx-sd">Courses, certifications, career paths and programs.</span></span></button><button type="button" role="tab" class="tx-step {{ws.s1.cls}}" aria-selected="{{ws.s1.sel}}" onClick="{{ws.s1.pick}}"><span class="tx-num">2</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Deliver</span><span class="tx-sd">Enrol learners, run cohorts, keep learning on track.</span></span></button><button type="button" role="tab" class="tx-step {{ws.s2.cls}}" aria-selected="{{ws.s2.sel}}" onClick="{{ws.s2.pick}}"><span class="tx-num">3</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Manage</span><span class="tx-sd">Learners, creators, admins and what each can do.</span></span></button><button type="button" role="tab" class="tx-step {{ws.s3.cls}}" aria-selected="{{ws.s3.sel}}" onClick="{{ws.s3.pick}}"><span class="tx-num">4</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Understand</span><span class="tx-sd">Enrolment, progress, completion and results.</span></span></button><button type="button" role="tab" class="tx-step {{ws.s4.cls}}" aria-selected="{{ws.s4.sel}}" onClick="{{ws.s4.pick}}"><span class="tx-num">5</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Validate</span><span class="tx-sd">Submit learning for independent review.</span></span></button><button type="button" role="tab" class="tx-step {{ws.s5.cls}}" aria-selected="{{ws.s5.sel}}" onClick="{{ws.s5.pick}}"><span class="tx-num">6</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Credential</span><span class="tx-sd">Issue verifiable credentials to Backpacks.</span></span></button></div>
+</div>
+<div class="ci-win cx-win in-win" role="tabpanel" aria-label="{{ws.title}}">
+<div class="ci-wk"><span>Meridian University · {{ws.title}}</span><span class="ds-tag">{{ws.sub}}</span></div>
+<div class="in-kp">
+<sc-for list="{{ws.kpis}}" as="k" hint-placeholder-count="4"><span class="in-k"><b>{{k.v}}</b>{{k.k}}</span></sc-for>
+</div>
+<sc-for list="{{ws.rows}}" as="r" hint-placeholder-count="5"><div class="ci-row in-r"><span class="in-rn">{{r.a}}</span><i class="in-rb"><s style="width: {{r.pct}}"></s></i><span class="ds-tag {{r.cls}}">{{r.tag}}</span></div></sc-for>
+<span class="cx-add in-ill">Meridian University is an illustrative example.</span>
+</div>
+</div>
+</section>
+<section class="pc-sec cx-sec" aria-labelledby="in-ai">
+<div class="in-ai">
+<div><span class="pc-k">AI for institutions</span><h2 id="in-ai" class="pc-h2">AI that works inside your learning environment.</h2><p class="pc-p">It uses your learners’ course and progress context. You decide how it’s set up, area by area.</p></div>
+<div class="nova-card in-aic">
+<div class="in-aih"><span class="nv-av" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span><span><b>AI settings</b><small>Meridian University</small></span></div>
+<sc-for list="{{ai.rows}}" as="a" hint-placeholder-count="5"><div class="in-air"><span><b>{{a.t}}</b><small>{{a.d}}</small></span><button type="button" class="hp-sw {{a.cls}}" role="switch" aria-checked="{{a.on}}" aria-label="{{a.t}}" onClick="{{a.flip}}"></button></div></sc-for>
+</div>
+</div>
+</section>
+<section class="pc-sec cx-sec" aria-label="Structure and credentials">
+<div class="in-sc">
+<div class="ds-card in-card">
+<span class="pc-k">Institutional structure</span>
+<h2 class="pc-h2">Your organisation, with roles that fit.<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Role-based permissions decide what each person can see and do.</span></span></h2>
+<div class="in-tree"><span class="in-root"><span class="in-rm">MU</span>Meridian University</span>
+<ul><li><span class="in-gt"><b>Admins</b><small>Workspace, billing and permissions</small></span></li><li><span class="in-gt"><b>Creators</b><small>Build the learning</small></span><span class="in-gc"><span class="ds-tag">Teachers</span><span class="ds-tag">Experts</span><span class="ds-tag">Teams</span></span></li><li><span class="in-gt"><b>Validators</b><small>Review quality</small></span><span class="in-gc"><span class="ds-tag">Educational</span><span class="ds-tag">Subject matter</span><span class="ds-tag">Assessment</span></span></li><li><span class="in-gt"><b>Learners</b><small>Students, employees and members</small></span></li></ul></div>
+</div>
+<div class="ds-card in-card">
+<span class="pc-k">Credentials</span>
+<h2 class="pc-h2">Give achievement somewhere to live.</h2>
+<p class="pc-p">Eligible achievements become verifiable credentials in each learner’s Digital Backpack.</p>
+<div class="lr-pfs in-pfs"><div class="lr-pf"><span class="lr-pf-top"><span class="lr-pf-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg></span><span class="lr-pf-ok" title="Verifiable" aria-label="Verifiable"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></span><b>Professional Certificate</b><small>Issued by Meridian University</small></div><div class="lr-pf"><span class="lr-pf-top"><span class="lr-pf-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"></rect><path d="M3 9h18M8 13h3M8 16h6"></path></svg></span><span class="lr-pf-ok" title="Verifiable" aria-label="Verifiable"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></span><b>Verified Project</b><small>Issued by Meridian University</small></div><div class="lr-pf"><span class="lr-pf-top"><span class="lr-pf-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><span class="lr-pf-ok" title="Verifiable" aria-label="Verifiable"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></span><b>Program Completion</b><small>Issued by Meridian University</small></div><div class="lr-pf"><span class="lr-pf-top"><span class="lr-pf-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"></path></svg></span><span class="lr-pf-ok" title="Verifiable" aria-label="Verifiable"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></span><b>Competency Badge</b><small>Issued by Meridian University</small></div></div>
+</div>
+</div>
+</section>
+<section class="pc-sec cx-sec" aria-labelledby="in-va">
+<div class="pc-sh"><div><span class="pc-k">Validation</span><h2 id="in-va" class="pc-h2">Quality you can demonstrate.</h2><p class="pc-p">Submit applicable programs for independent validation. Validated programs carry the Credalio seal and a public Validation Record.</p></div><a class="ds-ghost" href="#">How validation works<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+<ol class="ko-path cx-path"><li><span class="ko-dot">1</span><span><b>Create</b><span>Your team builds the program.</span></span></li><li><span class="ko-dot">2</span><span><b>Submit</b><span>Send applicable learning for review.</span></span></li><li><span class="ko-dot">3</span><span><b>Validators assigned</b><span>Qualified, independent experts.</span></span></li><li><span class="ko-dot">4</span><span><b>Review</b><span>Questions and clarifications in one place.</span></span></li><li class="cx-ok"><span class="ko-dot"><svg width="28" height="28" viewBox="0 0 100 100"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span><b>Validated</b><span>A clear decision and a public record.</span></span></li><li><span class="ko-dot">6</span><span><b>Visible status</b><span>Learners see the seal on your program.</span></span></li></ol>
+</section>
+<section class="pc-sec cx-sec" aria-labelledby="in-it">
+<div class="pc-sh"><div><span class="pc-k">Enterprise integration</span><h2 id="in-it" class="pc-h2">Built to fit your environment.</h2></div></div>
+<div class="in-int"><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"></circle><path d="m11 12 9-9M17 6l3 3"></path></svg></span>SSO & identity</span><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"></path></svg></span>Role-based access</span><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"></path></svg></span>APIs & integrations</span><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg></span>Custom AI setup</span><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2"></rect></svg></span>Reporting</span><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"></path></svg></span>Enterprise support</span><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span>Data & privacy controls</span><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.9 1.2-1.8-.5-1-.1-2.2 1.1-2.2H17a4 4 0 0 0 4-4c0-5.5-4-10-9-10z"></path><circle cx="7.5" cy="11" r="1"></circle><circle cx="12" cy="7.5" r="1"></circle><circle cx="16.5" cy="11" r="1"></circle></svg></span>Your branding</span></div>
+</section>
+<section aria-labelledby="fc-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif">
+<div class="fc-wrap" style="max-width: 1360px; margin: 0 auto; padding: 32px 24px 64px; box-sizing: border-box">
+<div class="fc-band">
+<span class="fc-horizon" aria-hidden="true"></span>
+<span class="fc-mark" aria-hidden="true"><img src="/_blob/f81e36d31295a0d0737959589ec1abd4" alt="" width="42" height="42"></span>
+<h2 id="fc-h" class="fc-h2">Let’s shape Credalio around your institution.</h2>
+<p class="fc-sub">Tell us about your organisation. We’ll show you a workspace that fits.</p>
+<a class="ds-btn cx-fb" href="#"><span>Talk to Credalio</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+</div>
+</div>
+</section>
+<footer class="sx-foot">
+<div class="sx-fin">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="Creators.dc.html">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+<span>© 2026 magnummeta. All rights reserved.</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4680}}'>
+var AREAS = [["Create", "Programs", "84 programs", [["84", "Programs"], ["12", "Career paths"], ["9", "Certifications"], ["410", "Courses"]], [["Graduate Data Programme", 76, "Live", "green"], ["MBA Foundations", 64, "Live", "green"], ["Nursing CPD", 55, "Live", "green"], ["Cloud & Security Pathway", 48, "Enrolling", "blue"], ["Teaching Excellence", 20, "Draft", ""]]], ["Deliver", "Cohorts", "Autumn intake", [["46", "Active cohorts"], ["28", "Average size"], ["7", "Starting soon"], ["94%", "Seats filled"]], [["Data 2026A", 82, "Week 6 of 12", "blue"], ["MBA 2026-1", 60, "Week 4 of 16", "blue"], ["Nursing CPD Oct", 40, "Week 2 of 8", "blue"], ["Security Oct", 10, "Starts 14 Oct", "amber"], ["Research Methods B", 95, "Final week", "green"]]], ["Manage", "People", "All departments", [["4,820", "Learners"], ["126", "Creators"], ["14", "Admins"], ["312", "Need support"]], [["School of Business", 74, "On track", "green"], ["School of Computing", 81, "On track", "green"], ["School of Health", 59, "Watch", "amber"], ["Continuing Education", 66, "On track", "green"], ["Foundation Year", 52, "Watch", "amber"]]], ["Understand", "Analytics", "Autumn term", [["72%", "Active learning"], ["64%", "Completion"], ["78%", "Avg. assessment"], ["+11%", "vs last term"]], [["Enrolment", 92, "High", "green"], ["Engagement", 72, "Good", "green"], ["Progress", 68, "Good", "green"], ["Assessment performance", 78, "Good", "green"], ["Credential achievement", 46, "Rising", "blue"]]], ["Validate", "Validation", "Institutional learning", [["31", "Validated"], ["12", "In review"], ["4", "Findings open"], ["2", "Revalidation due"]], [["Graduate Data Programme", 100, "Validated", "green"], ["Nursing CPD", 100, "Validated", "green"], ["MBA Foundations", 60, "In review", "amber"], ["Cloud & Security Pathway", 40, "Findings open", "amber"], ["Teaching Excellence", 0, "Not submitted", ""]]], ["Credential", "Credentials", "This term", [["2,214", "Issued"], ["61%", "Shared by learners"], ["9", "Credential types"], ["0", "Revoked"]], [["Program Completion", 72, "1,120", "green"], ["Professional Certificate", 45, "384", "green"], ["Verified Project", 58, "520", "green"], ["Competency Badge", 33, "190", "green"], ["Micro-credential", 12, "Draft", ""]]]];
+var AIS = [["AI Learning Coach", "Supports learners with their course and progress context."], ["AI Creator Assistance", "Helps educators build and improve learning."], ["AI Recommendations", "Suggests personal learning pathways."], ["AI Support", "Answers common questions, then hands over to people."], ["Assessment help", "Hints during graded work."]];
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { tab: 0, ai: [true, true, true, true, false] }; }
+  renderVals() {
+    var self = this, t = this.state.tab, a = AREAS[t], ws = { title: a[1], sub: a[2] };
+    AREAS.forEach(function (x, k) { ws['s' + k] = { cls: k === t ? 'tx-step-run' : 'tx-step-wait', sel: k === t ? 'true' : 'false', pick: function () { self.setState({ tab: k }); } }; });
+    ws.kpis = a[3].map(function (k) { return { v: k[0], k: k[1] }; });
+    ws.rows = a[4].map(function (r) { return { a: r[0], pct: r[1] + '%', tag: r[2], cls: r[3] }; });
+    var rows = AIS.map(function (x, i) { var on = self.state.ai[i]; return { t: x[0], d: i === 4 && !on ? 'Off by your policy. ' + x[1] : x[1], on: on ? 'true' : 'false', cls: on ? 'on' : '', flip: function () { var n = self.state.ai.slice(); n[i] = !n[i]; self.setState({ ai: n }); } }; });
+    return { ws: ws, ai: { rows: rows } };
+  }
+}
+</script>
+</body>
+</html>

@@ -86,6 +86,11 @@ KIT_CSS = r'''.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radi
 .ds-acts.c{justify-content:center}
 .ds-acts.sb{justify-content:space-between}
 .ds-mbar{display:none}
+.ds-seg{display:flex;gap:4px;padding:4px;border-radius:999px;background:#F1F3F8}
+.ds-seg button{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 14px;border:0;border-radius:999px;background:transparent;font-family:inherit;font-size:14px;font-weight:500;color:#3A4566;cursor:pointer;transition:background .2s ease,color .2s ease}
+.ds-seg button.on{background:#FFFFFF;color:#0B1433;box-shadow:0 1px 2px rgba(11,20,51,.08),0 6px 14px -8px rgba(11,20,51,.25)}
+.ds-seg button i{font-style:normal;min-width:20px;height:20px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:11.5px;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
+.ds-seg button:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
 .ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.ds-chip:focus-visible,.ds-opt:focus-visible,.ds-x:focus-visible,.ds-send:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
 .tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
 .tip:hover,.tip:focus{color:#1652F0}

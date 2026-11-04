@@ -54,6 +54,11 @@
 .ds-acts{display:flex;align-items:center;justify-content:flex-end;gap:20px;margin-top:32px}
 .ds-acts.c{justify-content:center}
 .ds-acts.sb{justify-content:space-between}
+.ds-seg{display:flex;gap:4px;padding:4px;border-radius:999px;background:#F1F3F8}
+.ds-seg button{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 14px;border:0;border-radius:999px;background:transparent;font-family:inherit;font-size:14px;font-weight:500;color:#3A4566;cursor:pointer;transition:background .2s ease,color .2s ease}
+.ds-seg button.on{background:#FFFFFF;color:#0B1433;box-shadow:0 1px 2px rgba(11,20,51,.08),0 6px 14px -8px rgba(11,20,51,.25)}
+.ds-seg button i{font-style:normal;min-width:20px;height:20px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:11.5px;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
+.ds-seg button:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
 .ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.ds-chip:focus-visible,.ds-x:focus-visible,.ds-send:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
 .tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
 .tip:hover,.tip:focus{color:#1652F0}
@@ -148,7 +153,7 @@ h1,h2,h3,p{text-wrap:pretty}
 .lr-date{display:block;font-size:13.5px;font-weight:500;color:#8A93AD}
 .lr-h1{margin:6px 0 0;font-size:clamp(28px,2.5vw,36px);line-height:1.15;font-weight:600;letter-spacing:-.03em}
 .lr-strip{display:flex;align-items:stretch;background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:16px;flex-shrink:0}
-.lr-st{display:flex;flex-direction:column;justify-content:center;gap:3px;padding:10px 18px;min-width:0;text-decoration:none;color:#0B1433}
+.lr-st{display:flex;flex-direction:column;justify-content:center;gap:3px;padding:10px 20px;min-width:96px;box-sizing:border-box;min-width:0;text-decoration:none;color:#0B1433}
 .lr-st + .lr-st{border-left:1px solid #EEF1F7}
 .lr-st small{font-size:12px;color:#5B6582;white-space:nowrap}
 .lr-st b{display:flex;align-items:center;gap:6px;font-size:16px;font-weight:600;white-space:nowrap}
@@ -163,7 +168,7 @@ h1,h2,h3,p{text-wrap:pretty}
 .lr-gs-s.done i{background:#0F6B45;border-color:#0F6B45}
 .lr-gs-s.next{border-color:#1652F0;color:#0E3BB8;background:#F5F8FF}
 .lr-gs-s.next i{border-color:#1652F0}
-a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
+button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-focus{position:relative;border-radius:24px;padding:40px 44px;box-sizing:border-box;border:1.5px solid #DCE5FB;box-shadow:0 30px 60px -44px rgba(22,82,240,.4)}
 .lr-disc{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:center}
 .lr-k{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;color:#1652F0}
@@ -199,9 +204,8 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-ok b{font-weight:600}
 .lr-jf .ds-acts{margin:0}
 .lr-sec{margin-top:36px}
-.lr-sh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:16px}
-.lr-sh h2{margin:0;font-size:22px;font-weight:600;letter-spacing:-.4px}
-.lr-sh p{margin:4px 0 0;font-size:14px;color:#5B6582}
+.lr-sh{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.lr-sh h2{display:flex;align-items:center;margin:0;font-size:22px;font-weight:600;letter-spacing:-.4px}
 .lr-g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .cs-card{position:relative;display:flex;flex-direction:column;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 22px 44px -38px rgba(11,20,51,.45);text-decoration:none;color:#0B1433;transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease,border-color .3s ease}
 .cs-card:hover{transform:translateY(-4px);border-color:#D6DDEE;box-shadow:0 34px 60px -38px rgba(22,82,240,.45)}
@@ -240,20 +244,12 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-cb{display:flex;align-items:flex-start;gap:16px;margin-top:18px}
 .lr-cb h4{margin:0;font-size:15.5px;font-weight:600}
 .lr-cb p{margin-top:4px}
-.lr-seas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
-.lr-seas div{padding:12px 14px;border-radius:14px;background:#F7F9FD;border:1.5px dashed #D6DDEE}
-.lr-seas b{display:block;font-size:13.5px;font-weight:600;color:#5B6582}
-.lr-seas span{display:block;margin-top:2px;font-size:12px;color:#8A93AD}
-.lr-bp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
-.lr-bp div{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;border:1.5px dashed #D6DDEE;font-size:13.5px;font-weight:500;color:#5B6582}
-.lr-bp svg{color:#9DB8F7;flex-shrink:0}
 .lr-posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.lr-post{display:flex;flex-direction:column;gap:10px;padding:20px 22px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;text-decoration:none;color:#0B1433;transition:border-color .2s ease,transform .3s ease}
+.lr-post{display:flex;flex-direction:column;gap:14px;padding:20px 22px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;text-decoration:none;color:#0B1433;transition:border-color .2s ease,transform .3s ease}
 .lr-post:hover{border-color:#AFC1F5;transform:translateY(-2px)}
 .lr-post b{font-size:15.5px;font-weight:600;line-height:1.35}
 .lr-post small{display:flex;align-items:center;gap:8px;margin-top:auto;font-size:13px;color:#5B6582}
 .lr-post .cs-cav{width:22px;height:22px;font-size:9px}
-.lr-post .ds-tag{align-self:flex-start}
 .lr-scrim,.lr-panel{font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
 .lr-scrim{position:fixed;inset:0;z-index:40;background:rgba(11,20,51,.28);animation:lrFade .25s ease both}
 .lr-panel{position:fixed;right:0;top:0;bottom:0;z-index:41;width:420px;max-width:100vw;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;box-shadow:-30px 0 80px -30px rgba(11,20,51,.35);animation:lrIn .4s cubic-bezier(.2,.8,.2,1) both}
@@ -302,8 +298,8 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-bar.lg{width:100%;height:8px;margin-top:14px}
 .lr-week{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);padding:0}
 .lr-week > div{padding:26px 28px;display:flex;flex-direction:column;min-width:0}
-.lr-week > div + div{border-left:1px solid #EEF1F7}
-.lr-wkd{font-size:13px;color:#5B6582}
+.lr-week > .lr-seg{display:none}
+.lr-week > .lr-wka{border-left:1px solid #EEF1F7}
 .lr-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin-top:16px}
 .lr-day{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 0;border-radius:12px;font-size:12px;color:#5B6582}
 .lr-day b{font-size:15px;font-weight:600;color:#0B1433}
@@ -314,7 +310,7 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-day.today i{background:#FFFFFF}
 .lr-evs{margin-top:6px}
 .lr-evd{display:block;margin-top:14px;font-size:12px;font-weight:600;color:#8A93AD}
-.lr-ev{display:grid;grid-template-columns:72px minmax(0,1fr) auto;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid #EEF1F7}
+.lr-ev{display:grid;grid-template-columns:72px minmax(0,1fr);align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid #EEF1F7}
 .lr-ev time{font-size:13px;color:#5B6582}
 .lr-ev b{min-width:0;font-size:14.5px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lr-week .ds-link.lr-end{margin-top:auto;padding-top:16px;align-self:flex-start}
@@ -328,21 +324,17 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-goalw div{display:flex;align-items:baseline;justify-content:space-between;gap:12px;font-size:14px;color:#4A5578}
 .lr-goalw b{font-size:15px;font-weight:600;color:#0B1433}
 .lr-goalw .lr-bar{margin-top:10px}
-.lr-goalw p{margin:10px 0 0;font-size:13px;color:#4A5578}
 .lr-week .lr-rows + .lr-goalw{margin-top:18px}
-.lr-tabs{display:flex;gap:8px;flex-wrap:wrap}
-.lr-mlc{padding:20px 24px 8px}
-.lr-mls{margin-top:8px}
-.lr-mr{display:grid;grid-template-columns:40px minmax(0,1fr) 130px 180px 90px;align-items:center;gap:18px;padding:16px 0;border-top:1px solid #EEF1F7;text-decoration:none;color:#0B1433}
+.lr-mlc{padding:4px 24px}
+.lr-mr{display:grid;grid-template-columns:40px minmax(0,1fr) 200px 20px;align-items:center;gap:18px;padding:16px 0;border-top:1px solid #EEF1F7;text-decoration:none;color:#0B1433}
 .lr-mr:first-child{border-top:0}
 .lr-mr:hover .lr-mr-b b{color:#1652F0}
 .lr-mr-b b{display:block;font-size:15.5px;font-weight:600;transition:color .2s ease}
 .lr-mr-b small{display:block;margin-top:3px;font-size:13px;color:#5B6582}
-.lr-mr .ds-tag{justify-self:start}
 .lr-mr-p{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600}
-.lr-mr .ds-link{justify-self:end}
-.lr-mle{margin:0;padding:18px 0;font-size:14.5px;color:#5B6582}
-.lr-g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.lr-chev{color:#8A93AD;display:flex;transition:transform .2s ease,color .2s ease}
+.lr-mr:hover .lr-chev{color:#1652F0;transform:translateX(2px)}
+.lr-mr-p .lr-bar{flex:1}
 .lr-big{display:flex;align-items:baseline;gap:8px;margin-top:14px;font-size:36px;line-height:1;font-weight:600;letter-spacing:-1px}
 .lr-big small{font-size:14px;font-weight:500;color:#5B6582;letter-spacing:0}
 .lr-split{display:flex;gap:3px;height:8px;margin-top:16px}
@@ -385,8 +377,7 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-disc{grid-template-columns:minmax(0,1fr) 300px;gap:28px}
 .lr-goal{grid-template-columns:minmax(0,1fr)}
 .lr-gv{display:none}
-.lr-mr{grid-template-columns:40px minmax(0,1fr) 160px 80px}
-.lr-mr .ds-tag{display:none}
+.lr-mr{grid-template-columns:40px minmax(0,1fr) 160px 20px}
 .lr-bpb{flex-direction:column;align-items:stretch}
 .lr-nova{flex-wrap:wrap}
 .lr-tut{padding-left:0;border-left:0;width:100%}
@@ -410,9 +401,7 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-acct{display:flex}
 .ds-main{padding:8px 16px 32px}
 .lr-disc{grid-template-columns:minmax(0,1fr)}
-.lr-g2,.lr-posts,.lr-g3{grid-template-columns:minmax(0,1fr)}
-.lr-week{grid-template-columns:minmax(0,1fr)}
-.lr-week > div + div{border-left:0;border-top:1px solid #EEF1F7}
+.lr-g2,.lr-posts{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width: 760px){
 .lr-head{margin:4px 0 18px;gap:14px}
@@ -431,21 +420,20 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-nv{padding:18px}
 .lr-nv p{margin:12px 0 14px;font-size:14.5px}
 .lr-jy .jy-jh{flex-direction:column;align-items:flex-start;gap:14px}
+.lr-jp .jy-jh{flex-direction:row;align-items:flex-end;justify-content:space-between}
 .lr-jy .jy-jt{font-size:26px;letter-spacing:-.5px}
-.lr-jy .jy-jr{grid-template-columns:minmax(0,1fr);margin-top:22px}
-.lr-jy .jy-jr::before{display:none}
-.lr-jy .jy-js{display:grid;grid-template-columns:32px minmax(0,1fr) auto;align-items:center;column-gap:12px;text-align:left;padding-bottom:16px}
-.lr-jy .jy-js:not(:last-child)::after{content:"";position:absolute;left:15px;top:32px;bottom:0;width:2px;background:rgba(22,82,240,.28)}
-.lr-jy .jy-js:last-child{padding-bottom:0}
-.lr-jy .jy-jn{width:32px;height:32px;margin:0;font-size:12px}
-.lr-jy .jy-jl{font-size:14px}
-.lr-jy .jy-jd{grid-column:3;font-size:12px}
-.lr-jy .jy-here{grid-column:2;justify-self:start;margin-top:6px}
+.lr-jy .jy-jr{margin:22px -6px 0}
+.lr-jy .jy-jr::before{top:13px}
+.lr-jy .jy-js{gap:2px}
+.lr-jy .jy-jn{width:28px;height:28px;margin-bottom:4px;font-size:11.5px}
+.lr-jy .jy-js.now .jy-jn{box-shadow:0 0 0 4px rgba(22,82,240,.14)}
+.lr-jy .jy-jl{font-size:11.5px;font-weight:500;line-height:1.25}
+.lr-jy .jy-js.now .jy-jl{font-weight:600;color:#1652F0}
+.lr-jy .jy-jd,.lr-jy .jy-here{display:none}
 .lr-jf{flex-direction:column;align-items:stretch;gap:16px;margin-top:22px;padding-top:18px}
 .lr-jf .ds-acts{position:static;margin:0;padding:0;border:0;background:none}
 .lr-sec{margin-top:30px}
 .lr-sh h2{font-size:19px}
-.lr-sh p{display:none}
 .lr-g4{display:flex;overflow-x:auto;gap:12px;margin:0 -16px;padding:2px 16px 6px;scroll-snap-type:x mandatory;scrollbar-width:none}
 .lr-g4::-webkit-scrollbar{display:none}
 .lr-g4 > *{flex:0 0 76%;scroll-snap-align:start}
@@ -459,33 +447,31 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-nova-b p{font-size:15px}
 .lr-nova-a{width:100%;justify-content:space-between}
 .lr-card{padding:20px 18px}
-.lr-seas,.lr-bp{display:none}
 .lr-posts{display:flex;overflow-x:auto;gap:12px;margin:0 -16px;padding:0 16px;scrollbar-width:none}
 .lr-posts::-webkit-scrollbar{display:none}
 .lr-post{flex:0 0 78%;padding:16px 18px}
-.lr-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-.lr-st + .lr-st{border-left:0}
-.lr-st:nth-child(even){border-left:1px solid #EEF1F7}
-.lr-st:nth-child(n+3){border-top:1px solid #EEF1F7}
 .lr-fa{flex-direction:column;align-items:stretch;gap:10px;margin-top:22px}
 .lr-fa .ds-btn{justify-content:space-between}
 .lr-fa .ds-link{justify-content:center;min-height:40px}
 .lr-nx b{font-size:15.5px}
 .lr-nx-i{width:44px;height:44px;border-radius:14px}
 .lr-bar{width:90px}
-.lr-week > div{padding:20px 18px}
+.lr-week{grid-template-columns:minmax(0,1fr)}
+.lr-week > div.lr-wkc,.lr-week > div.lr-wka{padding:18px 16px 20px}
 .lr-ev{grid-template-columns:62px minmax(0,1fr)}
-.lr-ev .ds-tag{display:none}
-.lr-mlc{padding:16px 16px 4px}
-.lr-tabs{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px;padding:0 16px;scrollbar-width:none}
-.lr-tabs::-webkit-scrollbar{display:none}
-.lr-mr{grid-template-columns:40px minmax(0,1fr) auto;gap:12px}
-.lr-mr-p{grid-column:2;grid-row:2;margin-top:-6px}
-.lr-mr .ds-link{grid-column:3;grid-row:1}
+.lr-week > .lr-seg{display:flex;flex-direction:row;padding:4px;margin:16px 16px 0}
+.lr-week .lr-ch h3{display:none}
+.lr-week .lr-wkc .lr-ch{display:none}
+.lr-week.t-due .lr-wkc,.lr-week.t-sch .lr-wka{display:none}
+.lr-week > .lr-wka{border-top:0}
+.lr-days{margin-top:0}
+.lr-wka .lr-ch{display:none}
+.lr-wka .lr-rows{margin-top:0}
+.lr-mlc{padding:2px 16px}
+.lr-mr{grid-template-columns:40px minmax(0,1fr) 18px;column-gap:12px;row-gap:8px;padding:14px 0}
+.lr-mr-p{grid-column:2;grid-row:2}
+.lr-chev{grid-column:3;grid-row:1 / span 2}
 .lr-big{font-size:30px}
-.lr-g3{display:flex;overflow-x:auto;gap:12px;margin:0 -16px;padding:0 16px 4px;scroll-snap-type:x mandatory;scrollbar-width:none}
-.lr-g3::-webkit-scrollbar{display:none}
-.lr-g3 > *{flex:0 0 80%;scroll-snap-align:start}
 .lr-bpf{padding:20px 18px}
 .lr-bpn{flex-direction:column;align-items:flex-start;gap:14px}
 .lr-bps span{padding:0 12px}
@@ -528,11 +514,11 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 <div><span class="lr-date">{{date}}</span><h1 class="lr-h1">{{greeting}}, Ada.</h1></div>
 <sc-if value="{{isNew}}" hint-placeholder-val="{{ true }}">
 <div class="lr-gs"><span class="lr-gs-t">Getting started<b>{{gsDone}} of 3 done</b></span><ol>
-<sc-for list="{{gs}}" as="g" hint-placeholder-count="3"><li><sc-if value="{{g.isBtn}}" hint-placeholder-val="{{ false }}"><button type="button" class="lr-gs-s {{g.cls}}" onClick="{{g.go}}"><i><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>{{g.t}}</button></sc-if><sc-if value="{{g.isLink}}" hint-placeholder-val="{{ false }}"><a class="lr-gs-s {{g.cls}}" href="{{g.href}}"><i><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>{{g.t}}</a></sc-if><sc-if value="{{g.isDone}}" hint-placeholder-val="{{ true }}"><span class="lr-gs-s done"><i><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>{{g.t}}</span></sc-if></li></sc-for>
+<sc-for list="{{gs}}" as="g" hint-placeholder-count="3"><li><sc-if value="{{g.isBtn}}" hint-placeholder-val="{{ false }}"><button type="button" class="lr-gs-s {{g.cls}}" onClick="{{g.go}}"><i><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>{{g.t}}</button></sc-if><sc-if value="{{g.isNext}}" hint-placeholder-val="{{ false }}"><span class="lr-gs-s next"><i><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>{{g.t}}</span></sc-if><sc-if value="{{g.isDone}}" hint-placeholder-val="{{ true }}"><span class="lr-gs-s done"><i><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>{{g.t}}</span></sc-if></li></sc-for>
 </ol></div>
 </sc-if>
 <sc-if value="{{isActive}}" hint-placeholder-val="{{ false }}">
-<div class="lr-strip"><sc-for list="{{stats}}" as="s" hint-placeholder-count="4"><a class="lr-st" href="{{s.href}}"><small>{{s.k}}</small><b><sc-if value="{{s.coin}}" hint-placeholder-val="{{ false }}"><span class="dlp-c" aria-hidden="true"></span></sc-if>{{s.v}}<i>{{s.of}}</i></b></a></sc-for></div>
+<div class="lr-strip"><sc-for list="{{stats}}" as="s" hint-placeholder-count="3"><a class="lr-st" href="{{s.href}}"><small>{{s.k}}</small><b>{{s.v}}<i>{{s.of}}</i></b></a></sc-for></div>
 </sc-if>
 </div>
 
@@ -541,7 +527,7 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 <div>
 <span class="lr-k">{{dKicker}}</span>
 <h2 id="lr-ft" class="lr-ft">What would you like to learn?</h2>
-<p class="lr-fs">{{dSub}}</p>
+<sc-if value="{{hasDSub}}" hint-placeholder-val="{{ false }}"><p class="lr-fs">{{dSub}}</p></sc-if>
 <form class="ds-ask lr-ask" action="Explore.dc.html" role="search"><label class="sr-only" for="lr-q">Search learning</label><input id="lr-q" name="q" placeholder="Try ‘SQL’, ‘UX design’ or ‘leadership’" value="{{q}}" onInput="{{onQ}}"><a class="ds-btn sm" href="Explore.dc.html"><span>Explore</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></form>
 <div class="lr-chips"><small>Or browse</small><sc-for list="{{disc}}" as="c" hint-placeholder-count="4"><a class="ds-chip" href="{{c.h}}">{{c.t}}</a></sc-for></div>
 </div>
@@ -556,7 +542,7 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 <sc-if value="{{fReady}}" hint-placeholder-val="{{ false }}">
 <section class="lr-focus lr-jy aur aur-lt" aria-labelledby="lr-jt">
 <div class="jy-jh"><div><span class="jy-jk"><span class="ds-tag green">Journey ready</span>Your journey to becoming</span><h2 id="lr-jt" class="jy-jt" style="margin: 6px 0 0">Data Analyst</h2></div>
-<div class="jy-jm"><span class="ds-tag line lg">5 stages</span><span class="ds-tag line lg">3–4 months</span><span class="ds-tag line lg"><span class="dlp-c" aria-hidden="true"></span>~3,800 DLP<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">An estimate of the learning allowance the whole journey uses. You only spend DLP as you learn, stage by stage.</span></span></span></div></div>
+<div class="jy-jm"><span class="ds-tag line lg">3–4 months</span><span class="ds-tag line lg"><span class="dlp-c" aria-hidden="true"></span>~3,800 DLP<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">An estimate of the learning allowance the whole journey uses. You only spend DLP as you learn, stage by stage.</span></span></span></div></div>
 <ol class="jy-jr" aria-label="Your five stages">
 <sc-for list="{{route}}" as="r" hint-placeholder-count="5"><li class="jy-js {{r.cls}}"><span class="jy-jn">{{r.mark}}</span><span class="jy-jl">{{r.label}}</span><span class="jy-jd">{{r.note}}</span><sc-if value="{{r.here}}" hint-placeholder-val="{{ false }}"><span class="ds-tag blue jy-here">{{r.hereT}}</span></sc-if></li></sc-for>
 </ol>
@@ -572,7 +558,7 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 <div>
 <span class="lr-k">Your goal</span>
 <h2 id="lr-gt" class="lr-ft">Become a stronger leader</h2>
-<p class="lr-fs">You haven’t chosen a path yet. Pick something below, or let {{coachTitle}} shape a journey around this goal.</p>
+<p class="lr-fs">You haven’t picked a path yet.</p>
 <div class="lr-fa"><a class="ds-btn" href="Journey.dc.html"><span>Continue with {{coachTitle}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><a class="ds-link" href="Explore.dc.html">Explore leadership learning</a></div>
 </div>
 <div class="lr-gv" aria-hidden="true">
@@ -586,9 +572,9 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 </sc-if>
 
 <sc-if value="{{fJourney}}" hint-placeholder-val="{{ false }}">
-<section class="lr-focus lr-jy aur aur-lt" aria-labelledby="lr-jn">
+<section class="lr-focus lr-jy lr-jp aur aur-lt" aria-labelledby="lr-jn">
 <div class="jy-jh"><div><span class="jy-jk">{{jKicker}}</span><h2 id="lr-jn" class="jy-jt" style="margin: 6px 0 0">{{jTitle}}</h2></div>
-<div class="jy-jm"><span class="ds-tag line lg">{{jPct}} complete</span><span class="ds-tag line lg">{{jStage}}</span></div></div>
+<div class="jy-jm"><span class="ds-tag line lg">{{jPct}} complete</span></div></div>
 <ol class="jy-jr" aria-label="Your five stages">
 <sc-for list="{{route}}" as="r" hint-placeholder-count="5"><li class="jy-js {{r.cls}}"><span class="jy-jn">{{r.mark}}</span><span class="jy-jl">{{r.label}}</span><span class="jy-jd">{{r.note}}</span><sc-if value="{{r.here}}" hint-placeholder-val="{{ false }}"><span class="ds-tag blue jy-here">{{r.hereT}}</span></sc-if></li></sc-for>
 </ol>
@@ -600,34 +586,33 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 </sc-if>
 
 <sc-if value="{{isActive}}" hint-placeholder-val="{{ false }}">
-<section class="lr-sec lr-card lr-week" aria-label="This week">
-<div>
-<div class="lr-ch"><h3>This week</h3><span class="lr-wkd">{{wkRange}}</span></div>
+<section class="lr-sec lr-card lr-week {{wkCls}}" aria-label="This week">
+<div class="ds-seg lr-seg" role="tablist" aria-label="This week"><button type="button" role="tab" class="{{segSch}}" aria-selected="{{selSch}}" onClick="{{pickSch}}">Schedule</button><button type="button" role="tab" class="{{segDue}}" aria-selected="{{selDue}}" onClick="{{pickDue}}">Due soon<i>{{asgN}}</i></button></div>
+<div class="lr-wkc">
+<div class="lr-ch"><h3>This week</h3></div>
 <div class="lr-days"><sc-for list="{{days}}" as="d" hint-placeholder-count="7"><span class="lr-day {{d.cls}}"><span>{{d.w}}</span><b>{{d.n}}</b><i></i></span></sc-for></div>
-<div class="lr-evs"><sc-for list="{{sched}}" as="e" hint-placeholder-count="5"><sc-if value="{{e.head}}" hint-placeholder-val="{{ false }}"><span class="lr-evd">{{e.day}}</span></sc-if><div class="lr-ev"><time>{{e.time}}</time><b>{{e.t}}</b><span class="ds-tag {{e.tc}}">{{e.type}}</span></div></sc-for></div>
+<div class="lr-evs"><sc-for list="{{sched}}" as="e" hint-placeholder-count="5"><sc-if value="{{e.head}}" hint-placeholder-val="{{ false }}"><span class="lr-evd">{{e.day}}</span></sc-if><div class="lr-ev"><time>{{e.time}}</time><b>{{e.t}}</b></div></sc-for></div>
 <a class="ds-link lr-end" href="#">Open schedule<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
 </div>
-<div>
+<div class="lr-wka">
 <div class="lr-ch"><h3>Due soon</h3><a class="ds-link" href="#">All assignments</a></div>
 <div class="lr-rows"><sc-for list="{{assigns}}" as="a" hint-placeholder-count="2"><div class="lr-row"><span class="lr-row-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 3.5h6v3H9zM9 12h6M9 16h4"></path></svg></span><div class="lr-row-b"><b>{{a.t}}</b><small>{{a.ctx}}</small><small><span class="ds-tag {{a.dueCls}}">{{a.due}}</span>{{a.est}}</small></div><a class="ds-link" href="{{a.href}}">{{a.cta}}</a></div></sc-for></div>
-<div class="lr-goalw"><div><span>Weekly goal</span><b>{{wgDone}} of {{wgAll}} hours</b></div><span class="lr-bar lg"><i style="width: {{wgPct}}"></i></span><p>{{wgNote}}</p></div>
+<div class="lr-goalw"><div><span>Weekly goal</span><b>{{wgDone}} of {{wgAll}} hours</b></div><span class="lr-bar lg"><i style="width: {{wgPct}}"></i></span></div>
 </div>
 </section>
 
 <section class="lr-sec" aria-labelledby="lr-ml">
-<div class="lr-sh"><div><h2 id="lr-ml">My learning</h2><p>Everything you’ve started, in one place.</p></div><a class="ds-link" href="#">View all</a></div>
+<div class="lr-sh"><h2 id="lr-ml">My learning</h2><a class="ds-link" href="#">View all</a></div>
 <div class="lr-card lr-mlc">
-<div class="lr-tabs" role="tablist" aria-label="Filter my learning"><sc-for list="{{mlTabs}}" as="t" hint-placeholder-count="5"><button type="button" role="tab" class="ds-chip sm {{t.cls}}" aria-selected="{{t.sel}}" onClick="{{t.pick}}">{{t.label}}<i>{{t.n}}</i></button></sc-for></div>
 <div class="lr-mls">
-<sc-for list="{{mlItems}}" as="m" hint-placeholder-count="4"><a class="lr-mr" href="{{m.href}}"><span class="lr-row-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g style="display: {{m.i0}}"><circle cx="6" cy="19" r="2.5"></circle><circle cx="18" cy="5" r="2.5"></circle><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"></path></g><g style="display: {{m.i1}}"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></g><g style="display: {{m.i2}}"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></g><g style="display: {{m.i3}}"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M7.5 14h3M7.5 17h6"></path></g></svg></span><span class="lr-mr-b"><b>{{m.t}}</b><small>{{m.sub}}</small></span><span class="ds-tag line">{{m.type}}</span><span class="lr-mr-p"><span class="lr-bar {{m.barCls}}"><i style="width: {{m.pct}}"></i></span>{{m.pctLabel}}</span><span class="ds-link">{{m.cta}}</span></a></sc-for>
-<sc-if value="{{mlEmpty}}" hint-placeholder-val="{{ false }}"><p class="lr-mle">Nothing in this group yet.</p></sc-if>
+<sc-for list="{{mlItems}}" as="m" hint-placeholder-count="4"><a class="lr-mr" href="{{m.href}}"><span class="lr-row-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g style="display: {{m.i0}}"><circle cx="6" cy="19" r="2.5"></circle><circle cx="18" cy="5" r="2.5"></circle><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"></path></g><g style="display: {{m.i1}}"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></g><g style="display: {{m.i2}}"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></g><g style="display: {{m.i3}}"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M7.5 14h3M7.5 17h6"></path></g></svg></span><span class="lr-mr-b"><b>{{m.t}}</b><small>{{m.sub}}</small></span><span class="lr-mr-p"><span class="lr-bar {{m.barCls}}"><i style="width: {{m.pct}}"></i></span>{{m.pctLabel}}</span><span class="lr-chev" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></span></a></sc-for>
 </div>
 </div>
 </section>
 </sc-if>
 
 <section class="lr-sec" aria-labelledby="lr-rec">
-<div class="lr-sh"><div><h2 id="lr-rec">{{recTitle}}</h2><p>{{recSub}}</p></div><a class="ds-link" href="Explore.dc.html">Explore learning</a></div>
+<div class="lr-sh"><h2 id="lr-rec">{{recTitle}}<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">{{recSub}}</span></span></h2><a class="ds-link" href="Explore.dc.html">Explore learning</a></div>
 <div class="lr-g4"><sc-for list="{{recs}}" as="c" hint-placeholder-count="4"><a class="cs-card" href="{{c.href}}" aria-label="{{c.t}}">
 <div class="cs-th" style="background: {{c.bg}}">
 <svg class="cs-ico" viewBox="0 0 24 24" fill="none" stroke="{{c.icoC}}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20" style="display: {{c.i0}}"></path><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" style="display: {{c.i1}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{c.i2}}"></path><path d="M3 7h18v13H3zM8 7V4h8v3" style="display: {{c.i4}}"></path></svg>
@@ -656,18 +641,13 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 
 <sc-if value="{{seasonOn}}" hint-placeholder-val="{{ false }}">
 <section class="lr-sec" aria-labelledby="lr-sn">
-<div class="lr-sh"><div><h2 id="lr-sn">Your Learning Season</h2><p>Learning comes first. Rewards follow when the season closes.</p></div><span class="ds-tag blue lg">September · 3 days left</span></div>
-<div class="lr-g3">
+<div class="lr-sh"><h2 id="lr-sn">Learning Season<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Learning comes first. Your LAS and rewards are worked out when the season closes.</span></span></h2><span class="ds-tag blue lg">September · 3 days left</span></div>
+<div class="lr-g2">
 <section class="lr-card" aria-labelledby="lr-las"><div class="lr-ch"><h3 id="lr-las">Season LAS<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Your verified learning activity this season. It’s a score, not money, and has no fixed cash value.</span></span></h3></div>
 <span class="lr-big">1,240<small>LAS</small></span>
 <span class="lr-split" aria-hidden="true"><i style="width: 85%"></i><i style="width: 15%"></i></span>
 <span class="lr-leg"><span><i></i>Learning 1,050</span><span><i></i>Community 190</span></span>
 <a class="ds-link" href="#">View breakdown<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></section>
-<section class="lr-card" aria-labelledby="lr-stk"><div class="lr-ch"><h3 id="lr-stk">Learning streak</h3></div>
-<span class="lr-big">18<small>days in a row</small></span>
-<span class="lr-bar lg" aria-hidden="true"><i style="width: 60%"></i></span>
-<p>12 more days to your 30-day milestone.</p>
-<a class="ds-link" href="#">View activity<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></section>
 <section class="lr-card" aria-labelledby="lr-sr"><div class="lr-ch"><h3 id="lr-sr">Season rewards<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Rewards are worked out when the season closes. Credits reach your Wallets only after that.</span></span></h3><span class="ds-tag blue">Accumulating</span></div>
 <div class="lr-rw"><div><span>Marketplace Credits</span><span class="ds-tag">Pending</span></div><div><span>Scholarship</span><span class="ds-tag">Pending</span></div><div><span>MFORGE</span><span class="ds-tag green">Eligible</span></div></div>
 <a class="ds-link" href="#">View rewards<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></section>
@@ -679,14 +659,12 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 <div class="lr-sec lr-g2">
 <section class="lr-card" aria-labelledby="lr-rw">
 <div class="lr-ch"><h3 id="lr-rw">Learning rewards<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Each Learning Season, verified learning activity on a paid plan earns rewards such as Marketplace Credits. Learning always comes first.</span></span></h3><span class="ds-tag">Paid plans</span></div>
-<div class="lr-cb"><span class="lr-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0z"></path><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 21h7M10 17h4"></path></svg></span><div><h4>Learning Seasons come with paid plans.</h4><p>Your learning still builds your streak and your Digital Backpack, on any plan.</p></div></div>
-<div class="lr-seas" aria-hidden="true"><div><b>Season LAS</b><span>Your activity score</span></div><div><b>Streak</b><span>Days in a row</span></div><div><b>Rewards</b><span>At season close</span></div></div>
+<div class="lr-cb"><span class="lr-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0z"></path><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 21h7M10 17h4"></path></svg></span><div><h4>Learning Seasons come with paid plans.</h4><p>Your streak and Backpack still grow on any plan.</p></div></div>
 <a class="ds-link" href="#">Compare plans<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
 </section>
 <section class="lr-card" aria-labelledby="lr-bp">
 <div class="lr-ch"><h3 id="lr-bp">Digital Backpack<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Your verified proof: credentials, projects and skills you earn on Credalio, ready to share.</span></span></h3></div>
-<div class="lr-cb"><span class="lr-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2M4 13h16M11 13v2h2v-2"></path></svg></span><div><h4>Your proof starts here.</h4><p>Everything you earn on Credalio lands here, verified and ready to share.</p></div></div>
-<div class="lr-bp" aria-hidden="true"><div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg>Credentials</div><div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"></rect><path d="M3 9h18M8 13h3M8 16h6"></path></svg>Projects</div><div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6-4.5-4.2 6.1-.7z"></path></svg>Skills</div></div>
+<div class="lr-cb"><span class="lr-ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2M4 13h16M11 13v2h2v-2"></path></svg></span><div><h4>Your proof starts here.</h4><p>What you earn lands here, verified and ready to share.</p></div></div>
 <a class="ds-link" href="#">Open Backpack<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
 </section>
 </div>
@@ -703,8 +681,8 @@ a.lr-gs-s.next:hover,button.lr-gs-s.next:hover{background:#EAF0FF}
 </sc-if>
 
 <section class="lr-sec" aria-labelledby="lr-cm">
-<div class="lr-sh"><div><h2 id="lr-cm">From your learning community</h2><p>{{commSub}}</p></div><a class="ds-link" href="#">Open community</a></div>
-<div class="lr-posts"><sc-for list="{{posts}}" as="p" hint-placeholder-count="3"><a class="lr-post" href="#"><span class="ds-tag line">{{p.tag}}</span><b>{{p.t}}</b><small><span class="cs-cav">{{p.ini}}</span>{{p.by}} · {{p.n}} replies</small></a></sc-for></div>
+<div class="lr-sh"><h2 id="lr-cm">From the community</h2><a class="ds-link" href="#">Open community</a></div>
+<div class="lr-posts"><sc-for list="{{posts}}" as="p" hint-placeholder-count="3"><a class="lr-post" href="#"><b>{{p.t}}</b><small><span class="cs-cav">{{p.ini}}</span>{{p.by}} · {{p.n}} replies</small></a></sc-for></div>
 </section>
 
 </main>
@@ -742,7 +720,7 @@ class Component extends DCLogic {
   constructor(props) {
     super(props);
     var p = props || {};
-    this.state = { st: p.state || 'A', coach: p.coach === undefined || p.coach === null ? 'Nova' : p.coach, panel: p.panel === true || p.panel === 'true', nav: false, draft: '', q: '', thinking: false, ti: 0, tab: 'All' };
+    this.state = { st: p.state || 'A', coach: p.coach === undefined || p.coach === null ? 'Nova' : p.coach, panel: p.panel === true || p.panel === 'true', nav: false, draft: '', q: '', thinking: false, ti: 0, wk: 'sch' };
     this.CH = { Nova: ['/_blob/398ca91d2832bb0ab6b0af61319676f4', '-87.50%', '-57.81%', '294.06%'], Maya: ['/_blob/a1da64159da9c302c3a1835dea8e5266', '-68.75%', '-105.00%', '235.25%'], Alex: ['/_blob/22972224648e9b26d4acac7cc3f7c3a8', '-72.97%', '-112.16%', '254.32%'], Sage: ['/_blob/343a6c48a0cc4849f5a082d9a10a83a4', '-75.68%', '-114.86%', '254.32%'] };
     this.TONE = { Data: ['linear-gradient(150deg,#1C3AA8,#0B1433)', '#FFFFFF', 0], Design: ['linear-gradient(150deg,#7FA4FF,#4C7DFF)', '#FFFFFF', 1], Software: ['linear-gradient(150deg,#4C7DFF,#1652F0)', '#FFFFFF', 2], Business: ['linear-gradient(150deg,#DCE5FB,#EAF0FF)', '#1652F0', 4], Leadership: ['linear-gradient(150deg,#9DB8F7,#4C7DFF)', '#FFFFFF', 4] };
     this.TIER = { gold: ['Gold Validated', '#C8961E'], silver: ['Silver Validated', '#8E9BB0'], bronze: ['Bronze Validated', '#A8683A'] };
@@ -805,7 +783,7 @@ class Component extends DCLogic {
     var gs = GS[st] || [['Account created', 'd'], named ? ['Coach named', 'd'] : ['Name your coach', 'b'], ['Start your first lesson', named ? 'l' : 'o', 'Explore.dc.html']];
     var firstOpen = true;
     var gsv = gs.map(function (g) { var nx = g[1] !== 'd' && firstOpen; if (g[1] !== 'd') firstOpen = false; var kind = g[1] === 'o' ? 'l' : g[1];
-      return { t: g[0], isDone: g[1] === 'd', isBtn: kind === 'b', isLink: kind === 'l', href: g[2] || '#', go: open, cls: nx ? 'next' : '' }; });
+      return { t: g[0], isDone: g[1] === 'd', isBtn: kind === 'b', isNext: kind === 'l', go: open, cls: nx ? 'next' : '' }; });
     var NOVA = {
       A: ['Not sure where to begin? Tell me a goal and I’ll build a journey around it in about two minutes.', 'Build my journey', 'Journey.dc.html'],
       C: ['Leaders grow fastest with regular feedback practice. Want me to plan a short session for each week?', 'Plan my week', ''],
@@ -821,28 +799,24 @@ class Component extends DCLogic {
     var CHN = this.CH;
     var ROUTES = {
       R: [['1', 'Foundation', '2 courses', 'now', 'You start here'], ['2', 'Core skills', '3 courses'], ['3', 'Practice', '2 projects'], ['4', 'Certification', '1 exam'], ['✓', 'Job-ready', 'Your portfolio', 'end']],
-      D: [['✓', 'Foundation', 'Completed', 'done'], ['2', 'Core skills', '1 of 3 courses', 'now', 'You’re here'], ['3', 'Practice', '2 projects'], ['4', 'Certification', '1 exam'], ['✓', 'Job-ready', 'Your portfolio', 'end']]
+      D: [['✓', 'Foundation', 'Completed', 'done'], ['2', 'Core skills', '1 of 3 courses', 'now'], ['3', 'Practice', '2 projects'], ['4', 'Certification', '1 exam'], ['✓', 'Job-ready', 'Your portfolio', 'end']]
     };
     var route = (ROUTES[st] || ROUTES.D).map(function (r) { return { mark: r[0], label: r[1], note: r[2], cls: r[3] || '', here: !!r[4], hereT: r[4] || '' }; });
-    var stat = function (k, v, of, href, cn) { return { k: k, v: v, of: of || '', href: href, coin: !!cn }; };
+    var stat = function (k, v, of, href) { return { k: k, v: v, of: of || '', href: href }; };
     var counts = { D: [4, 8], E: [4, 8], F: [2, 2], G: [3, 5], H: [2, 6], I: [4, 8], W: [4, 8] }[st] || [0, 0];
     var ML = { D: [['Data Analyst', 'Career Path', 32, 'Stage 2 of 5'], ['SQL for Data Analysis', 'Course', 62, 'Module 4 of 8'], ['Professional Certificate in Data Analysis', 'Certification', 18, 'Learning 2 of 6'], ['Applied Data Program', 'Learning Program', -1, 'Starts 12 October']] };
     ML.E = ML.D; ML.I = ML.D; ML.W = ML.D;
     var items = ML[st] || [];
-    var TABS = [['All', null], ['Career paths', 'Career Path'], ['Courses', 'Course'], ['Certifications', 'Certification'], ['Programs', 'Learning Program']];
-    var tabT = (TABS.filter(function (t) { return t[0] === S.tab; })[0] || TABS[0])[1];
-    var shown = items.filter(function (m) { return !tabT || m[1] === tabT; });
     var TI = { 'Career Path': 0, Course: 1, Certification: 2, 'Learning Program': 3 };
-    var mlItems = shown.map(function (m) { var v = { t: m[0], type: m[1], sub: m[3], pct: (m[2] < 0 ? 0 : m[2]) + '%', pctLabel: m[2] < 0 ? 'Upcoming' : m[2] + '%', barCls: m[2] === 100 ? 'ok' : '',
+    var mlItems = items.map(function (m) { var v = { t: m[0], sub: m[1] + ' · ' + m[3], pct: (m[2] < 0 ? 0 : m[2]) + '%', pctLabel: m[2] < 0 ? 'Upcoming' : m[2] + '%', barCls: m[2] === 100 ? 'ok' : '',
       cta: m[2] < 0 ? 'View' : (m[2] === 100 ? 'Review' : 'Continue'), href: m[1] === 'Career Path' ? 'PathDetail-Learner.dc.html' : (m[1] === 'Certification' ? 'CertDetail.dc.html' : (m[1] === 'Learning Program' ? 'ProgramDetail.dc.html' : 'CourseDetail-Learner.dc.html')) };
       for (var i = 0; i < 4; i++) v['i' + i] = TI[m[1]] === i ? 'inline' : 'none'; return v; });
-    var mlTabs = TABS.map(function (t) { var on = (S.tab || 'All') === t[0]; return { label: t[0], n: t[1] ? items.filter(function (m) { return m[1] === t[1]; }).length : items.length, cls: on ? 'on' : '', sel: on ? 'true' : 'false', pick: function () { self.setState({ tab: t[0] }); } }; });
-    var EV = [[1, 'Today', '7:00 PM', 'SQL JOINs · Lesson 4', 'Lesson', 'blue'], [0, '', '8:00 PM', 'Tutor session with Hannah', 'Tutor', 'line'], [1, 'Tomorrow · Monday 28', '6:00 PM', 'Live session: Querying real datasets', 'Live', 'line'], [0, '', '11:59 PM', 'Knowledge Check due', 'Due', 'amber'], [1, 'Tuesday 29', '11:59 PM', 'SQL Data Cleaning Project due', 'Due', 'amber']];
+    var EV = [[1, 'Today', '7:00 PM', 'SQL JOINs · Lesson 4'], [0, '', '8:00 PM', 'Tutor session with Hannah'], [1, 'Tomorrow', '6:00 PM', 'Live session: Querying real datasets'], [1, 'Thursday 1', '6:30 PM', 'Study group: SQL practice']];
     var DAYS = [['Sun', 27, 'today'], ['Mon', 28, 'ev'], ['Tue', 29, 'ev'], ['Wed', 30, ''], ['Thu', 1, 'ev'], ['Fri', 2, ''], ['Sat', 3, '']];
     var AS = [['Knowledge Check', 'SQL for Data Analysis', 'Due tomorrow', 'amber', '~15 min', 'Start'], ['SQL Data Cleaning Project', 'Data Analyst Career Path', 'Due Tue 29 Sep', '', '~1 hr 30 min', 'Continue']];
-    var discSub = { B: 'You picked Data, Business and AI. Start with a suggestion below, or search for anything else.' }[st] || 'Search for something you’re curious about, or browse what people are learning.';
+    var discSub = { B: 'You picked Data, Business and AI.' }[st] || '';
     var dNova = { B: 'I can turn your interests into a starting journey. It takes about two minutes.' }[st] || 'Not sure yet? Tell me where you’d like to be, and I’ll build a journey around it.';
-    var REC_T = { R: ['Next on your journey', 'Picked by ' + coachN + ' for your Data Analyst journey.'], B: ['Picked for your interests', 'Based on Data, Business and AI.'], C: ['For your goal', 'Learning that builds towards becoming a stronger leader.'], active: ['Recommended for you', 'Based on your Data Analyst path and your progress.'], start: ['Good places to start', 'Popular first steps, while you find your direction.'] }[st === 'R' || st === 'B' || st === 'C' ? st : (isActive ? 'active' : 'start')];
+    var REC_T = { R: ['Next on your journey', 'Picked by ' + coachN + ' for your Data Analyst journey.'], B: ['Picked for your interests', 'Based on Data, Business and AI.'], C: ['For your goal', 'Learning that builds towards becoming a stronger leader.'], active: ['Recommended for you', 'Picked by ' + coachN + ' from your path and progress.'], start: ['Good places to start', 'Popular first steps while you find your direction.'] }[st === 'R' || st === 'B' || st === 'C' ? st : (isActive ? 'active' : 'start')];
     return {
       navCls: S.nav ? 'ds-open' : '', toggleNav: function () { self.setState({ nav: !S.nav }); },
       date: 'Sunday 27 September',
@@ -860,24 +834,24 @@ class Component extends DCLogic {
       nameSug: ['Nova', 'Maya', 'Alex', 'Sage'].map(function (n) { var on = S.draft.trim() === n, c = CHN[n]; return { label: n, src: c[0], l: c[1], t: c[2], w: c[3], on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { self.setState({ draft: n }); } }; }),
       saveName: function () { self.setState({ coach: S.draft.trim() || 'Nova', draft: '' }); },
       dlp: fmt(dlpN),
-      planName: { free: 'Free plan', basic: 'Basic plan', pro: 'Pro plan' }[tierK], planSub: fmt(allow) + ' DLP each month', planCta: tierK === 'pro' ? 'Manage' : 'Upgrade',
+      planName: { free: 'Free plan', basic: 'Basic plan', pro: 'Pro plan' }[tierK], planSub: fmt(allow) + ' DLP a month', planCta: tierK === 'pro' ? 'Manage' : 'Upgrade',
       hasAsg: isActive, asgN: AS.length,
       isNew: isNew, isActive: isActive, gs: gsv, gsDone: gs.filter(function (g) { return g[1] === 'd'; }).length,
-      stats: [stat('In progress', counts[0], '', '#'), stat('Completed', counts[1], '', '#'), stat('DLP', fmt(dlpN), '/ ' + fmt(allow), '#', true), stat('Season LAS', paid ? '1,240' : '—', '', '#')],
+      stats: [stat('In progress', counts[0], '', '#'), stat('Completed', counts[1], '', '#'), stat('Streak', '18', 'days', '#')],
       fDisc: st === 'A' || st === 'B', fGoal: st === 'C', fReady: st === 'R', fJourney: ['D', 'E', 'I', 'W'].indexOf(st) > -1,
-      dKicker: 'Welcome to Credalio', dSub: discSub, dNova: dNova, dNovaCta: 'Build my journey',
+      dKicker: 'Welcome to Credalio', dSub: discSub, hasDSub: !!discSub, dNova: dNova, dNovaCta: 'Build my journey',
       q: S.q, onQ: function (e) { self.setState({ q: e.target.value }); },
       disc: [['Courses', 'Courses.dc.html'], ['Career paths', 'CareerPaths.dc.html'], ['Certifications', 'Certifications.dc.html'], ['Programs', 'Programs.dc.html']].map(function (d) { return { t: d[0], h: d[1] }; }),
       route: route,
       jKicker: st === 'D' ? 'Your current journey · Career Path' : 'Your current journey · built with ' + coachN, jTitle: 'Data Analyst', jPct: '32%', jStage: 'Stage 2 of 5',
-      nxCtx: 'SQL for Data Analysis', nxTitle: 'SQL JOINs · Lesson 4', nxPct: '62%', nxMeta: '62% of the course · about 22 min',
+      nxCtx: 'SQL for Data Analysis', nxTitle: 'SQL JOINs · Lesson 4', nxPct: '62%', nxMeta: '62% of the course · ~22 min',
       jViewHref: st === 'D' ? 'PathDetail-Learner.dc.html' : 'JourneyPlan-Saved.dc.html', jCta: 'Continue', jCtaHref: 'CourseDetail-Learner.dc.html',
-      wkRange: '27 September – 3 October',
+      wkCls: S.wk === 'due' ? 't-due' : 't-sch', segSch: S.wk === 'due' ? '' : 'on', segDue: S.wk === 'due' ? 'on' : '', selSch: S.wk === 'due' ? 'false' : 'true', selDue: S.wk === 'due' ? 'true' : 'false', pickSch: function () { self.setState({ wk: 'sch' }); }, pickDue: function () { self.setState({ wk: 'due' }); },
       days: DAYS.map(function (d) { return { w: d[0], n: d[1], cls: d[2] }; }),
-      sched: EV.map(function (e) { return { head: !!e[0], day: e[1], time: e[2], t: e[3], type: e[4], tc: e[5] }; }),
+      sched: EV.map(function (e) { return { head: !!e[0], day: e[1], time: e[2], t: e[3] }; }),
       assigns: AS.map(function (a) { return { t: a[0], ctx: a[1], due: a[2], dueCls: a[3], est: a[4], cta: a[5], href: 'CourseDetail-Learner.dc.html' }; }),
-      wgDone: 4, wgAll: 6, wgPct: '67%', wgNote: 'On track. Two more sessions this week will get you there.',
-      mlTabs: mlTabs, mlItems: mlItems, mlEmpty: shown.length === 0,
+      wgDone: 4, wgAll: 6, wgPct: '67%',
+      mlItems: mlItems,
       seasonOn: isActive && paid,
       recTitle: REC_T[0], recSub: REC_T[1], recs: recs,
       novaKicker: named ? name + ' · Your AI Coach' : 'Your AI Coach',
@@ -885,7 +859,6 @@ class Component extends DCLogic {
       novaLink: named ? 'Ask ' + name : 'Ask a question',
       novaCta: named ? nv[1] : 'Name your coach', novaIsBtn: !named || !nv[2], novaIsLink: named && !!nv[2], novaHref: nv[2] || '#',
       showTutor: ['D', 'E', 'I', 'W'].indexOf(st) > -1,
-      commSub: st === 'C' ? 'Conversations from learners growing as leaders.' : (st === 'R' || isActive ? 'Conversations from learners on a similar journey.' : 'Tips from learners who started where you are.'),
       posts: posts, showBand: !named || (st !== 'A' && st !== 'B')
     };
   }

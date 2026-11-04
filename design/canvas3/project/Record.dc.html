@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Validation Record</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+h1,h2,h3,p{text-wrap:pretty}
+@media (min-width: 761px){
+p{text-wrap:balance}
+}
+.sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sx-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.sx-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
+.sx-word{display:block;height:24px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}
+.sx-links{display:flex;align-items:center;gap:4px}
+.sx-link{height:40px;padding:0 12px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:500;color:#3A4566;text-decoration:none;white-space:nowrap;transition:color .2s ease,background .2s ease}
+.sx-link:hover{color:#0B1433;background:#F5F8FF}
+.sx-cta{height:44px;padding:0 20px;border-radius:999px;display:flex;align-items:center;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease}
+.sx-cta:hover{background:#0E3BB8}
+.sx-menu{display:none;width:44px;height:44px;border-radius:999px;border:none;background:transparent;color:#0B1433;align-items:center;justify-content:center;cursor:pointer}
+.sx-link:focus-visible,.sx-cta:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
+.sx-fin{max-width:1312px;margin:0 auto;padding:40px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#5B6582}
+.sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
+.sx-fin a{color:#3A4566;text-decoration:none}
+.sx-fin a:hover{color:#1652F0}
+@media (max-width: 1180px){
+.sx-links{display:none}
+.sx-menu{display:flex}
+}
+@media (max-width: 520px){
+.sx-login{display:none !important}
+}
+@media (max-width: 760px){
+.sx-nav{height:60px;padding:0 16px}
+.sx-word{height:20px}
+.sx-cta{height:40px;padding:0 16px;font-size:14px}
+.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}
+}
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-tag .tip{margin-left:0}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-ghost:focus-visible,.ds-link:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+@media (max-width: 960px){
+.ds-ghost{height:44px;font-size:14.5px}
+}
+@media (max-width: 760px){
+.tip-b{display:none;width:min(250px,calc(100vw - 48px))}
+.tip:hover .tip-b,.tip:focus .tip-b{display:block}
+}
+.pc-ph1{margin:4px 0 0;font-size:clamp(30px,3vw,40px);line-height:1.12;font-weight:600;letter-spacing:-.03em}
+.pc-k{display:block;font-size:14px;font-weight:500;color:#1652F0}
+.ko-path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ko-path li{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;padding:0 16px;text-align:center}
+.ko-path li:not(:last-child)::before{content:'';position:absolute;left:calc(50% + 22px);right:calc(-50% + 22px);top:13px;height:2px;border-radius:2px;background:#1652F0}
+.ko-dot{width:28px;height:28px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:2px solid #1652F0;background:#FFFFFF;display:flex;align-items:center;justify-content:center;color:#1652F0;font-size:12.5px;font-weight:600}
+.ko-path li:first-child .ko-dot{background:#1652F0;color:#FFFFFF}
+.ko-path li > span:last-child{display:flex;flex-direction:column;gap:4px;align-items:center}
+.ko-path b{font-size:16px;font-weight:600}
+.ko-path li > span:last-child > span{font-size:14px;line-height:1.5;color:#4A5578;max-width:240px}
+@media (max-width: 960px){
+.ko-path{grid-template-columns:minmax(0,1fr);gap:0}
+.ko-path li{flex-direction:row;align-items:flex-start;text-align:left;gap:14px;padding:0 0 22px}
+.ko-path li:last-child{padding-bottom:0}
+.ko-path li:not(:last-child)::before{left:13px;right:auto;top:30px;bottom:2px;width:2px;height:auto}
+.ko-path li > span:last-child{align-items:flex-start}
+}
+@media (max-width: 760px){
+.pc-ph1{font-size:26px}
+}
+.pt-path{grid-template-columns:minmax(0,1fr);gap:0;margin-top:18px}
+.pt-path li{flex-direction:row;align-items:flex-start;text-align:left;gap:14px;padding:0 0 22px}
+.pt-path li:last-child{padding-bottom:0}
+.pt-path li:not(:last-child)::before{left:13px;right:auto;top:30px;bottom:2px;width:2px;height:auto}
+.pt-path li > span:last-child{align-items:flex-start}
+.pt-path b{font-size:15px}
+.pt-path li > span:last-child > span{max-width:none}
+.pt-path li > span:last-child > span{font-size:13.5px}
+.pt-path li:first-child .ko-dot{background:#1652F0;color:#FFFFFF}
+.pt-path li.pt-ok .ko-dot{background:#0F6B45;border-color:#0F6B45}
+.cd-crumb{display:flex;align-items:center;gap:8px;font-size:13px;color:#8A93AD}
+.cd-crumb a{color:#5B6582;text-decoration:none}
+.cd-crumb a:hover{color:#1652F0}
+.cd-val{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;padding:26px 28px;border-radius:20px;border:1.5px solid #E6EAF3;background:#FFFFFF}
+.cd-seal{width:64px;height:64px;filter:drop-shadow(0 12px 16px rgba(200,150,30,.3))}
+.cd-vt{font-size:20px;font-weight:600;letter-spacing:-.4px;color:#0B1433}
+.cd-vd{font-size:14px;line-height:1.5;color:#5B6582;margin-top:4px;text-wrap:pretty}
+.cd-checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+.cd-chk{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border-radius:14px;background:#F5F8FF}
+.cd-chk b{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:#0B1433}
+.cd-chk span{font-size:13px;line-height:1.45;color:#5B6582;text-wrap:pretty}
+.cd-vf{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid #EEF1F7;font-size:13px;color:#8A93AD}
+.cd-vid{display:inline-flex;align-items:center;gap:6px}
+@media (max-width: 760px){
+.cd-crumb{display:none}
+.cd-vf{position:relative}
+.cd-val{grid-template-columns:minmax(0,1fr);gap:14px;padding:20px}
+.cd-seal{width:52px;height:52px}
+.cd-checks{display:flex;flex-wrap:wrap;gap:8px}
+.cd-chk{padding:8px 12px;border-radius:999px}
+.cd-chk span{display:none}
+.cd-chk b{font-size:13px}
+.cd-vid .tip{position:static}
+.cd-vf .tip-b{left:0;right:0;width:auto}
+}
+.rc-wrap{max-width:1216px;margin:0 auto;padding:28px 48px 96px;box-sizing:border-box}
+.rc-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-top:24px}
+.rc-head .pc-ph1{margin-top:8px}
+.rc-by{margin:8px 0 0;font-size:15px;color:#5B6582}
+.rc-acts{display:flex;align-items:center;gap:18px;flex-shrink:0}
+.rc-copy{display:inline-flex;align-items:center;gap:8px}
+.rc-copy svg{color:#1652F0}
+.rc-copy.on{border-color:#0F6B45;color:#0F6B45}
+.rc-copy.on svg{color:#0F6B45}
+.rc-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start;margin-top:32px}
+.rc-main{display:flex;flex-direction:column;gap:16px}
+.cd-seal{width:64px;height:64px}
+.rc-card{padding:26px 28px;border-radius:20px}
+.rc-h2{margin:0;display:flex;align-items:center;font-size:18px;font-weight:600;letter-spacing:-.2px}
+.rc-not{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 20px}
+.rc-not li{display:flex;align-items:center;gap:10px;font-size:14.5px;color:#3A4566}
+.rc-not i{width:20px;height:20px;border-radius:999px;background:#F1F3F8;color:#5B6582;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rc-path{margin-top:18px}
+.rc-path b{display:flex;align-items:center;gap:10px}
+.rc-path b .ds-tag{font-size:12px !important;color:#0E3BB8 !important}
+.rc-facts{position:sticky;top:96px;padding:8px 22px 20px;border-radius:20px}
+.rc-dl{margin:0}
+.rc-dl > div{padding:13px 0;border-top:1.5px solid #F0F2F8}
+.rc-dl > div:first-child{border-top:0}
+.rc-dl dt{font-size:12.5px;color:#8A93AD}
+.rc-dl dd{margin:4px 0 0;font-size:15px;font-weight:600;color:#0B1433}
+.rc-links{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding-top:16px;border-top:1.5px solid #F0F2F8}
+.rc-rep{font-size:13.5px;color:#5B6582;text-decoration:underline;text-underline-offset:3px}
+@media (max-width: 960px){
+.rc-wrap{padding:16px 20px 72px}
+.rc-head{flex-direction:column;align-items:flex-start;gap:14px}
+.rc-grid{grid-template-columns:minmax(0,1fr);margin-top:22px}
+.rc-main{display:contents}
+.rc-facts{position:static;order:1}
+.rc-main > *{order:2}
+.rc-main > .cd-val{order:0}
+.rc-grid{gap:16px}
+.rc-dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:16px}
+.rc-dl > div:nth-child(2){border-top:0}
+}
+@media (max-width: 760px){
+.rc-head .pc-ph1{font-size:26px}
+.rc-acts{width:100%;justify-content:space-between}
+.rc-card{padding:20px 18px}
+.rc-not{grid-template-columns:minmax(0,1fr)}
+.rc-facts{padding:4px 18px 18px}
+.rc-rep{position:relative}
+.rc-rep::after{content:'';position:absolute;inset:-12px -4px}
+.cd-seal{width:52px;height:52px}
+}
+</style>
+</helmet>
+<div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
+<header class="sx-nav">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav class="sx-links" aria-label="Main">
+<a class="sx-link" href="#">Explore learning</a>
+<a class="sx-link" href="#">Career paths</a>
+<a class="sx-link" href="#">Certifications</a>
+<a class="sx-link" href="#">Pricing</a>
+<a class="sx-link" href="Creators.dc.html">For creators</a>
+<a class="sx-link" href="Institutions.dc.html">For institutions</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
+<a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
+<a class="sx-cta" href="OnbWelcome.dc.html">Create account</a>
+<button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+</header>
+<main class="rc-wrap">
+<nav class="cd-crumb" aria-label="Breadcrumb"><a href="Courses.dc.html">Courses</a><span aria-hidden="true">/</span><a href="CourseDetail.dc.html">Data Foundations</a><span aria-hidden="true">/</span><span>Validation Record</span></nav>
+<header class="rc-head">
+<div><span class="pc-k">Validation Record</span><h1 class="pc-ph1">Data Foundations: Spreadsheets to SQL</h1><p class="rc-by">Course by Amara Okafor</p></div>
+<div class="rc-acts"><button type="button" class="ds-ghost sm rc-copy {{copyCls}}" onClick="{{copy}}"><sc-if value="{{copied}}" hint-placeholder-val="{{ false }}"><svg class="ck" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></sc-if><sc-if value="{{notCopied}}" hint-placeholder-val="{{ true }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"></path><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg></sc-if><span>{{copyLabel}}</span></button><a class="ds-link" href="CourseDetail.dc.html">View the course →</a></div>
+</header>
+<div class="rc-grid">
+<div class="rc-main">
+<section class="cd-val" aria-label="Validation result">
+<svg class="cd-seal" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="cdGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9C46A"></stop><stop offset=".55" stop-color="#C8961E"></stop><stop offset="1" stop-color="#A87A12"></stop></linearGradient></defs><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="url(#cdGold)"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<div>
+<div class="cd-vt">Gold Validated</div>
+<div class="cd-vd">This version completed every review that applies to it.</div>
+<div class="cd-checks"><div class="cd-chk"><b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Content</b><span>Subject Matter Validator · Completed</span></div><div class="cd-chk"><b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Learning design</b><span>Educational Validator · Completed</span></div><div class="cd-chk"><b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Assessment</b><span>Assessment Validator · Completed</span></div></div>
+<div class="cd-vf"><span class="cd-vid">AI and Security &amp; Privacy reviews: not applicable<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">These reviews are only added when the learning uses AI features or handles personal data.</span></span></span></div>
+</div>
+</section>
+<section class="ds-card rc-card" aria-labelledby="rc-nm">
+<h2 id="rc-nm" class="rc-h2">What validation doesn’t promise</h2>
+<ul class="rc-not"><li><i><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></i>Every learner gets a particular outcome</li><li><i><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></i>A job is guaranteed</li><li><i><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></i>The content can never go out of date</li><li><i><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></i>Future versions are validated automatically</li></ul>
+</section>
+<section class="ds-card rc-card" aria-labelledby="rc-vh">
+<h2 id="rc-vh" class="rc-h2">Version history<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">After a major update, the new version is reviewed again and appears here with its own status.</span></span></h2>
+<ol class="ko-path pt-path rc-path"><li class="pt-ok"><span class="ko-dot"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>v2.1 · Validated <span class="ds-tag blue">Current</span></b><span>24 September 2026</span></span></li></ol>
+</section>
+</div>
+<aside class="ds-card rc-facts" aria-label="Record details">
+<dl class="rc-dl"><div><dt>Validation ID</dt><dd>VAL-CRD-004821</dd></div><div><dt>Status</dt><dd><span class="ds-tag green">Credalio Validated</span></dd></div><div><dt>Tier</dt><dd>Gold</dd></div><div><dt>Creator</dt><dd>Amara Okafor</dd></div><div><dt>Learning type</dt><dd>Course</dd></div><div><dt>Version validated</dt><dd>v2.1</dd></div><div><dt>Completed</dt><dd>24 September 2026</dd></div></dl>
+<div class="rc-links"><a class="ds-link" href="Validation.dc.html">How validation works →</a><a class="rc-rep" href="#">Report a concern about this record</a></div>
+</aside>
+</div>
+</main>
+<footer class="sx-foot">
+<div class="sx-fin">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="Creators.dc.html">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+<span>© 2026 magnummeta. All rights reserved.</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1060}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { copied: false }; }
+  componentWillUnmount() { if (this.t) clearTimeout(this.t); }
+  renderVals() {
+    var self = this, on = this.state.copied;
+    return { copyLabel: on ? 'Link copied' : 'Copy record link', copyCls: on ? 'on' : '', copied: on, notCopied: !on,
+      copy: function () { self.setState({ copied: true }); if (self.t) clearTimeout(self.t); self.t = setTimeout(function () { self.setState({ copied: false }); }, 2000); } };
+  }
+}
+</script>
+</body>
+</html>

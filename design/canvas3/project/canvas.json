@@ -1754,8 +1754,8 @@
       "x": 6450,
       "y": 89675,
       "w": 1440,
-      "h": 4580,
-      "title": "TRST-001 → 008 How Validation Works: hero, statuses, review areas, journey, clarification, decision, versioning · Desktop",
+      "h": 5120,
+      "title": "TRST-001 → 008 How Validation Works: hero, statuses, review areas, journey, clarification, decision, versioning, for creators and validators · Desktop",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -1764,8 +1764,27 @@
       "x": 7970,
       "y": 89675,
       "w": 390,
-      "h": 5610,
-      "title": "TRST-001 → 008 How Validation Works: hero, statuses, review areas, journey, clarification, decision, versioning · Mobile",
+      "h": 6190,
+      "title": "TRST-001 → 008 How Validation Works: hero, statuses, review areas, journey, clarification, decision, versioning, for creators and validators · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Record.dc.html": {
+      "x": 0,
+      "y": 96765,
+      "w": 1440,
+      "h": 1060,
+      "title": "TRST-006 Public Validation Record · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Record-Mobile.dc.html": {
+      "x": 1520,
+      "y": 96765,
+      "w": 390,
+      "h": 1600,
+      "title": "TRST-006 Public Validation Record · Mobile",
       "page": "main",
       "is_interactive": true
     }
@@ -1806,7 +1825,8 @@
     "row-b23",
     "row-b24",
     "row-b25",
-    "row-b26"
+    "row-b26",
+    "row-b27"
   ],
   "notes": {
     "new-hero": {
@@ -2033,6 +2053,14 @@
       "kind": "title1",
       "maxW": 8400,
       "page": "main"
+    },
+    "row-b27": {
+      "x": 0,
+      "y": 96465,
+      "text": "Batch 27 · Public Validation Record (opened from the course page and How Validation Works)",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -2221,7 +2249,9 @@
     "Partner-Done.dc.html",
     "Partner-Done-Mobile.dc.html",
     "Validation.dc.html",
-    "Validation-Mobile.dc.html"
+    "Validation-Mobile.dc.html",
+    "Record.dc.html",
+    "Record-Mobile.dc.html"
   ],
   "pages": [
     {

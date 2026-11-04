@@ -121,7 +121,7 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-ask{margin-top:26px;max-width:620px}
 .lr-chips{display:flex;align-items:center;gap:8px;margin-top:16px;flex-wrap:wrap}
 .lr-chips small{font-size:13px;color:#5B6582;margin-right:4px}
-.lr-chips .ds-chip,.lr-qs .ds-chip{text-decoration:none}
+.lr-chips .ds-chip{text-decoration:none}
 .lr-chips .ds-chip{background:rgba(255,255,255,.8)}
 .lr-nv{position:relative;padding:22px;border-radius:20px;background:rgba(255,255,255,.82);border:1.5px solid #FFFFFF;box-shadow:0 24px 50px -36px rgba(11,20,51,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .lr-nvh{display:flex;align-items:center;gap:12px}
@@ -194,28 +194,12 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-post b{font-size:15.5px;font-weight:600;line-height:1.35}
 .lr-post small{display:flex;align-items:center;gap:8px;margin-top:auto;font-size:13px;color:#5B6582}
 .lr-post .cs-cav{width:22px;height:22px;font-size:9px}
-.lr-scrim,.lr-panel{font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
-.lr-scrim{position:fixed;inset:0;z-index:40;background:rgba(11,20,51,.28);animation:lrFade .25s ease both}
-.lr-panel{position:fixed;right:0;top:0;bottom:0;z-index:41;width:420px;max-width:100vw;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;box-shadow:-30px 0 80px -30px rgba(11,20,51,.35);animation:lrIn .4s cubic-bezier(.2,.8,.2,1) both}
-.lr-ph{display:flex;align-items:center;gap:12px;padding:18px 18px 18px 22px;border-bottom:1.5px solid #EEF1F7}
-.lr-ph b{display:block;font-size:16px;font-weight:600}
-.lr-ph span{display:block;font-size:12.5px;color:#5B6582}
-.lr-ph .ds-x{margin-left:auto}
-.lr-pb{flex:1;overflow-y:auto;padding:22px;display:flex;flex-direction:column;gap:16px;background:linear-gradient(180deg,#F5F8FF,#FFFFFF 220px)}
-.lr-msg{display:flex;align-items:flex-start;gap:10px;animation:lrUp .4s ease both}
-.lr-msg .nv-av{width:30px;height:30px}
-.lr-bub{padding:14px 16px;border-radius:4px 18px 18px 18px;background:#FFFFFF;border:1.5px solid #E6EAF3;font-size:15px;line-height:1.5;color:#0B1433;box-shadow:0 10px 24px -20px rgba(11,20,51,.4)}
-.lr-me{align-self:flex-end;max-width:85%;padding:12px 16px;border-radius:18px 18px 4px 18px;background:#1652F0;color:#FFFFFF;font-size:15px;line-height:1.45}
 .lr-name{display:flex;flex-direction:column;gap:12px;animation:lrUp .4s ease .1s both}
 .lr-name label{font-size:13px;font-weight:500;color:#3A4566}
 .lr-sugs{display:flex;gap:8px;flex-wrap:wrap}
 .lr-sugs .ds-chip{padding-left:4px}
 .lr-sugs .nv-av{width:24px;height:24px}
 .lr-na{display:flex;align-items:center;gap:18px;margin-top:4px}
-.lr-qs{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-left:40px}
-.lr-qs .ds-chip{height:auto;min-height:40px;padding:9px 14px;white-space:normal;text-align:left;line-height:1.35}
-.lr-pf{padding:14px 16px 18px;border-top:1.5px solid #EEF1F7}
-.lr-pf .ds-ask{box-shadow:none}
 .ds-badge{margin-left:auto;min-width:22px;height:22px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
 .lr-st b i{font-style:normal;font-weight:500;font-size:13px;color:#8A93AD}
 .lr-st:hover small{color:#1652F0}
@@ -366,28 +350,32 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-dlp b{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:#0B1433}
 .lr-ans-a{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
 .lr-ans-a .ds-link{font-size:14px}
-.lr-walw{position:relative;display:inline-flex}
 button.lr-pill{font-family:inherit;cursor:pointer}
-.lr-wal{position:absolute;right:0;top:calc(100% + 10px);z-index:30;width:360px;box-sizing:border-box;padding:16px 18px 14px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 30px 60px -24px rgba(11,20,51,.35);animation:lrUp .25s ease both}
-.lr-wal-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
-.lr-wal-h b{display:flex;align-items:center;font-size:15.5px;font-weight:600}
-.lr-wal-h .ds-x{width:36px;height:36px}
-.lr-wr{display:grid;grid-template-columns:26px minmax(0,1fr) auto;align-items:center;gap:12px;padding:12px 0;border-top:1px solid #EEF1F7;text-decoration:none;color:#0B1433}
-.lr-wal-h + .lr-wr{border-top:0}
-.lr-wr b{display:block;font-size:14.5px;font-weight:600}
-.lr-wr small{display:block;margin-top:2px;font-size:12.5px;color:#5B6582}
-.lr-wr strong{font-size:16px;font-weight:600}
-.lr-wr strong.off{font-size:13px;font-weight:500;color:#8A93AD}
-.lr-wr:hover b{color:#1652F0}
-.lr-wal-f{display:flex;justify-content:space-between;gap:12px;padding-top:12px;border-top:1px solid #EEF1F7}
-.lr-wal-f .ds-link{font-size:14px}
+.tp-w{position:relative;flex-shrink:0}
+.lr-pill.tp-on{box-shadow:0 0 0 4px rgba(220,229,251,.8)}
+.tk-low{display:inline-flex;align-items:center;height:22px;margin-left:2px;padding:0 8px;border-radius:999px;background:#FFF3DC;border:1px solid #F0C774;color:#8A5300;font-size:12px;font-weight:500}
+.tp-p{position:absolute;right:-6px;top:calc(100% + 12px);z-index:30;width:340px;box-sizing:border-box;padding:22px 22px 18px 22px;border-radius:20px;background:linear-gradient(170deg,#F5F8FF 0%,#FFFFFF 48%);border:1.5px solid #DCE5FB;box-shadow:0 24px 60px rgba(11,20,51,.16);display:flex;flex-direction:column;align-items:flex-start;animation:lrUp .25s ease both}
+.tp-lab{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:#8A93AD}
+.tp-big{margin-top:10px;display:flex;align-items:center;gap:10px;font-size:34px;font-weight:600;letter-spacing:-0.03em;color:#0B1433}
+.tp-big .dlp-c{width:30px;height:30px}
+.tp-sub{margin-top:6px;font-size:14px;color:#4A5578}
+.tp-warn{margin:16px 0 0 0;width:100%;box-sizing:border-box;display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:14px;background:#FFF3DC;font-size:13.5px;line-height:1.45;color:#5C3B00}
+.tp-warn b{font-weight:600}
+.tp-i{width:20px;height:20px;flex-shrink:0;border-radius:50%;background:#B26A00;color:#FFFFFF;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.tp-more{width:100%;margin-top:16px;border-top:1px solid #EEF1F7}
+.tp-row{display:flex;align-items:center;gap:10px;padding:11px 0 0;font-size:14px;color:#3A4566;text-decoration:none}
+.tp-row span{flex:1}
+.tp-row b{font-weight:600;color:#0B1433}
+.tp-row b.off{font-weight:500;color:#8A93AD}
+.tp-f{margin-top:20px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tp-go{height:44px;padding:0 20px;font-size:14.5px}
+.tp-u{font-size:14px}
 .lr-rwv{display:inline-flex;align-items:center;gap:6px}
 .lr-rwv .tip{margin-left:0}
 .lr-rwv b{display:inline-flex;align-items:center;gap:6px;font-weight:600}
 .lr-sk{display:block;width:72px;height:12px;border-radius:9px;background:linear-gradient(90deg,#EEF1F7 0%,#DCE5FB 50%,#EEF1F7 100%);background-size:200% 100%;animation:nvShim 1.4s linear infinite}
 .lr-rwc.ready{background:linear-gradient(180deg,#F1FAF5,#FFFFFF 60%);border-color:#BFE3CF;box-shadow:0 24px 48px -36px rgba(15,107,69,.5)}
 .lr-rwa{display:flex;align-items:center;gap:18px;margin-top:auto;padding-top:16px}
-.lr-lasp .lr-ico{width:36px;height:36px;border-radius:12px}
 .lr-lt{display:flex;align-items:baseline;gap:4px}
 .lr-lt .lr-big{margin-top:0}
 .lr-lasp .lr-split{margin-top:4px}
@@ -400,30 +388,12 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 .lr-lr{display:grid;grid-template-columns:minmax(0,1fr) 90px 44px;align-items:center;gap:12px;padding:8px 0;font-size:14px;color:#3A4566}
 .lr-lr b{text-align:right;font-weight:600;color:#0B1433}
 .lr-lr .lr-bar{width:auto}
-.lr-h1t{display:flex;align-items:center}
-.lr-h1t .tip{margin-left:10px}
-.lr-use{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;padding:34px 40px}
-.lr-use-m{flex:1;max-width:560px}
-.lr-use-n{display:flex;align-items:center;gap:12px;margin-top:10px;font-size:52px;line-height:1;font-weight:600;letter-spacing:-1.5px}
-.lr-use-n .dlp-c{width:40px;height:40px;vertical-align:0}
-.lr-use-n small{align-self:flex-end;margin-bottom:6px;font-size:18px;font-weight:500;letter-spacing:0;color:#3A4566}
-.lr-use .lr-bar.lg{margin-top:22px}
-.lr-use-l{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:13.5px;color:#4A5578}
-.lr-use-a{margin-top:0;flex-shrink:0}
-.lr-led{display:flex;flex-direction:column;margin-top:10px}
-.lr-led div{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid #EEF1F7;font-size:14.5px;color:#3A4566}
-.lr-led b{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:#0B1433}
-.lr-led b.up{color:#0F6B45}
-.lr-led .tot{border-bottom:0;padding-top:14px;font-weight:600;color:#0B1433}
-.lr-led .tot b{font-size:16px}
 .lr-ok-s{margin-top:auto;padding-top:14px;font-size:14px}
 .lr-ok-s i{width:20px;height:20px}
-.lr-pill.low{background:#FFFAEB;border-color:#F4D98E}
-.lr-pill.low > span{color:#8A5A00}
-.lr-low{display:flex;align-items:center;gap:14px;margin:0 0 18px;padding:14px 16px 14px 18px;border-radius:18px;background:#FFF8EB;border:1.5px solid #F4D98E}
-.lr-low-i{width:28px;height:28px;border-radius:999px;background:#B97A10;color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;font-weight:700}
-.lr-low p{flex:1;margin:0;font-size:14.5px;line-height:1.45;color:#3A4566}
-.lr-low p b{font-weight:600;color:#0B1433}
+.lr-low{display:flex;align-items:center;gap:10px;margin:0 0 18px;padding:12px 14px 12px 16px;border-radius:14px;background:#FFF3DC}
+.lr-low p{flex:1;margin:0;font-size:14px;line-height:1.45;color:#5C3B00}
+.lr-low p b{font-weight:600}
+.lr-low .tp-i{margin-top:0}
 .lr-low-a{display:flex;align-items:center;gap:18px;flex-shrink:0}
 .lr-low .ds-ghost{background:#FFFFFF}
 .lr-alw{padding:38px 44px 34px}
@@ -431,15 +401,79 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 .lr-alw .lr-fs{max-width:620px}
 .lr-alw-o{margin-top:34px}
 .lr-alw-f{margin-top:22px}
+.cp-ov{position:fixed;inset:0;z-index:30;background:rgba(11,20,51,.18)}
+.cp-me{justify-content:flex-end}.cp-me .cp-bub{max-width:80%;border-radius:18px 18px 6px 18px;background:#1652F0;border-color:#1652F0;color:#FFFFFF;font-size:14.5px;line-height:1.5}
+.cp{position:fixed;z-index:31;top:0;right:0;bottom:0;width:420px;max-width:100vw;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;border-left:1.5px solid #E6EAF3;box-shadow:-24px 0 64px rgba(11,20,51,.14);overflow:hidden;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.cp-fx{position:absolute;left:0;right:0;top:0;height:180px;pointer-events:none;background:linear-gradient(90deg,rgba(22,82,240,0) 0%,rgba(22,82,240,.16) 18%,rgba(140,175,255,.26) 34%,rgba(22,82,240,0) 50%,rgba(22,82,240,.16) 68%,rgba(140,175,255,.26) 84%,rgba(22,82,240,0) 100%);background-size:200% 100%;-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 45%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.5) 45%,transparent 100%);animation:fxFlow 10s linear infinite}
+@media (prefers-reduced-motion: reduce){.cp-fx{animation:none}}
+.cp-h{position:relative;display:flex;align-items:center;gap:12px;padding:20px 16px 16px 22px}
+.cp-av{position:relative;display:block;flex-shrink:0;border-radius:50%;overflow:hidden;background:#EAF0FF}
+.cp-n{flex-grow:1;display:flex;flex-direction:column;gap:1px}.cp-n b{font-size:17px;font-weight:600}.cp-n span{font-size:13px;color:#5B6582}
+.cp-ib{width:40px;height:40px;border-radius:50%;border:0;background:transparent;color:#4A5578;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.cp-ib:hover{background:rgba(11,20,51,.06)}
+.cp-b{position:relative;flex-grow:1;display:flex;flex-direction:column;justify-content:flex-end;gap:18px;padding:0 22px 20px 22px;overflow-y:auto}
+.cp-ctx{align-self:center;display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:999px;background:#F1F3F8;color:#5B6582;font-size:12.5px;font-weight:500}
+.cp-m{display:flex;align-items:flex-end;gap:10px}
+.cp-bub{padding:14px 16px;border-radius:18px 18px 18px 6px;background:#F5F8FF;border:1.5px solid #E1E9FF}
+.cp-bub p{margin:0;font-size:14.5px;line-height:1.55}.cp-bub p + p{margin-top:8px}
+.cp-f{position:relative;padding:14px 22px 18px 22px;border-top:1.5px solid #F0F2F8;display:flex;flex-direction:column;gap:12px}
+.cp-ch{display:flex;gap:8px;overflow-x:auto;margin:0 -22px;padding:0 22px;scrollbar-width:none}.cp-ch::-webkit-scrollbar{display:none}
+.cp-ch button{flex-shrink:0;height:36px;padding:0 14px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;font-size:13.5px;font-weight:500;color:#0B1433;cursor:pointer;white-space:nowrap}
+.cp-ch button:hover{border-color:#1652F0;background:#F5F8FF}
+.cp-in{display:flex;align-items:center;gap:8px;height:52px;padding:0 6px 0 18px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF}
+.cp-in:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.cp-in input{flex-grow:1;min-width:0;border:0;outline:none;font-family:inherit;font-size:15px;color:#0B1433;background:transparent}
+.cp-go{width:40px;height:40px;flex-shrink:0;border-radius:50%;border:0;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer}
+@media (max-width: 960px){
+.cp-ov{display:none}
+.cp{width:100%;border-left:0;box-shadow:none}
+.cp-h{padding:14px 10px 12px 16px}
+.cp-b{padding:0 16px 18px 16px}
+.cp-f{padding:12px 16px 16px 16px}
+.cp-ch{margin:0 -16px;padding:0 16px}
+}
+@keyframes fxFlow{from{background-position:0% 0}to{background-position:200% 0}}
+.cp-ch a.cp-chl{flex-shrink:0;height:36px;padding:0 14px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-size:13.5px;font-weight:500;color:#0B1433;white-space:nowrap;display:inline-flex;align-items:center;text-decoration:none}
+.cp-ch a.cp-chl:hover{border-color:#1652F0;background:#F5F8FF}
+.cp-bub .nv-think{min-height:22px}
+.lr-lasb{justify-content:flex-start;padding-top:8px;gap:16px}
+.lr-lasp .cp-h .lr-ico{width:40px;height:40px}
+
+.nv-g{display:grid;grid-template-columns:360px minmax(0,1fr);gap:24px;align-items:stretch}
+.nv-bal{padding:28px;display:flex;flex-direction:column;align-items:flex-start;background:linear-gradient(160deg,#F5F8FF 0%,#FFFFFF 60%);border-color:#DCE5FB}
+.hp-lab{display:block;font-size:12.5px;font-weight:500;color:#8A93AD}
+.nv-lab{display:flex;align-items:center;gap:6px}
+.nv-lab .tip{margin-left:0}
+.nv-st{display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:999px;font-size:12px;font-weight:500}
+.nv-st.cb{background:#EAF0FF;border:1px solid #C9D7FB;color:#0E3BB8}
+.nv-big{margin-top:14px;display:flex;align-items:center;gap:12px;font-size:44px;font-weight:600;letter-spacing:-0.03em;color:#0B1433}
+.nv-big .dlp-c{width:38px;height:38px}
+.nv-sub{margin-top:8px;display:flex;align-items:center;gap:6px;font-size:14px;color:#4A5578}
+.nv-acts{margin-top:auto;padding-top:28px;display:flex;align-items:center;gap:20px}
+.nv-use{padding:26px 28px 22px 28px;display:flex;flex-direction:column}
+.nv-uh{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+.nv-uh h2{margin:0;display:flex;align-items:center;font-size:17px;font-weight:600}
+.nv-up{margin-top:26px;padding-top:22px;border-top:1.5px solid #F0F2F8}
+.nv-tot{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#5B6582}.nv-tot b{font-size:16px;color:#0B1433;font-weight:600}.nv-tot svg{flex-shrink:0}
+.nv-l{list-style:none;margin:22px 0 0 0;padding:0;display:flex;flex-direction:column;gap:16px}
+.nv-l li{display:grid;grid-template-columns:170px minmax(0,1fr) 70px;align-items:center;gap:16px}
+.nv-k{font-size:14px;color:#3A4566}
+.nv-bar{height:10px;border-radius:999px;background:#F1F3F8;overflow:hidden}.nv-bar i{display:block;height:100%;border-radius:999px;background:#1652F0}
+.nv-l b{text-align:right;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums}
+.nv-l.nv-ex{margin-top:14px;gap:0}
+.nv-l.nv-ex li{grid-template-columns:minmax(0,1fr) auto;padding:12px 0}.nv-ex b{white-space:nowrap}.nv-ex .nv-k{font-size:15px;color:#0B1433}.nv-ex li + li{border-top:1.5px solid #F0F2F8}
+.lr-ok-s{margin-top:14px;font-size:14px}
+.lr-ok-s i{width:20px;height:20px}
 @keyframes lrIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
 @keyframes lrFade{from{opacity:0}to{opacity:1}}
 @keyframes lrUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion: reduce){.lr-panel,.lr-scrim,.lr-msg,.lr-name,.lr-gv-p,.lr-lsn-r i.n,.lr-wal,.lr-sk{animation:none}}
+@media (prefers-reduced-motion: reduce){.lr-name,.lr-gv-p,.lr-lsn-r i.n,.lr-sk{animation:none}}
 @media (max-width: 1280px){
 .lr-head{flex-direction:column;align-items:flex-start;gap:16px}
 .lr-g4{grid-template-columns:repeat(3,minmax(0,1fr))}
 .lr-g4 > :nth-child(4){display:none}
 }
+@media (max-width: 1080px){.nv-g{grid-template-columns:minmax(0,1fr)}}
 @media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}.lr-disc{grid-template-columns:minmax(0,1fr) 300px;gap:28px}.lr-req{grid-template-columns:repeat(2,minmax(0,1fr))}.lr-goal{grid-template-columns:minmax(0,1fr)}.lr-crs{grid-template-columns:minmax(0,1fr);gap:28px}.lr-lead,.lr-coh{align-self:stretch}.lr-ldl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:18px}.lr-ldl a,.lr-ldl li:first-child a{border-top:0;padding:8px 0}.lr-ldl .lr-chev{display:none}.lr-coh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:24px;align-items:center}.lr-coh .lr-ch{grid-column:1 / -1}.lr-coh .lr-mentor{margin-top:16px;padding-top:0;border-top:0}.lr-gv{display:none}.lr-mr{grid-template-columns:40px minmax(0,1fr) 160px 20px}.lr-nova{flex-wrap:wrap}.lr-tut{padding-left:0;border-left:0;width:100%}}
 @media (max-width: 960px){
 .ds-root{grid-template-columns:minmax(0,1fr);overflow-x:hidden}
@@ -564,20 +598,29 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 .lr-coh .lr-mentor{margin-top:14px;padding-top:14px;border-top:1px solid #EEF1F7}
 .lr-crs .lr-jf{margin-top:24px}
 .lr-lead{padding:18px}
-.lr-wal{position:fixed;left:12px;right:12px;top:68px;width:auto}
-.lr-use{flex-direction:column;align-items:stretch;gap:24px;padding:28px 16px}
-.lr-use-n{font-size:40px}
-.lr-use-n .dlp-c{width:32px;height:32px}
-.lr-use-a{flex-direction:column-reverse}
-.lr-use-a .ds-ghost{width:100%}
 .lr-lr{grid-template-columns:minmax(0,1fr) 64px 40px}
+.nv-bal{padding:22px 18px;border-radius:20px}
+.nv-big{font-size:36px}
+.nv-big .dlp-c{width:32px;height:32px}
+.nv-acts{flex-direction:column;align-items:stretch;gap:6px;padding-top:22px;width:100%}
+.nv-acts .ds-btn{justify-content:space-between}
+.nv-acts .ds-link{justify-content:center;min-height:40px}
+.nv-use{padding:20px 18px}
+.nv-l li{grid-template-columns:minmax(0,1fr) 64px;gap:6px 12px}
+.nv-bar{grid-column:1 / -1;grid-row:2}
+.nv-l.nv-ex li{grid-template-columns:minmax(0,1fr) auto}
 .lr-low{flex-wrap:wrap;align-items:flex-start;padding:14px 16px}
-.lr-low p{flex:1 1 calc(100% - 42px)}
-.lr-low-a{width:100%;justify-content:space-between;padding-left:42px;box-sizing:border-box}
+.lr-low p{flex:1 1 calc(100% - 30px)}
+.lr-low .tp-i{margin-top:1px}
+.lr-low-a{width:100%;justify-content:space-between;padding-left:30px;box-sizing:border-box}
 .lr-alw{padding:32px 16px 28px}
 .lr-alw-o{margin-top:30px}
-.lr-panel{width:100vw}
-.lr-pb{padding:18px 16px}
+.tp-w{position:static}
+.lr-pill .tk-low{display:none}
+.tp-p{position:fixed;left:8px;right:8px;top:68px;width:auto;padding:22px 18px 16px 18px}
+.tp-f{flex-direction:column;align-items:stretch;gap:6px}
+.tp-go{justify-content:center}
+.tp-u{align-self:center;padding:10px 0}
 }
 '''.replace('NOVABG', '/_blob/0b29db2e4cd6f4a89dc7ba8f12e59c8d')
 
@@ -624,14 +667,15 @@ MARKUP = '''<div class="ds-root">
 <a class="ds-mlogo lr-mlogo" href="Dashboard.dc.html" aria-label="Credalio home"><span class="lr-word"></span></a>
 <label class="ds-search">''' + ic(I['search'], 18) + '''<span class="sr-only">Search</span><input placeholder="Search courses, career paths, certifications…"></label>
 <span class="ds-hide-sm" style="flex-grow: 1"></span>
-<span class="lr-walw"><button type="button" class="lr-pill {{pillCls}}" aria-expanded="{{walExp}}" aria-label="{{dlp}} DLP available. Show balances" onClick="{{toggleWal}}">''' + coin() + '''<span>{{dlp}}</span><i class="ds-hide-sm">DLP</i></button>
-<sc-if value="{{walOpen}}" hint-placeholder-val="{{ false }}"><div class="lr-wal" role="dialog" aria-label="Your balances">
-<div class="lr-wal-h"><b>Your balances''' + tip('LAS is a score, not a balance, so you’ll find it in Learning rewards.', 'r') + '''</b><button type="button" class="ds-x" onClick="{{toggleWal}}" aria-label="Close">''' + CLOSE + '''</button></div>
-<a class="lr-wr" href="Usage.dc.html">''' + coin(True) + '''<span><b>DLP</b><small>{{walDlpSub}}</small></span><strong>{{dlp}}</strong></a>
-<a class="lr-wr" href="#">''' + credit(True) + '''<span><b>Marketplace Credits</b><small>For lifetime access and more</small></span><strong>{{walCr}}</strong></a>
-<a class="lr-wr" href="#">''' + mforge(True) + '''<span><b>MFORGE</b><small>{{walMfSub}}</small></span><strong class="{{walMfCls}}">{{walMf}}</strong></a>
-<div class="lr-wal-f"><a class="ds-link" href="Usage.dc.html">Usage and activity</a><a class="ds-link" href="Chk-TOP.dc.html">Get more DLP</a></div>
-</div></sc-if></span>
+<span class="tp-w"><button type="button" class="lr-pill {{pillOn}}" aria-expanded="{{walExp}}" aria-label="{{dlp}} DLP available. Show balances" onClick="{{toggleWal}}">''' + coin() + '''<span>{{dlp}}</span><i class="ds-hide-sm">DLP</i><sc-if value="{{isLow}}" hint-placeholder-val="{{ false }}"><span class="tk-low">Low</span></sc-if></button>
+<sc-if value="{{walOpen}}" hint-placeholder-val="{{ false }}"><section class="tp-p" role="dialog" aria-label="DLP">
+<span class="tp-lab">DLP available''' + tip('Your learning allowance. You use DLP as you open eligible learning; it refreshes each month.', 'r') + '''</span>
+<span class="tp-big">''' + coin(True) + '''{{dlp}}</span>
+<span class="tp-sub">{{walDlpSub}}</span>
+<sc-if value="{{isLow}}" hint-placeholder-val="{{ false }}"><p class="tp-warn"><span class="tp-i" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v6M12 16.5v.01"></path></svg></span><span>{{lowT}}</span></p></sc-if>
+<div class="tp-more"><a class="tp-row" href="#">''' + credit() + '''<span>Marketplace Credits</span><b>{{walCr}}</b></a><a class="tp-row" href="#">''' + mforge() + '''<span>MFORGE</span><b class="{{walMfCls}}">{{walMf}}</b></a></div>
+<div class="tp-f"><a href="Chk-TOP.dc.html" class="ds-btn tp-go"><span>Get more DLP</span></a><a href="Usage.dc.html" class="ds-link tp-u">See usage</a></div>
+</section></sc-if></span>
 <button type="button" class="lr-coach" onClick="{{openPanel}}" aria-label="{{coachBtn}}">''' + av() + '''<span>{{coachBtn}}</span></button>
 <a href="#" class="ds-icon-btn" aria-label="Notifications, 1 new">''' + ic(I['bell'], 19) + '''<span class="lr-dot"></span></a>
 <a href="#" class="lr-av" aria-label="Your account">AO</a>
@@ -651,7 +695,7 @@ MARKUP = '''<div class="ds-root">
 </div>
 
 <sc-if value="{{lowNote}}" hint-placeholder-val="{{ false }}">
-<div class="lr-low" role="status"><span class="lr-low-i" aria-hidden="true">!</span><p><b>You’re running low on DLP.</b> 180 left, and your next lesson uses about 200.''' + tip('Your Basic allowance of 2,000 DLP refreshes on 12 October. Until then, a top-up keeps you moving.') + '''</p><div class="lr-low-a"><a class="ds-link" href="Usage.dc.html">See usage</a><a class="ds-ghost sm" href="Chk-TOP.dc.html">Get more DLP</a></div></div>
+<div class="lr-low" role="status"><span class="tp-i" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v6M12 16.5v.01"></path></svg></span><p><b>You’re running low on DLP.</b> 180 left, and your next lesson uses about 200.''' + tip('Your Basic allowance of 2,000 DLP refreshes on 12 October. Until then, a top-up keeps you moving.') + '''</p><div class="lr-low-a"><a class="ds-link" href="Usage.dc.html">See usage</a><a class="ds-ghost sm" href="Chk-TOP.dc.html">Get more DLP</a></div></div>
 </sc-if>
 
 <sc-if value="{{fAllow}}" hint-placeholder-val="{{ false }}">
@@ -870,26 +914,13 @@ MARKUP = '''<div class="ds-root">
 </sc-if>
 <sc-if value="{{pUsage}}" hint-placeholder-val="{{ false }}">
 <div class="lr-head">
-<div><span class="lr-date">Account · Plan and DLP</span><h1 class="lr-h1 lr-h1t">Your learning allowance''' + tip('DLP is used as you open eligible learning. Marketplace Credits are kept separately.') + '''</h1></div>
-<div class="lr-strip"><span class="lr-st"><small>Plan</small><b>Basic</b></span><span class="lr-st"><small>Each month</small><b>2,000<i>DLP</i></b></span><span class="lr-st"><small>Refreshes</small><b>12 Oct</b></span></div>
+<div><h1 class="lr-h1">Your learning allowance</h1></div>
 </div>
-<section class="lr-focus lr-use aur aur-lt" aria-labelledby="lr-ua">
-<div class="lr-use-m">
-<span class="lr-k" id="lr-ua">Available now</span>
-<span class="lr-use-n">''' + coin(True) + '''1,460<small>DLP</small></span>
-<span class="lr-bar lg"><i style="width: 73%"></i></span>
-<span class="lr-use-l"><span>1,460 of 2,000 left</span><span>540 used this month</span></span>
-</div>
-<div class="lr-fa lr-use-a"><a class="ds-ghost" href="Chk-007p.dc.html">Manage plan</a>''' + btn('Get more DLP', 'Chk-TOP.dc.html') + '''</div>
-</section>
-<div class="lr-sec lr-g2">
-<section class="lr-card" aria-labelledby="lr-u1"><div class="lr-ch"><h3 id="lr-u1">This month</h3></div>
-<div class="lr-led"><div><span>Monthly allowance</span><b class="up">+2,000</b></div><div><span>Data Foundations</span><b>−320</b></div><div><span>SQL for Data Analysis</span><b>−220</b></div><div class="tot"><span>Balance</span><b>''' + coin() + '''1,460</b></div></div>
-</section>
-<section class="lr-card" aria-labelledby="lr-u2"><div class="lr-ch"><h3 id="lr-u2">Coming up''' + tip('What your current plans are likely to use. Estimates update as you learn.', 'r') + '''</h3></div>
-<div class="lr-led"><div><span>Rest of SQL for Data Analysis</span><b>~280</b></div><div><span>Data cleaning project</span><b>~300</b></div><div class="tot"><span>Likely to use</span><b>''' + coin() + '''~580</b></div></div>
-<span class="lr-ok lr-ok-s"><i>''' + ck(12, 3.2) + '''</i><span>Your balance covers this.</span></span>
-</section>
+<div class="nv-g">
+<section class="ds-card nv-bal" aria-label="DLP balance"><span class="hp-lab nv-lab">DLP available<span class="nv-st cb">Basic</span>''' + tip('DLP is used as you open eligible learning. Marketplace Credits are kept separately.') + '''</span><span class="nv-big">''' + coin(True) + '''1,460</span><span class="nv-sub">About 14 learning hours · refreshes 12 Oct</span><div class="nv-acts">''' + btn('Get more DLP', 'Chk-TOP.dc.html', 'nv-go') + '''<a class="ds-link" href="Chk-007p.dc.html">Manage plan</a></div></section>
+<section class="ds-card nv-use" aria-labelledby="nv-u"><div class="nv-uh"><h2 id="nv-u">This month</h2><span class="nv-tot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20"></path></svg><b>540</b> DLP used</span></div><ul class="nv-l"><li><span class="nv-k">Data Foundations</span><span class="nv-bar"><i style="width: 100%"></i></span><b>320</b></li><li><span class="nv-k">SQL for Data Analysis</span><span class="nv-bar"><i style="width: 69%"></i></span><b>220</b></li></ul>
+<div class="nv-uh nv-up"><h2>Coming up''' + tip('What your current plans are likely to use. Estimates update as you learn.', 'r') + '''</h2><span class="nv-tot"><b>~580</b> DLP</span></div><ul class="nv-l nv-ex"><li><span class="nv-k">Rest of SQL for Data Analysis</span><b>about 280</b></li><li><span class="nv-k">Data cleaning project</span><b>about 300</b></li></ul>
+<span class="lr-ok lr-ok-s"><i>''' + ck(12, 3.2) + '''</i><span>Your balance covers this.</span></span></section>
 </div>
 <section class="lr-sec lr-nova nova-card" aria-label="Your AI Coach">
 ''' + av() + '''
@@ -903,10 +934,10 @@ MARKUP = '''<div class="ds-root">
 </div>
 
 <sc-if value="{{lasOpen}}" hint-placeholder-val="{{ false }}">
-<div class="lr-scrim" onClick="{{closeLas}}"></div>
-<aside class="lr-panel lr-lasp" role="dialog" aria-modal="true" aria-labelledby="lr-lph">
-<div class="lr-ph"><span class="lr-ico">''' + ic(I['reward'], 20) + '''</span><div><b id="lr-lph">September learning activity</b><span>Learning Season · LAS</span></div><button type="button" class="ds-x" onClick="{{closeLas}}" aria-label="Close">''' + CLOSE + '''</button></div>
-<div class="lr-pb">
+<div class="cp-ov" onClick="{{closeLas}}"></div>
+<aside class="cp lr-lasp" role="dialog" aria-labelledby="lr-lph">
+<div class="cp-h"><span class="lr-ico">''' + ic(I['reward'], 20) + '''</span><span class="cp-n"><b id="lr-lph">September learning activity</b><span>Learning Season · LAS</span></span><button type="button" class="cp-ib" onClick="{{closeLas}}" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"></path></svg></button></div>
+<div class="cp-b lr-lasb">
 <div class="lr-lt"><span class="lr-big">1,240<small>LAS</small></span>''' + tip('LAS measures eligible learning activity during the season. It isn’t money and has no fixed cash value.', 'r') + '''</div>
 <span class="lr-split" aria-hidden="true"><i style="width: 85%"></i><i style="width: 15%"></i></span>
 <sc-for list="{{lasG}}" as="g" hint-placeholder-count="2"><div class="lr-lg"><div class="lr-lg-h"><b><i class="{{g.dot}}"></i>{{g.t}}</b><span>{{g.v}}</span></div><sc-for list="{{g.rows}}" as="r" hint-placeholder-count="4"><div class="lr-lr"><span>{{r.k}}</span><span class="lr-bar"><i style="width: {{r.w}}"></i></span><b>{{r.v}}</b></div></sc-for></div></sc-for>
@@ -914,12 +945,12 @@ MARKUP = '''<div class="ds-root">
 </aside>
 </sc-if>
 <sc-if value="{{panelOpen}}" hint-placeholder-val="{{ false }}">
-<div class="lr-scrim" onClick="{{closePanel}}"></div>
-<aside class="lr-panel" role="dialog" aria-modal="true" aria-label="{{coachTitle}}, your AI Coach">
-<div class="lr-ph">''' + av() + '''<div><b>{{coachTitle}}</b><span>Your AI Coach</span></div><button type="button" class="ds-x" onClick="{{closePanel}}" aria-label="Close">''' + CLOSE + '''</button></div>
-<div class="lr-pb">
+<div class="cp-ov" onClick="{{closePanel}}"></div>
+<aside class="cp" role="dialog" aria-label="{{coachTitle}}, your AI Coach"><div class="cp-fx" aria-hidden="true"></div>
+<header class="cp-h"><span class="cp-av" aria-hidden="true" style="width: 40px; height: 40px"><img src="{{coachSrc}}" alt="" style="position: absolute; left: {{coachL}}; top: {{coachT}}; width: {{coachW}}; max-width: none; height: auto; mix-blend-mode: multiply"></span><span class="cp-n"><b>{{coachTitle}}</b><span>Your AI Coach</span></span><button type="button" class="cp-ib" aria-label="Past conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path><path d="M12 7v5l3 2"></path></svg></button><button type="button" class="cp-ib" onClick="{{closePanel}}" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"></path></svg></button></header>
+<div class="cp-b"><span class="cp-ctx"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"></rect><path d="M3 9h18"></path></svg>Looking at your Dashboard</span>
 <sc-if value="{{showUnnamed}}" hint-placeholder-val="{{ true }}">
-<div class="lr-msg">''' + av() + '''<div class="lr-bub">Hi Ada. I’m your AI Coach. I’ll help you choose what to learn and keep you moving. Want to give me a name?</div></div>
+<div class="cp-m"><span class="cp-av" aria-hidden="true" style="width: 28px; height: 28px"><img src="{{coachSrc}}" alt="" style="position: absolute; left: {{coachL}}; top: {{coachT}}; width: {{coachW}}; max-width: none; height: auto; mix-blend-mode: multiply"></span><div class="cp-bub"><p>Hi Ada. I’m your AI Coach. I’ll help you choose what to learn and keep you moving. Want to give me a name?</p></div></div>
 <div class="lr-name">
 <label for="lr-nm">Name your coach</label>
 <input id="lr-nm" class="ds-in" placeholder="Type a name" value="{{draft}}" onInput="{{onDraft}}">
@@ -928,15 +959,14 @@ MARKUP = '''<div class="ds-root">
 </div>
 </sc-if>
 <sc-if value="{{showNamed}}" hint-placeholder-val="{{ false }}">
-<div class="lr-msg">''' + av() + '''<div class="lr-bub">{{hello}}</div></div>
-<sc-if value="{{showQs}}" hint-placeholder-val="{{ true }}"><div class="lr-qs"><sc-for list="{{askSug}}" as="a" hint-placeholder-count="3"><sc-if value="{{a.link}}" hint-placeholder-val="{{ true }}"><a class="ds-chip" href="{{a.href}}">{{a.t}}</a></sc-if><sc-if value="{{a.q}}" hint-placeholder-val="{{ false }}"><button type="button" class="ds-chip" onClick="{{askDlp}}">{{a.t}}</button></sc-if></sc-for></div></sc-if>
-<sc-if value="{{dlpQ}}" hint-placeholder-val="{{ false }}"><div class="lr-me">{{dlpQText}}</div></sc-if>
-<sc-if value="{{dlpA}}" hint-placeholder-val="{{ false }}"><div class="lr-msg">''' + av() + '''<div class="lr-bub lr-ans"><p>{{dlpLead}}</p><div class="lr-dlp"><div><span>Your balance</span><b>''' + coin() + '''{{dlp}}</b></div><div><span>{{dlpStageL}}</span><b>''' + coin() + '''{{dlpStage}}</b></div><div><span>Rest of the journey</span><b>''' + coin() + '''{{dlpRest}}</b></div></div><p>{{dlpTail}}</p><div class="lr-ans-a"><a class="ds-link" href="Usage.dc.html">View my usage</a><a class="ds-link" href="#">See plan options</a></div></div></div></sc-if>
+<div class="cp-m"><span class="cp-av" aria-hidden="true" style="width: 28px; height: 28px"><img src="{{coachSrc}}" alt="" style="position: absolute; left: {{coachL}}; top: {{coachT}}; width: {{coachW}}; max-width: none; height: auto; mix-blend-mode: multiply"></span><div class="cp-bub"><p>{{hello}}</p></div></div>
+<sc-if value="{{dlpQ}}" hint-placeholder-val="{{ false }}"><div class="cp-m cp-me"><div class="cp-bub">{{dlpQText}}</div></div></sc-if>
+<sc-if value="{{dlpA}}" hint-placeholder-val="{{ false }}"><div class="cp-m"><span class="cp-av" aria-hidden="true" style="width: 28px; height: 28px"><img src="{{coachSrc}}" alt="" style="position: absolute; left: {{coachL}}; top: {{coachT}}; width: {{coachW}}; max-width: none; height: auto; mix-blend-mode: multiply"></span><div class="cp-bub lr-ans"><p>{{dlpLead}}</p><div class="lr-dlp"><div><span>Your balance</span><b>''' + coin() + '''{{dlp}}</b></div><div><span>{{dlpStageL}}</span><b>''' + coin() + '''{{dlpStage}}</b></div><div><span>Rest of the journey</span><b>''' + coin() + '''{{dlpRest}}</b></div></div><p>{{dlpTail}}</p><div class="lr-ans-a"><a class="ds-link" href="Usage.dc.html">View my usage</a><a class="ds-link" href="Chk-007p.dc.html">See plan options</a></div></div></div></sc-if>
 </sc-if>
-<sc-if value="{{thinking}}" hint-placeholder-val="{{ false }}"><div class="lr-msg">''' + av() + think('{{thinkText}}') + '''</div></sc-if>
+<sc-if value="{{thinking}}" hint-placeholder-val="{{ false }}"><div class="cp-m"><span class="cp-av" aria-hidden="true" style="width: 28px; height: 28px"><img src="{{coachSrc}}" alt="" style="position: absolute; left: {{coachL}}; top: {{coachT}}; width: {{coachW}}; max-width: none; height: auto; mix-blend-mode: multiply"></span><div class="cp-bub">''' + think('{{thinkText}}') + '''</div></div></sc-if>
 </div>
 <sc-if value="{{showNamed}}" hint-placeholder-val="{{ false }}">
-<div class="lr-pf"><form class="ds-ask sm" action="#"><label class="sr-only" for="lr-ask">Ask your coach</label><input id="lr-ask" placeholder="Ask {{coachTitle}} anything…"><button type="submit" class="ds-send" aria-label="Send">''' + ic(I['send'], 18, 2.4) + '''</button></form></div>
+<footer class="cp-f"><sc-if value="{{showQs}}" hint-placeholder-val="{{ true }}"><div class="cp-ch"><sc-for list="{{askSug}}" as="a" hint-placeholder-count="3"><sc-if value="{{a.link}}" hint-placeholder-val="{{ true }}"><a class="cp-chl" href="{{a.href}}">{{a.t}}</a></sc-if><sc-if value="{{a.q}}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{askDlp}}">{{a.t}}</button></sc-if></sc-for></div></sc-if><label class="cp-in"><span class="sr-only">Ask {{coachTitle}}</span><input placeholder="Ask {{coachTitle}} anything…"><button type="button" class="cp-go" aria-label="Send"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="m5 12 7-7 7 7"></path></svg></button></label></footer>
 </sc-if>
 </aside>
 </sc-if>'''
@@ -1160,8 +1190,8 @@ class Component extends DCLogic {
       lead: [['Data Analyst', '6–8 months · 8 courses', 'PathDetail.dc.html'], ['AI Engineer', '8–10 months · 8 courses', 'PathDetail.dc.html'], ['Data Scientist', '9–12 months · 9 courses', 'CareerPaths.dc.html']].map(function (l) { return { t: l[0], d: l[1], href: l[2] }; }),
       pHome: S.page !== 'usage', pUsage: S.page === 'usage',
       navDash: S.page === 'usage' ? '' : 'ds-on', navDashCur: S.page === 'usage' ? 'false' : 'page', navWal: S.page === 'usage' ? 'ds-on' : '', navWalCur: S.page === 'usage' ? 'page' : 'false',
-      walOpen: S.wal, walExp: S.wal ? 'true' : 'false', toggleWal: function () { self.setState({ wal: !S.wal }); },
-      walDlpSub: paid ? 'Learning allowance · refreshes 12 Oct' : 'Free allowance · refreshes 1 Oct', walCr: paid ? '62.40' : '0.00',
+      walOpen: S.wal, walExp: S.wal ? 'true' : 'false', pillOn: S.wal ? 'tp-on' : '', isLow: st === 'W' || st === 'L', lowT: st === 'L' ? 'You’ve used this month’s allowance. Your next 200 arrives on 1 October.' : 'Running low. Your next lesson uses about 200.', toggleWal: function () { self.setState({ wal: !S.wal }); },
+      walDlpSub: 'About ' + Math.round(dlpN / 100) + ' learning hours · refreshes ' + (paid ? '12 Oct' : '1 Oct'), walCr: paid ? '62.40' : '0.00',
       walMf: paid ? '4,820' : 'Connect', walMfCls: paid ? '' : 'off', walMfSub: paid ? 'Connected through TruVault' : 'Link TruVault to see it',
       lasOpen: S.las, openLas: function () { self.setState({ las: true }); }, closeLas: function () { self.setState({ las: false }); },
       openDlp: function () { self.setState({ panel: true }); self.askDlp(); },
@@ -1173,7 +1203,7 @@ class Component extends DCLogic {
       rw: (S.season === 'ready' ? [['Marketplace Credits', 'cr', '+18.40'], ['MFORGE', 'mf', '1,850']] : (S.season === 'calculating' ? [['Marketplace Credits', 'sk'], ['Scholarship', 'sk'], ['MFORGE', 'sk']]
         : [['Marketplace Credits', 'tag', 'Pending', ''], ['Scholarship', 'tag', 'Pending', ''], S.mf === 'not' ? ['MFORGE', 'tag', '3 of 4 met', 'amber', 'Still needed: connect TruVault so MFORGE can reach you. Everything else is done.'] : ['MFORGE', 'tag', 'Eligible', 'green']]))
         .map(function (r) { return { k: r[0], isTag: r[1] === 'tag', tag: r[2] || '', tc: r[3] || '', hasTip: !!r[4], tipT: r[4] || '', sk: r[1] === 'sk', isCr: r[1] === 'cr', isMf: r[1] === 'mf', v: r[2] || '' }; }),
-      showStrip: isActive || st === 'L', showML: isActive || st === 'L', showLocked: isNew || st === 'L', lowNote: st === 'W', fAllow: st === 'L', pillCls: (st === 'W' || st === 'L') ? 'low' : '',
+      showStrip: isActive || st === 'L', showML: isActive || st === 'L', showLocked: isNew || st === 'L', lowNote: st === 'W', fAllow: st === 'L',
       bpH: st === 'L' ? 'Your first credential is in.' : 'Your proof starts here.', bpP: st === 'L' ? 'Data Foundations is verified and ready to share.' : 'What you earn lands here, verified and ready to share.',
       optN: 3, opts: [['Upgrade to Basic', '2,000 DLP every month, enough for Stage 2 and most of Stage 3.', 'Upgrade', 'Chk-003.dc.html', 1], ['Top up instead', 'Stay on Free and add only what Stage 2 needs.', 'Add DLP', 'Chk-TOP.dc.html', 0], ['Wait for your refresh', 'Your next 200 DLP arrives on 1 October. We’ll remind you.', 'Remind me', '#', 0]]
         .map(function (o) { return { t: o[0], d: o[1], cta: o[2], href: o[3], rec: !!o[4], plain: !o[4], cls: o[4] ? 'rec' : '' }; }),

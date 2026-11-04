@@ -355,6 +355,14 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-mentor small{display:block;margin-top:2px;font-size:12.5px;color:#5B6582}
 .lr-mentor .lr-chev{margin-left:auto}
 .lr-mentor:hover b{color:#1652F0}
+.lr-ans p{margin:0}
+.lr-ans p + p{margin-top:12px}
+.lr-dlp{display:flex;flex-direction:column;margin-top:12px;padding:4px 14px;border-radius:14px;background:#F7F9FD;border:1.5px solid #EEF1F7}
+.lr-dlp div{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;font-size:14px;color:#4A5578}
+.lr-dlp div + div{border-top:1px solid #EEF1F7}
+.lr-dlp b{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:#0B1433}
+.lr-ans-a{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
+.lr-ans-a .ds-link{font-size:14px}
 @keyframes lrIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
 @keyframes lrFade{from{opacity:0}to{opacity:1}}
 @keyframes lrUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -764,7 +772,6 @@ MARKUP = '''<div class="ds-root">
 <aside class="lr-panel" role="dialog" aria-modal="true" aria-label="{{coachTitle}}, your AI Coach">
 <div class="lr-ph">''' + av() + '''<div><b>{{coachTitle}}</b><span>Your AI Coach</span></div><button type="button" class="ds-x" onClick="{{closePanel}}" aria-label="Close">''' + CLOSE + '''</button></div>
 <div class="lr-pb">
-<sc-if value="{{thinking}}" hint-placeholder-val="{{ false }}"><div class="lr-msg">''' + av() + think('{{thinkText}}') + '''</div></sc-if>
 <sc-if value="{{showUnnamed}}" hint-placeholder-val="{{ true }}">
 <div class="lr-msg">''' + av() + '''<div class="lr-bub">Hi Ada. I’m your AI Coach. I’ll help you choose what to learn and keep you moving. Want to give me a name?</div></div>
 <div class="lr-name">
@@ -776,8 +783,11 @@ MARKUP = '''<div class="ds-root">
 </sc-if>
 <sc-if value="{{showNamed}}" hint-placeholder-val="{{ false }}">
 <div class="lr-msg">''' + av() + '''<div class="lr-bub">{{hello}}</div></div>
-<div class="lr-qs"><sc-for list="{{askSug}}" as="a" hint-placeholder-count="3"><a class="ds-chip" href="{{a.href}}">{{a.t}}</a></sc-for></div>
+<sc-if value="{{showQs}}" hint-placeholder-val="{{ true }}"><div class="lr-qs"><sc-for list="{{askSug}}" as="a" hint-placeholder-count="3"><sc-if value="{{a.link}}" hint-placeholder-val="{{ true }}"><a class="ds-chip" href="{{a.href}}">{{a.t}}</a></sc-if><sc-if value="{{a.q}}" hint-placeholder-val="{{ false }}"><button type="button" class="ds-chip" onClick="{{askDlp}}">{{a.t}}</button></sc-if></sc-for></div></sc-if>
+<sc-if value="{{dlpQ}}" hint-placeholder-val="{{ false }}"><div class="lr-me">{{dlpQText}}</div></sc-if>
+<sc-if value="{{dlpA}}" hint-placeholder-val="{{ false }}"><div class="lr-msg">''' + av() + '''<div class="lr-bub lr-ans"><p>{{dlpLead}}</p><div class="lr-dlp"><div><span>Your balance</span><b>''' + coin() + '''{{dlp}}</b></div><div><span>{{dlpStageL}}</span><b>''' + coin() + '''{{dlpStage}}</b></div><div><span>Rest of the journey</span><b>''' + coin() + '''{{dlpRest}}</b></div></div><p>{{dlpTail}}</p><div class="lr-ans-a"><a class="ds-link" href="#">View my usage</a><a class="ds-link" href="#">See plan options</a></div></div></div></sc-if>
 </sc-if>
+<sc-if value="{{thinking}}" hint-placeholder-val="{{ false }}"><div class="lr-msg">''' + av() + think('{{thinkText}}') + '''</div></sc-if>
 </div>
 <sc-if value="{{showNamed}}" hint-placeholder-val="{{ false }}">
 <div class="lr-pf"><form class="ds-ask sm" action="#"><label class="sr-only" for="lr-ask">Ask your coach</label><input id="lr-ask" placeholder="Ask {{coachTitle}} anything…"><button type="submit" class="ds-send" aria-label="Send">''' + ic(I['send'], 18, 2.4) + '''</button></form></div>
@@ -790,7 +800,7 @@ class Component extends DCLogic {
   constructor(props) {
     super(props);
     var p = props || {};
-    this.state = { st: p.state || 'A', coach: p.coach === undefined || p.coach === null ? 'Nova' : p.coach, panel: p.panel === true || p.panel === 'true', nav: false, draft: '', q: '', thinking: false, ti: 0, wk: 'sch' };
+    this.state = { st: p.state || 'A', coach: p.coach === undefined || p.coach === null ? 'Nova' : p.coach, panel: p.panel === true || p.panel === 'true', nav: false, draft: '', q: '', thinking: false, ti: 0, wk: 'sch', intro: false, dlpQ: false, ask: p.ask || '' };
     this.CH = { Nova: ['/_blob/398ca91d2832bb0ab6b0af61319676f4', '-87.50%', '-57.81%', '294.06%'], Maya: ['/_blob/a1da64159da9c302c3a1835dea8e5266', '-68.75%', '-105.00%', '235.25%'], Alex: ['/_blob/22972224648e9b26d4acac7cc3f7c3a8', '-72.97%', '-112.16%', '254.32%'], Sage: ['/_blob/343a6c48a0cc4849f5a082d9a10a83a4', '-75.68%', '-114.86%', '254.32%'] };
     this.TONE = { Data: ['linear-gradient(150deg,#1C3AA8,#0B1433)', '#FFFFFF', 0], Design: ['linear-gradient(150deg,#7FA4FF,#4C7DFF)', '#FFFFFF', 1], Software: ['linear-gradient(150deg,#4C7DFF,#1652F0)', '#FFFFFF', 2], Business: ['linear-gradient(150deg,#DCE5FB,#EAF0FF)', '#1652F0', 4], Leadership: ['linear-gradient(150deg,#9DB8F7,#4C7DFF)', '#FFFFFF', 4] };
     this.TIER = { gold: ['Gold Validated', '#C8961E'], silver: ['Silver Validated', '#8E9BB0'], bronze: ['Bronze Validated', '#A8683A'] };
@@ -830,15 +840,17 @@ class Component extends DCLogic {
         C('Statistics for Analysts', 'Business', 'Northgate University', 'Intermediate', 'silver', '4.7', '980', 12, 600, 'Makes your SQL work sharper.')]
     };
   }
-  componentDidMount() { this.aurScan(); if (this.state.panel) this.think(); }
+  componentDidMount() { this.aurScan(); if (this.state.panel) { if (this.state.ask === 'dlp') this.askDlp(); else this.think(); } }
   componentWillUnmount() { if (this._aurMo) this._aurMo.disconnect(); clearTimeout(this._t); }
-  think() {
-    var self = this, steps = ['Reading your profile…', 'Checking what you’ve picked so far…', 'Getting ready to help…'];
+  think(list) {
+    var self = this, steps = list || ['Reading your profile…', 'Checking what you’ve picked so far…', 'Getting ready to help…'];
     clearTimeout(this._t);
+    this.steps = steps;
     this.setState({ thinking: true, ti: 0 });
-    var tick = function (i) { self._t = setTimeout(function () { if (i < steps.length) { self.setState({ ti: i }); tick(i + 1); } else self.setState({ thinking: false }); }, 800); };
-    this.steps = steps; tick(1);
+    var tick = function (i) { self._t = setTimeout(function () { if (i < steps.length) { self.setState({ ti: i }); tick(i + 1); } else self.setState({ thinking: false, intro: true }); }, 800); };
+    tick(1);
   }
+  askDlp() { this.setState({ intro: true, dlpQ: true }); this.think(['Checking your balance…', 'Adding up the rest of your journey…', 'Comparing it with your plan…']); }
   renderVals() {
     var self = this, S = this.state, st = S.st;
     var name = (S.coach || '').trim(), named = !!name, ch = this.CH[name] || this.CH.Nova, coachN = named ? name : 'your AI Coach';
@@ -856,7 +868,7 @@ class Component extends DCLogic {
       for (var i = 0; i < 5; i++) v['i' + i] = tn[2] === i ? 'inline' : 'none';
       return v;
     });
-    var open = function () { self.setState({ panel: true, nav: false }); self.think(); };
+    var open = function () { if (S.panel) return; self.setState({ panel: true, nav: false, intro: false, dlpQ: false }); self.think(); };
     var GS = {
       R: [['Account created', 'd'], ['Journey built', 'd'], ['Start Stage 1', 'l', 'CourseDetail-Learner.dc.html']],
       B: [['Account created', 'd'], ['Interests picked', 'd'], ['Start your first lesson', 'l', 'Explore.dc.html']],
@@ -876,7 +888,8 @@ class Component extends DCLogic {
     NOVA.G = ['Practice labs are the quickest way to get ready for the final evaluation. Lab 2 takes about 45 minutes.', 'Start a practice lab', 'CertDetail.dc.html'];
     NOVA.H = ['Your sales dashboard draft is due Friday. Want a checklist so nothing slips?', 'Get a checklist', ''];
     NOVA.F = ['Stuck on a lesson? I can explain it using exactly what you’re studying right now.', 'Explain this lesson', ''];
-    NOVA.B = NOVA.A; NOVA.I = NOVA.D; NOVA.W = NOVA.D;
+    NOVA.I = ['It’s been nine days. A three-minute recap of JOINs will make Lesson 4 much easier.', 'Recap with ' + (named ? name : 'your coach'), ''];
+    NOVA.B = NOVA.A; NOVA.W = NOVA.D;
     var nv = NOVA[st] || NOVA.A;
     var postsNew = [['Getting started', 'What I wish I’d known in my first week', 'Priya Nair', 'PN', 31], ['Choosing a path', 'Course, path or certification: how I decided', 'Daniel Reyes', 'DR', 18], ['Learning habits', 'Twenty minutes a day changed everything', 'Grace Adeyemi', 'GA', 24]];
     var postsData = [['Data Analytics', 'How I finally understood JOINs', 'Daniel Reyes', 'DR', 12], ['Career change', 'From classroom to analyst in eight months', 'Priya Nair', 'PN', 28], ['SQL', 'Weekly SQL practice group: join us', 'Tom Hughes', 'TH', 9]];
@@ -899,7 +912,7 @@ class Component extends DCLogic {
         dots: [1, 2, 4],
         as: [['Knowledge Check', 'SQL for Data Analysis', 'Due tomorrow', 'amber', '~15 min', 'Start'], ['SQL Data Cleaning Project', 'Data Analyst Career Path', 'Due Tue 29 Sep', '', '~1 hr 30 min', 'Continue']],
         proofs: [['Data Foundations', 'Credential', '24 Sep', 0], ['Sales dashboard', 'Project', '18 Sep', 1], ['SQL querying', 'Skill', '12 Sep', 2]], bp: ['12', '4 credentials · 3 projects', '8 skills · 1 milestone'],
-        hello: 'Hi Ada. You’re on Core skills, 62% through SQL for Data Analysis. What would help right now?', ask: [['Give me a quick JOINs practice', '#'], ['Explain today’s lesson simply', '#'], ['Do I have enough DLP to finish my path?', '#']] },
+        hello: 'Hi Ada. You’re on Core skills, 62% through SQL for Data Analysis. What would help right now?', ask: [['Give me a quick JOINs practice', '#'], ['Explain today’s lesson simply', '#'], ['Do I have enough DLP to finish my path?', '#dlp']] },
       F: { counts: [2, 2], streak: 6, wg: [2, 4],
         ml: [['Python Fundamentals', 'Course', 32, 'Lesson 3 of 18'], ['UI/UX Design Fundamentals', 'Course', 40, 'Module 2 of 6']],
         ev: [[1, 'Today', '7:00 PM', 'Python Fundamentals · Lesson 3'], [1, 'Wednesday 30', '12:30 PM', 'UX office hours with Lena'], [1, 'Thursday 1', '6:30 PM', 'Python study group']],
@@ -922,7 +935,12 @@ class Component extends DCLogic {
       as: [['Sales dashboard draft', 'Applied AI Cohort', 'Due Fri 2 Oct', '', '~2 hrs', 'Continue'], ['Peer review: two dashboards', 'Applied AI Cohort', 'Due Sun 4 Oct', '', '~40 min', 'Start']],
       proofs: [['Python for Data Analysis', 'Credential', '12 Sep', 0], ['Churn analysis notebook', 'Project', '20 Sep', 1], ['Prompt design', 'Skill', '5 Sep', 2]], bp: ['9', '3 credentials · 2 projects', '4 skills'],
       hello: 'Hi Ada. Week 4 is about analysis in practice. Want a checklist for your sales dashboard draft?', ask: [['Make me a checklist for the draft', '#'], ['Recap last week’s live session', '#'], ['What’s coming in Week 5?', 'ProgramDetail.dc.html']] };
-    ACT.E = ACT.D; ACT.I = ACT.D; ACT.W = ACT.D;
+    ACT.I = Object.assign({}, ACT.D, { streak: 0, wg: [0, 6],
+      ev: [[1, 'Today', '7:00 PM', 'SQL JOINs · Lesson 4'], [1, 'Tomorrow', '6:00 PM', 'Live session: Querying real datasets'], [1, 'Thursday 1', '6:30 PM', 'Study group: SQL practice']],
+      dots: [1, 4],
+      as: [['SQL Data Cleaning Project', 'Data Analyst Career Path', 'Overdue · was due 25 Sep', 'amber', '~1 hr 30 min', 'Continue'], ['Knowledge Check', 'SQL for Data Analysis', 'Due Wed 30 Sep', '', '~15 min', 'Start']],
+      hello: 'Welcome back, Ada. You stopped six minutes into SQL JOINs. Want a quick recap before you carry on?', ask: [['Give me a 3-minute recap of JOINs', '#'], ['Can I move my project deadline?', '#'], ['Do I have enough DLP to finish my path?', '#dlp']] });
+    ACT.E = ACT.D; ACT.W = ACT.D;
     var AD = ACT[st] || ACT.D;
     var counts = AD.counts, ML = {}; ML[st] = isActive ? AD.ml : [];
     var items = ML[st] || [];
@@ -939,16 +957,21 @@ class Component extends DCLogic {
     return {
       navCls: S.nav ? 'ds-open' : '', toggleNav: function () { self.setState({ nav: !S.nav }); },
       date: 'Sunday 27 September',
-      greeting: hr < 12 ? 'Good morning' : (hr < 18 ? 'Good afternoon' : 'Good evening'),
+      greeting: st === 'I' ? 'Welcome back' : (hr < 12 ? 'Good morning' : (hr < 18 ? 'Good afternoon' : 'Good evening')),
       coachSrc: ch[0], coachL: ch[1], coachT: ch[2], coachW: ch[3],
       coachTitle: named ? name : 'AI Coach', coachBtn: named ? 'Ask ' + name : 'AI Coach', coachNav: named ? name + ' · AI Coach' : 'Your AI Coach',
-      openPanel: open, closePanel: function () { clearTimeout(self._t); self.setState({ panel: false, thinking: false }); },
+      openPanel: open, closePanel: function () { clearTimeout(self._t); self.setState({ panel: false, thinking: false, intro: false, dlpQ: false }); },
       panelOpen: S.panel, thinking: S.thinking, thinkText: (this.steps || ['Reading your profile…'])[S.ti] || '',
-      showUnnamed: S.panel && !S.thinking && !named, showNamed: S.panel && !S.thinking && named,
+      showUnnamed: S.panel && S.intro && !named, showNamed: S.panel && S.intro && named, showQs: !S.dlpQ,
+      askDlp: function () { self.askDlp(); }, dlpQ: S.dlpQ, dlpA: S.dlpQ && !S.thinking,
+      dlpQText: st === 'R' ? 'Do I have enough DLP for my journey?' : 'Do I have enough DLP to finish my path?',
+      dlpLead: st === 'R' ? 'Yes for Stage 1. Here’s how the rest adds up:' : 'Yes for this stage. Here’s how the rest adds up:',
+      dlpStageL: st === 'R' ? 'Stage 1' : 'Rest of Core skills', dlpStage: st === 'R' ? '200' : '~900', dlpRest: st === 'R' ? '~3,600' : '~2,700',
+      dlpTail: st === 'R' ? 'Your Free allowance resets each month. For the later stages you’ll want a plan with more DLP, or a top-up when you get there.' : 'Your 2,000 DLP a month keeps you going, but you’ll likely want a top-up around Certification.',
       hello: st === 'R' ? 'Hi Ada. Your Data Analyst journey is ready. Want a quick tour of Stage 1, or shall we start?' : (isActive ? AD.hello : 'Hi Ada. I’m ' + name + '. What would you like to do today?'),
-      askSug: (st === 'R' ? [['What happens in Stage 1?', 'JourneyPlan-Saved.dc.html'], ['Do I have enough DLP for my journey?', '#'], ['Can I go faster?', 'JourneyPlan-Saved.dc.html']]
+      askSug: (st === 'R' ? [['What happens in Stage 1?', 'JourneyPlan-Saved.dc.html'], ['Do I have enough DLP for my journey?', '#dlp'], ['Can I go faster?', 'JourneyPlan-Saved.dc.html']]
         : (isActive ? AD.ask
-        : [['Help me choose what to learn', 'Journey.dc.html'], ['Build a journey towards a goal', 'Journey.dc.html'], ['Explain how DLP works', '#']])).map(function (a) { return { t: a[0], href: a[1] }; }),
+        : [['Help me choose what to learn', 'Journey.dc.html'], ['Build a journey towards a goal', 'Journey.dc.html'], ['Explain how DLP works', '#']])).map(function (a) { return { t: a[0], href: a[1], link: a[1] !== '#dlp', q: a[1] === '#dlp' }; }),
       draft: S.draft, onDraft: function (e) { self.setState({ draft: e.target.value }); },
       nameSug: ['Nova', 'Maya', 'Alex', 'Sage'].map(function (n) { var on = S.draft.trim() === n, c = CHN[n]; return { label: n, src: c[0], l: c[1], t: c[2], w: c[3], on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { self.setState({ draft: n }); } }; }),
       saveName: function () { self.setState({ coach: S.draft.trim() || 'Nova', draft: '' }); },
@@ -956,15 +979,15 @@ class Component extends DCLogic {
       planName: { free: 'Free plan', basic: 'Basic plan', pro: 'Pro plan' }[tierK], planSub: fmt(allow) + ' DLP a month', planCta: tierK === 'pro' ? 'Manage' : 'Upgrade',
       hasAsg: isActive, asgN: AS.length,
       isNew: isNew, isActive: isActive, gs: gsv, gsDone: gs.filter(function (g) { return g[1] === 'd'; }).length,
-      stats: [stat('In progress', counts[0], '', '#'), stat('Completed', counts[1], '', '#'), stat('Streak', AD.streak, 'days', '#')],
+      stats: [stat('In progress', counts[0], '', '#'), stat('Completed', counts[1], '', '#'), (st === 'I' ? stat('Last active', '9', 'days ago', '#') : stat('Streak', AD.streak, 'days', '#'))],
       fDisc: st === 'A' || st === 'B', fGoal: st === 'C', fReady: st === 'R', fJourney: ['D', 'E', 'I', 'W'].indexOf(st) > -1, fCourse: st === 'F', fCert: st === 'G', fProg: st === 'H',
       dKicker: 'Welcome to Credalio', dSub: discSub, hasDSub: !!discSub, dNova: dNova, dNovaCta: 'Build my journey',
       q: S.q, onQ: function (e) { self.setState({ q: e.target.value }); },
       disc: [['Courses', 'Courses.dc.html'], ['Career paths', 'CareerPaths.dc.html'], ['Certifications', 'Certifications.dc.html'], ['Programs', 'Programs.dc.html']].map(function (d) { return { t: d[0], h: d[1] }; }),
       route: route,
       jKicker: st === 'D' ? 'Your current journey · Career Path' : 'Your current journey · built with ' + coachN, jTitle: 'Data Analyst', jPct: '32%',
-      nxCtx: 'SQL for Data Analysis', nxTitle: 'SQL JOINs · Lesson 4', nxPct: '62%', nxMeta: '62% of the course · ~22 min',
-      jViewHref: st === 'D' ? 'PathDetail-Learner.dc.html' : 'JourneyPlan-Saved.dc.html', jCta: 'Continue', jCtaHref: 'CourseDetail-Learner.dc.html',
+      nxCtx: 'SQL for Data Analysis', nxTitle: 'SQL JOINs · Lesson 4', nxPct: '62%', nxMeta: st === 'I' ? 'Paused 6 min in · ~16 min left' : '62% of the course · ~22 min',
+      jViewHref: st === 'D' ? 'PathDetail-Learner.dc.html' : 'JourneyPlan-Saved.dc.html', jCta: st === 'I' ? 'Resume' : 'Continue', jCtaHref: 'CourseDetail-Learner.dc.html',
       wkCls: S.wk === 'due' ? 't-due' : 't-sch', segSch: S.wk === 'due' ? '' : 'on', segDue: S.wk === 'due' ? 'on' : '', selSch: S.wk === 'due' ? 'false' : 'true', selDue: S.wk === 'due' ? 'true' : 'false', pickSch: function () { self.setState({ wk: 'sch' }); }, pickDue: function () { self.setState({ wk: 'due' }); },
       days: DAYS.map(function (d) { return { w: d[0], n: d[1], cls: d[2] }; }),
       sched: EV.map(function (e) { return { head: !!e[0], day: e[1], time: e[2], t: e[3] }; }),
@@ -993,7 +1016,7 @@ class Component extends DCLogic {
 '''
 
 PROPS = {"state": {"editor": "enum", "options": ["A", "B", "C", "R", "D", "E", "F", "G", "H", "I", "L", "W"], "default": "A"},
-         "coach": {"editor": "text", "default": "Nova"}, "panel": {"editor": "boolean", "default": False},
+         "coach": {"editor": "text", "default": "Nova"}, "panel": {"editor": "boolean", "default": False}, "ask": {"editor": "enum", "options": ["", "dlp"], "default": ""},
          "$preview": {"width": 1440, "height": 2000}}
 
 HTML = '''<!doctype html>

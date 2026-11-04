@@ -1540,6 +1540,44 @@
       "title": "CHK-TOP Top-up done: back to the course · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Chk-Failed.dc.html": {
+      "x": 0,
+      "y": 63903,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK Payment didn’t go through (not charged) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-Failed-Mobile.dc.html": {
+      "x": 1520,
+      "y": 63903,
+      "w": 390,
+      "h": 844,
+      "title": "CHK Payment didn’t go through (not charged) · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Chk-Receipt.dc.html": {
+      "x": 2150,
+      "y": 63903,
+      "w": 1440,
+      "h": 820,
+      "title": "CHK Receipt (from View receipt) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Chk-Receipt-Mobile.dc.html": {
+      "x": 3670,
+      "y": 63903,
+      "w": 390,
+      "h": 844,
+      "title": "CHK Receipt (from View receipt) · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -1572,7 +1610,8 @@
     "row-b17",
     "row-b18",
     "row-b19",
-    "row-b20"
+    "row-b20",
+    "row-b21"
   ],
   "notes": {
     "new-hero": {
@@ -1751,6 +1790,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b21": {
+      "x": 0,
+      "y": 63603,
+      "text": "Batch 21 · Checkout: payment didn’t go through, receipt",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -1915,7 +1962,11 @@
     "Chk-TOP.dc.html",
     "Chk-TOP-Mobile.dc.html",
     "Chk-TOP-done.dc.html",
-    "Chk-TOP-done-Mobile.dc.html"
+    "Chk-TOP-done-Mobile.dc.html",
+    "Chk-Failed.dc.html",
+    "Chk-Failed-Mobile.dc.html",
+    "Chk-Receipt.dc.html",
+    "Chk-Receipt-Mobile.dc.html"
   ],
   "pages": [
     {

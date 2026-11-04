@@ -116,6 +116,23 @@ CSS = r'''body{margin:0;background:#FFFFFF}
 .ck-wal small{display:block;margin-top:2px;font-size:13.5px;color:#5B6582}
 .ck-wal .ds-tag{margin-left:auto}
 .ck-out .ds-acts{margin-top:28px}
+.ko-v.am{--k:#B97A10;--kb:#FFF4E0}
+.cl-glow.am{background:radial-gradient(60% 100% at 50% 0,rgba(244,201,110,.22),transparent 70%)}
+.ck-x{font-size:28px;font-weight:700;line-height:1}
+.ck-why{width:100%;max-width:480px;margin-top:24px;text-align:left;box-sizing:border-box}
+.ck-why dd .tip{margin-left:4px}
+.ck-rc{display:flex;flex-direction:column;align-items:stretch;width:100%;max-width:560px;margin:0 auto}
+.ck-back{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px 0 10px;margin:0 0 12px -10px;border:0;border-radius:999px;background:none;color:#3A4566;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer}
+.ck-back:hover{background:#F5F8FF;color:#0B1433}
+.ck-doc{padding:28px 30px 22px;border-radius:24px}
+.ck-doc-h{display:flex;align-items:center;justify-content:space-between}
+.ck-word{display:block;height:22px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}
+.ck-doc h1{margin:26px 0 0;font-size:28px;font-weight:600;letter-spacing:-.02em}
+.ck-doc-m{margin:6px 0 0;font-size:13.5px;color:#5B6582}
+.ck-doc-l{margin-top:20px}
+.ck-doc-f{margin:18px 0 0;font-size:13.5px;color:#5B6582}
+.ck-doc-f .ds-link{font-size:13.5px}
+.ck-rc .ds-acts{margin-top:22px}
 .ck-safe{margin-top:22px;display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:#F5F8FF;font-size:13.5px;font-weight:500;color:#0E3BB8}
 .ko-v.cb{--k:#1652F0;--kb:#EAF0FF}
 @media (prefers-reduced-motion: reduce){.ob-in,.ob-in2,.wf-spin{animation:none}}
@@ -145,6 +162,9 @@ CSS = r'''body{margin:0;background:#FFFFFF}
 .ck-sso{flex-direction:column}
 .ck-sso a{flex:none}
 .wf-solo{padding-top:40px}
+.ck-doc{border:0;box-shadow:none;padding:0;background:none;border-radius:0}
+.ck-doc h1{margin-top:22px;font-size:24px}
+.ck-back{margin-bottom:8px}
 .ck-out h1{font-size:28px}
 .ck-out .ds-acts{position:static;margin:24px 0 0;padding:0;border:0;width:100%}
 }
@@ -247,7 +267,39 @@ MARKUP = '''<div class="tk-root">
 <h1>{{doneT}}</h1>
 <p class="cl-pp">{{doneB}}</p>
 <div class="ds-card ck-wal">''' + coin(True) + '''<span><b>{{walN}} DLP</b><small>{{walSub}}</small></span><span class="ds-tag green">{{walTag}}</span></div>
-<div class="ds-acts c"><a class="ds-link" href="#">View receipt</a>''' + btn('{{nextL}}', '{{nextH}}') + '''</div>
+<div class="ds-acts c"><button type="button" class="ds-link" onClick="{{toReceipt}}">View receipt</button>''' + btn('{{nextL}}', '{{nextH}}') + '''</div>
+</div></main>
+</sc-if>
+
+<sc-if value="{{vFail}}" hint-placeholder-val="{{ false }}">
+<main class="cl wf-solo"><div class="ck-out ko-v am ob-in">
+<div class="ko-emb" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc"><span class="ck-x">!</span></span></div>
+<span class="ko-pill">Not charged</span>
+<h1>Your payment didn’t go through.</h1>
+<p class="cl-pp">Nothing has been taken from your account. Try again, or pay another way.</p>
+<dl class="wf-dl ck-why"><div><dt>Reason</dt><dd>Your bank declined the card''' + tip('Banks decline payments for many reasons, such as a daily limit or a security check. Your bank app usually says why.', 'r') + '''</dd></div><div><dt>Card</dt><dd>Visa •••• 4242</dd></div><div><dt>Amount</dt><dd>{{today}}</dd></div></dl>
+<div class="ds-acts c"><button type="button" class="ds-link" onClick="{{toPayBack}}">Use another way to pay</button>''' + btn('Try again', '#', '', 'onClick="{{pay}}"', 'button') + '''</div>
+</div></main>
+</sc-if>
+
+<sc-if value="{{vReceipt}}" hint-placeholder-val="{{ false }}">
+<main class="cl wf-solo"><div class="ck-rc ob-in">
+<button type="button" class="ck-back" onClick="{{toDone}}">''' + BACK + '''<span>Back</span></button>
+<article class="ds-card ck-doc" aria-labelledby="ck-rt">
+<header class="ck-doc-h"><span class="ck-word" aria-label="Credalio"></span><span class="ds-tag green">Paid</span></header>
+<h1 id="ck-rt">Receipt</h1>
+<p class="ck-doc-m">CR-2026-0927-4183 · 27 September 2026</p>
+<dl class="wf-dl ck-doc-l">
+<div><dt>{{rcItem}}</dt><dd>{{today}}</dd></div>
+<div><dt>{{rcDlpK}}</dt><dd>''' + coin() + '''{{rvV2}}</dd></div>
+<div><dt>Paid with</dt><dd>Visa •••• 4242</dd></div>
+<div><dt>Billed to</dt><dd>Ada Ononuju</dd></div>
+<sc-if value="{{isSub}}" hint-placeholder-val="{{ true }}"><div><dt>Next payment</dt><dd>27 October · {{today}}</dd></div></sc-if>
+<div class="wf-total"><dt>Total paid</dt><dd>{{today}}</dd></div>
+</dl>
+<p class="ck-doc-f">Questions about a charge? <a class="ds-link" href="#">Contact support</a></p>
+</article>
+<div class="ds-acts c"><a class="ds-ghost" href="#">''' + ic('<path d="M12 4v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path>', 18, 2.2) + '''Download PDF</a></div>
 </div></main>
 </sc-if>
 </div>'''
@@ -280,8 +332,8 @@ class Component extends DCLogic {
       : ['basic', 'pro'].map(function (k) { var q = P[k], on = S.plan === k; return { name: q.name, dlp: f(q.dlp) + ' a month', sub: '$' + q.price + ' a month · about ' + q.hrs + ' learning hours', on: on ? 'true' : 'false', cls: on ? 'xb-on' : '', hasTag: k === 'pro', tag: 'Best for career paths', pick: function () { self.setState({ plan: k }); } }; });
     var ME = [['card', 'Card', 'Visa, Mastercard, Verve'], ['local', 'Local payment', 'Bank app, USSD or mobile money'], ['mforge', 'MFORGE', 'Pay from your TruVault']];
     return {
-      barT: top ? 'Add DLP' : 'Your plan', closeHref: NEXT[1], glowCls: st === 'done' ? 'ok' : '',
-      showFlow: ['account', 'plan', 'pay', 'review'].indexOf(st) > -1, vAccount: st === 'account', vPlan: st === 'plan', vPay: st === 'pay', vReview: st === 'review', vProc: st === 'processing', vDone: st === 'done',
+      barT: top ? 'Add DLP' : 'Your plan', closeHref: NEXT[1], glowCls: st === 'done' ? 'ok' : (st === 'failed' ? 'am' : ''),
+      showFlow: ['account', 'plan', 'pay', 'review'].indexOf(st) > -1, vAccount: st === 'account', vPlan: st === 'plan', vPay: st === 'pay', vReview: st === 'review', vFail: st === 'failed', vReceipt: st === 'receipt', toReceipt: go('receipt'), toDone: go('done'), rcItem: top ? f(add) + ' DLP top-up' : pl.name + ' plan · monthly', rcDlpK: top ? 'DLP added' : 'DLP each month', vProc: st === 'processing', vDone: st === 'done',
       h1: top ? 'Add DLP' : (signedOut ? 'Get ' + pl.name : 'Choose your plan'), ctx: CTX[0], ret: CTX[1], hasRet: !!CTX[1], bal: f(base),
       steps: flow.map(function (t, i) { return { t: t, cls: i < idx ? 'dn' : (i === idx ? 'on' : '') }; }),
       email: S.email, onEmail: function (e) { self.setState({ email: e.target.value }); }, toPlan: go('plan'), toAccount: go('account'), canBackPlan: signedOut && !top,
@@ -309,7 +361,7 @@ class Component extends DCLogic {
 
 PROPS = {"plan": {"editor": "enum", "options": ["basic", "pro", "topup"], "default": "pro"},
          "from": {"editor": "enum", "options": ["pricing", "onboarding", "allowance", "path", "account", "course"], "default": "onboarding"},
-         "step": {"editor": "enum", "options": ["account", "plan", "pay", "review", "processing", "done"], "default": "plan"},
+         "step": {"editor": "enum", "options": ["account", "plan", "pay", "review", "processing", "done", "failed", "receipt"], "default": "plan"},
          "$preview": {"width": 1440, "height": 900}}
 
 HTML = '''<!doctype html>

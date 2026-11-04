@@ -932,6 +932,44 @@
       "title": "LRN-F Course-only learner · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Dash-G.dc.html": {
+      "x": 0,
+      "y": 43498,
+      "w": 1440,
+      "h": 2752,
+      "title": "LRN-G Certification-first learner · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-G-Mobile.dc.html": {
+      "x": 1520,
+      "y": 43498,
+      "w": 390,
+      "h": 3331,
+      "title": "LRN-G Certification-first learner · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-H.dc.html": {
+      "x": 2150,
+      "y": 43498,
+      "w": 1440,
+      "h": 2707,
+      "title": "LRN-H Learning Program learner (Pro) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-H-Mobile.dc.html": {
+      "x": 3670,
+      "y": 43498,
+      "w": 390,
+      "h": 3346,
+      "title": "LRN-H Learning Program learner (Pro) · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -957,7 +995,8 @@
     "row-b10",
     "row-b11",
     "row-b12",
-    "row-b13"
+    "row-b13",
+    "row-b14"
   ],
   "notes": {
     "new-hero": {
@@ -1080,6 +1119,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b14": {
+      "x": 0,
+      "y": 43198,
+      "text": "Batch 14 · Learner dashboard: certification-first, learning program (Pro)",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -1180,7 +1227,11 @@
     "Dash-E.dc.html",
     "Dash-E-Mobile.dc.html",
     "Dash-F.dc.html",
-    "Dash-F-Mobile.dc.html"
+    "Dash-F-Mobile.dc.html",
+    "Dash-G.dc.html",
+    "Dash-G-Mobile.dc.html",
+    "Dash-H.dc.html",
+    "Dash-H-Mobile.dc.html"
   ],
   "pages": [
     {

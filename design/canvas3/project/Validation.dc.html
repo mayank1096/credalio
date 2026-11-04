@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>How Validation Works</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+h1,h2,h3,p{text-wrap:pretty}
+@media (min-width: 761px){
+p{text-wrap:balance}
+}
+.sx-nav{max-width:1360px;margin:0 auto;height:72px;padding:0 24px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.sx-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.sx-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
+.sx-word{display:block;height:24px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}
+.sx-links{display:flex;align-items:center;gap:4px}
+.sx-link{height:40px;padding:0 12px;border-radius:999px;display:flex;align-items:center;font-size:15px;font-weight:500;color:#3A4566;text-decoration:none;white-space:nowrap;transition:color .2s ease,background .2s ease}
+.sx-link:hover{color:#0B1433;background:#F5F8FF}
+.sx-cta{height:44px;padding:0 20px;border-radius:999px;display:flex;align-items:center;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;transition:background .2s ease}
+.sx-cta:hover{background:#0E3BB8}
+.sx-menu{display:none;width:44px;height:44px;border-radius:999px;border:none;background:transparent;color:#0B1433;align-items:center;justify-content:center;cursor:pointer}
+.sx-link:focus-visible,.sx-cta:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
+.sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
+.sx-fin{max-width:1312px;margin:0 auto;padding:40px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#5B6582}
+.sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
+.sx-fin a{color:#3A4566;text-decoration:none}
+.sx-fin a:hover{color:#1652F0}
+@media (max-width: 1180px){
+.sx-links{display:none}
+.sx-menu{display:flex}
+}
+@media (max-width: 520px){
+.sx-login{display:none !important}
+}
+@media (max-width: 760px){
+.sx-nav{height:60px;padding:0 16px}
+.sx-word{height:20px}
+.sx-cta{height:40px;padding:0 16px;font-size:14px}
+.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}
+}
+body{margin:0;background:#FFFFFF}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-tag.solid{background:#1652F0;color:#FFFFFF}
+.ds-tag .tip{margin-left:0}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-tag.line{background:#FFFFFF;box-shadow:inset 0 0 0 1px #E6EAF3}
+.ds-tag.lg{height:30px;padding:0 12px;font-size:13px}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
+}
+h1,h2,h3,p{text-wrap:pretty}
+@media (min-width: 761px){
+p{text-wrap:balance}
+}
+@media (max-width: 760px){
+h2{text-wrap:balance}
+}
+a{color:#1652F0}
+a:hover{color:#0E3BB8}
+.tx-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,700px);gap:40px;align-items:center}
+.tx-h2{margin:0;font-size:48px;line-height:1.06;font-weight:600;letter-spacing:-1.5px}
+.tx-steps{display:flex;flex-direction:column;gap:2px;margin-top:14px}
+.tx-step{display:grid;grid-template-columns:32px minmax(0,1fr);gap:14px;align-items:center;padding:12px 0;border-top:1px solid #EEF1F7;transition:opacity .5s ease}
+.tx-step:first-child{border-top:none}
+.tx-step-wait{opacity:.45}
+.tx-num{width:32px;height:32px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;border:1.5px solid #D6DDEE;color:#5B6582;box-sizing:border-box;transition:background .4s ease,border-color .4s ease,color .4s ease}
+.tx-step-run .tx-num{border-color:#1652F0;color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.1)}
+.tx-step-done .tx-num{background:#E7F5EE;border-color:#CFE8DC;color:#0F6B45}
+.tx-st{font-size:16px;font-weight:600}
+.tx-sd{font-size:14px;color:#5B6582}
+.tx-stage{position:relative;height:660px;perspective:1800px;perspective-origin:50% 30%}
+.tx-stage::before{content:"";position:absolute;inset:6% 0 0;background:radial-gradient(50% 45% at 50% 55%,#EAF0FF 0%,rgba(234,240,255,0) 100%);pointer-events:none}
+.tx-pill{position:absolute;right:20px;top:18px;z-index:3;transition:background .5s ease,color .5s ease}
+.tx-spin{width:13px;height:13px;border-radius:999px;border:2px solid currentColor;border-right-color:transparent;box-sizing:border-box;animation:txSpin .9s linear infinite}
+@keyframes txSpin{to{transform:rotate(360deg)}}
+.tx-idle{position:absolute;left:50%;top:54%;width:0;height:0;transform-style:preserve-3d;transform:rotateX(55deg) rotateZ(-34deg)}
+.tx-floor{position:absolute;left:-250px;top:-170px;width:500px;height:340px;background:radial-gradient(closest-side,rgba(11,20,51,.10),rgba(11,20,51,.04) 60%,rgba(11,20,51,0));transform:translateZ(-30px)}
+.tx-layer{position:absolute;left:-200px;top:-135px;width:400px;height:270px;box-sizing:border-box;padding:20px 22px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 24px 40px -32px rgba(11,20,51,.28);transform-style:preserve-3d;will-change:transform;backface-visibility:hidden;transition:transform 1.4s cubic-bezier(.65,0,.35,1),border-color .5s ease;font-family:'Google Sans',system-ui,sans-serif;color:#0B1433}
+.tx-layer-run{border-color:#9DB8F7}
+.tx-clip{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none}
+.tx-scan{position:absolute;top:0;bottom:0;left:0;width:30%;background:linear-gradient(90deg,rgba(22,82,240,0),rgba(22,82,240,.07) 75%,rgba(22,82,240,.28) 99%,rgba(22,82,240,0));opacity:0;will-change:transform}
+.tx-layer-run .tx-scan{animation:txScan 2.1s cubic-bezier(.45,0,.55,1) .2s both}
+@keyframes txScan{0%{transform:translateX(-110%);opacity:1}90%{opacity:1}100%{transform:translateX(320%);opacity:0}}
+.tx-badge{position:absolute;right:16px;top:16px;width:28px;height:28px;border-radius:999px;border:1.5px solid #D6DDEE;box-sizing:border-box;display:flex;align-items:center;justify-content:center;color:transparent;background:#FFFFFF;transition:background .4s ease,border-color .4s ease,color .4s ease}
+.tx-layer-run .tx-badge{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.1)}
+.tx-layer-done .tx-badge{background:#0F6B45;border-color:#0F6B45;color:#FFFFFF}
+.tx-k{font-size:11px;font-weight:600;letter-spacing:1.4px;color:#8A93AD}
+.tx-bar{height:7px;border-radius:9px;background:#EEF1F7}
+.tx-seal{position:absolute;right:-34px;top:-38px;width:116px;height:116px;transform:translateZ(90px) scale(1.18);opacity:0;transition:transform .9s cubic-bezier(.22,.8,.3,1),opacity .45s ease;transform-style:preserve-3d;pointer-events:none}
+.tx-seal-sh{position:absolute;right:-30px;top:-30px;width:116px;height:116px;border-radius:999px;background:radial-gradient(closest-side,rgba(22,82,240,.28),rgba(22,82,240,0));transform:translateZ(1px) scale(.6);opacity:0;transition:transform .9s cubic-bezier(.22,.8,.3,1),opacity .9s ease;pointer-events:none}
+.tx-seal-sh.tx-seal-on{opacity:1;transform:translateZ(1px) scale(1)}
+.tx-seal.tx-seal-on{transform:translateZ(3px) scale(1);opacity:1}
+.tx-cap{position:absolute;left:0;right:0;bottom:0;text-align:center;font-size:15px;font-weight:500;color:#5B6582;transition:color .4s ease}
+@media (prefers-reduced-motion: reduce){
+.tx-spin,.tx-layer-run .tx-scan{animation:none}
+.tx-layer,.tx-seal,.tx-seal-sh{transition:none}
+}
+@media (max-width: 1080px){
+.tx-grid{grid-template-columns:minmax(0,1fr) !important;gap:8px !important}
+.tx-stage{max-width:700px;width:100%;justify-self:center}
+}
+@media (max-width: 760px){
+.tx-wrap{padding:80px 20px 72px !important}
+.tx-h2{font-size:32px !important;letter-spacing:-.9px !important}
+.tx-sub{font-size:16px !important}
+.tx-copy{display:contents !important}
+.tx-o1{order:1}
+.tx-stage{order:2}
+.tx-steps{order:3}
+.tx-grid{gap:14px !important}
+.tx-stage{height:450px;margin:0 -20px;width:calc(100% + 40px);perspective:1300px}
+.tx-idle{top:60%}
+.tx-scale{transform:scale(.62)}
+.tx-pill{right:50%;transform:translateX(50%);top:0}
+.tx-cap{bottom:6px;font-size:14px}
+}
+.ci-btn{align-self:flex-start;margin-top:6px}
+.ci-win{border-radius:16px;background:#FFFFFF;color:#0B1433;border:1.5px solid #E6EAF3;box-shadow:0 30px 60px -30px rgba(11,20,51,.5);padding:16px;display:flex;flex-direction:column;gap:10px}
+.ci-wk{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:500;color:#8A93AD}
+.ci-row{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:10px;background:#F5F8FF;font-size:12px;color:#3A4566}
+@media (max-width: 860px){
+.ci-btn{margin-top:4px}
+}
+@media (max-width: 1080px){
+.tx-sub{max-width:none !important}
+}
+.fc-band{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(180deg,#0B1433 0%,#0E1D55 55%,#14287A 100%);color:#FFFFFF;padding:64px 40px 120px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px}
+.fc-band::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(157,184,247,.18) 1px,transparent 1.3px);background-size:22px 22px;-webkit-mask-image:radial-gradient(60% 60% at 50% 30%,#000 10%,transparent 80%);mask-image:radial-gradient(60% 60% at 50% 30%,#000 10%,transparent 80%);pointer-events:none}
+.fc-horizon{position:absolute;left:50%;bottom:-520px;width:1500px;height:620px;margin-left:-750px;border-radius:50%;background:radial-gradient(50% 50% at 50% 50%,#2F5BF0 0%,#1C43C9 45%,#122E92 70%,rgba(18,46,146,0) 100%);border-top:1.5px solid rgba(190,208,255,.85);box-shadow:0 -10px 40px -6px rgba(110,150,255,.7),0 -60px 140px -20px rgba(60,110,255,.55);pointer-events:none;animation:fcRise 7s ease-in-out infinite}
+@keyframes fcRise{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.fc-mark{position:relative;width:64px;height:64px;border-radius:999px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(255,255,255,.06),0 0 48px 6px rgba(76,125,255,.55)}
+.fc-mark img{width:36px;height:36px}
+.fc-mark::before{content:"";position:absolute;inset:-8px;border-radius:999px;border:1.5px solid rgba(157,184,247,.5);animation:fcRing 3.2s ease-out infinite}
+@keyframes fcRing{from{transform:scale(1);opacity:.8}to{transform:scale(1.7);opacity:0}}
+.fc-h2{position:relative;margin:10px 0 0;font-size:56px;line-height:1.04;font-weight:600;letter-spacing:-1.8px}
+.fc-sub{position:relative;margin:0;font-size:18px;line-height:1.6;color:rgba(255,255,255,.72)}
+@media (prefers-reduced-motion: reduce){
+.fc-horizon,.fc-mark::before{animation:none}
+}
+@media (max-width: 760px){
+.fc-wrap{padding:24px 12px 40px !important}
+.fc-band{border-radius:22px;padding:48px 20px 92px;gap:12px}
+.fc-horizon{width:900px;margin-left:-450px;height:420px;bottom:-350px}
+.fc-mark{width:52px;height:52px}
+.fc-mark img{width:30px;height:30px}
+.fc-h2{font-size:32px;letter-spacing:-.9px;margin-top:8px}
+.fc-sub{font-size:15px;max-width:300px}
+.tip-b{display:none;width:min(250px,calc(100vw - 48px))}
+.tip:hover .tip-b,.tip:focus .tip-b{display:block}
+}
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-tag.solid{background:#1652F0;color:#FFFFFF}
+.ds-tag .tip{margin-left:0}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-tag.line{background:#FFFFFF;box-shadow:inset 0 0 0 1px #E6EAF3}
+.ds-tag.lg{height:30px;padding:0 12px;font-size:13px}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
+}
+@media (max-width: 760px){
+.tip-b{display:none;width:min(250px,calc(100vw - 48px))}
+.tip:hover .tip-b,.tip:focus .tip-b{display:block}
+}
+h1,h2,h3,p{text-wrap:pretty}
+.pc-sec{max-width:1312px;margin:0 auto;padding:0 48px 96px;box-sizing:border-box;font-family:'Google Sans',system-ui,sans-serif;color:#0B1433}
+.pc-sh{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px}
+.pc-k{display:block;font-size:14px;font-weight:500;color:#1652F0}
+.pc-h2{margin:8px 0 0;display:flex;align-items:center;font-size:36px;line-height:1.15;font-weight:600;letter-spacing:-.03em}
+.pc-p{margin:10px 0 0;max-width:620px;font-size:17px;line-height:1.6;color:#4A5578}
+.ko-path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.ko-path li{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px;padding:0 16px;text-align:center}
+.ko-path li:not(:last-child)::before{content:'';position:absolute;left:calc(50% + 22px);right:calc(-50% + 22px);top:13px;height:2px;border-radius:2px;background:#1652F0}
+.ko-dot{width:28px;height:28px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:2px solid #1652F0;background:#FFFFFF;display:flex;align-items:center;justify-content:center;color:#1652F0;font-size:12.5px;font-weight:600}
+.ko-path li:first-child .ko-dot{background:#1652F0;color:#FFFFFF}
+.ko-path li > span:last-child{display:flex;flex-direction:column;gap:4px;align-items:center}
+.ko-path b{font-size:16px;font-weight:600}
+.ko-path li > span:last-child > span{font-size:14px;line-height:1.5;color:#4A5578;max-width:240px}
+@media (max-width: 960px){
+.pc-sec{padding:0 20px 72px}
+.pc-sh{flex-direction:column;align-items:flex-start;gap:12px;margin-bottom:22px}
+.pc-h2{font-size:28px}
+.pc-p{font-size:15.5px}
+.ko-path{grid-template-columns:minmax(0,1fr);gap:0}
+.ko-path li{flex-direction:row;align-items:flex-start;text-align:left;gap:14px;padding:0 0 22px}
+.ko-path li:last-child{padding-bottom:0}
+.ko-path li:not(:last-child)::before{left:13px;right:auto;top:30px;bottom:2px;width:2px;height:auto}
+.ko-path li > span:last-child{align-items:flex-start}
+}
+@media (max-width: 760px){
+.pc-h2{font-size:24px}
+}
+.cx-acts{display:flex;align-items:center;gap:22px;margin-top:10px}
+.cx-acts .ci-btn{margin:0}
+.cx-wt{font-size:17px;font-weight:600;letter-spacing:-.2px;margin:2px 0 4px}
+.cx-sec{padding-top:0}
+.cx-studio{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:center}
+.cx-steps{margin-top:28px}
+.cx-steps .tx-step{font-family:inherit;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0;color:#0B1433;cursor:pointer;padding:16px 0}
+.cx-steps .tx-step:hover{opacity:1}
+.cx-steps .tx-step-run .tx-num{background:#1652F0;color:#FFFFFF}
+.cx-win{height:472px;box-sizing:border-box;padding:24px;gap:10px;border-radius:22px;box-shadow:0 40px 80px -50px rgba(11,20,51,.45);background:linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 70%,#F7F9FD 100%)}
+.cx-win .ci-row{padding:12px 14px;font-size:13.5px;border-radius:12px}
+.cx-pp{gap:12px}
+.cx-pn{display:flex;flex-direction:column;gap:1px;min-width:0}
+.cx-pn b{font-weight:600;color:#0B1433}
+.cx-pn small{font-size:12px;color:#5B6582}
+.cx-pp .ds-tag{margin-left:auto}
+.cx-ui{width:40px;height:40px;border-radius:12px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cx-ticks{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.cx-ticks li{display:flex;align-items:center;gap:10px;font-size:15px;color:#3A4566}
+.cx-ticks i{width:20px;height:20px;border-radius:999px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+#cx-make{overflow:clip}
+.cx-fb{position:relative;z-index:2;margin-top:14px}
+@media (max-width: 960px){
+.cx-studio{grid-template-columns:minmax(0,1fr);gap:24px}
+.cx-win{height:auto;min-height:440px}
+}
+@media (max-width: 760px){
+.cx-acts{flex-direction:column;align-items:stretch;gap:6px}
+.cx-acts .ds-btn{justify-content:space-between;align-self:stretch}
+.cx-steps{margin-top:18px}
+.cx-steps .tx-step{padding:12px 0}
+.cx-win{padding:16px;min-height:0;border-radius:18px}
+.cx-win .ci-row{padding:10px 12px;font-size:13px}
+.cx-pp .ds-tag{display:none}
+.cx-ticks li{font-size:14.5px}
+.cx-fb{align-self:stretch;justify-content:space-between}
+}
+.in-steps .tx-step{padding:13px 0}
+.in-ai{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.in-sc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
+.in-card{padding:32px;border-radius:22px;display:flex;flex-direction:column}
+.in-card .pc-h2{font-size:30px}
+@media (max-width: 960px){
+.in-ai,.in-sc{grid-template-columns:minmax(0,1fr);gap:24px}
+}
+@media (max-width: 760px){
+.in-steps{flex-direction:row;gap:8px;overflow-x:auto;margin:20px -20px 0;padding:2px 20px 4px;scroll-padding:0 20px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.in-steps::-webkit-scrollbar{display:none}
+.in-steps .tx-step{flex:0 0 auto;display:flex;align-items:center;gap:8px;height:44px;padding:0 16px 0 6px !important;border:1.5px solid #E6EAF3 !important;border-radius:999px;scroll-snap-align:start;opacity:1}
+.in-steps .tx-step-run{border-color:#1652F0 !important;background:#EAF0FF}
+.in-steps .tx-num{width:30px;height:30px;font-size:12px;box-shadow:none !important}
+.in-steps .tx-sd{display:none}
+.in-steps .tx-st{font-size:14.5px;font-weight:500;white-space:nowrap}
+.in-card{padding:24px 18px}
+.in-card .pc-h2{font-size:24px}
+}
+.va{width:34px;height:34px;flex-shrink:0;border-radius:50%;color:#FFFFFF;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;background:#0B1433}
+.va.v2{background:#0F6B45}
+.va.me{background:#1652F0}
+.va.sm{width:30px;height:30px;font-size:11px}
+.rq-thread{margin-top:20px;display:flex;flex-direction:column;gap:14px}
+.rq-m{display:flex;gap:12px;align-items:flex-start}
+.rq-m > div{flex-grow:1;padding:14px 16px;border-radius:16px;background:#F7F9FD}
+.rq-m.me > div{background:#F5F8FF;border:1.5px solid #E1E9FF}
+.rq-who{font-size:12.5px;color:#5B6582}
+.rq-who b{color:#0B1433;font-weight:600}
+.rq-m p{margin:6px 0 0 0;font-size:15px;line-height:1.6;color:#0B1433}
+.rq-att{margin-top:10px;display:inline-flex;align-items:center;gap:7px;height:34px;padding:0 12px;border-radius:10px;background:#FFFFFF;border:1.5px solid #E6EAF3;font-size:13.5px;font-weight:500;color:#0E3BB8}
+.rq-att i{font-style:normal;color:#8A93AD;font-weight:400;margin-left:4px}
+.vx-hero .tx-h2{margin:0}
+.vx-acts{margin-top:16px}
+.vx-acts .ds-link{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:600}
+.vx-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.vx-stats > div{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:28px;border-radius:22px;border:1.5px solid #E6EAF3;background:#FFFFFF;overflow:hidden}
+.vx-stats b{margin-top:6px;font-size:17px;font-weight:600}
+.vx-stats p{margin:0;font-size:15px;line-height:1.55;color:#4A5578}
+.vx-s-ok{border-color:#DCE5FB !important;background:linear-gradient(160deg,#F5F8FF 0%,#FFFFFF 70%) !important}
+.vx-seal{position:absolute;right:20px;top:18px;filter:drop-shadow(0 10px 18px rgba(22,82,240,.25))}
+.vx-ring{width:12px;height:12px;border-radius:999px;border:2px solid #CBD3E6;box-sizing:border-box}
+.vx-roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.vx-r{padding:28px;border-radius:22px;display:flex;flex-direction:column;align-items:flex-start}
+.vx-rk{margin-top:16px;font-size:13px;font-weight:500;color:#8A93AD}
+.vx-r h3{margin:4px 0 0;display:flex;align-items:center;font-size:21px;font-weight:600;letter-spacing:-.3px}
+.vx-r .cx-ticks{margin-top:18px}
+.vx-r .cx-ticks li{font-size:14.5px}
+.vx-r .cx-ticks i{background:#E7F5EE;color:#0F6B45}
+.vx-cond{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:16px}
+.vx-c{display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:18px;background:#F7F9FD}
+.vx-c b{font-size:15px;font-weight:600;white-space:nowrap}
+.vx-c small{font-size:14px;color:#5B6582}
+.vx-steps .tx-step{padding:10px 0}
+.vx-steps .tx-sd{font-size:13.5px}
+.vx-win{height:auto;min-height:400px}
+.vx-row{gap:14px}
+.vx-row .ds-tag{margin-left:auto}
+.vx-k{color:#3A4566}
+.vx-v{margin-left:auto;font-weight:600;color:#0B1433;text-align:right}
+.vx-win .cx-pp .va{width:32px;height:32px;font-size:11px}
+.vx-wf{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid #EEF1F7}
+.vx-wf .ds-link{position:relative}
+.vx-th{padding:24px;border-radius:22px}
+.vx-thh{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.vx-th .rq-thread{margin-top:18px}
+.vx-dh{display:flex;align-items:center;gap:16px}
+.vx-dh .pc-h2{margin-top:2px}
+.vx-ver .pc-h2{display:block}
+.vx-ver .pc-h2 .tip{display:inline-flex;vertical-align:middle;margin-left:6px}
+.vx-dec .pc-p,.vx-ver .pc-p{font-size:15.5px}
+.vx-dl{margin:22px 0 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;padding:18px;border-radius:16px;background:#F7F9FD}
+.vx-dl dt{font-size:12.5px;color:#8A93AD}
+.vx-dl dd{margin:3px 0 0;font-size:15px;font-weight:600}
+.vx-sc{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:18px 0 22px}
+.vx-sc .vx-k{margin-right:6px;font-size:13px;color:#8A93AD}
+.vx-dec > .ds-link{margin-top:auto}
+.vx-vp{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:32px}
+.vx-vp li{padding:0 8px}
+.vx-vp b{font-size:18px}
+.vx-vp li > span:last-child{gap:8px}
+.vx-vp .ko-dot{background:#FFFFFF}
+.vx-vp li.vx-v-green .ko-dot{background:#0F6B45;border-color:#0F6B45;color:#FFFFFF}
+.vx-vp li.vx-v-amber .ko-dot{background:#FFF4E0;border-color:#E8A33D;color:#8A5A00}
+.vx-vp li:not(:last-child)::before{background:#CBD3E6}
+.vx-vn{display:grid;grid-template-columns:1fr 1fr;margin:20px 16.6% 0;text-align:center;font-size:12.5px;color:#8A93AD}
+@media (max-width: 1180px){
+.vx-cond{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width: 960px){
+.vx-stats,.vx-roles{grid-template-columns:minmax(0,1fr);gap:12px}
+.vx-win{min-height:0}
+.vx-vp{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:0}
+.vx-vp li{flex-direction:column !important;align-items:center !important;text-align:center !important;padding:0 4px !important}
+.vx-vp li:not(:last-child)::before{left:calc(50% + 18px) !important;right:calc(-50% + 18px) !important;top:13px !important;bottom:auto !important;width:auto !important;height:2px !important}
+.vx-vp li > span:last-child{align-items:center !important}
+}
+@media (max-width: 760px){
+.vx-hero .tx-wrap{padding:24px 20px 48px !important}
+.vx-acts{order:5;flex-direction:column;align-items:stretch;gap:6px}
+.vx-acts .ds-btn{justify-content:space-between}
+.vx-acts .ds-link{align-self:center;padding:12px 0}
+.vx-th .rq-m .va{display:none}
+.vx-roles{display:flex;overflow-x:auto;gap:12px;margin:0 -20px;padding:2px 20px 6px;scroll-padding:0 20px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.vx-roles::-webkit-scrollbar{display:none}
+.vx-r{flex:0 0 84%;box-sizing:border-box;scroll-snap-align:start}
+.vx-stats > div,.vx-r{padding:22px 18px}
+.vx-seal svg{width:56px;height:56px}
+.vx-c{flex-direction:column;align-items:flex-start;gap:6px}
+.vx-th{padding:18px 14px}
+.vx-thh{flex-wrap:wrap}
+.vx-dl{grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding:14px}
+.vx-dh{gap:12px}
+.vx-dh svg{width:52px;height:52px}
+.vx-vp b{font-size:16px}
+.vx-vp .ds-tag{white-space:normal;height:auto;padding:5px 8px;text-align:center;line-height:1.25}
+.vx-vn{margin:16px 0 0;grid-template-columns:1fr 1fr;gap:8px;font-size:12px}
+.vx-wf .ds-link::after{content:'';position:absolute;inset:-12px -8px}
+}
+</style>
+</helmet>
+<div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
+<header class="sx-nav">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav class="sx-links" aria-label="Main">
+<a class="sx-link" href="#">Explore learning</a>
+<a class="sx-link" href="#">Career paths</a>
+<a class="sx-link" href="#">Certifications</a>
+<a class="sx-link" href="#">Pricing</a>
+<a class="sx-link" href="Creators.dc.html">For creators</a>
+<a class="sx-link" href="Institutions.dc.html">For institutions</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
+<a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
+<a class="sx-cta" href="OnbWelcome.dc.html">Create account</a>
+<button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</div>
+</header>
+<section class="vx-hero" aria-labelledby="tx-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; overflow: hidden">
+<div class="tx-wrap" style="max-width: 1312px; margin: 0 auto; padding: 48px 48px 72px; box-sizing: border-box">
+<div class="tx-grid" ref="{{tv.rootRef}}">
+<div class="tx-copy" style="display: flex; flex-direction: column; gap: 16px">
+<span class="tx-o1" style="font-size: 14px; font-weight: 500; color: #1652F0">Credalio Validation</span>
+<h1 id="tx-h" class="tx-h2 tx-o1">See what stands behind the learning.</h1>
+<p class="tx-sub tx-o1" style="margin: 0; max-width: 470px; font-size: 18px; line-height: 1.6; color: #4A5578">Qualified validators review learning independently, each in their own area, before a decision is made. You see the result on every course.</p>
+<div class="tx-steps" role="list">
+<sc-for list="{{tv.steps}}" as="s" hint-placeholder-count="3">
+<div class="tx-step {{s.cls}}" role="listitem"><span class="tx-num">{{s.n}}</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">{{s.t}}</span><span class="tx-sd">{{s.d}}</span></span></div>
+</sc-for>
+</div>
+<div class="cx-acts vx-acts"><a class="ds-btn ci-btn" href="Courses.dc.html"><span>Explore validated learning</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><a class="ds-link" href="#">Become a validator<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+</div>
+
+<div class="tx-stage" role="img" aria-label="A course comes apart into three layers, content, learning design and assessment. Each is checked, then the layers close and the Credalio seal is applied.">
+<span class="ds-tag lg tx-pill {{tv.pillCls}}" aria-hidden="true">
+<sc-if value="{{tv.pRun}}" hint-placeholder-val="{{ false }}"><span class="tx-spin"></span></sc-if>
+<sc-if value="{{tv.pOk}}" hint-placeholder-val="{{ false }}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></sc-if>
+<sc-if value="{{tv.pNone}}" hint-placeholder-val="{{ true }}"><span style="width: 12px; height: 12px; border-radius: 999px; border: 2px solid #CBD3E6; box-sizing: border-box"></span></sc-if>
+{{tv.pill}}</span>
+<div class="tx-scale" style="position: absolute; inset: 0; transform-style: preserve-3d">
+<div class="tx-idle">
+<div class="tx-floor"></div>
+
+<div class="tx-layer {{tv.l3.cls}}" style="transform: translate3d({{tv.l3.x}}, {{tv.l3.y}}, {{tv.l3.z}})">
+<span class="tx-clip"><span class="tx-scan"></span></span>
+<span class="tx-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+<span class="tx-k">ASSESSMENT</span>
+<div style="margin-top: 14px; font-size: 15px; font-weight: 600">Which join keeps every customer?</div>
+<div style="display: flex; flex-direction: column; gap: 8px; margin-top: 14px">
+<div style="display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 12px; border-radius: 10px; border: 1.5px solid #E6EAF3; font-size: 13px"><span style="width: 14px; height: 14px; border-radius: 999px; border: 2px solid #CBD3E6; box-sizing: border-box"></span>INNER JOIN</div>
+<div style="display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 12px; border-radius: 10px; border: 1.5px solid #1652F0; background: #F5F8FF; font-size: 13px; font-weight: 500"><span style="width: 14px; height: 14px; border-radius: 999px; border: 4px solid #1652F0; box-sizing: border-box"></span>LEFT JOIN</div>
+<div style="display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 12px; border-radius: 10px; border: 1.5px solid #E6EAF3; font-size: 13px"><span style="width: 14px; height: 14px; border-radius: 999px; border: 2px solid #CBD3E6; box-sizing: border-box"></span>CROSS JOIN</div>
+</div>
+<div style="display: flex; justify-content: space-between; margin-top: 12px; font-size: 12px; color: #5B6582"><span>Question 7 of 20</span><span>Pass mark 70%</span></div>
+</div>
+
+<div class="tx-layer {{tv.l2.cls}}" style="transform: translate3d({{tv.l2.x}}, {{tv.l2.y}}, {{tv.l2.z}})">
+<span class="tx-clip"><span class="tx-scan"></span></span>
+<span class="tx-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+<span class="tx-k">LEARNING DESIGN</span>
+<div style="position: relative; display: flex; justify-content: space-between; align-items: center; margin-top: 30px">
+<span style="position: absolute; left: 20px; right: 20px; top: 50%; height: 2px; background: #C9D7FA"></span>
+<span style="position: relative; height: 32px; padding: 0 12px; border-radius: 999px; background: #EAF0FF; color: #1652F0; border: 1.5px solid #C9D7FA; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500">Outcome</span>
+<span style="position: relative; height: 32px; padding: 0 12px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #C9D7FA; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500">Lessons</span>
+<span style="position: relative; height: 32px; padding: 0 12px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #C9D7FA; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500">Practice</span>
+<span style="position: relative; height: 32px; padding: 0 12px; border-radius: 999px; background: #1652F0; color: #FFFFFF; border: 1.5px solid #1652F0; display: inline-flex; align-items: center; font-size: 12px; font-weight: 500">Project</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 26px; align-items: end; height: 76px">
+<span style="height: 40%; border-radius: 6px; background: #EAF0FF"></span><span style="height: 65%; border-radius: 6px; background: #DCE5FB"></span><span style="height: 82%; border-radius: 6px; background: #C9D7FA"></span><span style="height: 100%; border-radius: 6px; background: #9DB8F7"></span>
+</div>
+<div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 12px; color: #5B6582"><span>8 lessons</span><span>Each step builds on the last</span></div>
+</div>
+
+<div class="tx-layer {{tv.l1.cls}}" style="transform: translate3d({{tv.l1.x}}, {{tv.l1.y}}, {{tv.l1.z}})">
+<span class="tx-clip"><span class="tx-scan"></span></span>
+<span class="tx-badge"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+<span class="tx-seal-sh {{tv.sealCls}}"></span>
+<div class="tx-seal {{tv.sealCls}}">
+<svg viewBox="0 0 100 100" style="position: absolute; inset: 0; width: 100%; height: 100%"><defs><linearGradient id="txSg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C7DFF"></stop><stop offset=".55" stop-color="#1652F0"></stop><stop offset="1" stop-color="#0E3BB8"></stop></linearGradient><path id="txSt" d="M50,50 m-31,0 a31,31 0 1,1 62,0 a31,31 0 1,1 -62,0"></path></defs><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="url(#txSg)"></path><text font-family="Google Sans, system-ui, sans-serif" font-size="7" font-weight="600" letter-spacing="1.6" fill="#FFFFFF"><textPath href="#txSt" textLength="192" lengthAdjust="spacing">CREDALIO · VALIDATED · CREDALIO · VALIDATED ·</textPath></text><circle cx="50" cy="50" r="21" fill="#FFFFFF"></circle><path d="M40 50.5l7 7 13-13.5" fill="none" stroke="#1652F0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<span class="tx-k">CONTENT</span>
+<div style="margin-top: 12px; font-size: 18px; font-weight: 600; letter-spacing: -.3px">Joining tables with SQL</div>
+<div style="display: flex; flex-direction: column; gap: 7px; margin-top: 12px"><span class="tx-bar" style="width: 92%"></span><span class="tx-bar" style="width: 78%"></span></div>
+<div style="margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: #F5F8FF; border: 1px solid #E6EAF3; font-family: ui-monospace, Menlo, monospace; font-size: 12px; line-height: 1.7; color: #3A4566">SELECT c.name, o.total<br>FROM customers c<br><span style="color: #1652F0; font-weight: 600">LEFT JOIN</span> orders o ON …</div>
+<div style="display: flex; gap: 8px; margin-top: 12px; font-size: 12px; color: #5B6582"><span>Lesson 4 of 8</span><span>·</span><span>12 min</span></div>
+
+</div>
+
+
+</div>
+</div>
+<p class="tx-cap" aria-live="polite" style="margin: 0; color: {{tv.capFg}}">{{tv.cap}}</p>
+</div>
+</div>
+</div>
+</section>
+<section class="pc-sec cx-sec" aria-labelledby="vx-st">
+<div class="pc-sh"><div><span class="pc-k">Validation status</span><h2 id="vx-st" class="pc-h2">Only one status carries the seal.</h2></div></div>
+<div class="vx-stats"><div class="vx-s vx-s-ok"><span class="vx-seal"><svg viewBox="0 0 100 100" width="72" height="72" aria-hidden="true"><defs><linearGradient id="vSga" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C7DFF"></stop><stop offset=".55" stop-color="#1652F0"></stop><stop offset="1" stop-color="#0E3BB8"></stop></linearGradient><path id="vSta" d="M50,50 m-31,0 a31,31 0 1,1 62,0 a31,31 0 1,1 -62,0"></path></defs><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="url(#vSga)"></path><text font-family="Google Sans, system-ui, sans-serif" font-size="7" font-weight="600" letter-spacing="1.6" fill="#FFFFFF"><textPath href="#vSta" textLength="192" lengthAdjust="spacing">CREDALIO · VALIDATED · CREDALIO · VALIDATED ·</textPath></text><circle cx="50" cy="50" r="21" fill="#FFFFFF"></circle><path d="M40 50.5l7 7 13-13.5" fill="none" stroke="#1652F0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="ds-tag lg green"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Credalio Validated</span><b>Reviewed and approved</b><p>The validation process is complete for the version you see. Only this status carries the seal.</p></div><div class="vx-s"><span class="ds-tag lg blue"><span class="tx-spin"></span>Review in progress</span><b>Submitted, being reviewed</b><p>Validators are reviewing it now. It isn’t validated yet.</p></div><div class="vx-s"><span class="ds-tag lg line"><span class="vx-ring"></span>Not yet validated</span><b>No completed review</b><p>You can still learn from it. It just hasn’t been through a validator review.</p></div></div>
+</section>
+<section class="pc-sec cx-sec" aria-labelledby="vx-rv">
+<div class="pc-sh"><div><span class="pc-k">What gets reviewed</span><h2 id="vx-rv" class="pc-h2">Different experts look at different things.</h2><p class="pc-p">No single validator checks everything. Each one reviews only their own area.</p></div></div>
+<div class="vx-roles"><div class="ds-card vx-r"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5z"></path><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"></path></svg></span><span class="vx-rk">Educational Validator</span><h3>Educational quality<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Doesn’t decide: Subject accuracy outside their expertise.</span></span></h3><ul class="cx-ticks"><li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Clear learning outcomes</li><li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Lessons match the outcomes</li><li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Activities build understanding</li><li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Progression makes sense</li></ul></div><div class="ds-card vx-r"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path><path d="m8 11 2 2 4-4"></path></svg></span><span class="vx-rk">Subject Matter Validator</span><h3>Subject accuracy<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Doesn’t decide: Whether the learning design or assessments work.</span></span></h3><ul class="cx-ticks"><li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Facts and technical detail</li><li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Relevance and depth</li><li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Current material</li><li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Practical relevance</li></ul></div><div class="ds-card vx-r"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6v3H9z"></path><path d="M7 5H5v16h14V5h-2"></path><path d="m9 14 2 2 4-4"></path></svg></span><span class="vx-rk">Assessment Validator</span><h3>Assessment quality<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Doesn’t decide: Subject accuracy of the content.</span></span></h3><ul class="cx-ticks"><li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Aligned with the outcomes</li><li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Measures real competence</li><li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Right difficulty</li><li><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Fair, defensible scoring</li></ul></div></div>
+<div class="vx-cond"><div class="vx-c"><span class="ds-tag">When needed</span><b>AI Validator</b><small>Where the learning uses AI features.</small></div><div class="vx-c"><span class="ds-tag">When needed</span><b>Security & Privacy Validator</b><small>Where it handles personal data or connected systems.</small></div></div>
+</section>
+<section class="pc-sec cx-sec" aria-labelledby="vx-jh">
+<div class="cx-studio vx-jr">
+<div class="cx-sl">
+<span class="pc-k">The validation journey</span>
+<h2 id="vx-jh" class="pc-h2">From submission to Credalio Validated.</h2>
+<div class="tx-steps cx-steps in-steps vx-steps" role="tablist" aria-label="The validation journey"><button type="button" role="tab" class="tx-step {{jv.s0.cls}}" aria-selected="{{jv.s0.sel}}" onClick="{{jv.s0.pick}}"><span class="tx-num">1</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Submit</span><span class="tx-sd">The creator asks for validation.</span></span></button><button type="button" role="tab" class="tx-step {{jv.s1.cls}}" aria-selected="{{jv.s1.sel}}" onClick="{{jv.s1.pick}}"><span class="tx-num">2</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Scope</span><span class="tx-sd">Credalio works out which reviews apply.</span></span></button><button type="button" role="tab" class="tx-step {{jv.s2.cls}}" aria-selected="{{jv.s2.sel}}" onClick="{{jv.s2.pick}}"><span class="tx-num">3</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Assign</span><span class="tx-sd">Qualified validators are matched.</span></span></button><button type="button" role="tab" class="tx-step {{jv.s3.cls}}" aria-selected="{{jv.s3.sel}}" onClick="{{jv.s3.pick}}"><span class="tx-num">4</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Review</span><span class="tx-sd">Each validator reviews their own area.</span></span></button><button type="button" role="tab" class="tx-step {{jv.s4.cls}}" aria-selected="{{jv.s4.sel}}" onClick="{{jv.s4.pick}}"><span class="tx-num">5</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Clarify</span><span class="tx-sd">Findings are answered with evidence.</span></span></button><button type="button" role="tab" class="tx-step {{jv.s5.cls}}" aria-selected="{{jv.s5.sel}}" onClick="{{jv.s5.pick}}"><span class="tx-num">6</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Decide</span><span class="tx-sd">A decision once everything is met.</span></span></button><button type="button" role="tab" class="tx-step {{jv.s6.cls}}" aria-selected="{{jv.s6.sel}}" onClick="{{jv.s6.pick}}"><span class="tx-num">7</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Publish</span><span class="tx-sd">The seal and record go live.</span></span></button><button type="button" role="tab" class="tx-step {{jv.s7.cls}}" aria-selected="{{jv.s7.sel}}" onClick="{{jv.s7.pick}}"><span class="tx-num">8</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">Revalidate</span><span class="tx-sd">Major updates are reviewed again.</span></span></button></div>
+</div>
+<div class="ci-win cx-win vx-win" role="tabpanel" aria-label="{{jv.name}}">
+<div class="ci-wk"><span>Validation · Data Foundations</span><span class="ds-tag blue"><span>Step {{jv.n}} of 8</span></span></div>
+<span class="cx-wt">{{jv.panel}}</span>
+<sc-if value="{{jv.isRows}}" hint-placeholder-val="{{ true }}"><sc-for list="{{jv.rows}}" as="r" hint-placeholder-count="4"><div class="ci-row vx-row"><span class="vx-k">{{r.k}}</span><sc-if value="{{r.tag}}" hint-placeholder-val="{{ false }}"><span class="ds-tag {{r.cls}}">{{r.v}}</span></sc-if><sc-if value="{{r.plain}}" hint-placeholder-val="{{ true }}"><b class="vx-v">{{r.v}}</b></sc-if></div></sc-for></sc-if>
+<sc-if value="{{jv.isTeam}}" hint-placeholder-val="{{ false }}"><sc-for list="{{jv.team}}" as="c" hint-placeholder-count="3"><div class="ci-row cx-pp"><span class="va v2">{{c.i}}</span><span class="cx-pn"><b>{{c.role}}</b><small>{{c.exp}}</small></span></div></sc-for></sc-if>
+<div class="vx-wf"><button type="button" class="ds-link" onClick="{{jv.prev}}" aria-label="Previous step">Previous</button><button type="button" class="ds-ghost sm" onClick="{{jv.next}}">{{jv.nextLabel}}</button></div>
+</div>
+</div>
+</section>
+<section class="pc-sec cx-sec" aria-labelledby="vx-cl">
+<div class="in-ai vx-cl">
+<div><span class="pc-k">Clarification & revision</span><h2 id="vx-cl" class="pc-h2">Validation isn’t just a checkbox.</h2><p class="pc-p">Findings are raised, answered with evidence and resolved on the record. Nobody simply presses Approve.</p></div>
+<div class="ds-card vx-th">
+<div class="vx-thh"><span class="ds-tag">Finding #3 · Subject matter</span><span class="ds-tag green">Resolved</span></div>
+<div class="rq-thread">
+<div class="rq-m"><span class="va v2">SM</span><div><span class="rq-who"><b>Subject Matter Validator</b> · Clarification required</span><p>The source for the industry benchmark in Module 3 can’t be verified. Please add evidence.</p></div></div>
+<div class="rq-m me"><span class="va me">CR</span><div><span class="rq-who"><b>Creator</b> · Evidence submitted</span><p>Updated the source and attached the supporting dataset.</p><span class="rq-att"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg>benchmark-source.pdf</span></div></div>
+<div class="rq-m"><span class="va v2">SM</span><div><span class="rq-who"><b>Subject Matter Validator</b> · Finding resolved</span><p>Evidence reviewed. The benchmark now has a verifiable source.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+<section class="pc-sec cx-sec" aria-label="Decision and versioning">
+<div class="in-sc">
+<div class="ds-card in-card vx-dec">
+<div class="vx-dh"><svg viewBox="0 0 100 100" width="64" height="64" aria-hidden="true"><defs><linearGradient id="vSgb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4C7DFF"></stop><stop offset=".55" stop-color="#1652F0"></stop><stop offset="1" stop-color="#0E3BB8"></stop></linearGradient><path id="vStb" d="M50,50 m-31,0 a31,31 0 1,1 62,0 a31,31 0 1,1 -62,0"></path></defs><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="url(#vSgb)"></path><text font-family="Google Sans, system-ui, sans-serif" font-size="7" font-weight="600" letter-spacing="1.6" fill="#FFFFFF"><textPath href="#vStb" textLength="192" lengthAdjust="spacing">CREDALIO · VALIDATED · CREDALIO · VALIDATED ·</textPath></text><circle cx="50" cy="50" r="21" fill="#FFFFFF"></circle><path d="M40 50.5l7 7 13-13.5" fill="none" stroke="#1652F0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg><div><span class="pc-k">The decision</span><h2 class="pc-h2">Credalio Validated</h2></div></div>
+<p class="pc-p">Given when every applicable requirement is met.</p>
+<dl class="vx-dl"><div><dt>Validation ID</dt><dd>VAL-CRD-004821</dd></div><div><dt>Experience</dt><dd>Data Foundations</dd></div><div><dt>Version reviewed</dt><dd>v2.1</dd></div><div><dt>Validated</dt><dd>24 September 2026</dd></div></dl>
+<div class="vx-sc"><span class="vx-k">Scope</span><span class="ds-tag">Educational quality</span><span class="ds-tag">Subject matter</span><span class="ds-tag">Assessment</span></div>
+<a class="ds-link" href="#">View Validation Record<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
+</div>
+<div class="ds-card in-card vx-ver">
+<span class="pc-k">Versioning</span>
+<h2 class="pc-h2">Validation belongs to the version reviewed.<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">A course can’t be validated once, then rewritten under the same seal. Each validated version gets its own entry on the public record.</span></span></h2>
+<p class="pc-p">When a creator publishes a major update, the new version is reviewed again.</p>
+<ol class="ko-path vx-vp"><li class="vx-v-green"><span class="ko-dot"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>v2.1</b><span class="ds-tag green">Validated</span></span></li><li class="vx-v-amber"><span class="ko-dot">!</span><span><b>v3.0</b><span class="ds-tag amber">Revalidation required</span></span></li><li class="vx-v-green"><span class="ko-dot"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>v3.0</b><span class="ds-tag green">Validated</span></span></li></ol>
+<div class="vx-vn"><span>Major update published</span><span>Validator review</span></div>
+</div>
+</div>
+</section>
+<section aria-labelledby="fc-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif">
+<div class="fc-wrap" style="max-width: 1360px; margin: 0 auto; padding: 32px 24px 64px; box-sizing: border-box">
+<div class="fc-band">
+<span class="fc-horizon" aria-hidden="true"></span>
+<span class="fc-mark" aria-hidden="true"><img src="/_blob/f81e36d31295a0d0737959589ec1abd4" alt="" width="42" height="42"></span>
+<h2 id="fc-h" class="fc-h2">Learn with confidence.</h2>
+<p class="fc-sub">Look for the seal, then check the record behind it.</p>
+<a class="ds-btn cx-fb" href="Courses.dc.html"><span>Explore validated learning</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
+</div>
+</div>
+</section>
+<footer class="sx-foot">
+<div class="sx-fin">
+<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="Creators.dc.html">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+<span>© 2026 magnummeta. All rights reserved.</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4580}}'>
+var J = [["Submit", "Submission", [["Experience", "Data Foundations: Spreadsheets to SQL", null], ["Version", "v2.1", null], ["Submitted", "2 September 2026", null]], null], ["Scope", "Standard course · required reviews", [["Educational", "Required", "green"], ["Subject matter", "Required", "green"], ["Assessment", "Where applicable", "green"], ["AI · Security & Privacy", "Added where needed", ""]], null], ["Assign", "Review team", null, [["EV", "Educational Validator", "Learning design"], ["SM", "Subject Matter Validator", "Data analytics"], ["AV", "Assessment Validator", "Assessment design"]]], ["Review", "Example checklist", [["Learning outcomes are clear", "Meets standard", "green"], ["Module 3 benchmark is sourced", "Clarification required", "blue"], ["Practice activity difficulty", "Revision required", "amber"], ["Final assessment matches outcomes", "Meets standard", "green"]], null], ["Clarify", "Finding #3", [["Clarification requested", "Evidence requested", "blue"], ["Creator response", "Source attached", ""], ["Validator review", "Finding resolved", "green"]], null], ["Decide", "Possible outcomes", [["All requirements met", "Credalio Validated", "green"], ["Requirements outstanding", "Revisions first", "amber"]], null], ["Publish", "Published", [["Validation ID", "VAL-CRD-004821", null], ["Version validated", "v2.1", null], ["Seal", "Credalio Validated", "green"], ["Record", "Public", null]], null], ["Revalidate", "Version status", [["v2.1", "Validated", "green"], ["v3.0 · major update", "Revalidation required", "amber"]], null]];
+class Part {
+  constructor(host) { this.host = host; this.props = {}; this.state = {}; }
+  setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }
+}
+class TrustPart extends Part {
+  constructor(host) {
+    super(host);
+    this.state = { step: 0 };
+    var self = this;
+    this.setRoot = function (e) { self.root = e; };
+    this.T = [1200, 2500, 4900, 7300, 9700, 11300, 15000];
+  }
+  componentDidMount() {
+    var self = this;
+    this.t0 = performance.now();
+    var tick = function (now) {
+      var el = now - self.t0, T = self.T, s = 0;
+      if (el >= T[6]) { self.t0 = now; el = 0; }
+      for (var k = 0; k < 6; k++) if (el >= T[k]) s = k + 1;
+      if (s !== self.state.step) self.setState({ step: s });
+      self.raf = requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+    if (window.IntersectionObserver && this.root) {
+      this.io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) self.t0 = performance.now(); }, { threshold: 0.4 });
+      this.io.observe(this.root);
+    }
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); if (this.io) this.io.disconnect(); }
+  renderVals() {
+    // steps: 0 closed, 1 opening, 2 content, 3 design, 4 assessment, 5 closing, 6 sealed
+    var s = this.state.step, open = s >= 1 && s <= 4;
+    var Z = open ? [270, 135, 0] : [24, 12, 0], X = open ? [0, -30, -60] : [0, 0, 0], Y = open ? [0, 52, 104] : [0, 0, 0];
+    var lay = function (k, z) { var chk = k + 2; return { z: z + 'px', x: X[k] + 'px', y: Y[k] + 'px', cls: s === chk ? 'tx-layer-run' : (s > chk ? 'tx-layer-done' : '') }; };
+    var S = [['Content', 'Accurate and current for the field'], ['Learning design', 'Lessons and practice add up to the outcome'], ['Assessment', 'Fair, and measures what it claims']];
+    var caps = ['A new course arrives', 'Taking it apart', 'A subject expert checks the content', 'A learning designer checks how it’s built', 'An assessment specialist tests the assessment', 'Every layer passed', 'Credalio Validated'];
+    return {
+      rootRef: this.setRoot,
+      l1: lay(0, Z[0]), l2: lay(1, Z[1]), l3: lay(2, Z[2]),
+      sealCls: s === 6 ? 'tx-seal-on' : '',
+      steps: S.map(function (r, k) { var c = k + 2; return { n: k + 1, t: r[0], d: r[1], cls: s === c ? 'tx-step-run' : (s > c ? 'tx-step-done' : 'tx-step-wait') }; }),
+      pill: s === 0 ? 'Not yet validated' : (s < 6 ? 'Review in progress' : 'Credalio Validated'),
+      pillCls: s === 0 ? 'line' : (s < 6 ? 'blue' : 'green'), pNone: s === 0, pRun: s > 0 && s < 6, pOk: s === 6,
+      cap: caps[s], capFg: s === 6 ? '#0F6B45' : '#5B6582'
+    };
+  }
+}
+class JourneyPart extends Part {
+  constructor(host) { super(host); this.state = { j: 0 }; }
+  renderVals() {
+    var self = this, t = this.state.j, a = J[t], o = { name: a[0], panel: a[1], n: t + 1, isRows: !!a[2], isTeam: !!a[3] };
+    J.forEach(function (x, k) { o['s' + k] = { cls: k === t ? 'tx-step-run' : (k < t ? 'tx-step-done' : 'tx-step-wait'), sel: k === t ? 'true' : 'false', pick: function () { self.setState({ j: k }); } }; });
+    o.rows = (a[2] || []).map(function (r) { var tag = r[2] !== null; return { k: r[0], v: r[1], tag: tag, plain: !tag, cls: r[2] || '' }; });
+    o.team = (a[3] || []).map(function (c) { return { i: c[0], role: c[1], exp: c[2] }; });
+    o.prev = function () { self.setState({ j: Math.max(0, t - 1) }); };
+    o.next = function () { self.setState({ j: t < 7 ? t + 1 : 0 }); };
+    o.nextLabel = t < 7 ? 'Next: ' + J[t + 1][0] : 'Back to start';
+    return o;
+  }
+}
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { v: 0 };
+    this.parts = { tv: new TrustPart(this), jv: new JourneyPart(this) };
+  }
+  bump(now) {
+    var self = this;
+    if (now) { this.setState({ v: this.state.v + 1 }); return; }
+    if (this.pend) return;
+    this.pend = true;
+    requestAnimationFrame(function () { self.pend = false; self.setState({ v: self.state.v + 1 }); });
+  }
+  componentDidMount() { for (var k in this.parts) if (this.parts[k].componentDidMount) this.parts[k].componentDidMount(); }
+  componentWillUnmount() { for (var k in this.parts) if (this.parts[k].componentWillUnmount) this.parts[k].componentWillUnmount(); }
+  renderVals() { var o = {}; for (var k in this.parts) o[k] = this.parts[k].renderVals(); return o; }
+}
+</script>
+</body>
+</html>

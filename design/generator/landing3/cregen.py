@@ -148,7 +148,7 @@ STUDIO = '''<section class="pc-sec cx-sec" aria-labelledby="cx-st">
 # ---------- validation: Link 2 step track ----------
 VSTEPS = [('Pre-check', 'Fix gaps before anyone else sees them.'), ('Submit', 'The cost is shown before anything is charged.'), ('Expert review', 'Independent validators check content, design and assessment.'), ('Resolve findings', 'Answer questions and update your work in the Studio.'), ('Validated', 'Your work earns the seal and a public record.'), ('Publish', 'Learners find it across Credalio.')]
 VAL = '''<section class="pc-sec cx-sec" aria-labelledby="cx-va">
-<div class="pc-sh"><div><span class="pc-k">Validation</span><h2 id="cx-va" class="pc-h2">Build it. Then prove the quality behind it.</h2><p class="pc-p">Independent experts review your work. Validated learning carries the Credalio seal, linked to a public Validation Record.</p></div><a class="ds-ghost" href="#">How validation works''' + ARR.replace('currentColor', '#1652F0').replace('18', '16') + '''</a></div>
+<div class="pc-sh"><div><span class="pc-k">Validation</span><h2 id="cx-va" class="pc-h2">Build it. Then prove the quality behind it.</h2><p class="pc-p">Independent experts review your work. Validated learning carries the Credalio seal, linked to a public Validation Record.</p></div><a class="ds-ghost" href="Validation.dc.html">How validation works''' + ARR.replace('currentColor', '#1652F0').replace('18', '16') + '''</a></div>
 <ol class="ko-path cx-path">''' + ''.join('<li%s><span class="ko-dot">%s</span><span><b>%s</b><span>%s</span></span></li>' % (' class="cx-ok"' if i == 4 else '', SEAL.replace('width="11" height="11"', 'width="28" height="28"') if i == 4 else str(i + 1), t, d) for i, (t, d) in enumerate(VSTEPS)) + '''</ol>
 </section>'''
 

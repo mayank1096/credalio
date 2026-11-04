@@ -229,15 +229,16 @@ h1,h2,h3,p{text-wrap:pretty}
 .pc-h2{font-size:24px}
 }
 .cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:border-box}
-.cx-hero{flex:none;height:640px;border-radius:28px}
-.cx-hero .ci-copy{max-width:560px;padding:72px 0 0 64px;gap:18px}
+.cx-hero{flex:none;height:700px;border-radius:28px}
+.sx-in{position:relative;z-index:4;max-width:none;width:100%;height:84px;padding:0 28px 0 40px;flex-shrink:0}
+.cx-hero .ci-copy{max-width:560px;padding:44px 0 0 64px;gap:18px}
 .cx-hero .ci-t{margin:0;font-size:54px;line-height:1.04;letter-spacing:-1.8px}
 .cx-hero .ci-d{margin:0;font-size:18px;max-width:500px}
 .cx-acts{display:flex;align-items:center;gap:22px;margin-top:10px}
 .cx-acts .ci-btn{margin:0}
 .cx-wl{position:relative;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none;opacity:.9}
 .cx-wl:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
-.cx-hero .ci-vis{right:64px;bottom:auto;top:104px;width:470px}
+.cx-hero .ci-vis{right:64px;bottom:auto;top:168px;width:470px}
 .cx-hero:hover .ci-vis{transform:none}
 .cx-hero .ci-win{padding:20px;gap:10px}
 .cx-wt{font-size:17px;font-weight:600;letter-spacing:-.2px;margin:2px 0 4px}
@@ -252,6 +253,10 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-win .ci-row{padding:12px 14px;font-size:13.5px;border-radius:12px}
 .cx-add{margin-top:8px;font-size:12.5px;font-weight:500;color:#8A93AD}
 .cx-path{grid-template-columns:repeat(6,minmax(0,1fr))}
+.cx-vh{justify-content:center;text-align:center;margin-bottom:44px}
+.cx-vh > div{display:flex;flex-direction:column;align-items:center}
+.cx-vh .pc-p{margin-left:auto;margin-right:auto}
+.cx-vb{display:flex;justify-content:center;margin-top:44px}
 .cx-path .ko-dot{background:#FFFFFF}
 .cx-path li:first-child .ko-dot{background:#1652F0}
 .cx-path .cx-ok .ko-dot{border:0;background:none}
@@ -263,8 +268,17 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-wt2 small{font-size:14px;line-height:1.5;color:#4A5578}
 #cx-make{overflow:clip}
 .cx-fb{position:relative;z-index:2;margin-top:14px}
+.cx-fc .fc-wrap{padding-bottom:56px}
+.cx-fc .fc-band{flex-direction:row;align-items:center;text-align:left;gap:28px;padding:40px 48px}
+.cx-fc .fc-horizon{bottom:-590px;opacity:.85}
+.cx-fc .fc-mark{width:60px;height:60px;flex-shrink:0}
+.cx-fc .fc-mark img{width:34px;height:34px}
+.cx-fct{position:relative;display:flex;flex-direction:column;gap:8px;flex:1;min-width:0}
+.cx-fc .fc-h2{margin:0;font-size:34px;letter-spacing:-1px;line-height:1.12}
+.cx-fc .fc-sub{font-size:16px}
+.cx-fc .cx-fb{margin:0;flex-shrink:0}
 @media (max-width: 1180px){
-.cx-hero .ci-copy{padding:56px 0 0 44px;max-width:470px}
+.cx-hero .ci-copy{padding:36px 0 0 44px;max-width:470px}
 .cx-hero .ci-t{font-size:44px}
 .cx-hero .ci-vis{right:36px;width:400px}
 .cx-path{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:32px}
@@ -277,7 +291,8 @@ h1,h2,h3,p{text-wrap:pretty}
 @media (max-width: 960px){
 .cx-top{padding:8px 12px 0}
 .cx-hero{height:auto;padding-bottom:0}
-.cx-hero .ci-copy{padding:40px 24px 0;max-width:none;gap:14px}
+.cx-hero .ci-copy{padding:20px 24px 0;max-width:none;gap:14px}
+.sx-in{height:72px;padding:0 20px 0 24px}
 .cx-hero .ci-t{font-size:34px;letter-spacing:-1px}
 .cx-hero .ci-d{font-size:15.5px}
 .cx-hero .ci-vis{display:block;position:relative;top:auto;right:auto;width:auto;margin:32px 20px -1px}
@@ -286,6 +301,10 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-studio{grid-template-columns:minmax(0,1fr);gap:24px}
 .cx-win{height:auto;min-height:440px}
 .cx-path{grid-template-columns:minmax(0,1fr);row-gap:0}
+.cx-vh{text-align:left;margin-bottom:22px}
+.cx-vh > div{align-items:flex-start}
+.cx-vh .pc-p{margin-left:0}
+.cx-vb{justify-content:flex-start;margin-top:28px}
 .cx-path li:nth-child(3)::before{display:block}
 .cx-path .cx-ok .ko-dot svg{width:28px;height:28px}
 .cx-who{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 4px;scroll-padding:0 20px;scrollbar-width:none}
@@ -293,7 +312,8 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-wt2{flex:0 0 220px;scroll-snap-align:start}
 }
 @media (max-width: 760px){
-.cx-hero .ci-copy{padding:32px 20px 0}
+.cx-hero .ci-copy{padding:16px 20px 0}
+.sx-in{height:64px;padding:0 10px 0 18px}
 .cx-hero .ci-t{font-size:30px}
 .cx-acts{flex-direction:column;align-items:stretch;gap:6px}
 .cx-acts .ds-btn{justify-content:space-between;align-self:stretch}
@@ -306,10 +326,19 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-win{padding:16px;min-height:0;border-radius:18px}
 .cx-win .ci-row{padding:10px 12px;font-size:13px}
 .cx-fb{align-self:stretch;justify-content:space-between}
+.cx-fc .fc-band{flex-direction:column;text-align:center;gap:14px;padding:36px 20px 40px}
+.cx-fct{align-items:center}
+.cx-fc .fc-h2{font-size:26px}
+.cx-fc .fc-sub{font-size:15px}
+.cx-fc .fc-mark{width:48px;height:48px}
+.cx-fc .fc-mark img{width:28px;height:28px}
+.cx-fc .cx-fb{align-self:stretch}
 }
 .in-hero .cx-wl{color:#1652F0}
 .in-hero .ci-copy{max-width:540px}
-.in-hero .ci-vis{top:96px}
+.in-hero .ci-vis{top:156px}
+.in-hero .sx-link:hover{background:rgba(255,255,255,.7)}
+.in-hero .sx-link-on{background:#FFFFFF}
 .in-hero .cx-f1{left:-110px;bottom:-34px}
 .in-kp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .in-k{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:12px;background:#F5F8FF;font-size:11.5px;color:#5B6582}
@@ -362,7 +391,7 @@ h1,h2,h3,p{text-wrap:pretty}
 .in-int{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .in-i{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:18px;border:1.5px solid #E6EAF3;font-size:15px;font-weight:600}
 @media (min-width: 961px){
-.in-hero{height:600px}
+.in-hero{height:660px}
 }
 @media (max-width: 1180px){
 .in-int{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -400,7 +429,9 @@ h1,h2,h3,p{text-wrap:pretty}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
-<header class="sx-nav">
+<section class="cx-top" aria-labelledby="in-h">
+<div class="ci-door ci-in cx-hero in-hero">
+<header class="sx-nav sx-in">
 <a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
 <nav class="sx-links" aria-label="Main">
 <a class="sx-link" href="#">Explore learning</a>
@@ -416,8 +447,6 @@ h1,h2,h3,p{text-wrap:pretty}
 <button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 </div>
 </header>
-<section class="cx-top" aria-labelledby="in-h">
-<div class="ci-door ci-in cx-hero in-hero">
 <div class="ci-copy">
 <span class="ci-k" style="color: #1652F0; opacity: 1">Credalio for Institutions</span>
 <h1 id="in-h" class="ci-t">Build learning that moves your people forward.</h1>
@@ -484,20 +513,22 @@ h1,h2,h3,p{text-wrap:pretty}
 </div>
 </section>
 <section class="pc-sec cx-sec" aria-labelledby="in-va">
-<div class="pc-sh"><div><span class="pc-k">Validation</span><h2 id="in-va" class="pc-h2">Quality you can demonstrate.</h2><p class="pc-p">Submit applicable programs for independent validation. Validated programs carry the Credalio seal and a public Validation Record.</p></div><a class="ds-ghost" href="Validation.dc.html">How validation works<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
+<div class="pc-sh cx-vh"><div><span class="pc-k">Validation</span><h2 id="in-va" class="pc-h2">Quality you can demonstrate.</h2><p class="pc-p">Submit applicable programs for independent validation. Validated programs carry the Credalio seal and a public Validation Record.</p></div></div>
 <ol class="ko-path cx-path"><li><span class="ko-dot">1</span><span><b>Create</b><span>Your team builds the program.</span></span></li><li><span class="ko-dot">2</span><span><b>Submit</b><span>Send applicable learning for review.</span></span></li><li><span class="ko-dot">3</span><span><b>Validators assigned</b><span>Qualified, independent experts.</span></span></li><li><span class="ko-dot">4</span><span><b>Review</b><span>Questions and clarifications in one place.</span></span></li><li class="cx-ok"><span class="ko-dot"><svg width="28" height="28" viewBox="0 0 100 100"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span><b>Validated</b><span>A clear decision and a public record.</span></span></li><li><span class="ko-dot">6</span><span><b>Visible status</b><span>Learners see the seal on your program.</span></span></li></ol>
+<div class="cx-vb"><a class="ds-ghost" href="Validation.dc.html">How validation works<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div>
 </section>
 <section class="pc-sec cx-sec" aria-labelledby="in-it">
 <div class="pc-sh"><div><span class="pc-k">Enterprise integration</span><h2 id="in-it" class="pc-h2">Built to fit your environment.</h2></div></div>
 <div class="in-int"><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="15" r="4"></circle><path d="m11 12 9-9M17 6l3 3"></path></svg></span>SSO & identity</span><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"></path></svg></span>Role-based access</span><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"></path></svg></span>APIs & integrations</span><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg></span>Custom AI setup</span><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2"></rect></svg></span>Reporting</span><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"></path></svg></span>Enterprise support</span><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span>Data & privacy controls</span><span class="in-i"><span class="cx-ui"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.9 1.2-1.8-.5-1-.1-2.2 1.1-2.2H17a4 4 0 0 0 4-4c0-5.5-4-10-9-10z"></path><circle cx="7.5" cy="11" r="1"></circle><circle cx="12" cy="7.5" r="1"></circle><circle cx="16.5" cy="11" r="1"></circle></svg></span>Your branding</span></div>
 </section>
-<section aria-labelledby="fc-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif">
+<section class="cx-fc" aria-labelledby="fc-h" style="background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif">
 <div class="fc-wrap" style="max-width: 1360px; margin: 0 auto; padding: 32px 24px 64px; box-sizing: border-box">
 <div class="fc-band">
 <span class="fc-horizon" aria-hidden="true"></span>
 <span class="fc-mark" aria-hidden="true"><img src="/_blob/f81e36d31295a0d0737959589ec1abd4" alt="" width="42" height="42"></span>
-<h2 id="fc-h" class="fc-h2">Let’s shape Credalio around your institution.</h2>
+<div class="cx-fct"><h2 id="fc-h" class="fc-h2">Let’s shape Credalio around your institution.</h2>
 <p class="fc-sub">Tell us about your organisation. We’ll show you a workspace that fits.</p>
+</div>
 <a class="ds-btn cx-fb" href="Partner.dc.html"><span>Talk to Credalio</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a>
 </div>
 </div>
@@ -511,7 +542,7 @@ h1,h2,h3,p{text-wrap:pretty}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4680}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4540}}'>
 var AREAS = [["Create", "Programs", "84 programs", [["84", "Programs"], ["12", "Career paths"], ["9", "Certifications"], ["410", "Courses"]], [["Graduate Data Programme", 76, "Live", "green"], ["MBA Foundations", 64, "Live", "green"], ["Nursing CPD", 55, "Live", "green"], ["Cloud & Security Pathway", 48, "Enrolling", "blue"], ["Teaching Excellence", 20, "Draft", ""]]], ["Deliver", "Cohorts", "Autumn intake", [["46", "Active cohorts"], ["28", "Average size"], ["7", "Starting soon"], ["94%", "Seats filled"]], [["Data 2026A", 82, "Week 6 of 12", "blue"], ["MBA 2026-1", 60, "Week 4 of 16", "blue"], ["Nursing CPD Oct", 40, "Week 2 of 8", "blue"], ["Security Oct", 10, "Starts 14 Oct", "amber"], ["Research Methods B", 95, "Final week", "green"]]], ["Manage", "People", "All departments", [["4,820", "Learners"], ["126", "Creators"], ["14", "Admins"], ["312", "Need support"]], [["School of Business", 74, "On track", "green"], ["School of Computing", 81, "On track", "green"], ["School of Health", 59, "Watch", "amber"], ["Continuing Education", 66, "On track", "green"], ["Foundation Year", 52, "Watch", "amber"]]], ["Understand", "Analytics", "Autumn term", [["72%", "Active learning"], ["64%", "Completion"], ["78%", "Avg. assessment"], ["+11%", "vs last term"]], [["Enrolment", 92, "High", "green"], ["Engagement", 72, "Good", "green"], ["Progress", 68, "Good", "green"], ["Assessment performance", 78, "Good", "green"], ["Credential achievement", 46, "Rising", "blue"]]], ["Validate", "Validation", "Institutional learning", [["31", "Validated"], ["12", "In review"], ["4", "Findings open"], ["2", "Revalidation due"]], [["Graduate Data Programme", 100, "Validated", "green"], ["Nursing CPD", 100, "Validated", "green"], ["MBA Foundations", 60, "In review", "amber"], ["Cloud & Security Pathway", 40, "Findings open", "amber"], ["Teaching Excellence", 0, "Not submitted", ""]]], ["Credential", "Credentials", "This term", [["2,214", "Issued"], ["61%", "Shared by learners"], ["9", "Credential types"], ["0", "Revoked"]], [["Program Completion", 72, "1,120", "green"], ["Professional Certificate", 45, "384", "green"], ["Verified Project", 58, "520", "green"], ["Competency Badge", 33, "190", "green"], ["Micro-credential", 12, "Draft", ""]]]];
 var AIS = [["AI Learning Coach", "Supports learners with their course and progress context."], ["AI Creator Assistance", "Helps educators build and improve learning."], ["AI Recommendations", "Suggests personal learning pathways."], ["AI Support", "Answers common questions, then hands over to people."], ["Assessment help", "Hints during graded work."]];
 class Component extends DCLogic {

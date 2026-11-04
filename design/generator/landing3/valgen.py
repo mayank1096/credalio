@@ -164,6 +164,7 @@ FC = block(L, '<section aria-labelledby="fc-h"')
 FC = re.sub(r'<form class="ds-ask fc-form".*?</form>', btn('Explore validated learning', 'Courses.dc.html', 'cx-fb'), FC, flags=re.S)
 FC = FC.replace('Your next version starts here.', 'Learn with confidence.').replace('Tell Credalio who you want to become. We’ll help you build the path.', 'Look for the seal, then check the record behind it.')
 FC = re.sub(r'<span class="fc-note">.*?</span>\n', '', FC, flags=re.S)
+FC = cregen.compact_fc(FC)
 
 NAVH = nav('').replace('<a class="sx-cta" href="#">Create account</a>', '<a class="sx-cta" href="OnbWelcome.dc.html">Create account</a>')
 

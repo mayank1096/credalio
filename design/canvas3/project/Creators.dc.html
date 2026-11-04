@@ -642,7 +642,15 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-sug .nv-av{width:32px;height:32px}
 .cx-earn,.cx-svc{padding:24px 18px}
 .cx-eh{flex-direction:column;gap:16px}
-.cx-earn .pc-units{grid-template-columns:minmax(0,1fr)}
+.cx-ec{gap:24px}
+.cx-earn .pc-units{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin:24px 0 24px}
+.cx-earn .pc-u{flex-direction:column;align-items:flex-start;gap:12px;padding:16px 14px;border-radius:16px;background:#F7F9FD}
+.cx-earn .pc-u small{display:none}
+.cx-earn .pc-u b{font-size:14.5px;line-height:1.3}
+.cx-earn .cx-ui{width:36px;height:36px;border-radius:11px;background:#FFFFFF}
+.cx-svc .pc-rate{margin-top:20px}
+.cx-svc .pc-p{margin-top:12px}
+.cx-ticks{gap:14px;margin-top:24px}
 .cx-svc .pc-rate{font-size:22px}
 .cx-ticks li{font-size:14.5px}
 .cx-fb{align-self:stretch;justify-content:space-between}
@@ -689,7 +697,7 @@ h1,h2,h3,p{text-wrap:pretty}
 <div class="cx-bk-r"><span class="ci-ck" style="background: #EAF0FF; border: 1.5px dashed #9DB8F7; box-sizing: border-box"></span><span class="cx-sk" style="width: 40%"></span><span class="cx-ai">AI draft</span></div>
 </div>
 <div class="cs-card cx-cc">
-<div class="cs-th cx-cov"><svg class="cs-ico" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20"></path></svg><span class="ds-tag glass">Course</span><svg class="cx-seal" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="cxGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9C46A"></stop><stop offset=".55" stop-color="#C8961E"></stop><stop offset="1" stop-color="#A87A12"></stop></linearGradient></defs><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="url(#cxGold)"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+<div class="cs-th cx-cov"><svg class="cs-ico" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20"></path></svg><span class="ds-tag glass">Course</span><svg class="cx-seal" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="cxGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9C46A"></stop><stop offset=".55" stop-color="#C8961E"></stop><stop offset="1" stop-color="#A87A12"></stop></linearGradient></defs><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="url(#cxGold)"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#6B4E16" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
 <div class="cs-cb">
 <span class="cs-ct">Data Foundations: Spreadsheets to SQL</span>
 <span class="cs-by"><span class="cs-cav">AO</span>Amara Okafor</span>
@@ -937,7 +945,7 @@ Not sure where to start? Ask Nova
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4550}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4540}}'>
 var AREAS = ["Shape it with AI", "Build rich learning", "Create together", "Check before you submit"];
 class Component extends DCLogic {
 auroraMount(el) {

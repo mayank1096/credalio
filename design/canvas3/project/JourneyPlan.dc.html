@@ -294,7 +294,7 @@ p{text-wrap:balance}
 <div class="jp-save"><div><b>This journey isn’t saved yet</b><span>Save it free to start learning and keep every change.</span></div><button class="ds-btn" type="button" onClick="{{openSave}}"><span>Save my journey</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div>
 </sc-if>
 <sc-if value="{{member}}" hint-placeholder-val="{{ false }}">
-<div class="jp-ok"><div><span class="jp-okc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><div><b>{{okT}}</b><span>{{okS}}</span></div></div><button class="ds-btn" type="button" onClick="{{toStep1}}"><span>{{okCta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div>
+<div class="jp-ok"><div><span class="jp-okc"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><div><b>{{okT}}</b><span>{{okS}}</span></div></div><a class="ds-btn" href="{{startHref}}" onClick="{{toStep1}}"><span>{{okCta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
 </sc-if>
 <div class="jp-head">
 <span class="jp-k">Your journey</span>
@@ -337,7 +337,7 @@ p{text-wrap:balance}
 <form class="ds-ask sm jp-ask" onSubmit="{{send}}"><label for="jp-q" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Ask Nova</label><input id="jp-q" type="text" placeholder="Ask or tell me what to change…" value="{{ask}}" onInput="{{onAsk}}" autocomplete="off"><button class="ds-send" type="submit" aria-label="Send"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></form>
 </div>
 </aside>
-<div class="ds-mbar"><button class="ds-btn" type="button" onClick="{{mainAct}}"><span>{{mainLabel}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div>
+<div class="ds-mbar"><a class="ds-btn" href="{{startHref}}" onClick="{{mainAct}}"><span>{{mainLabel}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
 </div>
 </sc-if>
 
@@ -537,9 +537,9 @@ class Component extends DCLogic {
       onName: function (e) { set({ fName: e.target.value }); }, onEmail: function (e) { set({ fEmail: e.target.value }); }, onPw: function (e) { set({ fPw: e.target.value }); },
       create: function (e) { var ok = /^\S+@\S+\.\S+$/.test(S.fEmail); if (e && (e.type === 'submit' || !ok)) e.preventDefault(); if (!ok) { set({ err: 'Enter a valid email address.' }); return; } if (e && e.type === 'submit') location.assign('OnbInbox.dc.html'); },
       sso: function () { set({ modal: false, member: true, view: 'saved', err: '', log: [] }); },
-      toStep1: function () { set({ view: 'step1' }); },
+      toStep1: function (e) { if (pro) return; if (e) e.preventDefault(); set({ view: 'step1' }); }, startHref: pro ? 'Chk-002.dc.html' : '#',
       okT: pro ? 'Saved · Pro selected' : 'Saved to your account', okS: pro ? 'You chose Pro. We’ll take you to finish your plan when you start.' : 'Nova keeps adapting it as you learn.', okCta: pro ? 'Start with Pro' : 'Start step 1', toPlan: function (e) { if (e) e.preventDefault(); set({ view: 'saved' }); },
-      mainLabel: member ? (pro ? 'Start with Pro' : 'Start step 1') : 'Save my journey', mainAct: function () { if (member) set({ view: 'step1' }); else set({ modal: true }); },
+      mainLabel: member ? (pro ? 'Start with Pro' : 'Start step 1') : 'Save my journey', mainAct: function (e) { if (member && pro) return; if (e) e.preventDefault(); if (member) set({ view: 'step1' }); else set({ modal: true }); },
       paces: ['No deadline', '1–3 months', '3–6 months', '6–12 months'].map(function (p) { var on = S.pace === p; return { label: p, on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { set({ pace: p }); } }; })
     };
   }

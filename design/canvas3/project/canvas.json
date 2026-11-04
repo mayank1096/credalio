@@ -1013,7 +1013,7 @@
       "x": 0,
       "y": 51287,
       "w": 1440,
-      "h": 1038,
+      "h": 900,
       "title": "DLP usage · My learning allowance · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -1023,7 +1023,7 @@
       "x": 1520,
       "y": 51287,
       "w": 390,
-      "h": 1361,
+      "h": 1100,
       "title": "DLP usage · My learning allowance · Mobile",
       "page": "main",
       "is_interactive": true
@@ -1384,7 +1384,7 @@
       "x": 1520,
       "y": 60843,
       "w": 390,
-      "h": 960,
+      "h": 900,
       "title": "CHK-003 Upgrade from the allowance moment · Mobile",
       "page": "main",
       "is_interactive": true
@@ -1422,7 +1422,7 @@
       "x": 5820,
       "y": 60843,
       "w": 390,
-      "h": 960,
+      "h": 900,
       "title": "CHK-006 Basic from the Data Analyst path · Mobile",
       "page": "main",
       "is_interactive": true
@@ -1441,7 +1441,7 @@
       "x": 7970,
       "y": 60843,
       "w": 390,
-      "h": 960,
+      "h": 900,
       "title": "CHK-006 Pro from the Data Analyst path · Mobile",
       "page": "main",
       "is_interactive": true
@@ -1557,25 +1557,6 @@
       "w": 390,
       "h": 844,
       "title": "CHK Payment didn’t go through (not charged) · Mobile",
-      "page": "main",
-      "is_interactive": true
-    },
-    "Chk-Receipt.dc.html": {
-      "x": 2150,
-      "y": 63903,
-      "w": 1440,
-      "h": 820,
-      "title": "CHK Receipt (from View receipt) · Desktop",
-      "page": "main",
-      "is_interactive": true,
-      "expand": "fill"
-    },
-    "Chk-Receipt-Mobile.dc.html": {
-      "x": 3670,
-      "y": 63903,
-      "w": 390,
-      "h": 844,
-      "title": "CHK Receipt (from View receipt) · Mobile",
       "page": "main",
       "is_interactive": true
     }
@@ -1794,7 +1775,7 @@
     "row-b21": {
       "x": 0,
       "y": 63603,
-      "text": "Batch 21 · Checkout: payment didn’t go through, receipt",
+      "text": "Batch 21 · Checkout: payment didn’t go through (receipt prints on the done screens)",
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
@@ -1964,9 +1945,7 @@
     "Chk-TOP-done.dc.html",
     "Chk-TOP-done-Mobile.dc.html",
     "Chk-Failed.dc.html",
-    "Chk-Failed-Mobile.dc.html",
-    "Chk-Receipt.dc.html",
-    "Chk-Receipt-Mobile.dc.html"
+    "Chk-Failed-Mobile.dc.html"
   ],
   "pages": [
     {

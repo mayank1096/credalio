@@ -1122,6 +1122,120 @@
       "title": "LRN-M MFORGE not yet eligible (3 of 4) · Mobile",
       "page": "main",
       "is_interactive": true
+    },
+    "Dash-W.dc.html": {
+      "x": 0,
+      "y": 55211,
+      "w": 1440,
+      "h": 2922,
+      "title": "LRN-W Running low on DLP · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-W-Mobile.dc.html": {
+      "x": 1520,
+      "y": 55211,
+      "w": 390,
+      "h": 3472,
+      "title": "LRN-W Running low on DLP · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Dash-L.dc.html": {
+      "x": 2150,
+      "y": 55211,
+      "w": 1440,
+      "h": 1786,
+      "title": "LRN-L Allowance used: ready for the next step · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Dash-L-Mobile.dc.html": {
+      "x": 3670,
+      "y": 55211,
+      "w": 390,
+      "h": 2201,
+      "title": "LRN-L Allowance used: ready for the next step · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Acc-Free.dc.html": {
+      "x": 4300,
+      "y": 55211,
+      "w": 1440,
+      "h": 900,
+      "title": "ACC-001 Course needs more DLP (Free learner) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Acc-Free-Mobile.dc.html": {
+      "x": 5820,
+      "y": 55211,
+      "w": 390,
+      "h": 980,
+      "title": "ACC-001 Course needs more DLP (Free learner) · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Acc-Pro.dc.html": {
+      "x": 6450,
+      "y": 55211,
+      "w": 1440,
+      "h": 900,
+      "title": "ACC-002 Course needs more DLP (Pro learner: top up, not upgrade) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Acc-Pro-Mobile.dc.html": {
+      "x": 7970,
+      "y": 55211,
+      "w": 390,
+      "h": 980,
+      "title": "ACC-002 Course needs more DLP (Pro learner: top up, not upgrade) · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Acc-Zero.dc.html": {
+      "x": 8600,
+      "y": 55211,
+      "w": 1440,
+      "h": 900,
+      "title": "ACC-003 Zero DLP: you’re ready for the next step · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Acc-Zero-Mobile.dc.html": {
+      "x": 10120,
+      "y": 55211,
+      "w": 390,
+      "h": 970,
+      "title": "ACC-003 Zero DLP: you’re ready for the next step · Mobile",
+      "page": "main",
+      "is_interactive": true
+    },
+    "Acc-Low.dc.html": {
+      "x": 10750,
+      "y": 55211,
+      "w": 1440,
+      "h": 900,
+      "title": "ACC-004 Low DLP during a lesson (non-blocking) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Acc-Low-Mobile.dc.html": {
+      "x": 12270,
+      "y": 55211,
+      "w": 390,
+      "h": 844,
+      "title": "ACC-004 Low DLP during a lesson (non-blocking) · Mobile",
+      "page": "main",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -1150,7 +1264,8 @@
     "row-b13",
     "row-b14",
     "row-b15",
-    "row-b16"
+    "row-b16",
+    "row-b17"
   ],
   "notes": {
     "new-hero": {
@@ -1297,6 +1412,14 @@
       "kind": "title1",
       "maxW": 1910,
       "page": "main"
+    },
+    "row-b17": {
+      "x": 0,
+      "y": 54911,
+      "text": "Batch 17 · Allowance shortfall: running low, allowance used, course needs more DLP (Free / Pro), zero DLP, low DLP in a lesson",
+      "kind": "title1",
+      "maxW": 1910,
+      "page": "main"
     }
   },
   "order": [
@@ -1417,7 +1540,19 @@
     "Dash-S3.dc.html",
     "Dash-S3-Mobile.dc.html",
     "Dash-M.dc.html",
-    "Dash-M-Mobile.dc.html"
+    "Dash-M-Mobile.dc.html",
+    "Dash-W.dc.html",
+    "Dash-W-Mobile.dc.html",
+    "Dash-L.dc.html",
+    "Dash-L-Mobile.dc.html",
+    "Acc-Free.dc.html",
+    "Acc-Free-Mobile.dc.html",
+    "Acc-Pro.dc.html",
+    "Acc-Pro-Mobile.dc.html",
+    "Acc-Zero.dc.html",
+    "Acc-Zero-Mobile.dc.html",
+    "Acc-Low.dc.html",
+    "Acc-Low-Mobile.dc.html"
   ],
   "pages": [
     {

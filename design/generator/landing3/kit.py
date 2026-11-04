@@ -86,6 +86,15 @@ KIT_CSS = r'''.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radi
 .ds-acts.c{justify-content:center}
 .ds-acts.sb{justify-content:space-between}
 .ds-mbar{display:none}
+.ko-v.am{--k:#B97A10;--kb:#FFF4E0}
+.ko-v.cb{--k:#1652F0;--kb:#EAF0FF}
+.al-opts{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:14px}
+.al-o{position:relative;display:flex;flex-direction:column;gap:6px;padding:20px 20px 18px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;text-align:left;box-sizing:border-box}
+.al-o.rec{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.08),0 20px 40px -30px rgba(22,82,240,.5)}
+.al-o > .ds-tag{position:absolute;top:-12px;left:18px}
+.al-o b{font-size:16px;font-weight:600;letter-spacing:-.1px}
+.al-o p{margin:0;font-size:14px;line-height:1.5;color:#4A5578}
+.al-o-a{margin-top:auto;padding-top:14px}
 .cr-c,.mf-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
 .cr-c{background:#1652F0}
 .mf-c{background:#0B1433}
@@ -141,6 +150,13 @@ COINCSS
 .cf{--k:.56}
 }
 @media (max-width: 760px){
+.al-opts{grid-template-columns:minmax(0,1fr);gap:10px}
+.al-o.rec{margin:12px 0 6px}
+.al-o .ds-btn{width:100%;justify-content:space-between}
+.al-o:not(.rec){display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:14px;row-gap:3px;padding:14px 16px}
+.al-o:not(.rec) b{grid-column:1;grid-row:1;font-size:15px}
+.al-o:not(.rec) p{grid-column:1 / -1;grid-row:2;font-size:13.5px}
+.al-o:not(.rec) .al-o-a{grid-column:2;grid-row:1;padding-top:0;margin-top:0}
 .ds-btn.sm.np{padding:0 16px}
 .tip-b{display:none;width:min(250px,calc(100vw - 48px))}
 .tip:hover .tip-b,.tip:focus .tip-b{display:block}
@@ -181,6 +197,12 @@ def credit(lg=False):
     return '<i class="cr-c%s" aria-hidden="true">C</i>' % (' lg' if lg else '')
 def mforge(lg=False):
     return '<i class="mf-c%s" aria-hidden="true">M</i>' % (' lg' if lg else '')
+def opts():
+    """Allowance options (upgrade / add DLP / wait for refresh). Data: opts [{t,d,cta,href,rec,plain,cls}], optN."""
+    return ('<div class="al-opts" style="--n: {{optN}}"><sc-for list="{{opts}}" as="o" hint-placeholder-count="3"><div class="al-o {{o.cls}}">'
+            '<sc-if value="{{o.rec}}" hint-placeholder-val="{{ false }}"><span class="ds-tag solid">Recommended</span></sc-if><b>{{o.t}}</b><p>{{o.d}}</p><div class="al-o-a">'
+            '<sc-if value="{{o.rec}}" hint-placeholder-val="{{ false }}">' + btn('{{o.cta}}', '{{o.href}}', 'sm') + '</sc-if>'
+            '<sc-if value="{{o.plain}}" hint-placeholder-val="{{ true }}"><a class="ds-link" href="{{o.href}}">{{o.cta}}</a></sc-if></div></div></sc-for></div>')
 def coin(lg=False):
     return '<span class="dlp-c%s" aria-hidden="true"></span>' % (' dlp-lg' if lg else '')
 

@@ -304,16 +304,44 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-pf-sum{background:#EAF0FF;border-color:#DCE5FB;justify-content:flex-end}
 .lr-pf-n{font-size:44px;line-height:1;font-weight:600;letter-spacing:-1.5px;color:#1652F0;margin-bottom:6px}
 .lr-pf-sum small{color:#3A4566;line-height:1.45}
+.lr-adp{padding-left:4px}
+.lr-adp .nv-av{width:22px;height:22px}
+.lr-adp .tip{margin-left:0}
+.lr-crs{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:36px;align-items:stretch}
+.lr-crs-m{display:flex;flex-direction:column;min-width:0}
+.lr-crs-m .lr-jf{margin-top:auto}
+.lr-crs-m .lr-ft{margin-top:8px}
+.lr-crs-by{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:14px;color:#3A4566}
+.lr-lsn{margin:28px 0 30px}
+.lr-lsn-t{display:block;font-size:13.5px;color:#4A5578}
+.lr-lsn-t b{font-weight:600;color:#0B1433}
+.lr-lsn-r{display:grid;grid-template-columns:repeat(18,minmax(0,1fr));gap:4px;margin-top:10px}
+.lr-lsn-r i{height:8px;border-radius:9px;background:rgba(22,82,240,.16)}
+.lr-lsn-r i.d{background:#1652F0}
+.lr-lsn-r i.n{background:#1652F0;box-shadow:0 0 0 3px rgba(22,82,240,.2);animation:lrPulse 1.8s ease-in-out infinite}
+@keyframes lrPulse{50%{box-shadow:0 0 0 5px rgba(22,82,240,.08)}}
+.lr-lead{display:flex;flex-direction:column;padding:22px}
+.lr-ld-h{display:flex;align-items:center;margin:0;font-size:15.5px;font-weight:600}
+.lr-ldl{list-style:none;margin:10px 0 0;padding:0}
+.lr-ldl a{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid #EEF1F7;text-decoration:none;color:#0B1433}
+.lr-ldl li:first-child a{border-top:0}
+.lr-ldl a:hover b{color:#1652F0}
+.lr-ldl a:hover .lr-chev{color:#1652F0;transform:translateX(2px)}
+.lr-ldl b{display:block;font-size:14.5px;font-weight:600;transition:color .2s ease}
+.lr-ldl small{display:block;margin-top:2px;font-size:12.5px;color:#5B6582}
+.lr-ldl .lr-row-i{width:36px;height:36px;border-radius:11px}
+.lr-ldl .lr-chev{margin-left:auto}
+.lr-lead > .ds-link{margin-top:auto;padding-top:12px;align-self:flex-start}
 @keyframes lrIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
 @keyframes lrFade{from{opacity:0}to{opacity:1}}
 @keyframes lrUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion: reduce){.lr-panel,.lr-scrim,.lr-msg,.lr-name,.lr-gv-p{animation:none}}
+@media (prefers-reduced-motion: reduce){.lr-panel,.lr-scrim,.lr-msg,.lr-name,.lr-gv-p,.lr-lsn-r i.n{animation:none}}
 @media (max-width: 1280px){
 .lr-head{flex-direction:column;align-items:flex-start;gap:16px}
 .lr-g4{grid-template-columns:repeat(3,minmax(0,1fr))}
 .lr-g4 > :nth-child(4){display:none}
 }
-@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}.lr-disc{grid-template-columns:minmax(0,1fr) 300px;gap:28px}.lr-goal{grid-template-columns:minmax(0,1fr)}.lr-gv{display:none}.lr-mr{grid-template-columns:40px minmax(0,1fr) 160px 20px}.lr-nova{flex-wrap:wrap}.lr-tut{padding-left:0;border-left:0;width:100%}}
+@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}.lr-disc{grid-template-columns:minmax(0,1fr) 300px;gap:28px}.lr-goal{grid-template-columns:minmax(0,1fr)}.lr-crs{grid-template-columns:minmax(0,1fr);gap:28px}.lr-ldl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}.lr-ldl a{border:1.5px solid #EEF1F7;border-radius:14px;padding:12px}.lr-ldl li:first-child a{border-top:1.5px solid #EEF1F7}.lr-ldl .lr-chev{display:none}.lr-gv{display:none}.lr-mr{grid-template-columns:40px minmax(0,1fr) 160px 20px}.lr-nova{flex-wrap:wrap}.lr-tut{padding-left:0;border-left:0;width:100%}}
 @media (max-width: 960px){
 .ds-root{grid-template-columns:minmax(0,1fr);overflow-x:hidden}
 .ds-side{position:fixed;left:0;top:0;width:288px;max-width:86vw;transform:translateX(-102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 64px rgba(11,20,51,.18)}
@@ -416,6 +444,14 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-tut .cs-cav{width:30px;height:30px;font-size:11px}
 .lr-tut > div{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:6px}
 .lr-tut small{font-size:13.5px}
+.lr-lsn{margin:22px 0 0}
+.lr-ldl{display:block;margin-top:10px}
+.lr-ldl a{border:0;border-top:1px solid #EEF1F7;border-radius:0;padding:11px 0}
+.lr-ldl li:first-child a{border-top:0}
+.lr-ldl .lr-chev{display:flex}
+.lr-crs .lr-jf{margin-top:24px}
+.lr-lead{padding:18px}
+.lr-adp{display:none}
 .lr-panel{width:100vw}
 .lr-pb{padding:18px 16px}
 }
@@ -535,7 +571,7 @@ MARKUP = '''<div class="ds-root">
 <sc-if value="{{fJourney}}" hint-placeholder-val="{{ false }}">
 <section class="lr-focus lr-jy lr-jp aur aur-lt" aria-labelledby="lr-jn">
 <div class="jy-jh"><div><span class="jy-jk">{{jKicker}}</span><h2 id="lr-jn" class="jy-jt" style="margin: 6px 0 0">{{jTitle}}</h2></div>
-<div class="jy-jm"><span class="ds-tag line lg">{{jPct}} complete</span></div></div>
+<div class="jy-jm"><sc-if value="{{jAdapted}}" hint-placeholder-val="{{ false }}"><span class="ds-tag line lg lr-adp">''' + av() + '''Updated by {{coachTitle}}''' + tip('After your last quiz, {{coachTitle}} added a short JOINs practice to Core skills. You can undo it from your journey.', 'r') + '''</span></sc-if><span class="ds-tag line lg">{{jPct}} complete</span></div></div>
 <ol class="jy-jr" aria-label="Your five stages">
 <sc-for list="{{route}}" as="r" hint-placeholder-count="5"><li class="jy-js {{r.cls}}"><span class="jy-jn">{{r.mark}}</span><span class="jy-jl">{{r.label}}</span><span class="jy-jd">{{r.note}}</span><sc-if value="{{r.here}}" hint-placeholder-val="{{ false }}"><span class="ds-tag blue jy-here">{{r.hereT}}</span></sc-if></li></sc-for>
 </ol>
@@ -543,6 +579,26 @@ MARKUP = '''<div class="ds-root">
 <div class="lr-nx"><span class="lr-nx-i">''' + ic(I['learn'], 24) + '''</span><div><small>Next up · {{nxCtx}}</small><b>{{nxTitle}}</b><span class="lr-nx-m"><span class="lr-bar"><i style="width: {{nxPct}}"></i></span>{{nxMeta}}</span></div></div>
 <div class="ds-acts"><a class="ds-link" href="{{jViewHref}}">View journey</a>''' + btn('{{jCta}}', '{{jCtaHref}}') + '''</div>
 </div>
+</section>
+</sc-if>
+
+<sc-if value="{{fCourse}}" hint-placeholder-val="{{ false }}">
+<section class="lr-focus lr-crs aur aur-lt" aria-labelledby="lr-ct">
+<div class="lr-crs-m">
+<span class="lr-k">Your current course</span>
+<h2 id="lr-ct" class="lr-ft">Python Fundamentals</h2>
+<span class="lr-crs-by"><span class="cs-cav">PN</span>Priya Nair<span class="cs-dot"></span>Beginner<span class="cs-dot"></span>9 hrs</span>
+<div class="lr-lsn" role="img" aria-label="Lesson 3 of 18"><span class="lr-lsn-t"><b>Lesson 3</b> of 18</span><span class="lr-lsn-r"><sc-for list="{{lessons}}" as="x" hint-placeholder-count="18"><i class="{{x.c}}"></i></sc-for></span></div>
+<div class="lr-jf">
+<div class="lr-nx"><span class="lr-nx-i">''' + ic(I['learn'], 24) + '''</span><div><small>Next up</small><b>Variables and data types</b><span class="lr-nx-m">About 18 min</span></div></div>
+<div class="ds-acts"><a class="ds-link" href="CourseDetail-Learner.dc.html">Course overview</a>''' + btn('Continue', 'CourseDetail-Learner.dc.html') + '''</div>
+</div>
+</div>
+<aside class="lr-nv lr-lead" aria-labelledby="lr-ld">
+<h3 id="lr-ld" class="lr-ld-h">Where this could lead''' + tip('Python Fundamentals is part of these Career Paths. Everything you finish here counts towards them.', 'r') + '''</h3>
+<ul class="lr-ldl"><sc-for list="{{lead}}" as="l" hint-placeholder-count="3"><li><a href="{{l.href}}"><span class="lr-row-i">''' + ic(I['path'], 18) + '''</span><span><b>{{l.t}}</b><small>{{l.d}}</small></span><span class="lr-chev" aria-hidden="true">''' + ic('<path d="m9 6 6 6-6 6"></path>', 18, 2.2) + '''</span></a></li></sc-for></ul>
+<a class="ds-link" href="CareerPaths.dc.html">Compare career paths''' + ARR_S + '''</a>
+</aside>
 </section>
 </sc-if>
 
@@ -621,7 +677,7 @@ MARKUP = '''<div class="ds-root">
 <section class="lr-sec" aria-labelledby="lr-bpf">
 <div class="lr-sh"><h2 id="lr-bpf">Digital Backpack''' + tip('Your verified proof: credentials, projects and skills you earn on Credalio, ready to share with anyone.') + '''</h2><a class="ds-link" href="#">Open Backpack</a></div>
 <div class="lr-pfs">
-<a class="lr-pf lr-pf-sum" href="#"><span class="lr-pf-n">12</span><b>verified achievements</b><small>4 credentials · 3 projects<br>8 skills · 1 milestone</small></a>
+<a class="lr-pf lr-pf-sum" href="#"><span class="lr-pf-n">{{bpN}}</span><b>verified achievements</b><small>{{bpL1}}<br>{{bpL2}}</small></a>
 <sc-for list="{{proofs}}" as="p" hint-placeholder-count="3"><a class="lr-pf" href="#"><span class="lr-pf-top"><span class="lr-pf-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g style="display: {{p.i0}}">''' + I['cred'] + '''</g><g style="display: {{p.i1}}">''' + I['proj'] + '''</g><g style="display: {{p.i2}}">''' + I['skill'] + '''</g></svg></span><span class="lr-pf-ok" title="Verified" aria-label="Verified">''' + ck(11, 3.4) + '''</span></span><b>{{p.t}}</b><small>{{p.k}} · {{p.d}}</small></a></sc-for>
 </div>
 </section>
@@ -673,6 +729,10 @@ class Component extends DCLogic {
     this.TIER = { gold: ['Gold Validated', '#C8961E'], silver: ['Silver Validated', '#8E9BB0'], bronze: ['Bronze Validated', '#A8683A'] };
     var C = function (t, topic, by, lvl, tier, rating, reviews, hrs, dlp, why) { return { t: t, topic: topic, by: by, lvl: lvl, tier: tier, rating: rating, reviews: reviews, hrs: hrs, dlp: dlp, why: why }; };
     this.REC = {
+      course: [C('Python for Data Analysis', 'Design', 'Priya Nair', 'Intermediate', 'silver', '4.7', '1.6k', 16, 900, 'The natural next step after Python Fundamentals.'),
+        C('Python for Everyday Automation', 'Software', 'Priya Nair', 'Beginner', 'bronze', '4.6', '1.6k', 9, 800, 'Put your Python to work straight away.'),
+        C('Prototyping in Figma', 'Software', 'Lena Fischer', 'Beginner', 'silver', '4.7', '1.1k', 6, 500, 'Builds on your UI/UX course.'),
+        C('Data Foundations: Spreadsheets to SQL', 'Data', 'Amara Okafor', 'Beginner', 'gold', '4.8', '3.4k', 12, 200, 'Pairs well with Python.')],
       start: [C('Data Foundations: Spreadsheets to SQL', 'Data', 'Amara Okafor', 'Beginner', 'gold', '4.8', '3.4k', 12, 200, 'A popular first step on Credalio.'),
         C('UX and Product Design Foundations', 'Design', 'Lena Fischer', 'Beginner', 'silver', '4.7', '1.2k', 12, 900, 'Loved by career changers.'),
         C('Python for Everyday Automation', 'Software', 'Priya Nair', 'Beginner', 'bronze', '4.6', '1.6k', 9, 800, 'Trending this month.'),
@@ -714,7 +774,7 @@ class Component extends DCLogic {
     var allow = { free: 200, basic: 2000, pro: 6000 }[tierK];
     var fmt = function (n) { return n.toLocaleString('en-GB'); };
     var tone = this.TONE, tier = this.TIER;
-    var recKey = { R: 'ready', B: 'interests', C: 'goal' }[st] || (isActive ? 'active' : 'start');
+    var recKey = { R: 'ready', B: 'interests', C: 'goal', F: 'course' }[st] || (isActive ? 'active' : 'start');
     var recs = this.REC[recKey].map(function (c) {
       var tn = tone[c.topic], v = { t: c.t, by: c.by, lvl: c.lvl, rating: c.rating, reviews: c.reviews, hrs: c.hrs + ' hrs', dlp: fmt(c.dlp), why: c.why, href: c.dlp === 200 ? 'CourseDetail-Learner.dc.html' : 'CourseDetail.dc.html',
         ini: c.by.split(' ').map(function (w) { return w[0]; }).slice(0, 2).join(''), bg: tn[0], icoC: tn[1], tierLabel: tier[c.tier][0], tierDot: tier[c.tier][1] };
@@ -737,12 +797,15 @@ class Component extends DCLogic {
       R: ['I’ll adapt your journey as you learn. If something feels too easy, too slow or not for you, just tell me.', 'Ask about my journey', ''],
       D: ['You’re 62% through SQL for Data Analysis. Your last quiz suggests JOINs need a little more practice before you move on.', 'Practise with ' + (named ? name : 'your coach'), '']
     };
-    NOVA.B = NOVA.A; NOVA.E = NOVA.D; NOVA.I = NOVA.D; NOVA.W = NOVA.D;
+    NOVA.E = ['Eighteen days in a row. Two more short sessions this week and you’ll reach your 6-hour goal.', 'Plan my week', ''];
+    NOVA.F = ['Stuck on a lesson? I can explain it using exactly what you’re studying right now.', 'Explain this lesson', ''];
+    NOVA.B = NOVA.A; NOVA.I = NOVA.D; NOVA.W = NOVA.D;
     var nv = NOVA[st] || NOVA.A;
     var postsNew = [['Getting started', 'What I wish I’d known in my first week', 'Priya Nair', 'PN', 31], ['Choosing a path', 'Course, path or certification: how I decided', 'Daniel Reyes', 'DR', 18], ['Learning habits', 'Twenty minutes a day changed everything', 'Grace Adeyemi', 'GA', 24]];
     var postsData = [['Data Analytics', 'How I finally understood JOINs', 'Daniel Reyes', 'DR', 12], ['Career change', 'From classroom to analyst in eight months', 'Priya Nair', 'PN', 28], ['SQL', 'Weekly SQL practice group: join us', 'Tom Hughes', 'TH', 9]];
     var postsLead = [['Leadership', 'The one-to-one question that changed my team', 'Tom Hughes', 'TH', 22], ['Feedback', 'Giving feedback without the dread', 'Grace Adeyemi', 'GA', 17], ['New managers', 'My first 90 days leading people', 'Priya Nair', 'PN', 26]];
-    var posts = (st === 'C' ? postsLead : (isNew && st !== 'R' ? postsNew : postsData)).map(function (x) { return { tag: x[0], t: x[1], by: x[2], ini: x[3], n: x[4] }; });
+    var postsPy = [['', 'How I got unstuck on Python loops', 'Daniel Reyes', 'DR', 14], ['', 'Five wireframing habits that saved me hours', 'Lena Fischer', 'LF', 21], ['', 'Python study group: Thursdays, all welcome', 'Tom Hughes', 'TH', 8]];
+    var posts = (st === 'C' ? postsLead : (st === 'F' ? postsPy : (isNew && st !== 'R' ? postsNew : postsData))).map(function (x) { return { tag: x[0], t: x[1], by: x[2], ini: x[3], n: x[4] }; });
     var CHN = this.CH;
     var ROUTES = {
       R: [['1', 'Foundation', '2 courses', 'now', 'You start here'], ['2', 'Core skills', '3 courses'], ['3', 'Practice', '2 projects'], ['4', 'Certification', '1 exam'], ['✓', 'Job-ready', 'Your portfolio', 'end']],
@@ -750,17 +813,33 @@ class Component extends DCLogic {
     };
     var route = (ROUTES[st] || ROUTES.D).map(function (r) { return { mark: r[0], label: r[1], note: r[2], cls: r[3] || '', here: !!r[4], hereT: r[4] || '' }; });
     var stat = function (k, v, of, href) { return { k: k, v: v, of: of || '', href: href }; };
-    var counts = { D: [4, 8], E: [4, 8], F: [2, 2], G: [3, 5], H: [2, 6], I: [4, 8], W: [4, 8] }[st] || [0, 0];
-    var ML = { D: [['Data Analyst', 'Career Path', 32, 'Stage 2 of 5'], ['SQL for Data Analysis', 'Course', 62, 'Module 4 of 8'], ['Professional Certificate in Data Analysis', 'Certification', 18, 'Learning 2 of 6'], ['Applied Data Program', 'Learning Program', -1, 'Starts 12 October']] };
-    ML.E = ML.D; ML.I = ML.D; ML.W = ML.D;
+    var ACT = {
+      D: { counts: [4, 8], streak: 18, wg: [4, 6],
+        ml: [['Data Analyst', 'Career Path', 32, 'Stage 2 of 5'], ['SQL for Data Analysis', 'Course', 62, 'Module 4 of 8'], ['Professional Certificate in Data Analysis', 'Certification', 18, 'Learning 2 of 6'], ['Applied Data Program', 'Learning Program', -1, 'Starts 12 October']],
+        ev: [[1, 'Today', '7:00 PM', 'SQL JOINs · Lesson 4'], [0, '', '8:00 PM', 'Tutor session with Hannah'], [1, 'Tomorrow', '6:00 PM', 'Live session: Querying real datasets'], [1, 'Thursday 1', '6:30 PM', 'Study group: SQL practice']],
+        dots: [1, 2, 4],
+        as: [['Knowledge Check', 'SQL for Data Analysis', 'Due tomorrow', 'amber', '~15 min', 'Start'], ['SQL Data Cleaning Project', 'Data Analyst Career Path', 'Due Tue 29 Sep', '', '~1 hr 30 min', 'Continue']],
+        proofs: [['Data Foundations', 'Credential', '24 Sep', 0], ['Sales dashboard', 'Project', '18 Sep', 1], ['SQL querying', 'Skill', '12 Sep', 2]], bp: ['12', '4 credentials · 3 projects', '8 skills · 1 milestone'],
+        hello: 'Hi Ada. You’re on Core skills, 62% through SQL for Data Analysis. What would help right now?', ask: [['Give me a quick JOINs practice', '#'], ['Explain today’s lesson simply', '#'], ['Do I have enough DLP to finish my path?', '#']] },
+      F: { counts: [2, 2], streak: 6, wg: [2, 4],
+        ml: [['Python Fundamentals', 'Course', 32, 'Lesson 3 of 18'], ['UI/UX Design Fundamentals', 'Course', 40, 'Module 2 of 6']],
+        ev: [[1, 'Today', '7:00 PM', 'Python Fundamentals · Lesson 3'], [1, 'Wednesday 30', '12:30 PM', 'UX office hours with Lena'], [1, 'Thursday 1', '6:30 PM', 'Python study group']],
+        dots: [3, 4],
+        as: [['Wireframe a sign-up flow', 'UI/UX Design Fundamentals', 'Due Thu 1 Oct', '', '~1 hr', 'Continue']],
+        proofs: [['HTML and CSS Basics', 'Credential', '2 Sep', 0], ['Personal portfolio site', 'Project', '28 Aug', 1], ['Python basics', 'Skill', '20 Sep', 2]], bp: ['5', '2 credentials · 1 project', '2 skills'],
+        hello: 'Hi Ada. You’re on Lesson 3 of Python Fundamentals. Want me to explain anything before you start?', ask: [['Explain variables with an example', '#'], ['Quiz me on Lesson 2', '#'], ['Where could Python take me?', 'CareerPaths.dc.html']] }
+    };
+    ACT.E = ACT.D; ACT.I = ACT.D; ACT.W = ACT.D; ACT.G = ACT.D; ACT.H = ACT.D;
+    var AD = ACT[st] || ACT.D;
+    var counts = AD.counts, ML = {}; ML[st] = isActive ? AD.ml : [];
     var items = ML[st] || [];
     var TI = { 'Career Path': 0, Course: 1, Certification: 2, 'Learning Program': 3 };
     var mlItems = items.map(function (m) { var v = { t: m[0], sub: m[1] + ' · ' + m[3], pct: (m[2] < 0 ? 0 : m[2]) + '%', pctLabel: m[2] < 0 ? 'Upcoming' : m[2] + '%', barCls: m[2] === 100 ? 'ok' : '',
       cta: m[2] < 0 ? 'View' : (m[2] === 100 ? 'Review' : 'Continue'), href: m[1] === 'Career Path' ? 'PathDetail-Learner.dc.html' : (m[1] === 'Certification' ? 'CertDetail.dc.html' : (m[1] === 'Learning Program' ? 'ProgramDetail.dc.html' : 'CourseDetail-Learner.dc.html')) };
       for (var i = 0; i < 4; i++) v['i' + i] = TI[m[1]] === i ? 'inline' : 'none'; return v; });
-    var EV = [[1, 'Today', '7:00 PM', 'SQL JOINs · Lesson 4'], [0, '', '8:00 PM', 'Tutor session with Hannah'], [1, 'Tomorrow', '6:00 PM', 'Live session: Querying real datasets'], [1, 'Thursday 1', '6:30 PM', 'Study group: SQL practice']];
-    var DAYS = [['Sun', 27, 'today'], ['Mon', 28, 'ev'], ['Tue', 29, 'ev'], ['Wed', 30, ''], ['Thu', 1, 'ev'], ['Fri', 2, ''], ['Sat', 3, '']];
-    var AS = [['Knowledge Check', 'SQL for Data Analysis', 'Due tomorrow', 'amber', '~15 min', 'Start'], ['SQL Data Cleaning Project', 'Data Analyst Career Path', 'Due Tue 29 Sep', '', '~1 hr 30 min', 'Continue']];
+    var EV = AD.ev;
+    var DAYS = [['Sun', 27], ['Mon', 28], ['Tue', 29], ['Wed', 30], ['Thu', 1], ['Fri', 2], ['Sat', 3]].map(function (d, i) { return [d[0], d[1], i === 0 ? 'today' : (AD.dots.indexOf(i) > -1 ? 'ev' : '')]; });
+    var AS = AD.as;
     var discSub = { B: 'You picked Data, Business and AI.' }[st] || '';
     var dNova = { B: 'I can turn your interests into a starting journey. It takes about two minutes.' }[st] || 'Not sure yet? Tell me where you’d like to be, and I’ll build a journey around it.';
     var REC_T = { R: ['Next on your journey', 'Picked by ' + coachN + ' for your Data Analyst journey.'], B: ['Picked for your interests', 'Based on Data, Business and AI.'], C: ['For your goal', 'Learning that builds towards becoming a stronger leader.'], active: ['Recommended for you', 'Picked by ' + coachN + ' from your path and progress.'], start: ['Good places to start', 'Popular first steps while you find your direction.'] }[st === 'R' || st === 'B' || st === 'C' ? st : (isActive ? 'active' : 'start')];
@@ -773,9 +852,9 @@ class Component extends DCLogic {
       openPanel: open, closePanel: function () { clearTimeout(self._t); self.setState({ panel: false, thinking: false }); },
       panelOpen: S.panel, thinking: S.thinking, thinkText: (this.steps || ['Reading your profile…'])[S.ti] || '',
       showUnnamed: S.panel && !S.thinking && !named, showNamed: S.panel && !S.thinking && named,
-      hello: st === 'R' ? 'Hi Ada. Your Data Analyst journey is ready. Want a quick tour of Stage 1, or shall we start?' : (isActive ? 'Hi Ada. You’re on Core skills, 62% through SQL for Data Analysis. What would help right now?' : 'Hi Ada. I’m ' + name + '. What would you like to do today?'),
+      hello: st === 'R' ? 'Hi Ada. Your Data Analyst journey is ready. Want a quick tour of Stage 1, or shall we start?' : (isActive ? AD.hello : 'Hi Ada. I’m ' + name + '. What would you like to do today?'),
       askSug: (st === 'R' ? [['What happens in Stage 1?', 'JourneyPlan-Saved.dc.html'], ['Do I have enough DLP for my journey?', '#'], ['Can I go faster?', 'JourneyPlan-Saved.dc.html']]
-        : (isActive ? [['Give me a quick JOINs practice', '#'], ['Explain today’s lesson simply', '#'], ['Do I have enough DLP to finish my path?', '#']]
+        : (isActive ? AD.ask
         : [['Help me choose what to learn', 'Journey.dc.html'], ['Build a journey towards a goal', 'Journey.dc.html'], ['Explain how DLP works', '#']])).map(function (a) { return { t: a[0], href: a[1] }; }),
       draft: S.draft, onDraft: function (e) { self.setState({ draft: e.target.value }); },
       nameSug: ['Nova', 'Maya', 'Alex', 'Sage'].map(function (n) { var on = S.draft.trim() === n, c = CHN[n]; return { label: n, src: c[0], l: c[1], t: c[2], w: c[3], on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { self.setState({ draft: n }); } }; }),
@@ -784,20 +863,20 @@ class Component extends DCLogic {
       planName: { free: 'Free plan', basic: 'Basic plan', pro: 'Pro plan' }[tierK], planSub: fmt(allow) + ' DLP a month', planCta: tierK === 'pro' ? 'Manage' : 'Upgrade',
       hasAsg: isActive, asgN: AS.length,
       isNew: isNew, isActive: isActive, gs: gsv, gsDone: gs.filter(function (g) { return g[1] === 'd'; }).length,
-      stats: [stat('In progress', counts[0], '', '#'), stat('Completed', counts[1], '', '#'), stat('Streak', '18', 'days', '#')],
-      fDisc: st === 'A' || st === 'B', fGoal: st === 'C', fReady: st === 'R', fJourney: ['D', 'E', 'I', 'W'].indexOf(st) > -1,
+      stats: [stat('In progress', counts[0], '', '#'), stat('Completed', counts[1], '', '#'), stat('Streak', AD.streak, 'days', '#')],
+      fDisc: st === 'A' || st === 'B', fGoal: st === 'C', fReady: st === 'R', fJourney: ['D', 'E', 'I', 'W'].indexOf(st) > -1, fCourse: st === 'F', jAdapted: st === 'E',
       dKicker: 'Welcome to Credalio', dSub: discSub, hasDSub: !!discSub, dNova: dNova, dNovaCta: 'Build my journey',
       q: S.q, onQ: function (e) { self.setState({ q: e.target.value }); },
       disc: [['Courses', 'Courses.dc.html'], ['Career paths', 'CareerPaths.dc.html'], ['Certifications', 'Certifications.dc.html'], ['Programs', 'Programs.dc.html']].map(function (d) { return { t: d[0], h: d[1] }; }),
       route: route,
-      jKicker: st === 'D' ? 'Your current journey · Career Path' : 'Your current journey · built with ' + coachN, jTitle: 'Data Analyst', jPct: '32%', jStage: 'Stage 2 of 5',
+      jKicker: st === 'D' ? 'Your current journey · Career Path' : 'Your current journey · built with ' + coachN, jTitle: 'Data Analyst', jPct: '32%',
       nxCtx: 'SQL for Data Analysis', nxTitle: 'SQL JOINs · Lesson 4', nxPct: '62%', nxMeta: '62% of the course · ~22 min',
       jViewHref: st === 'D' ? 'PathDetail-Learner.dc.html' : 'JourneyPlan-Saved.dc.html', jCta: 'Continue', jCtaHref: 'CourseDetail-Learner.dc.html',
       wkCls: S.wk === 'due' ? 't-due' : 't-sch', segSch: S.wk === 'due' ? '' : 'on', segDue: S.wk === 'due' ? 'on' : '', selSch: S.wk === 'due' ? 'false' : 'true', selDue: S.wk === 'due' ? 'true' : 'false', pickSch: function () { self.setState({ wk: 'sch' }); }, pickDue: function () { self.setState({ wk: 'due' }); },
       days: DAYS.map(function (d) { return { w: d[0], n: d[1], cls: d[2] }; }),
       sched: EV.map(function (e) { return { head: !!e[0], day: e[1], time: e[2], t: e[3] }; }),
       assigns: AS.map(function (a) { return { t: a[0], ctx: a[1], due: a[2], dueCls: a[3], est: a[4], cta: a[5], href: 'CourseDetail-Learner.dc.html' }; }),
-      wgDone: 4, wgAll: 6, wgPct: '67%',
+      wgDone: AD.wg[0], wgAll: AD.wg[1], wgPct: Math.round(AD.wg[0] / AD.wg[1] * 100) + '%',
       mlItems: mlItems,
       seasonOn: isActive && paid,
       recTitle: REC_T[0], recSub: REC_T[1], recs: recs,
@@ -806,7 +885,10 @@ class Component extends DCLogic {
       novaLink: named ? 'Ask ' + name : 'Ask a question',
       novaCta: named ? nv[1] : 'Name your coach', novaIsBtn: !named || !nv[2], novaIsLink: named && !!nv[2], novaHref: nv[2] || '#',
       showTutor: ['D', 'E', 'I', 'W'].indexOf(st) > -1,
-      proofs: [['Data Foundations', 'Credential', '24 Sep', 0], ['Sales dashboard', 'Project', '18 Sep', 1], ['SQL querying', 'Skill', '12 Sep', 2]].map(function (p) { return { t: p[0], k: p[1], d: p[2], i0: p[3] === 0 ? 'inline' : 'none', i1: p[3] === 1 ? 'inline' : 'none', i2: p[3] === 2 ? 'inline' : 'none' }; }),
+      bpN: AD.bp[0], bpL1: AD.bp[1], bpL2: AD.bp[2],
+      proofs: AD.proofs.map(function (p) { return { t: p[0], k: p[1], d: p[2], i0: p[3] === 0 ? 'inline' : 'none', i1: p[3] === 1 ? 'inline' : 'none', i2: p[3] === 2 ? 'inline' : 'none' }; }),
+      lessons: Array.apply(null, Array(18)).map(function (x, i) { return { c: i < 2 ? 'd' : (i === 2 ? 'n' : '') }; }),
+      lead: [['Data Analyst', '6–8 months · 8 courses', 'PathDetail.dc.html'], ['AI Engineer', '8–10 months · 8 courses', 'PathDetail.dc.html'], ['Data Scientist', '9–12 months · 9 courses', 'CareerPaths.dc.html']].map(function (l) { return { t: l[0], d: l[1], href: l[2] }; }),
       posts: posts, showBand: !named || (st !== 'A' && st !== 'B')
     };
   }

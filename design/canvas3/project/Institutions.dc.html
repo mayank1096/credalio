@@ -27,11 +27,6 @@ p{text-wrap:balance}
 .sx-cta:hover{background:#0E3BB8}
 .sx-menu{display:none;width:44px;height:44px;border-radius:999px;border:none;background:transparent;color:#0B1433;align-items:center;justify-content:center;cursor:pointer}
 .sx-link:focus-visible,.sx-cta:focus-visible,.sx-menu:focus-visible,.sx-logo:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px}
-.sx-foot{border-top:1px solid #EEF1F7;background:#FFFFFF}
-.sx-fin{max-width:1312px;margin:0 auto;padding:40px 48px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px;color:#5B6582}
-.sx-fin nav{display:flex;gap:20px;flex-wrap:wrap}
-.sx-fin a{color:#3A4566;text-decoration:none}
-.sx-fin a:hover{color:#1652F0}
 @media (max-width: 1180px){
 .sx-links{display:none}
 .sx-menu{display:flex}
@@ -43,7 +38,6 @@ p{text-wrap:balance}
 .sx-nav{height:60px;padding:0 16px}
 .sx-word{height:20px}
 .sx-cta{height:40px;padding:0 16px;font-size:14px}
-.sx-fin{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:14px}
 }
 body{margin:0;background:#FFFFFF}
 .ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
@@ -52,13 +46,25 @@ body{margin:0;background:#FFFFFF}
 .ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
 .ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
 .ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
 .ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
 .ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
 .ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
 .ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
 .ds-tag.green{background:#E7F5EE;color:#0F6B45}
 .ds-tag.amber{background:#FFF4E0;color:#8A5A00}
-.ds-btn:focus-visible,.ds-ghost:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.ds-ask{display:flex;align-items:center;gap:10px;height:60px;box-sizing:border-box;padding:6px 6px 6px 22px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;box-shadow:0 20px 40px -30px rgba(11,20,51,.5);transition:border-color .2s ease,box-shadow .2s ease}
+.ds-ask:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.ds-ask input{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:inherit;font-size:16px;color:#0B1433}
+.ds-ask input::placeholder{color:#8A93AD}
+.ds-ask .ds-btn{flex-shrink:0}
+.ds-ask.sm{height:50px;padding:4px 4px 4px 16px}
+.ds-ask.sm input{font-size:14px}
+.ds-send{width:40px;height:40px;border-radius:999px;border:none;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .2s ease}
+.ds-send:hover{background:#0E3BB8}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-send:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
 .tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
 .tip:hover,.tip:focus{color:#1652F0}
 .tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
@@ -67,10 +73,17 @@ body{margin:0;background:#FFFFFF}
 .nova-card{background:#FFFFFF url(/_blob/0b29db2e4cd6f4a89dc7ba8f12e59c8d) center / cover no-repeat}
 .nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
 .nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.sm{width:28px;height:28px}
 @media (max-width: 960px){
 .ds-btn{height:48px;font-size:15px}
 .ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
 .ds-ghost{height:44px;font-size:14.5px}
+}
+@media (max-width: 760px){
+.ds-ask{height:54px;padding:5px 5px 5px 18px}
+.ds-ask input{font-size:15px}
 }
 h1,h2,h3,p,.ci-d{text-wrap:pretty}
 @media (min-width: 761px){
@@ -81,6 +94,12 @@ h2{text-wrap:balance}
 }
 a{color:#1652F0}
 a:hover{color:#0E3BB8}
+.lh-word{display:block;height:24px;aspect-ratio:292/56;background:url(/_blob/8acabcff7ece53343d63205e8b7321a2) left center/contain no-repeat}
+.lh-mark{display:block;width:28px;height:28px;background:url(/_blob/f81e36d31295a0d0737959589ec1abd4) center/contain no-repeat}
+.lh-eng{position:relative;z-index:3;margin-top:16px;border-radius:28px;overflow:clip;background:#FFFFFF;box-shadow:0 -18px 40px -30px rgba(11,20,51,.2)}
+@media (max-width: 760px){
+.lh-word{display:none}
+}
 .tx-steps{display:flex;flex-direction:column;gap:2px;margin-top:14px}
 .tx-step{display:grid;grid-template-columns:32px minmax(0,1fr);gap:14px;align-items:center;padding:12px 0;border-top:1px solid #EEF1F7;transition:opacity .5s ease}
 .tx-step:first-child{border-top:none}
@@ -91,6 +110,49 @@ a:hover{color:#0E3BB8}
 .tx-sd{font-size:14px;color:#5B6582}
 @media (max-width: 760px){
 .tx-steps{order:3}
+}
+.ft{font-family:'Google Sans',system-ui,sans-serif;color:#0B1433}
+.ft-top{position:relative;z-index:1;max-width:1312px;margin:0 auto;padding:88px 48px 0;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,.9fr)) minmax(0,1.4fr);gap:40px}
+.ft-brand{display:flex;flex-direction:column;gap:18px}
+.ft .lh-word{display:block !important}
+.ft-col{display:flex;flex-direction:column;gap:12px}
+.ft-h{font-size:14px;font-weight:600;color:#0B1433;margin-bottom:4px}
+.ft-a{font-size:14px;color:#4A5578;text-decoration:none;transition:color .2s ease;width:max-content}
+.ft-a:hover{color:#1652F0}
+.ft-a:focus-visible,.ft-soc:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:3px;border-radius:6px}
+.ft-news{display:flex;flex-direction:column;gap:12px}
+.ft-form{margin-top:6px}
+.ft-art{position:relative;margin-top:4px;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 18%);mask-image:linear-gradient(180deg,transparent 0,#000 18%);pointer-events:none}
+.ft-img{height:auto;position:relative;left:50%;width:max(1440px,100%);transform:translateX(-50%);display:block}
+.ft-bar{position:relative;max-width:1312px;margin:-72px auto 0;padding:0 48px 28px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.ft-soc{width:40px;height:40px;border-radius:999px;display:flex;align-items:center;justify-content:center;color:#3A4566;background:rgba(255,255,255,.85);transition:color .2s ease,background .2s ease}
+.ft-soc:hover{color:#1652F0;background:#FFFFFF}
+.ft-copy{font-size:13px;color:#3A4566;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.85)}
+.ft-legal{font-size:13px;color:#3A4566;padding:6px 0}
+.ft-legalnav{padding:0 14px;border-radius:999px;background:rgba(255,255,255,.85)}
+@media (max-width: 1080px){
+.ft-top{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+.ft-brand,.ft-news{grid-column:1 / -1}
+}
+@media (max-width: 760px){
+.ft-top{grid-template-columns:repeat(2,minmax(0,1fr)) !important;padding:64px 20px 0 !important;gap:32px 20px !important}
+.ft-col:last-of-type{grid-column:1 / -1}
+.ft-art{margin-top:-8px}
+.ft-img{width:620px}
+.ft-legalnav{padding:0;background:none}
+.ft-bar{flex-direction:column-reverse;align-items:flex-start;margin-top:4px;padding:0 20px 24px;gap:10px}
+.ft-a{position:relative}
+.ft-a::after{content:"";position:absolute;left:-6px;right:-6px;top:50%;height:44px;transform:translateY(-50%)}
+}
+@supports (animation-timeline: view()){
+.ft{view-timeline:--ft block}
+.ft-img{transform-origin:50% 100%;animation:ftRise linear both;animation-timeline:--ft;animation-range:entry 25% entry 100%}
+.ft-top{animation:ftLift linear both;animation-timeline:--ft;animation-range:entry 0% entry 60%}
+@keyframes ftRise{from{transform:translateX(-50%) translateY(110px) scale(1.1)}to{transform:translateX(-50%) translateY(0) scale(1)}}
+@keyframes ftLift{from{transform:translateY(48px);opacity:.35}to{transform:none;opacity:1}}
+}
+@media (prefers-reduced-motion: reduce){
+.ft-img,.ft-top{animation:none !important}
 }
 .ci-door{position:relative;flex:1;display:flex;flex-direction:column;border-radius:22px;overflow:hidden;text-decoration:none;transition:flex .7s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease}
 .ci-in{background:radial-gradient(90% 90% at 85% 100%,#DCE5FB 0%,#EAF0FF 50%,#F5F8FF 100%);color:#0B1433;border:1.5px solid #DCE5FB}
@@ -157,15 +219,27 @@ a:hover{color:#0E3BB8}
 .ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
 .ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
 .ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
 .ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
 .ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
 .ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
 .ds-tag .tip{margin-left:0}
 .ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
 .ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
 .ds-tag.green{background:#E7F5EE;color:#0F6B45}
 .ds-tag.amber{background:#FFF4E0;color:#8A5A00}
-.ds-btn:focus-visible,.ds-ghost:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.ds-ask{display:flex;align-items:center;gap:10px;height:60px;box-sizing:border-box;padding:6px 6px 6px 22px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;box-shadow:0 20px 40px -30px rgba(11,20,51,.5);transition:border-color .2s ease,box-shadow .2s ease}
+.ds-ask:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.ds-ask input{flex:1;min-width:0;height:100%;border:none;outline:none;background:transparent;font-family:inherit;font-size:16px;color:#0B1433}
+.ds-ask input::placeholder{color:#8A93AD}
+.ds-ask .ds-btn{flex-shrink:0}
+.ds-ask.sm{height:50px;padding:4px 4px 4px 16px}
+.ds-ask.sm input{font-size:14px}
+.ds-send{width:40px;height:40px;border-radius:999px;border:none;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .2s ease}
+.ds-send:hover{background:#0E3BB8}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-send:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
 .tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
 .tip:hover,.tip:focus{color:#1652F0}
 .tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
@@ -174,14 +248,19 @@ a:hover{color:#0E3BB8}
 .nova-card{background:#FFFFFF url(/_blob/0b29db2e4cd6f4a89dc7ba8f12e59c8d) center / cover no-repeat}
 .nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
 .nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.sm{width:28px;height:28px}
 @media (max-width: 960px){
 .ds-btn{height:48px;font-size:15px}
 .ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
 .ds-ghost{height:44px;font-size:14.5px}
 }
 @media (max-width: 760px){
 .tip-b{display:none;width:min(250px,calc(100vw - 48px))}
 .tip:hover .tip-b,.tip:focus .tip-b{display:block}
+.ds-ask{height:54px;padding:5px 5px 5px 18px}
+.ds-ask input{font-size:15px}
 }
 h1,h2,h3,p{text-wrap:pretty}
 .lr-pfs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
@@ -244,12 +323,12 @@ h1,h2,h3,p{text-wrap:pretty}
 .cx-wt{font-size:17px;font-weight:600;letter-spacing:-.2px;margin:2px 0 4px}
 .cx-hero .cx-f1{left:-96px;bottom:-30px}
 .cx-sec{padding-top:0}
-.cx-studio{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:center}
+.cx-studio{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:start}
 .cx-steps{margin-top:28px}
 .cx-steps .tx-step{font-family:inherit;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0;color:#0B1433;cursor:pointer;padding:16px 0}
 .cx-steps .tx-step:hover{opacity:1}
 .cx-steps .tx-step-run .tx-num{background:#1652F0;color:#FFFFFF}
-.cx-win{height:472px;box-sizing:border-box;padding:24px;gap:10px;border-radius:22px;box-shadow:0 40px 80px -50px rgba(11,20,51,.45);background:linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 70%,#F7F9FD 100%)}
+.cx-win{height:auto;box-sizing:border-box;padding:24px;gap:10px;border-radius:22px;box-shadow:0 40px 80px -50px rgba(11,20,51,.45);background:linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 70%,#F7F9FD 100%)}
 .cx-win .ci-row{padding:12px 14px;font-size:13.5px;border-radius:12px}
 .cx-add{margin-top:8px;font-size:12.5px;font-weight:500;color:#8A93AD}
 .cx-path{grid-template-columns:repeat(6,minmax(0,1fr))}
@@ -533,16 +612,31 @@ h1,h2,h3,p{text-wrap:pretty}
 </div>
 </div>
 </section>
-<footer class="sx-foot">
-<div class="sx-fin">
-<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
-<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="Creators.dc.html">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
-<span>© 2026 magnummeta. All rights reserved.</span>
+<footer class="lh-eng ft" aria-label="Footer">
+<div class="ft-top">
+<div class="ft-brand">
+<a href="#" aria-label="Credalio home" style="display: flex; align-items: center; gap: 8px; text-decoration: none"><span class="lh-mark" aria-hidden="true"></span><span class="lh-word" aria-hidden="true"></span></a>
+<p style="margin: 0; max-width: 340px; font-size: 15px; line-height: 1.6; color: #4A5578">Helping you become who you want to be next.</p>
+</div>
+<nav class="ft-col" aria-label="Learn"><span class="ft-h">Learn</span><a class="ft-a" href="#">Courses</a><a class="ft-a" href="#">Professional Certifications</a><a class="ft-a" href="#">Career Paths</a><a class="ft-a" href="#">Learning Programs</a></nav><nav class="ft-col" aria-label="Create"><span class="ft-h">Create</span><a class="ft-a" href="Creators.dc.html">For Creators</a><a class="ft-a" href="Institutions.dc.html">For Institutions</a><a class="ft-a" href="#">Become a Validator</a></nav><nav class="ft-col" aria-label="Company"><span class="ft-h">Company</span><a class="ft-a" href="#">Pricing</a><a class="ft-a" href="#">About magnummeta</a><a class="ft-a" href="#">Ecosystem</a><a class="ft-a" href="#">Contact</a></nav>
+<div class="ft-news">
+<span class="ft-h">Stay in the loop</span>
+<p style="margin: 0; font-size: 14px; line-height: 1.6; color: #4A5578">New courses, career paths and stories from people becoming who they want to be.</p>
+<form class="ds-ask sm ft-form" onSubmit="{{ftSub}}"><label for="ft-email" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Email address</label><input id="ft-email" type="email" placeholder="Your email address" autocomplete="email"><button class="ds-send" type="submit" aria-label="Subscribe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button></form>
+</div>
+</div>
+<div class="ft-art" aria-hidden="true">
+<img class="ft-img" src="/_blob/eb2e20d6cbd3a76832bd7baba973357a" srcset="/_blob/41ff0a4f2d85266cb38bf7eb56bfd49e 1440w, /_blob/eb2e20d6cbd3a76832bd7baba973357a 2000w" sizes="(min-width: 761px) max(1440px, 100vw), 620px" width="2000" height="600" loading="lazy" decoding="async" alt="">
+</div>
+<div class="ft-bar">
+<div style="display: flex; gap: 4px"><a class="ft-soc" href="#" aria-label="Credalio on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 9.5v8M6.5 6.5v.01M10.5 17.5v-4.5a2.5 2.5 0 0 1 5 0v4.5M10.5 9.5v8"></path><rect x="3" y="3" width="18" height="18" rx="4"></rect></svg></a><a class="ft-soc" href="#" aria-label="Credalio on Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5v.01"></path></svg></a><a class="ft-soc" href="#" aria-label="Credalio on X"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"></path></svg></a><a class="ft-soc" href="#" aria-label="Credalio on YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path d="M10 9.5v5l4.5-2.5z"></path></svg></a></div>
+<span class="ft-copy">© 2026 magnummeta. All rights reserved.</span>
+<nav class="ft-legalnav" style="display: flex; gap: 20px" aria-label="Legal"><a class="ft-a ft-legal" href="#">Privacy</a><a class="ft-a ft-legal" href="#">Terms</a><a class="ft-a ft-legal" href="#">Cookies</a></nav>
 </div>
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4540}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4815}}'>
 var AREAS = [["Create", "Programs", "84 programs", [["84", "Programs"], ["12", "Career paths"], ["9", "Certifications"], ["410", "Courses"]], [["Graduate Data Programme", 76, "Live", "green"], ["MBA Foundations", 64, "Live", "green"], ["Nursing CPD", 55, "Live", "green"], ["Cloud & Security Pathway", 48, "Enrolling", "blue"], ["Teaching Excellence", 20, "Draft", ""]]], ["Deliver", "Cohorts", "Autumn intake", [["46", "Active cohorts"], ["28", "Average size"], ["7", "Starting soon"], ["94%", "Seats filled"]], [["Data 2026A", 82, "Week 6 of 12", "blue"], ["MBA 2026-1", 60, "Week 4 of 16", "blue"], ["Nursing CPD Oct", 40, "Week 2 of 8", "blue"], ["Security Oct", 10, "Starts 14 Oct", "amber"], ["Research Methods B", 95, "Final week", "green"]]], ["Manage", "People", "All departments", [["4,820", "Learners"], ["126", "Creators"], ["14", "Admins"], ["312", "Need support"]], [["School of Business", 74, "On track", "green"], ["School of Computing", 81, "On track", "green"], ["School of Health", 59, "Watch", "amber"], ["Continuing Education", 66, "On track", "green"], ["Foundation Year", 52, "Watch", "amber"]]], ["Understand", "Analytics", "Autumn term", [["72%", "Active learning"], ["64%", "Completion"], ["78%", "Avg. assessment"], ["+11%", "vs last term"]], [["Enrolment", 92, "High", "green"], ["Engagement", 72, "Good", "green"], ["Progress", 68, "Good", "green"], ["Assessment performance", 78, "Good", "green"], ["Credential achievement", 46, "Rising", "blue"]]], ["Validate", "Validation", "Institutional learning", [["31", "Validated"], ["12", "In review"], ["4", "Findings open"], ["2", "Revalidation due"]], [["Graduate Data Programme", 100, "Validated", "green"], ["Nursing CPD", 100, "Validated", "green"], ["MBA Foundations", 60, "In review", "amber"], ["Cloud & Security Pathway", 40, "Findings open", "amber"], ["Teaching Excellence", 0, "Not submitted", ""]]], ["Credential", "Credentials", "This term", [["2,214", "Issued"], ["61%", "Shared by learners"], ["9", "Credential types"], ["0", "Revoked"]], [["Program Completion", 72, "1,120", "green"], ["Professional Certificate", 45, "384", "green"], ["Verified Project", 58, "520", "green"], ["Competency Badge", 33, "190", "green"], ["Micro-credential", 12, "Draft", ""]]]];
 var AIS = [["AI Learning Coach", "Supports learners with their course and progress context."], ["AI Creator Assistance", "Helps educators build and improve learning."], ["AI Recommendations", "Suggests personal learning pathways."], ["AI Support", "Answers common questions, then hands over to people."], ["Assessment help", "Hints during graded work."]];
 class Component extends DCLogic {
@@ -553,7 +647,7 @@ class Component extends DCLogic {
     ws.kpis = a[3].map(function (k) { return { v: k[0], k: k[1] }; });
     ws.rows = a[4].map(function (r) { return { a: r[0], pct: r[1] + '%', tag: r[2], cls: r[3] }; });
     var rows = AIS.map(function (x, i) { var on = self.state.ai[i]; return { t: x[0], d: i === 4 && !on ? 'Off by your policy. ' + x[1] : x[1], on: on ? 'true' : 'false', cls: on ? 'on' : '', flip: function () { var n = self.state.ai.slice(); n[i] = !n[i]; self.setState({ ai: n }); } }; });
-    return { ws: ws, ai: { rows: rows } };
+    return { ws: ws, ai: { rows: rows }, ftSub: function (e) { if (e && e.preventDefault) e.preventDefault(); } };
   }
 }
 </script>

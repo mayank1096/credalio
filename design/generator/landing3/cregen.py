@@ -190,6 +190,10 @@ WHOS = '''<section class="pc-sec cx-sec" aria-labelledby="cx-wh">
 
 # ---------- final CTA: Landing band ----------
 
+# The Landing page's own footer (links, newsletter, 3D-logo illustration, socials): used on every marketing page.
+LFOOT = block(L, '<footer class="lh-eng ft"', 'footer').replace('onSubmit="{{hero.onStart}}"', 'onSubmit="{{ftSub}}"')
+FTSUB = "ftSub: function (e) { if (e && e.preventDefault) e.preventDefault(); }"
+
 def compact_fc(fc):
     """Landing final CTA band as a compact one-row band (mark · text · button)."""
     fc = fc.replace('<section aria-labelledby="fc-h"', '<section class="cx-fc" aria-labelledby="fc-h"', 1)
@@ -239,12 +243,12 @@ CSS = r'''.cx-top{max-width:1360px;margin:0 auto;padding:16px 24px 0;box-sizing:
 .cx-hero .cx-f1{left:-96px;bottom:-30px}
 .cx-hero .cx-f2{right:-26px;top:-24px;animation-delay:-2.5s}
 .cx-sec{padding-top:0}
-.cx-studio{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:center}
+.cx-studio{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:start}
 .cx-steps{margin-top:28px}
 .cx-steps .tx-step{font-family:inherit;text-align:left;background:none;border-left:0;border-right:0;border-bottom:0;color:#0B1433;cursor:pointer;padding:16px 0}
 .cx-steps .tx-step:hover{opacity:1}
 .cx-steps .tx-step-run .tx-num{background:#1652F0;color:#FFFFFF}
-.cx-win{height:472px;box-sizing:border-box;padding:24px;gap:10px;border-radius:22px;box-shadow:0 40px 80px -50px rgba(11,20,51,.45);background:linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 70%,#F7F9FD 100%)}
+.cx-win{height:auto;box-sizing:border-box;padding:24px;gap:10px;border-radius:22px;box-shadow:0 40px 80px -50px rgba(11,20,51,.45);background:linear-gradient(180deg,#FFFFFF 0%,#FFFFFF 70%,#F7F9FD 100%)}
 .cx-win .ci-row{padding:12px 14px;font-size:13.5px;border-radius:12px}
 .cx-win .ci-ck{width:20px;height:20px}
 .cx-ol{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column}
@@ -400,7 +404,7 @@ BODY = '''<div style="font-family: 'Google Sans', system-ui, sans-serif; color: 
 ''' + EARN + '''
 ''' + WHOS + '''
 ''' + FC + '''
-''' + FOOT + '''
+''' + LFOOT + '''
 </div>'''
 
 JS = '''
@@ -419,7 +423,7 @@ class Component extends DCLogic {
     st.acceptLabel = this.state.drafted ? 'Review questions' : 'Draft 3 questions';
     st.accept = function () { if (self.state.drafted) self.setState({ tab: 1 }); else self.setState({ drafted: true, skipped: false }); };
     st.skip = function () { self.setState({ skipped: true, drafted: false }); };
-    return { st: st };
+    return { st: st, ''' + FTSUB + ''' };
   }
 }
 '''

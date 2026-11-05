@@ -618,6 +618,17 @@ h1,h2,h3,p{text-wrap:pretty}
 .cb-d,.cb-go{display:none}
 .pc-scale{padding:22px 18px}
 .pc-rows li{grid-template-columns:52px minmax(0,1fr) 80px;gap:10px}
+.fc-wrap{padding:24px 12px 40px !important}
+.fc-band{border-radius:22px;padding:48px 20px 92px;gap:12px}
+.fc-h2{font-size:32px;letter-spacing:-.9px;margin-top:8px}
+.fc-sub{font-size:15px;max-width:300px}
+.fc-form{flex-direction:column;align-items:stretch;height:auto;padding:0;gap:10px;background:none;border:none;box-shadow:none;border-radius:0;margin-top:10px}
+.fc-form:focus-within{border:none;box-shadow:none}
+.fc-form input{flex:none;height:52px;box-sizing:border-box;padding:0 20px;border-radius:999px;background:#FFFFFF;font-size:15px;box-shadow:0 20px 40px -24px rgba(0,0,0,.6)}
+.fc-form input:focus{box-shadow:0 0 0 4px rgba(157,184,247,.45)}
+.fc-form .ds-btn{justify-content:space-between;height:52px;padding:0 6px 0 22px;font-size:15px}
+.fc-form .ds-btn .ob-arrow{width:40px;height:40px}
+.fc-note{font-size:13px;margin-top:4px}
 }
 </style>
 </helmet>
@@ -853,7 +864,7 @@ h1,h2,h3,p{text-wrap:pretty}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"mode":{"editor":"enum","options":["guest","free","basic","pro","path"],"default":"guest"},"$preview":{"width":1440,"height":5803}}'>
+<script type="text/x-dc" data-dc-script data-props='{"mode":{"editor":"enum","options":["guest","free","basic","pro","path"],"default":"guest"},"$preview":{"width":1440,"height":4000}}'>
 var FAQ = [["Can I start for free?", "Yes. Free gives you 200 DLP to explore Credalio, find your goal with your AI Coach and start eligible free learning."], ["Do I need a card for Free?", "No. You only add payment details if you choose Basic or Pro."], ["What happens when I use all my DLP?", "Your progress, projects and Backpack stay with you. Explore free learning, wait for your refresh, or upgrade to keep going."], ["Does unused DLP roll over?", "Not on Free. On Pro, unused DLP rolls over up to 18,000, with gradual decay from month four. Basic follows the Basic plan policy, which is being finalised."], ["Are certificates included?", "Certificates you earn from eligible learning go straight to your Digital Backpack."], ["Are Professional Certifications included?", "Certification learning uses your DLP like other learning. Any separate exam fee is shown on the certification page before you start."], ["Does my plan include AI?", "Yes. Every plan includes an AI Coach. You get more of it on Basic, and the most on Pro."], ["What if a course needs more DLP than I have?", "You can still start. Credalio shows what your balance covers, and you carry on when your allowance refreshes or you top up."], ["Can my employer or university pay?", "Yes. Organisations can give access through Credalio for Institutions, from 5,000 to 10,000 DLP per person."]];
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }

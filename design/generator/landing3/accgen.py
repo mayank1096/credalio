@@ -18,7 +18,7 @@ CSS = r'''.sx-dlp{height:36px;padding:0 12px 0 8px;border-radius:999px;backgroun
 .sx-dlp.low{background:#FFFAEB;border-color:#F4D98E;color:#8A5A00}
 .ac-avl{font-weight:500;color:#5B6582}
 .sx-av{width:40px;height:40px;border-radius:999px;background:#DCE5FB;color:#1652F0;text-decoration:none;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
-.tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/b7fe5c1a1e0ae23ab09139f1d05e4281) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
+.tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(26vh,22vw);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 40%);mask-image:linear-gradient(to bottom,transparent,#000 40%);background:url(/_blob/b7fe5c1a1e0ae23ab09139f1d05e4281) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
 @media (max-width: 760px){.tk-scene{height:240px;background-size:250% auto;background-position:52% 100%}}
 .ac-root{position:relative;isolation:isolate;min-height:100vh;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433;background:#FFFFFF;overflow:hidden}
 .ac-glow{position:absolute;left:50%;top:-260px;width:1100px;height:560px;transform:translateX(-50%);border-radius:50%;pointer-events:none;filter:blur(10px)}

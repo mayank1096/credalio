@@ -183,6 +183,8 @@ p{text-wrap:balance}
 .ac-toast div:nth-child(2){flex:1 1 calc(100% - 44px)}
 .ac-toast-a{width:100%;justify-content:space-between;padding-left:44px;box-sizing:border-box}
 }
+.pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
+.pav-h{position:relative !important;overflow:hidden !important}
 </style>
 </helmet>
 <div class="ac-root">
@@ -199,7 +201,7 @@ p{text-wrap:balance}
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
 <a class="sx-dlp {{pillCls}}" href="Usage.dc.html" aria-label="{{pill}} DLP available. View usage"><span class="dlp-c" aria-hidden="true"></span><b style="font-weight: 600">{{pill}}<span class="ac-avl"> available</span></b></a>
-<a class="sx-av" href="Dashboard.dc.html" aria-label="Your dashboard">AO</a>
+<a class="sx-av pav-h" href="Dashboard.dc.html" aria-label="Your dashboard">AO<img class="pav" src="/_blob/9112077cc7e3c1c839edc7e609d87954" alt=""></a>
 <button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 </div>
 </header>

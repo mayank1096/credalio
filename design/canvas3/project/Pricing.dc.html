@@ -630,6 +630,8 @@ h1,h2,h3,p{text-wrap:pretty}
 .fc-form .ds-btn .ob-arrow{width:40px;height:40px}
 .fc-note{font-size:13px;margin-top:4px}
 }
+.pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
+.pav-h{position:relative !important;overflow:hidden !important}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
@@ -645,7 +647,7 @@ h1,h2,h3,p{text-wrap:pretty}
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
 <sc-if value="{{pr.guest}}" hint-placeholder-val="{{ true }}"><a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
-<a class="sx-cta" href="OnbWelcome.dc.html">Create account</a></sc-if><sc-if value="{{pr.member}}" hint-placeholder-val="{{ false }}"><a class="sx-dlp" href="Usage.dc.html" aria-label="{{pr.bal}} DLP available. View usage"><span class="dlp-c" aria-hidden="true"></span><b style="font-weight: 600">{{pr.bal}}<span class="pc-avl"> available</span></b></a><a class="sx-av" href="Dash-E.dc.html" aria-label="Your dashboard">AO</a></sc-if>
+<a class="sx-cta" href="OnbWelcome.dc.html">Create account</a></sc-if><sc-if value="{{pr.member}}" hint-placeholder-val="{{ false }}"><a class="sx-dlp" href="Usage.dc.html" aria-label="{{pr.bal}} DLP available. View usage"><span class="dlp-c" aria-hidden="true"></span><b style="font-weight: 600">{{pr.bal}}<span class="pc-avl"> available</span></b></a><a class="sx-av pav-h" href="Dash-E.dc.html" aria-label="Your dashboard">AO<img class="pav" src="/_blob/9112077cc7e3c1c839edc7e609d87954" alt=""></a></sc-if>
 <button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 </div>
 </header>
@@ -742,7 +744,7 @@ h1,h2,h3,p{text-wrap:pretty}
 <div class="ci-vis" aria-hidden="true">
 <div class="ci-win">
 <div class="ci-wk"><span>Cohort 12 · Data Analysis</span><span class="ds-tag green"><span style="width: 6px; height: 6px; border-radius: 9px; background: #0F6B45"></span>Live</span></div>
-<div style="display: flex; align-items: center; justify-content: space-between"><span style="display: flex; padding-left: 7px"><span class="ci-av" style="background: #DCE5FB; color: #1652F0">AK</span><span class="ci-av" style="background: #1652F0; color: #FFFFFF">MS</span><span class="ci-av" style="background: #0B1433; color: #FFFFFF">PL</span><span class="ci-av" style="background: #EAF0FF; color: #1652F0; width: auto; padding: 0 7px">+245</span></span><span style="font-size: 12px; color: #5B6582">248 learners</span></div>
+<div style="display: flex; align-items: center; justify-content: space-between"><span style="display: flex; padding-left: 7px"><span class="ci-av pav-h" style="background: #DCE5FB; color: #1652F0">AK<img class="pav" src="/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2" alt=""></span><span class="ci-av pav-h" style="background: #1652F0; color: #FFFFFF">MS<img class="pav" src="/_blob/84f08b38fbe9b11d8aa477ac10398bfe" alt=""></span><span class="ci-av pav-h" style="background: #0B1433; color: #FFFFFF">PL<img class="pav" src="/_blob/6940b199369f0ef8a87915557d16027b" alt=""></span><span class="ci-av" style="background: #EAF0FF; color: #1652F0; width: auto; padding: 0 7px">+245</span></span><span style="font-size: 12px; color: #5B6582">248 learners</span></div>
 <div style="display: flex; flex-direction: column; gap: 6px"><div style="display: flex; justify-content: space-between; font-size: 12px; color: #5B6582"><span>Average progress</span><b style="color: #0B1433; font-weight: 600">72%</b></div><div style="height: 8px; border-radius: 9px; background: #EEF1F7; overflow: hidden"><span style="display: block; width: 72%; height: 100%; background: #1652F0; border-radius: 9px"></span></div></div>
 <div class="ci-row"><span>Educators</span><b style="margin-left: auto; font-weight: 600; color: #0B1433">6</b></div>
 <div style="height: 30px"></div>

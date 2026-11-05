@@ -297,6 +297,8 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 .aur{position:relative;isolation:isolate;overflow:hidden;background:#0B1433}
 .aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
 .aur-off{background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat}
+.pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
+.pav-h{position:relative !important;overflow:hidden !important}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
@@ -383,7 +385,7 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 </div>
 <div class="cs-cb">
 <span class="cs-ct">{{c.t}}</span>
-<span class="cs-by"><span class="cs-cav">{{c.ini}}</span>{{c.by}}</span>
+<span class="cs-by"><span class="cs-cav pav-h">{{c.ini}}<sc-if value="{{c.pic}}" hint-placeholder-val="{{ false }}"><img class="pav" src="{{c.pic}}" alt=""></sc-if></span>{{c.by}}</span>
 <span class="cs-meta"><span class="cs-star" aria-hidden="true">★</span><b>{{c.rating}}</b><span>({{c.reviews}})</span><span class="cs-dot"></span><span>{{c.lvl}}</span><span class="cs-dot"></span><span>{{c.hrs}}</span></span>
 <span class="cs-tags"><span class="ds-tag blue"><span class="cs-tdot" style="background: {{c.tierDot}}"></span>{{c.tierLabel}}</span><span class="ds-tag line">CEI {{c.cei}}<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Creator Expertise Index: the creator’s validated subject knowledge, experience and recognition, out of 100.</span></span></span></span>
 <div class="cs-acc">
@@ -461,6 +463,10 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2722}}'>
+var AVP = {"DR": "/_blob/6940b199369f0ef8a87915557d16027b", "TA": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "TH": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "TR": "/_blob/6940b199369f0ef8a87915557d16027b", "PN": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "GA": "/_blob/9112077cc7e3c1c839edc7e609d87954", "ML": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "HC": "/_blob/9112077cc7e3c1c839edc7e609d87954", "LF": "/_blob/9112077cc7e3c1c839edc7e609d87954", "PS": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "LO": "/_blob/9112077cc7e3c1c839edc7e609d87954", "MR": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "SA": "/_blob/9112077cc7e3c1c839edc7e609d87954", "SM": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "KB": "/_blob/6940b199369f0ef8a87915557d16027b", "JM": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "SL": "/_blob/9112077cc7e3c1c839edc7e609d87954", "AK": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "MS": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "PL": "/_blob/6940b199369f0ef8a87915557d16027b", "SR": "/_blob/6940b199369f0ef8a87915557d16027b", "JL": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "ME": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "MO": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "KA": "/_blob/6940b199369f0ef8a87915557d16027b", "IN": "/_blob/9112077cc7e3c1c839edc7e609d87954", "DA": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "DM": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "TB": "/_blob/6940b199369f0ef8a87915557d16027b", "RP": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "NB": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "LK": "/_blob/9112077cc7e3c1c839edc7e609d87954", "JC": "/_blob/6940b199369f0ef8a87915557d16027b", "DK": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2"};
+AVP.AO = "/_blob/84f08b38fbe9b11d8aa477ac10398bfe";
+function PIC(i) { return AVP[i] || ""; }
+
 class Component extends DCLogic {
   auroraMount(el) {
     var host = window;
@@ -611,7 +617,7 @@ class Component extends DCLogic {
   }
   card(c) {
     var self = this, S = this.state, tn = this.TONE[c.topic], ini = c.by.split(' ').map(function (w) { return w[0]; }).slice(0, 2).join(''), w = !!S.wish[c.t];
-    var v = { t: c.t, by: c.by, lvl: c.lvl, rating: c.rating, reviews: c.reviews, hrs: c.hrs + (c.hrs === 1 ? ' hr' : ' hrs'), cei: c.cei, ini: ini,
+    var v = { t: c.t, by: c.by, lvl: c.lvl, rating: c.rating, reviews: c.reviews, hrs: c.hrs + (c.hrs === 1 ? ' hr' : ' hrs'), cei: c.cei, ini: ini, pic: PIC(ini),
       bg: tn[0], icoC: tn[1], light: tn[2], tierLabel: this.TIER[c.tier][0], tierDot: this.TIER[c.tier][1],
       accV: c.free ? 'Free to learn' : c.dlp.toLocaleString('en-GB') + ' DLP', accCls: c.free ? 'cs-free' : '', paid: !c.free,
       hasLife: c.life > 0, lifeTip: 'Or keep it for life: ' + c.life.toLocaleString('en-GB') + ' credits, one-off.', stop: function (e) { e.preventDefault(); e.stopPropagation(); },

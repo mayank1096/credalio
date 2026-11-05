@@ -287,6 +287,8 @@ p{text-wrap:balance}
 .aur{position:relative;isolation:isolate;overflow:hidden;background:#0B1433}
 .aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
 .aur-off{background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat}
+.pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
+.pav-h{position:relative !important;overflow:hidden !important}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
@@ -308,7 +310,7 @@ p{text-wrap:balance}
 </sc-if>
 <sc-if value="{{learner}}" hint-placeholder-val="{{ false }}">
 <a class="sx-dlp" href="#" aria-label="1,460 DLP available. View usage"><span class="dlp-c"></span><b style="font-weight: 600">1,460<span style="font-weight: 500; color: #5B6582"> available</span></b></a>
-<span class="sx-av" aria-label="Your account">AO</span>
+<span class="sx-av pav-h" aria-label="Your account">AO<img class="pav" src="/_blob/9112077cc7e3c1c839edc7e609d87954" alt=""></span>
 </sc-if>
 <button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
 </div>
@@ -325,7 +327,7 @@ p{text-wrap:balance}
 <h1 class="cd-h1">Data Foundations: Spreadsheets to SQL</h1>
 <p class="cd-sub">Go from spreadsheets to confident SQL queries, using real business data.</p>
 <div class="cd-by">
-<span class="cd-who"><span class="cd-av" aria-hidden="true">AO</span><span><b>Amara Okafor</b></span></span>
+<span class="cd-who"><span class="cd-av pav-h" aria-hidden="true">AO<img class="pav" src="/_blob/84f08b38fbe9b11d8aa477ac10398bfe" alt=""></span><span><b>Amara Okafor</b></span></span>
 <span class="cd-sep" aria-hidden="true"></span>
 <span class="cd-fact"><svg class="cd-star" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><b>4.8</b> (3.4k reviews)</span>
 <span class="cd-fact"><b>Beginner</b><span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Made for beginners. No coding needed; basic spreadsheet use is enough.</span></span></span>
@@ -401,7 +403,7 @@ p{text-wrap:balance}
 <section class="cd-sec" ref="{{refCreator}}" aria-labelledby="cd-cr">
 <h2 id="cd-cr" class="cd-h2">Your creator</h2>
 <div class="cd-cr">
-<span class="cd-cav" aria-hidden="true">AO</span>
+<span class="cd-cav pav-h" aria-hidden="true">AO<img class="pav" src="/_blob/84f08b38fbe9b11d8aa477ac10398bfe" alt=""></span>
 <div>
 <div class="cd-cn">Amara Okafor</div>
 <div class="cd-ct">Senior Data Analyst · 6 courses on Credalio</div>
@@ -414,8 +416,8 @@ p{text-wrap:balance}
 <h2 id="cd-re" class="cd-h2">What learners say</h2>
 <div class="cd-revs">
 <div class="cd-score"><b>4.8</b><span class="cd-stars" aria-label="4.8 out of 5"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"></path></svg></span><span>3,412 verified learners</span></div>
-<div class="cd-rev"><p class="cd-rq">“I’d avoided SQL for years. By module four I was joining tables at work without asking anyone for help.”</p><div class="cd-rb"><span class="cd-rav" aria-hidden="true">DR</span><span><b>Daniel R.</b> · Operations lead</span></div></div>
-<div class="cd-rev"><p class="cd-rq">“The sales project was the bit that clicked. It’s now the first thing I show in interviews.”</p><div class="cd-rb"><span class="cd-rav" aria-hidden="true">SM</span><span><b>Sofia M.</b> · Junior analyst</span></div></div>
+<div class="cd-rev"><p class="cd-rq">“I’d avoided SQL for years. By module four I was joining tables at work without asking anyone for help.”</p><div class="cd-rb"><span class="cd-rav pav-h" aria-hidden="true">DR<img class="pav" src="/_blob/6940b199369f0ef8a87915557d16027b" alt=""></span><span><b>Daniel R.</b> · Operations lead</span></div></div>
+<div class="cd-rev"><p class="cd-rq">“The sales project was the bit that clicked. It’s now the first thing I show in interviews.”</p><div class="cd-rb"><span class="cd-rav pav-h" aria-hidden="true">SM<img class="pav" src="/_blob/84f08b38fbe9b11d8aa477ac10398bfe" alt=""></span><span><b>Sofia M.</b> · Junior analyst</span></div></div>
 </div>
 </section>
 

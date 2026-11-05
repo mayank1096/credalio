@@ -919,6 +919,8 @@ a:hover{color:#0E3BB8}
 .aur{position:relative;isolation:isolate;overflow:hidden;background:#0B1433}
 .aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
 .aur-off{background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat}
+.pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
+.pav-h{position:relative !important;overflow:hidden !important}
 </style>
 </helmet>
 <div class="lh-root" style="box-sizing: border-box; padding: 16px; background: #FFFFFF; font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433">
@@ -1558,7 +1560,7 @@ Not sure? Ask Nova, your AI Coach
 
 <div class="bp-stage {{bp.goCls}}" role="img" aria-label="A Digital Backpack of verified credentials. One is shared by link and arrives verified on a hiring manager's screen.">
 <div class="bp-wallet">
-<div class="bp-whead"><span class="bp-av" style="background: #EAF0FF; color: #1652F0">MR</span><b>Maya’s Backpack</b><span class="bp-wsep"></span><span class="bp-wok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>5 items, all verified</span></div>
+<div class="bp-whead"><span class="bp-av pav-h" style="background: #EAF0FF; color: #1652F0">MR<img class="pav" src="/_blob/84f08b38fbe9b11d8aa477ac10398bfe" alt=""></span><b>Maya’s Backpack</b><span class="bp-wsep"></span><span class="bp-wok"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>5 items, all verified</span></div>
 <sc-for list="{{bp.cards}}" as="c" hint-placeholder-count="5">
 <div class="bp-card {{c.cls}}" style="transform: {{c.tf}}; z-index: {{c.z}}; background: {{c.bg}}; color: {{c.fg}}; border: 1.5px solid {{c.bd}}">
 <div class="bp-type"><span>{{c.type}}</span><span class="ds-tag {{c.chipCls}} bp-vchip"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Verified</span></div>
@@ -1574,7 +1576,7 @@ Not sure? Ask Nova, your AI Coach
 <div class="bp-dest {{bp.destCls}}">
 <div class="bp-bar"><i></i><i></i><i></i><span class="bp-url">credalio.com/verify/{{bp.d.id}}</span></div>
 <div class="bp-body">
-<div class="bp-who"><span class="bp-av" style="background: {{bp.d.avBg}}; color: {{bp.d.avFg}}">{{bp.d.ini}}</span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-weight: 600; color: #0B1433">{{bp.d.who}}</span><span style="font-size: 12px">{{bp.d.org}}</span></span></div>
+<div class="bp-who"><span class="bp-av pav-h" style="background: {{bp.d.avBg}}; color: {{bp.d.avFg}}">{{bp.d.ini}}<sc-if value="{{bp.d.pic}}" hint-placeholder-val="{{ false }}"><img class="pav" src="{{bp.d.pic}}" alt=""></sc-if></span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-weight: 600; color: #0B1433">{{bp.d.who}}</span><span style="font-size: 12px">{{bp.d.org}}</span></span></div>
 <sc-if value="{{bp.waiting}}" hint-placeholder-val="{{ false }}"><div class="bp-empty"><span style="width: 80%"></span><span style="width: 60%"></span><span style="width: 70%"></span></div></sc-if>
 <div class="bp-got {{bp.gotCls}}">
 <span style="font-size: 12px; color: #8A93AD">Shared with you by Maya Rao</span>
@@ -1624,7 +1626,7 @@ Not sure? Ask Nova, your AI Coach
 </div>
 <div class="cs-cb">
 <span class="cs-ct">{{k.t}}</span>
-<span class="cs-by"><span class="cs-cav">{{k.ini}}</span>{{k.by}}</span>
+<span class="cs-by"><span class="cs-cav pav-h">{{k.ini}}<sc-if value="{{k.pic}}" hint-placeholder-val="{{ false }}"><img class="pav" src="{{k.pic}}" alt=""></sc-if></span>{{k.by}}</span>
 <span class="cs-meta"><span class="cs-star" aria-hidden="true">★</span><b>{{k.rating}}</b><span>({{k.reviews}})</span><span class="cs-dot"></span><span>{{k.lvl}}</span><span class="cs-dot"></span><span>{{k.hrs}}</span></span>
 <span class="cs-tags"><span class="ds-tag blue"><span class="cs-tdot" style="background: {{k.tierDot}}"></span>{{k.tierLabel}}</span><span class="ds-tag line">CEI {{k.cei}}<span class="tip" tabindex="{{k.tab}}" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Creator Expertise Index: the creator’s validated subject knowledge, experience and recognition, out of 100.</span></span></span></span>
 <div class="cs-acc">
@@ -1681,7 +1683,7 @@ Not sure? Ask Nova, your AI Coach
 <div class="ci-vis" aria-hidden="true">
 <div class="ci-win">
 <div class="ci-wk"><span>Cohort 12 · Data Analysis</span><span class="ds-tag green"><span style="width: 6px; height: 6px; border-radius: 9px; background: #0F6B45"></span>Live</span></div>
-<div style="display: flex; align-items: center; justify-content: space-between"><span style="display: flex; padding-left: 7px"><span class="ci-av" style="background: #DCE5FB; color: #1652F0">AK</span><span class="ci-av" style="background: #1652F0; color: #FFFFFF">MS</span><span class="ci-av" style="background: #0B1433; color: #FFFFFF">PL</span><span class="ci-av" style="background: #EAF0FF; color: #1652F0; width: auto; padding: 0 7px">+245</span></span><span style="font-size: 12px; color: #5B6582">248 learners</span></div>
+<div style="display: flex; align-items: center; justify-content: space-between"><span style="display: flex; padding-left: 7px"><span class="ci-av pav-h" style="background: #DCE5FB; color: #1652F0">AK<img class="pav" src="/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2" alt=""></span><span class="ci-av pav-h" style="background: #1652F0; color: #FFFFFF">MS<img class="pav" src="/_blob/84f08b38fbe9b11d8aa477ac10398bfe" alt=""></span><span class="ci-av pav-h" style="background: #0B1433; color: #FFFFFF">PL<img class="pav" src="/_blob/6940b199369f0ef8a87915557d16027b" alt=""></span><span class="ci-av" style="background: #EAF0FF; color: #1652F0; width: auto; padding: 0 7px">+245</span></span><span style="font-size: 12px; color: #5B6582">248 learners</span></div>
 <div style="display: flex; flex-direction: column; gap: 6px"><div style="display: flex; justify-content: space-between; font-size: 12px; color: #5B6582"><span>Average progress</span><b style="color: #0B1433; font-weight: 600">72%</b></div><div style="height: 8px; border-radius: 9px; background: #EEF1F7; overflow: hidden"><span style="display: block; width: 72%; height: 100%; background: #1652F0; border-radius: 9px"></span></div></div>
 <div class="ci-row"><span>Educators</span><b style="margin-left: auto; font-weight: 600; color: #0B1433">6</b></div>
 <div style="height: 30px"></div>
@@ -1826,6 +1828,10 @@ Not sure? Ask Nova, your AI Coach
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":11187}}'>
+var AVP = {"DR": "/_blob/6940b199369f0ef8a87915557d16027b", "TA": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "TH": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "TR": "/_blob/6940b199369f0ef8a87915557d16027b", "PN": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "GA": "/_blob/9112077cc7e3c1c839edc7e609d87954", "ML": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "HC": "/_blob/9112077cc7e3c1c839edc7e609d87954", "LF": "/_blob/9112077cc7e3c1c839edc7e609d87954", "PS": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "LO": "/_blob/9112077cc7e3c1c839edc7e609d87954", "MR": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "SA": "/_blob/9112077cc7e3c1c839edc7e609d87954", "SM": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "KB": "/_blob/6940b199369f0ef8a87915557d16027b", "JM": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "SL": "/_blob/9112077cc7e3c1c839edc7e609d87954", "AK": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "MS": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "PL": "/_blob/6940b199369f0ef8a87915557d16027b", "SR": "/_blob/6940b199369f0ef8a87915557d16027b", "JL": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "ME": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "MO": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "KA": "/_blob/6940b199369f0ef8a87915557d16027b", "IN": "/_blob/9112077cc7e3c1c839edc7e609d87954", "DA": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "DM": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "TB": "/_blob/6940b199369f0ef8a87915557d16027b", "RP": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "NB": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "LK": "/_blob/9112077cc7e3c1c839edc7e609d87954", "JC": "/_blob/6940b199369f0ef8a87915557d16027b", "DK": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2"};
+AVP.AO = "/_blob/84f08b38fbe9b11d8aa477ac10398bfe";
+function PIC(i) { return AVP[i] || ""; }
+
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }
   setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }
@@ -2284,9 +2290,9 @@ class BackpackPart extends Part {
       { type: 'Verified achievement', title: 'Practical assessment: data cleaning', meta: 'Validated assessment · 91%', bg: '#FFFFFF', fg: '#0B1433', bd: '#E6EAF3', chipCls: 'green', id: '5A6-38' }
     ];
     this.D = [
-      { who: 'Hiring manager', org: 'Northwind Analytics', ini: 'NA', avBg: '#0B1433', avFg: '#FFFFFF' },
-      { who: 'Admissions', org: 'City University', ini: 'CU', avBg: '#DCE5FB', avFg: '#1652F0' },
-      { who: 'Client', org: 'Freelance brief', ini: 'JL', avBg: '#1652F0', avFg: '#FFFFFF' }
+      { who: 'Hiring manager', org: 'Northwind Analytics', ini: 'NA', pic: PIC('NA'), avBg: '#0B1433', avFg: '#FFFFFF' },
+      { who: 'Admissions', org: 'City University', ini: 'CU', pic: PIC('CU'), avBg: '#DCE5FB', avFg: '#1652F0' },
+      { who: 'Client', org: 'Freelance brief', ini: 'JL', pic: PIC('JL'), avBg: '#1652F0', avFg: '#FFFFFF' }
     ];
     this.T = [1600, 2600, 4200, 8200];
   }
@@ -2324,7 +2330,7 @@ class BackpackPart extends Part {
       goCls: S.step >= 2 ? 'bp-go' : '', linkCls: S.step === 2 ? 'bp-link-on' : '',
       destCls: S.step === 3 ? 'bp-dest-ok bp-dest-show' : '',
       waiting: S.step < 3, gotCls: S.step === 3 ? 'bp-got-on' : '',
-      d: { who: dd.who, org: dd.org, ini: dd.ini, avBg: dd.avBg, avFg: dd.avFg, title: fc.title, id: fc.id },
+      d: { who: dd.who, org: dd.org, ini: dd.ini, pic: PIC(dd.ini), avBg: dd.avBg, avFg: dd.avFg, title: fc.title, id: fc.id },
       beats: B.map(function (b, k) { return { n: b[0], t: b[1], d: b[2], s: ['Keep it', 'Share it', 'Anyone checks it'][k], cls: k === beatOn ? 'bp-beat-on' : '' }; })
     };
   }
@@ -2358,7 +2364,7 @@ class MarketPart extends Part {
     var areas = ['All', 'Data & AI', 'Design', 'Technology', 'Business', 'Finance', 'Health', 'Leadership'];
     var card = function (c, dup) {
       var b = self.B[c.tone], ini = c.by.split(' ').map(function (w) { return w[0]; }).slice(0, 2).join(''), w = !!self.state.wish[c.t];
-      var v = { t: c.t, by: c.by, lvl: c.lvl, rating: c.rating, reviews: c.reviews, hrs: c.hrs, cei: c.cei, ini: ini,
+      var v = { t: c.t, by: c.by, lvl: c.lvl, rating: c.rating, reviews: c.reviews, hrs: c.hrs, cei: c.cei, ini: ini, pic: PIC(ini),
         bg: b[0], icoC: b[1], light: b[2], tierLabel: self.TIER[c.tier][0], tierDot: self.TIER[c.tier][1],
         accV: c.free ? 'Free to learn' : c.dlp.toLocaleString('en-GB') + ' DLP', accCls: c.free ? 'cs-free' : '', paid: !c.free,
         hasLife: c.life > 0, lifeTip: 'Or keep it for life: ' + c.life.toLocaleString('en-GB') + ' credits, one-off.', stop: function (e) { e.preventDefault(); e.stopPropagation(); },

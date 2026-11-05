@@ -279,6 +279,8 @@ p{text-wrap:balance}
 .jp-page{position:relative;isolation:isolate}
 .jp-page .tk-scene{position:relative;display:block;left:auto;right:auto;bottom:auto;height:330px;margin-top:-150px}
 @media (max-width: 760px){.jp-page .tk-scene{height:220px;margin-top:-60px}}
+.pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
+.pav-h{position:relative !important;overflow:hidden !important}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
@@ -288,7 +290,7 @@ p{text-wrap:balance}
 <a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
 <div class="jp-right">
 <sc-if value="{{guest}}" hint-placeholder-val="{{ true }}"><a class="jp-login" href="#">Log in</a></sc-if>
-<sc-if value="{{member}}" hint-placeholder-val="{{ false }}"><span class="jp-pill" aria-label="200 DLP available"><span class="dlp-c" aria-hidden="true"></span>200</span><span class="jp-me" aria-label="Your account">AO</span></sc-if>
+<sc-if value="{{member}}" hint-placeholder-val="{{ false }}"><span class="jp-pill" aria-label="200 DLP available"><span class="dlp-c" aria-hidden="true"></span>200</span><span class="jp-me pav-h" aria-label="Your account">AO<img class="pav" src="/_blob/9112077cc7e3c1c839edc7e609d87954" alt=""></span></sc-if>
 </div>
 </header>
 

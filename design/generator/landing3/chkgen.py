@@ -197,7 +197,9 @@ CSS = r'''body{margin:0;background:#FFFFFF}
 .ko-r .ko-links{margin-top:auto;padding-top:28px}
 }
 .tk-scene{position:absolute;left:0;right:0;bottom:0;height:min(46vh,40vw);background:url(/_blob/b7fe5c1a1e0ae23ab09139f1d05e4281) 50% 100% / cover no-repeat;z-index:-1;pointer-events:none}
-@media (max-width: 760px){.tk-scene{height:240px;background-size:250% auto;background-position:52% 100%}}
+.tk-scene.lo{height:min(26vh,22vw);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 40%);mask-image:linear-gradient(to bottom,transparent,#000 40%)}
+@media (max-width: 760px){.tk-scene{height:240px;background-size:250% auto;background-position:52% 100%}
+.tk-scene.lo{height:150px}}
 .wo-one{max-width:560px}
 .ko-cta:not(:has(.ds-btn)){margin-top:14px}
 @media (max-width: 960px){.cf{--k:.56}}
@@ -314,7 +316,7 @@ MARKUP = '''<div class="tk-root">
 <h1 class="cl-h1">{{h1}}</h1>
 <p class="cl-sub">{{ctx}}</p>
 <sc-if value="{{hasRet}}" hint-placeholder-val="{{ true }}"><span class="wf-ret">''' + RET + '''{{ret}}</span></sc-if>
-<div class="wf-bal">''' + coin(True) + '''<span><span class="hp-lab">Current balance</span><b>{{bal}} DLP</b></span></div>
+<sc-if value="{{showBal}}" hint-placeholder-val="{{ true }}"><div class="wf-bal">''' + coin(True) + '''<span><span class="hp-lab">Current balance</span><b>{{bal}} DLP</b></span></div></sc-if>
 ''' + STEPS + '''
 </aside>
 <div class="cl-main">
@@ -408,7 +410,7 @@ MARKUP = '''<div class="tk-root">
 <div class="ko-links ob-in4"><a href="{{l1h}}">{{l1}}</a><span aria-hidden="true">·</span><a href="{{l2h}}">{{l2}}</a></div>
 </main>
 </sc-if>
-<div class="tk-scene" aria-hidden="true"></div>
+<div class="{{sceneCls}}" aria-hidden="true"></div>
 </div>'''
 
 JS = r'''
@@ -438,7 +440,7 @@ class Component extends DCLogic {
     var flow = top ? ['Amount', 'Payment', 'Review'] : (signedOut ? ['Account', 'Plan', 'Payment', 'Review'] : ['Plan', 'Payment', 'Review']);
     var at = { account: 'Account', plan: top ? 'Amount' : 'Plan', pay: 'Payment', review: 'Review' }[st];
     var idx = flow.indexOf(at);
-    var CTX = { pricing: ['Pick a plan and create your account. It takes about a minute.', 'Then a few quick questions'], onboarding: ['You chose Pro while building your journey. Set up your plan, then start learning.', 'Then back to your journey'],
+    var CTX = { pricing: ['Create your account, then confirm your plan. It takes about a minute.', 'Then a few quick questions'], onboarding: ['You chose Pro while building your journey. Set up your plan, then start learning.', 'Then back to your journey'],
       allowance: ['Upgrade to keep going with your Data Analyst journey. Your progress is saved.', 'Then back to SQL for Data Analysis'], path: ['Pick the plan that fits your Data Analyst path. The whole path needs about 3,800 DLP.', 'Then back to the Data Analyst path'],
       account: ['Change your plan. The new allowance starts straight away.', 'Then back to your allowance'], course: ['Add the DLP you need for Advanced Analytics with Python. Your plan stays the same.', 'Then back to your course'] }[from] || ['', ''];
     var NEXT = { pricing: ['Personalise Credalio', 'OnbAbout.dc.html'], onboarding: ['Start my journey', 'Dash-R.dc.html'], allowance: ['Continue to SQL for Data Analysis', 'Dash-E.dc.html'], path: ['Back to the Data Analyst path', 'PathDetail-Learner.dc.html'], account: ['Back to my allowance', 'Usage.dc.html'], course: ['Back to the course', 'CourseDetail-Learner.dc.html'] }[from];
@@ -450,7 +452,7 @@ class Component extends DCLogic {
     var ME = [['card', 'Card', 'Visa, Mastercard, Verve'], ['local', 'Local payment', 'Bank app, USSD or mobile money'], ['mforge', 'MFORGE', 'Pay from your TruVault']];
     return {
       barT: top ? 'Add DLP' : 'Your plan', closeHref: NEXT[1], glowCls: '',
-      showFlow: ['account', 'plan', 'pay', 'review'].indexOf(st) > -1, vAccount: st === 'account', vPlan: st === 'plan', vPay: st === 'pay', vReview: st === 'review', vOut: ['processing', 'done', 'failed'].indexOf(st) > -1, oR: st === 'processing', oV: st === 'done', oA: st === 'failed',
+      showFlow: ['account', 'plan', 'pay', 'review'].indexOf(st) > -1, vAccount: st === 'account', showBal: st !== 'account', vPlan: st === 'plan', vPay: st === 'pay', vReview: st === 'review', vOut: ['processing', 'done', 'failed'].indexOf(st) > -1, sceneCls: ['done', 'failed'].indexOf(st) > -1 ? 'tk-scene lo' : 'tk-scene', oR: st === 'processing', oV: st === 'done', oA: st === 'failed',
       koCls: { processing: 'ko-r', done: 'ko-v ko-rc', failed: 'ko-a' }[st] || '', rcGo: S.go ? 'rc-go' : '',
       toLocal: function (e) { if (e) e.preventDefault(); self.setState({ step: 'pay', method: 'local' }); },
       rcItems: (top ? [[f(add) + ' DLP top-up', '$' + price + '.00']] : [[pl.name + ' plan · monthly', '$' + price + '.00'], [f(add) + ' DLP each month', 'Included']]).map(function (x) { return { t: x[0], v: x[1] }; }),
@@ -475,7 +477,7 @@ class Component extends DCLogic {
       fit: top ? (S.pkg >= 250 ? 'You need 250 more for this course. ' + f(S.pkg) + ' covers it, with ' + f(S.pkg - 250) + ' to spare.' : '') : from === 'allowance' ? (S.plan === 'basic' ? 'Stage 2 needs about 1,400 DLP. Basic covers it, with room to spare.' : 'Pro covers Stage 2 and most of what comes after it.') : (S.plan === 'basic' ? 'The path needs about 3,800 DLP. Basic covers it over about two months.' : 'The path needs about 3,800 DLP. Pro covers it in your first month.'),
       oPill: { processing: 'Processing', failed: 'Not charged' }[st] || (top ? 'Added' : ((from === 'path' || from === 'account') ? 'Plan updated' : 'Plan active')),
       oH: st === 'processing' ? 'Processing your payment' : (st === 'failed' ? 'Your payment didn’t go through' : (top ? f(add) + ' DLP added' : 'You’re on ' + pl.name)),
-      oSub: st === 'processing' ? 'We’re waiting for your bank. You can leave this page, and you won’t be charged twice.' : (st === 'failed' ? 'Your bank declined the $' + price + '.00 charge on Visa •••• 4242.' : (top ? 'It’s in your balance and ready to use. Your plan stays the same.' : f(add) + ' DLP is in your balance and ready to use.')),
+      oSub: st === 'processing' ? 'We’re waiting for your bank. You can leave this page, and you won’t be charged twice.' : (st === 'failed' ? 'Your bank declined the $' + price + '.00 charge on Visa •••• 4242.' : (top ? 'It’s in your balance and ready to use. Your plan stays the same.' : f(add) + ' DLP is in your balance and ready to use.')),
       nxH: { pricing: 'Make Credalio yours', onboarding: 'Start your journey', allowance: 'Back to your journey', path: 'Back to the Data Analyst path', account: 'Your new allowance', course: 'Back to Advanced Analytics with Python' }[from],
       nxP: { pricing: 'A few quick questions so your AI Coach can help from day one.', onboarding: 'Your Data Analyst journey is ready. Stage 1 is covered.', allowance: 'SQL for Data Analysis is next, and your new DLP covers it.', path: 'The whole path is covered at your new allowance.', account: 'See what you have and what’s coming up.', course: 'You’re covered for the course now.' }[from],
       nextL: NEXT[0], nextH: NEXT[1]

@@ -46,6 +46,13 @@ DOOR = DOOR.replace('<span class="ci-t">Bring your programs to Credalio.</span>'
 DOOR = DOOR.replace('Deliver programs, manage learners and educators, and issue verifiable credentials at scale.', 'Give teams, students or members access with central admin, AI settings and reporting. From 5,000 to 10,000 DLP per person, depending on your plan.')
 DOOR = DOOR.replace('Partner with Credalio', 'Talk to Credalio')
 LFOOT = block(L, '<footer class="lh-eng ft"', 'footer').replace('onSubmit="{{hero.onStart}}"', 'onSubmit="{{ftSub}}"')
+def _fcm(css):
+    out = []
+    for m in re.finditer(r'@media \(max-width: 760px\)\{(.*?)\n\}', css, re.S):
+        rules = [l for l in m.group(1).split('\n') if re.match(r'\.fc-(form|note|band|h2|sub|wrap)\b', l)]
+        if rules: out.append('@media (max-width: 760px){\n' + '\n'.join(rules) + '\n}')
+    return '\n'.join(out)
+FC_M = _fcm(style(L))
 FAQ_CSS = '\n'.join(l for l in style(CD).split('\n') if re.match(r'\.dt-(faq|fq|fh|fa|chev)|\.dt-fq-open', l))
 
 
@@ -352,7 +359,7 @@ HTML = '''<!doctype html>
 <helmet>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
-''' + BASE_CSS + style(L) + '\n' + KIT_CSS + '\n' + DCSS + '\n' + CSS + '''</style>
+''' + BASE_CSS + style(L) + '\n' + KIT_CSS + '\n' + DCSS + '\n' + CSS + '\n' + FC_M + '''</style>
 </helmet>
 ''' + BODY + '''
 </x-dc>

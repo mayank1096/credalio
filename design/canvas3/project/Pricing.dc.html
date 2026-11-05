@@ -422,7 +422,7 @@ h1,h2,h3,p{text-wrap:pretty}
 .lr-nova-b p{margin:4px 0 0;font-size:16px;line-height:1.5;font-weight:500;letter-spacing:-.1px}
 .lr-card{padding:26px 28px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-sizing:border-box;display:flex;flex-direction:column}
 .lr-ch{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.lr-ch h3{margin:0;display:flex;align-items:center;font-size:17px;font-weight:600}
+.lr-ch h3{margin:0;font-size:17px;font-weight:600}
 .lr-card p{margin:8px 0 0;font-size:14.5px;line-height:1.55;color:#4A5578}
 .lr-card > .ds-link{margin-top:auto;padding-top:18px;align-self:flex-start}
 .lr-ico{width:44px;height:44px;border-radius:14px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -522,7 +522,7 @@ h1,h2,h3,p{text-wrap:pretty}
 .pc-sec{max-width:1312px;margin:0 auto;padding:0 48px 96px;box-sizing:border-box;font-family:'Google Sans',system-ui,sans-serif;color:#0B1433}
 .pc-sh{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px}
 .pc-k{display:block;font-size:14px;font-weight:500;color:#1652F0}
-.pc-h2{margin:8px 0 0;display:flex;align-items:center;font-size:36px;line-height:1.15;font-weight:600;letter-spacing:-.03em}
+.pc-h2{margin:8px 0 0;font-size:36px;line-height:1.15;font-weight:600;letter-spacing:-.03em}
 .pc-p{margin:10px 0 0;max-width:620px;font-size:17px;line-height:1.6;color:#4A5578}
 .pc-ent .ci-doors{height:380px}
 .pc-ent .ci-door{flex:1}
@@ -712,7 +712,7 @@ h1,h2,h3,p{text-wrap:pretty}
 <sc-if value="{{pr.isPath}}" hint-placeholder-val="{{ false }}"><p class="pc-note">Plans give you a monthly allowance. No plan pays for a whole path: DLP is used as you learn.</p></sc-if>
 <sc-if value="{{pr.guest}}" hint-placeholder-val="{{ true }}">
 <div class="pr-foot">
-<span class="pr-ent">Need learning for your organisation? <a class="ds-link" href="Pricing.dc.html#pc-ent">Explore Enterprise →</a></span>
+<span class="pr-ent">Need learning for your organization? <a class="ds-link" href="Pricing.dc.html#pc-ent">Explore Enterprise →</a></span>
 <button class="ds-ghost sm pr-more {{pr.moreCls}}" type="button" aria-expanded="{{pr.open}}" onClick="{{pr.toggle}}">{{pr.moreLabel}}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
 </div>
 
@@ -734,10 +734,10 @@ h1,h2,h3,p{text-wrap:pretty}
 </section>
 
 <sc-if value="{{pr.guest}}" hint-placeholder-val="{{ true }}">
-<section class="pc-sec pc-ent" id="pc-ent" aria-label="Credalio for organisations"><div class="ci-doors"><a class="ci-door ci-in" href="Institutions.dc.html" aria-label="For institutions: partner with Credalio">
+<section class="pc-sec pc-ent" id="pc-ent" aria-label="Credalio for organizations"><div class="ci-doors"><a class="ci-door ci-in" href="Institutions.dc.html" aria-label="For institutions: partner with Credalio">
 <div class="ci-copy">
 <span class="ci-k" style="color: #1652F0; opacity: 1">For institutions</span>
-<span class="ci-t">Learning for your organisation.</span>
+<span class="ci-t">Learning for your organization.</span>
 <span class="ci-d" style="color: #3A4566; opacity: 1">Give teams, students or members access with central admin, AI settings and reporting. From 5,000 to 10,000 DLP per person, depending on your plan.</span>
 <span class="ds-ghost ci-btn">Talk to Credalio<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1652F0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
 </div>
@@ -749,7 +749,7 @@ h1,h2,h3,p{text-wrap:pretty}
 <div class="ci-row"><span>Educators</span><b style="margin-left: auto; font-weight: 600; color: #0B1433">6</b></div>
 <div style="height: 30px"></div>
 </div>
-<div class="ci-float" style="left: -128px; top: 128px"><span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">Verifiable credentials</span><span style="font-size: 15px; font-weight: 600">186 issued</span></span></div>
+<div class="ci-float" style="left: -176px; top: 128px"><span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">Verifiable credentials</span><span style="font-size: 15px; font-weight: 600">186 issued</span></span></div>
 </div>
 </a></div></section>
 
@@ -757,7 +757,7 @@ h1,h2,h3,p{text-wrap:pretty}
 <section class="pc-sec" aria-labelledby="pc-tu">
 <div class="pc-top">
 <div><span class="pc-k">DLP top-ups</span><h2 id="pc-tu" class="pc-h2">{{pr.topT}}</h2><p class="pc-p">Add DLP without changing your plan. Handy on Pro, or when you just need a little extra.</p></div>
-<div class="cb-g"><a class="wf-o cb-o" href="Chk-TOP.dc.html"><b><span class="dlp-c" aria-hidden="true"></span>500</b><span>DLP · price to be confirmed</span><span class="cb-d">About 5 hours of learning</span><span class="cb-go">Get DLP →</span></a><a class="wf-o cb-o" href="Chk-TOP.dc.html"><em class="cb-pop">Most chosen</em><b><span class="dlp-c" aria-hidden="true"></span>1,000</b><span>DLP · price to be confirmed</span><span class="cb-d">About 10 hours of learning</span><span class="cb-go">Get DLP →</span></a><a class="wf-o cb-o" href="Chk-TOP.dc.html"><b><span class="dlp-c" aria-hidden="true"></span>2,500</b><span>DLP · price to be confirmed</span><span class="cb-d">About 25 hours of learning</span><span class="cb-go">Get DLP →</span></a></div>
+<div class="cb-g"><a class="wf-o cb-o" href="Chk-TOP.dc.html"><b><span class="dlp-c" aria-hidden="true"></span>500</b><span>DLP · $6 one time</span><span class="cb-d">About 5 hours of learning</span><span class="cb-go">Get DLP →</span></a><a class="wf-o cb-o" href="Chk-TOP.dc.html"><em class="cb-pop">Most chosen</em><b><span class="dlp-c" aria-hidden="true"></span>1,000</b><span>DLP · $11 one time</span><span class="cb-d">About 10 hours of learning</span><span class="cb-go">Get DLP →</span></a><a class="wf-o cb-o" href="Chk-TOP.dc.html"><b><span class="dlp-c" aria-hidden="true"></span>2,500</b><span>DLP · $25 one time</span><span class="cb-d">About 25 hours of learning</span><span class="cb-go">Get DLP →</span></a></div>
 </div>
 </section>
 
@@ -867,7 +867,7 @@ h1,h2,h3,p{text-wrap:pretty}
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"mode":{"editor":"enum","options":["guest","free","basic","pro","path"],"default":"guest"},"$preview":{"width":1440,"height":4000}}'>
-var FAQ = [["Can I start for free?", "Yes. Free gives you 200 DLP to explore Credalio, find your goal with your AI Coach and start eligible free learning."], ["Do I need a card for Free?", "No. You only add payment details if you choose Basic or Pro."], ["What happens when I use all my DLP?", "Your progress, projects and Backpack stay with you. Explore free learning, wait for your refresh, or upgrade to keep going."], ["Does unused DLP roll over?", "Not on Free. On Pro, unused DLP rolls over up to 18,000, with gradual decay from month four. Basic follows the Basic plan policy, which is being finalised."], ["Are certificates included?", "Certificates you earn from eligible learning go straight to your Digital Backpack."], ["Are Professional Certifications included?", "Certification learning uses your DLP like other learning. Any separate exam fee is shown on the certification page before you start."], ["Does my plan include AI?", "Yes. Every plan includes an AI Coach. You get more of it on Basic, and the most on Pro."], ["What if a course needs more DLP than I have?", "You can still start. Credalio shows what your balance covers, and you carry on when your allowance refreshes or you top up."], ["Can my employer or university pay?", "Yes. Organisations can give access through Credalio for Institutions, from 5,000 to 10,000 DLP per person."]];
+var FAQ = [["Can I start for free?", "Yes. Free gives you 200 DLP to explore Credalio, find your goal with your AI Coach and start eligible free learning."], ["Do I need a card for Free?", "No. You only add payment details if you choose Basic or Pro."], ["What happens when I use all my DLP?", "Your progress, projects and Backpack stay with you. Explore free learning, wait for your refresh, or upgrade to keep going."], ["Does unused DLP roll over?", "Not on Free. On Pro, unused DLP rolls over up to 18,000, with gradual decay from month four. Basic follows the Basic plan policy, which is being finalised."], ["Are certificates included?", "Certificates you earn from eligible learning go straight to your Digital Backpack."], ["Are Professional Certifications included?", "Certification learning uses your DLP like other learning. Any separate exam fee is shown on the certification page before you start."], ["Does my plan include AI?", "Yes. Every plan includes an AI Coach. You get more of it on Basic, and the most on Pro."], ["What if a course needs more DLP than I have?", "You can still start. Credalio shows what your balance covers, and you carry on when your allowance refreshes or you top up."], ["Can my employer or university pay?", "Yes. Organizations can give access through Credalio for Institutions, from 5,000 to 10,000 DLP per person."]];
 class Part {
   constructor(host) { this.host = host; this.props = {}; this.state = {}; }
   setState(p) { for (var k in p) this.state[k] = p[k]; this.host.bump(this.sync); }

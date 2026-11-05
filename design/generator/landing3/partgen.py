@@ -56,7 +56,7 @@ FORM = '''<sc-if value="{{isForm}}" hint-placeholder-val="{{ true }}">
 <div class="pt-sec"><h2>About you</h2>
 <div class="pt-two">''' + field('pt-name', 'Your name', 'name', 'Ada Ononuju', ac='name') + field('pt-email', 'Work email', 'email', 'ada@meridian.ac.uk', 'email', 'email') + '''</div>
 ''' + field('pt-role', 'Role', 'role', 'Head of Digital Learning', ac='organization-title') + '''
-<div class="pt-f"><label for="pt-notes" class="ob-lab">Anything else we should know? <span class="pt-opt">(optional)</span></label><textarea id="pt-notes" class="ob-f pt-ta" rows="3" placeholder="Timelines, systems you use, programmes you want to bring" value="{{f.notes}}" onInput="{{f.notesOn}}"></textarea></div>
+<div class="pt-f"><label for="pt-notes" class="ob-lab">Anything else we should know? <span class="pt-opt">(optional)</span></label><textarea id="pt-notes" class="ob-f pt-ta" rows="3" placeholder="Timelines, systems you use, programs you want to bring" value="{{f.notes}}" onInput="{{f.notesOn}}"></textarea></div>
 </div>
 <div class="pt-act">''' + btn('Send request', tag='button').replace('type="button"', 'type="submit"') + '''<span class="pt-pv">We only use these details to reply to you.''' + tip('Your request goes to the Credalio Enterprise Team. We don’t add you to marketing lists.') + '''</span></div>
 </form>

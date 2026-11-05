@@ -52,7 +52,7 @@ I_BRF = '<rect x="3" y="7" width="18" height="13" rx="2.5"></rect><path d="M9 7V
 I_GOV = '<path d="M4 20h16M5 10h14M12 4l8 4H4z"></path><path d="M7 10v7M12 10v7M17 10v7"></path>'
 WHO = [(I_UNI, 'Universities & colleges', 'Extend learning beyond the classroom.'), (dashgen.I['learn'], 'Training providers', 'Create and run professional learning at scale.'), (I_BRF, 'Companies', 'Upskill and reskill your people.'), (dashgen.I['cert'], 'Professional bodies', 'Deliver assessed CPD and credentials.'), (I_GOV, 'Government & workforce', 'Coordinate learning across large groups.')]
 WHOS = '''<section class="pc-sec cx-sec in-first" aria-labelledby="in-wh">
-<div class="pc-sh"><div><span class="pc-k">Who it’s for</span><h2 id="in-wh" class="pc-h2">Built for organisations that grow people.</h2></div></div>
+<div class="pc-sh"><div><span class="pc-k">Who it’s for</span><h2 id="in-wh" class="pc-h2">Built for organizations that grow people.</h2></div></div>
 <div class="cx-who">''' + ''.join('<div class="cx-wt2"><span class="cx-ui">' + ic(i, 20) + '</span><b>' + t + '</b><small>' + d + '</small></div>' for i, t, d in WHO) + '''</div>
 </section>'''
 
@@ -60,7 +60,7 @@ WHOS = '''<section class="pc-sec cx-sec in-first" aria-labelledby="in-wh">
 G, B, A, N = 'green', 'blue', 'amber', ''
 AREAS = [
     ('Create', 'Courses, certifications, career paths and programs.', 'Programs', '84 programs', [('84', 'Programs'), ('12', 'Career paths'), ('9', 'Certifications'), ('410', 'Courses')],
-     [('Graduate Data Programme', 76, 'Live', G), ('MBA Foundations', 64, 'Live', G), ('Nursing CPD', 55, 'Live', G), ('Cloud & Security Pathway', 48, 'Enrolling', B), ('Teaching Excellence', 20, 'Draft', N)]),
+     [('Graduate Data Program', 76, 'Live', G), ('MBA Foundations', 64, 'Live', G), ('Nursing CPD', 55, 'Live', G), ('Cloud & Security Pathway', 48, 'Enrolling', B), ('Teaching Excellence', 20, 'Draft', N)]),
     ('Deliver', 'Enrol learners, run cohorts, keep learning on track.', 'Cohorts', 'Autumn intake', [('46', 'Active cohorts'), ('28', 'Average size'), ('7', 'Starting soon'), ('94%', 'Seats filled')],
      [('Data 2026A', 82, 'Week 6 of 12', B), ('MBA 2026-1', 60, 'Week 4 of 16', B), ('Nursing CPD Oct', 40, 'Week 2 of 8', B), ('Security Oct', 10, 'Starts 14 Oct', A), ('Research Methods B', 95, 'Final week', G)]),
     ('Manage', 'Learners, creators, admins and what each can do.', 'People', 'All departments', [('4,820', 'Learners'), ('126', 'Creators'), ('14', 'Admins'), ('312', 'Need support')],
@@ -68,7 +68,7 @@ AREAS = [
     ('Understand', 'Enrolment, progress, completion and results.', 'Analytics', 'Autumn term', [('72%', 'Active learning'), ('64%', 'Completion'), ('78%', 'Avg. assessment'), ('+11%', 'vs last term')],
      [('Enrolment', 92, 'High', G), ('Engagement', 72, 'Good', G), ('Progress', 68, 'Good', G), ('Assessment performance', 78, 'Good', G), ('Credential achievement', 46, 'Rising', B)]),
     ('Validate', 'Submit learning for independent review.', 'Validation', 'Institutional learning', [('31', 'Validated'), ('12', 'In review'), ('4', 'Findings open'), ('2', 'Revalidation due')],
-     [('Graduate Data Programme', 100, 'Validated', G), ('Nursing CPD', 100, 'Validated', G), ('MBA Foundations', 60, 'In review', A), ('Cloud & Security Pathway', 40, 'Findings open', A), ('Teaching Excellence', 0, 'Not submitted', N)]),
+     [('Graduate Data Program', 100, 'Validated', G), ('Nursing CPD', 100, 'Validated', G), ('MBA Foundations', 60, 'In review', A), ('Cloud & Security Pathway', 40, 'Findings open', A), ('Teaching Excellence', 0, 'Not submitted', N)]),
     ('Credential', 'Issue verifiable credentials to Backpacks.', 'Credentials', 'This term', [('2,214', 'Issued'), ('61%', 'Shared by learners'), ('9', 'Credential types'), ('0', 'Revoked')],
      [('Program Completion', 72, '1,120', G), ('Professional Certificate', 45, '384', G), ('Verified Project', 58, '520', G), ('Competency Badge', 33, '190', G), ('Micro-credential', 12, 'Draft', N)]),
 ]
@@ -114,7 +114,7 @@ SC = '''<section class="pc-sec cx-sec" aria-label="Structure and credentials">
 <div class="in-sc">
 <div class="ds-card in-card">
 <span class="pc-k">Institutional structure</span>
-<h2 class="pc-h2">Your organisation, with roles that fit.''' + tip('Role-based permissions decide what each person can see and do.') + '''</h2>
+<h2 class="pc-h2">Your organization, with roles that fit.''' + tip('Role-based permissions decide what each person can see and do.') + '''</h2>
 <div class="in-tree"><span class="in-root"><span class="in-rm">MU</span>Meridian University</span>
 <ul>''' + grp('Admins', 'Workspace, billing and permissions', []) + grp('Creators', 'Build the learning', ['Teachers', 'Experts', 'Teams']) + grp('Validators', 'Review quality', ['Educational', 'Subject matter', 'Assessment']) + grp('Learners', 'Students, employees and members', []) + '''</ul></div>
 </div>
@@ -147,7 +147,7 @@ INTS = '''<section class="pc-sec cx-sec" aria-labelledby="in-it">
 # ---------- final CTA: Landing band ----------
 FC = block(L, '<section aria-labelledby="fc-h"')
 FC = re.sub(r'<form class="ds-ask fc-form".*?</form>', btn('Talk to Credalio', TALK, 'cx-fb'), FC, flags=re.S)
-FC = FC.replace('Your next version starts here.', 'Let’s shape Credalio around your institution.').replace('Tell Credalio who you want to become. We’ll help you build the path.', 'Tell us about your organisation. We’ll show you a workspace that fits.')
+FC = FC.replace('Your next version starts here.', 'Let’s shape Credalio around your institution.').replace('Tell Credalio who you want to become. We’ll help you build the path.', 'Tell us about your organization. We’ll show you a workspace that fits.')
 FC = re.sub(r'<span class="fc-note">.*?</span>\n', '', FC, flags=re.S)
 FC = cregen.compact_fc(FC)
 
@@ -159,7 +159,7 @@ CSS = r'''.in-hero .cx-wl{color:#1652F0}
 .in-hero .ci-vis{top:156px}
 .in-hero .sx-link:hover{background:rgba(255,255,255,.7)}
 .in-hero .sx-link-on{background:#FFFFFF}
-.in-hero .cx-f1{left:-110px;bottom:-34px}
+.in-hero .cx-f1{left:-110px;bottom:-50px}
 .in-kp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
 .in-k{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:12px;background:#F5F8FF;font-size:11.5px;color:#5B6582}
 .in-kp b{font-size:18px;font-weight:600;color:#0B1433;letter-spacing:-.3px}

@@ -512,7 +512,7 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 .lr-gs{justify-content:space-between;gap:12px;padding:10px 10px 10px 14px}
 .lr-gs li:has(.done){display:none}
 .lr-st{flex:1;padding:10px 12px}
-.lr-focus{margin:0 -16px;border-radius:0;border-left:0;border-right:0;padding:32px 16px 28px}
+.lr-focus{margin:0 -16px;border-radius:0;border-left:0;border-right:0;padding:32px 16px 28px;box-shadow:none}
 .lr-ft{font-size:28px;letter-spacing:-.025em}
 .lr-fs{font-size:15px}
 .lr-ask{margin-top:20px}
@@ -730,7 +730,7 @@ MARKUP = '''<div class="ds-root">
 <div class="lr-chips"><small>Or browse</small><sc-for list="{{disc}}" as="c" hint-placeholder-count="4"><a class="ds-chip" href="{{c.h}}">{{c.t}}</a></sc-for></div>
 </div>
 <aside class="lr-nv" aria-label="Your AI Coach">
-<div class="lr-nvh">''' + av('lg') + '''<div><b>{{coachTitle}}</b><span>Your AI Coach</span></div></div>
+<div class="lr-nvh">''' + av('lg') + '''<div><b>{{coachTitle}}</b><span>{{coachSub}}</span></div></div>
 <p>{{dNova}}</p>
 <a class="ds-link" href="Journey.dc.html">{{dNovaCta}}''' + ARR_S + '''</a>
 </aside>
@@ -827,8 +827,8 @@ MARKUP = '''<div class="ds-root">
 </div>
 <aside class="lr-nv lr-coh" aria-labelledby="lr-coh">
 <div class="lr-ch"><h3 id="lr-coh" class="lr-ld-h">Your cohort''' + tip('The people learning this program with you. Your mentor runs weekly check-ins and reviews your project work.', 'r') + '''</h3><a class="ds-link" href="ProgramDetail.dc.html">Open</a></div>
-<div class="lr-coh-r"><div class="lr-stack"><span class="cs-cav">DR</span><span class="cs-cav">PN</span><span class="cs-cav">GA</span><span class="cs-cav">TH</span><span class="cs-cav">LF</span><span class="cs-cav lr-more">+19</span></div>
-<span class="lr-on"><i></i><span>24 learners · 6 online now</span></span></div>
+<div class="lr-coh-r"><div class="lr-stack"><span class="cs-cav">DR</span><span class="cs-cav">PN</span><span class="cs-cav">GA</span><span class="cs-cav">TH</span><span class="cs-cav lr-more">+20</span></div>
+<span class="lr-on"><i></i><span>24 learners · 6 online</span></span></div>
 <a class="lr-mentor" href="#"><span class="cs-cav">SA</span><span><b>Dr Sara Ali</b><small>Mentor · check-in Wednesday</small></span><span class="lr-chev" aria-hidden="true">''' + ic('<path d="m9 6 6 6-6 6"></path>', 18, 2.2) + '''</span></a>
 </aside>
 </section>
@@ -959,7 +959,7 @@ MARKUP = '''<div class="ds-root">
 <sc-if value="{{panelOpen}}" hint-placeholder-val="{{ false }}">
 <div class="cp-ov" onClick="{{closePanel}}"></div>
 <aside class="cp" role="dialog" aria-label="{{coachTitle}}, your AI Coach"><div class="cp-fx" aria-hidden="true"></div>
-<header class="cp-h"><span class="cp-av" aria-hidden="true" style="width: 40px; height: 40px"><img src="{{coachSrc}}" alt="" style="position: absolute; left: {{coachL}}; top: {{coachT}}; width: {{coachW}}; max-width: none; height: auto; mix-blend-mode: multiply"></span><span class="cp-n"><b>{{coachTitle}}</b><span>Your AI Coach</span></span><button type="button" class="cp-ib" aria-label="Past conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path><path d="M12 7v5l3 2"></path></svg></button><button type="button" class="cp-ib" onClick="{{closePanel}}" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"></path></svg></button></header>
+<header class="cp-h"><span class="cp-av" aria-hidden="true" style="width: 40px; height: 40px"><img src="{{coachSrc}}" alt="" style="position: absolute; left: {{coachL}}; top: {{coachT}}; width: {{coachW}}; max-width: none; height: auto; mix-blend-mode: multiply"></span><span class="cp-n"><b>{{coachTitle}}</b><span>{{coachSub}}</span></span><button type="button" class="cp-ib" aria-label="Past conversations"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"></path><path d="M3 3v5h5"></path><path d="M12 7v5l3 2"></path></svg></button><button type="button" class="cp-ib" onClick="{{closePanel}}" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"></path></svg></button></header>
 <div class="cp-b"><span class="cp-ctx"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"></rect><path d="M3 9h18"></path></svg>Looking at your Dashboard</span>
 <sc-if value="{{showUnnamed}}" hint-placeholder-val="{{ true }}">
 <div class="cp-m"><span class="cp-av" aria-hidden="true" style="width: 28px; height: 28px"><img src="{{coachSrc}}" alt="" style="position: absolute; left: {{coachL}}; top: {{coachT}}; width: {{coachW}}; max-width: none; height: auto; mix-blend-mode: multiply"></span><div class="cp-bub"><p>Hi Ada. I’m your AI Coach. I’ll help you choose what to learn and keep you moving. Want to give me a name?</p></div></div>
@@ -1152,7 +1152,7 @@ class Component extends DCLogic {
       date: 'Sunday 27 September',
       greeting: st === 'I' ? 'Welcome back' : (hr < 12 ? 'Good morning' : (hr < 18 ? 'Good afternoon' : 'Good evening')),
       coachSrc: ch[0], coachL: ch[1], coachT: ch[2], coachW: ch[3],
-      coachTitle: named ? name : 'AI Coach', coachBtn: named ? 'Ask ' + name : 'AI Coach', coachNav: named ? name + ' · AI Coach' : 'Your AI Coach',
+      coachTitle: named ? name : 'AI Coach', coachSub: named ? 'Your AI Coach' : '', coachBtn: named ? 'Ask ' + name : 'AI Coach', coachNav: named ? name + ' · AI Coach' : 'Your AI Coach',
       openPanel: open, closePanel: function () { clearTimeout(self._t); self.setState({ panel: false, thinking: false, intro: false, dlpQ: false }); },
       panelOpen: S.panel, thinking: S.thinking, thinkText: (this.steps || ['Reading your profile…'])[S.ti] || '',
       showUnnamed: S.panel && S.intro && !named, showNamed: S.panel && S.intro && named, showQs: !S.dlpQ,

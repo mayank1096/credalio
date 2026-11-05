@@ -9,15 +9,354 @@
 <x-dc>
 <helmet>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
-<style>body{margin:0}</style>
+<style>
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}
+.ds-root{display:grid;grid-template-columns:264px minmax(0,1fr);min-height:100vh;background:#F7F9FD;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.ds-side{position:sticky;top:0;height:100vh;overflow-y:auto;box-sizing:border-box;padding:22px 14px 24px 14px;background:#FFFFFF;border-right:1.5px solid #E6EAF3;display:flex;flex-direction:column;gap:2px;z-index:20}
+.ds-glab{display:block;margin:16px 12px 6px 12px;font-size:12px;font-weight:600;color:#8A93AD}
+.ds-item{display:flex;align-items:center;gap:12px;min-height:40px;padding:0 12px;border-radius:12px;color:#3A4566;font-size:14.5px;font-weight:500;text-decoration:none;transition:background .2s ease,color .2s ease}
+.ds-item svg{flex-shrink:0;color:#5B6582}
+.ds-item:hover{background:#F5F8FF;color:#0B1433}
+.ds-on{background:#EAF0FF !important;color:#0E3BB8 !important;font-weight:600}
+.ds-on svg{color:#1652F0}
+.ds-badge{min-width:22px;height:22px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.ds-top{position:sticky;top:0;z-index:10;height:72px;box-sizing:border-box;padding:0 clamp(20px,3vw,40px);display:flex;align-items:center;gap:12px;background:rgba(247,249,253,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.ds-search{flex:1 1 auto;max-width:440px;height:44px;box-sizing:border-box;display:flex;align-items:center;gap:10px;padding:0 16px;border-radius:999px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#8A93AD;font-size:14px}
+.ds-search input{border:0;outline:none;background:transparent;font-family:inherit;font-size:14px;color:#0B1433;flex-grow:1;min-width:0}
+.ds-search input::placeholder{color:#8A93AD}
+.ds-icon-btn{width:44px;height:44px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#3A4566;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;text-decoration:none}
+.ds-icon-btn:hover{border-color:#AFC1F5}
+.ds-main{box-sizing:border-box;width:100%;max-width:1200px;padding:12px clamp(20px,3vw,40px) 56px clamp(20px,3vw,40px)}
+.ds-h1{margin:0;font-size:clamp(28px,2.5vw,36px);line-height:1.15;font-weight:600;letter-spacing:-0.03em;color:#0B1433}
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-weight:600;font-size:14.5px;text-decoration:none}
+.ds-link:hover{color:#0E3BB8}
+.ds-menu,.ds-scrim,.ds-mlogo,.ds-close{display:none}
+.ds-btn:focus-visible,.ds-item:focus-visible,.ds-icon-btn:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2{animation:none}}
+@media (max-width: 440px){.ds-mlogo .ds-brand{display:none}}
+@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}}
+@media (max-width: 960px){
+.ds-root{grid-template-columns:minmax(0,1fr)}
+.ds-side{position:fixed;left:0;top:0;width:288px;max-width:86vw;transform:translateX(-102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 64px rgba(11,20,51,.18)}
+.ds-side.ds-open{transform:none}
+.ds-scrim.ds-open{display:block;position:fixed;inset:0;background:rgba(11,20,51,.32);z-index:15}
+.ds-menu,.ds-mlogo{display:flex}
+.ds-close{display:flex;position:absolute;right:12px;top:16px}
+.ds-top{height:64px;padding:0 16px;gap:8px}
+.ds-search,.ds-hide-sm{display:none !important}
+.ds-icon-btn{width:40px;height:40px}
+.ds-h1{font-size:24px !important;line-height:1.2}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-root{overflow-x:hidden}
+.ds-main{padding:12px 16px 32px 16px}
+.ds-btn{justify-content:space-between}
+}
+.lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/4b16f774b3091fed36b87721ea42cd94) left center/contain no-repeat}.lg-mark{display:none;width:30px;height:30px;background:url(/_blob/c988a8a0ac19714cd1286a040d58e5f7) center/contain no-repeat}@media (max-width: 960px){.lg-word{height:22px}.ds-mlogo .lg-mark{display:block}}
+.hp{max-width:1240px}
+.hp-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding:22px 0 18px 0}
+.hp-lab{display:block;font-size:12.5px;font-weight:500;color:#8A93AD}
+.hp-btn{height:48px;font-size:15px;padding:0 5px 0 20px;flex-shrink:0}
+.hp-btn .ob-arrow{width:38px;height:38px}
+.hp-rb{display:inline-flex;align-items:center;height:38px;padding:0 15px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-size:13.5px;font-weight:600;text-decoration:none;flex-shrink:0;font-family:inherit;cursor:pointer;white-space:nowrap}
+.hp-ic{width:40px;height:40px;flex-shrink:0;border-radius:12px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.hp-ic.gr{background:#E7F5EE;color:#0F6B45}
+@media (max-width: 960px){
+.hp-head{flex-direction:column;align-items:stretch;gap:12px;padding:20px 0 14px 0}
+.hp-head .hp-btn{width:100%;justify-content:space-between}
+}
+.se{display:grid;grid-template-columns:240px minmax(0,1fr);gap:24px;align-items:start}
+.se-nav{position:sticky;top:96px;display:flex;flex-direction:column;gap:2px}
+.se-n{display:flex;align-items:center;gap:12px;height:44px;padding:0 14px;border-radius:12px;color:#3A4566;font-size:14.5px;font-weight:500;text-decoration:none}
+.se-n svg{color:#5B6582}
+.se-n.on{background:#EAF0FF;color:#0E3BB8;font-weight:600}.se-n.on svg{color:#1652F0}
+.se-p{padding:6px 28px 22px 28px}
+.se-ph{padding:20px 0 18px 0;border-bottom:1.5px solid #F0F2F8}
+.se-ph h2{margin:0;font-size:20px;font-weight:600;letter-spacing:-0.01em}
+.se-ph p{margin:4px 0 0 0;font-size:14px;color:#5B6582}
+@media (max-width: 960px){
+.se{grid-template-columns:minmax(0,1fr);gap:14px}
+.se-nav{position:static;flex-direction:row;overflow-x:auto;margin:0 -16px;padding:0 16px;gap:6px;scrollbar-width:none}
+.se-n{flex-shrink:0;height:40px;border:1.5px solid #E6EAF3;background:#FFFFFF;border-radius:999px;font-size:14px}
+.se-n.on{border-color:#1652F0}
+.se-p{padding:2px 16px 18px 16px}
+.se-ph{padding:16px 0 14px 0}
+}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .16s ease,transform .16s ease,visibility .16s;z-index:20;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.st{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 11px;border-radius:999px;font-size:12.5px;font-weight:500;white-space:nowrap}
+.st.gr{background:#E7F5EE;color:#0F6B45}
+.se-p{padding:6px 32px 28px 32px}
+.se-ph{padding:22px 0 14px 0}
+.sa-r{display:grid;grid-template-columns:200px minmax(0,1fr) auto;align-items:center;gap:24px;min-height:44px;padding:16px 0;border-bottom:1.5px solid #F0F2F8}
+.sa-k{font-size:14px;color:#5B6582}
+.sa-v{display:flex;align-items:center;flex-wrap:wrap;gap:4px 12px;font-size:15px;font-weight:500;color:#0B1433;min-width:0}
+.sa-v .tip{margin-left:-4px}
+.sa-sub{font-size:13.5px;font-weight:400;color:#5B6582}
+.sa-on{display:inline-flex;align-items:center;gap:8px;color:#0F6B45}.sa-on i{width:8px;height:8px;border-radius:50%;background:#0F6B45}
+.ss-h{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:34px}
+.ss-h .ds-link{font-size:14px}
+.ss-l{list-style:none;margin:10px 0 0 0;padding:0}
+.ss-r{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1.5px solid #F0F2F8}
+.ss-r:last-child{border-bottom:0;padding-bottom:0}
+.ss-ic{width:42px;height:42px;flex-shrink:0;border-radius:12px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.ss-t{flex-grow:1;display:flex;flex-direction:column;gap:2px;min-width:0}.ss-t b{font-size:15px;font-weight:600}.ss-t span{font-size:13.5px;color:#5B6582}
+.so-t{flex-grow:1;display:flex;flex-direction:column;gap:2px;min-width:0}.so-t b{font-size:15px;font-weight:600}.so-t span{font-size:13.5px;color:#5B6582}
+.dl-ov{position:fixed;inset:0;z-index:40;background:rgba(11,20,51,.42)}
+.dl{position:fixed;z-index:41;left:50%;top:50%;transform:translate(-50%,-50%);width:min(560px,calc(100vw - 32px));box-sizing:border-box;padding:32px 32px 24px 32px;border-radius:24px;background:#FFFFFF;box-shadow:0 30px 80px rgba(11,20,51,.28)}
+.dl-x{position:absolute;right:18px;top:18px;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#5B6582}
+.dl-x:hover{background:#F1F3F8}
+.dl h2{margin:0;padding-right:40px;font-size:22px;font-weight:600;letter-spacing:-0.02em}
+.dl > p{margin:8px 0 0 0;font-size:14.5px;line-height:1.5;color:#4A5578}
+.dl-l{list-style:none;margin:22px 0 0 0;padding:0;display:flex;flex-direction:column;gap:16px}
+.dl-l li{display:flex;align-items:flex-start;gap:14px}
+.dl-l .hp-ic{flex-shrink:0}
+.dl-ft{margin-top:28px;display:flex;justify-content:flex-end;gap:10px}
+.dl-go{display:inline-flex;align-items:center;height:44px;padding:0 22px;border-radius:999px;background:#B42318;color:#FFFFFF;font-size:15px;font-weight:600;text-decoration:none}
+.dl-go:hover{background:#912018}
+.dl-alt{height:44px;padding:0 20px;font-size:15px}
+.dl-n{display:block;margin-top:14px;text-align:right;font-size:12.5px;color:#8A93AD}
+@media (max-width: 960px){
+.se-p{padding:2px 18px 22px 18px}
+.se-ph{padding:18px 0 8px 0}
+.sa-r{grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;padding:14px 0}
+.sa-k{grid-column:1;font-size:13px}
+.sa-v{grid-column:1;grid-row:2;font-size:14.5px}
+.sa-r .hp-rb{grid-column:2;grid-row:1 / span 2;height:36px;padding:0 14px;font-size:13.5px}
+.ss-h{margin-top:30px;flex-wrap:wrap;gap:6px}
+.ss-r{gap:12px}.ss-ic{width:38px;height:38px}
+.ss-r .hp-rb{height:36px;padding:0 13px;font-size:13px}
+.dl{left:0;right:0;top:auto;bottom:0;transform:none;width:100%;padding:28px 18px 22px 18px;border-radius:24px 24px 0 0}
+.dl h2{font-size:20px}
+.dl-l{gap:14px}
+.dl-ft{flex-direction:column-reverse;gap:8px}
+.dl-go,.dl-alt{justify-content:center;width:100%;box-sizing:border-box}
+.dl-n{text-align:center}
+}
+.se-lc{position:sticky;top:72px;display:flex;flex-direction:column}
+.se-lc .se-nav{position:static}
+.se > .se-p{margin-top:22px}
+@media (max-width: 960px){.se-lc{position:static}.se > .se-p{margin-top:0}.se-lc .hp-head{padding-bottom:14px}}
+.dl-go.dl-dea{background:#0B1433}.dl-go.dl-dea:hover{background:#1B2547}
+.ds-main{flex-grow:1}
+.pg-end{box-sizing:border-box;width:100%;max-width:1200px;padding:0 clamp(20px,3vw,40px) 28px clamp(20px,3vw,40px);display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:13px;color:#8A93AD}
+.pg-end::before{content:'';position:absolute;left:0;right:0;top:0;height:1.5px;background:#E6EAF3}
+.pg-end{position:relative;padding-top:20px;margin-top:8px}
+.pg-end nav{display:flex;gap:20px}
+.pg-end a{color:#5B6582;text-decoration:none;font-weight:500}
+.pg-end a:hover{color:#1652F0}
+@media (max-width: 960px){.pg-end{flex-direction:column;gap:10px;padding:18px 16px 24px 16px;text-align:center}.pg-end::before{left:16px;right:16px}.pg-end a{position:relative}.pg-end a::after{content:'';position:absolute;left:-8px;right:-8px;top:-14px;bottom:-14px}}
+@keyframes cpPop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+.cp-pop{animation:cpPop .3s ease both}
+.sc-ok{display:flex;align-items:flex-start;gap:10px;margin-top:18px;padding:12px 14px;border-radius:14px;background:#F2FAF6;border:1.5px solid #CFEADD;font-size:14px;line-height:1.5;color:#0B1433}
+.sc-ok svg{flex-shrink:0;margin-top:2px;color:#0F6B45}
+.sc-ghost{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 16px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;font-size:14px;font-weight:600;color:#0B1433;cursor:pointer;justify-self:end;white-space:nowrap}
+.sc-ghost:hover{border-color:#1652F0;background:#F5F8FF}
+.sc-link{border:0;background:none;padding:0 6px;height:42px;font-family:inherit;font-size:14px;font-weight:600;color:#1652F0;cursor:pointer;justify-self:end;white-space:nowrap}
+.sc-link:hover{text-decoration:underline}
+.sc-two{display:flex;align-items:center;gap:8px;justify-self:end;flex-wrap:wrap}
+.sc-form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:4px 0 20px 0;border-bottom:1.5px solid #F0F2F8}
+.sc-f{display:flex;flex-direction:column;gap:6px;min-width:0}
+.sc-lab{font-size:13px;font-weight:600;color:#0B1433}
+.sc-pw{position:relative;display:block}
+.sc-pw input{width:100%;height:46px;box-sizing:border-box;padding:0 14px;border-radius:12px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;font-size:14.5px;color:#0B1433;outline:none}
+.sc-pw input:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.sc-pw input::placeholder{color:#8A93AD}
+.sc-bad input{border-color:#D92D20 !important}
+.sc-show{position:absolute;right:6px;top:6px;height:34px;padding:0 10px;border:0;border-radius:9px;background:#F5F8FF;color:#1652F0;font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer}
+.sc-pw input[autocomplete="current-password"]{padding-right:64px}
+.sc-forgot{font-size:12.5px;font-weight:600;text-decoration:none;align-self:flex-start}
+.sc-meter{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin-top:2px}
+.sc-meter i{height:4px;border-radius:4px;background:#E6EAF3}
+.sc-meter i.w{background:#D92D20}.sc-meter i.f{background:#E2A024}.sc-meter i.g{background:#0F6B45}
+.sc-hint{font-size:12.5px;color:#5B6582}
+.sc-hint.ok{color:#0F6B45}
+.sc-err{font-size:12.5px;color:#B42318}
+.sc-acts{grid-column:1 / -1;display:flex;justify-content:flex-end;align-items:center;gap:12px}
+.hp-btn:disabled,.ds-btn:disabled{background:#E6EAF3 !important;color:#4A5578 !important;box-shadow:none !important;cursor:not-allowed;transform:none !important}
+.ds-btn:disabled .ob-arrow{color:#8A93AD !important}
+.sc-scrim{position:fixed;inset:0;background:rgba(11,20,51,.36);z-index:40}
+.sc-modal{font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:41;width:min(460px,calc(100vw - 32px));max-height:calc(100vh - 40px);overflow:auto;box-sizing:border-box;padding:28px 28px 24px 28px;border-radius:24px;background:#FFFFFF;box-shadow:0 30px 80px rgba(11,20,51,.28);display:flex;flex-direction:column;gap:12px}
+.sc-modal.cp-pop{animation:none}
+.sc-x{position:absolute;right:14px;top:14px;width:40px;height:40px;border:0;border-radius:50%;background:transparent;color:#3A4566;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.sc-x:hover{background:#F5F8FF}
+.sc-step{font-size:12.5px;font-weight:600;color:#1652F0}
+.sc-modal h3{margin:0;font-size:24px;line-height:1.2;font-weight:600;letter-spacing:-0.02em;color:#0B1433;padding-right:36px}
+.sc-mp{margin:0;font-size:14.5px;line-height:1.55;color:#4A5578}
+.sc-qr{align-self:center;padding:10px;border-radius:16px;border:1.5px solid #E6EAF3;margin-top:4px}
+.sc-key{margin:0;font-size:13px;color:#5B6582;display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center}
+.sc-keyrow{display:flex;align-items:center;gap:6px}
+.sc-key code,.sc-codes li{font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace;color:#0B1433}
+.sc-key code{font-size:14px;background:#F5F8FF;padding:6px 10px;border-radius:8px;letter-spacing:.06em}
+.sc-code{height:60px;box-sizing:border-box;border-radius:14px;border:1.5px solid #D6DDEE;text-align:center;font-family:'SFMono-Regular',Consolas,monospace;font-size:28px;letter-spacing:.5em;padding-left:.5em;color:#0B1433;outline:none;margin-top:4px}
+.sc-code:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.sc-code.bad{border-color:#D92D20}
+.sc-code::placeholder{color:#CBD3E6}
+.sc-c{text-align:center}
+.sc-macts{display:flex;justify-content:flex-end;align-items:center;gap:12px;margin-top:8px}
+.sc-full{width:100%;justify-content:space-between}
+.sc-codes{list-style:none;margin:4px 0 0 0;padding:14px;border-radius:16px;background:#F7F9FD;border:1.5px solid #EEF1F7;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px}
+.sc-codes li{font-size:15px;letter-spacing:.04em;text-align:center}
+.sc-codes li.used{color:#B4BCD0;text-decoration:line-through}
+.sc-mid{justify-self:auto;justify-content:center}
+.sc-check{display:flex;align-items:center;gap:10px;border:0;background:none;padding:6px 0;font-family:inherit;font-size:14px;color:#0B1433;cursor:pointer;text-align:left}
+.sc-box{width:22px;height:22px;flex-shrink:0;box-sizing:border-box;border-radius:7px;border:2px solid #CBD3E6;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.sc-check.on .sc-box{background:#1652F0;border-color:#1652F0}
+.sc-dbtn{height:46px;padding:0 20px;border:0;border-radius:999px;background:#D92D20;color:#FFFFFF;font-family:inherit;font-size:14.5px;font-weight:600;cursor:pointer}
+.sc-dbtn:disabled{background:#F3C9C5;cursor:not-allowed}
+.sc-ghost:focus-visible,.sc-link:focus-visible,.sc-x:focus-visible,.sc-check:focus-visible,.sc-dbtn:focus-visible,.sc-show:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (max-width: 960px){
+.sc-form{grid-template-columns:minmax(0,1fr)}
+.sc-acts{justify-content:stretch}.sc-acts .ds-btn{flex:1 1 auto;justify-content:space-between}
+.sc-modal{left:0;right:0;top:auto;bottom:0;transform:none;width:100%;max-height:92vh;border-radius:24px 24px 0 0;padding:24px 20px 20px 20px}
+.sc-ghost,.sc-link,.sc-two{justify-self:start}
+}
+.sa-on.off{color:#5B6582}.sa-on.off i{background:#8A93AD}
+button.hp-rb{font-family:inherit}
+.hp-rb.sc-pri{background:#1652F0;border-color:#1652F0;color:#FFFFFF}
+.hp-rb.sc-pri:hover{background:#0E3BB8;border-color:#0E3BB8}
+button.ds-link{border:0;background:none;padding:0;font-family:inherit;cursor:pointer}
+.sc-new{display:inline;margin-left:14px;font-size:13.5px}
+.sc-solo{margin:10px 0 0 0;font-size:13.5px;color:#5B6582}
+.sa-r + .sc-form{margin-top:4px}
+.sc-mail{width:48px;height:48px;border-radius:14px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.sc-mp b{font-weight:600;color:#0B1433}
+.sc-mn{margin:12px 0 0 0;font-size:13.5px;color:#5B6582}
+.sc-inl{border:0;background:none;padding:0;font:inherit;font-weight:600;color:#1652F0;cursor:pointer}
+.sc-inl:hover{text-decoration:underline}
+</style>
 </helmet>
-<div style="width: 1440px; height: 820px; overflow: hidden; background: #FFFFFF">
-<dc-import name="CR-SET" variant="security" hint-size="1440px,820px"></dc-import>
+<div class="ds-root">
+<div class="ds-scrim {{navCls}}" onClick="{{toggleNav}}"></div>
+<nav class="ds-side {{navCls}}" aria-label="Main">
+<div style="padding: 0 6px 14px 6px"><a href="#" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+<span class="lg-mark" aria-hidden="true"></span><span class="lg-word ds-brand" role="img" aria-label="Credalio"></span></a></div>
+<button type="button" class="ds-icon-btn ds-close" onClick="{{toggleNav}}" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2"></rect></svg><span style="flex-grow: 1; min-width: 0">Dashboard</span></a><span class="ds-glab">Create</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6.5A2.5 2.5 0 0 1 4 18.5"></path><path d="M8 7h8"></path></svg><span style="flex-grow: 1; min-width: 0">My creations</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg><span style="flex-grow: 1; min-width: 0">Create new</span></a><span class="ds-glab">Work</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 3.5h6v3H9zM9 12h6M9 16h4"></path></svg><span style="flex-grow: 1; min-width: 0">Assigned to me</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg><span style="flex-grow: 1; min-width: 0">Validation Centre</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span style="flex-grow: 1; min-width: 0">Discussions</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3.5"></circle><path d="m5.6 5.6 3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"></path></svg><span style="flex-grow: 1; min-width: 0">Learner support</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span style="flex-grow: 1; min-width: 0">Calendar</span></a><span class="ds-glab">Insights</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span style="flex-grow: 1; min-width: 0">Learners</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M6.5 16v-5M11.5 16V6M16.5 16v-8"></path></svg><span style="flex-grow: 1; min-width: 0">Analytics</span></a><span class="ds-glab">Economy</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg><span style="flex-grow: 1; min-width: 0">Earnings & payouts</span></a><a href="CR-WAL-001.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg><span style="flex-grow: 1; min-width: 0">Credit Wallet</span></a><span class="ds-glab">Creator</span><a href="#" class="ds-item" onClick="{{openNova}}"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z" fill="currentColor" stroke="none"></path></svg><span style="flex-grow: 1; min-width: 0">Nova · your Copilot</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path></svg><span style="flex-grow: 1; min-width: 0">Creator Centre</span></a><a href="CR-PROF-001.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span style="flex-grow: 1; min-width: 0">Creator profile</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.3 1.7 2.9-.1.9 2.7 2.3 1.7-.9 2.7.9 2.7-2.3 1.7-.9 2.7-2.9-.1L12 21l-2.3-1.7-2.9.1-.9-2.7L3.6 15l.9-2.7-.9-2.7 2.3-1.7.9-2.7 2.9.1z"></path><path d="m9 12 2 2 4-4"></path></svg><span style="flex-grow: 1; min-width: 0">Readiness</span><span class="ds-badge" aria-label="3 to do">3</span></a><span class="ds-glab">Account</span><a href="CR-SET-001.dc.html" class="ds-item ds-on" aria-current="page"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg><span style="flex-grow: 1; min-width: 0">Settings</span></a>
+</nav>
+<div style="min-width: 0; display: flex; flex-direction: column">
+<header class="ds-top">
+<button type="button" class="ds-icon-btn ds-menu" onClick="{{toggleNav}}" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<span class="ds-mlogo" style="flex-grow: 1"><a href="#" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+<span class="lg-mark" aria-hidden="true"></span><span class="lg-word ds-brand" role="img" aria-label="Credalio"></span></a></span>
+<label class="ds-search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span class="sr-only">Search</span><input placeholder="Search your creations, learners, discussions…"></label>
+<span class="ds-hide-sm" style="flex-grow: 1"></span>
+<dc-import name="CR-NOVA-CHIP" hint-size="150px,44px"></dc-import>
+<a href="CR-HELP-001.dc.html" class="ds-icon-btn ds-hide-sm" aria-label="Help"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"></path></svg></a>
+<a href="#" class="ds-icon-btn" aria-label="Notifications, 1 new"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16z"></path><path d="M10 21h4"></path></svg><span style="position: absolute; right: 10px; top: 9px; width: 8px; height: 8px; border-radius: 50%; background: #E5484D; box-shadow: 0 0 0 2px #FFFFFF"></span></a>
+<a href="#" aria-label="Your account" style="position: relative; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: #0B1433; color: #FFFFFF; font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; text-decoration: none">AO<span style="position: absolute; right: 0; bottom: 1px; width: 11px; height: 11px; border-radius: 50%; background: #0F6B45; border: 2px solid #F7F9FD"></span></a>
+</header>
+<main class="ds-main hp">
+<div class="se ob-in2"><div class="se-lc"><div class="hp-head ob-in"><div><h1 class="ds-h1">Settings</h1></div></div><nav class="se-nav" aria-label="Settings"><a href="CR-PROF-001.dc.html" class="se-n"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>Profile</span></a><a href="CR-SET-001.dc.html" class="se-n"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg><span>Account &amp; sign-in</span></a><a href="CR-SET-003.dc.html" class="se-n on" aria-current="page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path></svg><span>Security</span></a><a href="CR-SET-004.dc.html" class="se-n"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16z"></path><path d="M10 21h4"></path></svg><span>Notifications</span></a><a href="CR-SET-005.dc.html" class="se-n"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg><span>Privacy</span></a><a href="CR-SET-006.dc.html" class="se-n"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><span>Language &amp; region</span></a><a href="CR-HOME-SET.dc.html" class="se-n"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10.5l-5.6 1.9L12 18l-1.9-5.6L4.5 10.5l5.6-1.9z"></path></svg><span>AI preferences</span></a><a href="#" class="se-n"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"></path></svg><span>My organizations</span></a></nav></div><section class="ds-card se-p" aria-label="Security"><div class="se-ph"><div><h2>Security</h2></div></div>
+<sc-if value="{{pwDone}}" hint-placeholder-val="{{false}}"><div class="sc-ok cp-pop" role="status"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12.5 2.8 2.8L16.5 9.5"></path></svg><span><b>Password changed.</b> You’ve been logged out on your other devices.</span></div></sc-if>
+<sc-if value="{{tfaJustOn}}" hint-placeholder-val="{{false}}"><div class="sc-ok cp-pop" role="status"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="m8 12.5 2.8 2.8L16.5 9.5"></path></svg><span><b>Two-step verification is on.</b> You’ll enter a code from your app each time you log in.</span></div></sc-if>
+<div class="sa-r"><span class="sa-k">Password</span><span class="sa-v">{{pwSub}}</span><sc-if value="{{pwClosed}}" hint-placeholder-val="{{true}}"><button type="button" class="hp-rb" onClick="{{openPw}}">Change</button></sc-if></div>
+<sc-if value="{{pwOpen}}" hint-placeholder-val="{{false}}"><div class="sc-form cp-pop">
+<label class="sc-f"><span class="sc-lab">Current password</span><span class="sc-pw"><input type="{{pwType}}" value="{{cur}}" onChange="{{onCur}}" autocomplete="current-password" placeholder="Your current password"><button type="button" class="sc-show" onClick="{{toggleShow}}">{{showLabel}}</button></span><a href="#" class="sc-forgot" onClick="{{openForgot}}">Forgot it?</a></label>
+<label class="sc-f"><span class="sc-lab">New password</span><span class="sc-pw"><input type="{{pwType}}" value="{{nw}}" onChange="{{onNw}}" autocomplete="new-password" placeholder="At least 8 characters"></span>
+<span class="sc-meter" aria-hidden="true"><i class="{{m1}}"></i><i class="{{m2}}"></i><i class="{{m3}}"></i><i class="{{m4}}"></i></span><span class="sc-hint {{strCls}}">{{strText}}</span></label>
+<label class="sc-f"><span class="sc-lab">Confirm new password</span><span class="sc-pw {{cfCls}}"><input type="{{pwType}}" value="{{cf}}" onChange="{{onCf}}" autocomplete="new-password" placeholder="Type it again"></span><sc-if value="{{cfBad}}" hint-placeholder-val="{{false}}"><span class="sc-err">Passwords don’t match.</span></sc-if><sc-if value="{{sameBad}}" hint-placeholder-val="{{false}}"><span class="sc-err">Choose a password you haven’t used here.</span></sc-if></label>
+<div class="sc-acts"><button type="button" class="sc-link" onClick="{{closePw}}">Cancel</button><button type="button" class="ds-btn hp-btn {{pwGoCls}}" onClick="{{savePw}}" disabled="{{pwGoOff}}"><span>Update password</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div>
+</div></sc-if>
+<div class="sa-r"><span class="sa-k">Two-step verification</span><span class="sa-v"><span class="sa-on {{tfaCls}}"><i></i>{{tfaState}}</span><span class="sa-sub">{{tfaSub}}</span></span><sc-if value="{{tfaOff}}" hint-placeholder-val="{{true}}"><button type="button" class="hp-rb sc-pri" onClick="{{startTfa}}">Turn on</button></sc-if><sc-if value="{{tfaOn}}" hint-placeholder-val="{{false}}"><button type="button" class="hp-rb" onClick="{{askOff}}">Turn off</button></sc-if></div>
+<sc-if value="{{tfaOn}}" hint-placeholder-val="{{false}}"><div class="sa-r"><span class="sa-k">Recovery codes</span><span class="sa-v">{{codesLeft}} of 10 left<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b l" role="tooltip">Each code signs you in once if you lose your phone. Keep them somewhere safe.</span></span><button type="button" class="ds-link sc-new" onClick="{{newCodes}}">Get new codes</button></span><button type="button" class="hp-rb" onClick="{{viewCodes}}">View</button></div></sc-if>
+<div class="ss-h"><span class="hp-lab">Where you’re signed in</span><sc-if value="{{someOut}}" hint-placeholder-val="{{true}}"><button type="button" class="ds-link sc-lk" onClick="{{logoutOthers}}">Sign out everywhere else</button></sc-if></div>
+<ul class="ss-l"><li class="ss-r"><span class="ss-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"></rect><path d="M2 19h20"></path></svg></span><span class="ss-t"><b>Chrome on macOS</b><span>Lagos, Nigeria · Active now</span></span><span class="st gr">This device</span></li><sc-if value="{{d2}}" hint-placeholder-val="{{true}}"><li class="ss-r"><span class="ss-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"></rect><path d="M11 18h2"></path></svg></span><span class="ss-t"><b>Credalio app on iPhone</b><span>Lagos, Nigeria · 2 hours ago</span></span><button type="button" class="hp-rb" onClick="{{out2}}">Sign out</button></li></sc-if><sc-if value="{{d3}}" hint-placeholder-val="{{true}}"><li class="ss-r"><span class="ss-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="11" rx="2"></rect><path d="M2 19h20"></path></svg></span><span class="ss-t"><b>Firefox on Windows</b><span>Abuja, Nigeria · 5 days ago</span></span><button type="button" class="hp-rb" onClick="{{out3}}">Sign out</button></li></sc-if></ul><sc-if value="{{allOut}}" hint-placeholder-val="{{false}}"><p class="sc-solo">You’re only signed in on this device.</p></sc-if>
+</section></div><sc-if value="{{isDel}}" hint-placeholder-val="{{false}}"><div class="dl-ov" aria-hidden="false"></div><div class="dl" role="dialog" aria-modal="true" aria-labelledby="dl-h"><a href="CR-SET-001.dc.html" class="dl-x" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"></path></svg></a><h2 id="dl-h">Before your account can be deleted</h2><p>These are settled first, so nobody loses what they rely on.</p><ul class="dl-l"><li><span class="hp-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6.5A2.5 2.5 0 0 1 4 18.5"></path><path d="M8 7h8"></path></svg></span><span class="so-t"><b>4 published learning experiences</b><span>Stay open to enrolled learners until their access ends.</span></span></li><li><span class="hp-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg></span><span class="so-t"><b>$1,410.00 in earnings</b><span>Paid out first. Pending earnings are paid when they clear.</span></span></li><li><span class="hp-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg></span><span class="so-t"><b>1,214 active learners</b><span>Keep access to what they enrolled in.</span></span></li><li><span class="hp-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"></path></svg></span><span class="so-t"><b>Roles at ABC Institute</b><span>ABC Institute is told, so it can reassign them.</span></span></li><li><span class="hp-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 21h14M6 7h12"></path><path d="m6 7-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"></path></svg></span><span class="so-t"><b>Validation records</b><span>Kept for audit. Your name stays on past records.</span></span></li></ul><div class="dl-ft"><a href="CR-SET-001.dc.html" class="hp-rb dl-alt">Deactivate instead</a><a href="#" class="dl-go">Request deletion</a></div><span class="dl-n">Nothing is removed until everything above is settled.</span></div></sc-if><sc-if value="{{isDea}}" hint-placeholder-val="{{false}}"><div class="dl-ov" aria-hidden="false"></div><div class="dl" role="dialog" aria-modal="true" aria-labelledby="da-h"><a href="CR-SET-001.dc.html" class="dl-x" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"></path></svg></a><h2 id="da-h">Deactivate your account?</h2><p>You can come back any time. Just sign in and everything is where you left it.</p><ul class="dl-l"><li><span class="hp-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6.5A2.5 2.5 0 0 1 4 18.5"></path><path d="M8 7h8"></path></svg></span><span class="so-t"><b>Your profile is hidden</b><span>Learners and organizations can’t find you while you’re away.</span></span></li><li><span class="hp-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg></span><span class="so-t"><b>New enrollments pause</b><span>1,214 current learners keep their access.</span></span></li><li><span class="hp-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg></span><span class="so-t"><b>Earnings keep arriving</b><span>$1,410.00 is still paid out on schedule.</span></span></li></ul><div class="dl-ft"><a href="CR-SET-001.dc.html" class="hp-rb dl-alt">Keep my account</a><a href="#" class="dl-go dl-dea">Deactivate account</a></div></div></sc-if>
+</main>
+<footer class="pg-end"><span>© 2026 Credalio</span><nav aria-label="Footer"><a href="#">Help &amp; Support</a><a href="#">Privacy</a><a href="#">Terms</a></nav></footer>
+<dc-import name="CR-NOVA" page="Security settings" open="{{novaInit}}" hint-size="0px,0px"></dc-import>
+</div>
+<sc-if value="{{modal}}" hint-placeholder-val="{{false}}"><div class="sc-scrim" onClick="{{closeModal}}"></div><div class="sc-modal cp-pop" role="dialog" aria-modal="true" aria-labelledby="sc-mh">
+<button type="button" class="sc-x" onClick="{{closeModal}}" aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+<sc-if value="{{stepQr}}" hint-placeholder-val="{{true}}"><span class="sc-step">Step 1 of 3</span><h3 id="sc-mh">Scan this QR code</h3><p class="sc-mp">Open your authenticator app, tap <b>+</b>, and scan the code.</p><div class="sc-qr"><svg viewBox="-2 -2 29 29" width="168" height="168" role="img" aria-label="QR code for your authenticator app" shape-rendering="crispEdges"><rect x="-2" y="-2" width="29" height="29" fill="#FFFFFF"></rect><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM9 0h1v1h-1zM11 0h1v1h-1zM13 0h1v1h-1zM14 0h1v1h-1zM16 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM9 1h1v1h-1zM10 1h1v1h-1zM11 1h1v1h-1zM13 1h1v1h-1zM14 1h1v1h-1zM18 1h1v1h-1zM24 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM9 2h1v1h-1zM11 2h1v1h-1zM13 2h1v1h-1zM14 2h1v1h-1zM15 2h1v1h-1zM16 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM9 3h1v1h-1zM12 3h1v1h-1zM14 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM21 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM12 4h1v1h-1zM13 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM12 5h1v1h-1zM14 5h1v1h-1zM15 5h1v1h-1zM18 5h1v1h-1zM24 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM15 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM21 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM10 7h1v1h-1zM13 7h1v1h-1zM15 7h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM9 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM13 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM17 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM2 9h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM8 9h1v1h-1zM9 9h1v1h-1zM10 9h1v1h-1zM11 9h1v1h-1zM18 9h1v1h-1zM23 9h1v1h-1zM24 9h1v1h-1zM0 10h1v1h-1zM2 10h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM12 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM17 10h1v1h-1zM18 10h1v1h-1zM19 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM0 11h1v1h-1zM1 11h1v1h-1zM2 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM8 11h1v1h-1zM10 11h1v1h-1zM15 11h1v1h-1zM16 11h1v1h-1zM17 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM8 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM13 12h1v1h-1zM17 12h1v1h-1zM18 12h1v1h-1zM19 12h1v1h-1zM20 12h1v1h-1zM21 12h1v1h-1zM0 13h1v1h-1zM3 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM11 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM18 13h1v1h-1zM19 13h1v1h-1zM20 13h1v1h-1zM23 13h1v1h-1zM2 14h1v1h-1zM4 14h1v1h-1zM5 14h1v1h-1zM10 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM18 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM22 14h1v1h-1zM23 14h1v1h-1zM1 15h1v1h-1zM6 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM9 15h1v1h-1zM11 15h1v1h-1zM12 15h1v1h-1zM15 15h1v1h-1zM19 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM3 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM15 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM24 16h1v1h-1zM11 17h1v1h-1zM14 17h1v1h-1zM17 17h1v1h-1zM19 17h1v1h-1zM23 17h1v1h-1zM24 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM13 18h1v1h-1zM15 18h1v1h-1zM16 18h1v1h-1zM17 18h1v1h-1zM20 18h1v1h-1zM24 18h1v1h-1zM0 19h1v1h-1zM6 19h1v1h-1zM8 19h1v1h-1zM9 19h1v1h-1zM11 19h1v1h-1zM12 19h1v1h-1zM13 19h1v1h-1zM16 19h1v1h-1zM17 19h1v1h-1zM21 19h1v1h-1zM22 19h1v1h-1zM24 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM12 20h1v1h-1zM14 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM23 20h1v1h-1zM24 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM8 21h1v1h-1zM9 21h1v1h-1zM10 21h1v1h-1zM11 21h1v1h-1zM12 21h1v1h-1zM14 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM6 22h1v1h-1zM9 22h1v1h-1zM11 22h1v1h-1zM14 22h1v1h-1zM18 22h1v1h-1zM22 22h1v1h-1zM23 22h1v1h-1zM24 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM8 23h1v1h-1zM9 23h1v1h-1zM11 23h1v1h-1zM12 23h1v1h-1zM13 23h1v1h-1zM17 23h1v1h-1zM18 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM0 24h1v1h-1zM1 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM10 24h1v1h-1zM12 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM15 24h1v1h-1zM16 24h1v1h-1zM18 24h1v1h-1zM20 24h1v1h-1zM21 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1z" fill="#0B1433"></path></svg></div><p class="sc-key">Can’t scan? Enter this key instead<span class="sc-keyrow"><code>JBSW Y3DP EHPK 3PXP</code><button type="button" class="sc-link" onClick="{{copyKey}}">{{keyLabel}}</button></span></p><div class="sc-macts"><button type="button" class="ds-btn hp-btn sc-full" onClick="{{toCode}}"><span>Next</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div></sc-if>
+<sc-if value="{{stepCode}}" hint-placeholder-val="{{false}}"><span class="sc-step">Step 2 of 3</span><h3 id="sc-mh">Enter the 6-digit code</h3><p class="sc-mp">Type the code your app shows for Credalio.</p><input class="sc-code {{codeCls}}" value="{{code}}" onChange="{{onCode}}" onKeyDown="{{onCodeKey}}" inputMode="numeric" maxLength="6" autocomplete="one-time-code" placeholder="000000" aria-label="6-digit code"><sc-if value="{{codeBad}}" hint-placeholder-val="{{false}}"><span class="sc-err sc-c">That code didn’t work. Check the time on your phone and try a new code.</span></sc-if><div class="sc-macts"><button type="button" class="sc-link" onClick="{{toQr}}">Back</button><button type="button" class="ds-btn hp-btn {{verGoCls}}" onClick="{{verify}}" disabled="{{verOff}}"><span>Verify</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div></sc-if>
+<sc-if value="{{stepCodes}}" hint-placeholder-val="{{false}}"><span class="sc-step">{{codesStep}}</span><h3 id="sc-mh">Save your recovery codes</h3><p class="sc-mp">If you lose your phone, each code lets you log in once. Keep them somewhere safe, like a password manager.</p><ul class="sc-codes"><sc-for list="{{codes}}" as="c" hint-placeholder-count="10"><li class="{{c.cls}}">{{c.v}}</li></sc-for></ul><div class="sc-two sc-mid"><button type="button" class="sc-ghost" onClick="{{copyCodes}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5"></rect><path d="M5 15V6a2 2 0 0 1 2-2h9"></path></svg>{{copyLabel}}</button><button type="button" class="sc-ghost" onClick="{{dlCodes}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>{{dlLabel}}</button></div><button type="button" class="sc-check {{savedCls}}" role="checkbox" aria-checked="{{savedAria}}" onClick="{{toggleSaved}}"><span class="sc-box"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>I’ve saved these somewhere safe</button><div class="sc-macts"><button type="button" class="ds-btn hp-btn sc-full {{doneCls}}" onClick="{{finish}}" disabled="{{doneOff}}"><span>Done</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div></sc-if>
+<sc-if value="{{stepOff}}" hint-placeholder-val="{{false}}"><h3 id="sc-mh">Turn off two-step verification?</h3><p class="sc-mp">Your account will only be protected by your password. Your recovery codes will stop working.</p><label class="sc-f"><span class="sc-lab">Enter your password to confirm</span><span class="sc-pw"><input type="password" value="{{offPw}}" onChange="{{onOffPw}}" autocomplete="current-password" placeholder="Your password"></span></label><div class="sc-macts"><button type="button" class="sc-link" onClick="{{closeModal}}">Keep it on</button><button type="button" class="sc-dbtn" onClick="{{turnOff}}" disabled="{{offGo}}">Turn off</button></div></sc-if>
+<sc-if value="{{stepForgot}}" hint-placeholder-val="{{false}}"><div class="sc-mail"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><path d="m4 7 8 6 8-6"></path></svg></div><h3 id="sc-mh">Reset your password?</h3><p class="sc-mp">We’ll email a reset link to <b>ada.ononuju@example.com</b>. You’ll choose a new password from there.</p><div class="sc-macts"><button type="button" class="sc-link" onClick="{{backToPw}}">Back</button><button type="button" class="ds-btn hp-btn" onClick="{{sendReset}}"><span>Send reset link</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div></sc-if>
+<sc-if value="{{stepSent}}" hint-placeholder-val="{{false}}"><div class="sc-mail"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><path d="m4 7 8 6 8-6"></path></svg></div><h3 id="sc-mh">Check your inbox</h3><p class="sc-mp">We sent a reset link to <b>ada.ononuju@example.com</b>. It only works for a short time, so use it soon.</p><p class="sc-mn">No email yet? Check spam or <button type="button" class="sc-inl" onClick="{{resend}}">{{resendLabel}}</button>.</p><div class="sc-macts"><button type="button" class="sc-link" onClick="{{closeModal}}">Done</button><a href="CR-LOG-003.dc.html" class="ds-btn hp-btn"><span>Open email</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></sc-if>
+<sc-if value="{{stepNew}}" hint-placeholder-val="{{false}}"><h3 id="sc-mh">Get new recovery codes?</h3><p class="sc-mp">Your current codes will stop working straight away. You’ll see 10 new ones to save.</p><div class="sc-macts"><button type="button" class="sc-link" onClick="{{closeModal}}">Cancel</button><button type="button" class="ds-btn hp-btn" onClick="{{regen}}"><span>Get new codes</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button></div></sc-if>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
 class Component extends DCLogic {
-  renderVals() { return {}; }
+  constructor(props) {
+    super(props);
+    const v = (props || {}).variant || '';
+    this.CODES = ['4F7K-2MQ9', 'X8PD-R3LC', '9WTN-6HBA', 'QJ2E-7VKS', 'M5RY-C8DU', 'B3GZ-T6NF', 'K7AW-4PXH', 'D9LS-Y2QE', 'H6VC-8JRM', 'T2NB-5WKG'];
+    this.state = { nav: false, pw: v === 'pw' || v === 'forgot' || v === 'sent', cur: v === 'pw' ? 'Lagos#2026' : '', nw: v === 'pw' ? 'Credalio!Data7' : '', cf: v === 'pw' ? 'Credalio!Data7' : '', show: false, pwDone: false,
+      tfa: v === 'on', justOn: false, modal: v === 'qr' ? 'qr' : (v === 'codes' ? 'codes' : (v === 'forgot' || v === 'sent' ? v : '')), resent: false, setup: v === 'codes', code: '', codeBad: false, saved: false, copied: false, dl: false, keyCopied: false, offPw: '', used: v === 'on' ? 2 : 0, out: false, d2: true, d3: true };
+  }
+  componentWillUnmount() { clearTimeout(this.t); }
+  _rv0() {
+    const S = this.state;
+    const n = S.nw;
+    let score = 0;
+    if (n.length >= 8) score++;
+    if (/[0-9]/.test(n)) score++;
+    if (/[^A-Za-z0-9]/.test(n)) score++;
+    if (n.length >= 12 && /[A-Z]/.test(n) && /[a-z]/.test(n)) score++;
+    const strong = n.length >= 8 && /[0-9]/.test(n) && /[^A-Za-z0-9]/.test(n);
+    const col = score <= 1 ? 'w' : (score <= 2 ? 'f' : 'g');
+    const cfBad = !!S.cf && S.cf !== n;
+    const sameBad = !!n && n === S.cur;
+    const pwOk = !!S.cur && strong && S.cf === n && !sameBad;
+    const flash = (k) => { clearTimeout(this.t); this.setState({ [k]: true }); this.t = setTimeout(() => this.setState({ [k]: false }), 1800); };
+    const close = () => this.setState({ modal: '', code: '', codeBad: false, offPw: '' });
+    const codeOk = /^[0-9]{6}$/.test(S.code);
+    const verify = () => { if (!codeOk) return; if (S.code === '000000') this.setState({ codeBad: true }); else this.setState({ modal: 'codes', setup: true, codeBad: false, saved: false, copied: false, dl: false }); };
+    const stepCodes = S.modal === 'codes';
+    return {
+      navCls: S.nav ? 'ds-open' : '', toggleNav: () => this.setState({ nav: !S.nav }),
+      pwDone: S.pwDone, tfaJustOn: S.justOn,
+      pwSub: S.pwDone ? 'Changed just now' : 'Changed 3 months ago',
+      pwOpen: S.pw, pwClosed: !S.pw, openPw: () => this.setState({ pw: true, pwDone: false }), closePw: () => this.setState({ pw: false, cur: '', nw: '', cf: '' }),
+      pwType: S.show ? 'text' : 'password', showLabel: S.show ? 'Hide' : 'Show', toggleShow: () => this.setState({ show: !S.show }),
+      cur: S.cur, onCur: (e) => this.setState({ cur: e.target.value }), nw: n, onNw: (e) => this.setState({ nw: e.target.value }), cf: S.cf, onCf: (e) => this.setState({ cf: e.target.value }),
+      m1: n ? col : '', m2: n && score >= 2 ? col : '', m3: n && score >= 3 ? col : '', m4: n && score >= 4 ? col : '',
+      strText: !n ? 'Use 8+ characters with a number and a symbol.' : (strong ? (score >= 4 ? 'Strong password.' : 'Good password.') : 'Add ' + [n.length < 8 ? '8+ characters' : '', /[0-9]/.test(n) ? '' : 'a number', /[^A-Za-z0-9]/.test(n) ? '' : 'a symbol'].filter(Boolean).join(', ') + '.'),
+      strCls: strong ? 'ok' : '', cfBad, cfCls: cfBad ? 'sc-bad' : '', sameBad,
+      pwGoCls: '', pwGoOff: !pwOk, savePw: () => { if (pwOk) this.setState({ pw: false, pwDone: true, justOn: false, cur: '', nw: '', cf: '' }); },
+      tfaOn: S.tfa, tfaOff: !S.tfa, tfaState: S.tfa ? 'On' : 'Off', tfaCls: S.tfa ? '' : 'off', tfaSub: S.tfa ? 'Authenticator app' : 'Add a code from an app when you log in',
+      startTfa: () => this.setState({ modal: 'qr', code: '', codeBad: false, pwDone: false }), askOff: () => this.setState({ modal: 'off', offPw: '' }),
+      codesLeft: 10 - S.used, viewCodes: () => this.setState({ modal: 'codes', setup: false, fresh: false, saved: true, copied: false, dl: false }), newCodes: () => this.setState({ modal: 'new' }),
+      d2: S.d2, d3: S.d3, out2: () => this.setState({ d2: false }), out3: () => this.setState({ d3: false }), someOut: S.d2 || S.d3, allOut: !S.d2 && !S.d3, logoutOthers: () => this.setState({ d2: false, d3: false }),
+      modal: !!S.modal, closeModal: close,
+      stepQr: S.modal === 'qr', stepCode: S.modal === 'code', stepCodes, stepOff: S.modal === 'off', stepNew: S.modal === 'new', stepForgot: S.modal === 'forgot', stepSent: S.modal === 'sent',
+      openForgot: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ modal: 'forgot', resent: false }); }, backToPw: () => this.setState({ modal: '' }), sendReset: () => this.setState({ modal: 'sent', resent: false }),
+      resend: () => flash('resent'), resendLabel: S.resent ? 'link sent again' : 'resend the link',
+      keyLabel: S.keyCopied ? 'Copied' : 'Copy', copyKey: () => flash('keyCopied'),
+      toCode: () => this.setState({ modal: 'code' }), toQr: () => this.setState({ modal: 'qr', code: '', codeBad: false }),
+      code: S.code, onCode: (e) => this.setState({ code: e.target.value.replace(/[^0-9]/g, '').slice(0, 6), codeBad: false }),
+      onCodeKey: (e) => { if (e.key === 'Enter') { e.preventDefault(); verify(); } },
+      codeCls: S.codeBad ? 'bad' : '', codeBad: S.codeBad, verGoCls: '', verOff: !codeOk, verify,
+      codesStep: S.setup ? 'Step 3 of 3' : (S.fresh ? 'New recovery codes' : 'Your recovery codes'),
+      codes: this.CODES.map((v, i) => ({ v, cls: !S.setup && !S.fresh && i < S.used ? 'used' : '' })),
+      copyLabel: S.copied ? 'Copied' : 'Copy all', copyCodes: () => this.setState({ copied: true }),
+      dlLabel: S.dl ? 'Downloaded' : 'Download', dlCodes: () => this.setState({ dl: true }),
+      savedCls: S.saved ? 'on' : '', savedAria: S.saved ? 'true' : 'false', toggleSaved: () => this.setState({ saved: !S.saved }),
+      doneCls: '', doneOff: !S.saved, finish: () => { if (!S.saved) return; this.setState(S.setup ? { modal: '', tfa: true, justOn: true, used: 0 } : { modal: '', used: S.fresh ? 0 : S.used, fresh: false }); },
+      offPw: S.offPw, onOffPw: (e) => this.setState({ offPw: e.target.value }), offGo: !S.offPw, turnOff: () => { if (S.offPw) this.setState({ modal: '', tfa: false, justOn: false, offPw: '' }); },
+      regen: () => this.setState({ modal: 'codes', setup: false, fresh: true, saved: false, copied: false, dl: false })
+    };
+  }
+  renderVals() {
+    const v = this._rv0() || {};
+    const p = this.props || {};
+    return Object.assign({}, v, { openNova: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ nav: false }); window.dispatchEvent(new CustomEvent('cr-nova-open')); }, novaInit: p.nova ? String(p.nova) : '' });
+  }
 }
 </script>
 </body>

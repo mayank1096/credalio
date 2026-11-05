@@ -17,6 +17,7 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `LOG-003` Choose a new password
 - [x] D [x] M  `LOG-003b` Password updated
 - [x] D [x] M  `LOG-003c` Reset link expired
+- [x] D [x] M  `LOG-004` Enter your code (two-step on; 004r recovery code, 004e code didn’t work)
 
 ## 01. Creator onboarding: sign up → creator type → account → check inbox → email verified → password → about you → expertise → Copilot → ready (12)
 
@@ -41,6 +42,9 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-CREATE-002A` CR-CREATE-002A · Start with Copilot: the outcome question lives here
 - [x] D [x] M  `CR-CREATE-002Ab` CR-CREATE-002A · Copilot proposal: review & accept before the Studio
 - [x] D [x] M  `CR-CREATE-002B` CR-CREATE-002B · Build from scratch → existing setup flow
+- [x] D [ ] M  `CR-CREATE-002Bc` Build from scratch · Professional certification
+- [x] D [ ] M  `CR-CREATE-002Bp` Build from scratch · Career path
+- [x] D [ ] M  `CR-CREATE-002Bl` Build from scratch · Learning program
 
 ## 03. Readiness, Creator Centre & Orientation (10)
 
@@ -137,6 +141,8 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-WAL-005f` CR-WAL-005 · Payment failed, not charged
 - [x] D [x] M  `CR-WAL-006` CR-WAL-006 · Wallet funded
 - [x] D [x] M  `CR-WAL-007` CR-WAL-007 · Transaction history (filters)
+- [x] D [x] M  `CR-WAL-008` Bank transfer details (008w waiting, 008e expired, 008m different amount, 006b Credits added)
+- [x] D [x] M  `CR-WAL-009` Local payment · USSD (009m mobile money, 009w confirming, 006l Credits added)
 
 ## 12. Payments & revalidation (9)
 
@@ -230,12 +236,13 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-SET-006` SET-006 · Language & Region
 - [x] D [x] M  `CR-SET-007` SET-007 · AI Preferences (= CR-HOME-SET, copied into the Studio canvas)
 - [x] D [x] M  `CR-SET-008` Sign-in methods
+- [x] D [x] M  `CR-SET-003a` Security states: change password (003a), two-step set-up (003b–d), forgot password (003e–f)
 
 ## 19. Copilot panel (CP-001 to CP-003), Search and Help & Support (10)
 
 - [x] D [x] M  `CR-AI-001` CP-001/002 · Copilot panel, context-aware (shows AI Token balance)
 - [x] D [x] M  `CR-AI-001a` CP-001 · Level 3 Act: Apply Changes / consequential action guided
-- [x] D [x] M  `CR-AI-003` CP-003 · Copilot history
+- [x] D [x] M  `CR-AI-003` Nova chat open on Security (history is now CR-AI-001h / 002h); CR-AI-001r/h, CR-AI-002/r/h Nova on Dashboard and Creator profile
 - [x] D [x] M  `CR-AI-001x` CP-001 · Copilot panel expanded (client CP-EXP)
 - [x] D [x] M  `CR-SEARCH-002` SEARCH-001/002 · Global search results for "SQL"
 - [x] D [x] M  `CR-SEARCH-EMPTY` SEARCH · No results
@@ -246,6 +253,7 @@ Each screen = Desktop (1440) + Mobile (390) frame in Figma. Tick `D` / `M` when 
 - [x] D [x] M  `CR-HELP-004` HELP-004 · Support ticket created
 - [x] D [x] M  `CR-HELP-005` HELP-005 · My support requests
 - [x] D [x] M  `CR-HELP-006` HELP-006 · Support conversation (ticket is the record)
+- [x] D [x] M  `CR-HELP-001t` Help topic page
 
 ## 20. AI Tokens · Nova, Your Creator Copilot: overview, balance, buy (packages or custom amount), confirm, success (6)
 

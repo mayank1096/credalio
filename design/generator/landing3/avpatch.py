@@ -18,7 +18,7 @@ M2 = '/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2'
 PEOPLE = {'AO': F2, 'DR': M1, 'TA': M2, 'TH': M2, 'TR': M1, 'PN': F1, 'GA': F2, 'ML': F1, 'HC': F2, 'LF': F2, 'PS': F1,
           'LO': F2, 'MR': F1, 'SA': F2, 'SM': F1, 'KB': M1, 'JM': M2, 'SL': F2, 'AK': M2, 'MS': F1, 'PL': M1, 'SR': M1,
           'JL': M2, 'ME': F1, 'MO': F1, 'KA': M1, 'IN': F2, 'DA': M2,
-          'DM': M2, 'TB': M1, 'RP': M2, 'NB': F1, 'LK': F2, 'JC': M1, 'DK': M2}
+          'DM': M2, 'ÉL': F2, 'EL': F2, 'SF': F1, 'TB': M1, 'RP': M2, 'NB': F1, 'LK': F2, 'JC': M1, 'DK': M2}
 CREATOR_AO = F1                      # Amara Okafor
 CREATOR_CLS = {'cd-av', 'cd-cav', 'cs-cav', 'ci-av'}
 PERSON_CLS = {'sx-av', 'cd-av', 'cd-cav', 'cd-rav', 'cs-cav', 'ci-av', 'lr-av', 'lr-gv-you', 'av', 'jy-me', 'jp-me',

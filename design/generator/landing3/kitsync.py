@@ -114,4 +114,8 @@ def sync(path):
     print(os.path.basename(path), 'updated', changed, 'added', len(adds))
 
 if __name__ == '__main__':
-    for p in sys.argv[1:]: sync(p)
+    import avpatch
+    for p in sys.argv[1:]:
+        sync(p)
+        t = open(p).read(); u, _ = avpatch.patch(t)
+        if u != t: open(p, 'w').write(u)

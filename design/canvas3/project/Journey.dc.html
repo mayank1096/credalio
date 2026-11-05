@@ -319,6 +319,8 @@ p{text-wrap:balance}
 .jy-page{position:relative;isolation:isolate}
 .jy-page .tk-scene{position:relative;display:block;left:auto;right:auto;bottom:auto;height:330px;margin-top:-150px}
 @media (max-width: 760px){.jy-page .tk-scene{height:220px;margin-top:-150px}}
+.pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
+.pav-h{position:relative !important;overflow:hidden !important}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
@@ -331,7 +333,7 @@ p{text-wrap:balance}
 <span class="jy-st {{s2}}"><i>{{n2}}</i><span>What you know</span></span><b class="jy-ln {{l2}}"></b>
 <span class="jy-st {{s3}}"><i>3</i><span>Your journey</span></span>
 </div></sc-if><sc-if value="{{isRet}}" hint-placeholder-val="{{ false }}"><span></span></sc-if>
-<div class="jy-right"><sc-if value="{{isPlainGuest}}" hint-placeholder-val="{{ true }}"><a class="jy-login" href="#">Log in</a></sc-if><sc-if value="{{isRet}}" hint-placeholder-val="{{ false }}"><span class="jy-pill" aria-label="200 DLP available"><span class="dlp-c" aria-hidden="true"></span>200</span><span class="jy-me" aria-label="Your account">AO</span></sc-if><sc-if value="{{canClose}}" hint-placeholder-val="{{ true }}"><a class="ds-x" href="#" aria-label="Leave and go back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a></sc-if></div>
+<div class="jy-right"><sc-if value="{{isPlainGuest}}" hint-placeholder-val="{{ true }}"><a class="jy-login" href="#">Log in</a></sc-if><sc-if value="{{isRet}}" hint-placeholder-val="{{ false }}"><span class="jy-pill" aria-label="200 DLP available"><span class="dlp-c" aria-hidden="true"></span>200</span><span class="jy-me pav-h" aria-label="Your account">AO<img class="pav" src="/_blob/9112077cc7e3c1c839edc7e609d87954" alt=""></span></sc-if><sc-if value="{{canClose}}" hint-placeholder-val="{{ true }}"><a class="ds-x" href="#" aria-label="Leave and go back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a></sc-if></div>
 </header></sc-if>
 <sc-if value="{{isOnb}}" hint-placeholder-val="{{ false }}"><div class="jy-obh"><header class="ob-header" style="position: absolute; left: 0; top: 0; width: 100%; height: 88px; box-sizing: border-box; padding: 0 clamp(24px, 6.67vw, 96px); display: flex; align-items: center; justify-content: space-between; z-index: 3">
 <div style="display: flex; align-items: center; gap: 10px">

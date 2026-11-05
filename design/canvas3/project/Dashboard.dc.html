@@ -969,6 +969,8 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 .vt-door{transform:none}
 .vt-bolts{transform:none}
 }
+.pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
+.pav-h{position:relative !important;overflow:hidden !important}
 </style>
 </helmet>
 <div class="ds-root">
@@ -982,7 +984,7 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 <button type="button" class="ds-item" onClick="{{openPanel}}"><span class="nv-av sm" aria-hidden="true"><img src="{{coachSrc}}" alt="" style="left: {{coachL}}; top: {{coachT}}; width: {{coachW}}"></span><span>{{coachNav}}</span></button>
 <a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"></path></svg><span>Help &amp; support</span></a>
 <a href="Dash-Settings.dc.html" class="ds-item {{navSet}}" aria-current="{{navSetCur}}"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg><span>Settings</span></a>
-<a href="#" class="ds-item lr-acct"><span class="cs-cav">AO</span><span>Ada Ononuju</span></a>
+<a href="#" class="ds-item lr-acct"><span class="cs-cav pav-h">AO<img class="pav" src="/_blob/84f08b38fbe9b11d8aa477ac10398bfe" alt=""></span><span>Ada Ononuju</span></a>
 </div>
 </nav>
 <div style="min-width: 0; display: flex; flex-direction: column">
@@ -1002,7 +1004,7 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 </section></sc-if></span>
 <button type="button" class="lr-coach" onClick="{{openPanel}}" aria-label="{{coachBtn}}"><span class="nv-av" aria-hidden="true"><img src="{{coachSrc}}" alt="" style="left: {{coachL}}; top: {{coachT}}; width: {{coachW}}"></span><span>{{coachBtn}}</span></button>
 <a href="#" class="ds-icon-btn" aria-label="Notifications, 1 new"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16z"></path><path d="M10 21h4"></path></svg><span class="lr-dot"></span></a>
-<a href="#" class="lr-av" aria-label="Your account">AO</a>
+<a href="#" class="lr-av pav-h" aria-label="Your account">AO<img class="pav" src="/_blob/9112077cc7e3c1c839edc7e609d87954" alt=""></a>
 </header>
 <main class="ds-main">
 <sc-if value="{{pHome}}" hint-placeholder-val="{{ true }}">
@@ -1074,7 +1076,7 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 <div class="lr-gv" aria-hidden="true">
 <svg viewBox="0 0 400 230"><path class="lr-gv-p" d="M40 190 Q85 185 130 160 T215 110 T290 75 T360 40"></path></svg>
 <span class="lr-gv-g" style="left: 130px; top: 160px"></span><span class="lr-gv-g" style="left: 215px; top: 110px"></span><span class="lr-gv-g" style="left: 290px; top: 75px"></span>
-<span class="lr-gv-n" style="left: 40px; top: 190px; transform: translate(-50%, -24px)"><span class="lr-gv-you">AO</span>You, today</span>
+<span class="lr-gv-n" style="left: 40px; top: 190px; transform: translate(-50%, -24px)"><span class="lr-gv-you pav-h">AO<img class="pav" src="/_blob/9112077cc7e3c1c839edc7e609d87954" alt=""></span>You, today</span>
 <span class="lr-gv-n lr-gv-l" style="left: 360px; top: 40px"><span class="lr-gv-flag"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21V4"></path><path d="M7 4h11l-2.6 4.5L18 13H7z" fill="currentColor"></path></svg></span>Stronger leader</span>
 <span class="lr-gv-c" style="left: 186px; top: 156px"><span class="nv-av" aria-hidden="true"><img src="{{coachSrc}}" alt="" style="left: {{coachL}}; top: {{coachT}}; width: {{coachW}}"></span><span>{{coachTitle}} can map the steps</span></span>
 </div>
@@ -1100,7 +1102,7 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 <div class="lr-crs-m">
 <span class="lr-k">Your current course</span>
 <h2 id="lr-ct" class="lr-ft">Python Fundamentals</h2>
-<span class="lr-crs-by"><span class="cs-cav">PN</span>Priya Nair<span class="cs-dot"></span>Beginner<span class="cs-dot"></span>9 hrs</span>
+<span class="lr-crs-by"><span class="cs-cav pav-h">PN<img class="pav" src="/_blob/84f08b38fbe9b11d8aa477ac10398bfe" alt=""></span>Priya Nair<span class="cs-dot"></span>Beginner<span class="cs-dot"></span>9 hrs</span>
 <div class="lr-lsn" role="img" aria-label="{{lsnB}} {{lsnOf}}"><span class="lr-lsn-t"><b>{{lsnB}}</b> {{lsnOf}}</span><span class="lr-lsn-r" style="grid-template-columns: repeat({{lsnN}}, minmax(0, 1fr))"><sc-for list="{{lessons}}" as="x" hint-placeholder-count="18"><i class="{{x.c}}"></i></sc-for></span></div>
 <div class="lr-jf">
 <div class="lr-nx"><span class="lr-nx-i"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><div><small>Next up</small><b>Variables and data types</b><span class="lr-nx-m">About 18 min</span></div></div>
@@ -1139,9 +1141,9 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 </div>
 <aside class="lr-nv lr-coh" aria-labelledby="lr-coh">
 <div class="lr-ch"><h3 id="lr-coh" class="lr-ld-h">Your cohort<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">The people learning this program with you. Your mentor runs weekly check-ins and reviews your project work.</span></span></h3><a class="ds-link" href="ProgramDetail.dc.html">Open</a></div>
-<div class="lr-coh-r"><div class="lr-stack"><span class="cs-cav">DR</span><span class="cs-cav">PN</span><span class="cs-cav">GA</span><span class="cs-cav">TH</span><span class="cs-cav">LF</span><span class="cs-cav lr-more">+19</span></div>
+<div class="lr-coh-r"><div class="lr-stack"><span class="cs-cav pav-h">DR<img class="pav" src="/_blob/6940b199369f0ef8a87915557d16027b" alt=""></span><span class="cs-cav pav-h">PN<img class="pav" src="/_blob/84f08b38fbe9b11d8aa477ac10398bfe" alt=""></span><span class="cs-cav pav-h">GA<img class="pav" src="/_blob/9112077cc7e3c1c839edc7e609d87954" alt=""></span><span class="cs-cav pav-h">TH<img class="pav" src="/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2" alt=""></span><span class="cs-cav pav-h">LF<img class="pav" src="/_blob/9112077cc7e3c1c839edc7e609d87954" alt=""></span><span class="cs-cav lr-more">+19</span></div>
 <span class="lr-on"><i></i><span>24 learners · 6 online now</span></span></div>
-<a class="lr-mentor" href="#"><span class="cs-cav">SA</span><span><b>Dr Sara Ali</b><small>Mentor · check-in Wednesday</small></span><span class="lr-chev" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></span></a>
+<a class="lr-mentor" href="#"><span class="cs-cav pav-h">SA<img class="pav" src="/_blob/9112077cc7e3c1c839edc7e609d87954" alt=""></span><span><b>Dr Sara Ali</b><small>Mentor · check-in Wednesday</small></span><span class="lr-chev" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></span></a>
 </aside>
 </section>
 </sc-if>
@@ -1182,7 +1184,7 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 </div>
 <div class="cs-cb">
 <span class="cs-ct">{{c.t}}</span>
-<span class="cs-by"><span class="cs-cav">{{c.ini}}</span>{{c.by}}</span>
+<span class="cs-by"><span class="cs-cav pav-h">{{c.ini}}<sc-if value="{{c.pic}}" hint-placeholder-val="{{ false }}"><img class="pav" src="{{c.pic}}" alt=""></sc-if></span>{{c.by}}</span>
 <span class="cs-meta"><span class="cs-star" aria-hidden="true">★</span><b>{{c.rating}}</b><span>({{c.reviews}})</span><span class="cs-dot"></span><span>{{c.lvl}}</span><span class="cs-dot"></span><span>{{c.hrs}}</span></span>
 <span class="cs-tags"><span class="ds-tag blue"><span class="cs-tdot" style="background: {{c.tierDot}}"></span>{{c.tierLabel}}</span></span>
 <div class="cs-acc">
@@ -1198,7 +1200,7 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 <span class="nv-av" aria-hidden="true"><img src="{{coachSrc}}" alt="" style="left: {{coachL}}; top: {{coachT}}; width: {{coachW}}"></span>
 <div class="lr-nova-b"><span class="lr-nova-k">{{novaKicker}}</span><p>{{novaMsg}}</p></div>
 <div class="lr-nova-a"><sc-if value="{{novaIsLink}}" hint-placeholder-val="{{ false }}"><button type="button" class="ds-link" onClick="{{openPanel}}">{{novaLink}}</button></sc-if><sc-if value="{{novaIsBtn}}" hint-placeholder-val="{{ true }}"><button type="button" class="ds-ghost sm" onClick="{{openPanel}}">{{novaCta}}</button></sc-if><sc-if value="{{novaIsLink}}" hint-placeholder-val="{{ false }}"><a class="ds-ghost sm" href="{{novaHref}}">{{novaCta}}</a></sc-if></div>
-<sc-if value="{{showTutor}}" hint-placeholder-val="{{ false }}"><div class="lr-tut"><span class="cs-cav">HC</span><div><small>Prefer a person?</small><a class="ds-link" href="#">Message Hannah, your tutor</a></div></div></sc-if>
+<sc-if value="{{showTutor}}" hint-placeholder-val="{{ false }}"><div class="lr-tut"><span class="cs-cav pav-h">HC<img class="pav" src="/_blob/9112077cc7e3c1c839edc7e609d87954" alt=""></span><div><small>Prefer a person?</small><a class="ds-link" href="#">Message Hannah, your tutor</a></div></div></sc-if>
 </section>
 </sc-if>
 
@@ -1246,7 +1248,7 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 
 <section class="lr-sec" aria-labelledby="lr-cm">
 <div class="lr-sh"><h2 id="lr-cm">From the community</h2><a class="ds-link" href="#">Open community</a></div>
-<div class="lr-posts"><sc-for list="{{posts}}" as="p" hint-placeholder-count="3"><a class="lr-post" href="#"><b>{{p.t}}</b><small><span class="cs-cav">{{p.ini}}</span>{{p.by}} · {{p.n}} replies</small></a></sc-for></div>
+<div class="lr-posts"><sc-for list="{{posts}}" as="p" hint-placeholder-count="3"><a class="lr-post" href="#"><b>{{p.t}}</b><small><span class="cs-cav pav-h">{{p.ini}}<sc-if value="{{p.pic}}" hint-placeholder-val="{{ false }}"><img class="pav" src="{{p.pic}}" alt=""></sc-if></span>{{p.by}} · {{p.n}} replies</small></a></sc-for></div>
 </section>
 
 </sc-if>
@@ -1305,7 +1307,7 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 <a href="#" class="pg-back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg>Lesson 4 · Joining tables with SQL</a>
 <div class="sc-g">
 <section class="ds-card sc-chat tu-chat" aria-label="Conversation with your tutor">
-<header class="sc-hd"><span class="av tu-av">TA</span><span><b>Tobi Adeyemi</b><span>SQL tutor · Data Foundations · Active now</span></span><a href="#" class="hp-rb"><span class="sg-lg">Book a live session</span><span class="sg-sm">Book</span></a></header>
+<header class="sc-hd"><span class="av tu-av pav-h">TA<img class="pav" src="/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2" alt=""></span><span><b>Tobi Adeyemi</b><span>SQL tutor · Data Foundations · Active now</span></span><a href="#" class="hp-rb"><span class="sg-lg">Book a live session</span><span class="sg-sm">Book</span></a></header>
 <div class="sc-body">
 <div class="sc-sum"><span class="sc-sl"><span class="nv-av tu-nv" aria-hidden="true"><img src="{{coachSrc}}" alt="" style="left: {{coachL}}; top: {{coachT}}; width: {{coachW}}"></span><span>Handed over by {{coachName}}</span><span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">You chose to share this. Your tutor sees the summary, the lesson and what you’ve tried, not the rest of your account.</span></span></span>
 <p>You asked why the LEFT JOIN leaves some customers with an empty total. {{coachName}} tried two explanations and a worked example, and you were still unsure.</p>
@@ -1313,8 +1315,8 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 <sc-if value="{{showT}}" hint-placeholder-val="{{ false }}"><ol class="tu-tr"><sc-for list="{{tr}}" as="t" hint-placeholder-count="4"><li><b class="{{t.cls}}">{{t.who}}</b><span>{{t.text}}</span></li></sc-for></ol></sc-if>
 </div>
 <span class="sc-day">Today</span>
-<sc-for list="{{msgs}}" as="m" hint-placeholder-count="2"><div class="sc-msg {{m.cls}}"><sc-if value="{{m.tutor}}" hint-placeholder-val="{{ true }}"><span class="av tu-av">TA</span></sc-if><div><p>{{m.text}}</p></div></div></sc-for>
-<sc-if value="{{typing}}" hint-placeholder-val="{{ false }}"><div class="sc-msg"><span class="av tu-av">TA</span><div class="tu-typ" role="status"><i></i><i></i><i></i><span class="sr-only">Tobi is typing</span></div></div></sc-if>
+<sc-for list="{{msgs}}" as="m" hint-placeholder-count="2"><div class="sc-msg {{m.cls}}"><sc-if value="{{m.tutor}}" hint-placeholder-val="{{ true }}"><span class="av tu-av pav-h">TA<img class="pav" src="/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2" alt=""></span></sc-if><div><p>{{m.text}}</p></div></div></sc-for>
+<sc-if value="{{typing}}" hint-placeholder-val="{{ false }}"><div class="sc-msg"><span class="av tu-av pav-h">TA<img class="pav" src="/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2" alt=""></span><div class="tu-typ" role="status"><i></i><i></i><i></i><span class="sr-only">Tobi is typing</span></div></div></sc-if>
 </div>
 <form class="sc-cmp" onSubmit="{{send}}"><label for="tu-in" class="sr-only">Message your tutor</label><input id="tu-in" class="tu-in" placeholder="Message Tobi…" value="{{tdraft}}" onInput="{{onTDraft}}" autocomplete="off"><button type="submit" class="sc-send" aria-label="Send"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></button></form>
 </section>
@@ -1372,7 +1374,11 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 </aside>
 </sc-if>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"state": {"editor": "enum", "options": ["A", "B", "C", "R", "D", "E", "F", "G", "H", "I", "L", "W"], "default": "A"}, "coach": {"editor": "text", "default": "Nova"}, "panel": {"editor": "boolean", "default": false}, "ask": {"editor": "enum", "options": ["", "dlp"], "default": ""}, "page": {"editor": "enum", "options": ["home", "usage", "backpack", "settings", "tutor"], "default": "home"}, "tv": {"editor": "enum", "options": ["new", "later", "connected"], "default": "new"}, "season": {"editor": "enum", "options": ["active", "calculating", "ready"], "default": "active"}, "mforge": {"editor": "enum", "options": ["eligible", "not"], "default": "eligible"}, "wallets": {"editor": "boolean", "default": false}, "las": {"editor": "boolean", "default": false}, "$preview": {"width": 1440, "height": 2000}}'>var TR = [["You", "I don’t understand why we use a LEFT JOIN here."], ["Coach", "LEFT JOIN keeps every customer; INNER JOIN drops the ones with no orders."], ["You", "Show me visually."], ["Coach", "Shared a results table with a customer whose total is NULL."], ["You", "Give me an example."], ["Coach", "Worked example: a shop’s full customer list, including people who haven’t bought yet."], ["You", "I’m still confused."], ["Coach", "Suggested a tutor and prepared this handover."]];
+<script type="text/x-dc" data-dc-script data-props='{"state": {"editor": "enum", "options": ["A", "B", "C", "R", "D", "E", "F", "G", "H", "I", "L", "W"], "default": "A"}, "coach": {"editor": "text", "default": "Nova"}, "panel": {"editor": "boolean", "default": false}, "ask": {"editor": "enum", "options": ["", "dlp"], "default": ""}, "page": {"editor": "enum", "options": ["home", "usage", "backpack", "settings", "tutor"], "default": "home"}, "tv": {"editor": "enum", "options": ["new", "later", "connected"], "default": "new"}, "season": {"editor": "enum", "options": ["active", "calculating", "ready"], "default": "active"}, "mforge": {"editor": "enum", "options": ["eligible", "not"], "default": "eligible"}, "wallets": {"editor": "boolean", "default": false}, "las": {"editor": "boolean", "default": false}, "$preview": {"width": 1440, "height": 2000}}'>
+var AVP = {"DR": "/_blob/6940b199369f0ef8a87915557d16027b", "TA": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "TH": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "TR": "/_blob/6940b199369f0ef8a87915557d16027b", "PN": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "GA": "/_blob/9112077cc7e3c1c839edc7e609d87954", "ML": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "HC": "/_blob/9112077cc7e3c1c839edc7e609d87954", "LF": "/_blob/9112077cc7e3c1c839edc7e609d87954", "PS": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "LO": "/_blob/9112077cc7e3c1c839edc7e609d87954", "MR": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "SA": "/_blob/9112077cc7e3c1c839edc7e609d87954", "SM": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "KB": "/_blob/6940b199369f0ef8a87915557d16027b", "JM": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "SL": "/_blob/9112077cc7e3c1c839edc7e609d87954", "AK": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "MS": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "PL": "/_blob/6940b199369f0ef8a87915557d16027b", "SR": "/_blob/6940b199369f0ef8a87915557d16027b", "JL": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "ME": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "MO": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "KA": "/_blob/6940b199369f0ef8a87915557d16027b", "IN": "/_blob/9112077cc7e3c1c839edc7e609d87954", "DA": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "DM": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "TB": "/_blob/6940b199369f0ef8a87915557d16027b", "RP": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "NB": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "LK": "/_blob/9112077cc7e3c1c839edc7e609d87954", "JC": "/_blob/6940b199369f0ef8a87915557d16027b", "DK": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2"};
+AVP.AO = "/_blob/84f08b38fbe9b11d8aa477ac10398bfe";
+function PIC(i) { return AVP[i] || ""; }
+var TR = [["You", "I don’t understand why we use a LEFT JOIN here."], ["Coach", "LEFT JOIN keeps every customer; INNER JOIN drops the ones with no orders."], ["You", "Show me visually."], ["Coach", "Shared a results table with a customer whose total is NULL."], ["You", "Give me an example."], ["Coach", "Worked example: a shop’s full customer list, including people who haven’t bought yet."], ["You", "I’m still confused."], ["Coach", "Suggested a tutor and prepared this handover."]];
 var CANNED = ["Exactly: you’d still write their name and leave the amount blank. That blank is the NULL you saw. A LEFT JOIN does the same: keep everyone from the first list, fill in what matches.", "Try it: open the practice editor, swap LEFT JOIN for INNER JOIN and compare the row counts. I’ll stay here.", "Great. Tell me what you find, or book a live session if you’d like to walk through it together."];
 
 class Component extends DCLogic {
@@ -1457,7 +1463,7 @@ class Component extends DCLogic {
     var recKey = { R: 'ready', B: 'interests', C: 'goal', F: 'course', G: 'cert', H: 'program', L: 'active' }[st] || (isActive ? 'active' : 'start');
     var recs = this.REC[recKey].map(function (c) {
       var tn = tone[c.topic], v = { t: c.t, by: c.by, lvl: c.lvl, rating: c.rating, reviews: c.reviews, hrs: c.hrs + ' hrs', dlp: fmt(c.dlp), why: c.why, href: c.dlp === 200 ? 'CourseDetail-Learner.dc.html' : 'CourseDetail.dc.html',
-        ini: c.by.split(' ').map(function (w) { return w[0]; }).slice(0, 2).join(''), bg: tn[0], icoC: tn[1], tierLabel: tier[c.tier][0], tierDot: tier[c.tier][1] };
+        ini: c.by.split(' ').map(function (w) { return w[0]; }).slice(0, 2).join(''), pic: PIC(c.by.split(' ').map(function (w) { return w[0]; }).slice(0, 2).join('')), bg: tn[0], icoC: tn[1], tierLabel: tier[c.tier][0], tierDot: tier[c.tier][1] };
       for (var i = 0; i < 5; i++) v['i' + i] = tn[2] === i ? 'inline' : 'none';
       return v;
     });
@@ -1492,7 +1498,7 @@ class Component extends DCLogic {
     var postsPy = [['', 'How I got unstuck on Python loops', 'Daniel Reyes', 'DR', 14], ['', 'Five wireframing habits that saved me hours', 'Lena Fischer', 'LF', 21], ['', 'Python study group: Thursdays, all welcome', 'Tom Hughes', 'TH', 8]];
     var postsCert = [['', 'How I prepared for the final evaluation', 'Amara Okafor', 'AO', 19], ['', 'Practice labs: which ones helped most', 'Daniel Reyes', 'DR', 11], ['', 'Certificate study group: Tuesdays', 'Tom Hughes', 'TH', 7]];
     var postsCoh = [['', 'Week 4 dashboards: share your drafts', 'Dr Sara Ali', 'SA', 23], ['', 'Notes from the live session on datasets', 'Priya Nair', 'PN', 16], ['', 'Anyone up for a study room on Thursday?', 'Grace Adeyemi', 'GA', 9]];
-    var posts = (st === 'C' ? postsLead : (st === 'G' ? postsCert : (st === 'H' ? postsCoh : (st === 'F' ? postsPy : (isNew && st !== 'R' ? postsNew : postsData))))).map(function (x) { return { tag: x[0], t: x[1], by: x[2], ini: x[3], n: x[4] }; });
+    var posts = (st === 'C' ? postsLead : (st === 'G' ? postsCert : (st === 'H' ? postsCoh : (st === 'F' ? postsPy : (isNew && st !== 'R' ? postsNew : postsData))))).map(function (x) { return { tag: x[0], t: x[1], by: x[2], ini: x[3], pic: PIC(x[3]), n: x[4] }; });
     var CHN = this.CH;
     var ROUTES = {
       R: [['1', 'Foundation', '2 courses', 'now', 'You start here'], ['2', 'Core skills', '3 courses'], ['3', 'Practice', '2 projects'], ['4', 'Certification', '1 exam'], ['✓', 'Job-ready', 'Your portfolio', 'end']],

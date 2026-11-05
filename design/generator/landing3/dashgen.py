@@ -256,8 +256,11 @@ button.lr-gs-s.next:hover{background:#EAF0FF}
 .lr-goalw b{font-size:15px;font-weight:600;color:#0B1433}
 .lr-goalw .lr-bar{margin-top:10px}
 .lr-week .lr-rows + .lr-goalw{margin-top:18px}
-.lr-week .lr-wka .lr-rows{margin-bottom:18px}
-.lr-week .lr-wka .lr-rows + .lr-goalw,.lr-week .lr-wka .lr-goalw{margin-top:auto}
+.lr-week > .lr-wkf{grid-column:1 / -1;padding:18px 28px 22px;border-top:1px solid #EEF1F7}
+.lr-week .lr-wkf .lr-goalw{margin:0;display:flex;align-items:center;gap:18px;padding:0;background:none;font-size:14px;color:#4A5578}
+.lr-wkf .lr-goalw .lr-bar{flex:1;margin:0}
+.lr-wkf .lr-goalw > span:first-child{flex-shrink:0}
+.lr-wkf .lr-goalw b{flex-shrink:0}
 .lr-mlc{padding:4px 24px}
 .lr-mr{display:grid;grid-template-columns:40px minmax(0,1fr) 200px 20px;align-items:center;gap:18px;padding:16px 0;border-top:1px solid #EEF1F7;text-decoration:none;color:#0B1433}
 .lr-mr:first-child{border-top:0}
@@ -553,6 +556,10 @@ button.lr-pill{font-family:inherit;cursor:pointer}
 .lr-bar{width:90px}
 .lr-week{grid-template-columns:minmax(0,1fr);margin-left:-16px;margin-right:-16px;border-radius:0;border-left:0;border-right:0}
 .lr-week > div.lr-wkc,.lr-week > div.lr-wka{padding:16px 16px 20px}
+.lr-week > .lr-wkf{padding:14px 16px 18px}
+.lr-week .lr-wkf .lr-goalw{flex-wrap:wrap;gap:10px 12px}
+.lr-wkf .lr-goalw b{margin-left:auto}
+.lr-wkf .lr-goalw .lr-bar{order:3;flex-basis:100%}
 .lr-ev{grid-template-columns:62px minmax(0,1fr)}
 .lr-week > .lr-seg{display:flex;flex-direction:row;padding:4px;margin:16px 16px 0}
 .lr-week .lr-ch h3{display:none}
@@ -839,8 +846,8 @@ MARKUP = '''<div class="ds-root">
 <div class="lr-wka">
 <div class="lr-ch"><h3>Due soon</h3><a class="ds-link" href="#">All assignments</a></div>
 <div class="lr-rows"><sc-for list="{{assigns}}" as="a" hint-placeholder-count="2"><div class="lr-row"><span class="lr-row-i">''' + ic(I['assign'], 20) + '''</span><div class="lr-row-b"><b>{{a.t}}</b><small>{{a.ctx}}</small><small><span class="ds-tag {{a.dueCls}}">{{a.due}}</span>{{a.est}}</small></div><a class="ds-link" href="{{a.href}}">{{a.cta}}</a></div></sc-for></div>
-<div class="lr-goalw"><div><span>Weekly goal</span><b>{{wgDone}} of {{wgAll}} hours</b></div><span class="lr-bar lg"><i style="width: {{wgPct}}"></i></span></div>
 </div>
+<div class="lr-wkf"><div class="lr-goalw"><span>Weekly goal</span><span class="lr-bar lg"><i style="width: {{wgPct}}"></i></span><b>{{wgDone}} of {{wgAll}} hours</b></div></div>
 </section>
 </sc-if>
 

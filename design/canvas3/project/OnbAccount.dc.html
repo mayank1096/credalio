@@ -61,10 +61,12 @@ a{color:#1652F0}a:hover{color:#0E3BB8}
 .ob-inv-l{width:32px;height:32px;border-radius:999px;background:#0B1433;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
 .ob-note{margin:clamp(14px,2.6vh,20px) 0 0 0;font-size:13.5px;line-height:1.5;color:#5B6582;text-align:center}
 @media (max-width: 760px){.ob-inv{border-radius:16px}}
+.ob-scene-join{background-image:url(/_blob/b90801d4b5310b6fb5d01893ba763645)}
+@media (max-width: 760px){.ob-scene-join{background-position:6% 100%}}
 </style>
 </helmet>
 <div class="ob-root" style="width: 100%; height: 100vh; min-height: 680px; position: relative; overflow: hidden; background: #FFFFFF; font-family: 'Google Sans', 'Google Sans Text', 'Helvetica Neue', system-ui, sans-serif; color: #0B1433">
-<div class="ob-scene" aria-hidden="true"></div>
+<div class="ob-scene {{sceneCls}}" aria-hidden="true"></div>
 <header class="ob-header" style="position: absolute; left: 0; top: 0; width: 100%; height: 88px; box-sizing: border-box; padding: 0 clamp(24px, 6.67vw, 96px); display: flex; align-items: center; justify-content: space-between; z-index: 3">
 <div style="display: flex; align-items: center; gap: 10px">
 <span class="lg-mark" aria-hidden="true"></span><span class="lg-word ob-brand" role="img" aria-label="Credalio"></span>
@@ -105,7 +107,7 @@ class Component extends DCLogic {
       sub: ch ? 'We’ll send a new link to the right address. The old one stops working.' : (code ? 'The invite link in your email connects you automatically. You can also enter your invite code.' : (inv ? 'Use the email your invitation was sent to.' : 'Save your journey and pick it up anywhere.')),
       btn: ch ? 'Send new link' : (code ? 'Continue' : 'Continue with Email'), backHref: ch ? 'OnbInbox.dc.html' : (inv ? 'InstInvite.dc.html' : 'OnbWelcome.dc.html'),
       em: ch ? 'ada.ononuju@gmail.com' : (bad ? 'ada.ononuju@example' : (code ? 'MERIDIAN-4821' : (inv ? 'ada.ononuju@meridian.edu' : ''))), emCls: bad ? 'ob-bad' : '', emInv: bad ? 'true' : 'false', bad, full: !ch && !code,
-      showSteps: !code, isCode: code, isInv: inv, fieldLabel: code ? 'Invite code' : 'Email', fieldType: code ? 'text' : 'email', ph: code ? 'Invite code' : 'Your email address',
+      showSteps: !code, sceneCls: (code || inv) ? 'ob-scene-join' : '', isCode: code, isInv: inv, fieldLabel: code ? 'Invite code' : 'Email', fieldType: code ? 'text' : 'email', ph: code ? 'Invite code' : 'Your email address',
       nextHref: code ? 'InstInvite.dc.html' : 'OnbInbox.dc.html', ssoHref: inv ? 'InstDone.dc.html' : '#' };
   }
 }

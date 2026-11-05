@@ -157,7 +157,7 @@ for a, b in [
     DOORS = DOORS.replace(a, b)
 win = re.search(r'(<a class="ci-door ci-in".*?<div class="ci-win">)(.*?)(<div style="height: 30px"></div>\n</div>)', DOORS, re.S)
 DOORS = DOORS.replace(win.group(2), '<div class="ci-wk"><span>Validator profile</span><span class="ds-tag green">Qualified</span></div>\n<span style="font-size: 16px; font-weight: 600; letter-spacing: -.2px">Subject Matter · Data analytics</span>\n<div class="ci-row"><span>Findings resolved</span><b style="margin-left: auto; font-weight: 600; color: #0B1433">96%</b></div>\n<div class="ci-row"><span>Reviews this term</span><b style="margin-left: auto; font-weight: 600; color: #0B1433">18</b></div>\n')
-DOORS = DOORS.replace('<div class="ci-float" style="left: -128px; top: 128px"><span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0', '<div class="ci-float" style="left: -128px; top: 128px"><span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0')
+DOORS = DOORS.replace('<div class="ci-float" style="left: -128px; top: 128px"><span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0', '<div class="ci-float" style="left: -176px; top: 128px"><span style="width: 32px; height: 32px; border-radius: 999px; background: #1652F0')
 DOORS_SEC = '<section class="pc-sec cx-sec" aria-label="For creators and validators">' + DOORS + '</section>'
 # ---------- final CTA ----------
 FC = block(L, '<section aria-labelledby="fc-h"')

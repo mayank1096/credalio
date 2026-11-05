@@ -130,8 +130,6 @@ HOLO_CSS = r'''.rc-main .cd-val{position:relative;overflow:hidden;background:rad
 @property --ha{syntax:'<angle>';inherits:false;initial-value:0deg}
 @keyframes hlSpin{to{--ha:360deg}}
 @keyframes hlGlint{0%,35%{background-position:130% 0}70%,100%{background-position:-60% 0}}
-.hl-cap{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:12px;font-weight:500;color:#8A6A1E}
-.hl-cap i{width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,#7FD6FF,#FF9AD5,#FFE27A)}
 @media (prefers-reduced-motion: reduce){.hl-sh,.hl-gl{animation:none}}
 @media (max-width: 760px){.hl{width:60px;height:60px}}
 '''

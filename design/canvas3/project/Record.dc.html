@@ -187,8 +187,6 @@ p{text-wrap:balance}
 @property --ha{syntax:'<angle>';inherits:false;initial-value:0deg}
 @keyframes hlSpin{to{--ha:360deg}}
 @keyframes hlGlint{0%,35%{background-position:130% 0}70%,100%{background-position:-60% 0}}
-.hl-cap{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:12px;font-weight:500;color:#8A6A1E}
-.hl-cap i{width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,#7FD6FF,#FF9AD5,#FFE27A)}
 @media (prefers-reduced-motion: reduce){
 .hl-sh,.hl-gl{animation:none}
 }
@@ -228,7 +226,6 @@ p{text-wrap:balance}
 <div class="cd-vt">Gold Validated</div>
 <div class="cd-vd">This version completed every review that applies to it.</div>
 <div class="cd-checks"><div class="cd-chk"><b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Content</b><span>Subject Matter Validator · Completed</span></div><div class="cd-chk"><b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Learning design</b><span>Educational Validator · Completed</span></div><div class="cd-chk"><b><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F6B45" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Assessment</b><span>Assessment Validator · Completed</span></div></div>
-<span class="hl-cap"><i></i>Holographic seal</span>
 <div class="cd-vf"><span class="cd-vid">AI and Security &amp; Privacy reviews: not applicable<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">These reviews are only added when the learning uses AI features or handles personal data.</span></span></span></div>
 </div>
 </section>
@@ -256,7 +253,7 @@ p{text-wrap:balance}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1080}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1053}}'>
 class Component extends DCLogic {
 
   holoMove(e) {

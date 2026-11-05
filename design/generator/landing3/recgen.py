@@ -80,7 +80,6 @@ BODY = '''<div style="font-family: 'Google Sans', system-ui, sans-serif; color: 
 <div class="cd-vt">Gold Validated</div>
 <div class="cd-vd">This version completed every review that applies to it.</div>
 <div class="cd-checks">''' + ''.join('<div class="cd-chk"><b>%s%s</b><span>%s · Completed</span></div>' % (CHKI, t, r) for t, r, _ in AREAS) + '''</div>
-<span class="hl-cap"><i></i>Holographic seal</span>
 <div class="cd-vf"><span class="cd-vid">AI and Security &amp; Privacy reviews: not applicable''' + tip('These reviews are only added when the learning uses AI features or handles personal data.') + '''</span></div>
 </div>
 </section>

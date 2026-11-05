@@ -27,7 +27,7 @@ WARN = '<span class="ci-ck" style="background: #FFF4E5; color: #B54708; font-siz
 # ---------- hero: the Landing creators door, opened up ----------
 DOOR = block(L, '<a class="ci-door ci-cr', 'a')
 SEAL = re.search(r'<svg width="11" height="11" viewBox="0 0 100 100">.*?</svg>', DOOR, re.S).group(0)
-FLOAT = re.search(r'<div class="ci-float".*?</div></div>|<div class="ci-float".*?£1,240 earned</span></span></div>', DOOR, re.S).group(0)
+FLOAT = re.search(r'<div class="ci-float".*?</div></div>|<div class="ci-float".*?$1,240 earned</span></span></div>', DOOR, re.S).group(0)
 CDH = open(P + 'CourseDetail.dc.html').read()
 GSEAL = re.search(r'<svg class="cd-seal".*?</svg>', CDH, re.S).group(0).replace('class="cd-seal"', 'class="cx-seal"').replace('cdGold', 'cxGold').replace('stroke="#FFFFFF" stroke-width="9"', 'stroke="#6B4E16" stroke-width="9"')
 HERO = '''<section class="cx-top" aria-labelledby="cx-h">
@@ -55,7 +55,7 @@ HERO = '''<section class="cx-top" aria-labelledby="cx-h">
 </div>
 </div>
 <div class="ci-float cx-nvf">''' + AVN + '''<span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">Nova · just now</span><span style="font-size: 13.5px; font-weight: 600">Drafted 3 questions</span></span></div>
-<div class="ci-float cx-ern"><div class="ci-bars cx-bars"><span style="height: 40%"></span><span style="height: 55%"></span><span style="height: 48%"></span><span style="height: 72%"></span><span style="height: 100%; background: #1652F0"></span></div><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">This month</span><span style="font-size: 16px; font-weight: 600">£1,240 <i class="cx-up">+18%</i></span></span></div>
+<div class="ci-float cx-ern"><div class="ci-bars cx-bars"><span style="height: 40%"></span><span style="height: 55%"></span><span style="height: 48%"></span><span style="height: 72%"></span><span style="height: 100%; background: #1652F0"></span></div><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">This month</span><span style="font-size: 16px; font-weight: 600">$1,240 <i class="cx-up">+18%</i></span></span></div>
 </div>
 </div>
 </section>'''
@@ -164,14 +164,14 @@ VAL = '''<section class="pc-sec cx-sec" aria-labelledby="cx-va">
 
 # ---------- earnings + creator services ----------
 WAYS = [('wallet', 'Marketplace sales', 'Earn when learners buy your eligible learning.', ''),
-        ('prog', 'Organisations', 'Offer your learning to institutions and teams, where eligible.', ''),
+        ('prog', 'Organizations', 'Offer your learning to institutions and teams, where eligible.', ''),
         ('send', 'Referrals', 'Introduce learners to your learning, or other eligible learning.', ''),
         ('reward', 'Creator rewards', 'Take part in Credalio’s creator reward economy.', 'Open to eligible creators, based on qualified contribution and platform rules.')]
 EARN = '''<section class="pc-sec cx-sec" aria-label="Earnings and creator services">
 <div class="cx-ec">
 <div class="ds-card cx-earn">
 <div class="cx-eh"><div><span class="pc-k">Creator economics</span><h2 class="pc-h2">Build knowledge. Create value.</h2></div>
-<div class="ci-float cx-ef">''' + re.search(r'<div class="ci-bars">.*?</div>', FLOAT, re.S).group(0) + '''<span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">This month</span><span style="font-size: 15px; font-weight: 600">£1,240 earned</span></span></div></div>
+<div class="ci-float cx-ef">''' + re.search(r'<div class="ci-bars">.*?</div>', FLOAT, re.S).group(0) + '''<span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">This month</span><span style="font-size: 15px; font-weight: 600">$1,240 earned</span></span></div></div>
 <div class="pc-units">''' + ''.join('<div class="pc-u"><span class="cx-ui">' + ic(dashgen.I[k], 20) + '</span><div><b>' + t + (tip(x, 'r') if x else '') + '</b><small>' + d + '</small></div></div>' for k, t, d, x in WAYS) + '''</div>
 <a class="ds-link" href="#">How creator earnings work''' + dashgen.ARR_S + '''</a>
 </div>

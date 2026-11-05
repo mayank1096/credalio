@@ -42,7 +42,7 @@ PR = PR.replace('<div class="pr-foot">', '<sc-if value="{{pr.isPath}}" hint-plac
 PR = PR.replace('<sc-if value="{{pr.showTable}}"', '</sc-if>\n<sc-if value="{{pr.showTable}}"')
 FC = block(L, '<section aria-labelledby="fc-h"')
 DOOR = block(L, '<a class="ci-door ci-in"', 'a')
-DOOR = DOOR.replace('<span class="ci-t">Bring your programs to Credalio.</span>', '<span class="ci-t">Learning for your organisation.</span>')
+DOOR = DOOR.replace('<span class="ci-t">Bring your programs to Credalio.</span>', '<span class="ci-t">Learning for your organization.</span>')
 DOOR = DOOR.replace('Deliver programs, manage learners and educators, and issue verifiable credentials at scale.', 'Give teams, students or members access with central admin, AI settings and reporting. From 5,000 to 10,000 DLP per person, depending on your plan.')
 DOOR = DOOR.replace('Partner with Credalio', 'Talk to Credalio')
 LFOOT = block(L, '<footer class="lh-eng ft"', 'footer').replace('onSubmit="{{hero.onStart}}"', 'onSubmit="{{ftSub}}"')
@@ -78,7 +78,7 @@ MEMBERHEAD = """<sc-if value="{{pr.mine}}" hint-placeholder-val="{{ false }}">
 </div>
 </sc-if>"""
 PR = PR.replace('MEMBERHEAD', MEMBERHEAD).replace('CKI', CKI)
-FAQS = [('Can I start for free?', 'Yes. Free gives you 200 DLP to explore Credalio, find your goal with your AI Coach and start eligible free learning.'), ('Do I need a card for Free?', 'No. You only add payment details if you choose Basic or Pro.'), ('What happens when I use all my DLP?', 'Your progress, projects and Backpack stay with you. Explore free learning, wait for your refresh, or upgrade to keep going.'), ('Does unused DLP roll over?', 'Not on Free. On Pro, unused DLP rolls over up to 18,000, with gradual decay from month four. Basic follows the Basic plan policy, which is being finalised.'), ('Are certificates included?', 'Certificates you earn from eligible learning go straight to your Digital Backpack.'), ('Are Professional Certifications included?', 'Certification learning uses your DLP like other learning. Any separate exam fee is shown on the certification page before you start.'), ('Does my plan include AI?', 'Yes. Every plan includes an AI Coach. You get more of it on Basic, and the most on Pro.'), ('What if a course needs more DLP than I have?', 'You can still start. Credalio shows what your balance covers, and you carry on when your allowance refreshes or you top up.'), ('Can my employer or university pay?', 'Yes. Organisations can give access through Credalio for Institutions, from 5,000 to 10,000 DLP per person.')]
+FAQS = [('Can I start for free?', 'Yes. Free gives you 200 DLP to explore Credalio, find your goal with your AI Coach and start eligible free learning.'), ('Do I need a card for Free?', 'No. You only add payment details if you choose Basic or Pro.'), ('What happens when I use all my DLP?', 'Your progress, projects and Backpack stay with you. Explore free learning, wait for your refresh, or upgrade to keep going.'), ('Does unused DLP roll over?', 'Not on Free. On Pro, unused DLP rolls over up to 18,000, with gradual decay from month four. Basic follows the Basic plan policy, which is being finalised.'), ('Are certificates included?', 'Certificates you earn from eligible learning go straight to your Digital Backpack.'), ('Are Professional Certifications included?', 'Certification learning uses your DLP like other learning. Any separate exam fee is shown on the certification page before you start.'), ('Does my plan include AI?', 'Yes. Every plan includes an AI Coach. You get more of it on Basic, and the most on Pro.'), ('What if a course needs more DLP than I have?', 'You can still start. Credalio shows what your balance covers, and you carry on when your allowance refreshes or you top up.'), ('Can my employer or university pay?', 'Yes. Organizations can give access through Credalio for Institutions, from 5,000 to 10,000 DLP per person.')]
 CK = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>'
 
 CSS = r'''.pc-avl{font-weight:500;color:#5B6582}
@@ -125,7 +125,8 @@ CSS = r'''.pc-avl{font-weight:500;color:#5B6582}
 .pc-sec{max-width:1312px;margin:0 auto;padding:0 48px 96px;box-sizing:border-box;font-family:'Google Sans',system-ui,sans-serif;color:#0B1433}
 .pc-sh{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:28px}
 .pc-k{display:block;font-size:14px;font-weight:500;color:#1652F0}
-.pc-h2{margin:8px 0 0;display:flex;align-items:center;font-size:36px;line-height:1.15;font-weight:600;letter-spacing:-.03em}
+.pc-h2{margin:8px 0 0;font-size:36px;line-height:1.15;font-weight:600;letter-spacing:-.03em}
+.lr-card .lr-ch h3{display:block}
 .pc-p{margin:10px 0 0;max-width:620px;font-size:17px;line-height:1.6;color:#4A5578}
 .pc-ent .ci-doors{height:380px}
 .pc-ent .ci-door{flex:1}
@@ -215,7 +216,7 @@ CSS = r'''.pc-avl{font-weight:500;color:#5B6582}
 }
 '''
 
-TOPS = ''.join('''<a class="wf-o cb-o" href="Chk-TOP.dc.html">%s<b>%s%s</b><span>DLP · price to be confirmed</span><span class="cb-d">About %d hours of learning</span><span class="cb-go">Get DLP →</span></a>''' % ('<em class="cb-pop">Most chosen</em>' if n == 1000 else '', coin(), '{:,}'.format(n), n // 100) for n in (500, 1000, 2500))
+TOPS = ''.join('''<a class="wf-o cb-o" href="Chk-TOP.dc.html">%s<b>%s%s</b><span>DLP · $%d one time</span><span class="cb-d">About %d hours of learning</span><span class="cb-go">Get DLP →</span></a>''' % ('<em class="cb-pop">Most chosen</em>' if n == 1000 else '', coin(), '{:,}'.format(n), {500: 6, 1000: 11, 2500: 25}[n], n // 100) for n in (500, 1000, 2500))
 
 STEPS = [('Subscribe', 'Your monthly DLP lands in your account.'), ('Choose learning', 'Every eligible course shows how much DLP it needs.'), ('Learn', 'DLP is used as you open eligible learning.'), ('Keep going', 'Your allowance refreshes each month, with rollover on eligible plans.')]
 HOW = ''.join('<li><span class="ko-dot">%d</span><span><b>%s</b><span>%s</span></span></li>' % (i + 1, t, d) for i, (t, d) in enumerate(STEPS))
@@ -225,7 +226,7 @@ BODY = '''<div style="font-family: 'Google Sans', system-ui, sans-serif; color: 
 ''' + PR + '''
 
 <sc-if value="{{pr.guest}}" hint-placeholder-val="{{ true }}">
-<section class="pc-sec pc-ent" id="pc-ent" aria-label="Credalio for organisations"><div class="ci-doors">''' + DOOR + '''</div></section>
+<section class="pc-sec pc-ent" id="pc-ent" aria-label="Credalio for organizations"><div class="ci-doors">''' + DOOR + '''</div></section>
 
 </sc-if>
 <section class="pc-sec" aria-labelledby="pc-tu">

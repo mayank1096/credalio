@@ -219,6 +219,33 @@
       "x": 6210,
       "y": 4840
     },
+    "CR-CREATE-002Bc.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CREATE-002Bc · Build from scratch · Professional certification · Desktop",
+      "w": 1440,
+      "x": 8280,
+      "y": 4840
+    },
+    "CR-CREATE-002Bl.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CREATE-002Bl · Build from scratch · Learning program · Desktop",
+      "w": 1440,
+      "x": 11320,
+      "y": 4840
+    },
+    "CR-CREATE-002Bp.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-CREATE-002Bp · Build from scratch · Career path · Desktop",
+      "w": 1440,
+      "x": 9800,
+      "y": 4840
+    },
     "CR-CRED-001-Mobile.dc.html": {
       "h": 844,
       "is_interactive": true,
@@ -491,7 +518,7 @@
       "y": 6660
     },
     "CR-DASH-NEW-Mobile.dc.html": {
-      "h": 844,
+      "h": 980,
       "is_interactive": true,
       "page": "p1",
       "title": "CR-DASH-NEW · Mobile",
@@ -501,7 +528,7 @@
     },
     "CR-DASH-NEW.dc.html": {
       "expand": "fill",
-      "h": 820,
+      "h": 1000,
       "is_interactive": true,
       "page": "p1",
       "title": "CR-DASH-NEW · Creator Studio launchpad · Desktop",
@@ -770,7 +797,7 @@
       "y": 29676
     },
     "CR-HOME-NEW-Mobile.dc.html": {
-      "h": 844,
+      "h": 1000,
       "is_interactive": true,
       "page": "p1",
       "title": "CR-HOME-NEW · Mobile",
@@ -797,7 +824,7 @@
       "y": 29676
     },
     "CR-HOME-SET.dc.html": {
-      "h": 900,
+      "h": 940,
       "is_interactive": true,
       "page": "p1",
       "title": "CR-HOME-SET · Settings · AI preferences · Desktop",
@@ -1207,6 +1234,43 @@
       "x": 8280,
       "y": 1620
     },
+    "CR-LOG-004-Mobile.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-LOG-004 · Mobile",
+      "w": 390,
+      "x": 11870,
+      "y": 320
+    },
+    "CR-LOG-004.dc.html": {
+      "expand": "fill",
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-LOG-004 · Enter your code",
+      "w": 1440,
+      "x": 10350,
+      "y": 320
+    },
+    "CR-LOG-004e.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-LOG-004e · Code didn’t work",
+      "w": 1440,
+      "x": 13940,
+      "y": 320
+    },
+    "CR-LOG-004r.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "page": "p1",
+      "title": "CR-LOG-004r · Use a recovery code",
+      "w": 1440,
+      "x": 12420,
+      "y": 320
+    },
     "CR-NOT-001-Mobile.dc.html": {
       "h": 1200,
       "is_interactive": true,
@@ -1242,6 +1306,24 @@
       "w": 1440,
       "x": 10350,
       "y": 29676
+    },
+    "CR-NOVA-CHIP.dc.html": {
+      "h": 44,
+      "is_interactive": true,
+      "page": "p2",
+      "title": "CR-NOVA-CHIP · Nova · Creio button · shared source",
+      "w": 180,
+      "x": 1520,
+      "y": 7400
+    },
+    "CR-NOVA.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "page": "p2",
+      "title": "CR-NOVA · Nova Copilot panel · shared source",
+      "w": 1440,
+      "x": 0,
+      "y": 7400
     },
     "CR-ONB-001-Mobile.dc.html": {
       "h": 920,
@@ -3715,7 +3797,16 @@
     "CR-ORI-M5-K.dc.html",
     "CR-ORI-M6-K.dc.html",
     "CR-ORI-M7-K.dc.html",
-    "CR-ORI-M7-S.dc.html"
+    "CR-ORI-M7-S.dc.html",
+    "CR-LOG-004.dc.html",
+    "CR-LOG-004-Mobile.dc.html",
+    "CR-LOG-004r.dc.html",
+    "CR-LOG-004e.dc.html",
+    "CR-CREATE-002Bc.dc.html",
+    "CR-CREATE-002Bp.dc.html",
+    "CR-CREATE-002Bl.dc.html",
+    "CR-NOVA.dc.html",
+    "CR-NOVA-CHIP.dc.html"
   ],
   "pages": [
     {

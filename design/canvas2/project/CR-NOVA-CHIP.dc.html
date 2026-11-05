@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CR-NOVA-CHIP · Nova and Creio button (top bar)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+.nc{display:inline-flex;align-items:center;gap:8px;height:44px;flex-shrink:0;box-sizing:border-box;padding:0 16px 0 5px;border-radius:999px;border:1.5px solid #C9D7FB;background:#EEF3FF;color:#0B1433;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;font-size:14.5px;font-weight:600;cursor:pointer;white-space:nowrap}
+.nc:hover{border-color:#1652F0}
+.nc.on{box-shadow:0 0 0 4px rgba(22,82,240,.14);border-color:#1652F0}
+.nc:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.nc-dot{color:#8A93AD;font-weight:700}
+.nc-b{color:#1652F0}
+@media (max-width: 960px){.nc{padding:0 12px 0 5px;gap:6px}.nc-n,.nc-dot{display:none}}
+.nv-av{position:relative;display:block;flex-shrink:0;border-radius:50%;background:#EAF0FF}
+.nv-face{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:#EAF0FF}
+.nv-face img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-dot{position:absolute;right:0;bottom:0;width:10px;height:10px;border-radius:50%;background:#0F6B45;border:2px solid #FFFFFF}
+.nc-av{width:34px;height:34px}
+.nc-av .nv-dot{border-color:#EEF3FF}
+</style>
+</helmet>
+<div style="display: inline-flex">
+<button type="button" class="nc {{cls}}" onClick="{{tap}}" aria-label="{{aria}}" aria-haspopup="dialog" aria-expanded="{{exp}}"><span class="nv-av nc-av" aria-hidden="true"><span class="nv-face"><img src="/_blob/aae2f6f9f7354b42a1b77ca5c878637d" alt=""></span><i class="nv-dot"></i></span><span class="nc-n">Nova</span><span class="nc-dot" aria-hidden="true">·</span><span class="nc-b">{{short}}</span></button>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":180,"height":44}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { bal: 20000, on: false };
+    this.onBal = (e) => this.setState({ bal: e.detail });
+    this.onPop = (e) => this.setState({ on: !!e.detail });
+  }
+  componentDidMount() { window.addEventListener('cr-nova-bal', this.onBal); window.addEventListener('cr-nova-popstate', this.onPop); }
+  componentWillUnmount() { window.removeEventListener('cr-nova-bal', this.onBal); window.removeEventListener('cr-nova-popstate', this.onPop); }
+  renderVals() {
+    const b = this.state.bal;
+    const short = b >= 1000 ? (Math.round(b / 100) / 10).toString().replace(/\.0$/, '') + 'K' : String(b);
+    return { short, cls: this.state.on ? 'on' : '', exp: this.state.on ? 'true' : 'false', aria: 'Nova, ' + b.toLocaleString('en-US') + ' Creio',
+      tap: () => window.dispatchEvent(new CustomEvent('cr-nova-pop')) };
+  }
+}
+</script>
+</body>
+</html>

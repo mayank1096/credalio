@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CR-NOVA · Nova Copilot (Creio popover and chat panel)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0}
+.nv{font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+@keyframes nvIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@keyframes nvSlide{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.np-catch{position:fixed;inset:0;z-index:28;border:0;padding:0;margin:0;background:transparent;cursor:default;width:100%}
+.np{position:fixed;z-index:29;top:80px;right:calc(clamp(20px,3vw,40px) + 168px);width:330px;box-sizing:border-box;padding:20px 20px 18px 20px;border-radius:20px;background:linear-gradient(170deg,#FFFAEB 0%,#FFFFFF 50%);border:1.5px solid #F4D98E;box-shadow:0 24px 60px rgba(11,20,51,.16);display:flex;flex-direction:column;animation:nvIn .18s ease both}
+.np-lab{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:#8A93AD}
+.np-big{margin-top:8px;display:flex;align-items:center;gap:10px;font-size:34px;font-weight:600;letter-spacing:-0.03em;color:#4A3300}
+.np-coin{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#FFE9A3,#F6C343 45%,#D08A12);box-shadow:inset 0 0 0 3px rgba(255,241,194,.6)}
+.np-sub{margin-top:4px;font-size:14px;color:#6B4E16}
+.np-row{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.np-a{display:flex;align-items:center;justify-content:center;height:44px;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;box-sizing:border-box}
+.np-buy{background:#1652F0;color:#FFFFFF}
+.np-buy:hover{background:#0E3BB8;color:#FFFFFF}
+.np-use{border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433}
+.np-use:hover{border-color:#1652F0;color:#0B1433}
+.np-chat{margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px;height:44px;border-radius:999px;border:1.5px solid #C9D7FB;background:#F5F8FF;color:#1652F0;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;width:100%}
+.np-chat:hover{border-color:#1652F0}
+.cp-ov{position:fixed;left:0;right:0;top:72px;bottom:0;z-index:30;border:0;padding:0;margin:0;width:100%;background:linear-gradient(90deg,rgba(247,249,253,0) 0%,rgba(11,20,51,.10) 100%);cursor:pointer}
+.cp{position:fixed;z-index:31;top:72px;right:0;bottom:0;width:440px;max-width:100vw;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;border-left:1.5px solid #E6EAF3;box-shadow:-24px 0 64px rgba(11,20,51,.12);animation:nvSlide .24s ease both}
+.cp.cp-x{width:min(1040px,calc(100vw - 300px))}
+.cp-h{display:flex;align-items:center;gap:12px;padding:16px 16px 14px 20px;border-bottom:1.5px solid #F0F2F8}
+.cp-n{flex-grow:1;display:flex;flex-direction:column;gap:1px;min-width:0}
+.cp-n b{font-size:18px;font-weight:600}
+.cp-n span{font-size:13px;color:#5B6582}
+.cp-tb{height:38px;padding:0 14px;border-radius:10px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.cp-tb:hover{border-color:#1652F0}
+.cp-x1{width:38px;padding:0;display:flex;align-items:center;justify-content:center}
+.cp-r{display:flex;align-items:center;gap:10px;padding:12px 16px 12px 20px;border-bottom:1.5px solid #F0F2F8}
+.cp-ctx{flex:1 1 auto;min-width:0;display:inline-flex;align-items:center;min-height:32px;padding:4px 14px;box-sizing:border-box;border-radius:999px;background:#EAF0FF;color:#1652F0;font-size:13.5px;font-weight:600;line-height:1.3}
+.cp-x .cp-ctx{flex:0 1 auto}
+.cp-x .cp-r .cp-seg{margin-left:auto}
+.cp-seg{display:flex;gap:4px;flex-shrink:0}
+.cp-seg button{height:34px;padding:0 14px;border-radius:999px;border:0;background:#F1F3F8;color:#3A4566;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.cp-seg button.on{background:#0B1433;color:#FFFFFF}
+.cp-b{flex-grow:1;overflow-y:auto;display:flex;flex-direction:column;gap:12px;padding:18px 20px}
+.cp-x .cp-b,.cp-x .cp-f{padding-left:max(20px,calc((100% - 820px) / 2));padding-right:max(20px,calc((100% - 820px) / 2))}
+.cp-m{max-width:88%;padding:12px 16px;border-radius:14px;background:#F1F4FB;font-size:14.5px;line-height:1.55;align-self:flex-start}
+.cp-me{align-self:flex-end;background:#E3EBFF}
+.cp-hl{font-size:12px;font-weight:600;letter-spacing:.08em;color:#5B6582;text-transform:uppercase;padding-bottom:8px;border-bottom:1.5px solid #F0F2F8}
+.cp-hr{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1.5px solid #F0F2F8}
+.cp-ht{flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.cp-ht b{font-size:15px;font-weight:600}
+.cp-ht span{font-size:13px;color:#5B6582}
+.cp-f{padding:12px 20px 14px 20px;border-top:1.5px solid #F0F2F8;display:flex;flex-direction:column;gap:10px}
+.cp-ch{display:flex;flex-wrap:wrap;gap:8px}
+.cp-ch button{min-height:32px;padding:4px 14px;border-radius:999px;border:1.5px solid #C9D7FB;background:#F5F8FF;color:#1652F0;font-family:inherit;font-size:13.5px;font-weight:600;cursor:pointer;text-align:left}
+.cp-ch button:hover{border-color:#1652F0;background:#EAF0FF}
+.cp-in{display:flex;gap:8px}
+.cp-in input{flex-grow:1;min-width:0;height:46px;box-sizing:border-box;padding:0 14px;border-radius:12px;border:1.5px solid #D6DDEE;font-family:inherit;font-size:14.5px;color:#0B1433;outline:none}
+.cp-in input:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.cp-send{height:46px;padding:0 20px;border-radius:12px;border:0;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:14.5px;font-weight:600;cursor:pointer}
+.cp-send:disabled{background:#C9D7FB;cursor:not-allowed}
+.cp-note{margin:0;font-size:12px;line-height:1.5;color:#8A93AD}
+.cp-cost{font-weight:600;color:#6B4E16}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.cp-tb:focus-visible,.cp-seg button:focus-visible,.cp-ch button:focus-visible,.cp-send:focus-visible,.np-a:focus-visible,.np-chat:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.np,.cp,}
+@media (max-width: 960px){
+.np{left:8px;right:8px;top:68px;width:auto}
+.cp-ov{display:none}
+.cp,.cp.cp-x{top:0;width:100%;border-left:0;box-shadow:none;z-index:40}
+.cp-exp{display:none}
+.cp-h{padding:12px 12px 12px 16px}
+.cp-r{padding:10px 12px 10px 16px;flex-wrap:wrap}
+.cp-b{padding:16px}
+.cp-f{padding:10px 16px 14px 16px}
+.cp-m{max-width:92%}
+}
+.nv-av{position:relative;display:block;flex-shrink:0;border-radius:50%;background:#EAF0FF}
+.nv-face{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:#EAF0FF}
+.nv-face img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-dot{position:absolute;right:0;bottom:0;width:10px;height:10px;border-radius:50%;background:#0F6B45;border:2px solid #FFFFFF}
+.cp-av{width:46px;height:46px}
+.np-av{width:24px;height:24px}
+@keyframes nvSpin{to{transform:rotate(360deg)}}
+@keyframes nvPulse{0%,100%{transform:scale(.65);opacity:.65}50%{transform:scale(1);opacity:1}}
+@keyframes nvShim{from{background-position:100% 0}to{background-position:-100% 0}}
+@keyframes nvBorder{from{background-position:0 0,0% 0}to{background-position:0 0,300% 0}}
+.nv-think{display:inline-flex;align-items:center;gap:10px;min-height:24px}
+.nv-orb{position:relative;width:22px;height:22px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.nv-orb::before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,#1652F0,#6E96FF,#DCE5FB,#1652F0);-webkit-mask:radial-gradient(circle,transparent 6.5px,#000 7.5px);mask:radial-gradient(circle,transparent 6.5px,#000 7.5px);animation:nvSpin 1.1s linear infinite}
+.nv-orb i{width:7px;height:7px;border-radius:50%;background:#1652F0;animation:nvPulse 1.1s ease-in-out infinite}
+.nv-tt{font-size:15px;font-weight:400;line-height:1.4;background:linear-gradient(90deg,#5B6582 0%,#5B6582 35%,#1652F0 50%,#5B6582 65%,#5B6582 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:nvShim 1.6s linear infinite}
+.nv-bub{display:inline-flex;align-self:flex-start;padding:10px 16px 10px 12px;border-radius:18px 18px 18px 6px;border:1.5px solid transparent;background:linear-gradient(#F5F8FF,#F5F8FF) padding-box,linear-gradient(90deg,#1652F0,#C9D8FF,#6E96FF,#DCE5FB,#1652F0) border-box;background-size:100% 100%,300% 100%;box-shadow:0 0 0 5px rgba(22,82,240,.07),0 12px 30px rgba(22,82,240,.13);animation:nvBorder 2.2s linear infinite}
+@media (prefers-reduced-motion: reduce){.nv-orb::before,.nv-orb i,.nv-tt,.nv-bub{animation:none}.nv-tt{color:#5B6582}}
+</style>
+</helmet>
+<div class="nv">
+<sc-if value="{{popOpen}}" hint-placeholder-val="{{false}}">
+<button type="button" class="np-catch" aria-label="Close" onClick="{{closePop}}"></button>
+<section class="np" role="dialog" aria-label="Creio balance">
+<span class="np-lab">Creio available <span title="Creio pays for Nova’s replies. Large actions show an estimate first."><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg></span></span>
+<span class="np-big"><span class="np-coin" aria-hidden="true"></span>{{balTxt}}</span>
+<span class="np-sub">About {{replies}} replies from Nova. Large actions show an estimate first.</span>
+<div class="np-row"><a href="CR-CREIO-003.dc.html" class="np-a np-buy">Get more Creio</a><a href="CR-CREIO-USE.dc.html" class="np-a np-use">See usage</a></div>
+<button type="button" class="np-chat" onClick="{{openChat}}"><span class="nv-av np-av" aria-hidden="true"><span class="nv-face"><img src="/_blob/aae2f6f9f7354b42a1b77ca5c878637d" alt=""></span></span>Chat with Nova</button>
+</section>
+</sc-if>
+<sc-if value="{{isOpen}}" hint-placeholder-val="{{false}}">
+<button type="button" class="cp-ov" aria-label="Close Nova" onClick="{{close}}"></button>
+<aside class="cp {{cpCls}}" role="dialog" aria-label="Nova, your Copilot">
+<header class="cp-h"><span class="nv-av cp-av" aria-hidden="true"><span class="nv-face"><img src="/_blob/aae2f6f9f7354b42a1b77ca5c878637d" alt=""></span><i class="nv-dot"></i></span><span class="cp-n"><b>Nova</b><span>{{balTxt}} Creio</span></span>
+<button type="button" class="cp-tb cp-exp" onClick="{{toggleSize}}">{{sizeLabel}}</button>
+<button type="button" class="cp-tb cp-x1" aria-label="Close" onClick="{{close}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></header>
+<div class="cp-r"><span class="cp-ctx">{{ctx}}</span><div class="cp-seg" role="tablist" aria-label="Nova views"><button type="button" role="tab" class="{{tabChat}}" aria-selected="{{selChat}}" onClick="{{showChat}}">Chat</button><button type="button" role="tab" class="{{tabHist}}" aria-selected="{{selHist}}" onClick="{{showHist}}">History</button></div></div>
+<sc-if value="{{isChat}}" hint-placeholder-val="{{true}}">
+<div class="cp-b" aria-live="polite">
+<div class="cp-m">{{greeting}}</div>
+<sc-for list="{{msgs}}" as="m" hint-placeholder-count="0"><div class="cp-m {{m.cls}}">{{m.text}}</div></sc-for>
+<sc-if value="{{thinking}}" hint-placeholder-val="{{false}}"><div class="nv-bub"><span class="nv-think" role="status"><span class="nv-orb" aria-hidden="true"><i></i></span><span class="nv-tt">{{thinkText}}</span></span></div></sc-if>
+</div>
+<footer class="cp-f"><div class="cp-ch"><sc-for list="{{chips}}" as="ch" hint-placeholder-count="3"><button type="button" onClick="{{ch.pick}}">{{ch.label}}</button></sc-for></div>
+<div class="cp-in"><label class="sr-only" for="nv-ask">Ask Nova</label><input id="nv-ask" placeholder="Ask Nova anything about your creator work…" value="{{draft}}" onChange="{{onDraft}}" onKeyDown="{{onKey}}"><button type="button" class="cp-send" onClick="{{send}}" disabled="{{sendOff}}">Send</button></div>
+<p class="cp-note"><span class="cp-cost">About 150 Creio per reply.</span> Nova explains and suggests freely. It never publishes, submits, pays, requests payouts, deletes, changes revenue or signs declarations for you.</p></footer>
+</sc-if>
+<sc-if value="{{isHist}}" hint-placeholder-val="{{false}}">
+<div class="cp-b"><span class="cp-hl">Copilot history</span>
+<sc-for list="{{hist}}" as="h" hint-placeholder-count="4"><div class="cp-hr"><span class="cp-ht"><b>{{h.t}}</b><span>{{h.s}}</span></span><button type="button" class="cp-tb" onClick="{{h.go}}">Continue</button></div></sc-for>
+</div>
+</sc-if>
+</aside>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"page":{"editor":"text","default":"Dashboard"},"open":{"editor":"enum","options":["open","expanded","pop","history","reply",""],"default":"open"},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const o = (props || {}).open;
+    const init = o === undefined || o === null ? 'open' : String(o);
+    const panel = ['open', 'expanded', 'history', 'reply'].indexOf(init) >= 0;
+    this.state = { open: panel, big: init === 'expanded', pop: init === 'pop', tab: init === 'history' ? 'hist' : 'chat', msgs: [], draft: '', thinking: false, bal: 20000, seed: init === 'reply' };
+    this.onOpen = () => this.setState({ open: true, pop: false, tab: 'chat' }, () => this.sync());
+    this.onPop = () => this.setState({ pop: !this.state.pop }, () => this.sync());
+  }
+  sync() { window.dispatchEvent(new CustomEvent('cr-nova-popstate', { detail: this.state.pop })); }
+  componentDidMount() {
+    window.addEventListener('cr-nova-open', this.onOpen); window.addEventListener('cr-nova-pop', this.onPop);
+    if (this.state.seed) this.ask('What should I work on next?', true);
+    if (this.state.pop) this.sync();
+  }
+  componentWillUnmount() { window.removeEventListener('cr-nova-open', this.onOpen); window.removeEventListener('cr-nova-pop', this.onPop); clearTimeout(this.t); clearTimeout(this.t2); }
+  ask(text, instant) {
+    const t = String(text || '').trim(); if (!t) return;
+    const R = this.R || {};
+    const me = { text: t, cls: 'cp-me' };
+    clearTimeout(this.t);
+    if (R[t]) {
+      const done = () => { const bal = Math.max(0, this.state.bal - 150); this.setState({ thinking: false, bal, msgs: this.state.msgs.concat([{ text: R[t], cls: '' }]) }); window.dispatchEvent(new CustomEvent('cr-nova-bal', { detail: bal })); };
+      this.setState({ msgs: this.state.msgs.concat([me]), draft: '', thinking: !instant, ts: 0 }, () => { if (instant) done(); else { clearTimeout(this.t2); this.t2 = setTimeout(() => this.setState({ ts: 1 }), 1200); this.t = setTimeout(done, 2400); } });
+    } else {
+      this.setState({ msgs: this.state.msgs.concat([me]), draft: '', thinking: true });
+    }
+  }
+  renderVals() {
+    const S = this.state;
+    const page = (this.props || {}).page || 'Dashboard';
+    this.R = {
+      'What should I work on next?': 'Top three: 1) Verify your identity, the next step on your path to publishing. 2) Finish the draft you started from your idea. 3) Turn on two-step verification in Security.',
+      'Help me pick a format': 'Tell me who it’s for and how much time they have. A Course teaches one skill in a few hours. A Learning program groups several courses. A Career path guides a role change. A Professional certification ends with an assessment.',
+      'What happens before publishing?': 'Five checks: Creator profile, Verify your identity, Credentials & expertise, Creator Orientation and Creator policies. You’ve done 1 of 5. Then a validator reviews your creation.',
+      'Improve my headline': 'Lead with who you help and the result. For example: “I help analysts turn messy data into clear decisions with SQL and Power BI.” Want me to put it in your headline?',
+      'How do learners see me?': 'Learners see your display name, Ada O., your headline, field, topics and verified credentials. Your legal name, email and phone stay private.',
+      'Help me set up two-step verification': 'Tap Turn on next to Two-step verification. Scan the QR code with an authenticator app, type the 6-digit code it shows, then save your 10 recovery codes somewhere safe.',
+      'What are recovery codes?': 'Ten one-time codes that let you log in if you lose your phone. Each works once. Keep them in a password manager. You can view them or get new ones here in Security.',
+      'Where do I change my email?': 'In Account & sign-in, tap Change next to Email. We’ll send a link to the new address, and it changes once you confirm it.',
+      'What does deactivating do?': 'It hides your profile and pauses new enrolments. You can come back any time. Deleting is permanent and settles a few responsibilities first.'
+    };
+    const CH = {
+      'Dashboard': ['Help me pick a format', 'What happens before publishing?'],
+      'Creator profile': ['Improve my headline', 'How do learners see me?'],
+      'public profile': ['Improve my headline', 'How do learners see me?'],
+      'Security settings': ['Help me set up two-step verification', 'What are recovery codes?'],
+      'Settings': ['Where do I change my email?', 'What does deactivating do?'],
+      'Readiness': ['What happens before publishing?'],
+      'new creation': ['Help me pick a format']
+    };
+    const chips = ['What should I work on next?'].concat(CH[page] || []);
+    const HI = [['Improving SQL Learning Outcomes', 'Course · Data Analysis with SQL · 28 Sep'], ['Understanding Validation Feedback', 'VAL-00928 · 25 Sep'], ['Planning January Program Cohort', 'Applied AI Professional Program · 18 Sep'], ['Choosing what to create', 'Dashboard · 2 Sep']];
+    const close = () => this.setState({ open: false });
+    return {
+      popOpen: S.pop, closePop: () => this.setState({ pop: false }, () => this.sync()),
+      openChat: () => this.setState({ pop: false, open: true, tab: 'chat' }, () => this.sync()),
+      balTxt: S.bal.toLocaleString('en-US'), replies: Math.floor(S.bal / 150).toLocaleString('en-US'),
+      isOpen: S.open, cpCls: S.big ? 'cp-x' : '', sizeLabel: S.big ? 'Collapse' : 'Expand', toggleSize: () => this.setState({ big: !S.big }), close,
+      page, ctx: 'Working with: ' + page, greeting: 'Hi Ada. I can see you’re on your ' + page + '. Ask me anything, or pick a suggestion.',
+      isChat: S.tab === 'chat', isHist: S.tab === 'hist',
+      tabChat: S.tab === 'chat' ? 'on' : '', tabHist: S.tab === 'hist' ? 'on' : '', selChat: S.tab === 'chat' ? 'true' : 'false', selHist: S.tab === 'hist' ? 'true' : 'false',
+      showChat: () => this.setState({ tab: 'chat' }), showHist: () => this.setState({ tab: 'hist' }),
+      msgs: S.msgs, thinking: S.thinking, thinkText: ['Reading your question…', 'Writing a reply…'][S.ts || 0],
+      chips: chips.map((label) => ({ label, pick: () => this.ask(label) })),
+      hist: HI.map((x) => ({ t: x[0], s: x[1], go: () => this.setState({ tab: 'chat' }) })),
+      draft: S.draft, onDraft: (e) => this.setState({ draft: e.target.value }),
+      onKey: (e) => { if (e.key === 'Enter') { e.preventDefault(); this.ask(S.draft); } },
+      send: () => this.ask(S.draft), sendOff: !S.draft.trim()
+    };
+  }
+}
+</script>
+</body>
+</html>

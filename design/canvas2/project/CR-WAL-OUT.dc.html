@@ -159,8 +159,6 @@ body{background:#FFFFFF}
 .ko-path li > span:last-child{align-items:center;gap:4px}
 @keyframes koFlow{to{background-position:12px 0}}
 @media (prefers-reduced-motion: reduce){.ko-path li.ko-now::before{animation:none}}
-@media (max-width: 960px){
-}
 .ko-rc .ko-emb{display:none}
 .rc{position:relative;width:100%;max-width:380px;align-self:center}
 .rc .cf{top:40px}
@@ -236,7 +234,7 @@ body{background:#FFFFFF}
 <div class="rc-top"><div><span class="rc-k">Payment successful</span><b class="rc-amt">{{rcAmt}}</b><span class="rc-m">{{rcMeta}}</span></div><span class="rc-stamp" aria-hidden="true"><img src="/_blob/c988a8a0ac19714cd1286a040d58e5f7" alt=""><em>Paid</em></span></div>
 <ul class="rc-l"><sc-for list="{{rcItems}}" as="it" hint-placeholder-count="4"><li><span>{{it.t}}</span><span>{{it.v}}</span></li></sc-for></ul>
 <div class="rc-tot"><span>Total</span><b>{{rcTot}}</b></div>
-<div class="rc-ft"><span>{{rcFoot}}</span><sc-if value="{{fd}}" hint-placeholder-val="{{true}}"><a href="#" class="ds-link">Download</a></sc-if><sc-if value="{{pd}}" hint-placeholder-val="{{false}}"><a href="CR-WAL-007.dc.html" class="ds-link">Transactions</a></sc-if></div>
+<div class="rc-ft"><span>{{rcFoot}}</span><sc-if value="{{fd}}" hint-placeholder-val="{{true}}"><a href="#" class="ds-link">Download</a></sc-if><sc-if value="{{pd}}" hint-placeholder-val="{{false}}"><a href="#" class="ds-link">Transactions</a></sc-if></div>
 </div></div></div>
 </sc-if>
 <span class="ko-pill ob-in2">{{pill}}</span>
@@ -282,15 +280,18 @@ class Component extends DCLogic {
       processing: ['ko-r', 'Processing', 'Processing your payment', 'We’re waiting for your bank. You can leave this page. We’ll let you know when it’s done, and you won’t be charged twice.'],
       failed: ['ko-a', 'Not charged', 'Your payment didn’t go through', 'Your bank declined the $253.75 charge on Visa •••• 4417.'],
       funded: ['ko-v', 'Added', '2,500 Credits added', 'They’re in your wallet and ready to use.'],
+      fundedbank: ['ko-v', 'Added', '2,500 Credits added', 'Your bank transfer arrived. They’re in your wallet and ready to use.'],
+      fundedlocal: ['ko-v', 'Added', '2,500 Credits added', 'Your payment went through. They’re in your wallet and ready to use.'],
       ret: ['ko-v', 'Added', '2,500 Credits added', 'They’re in your wallet and ready to use.'],
       airet: ['ko-v', 'Added', '500 Credits added', 'They’re in your wallet and ready to use.'],
       paid: ['ko-v', 'Paid', 'Your validation case is open', 'We’ll let you know as soon as Validators are assigned.']
     }[v];
+    const bk = v === 'fundedbank', lc = v === 'fundedlocal'; 
     const pay = v === 'paid', ai = v === 'airet', ret = v === 'ret' || ai;
-    const rcI = pay ? [['Educational validator', '400 Cr'], ['Subject matter validator', '500 Cr'], ['Assessment validator', '300 Cr'], ['Credalio service fee (5%)', '60 Cr']] : (ai ? [['500 Credits', '$50.00'], ['Card fee (1.5%)', '$0.75']] : [['2,500 Credits', '$250.00'], ['Card fee (1.5%)', '$3.75']]);
-    const isV = v === 'funded' || ret || pay;
-    return { koCls: T[0] + (isV ? ' ko-rc' : ''), rcGo: this.state.go ? 'rc-go' : '', rcItems: rcI.map(x => ({ t: x[0], v: x[1] })), rcAmt: pay ? '1,260 Credits' : (ai ? '$50.75' : '$253.75'), rcTot: pay ? '1,260 Cr' : (ai ? '$50.75' : '$253.75'),
-      rcMeta: pay ? '20 Oct 2026 · Credit Wallet' : '20 Oct 2026 · Visa •••• 4417', rcFoot: pay ? 'Case VAL-00928 · balance 2,390' : (ai ? 'New balance 655 Credits' : 'New balance 3,650 Credits'), pill: T[1], h1: T[2], sub: T[3], r: v === 'processing', v: v === 'funded' || ret || pay, a: v === 'failed', f: false, pd: pay, fd: !pay,
+    const rcI = pay ? [['Educational validator', '400 Cr'], ['Subject matter validator', '500 Cr'], ['Assessment validator', '300 Cr'], ['Credalio service fee (5%)', '60 Cr']] : (ai ? [['500 Credits', '$50.00'], ['Card fee (1.5%)', '$0.75']] : (bk ? [['2,500 Credits', '₦412,500.00'], ['Transfer fee', '₦0.00']] : (lc ? [['2,500 Credits', '₦412,500.00'], ['Local payment fee (1.5%)', '₦6,187.50']] : [['2,500 Credits', '$250.00'], ['Card fee (1.5%)', '$3.75']])));
+    const isV = v === 'funded' || bk || lc || ret || pay;
+    return { koCls: T[0] + (isV ? ' ko-rc' : ''), rcGo: this.state.go ? 'rc-go' : '', rcItems: rcI.map(x => ({ t: x[0], v: x[1] })), rcAmt: pay ? '1,260 Credits' : (ai ? '$50.75' : (bk ? '₦412,500.00' : (lc ? '₦418,687.50' : '$253.75'))), rcTot: pay ? '1,260 Cr' : (ai ? '$50.75' : (bk ? '₦412,500.00' : (lc ? '₦418,687.50' : '$253.75'))),
+      rcMeta: pay ? '20 Oct 2026 · Credit Wallet' : (bk ? '20 Oct 2026 · Bank transfer · CRD-88531' : (lc ? '20 Oct 2026 · USSD · GTBank' : '20 Oct 2026 · Visa •••• 4417')), rcFoot: pay ? 'Case VAL-00928 · balance 2,390' : (ai ? 'New balance 655 Credits' : 'New balance 3,650 Credits'), pill: T[1], h1: T[2], sub: T[3], r: v === 'processing', v: v === 'funded' || bk || lc || ret || pay, a: v === 'failed', f: false, pd: pay, fd: !pay,
       bar: pay ? 'Submit for validation' : (ai ? 'Nova, your Copilot' : 'Credit Wallet'), closeHref: pay ? 'CR-VAL-MC-001.dc.html' : 'CR-WAL-001.dc.html',
       nxH: pay ? 'Follow the case' : (ai ? 'Back to your Creio purchase' : (ret ? 'Back to your validation payment' : 'Pay for validation')),
       nxP: pay ? 'Requests and decisions show up in the Validation Centre.' : (ai ? '250,000 Creio for 175 Credits. You’re covered now.' : (ret ? '1,260 Credits for Data Analysis with SQL. You’re covered now.' : 'Data Analysis with SQL needs 1,260 Credits. You have enough now.')),

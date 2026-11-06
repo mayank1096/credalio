@@ -34,7 +34,7 @@ body{margin:0}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { bal: 20000, on: false };
+    this.state = { bal: Number((props || {}).bal) >= 0 && (props || {}).bal !== undefined && (props || {}).bal !== '' ? Number(props.bal) : 20000, on: false };
     this.onBal = (e) => this.setState({ bal: e.detail });
     this.onPop = (e) => this.setState({ on: !!e.detail });
   }

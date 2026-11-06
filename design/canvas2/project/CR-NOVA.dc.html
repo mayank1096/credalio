@@ -96,6 +96,20 @@ body{margin:0}
 .nv-tt{font-size:15px;font-weight:400;line-height:1.4;background:linear-gradient(90deg,#5B6582 0%,#5B6582 35%,#1652F0 50%,#5B6582 65%,#5B6582 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:nvShim 1.6s linear infinite}
 .nv-bub{display:inline-flex;align-self:flex-start;padding:10px 16px 10px 12px;border-radius:18px 18px 18px 6px;border:1.5px solid transparent;background:linear-gradient(#F5F8FF,#F5F8FF) padding-box,linear-gradient(90deg,#1652F0,#C9D8FF,#6E96FF,#DCE5FB,#1652F0) border-box;background-size:100% 100%,300% 100%;box-shadow:0 0 0 5px rgba(22,82,240,.07),0 12px 30px rgba(22,82,240,.13);animation:nvBorder 2.2s linear infinite}
 @media (prefers-reduced-motion: reduce){.nv-orb::before,.nv-orb i,.nv-tt,.nv-bub{animation:none}.nv-tt{color:#5B6582}}
+.cp-pr{align-self:stretch;box-sizing:border-box;border:1.5px solid #E6EAF3;border-radius:18px;background:#FFFFFF;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.cp-pr-t{font-size:14.5px;font-weight:600;color:#0B1433}
+.cp-pr-l{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.cp-pr-l li{display:flex;gap:10px;font-size:14px;line-height:1.45;color:#3A4566}
+.cp-pr-i{width:22px;height:22px;flex-shrink:0;border-radius:50%;background:#E7F5EE;color:#0F6B45;display:flex;align-items:center;justify-content:center}
+.cp-pr-a{display:flex;gap:6px;align-items:center;padding-top:10px;border-top:1px solid #EEF1F7}
+.cp-pr-go{height:40px;padding:0 18px;border:0;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s ease}
+.cp-pr-go:hover{background:#0E3BB8}
+.cp-pr-no{height:40px;padding:0 12px;border:0;background:none;color:#3A4566;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.cp-pr-no:hover{color:#1652F0}
+.cp-pr-c{margin-left:auto;font-size:12.5px;font-weight:500;color:#6B4E16}
+.cp-pr-ok{flex-direction:row;align-items:center;gap:10px;background:#E7F5EE;border-color:#BFE3CF;color:#0F6B45;font-size:14px;font-weight:500}
+.cp-pr-ok .cp-pr-ik{background:#0F6B45;color:#FFFFFF}
+.cp-pr-go:focus-visible,.cp-pr-no:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
 </style>
 </helmet>
 <div class="nv">
@@ -119,7 +133,7 @@ body{margin:0}
 <sc-if value="{{isChat}}" hint-placeholder-val="{{true}}">
 <div class="cp-b" aria-live="polite">
 <div class="cp-m">{{greeting}}</div>
-<sc-for list="{{msgs}}" as="m" hint-placeholder-count="0"><div class="cp-m {{m.cls}}">{{m.text}}</div></sc-for>
+<sc-for list="{{msgs}}" as="m" hint-placeholder-count="0"><div class="cp-m {{m.cls}}">{{m.text}}</div></sc-for><sc-if value="{{propOn}}" hint-placeholder-val="{{false}}"><div class="cp-pr"><b class="cp-pr-t">Adds 3 learning outcomes</b><ul class="cp-pr-l"><sc-for list="{{propItems}}" as="pi" hint-placeholder-count="3"><li><span class="cp-pr-i" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>{{pi.t}}</li></sc-for></ul><div class="cp-pr-a"><button type="button" class="cp-pr-go" onClick="{{applyProp}}">Apply changes</button><button type="button" class="cp-pr-no" onClick="{{skipProp}}">Not now</button><span class="cp-pr-c">About 400 Creio</span></div></div></sc-if><sc-if value="{{propDone}}" hint-placeholder-val="{{false}}"><div class="cp-pr cp-pr-ok" role="status"><span class="cp-pr-i cp-pr-ik" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Added 3 learning outcomes to Data Analysis with SQL.</div></sc-if>
 <sc-if value="{{thinking}}" hint-placeholder-val="{{false}}"><div class="nv-bub"><span class="nv-think" role="status"><span class="nv-orb" aria-hidden="true"><i></i></span><span class="nv-tt">{{thinkText}}</span></span></div></sc-if>
 </div>
 <footer class="cp-f"><div class="cp-ch"><sc-for list="{{chips}}" as="ch" hint-placeholder-count="3"><button type="button" onClick="{{ch.pick}}">{{ch.label}}</button></sc-for></div>
@@ -141,8 +155,8 @@ class Component extends DCLogic {
     super(props);
     const o = (props || {}).open;
     const init = o === undefined || o === null ? 'open' : String(o);
-    const panel = ['open', 'expanded', 'history', 'reply'].indexOf(init) >= 0;
-    this.state = { open: panel, big: init === 'expanded', pop: init === 'pop', tab: init === 'history' ? 'hist' : 'chat', msgs: [], draft: '', thinking: false, bal: 20000, seed: init === 'reply' };
+    const panel = ['open', 'expanded', 'history', 'reply', 'apply'].indexOf(init) >= 0;
+    this.state = { open: panel, big: init === 'expanded', pop: init === 'pop', tab: init === 'history' ? 'hist' : 'chat', draft: '', thinking: false, bal: 20000, seed: init === 'reply', prop: init === 'apply' ? 'open' : '', msgs: init === 'apply' ? [{ text: 'Add measurable outcomes to this course.', cls: 'cp-me' }, { text: 'Here are three your learners can show they’ve reached. Nothing changes until you apply.', cls: '' }] : [] };
     this.onOpen = () => this.setState({ open: true, pop: false, tab: 'chat' }, () => this.sync());
     this.onPop = () => this.setState({ pop: !this.state.pop }, () => this.sync());
   }
@@ -200,7 +214,7 @@ class Component extends DCLogic {
       isChat: S.tab === 'chat', isHist: S.tab === 'hist',
       tabChat: S.tab === 'chat' ? 'on' : '', tabHist: S.tab === 'hist' ? 'on' : '', selChat: S.tab === 'chat' ? 'true' : 'false', selHist: S.tab === 'hist' ? 'true' : 'false',
       showChat: () => this.setState({ tab: 'chat' }), showHist: () => this.setState({ tab: 'hist' }),
-      msgs: S.msgs, thinking: S.thinking, thinkText: ['Reading your question…', 'Writing a reply…'][S.ts || 0],
+      msgs: S.msgs, thinking: S.thinking, propOn: S.prop === 'open' && !S.thinking, propDone: S.prop === 'done', propItems: [{ t: 'Write SQL queries that filter and aggregate business data' }, { t: 'Join tables to answer questions across sources' }, { t: 'Present a recommendation backed by data' }], applyProp: () => { clearTimeout(this.t); clearTimeout(this.t2); this.setState({ thinking: true, ts: 2 }); this.t = setTimeout(() => { const bal = Math.max(0, this.state.bal - 400); this.setState({ thinking: false, prop: 'done', bal }); window.dispatchEvent(new CustomEvent('cr-nova-bal', { detail: bal })); }, 2400); }, skipProp: () => this.setState({ prop: '', msgs: this.state.msgs.concat([{ text: 'No problem. I’ll keep these ready if you change your mind.', cls: '' }]) }), thinkText: ['Reading your question…', 'Writing a reply…', 'Adding the outcomes to your course…'][S.ts || 0],
       chips: chips.map((label) => ({ label, pick: () => this.ask(label) })),
       hist: HI.map((x) => ({ t: x[0], s: x[1], go: () => this.setState({ tab: 'chat' }) })),
       draft: S.draft, onDraft: (e) => this.setState({ draft: e.target.value }),

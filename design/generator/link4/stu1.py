@@ -29,41 +29,52 @@ S_TYPE = '''<div class="fx-col">
     fmt_card('program', 'Learning Program', 'Learning Program', 'Deliver structured learning over time.', ['Cohorts', 'Institutions', 'Multi-course programs', 'Guided learning'], 'Create Learning Program', '#'),
     nova_av('sm'), nchip('Help Me Choose'))
 
-def deliv(icon, title, desc, feats, on):
-    inner = '<span class="dv-i">%s</span><span class="dv-t"><b>%s</b><span>%s</span><span class="dv-f"><em>Features</em>%s</span></span>' % (
-        ic(icon, 22), title, desc, ''.join('<span>%s</span>' % f for f in feats))
+VIDEO = '<span class="vz-vid"><span class="vz-play"></span><span class="vz-pb"><i></i></span></span>'
+def lrows(n=3):
+    return '<span class="vz-rows">%s</span>' % ''.join('<span class="vz-row%s"><i></i><b></b></span>' % c for c in ([' dn', ' dn', ' cur'][:n]))
+CAL = '<span class="vz-cal">%s</span>' % ''.join('<span class="vz-day%s"><i></i></span>' % (' on' if i == 2 else '') for i in range(5))
+SESS = '<span class="vz-sess"><span class="vz-live"></span><b></b>%s</span>' % stack([(F1, 'PN'), (M1, 'JA'), (M2, 'TA')], 20)
+VIS = {
+    'self': '<span class="vz vz-self">%s%s</span>' % (VIDEO, lrows()),
+    'live': '<span class="vz vz-livec">%s%s</span>' % (CAL, SESS),
+    'hyb': '<span class="vz vz-hyb">%s<span class="vz-link"><i></i><i></i><i></i></span><span class="vz-day on solo"><i></i></span></span>' % VIDEO,
+}
+
+def deliv(vis, title, desc, feats, on):
+    inner = ('<span class="dv-vz" aria-hidden="true">%s</span><span class="dv-t"><b>%s</b><span>%s</span><span class="dv-f"><em>Features</em>%s</span></span>' %
+             (VIS[vis], title, desc, ''.join('<span>%s%s</span>' % (ck(11), f) for f in feats)))
     return T.opt(inner, on, 'dlv', 'dv')
 
-S_DELIV = '''<div class="fx-col">
+S_DELIV = """<div class="fx-col">
 <a class="fx-back" href="STU-001.dc.html">%s<span>Back</span></a>
 <h1 class="fx-h1 ob-in">How will learners experience this course?</h1>
 <p class="fx-sub ob-in2">Self-paced courses can use video, audio, text, documents, interactive activities, projects and assessments.</p>
 <div class="dv-g ob-in3" role="group" aria-label="Delivery type">%s</div>
 <div class="ob-in4" style="margin-top: 18px">%s</div>
 <div class="fx-acts">%s</div>
-</div>''' % (
+</div>""" % (
     ICON(I['back'], 16, 2),
-    deliv('play', 'Self-Paced', 'Learners progress through lessons and activities at their own pace.', ['Video, audio, text, documents', 'Interactive activities', 'Projects and assessments'], False) +
+    deliv('self', 'Self-Paced', 'Learners progress through lessons and activities at their own pace.', ['Video, audio, text, documents', 'Interactive activities', 'Projects and assessments'], False) +
     deliv('live', 'Live Instructor-Led', 'Learning happens primarily through scheduled live sessions.', ['Live classes and scheduled sessions', 'Attendance', 'Resources and assignments'], False) +
-    deliv('mix', 'Hybrid', 'Combine self-paced learning with scheduled live sessions.', ['Content lessons + live classes', 'Assignments and practice', 'Assessments'], True),
+    deliv('hyb', 'Hybrid', 'Combine self-paced learning with scheduled live sessions.', ['Content lessons + live classes', 'Assignments and practice', 'Assessments'], True),
     nova_sg('Hybrid selected. I’ll help you structure which parts should be self-paced and which benefit from live instruction.'),
     btn('Continue', 'STU-003.dc.html'))
 
-def rv(label, value):
-    return '<div class="rv-r"><span class="rv-l">%s</span><span class="rv-v">%s</span></div>' % (label, value)
-
-S_REVIEW = '''<div class="fx-col n">
+S_REVIEW = """<div class="fx-col n">
 <a class="fx-back" href="STU-002.dc.html">%s<span>Back</span></a>
 <h1 class="fx-h1 ob-in">Your course setup</h1>
 <p class="fx-sub ob-in2">Nothing else to decide yet. You can change this any time.</p>
-<div class="ds-card rv ob-in3">%s</div>
+<div class="ds-card rs ob-in3">
+<div class="rs-top"><span class="rs-cv">%s</span><span class="rs-tt"><em>Learning experience</em><b>Course</b></span></div>
+<div class="rs-g">
+<div class="rs-c"><em>Delivery</em><span class="rs-v"><span class="rs-vz" aria-hidden="true">%s</span><b>Hybrid</b></span></div>
+<div class="rs-c"><em>Creator</em><span class="rs-v">%s<b>Ada Ononuju</b></span></div>
+<div class="rs-c"><em>Status</em><span class="rs-v"><span class="rs-st"><i></i>Draft</span></span></div>
+</div>
+</div>
 <div class="fx-acts"><a class="ds-ghost" href="STU-001.dc.html">Change Setup</a>%s</div>
-</div>''' % (
-    ICON(I['back'], 16, 2),
-    rv('Learning experience', '<span class="rv-ic">%s</span>Course' % ic('course', 16)) +
-    rv('Delivery', '<span class="rv-ic">%s</span>Hybrid' % ic('mix', 16)) +
-    rv('Creator', '%s Ada Ononuju' % av(ME, 'AO', 26)) +
-    rv('Status', tag('Draft')),
+</div>""" % (
+    ICON(I['back'], 16, 2), ic('course', 30, 1.7), VIS['hyb'], av(ME, 'AO', 40),
     btn('Continue', 'STU-004.dc.html'))
 
 def how(vis, kicker, title, desc, nxt, on):
@@ -145,7 +156,6 @@ SETUP_CSS = r'''.nw-g{margin-top:32px;display:grid;grid-template-columns:repeat(
 .fx-exit{height:40px;padding:0 16px;font-size:14px}
 .xb-sl em{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#8A93AD;margin-top:2px}
 .fx-sub b{font-weight:600;color:#0B1433}
-.rv + .fx-acts .ds-ghost{margin-right:auto}
 .nw-fm em{display:block;font-style:normal;font-size:12px;color:#8A93AD}
 .nw-ck{display:none;position:absolute;top:16px;right:16px;width:22px;height:22px;border-radius:50%;background:#1652F0;color:#FFFFFF;align-items:center;justify-content:center}
 .nw-f.on{border-color:#1652F0;background:#F8FAFF;box-shadow:0 0 0 4px rgba(22,82,240,.12);transform:none}
@@ -156,24 +166,69 @@ SETUP_CSS = r'''.nw-g{margin-top:32px;display:grid;grid-template-columns:repeat(
 .fx-nova:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
 .fx-nova input{flex:1;min-width:0;height:100%;border:0;outline:none;background:transparent;font-family:inherit;font-size:15.5px;color:#0B1433}
 .fx-nova input::placeholder{color:#8A93AD}
-.dv-g{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.ds-opt.dv{align-items:flex-start;padding:22px 20px;border-radius:18px}
-.dv-i{width:46px;height:46px;flex-shrink:0;border-radius:14px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
-.ds-opt.on .dv-i{background:#FFFFFF}
-.dv-t{display:flex;flex-direction:column;gap:6px;min-width:0;flex:1}
-.dv-t b{font-size:17px;font-weight:600}
+.dv-g{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ds-opt.dv{flex-direction:column;align-items:stretch;gap:0;padding:10px 10px 22px 10px;border-radius:22px;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.ds-opt.dv:hover{transform:translateY(-2px);box-shadow:0 18px 40px -22px rgba(22,82,240,.35)}
+.ds-opt.dv.on{background:#FFFFFF;box-shadow:0 0 0 4px rgba(22,82,240,.12),0 22px 44px -24px rgba(22,82,240,.45)}
+.dv .ds-opt-ck{position:absolute;top:22px;right:22px;margin:0;z-index:2}
+.dv-vz{display:block;height:148px;border-radius:15px;background:linear-gradient(160deg,#F5F8FF,#EDF2FF);position:relative;overflow:hidden}
+.ds-opt.on .dv-vz{background:linear-gradient(160deg,#EAF0FF,#DCE6FF)}
+.dv-t{display:flex;flex-direction:column;gap:6px;min-width:0;padding:18px 12px 0 12px}
+.dv-t b{font-size:18px;font-weight:600;letter-spacing:-0.01em}
 .dv-t > span{font-size:14px;line-height:1.5;color:#4A5578}
-.dv-f{margin-top:8px;padding-top:12px;border-top:1.5px solid #EEF1F7;display:flex;flex-direction:column;gap:6px}
-.dv-f span{font-size:13.5px;color:#3A4566}
-.dv-f span::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:#9DB8F7;margin:0 9px 2px 0}
-.ds-opt.on .dv-f{border-color:#C9D7FA}
-.dv .ds-opt-ck{margin-left:0}
-.rv{margin-top:28px;padding:6px 28px}
-.rv-r{display:grid;grid-template-columns:150px minmax(0,1fr) auto;align-items:center;gap:16px;min-height:64px;border-bottom:1.5px solid #F0F2F8}
-.rv-r:last-child{border-bottom:0}
-.rv-l{font-size:14px;color:#5B6582}
-.rv-v{display:flex;align-items:center;gap:10px;font-size:15.5px;font-weight:600}
-.rv-ic{width:32px;height:32px;border-radius:10px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.dv-f{margin-top:12px;padding-top:14px;border-top:1.5px solid #EEF1F7;display:flex;flex-direction:column;gap:8px}
+.dv-f span{display:flex;align-items:center;gap:9px;font-size:13.5px;color:#3A4566}
+.dv-f span svg{flex-shrink:0;width:18px;height:18px;padding:4px;box-sizing:border-box;border-radius:50%;background:#EAF0FF;color:#1652F0}
+.ds-opt.on .dv-f span svg{background:#1652F0;color:#FFFFFF}
+.vz{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;padding:18px}
+.vz-vid{position:relative;width:118px;height:76px;flex-shrink:0;border-radius:12px;background:linear-gradient(140deg,#1652F0,#0B1433);box-shadow:0 12px 24px -12px rgba(11,20,51,.6)}
+.vz-play{position:absolute;left:50%;top:44%;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:#FFFFFF}
+.vz-play::after{content:'';position:absolute;left:10px;top:7px;border-left:9px solid #1652F0;border-top:6px solid transparent;border-bottom:6px solid transparent}
+.vz-pb{position:absolute;left:10px;right:10px;bottom:9px;height:4px;border-radius:4px;background:rgba(255,255,255,.28)}
+.vz-pb i{display:block;width:58%;height:100%;border-radius:4px;background:#FFFFFF}
+.vz-rows{display:flex;flex-direction:column;gap:8px;width:96px}
+.vz-row{display:flex;align-items:center;gap:7px;height:20px;padding:0 7px;border-radius:7px;background:#FFFFFF;box-shadow:0 4px 10px -6px rgba(11,20,51,.25)}
+.vz-row i{width:8px;height:8px;border-radius:50%;flex-shrink:0;border:1.5px solid #CBD3E6;box-sizing:border-box}
+.vz-row.dn i{border:0;background:#0F6B45}
+.vz-row.cur i{border:0;background:#1652F0;box-shadow:0 0 0 3px rgba(22,82,240,.18)}
+.vz-row b{flex:1;height:5px;border-radius:5px;background:#E1E7F3}
+.vz-row.cur b{background:#C9D7FA}
+.vz-livec{flex-direction:column;gap:10px}
+.vz-cal{display:flex;gap:6px}
+.vz-day{width:30px;height:34px;box-sizing:border-box;border-radius:8px;background:#FFFFFF;box-shadow:0 4px 10px -6px rgba(11,20,51,.25);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px}
+.vz-day i{width:14px;height:4px;border-radius:4px;background:#E1E7F3}
+.vz-day.on{background:#1652F0;transform:translateY(-3px);box-shadow:0 10px 18px -8px rgba(22,82,240,.7)}
+.vz-day.on i{background:rgba(255,255,255,.75)}
+.vz-sess{display:flex;align-items:center;gap:8px;height:34px;padding:0 6px 0 10px;border-radius:999px;background:#FFFFFF;box-shadow:0 8px 16px -10px rgba(11,20,51,.35)}
+.vz-sess b{width:52px;height:5px;border-radius:5px;background:#E1E7F3}
+.vz-sess .avs .av + .av{margin-left:-6px}
+.vz-live{width:8px;height:8px;border-radius:50%;background:#0F6B45;box-shadow:0 0 0 0 rgba(15,107,69,.45);animation:vzPulse 1.8s ease-out infinite}
+@keyframes vzPulse{0%{box-shadow:0 0 0 0 rgba(15,107,69,.45)}100%{box-shadow:0 0 0 8px rgba(15,107,69,0)}}
+.vz-hyb{gap:0}
+.vz-hyb .vz-vid{width:104px;height:68px}
+.vz-link{display:flex;align-items:center;gap:5px;padding:0 8px}
+.vz-link i{width:5px;height:5px;border-radius:50%;background:#1652F0;opacity:.35}
+.vz-link i:nth-child(2){opacity:.6}
+.vz-link i:nth-child(3){opacity:.9}
+.vz-day.solo{width:52px;height:60px;border-radius:12px;padding-bottom:10px;transform:none}
+.vz-day.solo i{width:24px;height:5px}
+.rs{margin-top:28px;overflow:hidden;padding:0}
+.rs + .fx-acts .ds-ghost{margin-right:auto}
+.rs-top{display:flex;align-items:center;gap:18px;padding:26px 28px;background:linear-gradient(120deg,#F2F6FF,#E6EEFF)}
+.rs-cv{width:64px;height:64px;flex-shrink:0;border-radius:18px;background:linear-gradient(140deg,#1652F0,#0B1433);color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 28px -14px rgba(22,82,240,.8)}
+.rs-tt{display:flex;flex-direction:column;gap:2px}
+.rs-tt em,.rs-c em{font-style:normal;font-size:12.5px;font-weight:500;color:#5B6582}
+.rs-tt b{font-size:26px;font-weight:600;letter-spacing:-0.02em}
+.rs-g{display:grid;grid-template-columns:1.3fr 1fr .8fr}
+.rs-c{display:flex;flex-direction:column;gap:12px;padding:22px 28px 24px 28px}
+.rs-c + .rs-c{border-left:1.5px solid #EEF1F7}
+.rs-v{display:flex;align-items:center;gap:12px;min-height:44px}
+.rs-v b{font-size:16px;font-weight:600}
+.rs-vz{position:relative;width:96px;height:44px;flex-shrink:0;border-radius:10px;background:#F5F8FF;overflow:hidden}
+.rs-vz .vz{padding:0;transform:scale(.42);transform-origin:center}
+.rs-st{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 14px 0 12px;border-radius:999px;background:#F1F3F8;color:#3A4566;font-size:13.5px;font-weight:500}
+.rs-st i{width:8px;height:8px;border-radius:50%;background:#8A93AD}
+@media (prefers-reduced-motion: reduce){.vz-live{animation:none}}
 .hw-g{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .ds-opt.hw{flex-direction:column;align-items:flex-start;gap:18px;padding:24px 22px 22px 22px;border-radius:18px}
 .hw .ds-opt-ck{position:absolute;top:18px;right:18px;margin:0}
@@ -230,20 +285,32 @@ SETUP_CSS = r'''.nw-g{margin-top:32px;display:grid;grid-template-columns:repeat(
 .nw-ck{top:50%;transform:translateY(-50%);right:14px}
 .fx-nova{height:auto;flex-wrap:wrap;border-radius:18px;padding:12px;gap:10px}
 .fx-nova input{flex-basis:calc(100% - 44px);height:36px;font-size:14.5px}
-.dv-g,.hw-g{margin-top:20px;grid-template-columns:minmax(0,1fr);gap:10px}
-.ds-opt.dv{padding:16px}
+.dv-g{margin-top:20px;gap:10px;grid-template-columns:minmax(0,1fr)}
+.hw-g{margin-top:20px;grid-template-columns:minmax(0,1fr);gap:10px}
+.hw-t b{font-size:15.5px}
+.ds-opt.dv{display:grid;grid-template-columns:88px minmax(0,1fr);column-gap:14px;align-items:center;padding:10px 46px 10px 10px;border-radius:18px}
+.dv-vz{height:88px;border-radius:12px}
+.dv-vz .vz{inset:auto;left:50%;top:50%;width:250px;height:148px;margin:-74px 0 0 -125px;padding:0;transform:scale(.36)}
+.dv-t{padding:0}
+.dv-t b{font-size:15.5px}
+.dv-t > span{font-size:13.5px}
 .dv-f{display:none}
-.dv .ds-opt-ck{margin-left:auto}
-.dv-i{width:40px;height:40px;border-radius:12px}
-.dv-t b,.hw-t b{font-size:15.5px}
+.dv .ds-opt-ck{top:50%;right:14px;transform:translateY(-50%)}
+.rs-top{padding:18px;gap:14px}
+.rs-cv{width:52px;height:52px;border-radius:14px}
+.rs-tt b{font-size:21px}
+.rs-g{grid-template-columns:minmax(0,1fr)}
+.rs-c{flex-direction:row;align-items:center;justify-content:space-between;padding:14px 18px}
+.rs-c + .rs-c{border-left:0;border-top:1.5px solid #EEF1F7}
+.rs-v{min-height:0;gap:10px}
+.rs-vz{display:none}
+.rs-v b{font-size:15px}
+.rs-v .av{width:32px !important;height:32px !important}
 .ds-opt.hw{flex-direction:row;align-items:center;gap:14px;padding:16px 48px 16px 16px}
 .hw .ds-opt-ck{top:50%;transform:translateY(-50%);right:16px}
 .hw-v{height:44px;width:60px;flex-shrink:0;justify-content:center}
 .hw-t span{font-size:13.5px}
 .hw-t em{margin-top:2px;font-size:12.5px}
-.rv{margin-top:20px;padding:4px 16px}
-.rv-r{grid-template-columns:minmax(0,1fr) auto;row-gap:2px;padding:12px 0}
-.rv-l{grid-column:1 / -1;font-size:13px}
 .wl{align-items:stretch;text-align:left}
 .wl-nv{margin-bottom:16px}
 .wl-tags{justify-content:flex-start}

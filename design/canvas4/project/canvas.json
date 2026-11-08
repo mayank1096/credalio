@@ -655,9 +655,349 @@
       "is_interactive": true,
       "expand": "fill"
     },
-    "Setup.dc.html": {
+    "STU-026.dc.html": {
       "x": 0,
       "y": 20052,
+      "w": 1440,
+      "h": 3376,
+      "title": "CR-STU-026 · Course Resource Library · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-026-Mobile.dc.html": {
+      "x": 1520,
+      "y": 20052,
+      "w": 390,
+      "h": 7621,
+      "title": "CR-STU-026 · Course Resource Library · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-027.dc.html": {
+      "x": 2070,
+      "y": 20052,
+      "w": 1440,
+      "h": 2341,
+      "title": "CR-STU-027 · Completion Rules · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-027-Mobile.dc.html": {
+      "x": 3590,
+      "y": 20052,
+      "w": 390,
+      "h": 4542,
+      "title": "CR-STU-027 · Completion Rules · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-028.dc.html": {
+      "x": 4140,
+      "y": 20052,
+      "w": 1440,
+      "h": 2420,
+      "title": "CR-STU-028 · Team & Assignments · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-028-Mobile.dc.html": {
+      "x": 5660,
+      "y": 20052,
+      "w": 390,
+      "h": 4088,
+      "title": "CR-STU-028 · Team & Assignments · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-029.dc.html": {
+      "x": 6210,
+      "y": 20052,
+      "w": 1440,
+      "h": 1000,
+      "title": "CR-STU-029 · My Assigned Work · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-029-Mobile.dc.html": {
+      "x": 7730,
+      "y": 20052,
+      "w": 390,
+      "h": 1062,
+      "title": "CR-STU-029 · My Assigned Work · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-028-SOLO.dc.html": {
+      "x": 8280,
+      "y": 20052,
+      "w": 1440,
+      "h": 1823,
+      "title": "CR-STU-028 · My Work: solo · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-028-SOLO-Mobile.dc.html": {
+      "x": 9800,
+      "y": 20052,
+      "w": 390,
+      "h": 2350,
+      "title": "CR-STU-028 · My Work: solo · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-030.dc.html": {
+      "x": 10350,
+      "y": 20052,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-030 · Course Team Chat · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-030-Mobile.dc.html": {
+      "x": 11870,
+      "y": 20052,
+      "w": 390,
+      "h": 844,
+      "title": "CR-STU-030 · Course Team Chat · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-031.dc.html": {
+      "x": 0,
+      "y": 28093,
+      "w": 1440,
+      "h": 1447,
+      "title": "CR-STU-031 · DLP & Learning Effort · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-031-Mobile.dc.html": {
+      "x": 1520,
+      "y": 28093,
+      "w": 390,
+      "h": 2344,
+      "title": "CR-STU-031 · DLP & Learning Effort · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-ASM.dc.html": {
+      "x": 2070,
+      "y": 28093,
+      "w": 1440,
+      "h": 1103,
+      "title": "Course Assessments (management view) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-ASM-Mobile.dc.html": {
+      "x": 3590,
+      "y": 28093,
+      "w": 390,
+      "h": 1060,
+      "title": "Course Assessments (management view) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-PRA.dc.html": {
+      "x": 4140,
+      "y": 28093,
+      "w": 1440,
+      "h": 1570,
+      "title": "Practice & Projects (management view) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-PRA-Mobile.dc.html": {
+      "x": 5660,
+      "y": 28093,
+      "w": 390,
+      "h": 2324,
+      "title": "Practice & Projects (management view) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-DEL.dc.html": {
+      "x": 6210,
+      "y": 28093,
+      "w": 1440,
+      "h": 1325,
+      "title": "Delivery & Schedule (hybrid) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-DEL-Mobile.dc.html": {
+      "x": 7730,
+      "y": 28093,
+      "w": 390,
+      "h": 1433,
+      "title": "Delivery & Schedule (hybrid) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-LX.dc.html": {
+      "x": 8280,
+      "y": 28093,
+      "w": 1440,
+      "h": 1000,
+      "title": "Learner Experience · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-LX-Mobile.dc.html": {
+      "x": 9800,
+      "y": 28093,
+      "w": 390,
+      "h": 974,
+      "title": "Learner Experience · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-SUP.dc.html": {
+      "x": 10350,
+      "y": 28093,
+      "w": 1440,
+      "h": 1094,
+      "title": "Learner Support · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-SUP-Mobile.dc.html": {
+      "x": 11870,
+      "y": 28093,
+      "w": 390,
+      "h": 1699,
+      "title": "Learner Support · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-032.dc.html": {
+      "x": 0,
+      "y": 30857,
+      "w": 1440,
+      "h": 1000,
+      "title": "CR-STU-032 · Course Access Model · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-032-Mobile.dc.html": {
+      "x": 1520,
+      "y": 30857,
+      "w": 390,
+      "h": 1090,
+      "title": "CR-STU-032 · Course Access Model · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-033.dc.html": {
+      "x": 2070,
+      "y": 30857,
+      "w": 1440,
+      "h": 1083,
+      "title": "CR-STU-033 · Maintenance Burden · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-033-Mobile.dc.html": {
+      "x": 3590,
+      "y": 30857,
+      "w": 390,
+      "h": 1571,
+      "title": "CR-STU-033 · Maintenance Burden · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-034.dc.html": {
+      "x": 4140,
+      "y": 30857,
+      "w": 1440,
+      "h": 1000,
+      "title": "CR-STU-034 · Course Pricing · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-034-Mobile.dc.html": {
+      "x": 5660,
+      "y": 30857,
+      "w": 390,
+      "h": 1183,
+      "title": "CR-STU-034 · Course Pricing · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-034b.dc.html": {
+      "x": 6210,
+      "y": 30857,
+      "w": 1440,
+      "h": 1000,
+      "title": "CR-STU-034 · Pricing update required · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-034b-Mobile.dc.html": {
+      "x": 7730,
+      "y": 30857,
+      "w": 390,
+      "h": 1212,
+      "title": "CR-STU-034 · Pricing update required · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-035.dc.html": {
+      "x": 8280,
+      "y": 30857,
+      "w": 1440,
+      "h": 1000,
+      "title": "CR-STU-035 · Access & Pricing Summary · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-035-Mobile.dc.html": {
+      "x": 9800,
+      "y": 30857,
+      "w": 390,
+      "h": 844,
+      "title": "CR-STU-035 · Access & Pricing Summary · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Setup.dc.html": {
+      "x": 0,
+      "y": 32848,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -667,7 +1007,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 20052,
+      "y": 32848,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -677,7 +1017,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 20052,
+      "y": 32848,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -687,10 +1027,20 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 20052,
+      "y": 32848,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Course.dc.html": {
+      "x": 6400,
+      "y": 32848,
+      "w": 1440,
+      "h": 900,
+      "title": "Course set-up · shared source",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -761,10 +1111,45 @@
     "STU-024-Mobile.dc.html",
     "STU-025.dc.html",
     "STU-025-Mobile.dc.html",
+    "STU-026.dc.html",
+    "STU-026-Mobile.dc.html",
+    "STU-027.dc.html",
+    "STU-027-Mobile.dc.html",
+    "STU-028.dc.html",
+    "STU-028-Mobile.dc.html",
+    "STU-029.dc.html",
+    "STU-029-Mobile.dc.html",
+    "STU-028-SOLO.dc.html",
+    "STU-028-SOLO-Mobile.dc.html",
+    "STU-030.dc.html",
+    "STU-030-Mobile.dc.html",
+    "STU-031.dc.html",
+    "STU-031-Mobile.dc.html",
+    "STU-ASM.dc.html",
+    "STU-ASM-Mobile.dc.html",
+    "STU-PRA.dc.html",
+    "STU-PRA-Mobile.dc.html",
+    "STU-DEL.dc.html",
+    "STU-DEL-Mobile.dc.html",
+    "STU-LX.dc.html",
+    "STU-LX-Mobile.dc.html",
+    "STU-SUP.dc.html",
+    "STU-SUP-Mobile.dc.html",
+    "STU-032.dc.html",
+    "STU-032-Mobile.dc.html",
+    "STU-033.dc.html",
+    "STU-033-Mobile.dc.html",
+    "STU-034.dc.html",
+    "STU-034-Mobile.dc.html",
+    "STU-034b.dc.html",
+    "STU-034b-Mobile.dc.html",
+    "STU-035.dc.html",
+    "STU-035-Mobile.dc.html",
     "Setup.dc.html",
     "Studio.dc.html",
     "Builder.dc.html",
-    "Editor.dc.html"
+    "Editor.dc.html",
+    "Course.dc.html"
   ],
   "notes": {
     "b1-setup": {
@@ -865,9 +1250,51 @@
       "w": 260,
       "fill": "pink"
     },
-    "sources": {
+    "b3-build": {
       "x": 0,
       "y": 19752,
+      "text": "Batch 3 · Build tools: resource library, completion rules, team & assignments, my work, team chat",
+      "kind": "title1",
+      "maxW": 12260
+    },
+    "b3-build-new": {
+      "x": 0,
+      "y": 19902,
+      "text": "NEW · batch 3",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b3-views": {
+      "x": 0,
+      "y": 27793,
+      "text": "Batch 3 · DLP & effort, course assessments, practice & projects, delivery, learner experience, learner support",
+      "kind": "title1",
+      "maxW": 12260
+    },
+    "b3-views-new": {
+      "x": 0,
+      "y": 27943,
+      "text": "NEW · batch 3",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b3-pricing": {
+      "x": 0,
+      "y": 30557,
+      "text": "Batch 3 · Access & pricing: access model, maintenance burden, pricing, pricing update required, summary",
+      "kind": "title1",
+      "maxW": 10190
+    },
+    "b3-pricing-new": {
+      "x": 0,
+      "y": 30707,
+      "text": "NEW · batch 3",
+      "w": 260,
+      "fill": "pink"
+    },
+    "sources": {
+      "x": 0,
+      "y": 32548,
       "text": "Shared sources (code the boards above import, not screens)",
       "kind": "title1",
       "maxW": 3200
@@ -888,6 +1315,12 @@
     "b2-actions-new",
     "b2-editors",
     "b2-editors-new",
+    "b3-build",
+    "b3-build-new",
+    "b3-views",
+    "b3-views-new",
+    "b3-pricing",
+    "b3-pricing-new",
     "sources"
   ],
   "designSystems": []

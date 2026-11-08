@@ -5,13 +5,13 @@ Each row: title note, then desktop + mobile pairs left to right. Shared sources 
 """
 import json, os, sys
 from l4kit import OUT
-import stu1, stu2
+import stu1, stu2, stu3
 
 PAIR, GAP, ROWGAP = 1440 + 80 + 390, 160, 420
 H = {}
 for f in sys.argv[1:]:
     H.update(json.load(open(f)))
-T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS}
+T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS}
 
 ROWS = [
     ('b1-setup', 'Batch 1 · Course setup: learning experience, delivery type, setup review, how you’ll create it, Studio welcome', ['STU-001', 'STU-002', 'STU-003', 'STU-004', 'STU-008']),
@@ -20,9 +20,13 @@ ROWS = [
     ('b2-builder', 'Batch 2 · Curriculum Builder: team, solo, open for collaboration, invited co-creator', ['STU-020', 'STU-020-SOLO', 'STU-020-OPEN', 'STU-020-CO']),
     ('b2-actions', 'Batch 2 · Builder actions: add learning item, move lesson, move chapter, delete item, delete chapter', ['STU-021', 'STU-020-MVL', 'STU-020-MVC', 'STU-020-DEL', 'STU-020-DELC']),
     ('b2-editors', 'Batch 2 · Learning item editors: video, text (+ delete), live class, assessment, applied learning', ['STU-022A', 'STU-022B', 'STU-022B-DEL', 'STU-022D', 'STU-024', 'STU-025']),
+    ('b3-build', 'Batch 3 · Build tools: resource library, completion rules, team & assignments, my work, team chat', ['STU-026', 'STU-027', 'STU-028', 'STU-029', 'STU-028-SOLO', 'STU-030']),
+    ('b3-views', 'Batch 3 · DLP & effort, course assessments, practice & projects, delivery, learner experience, learner support', ['STU-031', 'STU-ASM', 'STU-PRA', 'STU-DEL', 'STU-LX', 'STU-SUP']),
+    ('b3-pricing', 'Batch 3 · Access & pricing: access model, maintenance burden, pricing, pricing update required, summary', ['STU-032', 'STU-033', 'STU-034', 'STU-034b', 'STU-035']),
 ]
 SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html', 'Course Studio · shared source'),
-           ('Builder.dc.html', 'Curriculum Builder · shared source'), ('Editor.dc.html', 'Learning item editors · shared source')]
+           ('Builder.dc.html', 'Curriculum Builder · shared source'), ('Editor.dc.html', 'Learning item editors · shared source'),
+           ('Course.dc.html', 'Course set-up · shared source')]
 
 boards, order, notes = {}, [], {}
 y = 300

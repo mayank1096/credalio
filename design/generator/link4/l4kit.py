@@ -111,6 +111,8 @@ class Toggles:
 
 # ---------- small pieces ----------
 def av(src, ini, size=32, cls=''):
+    if not src:  # organisation: initials badge, no photo
+        return '<span class="av org%s" style="width: %dpx; height: %dpx">%s</span>' % ((' ' + cls) if cls else '', size, size, ini)
     return '<span class="av%s" style="width: %dpx; height: %dpx">%s<img src="%s" alt=""></span>' % ((' ' + cls) if cls else '', size, size, ini, src)
 
 def stack(people, size=32):
@@ -151,7 +153,7 @@ NAV = [
     ('Design', [('Basics', 'STU-010.dc.html', 'ok', 'basics'), ('Audience & Prerequisites', 'STU-011.dc.html', 'ok', 'audience'),
                 ('Career & Skills', 'STU-012.dc.html', 'pr', 'career'), ('Learning Outcomes', 'STU-014.dc.html', 'pr', 'outcomes'),
                 ('Learning Design', 'STU-017.dc.html', None, 'design')]),
-    ('Build', [('Curriculum', '#', 'pr', 'curr'), ('Resources', '#', 'pr', 'res')]),
+    ('Build', [('Curriculum', 'STU-020.dc.html', 'pr', 'curr'), ('Resources', '#', 'pr', 'res')]),
     ('Experience', [('Delivery & Schedule', '#', 'ok', 'deliv'), ('Learner Experience', '#', 'ok', 'lx'), ('Access & Pricing', '#', 'pr', 'price')]),
     ('Prepare', [('Course Review', '#', None, 'review'), ('Validation Readiness', '#', 'pr', 'ready')]),
     ('Validate · Gate', [('Validation', '#', 'lk', 'val')]),
@@ -159,13 +161,25 @@ NAV = [
     ('Manage', [('Collaborators', '#', None, 'collab'), ('Course Settings', '#', None, 'settings')]),
 ]
 
+SUBNAV = {'curr': [('Curriculum Builder', 'STU-020.dc.html', 'cb'), ('Completion Rules', '#', 'comp'), ('Team & Assignments', '#', 'team'),
+                    ('DLP & Effort', '#', 'dlpe'), ('All Assessments', '#', 'alla')]}
+
 def course_nav(active):
     h = ''
     for g, items in NAV:
         if g and g != 'Overview': h += '<span class="ds-glab">%s</span>' % g
         for label, href, st, key in items:
+            sub = SUBNAV.get(key)
+            open_ = bool(sub) and any(k == active for _, _, k in sub)
             on = key == active
             icon = ic('home', 18) if key == 'home' else ''
+            if open_:
+                h += '<a href="%s" class="cn-i cn-open">%s<span class="cn-t">%s</span>%s</a><div class="cn-sub">' % (href, ic('down', 15, 2.2), label, STATUS.get(st, '') if st else '')
+                for sl, shref, sk in sub:
+                    son = sk == active
+                    h += '<a href="%s" class="cn-s%s"%s>%s</a>' % (shref, ' ds-on' if son else '', ' aria-current="page"' if son else '', sl)
+                h += '</div>'
+                continue
             h += '<a href="%s" class="cn-i%s"%s>%s<span class="cn-t">%s</span>%s</a>' % (
                 href, ' ds-on' if on else '', ' aria-current="page"' if on else '', icon, label, STATUS.get(st, '') if st else '')
     return h
@@ -178,20 +192,22 @@ def phase_strip():
         out += '<li class="ph-%s"><span class="ph-d">%s</span><span class="ph-l">%s</span></li>' % (s, lk, p)
     return '<ol class="ph" aria-label="Course phases: Design in progress">%s</ol>' % out
 
-TEAM = [(ME, 'AO'), (M1, 'JA'), (F1, 'AB')]
+TEAM = [(ME, 'AO'), (M1, 'JA'), (None, 'AB')]
 
-def topbar(nova_href='#'):
+def topbar(nova_href='#', solo=False):
     return '''<header class="ds-top cw-top">
 <button type="button" class="ds-icon-btn ds-menu" onClick="{{toggleNav}}" aria-label="Open course menu">%s</button>
 <span class="cw-mt">%s</span>
 %s
 <span class="cw-sp"></span>
 <a href="STU-009.dc.html" class="cw-hp ds-hide-sm"><span>Course Health</span><b>31%%</b></a>
-<a href="#" class="cw-team ds-hide-sm" aria-label="Team Chat">%s<span class="cw-chat">%s<span>Team Chat</span></span></a>
+%s
 <a href="%s" class="cw-nova ds-hide-sm">%s<span>Nova</span></a>
 <a href="#" class="ds-tok" aria-label="72,450 Creio">%s<span>72.4K</span></a>
 <a href="#" class="cw-me" aria-label="Your account">%s</a>
-</header>''' % (ic('menu', 20), COURSE, phase_strip(), stack(TEAM, 30), ic('chat', 16, 2), nova_href, nova_av('sm'), COIN('tp', 26), av(ME, 'AO', 40))
+</header>''' % (ic('menu', 20), COURSE, phase_strip(),
+       '' if solo else '<a href="#" class="cw-team ds-hide-sm" aria-label="Team Chat">%s<span class="cw-chat">%s<span>Team Chat</span></span></a>' % (stack(TEAM, 30), ic('chat', 16, 2)),
+       nova_href, nova_av('sm'), COIN('tp', 26), av(ME, 'AO', 40))
 
 def sidebar(active):
     return '''<div class="ds-scrim {{navCls}}" onClick="{{toggleNav}}"></div>
@@ -283,6 +299,7 @@ a{color:#1652F0}
 .lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(WORD) left center/contain no-repeat}
 .av{position:relative;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:#EAF0FF;color:#0E3BB8;font-size:11px;font-weight:600;box-sizing:border-box}
 .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.av.org{background:#0B1433;color:#FFFFFF;font-size:10.5px;letter-spacing:.02em}
 .avs{display:inline-flex;align-items:center}
 .avs .av{box-shadow:0 0 0 2px #FFFFFF}
 .avs .av + .av{margin-left:-8px}
@@ -334,6 +351,13 @@ CW_CSS = r'''.ds-root{grid-template-columns:272px minmax(0,1fr)}
 .cn-i svg{flex-shrink:0;color:#5B6582}
 .cn-i:hover{background:#F5F8FF;color:#0B1433}
 .cn-t{flex-grow:1;min-width:0}
+.cn-open{color:#0B1433;font-weight:600}
+.cn-open svg{margin-left:-4px;color:#1652F0}
+.cn-sub{display:flex;flex-direction:column;gap:1px;margin:2px 0 4px 20px;padding-left:10px;border-left:2px solid #E6EAF3}
+.cn-s{display:flex;align-items:center;min-height:32px;padding:0 10px;border-radius:10px;color:#3A4566;font-size:13.5px;font-weight:500;text-decoration:none}
+.cn-s:hover{background:#F5F8FF;color:#0B1433}
+.cn-s.ds-on{position:relative}
+.cn-s.ds-on::before{content:'';position:absolute;left:-12px;top:6px;bottom:6px;width:2px;border-radius:2px;background:#1652F0}
 .cn-i.ds-on .st.to{border-color:#9DB8F7}
 .cw-top{gap:14px}
 .cw-mt{display:none;font-size:15px;font-weight:600;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}

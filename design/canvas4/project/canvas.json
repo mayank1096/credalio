@@ -1,8 +1,8 @@
 {
   "v": 3,
   "createdOnFiles": {
-    "v": 1,
-    "at": "2026-11-08T06:00:00Z"
+    "at": "2026-11-08T06:00:00Z",
+    "v": 1
   },
   "title": "Credalio · Link 4 · Course Studio",
   "launch": {
@@ -669,7 +669,7 @@
       "x": 1520,
       "y": 20164,
       "w": 390,
-      "h": 7621,
+      "h": 7633,
       "title": "CR-STU-026 · Course Resource Library · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -709,7 +709,7 @@
       "x": 5660,
       "y": 20164,
       "w": 390,
-      "h": 4088,
+      "h": 4096,
       "title": "CR-STU-028 · Team & Assignments · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -729,7 +729,7 @@
       "x": 7730,
       "y": 20164,
       "w": 390,
-      "h": 1062,
+      "h": 1031,
       "title": "CR-STU-029 · My Assigned Work · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -777,7 +777,7 @@
     },
     "STU-031.dc.html": {
       "x": 0,
-      "y": 28205,
+      "y": 28217,
       "w": 1440,
       "h": 1447,
       "title": "CR-STU-031 · DLP & Learning Effort · Desktop",
@@ -787,7 +787,7 @@
     },
     "STU-031-Mobile.dc.html": {
       "x": 1520,
-      "y": 28205,
+      "y": 28217,
       "w": 390,
       "h": 2344,
       "title": "CR-STU-031 · DLP & Learning Effort · Mobile",
@@ -797,7 +797,7 @@
     },
     "STU-ASM.dc.html": {
       "x": 2070,
-      "y": 28205,
+      "y": 28217,
       "w": 1440,
       "h": 1103,
       "title": "Course Assessments (management view) · Desktop",
@@ -807,7 +807,7 @@
     },
     "STU-ASM-Mobile.dc.html": {
       "x": 3590,
-      "y": 28205,
+      "y": 28217,
       "w": 390,
       "h": 1060,
       "title": "Course Assessments (management view) · Mobile",
@@ -817,7 +817,7 @@
     },
     "STU-PRA.dc.html": {
       "x": 4140,
-      "y": 28205,
+      "y": 28217,
       "w": 1440,
       "h": 1570,
       "title": "Practice & Projects (management view) · Desktop",
@@ -827,7 +827,7 @@
     },
     "STU-PRA-Mobile.dc.html": {
       "x": 5660,
-      "y": 28205,
+      "y": 28217,
       "w": 390,
       "h": 2324,
       "title": "Practice & Projects (management view) · Mobile",
@@ -837,7 +837,7 @@
     },
     "STU-DEL.dc.html": {
       "x": 6210,
-      "y": 28205,
+      "y": 28217,
       "w": 1440,
       "h": 1325,
       "title": "Delivery & Schedule (hybrid) · Desktop",
@@ -847,7 +847,7 @@
     },
     "STU-DEL-Mobile.dc.html": {
       "x": 7730,
-      "y": 28205,
+      "y": 28217,
       "w": 390,
       "h": 1433,
       "title": "Delivery & Schedule (hybrid) · Mobile",
@@ -857,7 +857,7 @@
     },
     "STU-LX.dc.html": {
       "x": 8280,
-      "y": 28205,
+      "y": 28217,
       "w": 1440,
       "h": 1000,
       "title": "Learner Experience · Desktop",
@@ -867,7 +867,7 @@
     },
     "STU-LX-Mobile.dc.html": {
       "x": 9800,
-      "y": 28205,
+      "y": 28217,
       "w": 390,
       "h": 974,
       "title": "Learner Experience · Mobile",
@@ -877,7 +877,7 @@
     },
     "STU-SUP.dc.html": {
       "x": 10350,
-      "y": 28205,
+      "y": 28217,
       "w": 1440,
       "h": 1094,
       "title": "Learner Support · Desktop",
@@ -887,7 +887,7 @@
     },
     "STU-SUP-Mobile.dc.html": {
       "x": 11870,
-      "y": 28205,
+      "y": 28217,
       "w": 390,
       "h": 1699,
       "title": "Learner Support · Mobile",
@@ -897,7 +897,7 @@
     },
     "STU-032.dc.html": {
       "x": 0,
-      "y": 30969,
+      "y": 30981,
       "w": 1440,
       "h": 1000,
       "title": "CR-STU-032 · Course Access Model · Desktop",
@@ -907,9 +907,9 @@
     },
     "STU-032-Mobile.dc.html": {
       "x": 1520,
-      "y": 30969,
+      "y": 30981,
       "w": 390,
-      "h": 1090,
+      "h": 1323,
       "title": "CR-STU-032 · Course Access Model · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -917,7 +917,7 @@
     },
     "STU-033.dc.html": {
       "x": 2070,
-      "y": 30969,
+      "y": 30981,
       "w": 1440,
       "h": 1083,
       "title": "CR-STU-033 · Maintenance Burden · Desktop",
@@ -927,7 +927,7 @@
     },
     "STU-033-Mobile.dc.html": {
       "x": 3590,
-      "y": 30969,
+      "y": 30981,
       "w": 390,
       "h": 1571,
       "title": "CR-STU-033 · Maintenance Burden · Mobile",
@@ -937,7 +937,7 @@
     },
     "STU-034.dc.html": {
       "x": 4140,
-      "y": 30969,
+      "y": 30981,
       "w": 1440,
       "h": 1000,
       "title": "CR-STU-034 · Course Pricing · Desktop",
@@ -947,9 +947,9 @@
     },
     "STU-034-Mobile.dc.html": {
       "x": 5660,
-      "y": 30969,
+      "y": 30981,
       "w": 390,
-      "h": 1183,
+      "h": 1562,
       "title": "CR-STU-034 · Course Pricing · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -957,9 +957,9 @@
     },
     "STU-034b.dc.html": {
       "x": 6210,
-      "y": 30969,
+      "y": 30981,
       "w": 1440,
-      "h": 1000,
+      "h": 1009,
       "title": "CR-STU-034 · Pricing update required · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -967,9 +967,9 @@
     },
     "STU-034b-Mobile.dc.html": {
       "x": 7730,
-      "y": 30969,
+      "y": 30981,
       "w": 390,
-      "h": 1212,
+      "h": 1559,
       "title": "CR-STU-034 · Pricing update required · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -977,7 +977,7 @@
     },
     "STU-035.dc.html": {
       "x": 8280,
-      "y": 30969,
+      "y": 30981,
       "w": 1440,
       "h": 1000,
       "title": "CR-STU-035 · Access & Pricing Summary · Desktop",
@@ -987,7 +987,7 @@
     },
     "STU-035-Mobile.dc.html": {
       "x": 9800,
-      "y": 30969,
+      "y": 30981,
       "w": 390,
       "h": 844,
       "title": "CR-STU-035 · Access & Pricing Summary · Mobile",
@@ -997,7 +997,7 @@
     },
     "Setup.dc.html": {
       "x": 0,
-      "y": 32960,
+      "y": 32972,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -1007,7 +1007,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 32960,
+      "y": 32972,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -1017,7 +1017,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 32960,
+      "y": 32972,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -1027,7 +1027,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 32960,
+      "y": 32972,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -1037,7 +1037,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 32960,
+      "y": 32972,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -1153,11 +1153,12 @@
   ],
   "notes": {
     "b1-setup": {
-      "x": 0,
-      "y": 0,
-      "text": "Batch 1 · Course setup: learning experience, delivery type, setup review, how you’ll create it, Studio welcome",
       "kind": "title1",
-      "maxW": 10190
+      "maxW": 8000,
+      "text": "Batch 1 · Course setup: learning experience, delivery type, setup review, how you’ll create it, Studio welcome",
+      "w": 240,
+      "x": 0,
+      "y": 0
     },
     "b1-setup-new": {
       "x": 0,
@@ -1174,11 +1175,12 @@
       "fill": "blue"
     },
     "b1-design-a": {
-      "x": 0,
-      "y": 1359,
-      "text": "Batch 1 · Course design: Studio home, basics, audience, career & skills",
       "kind": "title1",
-      "maxW": 12260
+      "maxW": 8000,
+      "text": "Batch 1 · Course design: Studio home, basics, audience, career & skills",
+      "w": 240,
+      "x": 0,
+      "y": 1359
     },
     "b1-design-a-new": {
       "x": 0,
@@ -1188,11 +1190,12 @@
       "fill": "pink"
     },
     "b1-design-b": {
-      "x": 0,
-      "y": 4010,
-      "text": "Batch 1 · Course design: outcomes, skills map, evidence, assessment & award, effort, summary",
       "kind": "title1",
-      "maxW": 12260
+      "maxW": 8000,
+      "text": "Batch 1 · Course design: outcomes, skills map, evidence, assessment & award, effort, summary",
+      "w": 240,
+      "x": 0,
+      "y": 4010
     },
     "b1-design-b-new": {
       "x": 0,
@@ -1202,11 +1205,12 @@
       "fill": "pink"
     },
     "b2-builder": {
-      "x": 0,
-      "y": 6402,
-      "text": "Batch 2 · Curriculum Builder: team, solo, open for collaboration, invited co-creator",
       "kind": "title1",
-      "maxW": 8120
+      "maxW": 8000,
+      "text": "Batch 2 · Curriculum Builder: team, solo, open for collaboration, invited co-creator",
+      "w": 240,
+      "x": 0,
+      "y": 6402
     },
     "b2-builder-new": {
       "x": 0,
@@ -1223,11 +1227,12 @@
       "fill": "red"
     },
     "b2-actions": {
-      "x": 0,
-      "y": 12055,
-      "text": "Batch 2 · Builder actions: add learning item, move lesson, move chapter, delete item, delete chapter",
       "kind": "title1",
-      "maxW": 10190
+      "maxW": 8000,
+      "text": "Batch 2 · Builder actions: add learning item, move lesson, move chapter, delete item, delete chapter",
+      "w": 240,
+      "x": 0,
+      "y": 12055
     },
     "b2-actions-new": {
       "x": 0,
@@ -1237,11 +1242,12 @@
       "fill": "pink"
     },
     "b2-editors": {
-      "x": 0,
-      "y": 13375,
-      "text": "Batch 2 · Learning item editors: video, text (+ delete), live class, assessment, applied learning",
       "kind": "title1",
-      "maxW": 12260
+      "maxW": 8000,
+      "text": "Batch 2 · Learning item editors: video, text (+ delete), live class, assessment, applied learning",
+      "w": 240,
+      "x": 0,
+      "y": 13375
     },
     "b2-editors-new": {
       "x": 0,
@@ -1251,11 +1257,12 @@
       "fill": "pink"
     },
     "b3-build": {
-      "x": 0,
-      "y": 19864,
-      "text": "Batch 3 · Build tools: resource library, completion rules, team & assignments, my work, team chat",
       "kind": "title1",
-      "maxW": 12260
+      "maxW": 8000,
+      "text": "Batch 3 · Build tools: resource library, completion rules, team & assignments, my work, team chat",
+      "w": 240,
+      "x": 0,
+      "y": 19864
     },
     "b3-build-new": {
       "x": 0,
@@ -1265,39 +1272,42 @@
       "fill": "pink"
     },
     "b3-views": {
-      "x": 0,
-      "y": 27905,
-      "text": "Batch 3 · DLP & effort, course assessments, practice & projects, delivery, learner experience, learner support",
       "kind": "title1",
-      "maxW": 12260
+      "maxW": 8000,
+      "text": "Batch 3 · DLP & effort, course assessments, practice & projects, delivery, learner experience, learner support",
+      "w": 240,
+      "x": 0,
+      "y": 27917
     },
     "b3-views-new": {
       "x": 0,
-      "y": 28055,
+      "y": 28067,
       "text": "NEW · batch 3",
       "w": 260,
       "fill": "pink"
     },
     "b3-pricing": {
-      "x": 0,
-      "y": 30669,
-      "text": "Batch 3 · Access & pricing: access model, maintenance burden, pricing, pricing update required, summary",
       "kind": "title1",
-      "maxW": 10190
+      "maxW": 8000,
+      "text": "Batch 3 · Access & pricing: access model, maintenance burden, pricing, pricing update required, summary",
+      "w": 240,
+      "x": 0,
+      "y": 30681
     },
     "b3-pricing-new": {
       "x": 0,
-      "y": 30819,
+      "y": 30831,
       "text": "NEW · batch 3",
       "w": 260,
       "fill": "pink"
     },
     "sources": {
-      "x": 0,
-      "y": 32660,
-      "text": "Shared sources (code the boards above import, not screens)",
       "kind": "title1",
-      "maxW": 3200
+      "maxW": 3200,
+      "text": "Shared sources (code the boards above import, not screens)",
+      "w": 240,
+      "x": 0,
+      "y": 32672
     }
   },
   "noteOrder": [
@@ -1323,5 +1333,6 @@
     "b3-pricing-new",
     "sources"
   ],
-  "designSystems": []
+  "designSystems": [],
+  "attachments": {}
 }

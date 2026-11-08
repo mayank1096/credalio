@@ -22,6 +22,9 @@
 .ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
 .ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
 .ds-link:hover{color:#0E3BB8}
+.ds-btn.wh{background:#FFFFFF;color:#0B1433;box-shadow:0 10px 24px rgba(11,20,51,.24)}
+.ds-btn.wh .ob-arrow{background:#1652F0;color:#FFFFFF}
+.ds-btn.wh:hover{background:#EAF0FF;color:#0B1433}
 .ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
 .ds-link.off{opacity:.45;pointer-events:none}
 .ds-tag .tip{margin-left:0}
@@ -260,21 +263,33 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .sv-r .ds-btn{width:100%;justify-content:space-between}
 .sv-r .ds-link{justify-content:center;min-height:40px}
 }
-.hm-next{margin-top:24px;padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:32px;position:relative;overflow:hidden}
-.hm-next::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,#F2F6FF,rgba(242,246,255,0) 60%);pointer-events:none}
+.hm-next{margin-top:24px;padding:34px 40px;border-radius:24px;display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative;overflow:hidden;isolation:isolate;color:#FFFFFF;background:linear-gradient(125deg,#0B1433 0%,#102A7A 62%,#1652F0 130%);box-shadow:0 30px 60px -40px rgba(11,20,51,.8)}
+.hm-next::before{content:'';position:absolute;z-index:-1;right:-120px;top:-160px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(92,134,255,.45),rgba(92,134,255,0) 65%)}
+.hm-next::after{content:'';position:absolute;z-index:-1;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:18px 18px;-webkit-mask-image:linear-gradient(90deg,transparent 30%,#000);mask-image:linear-gradient(90deg,transparent 30%,#000)}
+.hm-next .pg-e{color:#9DB8F7}
 .hm-nl{position:relative;min-width:0}
-.hm-next h2{margin:0;max-width:580px;font-size:26px;line-height:1.2;font-weight:600;letter-spacing:-0.02em}
-.hm-next p{margin:10px 0 0 0;font-size:15px;line-height:1.55;color:#4A5578}
-.hm-na{margin-top:22px;display:flex;align-items:center;gap:22px}
-.hm-na .ds-link svg{color:#1652F0}
+.hm-next h2{margin:0;max-width:600px;font-size:28px;line-height:1.2;font-weight:600;letter-spacing:-0.025em}
+.hm-next p{margin:10px 0 0 0;font-size:15px;line-height:1.55;color:rgba(255,255,255,.72)}
+.hm-seg{margin-top:22px;display:flex;align-items:center;gap:5px;max-width:520px}
+.hm-seg i{flex:1;height:6px;border-radius:6px;background:rgba(255,255,255,.16)}
+.hm-seg i.dn{background:#FFFFFF}
+.hm-seg i.nx{background:#5C86FF;box-shadow:0 0 0 0 rgba(92,134,255,.6);animation:hmPulse 1.8s ease-out infinite}
+@keyframes hmPulse{0%{box-shadow:0 0 0 0 rgba(92,134,255,.6)}100%{box-shadow:0 0 0 6px rgba(92,134,255,0)}}
+.hm-sl{flex-shrink:0;margin-left:10px;font-size:13px;color:rgba(255,255,255,.72)}
+.hm-na{margin-top:26px;display:flex;align-items:center;gap:20px}
+.ds-btn.wh{background:#FFFFFF;color:#0B1433;box-shadow:0 12px 28px -12px rgba(0,0,0,.5)}
+.ds-btn.wh:hover{background:#F5F8FF;color:#0B1433}
+.ds-btn.wh .ob-arrow{background:#1652F0;color:#FFFFFF}
+.hm-pk{font-size:13.5px;color:rgba(255,255,255,.62)}
+.hm-rc{position:relative;flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;padding:18px 22px 16px 22px;border-radius:20px;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
 .hm-ring{position:relative;flex-shrink:0;width:132px;height:132px}
-.hm-rc{position:relative;flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:10px}
-.hm-rl{display:inline-flex;align-items:center;gap:2px}
-.hm-rl .ds-link{font-size:13.5px}
-.hm-rl .tip{margin:0 4px 0 0}
 .hm-ring span{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.hm-ring b{font-size:26px;font-weight:600;letter-spacing:-0.02em}
-.hm-ring em{font-style:normal;font-size:12px;color:#5B6582}
+.hm-ring b{font-size:30px;font-weight:600;letter-spacing:-0.02em}
+.hm-ring em{font-style:normal;font-size:12px;color:rgba(255,255,255,.7)}
+.hm-rl{display:inline-flex;align-items:center;gap:2px}
+.hm-rl .ds-link{font-size:13.5px;color:#FFFFFF}
+.hm-rl .tip{margin:0 4px 0 0;color:rgba(255,255,255,.6)}
+@media (prefers-reduced-motion: reduce){.hm-seg i.nx{animation:none}}
 .hm-list,.hm-det{margin-top:16px;padding:8px 10px 10px 10px}
 .hm-h{display:flex;align-items:center;margin:14px 14px 6px 14px;font-size:16px;font-weight:600}
 .hm-r{display:flex;align-items:center;gap:14px;min-height:68px;padding:10px 14px;border-radius:14px;color:#0B1433;text-decoration:none}
@@ -344,7 +359,6 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .ev-w{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:#8A5A00}
 .ev-w svg{color:#B76E00}
 .ev-sk{align-items:center}
-.hm-pk{font-size:13.5px;color:#5B6582}
 .ce-s .ds-link{font-size:13.5px;border:0;background:none;font-family:inherit;cursor:pointer;margin-left:8px}
 .sk-r{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr) 36px;align-items:center;gap:14px;padding:10px 0;border-bottom:1.5px solid #F0F2F8}
 .sk-hd{padding:0 0 8px 0;font-size:12.5px;font-weight:500;color:#8A93AD}
@@ -436,17 +450,19 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .sg-i.off i{width:11px;height:11px;box-sizing:border-box;border-radius:50%;border:1.5px dashed #8A93AD}
 @media (max-width: 1180px){.hm-dg{grid-template-columns:repeat(4,minmax(0,1fr))}.as-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width: 960px){
-.hm-next{margin-top:18px;padding:22px 18px;flex-direction:column-reverse;align-items:flex-start;gap:16px}
-.hm-next h2{font-size:20px}
+.hm-next{margin-top:18px;padding:22px 18px;border-radius:20px;flex-direction:column-reverse;align-items:stretch;gap:18px}
+.hm-next h2{font-size:21px}
 .hm-next p{font-size:14px}
-.hm-ring{width:84px;height:84px;align-self:flex-start}
-.hm-rc{flex-direction:row;align-self:stretch;justify-content:space-between}
-.hm-ring svg{width:84px;height:84px}
-.hm-ring b{font-size:18px}
+.hm-rc{flex-direction:row;justify-content:space-between;padding:10px 14px 10px 10px;border-radius:16px}
+.hm-ring{width:72px;height:72px}
+.hm-ring svg{width:72px;height:72px}
+.hm-ring b{font-size:17px}
 .hm-ring em{display:none}
+.hm-seg{flex-wrap:wrap;gap:4px}
+.hm-sl{flex-basis:100%;margin:6px 0 0 0}
 .hm-na{flex-direction:column;align-items:stretch;gap:8px;margin-top:18px}
 .hm-na .ds-btn{width:100%;justify-content:space-between}
-.hm-na .ds-link{justify-content:center;min-height:40px}
+.hm-pk{text-align:center}
 .hm-list,.hm-det{padding:6px}
 .hm-r{gap:12px;padding:10px;min-height:64px}
 .hm-r .avs,.hm-go{display:none}
@@ -597,10 +613,11 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 </header>
 <main class="ds-main">
 <sc-if value="{{p_home}}" hint-placeholder-val="{{ true }}">
-<header class="pg-h ob-in"><div class="pg-hl"><span class="pg-e">Studio Home</span><h1 class="ds-h1">Data Analysis with SQL</h1><p class="ds-sub">Course · Hybrid · Draft</p></div></header><section class="ds-card hm-next ob-in2" aria-label="Recommended next step">
+<header class="pg-h ob-in"><div class="pg-hl"><span class="pg-e">Studio Home</span><h1 class="ds-h1">Data Analysis with SQL</h1><p class="ds-sub">Course · Hybrid · Draft</p></div></header><section class="hm-next ob-in2" aria-label="Recommended next step">
 <div class="hm-nl"><span class="pg-e">Recommended next step</span><h2>Define who this course is for and where it leads</h2><p>Set the career role, stage and relevance for the Become Engine.</p>
-<div class="hm-na"><a class="ds-btn" href="STU-012.dc.html"><span>Continue Building</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><span class="hm-pk">Picks up where you left off.</span></div></div>
-<div class="hm-rc"><div class="hm-ring" aria-hidden="true"><svg viewBox="0 0 120 120" width="132" height="132"><circle cx="60" cy="60" r="50" fill="none" stroke="#EAF0FF" stroke-width="10"></circle><circle cx="60" cy="60" r="50" fill="none" stroke="#1652F0" stroke-width="10" stroke-linecap="round" stroke-dasharray="97 314" transform="rotate(-90 60 60)"></circle></svg><span><b>31%</b><em>Course Health</em></span></div><span class="hm-rl"><span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Completeness and readiness. Not a quality score and not CEI.</span></span><a class="ds-link" href="#">See what’s missing</a></span></div>
+<div class="hm-seg" role="img" aria-label="Course Design: 4 of 9 sections complete"><i class="dn"></i><i class="dn"></i><i class="dn"></i><i class="dn"></i><i class="nx"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><span class="hm-sl">4 of 9 sections complete</span></div>
+<div class="hm-na"><a class="ds-btn wh" href="STU-012.dc.html"><span>Continue Building</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><span class="hm-pk">Picks up where you left off.</span></div></div>
+<div class="hm-rc"><div class="hm-ring" aria-hidden="true"><svg viewBox="0 0 120 120" width="132" height="132"><defs><linearGradient id="hmg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9DB8F7"></stop><stop offset="1" stop-color="#FFFFFF"></stop></linearGradient></defs><circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="10"></circle><circle cx="60" cy="60" r="50" fill="none" stroke="url(#hmg)" stroke-width="10" stroke-linecap="round" stroke-dasharray="97 314" transform="rotate(-90 60 60)"></circle></svg><span><b>31%</b><em>Course Health</em></span></div><span class="hm-rl"><span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Completeness and readiness. Not a quality score and not CEI.</span></span><a class="ds-link" href="#">See what’s missing</a></span></div>
 </section>
 <section class="ds-card hm-list ob-in3" aria-label="Course sections">
 <a class="hm-r" href="STU-010.dc.html"><span class="hm-ri"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg></span><span class="hm-rt"><b>Course Design</b><span>4 of 9 sections complete · Next: define who this course is for and where it leads</span></span><span class="ds-tag blue">In progress</span><span class="hm-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></span></a><a class="hm-r" href="#"><span class="hm-ri"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><span class="hm-rt"><b>Curriculum</b><span>5 chapters · 9 lessons · 8h 5m detected learning time</span></span><span class="ds-tag green">Done</span><span class="hm-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></span></a><a class="hm-r" href="#"><span class="hm-ri"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8M8 12h5M8 16h3"></path></svg></span><span class="hm-rt"><b>Assessments</b><span>3 assessments · 35 questions · 3 of 4 outcomes assessed</span></span><span class="ds-tag blue">In progress</span><span class="hm-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></span></a><a class="hm-r" href="#"><span class="hm-ri"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg></span><span class="hm-rt"><b>Validation Readiness</b><span>Opens once Design and Build are complete</span></span><span class="ds-tag">Locked</span><span class="hm-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></span></a><a class="hm-r" href="#"><span class="hm-ri"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg></span><span class="hm-rt"><b>Collaborators</b><span>3 people · Dr. John Adeyemi, ABC Institute</span></span><span class="avs"><span class="av" style="width: 26px; height: 26px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><span class="av" style="width: 26px; height: 26px">JA<img src="/_blob/cbfe3f2bbb89728d8777e425b59db736" alt=""></span><span class="av" style="width: 26px; height: 26px">AB<img src="/_blob/167d6259769b54fee7a18d6801741d2f" alt=""></span></span><span class="ds-tag green">Done</span><span class="hm-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></span></a><a class="hm-r" href="STU-019.dc.html"><span class="hm-ri"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.5"></circle></svg></span><span class="hm-rt"><b>Learning Intelligence Profile</b><span>9 of 13 signals · What Credalio understands about this course. Next: career role, proficiency levels.</span></span><span class="ds-tag blue">In progress</span><span class="hm-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></span></a>

@@ -354,10 +354,11 @@ def row(icon, title, meta, st_label, st_kind, href, extra=''):
 
 DET = [('5', 'chapters'), ('9', 'lessons'), ('5', 'videos'), ('8h 5m', 'detected learning time'), ('3', 'assessments'), ('35', 'questions'), ('1', 'projects'), ('4 (3 assessed)', 'outcomes')]
 P('home', 'home', page_head('Studio Home', COURSE, 'Course · Hybrid · Draft') +
-'''<section class="ds-card hm-next ob-in2" aria-label="Recommended next step">
+'''<section class="hm-next ob-in2" aria-label="Recommended next step">
 <div class="hm-nl"><span class="pg-e">Recommended next step</span><h2>Define who this course is for and where it leads</h2><p>Set the career role, stage and relevance for the Become Engine.</p>
+<div class="hm-seg" role="img" aria-label="Course Design: 4 of 9 sections complete"><i class="dn"></i><i class="dn"></i><i class="dn"></i><i class="dn"></i><i class="nx"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><span class="hm-sl">4 of 9 sections complete</span></div>
 <div class="hm-na">%s<span class="hm-pk">Picks up where you left off.</span></div></div>
-<div class="hm-rc"><div class="hm-ring" aria-hidden="true"><svg viewBox="0 0 120 120" width="132" height="132"><circle cx="60" cy="60" r="50" fill="none" stroke="#EAF0FF" stroke-width="10"></circle><circle cx="60" cy="60" r="50" fill="none" stroke="#1652F0" stroke-width="10" stroke-linecap="round" stroke-dasharray="97 314" transform="rotate(-90 60 60)"></circle></svg><span><b>31%%</b><em>Course Health</em></span></div><span class="hm-rl">%s<a class="ds-link" href="#">See what’s missing</a></span></div>
+<div class="hm-rc"><div class="hm-ring" aria-hidden="true"><svg viewBox="0 0 120 120" width="132" height="132"><defs><linearGradient id="hmg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9DB8F7"></stop><stop offset="1" stop-color="#FFFFFF"></stop></linearGradient></defs><circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="10"></circle><circle cx="60" cy="60" r="50" fill="none" stroke="url(#hmg)" stroke-width="10" stroke-linecap="round" stroke-dasharray="97 314" transform="rotate(-90 60 60)"></circle></svg><span><b>31%%</b><em>Course Health</em></span></div><span class="hm-rl">%s<a class="ds-link" href="#">See what’s missing</a></span></div>
 </section>
 <section class="ds-card hm-list ob-in3" aria-label="Course sections">
 %s%s%s%s%s%s
@@ -367,7 +368,7 @@ P('home', 'home', page_head('Studio Home', COURSE, 'Course · Hybrid · Draft') 
 <div class="hm-dg">%s</div>
 </section>
 <div class="ob-in4" style="margin-top: 16px">%s</div>''' % (
-    btn('Continue Building', 'STU-012.dc.html'), tip('Completeness and readiness. Not a quality score and not CEI.', 'r'),
+    btn('Continue Building', 'STU-012.dc.html', 'wh'), tip('Completeness and readiness. Not a quality score and not CEI.', 'r'),
     row('layers', 'Course Design', '4 of 9 sections complete · Next: define who this course is for and where it leads', 'In progress', 'blue', 'STU-010.dc.html'),
     row('course', 'Curriculum', '5 chapters · 9 lessons · 8h 5m detected learning time', 'Done', 'green', '#'),
     row('quiz', 'Assessments', '3 assessments · 35 questions · 3 of 4 outcomes assessed', 'In progress', 'blue', '#'),
@@ -656,21 +657,33 @@ STUDIO_CSS = r'''.hm-strip{display:flex;border-radius:16px;background:#FFFFFF;bo
 .hm-strip > span + span{border-left:1.5px solid #EEF1F7}
 .hm-strip em{display:flex;align-items:center;font-style:normal;font-size:12px;color:#5B6582}
 .hm-strip b{font-size:17px;font-weight:600}
-.hm-next{margin-top:24px;padding:30px 34px;display:flex;align-items:center;justify-content:space-between;gap:32px;position:relative;overflow:hidden}
-.hm-next::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,#F2F6FF,rgba(242,246,255,0) 60%);pointer-events:none}
+.hm-next{margin-top:24px;padding:34px 40px;border-radius:24px;display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative;overflow:hidden;isolation:isolate;color:#FFFFFF;background:linear-gradient(125deg,#0B1433 0%,#102A7A 62%,#1652F0 130%);box-shadow:0 30px 60px -40px rgba(11,20,51,.8)}
+.hm-next::before{content:'';position:absolute;z-index:-1;right:-120px;top:-160px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(92,134,255,.45),rgba(92,134,255,0) 65%)}
+.hm-next::after{content:'';position:absolute;z-index:-1;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:18px 18px;-webkit-mask-image:linear-gradient(90deg,transparent 30%,#000);mask-image:linear-gradient(90deg,transparent 30%,#000)}
+.hm-next .pg-e{color:#9DB8F7}
 .hm-nl{position:relative;min-width:0}
-.hm-next h2{margin:0;max-width:580px;font-size:26px;line-height:1.2;font-weight:600;letter-spacing:-0.02em}
-.hm-next p{margin:10px 0 0 0;font-size:15px;line-height:1.55;color:#4A5578}
-.hm-na{margin-top:22px;display:flex;align-items:center;gap:22px}
-.hm-na .ds-link svg{color:#1652F0}
+.hm-next h2{margin:0;max-width:600px;font-size:28px;line-height:1.2;font-weight:600;letter-spacing:-0.025em}
+.hm-next p{margin:10px 0 0 0;font-size:15px;line-height:1.55;color:rgba(255,255,255,.72)}
+.hm-seg{margin-top:22px;display:flex;align-items:center;gap:5px;max-width:520px}
+.hm-seg i{flex:1;height:6px;border-radius:6px;background:rgba(255,255,255,.16)}
+.hm-seg i.dn{background:#FFFFFF}
+.hm-seg i.nx{background:#5C86FF;box-shadow:0 0 0 0 rgba(92,134,255,.6);animation:hmPulse 1.8s ease-out infinite}
+@keyframes hmPulse{0%{box-shadow:0 0 0 0 rgba(92,134,255,.6)}100%{box-shadow:0 0 0 6px rgba(92,134,255,0)}}
+.hm-sl{flex-shrink:0;margin-left:10px;font-size:13px;color:rgba(255,255,255,.72)}
+.hm-na{margin-top:26px;display:flex;align-items:center;gap:20px}
+.ds-btn.wh{background:#FFFFFF;color:#0B1433;box-shadow:0 12px 28px -12px rgba(0,0,0,.5)}
+.ds-btn.wh:hover{background:#F5F8FF;color:#0B1433}
+.ds-btn.wh .ob-arrow{background:#1652F0;color:#FFFFFF}
+.hm-pk{font-size:13.5px;color:rgba(255,255,255,.62)}
+.hm-rc{position:relative;flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:12px;padding:18px 22px 16px 22px;border-radius:20px;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
 .hm-ring{position:relative;flex-shrink:0;width:132px;height:132px}
-.hm-rc{position:relative;flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:10px}
-.hm-rl{display:inline-flex;align-items:center;gap:2px}
-.hm-rl .ds-link{font-size:13.5px}
-.hm-rl .tip{margin:0 4px 0 0}
 .hm-ring span{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.hm-ring b{font-size:26px;font-weight:600;letter-spacing:-0.02em}
-.hm-ring em{font-style:normal;font-size:12px;color:#5B6582}
+.hm-ring b{font-size:30px;font-weight:600;letter-spacing:-0.02em}
+.hm-ring em{font-style:normal;font-size:12px;color:rgba(255,255,255,.7)}
+.hm-rl{display:inline-flex;align-items:center;gap:2px}
+.hm-rl .ds-link{font-size:13.5px;color:#FFFFFF}
+.hm-rl .tip{margin:0 4px 0 0;color:rgba(255,255,255,.6)}
+@media (prefers-reduced-motion: reduce){.hm-seg i.nx{animation:none}}
 .hm-list,.hm-det{margin-top:16px;padding:8px 10px 10px 10px}
 .hm-h{display:flex;align-items:center;margin:14px 14px 6px 14px;font-size:16px;font-weight:600}
 .hm-r{display:flex;align-items:center;gap:14px;min-height:68px;padding:10px 14px;border-radius:14px;color:#0B1433;text-decoration:none}
@@ -742,7 +755,6 @@ STUDIO_CSS = r'''.hm-strip{display:flex;border-radius:16px;background:#FFFFFF;bo
 .ev-w{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:#8A5A00}
 .ev-w svg{color:#B76E00}
 .ev-sk{align-items:center}
-.hm-pk{font-size:13.5px;color:#5B6582}
 .hm-strip{align-items:center}
 .hm-strip .ds-link{padding:0 18px;font-size:13.5px;border-left:1.5px solid #EEF1F7;align-self:stretch}
 .ce-s .ds-link{font-size:13.5px;border:0;background:none;font-family:inherit;cursor:pointer;margin-left:8px}
@@ -839,17 +851,19 @@ STUDIO_CSS = r'''.hm-strip{display:flex;border-radius:16px;background:#FFFFFF;bo
 .hm-strip{width:100%}
 .hm-strip > span{flex:1}
 .hm-strip em{white-space:nowrap}
-.hm-next{margin-top:18px;padding:22px 18px;flex-direction:column-reverse;align-items:flex-start;gap:16px}
-.hm-next h2{font-size:20px}
+.hm-next{margin-top:18px;padding:22px 18px;border-radius:20px;flex-direction:column-reverse;align-items:stretch;gap:18px}
+.hm-next h2{font-size:21px}
 .hm-next p{font-size:14px}
-.hm-ring{width:84px;height:84px;align-self:flex-start}
-.hm-rc{flex-direction:row;align-self:stretch;justify-content:space-between}
-.hm-ring svg{width:84px;height:84px}
-.hm-ring b{font-size:18px}
+.hm-rc{flex-direction:row;justify-content:space-between;padding:10px 14px 10px 10px;border-radius:16px}
+.hm-ring{width:72px;height:72px}
+.hm-ring svg{width:72px;height:72px}
+.hm-ring b{font-size:17px}
 .hm-ring em{display:none}
+.hm-seg{flex-wrap:wrap;gap:4px}
+.hm-sl{flex-basis:100%;margin:6px 0 0 0}
 .hm-na{flex-direction:column;align-items:stretch;gap:8px;margin-top:18px}
 .hm-na .ds-btn{width:100%;justify-content:space-between}
-.hm-na .ds-link{justify-content:center;min-height:40px}
+.hm-pk{text-align:center}
 .hm-list,.hm-det{padding:6px}
 .hm-r{gap:12px;padding:10px;min-height:64px}
 .hm-r .avs,.hm-go{display:none}

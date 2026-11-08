@@ -144,8 +144,9 @@ def person(p, n, role, a, c, nxt, label=None):
         av(p[0], p[1], 44), n, role, label or '%d assigned · %d complete' % (a, c), int(100 * c / a) if a else 0, nxt))
 TEAM_SUB = 'Who is building what. Assign at chapter or item level. Assignment is work, not ownership: ownership, permissions, assignment and revenue share stay separate.'
 def team_tabs(cur):
-    return '<nav class="pts ob-in2" aria-label="Team views"><a href="STU-028.dc.html" class="pt%s">Team progress</a><a href="STU-029.dc.html" class="pt%s">My assigned work</a></nav>' % (
-        ' on' if cur == 0 else '', ' on' if cur == 1 else '')
+    t = [('STU-028.dc.html', 'users', 'Team progress'), ('STU-029.dc.html', 'assigned', 'My assigned work')]
+    return '<nav class="utabs ob-in2" aria-label="Team views">%s</nav>' % ''.join(
+        '<a href="%s" class="ut%s"%s>%s<span>%s</span></a>' % (h, ' on' if k == cur else '', ' aria-current="page"' if k == cur else '', ic(i, 16, 2), l) for k, (h, i, l) in enumerate(t))
 HIST = [('Tue 14:30', 'Ada removed John from “Aggregations and GROUP BY” · authorship and activity history kept'), ('Mon 09:05', 'Ada made John Chapter 2 lead'),
         ('Mon 09:02', 'Ada assigned John to Chapter 2 “SQL Foundations”')]
 P('team', 'team', 'Build', page_head('Build', 'Team & Assignments', TEAM_SUB) + team_tabs(0) +
@@ -159,11 +160,10 @@ MYW = [('inter', 'SELECT Statements', 'Chapter 2 · Interactive', 'Needs review'
        ('practice', 'Your First Queries', 'Chapter 2 · Practice Activity', 'Not started', 'Oct 5'), ('practice', 'Practice Joins', 'Chapter 3 · Practice Activity', 'Not started', 'Oct 6'),
        ('quiz', 'Final Exam', 'Chapter 5 · Exam', 'Not started', 'Oct 7')]
 P('mywork', 'team', 'Build', page_head('Build', 'My Assigned Work', TEAM_SUB) + team_tabs(1) +
-  '<div class="mw-bar ob-in2">%s<div class="bn mw-v">%s<p><b>Viewing as Dr. John Adeyemi · Co-Creator</b></p></div></div>' % (
-      C.seg(['All curriculum', 'My assigned work', 'Needs review', 'Completed'], 1), av(M1, 'J', 32)) +
-  '<section class="ds-card mw ob-in3">%s</section>' % ''.join(
+  '<section class="ds-card mw ob-in3"><header class="mw-h"><span class="mw-who">%s<span><b>Viewing as Dr. John Adeyemi</b><em>Co-Creator</em></span></span>%s</header>%s</section>' % (
+      av(M1, 'J', 36), chips(['All curriculum', 'My assigned work', 'Needs review', 'Completed'], {1}, group='mwf'), ''.join(
       '<div class="mw-r">%s<div class="mw-b"><b>%s</b><span>%s · %s</span></div>%s<span class="mw-d">Due %s</span><a class="ds-ghost xs" href="#">Open</a></div>' % (
-          iti(k, 17), t, m, s, tag(s, STATUS_C[s]), d) for k, t, m, s, d in MYW))
+          iti(k, 17), t, m, s, tag(s, STATUS_C[s]), d) for k, t, m, s, d in MYW)))
 
 P('mysolo', 'team', 'Build', page_head('Build', 'My Work', 'Your plan for this course: what is done, what is in progress and what is due. You are the only creator, so every lesson is yours. If you invite co-creators later, assignments appear here.') +
   '<div class="pcs one ob-in2">%s</div>' % person((ME, 'A'), 'Ada', 'You · Owner', 16, 7, 'SELECT Statements · due Oct 3', '16 lessons · 7 complete') +
@@ -279,14 +279,25 @@ P('support', 'lx', 'Experience', page_head('Experience', 'Learner Support', 'How
 
 # ---------------------------------------------------------------- CR-STU-032 Course Access Model
 PROC = ['Credalio measures', 'Credalio derives', 'you review and select', 'validation confirms', 'you publish']
+COVER = '<span class="ax-cv"><i>SQL</i><b></b><b class="s"></b></span>'
+def ax_vis(both):
+    sub = '<span class="ax-p gold">%s<b>DLP</b><em>Subscription</em></span>' % coin()
+    life = '<span class="ax-p blue">%s<b>Credits</b><em>Lifetime</em></span>' % credit()
+    if both:
+        return '<span class="ax-v two">%s%s<svg class="ax-l" viewBox="0 0 120 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 C60 30 60 60 120 60"></path><path d="M0 90 C60 90 60 60 120 60"></path></svg>%s</span>' % (sub, life, COVER)
+    return '<span class="ax-v">%s<svg class="ax-l" viewBox="0 0 120 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 L120 60"></path></svg>%s</span>' % (sub, COVER)
+def ax_card(both, title, desc, fields, on):
+    inner = ('<span class="ax-vz" aria-hidden="true">%s</span><span class="ax-t"><b>%s</b><span>%s</span></span>'
+             '<span class="ax-f">%s</span>') % (ax_vis(both), title, desc, ''.join('<span>%s%s</span>' % (ic_, f) for ic_, f in fields))
+    return C.opt(inner, on, 'am', 'amc')
+ACT = [('c', 'Credalio measures'), ('c', 'Credalio derives'), ('y', 'you review and select'), ('c', 'validation confirms'), ('y', 'you publish')]
 P('access', 'price', 'Experience', page_head('Experience', 'Course Access Model', 'How should learners access this course? This decides which pricing fields appear next.') +
   '<div class="am ob-in2">%s%s</div>' % (
-      C.opt('<span class="am-v">%s</span><span class="o-t"><b>Subscription Only</b><span>Learners access this course using DLP from their Credalio subscription.</span><span class="am-f">%s</span></span>' % (
-          coin(True), tag('DLP price from a permitted range', 'line')), False, 'am', 'amc'),
-      C.opt('<span class="am-v">%s%s</span><span class="o-t"><b>Subscription + Marketplace</b><span>Learners can access it through their subscription, or buy lifetime course access with Marketplace Credits.</span><span class="am-f">%s%s%s</span></span>' % (
-          coin(True), credit(True), tag('DLP price', 'line'), tag('Credit price', 'line'), tag('Maintenance burden', 'line')), True, 'am', 'amc')) +
-  '<section class="ds-card flw ob-in3"><ol>%s</ol><p class="flw-n">You won’t type a price anywhere: you choose from ranges Credalio generates.</p></section>' % ''.join(
-      '<li><span class="flw-d">%d</span><b>%s</b></li>' % (i + 1, x) for i, x in enumerate(PROC)) +
+      ax_card(False, 'Subscription Only', 'Learners access this course using DLP from their Credalio subscription.', [(coin(), 'DLP price from a permitted range')], False),
+      ax_card(True, 'Subscription + Marketplace', 'Learners can access it through their subscription, or buy lifetime course access with Marketplace Credits.',
+              [(coin(), 'DLP price'), (credit(), 'Credit price'), (ic('settings', 14, 2), 'Maintenance burden')], True)) +
+  '<section class="ds-card ax-pr ob-in3"><ol>%s</ol><p>%s<span>You won’t type a price anywhere: you choose from ranges Credalio generates.</span></p></section>' % (
+      ''.join('<li class="%s"><span class="ax-d">%s</span><b>%s</b></li>' % (k, av(ME, 'AO', 34) if k == 'y' else '<i class="ax-m"></i>', x) for k, x in ACT), ic('lock', 15, 2)) +
   acts('STU-033.dc.html', 'Continue to Maintenance Burden'))
 
 # ---------------------------------------------------------------- CR-STU-033 Maintenance Burden
@@ -306,28 +317,38 @@ P('maint', 'price', 'Experience', page_head('Experience', 'Maintenance Burden', 
 
 # ---------------------------------------------------------------- CR-STU-034 Course Pricing (+ update required)
 WHY = ['Learning effort (8h 5m calculated)', 'Course structure', 'Assessment and practice requirements', 'Maintenance requirements (Medium)', 'Course characteristics', 'Other applicable marketplace factors']
-def rng(vals, sel, unit, coin_html):
-    return '<div class="rg"><span class="rg-l"></span>%s</div>' % ''.join(
-        '<button type="button" class="rg-p%s" aria-pressed="%s">%s<b>%s</b></button>' % (' on' if v == sel else '', 'true' if v == sel else 'false', coin_html, v) for v in vals)
+def stops(vals, sel, coin_html, calc=None):
+    lo, hi = int(vals[0]), int(vals[-1])
+    mk = ''
+    if calc is not None:
+        mk = '<span class="pc-calc" style="left: %.1f%%"><i></i><em>%s</em></span>' % (100.0 * (calc - lo) / (hi - lo), 'Calculated %d' % calc)
+    return ('<div class="pc-band"><span class="pc-tr"><i></i></span>%s</div><div class="pc-stops" style="--n: %d" role="group">%s</div>' % (
+        mk, len(vals), ''.join('<button type="button" class="pc-stop%s" aria-pressed="%s">%s<b>%s</b></button>' % (
+            ' on' if v == sel else '', 'true' if v == sel else 'false', coin_html, v) for v in vals)))
+def pcard(kind, eyebrow, title, rng_label, rng_val, vals, sel, unit, calc=None, extra='', title_tip=''):
+    coin_html = coin() if kind == 'gold' else credit()
+    big = coin(True) if kind == 'gold' else credit(True)
+    selv = ('<b>%s</b><em>%s</em>' % (sel, unit)) if sel else '<b class="no">Not selected</b>'
+    return ('<section class="ds-card pcd %s"><header class="pc-h"><span class="pc-i">%s</span><div><span class="pg-e">%s</span><h2>%s</h2></div>'
+            '<div class="pc-sel"><span>Selected%s</span><div>%s</div></div></header>'
+            '<div class="pc-r"><span>%s</span><b>%s</b></div>%s%s</section>') % (
+        kind, big, eyebrow, title, title_tip, selv, rng_label, rng_val, stops(vals, sel, coin_html, calc), extra)
 def pricing(update):
     s_dlp, s_cr = ('700', '150') if update else (None, None)
     banner = ''
     if update:
         banner = ('<div class="bn bn-amb ob-in2"><span class="bn-i amb">%s</span><p><b>Pricing update required</b> Your course’s learning structure has changed significantly since pricing was selected. Previous DLP range: 500–700 DLP · Updated range: <b class="in">700–900 DLP</b>. Your price hasn’t been changed.</p>'
                   '<div class="bn-a"><a class="ds-ghost sm" href="#">Review Pricing</a></div></div>') % ic('warn', 18, 2)
-    why = ('<details class="why"%s><summary>%s<span>Why this range?</span></summary><div class="why-b"><span class="fl-l">Based on:</span><ul>%s</ul><p>Credalio doesn’t publish its internal coefficients. <a class="ds-link sm" href="#">Learn about Credalio Pricing [link TO CONFIRM]</a></p></div></details>' % (
-        '' if update else ' open', ic('down', 15, 2.2), ''.join('<li>%s</li>' % w for w in WHY)))
+    why = ('<details class="ds-card why"%s><summary><span class="why-i">%s</span><b>Why this range?</b>%s</summary><div class="why-b"><span class="fl-l">Based on:</span><ul>%s</ul><p>Credalio doesn’t publish its internal coefficients.</p><a class="ds-link sm" href="#">Learn about Credalio Pricing [link TO CONFIRM]</a></div></details>' % (
+        '' if update else ' open', ic('bulb', 18, 2), ic('down', 15, 2.2), ''.join('<li>%s%s</li>' % (ck(10), w) for w in WHY)))
+    note = '<section class="ds-card pn"><span class="pn-eq"><b>DLP estimate</b><i>≠</i><b>creator price</b></span><p>Calculated DLP is Credalio’s assessment of learning consumption. The permitted range comes from it, and you choose your price within that range.</p></section>'
     return (page_head('Experience', 'Course Pricing', 'Choose your price from the range Credalio permits for this course. Pricing is provisional now and confirmed before publication.') + banner +
-            '''<div class="g2 pg2 ob-in3">
-<section class="ds-card fc"><div class="fc-h"><div><span class="pg-e">Subscription access</span><h2>Calculated course DLP: 795 DLP</h2></div></div>
-<span class="rg-t">Credalio DLP range: <b>700–900 DLP</b></span>%s<p class="rg-s">Selected: <b>%s</b></p></section>
-<section class="ds-card fc"><div class="fc-h"><div><span class="pg-e">Lifetime marketplace access</span><h2><a class="mbl" href="STU-033.dc.html">Maintenance burden: Medium %s</a></h2></div></div>
-<span class="rg-t">Allowed Marketplace range: <b>130–210 Credits</b></span>%s<p class="rg-s">Selected: <b>%s</b>%s</p>%s</section>
-</div>
-<div class="wn info ob-in4">%s<span><b>DLP estimate ≠ creator price.</b> Calculated DLP is Credalio’s assessment of learning consumption. The permitted range comes from it, and you choose your price within that range.</span></div>''' % (
-                rng(['700', '800', '900'], s_dlp, 'DLP', coin()), (s_dlp + ' DLP') if s_dlp else 'Not selected', ic('chev', 14, 2.2),
-                rng(['130', '150', '170', '190', '210'], s_cr, 'Credits', credit()), (s_cr + ' Credits') if s_cr else 'Not selected',
-                tip('Marketplace Credits purchase lifetime access to this course under Credalio’s marketplace terms.'), why, ic('info', 16, 2) if 'info' in EXTRA else ICON('<circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path>', 16, 2)) +
+            '<div class="pr-g ob-in3"><div class="pr-main">%s%s</div><aside class="pr-side">%s%s</aside></div>' % (
+                pcard('gold', 'Subscription access', 'Calculated course DLP: 795 DLP', 'Credalio DLP range:', '700–900 DLP', ['700', '800', '900'], s_dlp, 'DLP', calc=795),
+                pcard('blue', 'Lifetime marketplace access', '<a class="mbl" href="STU-033.dc.html">Maintenance burden: Medium %s</a>' % ic('chev', 14, 2.2),
+                      'Allowed Marketplace range:', '130–210 Credits', ['130', '150', '170', '190', '210'], s_cr, 'Credits',
+                      title_tip=tip('Marketplace Credits purchase lifetime access to this course under Credalio’s marketplace terms.', 'r')),
+                why, note) +
             acts('STU-035.dc.html', 'Continue to summary'))
 P('pricing', 'price', 'Experience', pricing(False))
 P('pricingupd', 'price', 'Experience', pricing(True))
@@ -436,10 +457,17 @@ button.ch-add{background:none;font-family:inherit;cursor:pointer}
 .hs li{display:grid;grid-template-columns:100px minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1.5px solid #F0F2F8;font-size:14px}
 .hs li:last-child{border-bottom:0}
 .hs em{font-style:normal;color:#8A93AD;font-size:13px}
-.mw-bar{margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
-.mw-v{margin:0;flex:1;padding:8px 14px;background:#F5F8FF;border-color:#DCE5FB}
-.mw-v p b{display:inline}
-.mw{margin-top:16px;padding:6px 10px}
+.utabs{margin-top:20px;display:flex;gap:28px;border-bottom:1.5px solid #E6EAF3}
+.ut{display:inline-flex;align-items:center;gap:8px;height:46px;margin-bottom:-1.5px;border-bottom:2.5px solid transparent;color:#5B6582;font-size:14.5px;font-weight:500;text-decoration:none;white-space:nowrap}
+.ut:hover{color:#0B1433}
+.ut.on{color:#0B1433;font-weight:600;border-bottom-color:#1652F0}
+.ut.on svg{color:#1652F0}
+.mw-h{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 8px 14px 8px;border-bottom:1.5px solid #F0F2F8;margin-bottom:4px}
+.mw-who{display:flex;align-items:center;gap:12px}
+.mw-who > span{display:flex;flex-direction:column;gap:1px}
+.mw-who b{font-size:14.5px;font-weight:600}
+.mw-who em{font-style:normal;font-size:12.5px;color:#5B6582}
+.mw{margin-top:20px;padding:10px 14px 8px 14px}
 .mw-r{display:flex;align-items:center;gap:14px;padding:12px 8px}
 .mw-r + .mw-r{border-top:1.5px solid #F0F2F8}
 .mw-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
@@ -521,13 +549,107 @@ button.ch-add{background:none;font-family:inherit;cursor:pointer}
 .sp .tg-s{margin-top:2px}
 .sp.on .tg-s{background:#1652F0}
 .sp.on .tg-s i{transform:translateX(18px)}
-.am{margin-top:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.ds-opt.amc{flex-direction:column;align-items:flex-start;gap:16px;padding:24px;border-radius:20px}
-.amc .ds-opt-ck{position:absolute;top:22px;right:22px;margin:0}
-.am-v{display:flex;gap:8px}
-.am-f{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
-.amc .o-t b{font-size:18px}
-.amc .o-t > span{font-size:14px}
+.am{margin-top:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ds-opt.amc{flex-direction:column;align-items:stretch;gap:0;padding:10px 10px 20px 10px;border-radius:22px;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.ds-opt.amc:hover{transform:translateY(-2px);box-shadow:0 18px 40px -22px rgba(22,82,240,.35)}
+.ds-opt.amc.on{background:#FFFFFF;box-shadow:0 0 0 4px rgba(22,82,240,.12),0 22px 44px -24px rgba(22,82,240,.45)}
+.amc .ds-opt-ck{position:absolute;top:22px;right:22px;margin:0;z-index:2}
+.ax-vz{display:block;height:150px;border-radius:15px;background:linear-gradient(160deg,#F5F8FF,#EDF2FF);position:relative;overflow:hidden}
+.amc.on .ax-vz{background:linear-gradient(160deg,#EAF0FF,#DCE6FF)}
+.ax-v{position:absolute;inset:0;display:grid;grid-template-columns:auto minmax(30px,1fr) auto;grid-template-rows:1fr;align-items:center;padding:0 40px}
+.ax-v.two{grid-template-rows:1fr 1fr;padding:20px 40px}
+.ax-v .ax-p{grid-column:1}
+.ax-v .ax-l{grid-column:2;grid-row:1 / -1;width:100%;height:100%}
+.ax-v .ax-cv{grid-column:3;grid-row:1 / -1}
+.ax-l{fill:none;stroke:#1652F0;stroke-width:2.5;stroke-dasharray:4 5;vector-effect:non-scaling-stroke;opacity:.6}
+.ax-p{justify-self:start;display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px 0 8px;border-radius:999px;background:#FFFFFF;box-shadow:0 8px 18px -10px rgba(11,20,51,.35);white-space:nowrap}
+.ax-p b{font-size:14px;font-weight:600}
+.ax-p em{font-style:normal;font-size:12px;color:#5B6582}
+.ax-p.gold{background:linear-gradient(135deg,#FFFAEB,#FFF1CF);border:1.5px solid #F4D98E}
+.ax-p.gold b{color:#4A3300}
+.ax-p.gold em{color:#6B4E16}
+.ax-p.blue{border:1.5px solid #C9D7FA}
+.ax-p.blue b{color:#0E3BB8}
+.ax-cv{display:flex;flex-direction:column;gap:6px;width:92px;padding:8px;border-radius:14px;background:#FFFFFF;box-shadow:0 14px 28px -14px rgba(11,20,51,.45)}
+.ax-cv i{display:flex;align-items:center;justify-content:center;height:44px;border-radius:9px;background:linear-gradient(140deg,#1652F0,#0B1433);color:#FFFFFF;font-style:normal;font-size:11px;font-weight:600}
+.ax-cv b{height:5px;border-radius:5px;background:#E1E7F3}
+.ax-cv b.s{width:60%}
+.ax-t{display:flex;flex-direction:column;gap:6px;padding:18px 12px 0 12px}
+.ax-t b{font-size:18px;font-weight:600;letter-spacing:-0.01em}
+.ax-t span{font-size:14px;line-height:1.5;color:#4A5578}
+.ax-f{margin:14px 12px 0 12px;padding-top:14px;border-top:1.5px solid #EEF1F7;display:flex;flex-wrap:wrap;gap:8px}
+.ax-f > span{display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 12px 0 6px;border-radius:999px;background:#F7F9FD;font-size:13px;font-weight:500;color:#3A4566}
+.ax-f > span > svg{width:22px;height:22px;padding:4px;box-sizing:border-box;border-radius:50%;background:#EAF0FF;color:#1652F0}
+.amc.on .ax-f > span{background:#F2F6FF}
+.ax-pr{margin-top:16px;padding:24px 28px}
+.ax-pr ol{list-style:none;margin:0;padding:0;display:flex;position:relative;justify-content:space-between}
+.ax-pr ol::before{content:'';position:absolute;left:17px;right:17px;top:17px;height:2px;background:repeating-linear-gradient(90deg,#9DB8F7 0 6px,transparent 6px 11px)}
+.ax-pr li{position:relative;z-index:1;flex:1 1 0;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.ax-pr li:first-child{align-items:flex-start;text-align:left}
+.ax-pr li:last-child{align-items:flex-end;text-align:right}
+.ax-d{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#FFFFFF;box-shadow:0 0 0 4px #FFFFFF}
+.ax-m{width:34px;height:34px;border-radius:50%;background:#0B1433 url(/_blob/6d26bb5dab742fc7a27cff4144cfd663) center / 18px no-repeat;display:block}
+.ax-pr li.y .av{box-shadow:0 0 0 2.5px #1652F0}
+.ax-pr li b{font-size:14px;font-weight:600}
+.ax-pr li.y b{color:#1652F0}
+.ax-pr p{margin:20px 0 0 0;padding-top:16px;border-top:1.5px solid #F0F2F8;display:flex;align-items:center;gap:8px;font-size:14px;color:#3A4566}
+.ax-pr p svg{color:#1652F0;flex-shrink:0}
+.pr-g{margin-top:22px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:start}
+.pr-main,.pr-side{display:flex;flex-direction:column;gap:16px;min-width:0}
+.pr-side{position:sticky;top:88px}
+.pcd{padding:24px 26px 26px 26px;position:relative;overflow:hidden}
+.pcd::before{content:'';position:absolute;left:0;right:0;top:0;height:4px}
+.pcd.gold::before{background:linear-gradient(90deg,#F6C343,#D08A12)}
+.pcd.blue::before{background:linear-gradient(90deg,#5C86FF,#1652F0)}
+.pc-h{display:flex;align-items:center;gap:16px}
+.pc-i{width:56px;height:56px;flex-shrink:0;border-radius:16px;display:flex;align-items:center;justify-content:center}
+.pcd.gold .pc-i{background:linear-gradient(140deg,#FFFAEB,#FFF1CF)}
+.pcd.blue .pc-i{background:#EAF0FF}
+.pc-h .pg-e{margin-bottom:4px}
+.pcd.gold .pc-h .pg-e{color:#8A5A00}
+.pc-h h2{margin:0;font-size:19px;font-weight:600;letter-spacing:-0.01em}
+.pc-sel{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:4px;text-align:right}
+.pc-sel > span{display:flex;align-items:center;font-size:12.5px;color:#5B6582}
+.pc-sel > div{display:flex;align-items:baseline;gap:6px}
+.pc-sel b{font-size:30px;font-weight:600;letter-spacing:-0.03em;line-height:1}
+.pc-sel b.no{font-size:16px;font-weight:500;color:#8A93AD;letter-spacing:0}
+.pc-sel em{font-style:normal;font-size:14px;color:#5B6582}
+.pc-r{margin-top:22px;display:flex;align-items:center;gap:8px;font-size:14px;color:#3A4566}
+.pc-r b{font-weight:600;color:#0B1433}
+.pc-band{position:relative;margin:16px 0 0 0;height:30px}
+.pc-tr{position:absolute;left:0;right:0;top:12px;height:8px;border-radius:8px;overflow:hidden}
+.pcd.gold .pc-tr{background:linear-gradient(90deg,#FFF1CF,#F6C343)}
+.pcd.blue .pc-tr{background:linear-gradient(90deg,#DCE6FF,#5C86FF)}
+.pc-calc{position:absolute;top:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center}
+.pc-calc i{width:4px;height:32px;border-radius:4px;background:#0B1433;box-shadow:0 0 0 3px #FFFFFF}
+.pc-calc em{position:absolute;top:-24px;white-space:nowrap;font-style:normal;font-size:12px;font-weight:600;color:#0B1433;background:#FFFFFF;padding:2px 8px;border-radius:999px;box-shadow:0 2px 8px rgba(11,20,51,.12)}
+.pcd.gold .pc-band{margin-top:36px}
+.pc-stops{margin-top:12px;display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:8px}
+.pc-stop{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 6px;border-radius:14px;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#0B1433;font-family:inherit;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.pc-stop b{font-size:17px;font-weight:600}
+.pc-stop:hover{border-color:#9DB8F7}
+.pcd.gold .pc-stop.on{border-color:#D08A12;background:linear-gradient(160deg,#FFFAEB,#FFF1CF);box-shadow:0 0 0 4px rgba(214,150,30,.16);transform:translateY(-2px)}
+.pcd.blue .pc-stop.on{border-color:#1652F0;background:#F2F6FF;box-shadow:0 0 0 4px rgba(22,82,240,.12);transform:translateY(-2px)}
+.pc-stop:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.mbl{display:inline-flex;align-items:center;gap:4px;color:#0B1433;text-decoration:none}
+.mbl:hover{color:#1652F0}
+.why{padding:0;overflow:hidden}
+.why summary{display:flex;align-items:center;gap:12px;padding:18px 20px;cursor:pointer;list-style:none}
+.why summary::-webkit-details-marker{display:none}
+.why summary b{flex:1;font-size:15.5px;font-weight:600}
+.why summary > svg{color:#5B6582;transition:transform .2s ease}
+.why[open] summary > svg{transform:rotate(180deg)}
+.why-i{width:36px;height:36px;border-radius:11px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.why-b{padding:0 20px 20px 20px;font-size:13.5px;color:#3A4566}
+.why-b ul{list-style:none;margin:8px 0 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.why-b li{display:flex;align-items:center;gap:9px}
+.why-b li svg{flex-shrink:0;width:18px;height:18px;padding:4px;box-sizing:border-box;border-radius:50%;background:#EAF0FF;color:#1652F0}
+.why-b p{margin:14px 0 6px 0;padding-top:12px;border-top:1.5px solid #F0F2F8;font-size:13px;color:#5B6582}
+.pn{padding:18px 20px;background:linear-gradient(160deg,#0B1433,#102A7A);border:0;color:#FFFFFF}
+.pn-eq{display:flex;align-items:center;gap:10px;font-size:15px}
+.pn-eq b{font-weight:600}
+.pn-eq i{font-style:normal;font-size:22px;color:#9DB8F7}
+.pn p{margin:10px 0 0 0;font-size:13.5px;line-height:1.55;color:rgba(255,255,255,.75)}
 .kn{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .kn li{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:#F7F9FD;font-size:14px;line-height:1.45}
 .kn li span{width:20px;height:20px;flex-shrink:0;border-radius:50%;background:#E7F5EE;color:#0F6B45;display:flex;align-items:center;justify-content:center}
@@ -547,26 +669,8 @@ button.ch-add{background:none;font-family:inherit;cursor:pointer}
 .bn-amb{background:#FFF8EA;border-color:#F4DDAA}
 .bn-i.amb{background:#B76E00}
 .bn p b.in{display:inline}
-.pg2{align-items:stretch}
-.rg-t{display:block;font-size:14px;color:#3A4566}
-.rg-t b{font-weight:600;color:#0B1433}
-.rg{position:relative;margin-top:18px;display:flex;justify-content:space-between;gap:8px}
-.rg-l{position:absolute;left:24px;right:24px;top:50%;height:3px;margin-top:-1.5px;border-radius:3px;background:linear-gradient(90deg,#9DB8F7,#1652F0)}
-.rg-p{position:relative;z-index:1;display:inline-flex;align-items:center;gap:6px;height:44px;padding:0 14px 0 8px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14.5px;cursor:pointer}
-.rg-p b{font-weight:600}
-.rg-p:hover{border-color:#1652F0}
-.rg-p.on{background:#1652F0;border-color:#1652F0;color:#FFFFFF;box-shadow:0 10px 22px -10px rgba(22,82,240,.7)}
-.rg-s{margin:16px 0 0 0;display:flex;align-items:center;font-size:14px;color:#5B6582}
-.rg-s b{margin-left:4px;font-weight:600;color:#0B1433}
 .mbl{display:inline-flex;align-items:center;gap:4px;color:#0B1433;text-decoration:none}
 .mbl:hover{color:#1652F0}
-.why{margin-top:16px;border-top:1.5px solid #F0F2F8;padding-top:12px}
-.why summary{display:inline-flex;align-items:center;gap:6px;cursor:pointer;font-size:14px;font-weight:600;color:#1652F0;list-style:none}
-.why summary::-webkit-details-marker{display:none}
-.why[open] summary svg{transform:rotate(180deg)}
-.why-b{margin-top:10px;font-size:13.5px;color:#3A4566}
-.why-b ul{margin:6px 0 0 0;padding-left:18px;display:flex;flex-direction:column;gap:3px}
-.why-b p{margin:10px 0 0 0;font-size:13px;color:#5B6582}
 .ps{margin-top:22px;padding:6px 24px 20px 24px;max-width:760px}
 .ps-r{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1.5px solid #F0F2F8;font-size:14.5px}
 .ps-r span{color:#5B6582}
@@ -579,6 +683,26 @@ button.ch-add{background:none;font-family:inherit;cursor:pointer}
 .sv-s .ds-ghost{margin-right:8px}
 @media (max-width: 1180px){.at-r{grid-template-columns:minmax(0,1fr) auto auto;}.at-r .sel{grid-column:1 / 3}.ccr-g{grid-template-columns:repeat(2,minmax(0,1fr))}.tbl-r{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 70px 80px 80px 60px 150px}}
 @media (max-width: 960px){
+.am{grid-template-columns:minmax(0,1fr)}
+.ax-vz{height:120px}
+.ax-v,.ax-v.two{padding:14px 22px}
+.ax-pr ol{flex-direction:column;align-items:stretch;gap:10px}
+.ax-pr ol::before{left:17px;right:auto;top:18px;bottom:18px;width:2px;height:auto;background:repeating-linear-gradient(180deg,#9DB8F7 0 6px,transparent 6px 11px)}
+.ax-pr li,.ax-pr li:first-child,.ax-pr li:last-child{flex-direction:row;align-items:center;text-align:left}
+.ax-pr{padding:18px 16px}
+.pr-g{grid-template-columns:minmax(0,1fr)}
+.pr-side{position:static}
+.pcd{padding:20px 16px}
+.pc-h{flex-wrap:wrap}
+.pc-sel{margin-left:0;text-align:left;align-items:flex-start;width:100%}
+.pc-stops{gap:4px}
+.pc-stop{padding:10px 2px;gap:4px}
+.pc-stop b{font-size:14px}
+.pc-stop .cr-c,.pc-stop .dlp-c{display:none}
+.utabs{overflow-x:auto}
+.mw-h{flex-direction:column;align-items:stretch}
+.mw-h .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -14px;padding:0 14px 2px 14px;scrollbar-width:none}
+.mw-h .ds-chip{flex-shrink:0}
 .flt{padding:12px 14px}
 .flt-l{width:100%;overflow-x:auto}
 .flt .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -14px;padding:0 14px;scrollbar-width:none}
@@ -629,12 +753,9 @@ button.ch-add{background:none;font-family:inherit;cursor:pointer}
 .flw ol::before{left:15px;right:auto;top:16px;bottom:16px;width:3px;height:auto;background:linear-gradient(180deg,#1652F0,#9DB8F7)}
 .flw li,.flw li:first-child,.flw li:last-child{flex-direction:row;align-items:center;text-align:left;min-height:48px}
 .sps{grid-template-columns:minmax(0,1fr)}
-.am{grid-template-columns:minmax(0,1fr)}
 .kn{grid-template-columns:minmax(0,1fr)}
 .mq{flex-direction:column;align-items:stretch;gap:10px}
 .mb{grid-template-columns:minmax(0,1fr);gap:12px}
-.rg{flex-wrap:wrap;justify-content:flex-start}
-.rg-l{display:none}
 .ps{padding:4px 16px 16px 16px}
 .ps-g{grid-template-columns:minmax(0,1fr)}
 .sv-s .ds-ghost{width:100%;margin:0 0 6px 0}

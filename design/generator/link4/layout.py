@@ -31,7 +31,7 @@ SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html'
 boards, order, notes = {}, [], {}
 y = 300
 for nid, text, codes in ROWS:
-    notes[nid] = {'x': 0, 'y': y - 300, 'text': text, 'kind': 'title1', 'maxW': len(codes) * (PAIR + GAP) - GAP}
+    notes[nid] = {'kind': 'title1', 'maxW': min(8000, len(codes) * (PAIR + GAP) - GAP), 'text': text, 'w': 240, 'x': 0, 'y': y - 300}
     notes[nid + '-new'] = {'x': 0, 'y': y - 150, 'text': 'NEW · batch %s' % nid[1], 'w': 260, 'fill': 'pink'}
     if nid == 'b2-builder':
         notes['b2-missing'] = {'x': 300, 'y': y - 150, 'text': 'Not built yet: CR-STU-023 Assessment Type and CR-STU-020B Curriculum Readiness (solo + team). The client file refuses to open these three boards, so their content is missing.', 'w': 1100, 'fill': 'red'}
@@ -47,7 +47,7 @@ for nid, text, codes in ROWS:
         mh = max(mh, hd, hm)
         x += PAIR + GAP
     y += mh + ROWGAP
-notes['sources'] = {'x': 0, 'y': y - 300, 'text': 'Shared sources (code the boards above import, not screens)', 'kind': 'title1', 'maxW': 3200}
+notes['sources'] = {'kind': 'title1', 'maxW': 3200, 'text': 'Shared sources (code the boards above import, not screens)', 'w': 240, 'x': 0, 'y': y - 300}
 x = 0
 for name, title in SOURCES:
     boards[name] = {'x': x, 'y': y, 'w': 1440, 'h': 900, 'title': title, 'page': 'main', 'is_interactive': True, 'expand': 'fill'}
@@ -58,5 +58,6 @@ old = json.load(open(p)) if os.path.exists(p) else {}
 c = {'v': 3, 'createdOnFiles': old.get('createdOnFiles', {'v': 1, 'at': '2026-11-08T06:00:00Z'}), 'title': 'Credalio · Link 4 · Course Studio',
      'launch': {'view': 'canvas'}, 'pages': [{'id': 'main', 'name': 'Course Studio'}], 'boards': boards, 'order': order,
      'notes': notes, 'noteOrder': list(notes), 'designSystems': []}
+if 'attachments' in old: c['attachments'] = old['attachments']
 json.dump(c, open(p, 'w'), ensure_ascii=False, indent=2)
 print(len(boards), 'boards')

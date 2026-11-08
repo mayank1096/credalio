@@ -17,8 +17,12 @@
 .ds-btn:hover .ob-arrow{transform:translateX(3px)}
 .ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
 .ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
 .ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
 .ds-link:hover{color:#0E3BB8}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
 .ds-tag .tip{margin-left:0}
 .ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
 .ds-tag.line{background:#FFFFFF;box-shadow:inset 0 0 0 1px #E6EAF3}
@@ -30,7 +34,7 @@
 .ds-opt-ck .ck{display:none}
 .ds-opt.on .ds-opt-ck{background:#1652F0;border-color:#1652F0}
 .ds-opt.on .ds-opt-ck .ck{display:block}
-.ds-btn:focus-visible,.ds-link:focus-visible,.ds-opt:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.ds-opt:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
 .tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
 .tip:hover,.tip:focus{color:#1652F0}
 .tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
@@ -46,6 +50,7 @@
 .ds-btn .ob-arrow{width:36px;height:36px}
 .ds-btn.sm{height:42px;font-size:14px}
 .ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
 }
 @media (max-width: 760px){
 .tip-b{display:none;width:min(250px,calc(100vw - 48px))}
@@ -53,6 +58,7 @@
 }
 body{margin:0;background:#F7F9FD}
 a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}.ob-in3{animation:obIn .5s ease .16s both}.ob-in4{animation:obIn .5s ease .24s both}
 .ds-tok{height:44px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:7px;padding:0 14px 0 7px;border-radius:999px;background:linear-gradient(135deg,#FFFAEB,#FFF1CF);border:1.5px solid #F4D98E;font-size:14.5px;font-weight:600;color:#4A3300;text-decoration:none;box-shadow:0 6px 16px rgba(214,150,30,.12);transition:box-shadow .2s ease}
@@ -62,18 +68,22 @@ a{color:#1652F0}
 .ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
 .ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
 .ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
 .ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-weight:600;font-size:14.5px;text-decoration:none}
 .ds-link:hover{color:#0E3BB8}
-.ds-btn:focus-visible,.ds-opt:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-opt:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
 @media (prefers-reduced-motion: reduce){.ob-in,.ob-in2,.ob-in3,.ob-in4{animation:none}}
 @media (max-width: 960px){
 .ds-tok{padding:0 12px 0 6px;height:40px}
 .ds-btn{height:48px;font-size:15px}
 .ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
 .ds-btn{justify-content:space-between}
 }
 body{margin:0;background:#F7F9FD}
 a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .av{position:relative;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:#EAF0FF;color:#0E3BB8;font-size:11px;font-weight:600;box-sizing:border-box}
 .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .avs{display:inline-flex;align-items:center}
@@ -84,6 +94,10 @@ a{color:#1652F0}
 .nv-sg{display:flex;align-items:center;gap:14px;padding:14px 16px 14px 14px;border-radius:16px;border:1.5px solid #DCE5FB}
 .nv-sg p{margin:0;flex:1;min-width:0;font-size:14.5px;line-height:1.5;color:#3A4566}
 .nv-sg p b{color:#0B1433;font-weight:600;margin-right:4px}
+.nv-chip{display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 14px;box-sizing:border-box;border-radius:999px;border:1.5px solid #CBD7F5;background:#FFFFFF;color:#0E3BB8;font-family:inherit;font-size:13.5px;font-weight:500;cursor:pointer;white-space:nowrap;transition:border-color .2s ease,background .2s ease}
+.nv-chip svg{color:#1652F0}
+.nv-chip:hover{border-color:#1652F0;background:#F5F8FF}
+.nv-chip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
 @media (max-width: 760px){
 .nv-sg{flex-wrap:wrap;padding:14px}
 .nv-sg p{flex-basis:calc(100% - 44px)}
@@ -91,11 +105,8 @@ a{color:#1652F0}
 .fx-root{min-height:100vh;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433;position:relative;isolation:isolate}
 .fx-root::before{content:'';position:absolute;z-index:-1;left:0;right:0;top:64px;height:340px;pointer-events:none;background:linear-gradient(180deg,#F2F6FF,rgba(242,246,255,0))}
 .fx-top{height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1.5px solid #EEF1F7;background:#FFFFFF;position:relative}
-.fx-x{width:40px;height:40px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3A4566;text-decoration:none}
-.fx-x:hover{background:#F5F8FF;color:#0B1433}
 .fx-title{display:flex;align-items:baseline;gap:8px;min-width:0}
 .fx-t1{font-size:16px;font-weight:600;white-space:nowrap}
-.fx-t2{font-size:14px;color:#5B6582;white-space:nowrap}
 .fx-step{font-size:13.5px;color:#5B6582;white-space:nowrap}
 .fx-bar{position:absolute;left:0;bottom:-1.5px;height:3px;border-radius:0 3px 3px 0;background:linear-gradient(90deg,#1652F0,#5C86FF);transition:width .6s ease}
 .fx-main{flex-grow:1;display:flex;justify-content:center;align-items:center;padding:clamp(36px,6vh,64px) 24px 56px 24px}
@@ -108,7 +119,6 @@ a{color:#1652F0}
 .fx-acts{margin-top:32px;display:flex;align-items:center;justify-content:flex-end;gap:20px}
 @media (max-width: 960px){
 .fx-top{height:56px;padding:0 12px 0 6px;gap:8px}
-.fx-t2{display:none}
 .fx-main{align-items:flex-start;padding:24px 16px 0 16px}
 .fx-h1{font-size:26px}
 .fx-sub{font-size:14.5px;margin-top:8px}
@@ -117,6 +127,35 @@ a{color:#1652F0}
 .fx-acts .ds-btn{width:100%;justify-content:space-between}
 .fx-acts .ds-link{justify-content:center;min-height:40px}
 }
+.nw-g{margin-top:32px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.nw-f{position:relative;display:flex;flex-direction:column;padding:20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#0B1433;font-family:inherit;text-align:left;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.nw-f:hover{border-color:#CBD7F5;box-shadow:0 14px 34px rgba(22,82,240,.08);transform:translateY(-2px)}
+.nw-fi{width:46px;height:46px;border-radius:14px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.nw-f b{margin-top:14px;font-size:17px;font-weight:600}
+.nw-fd{margin-top:6px;font-size:14px;line-height:1.5;color:#4A5578;flex-grow:1}
+.nw-f{text-decoration:none}
+.nw-fm{margin-top:16px;padding-top:14px;border-top:1.5px solid #F0F2F8;display:flex;flex-direction:column;gap:6px;font-size:13.5px;color:#0B1433}
+.nw-fm span::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:#9DB8F7;margin:0 9px 2px 0}
+.nw-go{margin-top:16px;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:#1652F0}
+.nw-f:hover .nw-go svg{transform:translateX(3px)}
+.nw-go svg{transition:transform .2s ease}
+.fx-nl{flex-shrink:0;font-size:14px;color:#3A4566;white-space:nowrap}
+.fx-nl b{font-weight:600;color:#0B1433}
+.fx-nova input{border-left:1.5px solid #EEF1F7 !important;padding-left:14px !important}
+.dv-f em{font-style:normal;font-size:12px;color:#8A93AD}
+.fx-note{margin-right:auto;font-size:14px;color:#5B6582}
+.fx-exit{height:40px;padding:0 16px;font-size:14px}
+.xb-sl em{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#8A93AD;margin-top:2px}
+.fx-sub b{font-weight:600;color:#0B1433}
+.rv + .fx-acts .ds-ghost{margin-right:auto}
+.nw-fm em{display:block;font-style:normal;font-size:12px;color:#8A93AD}
+.nw-f.on{border-color:#1652F0;background:#F8FAFF;box-shadow:0 0 0 4px rgba(22,82,240,.12);transform:none}
+.nw-f.on .nw-fi{background:#1652F0;color:#FFFFFF}
+.nw-f:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.fx-nova{margin-top:20px;display:flex;align-items:center;gap:12px;height:60px;box-sizing:border-box;padding:6px 8px 6px 12px;border-radius:999px;border:1.5px solid #DCE5FB;background:#FFFFFF}
+.fx-nova:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.fx-nova input{flex:1;min-width:0;height:100%;border:0;outline:none;background:transparent;font-family:inherit;font-size:15.5px;color:#0B1433}
+.fx-nova input::placeholder{color:#8A93AD}
 .dv-g{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .ds-opt.dv{align-items:flex-start;padding:22px 20px;border-radius:18px}
 .dv-i{width:46px;height:46px;flex-shrink:0;border-radius:14px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
@@ -156,7 +195,6 @@ a{color:#1652F0}
 .wl-tags .avs .av + .av{margin-left:-6px}
 .xb-route{margin-top:28px;width:100%;box-sizing:border-box;padding:22px 26px 22px 26px;border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 18px 44px rgba(22,82,240,.08);text-align:left}
 .xb-rh{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.hp-lab{font-size:13px;font-weight:600;color:#8A93AD}
 .xb-rn{display:inline-flex;align-items:center;font-size:13px;color:#5B6582}
 .xb-steps{list-style:none;margin:22px 0 2px 0;padding:0;display:flex;position:relative}
 .xb-steps::before{content:'';position:absolute;left:16px;right:16px;top:15px;height:3px;border-radius:3px;background:linear-gradient(90deg,#1652F0,#AFC1F5 30%,#E6EAF3 60%)}
@@ -173,8 +211,23 @@ a{color:#1652F0}
 .wl-alt{display:flex;align-items:center;gap:14px;color:#8A93AD;font-size:14px}
 .wl-alt .ds-link{font-size:14px}
 @media (prefers-reduced-motion: reduce){.xb-first .xb-sn{animation:none}}
+@media (max-width: 1180px){.nw-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width: 960px){
 .fx-step{display:none}
+.nw-g{margin-top:20px;grid-template-columns:minmax(0,1fr);gap:10px}
+.nw-f{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:14px;align-items:center;padding:14px 16px;border-radius:16px}
+.nw-fi{width:40px;height:40px;border-radius:12px;grid-row:span 2}
+.nw-f b{margin-top:0;font-size:15.5px}
+.nw-fd{margin-top:2px;font-size:13.5px}
+.nw-fm,.nw-go,.xb-sl em{display:none}
+.fx-nl{white-space:normal;flex:1 1 calc(100% - 44px);font-size:13.5px}
+.fx-nova input{border-left:0 !important;padding-left:0 !important;flex-basis:100% !important;order:3}
+.fx-nova .nv-chip{order:4}
+.fx-note{margin:0 0 6px 0;text-align:center;font-size:13px}
+.fx-acts .ds-ghost{width:100%}
+.fx-exit{display:none !important}
+.fx-nova{height:auto;flex-wrap:wrap;border-radius:18px;padding:12px;gap:10px}
+.fx-nova input{flex-basis:calc(100% - 44px);height:36px;font-size:14.5px}
 .dv-g,.hw-g{margin-top:20px;grid-template-columns:minmax(0,1fr);gap:10px}
 .ds-opt.dv{padding:16px}
 .dv-f{display:none}
@@ -206,45 +259,51 @@ a{color:#1652F0}
 </helmet>
 <div class="fx-root">
 <header class="fx-top">
-<a href="#" class="fx-x" aria-label="Close setup"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
-<div class="fx-title"><span class="fx-t1">New course</span><span class="fx-t2">Setup</span></div>
+<div class="fx-title"><span class="fx-t1">Creator Studio</span></div>
 <span style="flex-grow: 1"></span>
 <span class="fx-step">{{stepLabel}}</span>
 <a href="#" class="ds-tok" aria-label="72,450 Creio"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0; display: block"><defs><linearGradient id="fca" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9A3"></stop><stop offset="0.45" stop-color="#F6C343"></stop><stop offset="1" stop-color="#D08A12"></stop></linearGradient><linearGradient id="fcb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9CF5A"></stop><stop offset="1" stop-color="#E2A024"></stop></linearGradient></defs><circle cx="32" cy="34" r="29" fill="#B8740A" opacity="0.35"></circle><circle cx="32" cy="32" r="29" fill="url(#fca)"></circle><circle cx="32" cy="32" r="22" fill="url(#fcb)" stroke="#FFF1C2" stroke-opacity="0.7" stroke-width="1.5"></circle><path d="M32 18l2.9 9.3 9.3 2.9-9.3 2.9L32 42.4l-2.9-9.3-9.3-2.9 9.3-2.9z" fill="#FFF8DF"></path><ellipse cx="23" cy="19" rx="9" ry="5" fill="#FFFFFF" opacity="0.35" transform="rotate(-30 23 19)"></ellipse></svg><span>72.4K</span></a>
+<a href="#" class="ds-ghost fx-exit">Save &amp; exit</a>
 <span class="fx-bar" style="width: {{barW}}"></span>
 </header>
 <main class="fx-main">
-<sc-if value="{{s_delivery}}" hint-placeholder-val="{{ true }}"><div class="fx-col">
-<h1 class="fx-h1 ob-in">How will learners take this course?</h1>
-<p class="fx-sub ob-in2">You can mix formats later. This sets what the Studio offers you.</p>
-<div class="dv-g ob-in3" role="group" aria-label="Delivery"><button type="button" class="ds-opt dv {{ct1}}" aria-pressed="{{at1}}" onClick="{{xt1}}"><span class="dv-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg></span><span class="dv-t"><b>Self-paced</b><span>Learners move through lessons in their own time.</span><span class="dv-f"><span>Video, audio, text</span><span>Interactive activities</span><span>Projects and assessments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt dv {{ct2}}" aria-pressed="{{at2}}" onClick="{{xt2}}"><span class="dv-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.5"></circle><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14"></path></svg></span><span class="dv-t"><b>Live, instructor-led</b><span>Learning happens in scheduled live sessions.</span><span class="dv-f"><span>Live classes</span><span>Attendance</span><span>Resources and assignments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt dv {{ct3}}" aria-pressed="{{at3}}" onClick="{{xt3}}"><span class="dv-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="8" height="7" rx="2"></rect><circle cx="17" cy="7.5" r="3.5"></circle><rect x="3" y="14" width="8" height="6" rx="2"></rect><path d="M14 14h6v6h-6z"></path></svg></span><span class="dv-t"><b>Hybrid</b><span>Self-paced lessons with scheduled live sessions.</span><span class="dv-f"><span>Lessons + live classes</span><span>Practice and assignments</span><span>Assessments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div>
-<div class="ob-in4" style="margin-top: 18px"><div class="nv-sg nova-card"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span><p><b>Nova</b> Hybrid works well for SQL. I’ll help you decide which parts land best live, like a weekly analysis clinic.</p></div></div>
+<sc-if value="{{s_type}}" hint-placeholder-val="{{ true }}"><div class="fx-col">
+<h1 class="fx-h1 ob-in">What will you create?</h1>
+<p class="fx-sub ob-in2">Choose the type of learning experience that best matches the outcome you want learners to achieve.</p>
+<div class="nw-g ob-in3"><a class="nw-f" href="STU-002.dc.html"><span class="nw-fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><b>Course</b><span class="nw-fd">Teach a focused subject or skill.</span><span class="nw-fm"><em>Best for</em><span>Individual skills</span><span>Knowledge development</span><span>Self-paced or instructor-led learning</span></span><span class="nw-go">Create Course<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><a class="nw-f" href="#"><span class="nw-fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg></span><b>Professional Certification</b><span class="nw-fd">Assess and verify professional competence.</span><span class="nw-fm"><em>Best for</em><span>Professional standards</span><span>Competency verification</span><span>Formal assessment</span><span>Recognised proof</span></span><span class="nw-go">Create Certification<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><a class="nw-f" href="#"><span class="nw-fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2.5"></circle><circle cx="18" cy="5" r="2.5"></circle><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"></path></svg></span><b>Career Path</b><span class="nw-fd">Build a journey toward a role or career outcome.</span><span class="nw-fm"><em>Best for</em><span>Multiple connected skills</span><span>Career transitions</span><span>Courses + practice + credentials</span><span>Portfolio development</span></span><span class="nw-go">Create Career Path<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><a class="nw-f" href="#"><span class="nw-fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M7.5 14h3M7.5 17h6"></path></svg></span><b>Learning Program</b><span class="nw-fd">Deliver structured learning over time.</span><span class="nw-fm"><em>Best for</em><span>Cohorts</span><span>Institutions</span><span>Multi-course programs</span><span>Guided learning</span></span><span class="nw-go">Create Learning Program<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
+<div class="fx-nova ob-in4"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span><span class="fx-nl"><b>Not sure? Tell Nova</b> what you want learners to achieve.</span><label class="sr-only" for="fxq">What should learners achieve?</label><input id="fxq" placeholder="What should learners achieve?"><button type="button" class="nv-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg><span>Help Me Choose</span></button></div>
+</div></sc-if>
+<sc-if value="{{s_delivery}}" hint-placeholder-val="{{ false }}"><div class="fx-col">
+<a class="fx-back" href="STU-001.dc.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a>
+<h1 class="fx-h1 ob-in">How will learners experience this course?</h1>
+<p class="fx-sub ob-in2">Self-paced courses can use video, audio, text, documents, interactive activities, projects and assessments.</p>
+<div class="dv-g ob-in3" role="group" aria-label="Delivery type"><button type="button" class="ds-opt dv {{ct1}}" aria-pressed="{{at1}}" onClick="{{xt1}}"><span class="dv-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg></span><span class="dv-t"><b>Self-Paced</b><span>Learners progress through lessons and activities at their own pace.</span><span class="dv-f"><em>Features</em><span>Video, audio, text, documents</span><span>Interactive activities</span><span>Projects and assessments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt dv {{ct2}}" aria-pressed="{{at2}}" onClick="{{xt2}}"><span class="dv-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.5"></circle><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14"></path></svg></span><span class="dv-t"><b>Live Instructor-Led</b><span>Learning happens primarily through scheduled live sessions.</span><span class="dv-f"><em>Features</em><span>Live classes and scheduled sessions</span><span>Attendance</span><span>Resources and assignments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt dv {{ct3}}" aria-pressed="{{at3}}" onClick="{{xt3}}"><span class="dv-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="8" height="7" rx="2"></rect><circle cx="17" cy="7.5" r="3.5"></circle><rect x="3" y="14" width="8" height="6" rx="2"></rect><path d="M14 14h6v6h-6z"></path></svg></span><span class="dv-t"><b>Hybrid</b><span>Combine self-paced learning with scheduled live sessions.</span><span class="dv-f"><em>Features</em><span>Content lessons + live classes</span><span>Assignments and practice</span><span>Assessments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div>
+<div class="ob-in4" style="margin-top: 18px"><div class="nv-sg nova-card"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span><p><b>Nova</b> Hybrid selected. I’ll help you structure which parts should be self-paced and which benefit from live instruction.</p></div></div>
 <div class="fx-acts"><a class="ds-btn" href="STU-003.dc.html"><span>Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
 </div></sc-if>
 <sc-if value="{{s_review}}" hint-placeholder-val="{{ false }}"><div class="fx-col n">
 <a class="fx-back" href="STU-002.dc.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a>
 <h1 class="fx-h1 ob-in">Your course setup</h1>
 <p class="fx-sub ob-in2">Nothing else to decide yet. You can change this any time.</p>
-<div class="ds-card rv ob-in3"><div class="rv-r"><span class="rv-l">Format</span><span class="rv-v"><span class="rv-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span>Course</span><a class="ds-link" href="#">Change</a></div><div class="rv-r"><span class="rv-l">Delivery</span><span class="rv-v"><span class="rv-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="8" height="7" rx="2"></rect><circle cx="17" cy="7.5" r="3.5"></circle><rect x="3" y="14" width="8" height="6" rx="2"></rect><path d="M14 14h6v6h-6z"></path></svg></span>Hybrid</span><a class="ds-link" href="STU-002.dc.html">Change</a></div><div class="rv-r"><span class="rv-l">Lead creator</span><span class="rv-v"><span class="av" style="width: 26px; height: 26px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span> Ada Ononuju</span><span></span></div><div class="rv-r"><span class="rv-l">Status</span><span class="rv-v"><span class="ds-tag">Draft</span></span><span></span></div></div>
-<div class="fx-acts"><a class="ds-btn" href="STU-004.dc.html"><span>Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
+<div class="ds-card rv ob-in3"><div class="rv-r"><span class="rv-l">Learning experience</span><span class="rv-v"><span class="rv-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span>Course</span></div><div class="rv-r"><span class="rv-l">Delivery</span><span class="rv-v"><span class="rv-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="8" height="7" rx="2"></rect><circle cx="17" cy="7.5" r="3.5"></circle><rect x="3" y="14" width="8" height="6" rx="2"></rect><path d="M14 14h6v6h-6z"></path></svg></span>Hybrid</span></div><div class="rv-r"><span class="rv-l">Creator</span><span class="rv-v"><span class="av" style="width: 26px; height: 26px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span> Ada Ononuju</span></div><div class="rv-r"><span class="rv-l">Status</span><span class="rv-v"><span class="ds-tag">Draft</span></span></div></div>
+<div class="fx-acts"><a class="ds-ghost" href="STU-001.dc.html">Change Setup</a><a class="ds-btn" href="STU-004.dc.html"><span>Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
 </div></sc-if>
 <sc-if value="{{s_how}}" hint-placeholder-val="{{ false }}"><div class="fx-col">
 <a class="fx-back" href="STU-003.dc.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a>
-<h1 class="fx-h1 ob-in">Who will build this course?</h1>
-<p class="fx-sub ob-in2">You can change this later from Collaborators.</p>
-<div class="hw-g ob-in3" role="group" aria-label="How you'll create"><button type="button" class="ds-opt hw {{ct4}}" aria-pressed="{{at4}}" onClick="{{xt4}}"><span class="hw-v" aria-hidden="true"><span class="av hw-me" style="width: 44px; height: 44px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span></span><span class="hw-t"><b>On my own</b><span>You’re the only creator. Go straight to building.</span><em>Next: your Studio</em></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt hw {{ct5}}" aria-pressed="{{at5}}" onClick="{{xt5}}"><span class="hw-v" aria-hidden="true"><span class="hw-co"><span class="av hw-me" style="width: 40px; height: 40px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><span class="av" style="width: 32px; height: 32px">JA<img src="/_blob/cbfe3f2bbb89728d8777e425b59db736" alt=""></span><span class="hw-plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></span></span><span class="hw-t"><b>With co-creators</b><span>Invite people you know by name or email.</span><em>Next: invite co-creators</em></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt hw {{ct6}}" aria-pressed="{{at6}}" onClick="{{xt6}}"><span class="hw-v" aria-hidden="true"><span class="hw-open"><span class="hw-ring"></span><span class="av hw-me" style="width: 32px; height: 32px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><i style="left: 4px; top: 22px"></i><i style="right: 2px; top: 10px"></i><i style="right: 8px; bottom: 2px"></i><i style="left: 16px; bottom: 0"></i><i style="left: 30px; top: 0"></i></span></span><span class="hw-t"><b>Open to collaboration</b><span>Let approved Credalio creators apply to join.</span><em>Next: describe the opportunity</em></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div>
-<div class="fx-acts"><a class="ds-btn" href="STU-008.dc.html"><span>Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
+<h1 class="fx-h1 ob-in">How will you create this course?</h1>
+<div class="hw-g ob-in3" role="group" aria-label="How will you create this course?"><button type="button" class="ds-opt hw {{ct4}}" aria-pressed="{{at4}}" onClick="{{xt4}}"><span class="hw-v" aria-hidden="true"><span class="av hw-me" style="width: 44px; height: 44px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span></span><span class="hw-t"><b>Create Solo</b><span>You are the primary and only creator. Go straight to building your course.</span><em>Next: Curriculum Builder</em></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt hw {{ct5}}" aria-pressed="{{at5}}" onClick="{{xt5}}"><span class="hw-v" aria-hidden="true"><span class="hw-co"><span class="av hw-me" style="width: 40px; height: 40px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><span class="av" style="width: 32px; height: 32px">JA<img src="/_blob/cbfe3f2bbb89728d8777e425b59db736" alt=""></span><span class="hw-plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></span></span><span class="hw-t"><b>Create with Co-Creators</b><span>Invite a specific person by name or email to contribute to this course.</span><em>Next: Invite Co-Creator</em></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt hw {{ct6}}" aria-pressed="{{at6}}" onClick="{{xt6}}"><span class="hw-v" aria-hidden="true"><span class="hw-open"><span class="hw-ring"></span><span class="av hw-me" style="width: 32px; height: 32px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><i style="left: 4px; top: 22px"></i><i style="right: 2px; top: 10px"></i><i style="right: 8px; bottom: 2px"></i><i style="left: 16px; bottom: 0"></i><i style="left: 30px; top: 0"></i></span></span><span class="hw-t"><b>Open to Collaboration</b><span>Make this opportunity discoverable to approved Credalio creators. Different from inviting someone directly.</span><em>Next: Open collaboration setup</em></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div>
+<div class="fx-acts"><span class="fx-note">You can change this later from Collaborators in Course Studio.</span><a class="ds-btn" href="STU-008.dc.html"><span>Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
 </div></sc-if>
 <sc-if value="{{s_welcome}}" hint-placeholder-val="{{ false }}"><div class="fx-col n wl">
 <div class="wl-nv ob-in"><span class="nv-av lg" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span></div>
 <h1 class="fx-h1 ob-in">Let’s build your course.</h1>
-<p class="fx-sub ob-in2">I’m Nova. I’ll help turn what you know into a course people finish. You approve every change.</p>
-<div class="wl-tags ob-in2"><span class="ds-tag line">Course</span><span class="ds-tag line">Hybrid</span><span class="ds-tag line"><span class="avs"><span class="av" style="width: 18px; height: 18px">JA<img src="/_blob/cbfe3f2bbb89728d8777e425b59db736" alt=""></span><span class="av" style="width: 18px; height: 18px">AB<img src="/_blob/167d6259769b54fee7a18d6801741d2f" alt=""></span></span> With 2 co-creators</span></div>
+<p class="fx-sub ob-in2"><b>Nova</b>: I’ll help you turn your expertise into a structured learning experience.</p>
+<div class="wl-tags ob-in2"><span class="ds-tag line">Course</span><span class="ds-tag line">Hybrid</span><span class="ds-tag line"><span class="avs"><span class="av" style="width: 18px; height: 18px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><span class="av" style="width: 18px; height: 18px">JA<img src="/_blob/cbfe3f2bbb89728d8777e425b59db736" alt=""></span><span class="av" style="width: 18px; height: 18px">AB<img src="/_blob/167d6259769b54fee7a18d6801741d2f" alt=""></span></span> 3 creators</span></div>
 <div class="xb-route ob-in3">
-<div class="xb-rh"><span class="hp-lab">Your plan</span><span class="xb-rn">Work in any order<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Your Studio is a workspace, not a wizard. Everything saves as you go, and Studio home always shows your next step. Only submitting for validation and publishing have requirements.</span></span></span></div>
-<ol class="xb-steps"><li class="xb-s xb-first"><span class="xb-sn">1</span><span class="xb-sl"><b>Define</b><span>What it is and who it’s for</span></span></li><li class="xb-s"><span class="xb-sn">2</span><span class="xb-sl"><b>Design</b><span>Skills, outcomes and evidence</span></span></li><li class="xb-s"><span class="xb-sn">3</span><span class="xb-sl"><b>Build</b><span>Lessons, practice, assessments</span></span></li><li class="xb-s"><span class="xb-sn">4</span><span class="xb-sl"><b>Review</b><span>Preview and test it</span></span></li><li class="xb-s"><span class="xb-sn">5</span><span class="xb-sl"><b>Validate</b><span>Independent review</span></span></li></ol>
+<div class="xb-rh"><span class="xb-rn">Your Studio is a workspace, not a wizard.<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Work in any order and come back whenever you like: everything saves as you go, and Studio Home always shows your next step. Only submitting for validation and publishing have requirements.</span></span></span></div>
+<ol class="xb-steps"><li class="xb-s xb-first"><span class="xb-sn">1</span><span class="xb-sl"><b>Define</b><span>Tell us what you’re teaching and who it’s for.</span><em>Design</em></span></li><li class="xb-s"><span class="xb-sn">2</span><span class="xb-sl"><b>Design</b><span>Define skills, outcomes and evidence.</span><em>Design</em></span></li><li class="xb-s"><span class="xb-sn">3</span><span class="xb-sl"><b>Build</b><span>Create lessons, practice and assessments.</span><em>Build · Experience</em></span></li><li class="xb-s"><span class="xb-sn">4</span><span class="xb-sl"><b>Review</b><span>Preview and test the learning experience.</span><em>Prepare</em></span></li><li class="xb-s"><span class="xb-sn">5</span><span class="xb-sl"><b>Validate</b><span>Submit for independent validation.</span><em>Validate</em></span></li></ol>
 </div>
-<div class="xb-acts ob-in4"><a class="ds-btn xb-go" href="STU-010.dc.html"><span>Start building</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><span class="wl-alt"><a class="ds-link" href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5"></path><path d="M4 19h16"></path></svg><span>Import an existing course</span></a><span aria-hidden="true">·</span><a class="ds-link" href="STU-009.dc.html">Go to Studio home</a></span></div>
+<div class="xb-acts ob-in4"><a class="ds-btn xb-go" href="STU-010.dc.html"><span>Start Building</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><span class="wl-alt"><a class="ds-link" href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5"></path><path d="M4 19h16"></path></svg><span>Import Existing Course</span></a><span aria-hidden="true">·</span><a class="ds-link" href="STU-009.dc.html">Go to Studio Home</a></span></div>
 </div></sc-if>
 </main>
 </div>
@@ -265,9 +324,9 @@ function togVals(self) {
 }
 class Component extends DCLogic {
   renderVals() {
-    var st = this.props.step || 'delivery';
-    var S = {"delivery": ["Step 1 of 3", 33], "review": ["Step 2 of 3", 66], "how": ["Step 3 of 3", 100], "welcome": ["Ready", 100]};
-    var cur = S[st] || S.delivery;
+    var st = this.props.step || 'type';
+    var S = {"type": ["Step 1 of 4", 25], "delivery": ["Step 2 of 4", 50], "review": ["Step 3 of 4", 75], "how": ["Step 4 of 4", 100], "welcome": ["", 100]};
+    var cur = S[st] || S.type;
     var v = togVals(this);
     v.stepLabel = cur[0]; v.barW = String(cur[1]).concat('%');
     Object.keys(S).forEach(function (k) { v['s_'.concat(k)] = k === st; });

@@ -57,7 +57,8 @@ CH = [
     ('Joining Tables', '3 items', '58m', '90', 'Complete all required items', ['J', 'A'], [
         ('video', 'Joining Tables with SQL', 'Video', 'Intermediate', '18 min', '30 DLP', 'Complete: Watch ≥ 70%', True, ['J'], 0, 'STU-022A.dc.html', 'Edit'),
         ('text', 'INNER vs LEFT JOIN', 'Text / Article', None, '15 min', '20 DLP', 'Complete: Reach the end', True, ['A', 'J'], 2, 'STU-022B.dc.html', 'Edit'),
-        ('practice', 'Practice Joins', 'Practice Activity', 'Beginner', '25 min', '40 DLP', 'Complete: Submit', True, ['J'], 1, '#', 'Edit')], []),
+        ('practice', 'Practice Joins', 'Practice Activity', 'Beginner', '25 min', '40 DLP', 'Complete: Submit', True, ['J'], 1, '#', 'Edit')],
+     ['SQL Joins Cheat Sheet.pdf', 'Practice Dataset.csv']),
     ('Analysing Business Data', '3 items', '2h 5m', '210', 'Complete all required items', ['A', 'AB'], [
         ('video', 'Aggregations and GROUP BY', 'Video', 'Intermediate', '20 min', '35 DLP', 'Complete: Watch ≥ 70%', True, ['A'], 0, '#', 'Edit'),
         ('live', 'Analysis Clinic', 'Live Class', 'Advanced', '60 min', '100 DLP', 'Complete: Attend ≥ 70%', False, ['AB'], 0, 'STU-022D.dc.html', 'Edit'),
@@ -121,11 +122,11 @@ def stat(v, l):
 def builder(mode):
     head_btns = '<a class="ds-ghost sm" href="#">%s<span>Preview</span></a>' % ic('eye', 16, 2)
     if mode in ('team', 'open', 'co'):
-        head_btns += '<a class="ds-ghost sm" href="#">%s<span>Team Chat</span></a>' % ic('chat', 16, 2)
+        head_btns += '<a class="ds-ghost sm" href="STU-030.dc.html">%s<span>Team Chat</span></a>' % ic('chat', 16, 2)
     if mode != 'co':
         head_btns += '<a class="ds-ghost sm" href="#">%s<span>Add Chapter</span></a>' % ic('plus', 16, 2.2)
     head_btns += nchip('Review')
-    quick = [('check', 'Completion rules'), ('clip', 'Resource library'), ('users', 'Team & assignments') if mode != 'solo' else ('assigned', 'My work'), ('analytics', 'DLP & effort')]
+    quick = [('check', 'Completion rules', 'STU-027.dc.html'), ('clip', 'Resource library', 'STU-026.dc.html'), ('users', 'Team & assignments', 'STU-028.dc.html') if mode != 'solo' else ('assigned', 'My work', 'STU-028-SOLO.dc.html'), ('analytics', 'DLP & effort', 'STU-031.dc.html')]
     banner = ''
     if mode == 'open':
         banner = ('<div class="bn bn-open ob-in2"><span class="bn-i">%s</span><p><b>Open for collaboration · live</b> Looking for: SQL reviewer (Content Contributor) · 3 applications waiting. Only you can accept applicants.</p>'
@@ -141,7 +142,7 @@ def builder(mode):
 <div class="nv-st ob-in3">%s%s</div>
 <div class="chs ob-in3">%s</div>%s''' % (
                 stat('31%', 'Course Health'), stat('8h 5m', 'Estimated learning time'), stat('795 DLP', 'Estimated DLP' + tip('Calculated by Credalio from each item’s duration, reading time or expected effort. This is the estimate, not what learners consume under the access policy. Formula per DLP policy [TO CONFIRM].', 'r')),
-                ''.join('<a class="cs-ql" href="#">%s<span>%s</span></a>' % (ic(i, 15, 2), l) for i, l in quick),
+                ''.join('<a class="cs-ql" href="%s">%s<span>%s</span></a>' % (h, ic(i, 15, 2), l) for i, l, h in quick),
                 banner,
                 nova_sg('“SELECT Statements” is marked required, but no completion rule has been configured.', '<button type="button" class="ds-ghost sm">Set Completion Rule</button>'),
                 nova_sg('Outcome 4 requires learners to “Understand SQL”, but the curriculum has no practice or assessment for it.', '<button type="button" class="ds-ghost sm">Add Practice</button>'),
@@ -191,7 +192,20 @@ OV_DELC = dlg('Delete Chapter 2 · SQL Foundations?',
                   B.opt('<span class="o-t"><b>Move the items to another chapter first</b></span>', True, 'delc', 'sm'),
                   sel('Chapter 1 · Introduction to Data Analysis', 'Move the items to')),
               'Move items & delete chapter', danger=True, icon=ic('trash', 18, 2))
-OVS = {'add': OV_ADD, 'mvl': OV_MVL, 'mvc': OV_MVC, 'del': OV_DEL, 'delc': OV_DELC}
+CHAT = [((M1, 'J'), 'John', 'Mon 10:12', 'I’ve finished Chapter 3. Can you review the practical exercise?', False),
+        ((ME, 'A'), 'Ada', 'Mon 10:40', 'Yes. I think we should connect it to Outcome 4.', True),
+        ((None, 'AB'), 'ABC Institute', 'Mon 14:05', 'We can run the Analysis Clinic live on Thursdays.', False)]
+OV_CHAT = '''<a class="cp-ov" href="STU-020.dc.html" aria-label="Close Team Chat"></a>
+<aside class="cp" role="dialog" aria-label="Course Team">
+<header class="cp-h"><span class="cp-tv">%s</span><span class="cp-n"><b>Course Team</b><span>Linked to Course ID CRS-00284 · not a general chat</span></span>
+<a class="cp-tb cp-x1" href="STU-020.dc.html" aria-label="Close">%s</a></header>
+<div class="cp-r"><span class="cp-mem">%s<span>Ada · John · ABC Institute</span></span><div class="cp-seg" role="tablist" aria-label="Copilot panel"><button type="button" role="tab" aria-selected="false">Nova</button><button type="button" role="tab" class="on" aria-selected="true">Team</button></div></div>
+<div class="cp-b">%s</div>
+<footer class="cp-f"><div class="cp-in"><label class="sr-only" for="tm-msg">Message the course team</label><input id="tm-msg" placeholder="Message the team, @mention someone"><button type="button" class="cp-send">Send</button></div></footer>
+</aside>''' % (ic('chat', 20, 2), ic('x', 16, 2.4), ppl(['A', 'J', 'AB'], 24),
+               ''.join('<div class="tm%s">%s<div class="tm-b"><span class="tm-h"><b>%s</b> · %s</span><div class="cp-m%s">%s</div></div></div>' % (
+                   ' me' if me else '', av(p[0], p[1], 30), n, w, ' cp-me' if me else '', t) for p, n, w, t, me in CHAT))
+OVS = {'add': OV_ADD, 'mvl': OV_MVL, 'mvc': OV_MVC, 'del': OV_DEL, 'delc': OV_DELC, 'chat': OV_CHAT}
 
 MODES = ['team', 'solo', 'open', 'co']
 BUILDER_BODY = '''<div class="ds-root">
@@ -204,7 +218,7 @@ BUILDER_BODY = '''<div class="ds-root">
 </main>
 </div>
 </div>
-%s''' % (sidebar('cb'), topbar(solo=True), topbar(),
+%s''' % (sidebar('cb'), topbar(solo=True, phase='Build'), topbar(phase='Build'),
          '\n'.join('<sc-if value="{{m_%s}}" hint-placeholder-val="{{ %s }}">%s</sc-if>' % (m, 'true' if m == 'team' else 'false', builder(m)) for m in MODES),
          '\n'.join('<sc-if value="{{o_%s}}" hint-placeholder-val="{{ false }}">%s</sc-if>' % (k, v) for k, v in OVS.items()))
 
@@ -314,6 +328,37 @@ BUILDER_CSS = r'''.ds-ghost.sm{height:40px;padding:0 16px;font-size:14px;gap:7px
 .ds-btn.danger:hover{background:#912018}
 .o-t{display:flex;flex-direction:column;gap:3px;min-width:0}
 .o-t b{font-size:15px;font-weight:600}
+.cp-ov{position:fixed;left:0;right:0;top:72px;bottom:0;z-index:1000;background:linear-gradient(90deg,rgba(247,249,253,0) 0%,rgba(11,20,51,.10) 100%)}
+.cp{position:fixed;z-index:1001;top:72px;right:0;bottom:0;width:440px;max-width:100vw;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;border-left:1.5px solid #E6EAF3;box-shadow:-24px 0 64px rgba(11,20,51,.12);font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.cp-h{display:flex;align-items:center;gap:12px;padding:16px 16px 14px 20px;border-bottom:1.5px solid #F0F2F8}
+.cp-tv{width:46px;height:46px;flex-shrink:0;border-radius:50%;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.cp-n{flex-grow:1;display:flex;flex-direction:column;gap:1px;min-width:0}
+.cp-n b{font-size:18px;font-weight:600}
+.cp-n span{font-size:13px;color:#5B6582}
+.cp-tb{height:38px;padding:0 14px;border-radius:10px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none}
+.cp-tb:hover{border-color:#1652F0}
+.cp-x1{width:38px;padding:0;display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+.cp-r{display:flex;align-items:center;gap:10px;padding:12px 16px 12px 20px;border-bottom:1.5px solid #F0F2F8}
+.cp-mem{flex:1;min-width:0;display:inline-flex;align-items:center;gap:8px;font-size:13px;color:#3A4566}
+.cp-mem .avs .av + .av{margin-left:-6px}
+.cp-seg{display:flex;gap:4px;flex-shrink:0}
+.cp-seg button{height:34px;padding:0 14px;border-radius:999px;border:0;background:#F1F3F8;color:#3A4566;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.cp-seg button.on{background:#0B1433;color:#FFFFFF}
+.cp-b{flex-grow:1;overflow-y:auto;display:flex;flex-direction:column;gap:16px;padding:18px 20px}
+.cp-m{max-width:88%;padding:12px 16px;border-radius:14px;background:#F1F4FB;font-size:14.5px;line-height:1.55;align-self:flex-start}
+.cp-me{align-self:flex-end;background:#E3EBFF}
+.tm{display:flex;gap:10px;align-items:flex-start}
+.tm.me{flex-direction:row-reverse}
+.tm-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.tm.me .tm-b{align-items:flex-end}
+.tm-h{font-size:12.5px;color:#5B6582}
+.tm-h b{color:#0B1433;font-weight:600}
+.tm .cp-m{max-width:100%}
+.cp-f{padding:12px 20px 14px 20px;border-top:1.5px solid #F0F2F8}
+.cp-in{display:flex;gap:8px}
+.cp-in input{flex-grow:1;min-width:0;height:46px;box-sizing:border-box;padding:0 14px;border-radius:12px;border:1.5px solid #D6DDEE;font-family:inherit;font-size:14.5px;color:#0B1433;outline:none}
+.cp-in input:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.cp-send{height:46px;padding:0 20px;border-radius:12px;border:0;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:14.5px;font-weight:600;cursor:pointer}
 @media (max-width: 1180px){.cs{grid-template-columns:minmax(0,1fr)}.cs-st{justify-content:flex-start}}
 @media (max-width: 960px){
 .pg-hr{justify-content:flex-start}
@@ -343,6 +388,12 @@ BUILDER_CSS = r'''.ds-ghost.sm{height:40px;padding:0 16px;font-size:14px;gap:7px
 .dl-f{flex-direction:column-reverse}
 .dl-f .ds-btn{width:100%;justify-content:center}
 .dl .ds-seg button{padding:0 6px;font-size:12px}
+.cp-ov{display:none}
+.cp{top:0;width:100%;border-left:0;box-shadow:none}
+.cp-h{padding:12px 12px 12px 16px}
+.cp-r{padding:10px 12px 10px 16px}
+.cp-b{padding:16px}
+.cp-f{padding:10px 16px 14px 16px}
 }
 '''
 
@@ -582,7 +633,7 @@ EDITOR_BODY = '''<div class="ds-root">
 </div>
 </div>
 <sc-if value="{{o_del}}" hint-placeholder-val="{{ false }}">%s</sc-if>''' % (
-    sidebar('cb'), topbar(), '\n'.join('<sc-if value="{{k_%s}}" hint-placeholder-val="{{ %s }}">%s</sc-if>' % (k, 'true' if k == 'video' else 'false', ED[k]) for k in KINDS), OV_EDEL)
+    sidebar('cb'), topbar(phase='Build'), '\n'.join('<sc-if value="{{k_%s}}" hint-placeholder-val="{{ %s }}">%s</sc-if>' % (k, 'true' if k == 'video' else 'false', ED[k]) for k in KINDS), OV_EDEL)
 
 EDITOR_JS = E.js() + '''class Component extends DCLogic {
   renderVals() {
@@ -769,6 +820,7 @@ BOARDS = [
     ('STU-020-MVC', 'Builder', {'state': 'team', 'overlay': 'mvc'}, 'CR-STU-020 · Move chapter'),
     ('STU-020-DEL', 'Builder', {'state': 'team', 'overlay': 'del'}, 'CR-STU-020 · Delete a learning item'),
     ('STU-020-DELC', 'Builder', {'state': 'team', 'overlay': 'delc'}, 'CR-STU-020 · Delete a chapter'),
+    ('STU-030', 'Builder', {'state': 'team', 'overlay': 'chat'}, 'CR-STU-030 · Course Team Chat'),
     ('STU-022A', 'Editor', {'kind': 'video'}, 'CR-STU-022A · Video editor'),
     ('STU-022B', 'Editor', {'kind': 'text'}, 'CR-STU-022B · Text editor'),
     ('STU-022B-DEL', 'Editor', {'kind': 'text', 'overlay': 'del'}, 'CR-STU-022B · Delete from inside the editor'),
@@ -776,7 +828,7 @@ BOARDS = [
     ('STU-024', 'Editor', {'kind': 'assess'}, 'CR-STU-024 · Assessment editor'),
     ('STU-025', 'Editor', {'kind': 'project'}, 'CR-STU-025 · Applied learning editor'),
 ]
-OVERLAY = {'STU-021', 'STU-020-MVL', 'STU-020-MVC', 'STU-020-DEL', 'STU-020-DELC', 'STU-022B-DEL'}
+OVERLAY = {'STU-030', 'STU-021', 'STU-020-MVL', 'STU-020-MVC', 'STU-020-DEL', 'STU-020-DELC', 'STU-022B-DEL'}
 
 if __name__ == '__main__':
     import sys

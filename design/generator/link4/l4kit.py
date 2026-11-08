@@ -153,16 +153,16 @@ NAV = [
     ('Design', [('Basics', 'STU-010.dc.html', 'ok', 'basics'), ('Audience & Prerequisites', 'STU-011.dc.html', 'ok', 'audience'),
                 ('Career & Skills', 'STU-012.dc.html', 'pr', 'career'), ('Learning Outcomes', 'STU-014.dc.html', 'pr', 'outcomes'),
                 ('Learning Design', 'STU-017.dc.html', None, 'design')]),
-    ('Build', [('Curriculum', 'STU-020.dc.html', 'pr', 'curr'), ('Resources', '#', 'pr', 'res')]),
-    ('Experience', [('Delivery & Schedule', '#', 'ok', 'deliv'), ('Learner Experience', '#', 'ok', 'lx'), ('Access & Pricing', '#', 'pr', 'price')]),
+    ('Build', [('Curriculum', 'STU-020.dc.html', 'pr', 'curr'), ('Resources', 'STU-026.dc.html', 'pr', 'res')]),
+    ('Experience', [('Delivery & Schedule', 'STU-DEL.dc.html', 'ok', 'deliv'), ('Learner Experience', 'STU-LX.dc.html', 'ok', 'lx'), ('Access & Pricing', 'STU-032.dc.html', 'pr', 'price')]),
     ('Prepare', [('Course Review', '#', None, 'review'), ('Validation Readiness', '#', 'pr', 'ready')]),
     ('Validate · Gate', [('Validation', '#', 'lk', 'val')]),
     ('Publish · Gate', [('Publication', '#', 'lk', 'pub')]),
     ('Manage', [('Collaborators', '#', None, 'collab'), ('Course Settings', '#', None, 'settings')]),
 ]
 
-SUBNAV = {'curr': [('Curriculum Builder', 'STU-020.dc.html', 'cb'), ('Completion Rules', '#', 'comp'), ('Team & Assignments', '#', 'team'),
-                    ('DLP & Effort', '#', 'dlpe'), ('All Assessments', '#', 'alla')]}
+SUBNAV = {'curr': [('Curriculum Builder', 'STU-020.dc.html', 'cb'), ('Completion Rules', 'STU-027.dc.html', 'comp'), ('Team & Assignments', 'STU-028.dc.html', 'team'),
+                    ('DLP & Effort', 'STU-031.dc.html', 'dlpe'), ('All Assessments', 'STU-ASM.dc.html', 'alla')]}
 
 def course_nav(active):
     h = ''
@@ -185,16 +185,18 @@ def course_nav(active):
     return h
 
 PHASES = [('Design', 'cur'), ('Build', 'pr'), ('Experience', 'pr'), ('Prepare', 'to'), ('Validate', 'lk'), ('Publish', 'lk')]
-def phase_strip():
+def phase_strip(cur='Design'):
     out = ''
     for i, (p, s) in enumerate(PHASES):
+        if p == cur: s = 'cur'
+        elif s == 'cur': s = 'pr'
         lk = ICON(EXTRA['lock'], 11, 2.2) if s == 'lk' else ''
         out += '<li class="ph-%s"><span class="ph-d">%s</span><span class="ph-l">%s</span></li>' % (s, lk, p)
-    return '<ol class="ph" aria-label="Course phases: Design in progress">%s</ol>' % out
+    return '<ol class="ph" aria-label="Course phases: %s in progress">%s</ol>' % (cur, out)
 
 TEAM = [(ME, 'AO'), (M1, 'JA'), (None, 'AB')]
 
-def topbar(nova_href='#', solo=False):
+def topbar(nova_href='#', solo=False, phase='Design'):
     return '''<header class="ds-top cw-top">
 <button type="button" class="ds-icon-btn ds-menu" onClick="{{toggleNav}}" aria-label="Open course menu">%s</button>
 <span class="cw-mt">%s</span>
@@ -205,7 +207,7 @@ def topbar(nova_href='#', solo=False):
 <a href="%s" class="cw-nova ds-hide-sm">%s<span>Nova</span></a>
 <a href="#" class="ds-tok" aria-label="72,450 Creio">%s<span>72.4K</span></a>
 <a href="#" class="cw-me" aria-label="Your account">%s</a>
-</header>''' % (ic('menu', 20), COURSE, phase_strip(),
+</header>''' % (ic('menu', 20), COURSE, phase_strip(phase),
        '' if solo else '<a href="#" class="cw-team ds-hide-sm" aria-label="Team Chat">%s<span class="cw-chat">%s<span>Team Chat</span></span></a>' % (stack(TEAM, 30), ic('chat', 16, 2)),
        nova_href, nova_av('sm'), COIN('tp', 26), av(ME, 'AO', 40))
 

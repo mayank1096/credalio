@@ -39,7 +39,7 @@
       "x": 2070,
       "y": 300,
       "w": 1440,
-      "h": 900,
+      "h": 939,
       "title": "CR-STU-002 · Delivery type · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -49,7 +49,7 @@
       "x": 3590,
       "y": 300,
       "w": 390,
-      "h": 844,
+      "h": 846,
       "title": "CR-STU-002 · Delivery type · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -117,7 +117,7 @@
     },
     "STU-009.dc.html": {
       "x": 0,
-      "y": 1634,
+      "y": 1659,
       "w": 1440,
       "h": 1380,
       "title": "CR-STU-009 · Studio home · Desktop",
@@ -127,7 +127,7 @@
     },
     "STU-009-Mobile.dc.html": {
       "x": 1520,
-      "y": 1634,
+      "y": 1659,
       "w": 390,
       "h": 1650,
       "title": "CR-STU-009 · Studio home · Mobile",
@@ -137,7 +137,7 @@
     },
     "STU-010.dc.html": {
       "x": 2070,
-      "y": 1634,
+      "y": 1659,
       "w": 1440,
       "h": 1615,
       "title": "CR-STU-010 · Basics · Desktop",
@@ -147,7 +147,7 @@
     },
     "STU-010-Mobile.dc.html": {
       "x": 3590,
-      "y": 1634,
+      "y": 1659,
       "w": 390,
       "h": 2082,
       "title": "CR-STU-010 · Basics · Mobile",
@@ -157,7 +157,7 @@
     },
     "STU-011.dc.html": {
       "x": 4140,
-      "y": 1634,
+      "y": 1659,
       "w": 1440,
       "h": 1208,
       "title": "CR-STU-011 · Audience & prerequisites · Desktop",
@@ -167,7 +167,7 @@
     },
     "STU-011-Mobile.dc.html": {
       "x": 5660,
-      "y": 1634,
+      "y": 1659,
       "w": 390,
       "h": 1777,
       "title": "CR-STU-011 · Audience & prerequisites · Mobile",
@@ -177,7 +177,7 @@
     },
     "STU-012.dc.html": {
       "x": 6210,
-      "y": 1634,
+      "y": 1659,
       "w": 1440,
       "h": 1007,
       "title": "CR-STU-012 · Career & progression · Desktop",
@@ -187,7 +187,7 @@
     },
     "STU-012-Mobile.dc.html": {
       "x": 7730,
-      "y": 1634,
+      "y": 1659,
       "w": 390,
       "h": 1511,
       "title": "CR-STU-012 · Career & progression · Mobile",
@@ -197,7 +197,7 @@
     },
     "STU-012b.dc.html": {
       "x": 8280,
-      "y": 1634,
+      "y": 1659,
       "w": 1440,
       "h": 1370,
       "title": "CR-STU-012b · Career: prepares for a certification · Desktop",
@@ -207,7 +207,7 @@
     },
     "STU-012b-Mobile.dc.html": {
       "x": 9800,
-      "y": 1634,
+      "y": 1659,
       "w": 390,
       "h": 2231,
       "title": "CR-STU-012b · Career: prepares for a certification · Mobile",
@@ -217,7 +217,7 @@
     },
     "STU-013.dc.html": {
       "x": 10350,
-      "y": 1634,
+      "y": 1659,
       "w": 1440,
       "h": 976,
       "title": "CR-STU-013 · Skills & proficiency · Desktop",
@@ -227,7 +227,7 @@
     },
     "STU-013-Mobile.dc.html": {
       "x": 11870,
-      "y": 1634,
+      "y": 1659,
       "w": 390,
       "h": 1411,
       "title": "CR-STU-013 · Skills & proficiency · Mobile",
@@ -237,7 +237,7 @@
     },
     "STU-014.dc.html": {
       "x": 0,
-      "y": 4285,
+      "y": 4310,
       "w": 1440,
       "h": 924,
       "title": "CR-STU-014 · Learning outcomes · Desktop",
@@ -247,7 +247,7 @@
     },
     "STU-014-Mobile.dc.html": {
       "x": 1520,
-      "y": 4285,
+      "y": 4310,
       "w": 390,
       "h": 1023,
       "title": "CR-STU-014 · Learning outcomes · Mobile",
@@ -257,7 +257,7 @@
     },
     "STU-015.dc.html": {
       "x": 2070,
-      "y": 4285,
+      "y": 4310,
       "w": 1440,
       "h": 919,
       "title": "CR-STU-015 · Outcome → skill map · Desktop",
@@ -267,7 +267,7 @@
     },
     "STU-015-Mobile.dc.html": {
       "x": 3590,
-      "y": 4285,
+      "y": 4310,
       "w": 390,
       "h": 1794,
       "title": "CR-STU-015 · Outcome → skill map · Mobile",
@@ -277,7 +277,7 @@
     },
     "STU-016.dc.html": {
       "x": 4140,
-      "y": 4285,
+      "y": 4310,
       "w": 1440,
       "h": 1332,
       "title": "CR-STU-016 · Outcome → evidence · Desktop",
@@ -287,7 +287,7 @@
     },
     "STU-016-Mobile.dc.html": {
       "x": 5660,
-      "y": 4285,
+      "y": 4310,
       "w": 390,
       "h": 1972,
       "title": "CR-STU-016 · Outcome → evidence · Mobile",
@@ -297,7 +297,7 @@
     },
     "STU-017.dc.html": {
       "x": 6210,
-      "y": 4285,
+      "y": 4310,
       "w": 1440,
       "h": 900,
       "title": "CR-STU-017 · Assessment & award · Desktop",
@@ -307,7 +307,7 @@
     },
     "STU-017-Mobile.dc.html": {
       "x": 7730,
-      "y": 4285,
+      "y": 4310,
       "w": 390,
       "h": 1233,
       "title": "CR-STU-017 · Assessment & award · Mobile",
@@ -317,7 +317,7 @@
     },
     "STU-018.dc.html": {
       "x": 8280,
-      "y": 4285,
+      "y": 4310,
       "w": 1440,
       "h": 1039,
       "title": "CR-STU-018 · Learning effort · Desktop",
@@ -327,7 +327,7 @@
     },
     "STU-018-Mobile.dc.html": {
       "x": 9800,
-      "y": 4285,
+      "y": 4310,
       "w": 390,
       "h": 1327,
       "title": "CR-STU-018 · Learning effort · Mobile",
@@ -337,7 +337,7 @@
     },
     "STU-019.dc.html": {
       "x": 10350,
-      "y": 4285,
+      "y": 4310,
       "w": 1440,
       "h": 1103,
       "title": "CR-STU-019 · Design summary · Desktop",
@@ -347,7 +347,7 @@
     },
     "STU-019-Mobile.dc.html": {
       "x": 11870,
-      "y": 4285,
+      "y": 4310,
       "w": 390,
       "h": 1376,
       "title": "CR-STU-019 · Design summary · Mobile",
@@ -357,7 +357,7 @@
     },
     "Setup.dc.html": {
       "x": 0,
-      "y": 6677,
+      "y": 6702,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -367,7 +367,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 6677,
+      "y": 6702,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -438,35 +438,35 @@
     },
     "b1-design-a": {
       "x": 0,
-      "y": 1334,
+      "y": 1359,
       "text": "Batch 1 · Course design: Studio home, basics, audience, career & skills",
       "kind": "title1",
       "maxW": 12260
     },
     "b1-design-a-new": {
       "x": 0,
-      "y": 1484,
+      "y": 1509,
       "text": "NEW · batch 1",
       "w": 260,
       "fill": "pink"
     },
     "b1-design-b": {
       "x": 0,
-      "y": 3985,
+      "y": 4010,
       "text": "Batch 1 · Course design: outcomes, skills map, evidence, assessment & award, effort, summary",
       "kind": "title1",
       "maxW": 12260
     },
     "b1-design-b-new": {
       "x": 0,
-      "y": 4135,
+      "y": 4160,
       "text": "NEW · batch 1",
       "w": 260,
       "fill": "pink"
     },
     "sources": {
       "x": 0,
-      "y": 6377,
+      "y": 6402,
       "text": "Shared sources (code the boards above import, not screens)",
       "kind": "title1",
       "maxW": 3200

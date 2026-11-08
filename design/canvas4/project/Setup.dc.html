@@ -39,6 +39,7 @@
 .tip:hover,.tip:focus{color:#1652F0}
 .tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
 .tip-b.r{left:auto;right:-12px}
+.tip-b.dn{bottom:auto;top:calc(100% + 10px)}
 .tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
 .nova-card{background:#FFFFFF url(/_blob/2201db898f778e583c1885b56e2d9c62) center / cover no-repeat}
 .nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
@@ -147,7 +148,6 @@ a{color:#1652F0}
 .fx-exit{height:40px;padding:0 16px;font-size:14px}
 .xb-sl em{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#8A93AD;margin-top:2px}
 .fx-sub b{font-weight:600;color:#0B1433}
-.rv + .fx-acts .ds-ghost{margin-right:auto}
 .nw-fm em{display:block;font-style:normal;font-size:12px;color:#8A93AD}
 .nw-f.on{border-color:#1652F0;background:#F8FAFF;box-shadow:0 0 0 4px rgba(22,82,240,.12);transform:none}
 .nw-f.on .nw-fi{background:#1652F0;color:#FFFFFF}
@@ -156,24 +156,69 @@ a{color:#1652F0}
 .fx-nova:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
 .fx-nova input{flex:1;min-width:0;height:100%;border:0;outline:none;background:transparent;font-family:inherit;font-size:15.5px;color:#0B1433}
 .fx-nova input::placeholder{color:#8A93AD}
-.dv-g{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.ds-opt.dv{align-items:flex-start;padding:22px 20px;border-radius:18px}
-.dv-i{width:46px;height:46px;flex-shrink:0;border-radius:14px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
-.ds-opt.on .dv-i{background:#FFFFFF}
-.dv-t{display:flex;flex-direction:column;gap:6px;min-width:0;flex:1}
-.dv-t b{font-size:17px;font-weight:600}
+.dv-g{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ds-opt.dv{flex-direction:column;align-items:stretch;gap:0;padding:10px 10px 22px 10px;border-radius:22px;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.ds-opt.dv:hover{transform:translateY(-2px);box-shadow:0 18px 40px -22px rgba(22,82,240,.35)}
+.ds-opt.dv.on{background:#FFFFFF;box-shadow:0 0 0 4px rgba(22,82,240,.12),0 22px 44px -24px rgba(22,82,240,.45)}
+.dv .ds-opt-ck{position:absolute;top:22px;right:22px;margin:0;z-index:2}
+.dv-vz{display:block;height:148px;border-radius:15px;background:linear-gradient(160deg,#F5F8FF,#EDF2FF);position:relative;overflow:hidden}
+.ds-opt.on .dv-vz{background:linear-gradient(160deg,#EAF0FF,#DCE6FF)}
+.dv-t{display:flex;flex-direction:column;gap:6px;min-width:0;padding:18px 12px 0 12px}
+.dv-t b{font-size:18px;font-weight:600;letter-spacing:-0.01em}
 .dv-t > span{font-size:14px;line-height:1.5;color:#4A5578}
-.dv-f{margin-top:8px;padding-top:12px;border-top:1.5px solid #EEF1F7;display:flex;flex-direction:column;gap:6px}
-.dv-f span{font-size:13.5px;color:#3A4566}
-.dv-f span::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:#9DB8F7;margin:0 9px 2px 0}
-.ds-opt.on .dv-f{border-color:#C9D7FA}
-.dv .ds-opt-ck{margin-left:0}
-.rv{margin-top:28px;padding:6px 28px}
-.rv-r{display:grid;grid-template-columns:150px minmax(0,1fr) auto;align-items:center;gap:16px;min-height:64px;border-bottom:1.5px solid #F0F2F8}
-.rv-r:last-child{border-bottom:0}
-.rv-l{font-size:14px;color:#5B6582}
-.rv-v{display:flex;align-items:center;gap:10px;font-size:15.5px;font-weight:600}
-.rv-ic{width:32px;height:32px;border-radius:10px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.dv-f{margin-top:12px;padding-top:14px;border-top:1.5px solid #EEF1F7;display:flex;flex-direction:column;gap:8px}
+.dv-f span{display:flex;align-items:center;gap:9px;font-size:13.5px;color:#3A4566}
+.dv-f span svg{flex-shrink:0;width:18px;height:18px;padding:4px;box-sizing:border-box;border-radius:50%;background:#EAF0FF;color:#1652F0}
+.ds-opt.on .dv-f span svg{background:#1652F0;color:#FFFFFF}
+.vz{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;padding:18px}
+.vz-vid{position:relative;width:118px;height:76px;flex-shrink:0;border-radius:12px;background:linear-gradient(140deg,#1652F0,#0B1433);box-shadow:0 12px 24px -12px rgba(11,20,51,.6)}
+.vz-play{position:absolute;left:50%;top:44%;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:#FFFFFF}
+.vz-play::after{content:'';position:absolute;left:10px;top:7px;border-left:9px solid #1652F0;border-top:6px solid transparent;border-bottom:6px solid transparent}
+.vz-pb{position:absolute;left:10px;right:10px;bottom:9px;height:4px;border-radius:4px;background:rgba(255,255,255,.28)}
+.vz-pb i{display:block;width:58%;height:100%;border-radius:4px;background:#FFFFFF}
+.vz-rows{display:flex;flex-direction:column;gap:8px;width:96px}
+.vz-row{display:flex;align-items:center;gap:7px;height:20px;padding:0 7px;border-radius:7px;background:#FFFFFF;box-shadow:0 4px 10px -6px rgba(11,20,51,.25)}
+.vz-row i{width:8px;height:8px;border-radius:50%;flex-shrink:0;border:1.5px solid #CBD3E6;box-sizing:border-box}
+.vz-row.dn i{border:0;background:#0F6B45}
+.vz-row.cur i{border:0;background:#1652F0;box-shadow:0 0 0 3px rgba(22,82,240,.18)}
+.vz-row b{flex:1;height:5px;border-radius:5px;background:#E1E7F3}
+.vz-row.cur b{background:#C9D7FA}
+.vz-livec{flex-direction:column;gap:10px}
+.vz-cal{display:flex;gap:6px}
+.vz-day{width:30px;height:34px;box-sizing:border-box;border-radius:8px;background:#FFFFFF;box-shadow:0 4px 10px -6px rgba(11,20,51,.25);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px}
+.vz-day i{width:14px;height:4px;border-radius:4px;background:#E1E7F3}
+.vz-day.on{background:#1652F0;transform:translateY(-3px);box-shadow:0 10px 18px -8px rgba(22,82,240,.7)}
+.vz-day.on i{background:rgba(255,255,255,.75)}
+.vz-sess{display:flex;align-items:center;gap:8px;height:34px;padding:0 6px 0 10px;border-radius:999px;background:#FFFFFF;box-shadow:0 8px 16px -10px rgba(11,20,51,.35)}
+.vz-sess b{width:52px;height:5px;border-radius:5px;background:#E1E7F3}
+.vz-sess .avs .av + .av{margin-left:-6px}
+.vz-live{width:8px;height:8px;border-radius:50%;background:#0F6B45;box-shadow:0 0 0 0 rgba(15,107,69,.45);animation:vzPulse 1.8s ease-out infinite}
+@keyframes vzPulse{0%{box-shadow:0 0 0 0 rgba(15,107,69,.45)}100%{box-shadow:0 0 0 8px rgba(15,107,69,0)}}
+.vz-hyb{gap:0}
+.vz-hyb .vz-vid{width:104px;height:68px}
+.vz-link{display:flex;align-items:center;gap:5px;padding:0 8px}
+.vz-link i{width:5px;height:5px;border-radius:50%;background:#1652F0;opacity:.35}
+.vz-link i:nth-child(2){opacity:.6}
+.vz-link i:nth-child(3){opacity:.9}
+.vz-day.solo{width:52px;height:60px;border-radius:12px;padding-bottom:10px;transform:none}
+.vz-day.solo i{width:24px;height:5px}
+.rs{margin-top:28px;overflow:hidden;padding:0}
+.rs + .fx-acts .ds-ghost{margin-right:auto}
+.rs-top{display:flex;align-items:center;gap:18px;padding:26px 28px;background:linear-gradient(120deg,#F2F6FF,#E6EEFF)}
+.rs-cv{width:64px;height:64px;flex-shrink:0;border-radius:18px;background:linear-gradient(140deg,#1652F0,#0B1433);color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 28px -14px rgba(22,82,240,.8)}
+.rs-tt{display:flex;flex-direction:column;gap:2px}
+.rs-tt em,.rs-c em{font-style:normal;font-size:12.5px;font-weight:500;color:#5B6582}
+.rs-tt b{font-size:26px;font-weight:600;letter-spacing:-0.02em}
+.rs-g{display:grid;grid-template-columns:1.3fr 1fr .8fr}
+.rs-c{display:flex;flex-direction:column;gap:12px;padding:22px 28px 24px 28px}
+.rs-c + .rs-c{border-left:1.5px solid #EEF1F7}
+.rs-v{display:flex;align-items:center;gap:12px;min-height:44px}
+.rs-v b{font-size:16px;font-weight:600}
+.rs-vz{position:relative;width:96px;height:44px;flex-shrink:0;border-radius:10px;background:#F5F8FF;overflow:hidden}
+.rs-vz .vz{padding:0;transform:scale(.42);transform-origin:center}
+.rs-st{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 14px 0 12px;border-radius:999px;background:#F1F3F8;color:#3A4566;font-size:13.5px;font-weight:500}
+.rs-st i{width:8px;height:8px;border-radius:50%;background:#8A93AD}
+@media (prefers-reduced-motion: reduce){.vz-live{animation:none}}
 .hw-g{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .ds-opt.hw{flex-direction:column;align-items:flex-start;gap:18px;padding:24px 22px 22px 22px;border-radius:18px}
 .hw .ds-opt-ck{position:absolute;top:18px;right:18px;margin:0}
@@ -228,20 +273,32 @@ a{color:#1652F0}
 .fx-exit{display:none !important}
 .fx-nova{height:auto;flex-wrap:wrap;border-radius:18px;padding:12px;gap:10px}
 .fx-nova input{flex-basis:calc(100% - 44px);height:36px;font-size:14.5px}
-.dv-g,.hw-g{margin-top:20px;grid-template-columns:minmax(0,1fr);gap:10px}
-.ds-opt.dv{padding:16px}
+.dv-g{margin-top:20px;gap:10px;grid-template-columns:minmax(0,1fr)}
+.hw-g{margin-top:20px;grid-template-columns:minmax(0,1fr);gap:10px}
+.hw-t b{font-size:15.5px}
+.ds-opt.dv{display:grid;grid-template-columns:88px minmax(0,1fr);column-gap:14px;align-items:center;padding:10px 46px 10px 10px;border-radius:18px}
+.dv-vz{height:88px;border-radius:12px}
+.dv-vz .vz{inset:auto;left:50%;top:50%;width:250px;height:148px;margin:-74px 0 0 -125px;padding:0;transform:scale(.36)}
+.dv-t{padding:0}
+.dv-t b{font-size:15.5px}
+.dv-t > span{font-size:13.5px}
 .dv-f{display:none}
-.dv .ds-opt-ck{margin-left:auto}
-.dv-i{width:40px;height:40px;border-radius:12px}
-.dv-t b,.hw-t b{font-size:15.5px}
+.dv .ds-opt-ck{top:50%;right:14px;transform:translateY(-50%)}
+.rs-top{padding:18px;gap:14px}
+.rs-cv{width:52px;height:52px;border-radius:14px}
+.rs-tt b{font-size:21px}
+.rs-g{grid-template-columns:minmax(0,1fr)}
+.rs-c{flex-direction:row;align-items:center;justify-content:space-between;padding:14px 18px}
+.rs-c + .rs-c{border-left:0;border-top:1.5px solid #EEF1F7}
+.rs-v{min-height:0;gap:10px}
+.rs-vz{display:none}
+.rs-v b{font-size:15px}
+.rs-v .av{width:32px !important;height:32px !important}
 .ds-opt.hw{flex-direction:row;align-items:center;gap:14px;padding:16px 48px 16px 16px}
 .hw .ds-opt-ck{top:50%;transform:translateY(-50%);right:16px}
 .hw-v{height:44px;width:60px;flex-shrink:0;justify-content:center}
 .hw-t span{font-size:13.5px}
 .hw-t em{margin-top:2px;font-size:12.5px}
-.rv{margin-top:20px;padding:4px 16px}
-.rv-r{grid-template-columns:minmax(0,1fr) auto;row-gap:2px;padding:12px 0}
-.rv-l{grid-column:1 / -1;font-size:13px}
 .wl{align-items:stretch;text-align:left}
 .wl-nv{margin-bottom:16px}
 .wl-tags{justify-content:flex-start}
@@ -277,7 +334,7 @@ a{color:#1652F0}
 <a class="fx-back" href="STU-001.dc.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a>
 <h1 class="fx-h1 ob-in">How will learners experience this course?</h1>
 <p class="fx-sub ob-in2">Self-paced courses can use video, audio, text, documents, interactive activities, projects and assessments.</p>
-<div class="dv-g ob-in3" role="group" aria-label="Delivery type"><button type="button" class="ds-opt dv {{ct1}}" aria-pressed="{{at1}}" onClick="{{xt1}}"><span class="dv-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg></span><span class="dv-t"><b>Self-Paced</b><span>Learners progress through lessons and activities at their own pace.</span><span class="dv-f"><em>Features</em><span>Video, audio, text, documents</span><span>Interactive activities</span><span>Projects and assessments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt dv {{ct2}}" aria-pressed="{{at2}}" onClick="{{xt2}}"><span class="dv-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.5"></circle><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14"></path></svg></span><span class="dv-t"><b>Live Instructor-Led</b><span>Learning happens primarily through scheduled live sessions.</span><span class="dv-f"><em>Features</em><span>Live classes and scheduled sessions</span><span>Attendance</span><span>Resources and assignments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt dv {{ct3}}" aria-pressed="{{at3}}" onClick="{{xt3}}"><span class="dv-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="8" height="7" rx="2"></rect><circle cx="17" cy="7.5" r="3.5"></circle><rect x="3" y="14" width="8" height="6" rx="2"></rect><path d="M14 14h6v6h-6z"></path></svg></span><span class="dv-t"><b>Hybrid</b><span>Combine self-paced learning with scheduled live sessions.</span><span class="dv-f"><em>Features</em><span>Content lessons + live classes</span><span>Assignments and practice</span><span>Assessments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div>
+<div class="dv-g ob-in3" role="group" aria-label="Delivery type"><button type="button" class="ds-opt dv {{ct1}}" aria-pressed="{{at1}}" onClick="{{xt1}}"><span class="dv-vz" aria-hidden="true"><span class="vz vz-self"><span class="vz-vid"><span class="vz-play"></span><span class="vz-pb"><i></i></span></span><span class="vz-rows"><span class="vz-row dn"><i></i><b></b></span><span class="vz-row dn"><i></i><b></b></span><span class="vz-row cur"><i></i><b></b></span></span></span></span><span class="dv-t"><b>Self-Paced</b><span>Learners progress through lessons and activities at their own pace.</span><span class="dv-f"><em>Features</em><span><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Video, audio, text, documents</span><span><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Interactive activities</span><span><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Projects and assessments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt dv {{ct2}}" aria-pressed="{{at2}}" onClick="{{xt2}}"><span class="dv-vz" aria-hidden="true"><span class="vz vz-livec"><span class="vz-cal"><span class="vz-day"><i></i></span><span class="vz-day"><i></i></span><span class="vz-day on"><i></i></span><span class="vz-day"><i></i></span><span class="vz-day"><i></i></span></span><span class="vz-sess"><span class="vz-live"></span><b></b><span class="avs"><span class="av" style="width: 20px; height: 20px">PN<img src="/_blob/167d6259769b54fee7a18d6801741d2f" alt=""></span><span class="av" style="width: 20px; height: 20px">JA<img src="/_blob/cbfe3f2bbb89728d8777e425b59db736" alt=""></span><span class="av" style="width: 20px; height: 20px">TA<img src="/_blob/a4f450d2ae86bf787d69075bfb298fd4" alt=""></span></span></span></span></span><span class="dv-t"><b>Live Instructor-Led</b><span>Learning happens primarily through scheduled live sessions.</span><span class="dv-f"><em>Features</em><span><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Live classes and scheduled sessions</span><span><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Attendance</span><span><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Resources and assignments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt dv {{ct3}}" aria-pressed="{{at3}}" onClick="{{xt3}}"><span class="dv-vz" aria-hidden="true"><span class="vz vz-hyb"><span class="vz-vid"><span class="vz-play"></span><span class="vz-pb"><i></i></span></span><span class="vz-link"><i></i><i></i><i></i></span><span class="vz-day on solo"><i></i></span></span></span><span class="dv-t"><b>Hybrid</b><span>Combine self-paced learning with scheduled live sessions.</span><span class="dv-f"><em>Features</em><span><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Content lessons + live classes</span><span><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Assignments and practice</span><span><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>Assessments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div>
 <div class="ob-in4" style="margin-top: 18px"><div class="nv-sg nova-card"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span><p><b>Nova</b> Hybrid selected. I’ll help you structure which parts should be self-paced and which benefit from live instruction.</p></div></div>
 <div class="fx-acts"><a class="ds-btn" href="STU-003.dc.html"><span>Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
 </div></sc-if>
@@ -285,7 +342,14 @@ a{color:#1652F0}
 <a class="fx-back" href="STU-002.dc.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a>
 <h1 class="fx-h1 ob-in">Your course setup</h1>
 <p class="fx-sub ob-in2">Nothing else to decide yet. You can change this any time.</p>
-<div class="ds-card rv ob-in3"><div class="rv-r"><span class="rv-l">Learning experience</span><span class="rv-v"><span class="rv-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span>Course</span></div><div class="rv-r"><span class="rv-l">Delivery</span><span class="rv-v"><span class="rv-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="8" height="7" rx="2"></rect><circle cx="17" cy="7.5" r="3.5"></circle><rect x="3" y="14" width="8" height="6" rx="2"></rect><path d="M14 14h6v6h-6z"></path></svg></span>Hybrid</span></div><div class="rv-r"><span class="rv-l">Creator</span><span class="rv-v"><span class="av" style="width: 26px; height: 26px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span> Ada Ononuju</span></div><div class="rv-r"><span class="rv-l">Status</span><span class="rv-v"><span class="ds-tag">Draft</span></span></div></div>
+<div class="ds-card rs ob-in3">
+<div class="rs-top"><span class="rs-cv"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><span class="rs-tt"><em>Learning experience</em><b>Course</b></span></div>
+<div class="rs-g">
+<div class="rs-c"><em>Delivery</em><span class="rs-v"><span class="rs-vz" aria-hidden="true"><span class="vz vz-hyb"><span class="vz-vid"><span class="vz-play"></span><span class="vz-pb"><i></i></span></span><span class="vz-link"><i></i><i></i><i></i></span><span class="vz-day on solo"><i></i></span></span></span><b>Hybrid</b></span></div>
+<div class="rs-c"><em>Creator</em><span class="rs-v"><span class="av" style="width: 40px; height: 40px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><b>Ada Ononuju</b></span></div>
+<div class="rs-c"><em>Status</em><span class="rs-v"><span class="rs-st"><i></i>Draft</span></span></div>
+</div>
+</div>
 <div class="fx-acts"><a class="ds-ghost" href="STU-001.dc.html">Change Setup</a><a class="ds-btn" href="STU-004.dc.html"><span>Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
 </div></sc-if>
 <sc-if value="{{s_how}}" hint-placeholder-val="{{ false }}"><div class="fx-col">

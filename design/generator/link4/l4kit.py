@@ -147,21 +147,22 @@ STATUS = {
 COURSE = 'Data Analysis with SQL'
 # (label, href, status, key)
 NAV = [
-    (None, [('Studio home', 'STU-009.dc.html', None, 'home')]),
-    ('Design', [('Basics', 'STU-010.dc.html', 'ok', 'basics'), ('Audience', 'STU-011.dc.html', 'ok', 'audience'),
-                ('Career & skills', 'STU-012.dc.html', 'pr', 'career'), ('Outcomes', 'STU-014.dc.html', 'pr', 'outcomes'),
-                ('Learning design', 'STU-017.dc.html', 'pr', 'design')]),
-    ('Build', [('Curriculum', '#', 'ok', 'curr'), ('Resources', '#', 'pr', 'res')]),
-    ('Experience', [('Delivery & schedule', '#', 'ok', 'deliv'), ('Learner experience', '#', 'ok', 'lx'), ('Access & pricing', '#', 'pr', 'price')]),
-    ('Prepare', [('Course review', '#', 'to', 'review'), ('Validation readiness', '#', 'to', 'ready')]),
-    ('Gates', [('Validation', '#', 'lk', 'val'), ('Publication', '#', 'lk', 'pub')]),
-    ('Manage', [('Collaborators', '#', None, 'collab'), ('Course settings', '#', None, 'settings')]),
+    ('Overview', [('Course Home', 'STU-009.dc.html', None, 'home')]),
+    ('Design', [('Basics', 'STU-010.dc.html', 'ok', 'basics'), ('Audience & Prerequisites', 'STU-011.dc.html', 'ok', 'audience'),
+                ('Career & Skills', 'STU-012.dc.html', 'pr', 'career'), ('Learning Outcomes', 'STU-014.dc.html', 'pr', 'outcomes'),
+                ('Learning Design', 'STU-017.dc.html', None, 'design')]),
+    ('Build', [('Curriculum', '#', 'pr', 'curr'), ('Resources', '#', 'pr', 'res')]),
+    ('Experience', [('Delivery & Schedule', '#', 'ok', 'deliv'), ('Learner Experience', '#', 'ok', 'lx'), ('Access & Pricing', '#', 'pr', 'price')]),
+    ('Prepare', [('Course Review', '#', None, 'review'), ('Validation Readiness', '#', 'pr', 'ready')]),
+    ('Validate · Gate', [('Validation', '#', 'lk', 'val')]),
+    ('Publish · Gate', [('Publication', '#', 'lk', 'pub')]),
+    ('Manage', [('Collaborators', '#', None, 'collab'), ('Course Settings', '#', None, 'settings')]),
 ]
 
 def course_nav(active):
     h = ''
     for g, items in NAV:
-        if g: h += '<span class="ds-glab">%s</span>' % g
+        if g and g != 'Overview': h += '<span class="ds-glab">%s</span>' % g
         for label, href, st, key in items:
             on = key == active
             icon = ic('home', 18) if key == 'home' else ''
@@ -185,8 +186,9 @@ def topbar(nova_href='#'):
 <span class="cw-mt">%s</span>
 %s
 <span class="cw-sp"></span>
-<a href="#" class="cw-team ds-hide-sm" aria-label="Course team: 3 people. Open team chat">%s<span class="cw-chat">%s</span></a>
-<a href="%s" class="cw-nova ds-hide-sm">%s<span>Ask Nova</span></a>
+<a href="STU-009.dc.html" class="cw-hp ds-hide-sm"><span>Course Health</span><b>31%%</b></a>
+<a href="#" class="cw-team ds-hide-sm" aria-label="Team Chat">%s<span class="cw-chat">%s<span>Team Chat</span></span></a>
+<a href="%s" class="cw-nova ds-hide-sm">%s<span>Nova</span></a>
 <a href="#" class="ds-tok" aria-label="72,450 Creio">%s<span>72.4K</span></a>
 <a href="#" class="cw-me" aria-label="Your account">%s</a>
 </header>''' % (ic('menu', 20), COURSE, phase_strip(), stack(TEAM, 30), ic('chat', 16, 2), nova_href, nova_av('sm'), COIN('tp', 26), av(ME, 'AO', 40))
@@ -195,19 +197,20 @@ def sidebar(active):
     return '''<div class="ds-scrim {{navCls}}" onClick="{{toggleNav}}"></div>
 <nav class="ds-side cw-side {{navCls}}" aria-label="Course">
 <button type="button" class="ds-icon-btn ds-close" onClick="{{toggleNav}}" aria-label="Close menu">%s</button>
-<a href="#" class="cw-back">%s<span>Creator Studio</span></a>
+<a href="#" class="cw-back">%s<span>Dashboard</span></a>
 <div class="cw-course">
 <span class="cw-cv" aria-hidden="true">SQL</span>
-<span class="cw-ct"><b>%s</b><span>Course · Hybrid</span></span>
+<span class="cw-ct"><b>%s</b><span class="ds-tag">Draft</span></span>
 </div>
 <span class="cw-gap"></span>
 %s
-</nav>''' % (ic('x', 18), ICON(I['back'], 16, 2), COURSE, course_nav(active))
+<div class="cw-lip"><span class="cw-lipl">Learning Intelligence Profile%s</span><b>9 <em>of 13 signals captured</em></b><span class="cw-hb"><i style="width: 69%%"></i></span></div>
+</nav>''' % (ic('x', 18), ICON(I['back'], 16, 2), COURSE, course_nav(active), tip('Built quietly as you work. Next: career role, proficiency levels.'))
 
-def acts(next_href, next_label='Save and continue', back_href=None):
+def acts(next_href, next_label='Save & continue', back_href=None, note=''):
     b = ('<a class="ds-link" href="%s">Back</a>' % back_href) if back_href else ''
-    return ('<div class="ds-acts sb sv"><span class="sv-s">%s<span>All changes saved</span></span><span class="sv-r">%s%s</span></div>' %
-            (ck(13), b, btn(next_label, next_href)))
+    return ('<div class="ds-acts sb sv"><span class="sv-s">%s</span><span class="sv-r">%s%s</span></div>' %
+            (note, b, btn(next_label, next_href)))
 
 def page_head(eyebrow, h1, sub, right='', tabs=''):
     return ('<header class="pg-h ob-in"><div class="pg-hl"><span class="pg-e">%s</span><h1 class="ds-h1">%s</h1>%s</div>%s</header>%s' %
@@ -347,7 +350,17 @@ CW_CSS = r'''.ds-root{grid-template-columns:272px minmax(0,1fr)}
 .ph-lk .ph-d{width:auto;height:auto;border:0;background:none;color:#8A93AD}
 .cw-team{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 12px 0 7px;box-sizing:border-box;border-radius:999px;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#3A4566;text-decoration:none}
 .cw-team:hover{border-color:#AFC1F5}
-.cw-chat{display:flex;color:#3A4566}
+.cw-chat{display:flex;align-items:center;gap:6px;color:#3A4566;font-size:13.5px;font-weight:500;white-space:nowrap}
+.cw-hp{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 14px;box-sizing:border-box;border-radius:999px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#3A4566;font-size:13.5px;font-weight:500;text-decoration:none;white-space:nowrap}
+.cw-hp b{color:#0B1433;font-weight:600}
+.cw-hp:hover{border-color:#AFC1F5}
+.cw-ct .ds-tag{align-self:flex-start;margin-top:5px;height:22px;font-size:11.5px}
+.cw-lip{margin:18px 6px 0 6px;padding:12px 14px;border-radius:14px;background:#F7F9FD;display:flex;flex-direction:column;gap:6px}
+.cw-lipl{display:flex;align-items:center;font-size:12.5px;font-weight:500;color:#3A4566}
+.cw-lip b{font-size:15px;font-weight:600}
+.cw-lip b em{font-style:normal;font-size:12.5px;font-weight:400;color:#5B6582}
+.cw-hb{height:6px;border-radius:6px;background:#E6EAF3;overflow:hidden}
+.cw-hb i{display:block;height:100%;border-radius:6px;background:#1652F0}
 .cw-nova{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px 0 6px;box-sizing:border-box;border-radius:999px;border:1.5px solid #CBD7F5;background:#FFFFFF;color:#0E3BB8;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap}
 .cw-nova:hover{border-color:#1652F0;background:#F5F8FF}
 .cw-me{display:flex;border-radius:50%;text-decoration:none}
@@ -376,7 +389,8 @@ CW_CSS = r'''.ds-root{grid-template-columns:272px minmax(0,1fr)}
 .sv-s svg{color:#0F6B45}
 .sv-r{display:inline-flex;align-items:center;gap:20px}
 @media (max-width: 1280px){.ph li + li::before{width:12px;margin:0 6px 0 0}.ph-l{font-size:12.5px}}
-@media (max-width: 1180px){.ds-root{grid-template-columns:248px minmax(0,1fr)}.ph-pr .ph-l,.ph-to .ph-l,.ph-lk .ph-l{display:none}}
+@media (max-width: 1560px){.cw-chat span{display:none}.cw-team{padding-right:10px}.ph li + li::before{width:14px;margin:0 6px 0 0}}
+@media (max-width: 1180px){.cw-hp{display:none !important}.ds-root{grid-template-columns:248px minmax(0,1fr)}.ph-pr .ph-l,.ph-to .ph-l,.ph-lk .ph-l{display:none}}
 @media (max-width: 960px){
 .ds-root{grid-template-columns:minmax(0,1fr)}
 .cw-mt{display:block;flex:1 1 auto}

@@ -307,10 +307,14 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .o-t{display:flex;flex-direction:column;gap:3px;min-width:0}
 .o-t b{font-size:15px;font-weight:600}
 @media (max-width: 960px){
-.pg-hr{justify-content:flex-start}
+.pg-h{gap:18px}
+.pg-hr{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;width:calc(100% + 32px);box-sizing:border-box;margin:0 -16px;padding:2px 16px 6px 16px;gap:8px;scrollbar-width:none}
+.pg-hr::-webkit-scrollbar{display:none}
+.pg-hr > *{flex-shrink:0}
+.it + .it{box-shadow:0 -1.5px 0 #F0F2F8}
 .bn{flex-wrap:wrap}
 .bn-a{width:100%}
-.it{flex-wrap:wrap;gap:10px 12px;padding:12px 2px}
+.it{flex-wrap:wrap;gap:12px;padding:16px 2px}
 .it-i{width:36px;height:36px}
 }
 textarea.ds-in.sm{min-height:76px}

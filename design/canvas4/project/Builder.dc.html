@@ -359,8 +359,20 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .cp-send{height:46px;padding:0 20px;border-radius:12px;border:0;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:14.5px;font-weight:600;cursor:pointer}
 @media (max-width: 1180px){.cs{grid-template-columns:minmax(0,1fr)}.cs-st{justify-content:flex-start}}
 @media (max-width: 960px){
-.pg-hr{justify-content:flex-start}
-.cs{padding:16px;gap:14px}
+.pg-h{gap:18px}
+.pg-hr{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;width:calc(100% + 32px);box-sizing:border-box;margin:0 -16px;padding:2px 16px 6px 16px;gap:8px;scrollbar-width:none}
+.pg-hr::-webkit-scrollbar,.nv-st::-webkit-scrollbar,.ch-tools::-webkit-scrollbar{display:none}
+.pg-hr > *{flex-shrink:0}
+.cs{margin-top:22px;padding:20px 18px;gap:18px}
+.cs-l b{font-size:18px;margin-top:2px}
+.nv-st{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;margin:22px -16px 0 -16px;padding:0 16px 6px 16px;gap:10px;scrollbar-width:none}
+.nv-st .nv-sg{flex:0 0 84%;box-sizing:border-box;scroll-snap-align:start;align-content:flex-start}
+.chs{margin-top:28px;gap:20px}
+.ch-h{gap:14px}
+.ch-m{margin-top:8px}
+.ch-tools{flex-wrap:nowrap;overflow-x:auto;margin:16px -14px 6px -14px;padding:0 14px 16px 14px;gap:20px;scrollbar-width:none}
+.ch-tools > *{flex-shrink:0}
+.it + .it{box-shadow:0 -1.5px 0 #F0F2F8}
 .cs-st{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .cs-s{min-width:0;padding:10px 12px}
 .cs-s b{font-size:16px}
@@ -369,12 +381,12 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .cs-ql{flex-shrink:0}
 .bn{flex-wrap:wrap}
 .bn-a{width:100%}
-.ch{padding:16px 14px 14px 14px;border-radius:18px}
+.ch{padding:20px 14px 16px 14px;border-radius:18px}
 .ch-h{flex-direction:column;gap:10px}
 .ch-h h2{font-size:17px}
 .ch-tools{gap:4px 14px}
 .ch-tools .nv-chip,.ch-tools .ud{display:none}
-.it{flex-wrap:wrap;gap:10px 12px;padding:12px 2px}
+.it{flex-wrap:wrap;gap:12px;padding:16px 2px}
 .it-i{width:36px;height:36px}
 .it-r{width:100%;padding-left:48px;box-sizing:border-box;flex-wrap:wrap}
 .it-act .ud{display:none}

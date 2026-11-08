@@ -361,8 +361,20 @@ BUILDER_CSS = r'''.ds-ghost.sm{height:40px;padding:0 16px;font-size:14px;gap:7px
 .cp-send{height:46px;padding:0 20px;border-radius:12px;border:0;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:14.5px;font-weight:600;cursor:pointer}
 @media (max-width: 1180px){.cs{grid-template-columns:minmax(0,1fr)}.cs-st{justify-content:flex-start}}
 @media (max-width: 960px){
-.pg-hr{justify-content:flex-start}
-.cs{padding:16px;gap:14px}
+.pg-h{gap:18px}
+.pg-hr{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;width:calc(100% + 32px);box-sizing:border-box;margin:0 -16px;padding:2px 16px 6px 16px;gap:8px;scrollbar-width:none}
+.pg-hr::-webkit-scrollbar,.nv-st::-webkit-scrollbar,.ch-tools::-webkit-scrollbar{display:none}
+.pg-hr > *{flex-shrink:0}
+.cs{margin-top:22px;padding:20px 18px;gap:18px}
+.cs-l b{font-size:18px;margin-top:2px}
+.nv-st{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;margin:22px -16px 0 -16px;padding:0 16px 6px 16px;gap:10px;scrollbar-width:none}
+.nv-st .nv-sg{flex:0 0 84%;box-sizing:border-box;scroll-snap-align:start;align-content:flex-start}
+.chs{margin-top:28px;gap:20px}
+.ch-h{gap:14px}
+.ch-m{margin-top:8px}
+.ch-tools{flex-wrap:nowrap;overflow-x:auto;margin:16px -14px 6px -14px;padding:0 14px 16px 14px;gap:20px;scrollbar-width:none}
+.ch-tools > *{flex-shrink:0}
+.it + .it{box-shadow:0 -1.5px 0 #F0F2F8}
 .cs-st{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .cs-s{min-width:0;padding:10px 12px}
 .cs-s b{font-size:16px}
@@ -371,12 +383,12 @@ BUILDER_CSS = r'''.ds-ghost.sm{height:40px;padding:0 16px;font-size:14px;gap:7px
 .cs-ql{flex-shrink:0}
 .bn{flex-wrap:wrap}
 .bn-a{width:100%}
-.ch{padding:16px 14px 14px 14px;border-radius:18px}
+.ch{padding:20px 14px 16px 14px;border-radius:18px}
 .ch-h{flex-direction:column;gap:10px}
 .ch-h h2{font-size:17px}
 .ch-tools{gap:4px 14px}
 .ch-tools .nv-chip,.ch-tools .ud{display:none}
-.it{flex-wrap:wrap;gap:10px 12px;padding:12px 2px}
+.it{flex-wrap:wrap;gap:12px;padding:16px 2px}
 .it-i{width:36px;height:36px}
 .it-r{width:100%;padding-left:48px;box-sizing:border-box;flex-wrap:wrap}
 .it-act .ud{display:none}
@@ -452,10 +464,20 @@ def details(title, desc='', ph='Short description learners see before they start
         field('Title', '<input class="ds-in" value="%s" aria-label="Title">' % title),
         field('Description', '<textarea class="ds-in sm" placeholder="%s" aria-label="Description">%s</textarea>' % (ph, desc))))
 
-def ehead(crumbs, kind_label, icon, title, meta, chips_=''):
+def facts(dlp, lt, src, who=None, req=None, prov=False):
+    '''Key facts strip in the editor header (moved up from the side DLP card).'''
+    h = '<span class="ef-c ef-dl"><em>Estimated DLP%s</em><b>%s%s</b>%s</span><span class="ef-c"><em>Estimated learning time</em><b>%s</b></span>' % (
+        tip(src + '. Recalculated automatically when this item or its tier changes.', 'dn r'), coin(), dlp, tag('PROVISIONAL', 'amber') if prov else '', lt)
+    if who:
+        h += '<span class="ef-c"><em>Assigned</em><span class="ef-w">%s<b>%s</b></span></span>' % (ppl(who, 26), names(who))
+    if req is not None:
+        h += '<span class="ef-c"><em>Requirement</em>%s</span>' % tag('Required' if req else 'Optional', 'blue' if req else '')
+    return '<div class="eh-f">%s</div>' % h
+
+def ehead(crumbs, kind_label, icon, title, meta, chips_='', facts_=''):
     bc = '<nav class="bc" aria-label="Breadcrumb"><a href="STU-020.dc.html">%s<span>Curriculum</span></a>%s</nav>' % (ICON(I['back'], 15, 2), ''.join('<span aria-hidden="true">›</span><span>%s</span>' % c for c in crumbs))
-    return ('%s<header class="eh ob-in"><span class="eh-i">%s</span><div class="eh-t"><span class="pg-e">%s</span><h1 class="ds-h1">%s</h1><p class="ds-sub">%s</p>%s</div></header>' %
-            (bc, ic(icon, 22), kind_label, title, meta, chips_))
+    return ('%s<header class="eh ob-in"><span class="eh-i">%s</span><div class="eh-t"><span class="pg-e">%s</span><h1 class="ds-h1">%s</h1><p class="ds-sub">%s</p>%s</div>%s</header>' %
+            (bc, ic(icon, 22), kind_label, title, meta, chips_, facts_))
 
 def eacts():
     return '<div class="ds-acts sb sv"><span class="sv-s"><a class="ds-link del" href="{{delHref}}">%s<span>Delete</span></a></span><span class="sv-r"><a class="ds-ghost sm" href="#">Save Draft</a>%s</span></div>' % (ic('trash', 15, 2), btn('Save & Continue', 'STU-020.dc.html'))
@@ -467,7 +489,7 @@ ED = {}
 # ---------- video
 MARK_ = [('0:00', 'Why joins matter', 0), ('6:00', 'INNER JOIN, step by step', 32.8), ('13:00', 'LEFT JOIN and missing rows', 71)]
 ED['video'] = layout(
-    ehead(['Chapter 3', 'Joining Tables with SQL', 'Video'], 'Video', 'play', 'Joining Tables with SQL', 'Chapter 3 · Joining Tables'),
+    ehead(['Chapter 3', 'Joining Tables with SQL', 'Video'], 'Video', 'play', 'Joining Tables with SQL', 'Chapter 3 · Joining Tables', facts_=facts('30', '18m', '18 min video, detected from joining-tables.mp4', ['J'], True)),
     details('Joining Tables with SQL', 'How INNER and LEFT joins combine two tables, with a worked example on customers and orders.') +
     card('Video file', '<div class="vf"><span class="vf-th">%s</span><span class="vf-t"><b>%s joining-tables.mp4</b><span>Duration detected: 18 min</span></span><a class="ds-link sm" href="#">Replace</a></div>'
          '<div class="va">%s</div>%s' % (
@@ -483,7 +505,7 @@ ED['video'] = layout(
     card('Chapter markers', '<div class="mk"><div class="mk-bar">%s</div><div class="mk-l">%s</div></div>' % (
         ''.join('<i style="left: %s%%"></i>' % p for _, _, p in MARK_), ''.join('<span><b>%s</b>%s</span>' % (t, l) for t, l, _ in MARK_))) +
     resources(('SQL Joins Cheat Sheet.pdf', 'Downloadable · Optional · During lesson')) + comments(),
-    dlp_card('30', '18m', '18 min video, detected from joining-tables.mp4') + nova_sg('I can draft an outline, and I’ll flag long stretches of content with no check.', cls='side-nv') +
+    nova_sg('I can draft an outline, and I’ll flag long stretches of content with no check.', cls='side-nv') +
     tier_card('video', 1) + settings(True, {1}, {1}, {0, 3}, ['Open the lesson', 'Watch ≥ 70% (recommended)', 'Watch ≥ 90%', 'Watch to the end'], 1,
                                       'Recommended: 70% minimum viewing. You choose within Credalio policy.'))
 
@@ -493,19 +515,19 @@ TXT_THREAD = [((ME, 'A'), 'Ada', 'Tue 09:14', 'Resolve', '@John can you add anot
               ((M1, 'J'), 'John', 'Tue 11:02', 'Resolve', 'On it. Adding a three-table join.'),
               ((ME, 'A'), 'Ada', 'Tue 11:30', 'Reopen', 'Great, thanks.')]
 ED['text'] = layout(
-    ehead(['Chapter 3', 'INNER vs LEFT JOIN', 'Text / Article'], 'Text / Article', 'file', 'INNER vs LEFT JOIN', 'Chapter 3 · Joining Tables'),
+    ehead(['Chapter 3', 'INNER vs LEFT JOIN', 'Text / Article'], 'Text / Article', 'file', 'INNER vs LEFT JOIN', 'Chapter 3 · Joining Tables', facts_=facts('20', '15m', '3,400 words at 230 a minute · about 15 min', ['A', 'J'], True)),
     details('INNER vs LEFT JOIN') +
     card('Lesson text', '<div class="rt"><div class="rt-tb">%s</div><div class="rt-a" aria-label="Lesson text"><p>When you join two tables you choose which rows survive. An INNER JOIN keeps only rows that match in both tables; a LEFT JOIN keeps every row from the left table and fills the gaps with NULL.</p><h3>Worked example: customers and orders</h3><ol><li>Start with the customers table (who) and the orders table (what they bought).</li><li>INNER JOIN on customer_id returns only customers who have ordered.</li><li>LEFT JOIN returns every customer, with NULL where there is no order.</li></ol></div><div class="rt-f">3,400 words · about 15 min of reading · 20 estimated DLP</div></div>' % (
         ''.join('<button type="button" class="rt-b" aria-label="%s">%s</button>' % (l, ic(i, 15, 2) + ('<span>%s</span>' % l if l not in ('B',) else '') if i else '<b>%s</b>' % l) for l, i in TOOLS)),
         right=nchip('Draft an outline')) +
     resources() + comments(TXT_THREAD),
-    dlp_card('20', '15m', '3,400 words at 230 a minute · about 15 min') + nova_sg('I can draft an outline, and I’ll flag long stretches of content with no check.', cls='side-nv') +
+    nova_sg('I can draft an outline, and I’ll flag long stretches of content with no check.', cls='side-nv') +
     tier_card('text lesson', 1) + settings(True, {0, 1}, {1}, {0, 3}, ['Reach the end (recommended)', 'Mark as complete', 'Minimum active time'], 0,
                                             'Counts toward chapter and course completion when required.'))
 
 # ---------- live class
 ED['live'] = layout(
-    ehead(['Chapter 4', 'Analysis Clinic', 'Live Class'], 'Live Class', 'live', 'Analysis Clinic', 'Chapter 4 · Analysing Business Data'),
+    ehead(['Chapter 4', 'Analysis Clinic', 'Live Class'], 'Live Class', 'live', 'Analysis Clinic', 'Chapter 4 · Analysing Business Data', facts_=facts('100', '1h', '60 min scheduled', ['AB'], False)),
     details('Analysis Clinic') +
     card('Schedule', '<div class="fg"><div class="fg fg3">%s%s%s</div>%s%s</div>' % (
         field('Date', '<input class="ds-in" value="Thu 16 Oct" placeholder="e.g. Thu 16 Oct" aria-label="Date">'),
@@ -521,7 +543,7 @@ ED['live'] = layout(
         field('Counts as attended when learners are present for at least', E.seg(['50% of the session', '70% of the session', '80% of the session', '90% of the session'], 1)),
         field('Recording', '<div class="opt3">%s</div>' % ''.join(E.opt('<span class="o-t"><b>%s</b></span>' % r, i == 0, 'rec', 'sm') for i, r in enumerate(['Recorded for enrolled learners', 'Recorded for attendees only', 'Not recorded']))))) +
     resources() + comments(),
-    dlp_card('100', '1h', '60 min scheduled') + nova_sg('Attendance sets when a live class counts as complete.', cls='side-nv') +
+    nova_sg('Attendance sets when a live class counts as complete.', cls='side-nv') +
     tier_card('live class', 2) + settings(False, {2}, {2}, {1}, ['Attend ≥ 50%', 'Attend ≥ 70% (recommended)', 'Attend ≥ 80%', 'Attend ≥ 90%'], 1,
                                            'Matches the attendance threshold set for this class.'))
 
@@ -598,7 +620,7 @@ ED['assess'] = layout(
 # ---------- applied learning (project)
 RUB = [('Query correctness', '40'), ('Analysis quality', '30'), ('Communication of findings', '30')]
 ED['project'] = layout(
-    ehead(['Chapter 5', 'Final Project', 'Project'], 'Project', 'rocket', 'Final Project', 'Chapter 5 · Communicating Findings'),
+    ehead(['Chapter 5', 'Final Project', 'Project'], 'Project', 'rocket', 'Final Project', 'Chapter 5 · Communicating Findings', facts_=facts('200', '2h', 'Creator estimate of 2h, adjusted by Credalio as learners complete it', ['A'], True)),
     details('Final Project') +
     card('Instructions for learners', '<div class="fg">%s%s</div>' % (
         '<textarea class="ds-in" aria-label="Instructions for learners">Choose a business question, prepare the data, analyse it with SQL and present your findings in a 5-minute recorded presentation.</textarea>',
@@ -614,7 +636,7 @@ ED['project'] = layout(
         '<div class="rb"><div class="rb-r rb-hd"><span>Rubric criterion</span><span>Weight (%%)</span><span></span></div>%s<button type="button" class="ds-link sm rb-add">+ Add criterion</button><p class="rb-ok">%s<span>Weights total 100%%</span></p></div>' % (
             ''.join('<div class="rb-r"><input class="ds-in" value="%s" aria-label="Criterion %d"><input class="ds-in" value="%s" aria-label="Weight %d"><button type="button" class="ib" aria-label="Remove criterion %d">%s</button></div>' % (c, i + 1, w, i + 1, i + 1, ic('x', 15, 2)) for i, (c, w) in enumerate(RUB)), ck(12)))) +
     resources(('retail-dataset.zip', 'Downloadable · Required · Before lesson')) + comments(),
-    dlp_card('200', '2h', 'Creator estimate of 2h, adjusted by Credalio as learners complete it') + nova_sg('Practice that maps to an outcome gives validators evidence.', cls='side-nv') +
+    nova_sg('Practice that maps to an outcome gives validators evidence.', cls='side-nv') +
     tier_card('applied learning activity', 1) + settings(True, {0}, {2}, {0, 1}, ['Submit', 'Pass the rubric (recommended)'], 1,
                                                           'Counts toward chapter and course completion when required.'))
 
@@ -654,6 +676,19 @@ EDITOR_CSS = BUILDER_CSS + r'''.ed-main{max-width:1240px}
 .bc a:hover{color:#1652F0}
 .bc span[aria-hidden]{color:#AEB6CC}
 .eh{display:flex;align-items:flex-start;gap:16px}
+.eh-t{flex:1}
+.eh-f{flex-shrink:0;align-self:center;display:flex;align-items:stretch;padding:6px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ef-c{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:10px 18px;min-width:96px}
+.ef-c + .ef-c{border-left:1.5px solid #F0F2F8}
+.ef-c em{display:flex;align-items:center;font-style:normal;font-size:12px;color:#5B6582;white-space:nowrap}
+.ef-c b{display:flex;align-items:center;gap:8px;font-size:20px;font-weight:600;letter-spacing:-0.02em;white-space:nowrap}
+.ef-c.ef-dl{border-radius:13px;background:linear-gradient(160deg,#FFFDF6,#FFF6DC);margin-right:4px}
+.ef-c.ef-dl + .ef-c{border-left:0}
+.ef-c.ef-dl .ds-tag{align-self:flex-start;height:22px;font-size:11px}
+.ef-c .ds-tag{align-self:flex-start}
+.ef-w{display:flex;align-items:center;gap:8px}
+.ef-w b{font-size:14px;font-weight:600;letter-spacing:0}
+.ef-w .avs .av + .av{margin-left:-6px}
 .eh-i{width:52px;height:52px;flex-shrink:0;border-radius:16px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 24px -12px rgba(22,82,240,.7)}
 .eh-t{min-width:0}
 .eh-t .pg-e{margin-bottom:4px}
@@ -793,6 +828,13 @@ textarea.ds-in.sm{min-height:76px}
 @media (max-width: 960px){
 .bc{margin-bottom:10px;font-size:12.5px}
 .eh-i{width:44px;height:44px;border-radius:14px}
+.eh{flex-wrap:wrap}
+.eh-t{flex-basis:calc(100% - 60px)}
+.eh-f{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:4px}
+.ef-c{padding:10px 12px;min-width:0}
+.ef-c + .ef-c{border-left:0}
+.ef-c.ef-dl{margin:0}
+.ef-c b{font-size:17px}
 .ed{grid-template-columns:minmax(0,1fr);margin-top:16px}
 .ed-s{position:static}
 .ec{padding:18px 16px 20px 16px}

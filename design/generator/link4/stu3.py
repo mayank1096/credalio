@@ -7,6 +7,7 @@ CR-STU-030 Team Chat is a Builder overlay (stu2.py).
 """
 import json
 from l4kit import *
+from rail import ring
 from kit import coin, credit
 import stu2
 from stu2 import ppl, ITEM_IC2, EXTRA, ibtn
@@ -165,8 +166,23 @@ P('mywork', 'team', 'Build', page_head('Build', 'My Assigned Work', TEAM_SUB) + 
       '<div class="mw-r">%s<div class="mw-b"><b>%s</b><span>%s · %s</span></div>%s<span class="mw-d">Due %s</span><a class="ds-ghost xs" href="#">Open</a></div>' % (
           iti(k, 17), t, m, s, tag(s, STATUS_C[s]), d) for k, t, m, s, d in MYW)))
 
+def my_summary():
+    cnt = {k: 0 for k in ST_OPTS}
+    for _, _, rows in ASG:
+        for _, st, _ in rows:
+            cnt[st] += 1
+    tot = sum(cnt.values())
+    order = ['Complete', 'In progress', 'Needs review', 'Not started']
+    bar = ''.join('<i class="%s" style="flex: %d"></i>' % (STATUS_C[k] or 'grey', cnt[k]) for k in order)
+    cells = ''.join('<span class="ms-c %s"><i></i><b>%d</b><em>%s</em></span>' % (STATUS_C[k] or 'grey', cnt[k], k) for k in order)
+    return ('<section class="ds-card ms ob-in2"><div class="ms-me">%s<span><b>Ada</b><em>You · Owner</em></span></div>'
+            '<div class="ms-rg">%s<span><b>%d</b><em>of %d</em></span></div>'
+            '<div class="ms-st"><span class="ms-l">%d lessons · %d complete</span><span class="ms-bar">%s</span><div class="ms-cs">%s</div></div>'
+            '<a class="ms-nx" href="#"><span class="ms-l">Next</span><b>SELECT Statements</b><em>due Oct 3</em><span class="ms-go">%s</span></a></section>') % (
+        av(ME, 'A', 52), ring(round(100 * cnt['Complete'] / tot), 92, 11), cnt['Complete'], tot, tot, cnt['Complete'], bar, cells, ic('arrowr', 16, 2.2))
+
 P('mysolo', 'team', 'Build', page_head('Build', 'My Work', 'Your plan for this course: what is done, what is in progress and what is due. You are the only creator, so every lesson is yours. If you invite co-creators later, assignments appear here.') +
-  '<div class="pcs one ob-in2">%s</div>' % person((ME, 'A'), 'Ada', 'You · Owner', 16, 7, 'SELECT Statements · due Oct 3', '16 lessons · 7 complete') +
+  my_summary() +
   '<section class="ds-card fc ob-in3">%s</section>' % asg_table(True) + acts('STU-031.dc.html'), solo=True)
 
 # ---------------------------------------------------------------- CR-STU-031 DLP & Learning Effort
@@ -364,7 +380,44 @@ P('psum', 'price', 'Experience', page_head('Experience', 'Access & Pricing Summa
 </section>''' % (coin(True), credit(True), tag('Provisional', 'amber')) +
   '<div class="ds-acts sb sv"><span class="sv-s"><a class="ds-ghost sm" href="STU-032.dc.html">Edit Access</a><a class="ds-ghost sm" href="STU-034.dc.html">Edit Pricing</a></span><span class="sv-r">%s</span></div>' % btn('Continue', '#'))
 
-COURSE_CSS = stu2.EDITOR_CSS + r'''.it-i.sm{width:34px;height:34px;border-radius:10px}
+COURSE_CSS = stu2.EDITOR_CSS + r'''.ms{margin-top:22px;padding:22px 24px;display:grid;grid-template-columns:auto auto minmax(0,1fr) 230px;align-items:center;gap:28px}
+.ms-me{display:flex;align-items:center;gap:14px;padding-right:28px;border-right:1.5px solid #F0F2F8}
+.ms-me > span,.ms-rg > span{display:flex;flex-direction:column;gap:2px}
+.ms-me b{font-size:17px;font-weight:600}
+.ms-me em,.ms-rg em{font-style:normal;font-size:13px;color:#5B6582}
+.ms-rg{position:relative;width:92px;height:92px}
+.ms-rg > span{position:absolute;inset:0;align-items:center;justify-content:center}
+.ms-rg b{font-size:26px;font-weight:600;letter-spacing:-0.02em;line-height:1}
+.ms-st{display:flex;flex-direction:column;gap:10px;min-width:0}
+.ms-l{font-size:12.5px;font-weight:500;color:#8A93AD}
+.ms-bar{display:flex;gap:3px;height:8px}
+.ms-bar i{border-radius:6px;transform-origin:left center;animation:ldGrow .9s cubic-bezier(.2,.8,.2,1) .2s both}
+.ms-bar i.green,.ms-c.green i{background:#0F6B45}
+.ms-bar i.blue,.ms-c.blue i{background:#1652F0}
+.ms-bar i.amber,.ms-c.amber i{background:#E0A030}
+.ms-bar i.grey,.ms-c.grey i{background:#CBD3E6}
+.ms-cs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.ms-c{display:grid;grid-template-columns:8px auto;align-items:center;column-gap:8px;row-gap:1px}
+.ms-c i{width:8px;height:8px;border-radius:50%}
+.ms-c b{font-size:18px;font-weight:600}
+.ms-c em{grid-column:2;font-style:normal;font-size:12.5px;color:#5B6582;white-space:nowrap}
+.ms-nx{position:relative;align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:14px 48px 14px 18px;border-radius:16px;background:#F5F8FF;color:#0B1433;text-decoration:none;transition:background .2s ease}
+.ms-nx:hover{background:#EAF0FF}
+.ms-nx b{font-size:15.5px;font-weight:600}
+.ms-nx em{font-style:normal;font-size:13px;color:#8A5A00;font-weight:500}
+.ms-go{position:absolute;right:14px;top:50%;margin-top:-16px;width:32px;height:32px;border-radius:50%;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;transition:transform .2s ease}
+.ms-nx:hover .ms-go{transform:translateX(3px)}
+@media (max-width: 1280px){.ms{grid-template-columns:auto auto minmax(0,1fr);}.ms-nx{grid-column:1 / -1}}
+@media (max-width: 960px){
+.ms{margin-top:18px;padding:18px 16px;grid-template-columns:minmax(0,1fr) auto;gap:16px}
+.ms-me{padding-right:0;border-right:0}
+.ms-rg,.ms-rg svg{width:72px;height:72px}
+.ms-rg b{font-size:20px}
+.ms-st{grid-column:1 / -1}
+.ms-cs{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ms-nx{grid-column:1 / -1;padding:12px 48px 12px 14px}
+}
+.it-i.sm{width:34px;height:34px;border-radius:10px}
 .ds-seg button{white-space:nowrap}
 button.ch-add{background:none;font-family:inherit;cursor:pointer}
 .nv-sg p .spl{margin:10px 0 0 0}
@@ -734,6 +787,11 @@ button.ch-add{background:none;font-family:inherit;cursor:pointer}
 .tb-a{grid-column:1 / -1;order:3}
 .tb-r .sts{grid-column:1;order:4}
 .tb-d{order:2;text-align:right}
+.tb.solo .tb-r{grid-template-columns:minmax(0,1fr) 148px;row-gap:2px;padding:12px 0}
+.tb.solo .tb-r .sts{grid-column:2;grid-row:1;order:0}
+.tb.solo .tb-it{grid-row:1 / span 2}
+.tb.solo .tb-d{grid-column:2;grid-row:2;order:0;padding-right:4px;font-size:12px}
+.tb.solo .tb-it b{white-space:normal}
 .tb-g{flex-direction:column;align-items:flex-start}
 .mw-r{flex-wrap:wrap}
 .mw-b{flex-basis:calc(100% - 50px)}

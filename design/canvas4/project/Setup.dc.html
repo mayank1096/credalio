@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Course setup · shared source</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-tag .tip{margin-left:0}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.line{background:#FFFFFF;box-shadow:inset 0 0 0 1px #E6EAF3}
+.ds-tag.lg{height:30px;padding:0 12px;font-size:13px}
+.ds-opt{position:relative;display:flex;align-items:center;gap:14px;width:100%;box-sizing:border-box;padding:16px 18px;border-radius:14px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;text-align:left;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-opt:hover{border-color:#9DB8F7}
+.ds-opt.on{background:#EAF0FF;border-color:#1652F0}
+.ds-opt-ck{width:22px;height:22px;border-radius:999px;border:1.5px solid #CBD3E6;background:#FFFFFF;box-sizing:border-box;flex-shrink:0;margin-left:auto;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.ds-opt-ck .ck{display:none}
+.ds-opt.on .ds-opt-ck{background:#1652F0;border-color:#1652F0}
+.ds-opt.on .ds-opt-ck .ck{display:block}
+.ds-btn:focus-visible,.ds-link:focus-visible,.ds-opt:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.nova-card{background:#FFFFFF url(/_blob/2201db898f778e583c1885b56e2d9c62) center / cover no-repeat}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.lg{width:56px;height:56px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
+.nv-av.sm{width:28px;height:28px}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+}
+@media (max-width: 760px){
+.tip-b{display:none;width:min(250px,calc(100vw - 48px))}
+.tip:hover .tip-b,.tip:focus .tip-b{display:block}
+}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}.ob-in3{animation:obIn .5s ease .16s both}.ob-in4{animation:obIn .5s ease .24s both}
+.ds-tok{height:44px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:7px;padding:0 14px 0 7px;border-radius:999px;background:linear-gradient(135deg,#FFFAEB,#FFF1CF);border:1.5px solid #F4D98E;font-size:14.5px;font-weight:600;color:#4A3300;text-decoration:none;box-shadow:0 6px 16px rgba(214,150,30,.12);transition:box-shadow .2s ease}
+.ds-tok:hover{box-shadow:0 8px 20px rgba(214,150,30,.24)}
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-weight:600;font-size:14.5px;text-decoration:none}
+.ds-link:hover{color:#0E3BB8}
+.ds-btn:focus-visible,.ds-opt:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2,.ob-in3,.ob-in4{animation:none}}
+@media (max-width: 960px){
+.ds-tok{padding:0 12px 0 6px;height:40px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn{justify-content:space-between}
+}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.av{position:relative;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:#EAF0FF;color:#0E3BB8;font-size:11px;font-weight:600;box-sizing:border-box}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.avs{display:inline-flex;align-items:center}
+.avs .av{box-shadow:0 0 0 2px #FFFFFF}
+.avs .av + .av{margin-left:-8px}
+.st{width:18px;height:18px;border-radius:50%;flex-shrink:0;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+.st.to{border:2px solid #CBD3E6}
+.nv-sg{display:flex;align-items:center;gap:14px;padding:14px 16px 14px 14px;border-radius:16px;border:1.5px solid #DCE5FB}
+.nv-sg p{margin:0;flex:1;min-width:0;font-size:14.5px;line-height:1.5;color:#3A4566}
+.nv-sg p b{color:#0B1433;font-weight:600;margin-right:4px}
+.nv-chip{display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 14px;box-sizing:border-box;border-radius:999px;border:1.5px solid #CBD7F5;background:#FFFFFF;color:#0E3BB8;font-family:inherit;font-size:13.5px;font-weight:500;cursor:pointer;white-space:nowrap;transition:border-color .2s ease,background .2s ease}
+.nv-chip svg{color:#1652F0}
+.nv-chip:hover{border-color:#1652F0;background:#F5F8FF}
+.nv-chip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (max-width: 760px){
+.nv-sg{flex-wrap:wrap;padding:14px}
+.nv-sg p{flex-basis:calc(100% - 44px)}
+}
+.fx-root{min-height:100vh;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433;position:relative;isolation:isolate}
+.fx-root::before{content:'';position:absolute;z-index:-1;left:0;right:0;top:64px;height:340px;pointer-events:none;background:linear-gradient(180deg,#F2F6FF,rgba(242,246,255,0))}
+.fx-top{height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1.5px solid #EEF1F7;background:#FFFFFF;position:relative}
+.fx-x{width:40px;height:40px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3A4566;text-decoration:none}
+.fx-x:hover{background:#F5F8FF;color:#0B1433}
+.fx-title{display:flex;align-items:baseline;gap:8px;min-width:0}
+.fx-t1{font-size:16px;font-weight:600;white-space:nowrap}
+.fx-t2{font-size:14px;color:#5B6582;white-space:nowrap}
+.fx-step{font-size:13.5px;color:#5B6582;white-space:nowrap}
+.fx-bar{position:absolute;left:0;bottom:-1.5px;height:3px;border-radius:0 3px 3px 0;background:linear-gradient(90deg,#1652F0,#5C86FF);transition:width .6s ease}
+.fx-main{flex-grow:1;display:flex;justify-content:center;align-items:center;padding:clamp(36px,6vh,64px) 24px 56px 24px}
+.fx-col{width:min(1040px,100%);display:flex;flex-direction:column}
+.fx-col.n{width:min(760px,100%)}
+.fx-h1{margin:0;font-size:clamp(32px,4.6vh,42px);line-height:1.12;font-weight:600;letter-spacing:-0.035em}
+.fx-sub{margin:12px 0 0 0;max-width:620px;font-size:16.5px;line-height:1.55;color:#4A5578}
+.fx-back{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;height:36px;margin:0 0 18px -10px;padding:0 14px 0 10px;border-radius:999px;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none}
+.fx-back:hover{background:#F5F8FF;color:#0B1433}
+.fx-acts{margin-top:32px;display:flex;align-items:center;justify-content:flex-end;gap:20px}
+@media (max-width: 960px){
+.fx-top{height:56px;padding:0 12px 0 6px;gap:8px}
+.fx-t2{display:none}
+.fx-main{align-items:flex-start;padding:24px 16px 0 16px}
+.fx-h1{font-size:26px}
+.fx-sub{font-size:14.5px;margin-top:8px}
+.fx-back{margin-bottom:10px}
+.fx-acts{position:sticky;bottom:0;z-index:5;margin:28px -16px 0 -16px;padding:12px 16px 14px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7;flex-direction:column-reverse;align-items:stretch;gap:4px}
+.fx-acts .ds-btn{width:100%;justify-content:space-between}
+.fx-acts .ds-link{justify-content:center;min-height:40px}
+}
+.nw-g{margin-top:32px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.nw-f{position:relative;display:flex;flex-direction:column;padding:20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#0B1433;font-family:inherit;text-align:left;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.nw-f:hover{border-color:#CBD7F5;box-shadow:0 14px 34px rgba(22,82,240,.08);transform:translateY(-2px)}
+.nw-fi{width:46px;height:46px;border-radius:14px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.nw-f b{margin-top:14px;font-size:17px;font-weight:600}
+.nw-fd{margin-top:6px;font-size:14px;line-height:1.5;color:#4A5578;flex-grow:1}
+.nw-fm{margin-top:16px;padding-top:14px;border-top:1.5px solid #F0F2F8;display:flex;flex-direction:column;gap:8px;font-size:13.5px;color:#0B1433}
+.nw-fm em{display:block;font-style:normal;font-size:12px;color:#8A93AD}
+.nw-ck{display:none;position:absolute;top:16px;right:16px;width:22px;height:22px;border-radius:50%;background:#1652F0;color:#FFFFFF;align-items:center;justify-content:center}
+.nw-f.on{border-color:#1652F0;background:#F8FAFF;box-shadow:0 0 0 4px rgba(22,82,240,.12);transform:none}
+.nw-f.on .nw-fi{background:#1652F0;color:#FFFFFF}
+.nw-f.on .nw-ck{display:flex}
+.nw-f:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.fx-nova{margin-top:20px;display:flex;align-items:center;gap:12px;height:60px;box-sizing:border-box;padding:6px 8px 6px 12px;border-radius:999px;border:1.5px solid #DCE5FB;background:#FFFFFF}
+.fx-nova:focus-within{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.fx-nova input{flex:1;min-width:0;height:100%;border:0;outline:none;background:transparent;font-family:inherit;font-size:15.5px;color:#0B1433}
+.fx-nova input::placeholder{color:#8A93AD}
+.dv-g{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ds-opt.dv{align-items:flex-start;padding:22px 20px;border-radius:18px}
+.dv-i{width:46px;height:46px;flex-shrink:0;border-radius:14px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.ds-opt.on .dv-i{background:#FFFFFF}
+.dv-t{display:flex;flex-direction:column;gap:6px;min-width:0;flex:1}
+.dv-t b{font-size:17px;font-weight:600}
+.dv-t > span{font-size:14px;line-height:1.5;color:#4A5578}
+.dv-f{margin-top:8px;padding-top:12px;border-top:1.5px solid #EEF1F7;display:flex;flex-direction:column;gap:6px}
+.dv-f span{font-size:13.5px;color:#3A4566}
+.dv-f span::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:#9DB8F7;margin:0 9px 2px 0}
+.ds-opt.on .dv-f{border-color:#C9D7FA}
+.dv .ds-opt-ck{margin-left:0}
+.rv{margin-top:28px;padding:6px 28px}
+.rv-r{display:grid;grid-template-columns:150px minmax(0,1fr) auto;align-items:center;gap:16px;min-height:64px;border-bottom:1.5px solid #F0F2F8}
+.rv-r:last-child{border-bottom:0}
+.rv-l{font-size:14px;color:#5B6582}
+.rv-v{display:flex;align-items:center;gap:10px;font-size:15.5px;font-weight:600}
+.rv-ic{width:32px;height:32px;border-radius:10px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.hw-g{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.ds-opt.hw{flex-direction:column;align-items:flex-start;gap:18px;padding:24px 22px 22px 22px;border-radius:18px}
+.hw .ds-opt-ck{position:absolute;top:18px;right:18px;margin:0}
+.hw-v{height:52px;display:flex;align-items:center}
+.hw-co{position:relative;display:flex;align-items:center}
+.hw-co .av + .av{margin-left:-10px;box-shadow:0 0 0 2.5px #FFFFFF}
+.hw-plus{margin-left:-8px;width:24px;height:24px;border-radius:50%;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2.5px #FFFFFF}
+.hw-open{position:relative;width:56px;height:52px;display:flex;align-items:center;justify-content:center}
+.hw-ring{position:absolute;inset:2px;border-radius:50%;border:1.5px dashed #9DB8F7}
+.hw-open i{position:absolute;width:8px;height:8px;border-radius:50%;background:#AFC1F5}
+.hw-t{display:flex;flex-direction:column;gap:6px}
+.hw-t b{font-size:17px;font-weight:600}
+.hw-t span{font-size:14px;line-height:1.5;color:#4A5578}
+.hw-t em{margin-top:8px;font-style:normal;font-size:13px;font-weight:500;color:#1652F0}
+.wl{align-items:center;text-align:center}
+.wl-nv{margin-bottom:22px}
+.wl .fx-sub{margin-left:auto;margin-right:auto;max-width:720px}
+.wl-tags{margin-top:18px;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.wl-tags .avs .av + .av{margin-left:-6px}
+.xb-route{margin-top:28px;width:100%;box-sizing:border-box;padding:22px 26px 22px 26px;border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 18px 44px rgba(22,82,240,.08);text-align:left}
+.xb-rh{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.hp-lab{font-size:13px;font-weight:600;color:#8A93AD}
+.xb-rn{display:inline-flex;align-items:center;font-size:13px;color:#5B6582}
+.xb-steps{list-style:none;margin:22px 0 2px 0;padding:0;display:flex;position:relative}
+.xb-steps::before{content:'';position:absolute;left:16px;right:16px;top:15px;height:3px;border-radius:3px;background:linear-gradient(90deg,#1652F0,#AFC1F5 30%,#E6EAF3 60%)}
+.xb-s{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;position:relative}
+.xb-s:first-child{align-items:flex-start;text-align:left}
+.xb-s:last-child{align-items:flex-end;text-align:right}
+.xb-sn{position:relative;z-index:1;width:32px;height:32px;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;background:#FFFFFF;color:#5B6582;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.xb-sl{display:flex;flex-direction:column;gap:3px;padding:0 2px}
+.xb-sl b{font-size:14px;font-weight:600;color:#0B1433}
+.xb-sl span{font-size:12.5px;line-height:1.4;color:#5B6582}
+.xb-first .xb-sn{background:#1652F0;border-color:#1652F0;color:#FFFFFF;animation:ndPulse 2s ease-out infinite}
+@keyframes ndPulse{0%{box-shadow:0 0 0 0 rgba(22,82,240,.35)}100%{box-shadow:0 0 0 10px rgba(22,82,240,0)}}
+.xb-acts{margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.wl-alt{display:flex;align-items:center;gap:14px;color:#8A93AD;font-size:14px}
+.wl-alt .ds-link{font-size:14px}
+@media (prefers-reduced-motion: reduce){.xb-first .xb-sn{animation:none}}
+@media (max-width: 1180px){.nw-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 960px){
+.fx-step{display:none}
+.nw-g{margin-top:20px;grid-template-columns:minmax(0,1fr);gap:10px}
+.nw-f{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:14px;align-items:center;padding:14px 46px 14px 16px;border-radius:16px}
+.nw-fi{width:40px;height:40px;border-radius:12px;grid-row:span 2}
+.nw-f b{margin-top:0;font-size:15.5px}
+.nw-fd{margin-top:2px;font-size:13.5px}
+.nw-fm{display:none}
+.nw-ck{top:50%;transform:translateY(-50%);right:14px}
+.fx-nova{height:auto;flex-wrap:wrap;border-radius:18px;padding:12px;gap:10px}
+.fx-nova input{flex-basis:calc(100% - 44px);height:36px;font-size:14.5px}
+.fx-nova .nv-chip{margin-left:42px}
+.dv-g,.hw-g{margin-top:20px;grid-template-columns:minmax(0,1fr);gap:10px}
+.ds-opt.dv{padding:16px}
+.dv-f{display:none}
+.dv .ds-opt-ck{margin-left:auto}
+.dv-i{width:40px;height:40px;border-radius:12px}
+.dv-t b,.hw-t b{font-size:15.5px}
+.ds-opt.hw{flex-direction:row;align-items:center;gap:14px;padding:16px 48px 16px 16px}
+.hw .ds-opt-ck{top:50%;transform:translateY(-50%);right:16px}
+.hw-v{height:44px;width:60px;flex-shrink:0;justify-content:center}
+.hw-t span{font-size:13.5px}
+.hw-t em{margin-top:2px;font-size:12.5px}
+.rv{margin-top:20px;padding:4px 16px}
+.rv-r{grid-template-columns:minmax(0,1fr) auto;row-gap:2px;padding:12px 0}
+.rv-l{grid-column:1 / -1;font-size:13px}
+.wl{align-items:stretch;text-align:left}
+.wl-nv{margin-bottom:16px}
+.wl-tags{justify-content:flex-start}
+.xb-route{margin-top:20px;padding:18px 16px;border-radius:18px}
+.xb-steps{flex-direction:column;margin-top:16px;gap:0}
+.xb-steps::before{left:13px;right:auto;top:14px;bottom:14px;width:3px;height:auto;background:linear-gradient(180deg,#1652F0,#AFC1F5 30%,#E6EAF3 60%)}
+.xb-s,.xb-s:first-child,.xb-s:last-child{flex-direction:row;align-items:center;text-align:left;gap:14px;min-height:52px}
+.xb-sn{width:28px;height:28px;font-size:12px}
+.xb-acts{align-items:stretch;margin-top:20px}
+.xb-go{justify-content:space-between}
+.wl-alt{flex-direction:column;gap:6px}
+.wl-alt > span[aria-hidden]{display:none}
+}
+</style>
+</helmet>
+<div class="fx-root">
+<header class="fx-top">
+<a href="#" class="fx-x" aria-label="Close setup"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
+<div class="fx-title"><span class="fx-t1">New course</span><span class="fx-t2">Setup</span></div>
+<span style="flex-grow: 1"></span>
+<span class="fx-step">{{stepLabel}}</span>
+<a href="#" class="ds-tok" aria-label="72,450 Creio"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0; display: block"><defs><linearGradient id="fca" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9A3"></stop><stop offset="0.45" stop-color="#F6C343"></stop><stop offset="1" stop-color="#D08A12"></stop></linearGradient><linearGradient id="fcb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9CF5A"></stop><stop offset="1" stop-color="#E2A024"></stop></linearGradient></defs><circle cx="32" cy="34" r="29" fill="#B8740A" opacity="0.35"></circle><circle cx="32" cy="32" r="29" fill="url(#fca)"></circle><circle cx="32" cy="32" r="22" fill="url(#fcb)" stroke="#FFF1C2" stroke-opacity="0.7" stroke-width="1.5"></circle><path d="M32 18l2.9 9.3 9.3 2.9-9.3 2.9L32 42.4l-2.9-9.3-9.3-2.9 9.3-2.9z" fill="#FFF8DF"></path><ellipse cx="23" cy="19" rx="9" ry="5" fill="#FFFFFF" opacity="0.35" transform="rotate(-30 23 19)"></ellipse></svg><span>72.4K</span></a>
+<span class="fx-bar" style="width: {{barW}}"></span>
+</header>
+<main class="fx-main">
+<sc-if value="{{s_type}}" hint-placeholder-val="{{ true }}"><div class="fx-col">
+<h1 class="fx-h1 ob-in">What will you create?</h1>
+<p class="fx-sub ob-in2">Pick the format that fits what learners should be able to do at the end.</p>
+<div class="nw-g ob-in3" role="group" aria-label="Format"><button type="button" class="nw-f {{ct1}}" aria-pressed="{{at1}}" onClick="{{xt1}}"><span class="nw-fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><span class="nw-ck"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><b>Course</b><span class="nw-fd">A focused subject or skill, learned step by step.</span><span class="nw-fm"><span><em>Best for</em>One skill or topic</span><span><em>Typical size</em>2 to 30 hours</span></span></button><button type="button" class="nw-f {{ct2}}" aria-pressed="{{at2}}" onClick="{{xt2}}"><span class="nw-fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg></span><span class="nw-ck"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><b>Professional certification</b><span class="nw-fd">Assess and verify that someone can do the job.</span><span class="nw-fm"><span><em>Best for</em>Proving competence</span><span><em>Typical size</em>Exam + practical</span></span></button><button type="button" class="nw-f {{ct3}}" aria-pressed="{{at3}}" onClick="{{xt3}}"><span class="nw-fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2.5"></circle><circle cx="18" cy="5" r="2.5"></circle><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"></path></svg></span><span class="nw-ck"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><b>Career path</b><span class="nw-fd">A journey of courses, practice and credentials toward a role.</span><span class="nw-fm"><span><em>Best for</em>Getting into a role</span><span><em>Typical size</em>Several courses</span></span></button><button type="button" class="nw-f {{ct4}}" aria-pressed="{{at4}}" onClick="{{xt4}}"><span class="nw-fi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M7.5 14h3M7.5 17h6"></path></svg></span><span class="nw-ck"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><b>Learning program</b><span class="nw-fd">Structured learning over time, often with a cohort.</span><span class="nw-fm"><span><em>Best for</em>Groups and institutions</span><span><em>Typical size</em>Weeks, with cohorts</span></span></button></div>
+<div class="fx-nova ob-in4"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span><label class="sr-only" for="fxq">What should learners achieve?</label><input id="fxq" placeholder="What should learners achieve?"><button type="button" class="nv-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg><span>Help me choose</span></button></div>
+<div class="fx-acts"><a class="ds-btn" href="STU-002.dc.html"><span>Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
+</div></sc-if>
+<sc-if value="{{s_delivery}}" hint-placeholder-val="{{ false }}"><div class="fx-col">
+<a class="fx-back" href="STU-001.dc.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a>
+<h1 class="fx-h1 ob-in">How will learners take this course?</h1>
+<p class="fx-sub ob-in2">You can mix formats later. This sets what the Studio offers you.</p>
+<div class="dv-g ob-in3" role="group" aria-label="Delivery"><button type="button" class="ds-opt dv {{ct5}}" aria-pressed="{{at5}}" onClick="{{xt5}}"><span class="dv-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg></span><span class="dv-t"><b>Self-paced</b><span>Learners move through lessons in their own time.</span><span class="dv-f"><span>Video, audio, text</span><span>Interactive activities</span><span>Projects and assessments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt dv {{ct6}}" aria-pressed="{{at6}}" onClick="{{xt6}}"><span class="dv-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.5"></circle><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14"></path></svg></span><span class="dv-t"><b>Live, instructor-led</b><span>Learning happens in scheduled live sessions.</span><span class="dv-f"><span>Live classes</span><span>Attendance</span><span>Resources and assignments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt dv {{ct7}}" aria-pressed="{{at7}}" onClick="{{xt7}}"><span class="dv-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="8" height="7" rx="2"></rect><circle cx="17" cy="7.5" r="3.5"></circle><rect x="3" y="14" width="8" height="6" rx="2"></rect><path d="M14 14h6v6h-6z"></path></svg></span><span class="dv-t"><b>Hybrid</b><span>Self-paced lessons with scheduled live sessions.</span><span class="dv-f"><span>Lessons + live classes</span><span>Practice and assignments</span><span>Assessments</span></span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div>
+<div class="ob-in4" style="margin-top: 18px"><div class="nv-sg nova-card"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span><p><b>Nova</b> Hybrid works well for SQL. I’ll help you decide which parts land best live, like a weekly analysis clinic.</p></div></div>
+<div class="fx-acts"><a class="ds-btn" href="STU-003.dc.html"><span>Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
+</div></sc-if>
+<sc-if value="{{s_review}}" hint-placeholder-val="{{ false }}"><div class="fx-col n">
+<a class="fx-back" href="STU-002.dc.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a>
+<h1 class="fx-h1 ob-in">Your course setup</h1>
+<p class="fx-sub ob-in2">Nothing else to decide yet. You can change this any time.</p>
+<div class="ds-card rv ob-in3"><div class="rv-r"><span class="rv-l">Format</span><span class="rv-v"><span class="rv-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span>Course</span><a class="ds-link" href="STU-001.dc.html">Change</a></div><div class="rv-r"><span class="rv-l">Delivery</span><span class="rv-v"><span class="rv-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="8" height="7" rx="2"></rect><circle cx="17" cy="7.5" r="3.5"></circle><rect x="3" y="14" width="8" height="6" rx="2"></rect><path d="M14 14h6v6h-6z"></path></svg></span>Hybrid</span><a class="ds-link" href="STU-002.dc.html">Change</a></div><div class="rv-r"><span class="rv-l">Lead creator</span><span class="rv-v"><span class="av" style="width: 26px; height: 26px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span> Ada Ononuju</span><span></span></div><div class="rv-r"><span class="rv-l">Status</span><span class="rv-v"><span class="ds-tag">Draft</span></span><span></span></div></div>
+<div class="fx-acts"><a class="ds-btn" href="STU-004.dc.html"><span>Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
+</div></sc-if>
+<sc-if value="{{s_how}}" hint-placeholder-val="{{ false }}"><div class="fx-col">
+<a class="fx-back" href="STU-003.dc.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a>
+<h1 class="fx-h1 ob-in">How will you create it?</h1>
+<p class="fx-sub ob-in2">You can change this later from Collaborators.</p>
+<div class="hw-g ob-in3" role="group" aria-label="How you'll create"><button type="button" class="ds-opt hw {{ct8}}" aria-pressed="{{at8}}" onClick="{{xt8}}"><span class="hw-v" aria-hidden="true"><span class="av hw-me" style="width: 44px; height: 44px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span></span><span class="hw-t"><b>On my own</b><span>You’re the only creator. Go straight to building.</span><em>Next: your Studio</em></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt hw {{ct9}}" aria-pressed="{{at9}}" onClick="{{xt9}}"><span class="hw-v" aria-hidden="true"><span class="hw-co"><span class="av hw-me" style="width: 40px; height: 40px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><span class="av" style="width: 32px; height: 32px">JA<img src="/_blob/cbfe3f2bbb89728d8777e425b59db736" alt=""></span><span class="hw-plus"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></span></span><span class="hw-t"><b>With co-creators</b><span>Invite people you know by name or email.</span><em>Next: invite co-creators</em></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt hw {{ct10}}" aria-pressed="{{at10}}" onClick="{{xt10}}"><span class="hw-v" aria-hidden="true"><span class="hw-open"><span class="hw-ring"></span><span class="av hw-me" style="width: 32px; height: 32px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><i style="left: 4px; top: 22px"></i><i style="right: 2px; top: 10px"></i><i style="right: 8px; bottom: 2px"></i><i style="left: 16px; bottom: 0"></i><i style="left: 30px; top: 0"></i></span></span><span class="hw-t"><b>Open to collaboration</b><span>Let approved Credalio creators apply to join.</span><em>Next: describe the opportunity</em></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div>
+<div class="fx-acts"><a class="ds-btn" href="STU-008.dc.html"><span>Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
+</div></sc-if>
+<sc-if value="{{s_welcome}}" hint-placeholder-val="{{ false }}"><div class="fx-col n wl">
+<div class="wl-nv ob-in"><span class="nv-av lg" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span></div>
+<h1 class="fx-h1 ob-in">Let’s build your course.</h1>
+<p class="fx-sub ob-in2">I’m Nova. I’ll help turn what you know into a course people finish. You approve every change.</p>
+<div class="wl-tags ob-in2"><span class="ds-tag line">Course</span><span class="ds-tag line">Hybrid</span><span class="ds-tag line"><span class="avs"><span class="av" style="width: 18px; height: 18px">JA<img src="/_blob/cbfe3f2bbb89728d8777e425b59db736" alt=""></span><span class="av" style="width: 18px; height: 18px">AB<img src="/_blob/167d6259769b54fee7a18d6801741d2f" alt=""></span></span> With 2 co-creators</span></div>
+<div class="xb-route ob-in3">
+<div class="xb-rh"><span class="hp-lab">Your plan</span><span class="xb-rn">Work in any order<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Your Studio is a workspace, not a wizard. Everything saves as you go, and Studio home always shows your next step. Only submitting for validation and publishing have requirements.</span></span></span></div>
+<ol class="xb-steps"><li class="xb-s xb-first"><span class="xb-sn">1</span><span class="xb-sl"><b>Define</b><span>What it is and who it’s for</span></span></li><li class="xb-s"><span class="xb-sn">2</span><span class="xb-sl"><b>Design</b><span>Skills, outcomes and evidence</span></span></li><li class="xb-s"><span class="xb-sn">3</span><span class="xb-sl"><b>Build</b><span>Lessons, practice, assessments</span></span></li><li class="xb-s"><span class="xb-sn">4</span><span class="xb-sl"><b>Review</b><span>Preview and test it</span></span></li><li class="xb-s"><span class="xb-sn">5</span><span class="xb-sl"><b>Validate</b><span>Independent review</span></span></li></ol>
+</div>
+<div class="xb-acts ob-in4"><a class="ds-btn xb-go" href="STU-010.dc.html"><span>Start building</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><span class="wl-alt"><a class="ds-link" href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5"></path><path d="M4 19h16"></path></svg><span>Import an existing course</span></a><span aria-hidden="true">·</span><a class="ds-link" href="STU-009.dc.html">Go to Studio home</a></span></div>
+</div></sc-if>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+var T0 = {"t1": true, "t2": false, "t3": false, "t4": false, "t5": false, "t6": false, "t7": true, "t8": false, "t9": true, "t10": false}, G = {"t1": "fmt", "t2": "fmt", "t3": "fmt", "t4": "fmt", "t5": "dlv", "t6": "dlv", "t7": "dlv", "t8": "how", "t9": "how", "t10": "how"};
+function togVals(self) {
+  var t = self.state.t || T0, v = {};
+  Object.keys(T0).forEach(function (k) {
+    v['c'.concat(k)] = t[k] ? 'on' : ''; v['a'.concat(k)] = t[k] ? 'true' : 'false';
+    v['x'.concat(k)] = function () {
+      var n = Object.assign({}, t);
+      if (G[k]) { Object.keys(G).forEach(function (j) { if (G[j] === G[k]) n[j] = false; }); n[k] = true; } else n[k] = !t[k];
+      self.setState({ t: n });
+    };
+  });
+  return v;
+}
+class Component extends DCLogic {
+  renderVals() {
+    var st = this.props.step || 'type';
+    var S = {"type": ["Step 1 of 4", 25], "delivery": ["Step 2 of 4", 50], "review": ["Step 3 of 4", 75], "how": ["Step 4 of 4", 100], "welcome": ["Ready", 100]};
+    var cur = S[st] || S.type;
+    var v = togVals(this);
+    v.stepLabel = cur[0]; v.barW = String(cur[1]).concat('%');
+    Object.keys(S).forEach(function (k) { v['s_'.concat(k)] = k === st; });
+    return v;
+  }
+}
+</script>
+</body>
+</html>

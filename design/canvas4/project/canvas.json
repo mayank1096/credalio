@@ -1,0 +1,478 @@
+{
+  "v": 3,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-08T06:00:00Z"
+  },
+  "title": "Credalio · Link 4 · Course Studio",
+  "launch": {
+    "view": "canvas"
+  },
+  "pages": [
+    {
+      "id": "main",
+      "name": "Course Studio"
+    }
+  ],
+  "boards": {
+    "STU-001.dc.html": {
+      "x": 0,
+      "y": 300,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-001 · What will you create? · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-001-Mobile.dc.html": {
+      "x": 1520,
+      "y": 300,
+      "w": 390,
+      "h": 844,
+      "title": "CR-STU-001 · What will you create? · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-002.dc.html": {
+      "x": 2070,
+      "y": 300,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-002 · Delivery · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-002-Mobile.dc.html": {
+      "x": 3590,
+      "y": 300,
+      "w": 390,
+      "h": 844,
+      "title": "CR-STU-002 · Delivery · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-003.dc.html": {
+      "x": 4140,
+      "y": 300,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-003 · Setup review · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-003-Mobile.dc.html": {
+      "x": 5660,
+      "y": 300,
+      "w": 390,
+      "h": 844,
+      "title": "CR-STU-003 · Setup review · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-004.dc.html": {
+      "x": 6210,
+      "y": 300,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-004 · How will you create it? · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-004-Mobile.dc.html": {
+      "x": 7730,
+      "y": 300,
+      "w": 390,
+      "h": 844,
+      "title": "CR-STU-004 · How will you create it? · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-008.dc.html": {
+      "x": 8280,
+      "y": 300,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-008 · Studio welcome · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-008-Mobile.dc.html": {
+      "x": 9800,
+      "y": 300,
+      "w": 390,
+      "h": 844,
+      "title": "CR-STU-008 · Studio welcome · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-009.dc.html": {
+      "x": 0,
+      "y": 1620,
+      "w": 1440,
+      "h": 1145,
+      "title": "CR-STU-009 · Studio home · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-009-Mobile.dc.html": {
+      "x": 1520,
+      "y": 1620,
+      "w": 390,
+      "h": 1485,
+      "title": "CR-STU-009 · Studio home · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-010.dc.html": {
+      "x": 2070,
+      "y": 1620,
+      "w": 1440,
+      "h": 1590,
+      "title": "CR-STU-010 · Basics · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-010-Mobile.dc.html": {
+      "x": 3590,
+      "y": 1620,
+      "w": 390,
+      "h": 1930,
+      "title": "CR-STU-010 · Basics · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-011.dc.html": {
+      "x": 4140,
+      "y": 1620,
+      "w": 1440,
+      "h": 1165,
+      "title": "CR-STU-011 · Audience & prerequisites · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-011-Mobile.dc.html": {
+      "x": 5660,
+      "y": 1620,
+      "w": 390,
+      "h": 1667,
+      "title": "CR-STU-011 · Audience & prerequisites · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-012.dc.html": {
+      "x": 6210,
+      "y": 1620,
+      "w": 1440,
+      "h": 1055,
+      "title": "CR-STU-012 · Career & progression · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-012-Mobile.dc.html": {
+      "x": 7730,
+      "y": 1620,
+      "w": 390,
+      "h": 1509,
+      "title": "CR-STU-012 · Career & progression · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-012b.dc.html": {
+      "x": 8280,
+      "y": 1620,
+      "w": 1440,
+      "h": 1418,
+      "title": "CR-STU-012b · Career: prepares for a certification · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-012b-Mobile.dc.html": {
+      "x": 9800,
+      "y": 1620,
+      "w": 390,
+      "h": 2085,
+      "title": "CR-STU-012b · Career: prepares for a certification · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-013.dc.html": {
+      "x": 10350,
+      "y": 1620,
+      "w": 1440,
+      "h": 1008,
+      "title": "CR-STU-013 · Skills & proficiency · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-013-Mobile.dc.html": {
+      "x": 11870,
+      "y": 1620,
+      "w": 390,
+      "h": 1298,
+      "title": "CR-STU-013 · Skills & proficiency · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-014.dc.html": {
+      "x": 0,
+      "y": 4125,
+      "w": 1440,
+      "h": 927,
+      "title": "CR-STU-014 · Learning outcomes · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-014-Mobile.dc.html": {
+      "x": 1520,
+      "y": 4125,
+      "w": 390,
+      "h": 999,
+      "title": "CR-STU-014 · Learning outcomes · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-015.dc.html": {
+      "x": 2070,
+      "y": 4125,
+      "w": 1440,
+      "h": 958,
+      "title": "CR-STU-015 · Outcome → skill map · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-015-Mobile.dc.html": {
+      "x": 3590,
+      "y": 4125,
+      "w": 390,
+      "h": 1452,
+      "title": "CR-STU-015 · Outcome → skill map · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-016.dc.html": {
+      "x": 4140,
+      "y": 4125,
+      "w": 1440,
+      "h": 1335,
+      "title": "CR-STU-016 · Outcome → evidence · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-016-Mobile.dc.html": {
+      "x": 5660,
+      "y": 4125,
+      "w": 390,
+      "h": 1816,
+      "title": "CR-STU-016 · Outcome → evidence · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-017.dc.html": {
+      "x": 6210,
+      "y": 4125,
+      "w": 1440,
+      "h": 914,
+      "title": "CR-STU-017 · Assessment & award · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-017-Mobile.dc.html": {
+      "x": 7730,
+      "y": 4125,
+      "w": 390,
+      "h": 1270,
+      "title": "CR-STU-017 · Assessment & award · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-018.dc.html": {
+      "x": 8280,
+      "y": 4125,
+      "w": 1440,
+      "h": 1158,
+      "title": "CR-STU-018 · Learning effort · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-018-Mobile.dc.html": {
+      "x": 9800,
+      "y": 4125,
+      "w": 390,
+      "h": 1286,
+      "title": "CR-STU-018 · Learning effort · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-019.dc.html": {
+      "x": 10350,
+      "y": 4125,
+      "w": 1440,
+      "h": 1245,
+      "title": "CR-STU-019 · Design summary · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-019-Mobile.dc.html": {
+      "x": 11870,
+      "y": 4125,
+      "w": 390,
+      "h": 1503,
+      "title": "CR-STU-019 · Design summary · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Setup.dc.html": {
+      "x": 0,
+      "y": 6361,
+      "w": 1440,
+      "h": 900,
+      "title": "Course setup · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Studio.dc.html": {
+      "x": 1600,
+      "y": 6361,
+      "w": 1440,
+      "h": 900,
+      "title": "Course Studio · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    }
+  },
+  "order": [
+    "STU-001.dc.html",
+    "STU-001-Mobile.dc.html",
+    "STU-002.dc.html",
+    "STU-002-Mobile.dc.html",
+    "STU-003.dc.html",
+    "STU-003-Mobile.dc.html",
+    "STU-004.dc.html",
+    "STU-004-Mobile.dc.html",
+    "STU-008.dc.html",
+    "STU-008-Mobile.dc.html",
+    "STU-009.dc.html",
+    "STU-009-Mobile.dc.html",
+    "STU-010.dc.html",
+    "STU-010-Mobile.dc.html",
+    "STU-011.dc.html",
+    "STU-011-Mobile.dc.html",
+    "STU-012.dc.html",
+    "STU-012-Mobile.dc.html",
+    "STU-012b.dc.html",
+    "STU-012b-Mobile.dc.html",
+    "STU-013.dc.html",
+    "STU-013-Mobile.dc.html",
+    "STU-014.dc.html",
+    "STU-014-Mobile.dc.html",
+    "STU-015.dc.html",
+    "STU-015-Mobile.dc.html",
+    "STU-016.dc.html",
+    "STU-016-Mobile.dc.html",
+    "STU-017.dc.html",
+    "STU-017-Mobile.dc.html",
+    "STU-018.dc.html",
+    "STU-018-Mobile.dc.html",
+    "STU-019.dc.html",
+    "STU-019-Mobile.dc.html",
+    "Setup.dc.html",
+    "Studio.dc.html"
+  ],
+  "notes": {
+    "b1-setup": {
+      "x": 0,
+      "y": 0,
+      "text": "Batch 1 · Course setup: format, delivery, review, how you’ll create it, Studio welcome",
+      "kind": "title1",
+      "maxW": 10190
+    },
+    "b1-setup-new": {
+      "x": 0,
+      "y": 150,
+      "text": "NEW · batch 1",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b1-design-a": {
+      "x": 0,
+      "y": 1320,
+      "text": "Batch 1 · Course design: Studio home, basics, audience, career & skills",
+      "kind": "title1",
+      "maxW": 12260
+    },
+    "b1-design-a-new": {
+      "x": 0,
+      "y": 1470,
+      "text": "NEW · batch 1",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b1-design-b": {
+      "x": 0,
+      "y": 3825,
+      "text": "Batch 1 · Course design: outcomes, skills map, evidence, assessment & award, effort, summary",
+      "kind": "title1",
+      "maxW": 12260
+    },
+    "b1-design-b-new": {
+      "x": 0,
+      "y": 3975,
+      "text": "NEW · batch 1",
+      "w": 260,
+      "fill": "pink"
+    },
+    "sources": {
+      "x": 0,
+      "y": 6061,
+      "text": "Shared sources (code the boards above import, not screens)",
+      "kind": "title1",
+      "maxW": 3200
+    }
+  },
+  "noteOrder": [
+    "b1-setup",
+    "b1-setup-new",
+    "b1-design-a",
+    "b1-design-a-new",
+    "b1-design-b",
+    "b1-design-b-new",
+    "sources"
+  ],
+  "designSystems": []
+}

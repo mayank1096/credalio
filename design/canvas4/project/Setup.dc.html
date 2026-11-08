@@ -107,6 +107,8 @@ a{color:#1652F0}
 .fx-root{min-height:100vh;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433;position:relative;isolation:isolate}
 .fx-root::before{content:'';position:absolute;z-index:-1;left:0;right:0;top:64px;height:340px;pointer-events:none;background:linear-gradient(180deg,#F2F6FF,rgba(242,246,255,0))}
 .fx-top{height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1.5px solid #EEF1F7;background:#FFFFFF;position:relative}
+.fx-x{width:40px;height:40px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3A4566;text-decoration:none}
+.fx-x:hover{background:#F5F8FF;color:#0B1433}
 .fx-title{display:flex;align-items:baseline;gap:8px;min-width:0}
 .fx-t1{font-size:16px;font-weight:600;white-space:nowrap}
 .fx-step{font-size:13.5px;color:#5B6582;white-space:nowrap}
@@ -147,6 +149,7 @@ a{color:#1652F0}
 .dv-f em{font-style:normal;font-size:12px;color:#8A93AD}
 .fx-note{margin-right:auto;font-size:14px;color:#5B6582}
 .fx-exit{height:40px;padding:0 16px;font-size:14px}
+.fx-xm{display:none !important}
 .xb-sl em{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#8A93AD;margin-top:2px}
 .fx-sub b{font-weight:600;color:#0B1433}
 .nw-fm em{display:block;font-style:normal;font-size:12px;color:#8A93AD}
@@ -272,6 +275,7 @@ a{color:#1652F0}
 .fx-note{margin:0 0 6px 0;text-align:center;font-size:13px}
 .fx-acts .ds-ghost{width:100%}
 .fx-exit{display:none !important}
+.fx-xm{display:flex !important}
 .fx-nova{height:auto;flex-wrap:wrap;border-radius:18px;padding:12px;gap:10px}
 .fx-nova input{flex-basis:calc(100% - 44px);height:36px;font-size:14.5px}
 .dv-g{margin-top:20px;gap:10px;grid-template-columns:minmax(0,1fr)}
@@ -317,6 +321,7 @@ a{color:#1652F0}
 </helmet>
 <div class="fx-root">
 <header class="fx-top">
+<a href="#" class="fx-x fx-xm" aria-label="Save &amp; exit"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a>
 <div class="fx-title"><span class="fx-t1">Creator Studio</span></div>
 <span style="flex-grow: 1"></span>
 <span class="fx-step">{{stepLabel}}</span>

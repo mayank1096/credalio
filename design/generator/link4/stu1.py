@@ -7,6 +7,7 @@ Boards: STU-0xx(.dc.html) desktop 1440 + STU-0xx-Mobile 390, each a dc-import of
 """
 import json
 from l4kit import *
+from rail import *
 
 # ======================================================================= SETUP (focus mode)
 T = Toggles()
@@ -121,6 +122,7 @@ STEPS = [('type', 'Step 1 of 4', 25, S_TYPE), ('delivery', 'Step 2 of 4', 50, S_
 
 SETUP_BODY = '''<div class="fx-root">
 <header class="fx-top">
+<a href="#" class="fx-x fx-xm" aria-label="Save &amp; exit">%s</a>
 <div class="fx-title"><span class="fx-t1">Creator Studio</span></div>
 <span style="flex-grow: 1"></span>
 <span class="fx-step">{{stepLabel}}</span>
@@ -131,7 +133,7 @@ SETUP_BODY = '''<div class="fx-root">
 <main class="fx-main">
 %s
 </main>
-</div>''' % (COIN('fc', 26), '\n'.join('<sc-if value="{{s_%s}}" hint-placeholder-val="{{ %s }}">%s</sc-if>' % (k, 'true' if k == 'type' else 'false', html) for k, _, _, html in STEPS))
+</div>''' % (ic('x', 20, 2), COIN('fc', 26), '\n'.join('<sc-if value="{{s_%s}}" hint-placeholder-val="{{ %s }}">%s</sc-if>' % (k, 'true' if k == 'type' else 'false', html) for k, _, _, html in STEPS))
 
 SETUP_CSS = r'''.nw-g{margin-top:32px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .nw-f{position:relative;display:flex;flex-direction:column;padding:20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#0B1433;font-family:inherit;text-align:left;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
@@ -154,6 +156,7 @@ SETUP_CSS = r'''.nw-g{margin-top:32px;display:grid;grid-template-columns:repeat(
 .hw-k{font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#8A93AD}
 .fx-note{margin-right:auto;font-size:14px;color:#5B6582}
 .fx-exit{height:40px;padding:0 16px;font-size:14px}
+.fx-xm{display:none !important}
 .xb-sl em{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#8A93AD;margin-top:2px}
 .fx-sub b{font-weight:600;color:#0B1433}
 .nw-fm em{display:block;font-style:normal;font-size:12px;color:#8A93AD}
@@ -282,6 +285,7 @@ SETUP_CSS = r'''.nw-g{margin-top:32px;display:grid;grid-template-columns:repeat(
 .fx-note{margin:0 0 6px 0;text-align:center;font-size:13px}
 .fx-acts .ds-ghost{width:100%}
 .fx-exit{display:none !important}
+.fx-xm{display:flex !important}
 .nw-ck{top:50%;transform:translateY(-50%);right:14px}
 .fx-nova{height:auto;flex-wrap:wrap;border-radius:18px;padding:12px;gap:10px}
 .fx-nova input{flex-basis:calc(100% - 44px);height:36px;font-size:14.5px}
@@ -342,15 +346,19 @@ write('Setup.dc.html', doc('Course setup · shared source', kit.KIT_CSS + '\n' +
 
 # ======================================================================= STUDIO (course workspace)
 W = Toggles()
-PAGES = []  # (key, nav, html)
+PAGES = []  # (key, nav, head, main, actions, rail)
 
-def P(key, nav, html):
-    PAGES.append((key, nav, html))
+def P(key, nav, head, main, actions, rail=''):
+    PAGES.append((key, nav, head, main, actions, rail))
+
+F_CAREER = [('Career & Progression Relevance', 'STU-012.dc.html'), ('Skills & Proficiency', 'STU-013.dc.html')]
+F_OUT = [('Learning Outcomes', 'STU-014.dc.html'), ('Outcome → Skill Mapping', 'STU-015.dc.html'), ('Outcome → Evidence Mapping', 'STU-016.dc.html')]
+F_LD = [('Course Design', 'STU-017.dc.html'), ('Learning Effort', 'STU-018.dc.html'), ('Your Learning Design', 'STU-019.dc.html')]
 
 # ---------- CR-STU-009 Studio home
 def row(icon, title, meta, st_label, st_kind, href, extra=''):
-    return ('<a class="hm-r" href="%s"><span class="hm-ri">%s</span><span class="hm-rt"><b>%s</b><span>%s</span></span>%s%s<span class="hm-go">%s</span></a>' %
-            (href, ic(icon, 18), title, meta, extra, tag(st_label, st_kind), ic('chev', 16, 2)))
+    return ('<a class="hm-r" href="%s"><span class="hm-ri">%s</span><span class="hm-rt"><span class="hm-tt"><b>%s</b>%s</span><span class="hm-m">%s</span></span>%s<span class="hm-go">%s</span></a>' %
+            (href, ic(icon, 18), title, tag(st_label, st_kind), meta, extra, ic('chev', 16, 2)))
 
 DET = [('5', 'chapters'), ('9', 'lessons'), ('5', 'videos'), ('8h 5m', 'detected learning time'), ('3', 'assessments'), ('35', 'questions'), ('1', 'projects'), ('4 (3 assessed)', 'outcomes')]
 P('home', 'home', page_head('Studio Home', COURSE, 'Course · Hybrid · Draft') +
@@ -358,67 +366,67 @@ P('home', 'home', page_head('Studio Home', COURSE, 'Course · Hybrid · Draft') 
 <div class="hm-nl"><span class="pg-e">Recommended next step</span><h2>Define who this course is for and where it leads</h2><p>Set the career role, stage and relevance for the Become Engine.</p>
 <div class="hm-seg" role="img" aria-label="Course Design: 4 of 9 sections complete"><i class="dn"></i><i class="dn"></i><i class="dn"></i><i class="dn"></i><i class="nx"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><span class="hm-sl">4 of 9 sections complete</span></div>
 <div class="hm-na">%s<span class="hm-pk">Picks up where you left off.</span></div></div>
-<div class="hm-rc"><div class="hm-ring" aria-hidden="true"><svg viewBox="0 0 120 120" width="132" height="132"><defs><linearGradient id="hmg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9DB8F7"></stop><stop offset="1" stop-color="#FFFFFF"></stop></linearGradient></defs><circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="10"></circle><circle cx="60" cy="60" r="50" fill="none" stroke="url(#hmg)" stroke-width="10" stroke-linecap="round" stroke-dasharray="97 314" transform="rotate(-90 60 60)"></circle></svg><span><b>31%%</b><em>Course Health</em></span></div><span class="hm-rl">%s<a class="ds-link" href="#">See what’s missing</a></span></div>
-</section>
-<section class="ds-card hm-list ob-in3" aria-label="Course sections">
+<div class="hm-rc"><div class="hm-ring">%s<span><b>31%%</b><em>Course Health</em></span></div><span class="hm-rl">%s<a class="ds-link" href="#">See what’s missing</a></span></div>
+</section>''' % (btn('Continue Building', 'STU-012.dc.html', 'wh'), ring(31, grad=('hmg', '#9DB8F7', '#FFFFFF'), track='rgba(255,255,255,.14)'),
+    tip('Completeness and readiness. Not a quality score and not CEI.', 'r')),
+'''<section class="ds-card hm-list ob-in3" aria-label="Course sections">
 %s%s%s%s%s%s
-</section>
-<section class="ds-card hm-det ob-in4" aria-label="Detected by Credalio">
-<div class="hm-dh"><h2 class="hm-h">Detected by Credalio%s</h2></div>
-<div class="hm-dg">%s</div>
-</section>
-<div class="ob-in4" style="margin-top: 16px">%s</div>''' % (
-    btn('Continue Building', 'STU-012.dc.html', 'wh'), tip('Completeness and readiness. Not a quality score and not CEI.', 'r'),
+</section>''' % (
     row('layers', 'Course Design', '4 of 9 sections complete · Next: define who this course is for and where it leads', 'In progress', 'blue', 'STU-010.dc.html'),
-    row('course', 'Curriculum', '5 chapters · 9 lessons · 8h 5m detected learning time', 'Done', 'green', '#'),
-    row('quiz', 'Assessments', '3 assessments · 35 questions · 3 of 4 outcomes assessed', 'In progress', 'blue', '#'),
+    row('course', 'Curriculum', '5 chapters · 9 lessons · 8h 5m detected learning time', 'Done', 'green', 'STU-020.dc.html'),
+    row('quiz', 'Assessments', '3 assessments · 35 questions · 3 of 4 outcomes assessed', 'In progress', 'blue', 'STU-ASM.dc.html'),
     row('lock', 'Validation Readiness', 'Opens once Design and Build are complete', 'Locked', '', '#'),
     row('users', 'Collaborators', '3 people · Dr. John Adeyemi, ABC Institute', 'Done', 'green', '#', stack(TEAM, 26)),
     row('target', 'Learning Intelligence Profile', '9 of 13 signals · What Credalio understands about this course. Next: career role, proficiency levels.', 'In progress', 'blue', 'STU-019.dc.html'),
-    tip('Built from your course structure as you work. No manual entry.', 'dn'),
-    ''.join('<span><b>%s</b><em>%s</em></span>' % d for d in DET),
-    nova_sg('Welcome back. I’ll keep track of what’s incomplete so you don’t have to.', nchip('What’s left before validation?'))))
+),
+'',
+nova_rail('Welcome back. I’ll keep track of what’s incomplete so you don’t have to.', nchip('What’s left before validation?')) +
+'<section class="ds-card rx cr-rx"><div class="cr-n">%s<b>72,450</b><span>Creio</span></div><p>Everyday help just works.</p><div class="cr-a"><a class="ds-ghost sm" href="#">Buy Creio</a><a class="ds-link sm" href="#">View usage</a></div></section>' % kit.coin(True) +
+'<section class="ds-card rx hm-det" aria-label="Detected by Credalio"><span class="rx-k">Detected by Credalio%s</span><div class="hm-dg">%s</div></section>' % (
+    tip('Built from your course structure as you work. No manual entry.', 'dn'), ''.join('<span><b>%s</b><em>%s</em></span>' % d for d in DET)))
 
 # ---------- CR-STU-010 Basics
-P('basics', 'basics', page_head('Design', 'Basics', 'Start with the course itself.') +
+SKILLS4 = ['SQL', 'Data Cleaning', 'Data Analysis', 'Relational Databases']
+P('basics', 'basics', page_head('Design', 'Basics', 'Start with the course itself.'),
 '''<section class="ds-card fc ob-in2">
 <div class="fg">
 %s
-<div class="fg fg2">%s%s</div>
 %s
-<div class="fg fg2">%s%s</div>
-<div class="fg fg2">%s%s</div>
+<div class="fg fg2 cv2">%s%s</div>
 %s
+<div class="fg fg2 keep">%s%s%s%s</div>
 </div>
 </section>
 <section class="ds-card fc ob-in3">
 <div class="fc-h"><div><h2>A few questions will help us configure your course%s</h2></div></div>
-<div class="fg">
+<div class="qs">
 %s%s%s
 </div>
 </section>''' % (
     field('Course title', '<div class="in-ai"><input class="ds-in lg" value="Data Analysis with SQL" aria-label="Course title">%s</div>' % nchip('Improve title')),
     field('Short description (marketplace card)', '<input class="ds-in" value="Write SQL to answer real business questions, from first query to a finished analysis." aria-label="Short description (marketplace card)"><span class="fl-f"><span class="in-help">%s</span><span class="cnt">85 / 140</span></span>' % nchip('Generate suggestion')),
     field('Course cover', '<div class="cov"><span class="cov-i" aria-hidden="true">SQL</span><span class="cov-t"><b>sql-course-cover.png</b></span><a class="ds-link" href="#">Replace</a></div>'),
+    field('Skills', '<div class="chips">%s</div><span class="in-help">%s</span>' % (''.join(W.chip(x, True) for x in SKILLS4), nchip('Suggest skills from description'))),
     field('Full description', '<textarea class="ds-in" aria-label="Full description">A hybrid course for career changers and analysts. Learn SQL step by step, practise on realistic business data, join a live analysis clinic and finish with a portfolio project.</textarea><span class="in-help">%s</span>' % nchip('Help me write this')),
     field('Primary category', sel('Technology', 'Primary category')), field('Topic', sel('Data Analytics', 'Topic')),
     field('Subtopic', sel('SQL', 'Subtopic')), field('Language', sel('English', 'Language')),
-    field('Skills', '<div class="chips">%s%s%s%s</div><span class="in-help">%s</span>' % (
-        W.chip('SQL', True), W.chip('Data Cleaning', True), W.chip('Data Analysis', True), W.chip('Relational Databases', True), nchip('Suggest skills from description'))),
     tip('Saved to your course profile so you won’t be asked again at validation.'),
-    field('Does this course require learners to use external software?', '<div class="chips">%s</div><span class="fl-sub">Which?</span><div class="chips">%s%s%s%s</div>' % (
-        W.seg(['Yes', 'No'], 0), W.chip('SQL Server', False, cls='sm'), W.chip('MySQL', False, cls='sm'), W.chip('PostgreSQL', True, cls='sm'), W.chip('Other', False, cls='sm'))),
-    field('Will learners work with real or simulated data?', '<div class="chips">%s</div>' % W.seg(['Real', 'Simulated', 'Both', 'Neither'], 1)),
-    field('Does this course involve AI?', '<div class="chips">%s%s%s%s%s</div>' % (
-        W.chip('No', True, 'ai'), W.chip('Learners use AI tools', False, 'ai'), W.chip('AI is taught as a subject', False, 'ai'), W.chip('AI-generated outputs are assessed', False, 'ai'), W.chip('Other', False, 'ai')))) +
-acts('STU-011.dc.html'))
+    '<div class="q"><span class="q-n">1</span><div class="q-b"><b>Does this course require learners to use external software?</b>%s<span class="fl-sub">Which?</span><div class="chips">%s%s%s%s</div></div></div>' % (
+        W.seg(['Yes', 'No'], 0), W.chip('SQL Server', False, cls='sm'), W.chip('MySQL', False, cls='sm'), W.chip('PostgreSQL', True, cls='sm'), W.chip('Other', False, cls='sm')),
+    '<div class="q"><span class="q-n">2</span><div class="q-b"><b>Will learners work with real or simulated data?</b>%s</div></div>' % W.seg(['Real', 'Simulated', 'Both', 'Neither'], 1),
+    '<div class="q"><span class="q-n">3</span><div class="q-b"><b>Does this course involve AI?</b><div class="chips">%s%s%s%s%s</div></div></div>' % (
+        W.chip('No', True, 'ai'), W.chip('Learners use AI tools', False, 'ai'), W.chip('AI is taught as a subject', False, 'ai'), W.chip('AI-generated outputs are assessed', False, 'ai'), W.chip('Other', False, 'ai'))),
+acts('STU-011.dc.html'),
+nova_rail('I’ll help with wording. You approve every change.', nchip('Improve title') + nchip('Suggest skills')) +
+'''<section class="ds-card rx pv"><span class="rx-k">Short description (marketplace card)</span>
+<div class="pv-c"><span class="pv-cv"><i>SQL</i><em></em><em></em><em></em></span><span class="pv-tg">%s%s</span><b>Data Analysis with SQL</b><p>Write SQL to answer real business questions, from first query to a finished analysis.</p><span class="pv-sk">%s</span></div></section>''' % (
+    tag('Course', 'line'), tag('Hybrid', 'line'), ''.join('<i>%s</i>' % x for x in SKILLS4)))
 
 # ---------- CR-STU-011 Audience & prerequisites
-PROF = ['Awareness', 'Foundation', 'Intermediate', 'Advanced']
 def prq(skill, lvl, req):
-    return ('<div class="pq-r"><span class="pq-s">%s</span>%s<div>%s</div><button type="button" class="ds-x sm" aria-label="Remove %s">%s</button></div>' %
+    return ('<div class="pq-r"><span class="pq-s">%s</span>%s<div class="pq-q">%s</div><button type="button" class="ds-x sm" aria-label="Remove %s">%s</button></div>' %
             (skill, sel(lvl, 'Minimum proficiency for ' + skill), W.seg(['Required', 'Recommended'], 0 if req else 1), skill, ic('x', 15, 2)))
-P('audience', 'audience', page_head('Design', 'Audience & Prerequisites', 'Who is this for, and what should they already know? Credalio stores this in a form it can match against learners.') +
+P('audience', 'audience', page_head('Design', 'Audience & Prerequisites', 'Who is this for, and what should they already know? Credalio stores this in a form it can match against learners.'),
 '''<section class="ds-card fc ob-in2">
 <div class="fg">
 %s
@@ -426,29 +434,32 @@ P('audience', 'audience', page_head('Design', 'Audience & Prerequisites', 'Who i
 </div>
 </section>
 <section class="ds-card fc ob-in3">
-<div class="fc-h"><div><h2>What should learners already know?</h2><p>Each prerequisite gets a minimum proficiency and whether it’s required.</p></div>%s</div>
+<div class="fc-h"><div><h2>What should learners already know?</h2><p>Each prerequisite gets a minimum proficiency and whether it’s required.</p></div></div>
 <div class="pq">
 <div class="pq-r pq-hd"><span>Prerequisite</span><span>Minimum proficiency</span><span>Requirement</span><span></span></div>
 %s%s
 </div>
 <div class="pq-add"><input class="ds-in" placeholder="Add prerequisite" aria-label="Add prerequisite"><button type="button" class="ds-ghost">Add</button></div>
-<div class="lip"><span class="lip-l">Learning Intelligence Profile:</span>%s%s</div>
+</section>
+<section class="ds-card fc ob-in4">
+<div class="fc-h"><div><h2>Age considerations%s</h2></div></div>
+<div class="opt3">%s%s%s</div>
 </section>''' % (
     field('Who is this for?', '<div class="chips">%s%s%s%s</div>' % (W.chip('Beginner', True), W.chip('Intermediate'), W.chip('Advanced'), W.chip('Professional')), 'Select all that apply'),
     field('Intended context', '<div class="chips">%s%s%s%s%s</div>' % (W.chip('Career development', True), W.chip('Academic learning'), W.chip('Professional development', True), W.chip('Personal learning'), W.chip('Workplace training'))),
-    nchip('Suggest prerequisites'),
     prq('Excel', 'Foundation', True), prq('Statistics', 'Foundation', False),
-    tag('Excel · Foundation · Required', 'line'), tag('Statistics · Foundation · Recommended', 'line')) +
-'''<section class="ds-card fc ob-in4">
-<div class="fc-h"><div><h2>Age considerations%s</h2></div></div>
-<div class="opt3">%s%s%s</div>
-</section>''' % (tip('This later helps validator assignment and risk classification.'),
+    tip('This later helps validator assignment and risk classification.'),
     W.opt('<span class="o-t"><b>General audience</b></span>', True, 'age'),
     W.opt('<span class="o-t"><b>Adults only (18+)</b></span>', False, 'age'),
-    W.opt('<span class="o-t"><b>Restricted / special audience</b></span>', False, 'age')) +
-acts('STU-012.dc.html', back_href='STU-010.dc.html'))
+    W.opt('<span class="o-t"><b>Restricted / special audience</b></span>', False, 'age')),
+acts('STU-012.dc.html', back_href='STU-010.dc.html'),
+nova_rail('Tell me who it’s for and I’ll suggest prerequisites.', nchip('Suggest prerequisites')) +
+'<section class="ds-card rx"><span class="rx-k">Learning Intelligence Profile:</span><ul class="lp">%s</ul></section>' % ''.join(
+    '<li><span class="lp-i">%s</span><span><b>%s</b><em>%s · %s</em></span></li>' % (ck(10), s, l, r) for s, l, r in [('Excel', 'Foundation', 'Required'), ('Statistics', 'Foundation', 'Recommended')]))
 
 # ---------- CR-STU-012 / 012b Career
+ROLEMAP = '''<section class="ds-card rx rm"><div class="rm-v" aria-hidden="true"><span class="rm-o"></span><span class="rm-o b"></span>
+<span class="rm-c">%s<b>Data Analyst</b><em>Entry Level</em></span><span class="rm-s s1"><b>BI Analyst</b></span><span class="rm-s s2"><b>Operations Analyst</b></span></div></section>''' % ic('target', 18, 2)
 def career(cert):
     goals = ['Build a skill', 'Prepare for a career role', 'Change career', 'Advance in an existing career', 'Prepare for certification', 'Academic progression']
     on = {0, 1, 2} | ({4} if cert else set())
@@ -457,18 +468,16 @@ def career(cert):
         certs = '''<section class="ds-card fc ob-in4">
 <div class="fc-h"><div><h2>Which certification does this course prepare for?%s</h2><p>Shown as “Prepares for” on your course page. The certification’s owner must approve the link.</p></div></div>
 <div class="ce">
-<div class="ce-r"><span class="ce-i">%s</span><span class="ce-t"><b>Professional Data Analyst Certification</b><span>ABC Institute · designed by Ada Ononuju</span></span>%s<span class="ce-s nl">Not linked</span><button type="button" class="ds-ghost sm">Link</button></div>
-<div class="ce-r"><span class="ce-i">%s</span><span class="ce-t"><b>Certified BI Practitioner</b><span>Data Professionals Association</span></span>%s<span class="ce-s">%s<span>Requested · waiting for the certification owner to approve</span></span><button type="button" class="ds-link ce-x">Remove</button></div>
-<div class="ce-r"><span class="ce-i">%s</span><span class="ce-t"><b>Associate Data Engineer</b><span>Acme Analytics Ltd</span></span>%s<span class="ce-s nl">Not linked</span><button type="button" class="ds-ghost sm">Request link</button></div>
+<div class="ce-r"><span class="ce-i">%s</span><span class="ce-t"><b>Professional Data Analyst Certification</b><span>ABC Institute · designed by Ada Ononuju</span></span><span class="ce-m">%s<span class="ce-s nl">Not linked</span></span><button type="button" class="ds-ghost sm">Link</button></div>
+<div class="ce-r"><span class="ce-i">%s</span><span class="ce-t"><b>Certified BI Practitioner</b><span>Data Professionals Association</span></span><span class="ce-m">%s<span class="ce-s">%s<span>Requested · waiting for the certification owner to approve</span></span></span><button type="button" class="ds-link ce-x">Remove</button></div>
+<div class="ce-r"><span class="ce-i">%s</span><span class="ce-t"><b>Associate Data Engineer</b><span>Acme Analytics Ltd</span></span><span class="ce-m">%s<span class="ce-s nl">Not linked</span></span><button type="button" class="ds-ghost sm">Request link</button></div>
 </div>
 </section>''' % (tip('Completing this course never awards the certification. Learners still register for it and pass its assessments. The course keeps its own completion certificate.'),
                  ic('badge', 18), tag('In validation', 'blue'), ic('badge', 18), tag('Validated', 'green'), ICON(EXTRA['clock'], 14, 2), ic('badge', 18), tag('Validated', 'green'))
     rel = (W.opt('<span class="o-t"><b>Core Skill</b><span>Essential to performing the role day to day.</span></span>', True, 'rel%d' % cert) +
            W.opt('<span class="o-t"><b>Supporting Skill</b><span>Helps in the role, but isn’t central to it.</span></span>', False, 'rel%d' % cert) +
            W.opt('<span class="o-t"><b>Specialized Skill</b><span>A niche or advanced capability within the role.</span></span>', False, 'rel%d' % cert))
-    return (page_head('Design', 'Career & Progression Relevance', 'Where can this learning take someone? This connects your course to learners’ goals in the Become Engine.') +
-'''<div class="ob-in2" style="margin-top: 20px">%s</div>
-<section class="ds-card fc ob-in3">
+    main = '''<section class="ds-card fc ob-in2">
 <div class="fg">
 %s
 <div class="fg fg2">%s%s</div>
@@ -476,16 +485,18 @@ def career(cert):
 %s
 </div>
 </section>%s''' % (
-        nova_sg('From your outcomes and skills, this course fits an entry-level Data Analyst path, with BI Analyst and Operations Analyst as related roles.',
-                '<button type="button" class="ds-ghost sm">Use suggestion</button>'),
         field('This course primarily helps learners:', '<div class="chips">%s</div>' % ''.join(W.chip(g, i in on) for i, g in enumerate(goals)), 'Select all that apply'),
         field('Primary role', '<input class="ds-in" aria-label="Primary role">'),
         field('Related roles', '<div class="rr"><input class="ds-in" placeholder="Add related role" aria-label="Add related role"><button type="button" class="ds-ghost">Add</button></div>'),
         field('Career stage', W.seg(['Entry Level', 'Early Career', 'Mid Career', 'Advanced'], 0), 'Where in a career is this course most useful?'),
-        field('Relevance to the role%s' % tip('Feeds the Become Engine: learners working towards the roles you set can find this course on their path. It never affects validation outcomes on its own.'), '<div class="opt3">%s</div>' % rel),
-        certs) + acts('STU-013.dc.html', back_href='STU-011.dc.html'))
-P('career', 'career', career(False))
-P('careercert', 'career', career(True))
+        field('Relevance to the role%s' % tip('Feeds the Become Engine: learners working towards the roles you set can find this course on their path. It never affects validation outcomes on its own.'), '<div class="opt3 v">%s</div>' % rel),
+        certs)
+    rail = (nova_rail('From your outcomes and skills, this course fits an entry-level Data Analyst path, with BI Analyst and Operations Analyst as related roles.',
+                      '<button type="button" class="ds-btn sm wh2">Use suggestion</button>' + nchip('Suggest roles')) + ROLEMAP + flow(F_CAREER, 0))
+    return (page_head('Design', 'Career & Progression Relevance', 'Where can this learning take someone? This connects your course to learners’ goals in the Become Engine.'),
+            main, acts('STU-013.dc.html', back_href='STU-011.dc.html'), rail)
+P('career', 'career', *career(False))
+P('careercert', 'career', *career(True))
 
 # ---------- CR-STU-013 Skills & proficiency
 LV = ['Beginner', 'Foundation', 'Intermediate', 'Advanced', 'Expert']
@@ -497,40 +508,36 @@ def track(a, b):
 def skr(skill, a, b):
     return ('<div class="sk-r"><span class="sk-s">%s</span>%s%s%s<button type="button" class="ds-x sm" aria-label="Remove %s">%s</button></div>' %
             (skill, sel(LV[a] if a is not None else 'Select level', 'Starting proficiency for ' + skill), sel(LV[b] if b is not None else 'Select level', 'Expected proficiency for ' + skill), track(a, b), skill, ic('x', 15, 2)))
-P('skills', 'career', page_head('Design', 'Skills & Proficiency', 'What skills will learners develop, and how far will they progress? Starting proficiency should match your prerequisites.') +
-'''<div class="ob-in2" style="margin-top: 20px">%s</div>
-<section class="ds-card fc ob-in3">
-<div class="fc-h fc-h-r">%s</div>
+P('skills', 'career', page_head('Design', 'Skills & Proficiency', 'What skills will learners develop, and how far will they progress? Starting proficiency should match your prerequisites.'),
+'''<section class="ds-card fc ob-in2">
 <div class="sk">
 <div class="sk-r sk-hd"><span>Skill</span><span>Starting proficiency</span><span>Expected proficiency</span><span>Progression</span><span></span></div>
 %s%s%s%s
 </div>
 <div class="pq-add"><input class="ds-in" placeholder="Add skill" aria-label="Add skill"><button type="button" class="ds-ghost">Add</button></div>
-<p class="fnote">Levels, lowest to highest: Beginner, Foundation, Intermediate, Advanced, Expert. Nova suggests; you confirm. Credalio checks these against your assessments during validation.</p>
-</section>''' % (
-    nova_sg('I identified 6 skills from your proposed curriculum. 4 are already listed. Add the others?',
-            '<button type="button" class="ds-chip sm">%s<span>Joins</span></button><button type="button" class="ds-chip sm">%s<span>Aggregation</span></button><button type="button" class="ds-link">Dismiss</button>' % (ic('plus', 13, 2.4), ic('plus', 13, 2.4))),
-    nchip('Suggest proficiency levels'),
-    skr('SQL', 0, 2), skr('Data Analysis', 1, 2), skr('Data Cleaning', 0, 2), skr('Relational Databases', None, None)) +
-acts('STU-014.dc.html', back_href='STU-012.dc.html'))
+</section>''' % (skr('SQL', 0, 2), skr('Data Analysis', 1, 2), skr('Data Cleaning', 0, 2), skr('Relational Databases', None, None)),
+acts('STU-014.dc.html', back_href='STU-012.dc.html'),
+nova_rail('I identified 6 skills from your proposed curriculum. 4 are already listed. Add the others?',
+          '<button type="button" class="ds-chip sm">%s<span>Joins</span></button><button type="button" class="ds-chip sm">%s<span>Aggregation</span></button><button type="button" class="ds-link sm">Dismiss</button>' % (ic('plus', 13, 2.4), ic('plus', 13, 2.4)) + nchip('Suggest proficiency levels')) +
+'<section class="ds-card rx"><ol class="ld">%s</ol><p class="rx-p">Levels, lowest to highest: Beginner, Foundation, Intermediate, Advanced, Expert. Nova suggests; you confirm. Credalio checks these against your assessments during validation.</p></section>' % ''.join(
+    '<li style="--i: %d"><i></i><span>%s</span></li>' % (i, l) for i, l in enumerate(LV)) + flow(F_CAREER, 1))
 
 # ---------- CR-STU-014 Outcomes
 def lo(n, text, warn=False):
     w = ''
     if warn:
         w = '<div class="lo-w">%s<p>“Understand SQL” may be difficult to assess. Consider: <b>Write SQL queries to retrieve, filter and aggregate structured data.</b></p><button type="button" class="ds-ghost sm">Use suggestion</button></div>' % nova_av('sm')
-    return ('<div class="lo-r%s"><span class="lo-n">%d</span><div class="lo-b"><span class="lo-k">Learning outcome %d</span><input class="ds-in" value="%s" aria-label="Outcome %d">%s</div><button type="button" class="ds-x sm" aria-label="Remove outcome %d">%s</button></div>' %
-            (' warn' if warn else '', n, n, text, n, w, n, ic('x', 15, 2)))
-P('outcomes', 'outcomes', page_head('Design', 'Learning Outcomes', 'What will learners be able to do by the end? Use observable verbs. You’ll connect each outcome to skills and evidence next.') +
+    return ('<div class="lo-r%s"><span class="lo-n">%d</span><div class="lo-b"><div class="lo-h"><span class="lo-k">Learning outcome %d</span><button type="button" class="ds-x sm" aria-label="Remove outcome %d">%s</button></div><textarea class="ds-in lo-in" rows="2" aria-label="Outcome %d">%s</textarea>%s</div></div>' %
+            (' warn' if warn else '', n, n, n, ic('x', 15, 2), n, text, w))
+P('outcomes', 'outcomes', page_head('Design', 'Learning Outcomes', 'What will learners be able to do by the end? Use observable verbs. You’ll connect each outcome to skills and evidence next.'),
 '''<section class="ds-card fc ob-in2">
-<div class="fc-h fc-h-r">%s</div>
 <div class="lo">%s%s%s%s</div>
-<button type="button" class="ds-ghost lo-add">%s<span>Add Outcome</span></button>
+<div class="lo-f"><button type="button" class="ds-ghost">%s<span>Add Outcome</span></button>%s</div>
 </section>''' % (
-    nchip('Generate from course goal'),
     lo(1, 'Write SQL queries to retrieve and filter structured business data.'), lo(2, 'Combine multiple relational tables using joins.'),
-    lo(3, 'Analyse business datasets and communicate findings.'), lo(4, 'Understand SQL', True), ic('plus', 16, 2.2)) +
-acts('STU-015.dc.html', back_href='STU-013.dc.html'))
+    lo(3, 'Analyse business datasets and communicate findings.'), lo(4, 'Understand SQL', True), ic('plus', 16, 2.2), nchip('Generate from course goal')),
+acts('STU-015.dc.html', back_href='STU-013.dc.html'),
+nova_rail('“Understand SQL” may be hard to assess. I’ve suggested a measurable version on the card.', nchip('Check my outcomes')) + flow(F_OUT, 0))
 
 # ---------- CR-STU-015 Outcome → skill map
 SK = ['SQL · Intermediate', 'Data Analysis · Intermediate', 'Data Cleaning · Intermediate', 'Relational Databases']
@@ -540,95 +547,93 @@ LOS = [('Outcome 1', 'Write SQL queries to retrieve and filter structured busine
        ('Outcome 4', 'Understand SQL', [0, 0, 0, 0])]
 def mx_cell(on, lo_, sk):
     k = W.new(bool(on))
-    return '<button type="button" class="mx-c {{c%s}}" aria-pressed="{{a%s}}" onClick="{{x%s}}" aria-label="%s develops %s"><span class="mx-ck">%s</span><span class="mx-l">%s</span></button>' % (k, k, k, lo_, sk, ck(13), sk)
+    return '<button type="button" class="mx-c {{c%s}}" aria-pressed="{{a%s}}" onClick="{{x%s}}" aria-label="%s develops %s"><span class="mx-ck">%s</span><span class="mx-l">%s</span></button>' % (k, k, k, lo_, sk, ck(13), sk.split(' · ')[0])
 def mx_rows():
     h = ''
     for code, text, cells in LOS:
         warn = not any(cells)
         h += '<div class="mx-r%s"><span class="mx-o"><em>%s</em><span>%s</span>%s</span>%s</div>' % (
             ' warn' if warn else '', code, text, tag('No skills mapped to this outcome yet', 'amber') if warn else '', ''.join(mx_cell(c, code, SK[i]) for i, c in enumerate(cells)))
-    cov = [('SQL', 'Target: Intermediate', 'Developed by LO1, LO2', ''), ('Data Analysis', 'Target: Intermediate', 'Developed by LO1, LO3', ''),
-           ('Data Cleaning', 'Target: Intermediate', 'Developed by LO3', ''), ('Relational Databases', 'Target: not set', 'Developed by LO2', 'amber')]
-    h += '<div class="mx-r mx-cov"><span class="mx-o"><em>Skill coverage</em></span>%s</div>' % ''.join(
-        '<span class="mx-k"><em class="mx-l">%s</em><b class="%s">%s</b><span>%s</span></span>' % (n, k, t, d) for n, t, d, k in cov)
     return h
-P('skillmap', 'outcomes', page_head('Design', 'Outcome → Skill Mapping', 'Connect each learning outcome to the skills it develops. This links your outcomes to the Learning Intelligence Profile.') +
-'''<div class="ob-in2" style="margin-top: 20px">%s</div>
-<section class="ds-card fc ob-in3">
+COV = [('SQL', 'Target: Intermediate', 'Developed by LO1, LO2', 2), ('Data Analysis', 'Target: Intermediate', 'Developed by LO1, LO3', 2),
+       ('Data Cleaning', 'Target: Intermediate', 'Developed by LO3', 1), ('Relational Databases', 'Target: not set', 'Developed by LO2', 1)]
+P('skillmap', 'outcomes', page_head('Design', 'Outcome → Skill Mapping', 'Connect each learning outcome to the skills it develops. This links your outcomes to the Learning Intelligence Profile.'),
+'''<section class="ds-card fc ob-in2">
 <div class="mx-w"><div class="mx" style="--n: 4">
 <div class="mx-r mx-hd"><span>Skills developed</span>%s</div>
 %s
 </div></div>
-</section>''' % (nova_sg('Every outcome should develop at least one skill.', nchip('Map skills for me')),
-               ''.join('<span>%s</span>' % s for s in SK), mx_rows()) +
-acts('STU-016.dc.html', back_href='STU-014.dc.html'))
+</section>''' % (''.join('<span>%s</span>' % s for s in SK), mx_rows()),
+acts('STU-016.dc.html', back_href='STU-014.dc.html'),
+nova_rail('Every outcome should develop at least one skill.', nchip('Map skills for me')) +
+'<section class="ds-card rx"><span class="rx-k">Skill coverage</span><ul class="cvl">%s</ul></section>' % ''.join(
+    '<li class="%s"><span class="cvl-h"><b>%s</b><em>%s</em></span><span class="cvl-b">%s</span><span class="cvl-d">%s</span></li>' % (
+        'amb' if 'not set' in t else '', n, t, ''.join('<i class="%s"></i>' % ('on' if j < c else '') for j in range(4)), d) for n, t, d, c in COV) + flow(F_OUT, 1))
 
 # ---------- CR-STU-016 Evidence
 EV = ['Practical exercise', 'Project', 'Quiz', 'Exam', 'Live demonstration', 'Portfolio artifact']
 def ev_r(code, text, skills, on):
     sk = ''.join(tag(s, 'line') for s in skills) if skills else '<span class="ev-none">none mapped</span>'
     warn = '' if on else '<span class="ev-w">%s<span>No evidence selected yet</span></span>' % ic('warn', 14, 2)
-    return ('<div class="ev-r"><div class="ev-o"><em>%s</em><b>%s</b><span class="ev-sk"><span class="ev-sl">Skills:</span>%s</span></div><div class="ev-q"><span class="ev-ql">How will learners prove this outcome?</span><div class="chips">%s</div>%s</div></div>' %
-            (code, text, sk, ''.join(W.chip(e, i in on, cls='sm') for i, e in enumerate(EV)), warn))
+    return ('<div class="ev-r%s"><div class="ev-o"><em>%s</em><b>%s</b><span class="ev-sk"><span class="ev-sl">Skills:</span>%s</span></div><div class="ev-q"><span class="ev-ql">How will learners prove this outcome?</span><div class="chips">%s</div>%s</div></div>' %
+            ('' if on else ' warn', code, text, sk, ''.join(W.chip(e, i in on, cls='sm') for i, e in enumerate(EV)), warn))
 CHAIN = [('LO1', [1, 1, 1, 1]), ('LO2', [1, 1, 1, 0]), ('LO3', [1, 1, 0, 1]), ('LO4', [1, 0, 0, 0])]
 def chain():
     cols = ['Taught', 'Practised', 'Assessed', 'Proof']
-    h = '<div class="ch-r ch-hd"><span>Outcome</span>%s</div>' % ''.join('<span>%s</span>' % c for c in cols)
+    h = '<div class="ch-r ch-hd"><span></span>%s</div>' % ''.join('<span>%s</span>' % c for c in cols)
     for code, cells in CHAIN:
         h += '<div class="ch-r"><span class="ch-o">%s</span>%s</div>' % (code, ''.join(
-            '<span class="ch-c %s">%s</span>' % ('ok' if c else 'no', ck(12) if c else '<i></i>') for c in cells))
+            '<span class="ch-c %s" style="--i: %d">%s</span>' % ('ok' if c else 'no', i, ck(11) if c else '<i></i>') for i, c in enumerate(cells)))
     return h
-P('evidence', 'outcomes', page_head('Design', 'Outcome → Evidence Mapping', 'How will learners prove each outcome? This completes the chain: Outcome → Skill → Evidence.') +
-'''<div class="ob-in2" style="margin-top: 20px">%s</div>
-<section class="ds-card fc ob-in3">
+P('evidence', 'outcomes', page_head('Design', 'Outcome → Evidence Mapping', 'How will learners prove each outcome? This completes the chain: Outcome → Skill → Evidence.'),
+'''<section class="ds-card fc ob-in2">
 <div class="ev">%s%s%s%s</div>
-</section>
-<section class="ds-card fc ob-in4">
-<div class="fc-h"><div><h2>Outcome → Learning → Practice → Assessment → Proof</h2></div></div>
-<div class="ch">%s</div>
 </section>''' % (
-    nova_sg('Choose how learners will prove each outcome.', nchip('Suggest evidence')),
     ev_r('Outcome 1', 'Write SQL queries to retrieve and filter structured business data.', ['SQL · Intermediate', 'Data Analysis · Intermediate'], {0, 2}),
     ev_r('Outcome 2', 'Combine multiple relational tables using joins.', ['SQL · Intermediate', 'Relational Databases'], {0, 3}),
     ev_r('Outcome 3', 'Analyse business datasets and communicate findings.', ['Data Analysis · Intermediate', 'Data Cleaning · Intermediate'], {1, 5}),
-    ev_r('Outcome 4', 'Understand SQL', [], set()), chain()) +
-acts('STU-017.dc.html', back_href='STU-015.dc.html'))
+    ev_r('Outcome 4', 'Understand SQL', [], set())),
+acts('STU-017.dc.html', back_href='STU-015.dc.html'),
+nova_rail('Choose how learners will prove each outcome.', nchip('Suggest evidence')) +
+'<section class="ds-card rx"><span class="rx-k">Outcome → Learning → Practice → Assessment → Proof</span><div class="ch">%s</div></section>' % chain() + flow(F_OUT, 2))
 
 # ---------- CR-STU-017 Course design
-P('design', 'design', page_head('Design', 'Course Design', 'Declare how the course will assess and award. Credalio later checks the declared level against the actual content.') +
+P('design', 'design', page_head('Design', 'Course Design', 'Declare how the course will assess and award. Credalio later checks the declared level against the actual content.'),
 '''<section class="ds-card fc ob-in2">
-<div class="fc-h"><div><h2>Assessment strategy%s</h2><p>Will this course include:</p></div></div>
+<div class="fc-h"><div><h2>Assessment strategy</h2><p>Will this course include:</p></div></div>
 <div class="as-g">%s</div>
 </section>
 <section class="ds-card fc ob-in3">
 <div class="fc-h"><div><h2>What does successful completion award?</h2></div></div>
-<div class="opt2">%s%s</div>
+<div class="opt2 aw">%s%s</div>
 </section>''' % (
-    tip('Difficulty tier is set per lesson. Creators pick a tier in each lesson editor (video, text, live class, applied learning, assessment). It feeds that item’s DLP estimate. See the Curriculum Builder.'),
     ''.join(W.opt('<span class="as-i">%s</span><span class="o-t"><b>%s</b></span>' % (ic(i, 18), t), on, cls='as')
             for i, t, on in [('check', 'Knowledge Checks', True), ('quiz', 'Quizzes', True), ('file', 'Exam', False),
                              ('edit', 'Assignments', True), ('project', 'Projects', True), ('target', 'Practical Activities', True)]),
-    W.opt('<span class="as-i">%s</span><span class="o-t"><b>Course Completion Certificate</b></span>' % ic('cert2', 18), True, cls='as'),
-    W.opt('<span class="as-i">%s</span><span class="o-t"><b>Skill badge (subject to policy)</b></span>' % ic('badge', 18), False, cls='as')) +
-acts('STU-018.dc.html', back_href='STU-016.dc.html'))
+    W.opt('<span class="aw-v cert" aria-hidden="true">%s</span><span class="o-t"><b>Course Completion Certificate</b></span>' % ic('cert2', 26, 1.7), True, cls='as awc'),
+    W.opt('<span class="aw-v badge" aria-hidden="true">%s</span><span class="o-t"><b>Skill badge (subject to policy)</b></span>' % ic('badge', 26, 1.7), False, cls='as awc')),
+acts('STU-018.dc.html', back_href='STU-016.dc.html'),
+nova_rail('I compare your estimate with detected learning time as you build.') +
+'<section class="ds-card rx inf"><span class="inf-i">%s</span><p>Difficulty tier is set per lesson. Creators pick a tier in each lesson editor (video, text, live class, applied learning, assessment). It feeds that item’s DLP estimate.</p><a class="ds-link sm" href="STU-020.dc.html">See the Curriculum Builder%s</a></section>' % (
+    ic('layers', 18, 2), ic('arrowr', 14, 2.2)) + flow(F_LD, 0))
 
 # ---------- CR-STU-018 Learning effort
-EF = [('Structured learning', 'Videos, reading, interactive lessons', '10', '2h 15m'), ('Practice', 'Exercises, assignments, discussions', '6', '1h 40m'),
-      ('Projects', 'Projects and portfolio work', '5', '2h'), ('Assessments', 'Knowledge checks, quizzes, exams', '3', '1h 10m'), ('Live instruction', 'Live sessions and clinics', '2', '1h')]
-P('effort', 'design', page_head('Design', 'Learning Effort', 'How much time will learners invest? Estimate now. As you build, Credalio calculates each figure from your actual content.') +
+EF = [('Structured learning', 'Videos, reading, interactive lessons', '10', '2h 15m', 135), ('Practice', 'Exercises, assignments, discussions', '6', '1h 40m', 100),
+      ('Projects', 'Projects and portfolio work', '5', '2h', 120), ('Assessments', 'Knowledge checks, quizzes, exams', '3', '1h 10m', 70), ('Live instruction', 'Live sessions and clinics', '2', '1h', 60)]
+P('effort', 'design', page_head('Design', 'Learning Effort', 'How much time will learners invest? Estimate now. As you build, Credalio calculates each figure from your actual content.'),
 '''<section class="ds-card fc ob-in2">
 <div class="ef">
 <div class="ef-r ef-hd"><span>Type of effort</span><span>Your estimate (hours)</span><span>Detected from your build</span><span>Source</span></div>
 %s
 <div class="ef-r ef-tot"><span><b>Total</b></span><span><b>26 hours</b></span><span><b>8h 5m built so far</b></span><span></span></div>
 </div>
-</section>
-<section class="ds-card fc ef-sum ob-in3">
-<div class="ef-l"><span class="pg-e">Learners will see</span><b>24–30 hours</b><p>Estimated effort, shown on the course page. Updated automatically as detected figures replace estimates.</p></div>
-<div class="ef-p"><div class="ef-pb"><i style="width: 31%%"></i></div><span>You’ve built 8h 5m of an estimated 26 hours. Detected figures replace your estimates as the curriculum fills in.</span></div>
 </section>''' % (
-    ''.join('<div class="ef-r"><span class="ef-t"><b>%s</b><span>%s</span></span><span class="ef-in"><input class="ds-in" value="%s" aria-label="Estimated hours for %s"></span><span class="ef-d">%s</span><span class="ef-s">%s</span></div>' % (t, d, v, t, b, tag('Estimate')) for t, d, v, b in EF)) +
-acts('STU-019.dc.html', back_href='STU-017.dc.html'))
+    ''.join('<div class="ef-r"><span class="ef-t"><b>%s</b><span>%s</span></span><span class="ef-in"><input class="ds-in" value="%s" aria-label="Estimated hours for %s"></span><span class="ef-d"><b>%s</b><span class="ef-b"><i style="width: %d%%"></i></span></span><span class="ef-s">%s</span></div>' % (
+        t, d, v, t, b, min(100, round(100 * m / (int(v) * 60))), tag('Estimate')) for t, d, v, b, m in EF)),
+acts('STU-019.dc.html', back_href='STU-017.dc.html'),
+nova_rail('Detected time grows as you build.') +
+'''<section class="ds-card rx ls"><span class="rx-k">Learners will see</span><b class="ls-n">24–30 hours</b><p class="rx-p">Estimated effort, shown on the course page. Updated automatically as detected figures replace estimates.</p>
+<div class="ls-r">%s<span><b>8h 5m</b><em>of 26 hours</em></span></div><p class="rx-p">You’ve built 8h 5m of an estimated 26 hours. Detected figures replace your estimates as the curriculum fills in.</p></section>''' % ring(31, 84, 12) + flow(F_LD, 1))
 
 # ---------- CR-STU-019 Design summary
 SUM = [('Target', 'No career role yet', 'pr', 'STU-012.dc.html'), ('Audience', 'Beginner · with Excel (foundation), Statistics (foundation)', 'ok', 'STU-011.dc.html'),
@@ -637,20 +642,25 @@ SUM = [('Target', 'No career role yet', 'pr', 'STU-012.dc.html'), ('Audience', '
        ('Estimated effort', '24–30 hours', 'ok', 'STU-018.dc.html')]
 SIG = [('Industry', 1), ('Domain', 1), ('Topic', 1), ('Career role', 0), ('Skills', 1), ('Prerequisites', 1), ('Proficiency levels', 0),
        ('Outcomes', 1), ('Evidence', 0), ('Effort', 1), ('Modality', 1), ('Credential', 1), ('Progression', 0)]
-P('summary', 'design', page_head('Design', 'Your Learning Design', 'Check the design before you build. Everything stays editable.') +
-'''<div class="ob-in2" style="margin-top: 20px">%s</div>
-<section class="ds-card fc sm-c ob-in3">
+P('summary', 'design', page_head('Design', 'Your Learning Design', 'Check the design before you build. Everything stays editable.'),
+'''<section class="ds-card fc sm-c ob-in2">
 <div class="sm">%s</div>
-</section>
-<section class="ds-card fc ob-in4">
-<div class="fc-h"><div><h2>Learning Intelligence Profile%s</h2><p>9 of 13 captured</p></div></div>
-<div class="sg">%s</div>
 </section>''' % (
-    nova_sg('Almost there. 4 items need attention: target, skills, outcomes, evidence requirements. You can still start building.'),
-    ''.join('<a class="sm-r" href="%s">%s<span class="sm-l">%s</span><span class="sm-v">%s</span><span class="sm-e">Edit</span></a>' % (h, STATUS[s], l, v) for l, v, s, h in SUM),
-    tip('You’ll confirm or correct the full profile in Prepare before validation.'),
-    ''.join('<span class="sg-i%s">%s%s</span>' % ('' if on else ' off', ck(11) if on else '<i></i>', n) for n, on in SIG)) +
-acts('#', 'Build Curriculum', back_href='STU-018.dc.html', note='You can start building now and come back to anything flagged.'))
+    ''.join('<a class="sm-r %s" href="%s">%s<span class="sm-l">%s</span><span class="sm-v">%s</span><span class="sm-e">Edit</span></a>' % (s, h, STATUS[s], l, v) for l, v, s, h in SUM)),
+acts('STU-020.dc.html', 'Build Curriculum', back_href='STU-018.dc.html', note='You can start building now and come back to anything flagged.'),
+nova_rail('Almost there. 4 items need attention: target, skills, outcomes, evidence requirements. You can still start building.') +
+'''<section class="ds-card rx lip2"><span class="rx-k">Learning Intelligence Profile%s</span><div class="lip-r">%s<span><b>9</b><em>of 13 captured</em></span></div><div class="sg">%s</div></section>''' % (
+    tip('You’ll confirm or correct the full profile in Prepare before validation.', 'r'), ring(69, 96, 12),
+    ''.join('<span class="sg-i%s">%s%s</span>' % ('' if on else ' off', ck(11) if on else '<i></i>', n) for n, on in SIG)) + flow(F_LD, 2))
+
+MST = [('Basics', 'STU-010.dc.html', 'basics', 'ok'), ('Audience & Prerequisites', 'STU-011.dc.html', 'audience', 'ok'), ('Career & Skills', 'STU-012.dc.html', 'career', 'pr'),
+       ('Learning Outcomes', 'STU-014.dc.html', 'outcomes', 'pr'), ('Learning Design', 'STU-017.dc.html', 'design', None)]
+def mstep(nav):
+    if nav == 'home':
+        return ''
+    return '<nav class="mst" aria-label="Design sections">%s</nav>' % ''.join(
+        '<a href="%s" class="mst-i%s"%s>%s<span>%s</span></a>' % (h, ' on' if k == nav else '', ' aria-current="page"' if k == nav else '', STATUS.get(st, '<span class="st to"></span>') if st else '<span class="st to"></span>', l)
+        for l, h, k, st in MST)
 
 STUDIO_CSS = r'''.hm-strip{display:flex;border-radius:16px;background:#FFFFFF;border:1.5px solid #E6EAF3}
 .hm-strip > span{display:flex;flex-direction:column;gap:4px;padding:10px 18px}
@@ -692,7 +702,7 @@ STUDIO_CSS = r'''.hm-strip{display:flex;border-radius:16px;background:#FFFFFF;bo
 .hm-ri{width:40px;height:40px;flex-shrink:0;border-radius:12px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
 .hm-rt{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
 .hm-rt b{font-size:15px;font-weight:600}
-.hm-rt span{font-size:13.5px;color:#5B6582}
+.hm-m{font-size:13.5px;line-height:1.45;color:#5B6582}
 .hm-go{color:#8A93AD;display:flex}
 .hm-dh{display:flex;align-items:center;justify-content:space-between}
 .hm-dg{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;padding:4px 4px 4px 4px}
@@ -744,8 +754,6 @@ STUDIO_CSS = r'''.hm-strip{display:flex;border-radius:16px;background:#FFFFFF;bo
 .lip{margin-top:18px;padding-top:16px;border-top:1.5px solid #F0F2F8;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .lip-l{font-size:13px;font-weight:500;color:#5B6582;margin-right:4px}
 .lo-k{display:block;margin-bottom:6px;font-size:12px;font-weight:600;color:#8A93AD}
-.lo-n{margin-top:26px !important}
-.lo-r .ds-x{margin-top:26px !important}
 .tkw{display:flex;flex-direction:column;gap:4px}
 .tk-t{font-size:12.5px;font-weight:500;color:#0F6B45}
 .ev-sl{font-size:12.5px;color:#5B6582;margin-right:2px}
@@ -867,7 +875,7 @@ STUDIO_CSS = r'''.hm-strip{display:flex;border-radius:16px;background:#FFFFFF;bo
 .hm-list,.hm-det{padding:6px}
 .hm-r{gap:12px;padding:10px;min-height:64px}
 .hm-r .avs,.hm-go{display:none}
-.hm-rt span{font-size:13px}
+.hm-m{font-size:13px}
 .hm-dg{grid-template-columns:repeat(2,minmax(0,1fr))}
 .in-ai .ds-in{padding-right:14px}
 .in-ai .nv-chip{position:static;transform:none;margin-top:8px}
@@ -927,13 +935,22 @@ STUDIO_CSS = r'''.hm-strip{display:flex;border-radius:16px;background:#FFFFFF;bo
 }
 '''
 
+STUDIO_CSS += WK_CSS + r'''@media (max-width: 960px){
+.as-g{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ds-opt.as:not(.awc){flex-direction:column;align-items:flex-start;gap:10px;padding:14px 14px 16px 14px}
+.ds-opt.as:not(.awc) .ds-opt-ck{position:absolute;top:12px;right:12px}
+.ds-opt.as:not(.awc) .as-i{width:36px;height:36px;border-radius:11px}
+.ds-opt.as:not(.awc) .o-t b{font-size:14.5px}
+}
+'''
+
 def studio_body():
     blocks = []
-    for key, nav, html in PAGES:
-        blocks.append('<sc-if value="{{p_%s}}" hint-placeholder-val="{{ %s }}">\n%s\n</sc-if>' % (key, 'true' if key == 'home' else 'false', html))
-    # one sidebar per active nav item (so the active state is static markup)
+    for key, nav, head, main, actions, rail in PAGES:
+        body = '%s%s<div class="wk"><div class="wk-m">%s</div>%s<aside class="wk-r">%s</aside></div>' % (head, mstep(nav), main, actions.replace('class="ds-acts sb sv"', 'class="ds-acts sb sv wk-a"'), rail)
+        blocks.append('<sc-if value="{{p_%s}}" hint-placeholder-val="{{ %s }}">\n%s\n</sc-if>' % (key, 'true' if key == 'home' else 'false', body))
     navs = []
-    for nav in sorted(set(n for _, n, _ in PAGES)):
+    for nav in sorted(set(p[1] for p in PAGES)):
         navs.append('<sc-if value="{{n_%s}}" hint-placeholder-val="{{ %s }}">%s</sc-if>' % (nav, 'true' if nav == 'home' else 'false', sidebar(nav)))
     return '''<div class="ds-root">
 %s
@@ -947,6 +964,9 @@ def studio_body():
 
 STUDIO_JS = W.js() + '''var NAV = %s;
 class Component extends DCLogic {
+  componentDidMount() {
+    try { var m = document.querySelector('.mst .on'); if (m && m.parentElement) { m.parentElement.scrollLeft = m.offsetLeft - 16; } } catch (e) {}
+  }
   renderVals() {
     var pg = this.props.page || 'home';
     var v = togVals(this);
@@ -958,7 +978,7 @@ class Component extends DCLogic {
     v.toggleNav = function () { self.setState({ nav: !self.state.nav }); };
     return v;
   }
-}''' % (json.dumps({k: n for k, n, _ in PAGES}), json.dumps(sorted(set(n for _, n, _ in PAGES))))
+}''' % (json.dumps({p[0]: p[1] for p in PAGES}), json.dumps(sorted(set(p[1] for p in PAGES))))
 
 write('Studio.dc.html', doc('Course Studio · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + CW_CSS + STUDIO_CSS, studio_body(), STUDIO_JS))
 

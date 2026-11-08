@@ -7,6 +7,7 @@ Editor.dc.html  (props kind: video | text | live | assess | project ; overlay: '
 """
 import json
 from l4kit import *
+from rail import *
 from kit import coin
 
 J = (M1, 'J')
@@ -133,22 +134,21 @@ def builder(mode):
                   '<div class="bn-a"><a class="ds-ghost sm" href="#">Review applications</a><a class="ds-link sm" href="#">Manage opportunity</a></div></div>') % ic('globe', 18)
     if mode == 'co':
         banner = ('<div class="bn ob-in2">%s<p><b>You are viewing as a Co-Creator · Dr. John Adeyemi</b> You can edit the lessons assigned to you. Only the owner (Ada) can add or remove chapters, move lessons, change assignments or publish.</p></div>') % av(M1, 'J', 36)
+    cons = ('<section class="ds-card rx cs2 ob-in2"><span class="rx-k">Course consumption</span><b class="cs2-t">5 chapters · 16 learning items</b>'
+            '<div class="cs2-r">%s<span class="cs2-h"><b>31%%</b><em>Course Health</em></span></div>'
+            '<div class="cs2-st">%s%s</div><nav class="cs2-q" aria-label="Curriculum tools">%s</nav></section>') % (
+        ring(31, 76, 11),
+        stat('8h 5m', 'Estimated learning time'), stat('795 DLP', 'Estimated DLP' + tip('Calculated by Credalio from each item’s duration, reading time or expected effort. This is the estimate, not what learners consume under the access policy. Formula per DLP policy [TO CONFIRM].', 'r')),
+        ''.join('<a class="cs-ql" href="%s">%s<span>%s</span>%s</a>' % (h, ic(i, 15, 2), l, ic('chev', 14, 2)) for i, l, h in quick))
+    nova = ('<section class="rn nova-card ob-in3"><header class="rn-h">%s<span><b>Nova</b><em>Creator Copilot · %s</em></span><span class="rn-c">2</span></header>'
+            '<div class="rn-s"><p>“SELECT Statements” is marked required, but no completion rule has been configured.</p><button type="button" class="ds-ghost xs">Set Completion Rule</button></div>'
+            '<div class="rn-s"><p>Outcome 4 requires learners to “Understand SQL”, but the curriculum has no practice or assessment for it.</p><button type="button" class="ds-ghost xs">Add Practice</button></div>'
+            '<footer><b>Nova</b> proposes. You approve every change.</footer></section>') % (nova_av(), COURSE)
+    main = '%s<div class="chs ob-in3">%s</div>%s' % (banner, ''.join(chapter(ci, ch, mode) for ci, ch in enumerate(CH)),
+                                                   ('' if mode == 'co' else '<a class="ch-add big" href="#">%s<span>Add Chapter</span></a>' % ic('plus', 18, 2.2)))
     return (page_head('Build', 'Curriculum Builder', 'The learner journey, chapter by chapter. Add any learning item (content, assessments, practice, live classes) and Credalio estimates its learning time and DLP as you go.', head_btns) +
-            '''<section class="ds-card cs ob-in2">
-<div class="cs-l"><span class="pg-e">Course consumption</span><b>5 chapters · 16 learning items</b></div>
-<div class="cs-st">%s%s%s</div>
-<div class="cs-q">%s</div>
-</section>%s
-<div class="nv-st ob-in3">%s%s</div>
-<div class="chs ob-in3">%s</div>%s''' % (
-                stat('31%', 'Course Health'), stat('8h 5m', 'Estimated learning time'), stat('795 DLP', 'Estimated DLP' + tip('Calculated by Credalio from each item’s duration, reading time or expected effort. This is the estimate, not what learners consume under the access policy. Formula per DLP policy [TO CONFIRM].', 'r')),
-                ''.join('<a class="cs-ql" href="%s">%s<span>%s</span></a>' % (h, ic(i, 15, 2), l) for i, l, h in quick),
-                banner,
-                nova_sg('“SELECT Statements” is marked required, but no completion rule has been configured.', '<button type="button" class="ds-ghost sm">Set Completion Rule</button>'),
-                nova_sg('Outcome 4 requires learners to “Understand SQL”, but the curriculum has no practice or assessment for it.', '<button type="button" class="ds-ghost sm">Add Practice</button>'),
-                ''.join(chapter(ci, ch, mode) for ci, ch in enumerate(CH)),
-                ('' if mode == 'co' else '<a class="ch-add big" href="#">%s<span>Add Chapter</span></a>' % ic('plus', 18, 2.2))) +
-            acts('#'))
+            '<div class="wk bw"><div class="wk-m">%s</div>%s<aside class="wk-r">%s%s</aside></div>' % (
+                main, acts('#').replace('class="ds-acts sb sv"', 'class="ds-acts sb sv wk-a"'), cons, nova))
 
 # ---------- overlays (builder)
 B = Toggles()
@@ -406,6 +406,75 @@ BUILDER_CSS = r'''.ds-ghost.sm{height:40px;padding:0 16px;font-size:14px;gap:7px
 .cp-r{padding:10px 12px 10px 16px}
 .cp-b{padding:16px}
 .cp-f{padding:10px 16px 14px 16px}
+}
+'''
+
+BUILDER_CSS += WK_CSS + r'''.bw{margin-top:22px}
+.bw .wk-m{gap:0}
+.bw .bn{margin:0 0 16px 0}
+.bw .chs{margin-top:0;position:relative;padding-left:56px;counter-reset:chn}
+.bw .chs::before{content:'';position:absolute;left:19px;top:30px;bottom:40px;width:2px;border-radius:2px;background:linear-gradient(180deg,#1652F0,#AFC1F5)}
+.bw .ch{position:relative;counter-increment:chn}
+.bw .ch::before{content:counter(chn);position:absolute;left:-56px;top:20px;width:40px;height:40px;border-radius:50%;background:#1652F0;color:#FFFFFF;font-size:15px;font-weight:600;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px #F7F9FD,0 10px 20px -10px rgba(22,82,240,.8)}
+.bw .ch::after{content:'';position:absolute;left:-16px;top:39px;width:16px;height:2px;background:#AFC1F5}
+.bw .ch:hover::before{animation:chNode .6s ease}
+@keyframes chNode{50%{transform:scale(1.12)}}
+.bw .ch-add.big{margin-left:56px}
+.bw .ch-k{display:none}
+.bw .ch-h h2{margin-top:0}
+.it .ud{display:none}
+.it:hover .ud,.it:focus-within .ud{display:inline-flex}
+.it .ib{opacity:.0;transition:opacity .2s ease}
+.it:hover .ib,.it:focus-within .ib{opacity:1}
+.ch-tools .ud,.ch-tools .del{opacity:0;transition:opacity .2s ease}
+.ch:hover .ch-tools .ud,.ch:hover .ch-tools .del,.ch:focus-within .ch-tools .ud,.ch:focus-within .ch-tools .del{opacity:1}
+.it-r .ds-tag{height:22px;padding:0 8px;font-size:11px;letter-spacing:.03em}
+.cs2-t{display:block;font-size:17px;font-weight:600;letter-spacing:-0.01em;line-height:1.3}
+.cs2-r{margin-top:16px;display:flex;align-items:center;gap:14px}
+.cs2-h{display:flex;flex-direction:column;gap:2px}
+.cs2-h b{font-size:24px;font-weight:600;letter-spacing:-0.02em}
+.cs2-h em{font-style:normal;font-size:12.5px;color:#5B6582}
+.cs2-st{margin-top:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.cs2 .cs-s{min-width:0;padding:10px 12px}
+.cs2 .cs-s b{font-size:17px}
+.cs2 .cs-s em{font-size:12px}
+.cs2-q{margin:14px -8px -8px -8px;padding-top:8px;border-top:1.5px solid #F0F2F8;display:flex;flex-direction:column}
+.cs2 .cs-ql{height:42px;padding:0 10px;border-radius:12px;background:none;color:#0B1433}
+.cs2 .cs-ql span{flex:1}
+.cs2 .cs-ql svg{color:#1652F0}
+.cs2 .cs-ql svg:last-child{color:#AEB6CC}
+.cs2 .cs-ql:hover{background:#F5F8FF}
+.rn-h > .rn-c{margin-left:auto;flex-direction:row;min-width:22px;height:22px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:12px;font-weight:600;align-items:center;justify-content:center}
+.rn-s{margin-top:12px;padding:12px;border-radius:14px;background:rgba(255,255,255,.82);border:1px solid #E1E8FA}
+.rn-s + .rn-s{margin-top:8px}
+.rn-s p{margin:0 0 10px 0;font-size:13.5px;line-height:1.5;color:#0B1433}
+@media (max-width: 960px){
+.bw{margin-top:18px}
+.bw .cs2{order:0}
+.bw .wk-m > .bn{order:-1;margin:0}
+.bw .wk-r > .rn{order:1}
+.bw .chs{padding-left:0;margin-top:4px}
+.bw .chs::before{left:21px;top:48px;bottom:60px;z-index:0}
+.bw .ch::before{left:14px;top:20px;width:30px;height:30px;font-size:13px;box-shadow:0 8px 16px -10px rgba(22,82,240,.8)}
+.bw .ch-hl{padding-left:42px;min-height:30px}
+.bw .ch-h h2{line-height:30px}
+.bw .ch::after{display:none}
+.bw .ch-add.big{margin-left:0}
+.bw .it{display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:12px;row-gap:8px;align-items:start;padding:14px 2px}
+.bw .it-i{grid-row:1 / span 2}
+.bw .it-t b{font-size:14.5px}
+.bw .it-m{font-size:12.5px;gap:2px 6px}
+.bw .it-r{grid-column:2;width:auto;padding:0;flex-wrap:nowrap;gap:8px}
+.bw .it-act{margin-left:auto}
+.bw .it .ud,.bw .it .ib{display:none}
+.bw .it-act .ds-ghost{margin:0;min-width:0}
+.ch-tools .ud,.ch-tools .del{opacity:1}
+.cs2-r{margin-top:12px}
+.cs2-q{flex-direction:row;overflow-x:auto;margin:14px -16px 0 -16px;padding:14px 16px 0 16px;gap:8px;scrollbar-width:none}
+.cs2-q::-webkit-scrollbar{display:none}
+.cs2 .cs-ql{flex-shrink:0;height:38px;border-radius:999px;background:#F5F8FF;color:#0E3BB8;padding:0 14px}
+.cs2 .cs-ql svg:last-child{display:none}
+.rn-s{padding:12px}
 }
 '''
 
@@ -836,7 +905,11 @@ textarea.ds-in.sm{min-height:76px}
 .ef-c.ef-dl{margin:0}
 .ef-c b{font-size:17px}
 .ed{grid-template-columns:minmax(0,1fr);margin-top:16px}
-.ed-s{position:static}
+.ed-s{position:static;gap:0;border-radius:20px;border:1.5px solid #E6EAF3;background:#FFFFFF;overflow:hidden}
+.ed-s > .ds-card{border:0;border-radius:0;box-shadow:none;margin:0}
+.ed-s > .ds-card + .ds-card{border-top:1.5px solid #F0F2F8}
+.ed-s > .nv-sg{border:0;border-radius:0}
+.ed-s > .ec.side{padding:16px 16px 18px 16px}
 .ec{padding:18px 16px 20px 16px}
 .va{grid-template-columns:repeat(2,minmax(0,1fr))}
 .mk-l{grid-template-columns:minmax(0,1fr)}

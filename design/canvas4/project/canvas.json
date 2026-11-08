@@ -355,9 +355,309 @@
       "is_interactive": true,
       "expand": "fill"
     },
-    "Setup.dc.html": {
+    "STU-020.dc.html": {
       "x": 0,
       "y": 6702,
+      "w": 1440,
+      "h": 3163,
+      "title": "CR-STU-020 · Curriculum Builder: team · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-Mobile.dc.html": {
+      "x": 1520,
+      "y": 6702,
+      "w": 390,
+      "h": 4939,
+      "title": "CR-STU-020 · Curriculum Builder: team · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-SOLO.dc.html": {
+      "x": 2070,
+      "y": 6702,
+      "w": 1440,
+      "h": 3132,
+      "title": "CR-STU-020 · Curriculum Builder: solo · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-SOLO-Mobile.dc.html": {
+      "x": 3590,
+      "y": 6702,
+      "w": 390,
+      "h": 4671,
+      "title": "CR-STU-020 · Curriculum Builder: solo · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-OPEN.dc.html": {
+      "x": 4140,
+      "y": 6702,
+      "w": 1440,
+      "h": 3249,
+      "title": "CR-STU-020 · Curriculum Builder: open for collaboration · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-OPEN-Mobile.dc.html": {
+      "x": 5660,
+      "y": 6702,
+      "w": 390,
+      "h": 5121,
+      "title": "CR-STU-020 · Curriculum Builder: open for collaboration · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-CO.dc.html": {
+      "x": 6210,
+      "y": 6702,
+      "w": 1440,
+      "h": 2791,
+      "title": "CR-STU-020 · Curriculum Builder: invited co-creator view · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-CO-Mobile.dc.html": {
+      "x": 7730,
+      "y": 6702,
+      "w": 390,
+      "h": 4442,
+      "title": "CR-STU-020 · Curriculum Builder: invited co-creator view · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-021.dc.html": {
+      "x": 0,
+      "y": 12243,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-021 · Add learning item · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-021-Mobile.dc.html": {
+      "x": 1520,
+      "y": 12243,
+      "w": 390,
+      "h": 844,
+      "title": "CR-STU-021 · Add learning item · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-MVL.dc.html": {
+      "x": 2070,
+      "y": 12243,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-020 · Move lesson · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-MVL-Mobile.dc.html": {
+      "x": 3590,
+      "y": 12243,
+      "w": 390,
+      "h": 844,
+      "title": "CR-STU-020 · Move lesson · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-MVC.dc.html": {
+      "x": 4140,
+      "y": 12243,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-020 · Move chapter · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-MVC-Mobile.dc.html": {
+      "x": 5660,
+      "y": 12243,
+      "w": 390,
+      "h": 844,
+      "title": "CR-STU-020 · Move chapter · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-DEL.dc.html": {
+      "x": 6210,
+      "y": 12243,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-020 · Delete a learning item · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-DEL-Mobile.dc.html": {
+      "x": 7730,
+      "y": 12243,
+      "w": 390,
+      "h": 844,
+      "title": "CR-STU-020 · Delete a learning item · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-DELC.dc.html": {
+      "x": 8280,
+      "y": 12243,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-020 · Delete a chapter · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-020-DELC-Mobile.dc.html": {
+      "x": 9800,
+      "y": 12243,
+      "w": 390,
+      "h": 844,
+      "title": "CR-STU-020 · Delete a chapter · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-022A.dc.html": {
+      "x": 0,
+      "y": 13563,
+      "w": 1440,
+      "h": 1915,
+      "title": "CR-STU-022A · Video editor · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-022A-Mobile.dc.html": {
+      "x": 1520,
+      "y": 13563,
+      "w": 390,
+      "h": 3458,
+      "title": "CR-STU-022A · Video editor · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-022B.dc.html": {
+      "x": 2070,
+      "y": 13563,
+      "w": 1440,
+      "h": 1719,
+      "title": "CR-STU-022B · Text editor · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-022B-Mobile.dc.html": {
+      "x": 3590,
+      "y": 13563,
+      "w": 390,
+      "h": 3221,
+      "title": "CR-STU-022B · Text editor · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-022B-DEL.dc.html": {
+      "x": 4140,
+      "y": 13563,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-022B · Delete from inside the editor · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-022B-DEL-Mobile.dc.html": {
+      "x": 5660,
+      "y": 13563,
+      "w": 390,
+      "h": 844,
+      "title": "CR-STU-022B · Delete from inside the editor · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-022D.dc.html": {
+      "x": 6210,
+      "y": 13563,
+      "w": 1440,
+      "h": 2174,
+      "title": "CR-STU-022D · Live class editor · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-022D-Mobile.dc.html": {
+      "x": 7730,
+      "y": 13563,
+      "w": 390,
+      "h": 3963,
+      "title": "CR-STU-022D · Live class editor · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-024.dc.html": {
+      "x": 8280,
+      "y": 13563,
+      "w": 1440,
+      "h": 3817,
+      "title": "CR-STU-024 · Assessment editor · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-024-Mobile.dc.html": {
+      "x": 9800,
+      "y": 13563,
+      "w": 390,
+      "h": 6069,
+      "title": "CR-STU-024 · Assessment editor · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-025.dc.html": {
+      "x": 10350,
+      "y": 13563,
+      "w": 1440,
+      "h": 2405,
+      "title": "CR-STU-025 · Applied learning editor · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-025-Mobile.dc.html": {
+      "x": 11870,
+      "y": 13563,
+      "w": 390,
+      "h": 3830,
+      "title": "CR-STU-025 · Applied learning editor · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Setup.dc.html": {
+      "x": 0,
+      "y": 20052,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -367,10 +667,30 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 6702,
+      "y": 20052,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Builder.dc.html": {
+      "x": 3200,
+      "y": 20052,
+      "w": 1440,
+      "h": 900,
+      "title": "Curriculum Builder · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Editor.dc.html": {
+      "x": 4800,
+      "y": 20052,
+      "w": 1440,
+      "h": 900,
+      "title": "Learning item editors · shared source",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -411,8 +731,40 @@
     "STU-018-Mobile.dc.html",
     "STU-019.dc.html",
     "STU-019-Mobile.dc.html",
+    "STU-020.dc.html",
+    "STU-020-Mobile.dc.html",
+    "STU-020-SOLO.dc.html",
+    "STU-020-SOLO-Mobile.dc.html",
+    "STU-020-OPEN.dc.html",
+    "STU-020-OPEN-Mobile.dc.html",
+    "STU-020-CO.dc.html",
+    "STU-020-CO-Mobile.dc.html",
+    "STU-021.dc.html",
+    "STU-021-Mobile.dc.html",
+    "STU-020-MVL.dc.html",
+    "STU-020-MVL-Mobile.dc.html",
+    "STU-020-MVC.dc.html",
+    "STU-020-MVC-Mobile.dc.html",
+    "STU-020-DEL.dc.html",
+    "STU-020-DEL-Mobile.dc.html",
+    "STU-020-DELC.dc.html",
+    "STU-020-DELC-Mobile.dc.html",
+    "STU-022A.dc.html",
+    "STU-022A-Mobile.dc.html",
+    "STU-022B.dc.html",
+    "STU-022B-Mobile.dc.html",
+    "STU-022B-DEL.dc.html",
+    "STU-022B-DEL-Mobile.dc.html",
+    "STU-022D.dc.html",
+    "STU-022D-Mobile.dc.html",
+    "STU-024.dc.html",
+    "STU-024-Mobile.dc.html",
+    "STU-025.dc.html",
+    "STU-025-Mobile.dc.html",
     "Setup.dc.html",
-    "Studio.dc.html"
+    "Studio.dc.html",
+    "Builder.dc.html",
+    "Editor.dc.html"
   ],
   "notes": {
     "b1-setup": {
@@ -464,9 +816,58 @@
       "w": 260,
       "fill": "pink"
     },
-    "sources": {
+    "b2-builder": {
       "x": 0,
       "y": 6402,
+      "text": "Batch 2 · Curriculum Builder: team, solo, open for collaboration, invited co-creator",
+      "kind": "title1",
+      "maxW": 8120
+    },
+    "b2-builder-new": {
+      "x": 0,
+      "y": 6552,
+      "text": "NEW · batch 2",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b2-missing": {
+      "x": 300,
+      "y": 6552,
+      "text": "Not built yet: CR-STU-023 Assessment Type and CR-STU-020B Curriculum Readiness (solo + team). The client file refuses to open these three boards, so their content is missing.",
+      "w": 1100,
+      "fill": "red"
+    },
+    "b2-actions": {
+      "x": 0,
+      "y": 11943,
+      "text": "Batch 2 · Builder actions: add learning item, move lesson, move chapter, delete item, delete chapter",
+      "kind": "title1",
+      "maxW": 10190
+    },
+    "b2-actions-new": {
+      "x": 0,
+      "y": 12093,
+      "text": "NEW · batch 2",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b2-editors": {
+      "x": 0,
+      "y": 13263,
+      "text": "Batch 2 · Learning item editors: video, text (+ delete), live class, assessment, applied learning",
+      "kind": "title1",
+      "maxW": 12260
+    },
+    "b2-editors-new": {
+      "x": 0,
+      "y": 13413,
+      "text": "NEW · batch 2",
+      "w": 260,
+      "fill": "pink"
+    },
+    "sources": {
+      "x": 0,
+      "y": 19752,
       "text": "Shared sources (code the boards above import, not screens)",
       "kind": "title1",
       "maxW": 3200
@@ -480,6 +881,13 @@
     "b1-design-a-new",
     "b1-design-b",
     "b1-design-b-new",
+    "b2-builder",
+    "b2-builder-new",
+    "b2-missing",
+    "b2-actions",
+    "b2-actions-new",
+    "b2-editors",
+    "b2-editors-new",
     "sources"
   ],
   "designSystems": []

@@ -1,28 +1,36 @@
 """Build project/canvas.json for the Link 4 canvas from the batch board lists and measured heights.
 
-Usage: python3 layout.py heights.json   (heights.json: {code: [desktop_h, mobile_h]})
+Usage: python3 layout.py heights.json [more.json …]   ({code: [desktop_h, mobile_h]}, merged)
 Each row: title note, then desktop + mobile pairs left to right. Shared sources sit in the last row.
 """
 import json, os, sys
 from l4kit import OUT
-import stu1
+import stu1, stu2
 
 PAIR, GAP, ROWGAP = 1440 + 80 + 390, 160, 420
-H = json.load(open(sys.argv[1]))
-T = {c: t for c, _, _, t in stu1.BOARDS}
+H = {}
+for f in sys.argv[1:]:
+    H.update(json.load(open(f)))
+T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS}
 
 ROWS = [
     ('b1-setup', 'Batch 1 · Course setup: learning experience, delivery type, setup review, how you’ll create it, Studio welcome', ['STU-001', 'STU-002', 'STU-003', 'STU-004', 'STU-008']),
     ('b1-design-a', 'Batch 1 · Course design: Studio home, basics, audience, career & skills', ['STU-009', 'STU-010', 'STU-011', 'STU-012', 'STU-012b', 'STU-013']),
     ('b1-design-b', 'Batch 1 · Course design: outcomes, skills map, evidence, assessment & award, effort, summary', ['STU-014', 'STU-015', 'STU-016', 'STU-017', 'STU-018', 'STU-019']),
+    ('b2-builder', 'Batch 2 · Curriculum Builder: team, solo, open for collaboration, invited co-creator', ['STU-020', 'STU-020-SOLO', 'STU-020-OPEN', 'STU-020-CO']),
+    ('b2-actions', 'Batch 2 · Builder actions: add learning item, move lesson, move chapter, delete item, delete chapter', ['STU-021', 'STU-020-MVL', 'STU-020-MVC', 'STU-020-DEL', 'STU-020-DELC']),
+    ('b2-editors', 'Batch 2 · Learning item editors: video, text (+ delete), live class, assessment, applied learning', ['STU-022A', 'STU-022B', 'STU-022B-DEL', 'STU-022D', 'STU-024', 'STU-025']),
 ]
-SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html', 'Course Studio · shared source')]
+SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html', 'Course Studio · shared source'),
+           ('Builder.dc.html', 'Curriculum Builder · shared source'), ('Editor.dc.html', 'Learning item editors · shared source')]
 
 boards, order, notes = {}, [], {}
 y = 300
 for nid, text, codes in ROWS:
     notes[nid] = {'x': 0, 'y': y - 300, 'text': text, 'kind': 'title1', 'maxW': len(codes) * (PAIR + GAP) - GAP}
-    notes[nid + '-new'] = {'x': 0, 'y': y - 150, 'text': 'NEW · batch 1', 'w': 260, 'fill': 'pink'}
+    notes[nid + '-new'] = {'x': 0, 'y': y - 150, 'text': 'NEW · batch %s' % nid[1], 'w': 260, 'fill': 'pink'}
+    if nid == 'b2-builder':
+        notes['b2-missing'] = {'x': 300, 'y': y - 150, 'text': 'Not built yet: CR-STU-023 Assessment Type and CR-STU-020B Curriculum Readiness (solo + team). The client file refuses to open these three boards, so their content is missing.', 'w': 1100, 'fill': 'red'}
     if nid == 'b1-setup':
         notes['b1-format'] = {'x': 300, 'y': y - 150, 'text': 'CR-STU-001 uses the same format-card design as Link 1 Create new (CR-HOME-NEW): one design for the format picker.', 'w': 900, 'fill': 'blue'}
     x, mh = 0, 0

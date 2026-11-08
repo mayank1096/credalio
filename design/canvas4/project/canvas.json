@@ -15,28 +15,8 @@
     }
   ],
   "boards": {
-    "STU-001.dc.html": {
-      "x": 0,
-      "y": 300,
-      "w": 1440,
-      "h": 900,
-      "title": "CR-STU-001 · What will you create? · Desktop",
-      "page": "main",
-      "is_interactive": true,
-      "expand": "fill"
-    },
-    "STU-001-Mobile.dc.html": {
-      "x": 1520,
-      "y": 300,
-      "w": 390,
-      "h": 844,
-      "title": "CR-STU-001 · What will you create? · Mobile",
-      "page": "main",
-      "is_interactive": true,
-      "expand": "fill"
-    },
     "STU-002.dc.html": {
-      "x": 2070,
+      "x": 0,
       "y": 300,
       "w": 1440,
       "h": 900,
@@ -46,7 +26,7 @@
       "expand": "fill"
     },
     "STU-002-Mobile.dc.html": {
-      "x": 3590,
+      "x": 1520,
       "y": 300,
       "w": 390,
       "h": 844,
@@ -56,7 +36,7 @@
       "expand": "fill"
     },
     "STU-003.dc.html": {
-      "x": 4140,
+      "x": 2070,
       "y": 300,
       "w": 1440,
       "h": 900,
@@ -66,7 +46,7 @@
       "expand": "fill"
     },
     "STU-003-Mobile.dc.html": {
-      "x": 5660,
+      "x": 3590,
       "y": 300,
       "w": 390,
       "h": 844,
@@ -76,27 +56,27 @@
       "expand": "fill"
     },
     "STU-004.dc.html": {
-      "x": 6210,
+      "x": 4140,
       "y": 300,
       "w": 1440,
       "h": 900,
-      "title": "CR-STU-004 · How will you create it? · Desktop",
+      "title": "CR-STU-004 · Who will build this course? · Desktop",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
     },
     "STU-004-Mobile.dc.html": {
-      "x": 7730,
+      "x": 5660,
       "y": 300,
       "w": 390,
       "h": 844,
-      "title": "CR-STU-004 · How will you create it? · Mobile",
+      "title": "CR-STU-004 · Who will build this course? · Mobile",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
     },
     "STU-008.dc.html": {
-      "x": 8280,
+      "x": 6210,
       "y": 300,
       "w": 1440,
       "h": 900,
@@ -106,7 +86,7 @@
       "expand": "fill"
     },
     "STU-008-Mobile.dc.html": {
-      "x": 9800,
+      "x": 7730,
       "y": 300,
       "w": 390,
       "h": 844,
@@ -377,8 +357,6 @@
     }
   },
   "order": [
-    "STU-001.dc.html",
-    "STU-001-Mobile.dc.html",
     "STU-002.dc.html",
     "STU-002-Mobile.dc.html",
     "STU-003.dc.html",
@@ -418,9 +396,9 @@
     "b1-setup": {
       "x": 0,
       "y": 0,
-      "text": "Batch 1 · Course setup: format, delivery, review, how you’ll create it, Studio welcome",
+      "text": "Batch 1 · Course setup: delivery, review, who builds it, Studio welcome",
       "kind": "title1",
-      "maxW": 10190
+      "maxW": 8120
     },
     "b1-setup-new": {
       "x": 0,
@@ -428,6 +406,13 @@
       "text": "NEW · batch 1",
       "w": 260,
       "fill": "pink"
+    },
+    "b1-format": {
+      "x": 300,
+      "y": 150,
+      "text": "CR-STU-001 (format) is not repeated here: the format is picked in Link 1 on Create new (CR-HOME-NEW) or Build it your way (CR-CREATE-002B), whose Start setup opens CR-STU-002.",
+      "w": 900,
+      "fill": "blue"
     },
     "b1-design-a": {
       "x": 0,
@@ -468,6 +453,7 @@
   "noteOrder": [
     "b1-setup",
     "b1-setup-new",
+    "b1-format",
     "b1-design-a",
     "b1-design-a-new",
     "b1-design-b",

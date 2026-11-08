@@ -12,7 +12,7 @@ H = json.load(open(sys.argv[1]))
 T = {c: t for c, _, _, t in stu1.BOARDS}
 
 ROWS = [
-    ('b1-setup', 'Batch 1 · Course setup: format, delivery, review, how you’ll create it, Studio welcome', ['STU-001', 'STU-002', 'STU-003', 'STU-004', 'STU-008']),
+    ('b1-setup', 'Batch 1 · Course setup: delivery, review, who builds it, Studio welcome', ['STU-002', 'STU-003', 'STU-004', 'STU-008']),
     ('b1-design-a', 'Batch 1 · Course design: Studio home, basics, audience, career & skills', ['STU-009', 'STU-010', 'STU-011', 'STU-012', 'STU-012b', 'STU-013']),
     ('b1-design-b', 'Batch 1 · Course design: outcomes, skills map, evidence, assessment & award, effort, summary', ['STU-014', 'STU-015', 'STU-016', 'STU-017', 'STU-018', 'STU-019']),
 ]
@@ -23,6 +23,8 @@ y = 300
 for nid, text, codes in ROWS:
     notes[nid] = {'x': 0, 'y': y - 300, 'text': text, 'kind': 'title1', 'maxW': len(codes) * (PAIR + GAP) - GAP}
     notes[nid + '-new'] = {'x': 0, 'y': y - 150, 'text': 'NEW · batch 1', 'w': 260, 'fill': 'pink'}
+    if nid == 'b1-setup':
+        notes['b1-format'] = {'x': 300, 'y': y - 150, 'text': 'CR-STU-001 (format) is not repeated here: the format is picked in Link 1 on Create new (CR-HOME-NEW) or Build it your way (CR-CREATE-002B), whose Start setup opens CR-STU-002.', 'w': 900, 'fill': 'blue'}
     x, mh = 0, 0
     for c in codes:
         hd, hm = H[c]

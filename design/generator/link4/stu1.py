@@ -11,39 +11,18 @@ from l4kit import *
 # ======================================================================= SETUP (focus mode)
 T = Toggles()
 
-def fmt_card(icon, title, desc, best, size, on):
-    k = T.new(on, 'fmt')
-    return ('<button type="button" class="nw-f {{c%s}}" aria-pressed="{{a%s}}" onClick="{{x%s}}"><span class="nw-fi">%s</span>'
-            '<span class="nw-ck">%s</span><b>%s</b><span class="nw-fd">%s</span><span class="nw-fm"><span><em>Best for</em>%s</span>'
-            '<span><em>Typical size</em>%s</span></span></button>') % (k, k, k, ic(icon, 22), ck(11), title, desc, best, size)
-
-S_TYPE = '''<div class="fx-col">
-<h1 class="fx-h1 ob-in">What will you create?</h1>
-<p class="fx-sub ob-in2">Pick the format that fits what learners should be able to do at the end.</p>
-<div class="nw-g ob-in3" role="group" aria-label="Format">%s</div>
-<div class="fx-nova ob-in4">%s<label class="sr-only" for="fxq">What should learners achieve?</label><input id="fxq" placeholder="What should learners achieve?">%s</div>
-<div class="fx-acts">%s</div>
-</div>''' % (
-    fmt_card('course', 'Course', 'A focused subject or skill, learned step by step.', 'One skill or topic', '2 to 30 hours', True) +
-    fmt_card('cert', 'Professional certification', 'Assess and verify that someone can do the job.', 'Proving competence', 'Exam + practical', False) +
-    fmt_card('path', 'Career path', 'A journey of courses, practice and credentials toward a role.', 'Getting into a role', 'Several courses', False) +
-    fmt_card('program', 'Learning program', 'Structured learning over time, often with a cohort.', 'Groups and institutions', 'Weeks, with cohorts', False),
-    nova_av('sm'), nchip('Help me choose'), btn('Continue', 'STU-002.dc.html'))
-
 def deliv(icon, title, desc, feats, on):
     inner = '<span class="dv-i">%s</span><span class="dv-t"><b>%s</b><span>%s</span><span class="dv-f">%s</span></span>' % (
         ic(icon, 22), title, desc, ''.join('<span>%s</span>' % f for f in feats))
     return T.opt(inner, on, 'dlv', 'dv')
 
 S_DELIV = '''<div class="fx-col">
-<a class="fx-back" href="STU-001.dc.html">%s<span>Back</span></a>
 <h1 class="fx-h1 ob-in">How will learners take this course?</h1>
 <p class="fx-sub ob-in2">You can mix formats later. This sets what the Studio offers you.</p>
 <div class="dv-g ob-in3" role="group" aria-label="Delivery">%s</div>
 <div class="ob-in4" style="margin-top: 18px">%s</div>
 <div class="fx-acts">%s</div>
 </div>''' % (
-    ICON(I['back'], 16, 2),
     deliv('play', 'Self-paced', 'Learners move through lessons in their own time.', ['Video, audio, text', 'Interactive activities', 'Projects and assessments'], False) +
     deliv('live', 'Live, instructor-led', 'Learning happens in scheduled live sessions.', ['Live classes', 'Attendance', 'Resources and assignments'], False) +
     deliv('mix', 'Hybrid', 'Self-paced lessons with scheduled live sessions.', ['Lessons + live classes', 'Practice and assignments', 'Assessments'], True),
@@ -62,7 +41,7 @@ S_REVIEW = '''<div class="fx-col n">
 <div class="fx-acts">%s</div>
 </div>''' % (
     ICON(I['back'], 16, 2),
-    rv('Format', '<span class="rv-ic">%s</span>Course' % ic('course', 16), 'STU-001.dc.html') +
+    rv('Format', '<span class="rv-ic">%s</span>Course' % ic('course', 16), '#') +
     rv('Delivery', '<span class="rv-ic">%s</span>Hybrid' % ic('mix', 16), 'STU-002.dc.html') +
     rv('Lead creator', '%s Ada Ononuju' % av(ME, 'AO', 26), None) +
     rv('Status', tag('Draft'), None),
@@ -78,7 +57,7 @@ V_OPEN = '<span class="hw-open"><span class="hw-ring"></span>%s<i style="left: 4
 
 S_HOW = '''<div class="fx-col">
 <a class="fx-back" href="STU-003.dc.html">%s<span>Back</span></a>
-<h1 class="fx-h1 ob-in">How will you create it?</h1>
+<h1 class="fx-h1 ob-in">Who will build this course?</h1>
 <p class="fx-sub ob-in2">You can change this later from Collaborators.</p>
 <div class="hw-g ob-in3" role="group" aria-label="How you'll create">%s</div>
 <div class="fx-acts">%s</div>
@@ -107,8 +86,8 @@ S_WELCOME = '''<div class="fx-col n wl">
     ''.join('<li class="xb-s%s"><span class="xb-sn">%d</span><span class="xb-sl"><b>%s</b><span>%s</span></span></li>' % (' xb-first' if i == 0 else '', i + 1, a, b) for i, (a, b) in enumerate(PLAN)),
     btn('Start building', 'STU-010.dc.html', 'xb-go'), ic('import', 16, 2))
 
-STEPS = [('type', 'Step 1 of 4', 25, S_TYPE), ('delivery', 'Step 2 of 4', 50, S_DELIV), ('review', 'Step 3 of 4', 75, S_REVIEW),
-         ('how', 'Step 4 of 4', 100, S_HOW), ('welcome', 'Ready', 100, S_WELCOME)]
+STEPS = [('delivery', 'Step 1 of 3', 33, S_DELIV), ('review', 'Step 2 of 3', 66, S_REVIEW),
+         ('how', 'Step 3 of 3', 100, S_HOW), ('welcome', 'Ready', 100, S_WELCOME)]
 
 SETUP_BODY = '''<div class="fx-root">
 <header class="fx-top">
@@ -122,7 +101,7 @@ SETUP_BODY = '''<div class="fx-root">
 <main class="fx-main">
 %s
 </main>
-</div>''' % (ic('x', 18, 2.2), COIN('fc', 26), '\n'.join('<sc-if value="{{s_%s}}" hint-placeholder-val="{{ %s }}">%s</sc-if>' % (k, 'true' if k == 'type' else 'false', html) for k, _, _, html in STEPS))
+</div>''' % (ic('x', 18, 2.2), COIN('fc', 26), '\n'.join('<sc-if value="{{s_%s}}" hint-placeholder-val="{{ %s }}">%s</sc-if>' % (k, 'true' if k == 'delivery' else 'false', html) for k, _, _, html in STEPS))
 
 SETUP_CSS = r'''.nw-g{margin-top:32px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .nw-f{position:relative;display:flex;flex-direction:column;padding:20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#0B1433;font-family:inherit;text-align:left;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
@@ -241,9 +220,9 @@ SETUP_CSS = r'''.nw-g{margin-top:32px;display:grid;grid-template-columns:repeat(
 
 SETUP_JS = T.js() + '''class Component extends DCLogic {
   renderVals() {
-    var st = this.props.step || 'type';
+    var st = this.props.step || 'delivery';
     var S = %s;
-    var cur = S[st] || S.type;
+    var cur = S[st] || S.delivery;
     var v = togVals(this);
     v.stepLabel = cur[0]; v.barW = String(cur[1]).concat('%%');
     Object.keys(S).forEach(function (k) { v['s_'.concat(k)] = k === st; });
@@ -842,10 +821,9 @@ write('Studio.dc.html', doc('Course Studio · shared source', kit.KIT_CSS + '\n'
 
 # ======================================================================= boards
 BOARDS = [
-    ('STU-001', 'Setup', {'step': 'type'}, 'CR-STU-001 · What will you create?'),
     ('STU-002', 'Setup', {'step': 'delivery'}, 'CR-STU-002 · Delivery'),
     ('STU-003', 'Setup', {'step': 'review'}, 'CR-STU-003 · Setup review'),
-    ('STU-004', 'Setup', {'step': 'how'}, 'CR-STU-004 · How will you create it?'),
+    ('STU-004', 'Setup', {'step': 'how'}, 'CR-STU-004 · Who will build this course?'),
     ('STU-008', 'Setup', {'step': 'welcome'}, 'CR-STU-008 · Studio welcome'),
     ('STU-009', 'Studio', {'page': 'home'}, 'CR-STU-009 · Studio home'),
     ('STU-010', 'Studio', {'page': 'basics'}, 'CR-STU-010 · Basics'),

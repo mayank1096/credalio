@@ -7,7 +7,7 @@ CR-STU-030 Team Chat is a Builder overlay (stu2.py).
 """
 import json
 from l4kit import *
-from rail import ring
+from rail import ring, nova_rail
 from kit import coin, credit
 import stu2
 from stu2 import ppl, ITEM_IC2, EXTRA, ibtn
@@ -27,6 +27,8 @@ def card(title, body, cls='', right='', t='', sub=''):
         (' ' + cls) if cls else '', title, tip(t) if t else '', ('<p>%s</p>' % sub) if sub else '', right, body)
 def back_btn(note=''):
     return '<div class="ds-acts sb sv"><span class="sv-s">%s</span><span class="sv-r">%s</span></div>' % (note, btn('Back to Curriculum', 'STU-020.dc.html'))
+def wk(main, actions, rail):
+    return '<div class="wk"><div class="wk-m">%s</div>%s<aside class="wk-r">%s</aside></div>' % (main, actions.replace('class="ds-acts sb sv"', 'class="ds-acts sb sv wk-a"'), rail)
 def tiles(items):
     return '<div class="st4">%s</div>' % ''.join('<span class="st-t%s"><b>%s</b><em>%s</em></span>' % ((' ' + k) if k else '', v, l) for v, l, k in items)
 
@@ -60,14 +62,21 @@ def res_card(r):
         field('Description', '<input class="ds-in" placeholder="Description learners see" aria-label="Description">'),
         field('Source or licence', '<input class="ds-in"%s placeholder="Source (optional)" aria-label="Source or licence">' % ((' value="%s"' % src) if src else '')),
         field('Rights', selx(RIGHTS, 'Select rights', 'Rights for ' + name)), rows, selx(TARGETS, 'Choose where…', 'Attach to'))
+def res_row(r, on=False):
+    icon, name, cat, used, src, att = r
+    warn = name == 'retail-dataset.zip'
+    a = ''.join('<span class="rr-a">%s<span>%s</span><em>%s · %s · %s</em></span>' % (
+        tag(lv.upper(), 'line'), tgt, ['Download', 'View only'][dl], ['Required', 'Optional'][rq], vis) for lv, tgt, dl, rq, vis in att)
+    return ('<a class="rr%s%s" href="#"%s><span class="rc-i">%s</span><span class="rr-b"><span class="rr-t"><b>%s</b>%s</span><span class="rr-m">%s · used in %s · v 1%s</span><span class="rr-as">%s</span></span><span class="rr-go">%s</span></a>') % (
+        ' on' if on else '', ' warn' if warn else '', ' aria-current="true"' if on else '', ic(icon, 18), name, tag('Needs rights', 'amber') if warn else '', cat, used, (' · ' + src) if src else '', a, ic('chev', 16, 2))
 P('res', 'res', 'Build', page_head('Build', 'Course Resource Library', 'Upload once, attach anywhere: to the whole course, a chapter, or a single learning item. Each attachment controls download, requirement and when learners see it.',
     '<a class="ds-ghost sm" href="#">%s<span>Upload</span></a><a class="ds-ghost sm" href="#">%s<span>Add link</span></a>' % (ic('upload', 16, 2), ic('plus', 16, 2.2))) +
   '''<section class="ds-card flt ob-in2"><div class="flt-l"><span class="fl-l">Level</span>%s</div>%s</section>
 <div class="wn ob-in2">%s<span>1 resource needs rights or source information: <b>retail-dataset.zip</b>.</span></div>
-<div class="rcs ob-in3">%s</div>''' % (
+<div class="rlw ob-in3"><div class="ds-card rl-l">%s</div><div class="rl-d">%s</div></div>''' % (
       C.seg(['All levels', 'Course', 'Chapter', 'Item'], 0),
       chips(['All (8)', 'Documents (3)', 'Templates (1)', 'Datasets (2)', 'Downloads (0)', 'Links (1)', 'References (1)', 'Source materials (0)'], {0}, group='rcat'),
-      ic('warn', 16, 2), ''.join(res_card(r) for r in RES)) +
+      ic('warn', 16, 2), ''.join(res_row(r, i == 0) for i, r in enumerate(RES)), res_card(RES[0])) +
   acts('STU-027.dc.html', note='Downloadable, required and visibility are set per attachment, so the same dataset can be optional in a lesson but required in a project.%s' % tip('Validators review rights for anything you didn’t create.')))
 
 # ---------------------------------------------------------------- CR-STU-027 Completion Rules
@@ -152,34 +161,36 @@ HIST = [('Tue 14:30', 'Ada removed John from “Aggregations and GROUP BY” · 
         ('Mon 09:02', 'Ada assigned John to Chapter 2 “SQL Foundations”')]
 P('team', 'team', 'Build', page_head('Build', 'Team & Assignments', TEAM_SUB) + team_tabs(0) +
   '<div class="pcs ob-in2">%s</div>' % ''.join(person(*x) for x in PEOPLE) +
-  card('Course-level assignment', chips(['Ada', 'John', 'ABC Institute'], {0}), sub='People assigned to the whole course (for example, reviewing every chapter).', cls='ob-in3') +
-  '<section class="ds-card fc ob-in3">%s</section>' % asg_table() +
-  card('Assignment history', '<ul class="hs">%s</ul>' % ''.join('<li><em>%s</em><span>%s</span></li>' % x for x in HIST), t='Changing an assignment never erases authorship or activity history.') +
-  acts('STU-031.dc.html'))
+  wk('<section class="ds-card fc ob-in3">%s</section>' % asg_table(), acts('STU-031.dc.html'),
+     card('Course-level assignment', chips(['Ada', 'John', 'ABC Institute'], {0}), sub='People assigned to the whole course (for example, reviewing every chapter).', cls='rx ob-in3') +
+     card('Assignment history', '<ul class="hs">%s</ul>' % ''.join('<li><em>%s</em><span>%s</span></li>' % x for x in HIST), t='Changing an assignment never erases authorship or activity history.', cls='rx ob-in4')))
 
 MYW = [('inter', 'SELECT Statements', 'Chapter 2 · Interactive', 'Needs review', 'Oct 3'), ('text', 'INNER vs LEFT JOIN', 'Chapter 3 · Text / Article', 'In progress', 'Oct 4'),
        ('practice', 'Your First Queries', 'Chapter 2 · Practice Activity', 'Not started', 'Oct 5'), ('practice', 'Practice Joins', 'Chapter 3 · Practice Activity', 'Not started', 'Oct 6'),
        ('quiz', 'Final Exam', 'Chapter 5 · Exam', 'Not started', 'Oct 7')]
-P('mywork', 'team', 'Build', page_head('Build', 'My Assigned Work', TEAM_SUB) + team_tabs(1) +
-  '<section class="ds-card mw ob-in3"><header class="mw-h"><span class="mw-who">%s<span><b>Viewing as Dr. John Adeyemi</b><em>Co-Creator</em></span></span>%s</header>%s</section>' % (
-      av(M1, 'J', 36), chips(['All curriculum', 'My assigned work', 'Needs review', 'Completed'], {1}, group='mwf'), ''.join(
-      '<div class="mw-r">%s<div class="mw-b"><b>%s</b><span>%s · %s</span></div>%s<span class="mw-d">Due %s</span><a class="ds-ghost xs" href="#">Open</a></div>' % (
-          iti(k, 17), t, m, s, tag(s, STATUS_C[s]), d) for k, t, m, s, d in MYW)))
-
-def my_summary():
+def my_summary(who='Ada'):
     cnt = {k: 0 for k in ST_OPTS}
     for _, _, rows in ASG:
-        for _, st, _ in rows:
-            cnt[st] += 1
+        for w, st, _ in rows:
+            if who == 'Ada' or who in w:
+                cnt[st] += 1
     tot = sum(cnt.values())
     order = ['Complete', 'In progress', 'Needs review', 'Not started']
     bar = ''.join('<i class="%s" style="flex: %d"></i>' % (STATUS_C[k] or 'grey', cnt[k]) for k in order)
     cells = ''.join('<span class="ms-c %s"><i></i><b>%d</b><em>%s</em></span>' % (STATUS_C[k] or 'grey', cnt[k], k) for k in order)
-    return ('<section class="ds-card ms ob-in2"><div class="ms-me">%s<span><b>Ada</b><em>You · Owner</em></span></div>'
+    return ('<section class="ds-card ms ob-in2"><div class="ms-me">%s<span><b>%s</b><em>%s</em></span></div>'
             '<div class="ms-rg">%s<span><b>%d</b><em>of %d</em></span></div>'
-            '<div class="ms-st"><span class="ms-l">%d lessons · %d complete</span><span class="ms-bar">%s</span><div class="ms-cs">%s</div></div>'
+            '<div class="ms-st"><span class="ms-l">%s</span><span class="ms-bar">%s</span><div class="ms-cs">%s</div></div>'
             '<a class="ms-nx" href="#"><span class="ms-l">Next</span><b>SELECT Statements</b><em>due Oct 3</em><span class="ms-go">%s</span></a></section>') % (
-        av(ME, 'A', 52), ring(round(100 * cnt['Complete'] / tot), 92, 11), cnt['Complete'], tot, tot, cnt['Complete'], bar, cells, ic('arrowr', 16, 2.2))
+        av(ME, 'A', 52) if who == 'Ada' else av(M1, 'J', 52), who, 'You · Owner' if who == 'Ada' else 'Co-Creator',
+        ring(round(100 * cnt['Complete'] / tot), 92, 11), cnt['Complete'], tot,
+        ('%d lessons · %d complete' if who == 'Ada' else '%d assigned · %d complete') % (tot, cnt['Complete']), bar, cells, ic('arrowr', 16, 2.2))
+
+P('mywork', 'team', 'Build', page_head('Build', 'My Assigned Work', TEAM_SUB) + team_tabs(1) + my_summary('John') +
+  '<section class="ds-card mw ob-in3"><header class="mw-h"><span class="mw-who"><b>Viewing as Dr. John Adeyemi</b></span>%s</header>%s</section>' % (
+      chips(['All curriculum', 'My assigned work', 'Needs review', 'Completed'], {1}, group='mwf'), ''.join(
+      '<div class="mw-r">%s<div class="mw-b"><b>%s</b><span>%s · %s</span></div>%s<span class="mw-d">Due %s</span><a class="ds-ghost xs" href="#">Open</a></div>' % (
+          iti(k, 17), t, m, s, tag(s, STATUS_C[s]), d) for k, t, m, s, d in MYW)))
 
 P('mysolo', 'team', 'Build', page_head('Build', 'My Work', 'Your plan for this course: what is done, what is in progress and what is due. You are the only creator, so every lesson is yours. If you invite co-creators later, assignments appear here.') +
   my_summary() +
@@ -200,8 +211,7 @@ P('dlp', 'dlpe', 'Build', page_head('Build', 'DLP & Learning Effort', 'System-ca
   '''<section class="ds-card fc ob-in3"><div class="fc-h"><div><h2>Current course estimate%s</h2></div></div>
 <div class="sb4">%s</div><div class="lg5">%s</div>
 <div class="tot"><span>Estimated learning effort</span><b>8h 5m</b><b class="tot-d">%s ~ 795 DLP</b></div></section>
-<div class="ob-in3" style="margin-top: 16px">%s</div>
-<div class="g2 ob-in4">%s%s</div>
+<div class="g2 dl2 ob-in3"><div class="dl2-l">%s%s</div>%s</div>
 <section class="ds-card fc ex ob-in4"><div class="fc-h"><div><h2>Estimated DLP is not DLP consumed</h2></div></div><div class="ex-g">
 <div><span class="pg-e">Estimated course DLP · 795 DLP</span><p>Calculated here, in Creator Studio, from each item’s duration, reading time or expected effort. It’s the starting point for DLP Access at publication.</p></div>
 <div><span class="pg-e">DLP consumed by learners</span><p>Decided on the learner side by the access and use policy [TO CONFIRM]. It can differ from the estimate, for example when optional items are skipped.</p></div></div>
@@ -209,8 +219,8 @@ P('dlp', 'dlpe', 'Build', page_head('Build', 'DLP & Learning Effort', 'System-ca
       tip('Runs continuously as you build. The exact calculation follows Credalio’s DLP policy [TO CONFIRM]. This estimate sets the permitted price range; it isn’t your price.'),
       ''.join('<i style="flex: %d; background: %s" title="%s"></i>' % (d, SEGC[i], n) for i, (n, t, d) in enumerate(EST)),
       ''.join('<span><i style="background: %s"></i><b>%s</b><em>%s · %d DLP</em></span>' % (SEGC[i], n, t, d) for i, (n, t, d) in enumerate(EST)), coin(),
-      nova_sg('Your curriculum currently adds up to 8h 5m, but you planned about 26 hours in Course Design. Either the curriculum is still growing, or the plan needs updating.'),
-      card('By chapter', bars(BYCH, 300)), card('By type of learning', bars(BYTY, 200)), ic('arrowr', 15, 2.2)) +
+      card('By chapter', bars(BYCH, 300)), nova_sg('Your curriculum currently adds up to 8h 5m, but you planned about 26 hours in Course Design. Either the curriculum is still growing, or the plan needs updating.'),
+      card('By type of learning', bars(BYTY, 200)), ic('arrowr', 15, 2.2)) +
   back_btn())
 
 # ---------------------------------------------------------------- Course Assessments (management view)
@@ -237,41 +247,47 @@ PRA = [('practice', 'Your First Queries', 'Practical exercise · Chapter 2', '5 
 def pra_card(p):
     k, t, m, prod, ev, sk, oc, pol = p
     warn = oc == 'Select outcome'
-    return ('<section class="ds-card fc pr%s"><div class="pr-h">%s<div><b>%s</b><span>%s</span></div>%s</div><div class="fg fg2">%s%s%s%s</div><div class="pr-pl"><span class="pr-plt"><b>Becomes Proof of Learning?</b><span>Shown in the learner’s achievement record once passed.</span></span>%s</div></section>' % (
+    return ('<section class="ds-card fc pr%s"><div class="pr-h">%s<div><b>%s</b><span>%s</span>%s</div><div class="pr-pl"><span class="pr-plt"><b>Becomes Proof of Learning?</b>%s</span>%s</div></div><div class="fg fg2">%s%s%s%s</div></section>' % (
         ' warn' if warn else '', iti(k, 18), t, m, ('<span class="it-warn">%s<span>Still to set: outcome</span></span>' % ic('warn', 13, 2.2)) if warn else '',
+        tip('Shown in the learner’s achievement record once passed.', 'r'), C.seg(['Yes', 'No'], pol),
         field('What will the learner produce?', '<input class="ds-in" value="%s" aria-label="What will the learner produce">' % prod),
         field('How is it evaluated?', '<input class="ds-in" value="%s" aria-label="How is it evaluated">' % ev),
-        field('What skill does it demonstrate?', selx(SKL, sk, 'Skill demonstrated')), field('What outcome does it prove?', selx(OUT, oc, 'Outcome proved')),
-        C.seg(['Yes', 'No'], pol)))
+        field('What skill does it demonstrate?', selx(SKL, sk, 'Skill demonstrated')), field('What outcome does it prove?', selx(OUT, oc, 'Outcome proved'))))
 P('practice', 'alla', 'Build', page_head('Build', 'Practice & Projects', 'For each piece of practical work: what learners produce, which skill it demonstrates, which outcome it proves, how it’s evaluated, and whether it becomes Proof of Learning.') +
   '<div class="ob-in2">%s</div><div class="chips addp ob-in3">%s</div>' % (''.join(pra_card(p) for p in PRA), ''.join(
       '<button type="button" class="ds-chip add">%s<span>%s</span></button>' % (ic('plus', 14, 2.2), x) for x in ['Practical exercise', 'Project', 'Case study', 'Simulation', 'Portfolio work'])) +
   acts('STU-DEL.dc.html'))
 
 # ---------------------------------------------------------------- Delivery & Schedule
-P('deliv', 'deliv', 'Experience', page_head('Experience', 'Delivery & Schedule', 'Configure live sessions for your hybrid course.') +
+P('deliv', 'deliv', 'Experience', page_head('Experience', 'Delivery & Schedule', 'Configure live sessions for your hybrid course.') + wk(
   card('Scheduling model', '<div class="fg">%s<div class="fg fg3">%s%s%s</div></div>' % (
       C.seg(['Cohort', 'Recurring availability'], 0),
       field('Capacity per session', '<input class="ds-in" value="25" aria-label="Capacity per session">'),
       field('Time zone', '<input class="ds-in" value="WAT (UTC+1)" aria-label="Time zone">'),
-      field('Instructor', '<input class="ds-in" value="Ada Ononuju" aria-label="Instructor">')), cls='ob-in2') +
+      field('Instructor', '<input class="ds-in" value="Ada Ononuju" aria-label="Instructor">')), cls='sch ob-in2') +
   card('Live sessions', '<div class="ls">%s<div class="ls-t"><b>Analysis Clinic</b><span>Thursdays · 6:00 PM</span></div>%s</div><button type="button" class="ch-add" style="width: 100%%">%s<span>Add live session</span></button>' % (
       '<span class="ls-d"><em>THU</em><b>6:00</b></span>', tag('60 min', 'line'), ic('plus', 16, 2.2)), cls='ob-in3') +
-  card('Policies', '<div class="fg">%s%s%s</div>' % (
+  card('Policies', '<div class="pol">%s%s%s</div>' % (
       field('Attendance requirement', C.seg(['Required', 'Recommended', 'Optional'], 1)),
       field('Recording policy', C.seg(['Recorded for enrolled learners', 'Not recorded'], 0)),
-      field('Office hours', C.seg(['Weekly', 'Fortnightly', 'None'], 0))), cls='ob-in3') +
-  '<div class="ob-in4" style="margin-top: 16px">%s</div>' % nova_sg('Detected split: <b>88 % self-paced · 12 % instructor-led</b>. Saved to your course profile.<span class="spl"><span class="spl-b"><i style="width: 88%"></i></span></span>') +
-  acts('STU-LX.dc.html'))
+      field('Office hours', C.seg(['Weekly', 'Fortnightly', 'None'], 0))), cls='ob-in3'),
+  acts('STU-LX.dc.html'),
+  nova_rail('Detected split: <b>88 % self-paced · 12 % instructor-led</b>. Saved to your course profile.',
+            '<span class="spr">%s<span class="spr-l"><span><i></i><b>88 %%</b><em>self-paced</em></span><span><i class="n"></i><b>12 %%</b><em>instructor-led</em></span></span></span>' % ring(88, 96, 13, track='#0B1433'))))
 
 # ---------------------------------------------------------------- Learner Experience
 P('lx', 'lx', 'Experience', page_head('Experience', 'Learner Experience', 'How learners move through the course, and what counts as completing it.') +
-  card('Course navigation', '<div class="opt2">%s%s</div>' % (C.opt('<span class="o-t"><b>Sequential</b></span>', True, 'nav'), C.opt('<span class="o-t"><b>Flexible</b></span>', False, 'nav')), cls='ob-in2') +
-  card('Completion requirements', '<div class="fg">%s%s%s</div>' % (
+  wk(card('Course navigation', '<div class="opt2 nvo">%s%s</div>' % (
+      C.opt('<span class="nvz seq" aria-hidden="true"><i class="d"></i><i></i><i></i><i></i></span><span class="o-t"><b>Sequential</b></span>', True, 'nav'),
+      C.opt('<span class="nvz flx" aria-hidden="true"><i class="d"></i><i></i><i></i><i></i></span><span class="o-t"><b>Flexible</b></span>', False, 'nav')), cls='ob-in2') +
+  card('Completion requirements', '<div class="fg lxc">%s<div class="lxs">%s%s</div></div>' % (
       chips(['Complete all lessons', 'Pass assessments', 'Submit final project'], {0, 1}, cls=''),
       field('Minimum score', '<span class="pct-w"><input class="ds-in pct" type="number" value="70" aria-label="Minimum score"><em>%</em></span>'),
-      field('Minimum score applies to', C.seg(['Each assessment', 'Final exam only', 'Overall average'], 0), 'Assessment requirements for completion')), cls='ob-in3') +
-  acts('STU-SUP.dc.html'))
+      field('Minimum score applies to', C.seg(['Each assessment', 'Final exam only', 'Overall average'], 0), 'Assessment requirements for completion')), cls='ob-in3'),
+  acts('STU-SUP.dc.html'),
+  '<section class="ds-card rx lxp ob-in3"><span class="rx-k">Course navigation · Sequential</span><ol>%s</ol></section>' % ''.join(
+      '<li class="%s" style="--i: %d"><span class="lxp-d">%s</span><span><em>Chapter %d</em><b>%s</b></span></li>' % (
+          ['dn', 'on', 'lk', 'lk', 'lk'][i], i, [ck(11), str(i + 1), ic('lock', 12, 2), ic('lock', 12, 2), ic('lock', 12, 2)][i], i + 1, c[0]) for i, c in enumerate(stu2.CH))))
 
 # ---------------------------------------------------------------- Learner Support
 def sup(t, tagt, d, on, k):
@@ -280,8 +296,7 @@ def sup(t, tagt, d, on, k):
         kk, kk, kk, t, tag(tagt, 'green' if tagt == 'ENABLED' else ''), d)
 FLOW = ['Learner question', 'AI Coach', 'Tutor', 'Answered · logged in Manage']
 P('support', 'lx', 'Experience', page_head('Experience', 'Learner Support', 'How can learners get help? These settings connect to the course chat, tutor escalation and Manage → Learner Questions.') +
-  '<section class="ds-card flw ob-in2"><ol>%s</ol></section>' % ''.join('<li><span class="flw-d">%d</span><b>%s</b></li>' % (i + 1, x) for i, x in enumerate(FLOW)) +
-  '<div class="sps ob-in3">%s</div>' % ''.join([
+  wk('<section class="ds-card sps lst ob-in2">%s</section>' % ''.join([
       sup('AI Coach', 'ENABLED', 'Answers learner questions 24/7 using your course content. It cites the lesson it drew from.', True, 1),
       sup('Ask Tutor', 'ENABLED', 'Learners send a question to a human tutor from any lesson.', True, 2),
       sup('AI → Tutor escalation', 'ENABLED', 'When the AI Coach can’t resolve a question, it hands over to a tutor with the conversation attached.', True, 3),
@@ -290,8 +305,9 @@ P('support', 'lx', 'Experience', page_head('Experience', 'Learner Support', 'How
   card('Tutor requests', '<div class="fg fg3">%s%s%s</div>' % (
       field('Who answers', selx(['Lead Creator', 'All co-creators', 'Assigned instructors'], 'All co-creators', 'Who answers tutor requests')),
       field('Response target', selx(['Within 24 hours', 'Within 48 hours', 'Within 72 hours'], 'Within 24 hours', 'Response target')),
-      field('Office hours', selx(['Off', 'Weekly', 'Fortnightly'], 'Off', 'Office hours frequency'))), cls='ob-in4') +
-  acts('STU-032.dc.html'))
+      field('Office hours', selx(['Off', 'Weekly', 'Fortnightly'], 'Off', 'Office hours frequency'))), cls='ob-in4'),
+  acts('STU-032.dc.html'),
+  '<section class="ds-card rx flw v ob-in3"><ol>%s</ol></section>' % ''.join('<li style="--i: %d"><span class="flw-d">%d</span><b>%s</b></li>' % (i, i + 1, x) for i, x in enumerate(FLOW))))
 
 # ---------------------------------------------------------------- CR-STU-032 Course Access Model
 PROC = ['Credalio measures', 'Credalio derives', 'you review and select', 'validation confirms', 'you publish']
@@ -371,7 +387,7 @@ P('pricingupd', 'price', 'Experience', pricing(True))
 
 # ---------------------------------------------------------------- CR-STU-035 Access & Pricing Summary
 P('psum', 'price', 'Experience', page_head('Experience', 'Access & Pricing Summary', 'What learners will be offered, pending validation.') +
-  '''<section class="ds-card ps ob-in2">
+  '''<section class="ds-card ps ps2 ob-in2">
 <div class="ps-r"><span>Course access</span><b>Subscription + Marketplace</b></div>
 <div class="ps-g"><div class="ps-c"><span>Subscription</span><b>%s800 DLP</b></div><div class="ps-c"><span>Lifetime access</span><b>%s170 Credits</b></div></div>
 <div class="ps-r"><span>Maintenance burden</span><b>Medium · confirmed</b></div>
@@ -429,7 +445,38 @@ button.ch-add{background:none;font-family:inherit;cursor:pointer}
 .wn b{font-weight:600;color:#0B1433}
 .wn.info{background:#F5F8FF;border-color:#DCE5FB}
 .wn.info svg{color:#1652F0}
-.rcs{margin-top:16px;display:flex;flex-direction:column;gap:12px}
+.rlw{margin-top:16px;display:grid;grid-template-columns:minmax(0,1fr) 430px;gap:16px;align-items:start}
+.rl-l{padding:8px}
+.rr{position:relative;display:flex;align-items:flex-start;gap:14px;padding:14px 12px;border-radius:14px;color:#0B1433;text-decoration:none;transition:background .2s ease}
+.rr + .rr{box-shadow:0 -1.5px 0 #F0F2F8}
+.rr:hover{background:#F7F9FD}
+.rr.on{background:#F5F8FF;box-shadow:inset 0 0 0 1.5px #1652F0}
+.rr.on + .rr{box-shadow:none}
+.rr.on .rc-i{background:#1652F0;color:#FFFFFF}
+.rr.warn .rc-i{background:#FFF4E0;color:#B76E00}
+.rr-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.rr-t{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rr-t b{font-size:15px;font-weight:600}
+.rr-t .ds-tag{height:22px;font-size:11.5px}
+.rr-m{font-size:13px;color:#5B6582}
+.rr-as{margin-top:6px;display:flex;flex-direction:column;gap:4px}
+.rr-a{display:flex;align-items:center;gap:8px;min-width:0;font-size:13px;color:#3A4566}
+.rr-a .ds-tag{height:20px;padding:0 7px;font-size:10.5px;flex-shrink:0}
+.rr-a > span:not(.ds-tag){font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.rr-a em{font-style:normal;color:#8A93AD;white-space:nowrap;flex-shrink:0}
+.rr-go{align-self:center;color:#AEB6CC;display:flex}
+.rr.on .rr-go{color:#1652F0}
+.rl-d{position:sticky;top:92px}
+.rl-d .rc{padding:20px;border-color:#C9D7FA;box-shadow:0 24px 40px -32px rgba(22,82,240,.55)}
+.rl-d .rc-h{flex-wrap:wrap;row-gap:12px}
+.rl-d .rc-h .ds-ghost{width:100%;justify-content:center}
+.rl-d .fg3{grid-template-columns:minmax(0,1fr);gap:14px}
+.rl-d .at-r{grid-template-columns:minmax(0,1fr) auto;gap:10px}
+.rl-d .at-l{grid-column:1 / -1}
+.rl-d .at-r .ds-seg{width:100%;box-sizing:border-box}
+.rl-d .at-r .sel{grid-column:1}
+.rl-d .rc-f{grid-template-columns:minmax(0,1fr) auto}
+.rl-d .rc-f .fl-l{grid-column:1 / -1}
 .rc{padding:18px 20px}
 .rc.warn{border-color:#F4DDAA}
 .rc-h{display:flex;align-items:center;gap:14px;margin-bottom:14px}
@@ -849,6 +896,186 @@ class Component extends DCLogic {
     return v;
   }
 }''' % (json.dumps({k: [n, ph, solo] for k, n, ph, solo, _ in PAGES}), json.dumps(sorted(set(p[1] for p in PAGES))))
+
+COURSE_CSS += r'''.mb-g .mb-m{display:flex;align-items:flex-end;gap:4px;height:28px}
+.mb-m i{width:8px;border-radius:3px;background:#E1E7F4;transform-origin:bottom;animation:mbUp .7s cubic-bezier(.2,.8,.2,1) both}
+.mb-m i:nth-child(1){height:10px;animation-delay:.2s}
+.mb-m i:nth-child(2){height:18px;animation-delay:.32s}
+.mb-m i:nth-child(3){height:26px;animation-delay:.44s}
+.mb-m i.on{background:linear-gradient(180deg,#5C86FF,#1652F0)}
+@keyframes mbUp{from{transform:scaleY(0)}}
+.ds-main > .sv:has(.sv-s:empty){width:max-content;margin-left:auto;padding-left:14px}
+.wk > .wk-r .fc{margin:0}
+.wk-r .fc.rx{padding:20px}
+.wk-r .fc.rx .fc-h{margin-bottom:14px}
+.wk-r .fc.rx .fc-h h2{font-size:16px}
+.wk-m > .fc:first-child{margin-top:0}
+.wk-r .hs li{grid-template-columns:minmax(0,1fr);gap:2px}
+.mw-who b{font-size:14px}
+.dl2{align-items:start}
+.dl2-l{display:flex;flex-direction:column;gap:16px;min-width:0}
+.dl2-l > .fc{margin:0}
+.pr-h{align-items:flex-start;margin-bottom:20px}
+.pr-h > div:not(.pr-pl){gap:3px}
+.pr-h .it-warn{margin-top:4px;font-size:13px}
+.pr-h .pr-pl{flex:0 0 auto;margin:0;padding:0;border:0;flex-direction:row;align-items:center;gap:12px}
+.pr-h .ds-seg{flex:none;flex-direction:row;gap:4px}
+.pr-h .pr-plt{flex:none;flex-direction:row;align-items:center;gap:0}
+@media (min-width: 961px){.wk .tb-r{grid-template-columns:minmax(0,1fr) 200px 142px 48px;gap:10px}.wk .tb-a .ds-chip.xs{padding:0 10px}}
+.sps.lst .sp-t{justify-items:start}
+.pr-plt{flex-direction:row;align-items:center}
+.pr-plt b{font-size:13.5px;font-weight:500;color:#3A4566}
+.sch .ds-seg{width:max-content}
+.pol{display:flex;flex-direction:column}
+.pol .fl{display:grid;grid-template-columns:200px auto;align-items:center;justify-content:start;gap:16px;padding:12px 0;border-top:1.5px solid #F0F2F8}
+.pol .fl:first-child{border-top:0;padding-top:0}
+.pol .fl:last-child{padding-bottom:0}
+.pol .ds-seg{width:max-content}
+.spr{display:flex;align-items:center;gap:16px;margin-top:4px}
+.spr-l{display:flex;flex-direction:column;gap:10px}
+.spr-l > span{display:grid;grid-template-columns:10px auto;align-items:center;column-gap:8px}
+.spr-l i{width:10px;height:10px;border-radius:50%;background:#1652F0}
+.spr-l i.n{background:#0B1433}
+.spr-l b{font-size:18px;font-weight:600;letter-spacing:-0.01em}
+.spr-l em{grid-column:2;font-style:normal;font-size:12.5px;color:#5B6582}
+.nvo .ds-opt{flex-direction:column;align-items:flex-start;gap:14px;padding:18px}
+.nvo .ds-opt-ck{position:absolute;top:16px;right:16px}
+.nvz{position:relative;display:flex;align-items:center;gap:22px;height:44px;padding:0 4px}
+.nvz i{position:relative;z-index:1;width:16px;height:16px;box-sizing:border-box;border-radius:50%;border:2px solid #9DB8F7;background:#FFFFFF}
+.nvz i.d{border-color:#1652F0;background:#1652F0}
+.nvz.seq::before{content:'';position:absolute;left:12px;right:12px;top:50%;height:2px;margin-top:-1px;background:linear-gradient(90deg,#1652F0,#CBD3E6)}
+.nvz.seq i:not(.d){border-color:#CBD3E6;background:#F1F3F8}
+.nvz.flx{display:grid;grid-template-columns:repeat(2,16px);gap:10px 26px;height:44px;align-content:center}
+.nvz.flx i:nth-child(2){transform:translateX(10px)}
+.nvz.flx i:nth-child(3){transform:translateX(-6px)}
+.ds-opt:hover .nvz.flx i{animation:nvFloat 2.4s ease-in-out infinite}
+.ds-opt:hover .nvz.flx i:nth-child(2n){animation-delay:-1.2s}
+@keyframes nvFloat{50%{translate:0 -3px}}
+.lxc{gap:20px}
+.lxs{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:end}
+.lxp ol{list-style:none;margin:0;padding:0;position:relative;display:flex;flex-direction:column;gap:6px}
+.lxp ol::before{content:'';position:absolute;left:13px;top:16px;bottom:16px;width:2px;background:linear-gradient(180deg,#1652F0 25%,#E6EAF3 25%)}
+.lxp li{position:relative;display:flex;align-items:center;gap:12px;padding:6px 0;animation:lxIn .5s ease both;animation-delay:calc(var(--i) * 90ms + 200ms)}
+@keyframes lxIn{from{opacity:0;transform:translateY(6px)}}
+.lxp-d{position:relative;z-index:1;width:28px;height:28px;flex-shrink:0;box-sizing:border-box;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;background:#F1F3F8;color:#8A93AD;box-shadow:0 0 0 4px #FFFFFF}
+.lxp li.dn .lxp-d{background:#E7F5EE;color:#0F6B45}
+.lxp li.on .lxp-d{background:#1652F0;color:#FFFFFF;box-shadow:0 0 0 4px #FFFFFF,0 0 0 7px rgba(22,82,240,.16)}
+.lxp li > span:last-child{display:flex;flex-direction:column;gap:1px;min-width:0}
+.lxp em{font-style:normal;font-size:11.5px;color:#8A93AD}
+.lxp b{font-size:13.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lxp li.lk b{color:#8A93AD;font-weight:500}
+.sps.lst{margin:0;padding:6px 20px;display:flex;flex-direction:column;gap:0}
+.sps.lst .sp{border:0;border-radius:0;padding:16px 0;background:none;align-items:center}
+.sps.lst .sp + .sp{border-top:1.5px solid #F0F2F8}
+.sps.lst .sp-t{display:grid;grid-template-columns:auto auto;justify-content:start;align-items:center;column-gap:10px;row-gap:3px}
+.sps.lst .sp-t > span:last-child{grid-column:1 / -1}
+.sps.lst .sp-t .ds-tag{height:20px;padding:0 7px;font-size:10.5px}
+.sps.lst .sp-t b{font-size:15px}
+.wk-m > .fc{margin-top:0}
+.flw.v{padding:20px 18px}
+.flw.v ol{flex-direction:column;gap:6px}
+.flw.v ol::before{left:15px;right:auto;top:16px;bottom:16px;width:3px;height:auto;background:linear-gradient(180deg,#1652F0,#9DB8F7)}
+.flw.v li,.flw.v li:first-child,.flw.v li:last-child{flex-direction:row;align-items:center;text-align:left;min-height:48px;animation:lxIn .5s ease both;animation-delay:calc(var(--i) * 120ms + 200ms)}
+.flw.v li b{font-size:14px}
+.ps2{max-width:none;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-areas:"a m" "g p" "g n";column-gap:40px;align-items:start;padding:8px 28px 24px 28px}
+.ps2 > :nth-child(1){grid-area:a}
+.ps2 > :nth-child(2){grid-area:g;border-bottom:0;padding-bottom:0}
+.ps2 > :nth-child(3){grid-area:m}
+.ps2 > :nth-child(4){grid-area:p}
+.ps2 > :nth-child(5){grid-area:n;margin-top:14px;padding:12px 14px;border-radius:12px;background:#FFF8EA;color:#6B4A00}
+.ps2 .ps-c{padding:20px;gap:12px;border:1.5px solid #E6EAF3;background:linear-gradient(160deg,#FFFFFF,#F5F8FF)}
+.ps2 .ps-c:first-child{background:linear-gradient(160deg,#FFFFFF,#FFF8E6);border-color:#F4E2B0}
+.ps2 .ps-c b{font-size:28px}
+@media (max-width: 960px){
+.ds-main > .sv:has(.sv-s:empty){width:auto;margin-left:-16px;padding-left:16px}
+.rlw{grid-template-columns:minmax(0,1fr);gap:14px}
+.rl-l{padding:4px}
+.rr{padding:12px 10px;gap:12px}
+.rr .rc-i{width:36px;height:36px}
+.rr-a{flex-wrap:wrap;row-gap:2px}
+.rr-a em{flex-basis:100%;padding-left:0}
+.rl-d{position:static}
+.rl-d .rc{padding:16px 14px}
+.pcs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:18px -16px 0 -16px;padding:2px 16px 6px 16px;gap:10px;scrollbar-width:none}
+.pcs::-webkit-scrollbar{display:none}
+.pcs > .pc{flex:0 0 82%;scroll-snap-align:start;box-sizing:border-box}
+.pcs.one > .pc{flex-basis:100%}
+.tb:not(.solo) .tb-r{grid-template-columns:minmax(0,1fr) 140px;row-gap:8px;padding:12px 0}
+.tb:not(.solo) .tb-a{grid-column:1;grid-row:2;order:0}
+.tb:not(.solo) .tb-r .sts{grid-column:2;grid-row:2;order:0}
+.tb:not(.solo) .tb-d{grid-column:2;grid-row:1;order:0;justify-self:end;align-self:center}
+.tb:not(.solo) .tb-it{grid-column:1 / -1;grid-row:1;padding-right:52px}
+.tb:not(.solo) .tb-it b{white-space:normal}
+.rr-a > span:not(.ds-tag){flex:1 1 0}
+.rl-d .at-r{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.rl-d .at-r .ds-seg{grid-column:auto}
+.rl-d .at-r .ds-seg button{padding:0 6px;font-size:12px}
+.tb-a .ds-chip.xs{height:30px;padding:0 9px;font-size:12px}
+.mw-r{display:grid;grid-template-columns:36px minmax(0,1fr) auto;align-items:center;gap:6px 12px}
+.mw-r > .it-i{grid-row:1 / span 2}
+.mw-b{grid-column:2 / -1}
+.mw-r .ds-tag{margin-left:0;grid-column:2;justify-self:start}
+.mw-d{display:none}
+.mw-r .ds-ghost{grid-column:3;grid-row:2}
+.cr{grid-template-columns:34px minmax(0,1fr) minmax(0,1fr);gap:10px 10px}
+.cr-b{grid-column:2 / -1}
+.cr .ds-seg{grid-column:1 / 3;width:100%;box-sizing:border-box}
+.cr .ds-seg button{padding:0 8px}
+.cr .sel{grid-column:3}
+.cr .ds-in{height:40px;font-size:13px;padding-left:12px}
+.bl-r{grid-template-columns:minmax(0,1fr) auto;row-gap:6px}
+.bl-n{white-space:normal}
+.bl-v{white-space:nowrap}
+.tbl{overflow:visible;padding:4px 16px}
+.tbl-r{min-width:0;display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;padding:14px 0}
+.tbl-r.tbl-hd{display:none}
+.tbl-r > .tbl-n{flex-basis:100%;margin-bottom:2px}
+.tbl-r > span:not(.tbl-n){font-size:12.5px;color:#3A4566}
+.tbl-r > span:nth-child(3)::before{content:'Chapter ';color:#8A93AD}
+.tbl-r > span:nth-child(4)::before{content:'Questions ';color:#8A93AD}
+.tbl-r > span:nth-child(5)::before{content:'Required ';color:#8A93AD}
+.tbl-r > span:nth-child(6)::before{content:'Pass ';color:#8A93AD}
+.tbl-r > a{flex-basis:100%;margin-top:6px;padding-left:40px}
+.tbl-n .it-i{margin-right:2px}
+.cv{overflow:visible}
+.cv-r.cv-hd{display:none}
+.cv-r{min-width:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px 6px;padding:14px 0}
+.cv-r > b{flex:1 1 calc(100% - 60px)}
+.cv-r > a{order:1}
+.cv-r > span:nth-child(2){order:2;flex-basis:100%;font-size:12.5px;color:#5B6582;margin-top:-4px}
+.cv-r > span:nth-child(3){display:none}
+.cv-r > .cv-c{order:3;width:auto;height:30px;padding:0 10px 0 8px;gap:5px;border-radius:999px;font-size:12px;font-weight:500;color:#5B6582}
+.cv-r > .cv-c.on{color:#FFFFFF}
+.cv-r > .cv-c:nth-child(4)::after{content:'LO1'}
+.cv-r > .cv-c:nth-child(5)::after{content:'LO2'}
+.cv-r > .cv-c:nth-child(6)::after{content:'LO3'}
+.cv-r > .cv-c:nth-child(7)::after{content:'LO4'}
+.pr-h{flex-wrap:wrap}
+.pr-h > div:not(.pr-pl){flex-basis:calc(100% - 50px)}
+.pr-h .pr-pl{width:100%;justify-content:space-between;padding:12px 0 0 0;border-top:1.5px solid #F0F2F8;margin-top:4px}
+.addp{flex-wrap:nowrap;overflow-x:auto;margin-left:-16px;margin-right:-16px;padding:0 16px;scrollbar-width:none}
+.addp::-webkit-scrollbar{display:none}
+.addp .ds-chip{flex-shrink:0}
+.sch .fg3{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sch .fg3 > .fl:last-child{grid-column:1 / -1}
+.pol .fl{grid-template-columns:minmax(0,1fr);gap:8px}
+.pol .ds-seg{width:100%;box-sizing:border-box;flex-wrap:wrap}
+.lxs{grid-template-columns:minmax(0,1fr);gap:18px}
+.nvo{grid-template-columns:repeat(2,minmax(0,1fr))}
+.sps.lst{padding:2px 16px}
+.sps.lst .sp{padding:14px 0;gap:12px}
+.sps.lst .sp-t > span:last-child{font-size:13px}
+.wk-r > .flw.v{order:0}
+.nvz{gap:12px}
+.ps2 .ps-c b{font-size:18px}
+.ps2{display:block;padding:4px 16px 16px 16px}
+.ps2 .ps-g{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.ps2 .ps-c{padding:14px 12px}
+.sv-s:not(:empty){display:flex}
+.ds-acts.sv > .sv-s:has(.ds-ghost){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;order:2}
+.sv-s .ds-ghost{justify-content:center}
+}
+'''
 
 write('Course.dc.html', doc('Course set-up · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + CW_CSS + COURSE_CSS, body(), JS))
 

@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Submit for validation · shared source</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-tag .tip{margin-left:0}
+.ds-chip{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:40px;padding:0 16px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:border-color .2s ease,background .2s ease}
+.ds-chip:hover{border-color:#1652F0;background:#F5F8FF}
+.ds-chip .ck{display:none}
+.ds-chip.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-chip.on .ck{display:block}
+.ds-chip.sm{height:34px;padding:0 13px;font-size:13px}
+.ds-chip i{font-style:normal;font-size:12px;color:#8A93AD}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.line{background:#FFFFFF;box-shadow:inset 0 0 0 1px #E6EAF3}
+.ko-v.am{--k:#B97A10;--kb:#FFF4E0}
+.cr-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
+.cr-c{background:#1652F0}
+.ds-seg{display:flex;gap:4px;padding:4px;border-radius:999px;background:#F1F3F8}
+.ds-seg button{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 14px;border:0;border-radius:999px;background:transparent;font-family:inherit;font-size:14px;font-weight:500;color:#3A4566;cursor:pointer;transition:background .2s ease,color .2s ease}
+.ds-seg button.on{background:#FFFFFF;color:#0B1433;box-shadow:0 1px 2px rgba(11,20,51,.08),0 6px 14px -8px rgba(11,20,51,.25)}
+.ds-seg button i{font-style:normal;min-width:20px;height:20px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:11.5px;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
+.ds-seg button:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.ds-chip:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip-b.dn{bottom:auto;top:calc(100% + 10px)}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.ko-v{--k:#0F6B45;--kb:#E7F5EE}
+.ko-emb{position:relative;width:84px;height:84px;display:flex;align-items:center;justify-content:center}
+.ko-halo{position:absolute;inset:0;border-radius:50%;background:var(--kb);z-index:1}
+.ko-disc{position:relative;z-index:1;width:58px;height:58px;border-radius:50%;background:var(--k);color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(11,20,51,.16)}
+.ko-tick path{stroke-dasharray:1;stroke-dashoffset:1;animation:koDraw .6s ease .3s forwards}
+@keyframes koDraw{to{stroke-dashoffset:0}}
+.ko-pill{margin-top:14px;display:inline-flex;align-items:center;height:30px;padding:0 13px;border-radius:999px;background:var(--kb);color:var(--k);font-size:13px;font-weight:500}
+.cf{position:absolute;left:50%;top:50%;width:0;height:0;pointer-events:none;z-index:0;--k:1}
+.cf i{position:absolute;left:0;top:0;display:block;opacity:0;animation:cfPath var(--d) var(--dl) both}
+.cf b{display:block;animation:cfSway var(--sd) ease-in-out infinite alternate}
+.cf s{display:block;transform:rotate(var(--r));animation:cfFlip var(--fd) linear infinite}
+@keyframes cfPath{0%{opacity:0;transform:translate(-50%,-50%);animation-timing-function:cubic-bezier(.1,.7,.25,1)}5%{opacity:1}24%{transform:translate(calc(var(--x) * var(--k) * 1px - 50%),calc(var(--y) * 1px - 50%));animation-timing-function:cubic-bezier(.42,.08,.7,.92)}86%{opacity:1}100%{opacity:0;transform:translate(calc(var(--x) * var(--k) * 1.22px - 50%),calc((var(--y) + var(--f)) * 1px))}}
+@keyframes cfSway{from{transform:translateX(calc(var(--sw) * -1)) rotate(-12deg)}to{transform:translateX(var(--sw)) rotate(12deg)}}
+@keyframes cfFlip{from{transform:rotate(var(--r)) rotate3d(var(--rx),1,0,0deg)}to{transform:rotate(var(--r)) rotate3d(var(--rx),1,0,360deg)}}
+@media (max-width: 960px){
+.ds-chip{height:36px;font-size:13.5px;padding:0 14px}
+.ds-chip.sm{height:32px;font-size:12.5px;padding:0 12px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
+.cf{--k:.56}
+}
+@media (max-width: 760px){
+.tip-b{display:none;width:min(250px,calc(100vw - 48px))}
+.tip:hover .tip-b,.tip:focus .tip-b{display:block}
+.ko-emb{width:72px;height:72px}
+.ko-disc{width:48px;height:48px}
+.ko-disc svg{width:24px;height:24px}
+}
+@media (prefers-reduced-motion: reduce){.cf{display:none}.ko-tick path{animation:none;stroke-dashoffset:0}}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}
+.ds-tok{height:44px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:7px;padding:0 14px 0 7px;border-radius:999px;background:linear-gradient(135deg,#FFFAEB,#FFF1CF);border:1.5px solid #F4D98E;font-size:14.5px;font-weight:600;color:#4A3300;text-decoration:none;box-shadow:0 6px 16px rgba(214,150,30,.12);transition:box-shadow .2s ease}
+.ds-tok:hover{box-shadow:0 8px 20px rgba(214,150,30,.24)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-weight:600;font-size:14.5px;text-decoration:none}
+.ds-link:hover{color:#0E3BB8}
+.ds-chip{display:inline-flex;align-items:center;height:40px;padding:0 16px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:14px;font-weight:500;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-chip:hover{border-color:#1652F0;background:#F5F8FF}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-chip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2{animation:none}}
+@media (max-width: 960px){
+.ds-tok{padding:0 12px 0 6px;height:40px}
+.ds-chip{height:36px;font-size:13.5px;padding:0 14px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
+.ds-btn{justify-content:space-between}
+}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.st{width:18px;height:18px;border-radius:50%;flex-shrink:0;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+.st.ok{background:#E7F5EE;color:#0F6B45}
+.st.pr{border:2px solid #1652F0;background:conic-gradient(#1652F0 0 50%,#FFFFFF 50% 100%)}
+.st.to{border:2px solid #CBD3E6}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.ds-btn.sm{height:36px;padding:0 16px;font-size:13.5px}
+.rx{padding:18px;border-radius:20px}
+@media (max-width: 960px){
+.rx{padding:18px 16px;border-radius:18px}
+}
+body{background:#FFFFFF}
+.lp-x{width:40px;height:40px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3A4566;text-decoration:none}
+.lp-x:hover{background:#F5F8FF;color:#0B1433}
+.lp-title{display:flex;align-items:baseline;gap:8px;min-width:0}
+.lp-t1{font-size:16px;font-weight:600;white-space:nowrap}
+@media (max-width: 960px){
+.lp-t1{display:none}
+}
+.tk-root{min-height:100vh;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.tk-top{position:sticky;top:0;z-index:5;height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1.5px solid #EEF1F7;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+@media (max-width: 960px){
+.tk-top{height:56px;padding:0 12px 0 6px;gap:8px}
+.tk-top .lp-t1{display:block;font-size:15px}
+}
+.tk-root{position:relative;isolation:isolate}
+.cl{flex-grow:1;width:min(1280px,100%);box-sizing:border-box;margin:0 auto;padding:clamp(24px,5vh,52px) 32px 64px 32px;display:grid;grid-template-columns:minmax(0,1fr) 640px;gap:64px;align-items:start;align-content:start}
+.cl-side{position:sticky;top:104px;display:flex;flex-direction:column;align-items:flex-start}
+.cl-h1{margin:8px 0 0 0;font-size:clamp(30px,4.4vh,38px);line-height:1.12;font-weight:600;letter-spacing:-0.03em}
+.cl-sub{margin:10px 0 0 0;font-size:15.5px;line-height:1.65;color:#3A4566;max-width:460px}
+.cl-meta{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+.cl-meta span{display:inline-flex;align-items:center;height:28px;padding:0 11px;border-radius:999px;background:#F1F3F8;color:#3A4566;font-size:12.5px;font-weight:500}
+.cl-steps{list-style:none;margin:32px 0 0 0;padding:0;display:flex;gap:6px;width:100%;max-width:420px}
+.cl-steps li{flex:1 1 0;display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:500;color:#8A93AD}
+.cl-steps i{display:block;height:4px;border-radius:4px;background:#E6EAF3}
+.cl-steps .on i{background:#1652F0}.cl-steps .on{color:#0B1433}
+.cl-steps .dn i{background:#0F6B45}.cl-steps .dn{color:#0F6B45}
+.cl-panel{border-radius:24px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 18px 44px rgba(22,82,240,.08);padding:24px 26px 18px 26px;display:flex;flex-direction:column}
+.cl-ph{margin:0;font-size:20px;font-weight:600;letter-spacing:-0.01em}
+.cl-pp{margin:8px 0 0 0;font-size:14.5px;line-height:1.55;color:#3A4566}
+.cl-foot{margin-top:24px;display:flex;align-items:center;gap:12px}
+.cl-go{margin-left:0}
+.cl-bk{height:52px;width:52px;padding:0}
+.cl-bk + .cl-go{margin-left:auto}.cl-bk span{display:none}
+.cl-glow{position:absolute;left:0;right:0;top:0;height:340px;z-index:-1;pointer-events:none;background:radial-gradient(60% 100% at 50% 0,rgba(22,82,240,.08),transparent 70%)}
+@media (max-width: 960px){
+.cl{grid-template-columns:minmax(0,1fr);gap:36px;padding:32px 16px 0 16px}
+.cl-side{position:static}
+.cl-h1{font-size:24px;margin-top:6px}
+.cl-sub{display:none}
+.cl-meta{margin-top:16px}
+.cl-steps{margin-top:28px;max-width:none}
+.cl-panel{border:0;box-shadow:none;border-radius:0;padding:0;background:none}
+.cl-ph{font-size:18px}
+.cl-foot{position:sticky;bottom:0;z-index:4;margin:28px -16px 0 -16px;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7}
+.cl-go{flex-grow:1;justify-content:space-between}
+}
+.py-svc{margin-top:6px;display:flex;align-items:center;font-size:14px;color:#5B6582}
+.py-dl{margin:16px 0 0 0;border:1.5px solid #E6EAF3;border-radius:18px;padding:4px 20px}
+.py-dl > div{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;border-top:1.5px solid #F0F2F8}
+.py-dl > div:first-child{border-top:0}
+.py-dl dt{font-size:14.5px;color:#3A4566}
+.py-dl dd{margin:0;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.py-dl > div:not(.py-tot):not(.tx) dd::after{content:' Cr';font-size:12.5px;font-weight:500;color:#8A93AD}
+.py-tot{border-top:1.5px solid #D6DDEE !important}
+.py-tot dt{font-size:16px;font-weight:600;color:#0B1433}.py-tot dd{font-size:21px}
+.py-note{margin:12px 0 0 0;font-size:13.5px;color:#5B6582}
+.is-wait .cl-glow{background:radial-gradient(60% 100% at 50% 0,rgba(214,140,20,.10),transparent 70%)}
+.is-ok .cl-glow{background:radial-gradient(60% 100% at 50% 0,rgba(15,107,69,.10),transparent 70%)}
+@media (max-width: 960px){
+.py-dl{padding:2px 16px}
+.py-dl dt{font-size:14px}
+}
+@media (max-width: 960px){.cl-foot{flex-wrap:wrap}}
+.cl-nx{margin-top:40px;width:100%;max-width:420px;box-sizing:border-box;padding:20px 22px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3}
+.cl-nx > span{font-size:12.5px;font-weight:500;color:#8A93AD}
+.cl{grid-template-columns:minmax(0,1fr) 600px}
+.cl-steps{max-width:460px}
+.cl-steps li{font-size:12px}
+.cl-nx{margin-top:32px}
+.cl-nx > span{display:block;margin-bottom:10px}
+.cl-nx p{margin:0;font-size:14px;line-height:1.55;color:#3A4566}
+.cl-nx.am{background:#FFF8EA;border-color:#F4DDAA}
+.cl-nx.am > span{color:#8A5A00}
+.cl-nx.am .ds-ghost{margin-top:14px;background:#FFFFFF}
+.det-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.det-g span{display:flex;flex-direction:column;gap:1px;padding:10px;border-radius:12px;background:#F7F9FD}
+.det-g b{font-size:16px;font-weight:600}
+.det-g em{font-style:normal;font-size:11.5px;line-height:1.3;color:#5B6582}
+.fi dl{margin:0;display:flex;flex-direction:column}
+.fi dl div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1.5px solid #F0F2F8;font-size:13.5px}
+.fi dl div:first-child{border-top:0;padding-top:0}
+.fi dt{color:#5B6582}
+.fi dd{margin:0;font-weight:600}
+.fi .ds-link{display:inline-block;margin-top:10px}
+.pf{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.pf li{display:grid;grid-template-columns:20px minmax(0,1fr);gap:10px;font-size:13.5px;line-height:1.45;color:#3A4566}
+.pf li svg{margin-top:4px;width:20px;height:20px;padding:5px;box-sizing:border-box;border-radius:50%;background:#E7F5EE;color:#0F6B45}
+.iqs{margin-top:18px;display:flex;flex-direction:column}
+.iq{display:flex;flex-direction:column;gap:10px;padding:16px 0;border-top:1.5px solid #F0F2F8}
+.iq:first-child{border-top:0;padding-top:4px}
+.iq-t{display:flex;flex-direction:column;gap:3px}
+.iq-t b{font-size:15px;font-weight:600}
+.iq-t > span{font-size:13px;line-height:1.45;color:#5B6582}
+.iq.row{flex-direction:row;align-items:center;justify-content:space-between;gap:20px}
+.iq.row .ds-seg{flex-shrink:0;width:150px}
+.iq-pf{display:inline-flex;align-items:center;gap:5px;margin-left:4px;height:22px;padding:0 9px;border-radius:999px;background:#EAF0FF;color:#0E3BB8;font-size:11.5px;font-weight:500;vertical-align:1px}
+.iq-pf svg{width:11px;height:11px}
+.dc-l{display:block;margin:18px 0 8px 0;font-size:12.5px;font-weight:500;color:#8A93AD}
+.dc{display:flex;flex-direction:column;gap:8px}
+.dc-r{display:flex;align-items:flex-start;gap:12px;padding:13px 14px;border-radius:14px;border:1.5px solid #E6EAF3;background:#FFFFFF;font-family:inherit;font-size:14px;line-height:1.5;color:#0B1433;text-align:left;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.dc-r:hover{border-color:#AFC1F5}
+.dc-b{width:20px;height:20px;flex-shrink:0;margin-top:1px;box-sizing:border-box;border-radius:6px;border:1.5px solid #CBD3E6;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.dc-b svg{opacity:0;transform:scale(.6);transition:opacity .2s ease,transform .2s ease}
+.dc-r.on{border-color:#1652F0;background:#F5F8FF}
+.dc-r.on .dc-b{border-color:#1652F0;background:#1652F0}
+.dc-r.on .dc-b svg{opacity:1;transform:none}
+.cr-l{list-style:none;margin:0;padding:2px 16px;border:1.5px solid #E6EAF3;border-radius:18px}
+.cr-r{display:flex;align-items:center;gap:12px;min-height:52px;border-top:1.5px solid #F0F2F8}
+.cr-r:first-child{border-top:0}
+.cr-s{display:flex}
+.cr-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.cr-t b{font-size:14.5px;font-weight:600}
+.cr-t em{font-style:normal;font-size:12.5px;color:#1652F0}
+.cr-pb{display:block;width:160px;height:6px;border-radius:6px;background:#EAF0FF;overflow:hidden}
+.cr-pb i{display:block;height:100%;border-radius:6px;background:#1652F0}
+.cr-r.pr{padding:10px 0}
+.cr-r .ds-tag{height:24px;font-size:11.5px}
+.cr-l.na .cr-t b{color:#5B6582;font-weight:500}
+.st.na{border:1.5px dashed #CBD3E6;color:#8A93AD;font-size:11px}
+.cr-na{font-size:12.5px;color:#8A93AD;text-align:right}
+.vs-seats{margin-top:18px;display:flex;align-items:stretch;gap:0}
+.vs-s{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:16px;border-radius:18px;background:#F7F9FD;border:1.5px solid #E6EAF3;animation:obIn .5s ease .2s both}
+.vs-s.lead{background:#F5F8FF;border-color:#C9D7FA;animation-delay:.35s}
+.vs-i{width:40px;height:40px;margin-bottom:6px;border-radius:12px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -8px rgba(22,82,240,.5)}
+.vs-s b{font-size:14.5px;font-weight:600}
+.vs-s em{font-style:normal;font-size:12.5px;color:#5B6582}
+.vs-x{width:28px;align-self:center;height:2px;background:repeating-linear-gradient(90deg,#9DB8F7 0 4px,transparent 4px 8px)}
+.vs-l{display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 8px;border-radius:999px;background:#0B1433;color:#FFFFFF;font-size:11.5px;font-weight:500}
+.py-dl .sub dt{color:#0B1433;font-weight:500}
+.py-dl .sub{background:linear-gradient(90deg,#F7F9FD,#FFFFFF)}
+.py-dl .tx dd{font-size:14px;text-align:right}
+.py-tot dd .cr-c{margin-right:2px}
+.py-note{display:flex;align-items:center}
+.bp{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.bp li{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:14px;background:#F7F9FD;font-size:13.5px;font-weight:500}
+.bp li.to{background:#FFFFFF;border:1.5px dashed #D6DDEE;color:#3A4566}
+.bp li span:not(.st){flex:1}
+.wl{margin-top:16px;padding:16px 18px;border-radius:18px;border:1.5px solid #E6EAF3;background:linear-gradient(160deg,#F5F8FF,#FFFFFF)}
+.wl-h{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.wl-h b{font-size:14.5px;font-weight:600}
+.wl dl{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.wl dl div{display:flex;flex-direction:column;gap:2px}
+.wl dt{font-size:12px;color:#5B6582}
+.wl dd{margin:0;font-size:17px;font-weight:600;font-variant-numeric:tabular-nums}
+.wl .r dd{color:#0F6B45}
+.wl.short{background:linear-gradient(160deg,#FFF8EA,#FFFFFF);border-color:#F4DDAA}
+.wl.short .r dd{color:#8A93AD}
+.wl-bar{margin-top:14px;height:8px;border-radius:8px;background:#E6EAF3;overflow:hidden}
+.wl-bar i{display:block;height:100%;border-radius:8px;background:linear-gradient(90deg,#1652F0,#5C86FF);transform-origin:left;animation:wlGrow 1s cubic-bezier(.2,.8,.2,1) .3s both}
+.wl.short .wl-bar i{background:linear-gradient(90deg,#D99A1E,#F4C66A)}
+@keyframes wlGrow{from{transform:scaleX(0)}}
+.wl-n{margin:12px 0 0 0;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#8A5300}
+.wl-n svg{color:#B76E00}
+.wl-t{margin-top:10px;display:flex;flex-wrap:wrap;gap:8px}
+.ds-btn.is-dis{background:#C9D2E6;box-shadow:none;cursor:not-allowed}
+.ds-btn.is-dis:hover{background:#C9D2E6;transform:none}
+.ds-btn.is-dis .ob-arrow{color:#8A93AD}
+.ko-wrap{flex-grow:1;display:flex;justify-content:center;padding:44px 24px 64px 24px}
+.ko{--k:#0F6B45;--kb:#E7F5EE;width:min(620px,100%);display:flex;flex-direction:column;align-items:center;text-align:center}
+.ko-h1{margin:14px 0 0 0;font-size:36px;line-height:1.12;font-weight:600;letter-spacing:-0.03em}
+.ko-sub{margin:10px 0 0 0;font-size:16px;color:#4A5578}
+.ko-tr{list-style:none;margin:28px 0 0 0;padding:0;width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:relative}
+.ko-tr::before{content:'';position:absolute;left:12.5%;right:12.5%;top:9px;height:2px;background:#E6EAF3}
+.ko-tr::after{content:'';position:absolute;left:12.5%;width:25%;top:9px;height:2px;background:linear-gradient(90deg,#0F6B45,#1652F0);transform-origin:left;animation:wlGrow 1s ease .6s both}
+.ko-tr li{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#8A93AD}
+.ko-tr i{width:20px;height:20px;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;background:#FFFFFF;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.ko-tr .dn{color:#0F6B45}.ko-tr .dn i{background:#0F6B45;border-color:#0F6B45}
+.ko-tr .on{color:#0B1433;font-weight:600}.ko-tr .on i{border:5px solid #1652F0;box-shadow:0 0 0 5px rgba(22,82,240,.16);animation:koPulse 1.8s ease-out infinite}
+@keyframes koPulse{0%{box-shadow:0 0 0 0 rgba(22,82,240,.35)}100%{box-shadow:0 0 0 9px rgba(22,82,240,0)}}
+.ko-card{margin-top:26px;width:100%;box-sizing:border-box;padding:18px 22px;border-radius:20px;border:1.5px solid #E6EAF3;background:#FFFFFF;text-align:left}
+.ko-cl{display:block;margin-bottom:6px;font-size:12.5px;font-weight:500;color:#8A93AD}
+.ko-card dl{margin:0}
+.ko-card dl div{display:grid;grid-template-columns:170px minmax(0,1fr);gap:12px;padding:10px 0;border-top:1.5px solid #F0F2F8;font-size:14px}
+.ko-card dl div:first-child{border-top:0}
+.ko-card dt{color:#5B6582}
+.ko-card dd{margin:0;display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-weight:600}
+.ko-card dd .cr-c{width:18px;height:18px;font-size:10px}
+.ko-note{margin:18px 0 0 0;display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;background:#F5F8FF;font-size:14px;color:#3A4566;text-align:left}
+.ko-note svg{flex-shrink:0;color:#1652F0}
+.ko-acts{margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:10px}
+@media (max-width: 960px){
+.cl{grid-template-columns:minmax(0,1fr);gap:20px}
+.cl-sub{display:block;font-size:14px}
+.cl-steps{gap:4px}
+.cl-steps li span{display:none}
+.cl-steps li.on span{display:block;white-space:nowrap}
+.cl{display:flex;flex-direction:column}
+.cl-side{display:contents}
+.cl-side > *{order:0}
+.cl-panel{order:1}
+.cl-nx{order:2;margin-top:4px;padding:16px}
+.cl-nx.det{order:0;margin-top:8px}
+.det-g{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.det-g span{padding:8px}
+.det-g b{font-size:14px}
+.det-g em{font-size:10.5px}
+.iq.row{flex-direction:column;align-items:stretch;gap:10px}
+.iq.row .ds-seg{width:100%}
+.bp{grid-template-columns:minmax(0,1fr)}
+.wl dl{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.wl dd{font-size:15px}
+.vs-seats{flex-direction:column}
+.vs-x{width:2px;height:16px;align-self:center;background:repeating-linear-gradient(180deg,#9DB8F7 0 4px,transparent 4px 8px)}
+.cr-pb{width:120px}
+.cr-na{display:none}
+.ko-wrap{padding:32px 16px 40px 16px}
+.ko-h1{font-size:26px}
+.ko-sub{font-size:15px}
+.ko-tr li{font-size:11.5px;text-align:center}
+.ko-card{padding:14px 16px}
+.ko-card dl div{grid-template-columns:minmax(0,1fr);gap:2px}
+.ko-acts{width:100%}
+.ko-acts .ds-btn{width:100%;justify-content:space-between}
+}
+</style>
+</helmet>
+<div class="tk-root {{rootCls}}"><span class="cl-glow"></span>
+<header class="tk-top"><a class="lp-x" href="STU-043.dc.html" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a><span class="lp-title"><span class="lp-t1">Submit for validation</span></span><span style="flex-grow: 1"></span><a href="#" class="ds-tok" aria-label="72,450 Creio"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0; display: block"><defs><linearGradient id="tpa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9A3"></stop><stop offset="0.45" stop-color="#F6C343"></stop><stop offset="1" stop-color="#D08A12"></stop></linearGradient><linearGradient id="tpb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9CF5A"></stop><stop offset="1" stop-color="#E2A024"></stop></linearGradient></defs><circle cx="32" cy="34" r="29" fill="#B8740A" opacity="0.35"></circle><circle cx="32" cy="32" r="29" fill="url(#tpa)"></circle><circle cx="32" cy="32" r="22" fill="url(#tpb)" stroke="#FFF1C2" stroke-opacity="0.7" stroke-width="1.5"></circle><path d="M32 18l2.9 9.3 9.3 2.9-9.3 2.9L32 42.4l-2.9-9.3-9.3-2.9 9.3-2.9z" fill="#FFF8DF"></path><ellipse cx="23" cy="19" rx="9" ry="5" fill="#FFFFFF" opacity="0.35" transform="rotate(-30 23 19)"></ellipse></svg><span>72.4K</span></a></header>
+<sc-if value="{{s_intake}}" hint-placeholder-val="{{ true }}"><div class="cl"><aside class="cl-side ob-in"><h1 class="cl-h1">Data Analysis with SQL</h1><p class="cl-sub">Course validation · 5 chapters, 16 learning items and 3 assessments.</p><div class="cl-meta"><span>Hybrid</span><span>Intermediate</span><span>Step 1 of 6</span></div><ol class="cl-steps"><li class="on"><i></i><span>Intake</span></li><li class=""><i></i><span>Declaration</span></li><li class=""><i></i><span>Readiness</span></li><li class=""><i></i><span>Scope</span></li><li class=""><i></i><span>Quote</span></li><li class=""><i></i><span>Payment</span></li></ol><div class="cl-nx det"><span>Detected by Credalio</span><div class="det-g"><span><b>5</b><em>chapters</em></span><span><b>9</b><em>lessons</em></span><span><b>5</b><em>videos</em></span><span><b>8h 5m</b><em>detected learning time</em></span><span><b>3</b><em>assessments</em></span><span><b>35</b><em>questions</em></span><span><b>1</b><em>projects</em></span><span><b>4 (4 assessed)</b><em>outcomes</em></span></div></div></aside><section class="cl-panel ob-in2"><h2 class="cl-ph">Validation Intake</h2><p class="cl-pp">We only ask what Credalio can’t reliably derive from your course. Everything above the line is already known.</p><div class="iqs"><div class="iq"><div class="iq-t"><b>AI usage</b><span>Does this learning experience involve AI? <span class="iq-pf"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg><span>Pre-filled from Basics.</span></span></span></div><div class="chips"><button type="button" class="ds-chip sm {{ct1}}" aria-pressed="{{at1}}" onClick="{{xt1}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>No</span></button><button type="button" class="ds-chip sm {{ct2}}" aria-pressed="{{at2}}" onClick="{{xt2}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>AI is taught</span></button><button type="button" class="ds-chip sm {{ct3}}" aria-pressed="{{at3}}" onClick="{{xt3}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Learners use AI</span></button><button type="button" class="ds-chip sm {{ct4}}" aria-pressed="{{at4}}" onClick="{{xt4}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>AI outputs are assessed</span></button><button type="button" class="ds-chip sm {{ct5}}" aria-pressed="{{at5}}" onClick="{{xt5}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>AI is integrated into the learning experience</span></button></div></div><div class="iq"><div class="iq-t"><b>External tools</b><span><span class="iq-pf"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg><span>Pre-filled from Basics.</span></span></span></div><div class="chips"><button type="button" class="ds-chip sm {{ct6}}" aria-pressed="{{at6}}" onClick="{{xt6}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>No external tools</span></button><button type="button" class="ds-chip sm {{ct7}}" aria-pressed="{{at7}}" onClick="{{xt7}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Yes: PostgreSQL</span></button></div></div><div class="iq"><div class="iq-t"><b>Regulated subject matter</b></div><div class="chips"><button type="button" class="ds-chip sm {{ct8}}" aria-pressed="{{at8}}" onClick="{{xt8}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Healthcare</span></button><button type="button" class="ds-chip sm {{ct9}}" aria-pressed="{{at9}}" onClick="{{xt9}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Financial advice</span></button><button type="button" class="ds-chip sm {{ct10}}" aria-pressed="{{at10}}" onClick="{{xt10}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Legal practice</span></button><button type="button" class="ds-chip sm {{ct11}}" aria-pressed="{{at11}}" onClick="{{xt11}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Safety-critical activities</span></button><button type="button" class="ds-chip sm {{ct12}}" aria-pressed="{{at12}}" onClick="{{xt12}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Other regulated areas</span></button><button type="button" class="ds-chip sm {{ct13}}" aria-pressed="{{at13}}" onClick="{{xt13}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>None</span></button></div></div><div class="iq row"><div class="iq-t"><b>Professional claims</b><span>Does this course prepare learners for an external professional licence, certification or regulated activity?</span></div><div class="ds-seg"><button type="button" class="{{ct14}}" aria-pressed="{{at14}}" onClick="{{xt14}}">Yes</button><button type="button" class="{{ct15}}" aria-pressed="{{at15}}" onClick="{{xt15}}">No</button></div></div><div class="iq row"><div class="iq-t"><b>Sensitive data</b><span>Will learners upload personal, confidential or sensitive information?</span></div><div class="ds-seg"><button type="button" class="{{ct16}}" aria-pressed="{{at16}}" onClick="{{xt16}}">Yes</button><button type="button" class="{{ct17}}" aria-pressed="{{at17}}" onClick="{{xt17}}">No</button></div></div><div class="iq"><div class="iq-t"><b>Who delivers live sessions?</b></div><div class="chips"><button type="button" class="ds-chip sm {{ct18}}" aria-pressed="{{at18}}" onClick="{{xt18}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Creator</span></button><button type="button" class="ds-chip sm {{ct19}}" aria-pressed="{{at19}}" onClick="{{xt19}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Co-Creator</span></button><button type="button" class="ds-chip sm {{ct20}}" aria-pressed="{{at20}}" onClick="{{xt20}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Guest instructor</span></button></div></div></div><div class="cl-foot"><a class="ds-ghost cl-bk" href="STU-044.dc.html" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a><a class="ds-btn cl-go" href="STU-046.dc.html"><span>Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section></div></sc-if>
+<sc-if value="{{s_declare}}" hint-placeholder-val="{{ false }}"><div class="cl"><aside class="cl-side ob-in"><h1 class="cl-h1">Data Analysis with SQL</h1><p class="cl-sub">Course validation · 5 chapters, 16 learning items and 3 assessments.</p><div class="cl-meta"><span>Hybrid</span><span>Intermediate</span><span>Step 2 of 6</span></div><ol class="cl-steps"><li class="dn"><i></i><span>Intake</span></li><li class="on"><i></i><span>Declaration</span></li><li class=""><i></i><span>Readiness</span></li><li class=""><i></i><span>Scope</span></li><li class=""><i></i><span>Quote</span></li><li class=""><i></i><span>Payment</span></li></ol><div class="cl-nx fi"><span>From your intake</span><dl><div><dt>AI</dt><dd>Learners use AI</dd></div><div><dt>External tools</dt><dd>Yes: PostgreSQL</dd></div><div><dt>Regulated subject</dt><dd>None</dd></div><div><dt>Professional claims</dt><dd>No</dd></div><div><dt>Sensitive data</dt><dd>No</dd></div></dl><a class="ds-link sm" href="STU-045.dc.html">Edit intake</a></div></aside><section class="cl-panel ob-in2"><h2 class="cl-ph">Creator Declaration</h2><p class="cl-pp">Your formal statement about this course. Validators rely on it, and it becomes part of the validation record.</p><span class="dc-l">I declare that</span><div class="dc"><button type="button" class="dc-r {{ct21}}" aria-pressed="{{at21}}" onClick="{{xt21}}"><span class="dc-b"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>The content is accurate to the best of my knowledge.</span></button><button type="button" class="dc-r {{ct22}}" aria-pressed="{{at22}}" onClick="{{xt22}}"><span class="dc-b"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>I hold the required rights and permissions for all materials.</span></button><button type="button" class="dc-r {{ct23}}" aria-pressed="{{at23}}" onClick="{{xt23}}"><span class="dc-b"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>AI-generated content has been reviewed and approved by me.</span></button><button type="button" class="dc-r {{ct24}}" aria-pressed="{{at24}}" onClick="{{xt24}}"><span class="dc-b"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>The submitted content represents the course I intend to publish.</span></button><button type="button" class="dc-r {{ct25}}" aria-pressed="{{at25}}" onClick="{{xt25}}"><span class="dc-b"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>I have made all required disclosures in the validation intake.</span></button><button type="button" class="dc-r {{ct26}}" aria-pressed="{{at26}}" onClick="{{xt26}}"><span class="dc-b"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>I understand that material changes after validation may trigger revalidation.</span></button></div><div class="cl-foot"><a class="ds-ghost cl-bk" href="STU-045.dc.html" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a><a class="ds-btn cl-go" href="STU-047.dc.html"><span>Sign &amp; Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section></div></sc-if>
+<sc-if value="{{s_creator}}" hint-placeholder-val="{{ false }}"><div class="cl"><aside class="cl-side ob-in"><h1 class="cl-h1">Data Analysis with SQL</h1><p class="cl-sub">Course validation · 5 chapters, 16 learning items and 3 assessments.</p><div class="cl-meta"><span>Hybrid</span><span>Intermediate</span><span>Step 3 of 6</span></div><ol class="cl-steps"><li class="dn"><i></i><span>Intake</span></li><li class="dn"><i></i><span>Declaration</span></li><li class="on"><i></i><span>Readiness</span></li><li class=""><i></i><span>Scope</span></li><li class=""><i></i><span>Quote</span></li><li class=""><i></i><span>Payment</span></li></ol><div class="cl-nx am"><span>Before submission</span><p>1 requirement remains before submission. No validation case is created yet.</p><a class="ds-ghost sm" href="#">Complete Requirement</a></div></aside><section class="cl-panel ob-in2"><h2 class="cl-ph">Creator Readiness</h2><p class="cl-pp">Requirements on you as a creator, separate from the course itself. Each trust layer is checked separately.</p><span class="dc-l">Creator</span><ul class="cr-l"><li class="cr-r"><span class="cr-s"><span class="st ok" aria-label="Done"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></span><span class="cr-t"><b>Identity verified</b></span><span class="ds-tag green">Complete</span></li><li class="cr-r"><span class="cr-s"><span class="st ok" aria-label="Done"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></span><span class="cr-t"><b>KYC complete</b></span><span class="ds-tag green">Complete</span></li><li class="cr-r"><span class="cr-s"><span class="st ok" aria-label="Done"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></span><span class="cr-t"><b>Required credentials verified</b></span><span class="ds-tag green">Complete</span></li><li class="cr-r pr"><span class="cr-s"><span class="st pr" aria-label="In progress"></span></span><span class="cr-t"><b>Creator Orientation complete</b><span class="cr-pb"><i style="width: 71%"></i></span><em>5 of 7 modules</em></span><a class="ds-ghost xs" href="#">Resume</a></li><li class="cr-r"><span class="cr-s"><span class="st ok" aria-label="Done"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></span><span class="cr-t"><b>Creator policies accepted</b></span><span class="ds-tag green">Complete</span></li></ul><span class="dc-l">Organisation</span><ul class="cr-l na"><li class="cr-r"><span class="cr-s"><span class="st na">–</span></span><span class="cr-t"><b>Business verification</b></span><span class="cr-na">Not required · individual creator</span></li><li class="cr-r"><span class="cr-s"><span class="st na">–</span></span><span class="cr-t"><b>Authorised representative</b></span><span class="cr-na">Not required · individual creator</span></li></ul><div class="cl-foot"><a class="ds-ghost cl-bk" href="STU-046.dc.html" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a><a class="ds-btn cl-go" href="STU-048.dc.html"><span>Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section></div></sc-if>
+<sc-if value="{{s_scope}}" hint-placeholder-val="{{ false }}"><div class="cl"><aside class="cl-side ob-in"><h1 class="cl-h1">Data Analysis with SQL</h1><p class="cl-sub">Course validation · 5 chapters, 16 learning items and 3 assessments.</p><div class="cl-meta"><span>Hybrid</span><span>Intermediate</span><span>Step 4 of 6</span></div><ol class="cl-steps"><li class="dn"><i></i><span>Intake</span></li><li class="dn"><i></i><span>Declaration</span></li><li class="dn"><i></i><span>Readiness</span></li><li class="on"><i></i><span>Scope</span></li><li class=""><i></i><span>Quote</span></li><li class=""><i></i><span>Payment</span></li></ol><div class="cl-nx"><span>Behind the scenes</span><p>Behind the scenes this uses workflow SV-001 Standard Course.</p></div></aside><section class="cl-panel ob-in2"><h2 class="cl-ph">Validation Scope</h2><p class="cl-pp">Credalio classifies your case from your course structure, intake and declaration. You don’t choose validators.</p><div class="vs-seats"><div class="vs-s"><span class="vs-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M10 10.5a2 2 0 1 0 0 3M16 10.5a2 2 0 1 0 0 3"></path></svg></span><b>Educational Validator</b><em>Independent · assigned by role</em></div><span class="vs-x" aria-hidden="true"></span><div class="vs-s lead"><span class="vs-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.5"></circle></svg></span><b>Subject Matter Validator</b><em><span class="vs-l"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg> Case Lead</span></em></div></div>
+<dl class="py-dl"><div class="tx"><dt>Validation type</dt><dd>Standard Course Validation</dd></div><div class="tx"><dt>Complexity</dt><dd>Intermediate</dd></div><div class="tx"><dt>Required validators</dt><dd>2</dd></div><div class="tx"><dt>Estimated review window</dt><dd>X business days (SLA to be confirmed)</dd></div></dl><div class="cl-foot"><a class="ds-ghost cl-bk" href="STU-047.dc.html" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a><a class="ds-btn cl-go" href="STU-049.dc.html"><span>See your quote</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section></div></sc-if>
+<sc-if value="{{s_quote}}" hint-placeholder-val="{{ false }}"><div class="cl"><aside class="cl-side ob-in"><h1 class="cl-h1">Data Analysis with SQL</h1><p class="cl-sub">Course validation · 5 chapters, 16 learning items and 3 assessments.</p><div class="cl-meta"><span>Hybrid</span><span>Intermediate</span><span>Step 5 of 6</span></div><ol class="cl-steps"><li class="dn"><i></i><span>Intake</span></li><li class="dn"><i></i><span>Declaration</span></li><li class="dn"><i></i><span>Readiness</span></li><li class="dn"><i></i><span>Scope</span></li><li class="on"><i></i><span>Quote</span></li><li class=""><i></i><span>Payment</span></li></ol><div class="cl-nx"><span>What you’re paying for</span><ul class="pf"><li><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Independent review by 2 validators, assigned by role</span></li><li><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>A validation report with findings, whatever the decision</span></li><li><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Clarification requests and case meetings within this case</span></li><li><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>One resubmission if improvements are required [TO CONFIRM]</span></li></ul></div></aside><section class="cl-panel ob-in2"><h2 class="cl-ph">Your Validation Quote</h2><span class="py-svc">Data Analysis with SQL · Standard Course Validation</span>
+<dl class="py-dl"><div><dt>Educational Validation</dt><dd>200</dd></div><div><dt>Subject Matter Validation</dt><dd>220</dd></div><div class="sub"><dt>Validator fees subtotal</dt><dd>420</dd></div><div><dt>Credalio service fee (5% per case)</dt><dd>21</dd></div><div class="py-tot"><dt>Total</dt><dd><i class="cr-c" aria-hidden="true">C</i>441 Credits</dd></div></dl>
+<p class="py-note">100% of validator fees go to the validators.<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Fee amounts are illustrative until the fee table is set.</span></span></p><div class="cl-foot"><a class="ds-ghost cl-bk" href="STU-048.dc.html" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a><a class="ds-btn cl-go" href="STU-050.dc.html"><span>Continue to Payment</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section></div></sc-if>
+<sc-if value="{{s_short}}" hint-placeholder-val="{{ false }}"><div class="cl"><aside class="cl-side ob-in"><h1 class="cl-h1">Data Analysis with SQL</h1><p class="cl-sub">Course validation · 5 chapters, 16 learning items and 3 assessments.</p><div class="cl-meta"><span>Hybrid</span><span>Intermediate</span><span>Step 6 of 6</span></div><ol class="cl-steps"><li class="dn"><i></i><span>Intake</span></li><li class="dn"><i></i><span>Declaration</span></li><li class="dn"><i></i><span>Readiness</span></li><li class="dn"><i></i><span>Scope</span></li><li class="dn"><i></i><span>Quote</span></li><li class="on"><i></i><span>Payment</span></li></ol><div class="cl-nx"><span>After you submit</span><p>A validation case is created with its own case ID. Validators are assigned by role and review independently. You’ll be notified when anything is needed from you. Editing is paused on submitted content until a decision.</p></div></aside><section class="cl-panel ob-in2"><h2 class="cl-ph">Payment</h2><p class="cl-pp">Pay from your Creator Credit Wallet to create your validation case. Creator Credits pay for validation and AI services; they’re separate from your earnings.</p><span class="dc-l">Before you pay</span><ul class="bp"><li class="to"><span class="st to" aria-label="Not started"></span><span>No blocking issues</span><a class="ds-link sm" href="STU-044.dc.html">Open</a></li><li class="ok"><span class="st ok" aria-label="Done"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>Creator Declaration signed</span></li><li class="ok"><span class="st ok" aria-label="Done"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>Creator readiness complete</span></li><li class="to"><span class="st to" aria-label="Not started"></span><span>Enough Creator Credits</span></li></ul><div class="wl short"><div class="wl-h"><i class="cr-c" aria-hidden="true">C</i><b>Creator Credit Wallet</b></div><dl><div><dt>Balance</dt><dd>300 Credits</dd></div><div><dt>Required</dt><dd>441 Credits</dd></div><div class="r"><dt>Remaining after payment</dt><dd>—</dd></div></dl><div class="wl-bar"><i style="width: 68%"></i></div><p class="wl-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17h.01"></path></svg><span>You need 141 more Credits.</span></p><div class="wl-t"><button type="button" class="ds-chip sm {{ct27}}" aria-pressed="{{at27}}" onClick="{{xt27}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>+ 250 Credits</span></button><button type="button" class="ds-chip sm {{ct28}}" aria-pressed="{{at28}}" onClick="{{xt28}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>+ 500 Credits</span></button><button type="button" class="ds-chip sm {{ct29}}" aria-pressed="{{at29}}" onClick="{{xt29}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>+ 1000 Credits</span></button></div></div><div class="cl-foot"><a class="ds-ghost cl-bk" href="STU-049.dc.html" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a><span class="ds-btn cl-go is-dis" aria-disabled="true"><span>Pay 441 Credits &amp; Submit</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></span></div></section></div></sc-if>
+<sc-if value="{{s_enough}}" hint-placeholder-val="{{ false }}"><div class="cl"><aside class="cl-side ob-in"><h1 class="cl-h1">Data Analysis with SQL</h1><p class="cl-sub">Course validation · 5 chapters, 16 learning items and 3 assessments.</p><div class="cl-meta"><span>Hybrid</span><span>Intermediate</span><span>Step 6 of 6</span></div><ol class="cl-steps"><li class="dn"><i></i><span>Intake</span></li><li class="dn"><i></i><span>Declaration</span></li><li class="dn"><i></i><span>Readiness</span></li><li class="dn"><i></i><span>Scope</span></li><li class="dn"><i></i><span>Quote</span></li><li class="on"><i></i><span>Payment</span></li></ol><div class="cl-nx"><span>After you submit</span><p>A validation case is created with its own case ID. Validators are assigned by role and review independently. You’ll be notified when anything is needed from you. Editing is paused on submitted content until a decision.</p></div></aside><section class="cl-panel ob-in2"><h2 class="cl-ph">Payment</h2><p class="cl-pp">Pay from your Creator Credit Wallet to create your validation case. Creator Credits pay for validation and AI services; they’re separate from your earnings.</p><span class="dc-l">Before you pay</span><ul class="bp"><li class="to"><span class="st to" aria-label="Not started"></span><span>No blocking issues</span><a class="ds-link sm" href="STU-044.dc.html">Open</a></li><li class="ok"><span class="st ok" aria-label="Done"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>Creator Declaration signed</span></li><li class="ok"><span class="st ok" aria-label="Done"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>Creator readiness complete</span></li><li class="ok"><span class="st ok" aria-label="Done"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>Enough Creator Credits</span></li></ul><div class="wl ok"><div class="wl-h"><i class="cr-c" aria-hidden="true">C</i><b>Creator Credit Wallet</b></div><dl><div><dt>Balance</dt><dd>1,240 Credits</dd></div><div><dt>Required</dt><dd>441 Credits</dd></div><div class="r"><dt>Remaining after payment</dt><dd>799 Credits</dd></div></dl><div class="wl-bar"><i style="width: 35.6%"></i></div></div><div class="cl-foot"><a class="ds-ghost cl-bk" href="STU-049.dc.html" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a><a class="ds-btn cl-go" href="STU-052.dc.html"><span>Pay 441 Credits &amp; Submit</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section></div></sc-if>
+<sc-if value="{{s_done}}" hint-placeholder-val="{{ false }}"><div class="ko-wrap ob-in"><div class="ko"><div class="ko-emb ko-v" aria-hidden="true"><span class="cf" aria-hidden="true"><i style="--x:271;--y:-84;--f:438;--d:2.82s;--dl:0.34s;--sw:12px;--sd:0.81s;--fd:0.62s;--rx:-0.39;--r:-57deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:61;--y:-94;--f:453;--d:3.38s;--dl:0.38s;--sw:14px;--sd:0.48s;--fd:0.58s;--rx:0.76;--r:73deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:177;--y:-104;--f:399;--d:2.88s;--dl:0.27s;--sw:6px;--sd:0.49s;--fd:1.04s;--rx:-0.19;--r:61deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:132;--y:-105;--f:408;--d:2.68s;--dl:0.43s;--sw:10px;--sd:0.83s;--fd:0.84s;--rx:0.92;--r:-80deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-185;--y:-22;--f:478;--d:3.08s;--dl:0.20s;--sw:12px;--sd:0.80s;--fd:0.75s;--rx:-0.83;--r:5deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:297;--y:-43;--f:404;--d:2.72s;--dl:0.20s;--sw:13px;--sd:0.53s;--fd:0.97s;--rx:-0.11;--r:-32deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#AFC1F5"></s></b></i><i style="--x:-67;--y:-11;--f:466;--d:3.77s;--dl:0.37s;--sw:15px;--sd:0.46s;--fd:0.69s;--rx:0.99;--r:74deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-293;--y:-129;--f:380;--d:3.33s;--dl:0.45s;--sw:9px;--sd:0.48s;--fd:0.71s;--rx:0.27;--r:-77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-82;--y:-86;--f:428;--d:3.29s;--dl:0.46s;--sw:7px;--sd:0.52s;--fd:1.23s;--rx:0.64;--r:-17deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-218;--y:-61;--f:448;--d:3.07s;--dl:0.33s;--sw:6px;--sd:0.47s;--fd:0.63s;--rx:0.02;--r:-15deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:153;--y:-95;--f:470;--d:3.19s;--dl:0.35s;--sw:15px;--sd:0.89s;--fd:0.64s;--rx:-0.04;--r:77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-140;--y:-21;--f:381;--d:2.92s;--dl:0.32s;--sw:6px;--sd:0.53s;--fd:0.83s;--rx:0.14;--r:-47deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-88;--y:-25;--f:445;--d:3.43s;--dl:0.37s;--sw:7px;--sd:0.47s;--fd:0.56s;--rx:0.82;--r:-1deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-306;--y:-60;--f:453;--d:2.98s;--dl:0.50s;--sw:6px;--sd:0.70s;--fd:1.10s;--rx:0.80;--r:-47deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-94;--y:-54;--f:467;--d:3.10s;--dl:0.43s;--sw:14px;--sd:0.71s;--fd:1.02s;--rx:-0.24;--r:69deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:69;--y:-138;--f:479;--d:3.66s;--dl:0.41s;--sw:9px;--sd:0.78s;--fd:0.99s;--rx:-0.12;--r:58deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-121;--y:-137;--f:475;--d:2.74s;--dl:0.43s;--sw:12px;--sd:0.67s;--fd:1.22s;--rx:-0.26;--r:-44deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-100;--y:-19;--f:404;--d:3.09s;--dl:0.26s;--sw:12px;--sd:0.81s;--fd:1.12s;--rx:-0.60;--r:-26deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-179;--y:-21;--f:393;--d:3.02s;--dl:0.47s;--sw:6px;--sd:0.48s;--fd:1.29s;--rx:0.64;--r:-52deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:211;--y:-96;--f:447;--d:3.46s;--dl:0.45s;--sw:12px;--sd:0.59s;--fd:1.17s;--rx:-0.44;--r:75deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:114;--y:-110;--f:444;--d:3.28s;--dl:0.39s;--sw:10px;--sd:0.54s;--fd:1.13s;--rx:-0.47;--r:-44deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:309;--y:-133;--f:433;--d:3.37s;--dl:0.30s;--sw:6px;--sd:0.54s;--fd:1.17s;--rx:-0.49;--r:-78deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-175;--y:-40;--f:474;--d:3.20s;--dl:0.50s;--sw:7px;--sd:0.83s;--fd:1.07s;--rx:-0.55;--r:25deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-236;--y:-86;--f:470;--d:3.05s;--dl:0.36s;--sw:14px;--sd:0.81s;--fd:1.26s;--rx:-0.07;--r:-28deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:142;--y:-35;--f:451;--d:2.86s;--dl:0.47s;--sw:15px;--sd:0.89s;--fd:0.95s;--rx:0.58;--r:2deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#0F6B45"></s></b></i><i style="--x:262;--y:-30;--f:388;--d:3.13s;--dl:0.36s;--sw:13px;--sd:0.67s;--fd:0.57s;--rx:0.62;--r:-64deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:191;--y:-125;--f:458;--d:2.77s;--dl:0.23s;--sw:11px;--sd:0.78s;--fd:1.18s;--rx:0.38;--r:46deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:165;--y:-88;--f:463;--d:3.27s;--dl:0.23s;--sw:11px;--sd:0.86s;--fd:0.74s;--rx:0.34;--r:76deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-125;--y:-130;--f:407;--d:3.20s;--dl:0.31s;--sw:7px;--sd:0.45s;--fd:0.83s;--rx:0.08;--r:-69deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-241;--y:-136;--f:473;--d:3.15s;--dl:0.47s;--sw:14px;--sd:0.63s;--fd:0.73s;--rx:-0.01;--r:6deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#1652F0"></s></b></i><i style="--x:256;--y:-19;--f:432;--d:2.73s;--dl:0.31s;--sw:6px;--sd:0.57s;--fd:1.08s;--rx:0.95;--r:-71deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-220;--y:-148;--f:452;--d:2.89s;--dl:0.34s;--sw:10px;--sd:0.71s;--fd:1.19s;--rx:0.25;--r:-30deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-305;--y:-61;--f:441;--d:3.25s;--dl:0.46s;--sw:11px;--sd:0.55s;--fd:0.71s;--rx:0.09;--r:70deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#AFC1F5"></s></b></i><i style="--x:-171;--y:-46;--f:470;--d:2.98s;--dl:0.28s;--sw:15px;--sd:0.55s;--fd:1.30s;--rx:0.78;--r:-46deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i></span><span class="ko-halo"></span><span class="ko-disc"><svg class="ko-tick" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" pathLength="1"></path></svg></span></div><span class="ko-pill">Submitted</span><h1 class="ko-h1">Submitted for validation</h1><p class="ko-sub">Your validation case has been created.</p>
+<ol class="ko-tr"><li class="dn"><i><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Submitted</span></li><li class="on"><i></i><span>Validator Assignment</span></li><li class=""><i></i><span>Validation</span></li><li class=""><i></i><span>Decision</span></li></ol>
+<section class="ko-card"><span class="ko-cl">Case summary</span><dl><div><dt>Case ID</dt><dd>VAL-2026-00482</dd></div><div><dt>Course</dt><dd>Data Analysis with SQL</dd></div><div><dt>Validation type</dt><dd>Standard Course Validation</dd></div><div><dt>Validator roles</dt><dd>2 · Educational Validator, Subject Matter Validator · <span class="vs-l"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg> Case Lead</span></dd></div><div><dt>Paid</dt><dd><i class="cr-c" aria-hidden="true">C</i>441 Creator Credits</dd></div><div><dt>Estimated review window</dt><dd>[TO CONFIRM: validation SLA]</dd></div></dl></section>
+<p class="ko-note"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16z"></path><path d="M10 21h4"></path></svg><span>Nothing to do right now. We’ll notify you when validators are assigned or if anything is needed.</span></p>
+<div class="ko-acts"><a class="ds-btn" href="#"><span>Open Validation Workspace</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><a class="ds-link" href="STU-009.dc.html">Back to Studio Home</a></div></div></div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+var T0 = {"t1": false, "t2": false, "t3": true, "t4": false, "t5": false, "t6": false, "t7": true, "t8": false, "t9": false, "t10": false, "t11": false, "t12": false, "t13": true, "t14": false, "t15": true, "t16": false, "t17": true, "t18": true, "t19": false, "t20": false, "t21": false, "t22": false, "t23": false, "t24": false, "t25": false, "t26": false, "t27": true, "t28": false, "t29": false}, G = {"t1": "ai", "t2": "ai", "t3": "ai", "t4": "ai", "t5": "ai", "t6": "tools", "t7": "tools", "t8": "reg", "t9": "reg", "t10": "reg", "t11": "reg", "t12": "reg", "t13": "reg", "t14": "g14", "t15": "g14", "t16": "g16", "t17": "g16", "t27": "top", "t28": "top", "t29": "top"};
+function togVals(self) {
+  var t = self.state.t || T0, v = {};
+  Object.keys(T0).forEach(function (k) {
+    v['c'.concat(k)] = t[k] ? 'on' : ''; v['a'.concat(k)] = t[k] ? 'true' : 'false';
+    v['x'.concat(k)] = function () {
+      var n = Object.assign({}, t);
+      if (G[k]) { Object.keys(G).forEach(function (j) { if (G[j] === G[k]) n[j] = false; }); n[k] = true; } else n[k] = !t[k];
+      self.setState({ t: n });
+    };
+  });
+  return v;
+}
+class Component extends DCLogic {
+  renderVals() {
+    var s = this.props.step || 'intake', v = togVals(this);
+    ["intake", "declare", "creator", "scope", "quote", "short", "enough", "done"].forEach(function (k) { v['s_'.concat(k)] = k === s; });
+    v.rootCls = s === 'short' ? 'is-wait' : (s === 'enough' || s === 'done' ? 'is-ok' : '');
+    return v;
+  }
+}
+</script>
+</body>
+</html>

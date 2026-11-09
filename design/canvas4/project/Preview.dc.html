@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Creator Preview · learner pages · shared source</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.cr-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
+.cr-c{background:#1652F0}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip-b.dn{bottom:auto;top:calc(100% + 10px)}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.nova-card{background:#FFFFFF url(/_blob/2201db898f778e583c1885b56e2d9c62) center / cover no-repeat}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.sm{width:28px;height:28px}
+.dlp-c{position:relative;display:inline-block;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(0,0,0,0) 61%,rgba(150,96,0,.5) 64%,rgba(0,0,0,0) 69%),radial-gradient(circle at 34% 28%,#FFF6CF 0%,#F9DC7A 30%,#EAB534 62%,#C38712 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),inset 0 -1.5px 1px rgba(130,80,0,.35),0 1.5px 0 #A86F06,0 3px 5px -2px rgba(110,70,0,.55);vertical-align:-3px;animation:dlpFlip 6s ease-in-out infinite}
+.dlp-c::before{content:"D";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Google Sans',system-ui,sans-serif;font-size:10px;font-weight:700;line-height:1;transform:translateY(.6px);box-sizing:border-box;color:#8A5A00;text-shadow:0 1px 0 rgba(255,246,207,.85)}
+.dlp-c::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.75) 48%,rgba(255,255,255,0) 60%);background-size:250% 100%;background-position:120% 0;animation:dlpShine 6s ease-in-out infinite;pointer-events:none}
+@keyframes dlpFlip{0%,70%{transform:rotateY(0)}82%{transform:rotateY(180deg)}94%,100%{transform:rotateY(360deg)}}
+@keyframes dlpShine{0%,30%{background-position:120% 0}48%,100%{background-position:-20% 0}}
+@media (prefers-reduced-motion: reduce){.dlp-c,.dlp-c::after{animation:none}}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
+}
+@media (max-width: 760px){
+.tip-b{display:none;width:min(250px,calc(100vw - 48px))}
+.tip:hover .tip-b,.tip:focus .tip-b{display:block}
+}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/56bd922e46929406f00f4b18fe9b3244) left center/contain no-repeat}
+.av{position:relative;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:#EAF0FF;color:#0E3BB8;font-size:11px;font-weight:600;box-sizing:border-box}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ds-btn.sm{height:36px;padding:0 16px;font-size:13.5px}
+.rx{padding:18px;border-radius:20px}
+.rg-a{animation:rgDraw 1.4s cubic-bezier(.2,.8,.2,1) .25s both}
+@keyframes rgDraw{from{stroke-dasharray:0 400}}
+@media (prefers-reduced-motion: reduce){.rg-a{animation:none}}
+@media (max-width: 960px){
+.rx{padding:18px 16px;border-radius:18px}
+}
+body{background:#FFFFFF}
+.lc,.lp2{min-height:100vh;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.pvs{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;padding:10px 20px;background:#FFF4DC;border-bottom:1.5px solid #F4D98E}
+.pvs-t{flex-shrink:0;height:24px;display:inline-flex;align-items:center;padding:0 10px;border-radius:999px;background:#B76E00;color:#FFFFFF;font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.pvs p{flex:1;margin:0;font-size:13.5px;color:#6B4A00}
+.pvs p b{color:#5A3B00;font-weight:600;margin-right:4px}
+.pvs-a{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.pvs .ds-ghost.sm{height:36px;padding:0 14px;font-size:13.5px;gap:6px;background:#FFFFFF;border-color:#F0D08A}
+.lh{display:flex;align-items:center;gap:28px;height:68px;padding:0 32px;border-bottom:1.5px solid #EEF1F7}
+.lh-lg{display:flex}
+.lh-n{display:flex;gap:22px}
+.lh-n a{color:#3A4566;font-size:14.5px;font-weight:500;text-decoration:none}
+.lh-s{flex:1;max-width:420px;display:flex;align-items:center;gap:10px;height:42px;padding:0 16px;border-radius:999px;background:#F5F7FB;color:#8A93AD}
+.lh-s input{flex:1;border:0;background:none;font-family:inherit;font-size:14px;outline:none}
+.lh-na{margin-left:auto;display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:999px;border:1.5px dashed #CBD3E6;font-size:12.5px;font-weight:500;color:#5B6582}
+.lc-hero{position:relative;overflow:hidden;background:linear-gradient(150deg,#0B1433,#102A7A 70%,#1652F0 130%);color:#FFFFFF}
+.lc-hero::after{content:'';position:absolute;right:-100px;top:-180px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(92,134,255,.4),rgba(92,134,255,0) 65%)}
+.lc-in{position:relative;z-index:1;width:min(1200px,100%);box-sizing:border-box;margin:0 auto;padding:36px 32px 44px 32px;padding-right:calc(32px + 380px)}
+.lc-bc{display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,.65)}
+.lc-bc a{color:rgba(255,255,255,.8);text-decoration:none}
+.lc-bd{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+.lc-bd > span{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;font-size:13px;font-weight:500;background:rgba(255,255,255,.12);color:#FFFFFF}
+.lc-gold{background:linear-gradient(135deg,#F7D98B,#C9952C) !important;color:#3D2700 !important}
+.lc-cei b{font-weight:600}
+.lc-hero h1{margin:14px 0 0 0;font-size:40px;line-height:1.1;font-weight:600;letter-spacing:-0.035em}
+.lc-d{margin:12px 0 0 0;max-width:640px;font-size:16.5px;line-height:1.55;color:rgba(255,255,255,.78)}
+.lc-st{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;font-size:14px;color:rgba(255,255,255,.82)}
+.lc-r{display:inline-flex;align-items:center;gap:6px}
+.lc-r b{font-weight:600;color:#FFFFFF}
+.lc-r em{font-style:normal}
+.lc-stars{display:inline-flex;gap:2px}
+.lc-stars i{width:13px;height:13px;background:#F4C66A;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.lc-stars i.h{background:linear-gradient(90deg,#F4C66A 80%,rgba(255,255,255,.3) 80%)}
+.lc-by{margin-top:22px;display:flex;align-items:center;gap:12px;font-size:14px;color:rgba(255,255,255,.8)}
+.lc-by b{color:#FFFFFF;font-weight:600}
+.lc-av{background:linear-gradient(140deg,#5C86FF,#1652F0) !important;color:#FFFFFF !important;font-size:13px !important}
+.lc-body{width:min(1200px,100%);box-sizing:border-box;margin:0 auto;padding:0 32px 64px 32px;display:grid;grid-template-columns:minmax(0,1fr) 352px;gap:44px;align-items:start}
+.lc-main{min-width:0;padding-top:12px}
+.lc-s{padding:30px 0;border-bottom:1.5px solid #EEF1F7}
+.lc-sh{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
+.lc-sh h2{margin:0;font-size:22px;font-weight:600;letter-spacing:-0.02em}
+.lc-meta{font-size:13.5px;color:#5B6582}
+.lc-ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lc-ol li{display:flex;align-items:flex-start;gap:12px;padding:16px;border-radius:16px;background:#F7F9FD;font-size:14.5px;line-height:1.45}
+.lc-ol li > span{width:24px;height:24px;flex-shrink:0;border-radius:50%;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.lc-sk{display:flex;flex-wrap:wrap;gap:8px}
+.lc-sk span{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:999px;border:1.5px solid #DCE5FB;background:#F5F8FF;font-size:14px}
+.lc-sk b{font-weight:500}
+.lc-sk em{font-style:normal;font-size:12px;font-weight:500;color:#0E3BB8;padding-left:8px;border-left:1.5px solid #CBD7F5}
+.lc-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;border-bottom:1.5px solid #EEF1F7}
+.lc-2 .lc-s{border-bottom:0}
+.lc-ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.lc-ul li{position:relative;padding-left:18px;font-size:14.5px;line-height:1.45;color:#3A4566}
+.lc-ul li::before{content:'';position:absolute;left:2px;top:8px;width:6px;height:6px;border-radius:50%;background:#1652F0}
+.lc-ul.ck li{padding-left:0;display:flex;align-items:flex-start;gap:10px}
+.lc-ul.ck li::before{display:none}
+.lc-ul.ck li > span{width:20px;height:20px;flex-shrink:0;border-radius:50%;background:#E7F5EE;color:#0F6B45;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.lc-p{margin:14px 0 0 0;font-size:14px;line-height:1.55;color:#5B6582}
+.lc-sh + .lc-p{margin-top:0}
+.lc-dl{margin:0;display:flex;flex-direction:column;gap:12px}
+.lc-dl dt{font-size:12.5px;font-weight:500;color:#8A93AD}
+.lc-dl dd{margin:2px 0 0 0;font-size:14.5px;line-height:1.45}
+.lc-in5{margin-top:16px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.lc-in5 span{display:flex;flex-direction:column;gap:2px;padding:14px;border-radius:16px;background:#F7F9FD}
+.lc-in5 b{font-size:22px;font-weight:600;letter-spacing:-0.02em}
+.lc-in5 em{font-style:normal;font-size:12.5px;color:#5B6582}
+.lc-al{display:block;margin:20px 0 10px 0;font-size:13px;font-weight:600}
+.lc-cu{border:1.5px solid #E6EAF3;border-radius:18px;overflow:hidden}
+.lc-cu details + details{border-top:1.5px solid #EEF1F7}
+.lc-cu summary{list-style:none;display:grid;grid-template-columns:minmax(0,1fr) auto 20px;align-items:center;gap:14px;padding:16px 18px;cursor:pointer}
+.lc-cu summary::-webkit-details-marker{display:none}
+.lc-cu summary b{font-size:15px;font-weight:600}
+.lc-cu summary em{font-style:normal;font-size:13px;color:#5B6582}
+.lc-cu summary svg{color:#8A93AD;transition:transform .2s ease}
+.lc-cu details[open] summary svg{transform:rotate(180deg)}
+.lc-cu details[open] summary{background:#F7F9FD}
+.lc-cu ol{list-style:none;margin:0;padding:6px 18px 12px 18px;background:#F7F9FD}
+.lc-cu li{display:grid;grid-template-columns:18px minmax(0,1fr) auto auto;align-items:center;gap:12px;min-height:42px;font-size:14px;border-top:1.5px solid #EEF1F7}
+.lc-cu li:first-child{border-top:0}
+.lc-cu li svg{color:#1652F0}
+.lc-cu li em{font-style:normal;font-size:13px;color:#5B6582}
+.lc-pv{display:inline-flex;align-items:center;height:24px;padding:0 9px;border-radius:999px;background:#EAF0FF;color:#0E3BB8;font-size:12px;font-weight:500}
+.lc-pj{display:grid;grid-template-columns:52px minmax(0,1fr);gap:18px;padding:22px;border-radius:20px;background:linear-gradient(160deg,#F5F8FF,#FFFFFF);border:1.5px solid #DCE5FB}
+.lc-pji{width:52px;height:52px;border-radius:16px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.lc-k{font-size:12.5px;font-weight:500;color:#1652F0}
+.lc-pj b{display:block;margin-top:4px;font-size:17px;font-weight:600}
+.lc-pj p{margin:6px 0 0 0;font-size:14.5px;line-height:1.55;color:#3A4566}
+.lc-ce{display:flex;align-items:center;gap:18px;padding:20px;border-radius:20px;border:1.5px solid #E6EAF3}
+.lc-cei2{width:56px;height:56px;flex-shrink:0;border-radius:16px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.lc-ce b{font-size:16px;font-weight:600}
+.lc-ce p{margin:4px 0 0 0;font-size:14px;line-height:1.5;color:#5B6582}
+.lc-rv{display:grid;grid-template-columns:240px minmax(0,1fr);gap:28px;align-items:start}
+.lc-rs > b{display:block;font-size:44px;font-weight:600;letter-spacing:-0.03em;line-height:1}
+.lc-rs .lc-stars{margin-top:8px}
+.lc-rs > em{display:block;margin-top:6px;font-style:normal;font-size:13px;color:#5B6582}
+.lc-rs ul{list-style:none;margin:14px 0 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.lc-rs li{display:grid;grid-template-columns:12px minmax(0,1fr) 34px;align-items:center;gap:8px;font-size:12.5px;color:#5B6582}
+.lc-rs li i{height:6px;border-radius:6px;background:#EEF1F7;overflow:hidden}
+.lc-rs li i b{display:block;height:100%;border-radius:6px;background:#F4C66A}
+.lc-rs li em{font-style:normal;text-align:right}
+.lc-q{margin:0;padding:22px;border-radius:20px;background:#F7F9FD}
+.lc-q p{margin:0;font-size:15px;line-height:1.6}
+.lc-q footer{margin-top:16px;display:flex;align-items:center;gap:10px}
+.lc-q footer span:last-child{display:flex;flex-direction:column}
+.lc-q footer b{font-size:14px;font-weight:600}
+.lc-q footer em{font-style:normal;font-size:12.5px;color:#5B6582}
+.lc-cr{display:grid;grid-template-columns:72px minmax(0,1fr);gap:20px}
+.lc-crb{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.lc-crn{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.lc-crn b{font-size:17px;font-weight:600}
+.lc-vf{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 9px;border-radius:999px;background:#E7F5EE;color:#0F6B45;font-size:12px;font-weight:500}
+.lc-crb > em{font-style:normal;font-size:13.5px;color:#5B6582}
+.lc-crb p{margin:6px 0 0 0;font-size:14.5px;line-height:1.55;color:#3A4566}
+.lc-crs{margin:10px 0 14px 0;display:flex;gap:22px}
+.lc-crs span{display:flex;flex-direction:column;font-size:12.5px;color:#5B6582}
+.lc-crs b{font-size:17px;font-weight:600;color:#0B1433}
+.lc-vq{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding:22px;border-radius:20px;border:1.5px solid #F0DDAE;background:linear-gradient(160deg,#FFFAEB,#FFFFFF 60%)}
+.lc-vb{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.lc-medal{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#F7D98B,#C9952C);color:#3D2700;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 24px -12px rgba(160,110,20,.8)}
+.lc-vb > b{font-size:16px;font-weight:600;color:#5A3B00}
+.lc-ceir{position:relative;width:76px;height:76px}
+.lc-ceir > span{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.lc-ceir b{font-size:20px;font-weight:600}
+.lc-ceir em{font-style:normal;font-size:10px;color:#6B4A00}
+.lc-vt p{margin:0;font-size:14.5px;line-height:1.55;color:#3A4566}
+.lc-vd{margin:16px 0 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.lc-vd dt{font-size:12px;color:#8A93AD}
+.lc-vd dd{margin:2px 0 0 0;font-size:14px;font-weight:600}
+.lc-fine{margin-top:16px !important;font-size:12.5px !important;color:#8A93AD !important}
+.lc-faq{border:1.5px solid #E6EAF3;border-radius:18px;overflow:hidden}
+.lc-faq details + details{border-top:1.5px solid #EEF1F7}
+.lc-faq summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;font-size:15px;font-weight:500;cursor:pointer}
+.lc-faq summary::-webkit-details-marker{display:none}
+.lc-faq summary svg{color:#8A93AD}
+.lc-ill{margin:24px 0 0 0;font-size:12.5px;color:#8A93AD}
+.lc-buy{position:relative;margin-top:-220px;z-index:5;display:flex;flex-direction:column;gap:14px}
+.lc-buy .lc-s{padding:20px;border:1.5px solid #E6EAF3;border-radius:22px;background:#FFFFFF}
+.lc-buy .lc-sh{margin-bottom:12px}
+.lc-buy .lc-sh h2{font-size:17px}
+.lc-buy .lc-vq{grid-template-columns:minmax(0,1fr);gap:14px;padding:0;border:0;background:none}
+.lc-buy .lc-s:has(.lc-vq){border-color:#F0DDAE;background:linear-gradient(160deg,#FFFAEB,#FFFFFF 70%)}
+.lc-buy .lc-vb{flex-direction:row;text-align:left}
+.lc-buy .lc-ceir{margin-left:auto}
+.lc-buy .lc-vt p{font-size:13.5px}
+.lc-buy .lc-vd{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.lc-buy .lc-vd dd{font-size:12.5px}
+.lc-buy .lc-ce{padding:0;border:0;align-items:flex-start;gap:14px}
+.lc-buy .lc-cei2{width:44px;height:44px;border-radius:14px}
+.lc-buy .lc-ce b{font-size:14.5px}
+.lc-buy .lc-ce p{font-size:13px}
+.lc-buy .lc-cr{grid-template-columns:52px minmax(0,1fr);gap:14px}
+.lc-buy .lc-cr > .av{width:52px !important;height:52px !important}
+.lc-buy .lc-crb p{font-size:13.5px}
+.lc-bx{border-radius:24px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 30px 60px -30px rgba(11,20,51,.45);overflow:hidden}
+.lc-bv{position:relative;display:block;height:150px;background:radial-gradient(circle at 85% 20%,rgba(92,134,255,.85),rgba(92,134,255,0) 60%),linear-gradient(140deg,#1652F0,#0B1433)}
+.lc-bv i{position:absolute;left:20px;bottom:14px;font-style:normal;font-size:38px;font-weight:600;letter-spacing:-0.03em;color:#FFFFFF}
+.lc-bv em{position:absolute;right:20px;height:7px;border-radius:7px;background:rgba(255,255,255,.24)}
+.lc-bv em:nth-of-type(1){top:24px;width:90px}.lc-bv em:nth-of-type(2){top:40px;width:60px;background:rgba(255,255,255,.42)}
+.lc-bi{padding:20px;display:flex;flex-direction:column;gap:10px}
+.lc-bi > b{font-size:16px;font-weight:600;margin-bottom:2px}
+.lc-o{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;padding:14px;border-radius:16px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;color:#0B1433;text-align:left;cursor:pointer}
+.lc-o.on{border-color:#1652F0;background:#F5F8FF}
+.lc-ot{display:flex;flex-direction:column;gap:2px}
+.lc-ot b{font-size:14.5px;font-weight:600}
+.lc-ot em{font-style:normal;font-size:12.5px;color:#5B6582}
+.lc-op{font-size:18px;font-weight:600;white-space:nowrap}
+.lc-op small{font-size:12px;font-weight:500;color:#5B6582}
+.lc-cta{width:100%;justify-content:space-between;margin-top:6px}
+.ds-btn.is-dis{background:#C9D2E6;box-shadow:none;cursor:not-allowed}
+.ds-btn.is-dis:hover{background:#C9D2E6;transform:none}
+.ds-btn.is-dis .ob-arrow{color:#8A93AD}
+.lc-tn{margin:0;display:flex;align-items:center;gap:6px;font-size:12.5px;color:#5B6582}
+.lc-ask{display:flex;align-items:center;gap:10px;margin-top:6px;padding:12px 14px;border-radius:16px;border:1.5px solid #DCE5FB;font-family:inherit;font-size:14px;font-weight:600;color:#0E3BB8;text-align:left;cursor:pointer}
+.lp2{display:flex;flex-direction:column;background:#F7F9FD}
+.lpt{display:flex;align-items:center;gap:16px;height:64px;padding:0 20px;background:#FFFFFF;border-bottom:1.5px solid #EEF1F7}
+.lpt-x{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px 0 10px;border-radius:999px;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none}
+.lpt-x:hover{background:#F5F8FF}
+.lpt-t{font-size:15px;font-weight:600;padding-left:16px;border-left:1.5px solid #EEF1F7}
+.lpt-d{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border-radius:999px;background:linear-gradient(160deg,#FFF1CF,#FFFAEB);border:1.5px solid #F4D98E;font-size:13px;color:#6B4A00}
+.lpt-d b{font-weight:600;color:#5A3B00}
+.lpt-d .dlp-c{width:16px;height:16px}
+.lpb{flex-grow:1;display:grid;grid-template-columns:320px minmax(0,1fr)}
+.lps{background:#FFFFFF;border-right:1.5px solid #EEF1F7;padding:20px 16px}
+.lps-p{display:flex;flex-direction:column;gap:10px;padding:14px 16px;border-radius:16px;background:#F7F9FD}
+.lps-p > span{font-size:12.5px;font-weight:500;color:#5B6582}
+.lps-r{display:flex;align-items:center;gap:12px}
+.lps-r b{font-size:22px;font-weight:600}
+.lps-c{margin-top:18px}
+.lps-c > b{display:block;padding:0 6px 8px 6px;font-size:13.5px;font-weight:600}
+.lps-c ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.lps-c li{display:grid;grid-template-columns:22px minmax(0,1fr) auto;align-items:center;gap:10px;min-height:42px;padding:0 10px;border-radius:12px;font-size:13.5px;color:#3A4566}
+.lps-c li em{font-style:normal;font-size:12px;color:#8A93AD}
+.lps-i{width:22px;height:22px;border-radius:50%;background:#F1F3F8;color:#5B6582;display:flex;align-items:center;justify-content:center}
+.lps-c li.dn .lps-i{background:#E7F5EE;color:#0F6B45}
+.lps-c li.on{background:#F5F8FF;color:#0B1433;font-weight:600;box-shadow:inset 3px 0 0 #1652F0}
+.lps-c li.on .lps-i{background:#1652F0;color:#FFFFFF}
+.lpm{padding:28px 40px 48px 40px;max-width:900px;box-sizing:border-box;width:100%;margin:0 auto}
+.lpv{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:radial-gradient(circle at 75% 25%,rgba(92,134,255,.6),rgba(92,134,255,0) 55%),linear-gradient(140deg,#13296E,#0B1433);box-shadow:0 30px 60px -36px rgba(11,20,51,.8)}
+.lpv-p{position:absolute;left:50%;top:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;background:rgba(255,255,255,.95);color:#1652F0;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(255,255,255,.15);animation:lpvP 2.4s ease-out infinite}
+@keyframes lpvP{0%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}100%{box-shadow:0 0 0 22px rgba(255,255,255,0)}}
+.lpv-b{position:absolute;left:20px;right:110px;bottom:22px;height:5px;border-radius:5px;background:rgba(255,255,255,.22)}
+.lpv-b i{display:block;height:100%;border-radius:5px;background:#FFFFFF}
+.lpv-tm{position:absolute;right:20px;bottom:16px;font-size:12.5px;color:rgba(255,255,255,.85)}
+.lpm-k{display:block;margin-top:24px;font-size:13px;font-weight:500;color:#1652F0}
+.lpm h1{margin:6px 0 0 0;font-size:30px;font-weight:600;letter-spacing:-0.03em}
+.lpn{margin-top:18px;padding:20px 22px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3}
+.lpn b{font-size:15px;font-weight:600}
+.lpn p{margin:8px 0 0 0;font-size:15px;line-height:1.65;color:#3A4566}
+.lpf{margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.lpf .ds-ghost{gap:8px}
+@media (max-width: 1180px){.lh-n{display:none}.lc-in5{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width: 960px){
+.pvs{flex-wrap:wrap;gap:8px 10px;padding:10px 16px}
+.pvs p{flex-basis:100%;order:3;font-size:12.5px}
+.pvs-a{margin-left:auto}
+.pvs-a .ds-ghost span{display:none}
+.pvs-a .ds-ghost{width:36px;padding:0;justify-content:center;gap:0}
+.pvs-a .ds-ghost svg{flex-shrink:0;width:16px;height:16px}
+.lh{height:60px;padding:0 16px;gap:12px}
+.lh-s{display:none}
+.lh-na{font-size:11.5px;height:28px;padding:0 10px}
+.lc-in{padding:24px 16px 30px 16px}
+.lc-hero h1{font-size:28px}
+.lc-d{font-size:15px}
+.lc-st{gap:6px 12px;font-size:13px}
+.lc-body{grid-template-columns:minmax(0,1fr);gap:0;padding:0 16px 24px 16px;display:flex;flex-direction:column;align-items:stretch}
+.lc-main{min-width:0;width:100%}
+.lc-buy{display:contents}
+.lc-bx{order:-1;margin-top:-14px}
+.lc-buy .lc-s{order:5;margin-top:14px;padding:18px 16px}
+.lc-bv{display:none}
+.lc-bi{padding:16px}
+.lc-s{padding:24px 0}
+.lc-sh h2{font-size:19px}
+.lc-ol{grid-template-columns:minmax(0,1fr);gap:8px}
+.lc-ol li{padding:12px 14px;font-size:14px}
+.lc-sk{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px;padding:0 16px;scrollbar-width:none}
+.lc-sk::-webkit-scrollbar{display:none}
+.lc-sk span{flex-shrink:0}
+.lc-2{grid-template-columns:minmax(0,1fr);gap:0}
+.lc-2 .lc-s + .lc-s{border-top:1.5px solid #EEF1F7}
+.lc-in5{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.lc-in5 span:first-child{grid-column:1 / -1}
+.lc-cu summary{grid-template-columns:minmax(0,1fr) 20px;padding:14px}
+.lc-cu summary em{grid-column:1;grid-row:2;font-size:12px}
+.lc-cu summary svg{grid-row:1 / span 2;grid-column:2}
+.lc-cu ol{padding:4px 14px 10px 14px}
+.lc-pj{grid-template-columns:minmax(0,1fr);padding:18px;gap:12px}
+.lc-rv{grid-template-columns:minmax(0,1fr);gap:18px}
+.lc-cr{grid-template-columns:56px minmax(0,1fr);gap:14px}
+.lc-cr > .av{width:56px !important;height:56px !important}
+.lc-vq{grid-template-columns:minmax(0,1fr)}
+.lc-vb{flex-direction:row;justify-content:flex-start;text-align:left}
+.lc-ceir{margin-left:auto}
+.lc-vd{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.lc-vd dd{font-size:13px}
+.lpt{height:56px;padding:0 12px;gap:10px}
+.lpt-x span,.lpt-t{display:none}
+.lpb{grid-template-columns:minmax(0,1fr);display:flex;flex-direction:column}
+.lps{order:2;border-right:0;border-top:1.5px solid #EEF1F7;padding:16px}
+.lpm{padding:0 0 20px 0}
+.lpv{border-radius:0}
+.lpm-k,.lpm h1,.lpn,.lpf{margin-left:16px;margin-right:16px}
+.lpm h1{font-size:23px}
+.lpn{padding:16px}
+.lpf{flex-direction:column-reverse;align-items:stretch}
+.lpf .ds-btn{width:100%;justify-content:space-between}
+.lpf .ds-btn span:first-child{white-space:normal;text-align:left}
+}
+</style>
+</helmet>
+<sc-if value="{{s_course}}" hint-placeholder-val="{{ true }}"><div class="lc">
+<div class="pvs"><span class="pvs-t">Creator Preview</span><p><b>Learner Preview</b> You’re viewing this course as a learner would see it before enrolling. Purchases, enrollments and learning rewards are disabled in preview mode.</p><span class="pvs-a"><a class="ds-ghost sm" href="STU-PRV-L.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg><span>Preview Sample Lesson</span></a><a class="ds-ghost sm pvs-x" href="STU-040.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg><span>Exit Preview</span></a></span></div>
+<header class="lh"><a class="lh-lg" href="#" aria-label="Credalio"><span class="lg-word"></span></a><nav class="lh-n"><a href="#">Browse</a><a href="#">Certifications</a><a href="#">Career Paths</a><a href="#">My Learning</a></nav>
+<label class="lh-s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input placeholder="Search courses, certifications, paths..." aria-label="Search"></label><span class="lh-na">No Learner Account Context</span></header>
+<div class="lc-hero"><div class="lc-in">
+<nav class="lc-bc" aria-label="Breadcrumb"><a href="#">Marketplace</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Technology</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Data Analytics</span></nav>
+<div class="lc-bd"><span class="lc-gold"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold Validated</span></span><span class="lc-cei"><b>CEI 87</b>/100</span><span class="lc-lv">Intermediate</span></div>
+<h1>Data Analysis with SQL</h1>
+<p class="lc-d">Learn how to query, clean and analyze real datasets using SQL, then apply your skills to practical business problems.</p>
+<div class="lc-st"><span class="lc-r"><b>4.8</b><span class="lc-stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="h"></i></span><em>(126 reviews)</em></span><span>2,418 learners</span><span>18 hours</span><span>6 chapters</span><span>English</span><span>Updated Sep 2026</span></div>
+<div class="lc-by"><span class="av lc-av" style="width: 40px; height: 40px">AM</span><span>Created by <b>Alex Morgan</b> · Data Analytics Educator</span></div>
+</div></div>
+<div class="lc-body"><div class="lc-main">
+<section class="lc-s"><div class="lc-sh"><h2>What You’ll Be Able to Do</h2></div><ul class="lc-ol"><li><span><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Write SQL queries to retrieve and analyze data</li><li><span><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Clean and organize datasets for analysis</li><li><span><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Combine tables and produce useful business insights</li><li><span><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Complete a practical SQL analysis project</li></ul></section><section class="lc-s"><div class="lc-sh"><h2>Skills You’ll Develop</h2></div><div class="lc-sk"><span><b>SQL Queries</b><em>Intermediate</em></span><span><b>Data Cleaning</b><em>Intermediate</em></span><span><b>Database Joins</b></span><span><b>Data Analysis</b></span><span><b>Data Interpretation</b><em>Foundational</em></span><span><b>Problem Solving</b></span></div></section><div class="lc-2"><section class="lc-s"><div class="lc-sh"><h2>Who This Course Is For</h2></div><ul class="lc-ul"><li>Aspiring data analysts</li><li>Business professionals working with reports</li><li>Students with basic spreadsheet experience</li><li>Professionals transitioning into analytics</li></ul><p class="lc-p">Best for: career development, practical workplace skills, professional upskilling.</p></section><section class="lc-s"><div class="lc-sh"><h2>What You Should Know First</h2></div><dl class="lc-dl"><div><dt>Required knowledge</dt><dd>Basic spreadsheet familiarity.</dd></div><div><dt>Required tools</dt><dd>Computer and access to the SQL learning environment.</dd></div><div><dt>Recommended</dt><dd>Comfortable working with tables and simple data.</dd></div></dl></section></div><section class="lc-s"><div class="lc-sh"><h2>What’s Included in This Course</h2><span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Illustrative counts. In production, calculate lesson, assessment and resource totals from the approved published course version. Only features actually included are shown — downloadable resources (practice datasets, workbooks) are counted separately from PDF lessons in the curriculum.</span></span></div><p class="lc-p">Everything you need to learn, practice and apply your SQL skills.</p><div class="lc-in5"><span><b>18 hours</b><em>Learning content</em></span><span><b>14</b><em>Video lessons</em></span><span><b>8</b><em>Downloadable resources</em></span><span><b>5</b><em>Assessments</em></span><span><b>1</b><em>Practical project</em></span></div><span class="lc-al">Also Included</span><ul class="lc-ul ck"><li><span><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Practical exercises and knowledge checks</li><li><span><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Access to course learning materials</li><li><span><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Learner support as provided by the creator</li><li><span><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Verified completion certificate when requirements are met</li></ul></section><section class="lc-s"><div class="lc-sh"><h2>Course Curriculum</h2><span class="lc-meta">6 chapters · 18 hours</span></div><div class="lc-cu"><details open><summary><b>Chapter 1 — Getting Started with SQL</b><em>4 lessons · 55 min</em><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary><ol><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg><span>Welcome to SQL</span><em>8 min</em><span class="lc-pv">Preview</span></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg><span>Understanding Databases</span><em>20 min</em></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg><span>Setting Up Your Environment</span><em>17 min</em></li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg><span>Knowledge Check</span><em>10 min</em></li></ol></details><details><summary><b>Chapter 2: Working with Databases</b><em>Lessons, practice and learning activities</em><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary></details><details><summary><b>Chapter 3: Filtering and Aggregating Data</b><em>Lessons, practice and learning activities</em><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary></details><details><summary><b>Chapter 4: SQL Joins and Relationships</b><em>Lessons, practice and learning activities</em><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary></details><details><summary><b>Chapter 5: Advanced Queries</b><em>Lessons, practice and learning activities</em><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary></details><details><summary><b>Chapter 6: Final Project and Assessment</b><em>Lessons, practice and learning activities</em><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary></details></div></section><section class="lc-s"><div class="lc-sh"><h2>Projects &amp; Evidence</h2></div><div class="lc-pj"><span class="lc-pji"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></span><div><span class="lc-k">What You’ll Build</span><b>SQL Business Analysis Project</b><p>Analyze a sample sales dataset, identify performance patterns and produce a structured report using SQL.</p><span class="lc-al">You’ll demonstrate:</span><ul class="lc-ul ck"><li><span><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Query writing and data filtering</li><li><span><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Combining and interpreting datasets</li><li><span><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Presenting findings supported by evidence</li></ul></div></div></section><section class="lc-s"><div class="lc-sh"><h2>Learner Reviews</h2><a class="ds-link sm" href="#">See All Reviews</a></div><div class="lc-rv"><div class="lc-rs"><b>4.8</b><span class="lc-stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="h"></i></span><em>126 reviews · Verified learners</em><ul><li><span>5</span><i><b style="width: 78%"></b></i><em>78%</em></li><li><span>4</span><i><b style="width: 14%"></b></i><em>14%</em></li><li><span>3</span><i><b style="width: 5%"></b></i><em>5%</em></li><li><span>2</span><i><b style="width: 2%"></b></i><em>2%</em></li><li><span>1</span><i><b style="width: 1%"></b></i><em>1%</em></li></ul></div><blockquote class="lc-q"><p>The practical SQL exercises helped me understand how to work with real business data. The final project was particularly useful.</p><footer><span class="av lc-av" style="width: 36px; height: 36px">AO</span><span><b>Amara O.</b><em>Verified learner</em></span></footer></blockquote></div></section><section class="lc-s"><div class="lc-sh"><h2>Frequently Asked Questions</h2></div><div class="lc-faq"><details><summary>Can I learn with DLP?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary></details><details><summary>What happens if I run out of DLP?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary></details><details><summary>What does lifetime access include?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary></details><details><summary>Do I need prior experience?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary></details><details><summary>Will I receive a certificate?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary></details><details><summary>Can I revisit completed lessons?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary></details><details><summary>How do I get support?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary></details></div></section>
+<p class="lc-ill">Illustrative page composition using sample course data. Actual content, validation details and access options come from the published course record.</p>
+</div>
+<aside class="lc-buy"><div class="lc-bx"><span class="lc-bv" aria-hidden="true"><i>SQL</i><em></em><em></em></span><div class="lc-bi"><b>Choose How to Learn</b>
+<button type="button" class="lc-o on"><span class="lc-oi"><span class="dlp-c" aria-hidden="true"></span></span><span class="lc-ot"><b>Subscription</b><em>Learn using your DLP allowance</em></span><span class="lc-op">1,800 <small>DLP</small></span></button>
+<button type="button" class="lc-o"><span class="lc-oi"><i class="cr-c" aria-hidden="true">C</i></span><span class="lc-ot"><b>Lifetime Access</b><em>Purchase continuing course access</em></span><span class="lc-op">420 <small>Credits</small></span></button>
+<span class="ds-btn lc-cta is-dis" aria-disabled="true"><span>Choose Access Option</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></span>
+<p class="lc-tn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg><span>Access and eligibility terms are shown before confirmation.</span></p>
+<button type="button" class="lc-ask nova-card"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span><span>Ask Nova: Is this course right for me?</span></button></div></div><section class="lc-s"><div class="lc-sh"><h2>Validation &amp; Quality</h2></div><div class="lc-vq"><div class="lc-vb"><span class="lc-medal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg></span><b>Gold Validated</b><span class="lc-ceir"><svg class="rg" viewBox="0 0 120 120" width="76" height="76" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#F3EAD3" stroke-width="9"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="#C08A1E" stroke-width="9" stroke-linecap="round" stroke-dasharray="273.3 400" style="--d: 273.3" transform="rotate(-90 60 60)"></circle></svg><span><b>87</b><em>/ 100 CEI</em></span></span></div><div class="lc-vt"><p>This course has been reviewed against Credalio’s learning quality standards, including relevant learning design, subject accuracy and assessment requirements.</p><dl class="lc-vd"><div><dt>Course Version</dt><dd>v1.0</dd></div><div><dt>Originally Published</dt><dd>12 Sep 2026</dd></div><div><dt>Last Updated</dt><dd>Updated Sep 2026</dd></div></dl><p class="lc-fine">Validation reflects approved review scope. It does not guarantee employment, third-party certification or a particular professional outcome. “Last Updated” reflects the most recent approved version activated for the live course, not draft edit dates.</p></div></div></section><section class="lc-s"><div class="lc-sh"><h2>Completion &amp; Achievements</h2></div><div class="lc-ce"><span class="lc-cei2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M7 9h10M7 12h6"></path><path d="m14 17 1 4 2-1.2L19 21l1-4"></path></svg></span><div><b>Verified Course Completion Certificate</b><p>Complete the required lessons, pass mandatory assessments and submit the final project to qualify.</p></div></div></section><section class="lc-s"><div class="lc-sh"><h2>Meet Your Creator</h2></div><div class="lc-cr"><span class="av lc-av" style="width: 72px; height: 72px">AM</span><div class="lc-crb"><span class="lc-crn"><b>Alex Morgan</b><span class="lc-vf"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Credentials Verified</span></span></span><em>Data Analytics Educator</em><p>Alex helps aspiring analysts and working professionals develop practical skills in SQL, reporting and business analytics.</p><div class="lc-crs"><span><b>8</b>Courses</span><span><b>12.4k</b>Learners</span><span><b>4.8</b>Rating</span></div><a class="ds-ghost sm" href="#">View Creator Profile</a></div></div></section></aside>
+</div></div></sc-if><sc-if value="{{s_lesson}}" hint-placeholder-val="{{ false }}"><div class="lp2">
+<div class="pvs"><span class="pvs-t">Creator Preview</span><p><b>Learning Preview</b> You’re viewing this course as a learner would see it before enrolling. Purchases, enrollments and learning rewards are disabled in preview mode.</p><span class="pvs-a"><a class="ds-ghost sm pvs-x" href="STU-040.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg><span>Exit Preview</span></a></span></div>
+<header class="lpt"><a class="lpt-x" href="STU-PRV.dc.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Exit to Course</span></a><b class="lpt-t">Data Analysis with SQL</b><span style="flex-grow: 1"></span><span class="lpt-d"><span class="dlp-c" aria-hidden="true"></span><b>1,800</b> DLP</span><span class="av" style="width: 36px; height: 36px">JM</span></header>
+<div class="lpb"><aside class="lps"><div class="lps-p"><span>Course Progress</span><div class="lps-r"><svg class="rg" viewBox="0 0 120 120" width="44" height="44" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#EAF0FF" stroke-width="7"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="#1652F0" stroke-width="7" stroke-linecap="round" stroke-dasharray="194.8 400" style="--d: 194.8" transform="rotate(-90 60 60)"></circle></svg><b>62%</b></div></div>
+<div class="lps-c"><b>Chapter 1 — Getting Started with SQL</b><ol><li class="dn"><span class="lps-i"><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>Welcome to SQL</span><em>8 min</em></li><li class="on"><span class="lps-i"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg></span><span>Understanding Databases</span><em>20 min</em></li><li class=""><span class="lps-i"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg></span><span>Setting Up Your Environment</span><em>17 min</em></li><li class=""><span class="lps-i"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg></span><span>Knowledge Check</span><em>10 min</em></li></ol></div>
+<div class="lps-c"><b>Chapter 2 — Working with Databases</b><ol><li><span class="lps-i"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg></span><span>Primary and Foreign Keys</span></li><li><span class="lps-i"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg></span><span>Normalization Basics</span></li><li><span class="lps-i"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg></span><span>Practice Activity</span></li></ol></div></aside>
+<main class="lpm"><div class="lpv" aria-label="Video"><span class="lpv-p"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m10 9.5 5 2.5-5 2.5z" fill="currentColor"></path></svg></span><span class="lpv-b"><i style="width: 38%"></i></span><span class="lpv-tm">7:36 / 20:00</span></div>
+<span class="lpm-k">Chapter 1 · Video Lesson</span><h1>Understanding Databases</h1>
+<section class="lpn"><b>Lesson Notes</b><p>This lesson introduces relational databases, tables, rows and columns, and how data is organized before you start writing queries. By the end, you’ll understand how SQL fits into a database system.</p></section>
+<div class="lpf"><a class="ds-ghost" href="#"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Previous</span></a><a class="ds-btn" href="#"><span>Next: Setting Up Your Environment</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></main></div>
+</div></sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() { var v = this.props.view || 'course'; return { s_course: v === 'course', s_lesson: v === 'lesson' }; }
+}
+</script>
+</body>
+</html>

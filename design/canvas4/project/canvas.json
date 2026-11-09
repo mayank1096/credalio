@@ -995,9 +995,329 @@
       "is_interactive": true,
       "expand": "fill"
     },
-    "Setup.dc.html": {
+    "STU-040.dc.html": {
       "x": 0,
       "y": 29015,
+      "w": 1440,
+      "h": 1080,
+      "title": "CR-STU-040 · Course Review (learner preview) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-040-Mobile.dc.html": {
+      "x": 1520,
+      "y": 29015,
+      "w": 390,
+      "h": 1881,
+      "title": "CR-STU-040 · Course Review (learner preview) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-040M.dc.html": {
+      "x": 2070,
+      "y": 29015,
+      "w": 1440,
+      "h": 1401,
+      "title": "CR-STU-040 · Marketplace preview · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-040M-Mobile.dc.html": {
+      "x": 3590,
+      "y": 29015,
+      "w": 390,
+      "h": 1717,
+      "title": "CR-STU-040 · Marketplace preview · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-PRV.dc.html": {
+      "x": 4140,
+      "y": 29015,
+      "w": 1440,
+      "h": 3467,
+      "title": "Creator Preview · Preview as Learner · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-PRV-Mobile.dc.html": {
+      "x": 5660,
+      "y": 29015,
+      "w": 390,
+      "h": 5584,
+      "title": "Creator Preview · Preview as Learner · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-PRV-L.dc.html": {
+      "x": 6210,
+      "y": 29015,
+      "w": 1440,
+      "h": 990,
+      "title": "Creator Preview · Learning Experience Preview (CR-LEARN-PRV-001) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-PRV-L-Mobile.dc.html": {
+      "x": 7730,
+      "y": 29015,
+      "w": 390,
+      "h": 1371,
+      "title": "Creator Preview · Learning Experience Preview (CR-LEARN-PRV-001) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-041.dc.html": {
+      "x": 8280,
+      "y": 29015,
+      "w": 1440,
+      "h": 1423,
+      "title": "CR-STU-041 · Course Intelligence Profile · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-041-Mobile.dc.html": {
+      "x": 9800,
+      "y": 29015,
+      "w": 390,
+      "h": 2426,
+      "title": "CR-STU-041 · Course Intelligence Profile · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-042.dc.html": {
+      "x": 0,
+      "y": 35019,
+      "w": 1440,
+      "h": 1665,
+      "title": "CR-STU-042 · Nova Course Review (not validation) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-042-Mobile.dc.html": {
+      "x": 1520,
+      "y": 35019,
+      "w": 390,
+      "h": 2729,
+      "title": "CR-STU-042 · Nova Course Review (not validation) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-043.dc.html": {
+      "x": 2070,
+      "y": 35019,
+      "w": 1440,
+      "h": 1478,
+      "title": "CR-STU-043 · Validation Readiness (incl. Commercial) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-043-Mobile.dc.html": {
+      "x": 3590,
+      "y": 35019,
+      "w": 390,
+      "h": 2469,
+      "title": "CR-STU-043 · Validation Readiness (incl. Commercial) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-044.dc.html": {
+      "x": 4140,
+      "y": 35019,
+      "w": 1440,
+      "h": 1700,
+      "title": "CR-STU-044 · Issues to resolve · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-044-Mobile.dc.html": {
+      "x": 5660,
+      "y": 35019,
+      "w": 390,
+      "h": 2692,
+      "title": "CR-STU-044 · Issues to resolve · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-045.dc.html": {
+      "x": 0,
+      "y": 38168,
+      "w": 1440,
+      "h": 1044,
+      "title": "CR-STU-045 · Validation intake · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-045-Mobile.dc.html": {
+      "x": 1520,
+      "y": 38168,
+      "w": 390,
+      "h": 1716,
+      "title": "CR-STU-045 · Validation intake · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-046.dc.html": {
+      "x": 2070,
+      "y": 38168,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-046 · Creator declaration · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-046-Mobile.dc.html": {
+      "x": 3590,
+      "y": 38168,
+      "w": 390,
+      "h": 1344,
+      "title": "CR-STU-046 · Creator declaration · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-047.dc.html": {
+      "x": 4140,
+      "y": 38168,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-047 · Creator readiness (1 requirement left) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-047-Mobile.dc.html": {
+      "x": 5660,
+      "y": 38168,
+      "w": 390,
+      "h": 1255,
+      "title": "CR-STU-047 · Creator readiness (1 requirement left) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-048.dc.html": {
+      "x": 6210,
+      "y": 38168,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-048 · Validation classification · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-048-Mobile.dc.html": {
+      "x": 7730,
+      "y": 38168,
+      "w": 390,
+      "h": 1213,
+      "title": "CR-STU-048 · Validation classification · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-049.dc.html": {
+      "x": 8280,
+      "y": 38168,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-049 · Validation quote · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-049-Mobile.dc.html": {
+      "x": 9800,
+      "y": 38168,
+      "w": 390,
+      "h": 1083,
+      "title": "CR-STU-049 · Validation quote · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-050.dc.html": {
+      "x": 10350,
+      "y": 38168,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-050 · Payment · insufficient Credits · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-050-Mobile.dc.html": {
+      "x": 11870,
+      "y": 38168,
+      "w": 390,
+      "h": 1273,
+      "title": "CR-STU-050 · Payment · insufficient Credits · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-051.dc.html": {
+      "x": 12420,
+      "y": 38168,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-050–051 · Payment & submit for validation · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-051-Mobile.dc.html": {
+      "x": 13940,
+      "y": 38168,
+      "w": 390,
+      "h": 1159,
+      "title": "CR-STU-050–051 · Payment & submit for validation · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-052.dc.html": {
+      "x": 14490,
+      "y": 38168,
+      "w": 1440,
+      "h": 957,
+      "title": "CR-STU-052 · Submission confirmation · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-052-Mobile.dc.html": {
+      "x": 16010,
+      "y": 38168,
+      "w": 390,
+      "h": 1049,
+      "title": "CR-STU-052 · Submission confirmation · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Setup.dc.html": {
+      "x": 0,
+      "y": 40304,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -1007,7 +1327,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 29015,
+      "y": 40304,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -1017,7 +1337,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 29015,
+      "y": 40304,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -1027,7 +1347,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 29015,
+      "y": 40304,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -1037,10 +1357,40 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 29015,
+      "y": 40304,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Prepare.dc.html": {
+      "x": 8000,
+      "y": 40304,
+      "w": 1440,
+      "h": 900,
+      "title": "Prepare · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Submit.dc.html": {
+      "x": 9600,
+      "y": 40304,
+      "w": 1440,
+      "h": 900,
+      "title": "Submit for validation · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Preview.dc.html": {
+      "x": 11200,
+      "y": 40304,
+      "w": 1440,
+      "h": 900,
+      "title": "Creator Preview · shared source",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -1145,11 +1495,46 @@
     "STU-034b-Mobile.dc.html",
     "STU-035.dc.html",
     "STU-035-Mobile.dc.html",
+    "STU-040.dc.html",
+    "STU-040-Mobile.dc.html",
+    "STU-040M.dc.html",
+    "STU-040M-Mobile.dc.html",
+    "STU-PRV.dc.html",
+    "STU-PRV-Mobile.dc.html",
+    "STU-PRV-L.dc.html",
+    "STU-PRV-L-Mobile.dc.html",
+    "STU-041.dc.html",
+    "STU-041-Mobile.dc.html",
+    "STU-042.dc.html",
+    "STU-042-Mobile.dc.html",
+    "STU-043.dc.html",
+    "STU-043-Mobile.dc.html",
+    "STU-044.dc.html",
+    "STU-044-Mobile.dc.html",
+    "STU-045.dc.html",
+    "STU-045-Mobile.dc.html",
+    "STU-046.dc.html",
+    "STU-046-Mobile.dc.html",
+    "STU-047.dc.html",
+    "STU-047-Mobile.dc.html",
+    "STU-048.dc.html",
+    "STU-048-Mobile.dc.html",
+    "STU-049.dc.html",
+    "STU-049-Mobile.dc.html",
+    "STU-050.dc.html",
+    "STU-050-Mobile.dc.html",
+    "STU-051.dc.html",
+    "STU-051-Mobile.dc.html",
+    "STU-052.dc.html",
+    "STU-052-Mobile.dc.html",
     "Setup.dc.html",
     "Studio.dc.html",
     "Builder.dc.html",
     "Editor.dc.html",
-    "Course.dc.html"
+    "Course.dc.html",
+    "Prepare.dc.html",
+    "Submit.dc.html",
+    "Preview.dc.html"
   ],
   "notes": {
     "b1-setup": {
@@ -1301,13 +1686,58 @@
       "w": 260,
       "fill": "pink"
     },
+    "b4-review": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 4 · Prepare: course review, marketplace preview, learner preview pages, intelligence profile",
+      "w": 240,
+      "x": 0,
+      "y": 28715
+    },
+    "b4-review-new": {
+      "x": 0,
+      "y": 28865,
+      "text": "NEW · batch 4",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b4-ready": {
+      "kind": "title1",
+      "maxW": 6050,
+      "text": "Batch 4 · Prepare: Nova course review, readiness checks, issues to resolve",
+      "w": 240,
+      "x": 0,
+      "y": 34719
+    },
+    "b4-ready-new": {
+      "x": 0,
+      "y": 34869,
+      "text": "NEW · batch 4",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b4-submit": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 4 · Submit for validation: intake, declaration, creator readiness, scope, quote, payment (short / enough), submitted",
+      "w": 240,
+      "x": 0,
+      "y": 37868
+    },
+    "b4-submit-new": {
+      "x": 0,
+      "y": 38018,
+      "text": "NEW · batch 4",
+      "w": 260,
+      "fill": "pink"
+    },
     "sources": {
       "kind": "title1",
       "maxW": 3200,
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 28715
+      "y": 40004
     }
   },
   "noteOrder": [
@@ -1331,6 +1761,12 @@
     "b3-views-new",
     "b3-pricing",
     "b3-pricing-new",
+    "b4-review",
+    "b4-review-new",
+    "b4-ready",
+    "b4-ready-new",
+    "b4-submit",
+    "b4-submit-new",
     "sources"
   ],
   "designSystems": [],

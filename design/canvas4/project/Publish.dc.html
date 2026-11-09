@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Publish your course · shared source</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-tag.lg{height:30px;padding:0 12px;font-size:13px}
+.ds-in{height:48px;width:100%;box-sizing:border-box;padding:0 14px;border-radius:12px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;font-size:15px;color:#0B1433;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.ds-in.lg{height:56px;padding:0 18px;border-radius:14px;font-size:17px}
+.ds-in::placeholder{color:#8A93AD}
+.ds-in:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.cr-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
+.cr-c{background:#1652F0}
+.cr-c.lg{width:26px;height:26px;font-size:13px}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.ko-v{--k:#0F6B45;--kb:#E7F5EE}
+.ko-emb{position:relative;width:84px;height:84px;display:flex;align-items:center;justify-content:center}
+.ko-halo{position:absolute;inset:0;border-radius:50%;background:var(--kb);z-index:1}
+.ko-disc{position:relative;z-index:1;width:58px;height:58px;border-radius:50%;background:var(--k);color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(11,20,51,.16)}
+.ko-tick path{stroke-dasharray:1;stroke-dashoffset:1;animation:koDraw .6s ease .3s forwards}
+@keyframes koDraw{to{stroke-dashoffset:0}}
+.ko-pill{margin-top:14px;display:inline-flex;align-items:center;height:30px;padding:0 13px;border-radius:999px;background:var(--kb);color:var(--k);font-size:13px;font-weight:500}
+.cf{position:absolute;left:50%;top:50%;width:0;height:0;pointer-events:none;z-index:0;--k:1}
+.cf i{position:absolute;left:0;top:0;display:block;opacity:0;animation:cfPath var(--d) var(--dl) both}
+.cf b{display:block;animation:cfSway var(--sd) ease-in-out infinite alternate}
+.cf s{display:block;transform:rotate(var(--r));animation:cfFlip var(--fd) linear infinite}
+@keyframes cfPath{0%{opacity:0;transform:translate(-50%,-50%);animation-timing-function:cubic-bezier(.1,.7,.25,1)}5%{opacity:1}24%{transform:translate(calc(var(--x) * var(--k) * 1px - 50%),calc(var(--y) * 1px - 50%));animation-timing-function:cubic-bezier(.42,.08,.7,.92)}86%{opacity:1}100%{opacity:0;transform:translate(calc(var(--x) * var(--k) * 1.22px - 50%),calc((var(--y) + var(--f)) * 1px))}}
+@keyframes cfSway{from{transform:translateX(calc(var(--sw) * -1)) rotate(-12deg)}to{transform:translateX(var(--sw)) rotate(12deg)}}
+@keyframes cfFlip{from{transform:rotate(var(--r)) rotate3d(var(--rx),1,0,0deg)}to{transform:rotate(var(--r)) rotate3d(var(--rx),1,0,360deg)}}
+.nova-card{background:#FFFFFF url(/_blob/2201db898f778e583c1885b56e2d9c62) center / cover no-repeat}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.lg{width:56px;height:56px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
+.nv-av.sm{width:28px;height:28px}
+.dlp-c{position:relative;display:inline-block;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(0,0,0,0) 61%,rgba(150,96,0,.5) 64%,rgba(0,0,0,0) 69%),radial-gradient(circle at 34% 28%,#FFF6CF 0%,#F9DC7A 30%,#EAB534 62%,#C38712 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),inset 0 -1.5px 1px rgba(130,80,0,.35),0 1.5px 0 #A86F06,0 3px 5px -2px rgba(110,70,0,.55);vertical-align:-3px;animation:dlpFlip 6s ease-in-out infinite}
+.dlp-c::before{content:"D";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Google Sans',system-ui,sans-serif;font-size:10px;font-weight:700;line-height:1;transform:translateY(.6px);box-sizing:border-box;color:#8A5A00;text-shadow:0 1px 0 rgba(255,246,207,.85)}
+.dlp-c::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.75) 48%,rgba(255,255,255,0) 60%);background-size:250% 100%;background-position:120% 0;animation:dlpShine 6s ease-in-out infinite;pointer-events:none}
+.dlp-lg{width:26px;height:26px;vertical-align:-5px}
+.dlp-lg::before{font-size:14px;transform:none}
+@keyframes dlpFlip{0%,70%{transform:rotateY(0)}82%{transform:rotateY(180deg)}94%,100%{transform:rotateY(360deg)}}
+@keyframes dlpShine{0%,30%{background-position:120% 0}48%,100%{background-position:-20% 0}}
+@media (prefers-reduced-motion: reduce){.dlp-c,.dlp-c::after{animation:none}}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
+.cf{--k:.56}
+}
+@media (max-width: 760px){
+.ko-emb{width:72px;height:72px}
+.ko-disc{width:48px;height:48px}
+.ko-disc svg{width:24px;height:24px}
+}
+@media (prefers-reduced-motion: reduce){.cf{display:none}.ko-tick path{animation:none;stroke-dashoffset:0}}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}
+.ds-tok{height:44px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:7px;padding:0 14px 0 7px;border-radius:999px;background:linear-gradient(135deg,#FFFAEB,#FFF1CF);border:1.5px solid #F4D98E;font-size:14.5px;font-weight:600;color:#4A3300;text-decoration:none;box-shadow:0 6px 16px rgba(214,150,30,.12);transition:box-shadow .2s ease}
+.ds-tok:hover{box-shadow:0 8px 20px rgba(214,150,30,.24)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-weight:600;font-size:14.5px;text-decoration:none}
+.ds-link:hover{color:#0E3BB8}
+.ds-btn:focus-visible,.ds-ghost:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2{animation:none}}
+@media (max-width: 960px){
+.ds-tok{padding:0 12px 0 6px;height:40px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
+.ds-btn{justify-content:space-between}
+}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.av{position:relative;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:#EAF0FF;color:#0E3BB8;font-size:11px;font-weight:600;box-sizing:border-box}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.av.org{background:#0B1433;color:#FFFFFF;font-size:10.5px;letter-spacing:.02em}
+.avs{display:inline-flex;align-items:center}
+.avs .av{box-shadow:0 0 0 2px #FFFFFF}
+.avs .av + .av{margin-left:-8px}
+.nv-sg{display:flex;align-items:center;gap:14px;padding:14px 16px 14px 14px;border-radius:16px;border:1.5px solid #DCE5FB}
+.nv-sg p{margin:0;flex:1;min-width:0;font-size:14.5px;line-height:1.5;color:#3A4566}
+.nv-sg p b{color:#0B1433;font-weight:600;margin-right:4px}
+.fl{display:flex;flex-direction:column;gap:8px;min-width:0}
+.fl-l{display:flex;align-items:center;font-size:14px;font-weight:600;color:#0B1433}
+.sel{position:relative;display:block}
+.sel select{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:pointer}
+.sel svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:#5B6582;pointer-events:none}
+textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;resize:vertical}
+@media (max-width: 760px){
+.nv-sg{flex-wrap:wrap;padding:14px}
+.nv-sg p{flex-basis:calc(100% - 44px)}
+}
+body{background:#FFFFFF}
+.lp-x{width:40px;height:40px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#3A4566;text-decoration:none}
+.lp-x:hover{background:#F5F8FF;color:#0B1433}
+.lp-title{display:flex;align-items:baseline;gap:8px;min-width:0}
+.lp-t1{font-size:16px;font-weight:600;white-space:nowrap}
+@media (max-width: 960px){
+.lp-t1{display:none}
+}
+.tk-root{min-height:100vh;display:flex;flex-direction:column;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.tk-top{position:sticky;top:0;z-index:5;height:64px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:16px;padding:0 20px;border-bottom:1.5px solid #EEF1F7;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+@media (max-width: 960px){
+.tk-top{height:56px;padding:0 12px 0 6px;gap:8px}
+.tk-top .lp-t1{display:block;font-size:15px}
+}
+.tk-root{position:relative;isolation:isolate}
+.cl{flex-grow:1;width:min(1280px,100%);box-sizing:border-box;margin:0 auto;padding:clamp(24px,5vh,52px) 32px 64px 32px;display:grid;grid-template-columns:minmax(0,1fr) 640px;gap:64px;align-items:start;align-content:start}
+.cl-side{position:sticky;top:104px;display:flex;flex-direction:column;align-items:flex-start}
+.cl-h1{margin:8px 0 0 0;font-size:clamp(30px,4.4vh,38px);line-height:1.12;font-weight:600;letter-spacing:-0.03em}
+.cl-meta{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+.cl-meta span{display:inline-flex;align-items:center;height:28px;padding:0 11px;border-radius:999px;background:#F1F3F8;color:#3A4566;font-size:12.5px;font-weight:500}
+.cl-steps{list-style:none;margin:32px 0 0 0;padding:0;display:flex;gap:6px;width:100%;max-width:420px}
+.cl-steps li{flex:1 1 0;display:flex;flex-direction:column;gap:8px;font-size:13px;font-weight:500;color:#8A93AD}
+.cl-steps i{display:block;height:4px;border-radius:4px;background:#E6EAF3}
+.cl-steps .on i{background:#1652F0}.cl-steps .on{color:#0B1433}
+.cl-steps .dn i{background:#0F6B45}.cl-steps .dn{color:#0F6B45}
+.cl-panel{border-radius:24px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 18px 44px rgba(22,82,240,.08);padding:24px 26px 18px 26px;display:flex;flex-direction:column}
+.cl-ph{margin:0;font-size:20px;font-weight:600;letter-spacing:-0.01em}
+.cl-pp{margin:8px 0 0 0;font-size:14.5px;line-height:1.55;color:#3A4566}
+.cl-foot{margin-top:24px;display:flex;align-items:center;gap:12px}
+.cl-go{margin-left:0}
+.cl-bk{height:52px;width:52px;padding:0}
+.cl-bk + .cl-go{margin-left:auto}.cl-bk span{display:none}
+.cl-glow{position:absolute;left:0;right:0;top:0;height:340px;z-index:-1;pointer-events:none;background:radial-gradient(60% 100% at 50% 0,rgba(22,82,240,.08),transparent 70%)}
+@media (max-width: 960px){
+.cl{grid-template-columns:minmax(0,1fr);gap:36px;padding:32px 16px 0 16px}
+.cl-side{position:static}
+.cl-h1{font-size:24px;margin-top:6px}
+.cl-meta{margin-top:16px}
+.cl-steps{margin-top:28px;max-width:none}
+.cl-panel{border:0;box-shadow:none;border-radius:0;padding:0;background:none}
+.cl-ph{font-size:18px}
+.cl-foot{position:sticky;bottom:0;z-index:4;margin:28px -16px 0 -16px;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7}
+.cl-go{flex-grow:1;justify-content:space-between}
+}
+.py-note{margin:12px 0 0 0;font-size:13.5px;color:#5B6582}
+.is-wait .cl-glow{background:radial-gradient(60% 100% at 50% 0,rgba(214,140,20,.10),transparent 70%)}
+.is-ok .cl-glow{background:radial-gradient(60% 100% at 50% 0,rgba(15,107,69,.10),transparent 70%)}
+@media (max-width: 960px){.cl-foot{flex-wrap:wrap}}
+.cl-nx{margin-top:40px;width:100%;max-width:420px;box-sizing:border-box;padding:20px 22px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3}
+.cl-nx > span{font-size:12.5px;font-weight:500;color:#8A93AD}
+.cl{grid-template-columns:minmax(0,1fr) 620px}
+.pb-k{font-size:13px;font-weight:600;color:#1652F0}
+.cl-meta{align-items:center}
+.gb{display:inline-flex !important;align-items:center;gap:6px;height:28px;padding:0 11px;border-radius:999px;background:linear-gradient(135deg,#F7D98B,#C9952C) !important;color:#3D2700 !important;font-size:12.5px;font-weight:600}
+.cl-steps{max-width:460px}
+.cl-nx{margin-top:32px}
+.cl-nx > span{display:block;margin-bottom:12px;font-size:12.5px;font-weight:500;color:#8A93AD}
+.vb{display:flex;flex-direction:column;align-items:flex-start;gap:6px;background:linear-gradient(160deg,#FFFAEB,#FFFFFF 70%);border-color:#F0DDAE}
+.cl-nx > span.vb-m{display:flex;margin:0 0 6px 0}
+.gb span{background:none !important;padding:0 !important;height:auto !important;color:inherit !important;font-weight:600 !important}
+.vb-m{width:52px;height:52px;margin-bottom:6px;border-radius:50%;background:linear-gradient(135deg,#F7D98B,#C9952C);color:#3D2700;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 24px -12px rgba(160,110,20,.8);animation:vbS 4s ease-in-out infinite}
+@keyframes vbS{50%{transform:rotate(-8deg) scale(1.04)}}
+.vb b{font-size:15.5px;font-weight:600;color:#5A3B00}
+.vb p{margin:0;font-size:13.5px;line-height:1.5;color:#6B4A00}
+.prs{margin-top:18px;display:flex;flex-direction:column;gap:12px}
+.pr-c{padding:16px 18px;border-radius:18px;border:1.5px solid #E6EAF3;background:#FFFFFF}
+.pr-c header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.pr-ic{display:flex}
+.pr-k{flex:1;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#5B6582}
+.pr-c .ds-tag svg{width:10px;height:10px}
+.pr-c.bad{border-color:#F5C2BD;background:linear-gradient(160deg,#FFF7F6,#FFFFFF 60%)}
+.ds-tag.red{background:#FDECEA;color:#B42318}
+.pr-r{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0;font-size:14px;color:#5B6582}
+.pr-r b{font-size:15px;font-weight:600;color:#0B1433;font-variant-numeric:tabular-nums}
+.pr-r.sel b{font-size:18px}
+.pr-c.bad .pr-r.sel b{color:#B42318;text-decoration:line-through;text-decoration-thickness:1.5px}
+.pr-band{position:relative;height:34px;margin:4px 0}
+.pr-tr{position:absolute;left:0;right:0;top:15px;height:6px;border-radius:6px}
+.gold .pr-tr{background:linear-gradient(90deg,#FFE7A8,#E8B44A)}
+.blue .pr-tr{background:linear-gradient(90deg,#C9D7FA,#1652F0)}
+.pr-pin{position:absolute;top:6px;width:4px;height:24px;margin-left:-2px;border-radius:4px;background:#0B1433;box-shadow:0 0 0 3px #FFFFFF;animation:pnD .8s cubic-bezier(.2,.9,.3,1.4) .3s both}
+@keyframes pnD{from{transform:translateY(-10px);opacity:0}}
+.pr-pin em{position:absolute;bottom:calc(100% + 2px);left:50%;transform:translateX(-50%);font-style:normal;font-size:11px;font-weight:600;color:#0B1433;white-space:nowrap;display:none}
+.pr-pin.out{background:#D92D20}
+.pr-sl{display:block;margin:10px 0 8px 0;font-size:13px;font-weight:600}
+.pr-st{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.pr-s{display:flex;align-items:center;justify-content:center;gap:8px;height:46px;border-radius:14px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;color:#0B1433;cursor:pointer}
+.pr-s b{font-size:16px;font-weight:600}
+.pr-s .dlp-c{width:18px;height:18px}
+.pr-s.on{border-color:#1652F0;background:#F5F8FF;box-shadow:0 0 0 3px rgba(22,82,240,.12)}
+.pr-w{margin:14px 0 0 0;display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:#FDECEA;color:#912018;font-size:13.5px;font-weight:500}
+.pr-w svg{flex-shrink:0;color:#B42318}
+.cl-ch{margin-right:auto}
+.cl-bk + .cl-ch{margin-left:0}
+.cl-foot .ds-link.cl-ch{margin-left:12px}
+.rv-d{position:relative;width:150px;height:150px;margin:0 auto 14px auto}
+.dn-s{animation:dnIn 1s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i) * 180ms + 200ms)}
+@keyframes dnIn{from{stroke-dasharray:0 400}}
+.rv-c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.rv-c b{font-size:22px;font-weight:600}
+.rv-c em{font-style:normal;font-size:12px;color:#5B6582}
+.rv ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.rv li{display:flex;align-items:center;gap:10px;font-size:13.5px}
+.rv li i{width:10px;height:10px;border-radius:3px}
+.rv li span{flex:1;color:#3A4566}
+.rv li b{font-weight:600}
+.sp{margin-top:18px;border:1.5px solid #E6EAF3;border-radius:18px;padding:2px 16px}
+.sp-r{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 64px 112px;align-items:center;gap:12px;padding:12px 0;border-top:1.5px solid #F0F2F8}
+.sp-r:first-child{border-top:0}
+.sp-hd{font-size:12px;font-weight:500;color:#8A93AD;padding:10px 0}
+.sp-n{display:flex;align-items:center;gap:10px;min-width:0}
+.sp-n b{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sp-ro{font-size:13px;color:#5B6582}
+.sp-p{font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+.sp-r .ds-tag{justify-self:start}
+.sp-r .ds-tag svg{width:11px;height:11px}
+.sp-tot{border-top:1.5px solid #D6DDEE}
+.sp-tot > span:first-child{font-weight:600}
+.sp-tot b{font-size:16px;font-weight:600}
+.sp-w{margin-top:14px;display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;background:#FFF8EA;border:1.5px solid #F4DDAA}
+.sp-wi{width:36px;height:36px;flex-shrink:0;border-radius:50%;background:#FFFFFF;color:#B76E00;display:flex;align-items:center;justify-content:center}
+.sp-w p{flex:1;margin:0;font-size:13.5px;line-height:1.5;color:#6B4A00}
+.sp-w .ds-ghost{background:#FFFFFF;gap:6px;flex-shrink:0}
+.py-note{margin:12px 0 0 0;font-size:13px;line-height:1.5;color:#5B6582}
+.ls2{margin-top:18px;display:flex;flex-direction:column;gap:16px}
+.ls2 textarea.ds-in{min-height:0}
+.fl-f{display:flex;align-items:center;justify-content:flex-end;gap:12px}
+.ls2 .nv-sg{margin-top:-6px;padding:10px 14px}
+.ls2 .nv-sg p{font-size:13.5px}
+.cnt{font-size:12px;color:#8A93AD}
+.cov{display:flex;align-items:center;gap:14px;height:56px;padding:0 16px 0 6px;border-radius:12px;border:1.5px solid #D6DDEE}
+.cov-i{width:58px;height:42px;border-radius:9px;background:linear-gradient(140deg,#1652F0,#0B1433);color:#FFFFFF;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.cov-t{flex:1;min-width:0}
+.cov-t b{font-size:14px;font-weight:600}
+.lf{margin:0;border:1.5px solid #E6EAF3;border-radius:18px;padding:2px 16px}
+.lf div{display:grid;grid-template-columns:120px minmax(0,1fr) auto;align-items:center;gap:12px;padding:11px 0;border-top:1.5px solid #F0F2F8}
+.lf div:first-child{border-top:0}
+.lf dt{font-size:13px;color:#5B6582}
+.lf dd{margin:0;font-size:14px;font-weight:500}
+.lf .lk dd{font-weight:600}
+.lf-l{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;color:#8A93AD;white-space:nowrap}
+.lvp{padding:18px}
+.mk-c2{position:relative;display:block;border-radius:18px;border:1.5px solid #E6EAF3;overflow:hidden;background:#FFFFFF;box-shadow:0 26px 50px -30px rgba(22,82,240,.6);animation:obIn .6s ease .3s both}
+.pv-cv{position:relative;display:block;height:124px;overflow:hidden;background:radial-gradient(circle at 85% 20%,rgba(92,134,255,.75),rgba(92,134,255,0) 55%),linear-gradient(140deg,#1652F0,#0B1433)}
+.pv-cv i{position:absolute;left:16px;bottom:10px;font-style:normal;font-size:30px;font-weight:600;letter-spacing:-0.03em;color:#FFFFFF}
+.pv-cv em{position:absolute;right:16px;height:6px;border-radius:6px;background:rgba(255,255,255,.22)}
+.pv-cv em:nth-of-type(1){top:50px;width:84px}.pv-cv em:nth-of-type(2){top:64px;width:56px;background:rgba(255,255,255,.4)}.pv-cv em:nth-of-type(3){top:78px;width:70px}
+.lvp-b{position:absolute;left:12px;top:12px;display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 9px;border-radius:999px;background:linear-gradient(135deg,#F7D98B,#C9952C);color:#3D2700;font-size:11.5px;font-weight:600}
+.lvp-cei{position:absolute;right:12px;top:12px;height:24px;display:inline-flex;align-items:center;padding:0 9px;border-radius:999px;background:rgba(255,255,255,.16);color:#FFFFFF;font-size:11.5px;font-weight:600}
+.mk-k{display:block;padding:12px 14px 0 14px;font-size:11.5px;font-weight:500;color:#5B6582}
+.mk-c2 > b{display:block;padding:4px 14px 0 14px;font-size:16px;font-weight:600}
+.mk-c2 > p{margin:4px 0 0 0;padding:0 14px;font-size:13px;line-height:1.5;color:#5B6582}
+.mk-by{display:flex;align-items:center;gap:8px;font-size:12.5px !important}
+.mk-by .avs .av + .av{margin-left:-6px}
+.pv-sk{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px 0 14px}
+.pv-sk i{font-style:normal;font-size:12px;font-weight:500;padding:4px 9px;border-radius:999px;background:#F5F8FF;color:#0E3BB8}
+.lvp-p{margin-top:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1.5px solid #F0F2F8}
+.lvp-p > span{display:flex;align-items:center;gap:6px;padding:12px 14px;font-size:12.5px;color:#5B6582}
+.lvp-p > span + span{border-left:1.5px solid #F0F2F8}
+.lvp-p b{font-size:16px;font-weight:600;color:#0B1433}
+.lvp-p .dlp-c{width:18px;height:18px}
+.ko-wrap{flex-grow:1;display:flex;justify-content:center;padding:44px 24px 64px 24px}
+.ko{--k:#0F6B45;--kb:#E7F5EE;width:min(620px,100%);display:flex;flex-direction:column;align-items:center;text-align:center}
+.ko-h1{margin:14px 0 0 0;font-size:38px;line-height:1.12;font-weight:600;letter-spacing:-0.03em}
+.ko-sub{margin:8px 0 0 0;font-size:17px;font-weight:500;color:#3A4566}
+.lv-s{margin-top:16px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px}
+.lv-cei{height:28px;display:inline-flex;align-items:center;padding:0 11px;border-radius:999px;background:#0B1433;color:#FFFFFF;font-size:12.5px}
+.lv-cei b{font-weight:600}
+.lv-pr{height:28px;display:inline-flex;align-items:center;padding:0 11px;border-radius:999px;background:#F1F3F8;color:#3A4566;font-size:12.5px;font-weight:500}
+.ko-card{margin-top:26px;width:100%;box-sizing:border-box;padding:18px 22px;border-radius:20px;border:1.5px solid #E6EAF3;background:#FFFFFF;text-align:left}
+.ko-cl{display:block;margin-bottom:12px;font-size:12.5px;font-weight:500;color:#8A93AD}
+.ko-nx{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.ko-nx li{display:flex;gap:12px}
+.ko-ni{width:36px;height:36px;flex-shrink:0;border-radius:12px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.ko-nx li span:last-child{display:flex;flex-direction:column;gap:2px}
+.ko-nx b{font-size:14.5px;font-weight:600}
+.ko-nx em{font-style:normal;font-size:13.5px;color:#5B6582}
+.ko-acts{margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.ko-2{display:flex;align-items:center;gap:18px}
+@media (max-width: 960px){
+.cl{display:flex;flex-direction:column;gap:20px}
+.cl-side{display:contents}
+.cl-side > *{order:0}
+.cl-panel{order:1}
+.cl-nx{order:2;margin-top:4px;padding:16px}
+.cl-steps li span{display:none}
+.cl-steps li.on span{display:block;white-space:nowrap}
+.pr-st{gap:6px}
+.cl-nx.vb{display:none}
+.sp{padding:2px 12px}
+.sp-r{grid-template-columns:minmax(0,1fr) auto;gap:6px 10px}
+.sp-hd{display:none}
+.sp-ro{grid-column:1;grid-row:2;padding-left:42px;font-size:12.5px}
+.sp-p{grid-column:2;grid-row:1;text-align:right}
+.sp-r .ds-tag{grid-column:2;grid-row:2;justify-self:end}
+.sp-tot .sp-ro,.sp-tot span:nth-child(4){display:none}
+.sp-w{flex-wrap:wrap}
+.sp-w p{flex-basis:calc(100% - 48px)}
+.sp-w .ds-ghost{width:100%;justify-content:center}
+.lf{padding:2px 12px}
+.lf div{grid-template-columns:minmax(0,1fr) auto;gap:2px 10px}
+.lf dd{grid-column:1;grid-row:2}
+.lf div > :last-child{grid-row:1 / span 2;grid-column:2}
+.cl-foot{flex-wrap:wrap}
+.cl-ch{order:3;width:100%;justify-content:center;margin:0 !important}
+.ko-wrap{padding:32px 16px 40px 16px}
+.ko-h1{font-size:28px}
+.ko-card{padding:16px}
+.ko-acts{width:100%}
+.ko-acts .ds-btn{width:100%;justify-content:space-between}
+.ko-2{flex-direction:column;width:100%;gap:8px}
+.ko-2 .ds-ghost{width:100%}
+}
+</style>
+</helmet>
+<div class="tk-root {{rootCls}}"><span class="cl-glow"></span>
+<header class="tk-top"><a class="lp-x" href="STU-059.dc.html" aria-label="Close"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a><span class="lp-title"><span class="lp-t1">Publish your course</span></span><span style="flex-grow: 1"></span><a href="#" class="ds-tok" aria-label="72,450 Creio"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0; display: block"><defs><linearGradient id="tpa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9A3"></stop><stop offset="0.45" stop-color="#F6C343"></stop><stop offset="1" stop-color="#D08A12"></stop></linearGradient><linearGradient id="tpb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9CF5A"></stop><stop offset="1" stop-color="#E2A024"></stop></linearGradient></defs><circle cx="32" cy="34" r="29" fill="#B8740A" opacity="0.35"></circle><circle cx="32" cy="32" r="29" fill="url(#tpa)"></circle><circle cx="32" cy="32" r="22" fill="url(#tpb)" stroke="#FFF1C2" stroke-opacity="0.7" stroke-width="1.5"></circle><path d="M32 18l2.9 9.3 9.3 2.9-9.3 2.9L32 42.4l-2.9-9.3-9.3-2.9 9.3-2.9z" fill="#FFF8DF"></path><ellipse cx="23" cy="19" rx="9" ry="5" fill="#FFFFFF" opacity="0.35" transform="rotate(-30 23 19)"></ellipse></svg><span>72.4K</span></a></header>
+<sc-if value="{{s_price}}" hint-placeholder-val="{{ true }}"><div class="cl"><aside class="cl-side ob-in"><span class="pb-k">Publish · Step 1 of 5</span><h1 class="cl-h1">Data Analysis with SQL</h1><div class="cl-meta"><span class="gb"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold Validated</span></span><span>VAL-2026-00482</span></div><ol class="cl-steps"><li class="on"><i></i><span>Final pricing</span></li><li class="dn"><i></i><span>Revenue</span></li><li class="dn"><i></i><span>Listing</span></li><li class=""><i></i><span>Preview</span></li><li class=""><i></i><span>Publish</span></li></ol><div class="cl-nx vb"><span class="vb-m"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg></span><b>Your course is validated</b><p>Gold Validated VAL-2026-00482 · final ranges reflect the validated course</p></div></aside><section class="cl-panel ob-in2"><h2 class="cl-ph">Your course is validated</h2><p class="cl-pp">Now confirm learner access. Credalio has set the final permitted ranges for your validated course.</p><div class="prs"><article class="pr-c gold"><header><span class="pr-ic"><span class="dlp-c dlp-lg" aria-hidden="true"></span></span><span class="pr-k">Subscription</span><span class="ds-tag green"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg> Within range</span></header><div class="pr-r"><span>Final permitted range</span><b>700–900 DLP</b></div><div class="pr-band"><span class="pr-tr"></span><span class="pr-pin" style="left: 50.0%"><em>800</em></span></div><div class="pr-r sel"><span>Your selection</span><b>800 DLP</b></div></article><article class="pr-c blue"><header><span class="pr-ic"><i class="cr-c lg" aria-hidden="true">C</i></span><span class="pr-k">Marketplace</span><span class="ds-tag green"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg> Within range</span></header><div class="pr-r"><span>Maintenance burden</span><b>Medium</b></div><div class="pr-r"><span>Final permitted range</span><b>130–210 Credits</b></div><div class="pr-band"><span class="pr-tr"></span><span class="pr-pin" style="left: 50.0%"><em>170</em></span></div><div class="pr-r sel"><span>Your selection</span><b>170 Credits</b></div></article></div><div class="cl-foot"><a class="ds-ghost cl-ch" href="STU-034.dc.html">Change Pricing</a><a class="ds-btn cl-go" href="STU-061.dc.html"><span>Confirm Pricing</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section></div></sc-if>
+<sc-if value="{{s_priceout}}" hint-placeholder-val="{{ false }}"><div class="cl"><aside class="cl-side ob-in"><span class="pb-k">Publish · Step 1 of 5</span><h1 class="cl-h1">Data Analysis with SQL</h1><div class="cl-meta"><span class="gb"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold Validated</span></span><span>VAL-2026-00482</span></div><ol class="cl-steps"><li class="on"><i></i><span>Final pricing</span></li><li class="dn"><i></i><span>Revenue</span></li><li class="dn"><i></i><span>Listing</span></li><li class=""><i></i><span>Preview</span></li><li class=""><i></i><span>Publish</span></li></ol><div class="cl-nx vb"><span class="vb-m"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg></span><b>Your course is validated</b><p>Gold Validated VAL-2026-00482 · final ranges reflect the validated course</p></div></aside><section class="cl-panel ob-in2"><h2 class="cl-ph">Your course is validated</h2><p class="cl-pp">Now confirm learner access. Credalio has set the final permitted ranges for your validated course.</p><div class="prs"><article class="pr-c gold bad"><header><span class="pr-ic"><span class="dlp-c dlp-lg" aria-hidden="true"></span></span><span class="pr-k">Subscription</span><span class="ds-tag red"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg> Outside range</span></header><div class="pr-r"><span>Final permitted range</span><b>900–1,100 DLP</b></div><div class="pr-band"><span class="pr-tr"></span><span class="pr-pin out" style="left: 0.0%"><em>700</em></span></div><div class="pr-r sel"><span>Your selection</span><b>700 DLP</b></div><span class="pr-sl">Select a price within the final range</span><div class="pr-st"><button type="button" class="pr-s {{ct1}}" aria-pressed="{{at1}}" onClick="{{xt1}}"><span class="dlp-c" aria-hidden="true"></span><b>900</b></button><button type="button" class="pr-s {{ct2}}" aria-pressed="{{at2}}" onClick="{{xt2}}"><span class="dlp-c" aria-hidden="true"></span><b>1,000</b></button><button type="button" class="pr-s {{ct3}}" aria-pressed="{{at3}}" onClick="{{xt3}}"><span class="dlp-c" aria-hidden="true"></span><b>1,100</b></button></div></article><article class="pr-c blue"><header><span class="pr-ic"><i class="cr-c lg" aria-hidden="true">C</i></span><span class="pr-k">Marketplace</span><span class="ds-tag green"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg> Within range</span></header><div class="pr-r"><span>Maintenance burden</span><b>Medium</b></div><div class="pr-r"><span>Final permitted range</span><b>170–270 Credits</b></div><div class="pr-band"><span class="pr-tr"></span><span class="pr-pin" style="left: 0.0%"><em>170</em></span></div><div class="pr-r sel"><span>Your selection</span><b>170 Credits</b></div></article></div><p class="pr-w"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17h.01"></path></svg><span>Your provisional price is no longer within the permitted range. Select another allowed value to continue.</span></p><div class="cl-foot"><a class="ds-ghost cl-ch" href="STU-034.dc.html">Change Pricing</a><a class="ds-btn cl-go" href="STU-061.dc.html"><span>Confirm Pricing</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section></div></sc-if>
+<sc-if value="{{s_revenue}}" hint-placeholder-val="{{ false }}"><div class="cl"><aside class="cl-side ob-in"><span class="pb-k">Publish · Step 2 of 5</span><h1 class="cl-h1">Data Analysis with SQL</h1><div class="cl-meta"><span class="gb"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold Validated</span></span><span>VAL-2026-00482</span></div><ol class="cl-steps"><li class="dn"><i></i><span>Final pricing</span></li><li class="on"><i></i><span>Revenue</span></li><li class="dn"><i></i><span>Listing</span></li><li class=""><i></i><span>Preview</span></li><li class=""><i></i><span>Publish</span></li></ol><div class="cl-nx rv"><span>Revenue split</span><div class="rv-d"><svg class="dn" viewBox="0 0 120 120" width="150" height="150" aria-hidden="true"><circle class="dn-s" cx="60" cy="60" r="50" fill="none" stroke="#1652F0" stroke-width="16" stroke-dasharray="186.5 127.7" stroke-dashoffset="0.0" transform="rotate(-90 60 60)" style="--i: 0"></circle><circle class="dn-s" cx="60" cy="60" r="50" fill="none" stroke="#5C86FF" stroke-width="16" stroke-dasharray="76.5 237.6" stroke-dashoffset="-188.5" transform="rotate(-90 60 60)" style="--i: 1"></circle><circle class="dn-s" cx="60" cy="60" r="50" fill="none" stroke="#AFC1F5" stroke-width="16" stroke-dasharray="45.1 269.0" stroke-dashoffset="-267.0" transform="rotate(-90 60 60)" style="--i: 2"></circle></svg><span class="rv-c"><b>100 %</b><em>Total</em></span></div><ul><li><i style="background: #1652F0"></i><span>Ada Ononuju</span><b>60 %</b></li><li><i style="background: #5C86FF"></i><span>Dr. John Adeyemi</span><b>25 %</b></li><li><i style="background: #AFC1F5"></i><span>ABC Institute</span><b>15 %</b></li></ul></div></aside><section class="cl-panel ob-in2"><h2 class="cl-ph">Revenue Confirmation</h2><p class="cl-pp">Every collaborator must accept the revenue split before a monetised course can go live.</p><div class="sp"><div class="sp-r sp-hd"><span>Collaborator</span><span>Role</span><span>Share</span><span>Agreement</span></div><div class="sp-r"><span class="sp-n"><span class="av" style="width: 32px; height: 32px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><b>Ada Ononuju</b></span><span class="sp-ro">Lead Creator</span><b class="sp-p">60 %</b><span class="ds-tag green"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg> Accepted</span></div><div class="sp-r"><span class="sp-n"><span class="av" style="width: 32px; height: 32px">JA<img src="/_blob/cbfe3f2bbb89728d8777e425b59db736" alt=""></span><b>Dr. John Adeyemi</b></span><span class="sp-ro">Co-Creator</span><b class="sp-p">25 %</b><span class="ds-tag amber"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg> Pending</span></div><div class="sp-r"><span class="sp-n"><span class="av org" style="width: 32px; height: 32px">AB</span><b>ABC Institute</b></span><span class="sp-ro">Content Contributor</span><b class="sp-p">15 %</b><span class="ds-tag amber"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg> Pending</span></div><div class="sp-r sp-tot"><span>Total</span><span></span><b>100 %</b><span></span></div></div>
+<div class="sp-w"><span class="sp-wi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><p>2 collaborators haven’t accepted yet. You can finish the other steps, but you can’t publish until they do.</p><button type="button" class="ds-ghost sm"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg><span>Send reminder</span></button></div>
+<p class="py-note">Changing the split after publication needs everyone to accept again. Only the Lead Creator can change revenue distribution.</p><div class="cl-foot"><a class="ds-ghost cl-bk" href="STU-060.dc.html" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a><a class="ds-link cl-ch" href="#">Edit split</a><a class="ds-btn cl-go" href="STU-062.dc.html"><span>Continue to Marketplace Listing</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section></div></sc-if>
+<sc-if value="{{s_listing}}" hint-placeholder-val="{{ false }}"><div class="cl"><aside class="cl-side ob-in"><span class="pb-k">Publish · Step 3 of 5</span><h1 class="cl-h1">Data Analysis with SQL</h1><div class="cl-meta"><span class="gb"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold Validated</span></span><span>VAL-2026-00482</span></div><ol class="cl-steps"><li class="dn"><i></i><span>Final pricing</span></li><li class="dn"><i></i><span>Revenue</span></li><li class="on"><i></i><span>Listing</span></li><li class=""><i></i><span>Preview</span></li><li class=""><i></i><span>Publish</span></li></ol><div class="cl-nx lvp"><span>Live preview</span><article class="pv-c mk-c2"><span class="pv-cv"><i>SQL</i><em></em><em></em><em></em><span class="lvp-b"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold Validated</span></span><span class="lvp-cei">CEI 92</span></span>
+<span class="mk-k">Data Analytics · Intermediate · Hybrid</span><b>Data Analysis with SQL</b><p>Write SQL to answer real business questions, from first query to a finished analysis.</p><p class="mk-by"><span class="avs"><span class="av" style="width: 22px; height: 22px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><span class="av" style="width: 22px; height: 22px">JA<img src="/_blob/cbfe3f2bbb89728d8777e425b59db736" alt=""></span><span class="av org" style="width: 22px; height: 22px">AB</span></span><span>By Ada Ononuju, Dr. John Adeyemi, ABC Institute</span></p>
+<span class="pv-sk"><i>SQL</i><i>Data Analysis</i><i>Data Cleaning</i><i>+1</i></span><span class="lvp-p"><span><span class="dlp-c" aria-hidden="true"></span><b>850</b> DLP</span><span><i class="cr-c" aria-hidden="true">C</i><b>500</b> Credits</span></span></article></div></aside><section class="cl-panel ob-in2"><h2 class="cl-ph">Marketplace Listing</h2><p class="cl-pp">Most of this is already filled from your course. Edit the marketing copy; validation details are locked.</p><div class="ls2"><label class="fl"><span class="fl-l">Title</span><input class="ds-in" value="Data Analysis with SQL" aria-label="Title"></label>
+<label class="fl"><span class="fl-l">Short description</span><textarea class="ds-in" rows="2" aria-label="Short description">Write SQL to answer real business questions, from first query to a finished analysis.</textarea><span class="fl-f"><span class="cnt">85 / 160 characters</span></span></label><div class="nv-sg nova-card"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span><p><b>Nova</b> I can tighten your short description for search.</p></div>
+<div class="fl"><span class="fl-l">Thumbnail</span><div class="cov"><span class="cov-i" aria-hidden="true">SQL</span><span class="cov-t"><b>sql-course-cover.png</b></span><a class="ds-link" href="#">Replace</a></div></div>
+<dl class="lf"><div class=""><dt>Category</dt><dd>Technology · Data Analytics · SQL</dd><a class="ds-link sm" href="#">Edit</a></div><div class=""><dt>Skills</dt><dd>SQL, Data Analysis, Data Cleaning, Relational Databases</dd><a class="ds-link sm" href="#">Edit</a></div><div class="lk"><dt>Validated tier</dt><dd>Gold Validated</dd><span class="lf-l"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Locked · validation</span></div><div class="lk"><dt>CEI</dt><dd>92</dd><span class="lf-l"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg>Locked · calculated</span></div><div class=""><dt>Creators</dt><dd>Ada Ononuju, Dr. John Adeyemi, ABC Institute</dd><a class="ds-link sm" href="#">Edit</a></div><div class=""><dt>Prepares for</dt><dd>No certification</dd><a class="ds-link sm" href="#">Edit</a></div><div class=""><dt>DLP access</dt><dd>850 DLP</dd><a class="ds-link sm" href="#">Edit</a></div><div class=""><dt>Lifetime price</dt><dd>500 Credits</dd><a class="ds-link sm" href="#">Edit</a></div></dl></div><div class="cl-foot"><a class="ds-ghost cl-bk" href="STU-061.dc.html" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back</span></a><a class="ds-btn cl-go" href="STU-PRV.dc.html"><span>Continue to Final Preview</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section></div></sc-if>
+<sc-if value="{{s_live}}" hint-placeholder-val="{{ false }}"><div class="ko-wrap ob-in"><div class="ko"><div class="ko-emb ko-v" aria-hidden="true"><span class="cf" aria-hidden="true"><i style="--x:271;--y:-84;--f:438;--d:2.82s;--dl:0.34s;--sw:12px;--sd:0.81s;--fd:0.62s;--rx:-0.39;--r:-57deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:61;--y:-94;--f:453;--d:3.38s;--dl:0.38s;--sw:14px;--sd:0.48s;--fd:0.58s;--rx:0.76;--r:73deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:177;--y:-104;--f:399;--d:2.88s;--dl:0.27s;--sw:6px;--sd:0.49s;--fd:1.04s;--rx:-0.19;--r:61deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:132;--y:-105;--f:408;--d:2.68s;--dl:0.43s;--sw:10px;--sd:0.83s;--fd:0.84s;--rx:0.92;--r:-80deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-185;--y:-22;--f:478;--d:3.08s;--dl:0.20s;--sw:12px;--sd:0.80s;--fd:0.75s;--rx:-0.83;--r:5deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:297;--y:-43;--f:404;--d:2.72s;--dl:0.20s;--sw:13px;--sd:0.53s;--fd:0.97s;--rx:-0.11;--r:-32deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#AFC1F5"></s></b></i><i style="--x:-67;--y:-11;--f:466;--d:3.77s;--dl:0.37s;--sw:15px;--sd:0.46s;--fd:0.69s;--rx:0.99;--r:74deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-293;--y:-129;--f:380;--d:3.33s;--dl:0.45s;--sw:9px;--sd:0.48s;--fd:0.71s;--rx:0.27;--r:-77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-82;--y:-86;--f:428;--d:3.29s;--dl:0.46s;--sw:7px;--sd:0.52s;--fd:1.23s;--rx:0.64;--r:-17deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-218;--y:-61;--f:448;--d:3.07s;--dl:0.33s;--sw:6px;--sd:0.47s;--fd:0.63s;--rx:0.02;--r:-15deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:153;--y:-95;--f:470;--d:3.19s;--dl:0.35s;--sw:15px;--sd:0.89s;--fd:0.64s;--rx:-0.04;--r:77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-140;--y:-21;--f:381;--d:2.92s;--dl:0.32s;--sw:6px;--sd:0.53s;--fd:0.83s;--rx:0.14;--r:-47deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-88;--y:-25;--f:445;--d:3.43s;--dl:0.37s;--sw:7px;--sd:0.47s;--fd:0.56s;--rx:0.82;--r:-1deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-306;--y:-60;--f:453;--d:2.98s;--dl:0.50s;--sw:6px;--sd:0.70s;--fd:1.10s;--rx:0.80;--r:-47deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-94;--y:-54;--f:467;--d:3.10s;--dl:0.43s;--sw:14px;--sd:0.71s;--fd:1.02s;--rx:-0.24;--r:69deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:69;--y:-138;--f:479;--d:3.66s;--dl:0.41s;--sw:9px;--sd:0.78s;--fd:0.99s;--rx:-0.12;--r:58deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-121;--y:-137;--f:475;--d:2.74s;--dl:0.43s;--sw:12px;--sd:0.67s;--fd:1.22s;--rx:-0.26;--r:-44deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-100;--y:-19;--f:404;--d:3.09s;--dl:0.26s;--sw:12px;--sd:0.81s;--fd:1.12s;--rx:-0.60;--r:-26deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-179;--y:-21;--f:393;--d:3.02s;--dl:0.47s;--sw:6px;--sd:0.48s;--fd:1.29s;--rx:0.64;--r:-52deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:211;--y:-96;--f:447;--d:3.46s;--dl:0.45s;--sw:12px;--sd:0.59s;--fd:1.17s;--rx:-0.44;--r:75deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:114;--y:-110;--f:444;--d:3.28s;--dl:0.39s;--sw:10px;--sd:0.54s;--fd:1.13s;--rx:-0.47;--r:-44deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:309;--y:-133;--f:433;--d:3.37s;--dl:0.30s;--sw:6px;--sd:0.54s;--fd:1.17s;--rx:-0.49;--r:-78deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-175;--y:-40;--f:474;--d:3.20s;--dl:0.50s;--sw:7px;--sd:0.83s;--fd:1.07s;--rx:-0.55;--r:25deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-236;--y:-86;--f:470;--d:3.05s;--dl:0.36s;--sw:14px;--sd:0.81s;--fd:1.26s;--rx:-0.07;--r:-28deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:142;--y:-35;--f:451;--d:2.86s;--dl:0.47s;--sw:15px;--sd:0.89s;--fd:0.95s;--rx:0.58;--r:2deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#0F6B45"></s></b></i><i style="--x:262;--y:-30;--f:388;--d:3.13s;--dl:0.36s;--sw:13px;--sd:0.67s;--fd:0.57s;--rx:0.62;--r:-64deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:191;--y:-125;--f:458;--d:2.77s;--dl:0.23s;--sw:11px;--sd:0.78s;--fd:1.18s;--rx:0.38;--r:46deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:165;--y:-88;--f:463;--d:3.27s;--dl:0.23s;--sw:11px;--sd:0.86s;--fd:0.74s;--rx:0.34;--r:76deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-125;--y:-130;--f:407;--d:3.20s;--dl:0.31s;--sw:7px;--sd:0.45s;--fd:0.83s;--rx:0.08;--r:-69deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-241;--y:-136;--f:473;--d:3.15s;--dl:0.47s;--sw:14px;--sd:0.63s;--fd:0.73s;--rx:-0.01;--r:6deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#1652F0"></s></b></i><i style="--x:256;--y:-19;--f:432;--d:2.73s;--dl:0.31s;--sw:6px;--sd:0.57s;--fd:1.08s;--rx:0.95;--r:-71deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-220;--y:-148;--f:452;--d:2.89s;--dl:0.34s;--sw:10px;--sd:0.71s;--fd:1.19s;--rx:0.25;--r:-30deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-305;--y:-61;--f:441;--d:3.25s;--dl:0.46s;--sw:11px;--sd:0.55s;--fd:0.71s;--rx:0.09;--r:70deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#AFC1F5"></s></b></i><i style="--x:-171;--y:-46;--f:470;--d:2.98s;--dl:0.28s;--sw:15px;--sd:0.55s;--fd:1.30s;--rx:0.78;--r:-46deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i></span><span class="ko-halo"></span><span class="ko-disc"><svg class="ko-tick" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" pathLength="1"></path></svg></span></div><span class="ko-pill">Public Marketplace</span><h1 class="ko-h1">Your course is live</h1><p class="ko-sub">Data Analysis with SQL</p>
+<div class="lv-s"><span class="gb"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold Validated</span></span><span class="lv-cei"><b>CEI 92</b></span><span class="lv-pr">850 DLP · 500 Credits lifetime</span></div>
+<section class="ko-card"><span class="ko-cl">What happens now</span><ul class="ko-nx"><li><span class="ko-ni"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span><span><b>Learners can find it in the marketplace</b><em>Search and browse listings usually update within minutes.</em></span></li><li><span class="ko-ni"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg></span><span><b>Your Gold badge and CEI are shown</b><em>Both appear on the course page and marketplace card.</em></span></li><li><span class="ko-ni"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg></span><span><b>Future edits are checked</b><em>Credalio tells you if a change needs revalidation before it goes live.</em></span></li></ul></section>
+<div class="ko-acts"><a class="ds-btn" href="#"><span>Share &amp; Promote</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><span class="ko-2"><a class="ds-ghost" href="#">Go to Manage</a><a class="ds-link" href="STU-001.dc.html">Create Another Experience</a></span></div></div></div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+var T0 = {"t1": true, "t2": false, "t3": false}, G = {"t1": "stop", "t2": "stop", "t3": "stop"};
+function togVals(self) {
+  var t = self.state.t || T0, v = {};
+  Object.keys(T0).forEach(function (k) {
+    v['c'.concat(k)] = t[k] ? 'on' : ''; v['a'.concat(k)] = t[k] ? 'true' : 'false';
+    v['x'.concat(k)] = function () {
+      var n = Object.assign({}, t);
+      if (G[k]) { Object.keys(G).forEach(function (j) { if (G[j] === G[k]) n[j] = false; }); n[k] = true; } else n[k] = !t[k];
+      self.setState({ t: n });
+    };
+  });
+  return v;
+}
+class Component extends DCLogic {
+  renderVals() {
+    var s = this.props.step || 'price', v = togVals(this);
+    ["price", "priceout", "revenue", "listing", "live"].forEach(function (k) { v['s_'.concat(k)] = k === s; });
+    v.rootCls = s === 'priceout' ? 'is-wait' : (s === 'live' ? 'is-ok' : '');
+    return v;
+  }
+}
+</script>
+</body>
+</html>

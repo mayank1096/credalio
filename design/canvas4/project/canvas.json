@@ -1315,9 +1315,329 @@
       "is_interactive": true,
       "expand": "fill"
     },
-    "Setup.dc.html": {
+    "STU-053.dc.html": {
       "x": 0,
       "y": 40304,
+      "w": 1440,
+      "h": 1080,
+      "title": "CR-STU-053 · Awaiting assignment · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-053-Mobile.dc.html": {
+      "x": 1520,
+      "y": 40304,
+      "w": 390,
+      "h": 1055,
+      "title": "CR-STU-053 · Awaiting assignment · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-054.dc.html": {
+      "x": 2070,
+      "y": 40304,
+      "w": 1440,
+      "h": 1080,
+      "title": "CR-STU-054 · Validators assigned (roles) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-054-Mobile.dc.html": {
+      "x": 3590,
+      "y": 40304,
+      "w": 390,
+      "h": 1410,
+      "title": "CR-STU-054 · Validators assigned (roles) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-055.dc.html": {
+      "x": 4140,
+      "y": 40304,
+      "w": 1440,
+      "h": 1080,
+      "title": "CR-STU-055 · Validation workspace · overview · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-055-Mobile.dc.html": {
+      "x": 5660,
+      "y": 40304,
+      "w": 390,
+      "h": 1372,
+      "title": "CR-STU-055 · Validation workspace · overview · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-055A.dc.html": {
+      "x": 6210,
+      "y": 40304,
+      "w": 1440,
+      "h": 1080,
+      "title": "CR-STU-055A · Clarification request · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-055A-Mobile.dc.html": {
+      "x": 7730,
+      "y": 40304,
+      "w": 390,
+      "h": 1401,
+      "title": "CR-STU-055A · Clarification request · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-055B.dc.html": {
+      "x": 8280,
+      "y": 40304,
+      "w": 1440,
+      "h": 1080,
+      "title": "CR-STU-055B · Evidence request · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-055B-Mobile.dc.html": {
+      "x": 9800,
+      "y": 40304,
+      "w": 390,
+      "h": 1639,
+      "title": "CR-STU-055B · Evidence request · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-055C.dc.html": {
+      "x": 10350,
+      "y": 40304,
+      "w": 1440,
+      "h": 1080,
+      "title": "CR-STU-055C · Meeting request · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-055C-Mobile.dc.html": {
+      "x": 11870,
+      "y": 40304,
+      "w": 390,
+      "h": 1557,
+      "title": "CR-STU-055C · Meeting request · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-055D.dc.html": {
+      "x": 12420,
+      "y": 40304,
+      "w": 1440,
+      "h": 1137,
+      "title": "CR-STU-055D · Findings · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-055D-Mobile.dc.html": {
+      "x": 13940,
+      "y": 40304,
+      "w": 390,
+      "h": 1622,
+      "title": "CR-STU-055D · Findings · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-056.dc.html": {
+      "x": 0,
+      "y": 42363,
+      "w": 1440,
+      "h": 1080,
+      "title": "CR-STU-056 · Improvements required (action plan) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-056-Mobile.dc.html": {
+      "x": 1520,
+      "y": 42363,
+      "w": 390,
+      "h": 1290,
+      "title": "CR-STU-056 · Improvements required (action plan) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-057.dc.html": {
+      "x": 2070,
+      "y": 42363,
+      "w": 1440,
+      "h": 1083,
+      "title": "CR-STU-057 · Course revision (findings in context) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-057-Mobile.dc.html": {
+      "x": 3590,
+      "y": 42363,
+      "w": 390,
+      "h": 1375,
+      "title": "CR-STU-057 · Course revision (findings in context) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-058.dc.html": {
+      "x": 4140,
+      "y": 42363,
+      "w": 1440,
+      "h": 1080,
+      "title": "CR-STU-058 · Resubmission · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-058-Mobile.dc.html": {
+      "x": 5660,
+      "y": 42363,
+      "w": 390,
+      "h": 1851,
+      "title": "CR-STU-058 · Resubmission · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-059.dc.html": {
+      "x": 6210,
+      "y": 42363,
+      "w": 1440,
+      "h": 1080,
+      "title": "CR-STU-059 · Validation decision · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-059-Mobile.dc.html": {
+      "x": 7730,
+      "y": 42363,
+      "w": 390,
+      "h": 1362,
+      "title": "CR-STU-059 · Validation decision · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-060.dc.html": {
+      "x": 0,
+      "y": 44634,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-060 · Final Pricing Confirmation · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-060-Mobile.dc.html": {
+      "x": 1520,
+      "y": 44634,
+      "w": 390,
+      "h": 995,
+      "title": "CR-STU-060 · Final Pricing Confirmation · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-060b.dc.html": {
+      "x": 2070,
+      "y": 44634,
+      "w": 1440,
+      "h": 904,
+      "title": "CR-STU-060 · Final pricing: provisional price now outside the range · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-060b-Mobile.dc.html": {
+      "x": 3590,
+      "y": 44634,
+      "w": 390,
+      "h": 1165,
+      "title": "CR-STU-060 · Final pricing: provisional price now outside the range · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-061.dc.html": {
+      "x": 4140,
+      "y": 44634,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-061 · Revenue share confirmation (1 pending) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-061-Mobile.dc.html": {
+      "x": 5660,
+      "y": 44634,
+      "w": 390,
+      "h": 1532,
+      "title": "CR-STU-061 · Revenue share confirmation (1 pending) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-062.dc.html": {
+      "x": 6210,
+      "y": 44634,
+      "w": 1440,
+      "h": 1078,
+      "title": "CR-STU-062 · Marketplace listing · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-062-Mobile.dc.html": {
+      "x": 7730,
+      "y": 44634,
+      "w": 390,
+      "h": 1907,
+      "title": "CR-STU-062 · Marketplace listing · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-065.dc.html": {
+      "x": 8280,
+      "y": 44634,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-065 · Published success · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-065-Mobile.dc.html": {
+      "x": 9800,
+      "y": 44634,
+      "w": 390,
+      "h": 892,
+      "title": "CR-STU-065 · Published success · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Setup.dc.html": {
+      "x": 0,
+      "y": 46961,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -1327,7 +1647,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 40304,
+      "y": 46961,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -1337,7 +1657,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 40304,
+      "y": 46961,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -1347,7 +1667,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 40304,
+      "y": 46961,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -1357,7 +1677,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 40304,
+      "y": 46961,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -1367,7 +1687,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 40304,
+      "y": 46961,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -1377,7 +1697,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 40304,
+      "y": 46961,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -1387,10 +1707,30 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 40304,
+      "y": 46961,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Validate.dc.html": {
+      "x": 12800,
+      "y": 46961,
+      "w": 1440,
+      "h": 900,
+      "title": "Validate · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Publish.dc.html": {
+      "x": 14400,
+      "y": 46961,
+      "w": 1440,
+      "h": 900,
+      "title": "Publish · shared source",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -1527,6 +1867,38 @@
     "STU-051-Mobile.dc.html",
     "STU-052.dc.html",
     "STU-052-Mobile.dc.html",
+    "STU-053.dc.html",
+    "STU-053-Mobile.dc.html",
+    "STU-054.dc.html",
+    "STU-054-Mobile.dc.html",
+    "STU-055.dc.html",
+    "STU-055-Mobile.dc.html",
+    "STU-055A.dc.html",
+    "STU-055A-Mobile.dc.html",
+    "STU-055B.dc.html",
+    "STU-055B-Mobile.dc.html",
+    "STU-055C.dc.html",
+    "STU-055C-Mobile.dc.html",
+    "STU-055D.dc.html",
+    "STU-055D-Mobile.dc.html",
+    "STU-056.dc.html",
+    "STU-056-Mobile.dc.html",
+    "STU-057.dc.html",
+    "STU-057-Mobile.dc.html",
+    "STU-058.dc.html",
+    "STU-058-Mobile.dc.html",
+    "STU-059.dc.html",
+    "STU-059-Mobile.dc.html",
+    "STU-060.dc.html",
+    "STU-060-Mobile.dc.html",
+    "STU-060b.dc.html",
+    "STU-060b-Mobile.dc.html",
+    "STU-061.dc.html",
+    "STU-061-Mobile.dc.html",
+    "STU-062.dc.html",
+    "STU-062-Mobile.dc.html",
+    "STU-065.dc.html",
+    "STU-065-Mobile.dc.html",
     "Setup.dc.html",
     "Studio.dc.html",
     "Builder.dc.html",
@@ -1534,7 +1906,9 @@
     "Course.dc.html",
     "Prepare.dc.html",
     "Submit.dc.html",
-    "Preview.dc.html"
+    "Preview.dc.html",
+    "Validate.dc.html",
+    "Publish.dc.html"
   ],
   "notes": {
     "b1-setup": {
@@ -1731,13 +2105,58 @@
       "w": 260,
       "fill": "pink"
     },
+    "b5-validate": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 5 · Validation: awaiting assignment, validators assigned, workspace overview, requests, evidence, meeting, findings",
+      "w": 240,
+      "x": 0,
+      "y": 40004
+    },
+    "b5-validate-new": {
+      "x": 0,
+      "y": 40154,
+      "text": "NEW · batch 5",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b5-decision": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 5 · Decision: improvements required, course revision, resubmission, passed validation",
+      "w": 240,
+      "x": 0,
+      "y": 42063
+    },
+    "b5-decision-new": {
+      "x": 0,
+      "y": 42213,
+      "text": "NEW · batch 5",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b5-publish": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 5 · Publish: final pricing (within / outside range), revenue confirmation, marketplace listing, course is live",
+      "w": 240,
+      "x": 0,
+      "y": 44334
+    },
+    "b5-publish-new": {
+      "x": 0,
+      "y": 44484,
+      "text": "NEW · batch 5",
+      "w": 260,
+      "fill": "pink"
+    },
     "sources": {
       "kind": "title1",
       "maxW": 3200,
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 40004
+      "y": 46661
     }
   },
   "noteOrder": [
@@ -1767,6 +2186,12 @@
     "b4-ready-new",
     "b4-submit",
     "b4-submit-new",
+    "b5-validate",
+    "b5-validate-new",
+    "b5-decision",
+    "b5-decision-new",
+    "b5-publish",
+    "b5-publish-new",
     "sources"
   ],
   "designSystems": [],

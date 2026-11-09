@@ -5,13 +5,13 @@ Each row: title note, then desktop + mobile pairs left to right. Shared sources 
 """
 import json, os, sys
 from l4kit import OUT
-import stu1, stu2, stu3
+import stu1, stu2, stu3, stu4
 
 PAIR, GAP, ROWGAP = 1440 + 80 + 390, 160, 420
 H = {}
 for f in sys.argv[1:]:
     H.update(json.load(open(f)))
-T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS}
+T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS + stu4.BOARDS}
 
 ROWS = [
     ('b1-setup', 'Batch 1 · Course setup: learning experience, delivery type, setup review, how you’ll create it, Studio welcome', ['STU-001', 'STU-002', 'STU-003', 'STU-004', 'STU-008']),
@@ -23,10 +23,14 @@ ROWS = [
     ('b3-build', 'Batch 3 · Build tools: resource library, completion rules, team & assignments, my work, team chat', ['STU-026', 'STU-027', 'STU-028', 'STU-029', 'STU-028-SOLO', 'STU-030']),
     ('b3-views', 'Batch 3 · DLP & effort, course assessments, practice & projects, delivery, learner experience, learner support', ['STU-031', 'STU-ASM', 'STU-PRA', 'STU-DEL', 'STU-LX', 'STU-SUP']),
     ('b3-pricing', 'Batch 3 · Access & pricing: access model, maintenance burden, pricing, pricing update required, summary', ['STU-032', 'STU-033', 'STU-034', 'STU-034b', 'STU-035']),
+    ('b4-review', 'Batch 4 · Prepare: course review, marketplace preview, learner preview pages, intelligence profile', ['STU-040', 'STU-040M', 'STU-PRV', 'STU-PRV-L', 'STU-041']),
+    ('b4-ready', 'Batch 4 · Prepare: Nova course review, readiness checks, issues to resolve', ['STU-042', 'STU-043', 'STU-044']),
+    ('b4-submit', 'Batch 4 · Submit for validation: intake, declaration, creator readiness, scope, quote, payment (short / enough), submitted', ['STU-045', 'STU-046', 'STU-047', 'STU-048', 'STU-049', 'STU-050', 'STU-051', 'STU-052']),
 ]
 SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html', 'Course Studio · shared source'),
            ('Builder.dc.html', 'Curriculum Builder · shared source'), ('Editor.dc.html', 'Learning item editors · shared source'),
-           ('Course.dc.html', 'Course set-up · shared source')]
+           ('Course.dc.html', 'Course set-up · shared source'), ('Prepare.dc.html', 'Prepare · shared source'),
+           ('Submit.dc.html', 'Submit for validation · shared source'), ('Preview.dc.html', 'Creator Preview · shared source')]
 
 boards, order, notes = {}, [], {}
 y = 300

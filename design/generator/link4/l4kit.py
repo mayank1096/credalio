@@ -155,13 +155,14 @@ NAV = [
                 ('Learning Design', 'STU-017.dc.html', None, 'design')]),
     ('Build', [('Curriculum', 'STU-020.dc.html', 'pr', 'curr'), ('Resources', 'STU-026.dc.html', 'pr', 'res')]),
     ('Experience', [('Delivery & Schedule', 'STU-DEL.dc.html', 'ok', 'deliv'), ('Learner Experience', 'STU-LX.dc.html', 'ok', 'lx'), ('Access & Pricing', 'STU-032.dc.html', 'pr', 'price')]),
-    ('Prepare', [('Course Review', '#', None, 'review'), ('Validation Readiness', '#', 'pr', 'ready')]),
+    ('Prepare', [('Course Review', 'STU-040.dc.html', None, 'review'), ('Validation Readiness', 'STU-043.dc.html', 'pr', 'ready')]),
     ('Validate · Gate', [('Validation', '#', 'lk', 'val')]),
     ('Publish · Gate', [('Publication', '#', 'lk', 'pub')]),
     ('Manage', [('Collaborators', '#', None, 'collab'), ('Course Settings', '#', None, 'settings')]),
 ]
 
-SUBNAV = {'curr': [('Curriculum Builder', 'STU-020.dc.html', 'cb'), ('Completion Rules', 'STU-027.dc.html', 'comp'), ('Team & Assignments', 'STU-028.dc.html', 'team'),
+SUBNAV = {'review': [('Learner Preview', 'STU-040.dc.html', 'lprev'), ('Marketplace Preview', 'STU-040M.dc.html', 'mprev'), ('Intelligence Profile', 'STU-041.dc.html', 'lip'), ('Nova Review', 'STU-042.dc.html', 'nrev')],
+          'curr': [('Curriculum Builder', 'STU-020.dc.html', 'cb'), ('Completion Rules', 'STU-027.dc.html', 'comp'), ('Team & Assignments', 'STU-028.dc.html', 'team'),
                     ('DLP & Effort', 'STU-031.dc.html', 'dlpe'), ('All Assessments', 'STU-ASM.dc.html', 'alla')]}
 
 def course_nav(active):

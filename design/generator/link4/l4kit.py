@@ -156,7 +156,7 @@ NAV = [
     ('Build', [('Curriculum', 'STU-020.dc.html', 'pr', 'curr'), ('Resources', 'STU-026.dc.html', 'pr', 'res')]),
     ('Experience', [('Delivery & Schedule', 'STU-DEL.dc.html', 'ok', 'deliv'), ('Learner Experience', 'STU-LX.dc.html', 'ok', 'lx'), ('Access & Pricing', 'STU-032.dc.html', 'pr', 'price')]),
     ('Prepare', [('Course Review', 'STU-040.dc.html', None, 'review'), ('Validation Readiness', 'STU-043.dc.html', 'pr', 'ready')]),
-    ('Validate · Gate', [('Validation', '#', 'lk', 'val')]),
+    ('Validate · Gate', [('Validation', 'STU-055.dc.html', 'lk', 'val')]),
     ('Publish · Gate', [('Publication', '#', 'lk', 'pub')]),
     ('Manage', [('Collaborators', '#', None, 'collab'), ('Course Settings', '#', None, 'settings')]),
 ]

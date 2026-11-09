@@ -5,13 +5,13 @@ Each row: title note, then desktop + mobile pairs left to right. Shared sources 
 """
 import json, os, sys
 from l4kit import OUT
-import stu1, stu2, stu3, stu4, stu5
+import stu1, stu2, stu3, stu4, stu5, stu6
 
 PAIR, GAP, ROWGAP = 1440 + 80 + 390, 160, 420
 H = {}
 for f in sys.argv[1:]:
     H.update(json.load(open(f)))
-T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS + stu4.BOARDS + stu5.BOARDS}
+T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS + stu4.BOARDS + stu5.BOARDS + stu6.BOARDS}
 
 ROWS = [
     ('b1-setup', 'Batch 1 · Course setup: learning experience, delivery type, setup review, how you’ll create it, Studio welcome', ['STU-001', 'STU-002', 'STU-003', 'STU-004', 'STU-008']),
@@ -29,12 +29,16 @@ ROWS = [
     ('b5-validate', 'Batch 5 · Validation: awaiting assignment, validators assigned, workspace overview, requests, evidence, meeting, findings', ['STU-053', 'STU-054', 'STU-055', 'STU-055A', 'STU-055B', 'STU-055C', 'STU-055D']),
     ('b5-decision', 'Batch 5 · Decision: improvements required, course revision, resubmission, passed validation', ['STU-056', 'STU-057', 'STU-058', 'STU-059']),
     ('b5-publish', 'Batch 5 · Publish: final pricing (within / outside range), revenue confirmation, marketplace listing, course is live', ['STU-060', 'STU-060b', 'STU-061', 'STU-062', 'STU-065']),
+    ('b6-hub', 'Batch 6 · Manage Published Course: hub, Publishing & Visibility, Manage Availability (step 2 / step 3), paused, hidden', ['MGT-001', 'MGT-002', 'MGT-002-EDIT', 'MGT-002-REVIEW', 'MGT-002B', 'MGT-002C']),
+    ('b6-states', 'Batch 6 · Publishing states: unpublished, restricted, organization approval, save error, restriction notice', ['MGT-002D', 'MGT-002E', 'MGT-002F', 'MGT-002G', 'MGT-002-NOTICE']),
+    ('b6-unpub', 'Batch 6 · Unpublish: impact, reason & transition, confirm, unpublished, requires review · Downstream: course overview, My Creations, learner My Learning', ['MGT-003A', 'MGT-003B', 'MGT-003C', 'MGT-003D', 'MGT-003E', 'MGT-DS-OV', 'MGT-DS-CR', 'MGT-DS-ML']),
 ]
 SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html', 'Course Studio · shared source'),
            ('Builder.dc.html', 'Curriculum Builder · shared source'), ('Editor.dc.html', 'Learning item editors · shared source'),
            ('Course.dc.html', 'Course set-up · shared source'), ('Prepare.dc.html', 'Prepare · shared source'),
            ('Submit.dc.html', 'Submit for validation · shared source'), ('Preview.dc.html', 'Creator Preview · shared source'),
-           ('Validate.dc.html', 'Validate · shared source'), ('Publish.dc.html', 'Publish · shared source')]
+           ('Validate.dc.html', 'Validate · shared source'), ('Publish.dc.html', 'Publish · shared source'),
+           ('Manage.dc.html', 'Manage Published Course · shared source'), ('Unpublish.dc.html', 'Unpublish · shared source'), ('Learner.dc.html', 'Learner app · shared source')]
 
 boards, order, notes = {}, [], {}
 y = 300

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Learner app · My Learning · shared source</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-btn:focus-visible,.ds-ghost:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
+}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ds-h1{margin:0;font-size:clamp(28px,2.5vw,36px);line-height:1.15;font-weight:600;letter-spacing:-0.03em;color:#0B1433}
+.ds-sub{margin:8px 0 0 0;font-size:16px;line-height:1.55;color:#4A5578}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-btn:focus-visible,.ds-ghost:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (max-width: 960px){
+.ds-h1{font-size:24px !important;line-height:1.2}
+.ds-sub{font-size:14.5px;margin-top:6px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
+.ds-btn{justify-content:space-between}
+}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/56bd922e46929406f00f4b18fe9b3244) left center/contain no-repeat}
+.av{position:relative;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:#EAF0FF;color:#0E3BB8;font-size:11px;font-weight:600;box-sizing:border-box}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ds-btn.sm{height:36px;padding:0 16px;font-size:13.5px}
+.rx{padding:18px;border-radius:20px}
+.rg-a{animation:rgDraw 1.4s cubic-bezier(.2,.8,.2,1) .25s both}
+@keyframes rgDraw{from{stroke-dasharray:0 400}}
+@media (prefers-reduced-motion: reduce){.rg-a{animation:none}}
+@media (max-width: 960px){
+.rx{padding:18px 16px;border-radius:18px}
+}
+.ds-btn.sm2{height:44px;font-size:14.5px;padding-left:20px;gap:12px}
+.ds-btn.sm2 .ob-arrow{width:34px;height:34px}
+body{background:#F7F9FD}
+.la{min-height:100vh;background:#F7F9FD;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.lh{display:flex;align-items:center;gap:28px;height:68px;padding:0 32px;background:#FFFFFF;border-bottom:1.5px solid #EEF1F7}
+.lh-lg{display:flex}
+.lh-lg .lg-word{height:24px}
+.lh-n{display:flex;gap:22px}
+.lh-n a{color:#3A4566;font-size:14.5px;font-weight:500;text-decoration:none;padding:24px 0;border-bottom:2.5px solid transparent}
+.lh-n a.on{color:#0B1433;font-weight:600;border-bottom-color:#1652F0}
+.lh-tag{display:inline-flex;align-items:center;height:28px;padding:0 11px;border-radius:999px;border:1.5px dashed #CBD3E6;font-size:12px;font-weight:500;color:#5B6582}
+.la-m{width:min(1180px,100%);box-sizing:border-box;margin:0 auto;padding:36px 32px 56px 32px}
+.pg-e{display:block;margin-bottom:8px;font-size:13px;font-weight:600;color:#1652F0}
+.lc3{margin-top:26px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.lc2{display:flex;flex-direction:column;border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3;overflow:hidden;animation:obIn .55s ease both;animation-delay:calc(var(--i) * 120ms + 150ms)}
+.lc2-cv{position:relative;display:block;height:132px;background:radial-gradient(circle at 85% 20%,rgba(92,134,255,.8),rgba(92,134,255,0) 55%),linear-gradient(140deg,#1652F0,#0B1433)}
+.lc2-cv i{position:absolute;left:18px;bottom:12px;font-style:normal;font-size:30px;font-weight:600;letter-spacing:-0.03em;color:#FFFFFF}
+.lc2-cv em{position:absolute;right:18px;height:6px;border-radius:6px;background:rgba(255,255,255,.22)}
+.lc2-cv em:nth-of-type(1){top:56px;width:80px}.lc2-cv em:nth-of-type(2){top:70px;width:52px;background:rgba(255,255,255,.4)}
+.lc2.am .lc2-cv{filter:saturate(.35)}
+.lc2.gy .lc2-cv{filter:grayscale(1);opacity:.75}
+.lc2-s{position:absolute;left:14px;top:14px;display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 11px 0 7px;border-radius:999px;font-size:12.5px;font-weight:600;background:#FFFFFF}
+.lc2-s svg{width:18px;height:18px;padding:3px;box-sizing:border-box;border-radius:50%;color:#FFFFFF}
+.lc2.ok .lc2-s{color:#0F6B45}.lc2.ok .lc2-s svg{background:#0F6B45}
+.lc2.am .lc2-s{color:#8A5A00}.lc2.am .lc2-s svg{background:#B76E00}
+.lc2.gy .lc2-s{color:#3A4566}.lc2.gy .lc2-s svg{background:#5B6582}
+.lc2-b{flex:1;display:flex;flex-direction:column;gap:12px;padding:18px 20px 20px 20px}
+.lc2-b > b{font-size:17px;font-weight:600}
+.lc2-p{display:flex;align-items:center;gap:14px}
+.lc2-p > span{display:flex;flex-direction:column;gap:2px}
+.lc2-p b{font-size:20px;font-weight:600}
+.lc2-p em{font-style:normal;font-size:13px;color:#5B6582}
+.lc2-x{padding:12px 14px;border-radius:14px}
+.lc2.am .lc2-x{background:#FFF8EA}
+.lc2.gy .lc2-x{background:#F1F3F8}
+.lc2-x b{font-size:14.5px;font-weight:600}
+.lc2.am .lc2-x b{color:#8A5A00}
+.lc2-x p{margin:3px 0 0 0;font-size:13.5px;line-height:1.5;color:#3A4566}
+.lc2-a{margin-top:auto;display:flex}
+.lc2-a .ds-btn,.lc2-a .ds-ghost{width:100%;justify-content:space-between}
+.lc2-a .ds-ghost{justify-content:center;height:44px}
+@media (max-width: 960px){
+.lh{height:60px;padding:0 16px;gap:12px}
+.lh-n{display:none}
+.la-m{padding:24px 16px 32px 16px}
+.ds-h1{font-size:24px}
+.lc3{grid-template-columns:minmax(0,1fr);gap:12px;margin-top:20px}
+.lc2{display:grid;grid-template-columns:96px minmax(0,1fr)}
+.lc2-cv{height:auto;min-height:100%}
+.lc2-cv i{font-size:18px;left:10px;bottom:8px}
+.lc2-cv em{display:none}
+.lc2-s{left:auto;right:auto;top:auto;bottom:auto;position:static;margin:10px 0 0 0;height:auto;padding:0;background:none;font-size:12px}
+.lc2-cv .lc2-s{display:none}
+.lc2-b{padding:14px;gap:10px}
+.lc2-b > b{font-size:15px}
+.lc2-p b{font-size:17px}
+.lc2-x{padding:10px 12px}
+}
+</style>
+</helmet>
+<div class="la">
+<header class="lh"><a class="lh-lg" href="#" aria-label="Credalio"><span class="lg-word"></span></a><nav class="lh-n"><a href="#">Browse</a><a href="#">Certifications</a><a href="#">Career Paths</a><a href="#" class="on">My Learning</a></nav><span style="flex-grow: 1"></span><span class="lh-tag">Learner app</span><span class="av" style="width: 36px; height: 36px">JM</span></header>
+<main class="la-m"><span class="pg-e">My Learning</span><h1 class="ds-h1">My Learning — course-access states after unpublish</h1><p class="ds-sub">Three distinct learner-facing states, shown side by side for comparison.</p>
+<div class="lc3"><article class="lc2 ok" style="--i: 0"><span class="lc2-cv"><i>SQL</i><em></em><em></em><span class="lc2-s"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Active entitlement</span></span></span><div class="lc2-b"><b>Data Analysis with SQL</b><div class="lc2-p"><svg class="rg" viewBox="0 0 120 120" width="52" height="52" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#EAF0FF" stroke-width="12"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="#1652F0" stroke-width="12" stroke-linecap="round" stroke-dasharray="194.8 400" style="--d: 194.8" transform="rotate(-90 60 60)"></circle></svg><span><b>62%</b><em>62% complete · DLP access active</em></span></div><div class="lc2-a"><a class="ds-btn sm2" href="#"><span>Continue Learning</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></article><article class="lc2 am" style="--i: 1"><span class="lc2-cv"><i>SQL</i><em></em><em></em><span class="lc2-s"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span>Entitlement expired</span></span></span><div class="lc2-b"><b>Data Analysis with SQL</b><div class="lc2-x"><b>Access Ended</b><p>Your DLP access period has ended. Renew to continue.</p></div><div class="lc2-a"><a class="ds-ghost sm" href="#">Renew Access</a></div></div></article><article class="lc2 gy" style="--i: 2"><span class="lc2-cv"><i>SQL</i><em></em><em></em><span class="lc2-s"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg><span>Special withdrawal</span></span></span><div class="lc2-b"><b>Data Analysis with SQL</b><div class="lc2-x"><b>Access Restricted</b><p>A special access review applies to your enrollment.</p></div><div class="lc2-a"><a class="ds-ghost sm" href="#">View Details</a></div></div></article></div></main></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

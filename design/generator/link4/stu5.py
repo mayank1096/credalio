@@ -47,7 +47,7 @@ def tracker(cur, tone='cb'):
     for i, t in enumerate(TRACK):
         k = 'dn' if i < cur else ('on' if i == cur else '')
         li += '<li class="%s"><i>%s</i><span>%s</span></li>' % (k, ck(10) if i < cur else '', t)
-    return '<ol class="vt %s" style="--p: %d" aria-label="Validation progress">%s</ol>' % (tone, cur, li)
+    return '<ol class="vt %s" style="--p: %d" aria-label="Validation progress">%s</ol><p class="vt-m %s"><b>%s</b><span>Step %d of 4</span></p>' % (tone, cur, li, tone, TRACK[cur], cur + 1)
 
 def case_head(status, tone, h1, sub, cur, extra=''):
     return ('<section class="vh %s ob-in"><div class="vh-t"><div><span class="vh-k"><b>%s</b><span>%s</span></span><h1 class="ds-h1">%s</h1>%s</div>%s</div>%s%s</section>') % (
@@ -80,8 +80,8 @@ CASE_CARD = '''<section class="ds-card rx cs-c"><span class="rx-k">Case</span><d
 NOW = [('dn', 'Your case is in the assignment queue'), ('on', 'Credalio is matching validators by role: Educational Validator, Subject Matter Validator'),
        ('', 'Each validator confirms no conflict of interest [TO CONFIRM protocol]')]
 P('wait', case_head('Awaiting assignment', 'cb', 'Finding the right validators', '', 1),
-  '''<section class="ds-card ok-n ob-in2"><span class="ok-i">%s</span><div><b>No action required</b><p>You’ll be notified as soon as validators are assigned.</p></div></section>
-<section class="ds-card fc ob-in3"><div class="fc-h"><div><h2>What’s happening now</h2></div></div><ol class="hn">%s</ol></section>
+  '''<section class="ds-card hq ob-in2"><div class="ok-n"><span class="ok-i">%s</span><div><b>No action required</b><p>You’ll be notified as soon as validators are assigned.</p></div></div>
+<div class="hq-b"><h2>What’s happening now</h2><ol class="hn">%s</ol></div></section>
 <section class="ds-card fc ww ob-in4"><div class="fc-h"><div><h2>While you wait</h2></div></div><p>The submitted version is locked until a decision so validators all review the same thing. You can keep working on other drafts, and nothing about this case needs you until a validator asks.</p><span class="ww-t">%s<span>Typical assignment time [TO CONFIRM]</span></span></section>''' % (
       ck(16), ''.join('<li class="%s"><span class="hn-d">%s</span><span>%s</span></li>' % (k, ck(10) if k == 'dn' else '', t) for k, t in NOW), ic('clock', 15, 2)),
   acts('STU-055.dc.html', 'Open Validation Workspace', note='<a class="ds-link" href="STU-009.dc.html">Back to Studio Home</a>'),
@@ -94,15 +94,14 @@ ROLES = [('cap', 'Educational Validator', 'Assigned', 'Reviews: Learning design,
          ('quiz', 'Assessment Validator', 'Not required', 'Reviews: Assessment validity and rubric quality. Only assigned when the case requires it.', False, False)]
 def role(i, r):
     icon, t, st, d, lead, on = r
-    return ('<article class="vr%s" style="--i: %d"><div class="vr-h"><span class="vr-i">%s</span>%s</div><b>%s</b>%s<p>%s</p><span class="vr-s"><span class="vr-sh">%s</span><em>%s</em></span></article>') % (
+    return ('<article class="vr%s" style="--i: %d"><div class="vr-h"><span class="vr-i">%s</span>%s</div><b>%s</b>%s<p>%s</p><span class="vr-s"><span class="vr-sh">%s</span><em>%s</em><span class="vr-x" aria-hidden="true"><i></i><i></i></span></span></article>') % (
         '' if on else ' off', i, ic(icon, 22, 1.9), tag('%s%s' % (ck(10) + ' ' if on else '', st), 'green' if on else ''), t,
         ('<span class="vr-l">%s<span>coordinates requests and meetings</span></span>' % LEAD) if lead else '', d,
         ic('lock', 12, 2) if on else '', 'Identity protected' if on else 'Not on this case')
 P('assigned', case_head('Validation underway', 'cb', 'Validators assigned', 'Each role reviews your course independently. You see roles, not identities.', 2),
-  '<div class="vrs ob-in2">%s</div><div class="wn info ob-in3">%s<span>Validator identities are protected under the validation protocol. All contact happens inside the Validation Workspace, so every request, meeting and message stays on the case record.</span></div>' % (
-      ''.join(role(i, r) for i, r in enumerate(ROLES)), ic('lock', 16, 2)),
+  '<div class="vrs ob-in2">%s</div>' % ''.join(role(i, r) for i, r in enumerate(ROLES)),
   acts('STU-055.dc.html', 'Open Validation Workspace'),
-  nova_rail(NOVA_WAIT) + CASE_CARD)
+  nova_rail(NOVA_WAIT) + '<section class="ds-card rx idp ob-in3"><span class="idp-i">%s</span><p>Validator identities are protected under the validation protocol. All contact happens inside the Validation Workspace, so every request, meeting and message stays on the case record.</p></section>' % ic('lock', 18, 2) + CASE_CARD)
 
 # ---------------------------------------------------------------- CR-STU-055 Workspace overview
 ATT = [('chat', 'Answer clarification', 'REQ-01 Subject Matter Validator · due 3 Oct', 'Respond', 'STU-055A.dc.html'),
@@ -153,12 +152,12 @@ def slot(d, dt, t, on):
 P('meet', ws_head('meet'),
   '''<article class="ds-card mr ob-in3"><header><span class="rq-k">Meeting request<span>Case-linked</span></span>%s</header>
 <h2>Clarification of practical assessment methodology</h2><p class="mr-by">Requested by Subject Matter Validator · %s</p>
-<div class="mr-g"><div class="mr-k"><span>Participants</span><b class="mr-p"><i>You</i><i>Subject Matter Validator</i><i>Educational Validator</i></b></div><div class="mr-k"><span>Linked to</span><b>Final Project · rubric (FND-2048-027)</b></div><div class="mr-k"><span>Length</span><b>30 minutes</b></div></div>
+<div class="mr-g"><div class="mr-k mr-pk"><span>Participants</span><b class="mr-p"><i>%s<span>You</span></i><i><span class="mr-a">%s</span><span>Subject Matter Validator</span></i><i><span class="mr-a">%s</span><span>Educational Validator</span></i></b></div><div class="mr-k"><span>Linked to</span><b>Final Project · rubric (FND-2048-027)</b></div><div class="mr-k"><span>Length</span><b>30 minutes</b></div></div>
 <p class="mr-w">The validators want to understand how the Final Project’s practical work is marked before finalising their assessment findings. 30 minutes.</p>
 <span class="mr-sl">Suggested times (your time zone, WAT)</span><div class="sls">%s</div>
 <div class="rq-a">%s%s</div></article>
 <p class="vn">%s<span>Meetings are part of the validation case, not a private call. The agenda, attendance and any agreed actions are recorded and remain attached to VAL-2026-00482.</span></p>''' % (
-      tag('Awaiting your response', 'amber'), LEAD, ''.join(slot(d, dt, t, i == 0) for i, (d, dt, t) in enumerate(SLOTS)),
+      tag('Awaiting your response', 'amber'), LEAD, av(ME, 'AO', 24), ic('target', 12, 2.2), ic('cap', 12, 2.2), ''.join(slot(d, dt, t, i == 0) for i, (d, dt, t) in enumerate(SLOTS)),
       '<button type="button" class="ds-ghost sm">Suggest Another Time</button>', btn('Accept', '#', 'sm2'), ic('lock', 14, 2)),
   '', nova_rail(NOVA_WS) + CASE_CARD)
 
@@ -291,7 +290,7 @@ def range_card(kind, ok, lo, hi, sel, unit, extra='', stops=None):
         tag('%s Within range' % ck(10), 'green') if ok else tag('%s Outside range' % ic('x', 10, 2.6), 'red'), extra,
         '{:,}'.format(lo), '{:,}'.format(hi), unit, pos_cls, pos, '{:,}'.format(sel), '{:,}'.format(sel), unit, stops_h)
 
-PSIDE_PRICE = '''<div class="cl-nx vb"><span class="vb-m">%s</span><b>Your course is validated</b><p>★ Gold Validated VAL-2026-00482 · final ranges reflect the validated course</p></div>'''.replace('★ ', '') % ic('badge', 22, 1.9)
+PSIDE_PRICE = '''<div class="cl-nx vb"><span class="vb-m">%s</span><b>Gold Validated</b><p>VAL-2026-00482 · final ranges reflect the validated course</p></div>''' % ic('badge', 22, 1.9)
 PUB = {}
 PUB['price'] = pside(0, PSIDE_PRICE) + ppanel('Your course is validated', 'Now confirm learner access. Credalio has set the final permitted ranges for your validated course.',
     '<div class="prs">%s%s</div>' % (range_card('Subscription', True, 700, 900, 800, 'DLP'), range_card('Marketplace', True, 130, 210, 170, 'Credits', '<div class="pr-r"><span>Maintenance burden</span><b>Medium</b></div>')),
@@ -679,7 +678,6 @@ a.ft-r:hover{background:#F7F9FD}
 .vt{grid-template-columns:repeat(4,minmax(0,1fr))}
 .vt::before,.vt::after{left:11px}
 .vtabs{margin:16px -16px 0 -16px;padding:0 16px;gap:20px}
-.ok-n{padding:16px}
 .vs3{display:flex;overflow-x:auto;margin:0 -16px;padding:0 16px 4px 16px;gap:10px;scrollbar-width:none}
 .vs3::-webkit-scrollbar{display:none}
 .vs-t{flex:0 0 76%;box-sizing:border-box}
@@ -695,7 +693,6 @@ a.ft-r:hover{background:#F7F9FD}
 .up{grid-template-columns:minmax(0,1fr)}
 .mr{padding:16px}
 .mr h2{font-size:18px}
-.mr-g{grid-template-columns:minmax(0,1fr)}
 .sls{grid-template-columns:minmax(0,1fr);gap:8px}
 .sl{flex-direction:row;align-items:baseline;gap:10px;padding:12px 14px}
 .sl b{font-size:20px}
@@ -726,6 +723,87 @@ a.ft-r{margin:0 -8px;padding:14px 8px}
 .ko-h1{font-size:26px}
 .dg{grid-template-columns:minmax(0,1fr);margin-top:22px}
 .vrp .fc-h{flex-direction:column;align-items:flex-start;gap:6px}
+}
+
+.vt-m{display:none}
+.hq{padding:0;overflow:hidden}
+.hq .ok-n{border-radius:0;border:0;border-bottom:1.5px solid #E2F0E8}
+.hq-b{padding:20px 24px 22px 24px}
+.hq-b h2{margin:0 0 14px 0;font-size:16px;font-weight:600}
+.ok-i{animation:okP 2.6s ease-out infinite}
+@keyframes okP{0%{box-shadow:0 0 0 0 rgba(15,107,69,.28),0 0 0 6px #E7F5EE}100%{box-shadow:0 0 0 14px rgba(15,107,69,0),0 0 0 6px #E7F5EE}}
+.mt-v::before{content:'';position:absolute;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;background:conic-gradient(from 0deg,rgba(22,82,240,.18),rgba(22,82,240,0) 25%);animation:rmSpin 3.2s linear infinite}
+.vr{min-height:0}
+.vr-s{min-height:26px;position:relative}
+.vr-x{margin-left:auto;display:flex;gap:4px}
+.vr-x i{width:24px;height:8px;border-radius:4px;background:linear-gradient(90deg,#E6EAF3,#F5F7FB,#E6EAF3);background-size:200% 100%;animation:vrX 1.8s linear infinite}
+.vr-x i + i{width:14px}
+.vr-s em{white-space:nowrap}
+@keyframes vrX{to{background-position:-200% 0}}
+.vr.off .vr-x{display:none}
+.idp{display:flex;gap:12px;align-items:flex-start}
+.idp-i{width:36px;height:36px;flex-shrink:0;border-radius:12px;background:#0B1433;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.idp p{margin:0;font-size:13px;line-height:1.55;color:#3A4566}
+.mr-g{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.mr-pk{grid-column:1 / -1;flex-direction:row !important;align-items:center;justify-content:space-between;gap:12px}
+.mr-p{display:flex;flex-wrap:wrap;gap:6px}
+.mr-p i{gap:6px;padding:0 10px 0 3px;height:30px}
+.mr-p .av{box-shadow:none}
+.mr-a{width:24px;height:24px;border-radius:50%;background:#0B1433;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center}
+.ap ol::before{content:'';position:absolute;left:15px;top:20px;bottom:30px;width:2px;background:repeating-linear-gradient(180deg,#CBD3E6 0 4px,transparent 4px 8px)}
+.ap-n{position:relative;z-index:1;background:#FFFFFF}
+.vb b{font-size:16px}
+.vb-m::after{content:'';position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.7) 50%,transparent 70%);background-size:250% 100%;animation:vbSh 3.5s ease-in-out infinite}
+.vb-m{position:relative;overflow:hidden}
+@keyframes vbSh{0%{background-position:150% 0}60%,100%{background-position:-100% 0}}
+@media (max-width: 960px){
+.vh .vh-k{margin-bottom:6px}
+.vh .ds-sub{font-size:13.5px;margin-top:4px}
+.vh-s,.vh-s.am{padding:0;border:0;background:none;max-width:none;font-size:13px;gap:8px}
+.vt{margin-top:16px;gap:0}
+.vt li span{display:none}
+.vt li,.vt li:first-child{align-items:center}
+.vt::before,.vt::after{left:calc(12.5%)}
+.vt::before{right:12.5%}
+.vt::after{width:calc(25% * var(--p))}
+.vt-m{display:flex;align-items:baseline;justify-content:center;gap:8px;margin:10px 0 0 0;font-size:13px}
+.vt-m b{font-weight:600}
+.vt-m span{color:#8A93AD}
+.vt-m.am b{color:#8A5A00}
+.vtabs{margin-top:14px}
+.hq-b{padding:16px}
+.ok-n{padding:16px}
+.vrs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 8px 16px;gap:12px;scrollbar-width:none}
+.vrs::-webkit-scrollbar{display:none}
+.vr{flex:0 0 80%;box-sizing:border-box;scroll-snap-align:start;padding:18px}
+.idp{order:2}
+.na li{display:grid;grid-template-columns:40px minmax(0,1fr) auto;align-items:center;gap:12px;flex-wrap:nowrap}
+.na-t{flex-basis:auto}
+.na li .ds-ghost{margin-left:0;height:36px;padding:0 14px;font-size:13px}
+.na-t em{font-size:12.5px}
+.mr-g{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.mr-pk{flex-direction:column !important;align-items:flex-start}
+.sls{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.sl{flex-direction:column;align-items:flex-start;gap:0;padding:12px 10px}
+.sl b{font-size:22px}
+.sl span{font-size:11.5px}
+.sl i{top:10px;right:8px;margin-top:0;width:18px;height:18px}
+.ap li{grid-template-columns:28px minmax(0,1fr) auto;align-items:start}
+.ap li .ds-ghost{grid-column:3;grid-row:1;height:34px;padding:0 12px;font-size:13px}
+.ap ol::before{left:13px}
+.cm2 li{grid-template-columns:18px minmax(0,1fr) auto}
+.cm2 li .ds-ghost{grid-column:3;grid-row:1;height:34px;padding:0 12px;font-size:13px}
+.ff .ds-seg{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+.vrp-r{display:grid;grid-template-columns:40px minmax(0,1fr);gap:8px 12px}
+.vrp-r > .ds-tag{margin-left:0;grid-column:2;justify-self:start}
+.vv-main .wk-r > .fs{order:1;padding:14px 16px}
+.fs ul{flex-direction:row;justify-content:space-between;margin-top:10px}
+.fs li{gap:6px;font-size:12.5px}
+.fs li span{flex:none}
+.ff{flex-direction:row;flex-wrap:nowrap;overflow-x:auto;margin:0 -16px;padding:0 16px;scrollbar-width:none}
+.ff::-webkit-scrollbar{display:none}
+.ff .ds-seg{flex-shrink:0;-webkit-mask-image:none;mask-image:none;overflow:visible}
+.ff-l{flex-shrink:0}
 }
 '''
 
@@ -762,7 +840,9 @@ PUB_CSS = open(os.path.join(HERE, 'submit_base.css')).read() + r'''
 .blue .pr-tr{background:linear-gradient(90deg,#C9D7FA,#1652F0)}
 .pr-pin{position:absolute;top:6px;width:4px;height:24px;margin-left:-2px;border-radius:4px;background:#0B1433;box-shadow:0 0 0 3px #FFFFFF;animation:pnD .8s cubic-bezier(.2,.9,.3,1.4) .3s both}
 @keyframes pnD{from{transform:translateY(-10px);opacity:0}}
-.pr-pin em{position:absolute;bottom:calc(100% + 2px);left:50%;transform:translateX(-50%);font-style:normal;font-size:11px;font-weight:600;color:#0B1433;white-space:nowrap;display:none}
+.pr-pin em{position:absolute;bottom:calc(100% + 2px);left:50%;transform:translateX(-50%);font-style:normal;font-size:11px;font-weight:600;color:#0B1433;white-space:nowrap;display:block;padding:2px 7px;border-radius:7px;background:#0B1433;color:#FFFFFF;bottom:calc(100% + 6px)}
+.pr-pin.out em{background:#D92D20}
+.pr-band{margin-top:22px}
 .pr-pin.out{background:#D92D20}
 .pr-sl{display:block;margin:10px 0 8px 0;font-size:13px;font-weight:600}
 .pr-st{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
@@ -860,11 +940,14 @@ PUB_CSS = open(os.path.join(HERE, 'submit_base.css')).read() + r'''
 .ko-acts{margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:14px}
 .ko-2{display:flex;align-items:center;gap:18px}
 @media (max-width: 960px){
-.cl{display:flex;flex-direction:column;gap:20px}
+.cl{display:flex;flex-direction:column;gap:0}
 .cl-side{display:contents}
 .cl-side > *{order:0}
-.cl-panel{order:1}
-.cl-nx{order:2;margin-top:4px;padding:16px}
+.cl-h1{margin-top:6px}
+.cl-meta{margin-top:12px}
+.cl-steps{margin-top:20px}
+.cl-panel{order:1;margin-top:24px}
+.cl-nx{order:2;margin-top:20px;padding:16px}
 .cl-steps li span{display:none}
 .cl-steps li.on span{display:block;white-space:nowrap}
 .pr-st{gap:6px}
@@ -875,7 +958,8 @@ PUB_CSS = open(os.path.join(HERE, 'submit_base.css')).read() + r'''
 .sp-ro{grid-column:1;grid-row:2;padding-left:42px;font-size:12.5px}
 .sp-p{grid-column:2;grid-row:1;text-align:right}
 .sp-r .ds-tag{grid-column:2;grid-row:2;justify-self:end}
-.sp-tot .sp-ro,.sp-tot span:nth-child(4){display:none}
+.sp-tot span:nth-child(2),.sp-tot span:nth-child(4){display:none}
+.sp-tot b{grid-column:2;grid-row:1;text-align:right}
 .sp-w{flex-wrap:wrap}
 .sp-w p{flex-basis:calc(100% - 48px)}
 .sp-w .ds-ghost{width:100%;justify-content:center}

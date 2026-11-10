@@ -2015,9 +2015,449 @@
       "is_interactive": true,
       "expand": "fill"
     },
-    "Setup.dc.html": {
+    "MGT-004.dc.html": {
       "x": 0,
       "y": 52664,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-004 · Pricing & Access (default) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-004-Mobile.dc.html": {
+      "x": 1520,
+      "y": 52664,
+      "w": 390,
+      "h": 1413,
+      "title": "CR-COURSE-MGT-004 · Pricing & Access (default) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-004-D.dc.html": {
+      "x": 2070,
+      "y": 52664,
+      "w": 1440,
+      "h": 1408,
+      "title": "CR-COURSE-MGT-004-D · Edit Pricing & Access (Step 1/3) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-004-D-Mobile.dc.html": {
+      "x": 3590,
+      "y": 52664,
+      "w": 390,
+      "h": 1743,
+      "title": "CR-COURSE-MGT-004-D · Edit Pricing & Access (Step 1/3) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-004-E.dc.html": {
+      "x": 4140,
+      "y": 52664,
+      "w": 1440,
+      "h": 989,
+      "title": "CR-COURSE-MGT-004-E · Review Pricing Changes (Step 2/3) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-004-E-Mobile.dc.html": {
+      "x": 5660,
+      "y": 52664,
+      "w": 390,
+      "h": 1308,
+      "title": "CR-COURSE-MGT-004-E · Review Pricing Changes (Step 2/3) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-004-G.dc.html": {
+      "x": 6210,
+      "y": 52664,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-004-G · Pricing Update Successful (Step 3/3) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-004-G-Mobile.dc.html": {
+      "x": 7730,
+      "y": 52664,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-004-G · Pricing Update Successful (Step 3/3) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-004-F.dc.html": {
+      "x": 8280,
+      "y": 52664,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-004-F · Pricing Change — Pending Approval variant · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-004-F-Mobile.dc.html": {
+      "x": 9800,
+      "y": 52664,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-004-F · Pricing Change — Pending Approval variant · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-004-H.dc.html": {
+      "x": 10350,
+      "y": 52664,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-004-H · Restricted / Invalid Change · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-004-H-Mobile.dc.html": {
+      "x": 11870,
+      "y": 52664,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-004-H · Restricted / Invalid Change · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-004-I.dc.html": {
+      "x": 12420,
+      "y": 52664,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-004-I · Pricing History · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-004-I-Mobile.dc.html": {
+      "x": 13940,
+      "y": 52664,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-004-I · Pricing History · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005.dc.html": {
+      "x": 0,
+      "y": 54827,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-005-A · Course Updates & Versions (live v1.0 + draft v1.1) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-Mobile.dc.html": {
+      "x": 1520,
+      "y": 54827,
+      "w": 390,
+      "h": 1261,
+      "title": "CR-COURSE-MGT-005-A · Course Updates & Versions (live v1.0 + draft v1.1) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-NONE.dc.html": {
+      "x": 2070,
+      "y": 54827,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-005 · Course Updates & Versions (no active draft) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-NONE-Mobile.dc.html": {
+      "x": 3590,
+      "y": 54827,
+      "w": 390,
+      "h": 1022,
+      "title": "CR-COURSE-MGT-005 · Course Updates & Versions (no active draft) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-CREATE.dc.html": {
+      "x": 4140,
+      "y": 54827,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-005A · Create Course Update · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-CREATE-Mobile.dc.html": {
+      "x": 5660,
+      "y": 54827,
+      "w": 390,
+      "h": 1148,
+      "title": "CR-COURSE-MGT-005A · Create Course Update · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-COMPARE.dc.html": {
+      "x": 6210,
+      "y": 54827,
+      "w": 1440,
+      "h": 1035,
+      "title": "CR-COURSE-MGT-005B · Compare Versions · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-COMPARE-Mobile.dc.html": {
+      "x": 7730,
+      "y": 54827,
+      "w": 390,
+      "h": 1001,
+      "title": "CR-COURSE-MGT-005B · Compare Versions · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-READY.dc.html": {
+      "x": 8280,
+      "y": 54827,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-005C · Update Readiness & Revalidation · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-READY-Mobile.dc.html": {
+      "x": 9800,
+      "y": 54827,
+      "w": 390,
+      "h": 993,
+      "title": "CR-COURSE-MGT-005C · Update Readiness & Revalidation · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-VALIDATE.dc.html": {
+      "x": 10350,
+      "y": 54827,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-005D · Update Under Validation · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-VALIDATE-Mobile.dc.html": {
+      "x": 11870,
+      "y": 54827,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-005D · Update Under Validation · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-CHANGES.dc.html": {
+      "x": 12420,
+      "y": 54827,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-005 (changes requested) · Validator finding returned to creator · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-CHANGES-Mobile.dc.html": {
+      "x": 13940,
+      "y": 54827,
+      "w": 390,
+      "h": 934,
+      "title": "CR-COURSE-MGT-005 (changes requested) · Validator finding returned to creator · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-ACTIVATE.dc.html": {
+      "x": 14490,
+      "y": 54827,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-005E · Approved Update & Activation · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-ACTIVATE-Mobile.dc.html": {
+      "x": 16010,
+      "y": 54827,
+      "w": 390,
+      "h": 1074,
+      "title": "CR-COURSE-MGT-005E · Approved Update & Activation · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-HISTORY.dc.html": {
+      "x": 16560,
+      "y": 54827,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-005F · Version History · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-005-HISTORY-Mobile.dc.html": {
+      "x": 18080,
+      "y": 54827,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-005F · Version History · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-006.dc.html": {
+      "x": 0,
+      "y": 56508,
+      "w": 1440,
+      "h": 1069,
+      "title": "CR-COURSE-MGT-006A · Learner Access Dashboard · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-006-Mobile.dc.html": {
+      "x": 1520,
+      "y": 56508,
+      "w": 390,
+      "h": 2035,
+      "title": "CR-COURSE-MGT-006A · Learner Access Dashboard · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-006-EMPTY.dc.html": {
+      "x": 2070,
+      "y": 56508,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-006A · Variant — Empty State (no learners) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-006-EMPTY-Mobile.dc.html": {
+      "x": 3590,
+      "y": 56508,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-006A · Variant — Empty State (no learners) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-006-DETAIL.dc.html": {
+      "x": 4140,
+      "y": 56508,
+      "w": 1440,
+      "h": 964,
+      "title": "CR-COURSE-MGT-006B · Learner Access Detail (drawer) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-006-DETAIL-Mobile.dc.html": {
+      "x": 5660,
+      "y": 56508,
+      "w": 390,
+      "h": 1249,
+      "title": "CR-COURSE-MGT-006B · Learner Access Detail (drawer) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-006-ASSIGN.dc.html": {
+      "x": 6210,
+      "y": 56508,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-006C · Course Version Assignments · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-006-ASSIGN-Mobile.dc.html": {
+      "x": 7730,
+      "y": 56508,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-006C · Course Version Assignments · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-006-IMPACT.dc.html": {
+      "x": 8280,
+      "y": 56508,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-006D · Learner Access Impact Review · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-006-IMPACT-Mobile.dc.html": {
+      "x": 9800,
+      "y": 56508,
+      "w": 390,
+      "h": 976,
+      "title": "CR-COURSE-MGT-006D · Learner Access Impact Review · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-006-UNPUB.dc.html": {
+      "x": 10350,
+      "y": 56508,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-006A · Variant — Course Unpublished · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-006-UNPUB-Mobile.dc.html": {
+      "x": 11870,
+      "y": 56508,
+      "w": 390,
+      "h": 1263,
+      "title": "CR-COURSE-MGT-006A · Variant — Course Unpublished · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Setup.dc.html": {
+      "x": 0,
+      "y": 58963,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -2027,7 +2467,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 52664,
+      "y": 58963,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -2037,7 +2477,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 52664,
+      "y": 58963,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -2047,7 +2487,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 52664,
+      "y": 58963,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -2057,7 +2497,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 52664,
+      "y": 58963,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -2067,7 +2507,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 52664,
+      "y": 58963,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -2077,7 +2517,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 52664,
+      "y": 58963,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -2087,7 +2527,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 52664,
+      "y": 58963,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -2097,7 +2537,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 52664,
+      "y": 58963,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -2107,7 +2547,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 52664,
+      "y": 58963,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -2117,7 +2557,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 52664,
+      "y": 58963,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -2127,7 +2567,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 52664,
+      "y": 58963,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -2137,10 +2577,20 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 52664,
+      "y": 58963,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Manage2.dc.html": {
+      "x": 20800,
+      "y": 58963,
+      "w": 1440,
+      "h": 900,
+      "title": "Manage Published Course (pricing, versions, learners) · shared source",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -2347,6 +2797,50 @@
     "MGT-DS-CR-Mobile.dc.html",
     "MGT-DS-ML.dc.html",
     "MGT-DS-ML-Mobile.dc.html",
+    "MGT-004.dc.html",
+    "MGT-004-Mobile.dc.html",
+    "MGT-004-D.dc.html",
+    "MGT-004-D-Mobile.dc.html",
+    "MGT-004-E.dc.html",
+    "MGT-004-E-Mobile.dc.html",
+    "MGT-004-G.dc.html",
+    "MGT-004-G-Mobile.dc.html",
+    "MGT-004-F.dc.html",
+    "MGT-004-F-Mobile.dc.html",
+    "MGT-004-H.dc.html",
+    "MGT-004-H-Mobile.dc.html",
+    "MGT-004-I.dc.html",
+    "MGT-004-I-Mobile.dc.html",
+    "MGT-005.dc.html",
+    "MGT-005-Mobile.dc.html",
+    "MGT-005-NONE.dc.html",
+    "MGT-005-NONE-Mobile.dc.html",
+    "MGT-005-CREATE.dc.html",
+    "MGT-005-CREATE-Mobile.dc.html",
+    "MGT-005-COMPARE.dc.html",
+    "MGT-005-COMPARE-Mobile.dc.html",
+    "MGT-005-READY.dc.html",
+    "MGT-005-READY-Mobile.dc.html",
+    "MGT-005-VALIDATE.dc.html",
+    "MGT-005-VALIDATE-Mobile.dc.html",
+    "MGT-005-CHANGES.dc.html",
+    "MGT-005-CHANGES-Mobile.dc.html",
+    "MGT-005-ACTIVATE.dc.html",
+    "MGT-005-ACTIVATE-Mobile.dc.html",
+    "MGT-005-HISTORY.dc.html",
+    "MGT-005-HISTORY-Mobile.dc.html",
+    "MGT-006.dc.html",
+    "MGT-006-Mobile.dc.html",
+    "MGT-006-EMPTY.dc.html",
+    "MGT-006-EMPTY-Mobile.dc.html",
+    "MGT-006-DETAIL.dc.html",
+    "MGT-006-DETAIL-Mobile.dc.html",
+    "MGT-006-ASSIGN.dc.html",
+    "MGT-006-ASSIGN-Mobile.dc.html",
+    "MGT-006-IMPACT.dc.html",
+    "MGT-006-IMPACT-Mobile.dc.html",
+    "MGT-006-UNPUB.dc.html",
+    "MGT-006-UNPUB-Mobile.dc.html",
     "Setup.dc.html",
     "Studio.dc.html",
     "Builder.dc.html",
@@ -2359,7 +2853,8 @@
     "Publish.dc.html",
     "Manage.dc.html",
     "Unpublish.dc.html",
-    "Learner.dc.html"
+    "Learner.dc.html",
+    "Manage2.dc.html"
   ],
   "notes": {
     "b1-setup": {
@@ -2646,13 +3141,58 @@
       "w": 260,
       "fill": "pink"
     },
+    "b7-pricing": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 7 · Pricing & Access: overview, edit (step 1), review (step 2), updated, pending approval, invalid change, pricing history",
+      "w": 240,
+      "x": 0,
+      "y": 52364
+    },
+    "b7-pricing-new": {
+      "x": 0,
+      "y": 52514,
+      "text": "NEW · batch 7",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b7-versions": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 7 · Course Updates & Versions: with draft, no draft, create update, compare, readiness, under validation, changes requested, activate, history",
+      "w": 240,
+      "x": 0,
+      "y": 54527
+    },
+    "b7-versions-new": {
+      "x": 0,
+      "y": 54677,
+      "text": "NEW · batch 7",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b7-learners": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 7 · Learner Access & Enrollment: dashboard, empty, learner detail drawer, version assignments, access impact, unpublished",
+      "w": 240,
+      "x": 0,
+      "y": 56208
+    },
+    "b7-learners-new": {
+      "x": 0,
+      "y": 56358,
+      "text": "NEW · batch 7",
+      "w": 260,
+      "fill": "pink"
+    },
     "sources": {
       "kind": "title1",
       "maxW": 3200,
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 52364
+      "y": 58663
     }
   },
   "noteOrder": [
@@ -2694,6 +3234,12 @@
     "b6-states-new",
     "b6-unpub",
     "b6-unpub-new",
+    "b7-pricing",
+    "b7-pricing-new",
+    "b7-versions",
+    "b7-versions-new",
+    "b7-learners",
+    "b7-learners-new",
     "sources"
   ],
   "designSystems": [],

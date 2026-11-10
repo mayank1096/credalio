@@ -5,13 +5,13 @@ Each row: title note, then desktop + mobile pairs left to right. Shared sources 
 """
 import json, os, sys
 from l4kit import OUT
-import stu1, stu2, stu3, stu4, stu5, stu6
+import stu1, stu2, stu3, stu4, stu5, stu6, stu7
 
 PAIR, GAP, ROWGAP = 1440 + 80 + 390, 160, 420
 H = {}
 for f in sys.argv[1:]:
     H.update(json.load(open(f)))
-T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS + stu4.BOARDS + stu5.BOARDS + stu6.BOARDS}
+T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS + stu4.BOARDS + stu5.BOARDS + stu6.BOARDS + stu7.BOARDS}
 
 ROWS = [
     ('b1-setup', 'Batch 1 · Course setup: learning experience, delivery type, setup review, how you’ll create it, Studio welcome', ['STU-001', 'STU-002', 'STU-003', 'STU-004', 'STU-008']),
@@ -32,13 +32,17 @@ ROWS = [
     ('b6-hub', 'Batch 6 · Manage Published Course: hub, Publishing & Visibility, Manage Availability (step 2 / step 3), paused, hidden', ['MGT-001', 'MGT-002', 'MGT-002-EDIT', 'MGT-002-REVIEW', 'MGT-002B', 'MGT-002C']),
     ('b6-states', 'Batch 6 · Publishing states: unpublished, restricted, organization approval, save error, restriction notice', ['MGT-002D', 'MGT-002E', 'MGT-002F', 'MGT-002G', 'MGT-002-NOTICE']),
     ('b6-unpub', 'Batch 6 · Unpublish: impact, reason & transition, confirm, unpublished, requires review · Downstream: course overview, My Creations, learner My Learning', ['MGT-003A', 'MGT-003B', 'MGT-003C', 'MGT-003D', 'MGT-003E', 'MGT-DS-OV', 'MGT-DS-CR', 'MGT-DS-ML']),
+    ('b7-pricing', 'Batch 7 · Pricing & Access: overview, edit (step 1), review (step 2), updated, pending approval, invalid change, pricing history', ['MGT-004', 'MGT-004-D', 'MGT-004-E', 'MGT-004-G', 'MGT-004-F', 'MGT-004-H', 'MGT-004-I']),
+    ('b7-versions', 'Batch 7 · Course Updates & Versions: with draft, no draft, create update, compare, readiness, under validation, changes requested, activate, history', ['MGT-005', 'MGT-005-NONE', 'MGT-005-CREATE', 'MGT-005-COMPARE', 'MGT-005-READY', 'MGT-005-VALIDATE', 'MGT-005-CHANGES', 'MGT-005-ACTIVATE', 'MGT-005-HISTORY']),
+    ('b7-learners', 'Batch 7 · Learner Access & Enrollment: dashboard, empty, learner detail drawer, version assignments, access impact, unpublished', ['MGT-006', 'MGT-006-EMPTY', 'MGT-006-DETAIL', 'MGT-006-ASSIGN', 'MGT-006-IMPACT', 'MGT-006-UNPUB']),
 ]
 SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html', 'Course Studio · shared source'),
            ('Builder.dc.html', 'Curriculum Builder · shared source'), ('Editor.dc.html', 'Learning item editors · shared source'),
            ('Course.dc.html', 'Course set-up · shared source'), ('Prepare.dc.html', 'Prepare · shared source'),
            ('Submit.dc.html', 'Submit for validation · shared source'), ('Preview.dc.html', 'Creator Preview · shared source'),
            ('Validate.dc.html', 'Validate · shared source'), ('Publish.dc.html', 'Publish · shared source'),
-           ('Manage.dc.html', 'Manage Published Course · shared source'), ('Unpublish.dc.html', 'Unpublish · shared source'), ('Learner.dc.html', 'Learner app · shared source')]
+           ('Manage.dc.html', 'Manage Published Course · shared source'), ('Unpublish.dc.html', 'Unpublish · shared source'), ('Learner.dc.html', 'Learner app · shared source'),
+           ('Manage2.dc.html', 'Manage Published Course (pricing, versions, learners) · shared source')]
 
 boards, order, notes = {}, [], {}
 y = 300

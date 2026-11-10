@@ -2915,9 +2915,109 @@
       "is_interactive": true,
       "expand": "fill"
     },
-    "Setup.dc.html": {
+    "CREDITS.dc.html": {
       "x": 0,
       "y": 65208,
+      "w": 1440,
+      "h": 944,
+      "title": "CR-COURSE-CREDITS · Course Credits & Visibility · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "CREDITS-Mobile.dc.html": {
+      "x": 1520,
+      "y": 65208,
+      "w": 390,
+      "h": 1803,
+      "title": "CR-COURSE-CREDITS · Course Credits & Visibility · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "CREDITS-ASK.dc.html": {
+      "x": 2070,
+      "y": 65208,
+      "w": 1440,
+      "h": 944,
+      "title": "CR-COURSE-CREDITS-ASK · Ask a contributor to be credited · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "CREDITS-ASK-Mobile.dc.html": {
+      "x": 3590,
+      "y": 65208,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-CREDITS-ASK · Ask a contributor to be credited · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "LEARN-CREATORS-2.dc.html": {
+      "x": 4140,
+      "y": 65208,
+      "w": 1440,
+      "h": 3913,
+      "title": "CR-LEARN-CREATORS-2 · Course Overview with 2 creators (Lead + 1 Co-Creator) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "LEARN-CREATORS-2-Mobile.dc.html": {
+      "x": 5660,
+      "y": 65208,
+      "w": 390,
+      "h": 5803,
+      "title": "CR-LEARN-CREATORS-2 · Course Overview with 2 creators (Lead + 1 Co-Creator) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "LEARN-CREATORS-5.dc.html": {
+      "x": 6210,
+      "y": 65208,
+      "w": 1440,
+      "h": 4216,
+      "title": "CR-LEARN-CREATORS-5 · Course Overview with 5 creators (3 names + 2 others, 4 cards) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "LEARN-CREATORS-5-Mobile.dc.html": {
+      "x": 7730,
+      "y": 65208,
+      "w": 390,
+      "h": 5835,
+      "title": "CR-LEARN-CREATORS-5 · Course Overview with 5 creators (3 names + 2 others, 4 cards) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "LEARN-CREATORS-PANEL.dc.html": {
+      "x": 8280,
+      "y": 65208,
+      "w": 1440,
+      "h": 1000,
+      "title": "CR-LEARN-CREATORS-PANEL · Course creators panel · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "LEARN-CREATORS-PANEL-Mobile.dc.html": {
+      "x": 9800,
+      "y": 65208,
+      "w": 390,
+      "h": 844,
+      "title": "CR-LEARN-CREATORS-PANEL · Course creators panel · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Setup.dc.html": {
+      "x": 0,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -2927,7 +3027,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 65208,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -2937,7 +3037,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 65208,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -2947,7 +3047,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 65208,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -2957,7 +3057,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 65208,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -2967,7 +3067,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 65208,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -2977,7 +3077,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 65208,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -2987,7 +3087,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 65208,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -2997,7 +3097,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 65208,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -3007,7 +3107,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 65208,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -3017,7 +3117,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 65208,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -3027,7 +3127,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 65208,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -3037,7 +3137,7 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 65208,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
@@ -3047,7 +3147,7 @@
     },
     "Manage2.dc.html": {
       "x": 20800,
-      "y": 65208,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (pricing, versions, learners) · shared source",
@@ -3057,7 +3157,7 @@
     },
     "Manage3.dc.html": {
       "x": 22400,
-      "y": 65208,
+      "y": 71463,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (validation, archive, insights) · shared source",
@@ -3357,6 +3457,16 @@
     "MGT-009E-Mobile.dc.html",
     "MGT-009F.dc.html",
     "MGT-009F-Mobile.dc.html",
+    "CREDITS.dc.html",
+    "CREDITS-Mobile.dc.html",
+    "CREDITS-ASK.dc.html",
+    "CREDITS-ASK-Mobile.dc.html",
+    "LEARN-CREATORS-2.dc.html",
+    "LEARN-CREATORS-2-Mobile.dc.html",
+    "LEARN-CREATORS-5.dc.html",
+    "LEARN-CREATORS-5-Mobile.dc.html",
+    "LEARN-CREATORS-PANEL.dc.html",
+    "LEARN-CREATORS-PANEL-Mobile.dc.html",
     "Setup.dc.html",
     "Studio.dc.html",
     "Builder.dc.html",
@@ -3748,13 +3858,28 @@
       "w": 260,
       "fill": "pink"
     },
+    "b9-credits": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 9 · Course Credits & Visibility: credits manager, ask to credit, learner course page with 2 and 5 creators, creators panel",
+      "w": 240,
+      "x": 0,
+      "y": 64908
+    },
+    "b9-credits-new": {
+      "x": 0,
+      "y": 65058,
+      "text": "NEW · batch 9",
+      "w": 260,
+      "fill": "pink"
+    },
     "sources": {
       "kind": "title1",
       "maxW": 3200,
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 64908
+      "y": 71163
     }
   },
   "noteOrder": [
@@ -3808,6 +3933,8 @@
     "b8-archive-new",
     "b8-insights",
     "b8-insights-new",
+    "b9-credits",
+    "b9-credits-new",
     "sources"
   ],
   "designSystems": [],

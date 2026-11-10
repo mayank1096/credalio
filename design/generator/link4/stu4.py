@@ -882,6 +882,7 @@ SUBMIT_CSS = open(os.path.join(HERE, 'submit_base.css')).read() + r'''
 '''
 
 PREVIEW_CSS = r'''body{background:#FFFFFF}
+.cp{font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
 .lc,.lp2{min-height:100vh;background:#FFFFFF;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
 .pvs{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:14px;padding:10px 20px;background:#FFF4DC;border-bottom:1.5px solid #F4D98E}
 .pvs-t{flex-shrink:0;height:24px;display:inline-flex;align-items:center;padding:0 10px;border-radius:999px;background:#B76E00;color:#FFFFFF;font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
@@ -1152,11 +1153,152 @@ PREVIEW_CSS = r'''body{background:#FFFFFF}
 }
 '''
 
+TEAM_CSS = r'''.lc-av.k2{background:linear-gradient(140deg,#3FB58A,#0F6B45) !important}
+.lc-av.k3{background:linear-gradient(140deg,#F2B45A,#C2741A) !important}
+.lc-av.k4{background:linear-gradient(140deg,#8A9BC4,#4A5578) !important}
+.lc-av.k5{background:linear-gradient(140deg,#B48CF0,#7048C8) !important}
+.lc-avs{display:inline-flex;align-items:center;flex-shrink:0;text-decoration:none}
+.lc-avs > *{margin-left:-10px;box-shadow:0 0 0 2.5px #13296E;transition:margin .25s ease}
+.lc-avs > *:first-child{margin-left:0}
+.lc-by:hover .lc-avs > *{margin-left:-4px}
+.lc-by:hover .lc-avs > *:first-child{margin-left:0}
+.lc-more{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.26);color:#FFFFFF;font-size:13px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+.lc-va{color:#FFFFFF;font-weight:500;text-decoration:underline;text-decoration-color:rgba(255,255,255,.4);text-underline-offset:3px}
+.lc-va:hover{text-decoration-color:#FFFFFF}
+.mtc-p{margin:-6px 0 16px 0 !important}
+.mtc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.mtc-c{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:20px;border-radius:22px;border:1.5px solid #E6EAF3;background:#FFFFFF;overflow:hidden;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 90ms + 150ms)}
+.mtc-c:hover{transform:translateY(-3px);border-color:#C9D7FA;box-shadow:0 22px 40px -30px rgba(22,82,240,.6)}
+.mtc-c.lead{border-color:#C9D7FA;background:linear-gradient(170deg,#F5F8FF,#FFFFFF 45%)}
+.mtc-c.lead::before{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,#1652F0,#5C86FF)}
+.mtc-c header{display:flex;align-items:center;gap:14px}
+.mtc-c header > div{display:flex;flex-direction:column;gap:3px;min-width:0}
+.mtc-n{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.mtc-n b{font-size:16px;font-weight:600}
+.mtc-r{display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:999px;background:#EEF1F7;color:#3A4566;font-size:11.5px;font-weight:500}
+.mtc-r.lead{background:#EAF0FF;color:#0E3BB8}
+.mtc-c em,.cp-l em{font-style:normal;font-size:13px;color:#5B6582}
+.mtc-v{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:#0F6B45}
+.mtc-v svg{width:16px;height:16px;padding:3px;box-sizing:border-box;border-radius:50%;background:#E7F5EE}
+.mtc-s{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;color:#5B6582}
+.mtc-s b{color:#0B1433;font-weight:600}
+.mtc-st{display:inline-flex;align-items:center;gap:4px}
+.mtc-st i{width:12px;height:12px;background:#F4C66A;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.mtc-k{align-self:stretch;margin:2px 0 0 0;padding:10px 12px;border-radius:12px;background:#F7F9FD;font-size:13px;line-height:1.5;color:#0B1433}
+.mtc-k span,.cp-l p span{color:#8A93AD}
+.mtc-c .ds-link,.cp-l .ds-link{display:inline-flex;align-items:center;gap:5px}
+.mtc-c .ds-link{margin-top:auto}
+.mtc-c .ds-link svg,.cp-l .ds-link svg{transition:transform .2s ease}
+.mtc-c:hover .ds-link svg{transform:translateX(3px)}
+.mtc-all{margin-top:14px;width:100%;justify-content:center;gap:10px}
+.mtc-sa{display:inline-flex}
+.mtc-sa > *{margin-left:-7px;box-shadow:0 0 0 2px #FFFFFF;font-size:9.5px !important}
+.mtc-sa > *:first-child{margin-left:0}
+.mtc-cp{margin-top:14px;display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;border:1.5px dashed #F0D08A;background:#FFFAEB}
+.mtc-cp p{flex:1;margin:0;font-size:13px;line-height:1.5;color:#6B4A00}
+.mtc-cp .ds-ghost{flex-shrink:0;gap:7px;background:#FFFFFF;border-color:#F0D08A;color:#5A3B00}
+.cp-o{position:fixed;inset:0;z-index:1000;background:rgba(11,20,51,.38);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);animation:cpF .3s ease both}
+@keyframes cpF{from{opacity:0}}
+.cp{position:fixed;z-index:1001;top:0;right:0;bottom:0;width:480px;max-width:100vw;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;box-shadow:-24px 0 64px rgba(11,20,51,.2);animation:cpIn .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes cpIn{from{transform:translateX(40px);opacity:0}}
+.cp-h{display:flex;align-items:flex-start;gap:12px;padding:26px 24px 18px 24px;border-bottom:1.5px solid #EEF1F7}
+.cp-h > div{flex:1}
+.cp-avs{display:inline-flex;margin-bottom:14px}
+.cp-avs > *{margin-left:-8px;box-shadow:0 0 0 2.5px #FFFFFF;font-size:10.5px !important;animation:cpA .5s cubic-bezier(.3,1.4,.5,1) both}
+.cp-avs > *:first-child{margin-left:0}
+.cp-avs > *:nth-child(2){animation-delay:.06s}.cp-avs > *:nth-child(3){animation-delay:.12s}.cp-avs > *:nth-child(4){animation-delay:.18s}.cp-avs > *:nth-child(5){animation-delay:.24s}
+@keyframes cpA{from{transform:scale(.4);opacity:0}}
+.cp-h h2{margin:0;font-size:22px;font-weight:600;letter-spacing:-0.015em}
+.cp-h p{margin:6px 0 0 0;font-size:14px;line-height:1.55;color:#5B6582}
+.cp-l{flex:1;overflow-y:auto;list-style:none;margin:0;padding:8px 24px}
+.cp-l li{display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:start;column-gap:14px;padding:16px 0;border-top:1.5px solid #F0F2F8;animation:obIn .45s ease both;animation-delay:calc(var(--i) * 70ms + 200ms)}
+.cp-l li:first-child{border-top:0}
+.cp-l li > div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.cp-l .mtc-n b{font-size:15px}
+.cp-l em{font-size:12.5px;line-height:1.45}
+.cp-l p{margin:2px 0 0 0;font-size:13px;line-height:1.5}
+.cp-l .ds-link{margin-top:2px;white-space:nowrap}
+.cp-f{display:flex;justify-content:flex-end;padding:14px 24px;border-top:1.5px solid #EEF1F7}
+@media (max-width: 960px){
+.lc-by{align-items:flex-start;gap:10px;font-size:13.5px}
+.lc-by > span:last-child{line-height:1.5}
+.lc-avs > *,.lc-more{width:34px !important;height:34px !important;font-size:11.5px !important}
+.mtc{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 8px 16px;scrollbar-width:none}
+.mtc::-webkit-scrollbar{display:none}
+.mtc-c{flex:0 0 84%;box-sizing:border-box;scroll-snap-align:start;scroll-margin-left:16px;padding:16px;gap:8px;border-radius:18px}
+.mtc-c:hover{transform:none}
+.mtc-all{margin-top:8px}
+.mtc-c .av{width:44px !important;height:44px !important}
+.mtc-n b{font-size:15px}
+.mtc-cp{flex-wrap:wrap;gap:8px 10px}
+.mtc-cp p{flex-basis:100%;order:2}
+.mtc-cp .ds-ghost{order:3}
+.cp{top:auto;width:100%;max-height:88vh;border-radius:24px 24px 0 0;animation:cpUp .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes cpUp{from{transform:translateY(60px);opacity:0}}
+.cp::before{content:'';position:absolute;left:50%;top:8px;width:40px;height:4px;margin-left:-20px;border-radius:4px;background:#D6DDEE}
+.cp-h{padding:22px 16px 14px 16px}
+.cp-avs{margin-bottom:10px}
+.cp-h h2{font-size:19px}
+.cp-h p{font-size:13.5px}
+.cp-l{padding:4px 16px}
+.cp-l li{grid-template-columns:40px minmax(0,1fr);padding:14px 0}
+.cp-l li > .av{width:40px !important;height:40px !important}
+.cp-l .ds-link{grid-column:2;margin-top:8px;justify-self:start}
+.cp-f{padding:12px 16px 16px 16px}
+.cp-f .ds-ghost{width:100%;justify-content:center}
+}
+'''
+PREVIEW_CSS += TEAM_CSS
+
 # ======================================================================= write sources
 write('Prepare.dc.html', doc('Course Studio · Prepare · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + CW_CSS + WK_CSS + PREP_CSS, prep_body(), PREP_JS))
 write('Submit.dc.html', doc('Submit for validation · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + WK_CSS + SUBMIT_CSS, submit_body(), SUBMIT_JS))
+# ======================================================================= TEAM CREDITS (CR-LEARN-CREATORS-2 / -5 / -PANEL): variants of the course page
+TEAM = [('AM', 'Alex Morgan', 'Lead Creator', 'Data Analytics Educator', '12', '18,400', '4.8', 'Course lead · Chapters 1, 4 and 6', ''),
+        ('JA', 'John Adeyemi', 'Co-Creator', 'Senior BI Analyst', '4', '3,200', '4.7', 'Chapters 2 and 3 · SQL Joins', 'k2'),
+        ('SK', 'Sade Kolawole', 'Co-Creator', 'SQL Trainer for finance teams', '6', '5,100', '4.8', 'Chapter 4 practice sets', 'k3'),
+        ('CO', 'Chidi Obi', 'Co-Creator', 'Analytics Engineer', '3', '1,900', '4.6', 'Assessments and answer keys', 'k4'),
+        ('RB', 'Rita Bako', 'Co-Creator', 'Data Visualization Lead', '5', '2,700', '4.7', 'Chapter 5 dashboards', 'k5')]
+def tav(m, n):
+    return '<span class="av lc-av %s" style="width: %dpx; height: %dpx">%s</span>' % (m[8], n, n, m[0])
+def trole(m):
+    return '<span class="mtc-r%s">%s</span>' % (' lead' if m[2] == 'Lead Creator' else '', m[2])
+PANEL_URL = 'LEARN-CREATORS-PANEL.dc.html'
+SOLO_BY = '<div class="lc-by">%s<span>Created by <b>Alex Morgan</b> · Data Analytics Educator</span></div>' % (AM % (40, 40))
+assert COURSE_PAGE.count(SOLO_BY) == 1
+BY2 = '<div class="lc-by"><span class="lc-avs">%s</span><span>Created by <b>Alex Morgan</b> and <b>John Adeyemi</b> · <a class="lc-va" href="#lc-meet">View all creators</a></span></div>' % ''.join(tav(m, 40) for m in TEAM[:2])
+BY5 = '<div class="lc-by"><a class="lc-avs" href="%s" aria-label="View all creators">%s<span class="lc-more">+2</span></a><span>Created by <b>Alex Morgan</b>, <b>John Adeyemi</b>, <b>Sade Kolawole</b> and <a class="lc-va" href="%s">2 others</a></span></div>' % (
+    PANEL_URL, ''.join(tav(m, 40) for m in TEAM[:3]), PANEL_URL)
+def tcard(i, m):
+    return ('<article class="mtc-c%s" style="--i: %d"><header>%s<div><span class="mtc-n"><b>%s</b>%s</span><em>%s</em></div></header>'
+            '<span class="mtc-v">%s<span>Verified expertise · Data Analytics</span></span>'
+            '<div class="mtc-s"><span><b>%s</b> courses</span><span><b>%s</b> learners</span><span class="mtc-st"><b>%s</b><i></i></span></div>'
+            '<p class="mtc-k"><span>Contributed:</span> %s</p><a class="ds-link sm" href="#">View profile%s</a></article>') % (
+        ' lead' if i == 0 else '', i, tav(m, 52), m[1], trole(m), m[3], ck(10), m[4], m[5], m[6], m[7], ic('arrowr', 13, 2.2))
+CP_NOTE = '<div class="mtc-cp"><span class="pvs-t">Creator Preview</span><p>%s</p><a class="ds-ghost sm" href="CREDITS.dc.html">%s<span>Change credits</span></a></div>'
+MEET2 = sec('Meet the creators', '<p class="lc-p mtc-p">Built by a Lead Creator and 1 Co-Creator.</p><div class="mtc">%s</div>%s' % (
+    ''.join(tcard(i, m) for i, m in enumerate(TEAM[:2])),
+    CP_NOTE % ('Learners see 2 of 4 team members. 1 contributor and 1 reviewer are hidden, and 1 pending invitation is not shown.', ic('users', 15, 2))), 'mt')
+MEET5 = sec('Meet the creators', '<p class="lc-p mtc-p">Built by a Lead Creator and 4 Co-Creators.</p><div class="mtc">%s</div><a class="ds-ghost mtc-all" href="%s"><span class="mtc-sa">%s</span><span>View all 5 creators</span></a>%s' % (
+    ''.join(tcard(i, m) for i, m in enumerate(TEAM[:4])), PANEL_URL, ''.join(tav(m, 24) for m in TEAM),
+    CP_NOTE % ('Learners see 5 credited creators: 3 names on the page and 4 cards. Everyone is in the panel.', ic('users', 15, 2))), 'mt')
+MEET2 = MEET2.replace('<section class="lc-s mt">', '<section class="lc-s mt" id="lc-meet">')
+COURSE_PAGE = COURSE_PAGE.replace(SOLO_BY, '<sc-if value="{{t_solo}}" hint-placeholder-val="{{ true }}">%s</sc-if><sc-if value="{{t_2}}" hint-placeholder-val="{{ false }}">%s</sc-if><sc-if value="{{t_5}}" hint-placeholder-val="{{ false }}">%s</sc-if>' % (SOLO_BY, BY2, BY5))
+assert COURSE_PAGE.count(_m) == 1
+COURSE_PAGE = COURSE_PAGE.replace(_m, '<sc-if value="{{t_solo}}" hint-placeholder-val="{{ true }}">%s</sc-if>' % _m)
+_wi = '<section class="lc-s"><div class="lc-sh"><h2>What’s Included'
+assert COURSE_PAGE.count(_wi) == 1
+COURSE_PAGE = COURSE_PAGE.replace(_wi, '<sc-if value="{{t_2}}" hint-placeholder-val="{{ false }}">%s</sc-if><sc-if value="{{t_5}}" hint-placeholder-val="{{ false }}">%s</sc-if>%s' % (MEET2, MEET5, _wi))
+PANEL = '''<a class="cp-o" href="LEARN-CREATORS-5.dc.html" aria-label="Close"></a>
+<aside class="cp" role="dialog" aria-modal="true" aria-label="Course creators"><header class="cp-h"><div><span class="cp-avs" aria-hidden="true">%s</span><h2>Course creators</h2><p>Data Analysis with SQL was created by 1 Lead Creator and 4 Co-Creators. Revenue arrangements are private and never shown.</p></div><a class="ds-x sm" href="LEARN-CREATORS-5.dc.html" aria-label="Close">%s</a></header>
+<ol class="cp-l">%s</ol><footer class="cp-f"><a class="ds-ghost" href="LEARN-CREATORS-5.dc.html">Close</a></footer></aside>''' % (
+    ''.join(tav(m, 30) for m in TEAM), ic('x', 16, 2.2),
+    ''.join('<li style="--i: %d">%s<div><span class="mtc-n"><b>%s</b>%s</span><em>%s · %s courses · %s learners · %s</em><p><span>Contributed:</span> %s</p></div><a class="ds-link sm" href="#">View profile%s</a></li>' % (
+        i, tav(m, 44), m[1], trole(m), m[3], m[4], m[5], m[6], m[7], ic('arrowr', 13, 2.2)) for i, m in enumerate(TEAM)))
+COURSE_PAGE = COURSE_PAGE + '<sc-if value="{{s_panel}}" hint-placeholder-val="{{ false }}">%s</sc-if>' % PANEL
+
 PREVIEW_JS = '''class Component extends DCLogic {
-  renderVals() { var v = this.props.view || 'course'; return { s_course: v === 'course', s_lesson: v === 'lesson' }; }
+  renderVals() { var v = this.props.view || 'course', t = this.props.team || ''; return { s_course: v === 'course', s_lesson: v === 'lesson', t_solo: !t, t_2: t === '2', t_5: t === '5', s_panel: !!this.props.panel }; }
 }'''
 write('Preview.dc.html', doc('Creator Preview · learner pages · shared source', kit.KIT_CSS + '\n' + BASE_CSS + WK_CSS + PREVIEW_CSS,
                              '<sc-if value="{{s_course}}" hint-placeholder-val="{{ true }}">%s</sc-if><sc-if value="{{s_lesson}}" hint-placeholder-val="{{ false }}">%s</sc-if>' % (COURSE_PAGE, LESSON), PREVIEW_JS))
@@ -1166,6 +1308,9 @@ BOARDS = [
     ('STU-040M', 'Prepare', {'page': 'market'}, 'CR-STU-040 · Marketplace preview'),
     ('STU-PRV', 'Preview', {'view': 'course'}, 'Creator Preview · Preview as Learner'),
     ('STU-PRV-L', 'Preview', {'view': 'lesson'}, 'Creator Preview · Learning Experience Preview (CR-LEARN-PRV-001)'),
+    ('LEARN-CREATORS-2', 'Preview', {'view': 'course', 'team': '2'}, 'CR-LEARN-CREATORS-2 · Course Overview with 2 creators (Lead + 1 Co-Creator)'),
+    ('LEARN-CREATORS-5', 'Preview', {'view': 'course', 'team': '5'}, 'CR-LEARN-CREATORS-5 · Course Overview with 5 creators (3 names + 2 others, 4 cards)'),
+    ('LEARN-CREATORS-PANEL', 'Preview', {'view': 'course', 'team': '5', 'panel': True}, 'CR-LEARN-CREATORS-PANEL · Course creators panel'),
     ('STU-041', 'Prepare', {'page': 'profile'}, 'CR-STU-041 · Course Intelligence Profile'),
     ('STU-042', 'Prepare', {'page': 'nova'}, 'CR-STU-042 · Nova Course Review (not validation)'),
     ('STU-043', 'Prepare', {'page': 'ready'}, 'CR-STU-043 · Validation Readiness (incl. Commercial)'),

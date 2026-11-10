@@ -295,6 +295,47 @@ P('i-disc', ih('disc', 'Course Discussion', 'Public Q&amp;A between enrolled lea
           ' pin' if pin else (' un' if s == 'Unanswered' else ''), i, t, tag(s, k), h, ini, by, ' z' if n == '0' else '', ic('chat', 13, 2), n, d, 'Unpin' if pin else 'Pin') for i, (t, s, k, by, n, d, pin, h, ini) in enumerate(THR)),
       note('Course Discussion is public to everyone enrolled. It’s separate from private questions and support.')))
 
+# ======================================================================= CR-COURSE-CREDITS (+ ASK dialog)
+kj, kl = W.new(True), W.new(False)
+def sw(k, label):
+    return '<button type="button" class="hp-sw {{c%s}}" role="switch" aria-checked="{{a%s}}" onClick="{{x%s}}" aria-label="%s"></button>' % (k, k, k, label)
+def swl(on, label):
+    return '<span class="hp-sw lk%s" role="switch" aria-checked="%s" aria-disabled="true" aria-label="%s"></span>' % (' on' if on else '', 'true' if on else 'false', label)
+CREW = [('AM', 'h1', 'Alex Morgan', 'Lead Creator', 'blue', 'Course lead', swl(True, 'Alex Morgan always shown'), 'ok', 'Always shown', ''),
+        ('JA', 'h4', 'John Adeyemi', 'Co-Creator', 'blue', 'Chapters 2–3', sw(kj, 'Show John Adeyemi'), 'ok', 'Shown by default', ''),
+        ('JO', 'h3', 'Johnson Okafor', 'Contributor', 'line', 'Lesson 3.2 resources', swl(False, 'Johnson Okafor hidden'), 'gy', 'Hidden by default', 'ask'),
+        ('MB', 'h2', 'Mercy Bello', 'Reviewer', 'line', 'Assessment review', swl(False, 'Mercy Bello hidden'), 'gy', 'Hidden by default', 'ask'),
+        ('TA', 'h5', 'Tunde Ade', 'Pending invitation', 'amber', 'Not started', '<span class="cr9-na">—</span>', 'gy', 'Not shown until accepted', ''),
+        ('LM', 'h2', 'Lena Moyo', 'Past member', '', 'Earlier version', sw(kl, 'Show Lena Moyo'), 'gy', 'Optional: “Contributed to earlier versions”', '')]
+RULES = [('Default', 'Lead Creator and Co-Creators are shown. Contributors and reviewers are hidden.'), ('Order', 'Lead Creator first, then Co-Creators by contribution'),
+         ('Names shown on', 'Course page, marketplace card and certificates'), ('Never shown', 'Revenue shares, agreements, pending invitations and applicants'),
+         ('Contributors and reviewers', 'Shown only after the person agrees to be credited')]
+def crew_row(i, m):
+    ini, h, n, role, rk, contrib, swh, dk, st, ask = m
+    return ('<div class="cr9-r%s" style="--i: %d"><span class="cr9-m"><span class="la2 %s">%s</span><b>%s</b></span><span class="cr9-ro">%s</span><span class="cr9-c">%s</span><span class="cr9-s">%s</span>'
+            '<span class="cr9-st %s"><i></i><span>%s</span>%s</span></div>') % (
+        ' pd' if role == 'Pending invitation' else '', i, h, ini, n, tag(role, rk), contrib, swh, dk, st,
+        '<a class="ds-link sm" href="CREDITS-ASK.dc.html">Ask to credit</a>' if ask else '')
+CREDITS = (head('Course Credits & Visibility', 'Course credits &amp; visibility', 'Choose who learners see on the course page. Lead Creator and Co-Creators are shown by default.',
+                right='<a class="ds-ghost sm" href="LEARN-CREATORS-2.dc.html">%s<span>Preview as learner</span></a>' % ic('eye', 15, 2), crumb_extra=('Credits', 'MGT-001.dc.html')) +
+  wk('''<section class="ds-card cr9 ob-in2"><div class="cr9-r cr9-hd"><span>Team member</span><span>Role</span><span>Contribution</span><span>Shown</span><span>Status on course page</span></div>%s</section>''' % ''.join(crew_row(i, m) for i, m in enumerate(CREW)) +
+     bar('%s<span>Changes apply to the live course page straight away. They do not change anyone’s role, permissions or revenue share.</span>' % INFO,
+         '<a class="ds-ghost" href="MGT-001.dc.html">Cancel</a>' + btn('Save changes', 'MGT-001.dc.html')),
+     '''<a class="ds-card rx cpv ob-in2" href="LEARN-CREATORS-2.dc.html"><span class="rx-k">Course page</span><div class="cpv-h"><span class="cpv-k">%s<span>Gold Validated</span></span><b>Data Analysis with SQL</b>
+<div class="cpv-by"><span class="cpv-avs"><span class="la2 h1">AM</span><span class="la2 h4 cpv-j {{c%s}}">JA</span><span class="la2 h2 cpv-j {{c%s}}">LM</span></span><span>Created by <b>Alex Morgan</b><span class="cpv-j {{c%s}}"> and <b>John Adeyemi</b></span></span></div>
+<span class="cpv-l cpv-j {{c%s}}">Lena Moyo · Contributed to earlier versions</span></div></a>
+<section class="ds-card rx cw9 ob-in3"><span class="rx-k">How credits work</span><dl>%s</dl></section>''' % (
+         ic('badge', 11, 2.2), kj, kl, kj, kl, ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % r for r in RULES))))
+ASK = '''<a class="ov-scrim" href="CREDITS.dc.html" aria-label="Close"></a>
+<div class="dl ak" role="dialog" aria-modal="true" aria-label="Ask Johnson Okafor to be credited"><header class="dl-h"><span class="ak-v" aria-hidden="true"><span class="la2 h1">AM</span><span class="la2 h4">JA</span><span class="la2 h3 ak-n">JO</span></span><a class="ds-x sm" href="CREDITS.dc.html" aria-label="Close">%s</a></header>
+<div class="dl-b"><h2 class="ak-h">Ask Johnson Okafor to be credited</h2><p class="dl-p">He decides whether his name appears on the course page.</p>
+<div class="ak-w"><span class="la2 h3">JO</span><span><b>Johnson Okafor</b><em>Lesson 3.2 resources</em></span>%s</div>
+<label class="dl-l" for="ak-m">Message</label><textarea id="ak-m" class="ds-in ak-t" rows="3">Hi Johnson, would you like to be credited on the Data Analysis with SQL course page as a Contributor?</textarea>
+<p class="dl-n">%s<span>He sees the request in Invitations. If he says yes, he is shown under “Meet the creators” as a Contributor. If he declines, nothing changes.</span></p></div>
+<footer class="dl-f"><a class="ds-ghost" href="CREDITS.dc.html">Cancel</a>%s</footer></div>''' % (ic('x', 16, 2.2), tag('Contributor', 'line'), INFO, btn('Send request', 'CREDITS.dc.html'))
+P('c-credits', CREDITS)
+P('c-ask', CREDITS + ASK)
+
 # ======================================================================= assembly + CSS
 def body():
     blocks = ['<sc-if value="{{p_%s}}" hint-placeholder-val="{{ %s }}">\n%s\n</sc-if>' % (k.replace('-', '_'), 'true' if k == 'h-a' else 'false', b) for k, b in PAGES]
@@ -320,7 +361,65 @@ class Component extends DCLogic {
   }
 }''' % (json.dumps([p[0] for p in PAGES]), json.dumps(TONE))
 
-CSS = stu7.CSS.replace('.mg-main:has(.ov-scrim){z-index:30}', '') + r'''.utabs{margin-top:20px;display:flex;gap:26px;border-bottom:1.5px solid #E6EAF3;overflow-x:auto;scrollbar-width:none}
+CSS = stu7.CSS + r'''.cr9{padding:6px 22px}
+.cr9-r{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1.05fr) minmax(0,1.15fr) 60px minmax(0,1.6fr);align-items:center;gap:12px;padding:15px 0;border-top:1.5px solid #F0F2F8;font-size:13.5px;animation:obIn .45s ease both;animation-delay:calc(var(--i,0) * 70ms + 200ms)}
+.cr9-hd{border-top:0;padding:12px 0;font-size:12.5px;font-weight:500;color:#8A93AD;animation:none}
+.cr9-m{display:flex;align-items:center;gap:10px;min-width:0}
+.cr9-m b{font-size:14.5px;font-weight:600}
+.cr9-ro .ds-tag{height:24px;font-size:11.5px}
+.cr9-c{color:#3A4566}
+.cr9-st{display:grid;grid-template-columns:7px minmax(0,1fr);align-items:center;column-gap:9px;row-gap:2px;color:#3A4566;line-height:1.4}
+.cr9-st > i{width:7px;height:7px;border-radius:50%;background:#AEB6CC}
+.cr9-st .ds-link{grid-column:2;justify-self:start}
+.cr9-st.ok > i{background:#0F6B45;box-shadow:0 0 0 3px #E7F5EE}
+.cr9-st .ds-link{font-size:13px}
+.cr9-r.pd .cr9-m,.cr9-r.pd .cr9-c{opacity:.6}
+.cr9-na{color:#AEB6CC;padding-left:16px}
+.hp-sw{position:relative;display:block;width:44px;height:26px;flex-shrink:0;border-radius:999px;border:0;background:#CBD3E6;cursor:pointer;transition:background .2s ease}
+.hp-sw::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#FFFFFF;box-shadow:0 1px 3px rgba(11,20,51,.2);transition:left .2s ease}
+.hp-sw.on{background:#1652F0}
+.hp-sw.on::after{left:21px}
+.hp-sw.lk{cursor:default;opacity:.45}
+.hp-sw.lk.on{opacity:.55}
+.wk-a2 .sv-s{display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.45;color:#5B6582}
+.wk-a2 .sv-s svg{flex-shrink:0;width:15px;height:15px;color:#8A93AD}
+.wk-a2 .sv-r{flex-shrink:0;display:flex;align-items:center;gap:10px}
+.cpv{display:block;padding:14px;color:#0B1433;text-decoration:none;transition:transform .25s ease,box-shadow .25s ease}
+.cpv:hover{transform:translateY(-2px);box-shadow:0 22px 40px -28px rgba(22,82,240,.6)}
+.cpv .rx-k{margin:0 4px 10px 4px}
+.cpv-h{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:16px;border-radius:16px;background:linear-gradient(160deg,#0B1433,#13296E 70%,#1A45C7);color:#FFFFFF}
+.cpv-h::after{content:'';position:absolute;right:-60px;top:-70px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(92,134,255,.45),rgba(92,134,255,0) 65%)}
+.cpv-k{display:inline-flex;align-items:center;gap:4px;height:20px;padding:0 8px;border-radius:999px;background:linear-gradient(110deg,#F7D98B,#C9952C);color:#4A3000;font-size:10.5px;font-weight:600}
+.cpv-h > b{font-size:16px;font-weight:600}
+.cpv-by{position:relative;z-index:1;display:flex;align-items:center;gap:8px;font-size:12px;line-height:1.4;color:rgba(255,255,255,.8)}
+.cpv-by b{color:#FFFFFF;font-weight:600}
+.cpv-avs{display:inline-flex;flex-shrink:0}
+.cpv-avs .la2{width:26px;height:26px;font-size:9.5px;margin-left:-7px;box-shadow:0 0 0 2px #13296E;transition:opacity .25s ease,transform .3s cubic-bezier(.3,1.4,.5,1)}
+.cpv-avs .la2:first-child{margin-left:0}
+.cpv-j:not(.on){display:none}
+.cpv-avs .cpv-j.on{animation:cpvIn .4s cubic-bezier(.3,1.4,.5,1)}
+@keyframes cpvIn{from{transform:scale(.3);opacity:0}}
+.cpv-l{font-size:11.5px;color:rgba(255,255,255,.65)}
+.cw9 dl{margin:0}
+.cw9 dl div{display:flex;flex-direction:column;gap:2px;padding:9px 0;border-top:1.5px solid #F0F2F8}
+.cw9 dl div:first-child{border-top:0;padding-top:0}
+.cw9 dt{font-size:12px;font-weight:500;color:#8A93AD}
+.cw9 dd{margin:0;font-size:13px;line-height:1.5;color:#0B1433}
+.ak{width:520px}
+.ak .dl-h{align-items:center}
+.ak-v{flex:1;display:inline-flex}
+.ak-v .la2{width:40px;height:40px;margin-left:-10px;box-shadow:0 0 0 3px #FFFFFF}
+.ak-v .la2:first-child{margin-left:0}
+.ak-n{position:relative;outline:2px dashed #1652F0;outline-offset:3px;animation:akP 2.4s ease-in-out infinite}
+@keyframes akP{50%{outline-offset:6px;outline-color:rgba(22,82,240,.35)}}
+.ak-h{margin:0;font-size:21px;line-height:1.3;font-weight:600;letter-spacing:-0.015em}
+.ak-w{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;background:#F7F9FD}
+.ak-w > span:nth-child(2){flex:1;display:flex;flex-direction:column;gap:1px}
+.ak-w b{font-size:14.5px;font-weight:600}
+.ak-w em{font-style:normal;font-size:12.5px;color:#5B6582}
+.ak-t{height:auto;min-height:96px;padding:12px 14px;border-radius:14px;font-family:inherit;font-size:14.5px;line-height:1.55;resize:vertical}
+.ak .dl-n{display:flex;gap:8px}
+.utabs{margin-top:20px;display:flex;gap:26px;border-bottom:1.5px solid #E6EAF3;overflow-x:auto;scrollbar-width:none}
 .utabs::-webkit-scrollbar{display:none}
 .ut{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;height:46px;margin-bottom:-1.5px;border-bottom:2.5px solid transparent;color:#5B6582;font-size:14.5px;font-weight:500;text-decoration:none;white-space:nowrap}
 .ut:hover{color:#0B1433}
@@ -883,6 +982,26 @@ a.ct-r{margin:0 -8px;padding:12px 8px}
 .th-d{display:none}
 .th-a{grid-column:1 / -1;justify-content:flex-start}
 .th-r.pin{margin:0 -8px;padding:14px 8px}
+.cr9{padding:2px 14px}
+.cr9-hd{display:none}
+.cr9-r{grid-template-columns:42px auto minmax(0,1fr) auto;gap:6px 0;padding:14px 0}
+.cr9-m{grid-column:1 / 4;grid-row:1;gap:10px}
+.cr9-m .la2{width:32px;height:32px;font-size:11px}
+.cr9-s{grid-column:4;grid-row:1 / span 3;align-self:center;padding-left:10px}
+.cr9-ro{grid-column:2;grid-row:2}
+.cr9-ro .ds-tag{height:22px;font-size:11px}
+.cr9-c{grid-column:3;grid-row:2;align-self:center;min-width:0;padding-left:8px;font-size:12.5px;color:#5B6582;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cr9-st{grid-column:2 / 4;grid-row:3;grid-template-columns:7px auto minmax(0,1fr);column-gap:8px;font-size:12.5px}
+.cr9-st .ds-link{grid-column:3;grid-row:1;font-size:12.5px;margin-left:4px}
+.cr9-na{display:block;width:44px;text-align:center;padding:0}
+.wk-a2 .sv-s{order:1;align-items:flex-start;text-align:left;padding:0 4px 4px 4px}
+.wk-r > .cpv{order:1}
+.wk-r > .cw9{order:3}
+.wk-a2 .sv-s{font-size:12px}
+.ak .dl-b{padding:6px 16px 4px 16px}
+.ak .dl-h{padding:18px 16px 0 16px}
+.ak-h{font-size:19px}
+.dl.ak{width:100%}
 }
 '''.replace('NOVABG', __import__('kit').NOVA_BG)
 
@@ -912,6 +1031,8 @@ BOARDS = [
     ('MGT-009D', 'i-rev', 'CR-COURSE-MGT-009D · Reviews & Feedback'),
     ('MGT-009E', 'i-sup', 'CR-COURSE-MGT-009E · Learner Questions & Support'),
     ('MGT-009F', 'i-disc', 'CR-COURSE-MGT-009F · Course Discussion'),
+    ('CREDITS', 'c-credits', 'CR-COURSE-CREDITS · Course Credits & Visibility'),
+    ('CREDITS-ASK', 'c-ask', 'CR-COURSE-CREDITS-ASK · Ask a contributor to be credited'),
 ]
 BOARDS = [(c, 'Manage3', {'page': p}, t) for c, p, t in BOARDS]
 

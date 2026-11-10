@@ -70,7 +70,7 @@ MGT = [('globe', 'Publishing & Visibility', 'Unpublish the course or manage mark
        ('users', 'Learner Access & Enrollment', 'Review learners, active access and the impact of enrollment changes.', 'View Learner Access', '#', ''),
        ('valid', 'Validation History', 'View validation results, decisions and revalidation cases for this course.', 'View Validation', '#', ''),
        ('analytics', 'Insights & Engagement', 'Learning performance, assessments, content health, reviews, learner support and discussion.', 'View Insights', '#', ''),
-       ('profile', 'Course Credits & Visibility', 'Choose which creators learners see on the course page. Lead Creator and Co-Creators show by default.', 'Manage Credits', '#', ''),
+       ('profile', 'Course Credits & Visibility', 'Choose which creators learners see on the course page. Lead Creator and Co-Creators show by default.', 'Manage Credits', 'CREDITS.dc.html', ''),
        ('trash', 'Archive & Removal', 'Restricted lifecycle actions: archiving and permanent removal requests.', 'Manage Removal', '#', 'warn')]
 def mcard(i, m):
     icon, t, d, cta, href, k = m

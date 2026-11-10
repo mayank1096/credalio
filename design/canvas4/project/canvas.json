@@ -1649,7 +1649,7 @@
       "x": 1520,
       "y": 46703,
       "w": 390,
-      "h": 1480,
+      "h": 1421,
       "title": "CR-COURSE-MGT-001 · Manage Course Hub · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -1669,7 +1669,7 @@
       "x": 3590,
       "y": 46703,
       "w": 390,
-      "h": 1500,
+      "h": 1420,
       "title": "CR-COURSE-MGT-002-A · Publishing & Visibility (default) · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -1689,7 +1689,7 @@
       "x": 5660,
       "y": 46703,
       "w": 390,
-      "h": 1500,
+      "h": 1420,
       "title": "MGT-002 · Manage Availability — Step 2 of 4 · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -1709,7 +1709,7 @@
       "x": 7730,
       "y": 46703,
       "w": 390,
-      "h": 1500,
+      "h": 1420,
       "title": "MGT-002 · Manage Availability — Step 3 of 4 · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -1719,7 +1719,7 @@
       "x": 8280,
       "y": 46703,
       "w": 1440,
-      "h": 940,
+      "h": 910,
       "title": "MGT-002-B · Published / Visible / Paused (success) · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -1729,7 +1729,7 @@
       "x": 9800,
       "y": 46703,
       "w": 390,
-      "h": 1611,
+      "h": 1531,
       "title": "MGT-002-B · Published / Visible / Paused (success) · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -1739,7 +1739,7 @@
       "x": 10350,
       "y": 46703,
       "w": 1440,
-      "h": 940,
+      "h": 910,
       "title": "MGT-002-C · Published / Hidden / Paused · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -1749,7 +1749,7 @@
       "x": 11870,
       "y": 46703,
       "w": 390,
-      "h": 1632,
+      "h": 1552,
       "title": "MGT-002-C · Published / Hidden / Paused · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -1757,7 +1757,7 @@
     },
     "MGT-002D.dc.html": {
       "x": 0,
-      "y": 48755,
+      "y": 48675,
       "w": 1440,
       "h": 900,
       "title": "MGT-002-D · Unpublished — Republish available · Desktop",
@@ -1767,9 +1767,9 @@
     },
     "MGT-002D-Mobile.dc.html": {
       "x": 1520,
-      "y": 48755,
+      "y": 48675,
       "w": 390,
-      "h": 1279,
+      "h": 1177,
       "title": "MGT-002-D · Unpublished — Republish available · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -1777,7 +1777,7 @@
     },
     "MGT-002E.dc.html": {
       "x": 2070,
-      "y": 48755,
+      "y": 48675,
       "w": 1440,
       "h": 902,
       "title": "MGT-002-E · Restricted by Credalio · Desktop",
@@ -1787,9 +1787,9 @@
     },
     "MGT-002E-Mobile.dc.html": {
       "x": 3590,
-      "y": 48755,
+      "y": 48675,
       "w": 390,
-      "h": 1453,
+      "h": 1351,
       "title": "MGT-002-E · Restricted by Credalio · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -1797,9 +1797,9 @@
     },
     "MGT-002F.dc.html": {
       "x": 4140,
-      "y": 48755,
+      "y": 48675,
       "w": 1440,
-      "h": 962,
+      "h": 932,
       "title": "MGT-002-F · Organization Approval Required · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -1807,9 +1807,9 @@
     },
     "MGT-002F-Mobile.dc.html": {
       "x": 5660,
-      "y": 48755,
+      "y": 48675,
       "w": 390,
-      "h": 1674,
+      "h": 1594,
       "title": "MGT-002-F · Organization Approval Required · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -1817,9 +1817,9 @@
     },
     "MGT-002G.dc.html": {
       "x": 6210,
-      "y": 48755,
+      "y": 48675,
       "w": 1440,
-      "h": 962,
+      "h": 932,
       "title": "MGT-002-G · Saving / Error / Conflict · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -1827,9 +1827,9 @@
     },
     "MGT-002G-Mobile.dc.html": {
       "x": 7730,
-      "y": 48755,
+      "y": 48675,
       "w": 390,
-      "h": 1695,
+      "h": 1615,
       "title": "MGT-002-G · Saving / Error / Conflict · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -1837,9 +1837,9 @@
     },
     "MGT-002-NOTICE.dc.html": {
       "x": 8280,
-      "y": 48755,
+      "y": 48675,
       "w": 1440,
-      "h": 997,
+      "h": 904,
       "title": "MGT-002-E2 · Restriction Notice · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -1847,9 +1847,9 @@
     },
     "MGT-002-NOTICE-Mobile.dc.html": {
       "x": 9800,
-      "y": 48755,
+      "y": 48675,
       "w": 390,
-      "h": 1563,
+      "h": 1468,
       "title": "MGT-002-E2 · Restriction Notice · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -1857,7 +1857,7 @@
     },
     "MGT-003A.dc.html": {
       "x": 0,
-      "y": 50870,
+      "y": 50710,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-003A · Unpublish — Review Learner Impact · Desktop",
@@ -1867,9 +1867,9 @@
     },
     "MGT-003A-Mobile.dc.html": {
       "x": 1520,
-      "y": 50870,
+      "y": 50710,
       "w": 390,
-      "h": 1240,
+      "h": 1222,
       "title": "CR-COURSE-MGT-003A · Unpublish — Review Learner Impact · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -1877,7 +1877,7 @@
     },
     "MGT-003B.dc.html": {
       "x": 2070,
-      "y": 50870,
+      "y": 50710,
       "w": 1440,
       "h": 1097,
       "title": "CR-COURSE-MGT-003B · Unpublish — Reason & Transition Plan · Desktop",
@@ -1887,9 +1887,9 @@
     },
     "MGT-003B-Mobile.dc.html": {
       "x": 3590,
-      "y": 50870,
+      "y": 50710,
       "w": 390,
-      "h": 1579,
+      "h": 1534,
       "title": "CR-COURSE-MGT-003B · Unpublish — Reason & Transition Plan · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -1897,7 +1897,7 @@
     },
     "MGT-003C.dc.html": {
       "x": 4140,
-      "y": 50870,
+      "y": 50710,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-003C · Unpublish — Final Confirmation · Desktop",
@@ -1907,7 +1907,7 @@
     },
     "MGT-003C-Mobile.dc.html": {
       "x": 5660,
-      "y": 50870,
+      "y": 50710,
       "w": 390,
       "h": 1111,
       "title": "CR-COURSE-MGT-003C · Unpublish — Final Confirmation · Mobile",
@@ -1917,7 +1917,7 @@
     },
     "MGT-003D.dc.html": {
       "x": 6210,
-      "y": 50870,
+      "y": 50710,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-003D · Unpublish — Success · Desktop",
@@ -1927,7 +1927,7 @@
     },
     "MGT-003D-Mobile.dc.html": {
       "x": 7730,
-      "y": 50870,
+      "y": 50710,
       "w": 390,
       "h": 892,
       "title": "CR-COURSE-MGT-003D · Unpublish — Success · Mobile",
@@ -1937,7 +1937,7 @@
     },
     "MGT-003E.dc.html": {
       "x": 8280,
-      "y": 50870,
+      "y": 50710,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-003E · Unpublish — Restricted / Approval Required · Desktop",
@@ -1947,7 +1947,7 @@
     },
     "MGT-003E-Mobile.dc.html": {
       "x": 9800,
-      "y": 50870,
+      "y": 50710,
       "w": 390,
       "h": 922,
       "title": "CR-COURSE-MGT-003E · Unpublish — Restricted / Approval Required · Mobile",
@@ -1957,7 +1957,7 @@
     },
     "MGT-DS-OV.dc.html": {
       "x": 10350,
-      "y": 50870,
+      "y": 50710,
       "w": 1440,
       "h": 900,
       "title": "Downstream · Course Overview — Unpublished state · Desktop",
@@ -1967,7 +1967,7 @@
     },
     "MGT-DS-OV-Mobile.dc.html": {
       "x": 11870,
-      "y": 50870,
+      "y": 50710,
       "w": 390,
       "h": 844,
       "title": "Downstream · Course Overview — Unpublished state · Mobile",
@@ -1977,7 +1977,7 @@
     },
     "MGT-DS-CR.dc.html": {
       "x": 12420,
-      "y": 50870,
+      "y": 50710,
       "w": 1440,
       "h": 900,
       "title": "Downstream · My Creations — Unpublished card state · Desktop",
@@ -1987,7 +1987,7 @@
     },
     "MGT-DS-CR-Mobile.dc.html": {
       "x": 13940,
-      "y": 50870,
+      "y": 50710,
       "w": 390,
       "h": 844,
       "title": "Downstream · My Creations — Unpublished card state · Mobile",
@@ -1997,7 +1997,7 @@
     },
     "MGT-DS-ML.dc.html": {
       "x": 14490,
-      "y": 50870,
+      "y": 50710,
       "w": 1440,
       "h": 900,
       "title": "Downstream · My Learning — learner access states (learner app) · Desktop",
@@ -2007,7 +2007,7 @@
     },
     "MGT-DS-ML-Mobile.dc.html": {
       "x": 16010,
-      "y": 50870,
+      "y": 50710,
       "w": 390,
       "h": 855,
       "title": "Downstream · My Learning — learner access states (learner app) · Mobile",
@@ -2017,7 +2017,7 @@
     },
     "Setup.dc.html": {
       "x": 0,
-      "y": 52869,
+      "y": 52664,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -2027,7 +2027,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 52869,
+      "y": 52664,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -2037,7 +2037,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 52869,
+      "y": 52664,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -2047,7 +2047,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 52869,
+      "y": 52664,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -2057,7 +2057,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 52869,
+      "y": 52664,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -2067,7 +2067,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 52869,
+      "y": 52664,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -2077,7 +2077,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 52869,
+      "y": 52664,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -2087,7 +2087,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 52869,
+      "y": 52664,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -2097,7 +2097,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 52869,
+      "y": 52664,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -2107,7 +2107,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 52869,
+      "y": 52664,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -2117,7 +2117,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 52869,
+      "y": 52664,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -2127,7 +2127,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 52869,
+      "y": 52664,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -2137,7 +2137,7 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 52869,
+      "y": 52664,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
@@ -2622,11 +2622,11 @@
       "text": "Batch 6 · Publishing states: unpublished, restricted, organization approval, save error, restriction notice",
       "w": 240,
       "x": 0,
-      "y": 48455
+      "y": 48375
     },
     "b6-states-new": {
       "x": 0,
-      "y": 48605,
+      "y": 48525,
       "text": "NEW · batch 6",
       "w": 260,
       "fill": "pink"
@@ -2637,11 +2637,11 @@
       "text": "Batch 6 · Unpublish: impact, reason & transition, confirm, unpublished, requires review · Downstream: course overview, My Creations, learner My Learning",
       "w": 240,
       "x": 0,
-      "y": 50570
+      "y": 50410
     },
     "b6-unpub-new": {
       "x": 0,
-      "y": 50720,
+      "y": 50560,
       "text": "NEW · batch 6",
       "w": 260,
       "fill": "pink"
@@ -2652,7 +2652,7 @@
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 52569
+      "y": 52364
     }
   },
   "noteOrder": [

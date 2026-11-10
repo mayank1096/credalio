@@ -79,7 +79,7 @@ def mcard(i, m):
 P('hub', 'My Creations',
   crumbs([('My Creations', 'MGT-DS-CR.dc.html'), ('Courses', 'MGT-DS-CR.dc.html'), ('Data Analysis with SQL', 'MGT-DS-OV.dc.html'), ('Manage', '')]) +
   '''<header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">Manage Course</h1><p class="ds-sub">Control how your published course is available, accessed and maintained.</p></div>
-<div class="pg-hr"><a class="ds-ghost sm" href="MGT-DS-OV.dc.html">%s<span>Back to Overview</span></a><a class="ds-ghost sm" href="STU-PRV.dc.html">%s<span>Preview as Learner</span></a><a class="ds-ghost sm" href="STU-009.dc.html">%s<span>Edit Course</span></a></div></header>
+<div class="pg-hr hub-a"><a class="ds-ghost sm" href="MGT-DS-OV.dc.html">%s<span>Back to Overview</span></a><a class="ds-ghost sm" href="STU-PRV.dc.html">%s<span>Preview as Learner</span></a><a class="ds-ghost sm" href="STU-009.dc.html">%s<span>Edit Course</span></a></div></header>
 <section class="ds-card mh ob-in2"><div class="mh-t">%s<div class="mh-b"><span class="cst-t"><span class="ds-tag green"><i class="lv-d"></i>Published</span><span class="gb">%s<span>Gold Validated</span></span></span><h2>Data Analysis with SQL</h2><span class="cst-p">%s</span></div>
 <div class="mh-pu"><span class="mh-pk">Pending update</span><b>Draft update pending assessment</b><span class="ds-tag amber">v1.1 draft</span></div></div>
 <dl class="mh-f">%s</dl></section>
@@ -107,10 +107,11 @@ STATES = {
     'f': ('Published', 'Visible', 'Open', ('am', 'users', 'Organization Approval Required', 'This course belongs to an organization. Being the Lead Creator for content validation does not automatically grant authority to change publication settings — organization publishing policy must be honored.'), 'Request Approval', '#', True),
     'g': ('Published', 'Visible', 'Open', ('rd', 'warn', 'Couldn’t save your change', 'Another authorized team member changed these settings while you were editing — or the backend did not confirm the update. Your previous state has been preserved. Retry or refresh to see the latest state before saving again.'), 'Manage Availability', 'MGT-002-EDIT.dc.html', True),
 }
-def stile(label, val, desc, sys_=False):
+def stile(label, val, desc, sw=True, i=0):
     icon, k = VAL_IC[val]
-    return '<div class="sw %s%s"><span class="sw-l">%s</span><span class="sw-v"><span class="sw-i">%s</span><b>%s</b></span><p>%s</p><span class="sw-tr" aria-hidden="true"><i></i></span></div>' % (
-        k, ' lg' if len(val) > 12 else '', label, ic(icon, 16, 2.2), val, desc)
+    tr = '<span class="sw-tr" aria-hidden="true"><i></i></span>' if sw else '<span class="sw-pd" aria-hidden="true"></span>'
+    return '<div class="sw %s%s" style="--i: %d"><span class="sw-l">%s</span><span class="sw-v"><span class="sw-i">%s</span><b>%s</b></span><p>%s</p>%s</div>' % (
+        k, ' lg' if len(val) > 12 else '', i, label, ic(icon, 16, 2.2), val, desc, tr)
 HIST = [('12 Sep 2026', 'Course Published', 'Lead Creator'), ('12 Sep 2026', 'Gold Validation Applied', 'Credalio')]
 RAIL_PUB = '''<section class="ds-card rx lap ob-in3"><span class="rx-k">Learner Access Protection</span><p>Changing visibility or pausing enrollment does not automatically revoke existing learner entitlements.</p>
 <div class="lap-n"><span><b>86</b><em>Active DLP Learners</em></span><span><b>42</b><em>Lifetime Purchasers</em></span></div><p class="rx-p">Learners who already have access keep it according to their current entitlement rules.</p><a class="ds-link sm" href="#">View Learner Access%s</a></section>
@@ -125,9 +126,11 @@ def pub_page(state, overlay=''):
     if ban:
         k, icon, h, t = ban
         banner = '<div class="bn2 %s ob-in">%s<span class="bn2-i">%s</span><div><b>%s</b><p>%s</p></div></div>' % (k, '<span class="bn2-g"></span>' if k == 'ok' else '', ic(icon, 18, 2.2), h, t)
-    main = '''%s<section class="ds-card pv2 ob-in2"><div class="sws">%s%s%s</div><div class="pv2-a">%s<a class="ds-link" href="STU-PRV.dc.html">View Live Listing%s</a></div></section>%s''' % (
-        course_strip(pub, tone), stile('Publication Status', pub, PUB_D[pub]), stile('Marketplace Visibility', vis, VIS_D), stile('New Enrollments', enr, ENR_D),
-        ('<a class="ds-btn sm2" href="%s"><span>%s</span><span class="ob-arrow">%s</span></a>' % (href, act, ARROW)), ic('arrowr', 14, 2.2), UNPUB if unp else '')
+    main = '''<section class="ds-card pv2 ob-in2"><div class="pv2-h">%s<div class="cst-b"><b>Data Analysis with SQL</b><span class="cst-t"><span class="ds-tag %s">%s</span><span class="gb">%s<span>Gold Validated</span></span></span><span class="cst-p">%s</span></div><a class="ds-ghost sm pv2-l" href="STU-PRV.dc.html">%s<span>View Live Listing</span></a></div>
+<div class="sws">%s%s%s</div><div class="pv2-a">%s</div></section>%s''' % (
+        COV, tone, pub, ic('badge', 12, 2.2), PRICE, ic('eye', 15, 2),
+        stile('Publication Status', pub, PUB_D[pub], False, 0), stile('Marketplace Visibility', vis, VIS_D, True, 1), stile('New Enrollments', enr, ENR_D, True, 2),
+        ('<a class="ds-btn sm2" href="%s"><span>%s</span><span class="ob-arrow">%s</span></a>' % (href, act, ARROW)), UNPUB if unp else '')
     return (crumbs([('Manage Course', 'MGT-001.dc.html'), ('Publishing & Visibility', '')]) +
             '<header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-001.dc.html">%s<span>Back to Manage Course</span></a><h1 class="ds-h1">Publishing &amp; Visibility</h1><p class="ds-sub">Control how learners discover and enroll in your published course.</p></div></header>%s'
             % (ICON(I['back'], 15, 2), banner) +
@@ -176,13 +179,12 @@ P('notice', 'My Creations',
 <section class="ds-card rn2 ob-in2"><div class="rn2-h"><span class="rn2-i">%s</span><div><span class="rx-k">Restriction summary</span><span class="ds-tag red">Restricted</span></div></div>
 <div class="rn2-r"><span>Reason</span><b>Assessment answer key mismatch reported by learners</b></div><dl class="rn2-g">%s</dl></section>
 <section class="ob-in3"><h2 class="sh">What is affected</h2><div class="af4">%s</div></section>
-<section class="ds-card fc wcd ob-in4"><div class="fc-h"><div><h2>What you can do</h2></div></div><p>Creators cannot override a restriction by switching visibility back on. Review the findings, correct the issue, and resubmit for validation. Credalio lifts the restriction once the case is resolved.</p>
-<div class="wcd-a">%s<a class="ds-ghost sm" href="#">Open Validation History</a><a class="ds-link" href="#">View Learner Access</a></div></section>
-</div><aside class="wk-r"><section class="ds-card rx nx4 ob-in3"><span class="rx-k">Next steps</span><ol>%s</ol></section></aside></div>''' % (
+</div><aside class="wk-r"><section class="ds-card rx nx4 ob-in3"><span class="rx-k">Next steps</span><ol>%s</ol></section><section class="ds-card rx wcd ob-in4"><span class="rx-k">What you can do</span><p>Creators cannot override a restriction by switching visibility back on. Review the findings, correct the issue, and resubmit for validation. Credalio lifts the restriction once the case is resolved.</p>
+<div class="wcd-a">%s<a class="ds-ghost sm" href="#">Open Validation History</a><a class="ds-link" href="#">View Learner Access</a></div></section></aside></div>''' % (
       ICON(I['back'], 15, 2), ic('lock', 22, 2), ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % r for r in NSUM),
       ''.join('<div class="af %s" style="--i: %d"><span class="af-i">%s</span><em>%s</em><b>%s</b></div>' % (k, i, ic(icn, 17, 2.2) if icn in EXTRA else ic(icn, 17, 2.2), l, v) for i, (l, v, k, icn) in enumerate(AFF)),
-      btn('Review Findings', 'STU-055D.dc.html', 'sm2'),
-      ''.join('<li class="%s" style="--i: %d"><span class="nx-n">%d</span><b>%s</b></li>' % ('on' if i == 0 else '', i, i + 1, t) for i, t in enumerate(NEXT))))
+      ''.join('<li class="%s" style="--i: %d"><span class="nx-n">%d</span><b>%s</b></li>' % ('on' if i == 0 else '', i, i + 1, t) for i, t in enumerate(NEXT)),
+      btn('Review Findings', 'STU-055D.dc.html', 'sm2')))
 
 # ---------------------------------------------------------------- Downstream · Course Overview (unpublished) — CR-COURSE-OV-001 design
 P('ds-ov', 'My Creations',
@@ -283,7 +285,7 @@ UN['confirm'] = uside(2, '''<div class="cl-nx wh"><span>What will happen</span><
 <button type="button" class="dc-r ack {{c%s}}" aria-pressed="{{a%s}}" onClick="{{x%s}}"><span class="dc-b">%s</span><span>I understand that unpublishing stops new access but does not automatically revoke existing learner entitlements.</span></button>''' % (
         ''.join('<div class="df2-r%s"><span>%s</span><span class="df2-v"><s>%s</s>%s<b>%s</b></span></div>' % (' same' if a == b else '', l, a if a != b else '', ic('arrowr', 13, 2.4) if a != b else '', b) for l, a, b in DIFF),
         kc, kc, kc, ck(12)),
-    ubk('MGT-003B.dc.html') + '<a class="ds-btn danger cl-go" href="MGT-003D.dc.html"><span>Confirm Unpublish</span></a>')
+    ubk('MGT-003B.dc.html') + '<span class="cf-g {{c%s}}"><a class="ds-btn danger cl-go" href="MGT-003D.dc.html"><span>Confirm Unpublish</span></a></span>' % kc)
 def emb(kind, icon):
     return '<div class="ko-emb ko-v %s" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc">%s</span></div>' % (kind, ic(icon, 28, 2.2))
 UN['done'] = '''<div class="ko-wrap ob-in"><div class="ko gy">%s<span class="ko-pill">Unpublished</span><h1 class="ko-h1">Course Unpublished</h1><p class="ko-sub">Data Analysis with SQL is no longer available for new learners to discover or enroll in.</p>
@@ -526,7 +528,11 @@ MANAGE_CSS = SHARED + r'''.cr-root{grid-template-columns:264px minmax(0,1fr)}
 .af em{font-style:normal;font-size:12.5px;color:#5B6582}
 .af b{font-size:15px;font-weight:600}
 .af.ok b{color:#0F6B45}
-.wcd p{margin:0;font-size:14.5px;line-height:1.6;color:#3A4566}
+.wcd p{margin:0;font-size:13.5px;line-height:1.55;color:#3A4566}
+.wk-r .wcd-a{flex-direction:column;align-items:stretch;gap:8px}
+.wk-r .wcd-a .ds-btn{justify-content:space-between}
+.wk-r .wcd-a .ds-ghost,.wk-r .wcd-a .ds-link{justify-content:center}
+.wk-r > .wcd{order:2}
 .wcd-a{margin-top:16px;display:flex;align-items:center;flex-wrap:wrap;gap:12px 16px}
 .wk > .wk-m > .wcd{margin-top:16px}
 .nx4 ol{list-style:none;margin:0;padding:0;position:relative;display:flex;flex-direction:column;gap:4px}
@@ -641,7 +647,8 @@ MANAGE_CSS = SHARED + r'''.cr-root{grid-template-columns:264px minmax(0,1fr)}
 .wcd-a{flex-direction:column;align-items:stretch}
 .wcd-a .ds-btn{justify-content:space-between}
 .wcd-a .ds-ghost,.wcd-a .ds-link{justify-content:center}
-.wk-r > .nx4{order:1}
+.wk-r > .nx4{order:3}
+.wk-r > .wcd{order:4}
 .ovh{flex-wrap:wrap;gap:12px}
 .ovh-i{width:48px;height:48px}
 .ovh-t{flex-basis:calc(100% - 64px)}
@@ -662,6 +669,78 @@ MANAGE_CSS = SHARED + r'''.cr-root{grid-template-columns:264px minmax(0,1fr)}
 .mcl-v:has(.mcl-dash){display:none}
 .mcl-a{grid-column:1 / -1;justify-content:flex-start;padding-left:50px;flex-wrap:wrap}
 .mcl-r:not(.un) .mcl-a{display:none}
+}
+
+.pv2-h{display:flex;align-items:center;gap:16px;padding-bottom:18px;margin-bottom:18px;border-bottom:1.5px solid #F0F2F8}
+.pv2-h .cst-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.pv2-h .cst-b > b{font-size:17px;font-weight:600}
+.pv2-l{flex-shrink:0}
+.pv2-a{border-top:0;padding-top:0;margin-top:16px}
+.sw{animation:obIn .5s ease both;animation-delay:calc(var(--i) * 90ms + 150ms)}
+.sw-tr i{animation:swK .6s cubic-bezier(.3,1.4,.5,1) both;animation-delay:calc(var(--i) * 90ms + 450ms)}
+@keyframes swK{from{left:3px}}
+.sw.gy .sw-tr i{animation:none}
+.sw-pd{position:absolute;right:16px;top:18px;width:9px;height:9px;border-radius:50%;background:#0F6B45;animation:lvP 2s ease-out infinite}
+.sw.gy .sw-pd{background:#8A93AD;animation:none}
+.sw.rd .sw-pd{background:#B42318;animation:rdP 2s ease-out infinite}
+@keyframes rdP{0%{box-shadow:0 0 0 0 rgba(180,35,24,.45)}100%{box-shadow:0 0 0 7px rgba(180,35,24,0)}}
+.sw.gy:not(:first-child)::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(203,211,230,.18) 0 8px,transparent 8px 16px);pointer-events:none}
+.mh-t .cv-t::after,.pv2-h .cv-t::after{content:'';position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.45) 50%,transparent 65%);background-size:250% 100%;animation:cvSh 4s ease-in-out 1s infinite}
+@keyframes cvSh{0%{background-position:150% 0}50%,100%{background-position:-100% 0}}
+@media (max-width: 960px){
+.bc:has(+ .pg-h .ds-back){display:none}
+.hub-a{display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100% !important;margin:0 !important;padding:0 !important;overflow:visible !important}
+.hub-a .ds-ghost{flex-direction:column;height:auto;min-height:62px;padding:10px 6px;gap:5px;font-size:12.5px;line-height:1.25;white-space:normal;text-align:center;border-radius:16px}
+.mh-t{display:grid;grid-template-columns:56px minmax(0,1fr);column-gap:14px;row-gap:6px;align-items:center}
+.mh-t .cv-t{grid-row:1 / span 2}
+.mh-b{display:contents}
+.mh-b .cst-t{grid-column:2;grid-row:1;align-self:end}
+.mh-b h2{grid-column:2;grid-row:2;align-self:start;margin:0}
+.mh-b .cst-p{grid-column:1 / -1;grid-row:3;margin-top:6px;font-size:13px}
+.mh-pu{grid-column:1 / -1;grid-row:4;margin-top:8px;grid-template-columns:minmax(0,1fr) auto;padding:10px 12px}
+.mh-pu b{font-size:13.5px}
+.mh-f{margin-top:14px;padding-top:12px}
+.ms4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0;padding:0;overflow:visible}
+.ms{flex:none;padding:12px;gap:10px;border-radius:16px}
+.ms-i{width:34px;height:34px;border-radius:11px}
+.ms-b b{font-size:15px}
+.ms-b > span{display:none}
+.pv2-h{display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:12px;row-gap:6px;padding-bottom:14px;margin-bottom:14px}
+.pv2-h .cv-t{width:48px;height:48px;border-radius:13px;grid-row:1 / span 2}
+.pv2-h .cst-b{display:contents}
+.pv2-h .cst-b > b{grid-column:2;grid-row:1;align-self:end;font-size:16px}
+.pv2-h .cst-t{grid-column:2;grid-row:2;align-self:start}
+.pv2-h .cst-p{grid-column:1 / -1;grid-row:3;margin-top:4px;font-size:12.5px}
+.pv2-l{grid-column:1 / -1;grid-row:4;margin-top:6px;justify-content:center}
+.sws{gap:0;border-radius:16px;background:#F7F9FD;overflow:hidden}
+.sw{border-radius:0;background:none !important;padding:12px 14px}
+.sw + .sw{border-top:1.5px solid #EEF1F7}
+.sw.am{background:#FFF8EA !important}.sw.rd{background:#FFF5F4 !important}
+.sw-pd{position:static;grid-column:2;grid-row:1 / span 2;margin-right:12px}
+.sw-l{font-size:12px}
+.pv2-a{margin-top:14px}
+.pv2-a .ds-btn{width:100%}
+.dz{display:grid;grid-template-columns:40px minmax(0,1fr);gap:4px 12px;align-items:center}
+.dz-i{width:40px;height:40px;border-radius:12px}
+.dz-b{display:contents}
+.dz-b b{grid-column:2;grid-row:1}
+.dz-b p,.dz-n{grid-column:1 / -1}
+.dz-b p{margin-top:6px}
+.dz-n{margin-top:4px}
+.dz-a{grid-column:1 / -1;margin-top:10px}
+.cst{display:grid;grid-template-columns:48px minmax(0,1fr)}
+.hub-a .ds-ghost{justify-content:flex-start;padding-top:12px;height:64px;min-height:0}
+.sw.gy .sw-tr{display:none}
+.mcs{display:flex;flex-direction:column;gap:0;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;overflow:hidden}
+.mc{flex-direction:row;align-items:center;gap:12px;padding:12px 14px;border:0;border-radius:0;background:none;box-shadow:none !important;transform:none !important}
+.mc + .mc{border-top:1.5px solid #F0F2F8}
+.mc-i{margin:0;width:36px;height:36px;flex-shrink:0}
+.mc b{flex:1;font-size:14.5px}
+.mc-a{margin:0;font-size:0;gap:0}
+.mc-a svg{width:16px;height:16px;color:#AEB6CC}
+.mc.warn .mc-a svg{color:#B42318}
+.mc-d{position:static;order:2;flex-shrink:0}
+.mc::after{display:none}
 }
 '''
 
@@ -734,7 +813,13 @@ UN_CSS = open(os.path.join(HERE, 'submit_base.css')).read() + SHARED + r'''
 @keyframes dfIn{from{opacity:0;transform:translateX(-6px)}}
 .df2-r.same b{background:#E7F5EE;color:#0F6B45}
 .cl-bk2{margin-right:auto}
-.cl-foot .ds-btn.danger{margin-left:auto}
+.cl-foot .cf-g{margin-left:auto;display:flex}
+.cf-g .ds-btn{transition:opacity .25s ease,filter .25s ease}
+.cf-g:not(.on) .ds-btn{opacity:.45;filter:saturate(.4);pointer-events:none}
+.cf-g.on .ds-btn{animation:cfIn .5s cubic-bezier(.3,1.4,.5,1)}
+@keyframes cfIn{50%{transform:scale(1.04)}}
+.dep-r .ds-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor;animation:lvP2 2s ease-out infinite}
+@keyframes lvP2{0%{box-shadow:0 0 0 0 rgba(224,160,48,.45)}100%{box-shadow:0 0 0 6px rgba(224,160,48,0)}}
 .ko-wrap{flex-grow:1;display:flex;justify-content:center;padding:44px 24px 64px 24px}
 .ko{width:min(620px,100%);display:flex;flex-direction:column;align-items:center;text-align:center}
 .ko-v.gy{--k:#5B6582;--kb:#EEF1F7}
@@ -788,7 +873,8 @@ UN_CSS = open(os.path.join(HERE, 'submit_base.css')).read() + SHARED + r'''
 .cl-nx{order:2;margin-top:20px;padding:16px}
 .im4{grid-template-columns:repeat(2,minmax(0,1fr))}
 .cl-foot{flex-wrap:nowrap}
-.cl-foot .ds-btn{flex:1}
+.cl-foot .ds-btn,.cl-foot .cf-g{flex:1}
+.cf-g .ds-btn{width:100%;justify-content:center}
 .cl-bk2{flex-shrink:0}
 .ko-wrap{padding:32px 16px 40px 16px}
 .ko-h1{font-size:27px}
@@ -800,6 +886,18 @@ UN_CSS = open(os.path.join(HERE, 'submit_base.css')).read() + SHARED + r'''
 .ko-card dd{font-size:13.5px}
 .ko-acts{width:100%}
 .ko-acts .ds-btn{width:100%;justify-content:space-between}
+}
+
+@media (max-width: 960px){
+.rs2{gap:0;border:1.5px solid #E6EAF3;border-radius:16px;overflow:hidden}
+.ds-opt.rs{border:0;border-radius:0;padding:12px 14px}
+.ds-opt.rs + .ds-opt.rs{border-top:1.5px solid #F0F2F8}
+.ds-opt.rs.on{background:#F5F8FF;box-shadow:inset 3px 0 0 #1652F0}
+.ko-st{gap:4px;flex-wrap:nowrap}
+.ko-st li{height:26px;padding:0 8px 0 4px;font-size:11px;gap:4px}
+.ko-st i{width:16px;height:16px}
+.im{padding:12px}
+.im b{font-size:22px}
 }
 '''
 

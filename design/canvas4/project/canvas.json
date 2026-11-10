@@ -3279,7 +3279,7 @@
       "x": 8280,
       "y": 73636,
       "w": 1440,
-      "h": 900,
+      "h": 948,
       "title": "CR-COL-004 · Collaborator detail · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -3289,7 +3289,7 @@
       "x": 9800,
       "y": 73636,
       "w": 390,
-      "h": 844,
+      "h": 908,
       "title": "CR-COL-004 · Collaborator detail · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -3395,9 +3395,529 @@
       "is_interactive": true,
       "expand": "fill"
     },
-    "Setup.dc.html": {
+    "COL-006A.dc.html": {
       "x": 0,
       "y": 75323,
+      "w": 1440,
+      "h": 1003,
+      "title": "CR-COL-006A · Open collaboration: opportunity (step 1 of 5) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-006A-Mobile.dc.html": {
+      "x": 1520,
+      "y": 75323,
+      "w": 390,
+      "h": 1493,
+      "title": "CR-COL-006A · Open collaboration: opportunity (step 1 of 5) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-006B.dc.html": {
+      "x": 2070,
+      "y": 75323,
+      "w": 1440,
+      "h": 1037,
+      "title": "CR-COL-006B · Open collaboration: expertise (step 2 of 5) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-006B-Mobile.dc.html": {
+      "x": 3590,
+      "y": 75323,
+      "w": 390,
+      "h": 1342,
+      "title": "CR-COL-006B · Open collaboration: expertise (step 2 of 5) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-006C.dc.html": {
+      "x": 4140,
+      "y": 75323,
+      "w": 1440,
+      "h": 994,
+      "title": "CR-COL-006C · Open collaboration: qualifications (step 3 of 5) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-006C-Mobile.dc.html": {
+      "x": 5660,
+      "y": 75323,
+      "w": 390,
+      "h": 1503,
+      "title": "CR-COL-006C · Open collaboration: qualifications (step 3 of 5) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-006D.dc.html": {
+      "x": 6210,
+      "y": 75323,
+      "w": 1440,
+      "h": 982,
+      "title": "CR-COL-006D · Open collaboration: revenue (step 4 of 5) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-006D-Mobile.dc.html": {
+      "x": 7730,
+      "y": 75323,
+      "w": 390,
+      "h": 1655,
+      "title": "CR-COL-006D · Open collaboration: revenue (step 4 of 5) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-006E.dc.html": {
+      "x": 8280,
+      "y": 75323,
+      "w": 1440,
+      "h": 925,
+      "title": "CR-COL-006E · Open collaboration: review & publish (step 5 of 5) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-006E-Mobile.dc.html": {
+      "x": 9800,
+      "y": 75323,
+      "w": 390,
+      "h": 1176,
+      "title": "CR-COL-006E · Open collaboration: review & publish (step 5 of 5) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-006F.dc.html": {
+      "x": 10350,
+      "y": 75323,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-006F · Opportunity published · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-006F-Mobile.dc.html": {
+      "x": 11870,
+      "y": 75323,
+      "w": 390,
+      "h": 989,
+      "title": "CR-COL-006F · Opportunity published · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-007.dc.html": {
+      "x": 12420,
+      "y": 75323,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-007 · Preview as creator · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-007-Mobile.dc.html": {
+      "x": 13940,
+      "y": 75323,
+      "w": 390,
+      "h": 1182,
+      "title": "CR-COL-007 · Preview as creator · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008.dc.html": {
+      "x": 0,
+      "y": 77398,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-008 · Applications (all) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-Mobile.dc.html": {
+      "x": 1520,
+      "y": 77398,
+      "w": 390,
+      "h": 960,
+      "title": "CR-COL-008 · Applications (all) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-NEW.dc.html": {
+      "x": 2070,
+      "y": 77398,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-008 · Applications (new) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-NEW-Mobile.dc.html": {
+      "x": 3590,
+      "y": 77398,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-008 · Applications (new) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-SHORTLISTED.dc.html": {
+      "x": 4140,
+      "y": 77398,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-008 · Applications (shortlisted) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-SHORTLISTED-Mobile.dc.html": {
+      "x": 5660,
+      "y": 77398,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-008 · Applications (shortlisted) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-OFFERED.dc.html": {
+      "x": 6210,
+      "y": 77398,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-008 · Applications (offered) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-OFFERED-Mobile.dc.html": {
+      "x": 7730,
+      "y": 77398,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-008 · Applications (offered) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-DECLINED.dc.html": {
+      "x": 8280,
+      "y": 77398,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-008 · Applications (declined) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-DECLINED-Mobile.dc.html": {
+      "x": 9800,
+      "y": 77398,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-008 · Applications (declined) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-DETAIL.dc.html": {
+      "x": 10350,
+      "y": 77398,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-008 · Applicant detail · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-DETAIL-Mobile.dc.html": {
+      "x": 11870,
+      "y": 77398,
+      "w": 390,
+      "h": 1486,
+      "title": "CR-COL-008 · Applicant detail · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-CLARIFY.dc.html": {
+      "x": 12420,
+      "y": 77398,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-008 · Request clarification · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-CLARIFY-Mobile.dc.html": {
+      "x": 13940,
+      "y": 77398,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-008 · Request clarification · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-CLARIFY-SENT.dc.html": {
+      "x": 14490,
+      "y": 77398,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-008 · Clarification requested · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-CLARIFY-SENT-Mobile.dc.html": {
+      "x": 16010,
+      "y": 77398,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-008 · Clarification requested · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-CLARIFY-REPLY.dc.html": {
+      "x": 16560,
+      "y": 77398,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-008 · Clarification reply received · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-CLARIFY-REPLY-Mobile.dc.html": {
+      "x": 18080,
+      "y": 77398,
+      "w": 390,
+      "h": 1184,
+      "title": "CR-COL-008 · Clarification reply received · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-DECLINE-APP.dc.html": {
+      "x": 18630,
+      "y": 77398,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-008 · Decline application · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-DECLINE-APP-Mobile.dc.html": {
+      "x": 20150,
+      "y": 77398,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-008 · Decline application · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-WITHDRAW-OFFER.dc.html": {
+      "x": 20700,
+      "y": 77398,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-008 · Withdraw offer · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-WITHDRAW-OFFER-Mobile.dc.html": {
+      "x": 22220,
+      "y": 77398,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-008 · Withdraw offer · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-OFFER-WITHDRAWN.dc.html": {
+      "x": 22770,
+      "y": 77398,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-008 · Offer withdrawn · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-008-OFFER-WITHDRAWN-Mobile.dc.html": {
+      "x": 24290,
+      "y": 77398,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-008 · Offer withdrawn · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-009.dc.html": {
+      "x": 0,
+      "y": 79304,
+      "w": 1440,
+      "h": 909,
+      "title": "CR-COL-009 · Make an offer · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-009-Mobile.dc.html": {
+      "x": 1520,
+      "y": 79304,
+      "w": 390,
+      "h": 1357,
+      "title": "CR-COL-009 · Make an offer · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-010.dc.html": {
+      "x": 2070,
+      "y": 79304,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-010 · Opportunity management (open) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-010-Mobile.dc.html": {
+      "x": 3590,
+      "y": 79304,
+      "w": 390,
+      "h": 936,
+      "title": "CR-COL-010 · Opportunity management (open) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-010-EMPTY.dc.html": {
+      "x": 4140,
+      "y": 79304,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-010 · Opportunity management (no applications) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-010-EMPTY-Mobile.dc.html": {
+      "x": 5660,
+      "y": 79304,
+      "w": 390,
+      "h": 1011,
+      "title": "CR-COL-010 · Opportunity management (no applications) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-010-PAUSED.dc.html": {
+      "x": 6210,
+      "y": 79304,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-010 · Opportunity paused · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-010-PAUSED-Mobile.dc.html": {
+      "x": 7730,
+      "y": 79304,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-010 · Opportunity paused · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-010-FILLED.dc.html": {
+      "x": 8280,
+      "y": 79304,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-010 · Opportunity filled · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-010-FILLED-Mobile.dc.html": {
+      "x": 9800,
+      "y": 79304,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-010 · Opportunity filled · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-010-CLOSED.dc.html": {
+      "x": 10350,
+      "y": 79304,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-010 · Opportunity closed / expired / cancelled · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-010-CLOSED-Mobile.dc.html": {
+      "x": 11870,
+      "y": 79304,
+      "w": 390,
+      "h": 926,
+      "title": "CR-COL-010 · Opportunity closed / expired / cancelled · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-010-WITHDRAW.dc.html": {
+      "x": 12420,
+      "y": 79304,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-010 · Withdraw opportunity · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-010-WITHDRAW-Mobile.dc.html": {
+      "x": 13940,
+      "y": 79304,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-010 · Withdraw opportunity · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Setup.dc.html": {
+      "x": 0,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -3407,7 +3927,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -3417,7 +3937,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -3427,7 +3947,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -3437,7 +3957,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -3447,7 +3967,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -3457,7 +3977,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -3467,7 +3987,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -3477,7 +3997,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -3487,7 +4007,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -3497,7 +4017,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -3507,7 +4027,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -3517,7 +4037,7 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
@@ -3527,7 +4047,7 @@
     },
     "Manage2.dc.html": {
       "x": 20800,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (pricing, versions, learners) · shared source",
@@ -3537,7 +4057,7 @@
     },
     "Manage3.dc.html": {
       "x": 22400,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (validation, archive, insights) · shared source",
@@ -3547,10 +4067,20 @@
     },
     "Collab.dc.html": {
       "x": 24000,
-      "y": 75323,
+      "y": 81081,
       "w": 1440,
       "h": 900,
       "title": "Course collaboration (invite, permissions, manage, remove) · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Collab2.dc.html": {
+      "x": 25600,
+      "y": 81081,
+      "w": 1440,
+      "h": 900,
+      "title": "Open collaboration (setup, applications, offers, manage opportunity) · shared source",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -3895,6 +4425,58 @@
     "COL-005C-Mobile.dc.html",
     "COL-005C-REVIEW.dc.html",
     "COL-005C-REVIEW-Mobile.dc.html",
+    "COL-006A.dc.html",
+    "COL-006A-Mobile.dc.html",
+    "COL-006B.dc.html",
+    "COL-006B-Mobile.dc.html",
+    "COL-006C.dc.html",
+    "COL-006C-Mobile.dc.html",
+    "COL-006D.dc.html",
+    "COL-006D-Mobile.dc.html",
+    "COL-006E.dc.html",
+    "COL-006E-Mobile.dc.html",
+    "COL-006F.dc.html",
+    "COL-006F-Mobile.dc.html",
+    "COL-007.dc.html",
+    "COL-007-Mobile.dc.html",
+    "COL-008.dc.html",
+    "COL-008-Mobile.dc.html",
+    "COL-008-NEW.dc.html",
+    "COL-008-NEW-Mobile.dc.html",
+    "COL-008-SHORTLISTED.dc.html",
+    "COL-008-SHORTLISTED-Mobile.dc.html",
+    "COL-008-OFFERED.dc.html",
+    "COL-008-OFFERED-Mobile.dc.html",
+    "COL-008-DECLINED.dc.html",
+    "COL-008-DECLINED-Mobile.dc.html",
+    "COL-008-DETAIL.dc.html",
+    "COL-008-DETAIL-Mobile.dc.html",
+    "COL-008-CLARIFY.dc.html",
+    "COL-008-CLARIFY-Mobile.dc.html",
+    "COL-008-CLARIFY-SENT.dc.html",
+    "COL-008-CLARIFY-SENT-Mobile.dc.html",
+    "COL-008-CLARIFY-REPLY.dc.html",
+    "COL-008-CLARIFY-REPLY-Mobile.dc.html",
+    "COL-008-DECLINE-APP.dc.html",
+    "COL-008-DECLINE-APP-Mobile.dc.html",
+    "COL-008-WITHDRAW-OFFER.dc.html",
+    "COL-008-WITHDRAW-OFFER-Mobile.dc.html",
+    "COL-008-OFFER-WITHDRAWN.dc.html",
+    "COL-008-OFFER-WITHDRAWN-Mobile.dc.html",
+    "COL-009.dc.html",
+    "COL-009-Mobile.dc.html",
+    "COL-010.dc.html",
+    "COL-010-Mobile.dc.html",
+    "COL-010-EMPTY.dc.html",
+    "COL-010-EMPTY-Mobile.dc.html",
+    "COL-010-PAUSED.dc.html",
+    "COL-010-PAUSED-Mobile.dc.html",
+    "COL-010-FILLED.dc.html",
+    "COL-010-FILLED-Mobile.dc.html",
+    "COL-010-CLOSED.dc.html",
+    "COL-010-CLOSED-Mobile.dc.html",
+    "COL-010-WITHDRAW.dc.html",
+    "COL-010-WITHDRAW-Mobile.dc.html",
     "Setup.dc.html",
     "Studio.dc.html",
     "Builder.dc.html",
@@ -3910,7 +4492,8 @@
     "Learner.dc.html",
     "Manage2.dc.html",
     "Manage3.dc.html",
-    "Collab.dc.html"
+    "Collab.dc.html",
+    "Collab2.dc.html"
   ],
   "notes": {
     "b1-setup": {
@@ -4339,13 +4922,58 @@
       "w": 260,
       "fill": "pink"
     },
+    "b11-setup": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 11 · Open collaboration: opportunity, expertise, qualifications, revenue, review & publish, published, preview as creator",
+      "w": 240,
+      "x": 0,
+      "y": 75023
+    },
+    "b11-setup-new": {
+      "x": 0,
+      "y": 75173,
+      "text": "NEW · batch 11",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b11-apps": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 11 · Applications: all, new, shortlisted, offered, declined, applicant detail, clarification (request, sent, reply), decline, withdraw offer, offer withdrawn",
+      "w": 240,
+      "x": 0,
+      "y": 77098
+    },
+    "b11-apps-new": {
+      "x": 0,
+      "y": 77248,
+      "text": "NEW · batch 11",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b11-manage": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 11 · Make an offer · Opportunity management: open, no applications, paused, filled, closed, withdraw",
+      "w": 240,
+      "x": 0,
+      "y": 79004
+    },
+    "b11-manage-new": {
+      "x": 0,
+      "y": 79154,
+      "text": "NEW · batch 11",
+      "w": 260,
+      "fill": "pink"
+    },
     "sources": {
       "kind": "title1",
       "maxW": 3200,
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 75023
+      "y": 80781
     }
   },
   "noteOrder": [
@@ -4406,6 +5034,12 @@
     "b10-missing",
     "b10-manage",
     "b10-manage-new",
+    "b11-setup",
+    "b11-setup-new",
+    "b11-apps",
+    "b11-apps-new",
+    "b11-manage",
+    "b11-manage-new",
     "sources"
   ],
   "designSystems": [],

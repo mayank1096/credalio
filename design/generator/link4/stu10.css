@@ -90,7 +90,7 @@ a.ct3-r + a.ct3-r{box-shadow:0 -1.5px 0 #F0F2F8}
 .ivp-a{display:flex;align-items:center;gap:6px}
 .ivp-l{position:relative;width:54px;height:2px;background:repeating-linear-gradient(90deg,#AFC1F5 0 5px,transparent 5px 10px)}
 .ivp-l i{position:absolute;top:-3px;left:0;width:8px;height:8px;border-radius:50%;background:#1652F0;animation:ivF 2.2s ease-in-out infinite}
-@keyframes ivF{0%{left:0;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:46px;opacity:0}}
+@keyframes ivF{0%{left:0;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:calc(100% - 8px);opacity:0}}
 .ivp-n{font-size:15px;font-weight:600}
 .ivp-r{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#5B6582}
 .ivp-s{margin:10px 0 6px 0;display:flex;flex-direction:column;align-items:center}
@@ -172,8 +172,8 @@ a.ct3-r + a.ct3-r{box-shadow:0 -1.5px 0 #F0F2F8}
 .mt3-x svg{color:#8A93AD}
 .mt3-y{color:#3A4566;line-height:1.45}
 .ps3 .mt3-r{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr) minmax(0,.9fr) minmax(0,.7fr) minmax(0,1.4fr)}
-.mt3-r.sel{margin:0 -12px;padding:14px 12px;border-radius:14px;border-top-color:transparent;background:#F5F8FF;box-shadow:inset 3px 0 0 #1652F0}
-.mt3-r.sel + .mt3-r{border-top-color:transparent}
+.mt3-r.pick{margin:0 -12px;padding:14px 12px;border-radius:14px;border-top-color:transparent;background:#F5F8FF;box-shadow:inset 3px 0 0 #1652F0}
+.mt3-r.pick + .mt3-r{border-top-color:transparent}
 .dz-l{color:#B42318 !important}
 .ah3{padding:20px 22px}
 .ah3 ol{list-style:none;margin:0;padding:0;position:relative}
@@ -356,7 +356,7 @@ a.ct3-r + a.ct3-r{box-shadow:0 -1.5px 0 #F0F2F8}
 .mt3-r > .mt3-x{grid-column:2;grid-row:2;justify-self:end;font-size:12.5px}
 .mt3-r > .mt3-y{grid-column:1 / -1;grid-row:3;padding-left:47px;font-size:12.5px;color:#5B6582}
 .mt3-r > .mt3-a{grid-column:1 / -1;grid-row:3;justify-content:flex-start;padding-left:47px}
-.mt3-r.sel{margin:0 -8px;padding:14px 8px}
+.mt3-r.pick{margin:0 -8px;padding:14px 8px}
 .ah3{padding:14px 16px}
 .ah3 b{font-size:13.5px}
 .cd3-a .dz-a{margin-left:0}

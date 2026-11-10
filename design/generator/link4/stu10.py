@@ -72,10 +72,10 @@ TEAMC = '''<section class="ds-card fc ob-in3"><div class="fc-h"><div><h2>Course 
         i + 3, who(k, sub=''), role(r), share(p, 'rs')) for i, (k, r, p, d) in enumerate(PEND)))
 HUBR = '''<section class="ds-card rx opn ob-in3"><span class="opn-v" aria-hidden="true"><i></i><i></i><i></i>%s</span><span class="rx-k">Open opportunity</span><p><b>None published.</b> Direct invitations and an open opportunity can run together on the same course.</p>%s</section>
 <section class="ds-card rx acv ob-in4"><div class="acv-h"><span class="rx-k">Activity</span>%s</div><ol>%s</ol></section>''' % (
-    ic('users', 18, 2), ghost('Open collaboration', '#', 'sm'), link('View all', 'COL-004-ACTIVITY.dc.html'),
+    ic('users', 18, 2), ghost('Open collaboration', 'COL-006A.dc.html', 'sm'), link('View all', 'COL-004-ACTIVITY.dc.html'),
     ''.join('<li style="--i: %d"><em>%s</em><span>%s</span></li>' % (i, w, e) for i, (w, e, _, _) in enumerate(ACT[:3])))
 P('hub', page_head(COLLAB, 'Course Collaboration', 'Data Analysis with SQL · Lead Creator',
-                   right=ghost('Open Collaboration', '#') + btn('Invite Creator', 'COL-002.dc.html')) + TMH + wk(TEAMC, HUBR))
+                   right=ghost('Open Collaboration', 'COL-006A.dc.html') + btn('Invite Creator', 'COL-002.dc.html')) + TMH + wk(TEAMC, HUBR))
 
 # ======================================================================= CR-COL-002 Invite (+ ERR)
 LATER = '''<div class="ltr ob-in">%s<p>Not ready to do this now? You can set up collaborators later from Collaborators. Your course stays fully editable.</p><a class="ds-link sm cl-a" href="STU-020.dc.html">Continue building course%s</a></div>''' % (ic('clock', 18, 2), ARR)
@@ -134,7 +134,7 @@ P('perm-role', perms('JA', 'Dr. John Adeyemi', 'Default permissions for Content 
 P('perm-edit', perms('JA', 'Dr. John Adeyemi', 'Default permissions for Co-Creator · Accepted', 'Co-Creator', [1, 1, 0, 1, 1, 1],
                      'Permission changes inside Credalio policy apply straight away and need no agreement from John. He is notified. Changing his revenue share still needs his agreement.', 'Save changes', 'COL-004-DETAIL.dc.html'))
 P('perm-offer', perms('SK', 'Sade Kolawole', 'Default permissions for Co-Creator · Applicant · offer not yet sent', 'Co-Creator', [1, 1, 1, 1, 1, 1],
-                      'These permissions are part of the offer. She sees them before accepting.', 'Save permissions', '#'))
+                      'These permissions are part of the offer. She sees them before accepting.', 'Save permissions', 'COL-009.dc.html'))
 
 # ======================================================================= CR-COL-003 Review invitation (+ SENT)
 REV = [('Course', 'Data Analysis with SQL · Personal ownership · Intermediate', 'w'),
@@ -166,7 +166,7 @@ def active_tbl(sel_=None):
     rows = ''
     for i, (k, n, _, r, sc, p) in enumerate(ACTIVE):
         act = '<a class="ds-ghost xs" href="#">View</a>' if k == 'AO' else '<a class="ds-ghost xs" href="COL-004-DETAIL.dc.html">View / Manage</a>'
-        rows += '<div class="mt3-r%s" style="--i: %d">%s%s%s%s<span class="mt3-a">%s</span></div>' % (' sel' if sel_ == k else '', i, who(k, n.replace(' (you)', '') if n else None, 'Lead' if k == 'AO' else None), role(r), share(p), tag('Active', 'green'), act)
+        rows += '<div class="mt3-r%s" style="--i: %d">%s%s%s%s<span class="mt3-a">%s</span></div>' % (' pick' if sel_ == k else '', i, who(k, n.replace(' (you)', '') if n else None, 'Lead' if k == 'AO' else None), role(r), share(p), tag('Active', 'green'), act)
     return ('<section class="ds-card mt3 ob-in3"><div class="mt3-r mt3-hd"><span>Creator</span><span>Role</span><span>Revenue share</span><span>Status</span><span>Actions</span></div>%s</section>' % rows +
             note('Pending proposals reserve allocation. Another 5% invitation cannot be sent while active and reserved shares total 100%.'))
 def pending_tbl():

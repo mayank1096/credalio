@@ -5,13 +5,13 @@ Each row: title note, then desktop + mobile pairs left to right. Shared sources 
 """
 import json, os, sys
 from l4kit import OUT
-import stu1, stu2, stu3, stu4, stu5, stu6, stu7, stu8, stu10
+import stu1, stu2, stu3, stu4, stu5, stu6, stu7, stu8, stu10, stu11
 
 PAIR, GAP, ROWGAP = 1440 + 80 + 390, 160, 420
 H = {}
 for f in sys.argv[1:]:
     H.update(json.load(open(f)))
-T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS + stu4.BOARDS + stu5.BOARDS + stu6.BOARDS + stu7.BOARDS + stu8.BOARDS + stu10.BOARDS}
+T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS + stu4.BOARDS + stu5.BOARDS + stu6.BOARDS + stu7.BOARDS + stu8.BOARDS + stu10.BOARDS + stu11.BOARDS}
 
 ROWS = [
     ('b1-setup', 'Batch 1 · Course setup: learning experience, delivery type, setup review, how you’ll create it, Studio welcome', ['STU-001', 'STU-002', 'STU-003', 'STU-004', 'STU-008']),
@@ -41,6 +41,9 @@ ROWS = [
     ('b9-credits', 'Batch 9 · Course Credits & Visibility: credits manager, ask to credit, learner course page with 2 and 5 creators, creators panel', ['CREDITS', 'CREDITS-ASK', 'LEARN-CREATORS-2', 'LEARN-CREATORS-5', 'LEARN-CREATORS-PANEL']),
     ('b10-invite', 'Batch 10 · Collaboration: collaboration centre, invite (+ allocation error), roles & permissions (invitation, role changed, accepted, offer), review, sent', ['COL-001', 'COL-002', 'COL-002-ERR', 'COL-002B', 'COL-002B-ROLE', 'COL-002B-EDIT', 'COL-002B-OFFER', 'COL-003', 'COL-003-SENT']),
     ('b10-manage', 'Batch 10 · Manage collaborators: active, pending, past, activity, collaborator detail, withdraw invitation · Remove: impact, reason, executed, sent to review', ['COL-004', 'COL-004-PENDING', 'COL-004-PAST', 'COL-004-ACTIVITY', 'COL-004-DETAIL', 'COL-004-WITHDRAW', 'COL-005A', 'COL-005B', 'COL-005C', 'COL-005C-REVIEW']),
+    ('b11-setup', 'Batch 11 · Open collaboration: opportunity, expertise, qualifications, revenue, review & publish, published, preview as creator', ['COL-006A', 'COL-006B', 'COL-006C', 'COL-006D', 'COL-006E', 'COL-006F', 'COL-007']),
+    ('b11-apps', 'Batch 11 · Applications: all, new, shortlisted, offered, declined, applicant detail, clarification (request, sent, reply), decline, withdraw offer, offer withdrawn', ['COL-008', 'COL-008-NEW', 'COL-008-SHORTLISTED', 'COL-008-OFFERED', 'COL-008-DECLINED', 'COL-008-DETAIL', 'COL-008-CLARIFY', 'COL-008-CLARIFY-SENT', 'COL-008-CLARIFY-REPLY', 'COL-008-DECLINE-APP', 'COL-008-WITHDRAW-OFFER', 'COL-008-OFFER-WITHDRAWN']),
+    ('b11-manage', 'Batch 11 · Make an offer · Opportunity management: open, no applications, paused, filled, closed, withdraw', ['COL-009', 'COL-010', 'COL-010-EMPTY', 'COL-010-PAUSED', 'COL-010-FILLED', 'COL-010-CLOSED', 'COL-010-WITHDRAW']),
 ]
 SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html', 'Course Studio · shared source'),
            ('Builder.dc.html', 'Curriculum Builder · shared source'), ('Editor.dc.html', 'Learning item editors · shared source'),
@@ -50,7 +53,8 @@ SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html'
            ('Manage.dc.html', 'Manage Published Course · shared source'), ('Unpublish.dc.html', 'Unpublish · shared source'), ('Learner.dc.html', 'Learner app · shared source'),
            ('Manage2.dc.html', 'Manage Published Course (pricing, versions, learners) · shared source'),
            ('Manage3.dc.html', 'Manage Published Course (validation, archive, insights) · shared source'),
-           ('Collab.dc.html', 'Course collaboration (invite, permissions, manage, remove) · shared source')]
+           ('Collab.dc.html', 'Course collaboration (invite, permissions, manage, remove) · shared source'),
+           ('Collab2.dc.html', 'Open collaboration (setup, applications, offers, manage opportunity) · shared source')]
 
 boards, order, notes = {}, [], {}
 y = 300

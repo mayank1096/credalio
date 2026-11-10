@@ -2039,7 +2039,7 @@
       "x": 2070,
       "y": 52664,
       "w": 1440,
-      "h": 1408,
+      "h": 1234,
       "title": "CR-COURSE-MGT-004-D · Edit Pricing & Access (Step 1/3) · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -2049,7 +2049,7 @@
       "x": 3590,
       "y": 52664,
       "w": 390,
-      "h": 1743,
+      "h": 1729,
       "title": "CR-COURSE-MGT-004-D · Edit Pricing & Access (Step 1/3) · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -2157,7 +2157,7 @@
     },
     "MGT-005.dc.html": {
       "x": 0,
-      "y": 54827,
+      "y": 54813,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-005-A · Course Updates & Versions (live v1.0 + draft v1.1) · Desktop",
@@ -2167,9 +2167,9 @@
     },
     "MGT-005-Mobile.dc.html": {
       "x": 1520,
-      "y": 54827,
+      "y": 54813,
       "w": 390,
-      "h": 1261,
+      "h": 1301,
       "title": "CR-COURSE-MGT-005-A · Course Updates & Versions (live v1.0 + draft v1.1) · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -2177,7 +2177,7 @@
     },
     "MGT-005-NONE.dc.html": {
       "x": 2070,
-      "y": 54827,
+      "y": 54813,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-005 · Course Updates & Versions (no active draft) · Desktop",
@@ -2187,9 +2187,9 @@
     },
     "MGT-005-NONE-Mobile.dc.html": {
       "x": 3590,
-      "y": 54827,
+      "y": 54813,
       "w": 390,
-      "h": 1022,
+      "h": 1017,
       "title": "CR-COURSE-MGT-005 · Course Updates & Versions (no active draft) · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -2197,7 +2197,7 @@
     },
     "MGT-005-CREATE.dc.html": {
       "x": 4140,
-      "y": 54827,
+      "y": 54813,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-005A · Create Course Update · Desktop",
@@ -2207,7 +2207,7 @@
     },
     "MGT-005-CREATE-Mobile.dc.html": {
       "x": 5660,
-      "y": 54827,
+      "y": 54813,
       "w": 390,
       "h": 1148,
       "title": "CR-COURSE-MGT-005A · Create Course Update · Mobile",
@@ -2217,9 +2217,9 @@
     },
     "MGT-005-COMPARE.dc.html": {
       "x": 6210,
-      "y": 54827,
+      "y": 54813,
       "w": 1440,
-      "h": 1035,
+      "h": 1009,
       "title": "CR-COURSE-MGT-005B · Compare Versions · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -2227,9 +2227,9 @@
     },
     "MGT-005-COMPARE-Mobile.dc.html": {
       "x": 7730,
-      "y": 54827,
+      "y": 54813,
       "w": 390,
-      "h": 1001,
+      "h": 974,
       "title": "CR-COURSE-MGT-005B · Compare Versions · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -2237,7 +2237,7 @@
     },
     "MGT-005-READY.dc.html": {
       "x": 8280,
-      "y": 54827,
+      "y": 54813,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-005C · Update Readiness & Revalidation · Desktop",
@@ -2247,7 +2247,7 @@
     },
     "MGT-005-READY-Mobile.dc.html": {
       "x": 9800,
-      "y": 54827,
+      "y": 54813,
       "w": 390,
       "h": 993,
       "title": "CR-COURSE-MGT-005C · Update Readiness & Revalidation · Mobile",
@@ -2257,7 +2257,7 @@
     },
     "MGT-005-VALIDATE.dc.html": {
       "x": 10350,
-      "y": 54827,
+      "y": 54813,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-005D · Update Under Validation · Desktop",
@@ -2267,7 +2267,7 @@
     },
     "MGT-005-VALIDATE-Mobile.dc.html": {
       "x": 11870,
-      "y": 54827,
+      "y": 54813,
       "w": 390,
       "h": 844,
       "title": "CR-COURSE-MGT-005D · Update Under Validation · Mobile",
@@ -2277,7 +2277,7 @@
     },
     "MGT-005-CHANGES.dc.html": {
       "x": 12420,
-      "y": 54827,
+      "y": 54813,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-005 (changes requested) · Validator finding returned to creator · Desktop",
@@ -2287,9 +2287,9 @@
     },
     "MGT-005-CHANGES-Mobile.dc.html": {
       "x": 13940,
-      "y": 54827,
+      "y": 54813,
       "w": 390,
-      "h": 934,
+      "h": 907,
       "title": "CR-COURSE-MGT-005 (changes requested) · Validator finding returned to creator · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -2297,7 +2297,7 @@
     },
     "MGT-005-ACTIVATE.dc.html": {
       "x": 14490,
-      "y": 54827,
+      "y": 54813,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-005E · Approved Update & Activation · Desktop",
@@ -2307,7 +2307,7 @@
     },
     "MGT-005-ACTIVATE-Mobile.dc.html": {
       "x": 16010,
-      "y": 54827,
+      "y": 54813,
       "w": 390,
       "h": 1074,
       "title": "CR-COURSE-MGT-005E · Approved Update & Activation · Mobile",
@@ -2317,7 +2317,7 @@
     },
     "MGT-005-HISTORY.dc.html": {
       "x": 16560,
-      "y": 54827,
+      "y": 54813,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-005F · Version History · Desktop",
@@ -2327,7 +2327,7 @@
     },
     "MGT-005-HISTORY-Mobile.dc.html": {
       "x": 18080,
-      "y": 54827,
+      "y": 54813,
       "w": 390,
       "h": 844,
       "title": "CR-COURSE-MGT-005F · Version History · Mobile",
@@ -2337,7 +2337,7 @@
     },
     "MGT-006.dc.html": {
       "x": 0,
-      "y": 56508,
+      "y": 56534,
       "w": 1440,
       "h": 1069,
       "title": "CR-COURSE-MGT-006A · Learner Access Dashboard · Desktop",
@@ -2347,9 +2347,9 @@
     },
     "MGT-006-Mobile.dc.html": {
       "x": 1520,
-      "y": 56508,
+      "y": 56534,
       "w": 390,
-      "h": 2035,
+      "h": 2019,
       "title": "CR-COURSE-MGT-006A · Learner Access Dashboard · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -2357,7 +2357,7 @@
     },
     "MGT-006-EMPTY.dc.html": {
       "x": 2070,
-      "y": 56508,
+      "y": 56534,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-006A · Variant — Empty State (no learners) · Desktop",
@@ -2367,7 +2367,7 @@
     },
     "MGT-006-EMPTY-Mobile.dc.html": {
       "x": 3590,
-      "y": 56508,
+      "y": 56534,
       "w": 390,
       "h": 844,
       "title": "CR-COURSE-MGT-006A · Variant — Empty State (no learners) · Mobile",
@@ -2377,7 +2377,7 @@
     },
     "MGT-006-DETAIL.dc.html": {
       "x": 4140,
-      "y": 56508,
+      "y": 56534,
       "w": 1440,
       "h": 964,
       "title": "CR-COURSE-MGT-006B · Learner Access Detail (drawer) · Desktop",
@@ -2387,9 +2387,9 @@
     },
     "MGT-006-DETAIL-Mobile.dc.html": {
       "x": 5660,
-      "y": 56508,
+      "y": 56534,
       "w": 390,
-      "h": 1249,
+      "h": 1233,
       "title": "CR-COURSE-MGT-006B · Learner Access Detail (drawer) · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -2397,7 +2397,7 @@
     },
     "MGT-006-ASSIGN.dc.html": {
       "x": 6210,
-      "y": 56508,
+      "y": 56534,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-006C · Course Version Assignments · Desktop",
@@ -2407,7 +2407,7 @@
     },
     "MGT-006-ASSIGN-Mobile.dc.html": {
       "x": 7730,
-      "y": 56508,
+      "y": 56534,
       "w": 390,
       "h": 844,
       "title": "CR-COURSE-MGT-006C · Course Version Assignments · Mobile",
@@ -2417,7 +2417,7 @@
     },
     "MGT-006-IMPACT.dc.html": {
       "x": 8280,
-      "y": 56508,
+      "y": 56534,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-006D · Learner Access Impact Review · Desktop",
@@ -2427,9 +2427,9 @@
     },
     "MGT-006-IMPACT-Mobile.dc.html": {
       "x": 9800,
-      "y": 56508,
+      "y": 56534,
       "w": 390,
-      "h": 976,
+      "h": 949,
       "title": "CR-COURSE-MGT-006D · Learner Access Impact Review · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -2437,7 +2437,7 @@
     },
     "MGT-006-UNPUB.dc.html": {
       "x": 10350,
-      "y": 56508,
+      "y": 56534,
       "w": 1440,
       "h": 900,
       "title": "CR-COURSE-MGT-006A · Variant — Course Unpublished · Desktop",
@@ -2447,9 +2447,9 @@
     },
     "MGT-006-UNPUB-Mobile.dc.html": {
       "x": 11870,
-      "y": 56508,
+      "y": 56534,
       "w": 390,
-      "h": 1263,
+      "h": 1247,
       "title": "CR-COURSE-MGT-006A · Variant — Course Unpublished · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -2457,7 +2457,7 @@
     },
     "Setup.dc.html": {
       "x": 0,
-      "y": 58963,
+      "y": 58973,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -2467,7 +2467,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 58963,
+      "y": 58973,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -2477,7 +2477,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 58963,
+      "y": 58973,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -2487,7 +2487,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 58963,
+      "y": 58973,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -2497,7 +2497,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 58963,
+      "y": 58973,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -2507,7 +2507,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 58963,
+      "y": 58973,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -2517,7 +2517,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 58963,
+      "y": 58973,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -2527,7 +2527,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 58963,
+      "y": 58973,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -2537,7 +2537,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 58963,
+      "y": 58973,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -2547,7 +2547,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 58963,
+      "y": 58973,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -2557,7 +2557,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 58963,
+      "y": 58973,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -2567,7 +2567,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 58963,
+      "y": 58973,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -2577,7 +2577,7 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 58963,
+      "y": 58973,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
@@ -2587,7 +2587,7 @@
     },
     "Manage2.dc.html": {
       "x": 20800,
-      "y": 58963,
+      "y": 58973,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (pricing, versions, learners) · shared source",
@@ -3162,11 +3162,11 @@
       "text": "Batch 7 · Course Updates & Versions: with draft, no draft, create update, compare, readiness, under validation, changes requested, activate, history",
       "w": 240,
       "x": 0,
-      "y": 54527
+      "y": 54513
     },
     "b7-versions-new": {
       "x": 0,
-      "y": 54677,
+      "y": 54663,
       "text": "NEW · batch 7",
       "w": 260,
       "fill": "pink"
@@ -3177,11 +3177,11 @@
       "text": "Batch 7 · Learner Access & Enrollment: dashboard, empty, learner detail drawer, version assignments, access impact, unpublished",
       "w": 240,
       "x": 0,
-      "y": 56208
+      "y": 56234
     },
     "b7-learners-new": {
       "x": 0,
-      "y": 56358,
+      "y": 56384,
       "text": "NEW · batch 7",
       "w": 260,
       "fill": "pink"
@@ -3192,7 +3192,7 @@
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 58663
+      "y": 58673
     }
   },
   "noteOrder": [

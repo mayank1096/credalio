@@ -67,12 +67,12 @@ P('p-a', head('Pricing & Access', 'Pricing & Access', 'Manage how new learners a
          coin(), tag('Enabled', 'green'), credit(), tag('Enabled', 'green')) + PROTECT))
 
 REASONS = ['Pricing or commercial adjustment', 'Promotional pricing change', 'Changing future access availability', 'Other']
+DLPLK = '''<section class="ds-card rx pe-lk ob-in3"><div class="pe-h"><span class="pe-i gold">%s</span><div><h2>Subscription DLP</h2><span class="ds-tag">%s Locked</span></div><b class="pe-v">1,800 <small>DLP</small></b></div><p class="pe-n">This requirement was established through the approved learning experience. Update course content through Course Studio if recalculation is needed.</p></section>''' % (coin(True), ic('lock', 11, 2.4))
 STOPS = [350, 400, 420, 450, 480, 500, 550]
 P('p-edit', head('Pricing & Access', 'Edit Pricing & Access', 'Adjust your approved Marketplace Credit price and available access options for future learners.', crumb_extra=('Edit Settings', 'MGT-004.dc.html')) +
   steps(0, ['Edit settings', 'Review changes', 'Done']) +
   wk('''<section class="ds-card fc ob-in2"><div class="pe-h"><span class="pe-i blue">%s</span><div><h2>Marketplace Credit Price</h2>%s</div><b class="pe-v">420 <small>Credits</small></b></div>
 <div class="pe-sl">%s<div class="pe-st">%s</div></div><p class="pe-n">Current published price: 420 Credits. Changes apply prospectively after approval or confirmation.</p></section>
-<section class="ds-card fc pe-lk ob-in3"><div class="pe-h"><span class="pe-i gold">%s</span><div><h2>Subscription DLP</h2><span class="ds-tag">%s Locked</span></div><b class="pe-v">1,800 <small>DLP</small></b></div><p class="pe-n">This requirement was established through the approved learning experience. Update course content through Course Studio if recalculation is needed.</p></section>
 <section class="ds-card fc ob-in3"><div class="fc-h"><div><h2>Access Channels</h2></div></div>
 <div class="ch2"><div class="ch2-r"><span class="aa-i gold">%s</span><span><b>Subscription DLP Access</b><em>Allow new eligible learners to consume the course using DLP.</em></span>%s</div>
 <div class="ch2-r"><span class="aa-i blue">%s</span><span><b>Marketplace Lifetime Access</b><em>Allow new learners to purchase lifetime access using Credits.</em></span>%s</div></div>
@@ -80,10 +80,10 @@ P('p-edit', head('Pricing & Access', 'Edit Pricing & Access', 'Adjust your appro
 <section class="ds-card fc ob-in4"><div class="fc-h"><div><h2>Reason for change</h2></div></div><div class="rs3">%s</div></section>''' % (
       credit(True), tag('%s Within Range' % ck(10), 'green'), band(350, 550, 420, cls='bl2'),
       ''.join('<button type="button" class="pe-s {{c%s}}" aria-pressed="{{a%s}}" onClick="{{x%s}}">%s</button>' % ((lambda k: (k, k, k))(W.new(v == 420, 'stop')) + (v,)) for v in STOPS),
-      coin(True), ic('lock', 11, 2.4), coin(), tg(), credit(), tg(), ic('warn', 15, 2.2),
+      coin(), tg(), credit(), tg(), ic('warn', 15, 2.2),
       ''.join(W.opt('<span class="o-t"><b>%s</b></span>' % r, i == 0, 'why', 'sm') for i, r in enumerate(REASONS))) +
      bar('<a class="ds-link" href="MGT-004.dc.html">Cancel</a>', btn('Review Changes', 'MGT-004-E.dc.html')),
-     '''<section class="ds-card rx pv3 ob-in3"><span class="rx-k">Learners will see</span><article class="pv-c"><span class="pv-cv"><i>SQL</i><em></em><em></em><em></em></span><b>Data Analysis with SQL</b><span class="pv3-p"><span>%s<b>1,800</b> DLP</span><span class="pv3-n">%s<b>420</b> Credits</span></span></article></section>''' % (coin(), credit()) + PROTECT))
+     '''%s<section class="ds-card rx pv3 ob-in3"><span class="rx-k">Learners will see</span><article class="pv-c"><span class="pv-cv"><i>SQL</i><em></em><em></em><em></em></span><b>Data Analysis with SQL</b><span class="pv3-p"><span>%s<b>1,800</b> DLP</span><span class="pv3-n">%s<b>420</b> Credits</span></span></article></section>''' % (DLPLK, coin(), credit()) + PROTECT))
 
 CMP = [('DLP requirement', '1,800 DLP', '1,800 DLP'), ('Marketplace price', '420 Credits', '480 Credits'), ('Subscription access', 'Enabled', 'Enabled'),
        ('Lifetime purchases', 'Enabled', 'Enabled'), ('Publication status', 'Published', 'Published')]
@@ -132,10 +132,10 @@ VSTRIP = strip('Technology / Data &amp; Analytics · Course ID: CRS-20394')
 P('v-a', head('Course Updates & Versions', 'Course Updates &amp; Versions', 'Improve your course while keeping the published learning experience protected.') +
   wk(VSTRIP + '''<div class="vrow ob-in2">%s<span class="vrow-x" aria-hidden="true"><i></i></span>
 <article class="vc draft"><header><span class="vc-k">Current Course Update</span><span class="ds-tag amber">Draft Update</span></header><b class="vc-v">Version 1.1</b><p class="vc-p">Your changes are saved separately and are not visible to learners yet.</p>
-<div class="vc-n">%s</div><div class="vc-cr"><em>Change review</em>%s</div><div class="vc-a"><a class="ds-ghost sm" href="STU-020.dc.html">Continue Editing</a><a class="ds-link sm" href="MGT-005-COMPARE.dc.html">Compare Changes%s</a></div></article></div>
-<section class="ds-card rdy ob-in3"><span class="rdy-i">%s</span><div><b>Ready for Review?</b><p>Check changes before submitting this version.</p></div>%s</section>''' % (
+<div class="vc-n">%s</div><div class="vc-cr"><em>Change review</em>%s</div><div class="vc-a"><a class="ds-ghost sm" href="STU-020.dc.html">Continue Editing</a><a class="ds-link sm" href="MGT-005-COMPARE.dc.html">Compare Changes%s</a></div></article></div>''' % (
       live_card(), ''.join('<span><b>%s</b><em>%s</em></span>' % x for x in [('4', 'Lessons modified'), ('2', 'New resources'), ('1', 'Assessments changed')]), tag('Not submitted'), ic('arrowr', 13, 2.2),
-      ic('check', 20, 2.2), btn('Review Update', 'MGT-005-READY.dc.html', 'sm2')),
+      ),
+     '<section class="ds-card rdy ob-in3"><span class="rdy-i">%s</span><div><b>Ready for Review?</b><p>Check changes before submitting this version.</p></div>%s</section>' % (ic('check', 20, 2.2), btn('Review Update', 'MGT-005-READY.dc.html', 'sm2')) +
      vhist(VHIST_D)))
 P('v-none', head('Course Updates & Versions', 'Course Updates &amp; Versions', 'Improve your course while keeping the published learning experience protected.') +
   wk(VSTRIP + '''<div class="vrow ob-in2">%s<span class="vrow-x" aria-hidden="true"><i></i></span>
@@ -940,6 +940,44 @@ CSS = stu6.MANAGE_CSS + r'''.cst2{display:flex;align-items:center;gap:16px;paddi
 .bn2{flex-wrap:wrap}
 .bn2 .ds-ghost{width:100%}
 }
+.ds-acts.wk-a2:has(.sv-s:empty){background:none;border:0;box-shadow:none;padding:0;backdrop-filter:none;-webkit-backdrop-filter:none}
+.wk-r .pe-lk .pe-h{flex-wrap:wrap;gap:10px 12px}
+.wk-r .pe-lk .pe-i{width:40px;height:40px;border-radius:13px}
+.wk-r .pe-lk h2{font-size:15px}
+.wk-r .pe-lk .pe-v{font-size:22px;margin-left:auto}
+.wk-r .pe-lk .pe-n{font-size:12.5px;margin-top:10px}
+.vc dl{gap:8px}
+.vc dl div{padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.75);border:1.5px solid #E2F0E8}
+.vc.live dl{flex:1;grid-auto-rows:1fr}
+.vc.new p{margin:0;font-size:13.5px;line-height:1.55;color:#3A4566}
+.vc-pl{animation:vcB 2.4s ease-in-out infinite}
+@keyframes vcB{50%{transform:scale(1.08);box-shadow:0 0 0 8px rgba(22,82,240,.12)}}
+.wk-r .rdy{flex-direction:column;align-items:flex-start;gap:10px;background:linear-gradient(160deg,#F5F8FF,#FFFFFF 60%);border-color:#C9D7FA}
+.wk-r .rdy .ds-btn{width:100%;justify-content:space-between}
+.rdy-i{animation:rdyP 2.6s ease-out infinite}
+@keyframes rdyP{0%{box-shadow:0 0 0 0 rgba(22,82,240,.3)}70%,100%{box-shadow:0 0 0 10px rgba(22,82,240,0)}}
+.va2{align-items:stretch}
+.va-c.live .va-b{height:16px;margin-top:auto}
+.va-c.live .va-s{margin-top:4px}
+.bd-tr::after{content:'';position:absolute;top:0;bottom:0;width:30%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.6),transparent);animation:bdS 3s ease-in-out 1.4s infinite}
+@keyframes bdS{from{left:-30%}to{left:110%}}
+.bd.iv .bd-tr::after{display:none}
+@media (max-width: 960px){
+.wk-r > .rdy{order:2}
+.wk-r .rdy{flex-direction:row;flex-wrap:wrap;align-items:center;gap:10px 12px;padding:14px}
+.wk-r .rdy > div{flex:1}
+.wk-r .rdy .ds-btn{flex-basis:100%}
+.wk-r > .pe-lk{order:2}
+.ao-x{display:none}
+.pe-st{grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin:14px 0 0 0;padding:0;overflow:visible}
+.pe-s{font-size:12px;height:36px;border-radius:10px}
+.vl-d{display:block}
+.vl-d:empty,.vl-d:not(:has(*)):is(:empty){display:none}
+.cst2{margin-top:14px}
+.wk .cst2{margin-top:0}
+.bk-r{padding:8px 0}
+}
+
 '''
 
 write('Manage2.dc.html', doc('Manage Published Course · pricing, versions, learners · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + WK_CSS + CSS, body(), JS))

@@ -3915,9 +3915,369 @@
       "is_interactive": true,
       "expand": "fill"
     },
-    "Setup.dc.html": {
+    "INV-001.dc.html": {
       "x": 0,
       "y": 80535,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-001 · My Invitations (pending) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-001-Mobile.dc.html": {
+      "x": 1520,
+      "y": 80535,
+      "w": 390,
+      "h": 979,
+      "title": "CR-INV-001 · My Invitations (pending) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-001-ACCEPTED.dc.html": {
+      "x": 2070,
+      "y": 80535,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-001 · My Invitations (accepted) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-001-ACCEPTED-Mobile.dc.html": {
+      "x": 3590,
+      "y": 80535,
+      "w": 390,
+      "h": 844,
+      "title": "CR-INV-001 · My Invitations (accepted) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-001-DECLINED.dc.html": {
+      "x": 4140,
+      "y": 80535,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-001 · My Invitations (declined) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-001-DECLINED-Mobile.dc.html": {
+      "x": 5660,
+      "y": 80535,
+      "w": 390,
+      "h": 844,
+      "title": "CR-INV-001 · My Invitations (declined) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-001-ALL.dc.html": {
+      "x": 6210,
+      "y": 80535,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-001 · My Invitations (all) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-001-ALL-Mobile.dc.html": {
+      "x": 7730,
+      "y": 80535,
+      "w": 390,
+      "h": 947,
+      "title": "CR-INV-001 · My Invitations (all) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-001-EMPTY.dc.html": {
+      "x": 8280,
+      "y": 80535,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-001 · My Invitations (empty) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-001-EMPTY-Mobile.dc.html": {
+      "x": 9800,
+      "y": 80535,
+      "w": 390,
+      "h": 844,
+      "title": "CR-INV-001 · My Invitations (empty) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-002.dc.html": {
+      "x": 10350,
+      "y": 80535,
+      "w": 1440,
+      "h": 1021,
+      "title": "CR-INV-002 · Invitation details · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-002-Mobile.dc.html": {
+      "x": 11870,
+      "y": 80535,
+      "w": 390,
+      "h": 1523,
+      "title": "CR-INV-002 · Invitation details · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-002-EXPIRED.dc.html": {
+      "x": 12420,
+      "y": 80535,
+      "w": 1440,
+      "h": 1080,
+      "title": "CR-INV-002 · Invitation details (expired) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-002-EXPIRED-Mobile.dc.html": {
+      "x": 13940,
+      "y": 80535,
+      "w": 390,
+      "h": 1610,
+      "title": "CR-INV-002 · Invitation details (expired) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-002-WITHDRAWN.dc.html": {
+      "x": 14490,
+      "y": 80535,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-002 · Offer withdrawn · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-002-WITHDRAWN-Mobile.dc.html": {
+      "x": 16010,
+      "y": 80535,
+      "w": 390,
+      "h": 844,
+      "title": "CR-INV-002 · Offer withdrawn · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-003.dc.html": {
+      "x": 16560,
+      "y": 80535,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-003 · Accept invitation · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-003-Mobile.dc.html": {
+      "x": 18080,
+      "y": 80535,
+      "w": 390,
+      "h": 1088,
+      "title": "CR-INV-003 · Accept invitation · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-004.dc.html": {
+      "x": 18630,
+      "y": 80535,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-004 · Decline invitation · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-004-Mobile.dc.html": {
+      "x": 20150,
+      "y": 80535,
+      "w": 390,
+      "h": 1148,
+      "title": "CR-INV-004 · Decline invitation · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "NAV-002.dc.html": {
+      "x": 20700,
+      "y": 80535,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-NAV-002 · Shared Courses · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "NAV-002-Mobile.dc.html": {
+      "x": 22220,
+      "y": 80535,
+      "w": 390,
+      "h": 1072,
+      "title": "CR-NAV-002 · Shared Courses · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-005A.dc.html": {
+      "x": 0,
+      "y": 82565,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-005A · Accepted · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-005A-Mobile.dc.html": {
+      "x": 1520,
+      "y": 82565,
+      "w": 390,
+      "h": 844,
+      "title": "CR-INV-005A · Accepted · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-005B.dc.html": {
+      "x": 2070,
+      "y": 82565,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-005B · Accepted, activation pending · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-005B-Mobile.dc.html": {
+      "x": 3590,
+      "y": 82565,
+      "w": 390,
+      "h": 844,
+      "title": "CR-INV-005B · Accepted, activation pending · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-005C.dc.html": {
+      "x": 4140,
+      "y": 82565,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-005C · Declined · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-005C-Mobile.dc.html": {
+      "x": 5660,
+      "y": 82565,
+      "w": 390,
+      "h": 844,
+      "title": "CR-INV-005C · Declined · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-005D.dc.html": {
+      "x": 6210,
+      "y": 82565,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-005D · Expired · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-005D-Mobile.dc.html": {
+      "x": 7730,
+      "y": 82565,
+      "w": 390,
+      "h": 844,
+      "title": "CR-INV-005D · Expired · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-005E.dc.html": {
+      "x": 8280,
+      "y": 82565,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-005E · Withdrawn · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-005E-Mobile.dc.html": {
+      "x": 9800,
+      "y": 82565,
+      "w": 390,
+      "h": 844,
+      "title": "CR-INV-005E · Withdrawn · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-005F.dc.html": {
+      "x": 10350,
+      "y": 82565,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-005F · Already responded · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-005F-Mobile.dc.html": {
+      "x": 11870,
+      "y": 82565,
+      "w": 390,
+      "h": 844,
+      "title": "CR-INV-005F · Already responded · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-005G.dc.html": {
+      "x": 12420,
+      "y": 82565,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-INV-005G · Superseded · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "INV-005G-Mobile.dc.html": {
+      "x": 13940,
+      "y": 82565,
+      "w": 390,
+      "h": 844,
+      "title": "CR-INV-005G · Superseded · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Setup.dc.html": {
+      "x": 0,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -3927,7 +4287,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -3937,7 +4297,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -3947,7 +4307,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -3957,7 +4317,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -3967,7 +4327,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -3977,7 +4337,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -3987,7 +4347,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -3997,7 +4357,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -4007,7 +4367,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -4017,7 +4377,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -4027,7 +4387,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -4037,7 +4397,7 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
@@ -4047,7 +4407,7 @@
     },
     "Manage2.dc.html": {
       "x": 20800,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (pricing, versions, learners) · shared source",
@@ -4057,7 +4417,7 @@
     },
     "Manage3.dc.html": {
       "x": 22400,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (validation, archive, insights) · shared source",
@@ -4067,7 +4427,7 @@
     },
     "Collab.dc.html": {
       "x": 24000,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Course collaboration (invite, permissions, manage, remove) · shared source",
@@ -4077,10 +4437,20 @@
     },
     "Collab2.dc.html": {
       "x": 25600,
-      "y": 80535,
+      "y": 83885,
       "w": 1440,
       "h": 900,
       "title": "Open collaboration (setup, applications, offers, manage opportunity) · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Collab3.dc.html": {
+      "x": 27200,
+      "y": 83885,
+      "w": 1440,
+      "h": 900,
+      "title": "Collaboration, creator side (my invitations, shared courses) · shared source",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -4477,6 +4847,42 @@
     "COL-010-CLOSED-Mobile.dc.html",
     "COL-010-WITHDRAW.dc.html",
     "COL-010-WITHDRAW-Mobile.dc.html",
+    "INV-001.dc.html",
+    "INV-001-Mobile.dc.html",
+    "INV-001-ACCEPTED.dc.html",
+    "INV-001-ACCEPTED-Mobile.dc.html",
+    "INV-001-DECLINED.dc.html",
+    "INV-001-DECLINED-Mobile.dc.html",
+    "INV-001-ALL.dc.html",
+    "INV-001-ALL-Mobile.dc.html",
+    "INV-001-EMPTY.dc.html",
+    "INV-001-EMPTY-Mobile.dc.html",
+    "INV-002.dc.html",
+    "INV-002-Mobile.dc.html",
+    "INV-002-EXPIRED.dc.html",
+    "INV-002-EXPIRED-Mobile.dc.html",
+    "INV-002-WITHDRAWN.dc.html",
+    "INV-002-WITHDRAWN-Mobile.dc.html",
+    "INV-003.dc.html",
+    "INV-003-Mobile.dc.html",
+    "INV-004.dc.html",
+    "INV-004-Mobile.dc.html",
+    "NAV-002.dc.html",
+    "NAV-002-Mobile.dc.html",
+    "INV-005A.dc.html",
+    "INV-005A-Mobile.dc.html",
+    "INV-005B.dc.html",
+    "INV-005B-Mobile.dc.html",
+    "INV-005C.dc.html",
+    "INV-005C-Mobile.dc.html",
+    "INV-005D.dc.html",
+    "INV-005D-Mobile.dc.html",
+    "INV-005E.dc.html",
+    "INV-005E-Mobile.dc.html",
+    "INV-005F.dc.html",
+    "INV-005F-Mobile.dc.html",
+    "INV-005G.dc.html",
+    "INV-005G-Mobile.dc.html",
     "Setup.dc.html",
     "Studio.dc.html",
     "Builder.dc.html",
@@ -4493,7 +4899,8 @@
     "Manage2.dc.html",
     "Manage3.dc.html",
     "Collab.dc.html",
-    "Collab2.dc.html"
+    "Collab2.dc.html",
+    "Collab3.dc.html"
   ],
   "notes": {
     "b1-setup": {
@@ -4967,13 +5374,43 @@
       "w": 260,
       "fill": "pink"
     },
+    "b12-invites": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 12 · My Invitations: pending, accepted, declined, all, empty · details (pending, expired, withdrawn) · accept · decline · Shared Courses",
+      "w": 240,
+      "x": 0,
+      "y": 80235
+    },
+    "b12-invites-new": {
+      "x": 0,
+      "y": 80385,
+      "text": "NEW · batch 12",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b12-outcomes": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 12 · Invitation outcomes: accepted, activation pending, declined, expired, withdrawn, already responded, superseded",
+      "w": 240,
+      "x": 0,
+      "y": 82265
+    },
+    "b12-outcomes-new": {
+      "x": 0,
+      "y": 82415,
+      "text": "NEW · batch 12",
+      "w": 260,
+      "fill": "pink"
+    },
     "sources": {
       "kind": "title1",
       "maxW": 3200,
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 80235
+      "y": 83585
     }
   },
   "noteOrder": [
@@ -5040,6 +5477,10 @@
     "b11-apps-new",
     "b11-manage",
     "b11-manage-new",
+    "b12-invites",
+    "b12-invites-new",
+    "b12-outcomes",
+    "b12-outcomes-new",
     "sources"
   ],
   "designSystems": [],

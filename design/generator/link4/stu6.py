@@ -368,6 +368,7 @@ MANAGE_CSS = SHARED + r'''.cr-root{grid-template-columns:264px minmax(0,1fr)}
 .cw-me{display:flex;border-radius:50%}
 .mg-main{position:relative;isolation:isolate;max-width:1240px}
 .mg-main::before{content:'';position:absolute;z-index:-1;left:0;right:0;top:-80px;height:300px;pointer-events:none;background:radial-gradient(60% 100% at 30% 0,rgba(22,82,240,.07),transparent 70%)}
+.mg-main:has(.ov-scrim){z-index:30}
 .mg-main.tn-ok::before{background:radial-gradient(60% 100% at 30% 0,rgba(15,107,69,.09),transparent 70%)}
 .mg-main.tn-am::before{background:radial-gradient(60% 100% at 30% 0,rgba(214,140,20,.11),transparent 70%)}
 .mg-main.tn-rd::before{background:radial-gradient(60% 100% at 30% 0,rgba(217,45,32,.08),transparent 70%)}

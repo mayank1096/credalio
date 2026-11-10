@@ -1197,6 +1197,25 @@ TEAM_CSS = r'''.lc-av.k2{background:linear-gradient(140deg,#3FB58A,#0F6B45) !imp
 .mtc-cp{margin-top:14px;display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;border:1.5px dashed #F0D08A;background:#FFFAEB}
 .mtc-cp p{flex:1;margin:0;font-size:13px;line-height:1.5;color:#6B4A00}
 .mtc-cp .ds-ghost{flex-shrink:0;gap:7px;background:#FFFFFF;border-color:#F0D08A;color:#5A3B00}
+.lc-s.lc-wim{display:none}
+.lc-buy .lc-wir .lc-sh{margin-bottom:6px}
+.lc-buy .lc-wir .lc-p{font-size:13px}
+.lc-buy .lc-wir .lc-in5{margin-top:12px;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.lc-buy .lc-wir .lc-in5 span{padding:10px 12px;border-radius:12px}
+.lc-buy .lc-wir .lc-in5 span:first-child{grid-column:1 / -1;flex-direction:row;align-items:baseline;gap:8px}
+.lc-buy .lc-wir .lc-in5 b{font-size:18px}
+.lc-buy .lc-wir .lc-in5 em{font-size:12px}
+.lc-buy .lc-wir .lc-al{margin:14px 0 8px 0;font-size:12.5px}
+.lc-buy .lc-wir .lc-ul{gap:7px}
+.lc-buy .lc-wir .lc-ul li{font-size:13px}
+.lc-main .mtc-cp{display:none}
+.lc-buy .lc-s.mtc-cpr{display:flex;flex-direction:column;align-items:flex-start;gap:10px;border:1.5px dashed #F0D08A;background:#FFFAEB}
+.mtc-cpr p{margin:0;font-size:13px;line-height:1.55;color:#6B4A00}
+.mtc-cpr .ds-ghost{gap:7px;background:#FFFFFF;border-color:#F0D08A;color:#5A3B00}
+.mtc-dots{display:none}
+.mtc-c.lead header .av{box-shadow:0 0 0 3px #FFFFFF,0 0 0 5px #C9D7FA;animation:mtcR 3.2s ease-in-out infinite}
+@keyframes mtcR{50%{box-shadow:0 0 0 3px #FFFFFF,0 0 0 7px rgba(22,82,240,.18)}}
+.cp-l .mtc-s{font-size:12.5px;gap:2px 12px}
 .cp-o{position:fixed;inset:0;z-index:1000;background:rgba(11,20,51,.38);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);animation:cpF .3s ease both}
 @keyframes cpF{from{opacity:0}}
 .cp{position:fixed;z-index:1001;top:0;right:0;bottom:0;width:480px;max-width:100vw;box-sizing:border-box;display:flex;flex-direction:column;background:#FFFFFF;box-shadow:-24px 0 64px rgba(11,20,51,.2);animation:cpIn .5s cubic-bezier(.2,.8,.2,1) both}
@@ -1211,18 +1230,25 @@ TEAM_CSS = r'''.lc-av.k2{background:linear-gradient(140deg,#3FB58A,#0F6B45) !imp
 .cp-h h2{margin:0;font-size:22px;font-weight:600;letter-spacing:-0.015em}
 .cp-h p{margin:6px 0 0 0;font-size:14px;line-height:1.55;color:#5B6582}
 .cp-l{flex:1;overflow-y:auto;list-style:none;margin:0;padding:8px 24px}
-.cp-l li{display:grid;grid-template-columns:44px minmax(0,1fr) auto;align-items:start;column-gap:14px;padding:16px 0;border-top:1.5px solid #F0F2F8;animation:obIn .45s ease both;animation-delay:calc(var(--i) * 70ms + 200ms)}
+.cp-l li{display:grid;grid-template-columns:44px minmax(0,1fr);align-items:start;column-gap:14px;padding:16px 0;border-top:1.5px solid #F0F2F8;animation:obIn .45s ease both;animation-delay:calc(var(--i) * 70ms + 200ms)}
 .cp-l li:first-child{border-top:0}
 .cp-l li > div{display:flex;flex-direction:column;gap:4px;min-width:0}
 .cp-l .mtc-n b{font-size:15px}
 .cp-l em{font-size:12.5px;line-height:1.45}
 .cp-l p{margin:2px 0 0 0;font-size:13px;line-height:1.5}
-.cp-l .ds-link{margin-top:2px;white-space:nowrap}
+.cp-l .ds-link{grid-column:2;justify-self:start;margin-top:8px;white-space:nowrap}
+.cp-l li:hover .ds-link svg{transform:translateX(3px)}
 .cp-f{display:flex;justify-content:flex-end;padding:14px 24px;border-top:1.5px solid #EEF1F7}
 @media (max-width: 960px){
 .lc-by{align-items:flex-start;gap:10px;font-size:13.5px}
 .lc-by > span:last-child{line-height:1.5}
-.lc-avs > *,.lc-more{width:34px !important;height:34px !important;font-size:11.5px !important}
+.lc-avs > *,.lc-more{width:30px !important;height:30px !important;font-size:10.5px !important}
+.lc-avs > *{margin-left:-7px}
+.lc-s.lc-wim{display:block}
+.lc-buy .lc-s.lc-wir,.lc-buy .lc-s.mtc-cpr{display:none}
+.mtc-dots{display:flex;justify-content:center;gap:6px;margin-top:4px}
+.mtc-dots i{width:6px;height:6px;border-radius:6px;background:#D6DDEE}
+.mtc-dots i.on{width:18px;background:#1652F0}
 .mtc{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 8px 16px;scrollbar-width:none}
 .mtc::-webkit-scrollbar{display:none}
 .mtc-c{flex:0 0 84%;box-sizing:border-box;scroll-snap-align:start;scroll-margin-left:16px;padding:16px;gap:8px;border-radius:18px}
@@ -1230,9 +1256,10 @@ TEAM_CSS = r'''.lc-av.k2{background:linear-gradient(140deg,#3FB58A,#0F6B45) !imp
 .mtc-all{margin-top:8px}
 .mtc-c .av{width:44px !important;height:44px !important}
 .mtc-n b{font-size:15px}
-.mtc-cp{flex-wrap:wrap;gap:8px 10px}
-.mtc-cp p{flex-basis:100%;order:2}
-.mtc-cp .ds-ghost{order:3}
+.lc-main .mtc-cp{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:8px 10px;padding:12px}
+.mtc-cp .pvs-t{justify-self:start}
+.mtc-cp .ds-ghost{grid-column:2;grid-row:1;justify-self:end;height:34px;padding:0 12px;font-size:13px}
+.mtc-cp p{grid-column:1 / -1;grid-row:2;font-size:12.5px}
 .cp{top:auto;width:100%;max-height:88vh;border-radius:24px 24px 0 0;animation:cpUp .5s cubic-bezier(.2,.8,.2,1) both}
 @keyframes cpUp{from{transform:translateY(60px);opacity:0}}
 .cp::before{content:'';position:absolute;left:50%;top:8px;width:40px;height:4px;margin-left:-20px;border-radius:4px;background:#D6DDEE}
@@ -1276,10 +1303,11 @@ def tcard(i, m):
             '<p class="mtc-k"><span>Contributed:</span> %s</p><a class="ds-link sm" href="#">View profile%s</a></article>') % (
         ' lead' if i == 0 else '', i, tav(m, 52), m[1], trole(m), m[3], ck(10), m[4], m[5], m[6], m[7], ic('arrowr', 13, 2.2))
 CP_NOTE = '<div class="mtc-cp"><span class="pvs-t">Creator Preview</span><p>%s</p><a class="ds-ghost sm" href="CREDITS.dc.html">%s<span>Change credits</span></a></div>'
-MEET2 = sec('Meet the creators', '<p class="lc-p mtc-p">Built by a Lead Creator and 1 Co-Creator.</p><div class="mtc">%s</div>%s' % (
+DOTS = lambda n: '<div class="mtc-dots" aria-hidden="true">%s</div>' % ''.join('<i%s></i>' % (' class="on"' if j == 0 else '') for j in range(n))
+MEET2 = sec('Meet the creators', ('<p class="lc-p mtc-p">Built by a Lead Creator and 1 Co-Creator.</p><div class="mtc">%s</div>' + DOTS(2) + '%s') % (
     ''.join(tcard(i, m) for i, m in enumerate(TEAM[:2])),
     CP_NOTE % ('Learners see 2 of 4 team members. 1 contributor and 1 reviewer are hidden, and 1 pending invitation is not shown.', ic('users', 15, 2))), 'mt')
-MEET5 = sec('Meet the creators', '<p class="lc-p mtc-p">Built by a Lead Creator and 4 Co-Creators.</p><div class="mtc">%s</div><a class="ds-ghost mtc-all" href="%s"><span class="mtc-sa">%s</span><span>View all 5 creators</span></a>%s' % (
+MEET5 = sec('Meet the creators', ('<p class="lc-p mtc-p">Built by a Lead Creator and 4 Co-Creators.</p><div class="mtc">%s</div>' + DOTS(4) + '<a class="ds-ghost mtc-all" href="%s"><span class="mtc-sa">%s</span><span>View all 5 creators</span></a>%s') % (
     ''.join(tcard(i, m) for i, m in enumerate(TEAM[:4])), PANEL_URL, ''.join(tav(m, 24) for m in TEAM),
     CP_NOTE % ('Learners see 5 credited creators: 3 names on the page and 4 cards. Everyone is in the panel.', ic('users', 15, 2))), 'mt')
 MEET2 = MEET2.replace('<section class="lc-s mt">', '<section class="lc-s mt" id="lc-meet">')
@@ -1288,12 +1316,22 @@ assert COURSE_PAGE.count(_m) == 1
 COURSE_PAGE = COURSE_PAGE.replace(_m, '<sc-if value="{{t_solo}}" hint-placeholder-val="{{ true }}">%s</sc-if>' % _m)
 _wi = '<section class="lc-s"><div class="lc-sh"><h2>What’s Included'
 assert COURSE_PAGE.count(_wi) == 1
-COURSE_PAGE = COURSE_PAGE.replace(_wi, '<sc-if value="{{t_2}}" hint-placeholder-val="{{ false }}">%s</sc-if><sc-if value="{{t_5}}" hint-placeholder-val="{{ false }}">%s</sc-if>%s' % (MEET2, MEET5, _wi))
+CPR = '<section class="lc-s mtc-cpr"><span class="pvs-t">Creator Preview</span><p>%s</p><a class="ds-ghost sm" href="CREDITS.dc.html">%s<span>Change credits</span></a></section>'
+_wi0 = COURSE_PAGE.index(_wi); _wis = COURSE_PAGE[_wi0:COURSE_PAGE.index('</section>', _wi0) + len('</section>')]
+COURSE_PAGE = COURSE_PAGE.replace(_wis, _wis.replace('<section class="lc-s">', '<section class="lc-s lc-wim">', 1))
+assert COURSE_PAGE.count(_c) == 1
+COURSE_PAGE = COURSE_PAGE.replace(_c, _c + '<sc-if value="{{t_2}}" hint-placeholder-val="{{ false }}">%s</sc-if><sc-if value="{{t_5}}" hint-placeholder-val="{{ false }}">%s</sc-if>%s' % (
+    CPR % ('Learners see 2 of 4 team members. 1 contributor and 1 reviewer are hidden, and 1 pending invitation is not shown.', ic('users', 15, 2)),
+    CPR % ('Learners see 5 credited creators: 3 names on the page and 4 cards. Everyone is in the panel.', ic('users', 15, 2)),
+    _wis.replace('<section class="lc-s">', '<section class="lc-s lc-wir">', 1)))
+_wim = '<section class="lc-s lc-wim">'
+assert COURSE_PAGE.count(_wim) == 1
+COURSE_PAGE = COURSE_PAGE.replace(_wim, '<sc-if value="{{t_2}}" hint-placeholder-val="{{ false }}">%s</sc-if><sc-if value="{{t_5}}" hint-placeholder-val="{{ false }}">%s</sc-if>%s' % (MEET2, MEET5, _wim))
 PANEL = '''<a class="cp-o" href="LEARN-CREATORS-5.dc.html" aria-label="Close"></a>
 <aside class="cp" role="dialog" aria-modal="true" aria-label="Course creators"><header class="cp-h"><div><span class="cp-avs" aria-hidden="true">%s</span><h2>Course creators</h2><p>Data Analysis with SQL was created by 1 Lead Creator and 4 Co-Creators. Revenue arrangements are private and never shown.</p></div><a class="ds-x sm" href="LEARN-CREATORS-5.dc.html" aria-label="Close">%s</a></header>
 <ol class="cp-l">%s</ol><footer class="cp-f"><a class="ds-ghost" href="LEARN-CREATORS-5.dc.html">Close</a></footer></aside>''' % (
     ''.join(tav(m, 30) for m in TEAM), ic('x', 16, 2.2),
-    ''.join('<li style="--i: %d">%s<div><span class="mtc-n"><b>%s</b>%s</span><em>%s · %s courses · %s learners · %s</em><p><span>Contributed:</span> %s</p></div><a class="ds-link sm" href="#">View profile%s</a></li>' % (
+    ''.join('<li style="--i: %d">%s<div><span class="mtc-n"><b>%s</b>%s</span><em>%s</em><span class="mtc-s"><span><b>%s</b> courses</span><span><b>%s</b> learners</span><span class="mtc-st"><b>%s</b><i></i></span></span><p><span>Contributed:</span> %s</p></div><a class="ds-link sm" href="#">View profile%s</a></li>' % (
         i, tav(m, 44), m[1], trole(m), m[3], m[4], m[5], m[6], m[7], ic('arrowr', 13, 2.2)) for i, m in enumerate(TEAM)))
 COURSE_PAGE = COURSE_PAGE + '<sc-if value="{{s_panel}}" hint-placeholder-val="{{ false }}">%s</sc-if>' % PANEL
 

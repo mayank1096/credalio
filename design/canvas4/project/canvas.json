@@ -1039,7 +1039,7 @@
       "x": 4140,
       "y": 29015,
       "w": 1440,
-      "h": 3467,
+      "h": 3075,
       "title": "Creator Preview · Preview as Learner · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -2919,7 +2919,7 @@
       "x": 0,
       "y": 65208,
       "w": 1440,
-      "h": 944,
+      "h": 973,
       "title": "CR-COURSE-CREDITS · Course Credits & Visibility · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -2929,7 +2929,7 @@
       "x": 1520,
       "y": 65208,
       "w": 390,
-      "h": 1803,
+      "h": 1619,
       "title": "CR-COURSE-CREDITS · Course Credits & Visibility · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -2939,7 +2939,7 @@
       "x": 2070,
       "y": 65208,
       "w": 1440,
-      "h": 944,
+      "h": 973,
       "title": "CR-COURSE-CREDITS-ASK · Ask a contributor to be credited · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -2959,7 +2959,7 @@
       "x": 4140,
       "y": 65208,
       "w": 1440,
-      "h": 3913,
+      "h": 3437,
       "title": "CR-LEARN-CREATORS-2 · Course Overview with 2 creators (Lead + 1 Co-Creator) · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -2969,7 +2969,7 @@
       "x": 5660,
       "y": 65208,
       "w": 390,
-      "h": 5803,
+      "h": 5750,
       "title": "CR-LEARN-CREATORS-2 · Course Overview with 2 creators (Lead + 1 Co-Creator) · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -2979,7 +2979,7 @@
       "x": 6210,
       "y": 65208,
       "w": 1440,
-      "h": 4216,
+      "h": 3740,
       "title": "CR-LEARN-CREATORS-5 · Course Overview with 5 creators (3 names + 2 others, 4 cards) · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -2989,7 +2989,7 @@
       "x": 7730,
       "y": 65208,
       "w": 390,
-      "h": 5835,
+      "h": 5802,
       "title": "CR-LEARN-CREATORS-5 · Course Overview with 5 creators (3 names + 2 others, 4 cards) · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -3017,7 +3017,7 @@
     },
     "Setup.dc.html": {
       "x": 0,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -3027,7 +3027,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -3037,7 +3037,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -3047,7 +3047,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -3057,7 +3057,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -3067,7 +3067,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -3077,7 +3077,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -3087,7 +3087,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -3097,7 +3097,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -3107,7 +3107,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -3117,7 +3117,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -3127,7 +3127,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -3137,7 +3137,7 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
@@ -3147,7 +3147,7 @@
     },
     "Manage2.dc.html": {
       "x": 20800,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (pricing, versions, learners) · shared source",
@@ -3157,7 +3157,7 @@
     },
     "Manage3.dc.html": {
       "x": 22400,
-      "y": 71463,
+      "y": 71430,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (validation, archive, insights) · shared source",
@@ -3879,7 +3879,7 @@
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 71163
+      "y": 71130
     }
   },
   "noteOrder": [

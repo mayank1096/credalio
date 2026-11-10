@@ -3929,7 +3929,7 @@
       "x": 1520,
       "y": 80535,
       "w": 390,
-      "h": 979,
+      "h": 1021,
       "title": "CR-INV-001 · My Invitations (pending) · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -3989,7 +3989,7 @@
       "x": 7730,
       "y": 80535,
       "w": 390,
-      "h": 947,
+      "h": 844,
       "title": "CR-INV-001 · My Invitations (all) · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -4019,7 +4019,7 @@
       "x": 10350,
       "y": 80535,
       "w": 1440,
-      "h": 1021,
+      "h": 900,
       "title": "CR-INV-002 · Invitation details · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -4029,7 +4029,7 @@
       "x": 11870,
       "y": 80535,
       "w": 390,
-      "h": 1523,
+      "h": 1435,
       "title": "CR-INV-002 · Invitation details · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -4039,7 +4039,7 @@
       "x": 12420,
       "y": 80535,
       "w": 1440,
-      "h": 1080,
+      "h": 916,
       "title": "CR-INV-002 · Invitation details (expired) · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -4049,7 +4049,7 @@
       "x": 13940,
       "y": 80535,
       "w": 390,
-      "h": 1610,
+      "h": 1521,
       "title": "CR-INV-002 · Invitation details (expired) · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -4109,7 +4109,7 @@
       "x": 20150,
       "y": 80535,
       "w": 390,
-      "h": 1148,
+      "h": 1134,
       "title": "CR-INV-004 · Decline invitation · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -4129,7 +4129,7 @@
       "x": 22220,
       "y": 80535,
       "w": 390,
-      "h": 1072,
+      "h": 938,
       "title": "CR-NAV-002 · Shared Courses · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -4137,7 +4137,7 @@
     },
     "INV-005A.dc.html": {
       "x": 0,
-      "y": 82565,
+      "y": 82476,
       "w": 1440,
       "h": 900,
       "title": "CR-INV-005A · Accepted · Desktop",
@@ -4147,7 +4147,7 @@
     },
     "INV-005A-Mobile.dc.html": {
       "x": 1520,
-      "y": 82565,
+      "y": 82476,
       "w": 390,
       "h": 844,
       "title": "CR-INV-005A · Accepted · Mobile",
@@ -4157,7 +4157,7 @@
     },
     "INV-005B.dc.html": {
       "x": 2070,
-      "y": 82565,
+      "y": 82476,
       "w": 1440,
       "h": 900,
       "title": "CR-INV-005B · Accepted, activation pending · Desktop",
@@ -4167,7 +4167,7 @@
     },
     "INV-005B-Mobile.dc.html": {
       "x": 3590,
-      "y": 82565,
+      "y": 82476,
       "w": 390,
       "h": 844,
       "title": "CR-INV-005B · Accepted, activation pending · Mobile",
@@ -4177,7 +4177,7 @@
     },
     "INV-005C.dc.html": {
       "x": 4140,
-      "y": 82565,
+      "y": 82476,
       "w": 1440,
       "h": 900,
       "title": "CR-INV-005C · Declined · Desktop",
@@ -4187,7 +4187,7 @@
     },
     "INV-005C-Mobile.dc.html": {
       "x": 5660,
-      "y": 82565,
+      "y": 82476,
       "w": 390,
       "h": 844,
       "title": "CR-INV-005C · Declined · Mobile",
@@ -4197,7 +4197,7 @@
     },
     "INV-005D.dc.html": {
       "x": 6210,
-      "y": 82565,
+      "y": 82476,
       "w": 1440,
       "h": 900,
       "title": "CR-INV-005D · Expired · Desktop",
@@ -4207,7 +4207,7 @@
     },
     "INV-005D-Mobile.dc.html": {
       "x": 7730,
-      "y": 82565,
+      "y": 82476,
       "w": 390,
       "h": 844,
       "title": "CR-INV-005D · Expired · Mobile",
@@ -4217,7 +4217,7 @@
     },
     "INV-005E.dc.html": {
       "x": 8280,
-      "y": 82565,
+      "y": 82476,
       "w": 1440,
       "h": 900,
       "title": "CR-INV-005E · Withdrawn · Desktop",
@@ -4227,7 +4227,7 @@
     },
     "INV-005E-Mobile.dc.html": {
       "x": 9800,
-      "y": 82565,
+      "y": 82476,
       "w": 390,
       "h": 844,
       "title": "CR-INV-005E · Withdrawn · Mobile",
@@ -4237,7 +4237,7 @@
     },
     "INV-005F.dc.html": {
       "x": 10350,
-      "y": 82565,
+      "y": 82476,
       "w": 1440,
       "h": 900,
       "title": "CR-INV-005F · Already responded · Desktop",
@@ -4247,7 +4247,7 @@
     },
     "INV-005F-Mobile.dc.html": {
       "x": 11870,
-      "y": 82565,
+      "y": 82476,
       "w": 390,
       "h": 844,
       "title": "CR-INV-005F · Already responded · Mobile",
@@ -4257,7 +4257,7 @@
     },
     "INV-005G.dc.html": {
       "x": 12420,
-      "y": 82565,
+      "y": 82476,
       "w": 1440,
       "h": 900,
       "title": "CR-INV-005G · Superseded · Desktop",
@@ -4267,7 +4267,7 @@
     },
     "INV-005G-Mobile.dc.html": {
       "x": 13940,
-      "y": 82565,
+      "y": 82476,
       "w": 390,
       "h": 844,
       "title": "CR-INV-005G · Superseded · Mobile",
@@ -4277,7 +4277,7 @@
     },
     "Setup.dc.html": {
       "x": 0,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -4287,7 +4287,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -4297,7 +4297,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -4307,7 +4307,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -4317,7 +4317,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -4327,7 +4327,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -4337,7 +4337,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -4347,7 +4347,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -4357,7 +4357,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -4367,7 +4367,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -4377,7 +4377,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -4387,7 +4387,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -4397,7 +4397,7 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
@@ -4407,7 +4407,7 @@
     },
     "Manage2.dc.html": {
       "x": 20800,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (pricing, versions, learners) · shared source",
@@ -4417,7 +4417,7 @@
     },
     "Manage3.dc.html": {
       "x": 22400,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (validation, archive, insights) · shared source",
@@ -4427,7 +4427,7 @@
     },
     "Collab.dc.html": {
       "x": 24000,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Course collaboration (invite, permissions, manage, remove) · shared source",
@@ -4437,7 +4437,7 @@
     },
     "Collab2.dc.html": {
       "x": 25600,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Open collaboration (setup, applications, offers, manage opportunity) · shared source",
@@ -4447,7 +4447,7 @@
     },
     "Collab3.dc.html": {
       "x": 27200,
-      "y": 83885,
+      "y": 83796,
       "w": 1440,
       "h": 900,
       "title": "Collaboration, creator side (my invitations, shared courses) · shared source",
@@ -5395,11 +5395,11 @@
       "text": "Batch 12 · Invitation outcomes: accepted, activation pending, declined, expired, withdrawn, already responded, superseded",
       "w": 240,
       "x": 0,
-      "y": 82265
+      "y": 82176
     },
     "b12-outcomes-new": {
       "x": 0,
-      "y": 82415,
+      "y": 82326,
       "text": "NEW · batch 12",
       "w": 260,
       "fill": "pink"
@@ -5410,7 +5410,7 @@
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 83585
+      "y": 83496
     }
   },
   "noteOrder": [

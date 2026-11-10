@@ -46,9 +46,9 @@ PENDING = [('Data Analysis with SQL', 'AM', 'Direct invite', 'Expires in 5 days'
            ('SQL for Finance Teams', 'SK', 'Open collaboration offer', 'Expires in 6 days', 6, 'Co-Creator', 15, 'INV-002')]
 def icard(i, c):
     t, k, kind, exp, days, r, pct, h = c
-    return '''<article class="ic6" style="--i: %d"><div class="ic6-t">%s<div class="ic6-h"><span class="ic6-k"><span class="ic6-p"><i></i>Awaiting response</span><span class="ic6-y%s">%s</span></span><b>%s</b><span class="ic6-f">%s<span>Invited by <b>%s</b> · Lead Creator · Role: %s</span></span></div></div>
-<div class="ic6-s"><div class="ic6-r"><span class="ic6-rg">%s<b>%d%%</b></span><em>Marketplace + Subscription earnings</em></div><div class="ic6-e"><span class="ic6-d" style="--d: %d">%s</span><em>%s</em></div></div>
-<div class="ic6-a">%s</div></article>''' % (
+    return '''<article class="ic6" style="--i: %d"><div class="ic6-t">%s<div class="ic6-h"><span class="ic6-k"><span class="ic6-p"><i></i><span>Awaiting response</span></span><span class="ic6-y%s">%s</span></span><b>%s</b><span class="ic6-f">%s<span>Invited by <b>%s</b> · Lead Creator · Role: %s</span></span></div></div>
+<div class="ic6-s"><div class="ic6-r"><span class="ic6-rg">%s<b>%d%%</b></span><em>Marketplace + Subscription earnings</em></div><div class="ic6-e"><span class="ic6-d" style="--d: %d">%s</span><em>%s</em></div><div class="ic6-a">%s</div></div>
+</article>''' % (
         i, cov(t, 56), ' oc' if 'open' in kind else '', kind, t, pa(k, 22), PPL[k][1], r, ring(pct, 52, 10), pct, days, ''.join('<i class="%s"></i>' % ('on' if j < days else '') for j in range(14)), exp, btn('Review Invitation', h + '.dc.html'))
 P('i-pend', 'Invitations', ph(INV_PATH, 'My Invitations', '2 pending. Direct invitations and offers from open collaboration appear here.') + itabs('pend', search=True) +
   '<div class="ic6s ob-in3">%s</div>' % ''.join(icard(i, c) for i, c in enumerate(PENDING)) +
@@ -57,22 +57,25 @@ P('i-pend', 'Invitations', ph(INV_PATH, 'My Invitations', '2 pending. Direct inv
 ALL = [('Data Analysis with SQL', 'AM', 'Co-Creator', '20%', 'Pending', ''), ('SQL for Finance Teams', 'SK', 'Co-Creator', '15%', 'Pending', ''),
        ('Python for Beginners', 'SY', 'Contributor', '15%', 'Accepted', ''), ('Excel Dashboards', 'MB', 'Reviewer', '5%', 'Declined', ''),
        ('Intro to R', 'TA', 'Co-Creator', '10%', 'Expired', ''), ('Stats Basics', 'RB', 'Contributor', '8%', 'Withdrawn', '')]
+HREF = {'Pending': 'INV-002.dc.html', 'Expired': 'INV-002-EXPIRED.dc.html', 'Withdrawn': 'INV-002-WITHDRAWN.dc.html', 'Accepted': 'INV-001-ACCEPTED.dc.html', 'Declined': 'INV-001-DECLINED.dc.html'}
 def itable(rows, act=None):
     h = ''
     for i, (t, k, r, sh, st, x) in enumerate(rows):
         a = act(t, st) if act else ''
-        h += '<div class="it6-r%s" style="--i: %d"><span class="it6-c">%s<b>%s</b></span><span class="it6-f">%s<span>%s</span></span>%s<b class="it6-s">%s</b><span class="it6-st">%s%s</span></div>' % (
-            ' dim' if st in ('Expired', 'Withdrawn') else '', i, cov(t, 36), t, pa(k, 26), PPL[k][1], role(r), sh, tag(st if not x else '%s · %s' % (st, x), STC[st]), a)
+        h += '<a class="it6-r%s" href="%s" style="--i: %d"><span class="it6-c">%s<b>%s</b></span><span class="it6-f">%s<span>%s<em class="it6-m"> · %s</em></span></span>%s<b class="it6-s">%s</b><span class="it6-st">%s%s</span></a>' % (
+            ' dim' if st in ('Expired', 'Withdrawn') else '', HREF.get(st, '#'), i, cov(t, 36), t, pa(k, 26), PPL[k][1], r, role(r), sh, tag(st if not x else '%s · %s' % (st, x), STC[st]), a)
     return '<section class="ds-card it6 ob-in3"><div class="it6-r it6-hd"><span>Course</span><span>From</span><span>Role</span><span>Share</span><span>Status</span></div>%s</section>' % h
 def acts_all(t, st):
-    return '<a class="ds-link sm cl-a" href="%s">%s%s</a>' % ('INV-002.dc.html' if st == 'Pending' else ('INV-002-EXPIRED.dc.html' if st == 'Expired' else ('INV-002-WITHDRAWN.dc.html' if st == 'Withdrawn' else '#')), 'Review' if st == 'Pending' else 'View', ARR)
+    return '<span class="ds-link sm cl-a">%s%s</span>' % ('Review' if st == 'Pending' else 'View', ARR)
 P('i-all', 'Invitations', ph(INV_PATH + ['All'], 'My Invitations', '') + itabs('all') + itable(ALL, acts_all) + note('All statuses, including expired and withdrawn, are kept in history.'))
+def rcard(t, k, r, pct, st, kind, act, nt, nicon):
+    return '''<article class="rc6 %s ob-in3"><div class="rc6-m">%s<div class="rc6-h"><b>%s</b><span class="ic6-f">%s<span>From <b>%s</b></span></span></div></div>
+<div class="rc6-k"><span><em>Role</em>%s</span><span><em>Share</em><span class="rc6-rg">%s<b>%d%%</b></span></span><span><em>Status</em>%s</span></div>
+<div class="rc6-a">%s</div><p class="rc6-n">%s<span>%s</span></p></article>''' % (kind, cov(t, 60), t, pa(k, 22), PPL[k][1], role(r), ring(pct, 40, 12, track='#EEF1F7', color='#0F6B45' if kind == 'ok' else '#AEB6CC'), pct, tag(st, STC[st]), act, nicon, nt)
 P('i-acc', 'Invitations', ph(INV_PATH + ['Accepted'], 'My Invitations', '') + itabs('acc') +
-  itable([('Python for Beginners', 'SY', 'Content Contributor', '15%', 'Accepted', '')], lambda t, st: '<a class="ds-ghost xs" href="NAV-002.dc.html">Open</a>') +
-  note('Accepted invitations become courses under Shared Courses.'))
+  rcard('Python for Beginners', 'SY', 'Content Contributor', 15, 'Accepted', 'ok', btn('Open', 'NAV-002.dc.html', 'sm2'), 'Accepted invitations become courses under Shared Courses.', ic('program', 15, 2)))
 P('i-dec', 'Invitations', ph(INV_PATH + ['Declined'], 'My Invitations', '') + itabs('dec') +
-  itable([('Excel Dashboards', 'MB', 'Reviewer', '5%', 'Declined', 'timeline conflict')]) +
-  note('Declined invitations stay here for your records. The Lead Creator can send a revised offer.'))
+  rcard('Excel Dashboards', 'MB', 'Reviewer', 5, 'Declined', 'gy', '<span class="rc6-why">%s<span>Declined · timeline conflict</span></span>' % ic('clock', 14, 2), 'Declined invitations stay here for your records. The Lead Creator can send a revised offer.', INFO))
 P('i-empty', 'Invitations', ph(INV_PATH, 'My Invitations', '') + itabs('pend', '0') +
   '''<section class="ds-card em6 ob-in3"><div class="em6-v" aria-hidden="true"><span class="em6-e"><i></i></span><span class="em6-o o1">%s</span><span class="em6-o o2">%s</span><span class="em6-o o3">%s</span></div>
 <b>You don’t have any invitations yet</b><p>Browse open collaboration to find courses that match your expertise.</p>%s</section>''' % (
@@ -85,18 +88,19 @@ TERMS = [('Responsibilities', 'Develop the SQL Joins module, exercises and relat
 def detail(expired=False):
     st = tag('Expired', '') if expired else tag('<i class="lv-d"></i>Pending', 'amber')
     band = ('<div class="bn6 am ob-in">%s<p>This invitation expired on 20 Oct 2026. Accept is disabled. Ask the Lead Creator to send a new invitation.</p></div>' % ic('clock', 18, 2)) if expired else ''
-    exp_tile = '<div class="kt6 %s"><span class="kt6-i">%s</span><b>%s</b><em>%s</em></div>' % ('x' if expired else 'am', ic('clock', 18, 2), 'Expired' if expired else '5 days', '' if expired else 'Expires in')
+    exp_tile = '<div class="kt6 %s"><span class="kt6-i">%s</span><b>%s</b><em>%s</em></div>' % ('x' if expired else 'am', ic('clock', 18, 2), '<s>5 days</s>' if expired else '5 days', 'Expired' if expired else 'Expires in')
     acts = ('<span class="ds-ghost is-dis" aria-disabled="true">Decline</span><span class="ds-btn is-dis" aria-disabled="true"><span>Accept Invitation</span><span class="ob-arrow">%s</span></span>' % ARROW) if expired else \
         ('<a class="ds-ghost dz-a" href="INV-004.dc.html">Decline</a>' + btn('Accept Invitation', 'INV-003.dc.html'))
     main = '''<section class="ds-card lt6 ob-in2"><div class="lt6-h">%s<div><span class="lt6-k">Collaboration Invitation %s</span><p>You’ve been invited to collaborate on <b>Data Analysis with SQL</b>. Alex Morgan (Lead Creator · Personal course) invited you as <b>Co-Creator</b>.</p></div></div>
 <div class="kt6s"><div class="kt6"><span class="kt6-i">%s</span><b>Co-Creator</b><em>Your role</em></div><div class="kt6 cb"><span class="kt6-i">%s</span><b>20%%</b><em>Revenue share</em></div>%s</div>
 <p class="lt6-n">%s<span>20%% of eligible distributable course earnings, including subscription-based earnings and Marketplace Credit sales. Continuing royalties after departure: per agreement v3.</span></p></section>
-<section class="ds-card fc ob-in3"><dl class="tm6">%s<div class="w"><dt>Agreement &amp; terms</dt><dd>Revenue sharing, content ownership, access, termination and settlement · %s</dd></div></dl></section>''' % (
+<section class="ds-card fc ob-in3"><dl class="tm6">%s</dl></section>''' % (
         cov('Data Analysis with SQL', 64), st, ic('users', 18, 2), ring(20, 40, 14), exp_tile, ic('earn', 15, 2),
-        ''.join('<div class="%s"><dt>%s</dt><dd>%s</dd></div>' % ('w' if l == 'About the course' else '', l, v) for l, v in TERMS), link('View full terms', '#'))
-    rail = '''<section class="ds-card rx fr6 ob-in3"><span class="rx-k">From</span><div class="fr6-p">%s<span><b>Alex Morgan</b>%s</span></div><div class="fr6-c">%s<span><b>Data Analysis with SQL</b><em>Personal course</em></span></div></section>
+        ''.join('<div class="%s"><dt>%s</dt><dd>%s</dd></div>' % ('w' if l == 'Responsibilities' else '', l, v) for l, v in TERMS if l != 'About the course'))
+    rail = '''<section class="ds-card rx fr6 ob-in3"><span class="rx-k">From</span><div class="fr6-p">%s<span><b>Alex Morgan</b>%s</span></div><div class="fr6-a"><span class="rx-k">About the course</span><p>Intermediate Data Analytics course focused on SQL and business analysis.</p></div></section>
+<section class="ds-card rx ag6 ob-in3"><span class="ag6-i">%s</span><div><span class="rx-k">Agreement &amp; terms</span><p>Revenue sharing, content ownership, access, termination and settlement</p>%s</div></section>
 <section class="ds-card rx pt6 ob-in4"><span class="pt6-i">%s</span><p>You see a limited course summary only. Protected course materials stay hidden until you are an accepted collaborator.</p><div class="pt6-b" aria-hidden="true"><i></i><i></i><i></i></div></section>''' % (
-        pa('AM', 44), role('Lead Creator'), cov('Data Analysis with SQL', 40), ic('lock', 18, 2))
+        pa('AM', 44), role('Lead Creator'), ic('file', 18, 2), link('View full terms', '#'), ic('lock', 18, 2))
     return band + ph(DET_PATH + ['Details'], 'Collaboration Invitation', '') + wk(main + bar('', acts), rail)
 P('d-pend', 'Invitations', detail())
 P('d-exp', 'Invitations', detail(True))
@@ -126,7 +130,7 @@ P('decline', 'Invitations', ph(DET_PATH + ['Decline'], 'Decline Collaboration In
       ''.join(W.opt('<span class="o-t"><b>%s</b>%s</span>' % (r, ('<span>%s</span>' % s) if s else ''), i == 2, 'drs', 'sm') for i, (r, s) in enumerate(RSN)),
       field('Additional details (optional)', '<textarea class="ds-in ta3" rows="2" aria-label="Additional details">Happy to join at 25%.</textarea>', cls='rsn-d')) +
      bar('<a class="ds-link" href="INV-002.dc.html">Cancel</a>', red('Confirm Decline', 'INV-005C.dc.html')),
-     '''<section class="ds-card rx dn6 ob-in3"><div class="dn6-c">%s<span><b>Data Analysis with SQL</b><em>Co-Creator · 20%%</em></span></div><p>Your selected reason is shared with the Lead Creator. Declining does not affect your Creator Reputation Score. The invitation closes and cannot be accepted afterwards.</p></section>''' % cov('Data Analysis with SQL', 40)))
+     '''<section class="ds-card rx dn6 ob-in3"><div class="dn6-c">%s<span><b>Data Analysis with SQL</b><em>Co-Creator · 20%%</em></span></div></section><section class="ds-card rx dn6n ob-in4"><span class="dn6-i">%s</span><p>Your selected reason is shared with the Lead Creator. Declining does not affect your Creator Reputation Score. The invitation closes and cannot be accepted afterwards.</p></section>''' % (cov('Data Analysis with SQL', 40), INFO)))
 
 # ======================================================================= CR-INV-005A–G outcomes
 LK = lambda *a: '</div><div class="ko-lk">%s' % ''.join('<a class="ds-link" href="%s">%s</a>' % (h, l) for l, h in a)
@@ -145,9 +149,9 @@ P('o-g', 'Invitations', outcome('am', 'layers', 'Superseded', 'A revised invitat
 SHARED = [('Data Analysis with SQL', 'AM', 'Co-Creator', 20, 'Chapters 2–3'), ('Python for Beginners', 'SY', 'Content Contributor', 15, '')]
 P('shared', 'Shared Courses', ph(['Creator Studio', 'Collaboration', 'Shared Courses'], 'Courses', 'Courses you lead and courses you collaborate on are kept apart.', right=btn('Create New', 'STU-001.dc.html')) +
   '<div class="sc6 ob-in2">%s</div>' % ''.join(
-      '''<article class="sc6-c" style="--i: %d"><div class="sc6-v">%s<span class="sc6-g"></span></div><div class="sc6-b"><span class="sc6-t">%s<b>%s</b></span><span class="sc6-f">%s<span><em>Lead Creator</em>%s</span></span>
+      '''<article class="sc6-c" style="--i: %d"><div class="sc6-v">%s<span class="sc6-g"></span></div><div class="sc6-b"><span class="sc6-t"><span class="sc6-mc">%s</span><b>%s</b></span><span class="sc6-f">%s<span><em>Lead Creator</em>%s</span></span>
 <div class="sc6-m"><span><em>Your role</em>%s</span><span><em>Your share</em><b>%d%%</b></span><span><em>Status</em>%s</span></div><a class="ds-btn sm2 sc6-o" href="%s"><span>Open Course Studio</span><span class="ob-arrow">%s</span></a></div></article>''' % (
-          i, cov(t, 64), '', t, pa(k, 28), PPL[k][1], role(r), p, tag('Active', 'green'), 'STU-020-CO.dc.html' if i == 0 else '#', ARROW) for i, (t, k, r, p, sc) in enumerate(SHARED)) +
+          i, cov(t, 64), cov(t, 44), t, pa(k, 28), PPL[k][1], role(r), p, tag('Active', 'green'), 'STU-020-CO.dc.html' if i == 0 else '#', ARROW) for i, (t, k, r, p, sc) in enumerate(SHARED)) +
   '<section class="ds-card rs6 ob-in3"><span class="rs6-i">%s</span><p>Shared courses open a restricted Course Studio: only your assigned scope is editable. Ownership, pricing, publishing and team controls belong to the Lead Creator.</p></section>' % ic('lock', 18, 2))
 
 # ======================================================================= assembly

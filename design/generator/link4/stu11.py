@@ -53,16 +53,16 @@ def setup(i, body, rail_extra='', acts=None):
             wk(body + bar('<a class="ds-link" href="%s.dc.html">Back</a>' % PRV[i], acts), opp_card(i) + rail_extra))
 
 P('s-a', setup(0, '''<section class="ds-card fc ivf ob-in2">
-<div class="iv-2">%s%s</div>%s%s
-<div class="iv-3 thr">%s%s%s</div>%s</section>''' % (
+<div class="iv-2">%s%s</div>%s<div class="iv-2 tx">%s%s</div>
+<div class="iv-3 thr">%s%s%s</div></section>''' % (
     field('Course title', '<div class="ds-in ro">%s<span>Data Analysis with SQL</span></div>' % ic('lock', 14, 2)),
     field('Collaboration title', '<input class="ds-in" value="Data Analytics Co-Creators Needed" aria-label="Collaboration title">'),
-    field('Short course summary', '<input class="ds-in" value="Practical SQL and Business Intelligence course for aspiring data analysts." aria-label="Short course summary">'),
+    field('Short course summary', ta('Practical SQL and Business Intelligence course for aspiring data analysts.', 'Short course summary', 1).replace('ta3', 'ta3 one')),
     field('What help is needed', ta('Lessons, exercises, assessments and learning resources for the SQL Joins and Reporting chapters.', 'What help is needed')),
+    field('Expected responsibilities', ta('Write and record lessons, build practice tasks, review peer work.', 'Expected responsibilities')),
     field('Positions', '<div class="stp3"><button type="button" class="ds-x xs" aria-label="Fewer">%s</button><b>2</b><button type="button" class="ds-x xs" aria-label="More">%s</button>%s</div>' % (ICON('<path d="M5 12h14"></path>', 14, 2.4), ic('plus', 14, 2.4), seats(0))),
     field('Contribution period', sel('8 weeks', 'Contribution period')),
-    field('Application deadline', '<div class="ds-in ic-in">%s<span>30 Nov 2026</span></div>' % ic('cal', 16, 2)),
-    field('Expected responsibilities', ta('Write and record lessons, build practice tasks, review peer work.', 'Expected responsibilities')))))
+    field('Application deadline', '<div class="ds-in ic-in">%s<span>30 Nov 2026</span></div>' % ic('cal', 16, 2)))))
 
 TAX = [('Industry', 'Technology'), ('Domain', 'Data Analytics'), ('Subdomain', 'Business Intelligence')]
 P('s-b', setup(1, '''<section class="ds-card fc ob-in2"><div class="fc-h"><div><h2>Match by expertise</h2><p>Same admin-managed taxonomy as Course Studio and validator domain mapping.</p></div></div>
@@ -86,6 +86,11 @@ P('s-c', setup(2, '''<section class="ds-card fc ob-in2"><div class="fc-h"><div><
 <p class="pm-m">%s<span>New creators with verified expertise are not excluded for having few platform sales unless you mark sales as required.</span></p>''' % (
     field('Time active on Credalio', sel('No minimum', 'Time active on Credalio')), ''.join(qrow(i, *q) for i, q in enumerate(QUAL)), INFO)))
 
+RING2 = ('<svg class="rg rg2" viewBox="0 0 120 120" width="150" height="150" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#EAF0FF" stroke-width="16"></circle>'
+         '<circle class="rg2-a" cx="60" cy="60" r="50" fill="none" stroke="#1652F0" stroke-width="16" stroke-dasharray="45.1 400" transform="rotate(-90 60 60)"></circle>'
+         '<circle class="rg2-b" cx="60" cy="60" r="50" fill="none" stroke="#7FA2FF" stroke-width="16" stroke-dasharray="45.1 400" transform="rotate(-36.5 60 60)"></circle>'
+         '<circle cx="60" cy="60" r="50" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-dasharray="2.5 312" transform="rotate(-37 60 60)"></circle></svg>')
+EC_BAR = '<div class="ec4-b" aria-hidden="true"><i class="l" style="flex: 70"></i><i class="a" style="flex: 30"></i></div>'
 P('s-d', setup(3, '''<section class="ds-card fc ob-in2"><div class="fc-h"><div><h2>Revenue allocation</h2><p>Applies to all distributable course earnings.</p></div></div>
 <div class="rv4"><div class="rv4-v">%s<span class="rv4-c"><b>30%%</b><em>Total offered</em></span></div><div class="rv4-k">
 <div class="rv4-r cb"><i></i><span><b>30%%</b><em>Total offered, combined across 2 positions</em></span></div>
@@ -93,10 +98,10 @@ P('s-d', setup(3, '''<section class="ds-card fc ob-in2"><div class="fc-h"><div><
 <div class="rv4-r lk"><i></i><span><b>70%%</b><em>Lead keeps</em></span></div></div></div>
 <div class="iv-3 thr rv4-f">%s%s%s</div></section>
 <p class="pm-m">%s<span>The advertised percentage is not anyone’s contractual share. A specific offer is made to the chosen applicant, who must accept it.</span></p>''' % (
-    ring(30, 150, 18), field('Total percentage available', '<div class="pcn"><input class="ds-in" value="30" aria-label="Total percentage available"><span>%</span></div>', tipt='Combined, not per creator.'),
+    RING2, field('Total percentage available', '<div class="pcn"><input class="ds-in" value="30" aria-label="Total percentage available"><span>%</span></div>', tipt='Combined, not per creator.'),
     field('Positions', '<div class="ds-in ro">2</div>'), field('Earliest effective date', '<div class="ds-in ic-in">%s<span>1 Dec 2026</span></div>' % ic('cal', 16, 2)), INFO),
-    '<section class="ds-card rx ec4 ob-in4"><span class="rx-k">Existing commitments</span><div class="ec4-r ec4-hd"><span></span><span>Share</span></div>%s</section>' % ''.join('<div class="ec4-r %s"><span>%s</span><b>%s</b></div>' % (k, l, v) for l, v, k in [
-        ('Lead Creator', '70%', ''), ('Accepted collaborators', '0%', ''), ('Available for this opportunity', '30%', 'hi')])))
+    '<section class="ds-card rx ec4 ob-in4"><span class="rx-k">Existing commitments</span>%s<div class="ec4-r ec4-hd"><span></span><span>Share</span></div>%s</section>' % (EC_BAR, ''.join('<div class="ec4-r %s"><span>%s</span><b>%s</b></div>' % (k, l, v) for l, v, k in [
+        ('Lead Creator', '70%', ''), ('Accepted collaborators', '0%', ''), ('Available for this opportunity', '30%', 'hi')]))))
 
 REVW = [('Opportunity', 'Data Analytics Co-Creators Needed · 2 positions', 'COL-006A'), ('Matching', 'Technology › Data Analytics › Business Intelligence · SQL, Power BI, Data Visualization', 'COL-006B'),
         ('Requirements', 'Verified expertise (required) · Reputation ≥ 70 · Prefer published courses and reviews', 'COL-006C'),
@@ -174,13 +179,14 @@ DET_ACTS = ghost('Request Clarification', 'COL-008-CLARIFY.dc.html') + '<a class
 PERF = '''<section class="ds-card rx pf5 ob-in3"><span class="rx-k">Performance (with sample size)</span><div class="pf5-r">%s<span><b>86</b><em>Reputation</em></span></div>
 <div class="pf5-g"><span><b>4.8</b>%s<em>from 120 reviews</em></span><span><b>1,880</b><em>completed sales</em></span></div><p class="rx-p">Metrics always show sample size. Ranking signals not required by you are not used to exclude applicants.</p></section>''' % (ring(86, 64, 10), stars(5))
 SKL = '''<section class="ds-card rx ob-in4"><span class="rx-k">Skills &amp; credentials</span><div class="sk5"><span>SQL</span><span>Power BI</span><span class="vf">%s Verified: Data Analytics</span></div></section>''' % ck(10)
+PUBC = '<section class="ds-card rx pcr ob-in4"><span class="rx-k">Published courses</span><div class="pc5">%s</div></section>' % ''.join(
+    '<div class="pc5-c"><span class="pc5-v">%s</span><div><b>%s</b><em>%s learners · %s ★</em></div></div>' % (ini, t, n, r) for ini, t, n, r in [('SQL', 'SQL for Analysts', '1,240', '4.8'), ('BI', 'Dashboards with Power BI', '640', '4.7')])
 DETAIL = (det_head('Sade Kolawole', 'Verified subject expertise · 3 years on Credalio', DET_ACTS, tag('Shortlisted', 'blue')) +
-          wk('''<section class="ds-card fc ob-in2"><div class="fc-h"><div><h2>Professional introduction</h2></div></div><p class="ad-p">Senior analyst with 8 years in BI. Teaches SQL workshops for finance teams.</p></section>
+          wk("""<section class="ds-card fc ob-in2"><div class="fc-h"><div><h2>Professional introduction</h2></div></div><p class="ad-p">Senior analyst with 8 years in BI. Teaches SQL workshops for finance teams.</p>
+<div class="ad-sk"><span class="rx-k">Skills &amp; credentials</span><div class="sk5"><span>SQL</span><span>Power BI</span><span class="vf">%s Verified: Data Analytics</span></div></div></section>
 <section class="ds-card fc ap5 ob-in3"><div class="fc-h"><div><h2>Application</h2></div></div><div class="ap5-g"><div><em>Proposed contribution</em><b>Joins module and 4 practice sets.</b></div><div><em>Availability</em><b>10 hrs/week from 1 Dec.</b></div></div>
-<blockquote><em>Statement</em>I want to turn my workshop material into a structured course.</blockquote></section>
-<section class="ds-card fc ob-in4"><div class="fc-h"><div><h2>Published courses</h2></div></div><div class="pc5">%s</div></section>''' % ''.join(
-              '<div class="pc5-c"><span class="pc5-v">%s</span><div><b>%s</b><em>%s learners · %s ★</em></div></div>' % (ini, t, n, r) for ini, t, n, r in [('SQL', 'SQL for Analysts', '1,240', '4.8'), ('BI', 'Dashboards with Power BI', '640', '4.7')]),
-             PERF + SKL))
+<blockquote><em>Statement</em>I want to turn my workshop material into a structured course.</blockquote></section>""" % ck(10),
+             PERF + PUBC))
 P('a-det', DETAIL)
 P('a-clar', DETAIL + dlg('COL-008-DETAIL.dc.html', 'Request clarification', '<span class="dl-i">%s</span><div class="dl-ht"><h2>Request clarification</h2></div>' % ic('chat', 20, 2),
   '''<p class="dl-p">Ask Sade Kolawole a question before you decide. This is not an offer and shares no revenue terms.</p>
@@ -221,9 +227,9 @@ P('offer', page_head(OC, 'Make an offer to Sade Kolawole', 'This becomes a stand
   '<ol class="fl5 ob-in2">%s</ol>' % ''.join('<li class="%s"><i>%s</i><span>%s</span></li>' % ('dn' if i < 3 else ('on' if i < 6 else ''), ck(9) if i < 3 else '', l) for i, l in enumerate(FLOW)) +
   wk('''<section class="ds-card fc ivf ob-in2"><div class="iv-3">%s%s%s</div>%s
 <div class="pmr">%s<span>Role permissions: default Co-Creator (edit curriculum, lessons, assessments, resources).</span>%s</div>
-<div class="iv-2">%s%s</div><p class="iv-ag">%s<span>Agreement v3 terms attached</span></p></section>''' % (
+<div class="iv-2 two">%s%s</div><p class="iv-ag">%s<span>Agreement v3 terms attached</span></p></section>''' % (
       field('Proposed role', sel('Co-Creator', 'Proposed role')),
-      field('Individual revenue share (%)', '<div class="pcn"><input class="ds-in" value="15" aria-label="Individual revenue share (%)"><span>%</span></div><span class="fl-n">Not the combined 30%.</span>'),
+      field('Individual revenue share (%)', '<div class="pcn"><input class="ds-in" value="15" aria-label="Individual revenue share (%)"><span>%</span></div>', tipt='Not the combined 30%.'),
       field('Effective date', '<div class="ds-in ic-in">%s<span>1 Dec 2026</span></div>' % ic('cal', 16, 2)),
       field('Accepted responsibilities', ta('Joins module and 4 practice sets (Chapter 4).', 'Accepted responsibilities')),
       ic('valid', 16, 2), link('Review permissions', 'COL-002B-OFFER.dc.html'),

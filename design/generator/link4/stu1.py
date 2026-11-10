@@ -96,7 +96,7 @@ S_HOW = '''<div class="fx-col">
     how(V_SOLO, 'Solo', 'Create Solo', 'You are the primary and only creator. Go straight to building your course.', 'Next: Curriculum Builder', False) +
     how(V_CO, 'Co-Creators', 'Create with Co-Creators', 'Invite a specific person by name or email to contribute to this course.', 'Next: Invite Co-Creator', True) +
     how(V_OPEN, 'Open', 'Open to Collaboration', 'Make this opportunity discoverable to approved Credalio creators. Different from inviting someone directly.', 'Next: Open collaboration setup', False),
-    btn('Continue', 'STU-008.dc.html'))
+    btn('Continue', 'COL-002.dc.html'))
 
 PLAN = [('Define', 'Tell us what you’re teaching and who it’s for.', 'Design'), ('Design', 'Define skills, outcomes and evidence.', 'Design'),
         ('Build', 'Create lessons, practice and assessments.', 'Build · Experience'), ('Review', 'Preview and test the learning experience.', 'Prepare'),

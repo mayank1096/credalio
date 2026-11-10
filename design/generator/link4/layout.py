@@ -5,13 +5,13 @@ Each row: title note, then desktop + mobile pairs left to right. Shared sources 
 """
 import json, os, sys
 from l4kit import OUT
-import stu1, stu2, stu3, stu4, stu5, stu6, stu7, stu8
+import stu1, stu2, stu3, stu4, stu5, stu6, stu7, stu8, stu10
 
 PAIR, GAP, ROWGAP = 1440 + 80 + 390, 160, 420
 H = {}
 for f in sys.argv[1:]:
     H.update(json.load(open(f)))
-T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS + stu4.BOARDS + stu5.BOARDS + stu6.BOARDS + stu7.BOARDS + stu8.BOARDS}
+T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS + stu4.BOARDS + stu5.BOARDS + stu6.BOARDS + stu7.BOARDS + stu8.BOARDS + stu10.BOARDS}
 
 ROWS = [
     ('b1-setup', 'Batch 1 · Course setup: learning experience, delivery type, setup review, how you’ll create it, Studio welcome', ['STU-001', 'STU-002', 'STU-003', 'STU-004', 'STU-008']),
@@ -39,6 +39,8 @@ ROWS = [
     ('b8-archive', 'Batch 8 · Archive & Removal: home, impact, confirm, archived, archived course, restore, removal request, removal status, restricted', ['MGT-008', 'MGT-008A', 'MGT-008B', 'MGT-008C', 'MGT-008D', 'MGT-008E', 'MGT-008F', 'MGT-008G', 'MGT-008H']),
     ('b8-insights', 'Batch 8 · Insights & Engagement: hub, learning performance, assessments, content health, reviews, questions & support, discussion', ['MGT-009', 'MGT-009A', 'MGT-009B', 'MGT-009C', 'MGT-009D', 'MGT-009E', 'MGT-009F']),
     ('b9-credits', 'Batch 9 · Course Credits & Visibility: credits manager, ask to credit, learner course page with 2 and 5 creators, creators panel', ['CREDITS', 'CREDITS-ASK', 'LEARN-CREATORS-2', 'LEARN-CREATORS-5', 'LEARN-CREATORS-PANEL']),
+    ('b10-invite', 'Batch 10 · Collaboration: collaboration centre, invite (+ allocation error), roles & permissions (invitation, role changed, accepted, offer), review, sent', ['COL-001', 'COL-002', 'COL-002-ERR', 'COL-002B', 'COL-002B-ROLE', 'COL-002B-EDIT', 'COL-002B-OFFER', 'COL-003', 'COL-003-SENT']),
+    ('b10-manage', 'Batch 10 · Manage collaborators: active, pending, past, activity, collaborator detail, withdraw invitation · Remove: impact, reason, executed, sent to review', ['COL-004', 'COL-004-PENDING', 'COL-004-PAST', 'COL-004-ACTIVITY', 'COL-004-DETAIL', 'COL-004-WITHDRAW', 'COL-005A', 'COL-005B', 'COL-005C', 'COL-005C-REVIEW']),
 ]
 SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html', 'Course Studio · shared source'),
            ('Builder.dc.html', 'Curriculum Builder · shared source'), ('Editor.dc.html', 'Learning item editors · shared source'),
@@ -47,15 +49,18 @@ SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html'
            ('Validate.dc.html', 'Validate · shared source'), ('Publish.dc.html', 'Publish · shared source'),
            ('Manage.dc.html', 'Manage Published Course · shared source'), ('Unpublish.dc.html', 'Unpublish · shared source'), ('Learner.dc.html', 'Learner app · shared source'),
            ('Manage2.dc.html', 'Manage Published Course (pricing, versions, learners) · shared source'),
-           ('Manage3.dc.html', 'Manage Published Course (validation, archive, insights) · shared source')]
+           ('Manage3.dc.html', 'Manage Published Course (validation, archive, insights) · shared source'),
+           ('Collab.dc.html', 'Course collaboration (invite, permissions, manage, remove) · shared source')]
 
 boards, order, notes = {}, [], {}
 y = 300
 for nid, text, codes in ROWS:
     notes[nid] = {'kind': 'title1', 'maxW': min(8000, len(codes) * (PAIR + GAP) - GAP), 'text': text, 'w': 240, 'x': 0, 'y': y - 300}
-    notes[nid + '-new'] = {'x': 0, 'y': y - 150, 'text': 'NEW · batch %s' % nid[1], 'w': 260, 'fill': 'pink'}
+    notes[nid + '-new'] = {'x': 0, 'y': y - 150, 'text': 'NEW · batch %s' % nid[1:].split('-')[0], 'w': 260, 'fill': 'pink'}
     if nid == 'b2-builder':
         notes['b2-missing'] = {'x': 300, 'y': y - 150, 'text': 'Not built yet: CR-STU-023 Assessment Type and CR-STU-020B Curriculum Readiness (solo + team). The client file refuses to open these three boards, so their content is missing.', 'w': 1100, 'fill': 'red'}
+    if nid == 'b10-invite':
+        notes['b10-missing'] = {'x': 300, 'y': y - 150, 'text': 'Not built yet: CR-COL-001-SOLO (collaboration centre, solo empty state). The client file refuses to open this board.', 'w': 900, 'fill': 'yellow'}
     if nid == 'b1-setup':
         notes['b1-format'] = {'x': 300, 'y': y - 150, 'text': 'CR-STU-001 uses the same format-card design as Link 1 Create new (CR-HOME-NEW): one design for the format picker.', 'w': 900, 'fill': 'blue'}
     x, mh = 0, 0

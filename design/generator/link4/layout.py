@@ -38,6 +38,7 @@ ROWS = [
     ('b8-validation', 'Batch 8 · Validation History: overview, record details, case history, findings, version relationship, required actions', ['MGT-007', 'MGT-007A', 'MGT-007B', 'MGT-007C', 'MGT-007D', 'MGT-007E-REV', 'MGT-007E-CHG']),
     ('b8-archive', 'Batch 8 · Archive & Removal: home, impact, confirm, archived, archived course, restore, removal request, removal status, restricted', ['MGT-008', 'MGT-008A', 'MGT-008B', 'MGT-008C', 'MGT-008D', 'MGT-008E', 'MGT-008F', 'MGT-008G', 'MGT-008H']),
     ('b8-insights', 'Batch 8 · Insights & Engagement: hub, learning performance, assessments, content health, reviews, questions & support, discussion', ['MGT-009', 'MGT-009A', 'MGT-009B', 'MGT-009C', 'MGT-009D', 'MGT-009E', 'MGT-009F']),
+    ('b9-credits', 'Batch 9 · Course Credits & Visibility: credits manager, ask to credit, learner course page with 2 and 5 creators, creators panel', ['CREDITS', 'CREDITS-ASK', 'LEARN-CREATORS-2', 'LEARN-CREATORS-5', 'LEARN-CREATORS-PANEL']),
 ]
 SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html', 'Course Studio · shared source'),
            ('Builder.dc.html', 'Curriculum Builder · shared source'), ('Editor.dc.html', 'Learning item editors · shared source'),

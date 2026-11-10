@@ -3015,9 +3015,389 @@
       "is_interactive": true,
       "expand": "fill"
     },
-    "Setup.dc.html": {
+    "COL-001.dc.html": {
       "x": 0,
       "y": 71430,
+      "w": 1440,
+      "h": 1017,
+      "title": "CR-COL-001 · Course Collaboration Centre · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-001-Mobile.dc.html": {
+      "x": 1520,
+      "y": 71430,
+      "w": 390,
+      "h": 1714,
+      "title": "CR-COL-001 · Course Collaboration Centre · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-002.dc.html": {
+      "x": 2070,
+      "y": 71430,
+      "w": 1440,
+      "h": 1356,
+      "title": "CR-COL-002 · Invite a Co-Creator · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-002-Mobile.dc.html": {
+      "x": 3590,
+      "y": 71430,
+      "w": 390,
+      "h": 2004,
+      "title": "CR-COL-002 · Invite a Co-Creator · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-002-ERR.dc.html": {
+      "x": 4140,
+      "y": 71430,
+      "w": 1440,
+      "h": 1425,
+      "title": "CR-COL-002 · Invite (share exceeds allocation) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-002-ERR-Mobile.dc.html": {
+      "x": 5660,
+      "y": 71430,
+      "w": 390,
+      "h": 2043,
+      "title": "CR-COL-002 · Invite (share exceeds allocation) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-002B.dc.html": {
+      "x": 6210,
+      "y": 71430,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-002B · Roles & permissions (invitation) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-002B-Mobile.dc.html": {
+      "x": 7730,
+      "y": 71430,
+      "w": 390,
+      "h": 1464,
+      "title": "CR-COL-002B · Roles & permissions (invitation) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-002B-ROLE.dc.html": {
+      "x": 8280,
+      "y": 71430,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-002B · Roles & permissions (role changed) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-002B-ROLE-Mobile.dc.html": {
+      "x": 9800,
+      "y": 71430,
+      "w": 390,
+      "h": 1464,
+      "title": "CR-COL-002B · Roles & permissions (role changed) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-002B-EDIT.dc.html": {
+      "x": 10350,
+      "y": 71430,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-002B · Roles & permissions (accepted collaborator) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-002B-EDIT-Mobile.dc.html": {
+      "x": 11870,
+      "y": 71430,
+      "w": 390,
+      "h": 1485,
+      "title": "CR-COL-002B · Roles & permissions (accepted collaborator) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-002B-OFFER.dc.html": {
+      "x": 12420,
+      "y": 71430,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-002B · Roles & permissions (applicant offer) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-002B-OFFER-Mobile.dc.html": {
+      "x": 13940,
+      "y": 71430,
+      "w": 390,
+      "h": 1443,
+      "title": "CR-COL-002B · Roles & permissions (applicant offer) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-003.dc.html": {
+      "x": 14490,
+      "y": 71430,
+      "w": 1440,
+      "h": 1027,
+      "title": "CR-COL-003 · Review invitation · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-003-Mobile.dc.html": {
+      "x": 16010,
+      "y": 71430,
+      "w": 390,
+      "h": 1303,
+      "title": "CR-COL-003 · Review invitation · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-003-SENT.dc.html": {
+      "x": 16560,
+      "y": 71430,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-003 · Invitation sent · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-003-SENT-Mobile.dc.html": {
+      "x": 18080,
+      "y": 71430,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-003 · Invitation sent · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-004.dc.html": {
+      "x": 0,
+      "y": 73893,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-004 · Manage collaborators (active) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-004-Mobile.dc.html": {
+      "x": 1520,
+      "y": 73893,
+      "w": 390,
+      "h": 996,
+      "title": "CR-COL-004 · Manage collaborators (active) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-004-PENDING.dc.html": {
+      "x": 2070,
+      "y": 73893,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-004 · Pending invitations · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-004-PENDING-Mobile.dc.html": {
+      "x": 3590,
+      "y": 73893,
+      "w": 390,
+      "h": 864,
+      "title": "CR-COL-004 · Pending invitations · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-004-PAST.dc.html": {
+      "x": 4140,
+      "y": 73893,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-004 · Past members · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-004-PAST-Mobile.dc.html": {
+      "x": 5660,
+      "y": 73893,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-004 · Past members · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-004-ACTIVITY.dc.html": {
+      "x": 6210,
+      "y": 73893,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-004 · Activity history · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-004-ACTIVITY-Mobile.dc.html": {
+      "x": 7730,
+      "y": 73893,
+      "w": 390,
+      "h": 929,
+      "title": "CR-COL-004 · Activity history · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-004-DETAIL.dc.html": {
+      "x": 8280,
+      "y": 73893,
+      "w": 1440,
+      "h": 948,
+      "title": "CR-COL-004 · Collaborator detail · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-004-DETAIL-Mobile.dc.html": {
+      "x": 9800,
+      "y": 73893,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-004 · Collaborator detail · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-004-WITHDRAW.dc.html": {
+      "x": 10350,
+      "y": 73893,
+      "w": 1440,
+      "h": 948,
+      "title": "CR-COL-004 · Withdraw invitation · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-004-WITHDRAW-Mobile.dc.html": {
+      "x": 11870,
+      "y": 73893,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-004 · Withdraw invitation · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-005A.dc.html": {
+      "x": 12420,
+      "y": 73893,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-005A · Remove: review impact · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-005A-Mobile.dc.html": {
+      "x": 13940,
+      "y": 73893,
+      "w": 390,
+      "h": 1024,
+      "title": "CR-COL-005A · Remove: review impact · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-005B.dc.html": {
+      "x": 14490,
+      "y": 73893,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-005B · Remove: reason · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-005B-Mobile.dc.html": {
+      "x": 16010,
+      "y": 73893,
+      "w": 390,
+      "h": 1340,
+      "title": "CR-COL-005B · Remove: reason · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-005C.dc.html": {
+      "x": 16560,
+      "y": 73893,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-005C · Removal executed · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-005C-Mobile.dc.html": {
+      "x": 18080,
+      "y": 73893,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-005C · Removal executed · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-005C-REVIEW.dc.html": {
+      "x": 18630,
+      "y": 73893,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COL-005C · Removal sent to review · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "COL-005C-REVIEW-Mobile.dc.html": {
+      "x": 20150,
+      "y": 73893,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COL-005C · Removal sent to review · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Setup.dc.html": {
+      "x": 0,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -3027,7 +3407,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 71430,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -3037,7 +3417,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 71430,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -3047,7 +3427,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 71430,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -3057,7 +3437,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 71430,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -3067,7 +3447,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 71430,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -3077,7 +3457,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 71430,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -3087,7 +3467,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 71430,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -3097,7 +3477,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 71430,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -3107,7 +3487,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 71430,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -3117,7 +3497,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 71430,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -3127,7 +3507,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 71430,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -3137,7 +3517,7 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 71430,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
@@ -3147,7 +3527,7 @@
     },
     "Manage2.dc.html": {
       "x": 20800,
-      "y": 71430,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (pricing, versions, learners) · shared source",
@@ -3157,10 +3537,20 @@
     },
     "Manage3.dc.html": {
       "x": 22400,
-      "y": 71430,
+      "y": 75653,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (validation, archive, insights) · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Collab.dc.html": {
+      "x": 24000,
+      "y": 75653,
+      "w": 1440,
+      "h": 900,
+      "title": "Course collaboration (invite, permissions, manage, remove) · shared source",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -3467,6 +3857,44 @@
     "LEARN-CREATORS-5-Mobile.dc.html",
     "LEARN-CREATORS-PANEL.dc.html",
     "LEARN-CREATORS-PANEL-Mobile.dc.html",
+    "COL-001.dc.html",
+    "COL-001-Mobile.dc.html",
+    "COL-002.dc.html",
+    "COL-002-Mobile.dc.html",
+    "COL-002-ERR.dc.html",
+    "COL-002-ERR-Mobile.dc.html",
+    "COL-002B.dc.html",
+    "COL-002B-Mobile.dc.html",
+    "COL-002B-ROLE.dc.html",
+    "COL-002B-ROLE-Mobile.dc.html",
+    "COL-002B-EDIT.dc.html",
+    "COL-002B-EDIT-Mobile.dc.html",
+    "COL-002B-OFFER.dc.html",
+    "COL-002B-OFFER-Mobile.dc.html",
+    "COL-003.dc.html",
+    "COL-003-Mobile.dc.html",
+    "COL-003-SENT.dc.html",
+    "COL-003-SENT-Mobile.dc.html",
+    "COL-004.dc.html",
+    "COL-004-Mobile.dc.html",
+    "COL-004-PENDING.dc.html",
+    "COL-004-PENDING-Mobile.dc.html",
+    "COL-004-PAST.dc.html",
+    "COL-004-PAST-Mobile.dc.html",
+    "COL-004-ACTIVITY.dc.html",
+    "COL-004-ACTIVITY-Mobile.dc.html",
+    "COL-004-DETAIL.dc.html",
+    "COL-004-DETAIL-Mobile.dc.html",
+    "COL-004-WITHDRAW.dc.html",
+    "COL-004-WITHDRAW-Mobile.dc.html",
+    "COL-005A.dc.html",
+    "COL-005A-Mobile.dc.html",
+    "COL-005B.dc.html",
+    "COL-005B-Mobile.dc.html",
+    "COL-005C.dc.html",
+    "COL-005C-Mobile.dc.html",
+    "COL-005C-REVIEW.dc.html",
+    "COL-005C-REVIEW-Mobile.dc.html",
     "Setup.dc.html",
     "Studio.dc.html",
     "Builder.dc.html",
@@ -3481,7 +3909,8 @@
     "Unpublish.dc.html",
     "Learner.dc.html",
     "Manage2.dc.html",
-    "Manage3.dc.html"
+    "Manage3.dc.html",
+    "Collab.dc.html"
   ],
   "notes": {
     "b1-setup": {
@@ -3873,13 +4302,50 @@
       "w": 260,
       "fill": "pink"
     },
+    "b10-invite": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 10 · Collaboration: collaboration centre, invite (+ allocation error), roles & permissions (invitation, role changed, accepted, offer), review, sent",
+      "w": 240,
+      "x": 0,
+      "y": 71130
+    },
+    "b10-invite-new": {
+      "x": 0,
+      "y": 71280,
+      "text": "NEW · batch 10",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b10-missing": {
+      "x": 300,
+      "y": 71280,
+      "text": "Not built yet: CR-COL-001-SOLO (collaboration centre, solo empty state). The client file refuses to open this board.",
+      "w": 900,
+      "fill": "yellow"
+    },
+    "b10-manage": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 10 · Manage collaborators: active, pending, past, activity, collaborator detail, withdraw invitation · Remove: impact, reason, executed, sent to review",
+      "w": 240,
+      "x": 0,
+      "y": 73593
+    },
+    "b10-manage-new": {
+      "x": 0,
+      "y": 73743,
+      "text": "NEW · batch 10",
+      "w": 260,
+      "fill": "pink"
+    },
     "sources": {
       "kind": "title1",
       "maxW": 3200,
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 71130
+      "y": 75353
     }
   },
   "noteOrder": [
@@ -3935,6 +4401,11 @@
     "b8-insights-new",
     "b9-credits",
     "b9-credits-new",
+    "b10-invite",
+    "b10-invite-new",
+    "b10-missing",
+    "b10-manage",
+    "b10-manage-new",
     "sources"
   ],
   "designSystems": [],

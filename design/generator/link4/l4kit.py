@@ -158,7 +158,7 @@ NAV = [
     ('Prepare', [('Course Review', 'STU-040.dc.html', None, 'review'), ('Validation Readiness', 'STU-043.dc.html', 'pr', 'ready')]),
     ('Validate · Gate', [('Validation', 'STU-055.dc.html', 'lk', 'val')]),
     ('Publish · Gate', [('Publication', '#', 'lk', 'pub')]),
-    ('Manage', [('Collaborators', '#', None, 'collab'), ('Course Settings', '#', None, 'settings')]),
+    ('Manage', [('Collaborators', 'COL-001.dc.html', None, 'collab'), ('Course Settings', '#', None, 'settings')]),
 ]
 
 SUBNAV = {'review': [('Learner Preview', 'STU-040.dc.html', 'lprev'), ('Marketplace Preview', 'STU-040M.dc.html', 'mprev'), ('Intelligence Profile', 'STU-041.dc.html', 'lip'), ('Nova Review', 'STU-042.dc.html', 'nrev')],

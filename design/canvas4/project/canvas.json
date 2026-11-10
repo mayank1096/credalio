@@ -2455,9 +2455,469 @@
       "is_interactive": true,
       "expand": "fill"
     },
-    "Setup.dc.html": {
+    "MGT-007.dc.html": {
       "x": 0,
       "y": 58973,
+      "w": 1440,
+      "h": 1347,
+      "title": "CR-COURSE-MGT-007 · Validation History (default) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-007-Mobile.dc.html": {
+      "x": 1520,
+      "y": 58973,
+      "w": 390,
+      "h": 1950,
+      "title": "CR-COURSE-MGT-007 · Validation History (default) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-007A.dc.html": {
+      "x": 2070,
+      "y": 58973,
+      "w": 1440,
+      "h": 1010,
+      "title": "CR-COURSE-MGT-007A · Validation Record Details · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-007A-Mobile.dc.html": {
+      "x": 3590,
+      "y": 58973,
+      "w": 390,
+      "h": 1250,
+      "title": "CR-COURSE-MGT-007A · Validation Record Details · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-007B.dc.html": {
+      "x": 4140,
+      "y": 58973,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-007B · Full Validation Case History · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-007B-Mobile.dc.html": {
+      "x": 5660,
+      "y": 58973,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-007B · Full Validation Case History · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-007C.dc.html": {
+      "x": 6210,
+      "y": 58973,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-007C · Findings & Decisions · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-007C-Mobile.dc.html": {
+      "x": 7730,
+      "y": 58973,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-007C · Findings & Decisions · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-007D.dc.html": {
+      "x": 8280,
+      "y": 58973,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-007D · Validation & Version Relationship · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-007D-Mobile.dc.html": {
+      "x": 9800,
+      "y": 58973,
+      "w": 390,
+      "h": 952,
+      "title": "CR-COURSE-MGT-007D · Validation & Version Relationship · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-007E-REV.dc.html": {
+      "x": 10350,
+      "y": 58973,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-007E · Required Action — Revalidation Required · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-007E-REV-Mobile.dc.html": {
+      "x": 11870,
+      "y": 58973,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-007E · Required Action — Revalidation Required · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-007E-CHG.dc.html": {
+      "x": 12420,
+      "y": 58973,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-007E · Required Action — Changes Requested · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-007E-CHG-Mobile.dc.html": {
+      "x": 13940,
+      "y": 58973,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-007E · Required Action — Changes Requested · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008.dc.html": {
+      "x": 0,
+      "y": 61343,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-008 · Archive & Removal (home) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008-Mobile.dc.html": {
+      "x": 1520,
+      "y": 61343,
+      "w": 390,
+      "h": 1290,
+      "title": "CR-COURSE-MGT-008 · Archive & Removal (home) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008A.dc.html": {
+      "x": 2070,
+      "y": 61343,
+      "w": 1440,
+      "h": 965,
+      "title": "CR-COURSE-MGT-008A · Archive Impact Review (Step 1/3) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008A-Mobile.dc.html": {
+      "x": 3590,
+      "y": 61343,
+      "w": 390,
+      "h": 1412,
+      "title": "CR-COURSE-MGT-008A · Archive Impact Review (Step 1/3) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008B.dc.html": {
+      "x": 4140,
+      "y": 61343,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-008B · Archive Reason & Confirmation (Step 2/3) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008B-Mobile.dc.html": {
+      "x": 5660,
+      "y": 61343,
+      "w": 390,
+      "h": 1154,
+      "title": "CR-COURSE-MGT-008B · Archive Reason & Confirmation (Step 2/3) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008C.dc.html": {
+      "x": 6210,
+      "y": 61343,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-008C · Archive Success (Step 3/3) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008C-Mobile.dc.html": {
+      "x": 7730,
+      "y": 61343,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-008C · Archive Success (Step 3/3) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008D.dc.html": {
+      "x": 8280,
+      "y": 61343,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-008D · Archived Course Detail · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008D-Mobile.dc.html": {
+      "x": 9800,
+      "y": 61343,
+      "w": 390,
+      "h": 1085,
+      "title": "CR-COURSE-MGT-008D · Archived Course Detail · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008E.dc.html": {
+      "x": 10350,
+      "y": 61343,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-008E · Restore Archived Course · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008E-Mobile.dc.html": {
+      "x": 11870,
+      "y": 61343,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-008E · Restore Archived Course · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008F.dc.html": {
+      "x": 12420,
+      "y": 61343,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-008F · Request Course Removal · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008F-Mobile.dc.html": {
+      "x": 13940,
+      "y": 61343,
+      "w": 390,
+      "h": 1216,
+      "title": "CR-COURSE-MGT-008F · Request Course Removal · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008G.dc.html": {
+      "x": 14490,
+      "y": 61343,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-008G · Removal Review & Status · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008G-Mobile.dc.html": {
+      "x": 16010,
+      "y": 61343,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-008G · Removal Review & Status · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008H.dc.html": {
+      "x": 16560,
+      "y": 61343,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-008H · Restricted Action (branch) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-008H-Mobile.dc.html": {
+      "x": 18080,
+      "y": 61343,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-008H · Restricted Action (branch) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-009.dc.html": {
+      "x": 0,
+      "y": 63175,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-COURSE-MGT-009 · Insights & Engagement (hub) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-009-Mobile.dc.html": {
+      "x": 1520,
+      "y": 63175,
+      "w": 390,
+      "h": 844,
+      "title": "CR-COURSE-MGT-009 · Insights & Engagement (hub) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-009A.dc.html": {
+      "x": 2070,
+      "y": 63175,
+      "w": 1440,
+      "h": 998,
+      "title": "CR-COURSE-MGT-009A · Learning Performance · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-009A-Mobile.dc.html": {
+      "x": 3590,
+      "y": 63175,
+      "w": 390,
+      "h": 1514,
+      "title": "CR-COURSE-MGT-009A · Learning Performance · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-009B.dc.html": {
+      "x": 4140,
+      "y": 63175,
+      "w": 1440,
+      "h": 1109,
+      "title": "CR-COURSE-MGT-009B · Assessment Analytics · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-009B-Mobile.dc.html": {
+      "x": 5660,
+      "y": 63175,
+      "w": 390,
+      "h": 1568,
+      "title": "CR-COURSE-MGT-009B · Assessment Analytics · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-009C.dc.html": {
+      "x": 6210,
+      "y": 63175,
+      "w": 1440,
+      "h": 917,
+      "title": "CR-COURSE-MGT-009C · Content Health · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-009C-Mobile.dc.html": {
+      "x": 7730,
+      "y": 63175,
+      "w": 390,
+      "h": 1307,
+      "title": "CR-COURSE-MGT-009C · Content Health · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-009D.dc.html": {
+      "x": 8280,
+      "y": 63175,
+      "w": 1440,
+      "h": 907,
+      "title": "CR-COURSE-MGT-009D · Reviews & Feedback · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-009D-Mobile.dc.html": {
+      "x": 9800,
+      "y": 63175,
+      "w": 390,
+      "h": 1374,
+      "title": "CR-COURSE-MGT-009D · Reviews & Feedback · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-009E.dc.html": {
+      "x": 10350,
+      "y": 63175,
+      "w": 1440,
+      "h": 1053,
+      "title": "CR-COURSE-MGT-009E · Learner Questions & Support · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-009E-Mobile.dc.html": {
+      "x": 11870,
+      "y": 63175,
+      "w": 390,
+      "h": 1613,
+      "title": "CR-COURSE-MGT-009E · Learner Questions & Support · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-009F.dc.html": {
+      "x": 12420,
+      "y": 63175,
+      "w": 1440,
+      "h": 925,
+      "title": "CR-COURSE-MGT-009F · Course Discussion · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "MGT-009F-Mobile.dc.html": {
+      "x": 13940,
+      "y": 63175,
+      "w": 390,
+      "h": 1179,
+      "title": "CR-COURSE-MGT-009F · Course Discussion · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Setup.dc.html": {
+      "x": 0,
+      "y": 65208,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -2467,7 +2927,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 58973,
+      "y": 65208,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -2477,7 +2937,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 58973,
+      "y": 65208,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -2487,7 +2947,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 58973,
+      "y": 65208,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -2497,7 +2957,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 58973,
+      "y": 65208,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -2507,7 +2967,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 58973,
+      "y": 65208,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -2517,7 +2977,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 58973,
+      "y": 65208,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -2527,7 +2987,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 58973,
+      "y": 65208,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -2537,7 +2997,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 58973,
+      "y": 65208,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -2547,7 +3007,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 58973,
+      "y": 65208,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -2557,7 +3017,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 58973,
+      "y": 65208,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -2567,7 +3027,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 58973,
+      "y": 65208,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -2577,7 +3037,7 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 58973,
+      "y": 65208,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
@@ -2587,10 +3047,20 @@
     },
     "Manage2.dc.html": {
       "x": 20800,
-      "y": 58973,
+      "y": 65208,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (pricing, versions, learners) · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Manage3.dc.html": {
+      "x": 22400,
+      "y": 65208,
+      "w": 1440,
+      "h": 900,
+      "title": "Manage Published Course (validation, archive, insights) · shared source",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -2841,6 +3311,52 @@
     "MGT-006-IMPACT-Mobile.dc.html",
     "MGT-006-UNPUB.dc.html",
     "MGT-006-UNPUB-Mobile.dc.html",
+    "MGT-007.dc.html",
+    "MGT-007-Mobile.dc.html",
+    "MGT-007A.dc.html",
+    "MGT-007A-Mobile.dc.html",
+    "MGT-007B.dc.html",
+    "MGT-007B-Mobile.dc.html",
+    "MGT-007C.dc.html",
+    "MGT-007C-Mobile.dc.html",
+    "MGT-007D.dc.html",
+    "MGT-007D-Mobile.dc.html",
+    "MGT-007E-REV.dc.html",
+    "MGT-007E-REV-Mobile.dc.html",
+    "MGT-007E-CHG.dc.html",
+    "MGT-007E-CHG-Mobile.dc.html",
+    "MGT-008.dc.html",
+    "MGT-008-Mobile.dc.html",
+    "MGT-008A.dc.html",
+    "MGT-008A-Mobile.dc.html",
+    "MGT-008B.dc.html",
+    "MGT-008B-Mobile.dc.html",
+    "MGT-008C.dc.html",
+    "MGT-008C-Mobile.dc.html",
+    "MGT-008D.dc.html",
+    "MGT-008D-Mobile.dc.html",
+    "MGT-008E.dc.html",
+    "MGT-008E-Mobile.dc.html",
+    "MGT-008F.dc.html",
+    "MGT-008F-Mobile.dc.html",
+    "MGT-008G.dc.html",
+    "MGT-008G-Mobile.dc.html",
+    "MGT-008H.dc.html",
+    "MGT-008H-Mobile.dc.html",
+    "MGT-009.dc.html",
+    "MGT-009-Mobile.dc.html",
+    "MGT-009A.dc.html",
+    "MGT-009A-Mobile.dc.html",
+    "MGT-009B.dc.html",
+    "MGT-009B-Mobile.dc.html",
+    "MGT-009C.dc.html",
+    "MGT-009C-Mobile.dc.html",
+    "MGT-009D.dc.html",
+    "MGT-009D-Mobile.dc.html",
+    "MGT-009E.dc.html",
+    "MGT-009E-Mobile.dc.html",
+    "MGT-009F.dc.html",
+    "MGT-009F-Mobile.dc.html",
     "Setup.dc.html",
     "Studio.dc.html",
     "Builder.dc.html",
@@ -2854,7 +3370,8 @@
     "Manage.dc.html",
     "Unpublish.dc.html",
     "Learner.dc.html",
-    "Manage2.dc.html"
+    "Manage2.dc.html",
+    "Manage3.dc.html"
   ],
   "notes": {
     "b1-setup": {
@@ -3186,13 +3703,58 @@
       "w": 260,
       "fill": "pink"
     },
+    "b8-validation": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 8 · Validation History: overview, record details, case history, findings, version relationship, required actions",
+      "w": 240,
+      "x": 0,
+      "y": 58673
+    },
+    "b8-validation-new": {
+      "x": 0,
+      "y": 58823,
+      "text": "NEW · batch 8",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b8-archive": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 8 · Archive & Removal: home, impact, confirm, archived, archived course, restore, removal request, removal status, restricted",
+      "w": 240,
+      "x": 0,
+      "y": 61043
+    },
+    "b8-archive-new": {
+      "x": 0,
+      "y": 61193,
+      "text": "NEW · batch 8",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b8-insights": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 8 · Insights & Engagement: hub, learning performance, assessments, content health, reviews, questions & support, discussion",
+      "w": 240,
+      "x": 0,
+      "y": 62875
+    },
+    "b8-insights-new": {
+      "x": 0,
+      "y": 63025,
+      "text": "NEW · batch 8",
+      "w": 260,
+      "fill": "pink"
+    },
     "sources": {
       "kind": "title1",
       "maxW": 3200,
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 58673
+      "y": 64908
     }
   },
   "noteOrder": [
@@ -3240,6 +3802,12 @@
     "b7-versions-new",
     "b7-learners",
     "b7-learners-new",
+    "b8-validation",
+    "b8-validation-new",
+    "b8-archive",
+    "b8-archive-new",
+    "b8-insights",
+    "b8-insights-new",
     "sources"
   ],
   "designSystems": [],

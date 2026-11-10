@@ -1,0 +1,1137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Manage Published Course · validation, archive, insights · shared source</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-link.off{opacity:.45;pointer-events:none}
+.ds-tag .tip{margin-left:0}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-tag.line{background:#FFFFFF;box-shadow:inset 0 0 0 1px #E6EAF3}
+.ds-opt{position:relative;display:flex;align-items:center;gap:14px;width:100%;box-sizing:border-box;padding:16px 18px;border-radius:14px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;text-align:left;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-opt:hover{border-color:#9DB8F7}
+.ds-opt.on{background:#EAF0FF;border-color:#1652F0}
+.ds-opt-ck{width:22px;height:22px;border-radius:999px;border:1.5px solid #CBD3E6;background:#FFFFFF;box-sizing:border-box;flex-shrink:0;margin-left:auto;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.ds-opt-ck .ck{display:none}
+.ds-opt.on .ds-opt-ck{background:#1652F0;border-color:#1652F0}
+.ds-opt.on .ds-opt-ck .ck{display:block}
+.ds-in{height:48px;width:100%;box-sizing:border-box;padding:0 14px;border-radius:12px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;font-size:15px;color:#0B1433;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.ds-in::placeholder{color:#8A93AD}
+.ds-in:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.ds-acts{display:flex;align-items:center;justify-content:flex-end;gap:20px;margin-top:32px}
+.ds-acts.c{justify-content:center}
+.ds-acts.sb{justify-content:space-between}
+.ko-v.am{--k:#B97A10;--kb:#FFF4E0}
+.ko-v.cb{--k:#1652F0;--kb:#EAF0FF}
+.cr-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
+.cr-c{background:#1652F0}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.ds-opt:focus-visible,.tip:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.tip{position:relative;display:inline-flex;align-items:center;vertical-align:-2px;margin-left:6px;color:#8A93AD;cursor:default;outline:none}
+.tip:hover,.tip:focus{color:#1652F0}
+.tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
+.tip-b.r{left:auto;right:-12px}
+.tip-b.dn{bottom:auto;top:calc(100% + 10px)}
+.tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
+.ko-v{--k:#0F6B45;--kb:#E7F5EE}
+.ko-emb{position:relative;width:84px;height:84px;display:flex;align-items:center;justify-content:center}
+.ko-halo{position:absolute;inset:0;border-radius:50%;background:var(--kb);z-index:1}
+.ko-disc{position:relative;z-index:1;width:58px;height:58px;border-radius:50%;background:var(--k);color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(11,20,51,.16)}
+.ko-pill{margin-top:14px;display:inline-flex;align-items:center;height:30px;padding:0 13px;border-radius:999px;background:var(--kb);color:var(--k);font-size:13px;font-weight:500}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.sm{width:28px;height:28px}
+.dlp-c{position:relative;display:inline-block;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(0,0,0,0) 61%,rgba(150,96,0,.5) 64%,rgba(0,0,0,0) 69%),radial-gradient(circle at 34% 28%,#FFF6CF 0%,#F9DC7A 30%,#EAB534 62%,#C38712 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),inset 0 -1.5px 1px rgba(130,80,0,.35),0 1.5px 0 #A86F06,0 3px 5px -2px rgba(110,70,0,.55);vertical-align:-3px;animation:dlpFlip 6s ease-in-out infinite}
+.dlp-c::before{content:"D";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Google Sans',system-ui,sans-serif;font-size:10px;font-weight:700;line-height:1;transform:translateY(.6px);box-sizing:border-box;color:#8A5A00;text-shadow:0 1px 0 rgba(255,246,207,.85)}
+.dlp-c::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.75) 48%,rgba(255,255,255,0) 60%);background-size:250% 100%;background-position:120% 0;animation:dlpShine 6s ease-in-out infinite;pointer-events:none}
+@keyframes dlpFlip{0%,70%{transform:rotateY(0)}82%{transform:rotateY(180deg)}94%,100%{transform:rotateY(360deg)}}
+@keyframes dlpShine{0%,30%{background-position:120% 0}48%,100%{background-position:-20% 0}}
+@media (prefers-reduced-motion: reduce){.dlp-c,.dlp-c::after{animation:none}}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
+}
+@media (max-width: 760px){
+.tip-b{display:none;width:min(250px,calc(100vw - 48px))}
+.tip:hover .tip-b,.tip:focus .tip-b{display:block}
+.ds-acts{display:flex;flex-direction:column-reverse;align-items:stretch;gap:4px;position:sticky;bottom:0;z-index:20;margin:28px -20px 0;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7}
+.ds-acts .ds-btn{width:100%;justify-content:space-between}
+.ds-acts .ds-link{justify-content:center;min-height:40px}
+.ko-emb{width:72px;height:72px}
+.ko-disc{width:48px;height:48px}
+.ko-disc svg{width:24px;height:24px}
+}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}.ob-in3{animation:obIn .5s ease .16s both}.ob-in4{animation:obIn .5s ease .24s both}
+.ds-root{display:grid;grid-template-columns:264px minmax(0,1fr);min-height:100vh;background:#F7F9FD;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.ds-side{position:sticky;top:0;height:100vh;overflow-y:auto;box-sizing:border-box;padding:22px 14px 24px 14px;background:#FFFFFF;border-right:1.5px solid #E6EAF3;display:flex;flex-direction:column;gap:2px;z-index:20}
+.ds-glab{display:block;margin:16px 12px 6px 12px;font-size:12px;font-weight:600;color:#8A93AD}
+.ds-item{display:flex;align-items:center;gap:12px;min-height:40px;padding:0 12px;border-radius:12px;color:#3A4566;font-size:14.5px;font-weight:500;text-decoration:none;transition:background .2s ease,color .2s ease}
+.ds-item svg{flex-shrink:0;color:#5B6582}
+.ds-item:hover{background:#F5F8FF;color:#0B1433}
+.ds-on{background:#EAF0FF !important;color:#0E3BB8 !important;font-weight:600}
+.ds-on svg{color:#1652F0}
+.ds-badge{min-width:22px;height:22px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.ds-top{position:sticky;top:0;z-index:10;height:72px;box-sizing:border-box;padding:0 clamp(20px,3vw,40px);display:flex;align-items:center;gap:12px;background:rgba(247,249,253,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.ds-search{flex:1 1 auto;max-width:440px;height:44px;box-sizing:border-box;display:flex;align-items:center;gap:10px;padding:0 16px;border-radius:999px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#8A93AD;font-size:14px}
+.ds-search input{border:0;outline:none;background:transparent;font-family:inherit;font-size:14px;color:#0B1433;flex-grow:1;min-width:0}
+.ds-search input::placeholder{color:#8A93AD}
+.ds-icon-btn{width:44px;height:44px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#3A4566;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;text-decoration:none}
+.ds-icon-btn:hover{border-color:#AFC1F5}
+.ds-tok{height:44px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:7px;padding:0 14px 0 7px;border-radius:999px;background:linear-gradient(135deg,#FFFAEB,#FFF1CF);border:1.5px solid #F4D98E;font-size:14.5px;font-weight:600;color:#4A3300;text-decoration:none;box-shadow:0 6px 16px rgba(214,150,30,.12);transition:box-shadow .2s ease}
+.ds-tok:hover{box-shadow:0 8px 20px rgba(214,150,30,.24)}
+.ds-main{box-sizing:border-box;width:100%;max-width:1200px;padding:12px clamp(20px,3vw,40px) 56px clamp(20px,3vw,40px)}
+.ds-h1{margin:0;font-size:clamp(28px,2.5vw,36px);line-height:1.15;font-weight:600;letter-spacing:-0.03em;color:#0B1433}
+.ds-sub{margin:8px 0 0 0;font-size:16px;line-height:1.55;color:#4A5578}
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-weight:600;font-size:14.5px;text-decoration:none}
+.ds-link:hover{color:#0E3BB8}
+.ds-back{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px 0 10px;border-radius:999px;color:#3A4566;font-size:14px;font-weight:500;text-decoration:none;margin-left:-10px}
+.ds-back:hover{background:#FFFFFF;color:#0B1433}
+.ds-menu,.ds-scrim,.ds-mlogo,.ds-close{display:none}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-item:focus-visible,.ds-icon-btn:focus-visible,.ds-opt:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2,.ob-in3,.ob-in4{animation:none}}
+@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}}
+@media (max-width: 960px){
+.ds-root{grid-template-columns:minmax(0,1fr)}
+.ds-side{position:fixed;left:0;top:0;width:288px;max-width:86vw;transform:translateX(-102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 64px rgba(11,20,51,.18)}
+.ds-side.ds-open{transform:none}
+.ds-scrim.ds-open{display:block;position:fixed;inset:0;background:rgba(11,20,51,.32);z-index:15}
+.ds-menu,.ds-mlogo{display:flex}
+.ds-close{display:flex;position:absolute;right:12px;top:16px}
+.ds-top{height:64px;padding:0 16px;gap:8px}
+.ds-search,.ds-hide-sm{display:none !important}
+.ds-tok{padding:0 12px 0 6px;height:40px}
+.ds-icon-btn{width:40px;height:40px}
+.ds-h1{font-size:24px !important;line-height:1.2}
+.ds-sub{font-size:14.5px;margin-top:6px}
+.ds-back{height:36px;font-size:13.5px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
+.ds-root{overflow-x:hidden}
+.ds-main{padding:12px 16px 32px 16px}
+.ds-btn{justify-content:space-between}
+}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/56bd922e46929406f00f4b18fe9b3244) left center/contain no-repeat}
+.av{position:relative;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:#EAF0FF;color:#0E3BB8;font-size:11px;font-weight:600;box-sizing:border-box}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sel{position:relative;display:block}
+.sel select{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:pointer}
+.sel svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:#5B6582;pointer-events:none}
+textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;resize:vertical}
+.wk{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr) 312px;grid-template-rows:auto 1fr;grid-template-areas:"m r" "a r";column-gap:24px;align-items:start}
+.wk-m{grid-area:m;min-width:0;display:flex;flex-direction:column;gap:16px}
+.wk-m > .fc,.wk-m > .fc + .fc{margin-top:0}
+.wk-r{grid-area:r;min-width:0;position:sticky;top:92px;display:flex;flex-direction:column;gap:14px}
+.ds-btn.sm{height:36px;padding:0 16px;font-size:13.5px}
+.rx{padding:18px;border-radius:20px}
+.rx-k{display:flex;align-items:center;margin-bottom:12px;font-size:12.5px;font-weight:500;color:#8A93AD}
+.rx-p{margin:12px 0 0 0;font-size:13px;line-height:1.5;color:#5B6582}
+.rm{padding:0;overflow:hidden;background:radial-gradient(circle at 50% 50%,#F5F8FF,#FFFFFF 70%)}
+@keyframes rmSpin{to{transform:rotate(360deg)}}
+.rg-a{animation:rgDraw 1.4s cubic-bezier(.2,.8,.2,1) .25s both}
+@keyframes rgDraw{from{stroke-dasharray:0 400}}
+.lo{position:relative;gap:14px}
+.lo::before{content:'';position:absolute;left:17px;top:18px;bottom:40px;width:2px;border-radius:2px;background:linear-gradient(180deg,#1652F0,#AFC1F5 75%,#F4DDAA)}
+@media (prefers-reduced-motion: reduce){.rg-a{animation:none}}
+@media (max-width: 1180px){.wk{grid-template-columns:minmax(0,1fr) 280px;column-gap:20px}}
+@media (max-width: 960px){
+.wk{display:flex;flex-direction:column;align-items:stretch;gap:16px;margin-top:20px}
+.wk-m{display:contents}
+.wk-r{display:contents}
+.wk-m > *{order:2}
+.wk-r > .rx{order:3}
+.wk-r > .rm{display:none}
+.rx{padding:18px 16px;border-radius:18px}
+.lo::before{left:13px;top:14px}
+}
+.cv-t{position:relative;display:block;width:64px;height:64px;flex-shrink:0;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 85% 15%,rgba(92,134,255,.85),rgba(92,134,255,0) 60%),linear-gradient(140deg,#1652F0,#0B1433);box-shadow:0 12px 24px -14px rgba(22,82,240,.8)}
+.cv-t i{position:absolute;left:9px;bottom:7px;font-style:normal;font-size:15px;font-weight:600;color:#FFFFFF;letter-spacing:-0.02em}
+.gb{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 10px;border-radius:999px;background:linear-gradient(135deg,#F7D98B,#C9952C);color:#3D2700;font-size:12px;font-weight:600;white-space:nowrap}
+.gb.sm{height:22px;font-size:11.5px;padding:0 8px}
+.lv-d{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 0 0 currentColor;animation:lvP 2s ease-out infinite}
+@keyframes lvP{0%{box-shadow:0 0 0 0 rgba(15,107,69,.5)}100%{box-shadow:0 0 0 7px rgba(15,107,69,0)}}
+.cst-t{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.cst-p{display:inline-flex;align-items:center;flex-wrap:wrap;gap:5px;font-size:13.5px;color:#5B6582}
+.cst-p .dlp-c,.cst-p .cr-c{width:16px;height:16px;font-size:9px;margin-left:4px}
+.ds-btn.sm2{height:44px;font-size:14.5px;padding-left:20px;gap:12px}
+.ds-btn.sm2 .ob-arrow{width:34px;height:34px}
+.cr-root{grid-template-columns:264px minmax(0,1fr)}
+.cr-lg{display:block;padding:4px 10px 16px 10px}
+.cr-lg .lg-word{height:24px}
+.ci-t{flex-grow:1;min-width:0}
+.ds-mlogo{flex-grow:1}
+.ds-mlogo .lg-word{height:20px}
+.fc{padding:24px 26px 26px 26px}
+.fc-h{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+.fc-h h2{margin:0;display:flex;align-items:center;font-size:17px;font-weight:600;letter-spacing:-0.01em}
+.bl-c{position:absolute;right:-3px;top:-3px;min-width:18px;height:18px;padding:0 4px;box-sizing:border-box;border-radius:999px;background:#E5484D;color:#FFFFFF;font-size:10.5px;font-weight:600;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px #F7F9FD}
+.cw-me{display:flex;border-radius:50%}
+.mg-main{position:relative;isolation:isolate;max-width:1240px}
+.mg-main::before{content:'';position:absolute;z-index:-1;left:0;right:0;top:-80px;height:300px;pointer-events:none;background:radial-gradient(60% 100% at 30% 0,rgba(22,82,240,.07),transparent 70%)}
+.bc{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin:4px 0 14px 0;font-size:13px;color:#8A93AD}
+.bc a{color:#5B6582;text-decoration:none}
+.bc a:hover{color:#1652F0}
+.bc svg{color:#AEB6CC}
+.bc span{color:#0B1433;font-weight:500}
+.pg-h{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.pg-hl{min-width:0}
+.pg-hl .ds-back{margin-bottom:6px}
+.ds-ghost.sm{height:42px;padding:0 16px;font-size:14px;gap:7px}
+.ds-ghost.xs{height:34px;padding:0 12px;font-size:13px;border-width:1.5px}
+.ds-link.sm{font-size:13.5px}
+.sh{margin:28px 0 12px 0;font-size:17px;font-weight:600;letter-spacing:-0.01em}
+.mc-i{width:40px;height:40px;margin-bottom:6px;border-radius:13px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.mc-a{margin-top:8px;display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:#1652F0}
+.mc-a svg{transition:transform .25s ease}
+.bn2{position:relative;overflow:hidden;margin-top:18px;display:flex;align-items:flex-start;gap:14px;padding:16px 18px;border-radius:18px;border:1.5px solid}
+.bn2 > div{flex:1;min-width:0}
+.bn2 b{display:block;font-size:15.5px;font-weight:600}
+.bn2 p{margin:3px 0 0 0;font-size:14px;line-height:1.55}
+.bn2-i{width:38px;height:38px;flex-shrink:0;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.bn2.ok{background:#F2FAF5;border-color:#CFE8DB}.bn2.ok .bn2-i{background:#0F6B45}.bn2.ok p{color:#2C5240}
+.bn2.am{background:#FFF8EA;border-color:#F4DDAA}.bn2.am .bn2-i{background:#B76E00}.bn2.am p{color:#6B4A00}
+.bn2.rd{background:#FFF5F4;border-color:#F5C2BD}.bn2.rd .bn2-i{background:#B42318}.bn2.rd p{color:#7A271A}
+.wk{margin-top:18px}
+.cst-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.cst-b > b{font-size:17px;font-weight:600}
+.dz-a{color:#B42318;border-color:#F5C2BD}
+.dz-a:hover{border-color:#B42318;background:#FFF5F4;color:#912018}
+.dl{position:fixed;z-index:1001;left:50%;top:50%;transform:translate(-50%,-50%);width:560px;max-width:calc(100vw - 32px);max-height:calc(100vh - 48px);overflow-y:auto;box-sizing:border-box;border-radius:24px;background:#FFFFFF;box-shadow:0 40px 90px -30px rgba(11,20,51,.5);animation:dlIn .45s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes dlIn{from{opacity:0;transform:translate(-50%,-46%) scale(.97)}}
+.o-t{display:flex;flex-direction:column;gap:3px;min-width:0}
+.ds-back{margin-left:-10px}
+@media (max-width: 960px){
+.cr-root{grid-template-columns:minmax(0,1fr)}
+.bc{margin-bottom:10px;font-size:12px}
+.pg-h{flex-direction:column;align-items:flex-start;gap:12px}
+.pg-h.row{flex-direction:row;align-items:center;justify-content:space-between}
+.fc{padding:18px 16px 20px 16px;border-radius:18px}
+.ds-ghost.sm{height:38px;font-size:13.5px;padding:0 14px}
+.sh{margin:22px 0 10px 0;font-size:16px}
+.mc-i{width:36px;height:36px;margin-bottom:4px}
+.mc-a{margin-top:6px;font-size:12.5px}
+.bn2{padding:14px;gap:12px}
+.bn2-i{width:34px;height:34px}
+.bn2 b{font-size:15px}
+.bn2 p{font-size:13.5px}
+.dz-a{width:100%}
+.dl{top:auto;bottom:0;left:0;right:0;transform:none;width:100%;max-width:none;max-height:92vh;border-radius:24px 24px 0 0;animation:dlUp .45s cubic-bezier(.2,.9,.3,1) both}
+@keyframes dlUp{from{transform:translateY(40px);opacity:0}}
+}
+@media (max-width: 960px){
+.bc:has(+ .pg-h .ds-back){display:none}
+.dz-a{grid-column:1 / -1;margin-top:10px}
+.mc-i{margin:0;width:36px;height:36px;flex-shrink:0}
+.mc-a{margin:0;font-size:0;gap:0}
+.mc-a svg{width:16px;height:16px;color:#AEB6CC}
+}
+.cst2{display:flex;align-items:center;gap:16px;padding:16px 18px}
+.cst2 .cv-t{width:52px;height:52px;border-radius:14px}
+.cst2 .cst-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.cst2 .cst-b > b{font-size:16.5px;font-weight:600}
+.wk-m{gap:16px}
+.wk-m > section,.wk-m > div{margin-top:0}
+.wk-m .sh{margin:6px 0 10px 0}
+.fc-h p{margin:4px 0 0 0;font-size:14px;line-height:1.55;color:#5B6582}
+.ds-acts.wk-a2{position:sticky;bottom:0;z-index:5;margin:4px 0 0 0;padding:12px 12px 12px 22px;border-radius:999px;background:rgba(255,255,255,.94);border:1.5px solid #E6EAF3;box-shadow:0 18px 40px -24px rgba(11,20,51,.35);display:flex;align-items:center;justify-content:space-between;gap:16px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.ds-acts.wk-a2{flex-direction:row}
+.wk-a2 .sv-s .ds-link{min-height:0}
+.ds-acts.wk-a2:has(.sv-s:empty){align-self:flex-end;width:max-content;padding-left:12px}
+.wk-m:has(> .wk-a2:has(.sv-s:empty)) .wk-a2{margin-left:auto}
+.ar .ds-opt:last-child:nth-child(odd){grid-column:1 / -1}
+.wk-a2 .sv-s{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:#5B6582}
+.wk-a2 .sv-r{display:inline-flex;align-items:center;gap:14px;margin-left:auto}
+.stp{list-style:none;margin:18px 0 0 0;padding:0;display:flex;align-items:center;gap:0;max-width:560px}
+.stp li{flex:1;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#8A93AD;position:relative}
+.stp li + li::before{content:'';flex:0 0 28px;height:2px;margin-right:8px;background:#E6EAF3}
+.stp li.dn + li::before,.stp li.on::before{background:linear-gradient(90deg,#0F6B45,#1652F0)}
+.stp i{width:24px;height:24px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;background:#FFFFFF;font-style:normal;font-size:11.5px;font-weight:600;display:flex;align-items:center;justify-content:center;color:#8A93AD}
+.stp .dn{color:#0F6B45}.stp .dn i{background:#0F6B45;border-color:#0F6B45;color:#FFFFFF}
+.stp .on{color:#0B1433;font-weight:600}.stp .on i{background:#1652F0;border-color:#1652F0;color:#FFFFFF;box-shadow:0 0 0 5px rgba(22,82,240,.14)}
+@keyframes bdG{from{transform:scaleX(0)}}
+.pr2{display:flex;flex-direction:column;align-items:flex-start;gap:8px;background:linear-gradient(160deg,#F2FAF5,#FFFFFF 70%);border-color:#CFE8DB}
+.pr2-i{width:40px;height:40px;border-radius:13px;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 0 rgba(15,107,69,.3);animation:prP 3s ease-out infinite}
+@keyframes prP{0%{box-shadow:0 0 0 0 rgba(15,107,69,.3)}70%,100%{box-shadow:0 0 0 12px rgba(15,107,69,0)}}
+.pr2 b{font-size:15px;font-weight:600;color:#0F6B45}
+.pr2 p{margin:0;font-size:13px;line-height:1.55;color:#2C5240}
+.pr2 .ds-ghost{margin-top:6px}
+.rs3{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.ds-opt.sm{padding:12px 14px;border-radius:14px}
+.ds-opt.sm .o-t b{font-size:14px;font-weight:500}
+.cmp{padding:6px 20px}
+.cmp-r{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) 30px minmax(0,1fr);align-items:center;gap:12px;padding:13px 0;border-top:1.5px solid #F0F2F8;font-size:14px}
+.cmp-r:first-child{border-top:0}
+.cmp-hd{font-size:12.5px;font-weight:500;color:#8A93AD;padding:10px 0}
+.cmp-r > span:first-child{color:#3A4566}
+.cmp-o{color:#5B6582}
+.cmp-n{font-weight:600}
+.cmp-a{color:#1652F0;display:flex}
+.cmp-r.ch{margin:0 -12px;padding:13px 12px;border-radius:14px;background:#F5F8FF;border-top-color:transparent}
+.cmp-r.ch + .cmp-r{border-top-color:transparent}
+.cmp-r.ch .cmp-o{text-decoration:line-through;text-decoration-thickness:1.5px}
+.cmp-r.ch .cmp-n{color:#0E3BB8;animation:dfIn .5s ease .3s both}
+@keyframes dfIn{from{opacity:0;transform:translateX(-6px)}}
+.ko-in{display:flex;justify-content:center;padding:30px 0 20px 0}
+.ko{width:min(640px,100%);display:flex;flex-direction:column;align-items:center;text-align:center;--k:#0F6B45;--kb:#E7F5EE}
+.ko-v.am{--k:#B97A10;--kb:#FFF4E0}.ko-v.rd{--k:#B42318;--kb:#FDECEA}
+.ko.am .ko-pill{background:#FFF4E0;color:#8A5A00}.ko.rd .ko-pill{background:#FDECEA;color:#B42318}
+.ko-h1{margin:14px 0 0 0;font-size:34px;line-height:1.12;font-weight:600;letter-spacing:-0.03em}
+.ko-sub{margin:10px 0 0 0;max-width:540px;font-size:15.5px;line-height:1.55;color:#4A5578}
+.ko-card{margin-top:24px;width:100%;box-sizing:border-box;padding:20px 22px;border-radius:22px;border:1.5px solid #E6EAF3;background:#FFFFFF;text-align:left}
+.ko-acts{margin-top:24px;display:flex;align-items:center;justify-content:center;gap:12px}
+@keyframes vrM{to{background-position:18px 0}}
+.vh2-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.vh2-h .rx-k{margin:0}
+.ar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.dd ul i.m{background:#1652F0}.dd ul i.a{background:#0F6B45}.dd ul i.r{background:#D92D20}
+.dd ul{list-style:none;margin:12px 0 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.dd li{display:flex;align-items:center;gap:8px;font-size:13.5px;color:#3A4566}
+.dd li i{width:8px;height:8px;border-radius:50%}
+.dd li b{margin-left:auto;font-weight:600;color:#0B1433}
+@keyframes clP{50%{opacity:.6}}
+.tk2-l{display:flex;align-items:center;gap:0;padding:16px;border-radius:18px;background:#F7F9FD}
+.tk2-r{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#FFFFFF;border:1.5px solid #E6EAF3;font-size:13px;white-space:nowrap}
+.tk2-r b{font-weight:600}
+.tk2-r em{font-style:normal;color:#5B6582}
+.tk2-r.live{color:#0F6B45;border-color:#CFE8DB}
+.tk2-r.rv{border-color:#C9D7FA}
+.tk2-dot{width:9px;height:9px;border-radius:50%;background:#1652F0;animation:rvP 1.6s ease-out infinite}
+@keyframes rvP{0%{box-shadow:0 0 0 0 rgba(22,82,240,.45)}100%{box-shadow:0 0 0 8px rgba(22,82,240,0)}}
+.tk2-line{flex:1;height:2px;margin:0 8px;position:relative;overflow:hidden;background:#E6EAF3}
+.tk2-line i{position:absolute;top:0;bottom:0;width:30%;background:linear-gradient(90deg,transparent,#1652F0,transparent);animation:tkS 1.8s ease-in-out infinite}
+@keyframes tkS{from{left:-30%}to{left:100%}}
+@keyframes vtA{50%{opacity:1;transform:scale(1.2)}}
+.imm{display:flex;gap:12px}
+.imm-i{width:36px;height:36px;flex-shrink:0;border-radius:11px;background:#0B1433;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.imm p{margin:0;font-size:13px;line-height:1.55;color:#3A4566}
+.st4b{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.sb{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:2px;padding:16px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 70ms + 150ms)}
+.sb::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--c)}
+.sb.all{--c:#0B1433}.sb.cb{--c:#1652F0}.sb.bl{--c:#5C86FF}.sb.ok{--c:#0F6B45}
+.sb b{font-size:28px;font-weight:600;letter-spacing:-0.03em}
+.sb span{font-size:13.5px;font-weight:600}
+.sb em{font-style:normal;font-size:12px;color:#5B6582}
+.dr-t{margin-top:14px;display:flex;align-items:center;gap:8px}
+.dr-f{width:150px;flex-shrink:0}
+.dr-f .ds-in{height:40px;font-size:13px;border-radius:999px;padding-left:14px}
+.la2{width:36px;height:36px;flex-shrink:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#FFFFFF}
+.h1{background:linear-gradient(135deg,#5C86FF,#1652F0)}.h2{background:linear-gradient(135deg,#34C38F,#0F6B45)}.h3{background:linear-gradient(135deg,#F4B860,#B76E00)}.h4{background:linear-gradient(135deg,#8A93AD,#3A4566)}.h5{background:linear-gradient(135deg,#C49BF5,#6B3FC2)}
+.vd-v{width:44px;height:44px;flex-shrink:0;border-radius:13px;background:#0F6B45;color:#FFFFFF;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.vd-v.dr{background:#FFF4E0;color:#8A5A00;border:1.5px dashed #E0A030;box-sizing:border-box}
+@keyframes rmSpin{to{transform:rotate(360deg)}}
+.bn2.gy{background:#F7F9FD;border-color:#E6EAF3}.bn2.gy .bn2-i{background:#5B6582}.bn2.gy p{color:#3A4566}
+.bn2 .ds-ghost{align-self:center;flex-shrink:0}
+@media (max-width: 1180px){.st4b{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width: 960px){
+.stp{margin-top:14px;max-width:none}
+.stp li{flex:none;font-size:12px}
+.stp li span{display:none}
+.stp li.on span{display:inline}
+.stp li + li::before{flex-basis:22px}
+.cst2{padding:14px;gap:12px}
+.cst2 .cv-t{width:44px;height:44px;border-radius:12px}
+.cst2 .cst-b > b{font-size:15px}
+.cst2 .cst-p{font-size:12.5px}
+.wk-m{gap:14px}
+.ds-acts.wk-a2{position:sticky;margin:6px -16px 0 -16px;padding:12px 16px 14px 16px;border-radius:0;border:0;border-top:1.5px solid #EEF1F7;box-shadow:none;flex-direction:column-reverse;align-items:stretch;gap:8px}
+.wk-a2 .sv-r{flex-direction:column-reverse;align-items:stretch;gap:6px;margin:0;width:100%}
+.wk-a2 .sv-r .ds-btn{width:100%;justify-content:space-between}
+.wk-a2 .sv-r .ds-link,.wk-a2 .sv-r .ds-ghost,.wk-a2 .sv-s .ds-link,.wk-a2 .sv-s .ds-ghost{justify-content:center;min-height:40px}
+.wk-a2 .sv-s{display:flex;justify-content:center;font-size:12.5px;text-align:center}
+.wk-a2 .sv-s:empty{display:none}
+.ds-acts.wk-a2:has(.sv-s:empty){width:auto;align-self:stretch;padding-left:16px}
+.wk-a2:has(.sv-s .ds-link){flex-direction:column-reverse}
+.rs3{grid-template-columns:minmax(0,1fr);gap:0;border:1.5px solid #E6EAF3;border-radius:16px;overflow:hidden}
+.rs3 .ds-opt{border:0;border-radius:0}
+.rs3 .ds-opt + .ds-opt{border-top:1.5px solid #F0F2F8}
+.rs3 .ds-opt.on{box-shadow:inset 3px 0 0 #1652F0}
+.cmp{padding:2px 16px}
+.cmp-hd{display:none}
+.cmp-r{grid-template-columns:minmax(0,1fr) auto auto auto;gap:8px;font-size:13px}
+.cmp-r > span:first-child{grid-column:1 / -1;font-size:12px;color:#8A93AD}
+.cmp-r:not(.ch) .cmp-o,.cmp-r:not(.ch) .cmp-a{display:none}
+.cmp-r:not(.ch){grid-template-columns:minmax(0,1fr) auto}
+.cmp-r:not(.ch) > span:first-child{grid-column:1;font-size:13px;color:#3A4566}
+.cmp-r.ch{margin:0 -8px;padding:12px 8px;grid-template-columns:auto auto auto 1fr}
+.cmp-r.ch > span:first-child{color:#0E3BB8;font-weight:500}
+.ko-in{padding:16px 0 8px 0}
+.ko-h1{font-size:26px}
+.ko-sub{font-size:14.5px}
+.ko-card{padding:14px}
+.ko-acts{flex-direction:column-reverse;width:100%;gap:8px}
+.ko-acts .ds-btn{width:100%;justify-content:space-between}
+.ko-acts .ds-ghost{width:100%}
+.ar{grid-template-columns:minmax(0,1fr);gap:0;border:1.5px solid #E6EAF3;border-radius:16px;overflow:hidden}
+.ar .ds-opt{border:0;border-radius:0;padding:12px 14px}
+.ar .ds-opt + .ds-opt{border-top:1.5px solid #F0F2F8}
+.ar .ds-opt.on{box-shadow:inset 3px 0 0 #1652F0}
+.ar .o-t span{display:none}
+.wk-r > .dd{display:none}
+.tk2-l{padding:10px;gap:0}
+.tk2-r{padding:6px 10px;font-size:12px}
+.st4b{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.sb{padding:12px 14px;border-radius:16px}
+.sb b{font-size:22px}
+.sb em{display:none}
+.dr-t{flex-wrap:wrap}
+.dr-f{flex:1;width:auto}
+.dr-t .ds-ghost{flex-shrink:0}
+.wk-m > .wk-a2{order:6}
+.dr-t .ds-ghost span{display:none}
+.dr-t .ds-ghost{width:40px;padding:0;height:40px;border-radius:50%}
+.wk-a2 .sv-r .ds-ghost{width:100%}
+.bn2{flex-wrap:wrap}
+.bn2 .ds-ghost{width:100%}
+}
+.ds-acts.wk-a2:has(.sv-s:empty){background:none;border:0;box-shadow:none;padding:0;backdrop-filter:none;-webkit-backdrop-filter:none}
+@media (max-width: 960px){
+.cst2{margin-top:14px}
+.wk .cst2{margin-top:0}
+}
+.utabs{margin-top:20px;display:flex;gap:26px;border-bottom:1.5px solid #E6EAF3;overflow-x:auto;scrollbar-width:none}
+.utabs::-webkit-scrollbar{display:none}
+.ut{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;height:46px;margin-bottom:-1.5px;border-bottom:2.5px solid transparent;color:#5B6582;font-size:14.5px;font-weight:500;text-decoration:none;white-space:nowrap}
+.ut:hover{color:#0B1433}
+.ut.on{color:#0B1433;font-weight:600;border-bottom-color:#1652F0}
+.utabs + .wk,.utabs + .kp{margin-top:20px}
+.ko-v.gy{--k:#5B6582;--kb:#EEF1F7}
+.ko.gy .ko-pill{background:#EEF1F7;color:#3A4566}
+.nt{margin:14px 0 0 0;display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.5;color:#8A93AD}
+.nt svg{flex-shrink:0;margin-top:2px;width:14px;height:14px}
+.lc-stars{display:inline-flex;gap:2px}
+.lc-stars i{width:13px;height:13px;background:#F4C66A;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.lc-stars i.h{background:linear-gradient(90deg,#F4C66A 80%,#E6EAF3 80%)}
+.lc-stars i.o{background:#E6EAF3}
+.dc-r{width:100%;display:flex;align-items:flex-start;gap:12px;padding:13px 14px;border-radius:14px;border:1.5px solid #E6EAF3;background:#FFFFFF;font-family:inherit;font-size:14px;line-height:1.5;color:#0B1433;text-align:left;cursor:pointer}
+.dc-b{width:20px;height:20px;flex-shrink:0;margin-top:1px;box-sizing:border-box;border-radius:6px;border:1.5px solid #CBD3E6;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.dc-b svg{opacity:0;transform:scale(.6);transition:opacity .2s ease,transform .2s ease}
+.dc-r.on{border-color:#1652F0;background:#F5F8FF}.dc-r.on .dc-b{border-color:#1652F0;background:#1652F0}.dc-r.on .dc-b svg{opacity:1;transform:none}
+.cf-g{display:flex}
+.cf-g .ds-btn{transition:opacity .25s ease,filter .25s ease}
+.cf-g:not(.on) .ds-btn{opacity:.45;filter:saturate(.4);pointer-events:none}
+.cf-g.on .ds-btn{animation:cfIn .5s cubic-bezier(.3,1.4,.5,1)}
+@keyframes cfIn{50%{transform:scale(1.04)}}
+.fx3{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.fx3.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+.fx3.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.fx3.col{grid-template-columns:minmax(0,1fr)}
+.fx3 div{display:flex;flex-direction:column;gap:3px;padding:12px 14px;border-radius:14px;background:#F7F9FD}
+.fx3 dt{font-size:12px;color:#8A93AD}
+.fx3 dd{margin:0;display:flex;align-items:center;font-size:14.5px;font-weight:600}
+.cei{position:relative;width:132px;height:132px}
+.cei-v{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.cei-v b{font-size:38px;font-weight:600;letter-spacing:-0.03em;line-height:1;color:#5A3B00}
+.cei-v em{font-style:normal;font-size:12.5px;color:#8A5A00}
+.lv2{display:grid;grid-template-columns:180px minmax(0,1fr);gap:24px;padding:22px 24px;background:linear-gradient(150deg,#FFFAEB,#FFFFFF 55%);border-color:#F0DDAE}
+.lv2-l{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+.gb.lg2{height:30px;font-size:13px;padding:0 12px;animation:gbS 4s ease-in-out infinite;background-size:200% 100%;background-image:linear-gradient(110deg,#F7D98B 20%,#FFF1C9 40%,#C9952C 60%)}
+@keyframes gbS{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+.lv2-r{display:flex;flex-direction:column;gap:12px;min-width:0}
+.lv2-r .rx-k{margin:0}
+.lv2-t{font-size:20px;font-weight:600;letter-spacing:-0.01em}
+.lv2-r .fx3 div{background:#FFFFFF;border:1.5px solid #F4E9C8}
+.lv2-n{display:flex;gap:10px;padding:12px 14px;border-radius:14px;background:#FFFFFF;border:1.5px dashed #E8D6A6;font-size:13px;line-height:1.5;color:#3A4566}
+.lv2-n svg{flex-shrink:0;margin-top:2px;color:#B07A12}
+.lv2-n b{display:block;color:#0B1433;font-weight:600}
+.lv2-a{display:flex;align-items:center;gap:16px}
+.lv2-a .ds-link,.rv2 > .ds-link,.fd3 .ds-link{display:inline-flex;align-items:center;gap:5px}
+.rv2{padding:20px 22px;display:flex;flex-direction:column;gap:14px}
+.rv2-h{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.rv2-h .rx-k{margin-bottom:4px}
+.rv2-h b{display:block;font-size:16px;font-weight:600}
+.rv2-n{margin:0;display:flex;gap:8px;align-items:center;font-size:13px;color:#2C5240;padding:10px 12px;border-radius:12px;background:#F2FAF5}
+.rv2-n svg{flex-shrink:0;color:#0F6B45}
+.vtl{list-style:none;margin:0;padding:0;position:relative}
+.vtl li:not(:last-child)::before{content:'';position:absolute;left:15px;top:42px;bottom:-10px;width:2px;background:linear-gradient(180deg,#1652F0,#0F6B45)}
+.vtl li{position:relative;display:flex;gap:14px;padding:10px 0;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 120ms + 200ms)}
+.vtl-n{position:relative;z-index:1;width:32px;height:32px;flex-shrink:0;border-radius:50%;color:#FFFFFF;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px #FFFFFF}
+.vtl .cb .vtl-n{background:#1652F0;animation:rvP 1.8s ease-out infinite}
+.vtl .ok .vtl-n{background:#0F6B45}
+.vtl li > div{display:flex;flex-direction:column;gap:2px;padding-top:4px}
+.vtl b{font-size:15px;font-weight:600}
+.vtl em{font-style:normal;font-size:12.5px;color:#8A93AD}
+.vtl p{margin:4px 0 0 0;font-size:13.5px;line-height:1.5;color:#3A4566}
+.ch3-r{display:grid;grid-template-columns:minmax(0,1.3fr) 44px auto;align-items:center;gap:8px;padding:10px 0;border-top:1.5px solid #F0F2F8;font-size:13px}
+.ch3-hd{border-top:0;padding-top:0;font-size:11.5px;color:#8A93AD}
+.ch3-r b{font-weight:600}
+.ch3-r .ds-tag{height:22px;font-size:11px;justify-self:end}
+.ca{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.ca-i{width:38px;height:38px;border-radius:12px;background:#E7F5EE;color:#0F6B45;display:flex;align-items:center;justify-content:center}
+.ca b{font-size:15px;font-weight:600}
+.ca p{margin:0;font-size:13px;line-height:1.55;color:#3A4566}
+.vr3{padding:20px 22px}
+.vr3-h{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.vr3-h > div{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.vr3-h b{font-size:18px;font-weight:600}
+.vr3-s{width:54px;height:54px;border-radius:17px;background:#0F6B45;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 0 rgba(15,107,69,.35);animation:prP 3s ease-out infinite}
+.va3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.va3-c{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:16px;border-radius:18px;background:#F7F9FD;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 100ms + 200ms)}
+.va3-i{width:38px;height:38px;margin-bottom:6px;border-radius:12px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.va3-c b{font-size:14.5px;font-weight:600}
+.va3-c em{font-style:normal;font-size:12.5px;color:#5B6582;margin-bottom:6px}
+.fds{position:relative;overflow:hidden}
+.fds-q{position:absolute;right:20px;top:-10px;font-size:120px;line-height:1;font-weight:600;color:#EAF0FF}
+.fds p{position:relative;margin:0 0 16px 0;font-size:15.5px;line-height:1.65;color:#0B1433}
+.ceis .cei{margin:4px auto 0 auto}
+.vr3 .fx3.five{grid-template-columns:repeat(4,minmax(0,1fr))}
+.vr3 .fx3 > div:nth-child(4){display:none}
+.ct{margin-top:24px;padding:16px 20px 8px 20px}
+.ct .dr-t{margin:0 0 6px 0}
+.ct .dr-f{width:170px}
+.ct-r{display:grid;grid-template-columns:minmax(0,1.2fr) 90px minmax(0,1fr) minmax(0,1fr) 120px;align-items:center;gap:12px;padding:14px 0;border-top:1.5px solid #F0F2F8;font-size:14px;color:#0B1433;text-decoration:none;animation:obIn .45s ease both;animation-delay:calc(var(--i,0) * 80ms + 200ms)}
+a.ct-r{margin:0 -10px;padding:14px 10px;border-radius:14px}
+a.ct-r:hover{background:#F7F9FD}
+.ct-hd{font-size:12.5px;font-weight:500;color:#8A93AD;padding:10px 0;animation:none}
+.ct-r .ds-tag{justify-self:start}
+.ct-v{font-weight:600}
+.ct-d{color:#5B6582}
+.fv3{margin-top:24px;display:flex;flex-direction:column;gap:16px}
+.fs3{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,2fr);gap:10px}
+.fs3-n{margin:0;display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;font-size:13px;line-height:1.5;color:#5B6582}
+.fs3-n svg{flex-shrink:0;width:30px;height:30px;padding:8px;box-sizing:border-box;border-radius:10px;background:#0B1433;color:#FFFFFF}
+.fd3g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.fs3 > span{display:flex;align-items:baseline;gap:10px;padding:16px 18px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3}
+.fs3 b{font-size:30px;font-weight:600;letter-spacing:-0.03em}
+.fs3 em{font-style:normal;font-size:13.5px;color:#5B6582}
+.fs3-z{background:linear-gradient(150deg,#F2FAF5,#FFFFFF 70%) !important;border-color:#CFE8DB !important}
+.fs3-z b{color:#0F6B45}
+.fd3{padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.fd3 header{display:flex;align-items:center;gap:12px}
+.fd3 header > div{flex:1;display:flex;flex-direction:column;gap:2px}
+.fd3 header b{font-size:15.5px;font-weight:600}
+.fd3 header em{font-style:normal;font-size:12.5px;color:#8A93AD}
+.fd3-i{width:34px;height:34px;flex-shrink:0;border-radius:50%;background:#E7F5EE;color:#0F6B45;display:flex;align-items:center;justify-content:center}
+.fd3 > p{margin:0;font-size:14px;line-height:1.55;color:#3A4566}
+.fd3-r{padding:12px 14px;border-radius:14px;background:#F2FAF5;border-left:3px solid #0F6B45}
+.fd3-r .rx-k{margin:0 0 4px 0}
+.fd3-r p{margin:0;font-size:13.5px;line-height:1.55;color:#2C5240}
+.vp{margin-top:20px;display:grid;grid-template-columns:minmax(0,1fr) 90px minmax(0,1fr);align-items:stretch}
+.vpc{display:flex;flex-direction:column;gap:14px;padding:20px}
+.vpc header{display:flex;align-items:center;gap:12px}
+.vpc header > div{flex:1}
+.vpc header b{font-size:17px;font-weight:600}
+.vpc.live{background:linear-gradient(160deg,#F2FAF5,#FFFFFF 60%);border-color:#CFE8DB}
+.vpc.rv{background:linear-gradient(160deg,#F5F8FF,#FFFFFF 60%);border-color:#C9D7FA;border-style:dashed}
+.vpc .fx3 div{flex-direction:row;justify-content:space-between;align-items:center;background:#FFFFFF;border:1.5px solid #EEF1F7}
+.vp-x{position:relative;display:flex;align-items:center;justify-content:center}
+.vp-l{position:absolute;left:0;right:0;top:50%;height:2px;background:repeating-linear-gradient(90deg,#CBD3E6 0 5px,transparent 5px 10px)}
+.vp-b{position:relative;width:38px;height:38px;border-radius:50%;background:#0B1433;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px #F7F9FD}
+.cr3{margin-top:16px;display:flex;gap:16px;padding:18px 20px}
+.cr3-i{width:44px;height:44px;flex-shrink:0;border-radius:14px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.cr3 .rx-k{margin:0 0 6px 0}
+.cr3 p{margin:0;font-size:14.5px;line-height:1.6;color:#3A4566}
+.arw{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:stretch}
+.arc{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:22px}
+.arc b{font-size:17px;font-weight:600}
+.arc > p{margin:0;font-size:13.5px;line-height:1.55;color:#3A4566}
+.arc .ds-ghost{margin-top:auto}
+.arc-i{width:46px;height:46px;border-radius:15px;background:#EEF1F7;color:#3A4566;display:flex;align-items:center;justify-content:center}
+.arc.rm{border-color:#F5D3CE;background:linear-gradient(150deg,#FFF7F6,#FFFFFF 60%)}
+.arc.rm .arc-i{background:#FDECEA;color:#B42318}
+.arc-s{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.arc-s > div{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:12px;border-radius:14px;background:#F7F9FD}
+.arc-s em{font-style:normal;font-size:12px;color:#8A93AD}
+.arc-n{margin:0;display:flex;align-items:flex-start;gap:8px;font-size:13px;line-height:1.5;color:#8A5A00}
+.arc-n svg{flex-shrink:0;margin-top:3px;color:#B76E00}
+.arc-w{padding:12px 14px;border-radius:14px;background:#FFFFFF;border:1.5px solid #F5D3CE}
+.arc-w b{font-size:13.5px}
+.arc-w p{margin:4px 0 0 0;font-size:13px;line-height:1.5;color:#5B6582}
+.wac{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.wac li{display:flex;gap:12px;padding:14px;border-radius:16px;background:#F7F9FD;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 80ms + 200ms)}
+.wac li > span{width:26px;height:26px;flex-shrink:0;border-radius:50%;background:#0B1433;color:#FFFFFF;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.wac p{margin:2px 0 0 0;font-size:13.5px;line-height:1.5;color:#3A4566}
+.dpc ul{list-style:none;margin:0;padding:0}
+.dpc li{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1.5px solid #F0F2F8;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 90ms + 300ms)}
+.dpc li:first-child{border-top:0;padding-top:0}
+.dpc li b{flex:1;font-size:13.5px;font-weight:500}
+.dpc .ds-tag{height:22px;font-size:11px}
+.dpc-s{width:16px;height:16px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:2px solid #F4DDAA;border-top-color:#D99A1E;animation:rmSpin 1.2s linear infinite}
+.asm-v{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.asm-v > span{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px;border-radius:14px;background:#F7F9FD}
+.asm-v em{font-style:normal;font-size:12.5px;font-weight:600}
+.asm-a{color:#8A93AD}.asm-b{background:#0B1433 !important;color:#FFFFFF}
+.asm-v > i{width:22px;height:2px;background:repeating-linear-gradient(90deg,#9DB8F7 0 4px,transparent 4px 8px);background-size:16px 2px;animation:vrM 1s linear infinite}
+.asm-r{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 0;border-top:1.5px solid #F0F2F8;font-size:13px}
+.asm-r > span{color:#5B6582}
+.asm-r s{color:#8A93AD;margin-right:6px}
+.asm-r b{font-weight:600}
+.ko4{margin-top:22px;width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.ko4 span{display:flex;flex-direction:column;gap:3px;padding:14px;border-radius:16px;background:#FFFFFF;border:1.5px solid #E6EAF3}
+.ko4 em{font-style:normal;font-size:12px;color:#8A93AD}
+.ko4 b{font-size:15px;font-weight:600}
+.ko4 .ok b{color:#0F6B45}
+.rcd{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+.rcd-c{grid-column:span 2}
+.rcd-c:nth-child(n+4){grid-column:span 3}
+.bn2:not(:has(p)){align-items:center}
+.rcd-c{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#0B1433;text-decoration:none;transition:transform .2s ease,border-color .2s ease;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 60ms + 200ms)}
+.rcd-c:hover{transform:translateY(-2px);border-color:#AFC1F5}
+.rcd-c b{flex:1;font-size:14px;font-weight:600}
+.rcd-c > svg{color:#AEB6CC}
+.rcd-i{width:36px;height:36px;flex-shrink:0;border-radius:11px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.rst{display:flex;flex-direction:column;align-items:flex-start;gap:8px;background:linear-gradient(160deg,#F5F8FF,#FFFFFF 60%);border-color:#C9D7FA}
+.rst-i{width:40px;height:40px;border-radius:13px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 20px -10px rgba(22,82,240,.7)}
+.rst b{font-size:15px;font-weight:600}
+.rst p{margin:0;font-size:13px;line-height:1.55;color:#3A4566}
+.rsv-v{display:flex;align-items:center;gap:8px}
+.rsv-b{width:56px;height:56px;border-radius:17px;display:flex;align-items:center;justify-content:center}
+.rsv-b.a{background:#EEF1F7;color:#8A93AD}.rsv-b.b{background:#1652F0;color:#FFFFFF;box-shadow:0 12px 24px -12px rgba(22,82,240,.8)}
+.rsv-p{flex:1;display:flex;justify-content:center;gap:6px}
+.rsv-p i{width:8px;height:8px;border-radius:50%;background:#1652F0;opacity:.25;animation:vtA 1.2s ease-in-out infinite}
+.rsv-p i:nth-child(2){animation-delay:.2s}.rsv-p i:nth-child(3){animation-delay:.4s}
+@keyframes vtA{50%{opacity:1;transform:scale(1.2)}}
+.rsv-l{margin-top:8px;display:flex;justify-content:space-between;font-size:12px;color:#5B6582}
+.sc3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.ds-opt.sc3-o{flex-direction:column;align-items:flex-start;gap:10px;padding:16px}
+.ds-opt.sc3-o .ds-opt-ck{position:absolute;top:14px;right:14px}
+.ds-opt.sc3-o .o-t b{font-size:14px;font-weight:600;line-height:1.4}
+.sc3-i{width:38px;height:38px;border-radius:12px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.ds-opt.on .sc3-i{background:#FFFFFF}
+.ii{display:flex;flex-direction:column;align-items:flex-start;gap:8px;background:#FFF8EA;border-color:#F4DDAA}
+.ii-i{width:38px;height:38px;border-radius:12px;background:#B76E00;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.ii b{font-size:15px;font-weight:600}
+.ii p{margin:0;font-size:13px;line-height:1.55;color:#6B4A00}
+.rq3w{margin-top:24px;display:flex;flex-direction:column;gap:16px}
+.rq3w .fc{margin:0}
+.rq3w .nt{margin-top:22px;padding-top:14px;border-top:1.5px solid #F0F2F8}
+.rq3{padding:20px 22px}
+.rq3-h{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.rq3-h > div{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.rq3-h em{font-style:normal;font-size:12.5px;color:#8A93AD}
+.rq3-i{width:52px;height:52px;border-radius:16px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.rtl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:relative}
+.rtl::before{content:'';position:absolute;left:12.5%;right:12.5%;top:15px;height:2px;background:#E6EAF3}
+.rtl::after{content:'';position:absolute;left:12.5%;width:25%;top:15px;height:2px;background:linear-gradient(90deg,#0F6B45,#1652F0);transform-origin:left;animation:bdG 1s ease .3s both}
+.rtl li{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.rtl-n{width:32px;height:32px;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;background:#FFFFFF;color:#8A93AD;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.rtl .dn .rtl-n{background:#0F6B45;border-color:#0F6B45;color:#FFFFFF}
+.rtl .on .rtl-n{background:#1652F0;border-color:#1652F0;color:#FFFFFF;animation:rvP 1.8s ease-out infinite}
+.rtl b{font-size:13px;font-weight:500;color:#3A4566;max-width:150px}
+.rtl .on b{color:#0B1433;font-weight:600}
+.pr4{list-style:none;margin:10px 0 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.pr4 li{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:#FFF8EA;font-size:14px;font-weight:500}
+.pr4 svg{color:#B76E00;flex-shrink:0}
+.i9{margin-top:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.i9c{position:relative;display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#0B1433;text-decoration:none;overflow:hidden;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 70ms + 150ms)}
+.i9c:hover{transform:translateY(-3px);border-color:#AFC1F5;box-shadow:0 22px 40px -28px rgba(22,82,240,.6)}
+.i9c b{font-size:16px;font-weight:600}
+.i9c p{flex:1;margin:0;font-size:13.5px;line-height:1.5;color:#5B6582}
+.i9c .mc-i{margin:-30px 0 4px 0;position:relative;z-index:1;box-shadow:0 0 0 5px #FFFFFF}
+.i9c:hover .mc-a svg{transform:translateX(3px)}
+.i9c-v{height:96px;margin:-18px -18px 0 -18px;padding:16px 18px;box-sizing:border-box;background:linear-gradient(160deg,#F5F8FF,#FFFFFF);display:flex;align-items:flex-end;justify-content:flex-end}
+.v9{display:flex}
+.v9.bars{align-items:flex-end;gap:6px;height:60px}
+.v9.bars i{width:16px;height:var(--h);border-radius:5px 5px 2px 2px;background:linear-gradient(180deg,#5C86FF,#1652F0);transform-origin:bottom;animation:mbUp .8s cubic-bezier(.2,.8,.2,1) both}
+.v9.bars i:nth-child(4){background:linear-gradient(180deg,#F4C66A,#D99A1E)}
+@keyframes mbUp{from{transform:scaleY(0)}}
+.v9.dots{display:grid;grid-template-columns:repeat(6,10px);gap:5px}
+.v9.dots i{width:10px;height:10px;border-radius:3px;background:#C9D7FA}
+.v9.dots i:nth-child(odd){background:#1652F0}
+.v9.dots i.lo{background:#D92D20;animation:clP 1.6s ease-in-out infinite}
+@keyframes clP{50%{opacity:.5}}
+.v9.rg9{position:relative;width:64px;height:64px}
+.v9.rg9 b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#0F6B45}
+.v9.st9{flex-direction:column;align-items:flex-end;gap:4px}
+.v9.st9 b{font-size:28px;font-weight:600;line-height:1}
+.v9.ch9{flex-direction:column;align-items:flex-end;gap:5px}
+.v9.ch9 i{height:14px;border-radius:8px}
+.v9.ch9 .a{width:70px;background:#EAF0FF}.v9.ch9 .b{width:90px;background:#1652F0}.v9.ch9 .s{width:46px}
+.v9.th9{flex-direction:column;gap:5px}
+.v9.th9 i{width:110px;height:10px;border-radius:5px;background:#EEF1F7}
+.v9.th9 i:first-child{background:#C9D7FA;width:90px}
+.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));grid-auto-flow:column;padding:6px}
+.kp-c{display:flex;flex-direction:column;gap:2px;padding:14px 18px;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 70ms + 150ms)}
+.kp-c + .kp-c{border-left:1.5px solid #F0F2F8}
+.kp-c b{font-size:28px;font-weight:600;letter-spacing:-0.03em}
+.kp-c span{font-size:13px;font-weight:500;color:#3A4566}
+.kp-c em{margin-top:4px;align-self:flex-start;font-style:normal;font-size:11.5px;font-weight:500;padding:2px 8px;border-radius:999px;background:#F1F3F8;color:#5B6582}
+.kp-c.am b{color:#B76E00}.kp-c.am em{background:#FFF4E0;color:#8A5A00}
+.kp-c.rd b{color:#B42318}.kp-c.rd em{background:#FDECEA;color:#B42318}
+.kp-c.ok b{color:#0F6B45}.kp-c.ok em{background:#E7F5EE;color:#0F6B45}
+.kp-c.cb b{color:#1652F0}.kp-c.cb em{background:#EAF0FF;color:#0E3BB8}
+.g9{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+.g9 .fc{margin:0;display:flex;flex-direction:column}
+.g9 .hbs{flex:1;justify-content:space-between}
+.g9 + .fc{margin-top:16px}
+.fc-a{display:flex;align-items:center;gap:14px;flex-shrink:0}
+.fc-a .ds-link{display:inline-flex;align-items:center;gap:5px}
+.hbs{display:flex;flex-direction:column;gap:12px}
+.hb{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.6fr) 44px;align-items:center;gap:12px;font-size:13.5px}
+.hb-l{color:#3A4566;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hb-t{position:relative;height:10px;border-radius:10px;background:#EEF1F7}
+.hb-t i{position:absolute;left:0;top:0;bottom:0;width:var(--w);border-radius:10px;background:linear-gradient(90deg,#5C86FF,#1652F0);transform-origin:left;animation:bdG .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i) * 80ms + 200ms)}
+.hb-t s{position:absolute;top:-4px;bottom:-4px;width:2px;background:#0B1433;border-radius:2px}
+.hb b{text-align:right;font-weight:600}
+.hbs.fun .hb{grid-template-columns:minmax(0,1.7fr) minmax(0,1.3fr) 44px}
+.hb.dr .hb-l{overflow:visible}
+.hbs.out .hb:last-child .hb-t i{background:linear-gradient(90deg,#F4C66A,#D99A1E)}
+.hb.dr{margin:0 -10px;padding:8px 10px;border-radius:12px;background:#FFF5F4}
+.hb.dr .hb-t i{background:linear-gradient(90deg,#F5A097,#D92D20)}
+.hb.dr .hb-l::after{content:'Biggest drop';margin-left:8px;padding:2px 7px;border-radius:999px;background:#FDECEA;color:#B42318;font-size:11px;font-weight:500}
+.hbs.pr9 .hb:nth-child(4) .hb-t i{background:linear-gradient(90deg,#F4C66A,#D99A1E)}
+.hbs.pr9 .hb{grid-template-columns:minmax(0,1fr) 40px;row-gap:4px}
+.hbs.pr9 .hb-t{grid-column:1 / -1;grid-row:2}
+.hb-k{display:flex;align-items:center;gap:6px;margin-top:12px;font-size:12px;color:#5B6582}
+.hb-k s{width:2px;height:12px;background:#0B1433;border-radius:2px}
+.ll{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.ll-c{display:grid;grid-template-columns:52px minmax(0,1fr);align-items:center;column-gap:12px;row-gap:4px;padding:14px;border-radius:16px;background:#FFFAEB;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 90ms + 250ms)}
+.ll-c .rg{grid-row:1 / span 2}
+.ll-c > span{display:flex;align-items:baseline;gap:6px}
+.ll-c > span b{font-size:20px;font-weight:600;color:#8A5A00}
+.ll-c > span em{font-style:normal;font-size:12px;color:#8A93AD}
+.ll-c p{margin:0;font-size:13px;font-weight:500;line-height:1.4}
+.qp{display:flex;flex-direction:column}
+.qp-r{display:grid;grid-template-columns:50px 50px minmax(0,1.5fr) 110px minmax(0,1.1fr);align-items:center;gap:12px;padding:13px 0;border-top:1.5px solid #F0F2F8;font-size:13.5px;animation:obIn .45s ease both;animation-delay:calc(var(--i,0) * 80ms + 250ms)}
+.qp-hd{border-top:0;padding-top:0;font-size:12px;font-weight:500;color:#8A93AD;animation:none}
+.qp-q{font-weight:600}
+.qp-o{display:inline-flex;justify-self:start;padding:2px 7px;border-radius:7px;background:#EAF0FF;color:#0E3BB8;font-size:11.5px;font-weight:600}
+.qp-c{display:flex;align-items:center;gap:8px}
+.qp-c i{flex:1;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--c) var(--w),#EEF1F7 var(--w))}
+.qp-c b{width:34px;text-align:right;font-weight:600}
+.qp-r.rd{--c:#D92D20}.qp-r.am{--c:#D99A1E}.qp-r.ok{--c:#0F6B45}.qp-r.cb{--c:#1652F0}
+.qp-p{font-size:12.5px;line-height:1.45;color:#5B6582}
+.qp-r.rd .qp-p{color:#B42318;font-weight:500}
+.qp-r.rd{margin:0 -10px;padding:13px 10px;border-radius:12px;background:#FFF5F4;border-top-color:transparent}
+.qp-r.rd + .qp-r{border-top-color:transparent}
+.q14{display:flex;align-items:center;gap:14px;padding:16px 18px;border-color:#DCE5FB;background:#FFFFFF url(/_blob/2201db898f778e583c1885b56e2d9c62) center / cover no-repeat}
+.q14 > div{flex:1}
+.q14 b{font-size:15px;font-weight:600}
+.q14 p{margin:2px 0 0 0;font-size:13.5px;color:#3A4566}
+.nf{padding:20px;border-color:#DCE5FB;background:#FFFFFF url(/_blob/2201db898f778e583c1885b56e2d9c62) center top / cover no-repeat}
+.nf-h{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.nf-h > span{display:flex;flex-direction:column}
+.nf-h b{font-size:16px;font-weight:600}
+.nf-h em{font-style:normal;font-size:12.5px;color:#5B6582}
+.nf-c{display:grid;grid-template-columns:32px minmax(0,1fr) auto;align-items:center;gap:12px;padding:14px;border-radius:16px;background:rgba(255,255,255,.88);border:1px solid #E1E8FA;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 120ms + 250ms)}
+.nf-c + .nf-c{margin-top:8px}
+.nf-s{align-self:start;width:32px;height:32px;border-radius:50%;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;animation:nfS 3s ease-in-out infinite}
+@keyframes nfS{50%{transform:rotate(20deg) scale(1.08)}}
+.nf-c b{font-size:14.5px;font-weight:600;line-height:1.4}
+.nf-c p{margin:4px 0 0 0;font-size:13px;line-height:1.5;color:#5B6582}
+.chr-r{position:relative;width:120px;height:120px;margin:4px auto 0 auto}
+.chr-r > span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.chr-r b{font-size:28px;font-weight:600;color:#0F6B45}
+.ac9 ul{list-style:none;margin:0;padding:0}
+.ac9 li{display:flex;gap:10px;padding:10px 0;border-top:1.5px solid #F0F2F8}
+.ac9 li:first-child{border-top:0;padding-top:0}
+.ac9-s{width:20px;height:20px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.ac9 li.ok .ac9-s{background:#E7F5EE;color:#0F6B45}
+.ac9 li.am .ac9-s{background:#FFE7B8;color:#8A5A00}
+.ac9 li > span:last-child{display:flex;flex-direction:column;gap:3px}
+.ac9 b{font-size:13.5px;font-weight:500}
+.ac9 em{font-style:normal;font-size:12.5px;line-height:1.45;color:#5B6582}
+.ac9 .ds-link{align-self:flex-start}
+.rvl2{display:flex;flex-direction:column;gap:12px}
+.rvc{padding:18px 20px;display:flex;flex-direction:column;gap:12px;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 100ms + 200ms)}
+.rvc header{display:flex;align-items:center;gap:12px}
+.rvc header > div{flex:1;display:flex;flex-direction:column;gap:3px}
+.rvc header b{font-size:14.5px;font-weight:600}
+.rvc header em{font-style:normal;font-size:12.5px;color:#8A93AD}
+.rvc > p{margin:0;font-size:15px;line-height:1.6}
+.rvc-r{display:flex;align-items:center;gap:8px}
+.rvc-r .ds-in{flex:1;height:42px;font-size:13.5px;border-radius:999px;padding:0 16px}
+.rvc-r .ds-ghost{flex-shrink:0}
+.la2.sm{width:28px;height:28px;font-size:10.5px}
+.rsm-t{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.rsm-t > b{font-size:46px;font-weight:600;letter-spacing:-0.03em;line-height:1}
+.rsm-t > span{display:flex;flex-direction:column;gap:4px}
+.rsm-t em{font-style:normal;font-size:12.5px;color:#5B6582}
+.rh{display:flex;flex-direction:column;gap:6px}
+.rh-r{display:grid;grid-template-columns:28px minmax(0,1fr) 36px;align-items:center;gap:8px;font-size:12.5px;color:#5B6582}
+.rh-r > span:first-child{display:flex;align-items:center;gap:3px;font-weight:600;color:#0B1433}
+.rh-r > span:first-child i{width:10px;height:10px;background:#F4C66A;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.rh-b{height:8px;border-radius:8px;background:#EEF1F7;overflow:hidden}
+.rh-b i{display:block;width:var(--w);height:100%;border-radius:8px;background:#F4C66A;transform-origin:left;animation:bdG .9s ease both;animation-delay:calc(var(--i) * 80ms + 300ms)}
+.rh-r em{font-style:normal;text-align:right}
+.sf .rx-p{margin:-6px 0 12px 0}
+.sf-r{display:grid;grid-template-columns:minmax(0,1fr) auto;row-gap:6px;padding:8px 0}
+.sf-r > span:first-child{font-size:13px;color:#3A4566}
+.sf-r b{font-size:13.5px;font-weight:600}
+.sf-r b em{font-style:normal;font-weight:400;color:#8A93AD}
+.sf-b{grid-column:1 / -1;height:6px;border-radius:6px;background:#EEF1F7;overflow:hidden}
+.sf-b i{display:block;width:var(--w);height:100%;border-radius:6px;background:linear-gradient(90deg,#5C86FF,#1652F0);transform-origin:left;animation:bdG .9s ease both;animation-delay:calc(var(--i) * 80ms + 300ms)}
+.tks{margin-top:16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+.tk{padding:18px 20px;display:flex;flex-direction:column;gap:10px;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 90ms + 200ms)}
+.tk.esc{border-color:#F4DDAA;background:linear-gradient(160deg,#FFFAF0,#FFFFFF 50%)}
+.tk header{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.tk-k{font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#8A93AD}
+.tk.esc .tk-k{color:#B76E00}
+.tk-q{font-size:15.5px;font-weight:600;line-height:1.45}
+.tk-w{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#5B6582}
+.tk-ai{padding:10px 12px;border-radius:12px;background:#F5F8FF}
+.tk-ai-k{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#0E3BB8}
+.tk-ai-k svg{width:12px;height:12px}
+.tk-ai p{margin:4px 0 0 0;font-size:13px;line-height:1.5;color:#3A4566}
+.tk-you{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border-radius:12px;background:#F2FAF5}
+.tk-you p{margin:0;font-size:13.5px;line-height:1.5;color:#2C5240}
+.tk .rvc-r .ds-link{flex-shrink:0;display:inline-flex;align-items:center;gap:4px}
+.th{margin-top:16px;padding:6px 20px}
+.th-r{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) 80px 100px 150px;align-items:center;gap:12px;padding:14px 0;border-top:1.5px solid #F0F2F8;font-size:13.5px;animation:obIn .45s ease both;animation-delay:calc(var(--i,0) * 70ms + 250ms)}
+.th-hd{border-top:0;font-size:12.5px;font-weight:500;color:#8A93AD;padding:10px 0;animation:none}
+.th-t{display:flex;align-items:center;gap:10px;flex-wrap:wrap;min-width:0}
+.th-t b{font-size:14.5px;font-weight:600}
+.th-t .ds-tag{height:22px;font-size:11px}
+.th-b{display:flex;align-items:center;gap:8px;color:#3A4566}
+.th-n{display:inline-flex;align-items:center;gap:6px;color:#5B6582}
+.th-n b{color:#0B1433;font-weight:600}
+.th-n.z b{color:#B76E00}
+.th-d{color:#5B6582}
+.th-a{display:flex;align-items:center;justify-content:flex-end;gap:10px}
+.th-a .ds-link{border:0;background:none;font-family:inherit;cursor:pointer;padding:0}
+.th-r.pin{margin:0 -10px;padding:14px 10px;border-radius:14px;background:#F5F8FF;border-top-color:transparent}
+.th-r.pin + .th-r{border-top-color:transparent}
+.th-r.un .th-t b::before{content:'';display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:#E0A030;vertical-align:2px;animation:lvP2 2s ease-out infinite}
+@keyframes lvP2{0%{box-shadow:0 0 0 0 rgba(224,160,48,.45)}100%{box-shadow:0 0 0 6px rgba(224,160,48,0)}}
+@media (max-width: 1180px){.i9{grid-template-columns:repeat(2,minmax(0,1fr))}.g9{grid-template-columns:minmax(0,1fr)}.tks{grid-template-columns:minmax(0,1fr)}.arw{grid-template-columns:minmax(0,1fr)}}
+@media (max-width: 960px){
+.utabs{margin:14px -16px 0 -16px;padding:0 16px;gap:20px}
+.ut{height:42px;font-size:13.5px}
+.fx3:not(.col),.fx3.five,.fx3.four,.vr3 .fx3.five{grid-template-columns:minmax(0,1fr);gap:0;padding:2px 14px;border-radius:14px;background:#F7F9FD}
+.fx3:not(.col) > div{flex-direction:row;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-radius:0;background:none}
+.fx3:not(.col) > div + div{border-top:1.5px solid #EEF1F7}
+.vr3 .fx3 > div:nth-child(4){display:flex}
+.wk-r > .ceis{display:none}
+.fx3 dd{font-size:13.5px;text-align:right}
+.lv2-r .fx3:not(.col){background:#FFFFFF;border:1.5px solid #F4E9C8}
+.lv2-r .fx3:not(.col) > div{border:0;background:none}
+.lv2-r .fx3:not(.col) > div + div{border-top:1.5px solid #F7EED6}
+.ko-card .fx3{background:none;padding:0 2px}
+.lv2{grid-template-columns:minmax(0,1fr);gap:14px;padding:16px}
+.lv2-l{flex-direction:row;justify-content:flex-start;gap:16px}
+.cei,.cei .rg{width:96px;height:96px}
+.cei-v b{font-size:28px}
+.lv2-t{font-size:17px}
+.lv2-a{flex-wrap:wrap;gap:8px 14px}
+.lv2-a .ds-ghost{flex:1}
+.rv2{padding:14px}
+.vtl b{font-size:14px}
+.vr3{padding:14px}
+.va3{grid-template-columns:minmax(0,1fr);gap:0;border:1.5px solid #E6EAF3;border-radius:16px;overflow:hidden}
+.va3-c{display:grid;grid-template-columns:38px minmax(0,1fr) auto;column-gap:12px;row-gap:2px;align-items:center;border-radius:0;padding:12px 14px;background:#FFFFFF}
+.va3-c + .va3-c{border-top:1.5px solid #F0F2F8}
+.va3-i{grid-row:1 / span 2;margin:0;background:#F5F8FF}
+.va3-c em{margin:0;grid-column:2}
+.va3-c .ds-tag{grid-row:1 / span 2;grid-column:3;height:22px;font-size:11px}
+.fds-q{font-size:80px;right:12px}
+.fds p{font-size:14.5px}
+.ct{padding:14px 14px 4px 14px}
+.ct .dr-t{flex-wrap:nowrap}
+.ct .dr-f{flex:1;width:auto}
+.ct-hd{display:none}
+.ct{margin-top:20px}
+.ct-r{grid-template-columns:auto auto minmax(0,1fr);gap:4px 0}
+a.ct-r{margin:0 -8px;padding:12px 8px}
+.ct-r > b{grid-column:1 / 3;grid-row:1}
+.ct-r .ds-tag{grid-column:3;grid-row:1;justify-self:end}
+.ct-v,.ct-r > span:nth-child(3),.ct-d{grid-row:2;font-size:12.5px;color:#5B6582;font-weight:400}
+.ct-v{grid-column:1}
+.ct-r > span:nth-child(3){grid-column:2}
+.ct-r > span:nth-child(3)::before{content:'·';margin:0 6px}
+.ct-d{grid-column:3;justify-self:end}
+.fv3{margin-top:20px;gap:10px}
+.fs3{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.fs3-n{grid-column:1 / -1;padding:12px 14px;font-size:12.5px}
+.fs3-n svg{width:26px;height:26px;padding:6px}
+.fd3g{grid-template-columns:minmax(0,1fr);gap:10px}
+.fs3 > span{padding:12px 14px}
+.fs3 b{font-size:24px}
+.fs3 em{font-size:12px}
+.fd3{padding:14px}
+.vp{grid-template-columns:minmax(0,1fr);margin-top:16px}
+.vp-x{height:40px}
+.vp-l{left:50%;right:auto;top:0;bottom:0;width:2px;height:auto;background:repeating-linear-gradient(180deg,#CBD3E6 0 5px,transparent 5px 10px)}
+.vp-b{width:30px;height:30px}
+.vpc{padding:16px;gap:10px}
+.vpc .fx3{grid-template-columns:minmax(0,1fr)}
+.cr3{padding:14px;gap:12px}
+.cr3 p{font-size:13.5px}
+.arc{padding:16px}
+.arc .ds-ghost{align-self:stretch;justify-content:center}
+.wk-m > .ack{order:4}
+.wk-r > .asm{order:3}
+.wk-r > .rsv{display:none}
+.wac{grid-template-columns:minmax(0,1fr);gap:6px}
+.wac li{padding:12px}
+.wk-r > .dpc{order:2}
+.asm-v > span{padding:10px}
+.ko4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.rcd{grid-template-columns:minmax(0,1fr);gap:0;border:1.5px solid #E6EAF3;border-radius:16px;overflow:hidden;background:#FFFFFF}
+.rcd-c,.rcd-c:nth-child(n+4){grid-column:auto;border:0;border-radius:0;padding:12px 14px}
+.rcd-c + .rcd-c{border-top:1.5px solid #F0F2F8}
+.wk-r > .rst{order:2}
+.sc3{grid-template-columns:minmax(0,1fr);gap:0;border:1.5px solid #E6EAF3;border-radius:16px;overflow:hidden}
+.sc3 .ds-opt{flex-direction:row;align-items:center;border:0;border-radius:0;padding:12px 14px}
+.sc3 .ds-opt + .ds-opt{border-top:1.5px solid #F0F2F8}
+.sc3 .ds-opt.on{box-shadow:inset 3px 0 0 #1652F0}
+.ds-opt.sc3-o .ds-opt-ck{position:static;margin-left:auto}
+.sc3-i{width:32px;height:32px;flex-shrink:0}
+.wk-r > .ii{order:1;display:grid;grid-template-columns:34px minmax(0,1fr);align-items:center;gap:10px 12px}
+.ii-i{width:34px;height:34px;border-radius:11px}
+.ii p{grid-column:1 / -1}
+.rq3w{margin-top:20px;gap:12px}
+.rq3{padding:14px}
+.rtl{grid-template-columns:minmax(0,1fr);gap:4px}
+.rtl::before{left:15px;right:auto;top:16px;bottom:16px;width:2px;height:auto}
+.rtl::after{display:none}
+.rtl li{flex-direction:row;text-align:left;gap:12px;min-height:44px}
+.rtl b{max-width:none}
+.i9{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
+.i9c{padding:14px;border-radius:18px;gap:4px}
+.i9c-v{height:70px;margin:-14px -14px 0 -14px;padding:10px 12px}
+.i9c .mc-i{width:34px;height:34px;margin-top:-24px}
+.i9c b{flex:1;font-size:14px;line-height:1.3}
+.i9c p{display:none}
+.i9c .mc-a{font-size:12.5px}
+.v9.bars{height:46px;gap:4px}.v9.bars i{width:11px}
+.v9.dots{grid-template-columns:repeat(6,7px);gap:4px}.v9.dots i{width:7px;height:7px}
+.v9.rg9,.v9.rg9 .rg{width:48px;height:48px}.v9.rg9 b{font-size:11px}
+.v9.st9 b{font-size:20px}
+.v9.th9 i{width:80px}.v9.th9 i:first-child{width:64px}
+.v9.ch9 .b{width:70px}.v9.ch9 .a{width:54px}
+.kp{grid-auto-flow:row;grid-template-columns:repeat(2,minmax(0,1fr));padding:4px}
+.kp-c{padding:12px}
+.kp-c + .kp-c{border-left:0}
+.kp-c:nth-child(even){border-left:1.5px solid #F0F2F8}
+.kp-c:nth-child(n+3){border-top:1.5px solid #F0F2F8}
+.kp:has(> .kp-c:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))}
+.kp-c:nth-child(3):last-child{border-top:0;border-left:1.5px solid #F0F2F8}
+.kp-c b{font-size:22px}
+.kp-c span{font-size:12px}
+.kp-c em{margin-top:2px;padding:0;background:none !important;font-size:11.5px;line-height:1.35}
+.kp-c:not(.am):not(.rd):not(.ok):not(.cb) em{color:#8A93AD}
+.g9{gap:14px;margin-top:14px}
+.hb,.hbs.fun .hb{grid-template-columns:minmax(0,1fr) 40px;row-gap:5px;font-size:13px}
+.hb-t{grid-column:1 / -1;grid-row:2}
+.hb-l{white-space:normal}
+.fc-a{display:none}
+.g9 + .fc{margin-top:14px}
+.ll{grid-template-columns:minmax(0,1fr);gap:8px}
+.qp-hd{display:none}
+.qp-r{grid-template-columns:auto auto minmax(0,1fr);gap:6px 10px}
+.qp-q{grid-row:1;grid-column:1}
+.qp-o{grid-row:1;grid-column:2}
+.qp-c{grid-row:1;grid-column:3}
+.qp-t{grid-column:1 / -1;grid-row:2;font-size:13px}
+.qp-p{grid-column:1 / -1;grid-row:3}
+.qp-r.rd{margin:0 -8px;padding:12px 8px}
+.wk-r > .rx:has(.pr9){order:1}
+.q14{flex-wrap:wrap;padding:14px}
+.q14 > div{flex-basis:calc(100% - 50px)}
+.q14 .ds-btn{width:100%;justify-content:space-between}
+.nf{padding:14px}
+.nf-c{grid-template-columns:minmax(0,1fr);gap:10px;padding:12px 14px}
+.nf-s{display:none}
+.nf-c > .ds-ghost,.nf-c > .ds-tag{justify-self:start}
+.wk-r > .chr{order:1}
+.wk-r > .chr .chr-r,.wk-r > .chr .chr-r .rg{width:84px;height:84px}
+.wk-r > .chr .chr-r b{font-size:20px}
+.wk-r > .chr{display:grid;grid-template-columns:84px minmax(0,1fr);column-gap:14px;align-items:center}
+.wk-r > .chr .rx-k{grid-column:2;margin:0}
+.wk-r > .chr .chr-r{grid-row:1 / span 2;margin:0}
+.wk-r > .chr .rx-p{grid-column:2;margin:4px 0 0 0}
+.wk-r > .ac9{order:1}
+.wk-r > .rsm{order:1}
+.wk-r > .sf{order:1}
+.rsm-t > b{font-size:38px}
+.rvc{padding:14px}
+.rvc > p{font-size:14px}
+.tks{grid-template-columns:minmax(0,1fr);gap:10px}
+.tk{padding:14px}
+.tk-q{font-size:14.5px}
+.rvc-r{flex-wrap:wrap}
+.rvc-r .ds-in{min-width:0;height:44px}
+.rvc-r .ds-ghost{height:44px}
+.tk .rvc-r .ds-link{flex-basis:100%;min-height:32px}
+.th{padding:2px 14px}
+.th-hd{display:none}
+.th-r{grid-template-columns:minmax(0,1fr) auto;gap:6px 10px}
+.th-t{grid-column:1 / -1}
+.th-b{grid-column:1;font-size:12.5px}
+.th-n{grid-column:2;grid-row:2;justify-self:end;font-size:12.5px}
+.th-d{display:none}
+.th-a{grid-column:1 / -1;justify-content:flex-start}
+.th-r.pin{margin:0 -8px;padding:14px 8px}
+}
+</style>
+</helmet>
+<div class="ds-root cr-root">
+<div class="ds-scrim {{navCls}}" onClick="{{toggleNav}}"></div>
+<nav class="ds-side {{navCls}}" aria-label="Main"><a class="cr-lg" href="#" aria-label="Credalio"><span class="lg-word"></span></a>
+<button type="button" class="ds-icon-btn ds-close" onClick="{{toggleNav}}" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2"></rect></svg><span class="ci-t">Dashboard</span></a><span class="ds-glab">Create</span><a href="MGT-DS-CR.dc.html" class="ds-item ds-on" aria-current="page"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6.5A2.5 2.5 0 0 1 4 18.5"></path><path d="M8 7h8"></path></svg><span class="ci-t">My Creations</span></a><a href="STU-001.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg><span class="ci-t">Create new</span></a><span class="ds-glab">Work</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 3.5h6v3H9zM9 12h6M9 16h4"></path></svg><span class="ci-t">Assigned to me</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="ci-t">Validation Centre</span><span class="ds-badge">1</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span class="ci-t">Discussions</span><span class="ds-badge">7</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3.5"></circle><path d="m5.6 5.6 3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"></path></svg><span class="ci-t">Learner support</span><span class="ds-badge">2</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span class="ci-t">Calendar</span></a><span class="ds-glab">Insights</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span class="ci-t">Learners</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M6.5 16v-5M11.5 16V6M16.5 16v-8"></path></svg><span class="ci-t">Analytics</span></a><span class="ds-glab">Economy</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg><span class="ci-t">Earnings & payouts</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg><span class="ci-t">Credit Wallet</span></a><span class="ds-glab">Creator</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z" fill="currentColor" stroke="none"></path></svg><span class="ci-t">Nova · your Copilot</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path></svg><span class="ci-t">Creator Centre</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span class="ci-t">Creator profile</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.3 1.7 2.9-.1.9 2.7 2.3 1.7-.9 2.7.9 2.7-2.3 1.7-.9 2.7-2.9-.1L12 21l-2.3-1.7-2.9.1-.9-2.7L3.6 15l.9-2.7-.9-2.7 2.3-1.7.9-2.7 2.9.1z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="ci-t">Verification & readiness</span></a><span class="ds-glab">Account</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg><span class="ci-t">Settings</span></a></nav>
+<div style="min-width: 0; display: flex; flex-direction: column">
+<header class="ds-top">
+<button type="button" class="ds-icon-btn ds-menu" onClick="{{toggleNav}}" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<span class="ds-mlogo"><span class="lg-word"></span></span>
+<label class="ds-search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span class="sr-only">Search</span><input placeholder="Search your learning experiences, learners, discussions..."></label>
+<span style="flex-grow: 1"></span>
+<a href="#" class="ds-tok" aria-label="72,450 Creio"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0; display: block"><defs><linearGradient id="tpa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9A3"></stop><stop offset="0.45" stop-color="#F6C343"></stop><stop offset="1" stop-color="#D08A12"></stop></linearGradient><linearGradient id="tpb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9CF5A"></stop><stop offset="1" stop-color="#E2A024"></stop></linearGradient></defs><circle cx="32" cy="34" r="29" fill="#B8740A" opacity="0.35"></circle><circle cx="32" cy="32" r="29" fill="url(#tpa)"></circle><circle cx="32" cy="32" r="22" fill="url(#tpb)" stroke="#FFF1C2" stroke-opacity="0.7" stroke-width="1.5"></circle><path d="M32 18l2.9 9.3 9.3 2.9-9.3 2.9L32 42.4l-2.9-9.3-9.3-2.9 9.3-2.9z" fill="#FFF8DF"></path><ellipse cx="23" cy="19" rx="9" ry="5" fill="#FFFFFF" opacity="0.35" transform="rotate(-30 23 19)"></ellipse></svg><span>72.4K</span></a>
+<a href="#" class="ds-icon-btn ds-hide-sm" aria-label="Help"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"></path></svg></a>
+<a href="#" class="ds-icon-btn" aria-label="Notifications, 9 new"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16z"></path><path d="M10 21h4"></path></svg><span class="bl-c">9</span></a>
+<a href="#" class="cw-me" aria-label="Your account"><span class="av" style="width: 40px; height: 40px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span></a>
+</header>
+<main class="ds-main mg-main {{tone}}">
+<sc-if value="{{p_h_a}}" hint-placeholder-val="{{ true }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Validation History</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-001.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Manage Course</span></a><h1 class="ds-h1">Validation History</h1><p class="ds-sub">Review your course’s validation status, decisions and approved learning versions.</p></div></header><div class="wk"><div class="wk-m"><section class="ds-card cst2 ob-in2"><span class="cv-t" aria-hidden="true"><i>SQL</i></span><div class="cst-b"><b>Data Analysis with SQL</b><span class="cst-t"><span class="ds-tag green">Published</span><span class="gb"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold Validated</span></span></span><span class="cst-p">Live Version 1.0 · Technology / Data &amp; Analytics</span></div></section><section class="ds-card lv2 ob-in2"><div class="lv2-l"><div class="cei"><svg class="rg" viewBox="0 0 120 120" width="132" height="132" aria-hidden="true"><defs><linearGradient id="ceig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7D98B"></stop><stop offset="1" stop-color="#C08A1E"></stop></linearGradient></defs><circle cx="60" cy="60" r="50" fill="none" stroke="#F3EAD3" stroke-width="10"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="url(#ceig)" stroke-width="10" stroke-linecap="round" stroke-dasharray="273.3 400" style="--d: 273.3" transform="rotate(-90 60 60)"></circle></svg><span class="cei-v"><b>87</b><em>/ 100</em></span></div><span class="gb lg2"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold Validated</span></span></div>
+<div class="lv2-r"><span class="rx-k">Current Live Validation</span><b class="lv2-t">Course Excellence Index</b><dl class="fx3 "><div><dt>Validated Version</dt><dd>v1.0</dd></div><div><dt>Validation Date</dt><dd>12 Sep 2026</dd></div><div><dt>Validation Case</dt><dd>VAL-00928</dd></div></dl>
+<div class="lv2-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span><b>CEI is a distinct metric from validation tier</b>The Course Excellence Index reflects the approved quality evaluation. Tier is determined by Credalio’s rubric and tier policy — a high CEI does not automatically mean Gold.</span></div>
+<div class="lv2-a"><a class="ds-ghost sm" href="MGT-007A.dc.html">View Validation Details</a><a class="ds-link sm" href="STU-PRV.dc.html">View Validated Version<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></div></div></section>
+<section class="ds-card rv2 ob-in3"><div class="rv2-h"><div><span class="rx-k">Current Revalidation</span><b>A newer course version is being reviewed.</b></div><span class="ds-tag blue">Under Review</span></div>
+<div class="tk2-l"><span class="tk2-r live"><i class="lv-d"></i><b>v1.0</b><em>Live version</em></span><span class="tk2-line"><i></i></span><span class="tk2-r rv"><span class="tk2-dot"></span><b>v1.1</b><em>Proposed version</em></span></div>
+<p class="rv2-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg><span>Your published version 1.0 remains live while the proposed update is reviewed. No changes have been applied to the marketplace course.</span></p><a class="ds-link sm" href="STU-055.dc.html">View Revalidation Case<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></section>
+<section class="ds-card fc ob-in4"><div class="fc-h"><div><h2>Validation Timeline</h2></div><span class="ds-tag line">2 Records</span></div><ol class="vtl"><li class="cb" style="--i: 0"><span class="vtl-n">1</span><div><b>Version 1.1 — Revalidation Submitted</b><em>Under review · Date from case record</em><p>Updated learning content and assessments submitted for review.</p></div></li><li class="ok" style="--i: 1"><span class="vtl-n">2</span><div><b>Version 1.0 — Gold Validation Approved</b><em>12 Sep 2026</em><p>Course approved for publication with CEI score 87.</p></div></li></ol></section></div><aside class="wk-r"><section class="ds-card rx ch3 ob-in3"><div class="vh2-h"><span class="rx-k">Validation Case History</span><a class="ds-link sm" href="MGT-007B.dc.html">View All</a></div><div class="ch3-r ch3-hd"><span>Case</span><span>Version</span><span>Status</span></div><div class="ch3-r"><b>VAL-00928</b><span>v1.0</span><span class="ds-tag green">Approved</span></div><div class="ch3-r"><b>Assigned case ID</b><span>v1.1</span><span class="ds-tag blue">In Review</span></div></section>
+<section class="ds-card rx ca ob-in4"><span class="ca-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><b>Current Validation Actions</b><p>There are no outstanding actions for the currently published version. Any new findings for version 1.1 will appear in its linked validation case.</p><a class="ds-ghost sm" href="MGT-007C.dc.html">View Findings &amp; Decisions</a></section></aside></div>
+</sc-if>
+<sc-if value="{{p_h_rec}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-007.dc.html">Validation History</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Case Details</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-007.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Validation History</span></a><h1 class="ds-h1">Validation Record</h1><p class="ds-sub">Case VAL-00928 · Data Analysis with SQL · Version 1.0</p></div></header><div class="wk"><div class="wk-m"><section class="ds-card vr3 ob-in2"><div class="vr3-h"><span class="vr3-s"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><div><span class="ds-tag green"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg> Approved</span><b>Final decision</b></div></div><dl class="fx3 five"><div><dt>Validation type</dt><dd>Initial Validation</dd></div><div><dt>Final decision</dt><dd>Approved</dd></div><div><dt>Validation tier</dt><dd><span class="gb sm"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold</span></span></dd></div><div><dt>CEI score</dt><dd>87 / 100</dd></div><div><dt>Decision date</dt><dd>12 Sep 2026</dd></div></dl></section>
+<section class="ds-card fc ob-in3"><div class="fc-h"><div><h2>Validation Areas</h2></div></div><div class="va3"><div class="va3-c" style="--i: 0"><span class="va3-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.5"></circle></svg></span><b>Learning Design & Pedagogy</b><em>Educational Validator</em><span class="ds-tag green"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg> Reviewed</span></div><div class="va3-c" style="--i: 1"><span class="va3-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M10 10.5a2 2 0 1 0 0 3M16 10.5a2 2 0 1 0 0 3"></path></svg></span><b>Subject Accuracy & Relevance</b><em>Subject Matter Validator</em><span class="ds-tag green"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg> Reviewed</span></div><div class="va3-c" style="--i: 2"><span class="va3-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8M8 12h5M8 16h3"></path></svg></span><b>Assessments & Evidence</b><em>Assessment Validator</em><span class="ds-tag green"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg> Reviewed</span></div></div></section>
+<section class="ds-card fc fds ob-in4"><span class="fds-q" aria-hidden="true">“</span><div class="fc-h"><div><h2>Final Decision Summary</h2></div></div><p>The course demonstrates clear learning design, accurate SQL instruction aligned to stated outcomes, and assessments that sufficiently evidence claimed skills. Approved for Gold validation at full course scope.</p><a class="ds-ghost sm" href="#"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5"></path><path d="M4 19h16"></path></svg><span>Download Validation Summary</span></a></section></div><aside class="wk-r"><section class="ds-card rx ceis ob-in3"><span class="rx-k">CEI score</span><div class="cei"><svg class="rg" viewBox="0 0 120 120" width="132" height="132" aria-hidden="true"><defs><linearGradient id="ceig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7D98B"></stop><stop offset="1" stop-color="#C08A1E"></stop></linearGradient></defs><circle cx="60" cy="60" r="50" fill="none" stroke="#F3EAD3" stroke-width="10"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="url(#ceig)" stroke-width="10" stroke-linecap="round" stroke-dasharray="273.3 400" style="--d: 273.3" transform="rotate(-90 60 60)"></circle></svg><span class="cei-v"><b>87</b><em>/ 100</em></span></div></section><section class="ds-card rx imm ob-in4"><span class="imm-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg></span><p>Validator identities, private deliberations and internal risk signals are not shown here — only the official, approved creator-facing decision.</p></section></aside></div>
+</sc-if>
+<sc-if value="{{p_h_cases}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-007.dc.html">Validation History</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Case History</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-007.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Validation History</span></a><h1 class="ds-h1">Validation Case History</h1><p class="ds-sub">Search and filter the validation records associated with this course.</p></div></header><section class="ds-card ct ob-in2"><div class="dr-t"><label class="sel dr-f"><span class="sr-only">All Statuses</span><select class="ds-in"><option>All Statuses</option></select><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></label><label class="sel dr-f"><span class="sr-only">All Types</span><select class="ds-in"><option>All Types</option></select><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></label></div><div class="ct-r ct-hd"><span>Case ID</span><span>Version</span><span>Validation Type</span><span>Decision / Status</span><span>Date</span></div><a class="ct-r" href="MGT-007A.dc.html" style="--i: 0"><b>VAL-00928</b><span class="ct-v">v1.0</span><span>Initial</span><span class="ds-tag green">Approved — Gold</span><span class="ct-d">12 Sep 2026</span></a><a class="ct-r" href="MGT-007A.dc.html" style="--i: 1"><b>Assigned case ID</b><span class="ct-v">v1.1</span><span>Revalidation</span><span class="ds-tag blue">Under Review</span><span class="ct-d">—</span></a></section><p class="nt"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Interactive example with fictional case history. Production supports multiple revalidation cycles, appeals and rejected submissions, each with its own linked case ID.</span></p>
+</sc-if>
+<sc-if value="{{p_h_find}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-007.dc.html">Validation History</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Findings & Decisions</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-007.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Validation History</span></a><h1 class="ds-h1">Findings &amp; Decisions</h1><p class="ds-sub">Review validation feedback and the status of required corrections.</p></div></header><div class="fv3"><div class="fs3 ob-in2"><span class="fs3-z"><b>0</b><em>Open — Live v1.0</em></span><span class="fs3-h"><b>2</b><em>Historical Findings</em></span><p class="fs3-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg><span>Illustrative findings, not actual validator decisions. Open findings route through the active Validation Centre workflow, never editing a historical approved record.</span></p></div><div class="fd3g"><article class="ds-card fd3 ob-in3"><header><span class="fd3-i"><svg class="ck" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><div><b>Assessment Alignment</b><em>Version 1.0 · Assessment Validation</em></div><span class="ds-tag green"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg> Resolved</span></header><p>An assessment required clearer alignment between its questions and the stated learning outcomes.</p><div class="fd3-r"><span class="rx-k">Resolution</span><p>Creator submitted revised assessment mapping. The correction was accepted during validation.</p></div><a class="ds-link sm" href="#">View Finding Details<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></article><article class="ds-card fd3 ob-in3"><header><span class="fd3-i"><svg class="ck" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><div><b>Content Clarification</b><em>Version 1.0 · Subject Matter Validation</em></div><span class="ds-tag green"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg> Resolved</span></header><p>A lesson explanation required additional clarification to support factual accuracy.</p></article></div></div>
+</sc-if>
+<sc-if value="{{p_h_ver}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-007.dc.html">Validation History</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Version Relationship</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-007.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Validation History</span></a><h1 class="ds-h1">Validated Course Versions</h1><p class="ds-sub">Which validation decisions apply to which course versions.</p></div></header><div class="vp ob-in2"><article class="ds-card vpc live"><header><span class="vd-v">v1.0</span><div><b>Version 1.0</b></div><span class="ds-tag green"><i class="lv-d"></i>Live</span></header><dl class="fx3 col"><div><dt>Validation</dt><dd><span class="gb sm"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold · CEI 87</span></span></dd></div><div><dt>Case</dt><dd>VAL-00928</dd></div><div><dt>Approval status</dt><dd>Approved</dd></div></dl></article>
+<span class="vp-x" aria-hidden="true"><span class="vp-l"></span><span class="vp-b"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg></span></span>
+<article class="ds-card vpc rv"><header><span class="vd-v dr">v1.1</span><div><b>Version 1.1</b></div><span class="ds-tag blue">Under Revalidation</span></header><dl class="fx3 col"><div><dt>Validation outcome</dt><dd>Pending</dd></div><div><dt>Marketplace status</dt><dd>Not Live</dd></div><div><dt>Learner assignments</dt><dd>None</dd></div></dl></article></div>
+<section class="ds-card cr3 ob-in3"><span class="cr3-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg></span><div><span class="rx-k">Core rule</span><p>The validation decision belongs to a specific immutable version or approved scope. If v1.1 is rejected, v1.0 does not automatically lose its valid approval — though a serious problem also present in v1.0 can open a separate compliance review against the live version.</p></div></section>
+</sc-if>
+<sc-if value="{{p_h_chg}}" hint-placeholder-val="{{ false }}">
+<div class="ko-in ob-in"><div class="ko am"><div class="ko-emb ko-v am" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17h.01"></path></svg></span></div><span class="ko-pill">Required Action</span><h1 class="ko-h1">Changes Requested</h1><p class="ko-sub">Validators have requested corrections to your submitted course update.</p><section class="ko-card"><dl class="fx3 "><div><dt>Course</dt><dd>Data Analysis with SQL</dd></div><div><dt>Submitted update</dt><dd>v1.1</dd></div><div><dt>Live version</dt><dd>v1.0</dd></div></dl></section><div class="ko-acts"><a class="ds-ghost" href="MGT-007.dc.html">Back to Validation History</a><a class="ds-btn" href="MGT-005-CHANGES.dc.html"><span>View Findings</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></div>
+</sc-if>
+<sc-if value="{{p_h_rev}}" hint-placeholder-val="{{ false }}">
+<div class="ko-in ob-in"><div class="ko am"><div class="ko-emb ko-v am" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg></span></div><span class="ko-pill">Required Action</span><h1 class="ko-h1">Revalidation Required</h1><p class="ko-sub">Changes to your course require review before the updated version can be published.</p><section class="ko-card"><dl class="fx3 "><div><dt>Course</dt><dd>Data Analysis with SQL</dd></div><div><dt>Proposed version</dt><dd>v1.1</dd></div><div><dt>Live version</dt><dd>v1.0</dd></div></dl></section><div class="ko-acts"><a class="ds-ghost" href="MGT-007.dc.html">Back to Validation History</a><a class="ds-btn" href="MGT-005-READY.dc.html"><span>Review Update</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></div>
+</sc-if>
+<sc-if value="{{p_a_a}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Archive & Removal</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-001.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Manage Course</span></a><h1 class="ds-h1">Archive &amp; Removal</h1><p class="ds-sub">Retire a course from active management or request a review for permanent removal.</p></div></header><div class="wk"><div class="wk-m"><section class="ds-card cst2 ob-in2"><span class="cv-t" aria-hidden="true"><i>SQL</i></span><div class="cst-b"><b>Data Analysis with SQL</b><span class="cst-t"><span class="ds-tag green">Published</span><span class="gb"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold Validated</span></span></span><span class="cst-p">Live v1.0 · <span class="dlp-c" aria-hidden="true"></span>1,800 DLP · <i class="cr-c" aria-hidden="true">C</i>420 Credits</span></div></section><div class="arw ob-in2"><article class="ds-card arc"><span class="arc-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg></span><b>Archive Course</b><p>Move this course out of your active creations while preserving required course records and existing learner access.</p>
+<div class="arc-s"><div><em>Publication status</em><span class="ds-tag green">Published</span></div><div><em>Archive eligibility</em><span class="ds-tag amber">Unpublish First</span></div></div><p class="arc-n"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg><span>This course must be unpublished before it can be archived.</span></p><a class="ds-ghost sm" href="MGT-003A.dc.html">Unpublish Course First</a></article>
+<article class="ds-card arc rm"><span class="arc-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg></span><b>Request Course Removal</b><p>For exceptional situations where you need Credalio to review the removal of eligible course content or records.</p>
+<div class="arc-w"><b>What removal does not guarantee</b><p>Existing learner entitlements, financial records, verified achievements and required validation evidence may need to remain available.</p></div><a class="ds-ghost sm dz-a" href="MGT-008F.dc.html">Request Removal Review</a></article></div></div><aside class="wk-r"><section class="ds-card rx pr2 ob-in3"><span class="pr2-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><b>Protected Learner Records</b><p>Archiving does not delete enrollments, progress, lifetime purchases, completed assessments, verified credentials or required validation records.</p></section></aside></div>
+</sc-if>
+<sc-if value="{{p_a_impact}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-008.dc.html">Archive & Removal</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Review Impact</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-008.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Archive & Removal</span></a><h1 class="ds-h1">Before You Archive</h1><p class="ds-sub">Review what will happen to this course and the learners who already have access.</p></div></header><ol class="stp" aria-label="Steps"><li class="on"><i>1</i><span>Review impact</span></li><li class=""><i>2</i><span>Confirm</span></li><li class=""><i>3</i><span>Archived</span></li></ol><div class="wk"><div class="wk-m"><section class="ds-card cst2 ob-in2"><span class="cv-t" aria-hidden="true"><i>SQL</i></span><div class="cst-b"><b>Data Analysis with SQL</b><span class="cst-t"><span class="ds-tag ">Unpublished</span><span class="gb"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold Validated</span></span></span><span class="cst-p">Version 1.0 · <span class="dlp-c" aria-hidden="true"></span>1,800 DLP · <i class="cr-c" aria-hidden="true">C</i>420 Credits</span></div></section><section class="ob-in2"><h2 class="sh">Learner Impact<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Illustrative figures; production must use actual enrollment and entitlement records.</span></span></h2><div class="st4b"><div class="sb all" style="--i: 0"><b>248</b><span>Total enrolled</span></div><div class="sb bl" style="--i: 1"><b>42</b><span>Lifetime purchasers</span></div><div class="sb cb" style="--i: 2"><b>86</b><span>Active DLP learners</span></div><div class="sb ok" style="--i: 3"><b>120</b><span>Completed learners</span></div></div></section>
+<section class="ds-card fc ob-in3"><div class="fc-h"><div><h2>What Archiving Changes</h2></div></div><ol class="wac"><li style="--i: 0"><span>1</span><p>The course moves from Active Creations to Archived Courses.</p></li><li style="--i: 1"><span>2</span><p>New enrollments and purchases remain unavailable.</p></li><li style="--i: 2"><span>3</span><p>The archived course is locked against normal content editing.</p></li><li style="--i: 3"><span>4</span><p>Eligible existing learners retain access under their entitlements.</p></li></ol></section><div class="ds-acts sb sv wk-a2"><span class="sv-s"><a class="ds-link" href="MGT-008.dc.html">Back</a></span><span class="sv-r"><a class="ds-btn" href="MGT-008B.dc.html"><span>Continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></div></div><aside class="wk-r"><section class="ds-card rx dpc ob-in3"><span class="rx-k">Dependency Checks</span><ul><li style="--i: 0"><span class="dpc-s"></span><b>Active learning programs</b><span class="ds-tag amber">Check required</span></li><li style="--i: 1"><span class="dpc-s"></span><b>Career Path dependencies</b><span class="ds-tag amber">Check required</span></li><li style="--i: 2"><span class="dpc-s"></span><b>Open validation cases</b><span class="ds-tag amber">Check required</span></li><li style="--i: 3"><span class="dpc-s"></span><b>Organization commitments</b><span class="ds-tag amber">Check required</span></li></ul><p class="rx-p">Actual eligibility is determined by the backend. Archiving must not break required learner delivery.</p></section></aside></div>
+</sc-if>
+<sc-if value="{{p_a_confirm}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-008.dc.html">Archive & Removal</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Confirmation</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-008.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Archive & Removal</span></a><h1 class="ds-h1">Confirm Course Archive</h1><p class="ds-sub">Tell us why you’re archiving this course and review the resulting changes.</p></div></header><ol class="stp" aria-label="Steps"><li class="dn"><i><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Review impact</span></li><li class="on"><i>2</i><span>Confirm</span></li><li class=""><i>3</i><span>Archived</span></li></ol><div class="wk"><div class="wk-m"><section class="ds-card fc ob-in2"><div class="fc-h"><div><h2>Reason for archiving</h2></div></div><div class="rs3"><button type="button" class="ds-opt sm {{ct2}}" aria-pressed="{{at2}}" onClick="{{xt2}}"><span class="o-t"><b>I no longer offer this course</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct3}}" aria-pressed="{{at3}}" onClick="{{xt3}}"><span class="o-t"><b>This course has been replaced by another course</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct4}}" aria-pressed="{{at4}}" onClick="{{xt4}}"><span class="o-t"><b>The content is outdated</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct5}}" aria-pressed="{{at5}}" onClick="{{xt5}}"><span class="o-t"><b>I’m reorganizing my course library</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct6}}" aria-pressed="{{at6}}" onClick="{{xt6}}"><span class="o-t"><b>Other reason</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div></section>
+<button type="button" class="dc-r ack {{ct1}}" aria-pressed="{{at1}}" onClick="{{xt1}}"><span class="dc-b"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>I understand this course will be removed from active management and that existing learner rights and required records will remain protected.</span></button><div class="ds-acts sb sv wk-a2"><span class="sv-s"><a class="ds-link" href="MGT-008A.dc.html">Back</a></span><span class="sv-r"><span class="cf-g {{ct1}}"><a class="ds-btn" href="MGT-008C.dc.html"><span>Confirm Archive</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></span></div></div><aside class="wk-r"><section class="ds-card rx asm ob-in3"><span class="rx-k">Archive Summary</span><div class="asm-v"><span class="asm-a"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg><em>Unpublished</em></span><i></i><span class="asm-b"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg><em>Archived</em></span></div><div class="asm-r"><span>Current status</span><s>Unpublished</s><b>Archived</b></div><div class="asm-r"><span>New enrollment</span><b>Disabled</b></div><div class="asm-r"><span>Existing entitlements</span><b>Preserved</b></div></section></aside></div>
+</sc-if>
+<sc-if value="{{p_a_done}}" hint-placeholder-val="{{ false }}">
+<div class="ko-in ob-in"><div class="ko gy"><div class="ko-emb ko-v gy" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg></span></div><span class="ko-pill">Archived</span><h1 class="ko-h1">Course Archived</h1><p class="ko-sub">Data Analysis with SQL has been moved to Archived Courses. Existing learner entitlements and required records remain protected.</p><div class="ko4"><span class=""><em>Course status</em><b>Archived</b></span><span class=""><em>Public listing</em><b>Hidden</b></span><span class=""><em>New enrollment</em><b>Closed</b></span><span class="ok"><em>Existing access</em><b>Protected</b></span></div><div class="ko-acts"><a class="ds-ghost" href="#">View Archived Courses</a><a class="ds-btn" href="MGT-008D.dc.html"><span>View Archived Course</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></div>
+</sc-if>
+<sc-if value="{{p_a_detail}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-DS-CR.dc.html">My Creations</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Archived Courses</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Data Analysis with SQL</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-008.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Archive &amp; Removal</span></a><h1 class="ds-h1">Data Analysis with SQL</h1></div></header><div class="bn2 gy ob-in"><span class="bn2-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg></span><div><b>This course is archived and no longer available for new enrollments.</b></div></div><div class="wk"><div class="wk-m"><section class="ds-card fc ob-in2"><dl class="fx3 four"><div><dt>Archived on</dt><dd>From archive record</dd></div><div><dt>Last live version</dt><dd>v1.0</dd></div><div><dt>Validation</dt><dd>Gold</dd></div><div><dt>Marketplace</dt><dd>Hidden</dd></div></dl></section><section class="ob-in3"><h2 class="sh">Available Records</h2><div class="rcd"><a class="rcd-c" href="MGT-DS-OV.dc.html" style="--i: 0"><span class="rcd-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><b>Course Overview</b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a><a class="rcd-c" href="MGT-006.dc.html" style="--i: 1"><span class="rcd-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg></span><b>Learner Access & Enrollment</b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a><a class="rcd-c" href="MGT-007.dc.html" style="--i: 2"><span class="rcd-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><b>Validation History</b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a><a class="rcd-c" href="MGT-005-HISTORY.dc.html" style="--i: 3"><span class="rcd-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg></span><b>Version History</b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a><a class="rcd-c" href="MGT-004-I.dc.html" style="--i: 4"><span class="rcd-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg></span><b>Pricing & Order History</b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></div></section></div><aside class="wk-r"><section class="ds-card rx rst ob-in3"><span class="rst-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1L3.5 8.5"></path><path d="M3.5 3.5v5h5"></path></svg></span><b>Restore Course</b><p>Move this course back into your active management library. Restoration does not automatically republish the course.</p><a class="ds-ghost sm" href="MGT-008E.dc.html">Review Restoration</a></section></aside></div>
+</sc-if>
+<sc-if value="{{p_a_restore}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-008D.dc.html">Archive & Removal</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Restore</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-008D.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Archived Course</span></a><h1 class="ds-h1">Restore Archived Course</h1><p class="ds-sub">Restore this course to your active creations. It will remain unpublished until you complete the required publishing checks.</p></div></header><div class="wk"><div class="wk-m"><section class="ds-card cmp ob-in2"><div class="cmp-r cmp-hd"><span>Setting</span><span>Before</span><span></span><span>After</span></div><div class="cmp-r ch"><span>Course lifecycle</span><span class="cmp-o">Archived</span><span class="cmp-a"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span><b class="cmp-n">Active</b></div><div class="cmp-r"><span>Publication</span><span class="cmp-o">Unpublished</span><span class="cmp-a"></span><b class="cmp-n">Unpublished</b></div><div class="cmp-r"><span>Marketplace visibility</span><span class="cmp-o">Hidden</span><span class="cmp-a"></span><b class="cmp-n">Hidden</b></div><div class="cmp-r"><span>Enrollment</span><span class="cmp-o">Closed</span><span class="cmp-a"></span><b class="cmp-n">Closed</b></div><div class="cmp-r ch"><span>Course editing</span><span class="cmp-o">Locked</span><span class="cmp-a"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span><b class="cmp-n">Available, subject to permissions</b></div><div class="cmp-r"><span>Existing entitlements</span><span class="cmp-o">Preserved</span><span class="cmp-a"></span><b class="cmp-n">Preserved</b></div></section><div class="ds-acts sb sv wk-a2"><span class="sv-s"><a class="ds-link" href="MGT-008D.dc.html">Back</a></span><span class="sv-r"><a class="ds-btn" href="MGT-001.dc.html"><span>Restore Course</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></div></div><aside class="wk-r"><section class="ds-card rx rsv ob-in3" aria-hidden="true"><span class="rx-k">Archived → Active</span><div class="rsv-v"><span class="rsv-b a"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg></span><span class="rsv-p"><i></i><i></i><i></i></span><span class="rsv-b b"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span></div><div class="rsv-l"><span>Archived Courses</span><span>Active Creations</span></div></section></aside></div>
+</sc-if>
+<sc-if value="{{p_a_req}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-008.dc.html">Archive & Removal</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Removal Request</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-008.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Archive & Removal</span></a><h1 class="ds-h1">Request Course Removal</h1><p class="ds-sub">Submit a request for Credalio to review the removal of eligible course content or records.</p></div></header><div class="wk"><div class="wk-m"><section class="ds-card fc ob-in2"><div class="fc-h"><div><h2>What would you like reviewed?</h2></div></div><div class="sc3"><button type="button" class="ds-opt sc3-o {{ct7}}" aria-pressed="{{at7}}" onClick="{{xt7}}"><span class="sc3-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg></span><span class="o-t"><b>Removal of specific course content or assets</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sc3-o {{ct8}}" aria-pressed="{{at8}}" onClick="{{xt8}}"><span class="sc3-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"></path></svg></span><span class="o-t"><b>Permanent deletion of eligible course records</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sc3-o {{ct9}}" aria-pressed="{{at9}}" onClick="{{xt9}}"><span class="sc3-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.3"></circle><circle cx="12" cy="12" r="1.3"></circle><circle cx="19" cy="12" r="1.3"></circle></svg></span><span class="o-t"><b>Other removal request</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div></section>
+<section class="ds-card fc ob-in3"><div class="fc-h"><div><h2>Reason for request</h2></div></div><div class="rs3"><button type="button" class="ds-opt sm {{ct10}}" aria-pressed="{{at10}}" onClick="{{xt10}}"><span class="o-t"><b>Content ownership or licensing concern</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct11}}" aria-pressed="{{at11}}" onClick="{{xt11}}"><span class="o-t"><b>Privacy or personal information concern</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct12}}" aria-pressed="{{at12}}" onClick="{{xt12}}"><span class="o-t"><b>Duplicate or incorrectly created record</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct13}}" aria-pressed="{{at13}}" onClick="{{xt13}}"><span class="o-t"><b>Legal or compliance concern</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct14}}" aria-pressed="{{at14}}" onClick="{{xt14}}"><span class="o-t"><b>Other</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div></section><div class="ds-acts sb sv wk-a2"><span class="sv-s"><a class="ds-link" href="MGT-008.dc.html">Back</a></span><span class="sv-r"><a class="ds-btn" href="MGT-008G.dc.html"><span>Review Removal Request</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></div></div><aside class="wk-r"><section class="ds-card rx ii ob-in3"><span class="ii-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17h.01"></path></svg></span><b>Important Information</b><p>Submitting this request does not immediately remove your course. Credalio will review the requested scope, learner entitlements, required retention and any relevant restrictions before deciding what can be removed.</p></section></aside></div>
+</sc-if>
+<sc-if value="{{p_a_status}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-008.dc.html">Archive & Removal</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Removal Request</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-008.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Archive & Removal</span></a><h1 class="ds-h1">Removal Request</h1></div></header><div class="rq3w"><section class="ds-card rq3 ob-in2"><div class="rq3-h"><span class="rq3-i"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg></span><div><span class="ds-tag blue"><i class="lv-d"></i>Under Review</span><em>Request ID generated by backend</em></div></div><dl class="fx3 three"><div><dt>Course</dt><dd>Data Analysis with SQL</dd></div><div><dt>Requested scope</dt><dd>Content Assets</dd></div><div><dt>Course status</dt><dd>Unchanged</dd></div></dl></section>
+<section class="ds-card fc ob-in3"><div class="fc-h"><div><h2>Request Timeline</h2></div></div><ol class="rtl"><li class="dn" style="--i: 0"><span class="rtl-n"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><b>Request submitted</b></li><li class="on" style="--i: 1"><span class="rtl-n">2</span><b>Eligibility and impact review</b></li><li class="" style="--i: 2"><span class="rtl-n">3</span><b>Decision and approved scope</b></li><li class="" style="--i: 3"><span class="rtl-n">4</span><b>Execution and audit confirmation</b></li></ol><p class="nt"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg><span>A pending request does not authorize removal or change the course’s publication status automatically.</span></p></section></div>
+</sc-if>
+<sc-if value="{{p_a_blocked}}" hint-placeholder-val="{{ false }}">
+<div class="ko-in ob-in"><div class="ko am"><div class="ko-emb ko-v am" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg></span></div><span class="ko-pill">Restricted</span><h1 class="ko-h1">Action Requires Review</h1><p class="ko-sub">This course has active obligations or restrictions that must be resolved before the requested lifecycle action can proceed.</p><section class="ko-card"><span class="rx-k">Possible requirements</span><ul class="pr4"><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span>Active learner or cohort commitments</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>Organization approval</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg><span>Validation, legal or compliance restrictions</span></li></ul><p class="nt"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>The exact reason must come from the backend. Not every possible blocker applies to every course.</span></p></section><div class="ko-acts"><a class="ds-ghost" href="MGT-008.dc.html">Back to Archive &amp; Removal</a><a class="ds-btn" href="#"><span>View Requirements</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></div>
+</sc-if>
+<sc-if value="{{p_i_hub}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Insights & Engagement</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-001.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Manage Course</span></a><h1 class="ds-h1">Insights &amp; Engagement</h1><p class="ds-sub">Understand how learners are doing, what needs fixing, and how your course is received.</p></div></header><div class="i9 ob-in2"><a class="i9c" href="MGT-009A.dc.html" style="--i: 0"><div class="i9c-v"><span class="v9 bars"><i style="--h: 92%"></i><i style="--h: 84%"></i><i style="--h: 70%"></i><i style="--h: 52%"></i><i style="--h: 45%"></i></span></div><span class="mc-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M6.5 16v-5M11.5 16V6M16.5 16v-8"></path></svg></span><b>Learning Performance</b><p>See outcome performance, chapter completion and where learners drop off.</p><span class="mc-a">View Performance<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><a class="i9c" href="MGT-009B.dc.html" style="--i: 1"><div class="i9c-v"><span class="v9 dots"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="lo"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span></div><span class="mc-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8M8 12h5M8 16h3"></path></svg></span><b>Assessment Analytics</b><p>Review pass rates, question difficulty and assessment patterns.</p><span class="mc-a">View Assessments<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><a class="i9c" href="MGT-009C.dc.html" style="--i: 2"><div class="i9c-v"><span class="v9 rg9"><svg class="rg" viewBox="0 0 120 120" width="64" height="64" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#E7F5EE" stroke-width="12"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="#0F6B45" stroke-width="12" stroke-linecap="round" stroke-dasharray="301.6 400" style="--d: 301.6" transform="rotate(-90 60 60)"></circle></svg><b>96%</b></span></div><span class="mc-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><b>Content Health</b><p>Automated checks and what learner behaviour says about your content.</p><span class="mc-a">View Content Health<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><a class="i9c" href="MGT-009D.dc.html" style="--i: 3"><div class="i9c-v"><span class="v9 st9"><b>4.8</b><span class="lc-stars"><i></i><i></i><i></i><i></i><i class="h"></i></span></span></div><span class="mc-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg></span><b>Reviews & Feedback</b><p>Ratings, written reviews and structured feedback. Reply publicly.</p><span class="mc-a">View Reviews<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><a class="i9c" href="MGT-009E.dc.html" style="--i: 4"><div class="i9c-v"><span class="v9 ch9"><i class="a"></i><i class="b"></i><i class="a s"></i></span></div><span class="mc-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3.5"></circle><path d="m5.6 5.6 3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"></path></svg></span><b>Questions & Support</b><p>AI Coach escalations and tutor requests. Private to the learner.</p><span class="mc-a">View Support<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><a class="i9c" href="MGT-009F.dc.html" style="--i: 5"><div class="i9c-v"><span class="v9 th9"><i></i><i></i><i></i></span></div><span class="mc-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg></span><b>Discussion</b><p>Public Q&A between enrolled learners and your team.</p><span class="mc-a">View Discussion<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div>
+</sc-if>
+<sc-if value="{{p_i_perf}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-009.dc.html">Insights & Engagement</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Learning Performance</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-009.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Insights &amp; Engagement</span></a><h1 class="ds-h1">Learning Performance</h1><p class="ds-sub">How well learners are reaching each outcome, and where they drop off.</p></div></header><nav class="utabs vtabs ob-in2" aria-label="Insights"><a href="MGT-009A.dc.html" class="ut on" aria-current="page">Learning Performance</a><a href="MGT-009B.dc.html" class="ut">Assessment Analytics</a><a href="MGT-009C.dc.html" class="ut">Content Health</a><a href="MGT-009D.dc.html" class="ut">Reviews & Feedback</a><a href="MGT-009E.dc.html" class="ut">Questions & Support</a><a href="MGT-009F.dc.html" class="ut">Discussion</a></nav><section class="ds-card kp ob-in2"><div class="kp-c " style="--i: 0"><b>48%</b><span>Completion rate</span></div><div class="kp-c " style="--i: 1"><b>9h 10m</b><span>Median time to complete</span></div><div class="kp-c am" style="--i: 2"><b>72%</b><span>Outcomes demonstrated</span><em>LO4 is lowest</em></div><div class="kp-c rd" style="--i: 3"><b>Ch. 4</b><span>Biggest drop-off</span><em>−22% vs Chapter 3</em></div></section><div class="g9 ob-in3"><section class="ds-card fc"><div class="fc-h"><div><h2>Outcome performance</h2><p>Share of learners who have demonstrated each outcome</p></div></div><div class="hbs out"><div class="hb" style="--i: 0"><span class="hb-l">LO1 · Write SELECT queries</span><span class="hb-t"><i style="--w: 88%"></i></span><b>88%</b></div><div class="hb" style="--i: 1"><span class="hb-l">LO2 · Join relational tables</span><span class="hb-t"><i style="--w: 81%"></i></span><b>81%</b></div><div class="hb" style="--i: 2"><span class="hb-l">LO3 · Analyse business data</span><span class="hb-t"><i style="--w: 72%"></i></span><b>72%</b></div><div class="hb" style="--i: 3"><span class="hb-l">LO4 · Publish a dashboard</span><span class="hb-t"><i style="--w: 54%"></i></span><b>54%</b></div></div></section>
+<section class="ds-card fc"><div class="fc-h"><div><h2>Completion by chapter</h2><p>Share of enrolled learners who finished each chapter</p></div></div><div class="hbs fun"><div class="hb" style="--i: 0"><span class="hb-l">1 · Introduction</span><span class="hb-t"><i style="--w: 96%"></i></span><b>96%</b></div><div class="hb" style="--i: 1"><span class="hb-l">2 · SQL Foundations</span><span class="hb-t"><i style="--w: 91%"></i></span><b>91%</b></div><div class="hb" style="--i: 2"><span class="hb-l">3 · Aggregation</span><span class="hb-t"><i style="--w: 84%"></i></span><b>84%</b></div><div class="hb dr" style="--i: 3"><span class="hb-l">4 · Joining tables</span><span class="hb-t"><i style="--w: 62%"></i></span><b>62%</b></div><div class="hb" style="--i: 4"><span class="hb-l">5 · Final Project</span><span class="hb-t"><i style="--w: 55%"></i></span><b>55%</b></div></div></section></div>
+<section class="ds-card fc ob-in4"><div class="fc-h"><div><h2>Lessons with the lowest engagement</h2><p>Share of learners who start the lesson and finish it</p></div><div class="fc-a"><a class="ds-ghost sm" href="MGT-009C.dc.html">Open Content Health</a><a class="ds-link sm" href="MGT-009B.dc.html">View Assessment Analytics<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></div></div><div class="ll"><div class="ll-c" style="--i: 0"><svg class="rg" viewBox="0 0 120 120" width="52" height="52" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#FFF1D6" stroke-width="12"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="#D99A1E" stroke-width="12" stroke-linecap="round" stroke-dasharray="194.8 400" style="--d: 194.8" transform="rotate(-90 60 60)"></circle></svg><span><b>62%</b><em>finish rate</em></span><p>Lesson 7 · Joining tables (video)</p></div><div class="ll-c" style="--i: 1"><svg class="rg" viewBox="0 0 120 120" width="52" height="52" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#FFF1D6" stroke-width="12"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="#D99A1E" stroke-width="12" stroke-linecap="round" stroke-dasharray="223.1 400" style="--d: 223.1" transform="rotate(-90 60 60)"></circle></svg><span><b>71%</b><em>finish rate</em></span><p>Lesson 9 · Subqueries</p></div><div class="ll-c" style="--i: 2"><svg class="rg" viewBox="0 0 120 120" width="52" height="52" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#FFF1D6" stroke-width="12"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="#D99A1E" stroke-width="12" stroke-linecap="round" stroke-dasharray="232.5 400" style="--d: 232.5" transform="rotate(-90 60 60)"></circle></svg><span><b>74%</b><em>finish rate</em></span><p>Lesson 11 · Window functions</p></div></div></section>
+</sc-if>
+<sc-if value="{{p_i_asm}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-009.dc.html">Insights & Engagement</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Assessment Analytics</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-009.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Insights &amp; Engagement</span></a><h1 class="ds-h1">Assessment Analytics</h1><p class="ds-sub">Pass rates, question performance and difficulty patterns.</p></div></header><nav class="utabs vtabs ob-in2" aria-label="Insights"><a href="MGT-009A.dc.html" class="ut">Learning Performance</a><a href="MGT-009B.dc.html" class="ut on" aria-current="page">Assessment Analytics</a><a href="MGT-009C.dc.html" class="ut">Content Health</a><a href="MGT-009D.dc.html" class="ut">Reviews & Feedback</a><a href="MGT-009E.dc.html" class="ut">Questions & Support</a><a href="MGT-009F.dc.html" class="ut">Discussion</a></nav><section class="ds-card kp ob-in2"><div class="kp-c " style="--i: 0"><b>78%</b><span>Final Exam average</span></div><div class="kp-c ok" style="--i: 1"><b>86%</b><span>Final Project pass rate</span></div><div class="kp-c am" style="--i: 2"><b>64%</b><span>Quiz 3 pass rate</span><em>Lowest of all assessments</em></div><div class="kp-c rd" style="--i: 3"><b>Q14</b><span>Hardest question</span><em>31% correct</em></div></section><div class="wk"><div class="wk-m"><section class="ds-card fc ob-in3"><div class="fc-h"><div><h2>Question performance · Quiz 3</h2><p>Sorted by lowest correct rate</p></div></div>
+<div class="qp"><div class="qp-r qp-hd"><span>Question</span><span>Outcome</span><span>Question text</span><span>Correct</span><span>Pattern</span></div><div class="qp-r rd" style="--i: 0"><b class="qp-q">Q14</b><span class="qp-o">LO4</span><span class="qp-t">Which chart type best shows revenue share by region over time?</span><span class="qp-c"><i style="--w: 31%"></i><b>31%</b></span><span class="qp-p">Split between B and D: likely ambiguous wording</span></div><div class="qp-r am" style="--i: 1"><b class="qp-q">Q9</b><span class="qp-o">LO3</span><span class="qp-t">Which query returns each region’s top product by revenue?</span><span class="qp-c"><i style="--w: 58%"></i><b>58%</b></span><span class="qp-p">Hard, but answers spread normally</span></div><div class="qp-r ok" style="--i: 2"><b class="qp-q">Q3</b><span class="qp-o">LO2</span><span class="qp-t">What does an INNER JOIN return?</span><span class="qp-c"><i style="--w: 87%"></i><b>87%</b></span><span class="qp-p">Performing as expected</span></div><div class="qp-r cb" style="--i: 3"><b class="qp-q">Q1</b><span class="qp-o">LO1</span><span class="qp-t">Which keyword removes duplicate rows?</span><span class="qp-c"><i style="--w: 97%"></i><b>97%</b></span><span class="qp-p">Possibly too easy: consider replacing</span></div></div></section>
+<section class="ds-card q14 ob-in4"><span class="q14-i"><span class="nv-av" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span></span><div><b>Q14 · 31% correct</b><p>Split between B and D: likely ambiguous wording</p></div><a class="ds-btn sm2" href="MGT-005.dc.html"><span>Add Q14 fix to draft update</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></section></div><aside class="wk-r"><section class="ds-card rx ob-in3"><span class="rx-k">Pass rate by assessment</span><div class="hbs pr9"><div class="hb" style="--i: 0"><span class="hb-l">Knowledge Check 1</span><span class="hb-t"><i style="--w: 97%"></i><s style="left: 70%"></s></span><b>97%</b></div><div class="hb" style="--i: 1"><span class="hb-l">Quiz 1</span><span class="hb-t"><i style="--w: 89%"></i><s style="left: 70%"></s></span><b>89%</b></div><div class="hb" style="--i: 2"><span class="hb-l">Quiz 2</span><span class="hb-t"><i style="--w: 81%"></i><s style="left: 70%"></s></span><b>81%</b></div><div class="hb" style="--i: 3"><span class="hb-l">Quiz 3</span><span class="hb-t"><i style="--w: 64%"></i><s style="left: 70%"></s></span><b>64%</b></div><div class="hb" style="--i: 4"><span class="hb-l">Final Exam (pass ≥ 70%)</span><span class="hb-t"><i style="--w: 83%"></i><s style="left: 70%"></s></span><b>83%</b></div><div class="hb" style="--i: 5"><span class="hb-l">Final Project</span><span class="hb-t"><i style="--w: 86%"></i><s style="left: 70%"></s></span><b>86%</b></div></div><span class="hb-k"><s></s>Pass mark 70%</span></section></aside></div>
+</sc-if>
+<sc-if value="{{p_i_health}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-009.dc.html">Insights & Engagement</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Content Health</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-009.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Insights &amp; Engagement</span></a><h1 class="ds-h1">Content Health</h1><p class="ds-sub">Automated checks plus what learner behaviour says about your content.</p></div></header><nav class="utabs vtabs ob-in2" aria-label="Insights"><a href="MGT-009A.dc.html" class="ut">Learning Performance</a><a href="MGT-009B.dc.html" class="ut">Assessment Analytics</a><a href="MGT-009C.dc.html" class="ut on" aria-current="page">Content Health</a><a href="MGT-009D.dc.html" class="ut">Reviews & Feedback</a><a href="MGT-009E.dc.html" class="ut">Questions & Support</a><a href="MGT-009F.dc.html" class="ut">Discussion</a></nav><div class="wk"><div class="wk-m"><section class="ds-card ob-in2 nf"><div class="nf-h"><span class="nv-av" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span><span><b>What Nova found in learner behaviour</b><em>Nova · Creator Copilot</em></span></div><article class="nf-c" style="--i: 0"><span class="nf-s"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg></span><div><b>Lesson 7 has unusually high abandonment: 38% leave before the end.</b><p>Most leave around the 9-minute mark of the video, where the JOIN diagram appears.</p></div><a class="ds-ghost xs" href="MGT-005.dc.html">Add fix to update</a></article><article class="nf-c" style="--i: 1"><span class="nf-s"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg></span><div><b>Question 14 in Quiz 3 has a significantly higher failure rate: 69% get it wrong.</b><p>Learners pick option B almost as often as the correct answer, which suggests ambiguous wording.</p></div><span class="ds-tag green"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg> In draft update</span></article><article class="nf-c" style="--i: 2"><span class="nf-s"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg></span><div><b>Learners frequently ask about LEFT JOIN row counts: 18 questions this month.</b><p>A worked example in Lesson 4.2 would likely answer most of them.</p></div><span class="ds-tag green"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg> In draft update</span></article></section></div><aside class="wk-r"><section class="ds-card rx chr ob-in2"><span class="rx-k">Content Health</span><div class="chr-r"><svg class="rg" viewBox="0 0 120 120" width="120" height="120" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#E7F5EE" stroke-width="10"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="#0F6B45" stroke-width="10" stroke-linecap="round" stroke-dasharray="301.6 400" style="--d: 301.6" transform="rotate(-90 60 60)"></circle></svg><span><b>96%</b></span></div><p class="rx-p">Automated checks plus learner signals. Not a quality score.</p></section>
+<section class="ds-card rx ac9 ob-in3"><span class="rx-k">Automated checks</span><ul><li class="ok"><span class="ac9-s"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Broken links: none</b></span></li><li class="am"><span class="ac9-s"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17h.01"></path></svg></span><span><b>Outdated references: 1</b><em>PostgreSQL docs link points to v14. Update to v17.</em><a class="ds-link sm" href="MGT-005.dc.html">Fix in update</a></span></li><li class="ok"><span class="ac9-s"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Captions on all videos: 100%</b></span></li><li class="ok"><span class="ac9-s"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Accessibility issues: none</b></span></li></ul></section></aside></div>
+</sc-if>
+<sc-if value="{{p_i_rev}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-009.dc.html">Insights & Engagement</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Reviews & Feedback</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-009.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Insights &amp; Engagement</span></a><h1 class="ds-h1">Reviews &amp; Feedback</h1><p class="ds-sub">Ratings, written reviews and structured feedback collected at completion.</p></div></header><nav class="utabs vtabs ob-in2" aria-label="Insights"><a href="MGT-009A.dc.html" class="ut">Learning Performance</a><a href="MGT-009B.dc.html" class="ut">Assessment Analytics</a><a href="MGT-009C.dc.html" class="ut">Content Health</a><a href="MGT-009D.dc.html" class="ut on" aria-current="page">Reviews & Feedback</a><a href="MGT-009E.dc.html" class="ut">Questions & Support</a><a href="MGT-009F.dc.html" class="ut">Discussion</a></nav><div class="wk"><div class="wk-m"><div class="rvl2 ob-in3"><article class="ds-card rvc" style="--i: 0"><header><span class="la2 h1">SK</span><div><b>Sarah K.</b><span class="lc-stars" aria-label="5 out of 5"><i></i><i></i><i></i><i></i><i></i></span></div><em>2 days ago</em></header><p>Best SQL course I’ve taken. The final project gave me something real to show in interviews.</p><div class="rvc-r"><input class="ds-in" placeholder="Reply publicly" aria-label="Reply publicly"><button type="button" class="ds-ghost sm">Reply</button></div></article><article class="ds-card rvc" style="--i: 1"><header><span class="la2 h2">TB</span><div><b>Tunde B.</b><span class="lc-stars" aria-label="3 out of 5"><i></i><i></i><i></i><i class="o"></i><i class="o"></i></span></div><em>5 days ago</em></header><p>Great content, but Chapter 4 moves too fast. The JOIN lessons need more examples.</p><div class="rvc-r"><input class="ds-in" placeholder="Reply publicly" aria-label="Reply publicly"><button type="button" class="ds-ghost sm">Reply</button></div></article><article class="ds-card rvc" style="--i: 2"><header><span class="la2 h3">GM</span><div><b>Grace M.</b><span class="lc-stars" aria-label="4 out of 5"><i></i><i></i><i></i><i></i><i class="o"></i></span></div><em>1 week ago</em></header><p>Clear explanations and the practice datasets were very helpful. Wish there were more of them.</p><div class="rvc-r"><input class="ds-in" placeholder="Reply publicly" aria-label="Reply publicly"><button type="button" class="ds-ghost sm">Reply</button></div></article></div></div><aside class="wk-r"><section class="ds-card rx rsm ob-in2"><div class="rsm-t"><b>4.8</b><span><span class="lc-stars" aria-label="5 out of 5"><i></i><i></i><i></i><i></i><i></i></span><em>126 reviews · 248 learners</em></span></div><div class="rh"><div class="rh-r" style="--i: 0"><span>5<i></i></span><span class="rh-b"><i style="--w: 74%"></i></span><em>74%</em></div><div class="rh-r" style="--i: 1"><span>4<i></i></span><span class="rh-b"><i style="--w: 18%"></i></span><em>18%</em></div><div class="rh-r" style="--i: 2"><span>3<i></i></span><span class="rh-b"><i style="--w: 5%"></i></span><em>5%</em></div><div class="rh-r" style="--i: 3"><span>2<i></i></span><span class="rh-b"><i style="--w: 2%"></i></span><em>2%</em></div><div class="rh-r" style="--i: 4"><span>1<i></i></span><span class="rh-b"><i style="--w: 1%"></i></span><em>1%</em></div></div></section>
+<section class="ds-card rx sf ob-in3"><span class="rx-k">Structured feedback</span><p class="rx-p">Average of learner ratings out of 5, asked at completion</p><div class="sf-r" style="--i: 0"><span>Clarity of explanations</span><b>4.8<em> / 5</em></b><span class="sf-b"><i style="--w: 96%"></i></span></div><div class="sf-r" style="--i: 1"><span>Practical relevance</span><b>4.9<em> / 5</em></b><span class="sf-b"><i style="--w: 98%"></i></span></div><div class="sf-r" style="--i: 2"><span>Pace</span><b>4.2<em> / 5</em></b><span class="sf-b"><i style="--w: 84%"></i></span></div><div class="sf-r" style="--i: 3"><span>Assessment fairness</span><b>4.1<em> / 5</em></b><span class="sf-b"><i style="--w: 82%"></i></span></div></section></aside></div>
+</sc-if>
+<sc-if value="{{p_i_sup}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-009.dc.html">Insights & Engagement</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Learner Questions & Support</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-009.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Insights &amp; Engagement</span></a><h1 class="ds-h1">Learner Questions &amp; Support</h1><p class="ds-sub">AI Coach escalations and tutor requests. Private to the learner and your team.</p></div></header><nav class="utabs vtabs ob-in2" aria-label="Insights"><a href="MGT-009A.dc.html" class="ut">Learning Performance</a><a href="MGT-009B.dc.html" class="ut">Assessment Analytics</a><a href="MGT-009C.dc.html" class="ut">Content Health</a><a href="MGT-009D.dc.html" class="ut">Reviews & Feedback</a><a href="MGT-009E.dc.html" class="ut on" aria-current="page">Questions & Support</a><a href="MGT-009F.dc.html" class="ut">Discussion</a></nav><section class="ds-card kp ob-in2"><div class="kp-c am" style="--i: 0"><b>2</b><span>Waiting for a tutor</span><em>Target: reply within 24 hours</em></div><div class="kp-c ok" style="--i: 1"><b>41</b><span>Resolved by AI Coach</span><em>This month</em></div><div class="kp-c " style="--i: 2"><b>9</b><span>Escalated to tutor</span><em>This month</em></div><div class="kp-c cb" style="--i: 3"><b>4h</b><span>Median tutor response</span></div></section><div class="tks ob-in3"><article class="ds-card tk esc" style="--i: 0"><header><span class="tk-k">AI → Tutor escalation</span><span class="ds-tag amber">Open 2h</span></header><b class="tk-q">“Why does my LEFT JOIN return more rows than the left table has?”</b><span class="tk-w"><span class="la2 h1 sm">AO</span>Amara Okafor · Lesson 7 · Joining tables</span><div class="tk-ai"><span class="tk-ai-k"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg><span>AI Coach tried first:</span></span><p>Explained join cardinality with an example. The learner was still stuck after two follow-ups, so it escalated.</p></div><div class="rvc-r"><input class="ds-in" placeholder="Write a reply" aria-label="Write a reply"><button type="button" class="ds-ghost sm">Reply</button></div></article><article class="ds-card tk tut" style="--i: 1"><header><span class="tk-k">Tutor request</span><span class="ds-tag amber">Open 5h</span></header><b class="tk-q">“I think Question 14 has two correct answers. Can you check?”</b><span class="tk-w"><span class="la2 h2 sm">TB</span>Tunde Bello · Quiz 3 · Question 14</span><div class="rvc-r"><input class="ds-in" placeholder="Write a reply" aria-label="Write a reply"><button type="button" class="ds-ghost sm">Reply</button><a class="ds-link sm" href="MGT-009B.dc.html">See Q14 data<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></div></article><article class="ds-card tk tut" style="--i: 2"><header><span class="tk-k">Tutor request</span><span class="ds-tag green">Answered</span></header><b class="tk-q">“Can I use PostgreSQL instead of MySQL for the project?”</b><span class="tk-w"><span class="la2 h3 sm">ZI</span>Zara Ibrahim · Final Project</span><div class="tk-you"><span class="av" style="width: 26px; height: 26px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><p>You: Yes. Any SQL dialect is fine as long as your queries run on the dataset.</p></div></article><article class="ds-card tk ai" style="--i: 3"><header><span class="tk-k">Resolved by AI Coach</span><span class="ds-tag green">Resolved by AI</span></header><b class="tk-q">“What’s the difference between WHERE and HAVING?”</b><span class="tk-w"><span class="la2 h4 sm">DM</span>Daniel Mensah · Lesson 2.2</span><div class="tk-ai"><span class="tk-ai-k"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg><span>AI Coach tried first:</span></span><p>Answered with the lesson’s own example. The learner marked it helpful.</p></div></article></div><p class="nt"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg><span>Private support. Only the learner and your team see these. Public Q&amp;A lives in Course Discussion.</span></p>
+</sc-if>
+<sc-if value="{{p_i_disc}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-009.dc.html">Insights & Engagement</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Course Discussion</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-009.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Insights &amp; Engagement</span></a><h1 class="ds-h1">Course Discussion</h1><p class="ds-sub">Public Q&amp;A between enrolled learners and your team.</p></div></header><nav class="utabs vtabs ob-in2" aria-label="Insights"><a href="MGT-009A.dc.html" class="ut">Learning Performance</a><a href="MGT-009B.dc.html" class="ut">Assessment Analytics</a><a href="MGT-009C.dc.html" class="ut">Content Health</a><a href="MGT-009D.dc.html" class="ut">Reviews & Feedback</a><a href="MGT-009E.dc.html" class="ut">Questions & Support</a><a href="MGT-009F.dc.html" class="ut on" aria-current="page">Discussion</a></nav><section class="ds-card kp ob-in2"><div class="kp-c " style="--i: 0"><b>23</b><span>Threads</span></div><div class="kp-c am" style="--i: 1"><b>2</b><span>Unanswered</span><em>Nobody has replied yet</em></div><div class="kp-c cb" style="--i: 2"><b>187</b><span>Learner replies this month</span></div></section><section class="ds-card th ob-in3"><div class="th-r th-hd"><span>Thread</span><span>Started by</span><span>Replies</span><span>Last activity</span><span></span></div><div class="th-r pin" style="--i: 0"><span class="th-t"><b>Tips for the final project dataset</b><span class="ds-tag blue">Pinned</span></span><span class="th-b"><span class="la2 h1 sm">AX</span>Alex (you)</span><span class="th-n"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><b>14</b></span><span class="th-d">3h ago</span><span class="th-a"><button type="button" class="ds-link sm">Unpin</button><button type="button" class="ds-ghost xs">Reply</button></span></div><div class="th-r un" style="--i: 1"><span class="th-t"><b>Is anyone else getting NULLs after a LEFT JOIN?</b><span class="ds-tag amber">Unanswered</span></span><span class="th-b"><span class="la2 h1 sm">AO</span>Amara O.</span><span class="th-n z"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><b>0</b></span><span class="th-d">1h ago</span><span class="th-a"><button type="button" class="ds-link sm">Pin</button><button type="button" class="ds-ghost xs">Reply</button></span></div><div class="th-r" style="--i: 2"><span class="th-t"><b>Share your Chapter 3 dashboards here</b><span class="ds-tag green">Active</span></span><span class="th-b"><span class="la2 h4 sm">EO</span>Emeka O.</span><span class="th-n"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><b>22</b></span><span class="th-d">Yesterday</span><span class="th-a"><button type="button" class="ds-link sm">Pin</button><button type="button" class="ds-ghost xs">Reply</button></span></div><div class="th-r" style="--i: 3"><span class="th-t"><b>Study group for the final project</b><span class="ds-tag green">Active</span></span><span class="th-b"><span class="la2 h3 sm">ZI</span>Zara I.</span><span class="th-n"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><b>6</b></span><span class="th-d">2 days ago</span><span class="th-a"><button type="button" class="ds-link sm">Pin</button><button type="button" class="ds-ghost xs">Reply</button></span></div><div class="th-r un" style="--i: 4"><span class="th-t"><b>Which chapter was hardest for you?</b><span class="ds-tag amber">Unanswered</span></span><span class="th-b"><span class="la2 h5 sm">AN</span>Adaeze N.</span><span class="th-n z"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><b>0</b></span><span class="th-d">4 days ago</span><span class="th-a"><button type="button" class="ds-link sm">Pin</button><button type="button" class="ds-ghost xs">Reply</button></span></div></section><p class="nt"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Course Discussion is public to everyone enrolled. It’s separate from private questions and support.</span></p>
+</sc-if>
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+var T0 = {"t1": false, "t2": true, "t3": false, "t4": false, "t5": false, "t6": false, "t7": true, "t8": false, "t9": false, "t10": true, "t11": false, "t12": false, "t13": false, "t14": false}, G = {"t2": "ar", "t3": "ar", "t4": "ar", "t5": "ar", "t6": "ar", "t7": "scope", "t8": "scope", "t9": "scope", "t10": "rr", "t11": "rr", "t12": "rr", "t13": "rr", "t14": "rr"};
+function togVals(self) {
+  var t = self.state.t || T0, v = {};
+  Object.keys(T0).forEach(function (k) {
+    v['c'.concat(k)] = t[k] ? 'on' : ''; v['a'.concat(k)] = t[k] ? 'true' : 'false';
+    v['x'.concat(k)] = function () {
+      var n = Object.assign({}, t);
+      if (G[k]) { Object.keys(G).forEach(function (j) { if (G[j] === G[k]) n[j] = false; }); n[k] = true; } else n[k] = !t[k];
+      self.setState({ t: n });
+    };
+  });
+  return v;
+}
+var PG = ["h-a", "h-rec", "h-cases", "h-find", "h-ver", "h-chg", "h-rev", "a-a", "a-impact", "a-confirm", "a-done", "a-detail", "a-restore", "a-req", "a-status", "a-blocked", "i-hub", "i-perf", "i-asm", "i-health", "i-rev", "i-sup", "i-disc"], TONE = {"h-chg": "am", "h-rev": "am", "a-done": "gy", "a-detail": "gy", "a-blocked": "am", "a-req": "rd", "i-health": "ok"};
+class Component extends DCLogic {
+  renderVals() {
+    var pg = this.props.page || 'h-a', v = togVals(this), self = this;
+    PG.forEach(function (k) { v['p_'.concat(k.replace('-', '_'))] = k === pg; });
+    v.tone = 'tn-'.concat(TONE[pg] || 'cb');
+    v.navCls = this.state.nav ? 'ds-open' : '';
+    v.toggleNav = function () { self.setState({ nav: !self.state.nav }); };
+    return v;
+  }
+}
+</script>
+</body>
+</html>

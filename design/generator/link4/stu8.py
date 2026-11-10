@@ -314,7 +314,7 @@ def crew_row(i, m):
     ini, h, n, role, rk, contrib, swh, dk, st, ask = m
     return ('<div class="cr9-r%s" style="--i: %d"><span class="cr9-m"><span class="la2 %s">%s</span><b>%s</b></span><span class="cr9-ro">%s</span><span class="cr9-c">%s</span><span class="cr9-s">%s</span>'
             '<span class="cr9-st %s"><i></i><span>%s</span>%s</span></div>') % (
-        ' pd' if role == 'Pending invitation' else '', i, h, ini, n, tag(role, rk), contrib, swh, dk, st,
+        (' pd' if role == 'Pending invitation' else '') + (' tm' if i < 4 else ''), i, h, ini, n, tag(role, rk), contrib, swh, dk, st,
         '<a class="ds-link sm" href="CREDITS-ASK.dc.html">Ask to credit</a>' if ask else '')
 CREDITS = (head('Course Credits & Visibility', 'Course credits &amp; visibility', 'Choose who learners see on the course page. Lead Creator and Co-Creators are shown by default.',
                 right='<a class="ds-ghost sm" href="LEARN-CREATORS-2.dc.html">%s<span>Preview as learner</span></a>' % ic('eye', 15, 2), crumb_extra=('Credits', 'MGT-001.dc.html')) +
@@ -323,7 +323,7 @@ CREDITS = (head('Course Credits & Visibility', 'Course credits &amp; visibility'
          '<a class="ds-ghost" href="MGT-001.dc.html">Cancel</a>' + btn('Save changes', 'MGT-001.dc.html')),
      '''<a class="ds-card rx cpv ob-in2" href="LEARN-CREATORS-2.dc.html"><span class="rx-k">Course page</span><div class="cpv-h"><span class="cpv-k">%s<span>Gold Validated</span></span><b>Data Analysis with SQL</b>
 <div class="cpv-by"><span class="cpv-avs"><span class="la2 h1">AM</span><span class="la2 h4 cpv-j {{c%s}}">JA</span><span class="la2 h2 cpv-j {{c%s}}">LM</span></span><span>Created by <b>Alex Morgan</b><span class="cpv-j {{c%s}}"> and <b>John Adeyemi</b></span></span></div>
-<span class="cpv-l cpv-j {{c%s}}">Lena Moyo · Contributed to earlier versions</span></div></a>
+<span class="cpv-l cpv-j {{c%s}}">Lena Moyo · Contributed to earlier versions</span></div><span class="cpv-c"><span class="cpv-n" aria-live="polite"></span><span>Learners see <b class="cpv-x"></b> of 4 team members</span></span></a>
 <section class="ds-card rx cw9 ob-in3"><span class="rx-k">How credits work</span><dl>%s</dl></section>''' % (
          ic('badge', 11, 2.2), kj, kl, kj, kl, ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % r for r in RULES))))
 ASK = '''<a class="ov-scrim" href="CREDITS.dc.html" aria-label="Close"></a>
@@ -400,6 +400,14 @@ CSS = stu7.CSS + r'''.cr9{padding:6px 22px}
 .cpv-avs .cpv-j.on{animation:cpvIn .4s cubic-bezier(.3,1.4,.5,1)}
 @keyframes cpvIn{from{transform:scale(.3);opacity:0}}
 .cpv-l{font-size:11.5px;color:rgba(255,255,255,.65)}
+.wk:has(.cr9){counter-reset:seen}
+.cr9-r.tm:has(.hp-sw.on){counter-increment:seen}
+.cpv-x::before{content:counter(seen)}
+.cpv-c{margin:12px 4px 0 4px;display:flex;align-items:center;gap:10px;font-size:13px;color:#3A4566}
+.cpv-c b{font-weight:600;color:#0B1433}
+.cpv-n{position:relative;width:34px;height:6px;flex-shrink:0;border-radius:6px;background:#EEF1F7;overflow:hidden}
+.cpv-n::after{content:'';position:absolute;left:0;top:0;bottom:0;width:50%;border-radius:6px;background:linear-gradient(90deg,#5C86FF,#1652F0);transition:width .35s ease}
+.wk:has(.cr9-r.tm .hp-sw:not(.lk):not(.on)) .cpv-n::after{width:25%}
 .cw9 dl{margin:0}
 .cw9 dl div{display:flex;flex-direction:column;gap:2px;padding:9px 0;border-top:1.5px solid #F0F2F8}
 .cw9 dl div:first-child{border-top:0;padding-top:0}
@@ -996,7 +1004,11 @@ a.ct-r{margin:0 -8px;padding:12px 8px}
 .cr9-na{display:block;width:44px;text-align:center;padding:0}
 .wk-a2 .sv-s{order:1;align-items:flex-start;text-align:left;padding:0 4px 4px 4px}
 .wk-r > .cpv{order:1}
-.wk-r > .cw9{order:3}
+.wk-r > .cw9{order:3;padding:16px 0 12px 0}
+.wk-r > .cw9 .rx-k{margin:0 16px 10px 16px}
+.cw9 dl{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px 4px 16px;scrollbar-width:none}
+.cw9 dl::-webkit-scrollbar{display:none}
+.cw9 dl div,.cw9 dl div:first-child{flex:0 0 68%;box-sizing:border-box;scroll-snap-align:start;scroll-margin-left:16px;padding:12px 14px;border:0;border-radius:14px;background:#F7F9FD}
 .wk-a2 .sv-s{font-size:12px}
 .ak .dl-b{padding:6px 16px 4px 16px}
 .ak .dl-h{padding:18px 16px 0 16px}

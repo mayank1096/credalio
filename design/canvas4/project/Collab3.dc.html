@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Collaboration · my invitations and shared courses · shared source</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-opt{position:relative;display:flex;align-items:center;gap:14px;width:100%;box-sizing:border-box;padding:16px 18px;border-radius:14px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;text-align:left;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-opt:hover{border-color:#9DB8F7}
+.ds-opt.on{background:#EAF0FF;border-color:#1652F0}
+.ds-opt-ck{width:22px;height:22px;border-radius:999px;border:1.5px solid #CBD3E6;background:#FFFFFF;box-sizing:border-box;flex-shrink:0;margin-left:auto;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.ds-opt-ck .ck{display:none}
+.ds-opt.on .ds-opt-ck{background:#1652F0;border-color:#1652F0}
+.ds-opt.on .ds-opt-ck .ck{display:block}
+.ds-in{height:48px;width:100%;box-sizing:border-box;padding:0 14px;border-radius:12px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;font-size:15px;color:#0B1433;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.ds-in::placeholder{color:#8A93AD}
+.ds-in:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.ds-acts{display:flex;align-items:center;justify-content:flex-end;gap:20px;margin-top:32px}
+.ds-acts.c{justify-content:center}
+.ds-acts.sb{justify-content:space-between}
+.ko-v.am{--k:#B97A10;--kb:#FFF4E0}
+.ko-v.cb{--k:#1652F0;--kb:#EAF0FF}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.ds-opt:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.ko-v{--k:#0F6B45;--kb:#E7F5EE}
+.ko-emb{position:relative;width:84px;height:84px;display:flex;align-items:center;justify-content:center}
+.ko-halo{position:absolute;inset:0;border-radius:50%;background:var(--kb);z-index:1}
+.ko-disc{position:relative;z-index:1;width:58px;height:58px;border-radius:50%;background:var(--k);color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(11,20,51,.16)}
+.ko-tick path{stroke-dasharray:1;stroke-dashoffset:1;animation:koDraw .6s ease .3s forwards}
+@keyframes koDraw{to{stroke-dashoffset:0}}
+.ko-pill{margin-top:14px;display:inline-flex;align-items:center;height:30px;padding:0 13px;border-radius:999px;background:var(--kb);color:var(--k);font-size:13px;font-weight:500}
+.cf{position:absolute;left:50%;top:50%;width:0;height:0;pointer-events:none;z-index:0;--k:1}
+.cf i{position:absolute;left:0;top:0;display:block;opacity:0;animation:cfPath var(--d) var(--dl) both}
+.cf b{display:block;animation:cfSway var(--sd) ease-in-out infinite alternate}
+.cf s{display:block;transform:rotate(var(--r));animation:cfFlip var(--fd) linear infinite}
+@keyframes cfPath{0%{opacity:0;transform:translate(-50%,-50%);animation-timing-function:cubic-bezier(.1,.7,.25,1)}5%{opacity:1}24%{transform:translate(calc(var(--x) * var(--k) * 1px - 50%),calc(var(--y) * 1px - 50%));animation-timing-function:cubic-bezier(.42,.08,.7,.92)}86%{opacity:1}100%{opacity:0;transform:translate(calc(var(--x) * var(--k) * 1.22px - 50%),calc((var(--y) + var(--f)) * 1px))}}
+@keyframes cfSway{from{transform:translateX(calc(var(--sw) * -1)) rotate(-12deg)}to{transform:translateX(var(--sw)) rotate(12deg)}}
+@keyframes cfFlip{from{transform:rotate(var(--r)) rotate3d(var(--rx),1,0,0deg)}to{transform:rotate(var(--r)) rotate3d(var(--rx),1,0,360deg)}}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
+.cf{--k:.56}
+}
+@media (max-width: 760px){
+.ds-acts{display:flex;flex-direction:column-reverse;align-items:stretch;gap:4px;position:sticky;bottom:0;z-index:20;margin:28px -20px 0;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7}
+.ds-acts .ds-btn{width:100%;justify-content:space-between}
+.ds-acts .ds-link{justify-content:center;min-height:40px}
+.ko-emb{width:72px;height:72px}
+.ko-disc{width:48px;height:48px}
+.ko-disc svg{width:24px;height:24px}
+}
+@media (prefers-reduced-motion: reduce){.cf{display:none}.ko-tick path{animation:none;stroke-dashoffset:0}}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}.ob-in3{animation:obIn .5s ease .16s both}.ob-in4{animation:obIn .5s ease .24s both}
+.ds-root{display:grid;grid-template-columns:264px minmax(0,1fr);min-height:100vh;background:#F7F9FD;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.ds-side{position:sticky;top:0;height:100vh;overflow-y:auto;box-sizing:border-box;padding:22px 14px 24px 14px;background:#FFFFFF;border-right:1.5px solid #E6EAF3;display:flex;flex-direction:column;gap:2px;z-index:20}
+.ds-glab{display:block;margin:16px 12px 6px 12px;font-size:12px;font-weight:600;color:#8A93AD}
+.ds-item{display:flex;align-items:center;gap:12px;min-height:40px;padding:0 12px;border-radius:12px;color:#3A4566;font-size:14.5px;font-weight:500;text-decoration:none;transition:background .2s ease,color .2s ease}
+.ds-item svg{flex-shrink:0;color:#5B6582}
+.ds-item:hover{background:#F5F8FF;color:#0B1433}
+.ds-on{background:#EAF0FF !important;color:#0E3BB8 !important;font-weight:600}
+.ds-on svg{color:#1652F0}
+.ds-badge{min-width:22px;height:22px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.ds-top{position:sticky;top:0;z-index:10;height:72px;box-sizing:border-box;padding:0 clamp(20px,3vw,40px);display:flex;align-items:center;gap:12px;background:rgba(247,249,253,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.ds-search{flex:1 1 auto;max-width:440px;height:44px;box-sizing:border-box;display:flex;align-items:center;gap:10px;padding:0 16px;border-radius:999px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#8A93AD;font-size:14px}
+.ds-search input{border:0;outline:none;background:transparent;font-family:inherit;font-size:14px;color:#0B1433;flex-grow:1;min-width:0}
+.ds-search input::placeholder{color:#8A93AD}
+.ds-icon-btn{width:44px;height:44px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#3A4566;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;text-decoration:none}
+.ds-icon-btn:hover{border-color:#AFC1F5}
+.ds-tok{height:44px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:7px;padding:0 14px 0 7px;border-radius:999px;background:linear-gradient(135deg,#FFFAEB,#FFF1CF);border:1.5px solid #F4D98E;font-size:14.5px;font-weight:600;color:#4A3300;text-decoration:none;box-shadow:0 6px 16px rgba(214,150,30,.12);transition:box-shadow .2s ease}
+.ds-tok:hover{box-shadow:0 8px 20px rgba(214,150,30,.24)}
+.ds-main{box-sizing:border-box;width:100%;max-width:1200px;padding:12px clamp(20px,3vw,40px) 56px clamp(20px,3vw,40px)}
+.ds-h1{margin:0;font-size:clamp(28px,2.5vw,36px);line-height:1.15;font-weight:600;letter-spacing:-0.03em;color:#0B1433}
+.ds-sub{margin:8px 0 0 0;font-size:16px;line-height:1.55;color:#4A5578}
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-weight:600;font-size:14.5px;text-decoration:none}
+.ds-link:hover{color:#0E3BB8}
+.ds-menu,.ds-scrim,.ds-mlogo,.ds-close{display:none}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-item:focus-visible,.ds-icon-btn:focus-visible,.ds-opt:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2,.ob-in3,.ob-in4{animation:none}}
+@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}}
+@media (max-width: 960px){
+.ds-root{grid-template-columns:minmax(0,1fr)}
+.ds-side{position:fixed;left:0;top:0;width:288px;max-width:86vw;transform:translateX(-102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 64px rgba(11,20,51,.18)}
+.ds-side.ds-open{transform:none}
+.ds-scrim.ds-open{display:block;position:fixed;inset:0;background:rgba(11,20,51,.32);z-index:15}
+.ds-menu,.ds-mlogo{display:flex}
+.ds-close{display:flex;position:absolute;right:12px;top:16px}
+.ds-top{height:64px;padding:0 16px;gap:8px}
+.ds-search,.ds-hide-sm{display:none !important}
+.ds-tok{padding:0 12px 0 6px;height:40px}
+.ds-icon-btn{width:40px;height:40px}
+.ds-h1{font-size:24px !important;line-height:1.2}
+.ds-sub{font-size:14.5px;margin-top:6px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
+.ds-root{overflow-x:hidden}
+.ds-main{padding:12px 16px 32px 16px}
+.ds-btn{justify-content:space-between}
+}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/56bd922e46929406f00f4b18fe9b3244) left center/contain no-repeat}
+.av{position:relative;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:#EAF0FF;color:#0E3BB8;font-size:11px;font-weight:600;box-sizing:border-box}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fl{display:flex;flex-direction:column;gap:8px;min-width:0}
+.fl-l{display:flex;align-items:center;font-size:14px;font-weight:600;color:#0B1433}
+textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;resize:vertical}
+.wk{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr) 312px;grid-template-rows:auto 1fr;grid-template-areas:"m r" "a r";column-gap:24px;align-items:start}
+.wk-m{grid-area:m;min-width:0;display:flex;flex-direction:column;gap:16px}
+.wk-m > .fc,.wk-m > .fc + .fc{margin-top:0}
+.wk-r{grid-area:r;min-width:0;position:sticky;top:92px;display:flex;flex-direction:column;gap:14px}
+.ds-btn.sm{height:36px;padding:0 16px;font-size:13.5px}
+.rx{padding:18px;border-radius:20px}
+.rx-k{display:flex;align-items:center;margin-bottom:12px;font-size:12.5px;font-weight:500;color:#8A93AD}
+@keyframes rmSpin{to{transform:rotate(360deg)}}
+.ld{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.ld li{display:grid;grid-template-columns:88px minmax(0,1fr);align-items:center;gap:10px;font-size:12.5px;font-weight:500;color:#3A4566}
+.ld li span{order:-1}
+.ld li i{display:block;height:10px;border-radius:6px;width:calc(20% + var(--i) * 20%);background:linear-gradient(90deg,#AFC1F5,#1652F0);opacity:calc(.45 + var(--i) * .14);transform-origin:left center;animation:ldGrow .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i) * 110ms + 200ms)}
+@keyframes ldGrow{from{transform:scaleX(0)}}
+.rg-a{animation:rgDraw 1.4s cubic-bezier(.2,.8,.2,1) .25s both}
+@keyframes rgDraw{from{stroke-dasharray:0 400}}
+@media (prefers-reduced-motion: reduce){.ld li i,.rg-a{animation:none}}
+@media (max-width: 1180px){.wk{grid-template-columns:minmax(0,1fr) 280px;column-gap:20px}}
+@media (max-width: 960px){
+.wk{display:flex;flex-direction:column;align-items:stretch;gap:16px;margin-top:20px}
+.wk-m{display:contents}
+.wk-r{display:contents}
+.wk-m > *{order:2}
+.wk-r > .rx{order:3}
+.rx{padding:18px 16px;border-radius:18px}
+}
+.lv-d{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 0 0 currentColor;animation:lvP 2s ease-out infinite}
+@keyframes lvP{0%{box-shadow:0 0 0 0 rgba(15,107,69,.5)}100%{box-shadow:0 0 0 7px rgba(15,107,69,0)}}
+.ds-btn.sm2{height:44px;font-size:14.5px;padding-left:20px;gap:12px}
+.ds-btn.sm2 .ob-arrow{width:34px;height:34px}
+.cr-root{grid-template-columns:264px minmax(0,1fr)}
+.cr-lg{display:block;padding:4px 10px 16px 10px}
+.cr-lg .lg-word{height:24px}
+.ci-t{flex-grow:1;min-width:0}
+.ds-mlogo{flex-grow:1}
+.ds-mlogo .lg-word{height:20px}
+.fc{padding:24px 26px 26px 26px}
+.fc-h{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+.fc-h h2{margin:0;display:flex;align-items:center;font-size:17px;font-weight:600;letter-spacing:-0.01em}
+.bl-c{position:absolute;right:-3px;top:-3px;min-width:18px;height:18px;padding:0 4px;box-sizing:border-box;border-radius:999px;background:#E5484D;color:#FFFFFF;font-size:10.5px;font-weight:600;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px #F7F9FD}
+.cw-me{display:flex;border-radius:50%}
+.mg-main{position:relative;isolation:isolate;max-width:1240px}
+.mg-main::before{content:'';position:absolute;z-index:-1;left:0;right:0;top:-80px;height:300px;pointer-events:none;background:radial-gradient(60% 100% at 30% 0,rgba(22,82,240,.07),transparent 70%)}
+.bc{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin:4px 0 14px 0;font-size:13px;color:#8A93AD}
+.bc a{color:#5B6582;text-decoration:none}
+.bc a:hover{color:#1652F0}
+.bc svg{color:#AEB6CC}
+.bc span{color:#0B1433;font-weight:500}
+.pg-h{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.pg-hl{min-width:0}
+.pg-hr{flex-shrink:0;display:flex;align-items:center;gap:8px}
+.ds-ghost.sm{height:42px;padding:0 16px;font-size:14px;gap:7px}
+.ds-ghost.xs{height:34px;padding:0 12px;font-size:13px;border-width:1.5px}
+.ds-link.sm{font-size:13.5px}
+.wk{margin-top:18px}
+.dz-a{color:#B42318;border-color:#F5C2BD}
+.dz-a:hover{border-color:#B42318;background:#FFF5F4;color:#912018}
+.dl{position:fixed;z-index:1001;left:50%;top:50%;transform:translate(-50%,-50%);width:560px;max-width:calc(100vw - 32px);max-height:calc(100vh - 48px);overflow-y:auto;box-sizing:border-box;border-radius:24px;background:#FFFFFF;box-shadow:0 40px 90px -30px rgba(11,20,51,.5);animation:dlIn .45s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes dlIn{from{opacity:0;transform:translate(-50%,-46%) scale(.97)}}
+.o-t{display:flex;flex-direction:column;gap:3px;min-width:0}
+@media (max-width: 960px){
+.cr-root{grid-template-columns:minmax(0,1fr)}
+.bc{margin-bottom:10px;font-size:12px}
+.pg-h{flex-direction:column;align-items:flex-start;gap:12px}
+.fc{padding:18px 16px 20px 16px;border-radius:18px}
+.pg-hr{width:calc(100% + 32px);margin:0 -16px;padding:0 16px 2px 16px;overflow-x:auto;scrollbar-width:none}
+.pg-hr::-webkit-scrollbar{display:none}
+.pg-hr > *{flex-shrink:0}
+.ds-ghost.sm{height:38px;font-size:13.5px;padding:0 14px}
+.dz-a{width:100%}
+.dl{top:auto;bottom:0;left:0;right:0;transform:none;width:100%;max-width:none;max-height:92vh;border-radius:24px 24px 0 0;animation:dlUp .45s cubic-bezier(.2,.9,.3,1) both}
+@keyframes dlUp{from{transform:translateY(40px);opacity:0}}
+}
+@media (max-width: 960px){
+.dz-a{grid-column:1 / -1;margin-top:10px}
+}
+.wk-m{gap:16px}
+.wk-m > section,.wk-m > div{margin-top:0}
+.fc-h p{margin:4px 0 0 0;font-size:14px;line-height:1.55;color:#5B6582}
+.ds-acts.wk-a2{position:sticky;bottom:0;z-index:5;margin:4px 0 0 0;padding:12px 12px 12px 22px;border-radius:999px;background:rgba(255,255,255,.94);border:1.5px solid #E6EAF3;box-shadow:0 18px 40px -24px rgba(11,20,51,.35);display:flex;align-items:center;justify-content:space-between;gap:16px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.ds-acts.wk-a2{flex-direction:row}
+.wk-a2 .sv-s .ds-link{min-height:0}
+.ds-acts.wk-a2:has(.sv-s:empty){align-self:flex-end;width:max-content;padding-left:12px}
+.wk-m:has(> .wk-a2:has(.sv-s:empty)) .wk-a2{margin-left:auto}
+.wk-a2 .sv-s{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:#5B6582}
+.wk-a2 .sv-r{display:inline-flex;align-items:center;gap:14px;margin-left:auto}
+.ds-btn.is-dis{background:#C9D2E6;box-shadow:none;cursor:not-allowed}.ds-btn.is-dis:hover{background:#C9D2E6;transform:none}.ds-btn.is-dis .ob-arrow{color:#8A93AD}
+.stp{list-style:none;margin:18px 0 0 0;padding:0;display:flex;align-items:center;gap:0;max-width:560px}
+.stp li{flex:1;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:#8A93AD;position:relative}
+.stp li + li::before{content:'';flex:0 0 28px;height:2px;margin-right:8px;background:#E6EAF3}
+.stp li.dn + li::before,.stp li.on::before{background:linear-gradient(90deg,#0F6B45,#1652F0)}
+.stp i{width:24px;height:24px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;background:#FFFFFF;font-style:normal;font-size:11.5px;font-weight:600;display:flex;align-items:center;justify-content:center;color:#8A93AD}
+.stp .dn{color:#0F6B45}.stp .dn i{background:#0F6B45;border-color:#0F6B45;color:#FFFFFF}
+.stp .on{color:#0B1433;font-weight:600}.stp .on i{background:#1652F0;border-color:#1652F0;color:#FFFFFF;box-shadow:0 0 0 5px rgba(22,82,240,.14)}
+@keyframes bdG{from{transform:scaleX(0)}}
+.ds-opt.sm{padding:12px 14px;border-radius:14px}
+.ds-opt.sm .o-t b{font-size:14px;font-weight:500}
+.ko-in{display:flex;justify-content:center;padding:30px 0 20px 0}
+.ko{width:min(640px,100%);display:flex;flex-direction:column;align-items:center;text-align:center;--k:#0F6B45;--kb:#E7F5EE}
+.ko-v.am{--k:#B97A10;--kb:#FFF4E0}
+.ko.am .ko-pill{background:#FFF4E0;color:#8A5A00}
+.ko-h1{margin:14px 0 0 0;font-size:34px;line-height:1.12;font-weight:600;letter-spacing:-0.03em}
+.ko-sub{margin:10px 0 0 0;max-width:540px;font-size:15.5px;line-height:1.55;color:#4A5578}
+.ko-card{margin-top:24px;width:100%;box-sizing:border-box;padding:20px 22px;border-radius:22px;border:1.5px solid #E6EAF3;background:#FFFFFF;text-align:left}
+.ko-acts{margin-top:24px;display:flex;align-items:center;justify-content:center;gap:12px}
+.dd ul i.m{background:#1652F0}.dd ul i.a{background:#0F6B45}.dd ul i.r{background:#D92D20}
+.dd ul{list-style:none;margin:12px 0 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.dd li{display:flex;align-items:center;gap:8px;font-size:13.5px;color:#3A4566}
+.dd li i{width:8px;height:8px;border-radius:50%}
+.dd li b{margin-left:auto;font-weight:600;color:#0B1433}
+@keyframes rvP{0%{box-shadow:0 0 0 0 rgba(22,82,240,.45)}100%{box-shadow:0 0 0 8px rgba(22,82,240,0)}}
+.sb{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:2px;padding:16px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 70ms + 150ms)}
+.sb::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--c)}
+.sb.cb{--c:#1652F0}.sb.ok{--c:#0F6B45}
+.sb b{font-size:28px;font-weight:600;letter-spacing:-0.03em}
+.sb span{font-size:13.5px;font-weight:600}
+.sb em{font-style:normal;font-size:12px;color:#5B6582}
+.la2{width:36px;height:36px;flex-shrink:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#FFFFFF}
+.h1{background:linear-gradient(135deg,#5C86FF,#1652F0)}.h2{background:linear-gradient(135deg,#34C38F,#0F6B45)}.h3{background:linear-gradient(135deg,#F4B860,#B76E00)}.h4{background:linear-gradient(135deg,#8A93AD,#3A4566)}.h5{background:linear-gradient(135deg,#C49BF5,#6B3FC2)}
+@keyframes rmSpin{to{transform:rotate(360deg)}}
+@media (max-width: 960px){
+.stp{margin-top:14px;max-width:none}
+.stp li{flex:none;font-size:12px}
+.stp li span{display:none}
+.stp li.on span{display:inline}
+.stp li + li::before{flex-basis:22px}
+.wk-m{gap:14px}
+.ds-acts.wk-a2{position:sticky;margin:6px -16px 0 -16px;padding:12px 16px 14px 16px;border-radius:0;border:0;border-top:1.5px solid #EEF1F7;box-shadow:none;flex-direction:column-reverse;align-items:stretch;gap:8px}
+.wk-a2 .sv-r{flex-direction:column-reverse;align-items:stretch;gap:6px;margin:0;width:100%}
+.wk-a2 .sv-r .ds-btn{width:100%;justify-content:space-between}
+.wk-a2 .sv-r .ds-link,.wk-a2 .sv-r .ds-ghost,.wk-a2 .sv-s .ds-link,.wk-a2 .sv-s .ds-ghost{justify-content:center;min-height:40px}
+.wk-a2 .sv-s{display:flex;justify-content:center;font-size:12.5px;text-align:center}
+.wk-a2 .sv-s:empty{display:none}
+.ds-acts.wk-a2:has(.sv-s:empty){width:auto;align-self:stretch;padding-left:16px}
+.wk-a2:has(.sv-s .ds-link){flex-direction:column-reverse}
+.ko-in{padding:16px 0 8px 0}
+.ko-h1{font-size:26px}
+.ko-sub{font-size:14.5px}
+.ko-card{padding:14px}
+.ko-acts{flex-direction:column-reverse;width:100%;gap:8px}
+.ko-acts .ds-btn{width:100%;justify-content:space-between}
+.ko-acts .ds-ghost{width:100%}
+.wk-r > .dd{display:none}
+.sb{padding:12px 14px;border-radius:16px}
+.sb b{font-size:22px}
+.sb em{display:none}
+.wk-m > .wk-a2{order:6}
+.pg-hr:has(.ds-btn){display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100% !important;margin:0 !important;padding:0 !important;overflow:visible !important}
+.pg-hr:has(.ds-btn) .ds-btn{order:-1;grid-column:1 / -1;justify-content:space-between}
+.pg-hr:has(.ds-btn) .ds-ghost{justify-content:center;font-size:12.5px;padding:0 8px}
+.wk-a2 .sv-r .ds-ghost{width:100%}
+}
+.ds-acts.wk-a2:has(.sv-s:empty){background:none;border:0;box-shadow:none;padding:0;backdrop-filter:none;-webkit-backdrop-filter:none}
+.wk-a2 .sv-s{display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.45;color:#5B6582}
+.wk-a2 .sv-s svg{flex-shrink:0;width:15px;height:15px;color:#8A93AD}
+.wk-a2 .sv-r{flex-shrink:0;display:flex;align-items:center;gap:10px}
+.utabs{margin-top:20px;display:flex;gap:26px;border-bottom:1.5px solid #E6EAF3;overflow-x:auto;scrollbar-width:none}
+.utabs::-webkit-scrollbar{display:none}
+.ut{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;height:46px;margin-bottom:-1.5px;border-bottom:2.5px solid transparent;color:#5B6582;font-size:14.5px;font-weight:500;text-decoration:none;white-space:nowrap}
+.ut:hover{color:#0B1433}
+.ut.on{color:#0B1433;font-weight:600;border-bottom-color:#1652F0}
+.utabs + .wk{margin-top:20px}
+.ko-v.gy{--k:#5B6582;--kb:#EEF1F7}
+.ko.gy .ko-pill{background:#EEF1F7;color:#3A4566}
+.nt{margin:14px 0 0 0;display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.5;color:#8A93AD}
+.nt svg{flex-shrink:0;margin-top:2px;width:14px;height:14px}
+.dc-r{width:100%;display:flex;align-items:flex-start;gap:12px;padding:13px 14px;border-radius:14px;border:1.5px solid #E6EAF3;background:#FFFFFF;font-family:inherit;font-size:14px;line-height:1.5;color:#0B1433;text-align:left;cursor:pointer}
+.dc-b{width:20px;height:20px;flex-shrink:0;margin-top:1px;box-sizing:border-box;border-radius:6px;border:1.5px solid #CBD3E6;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.dc-b svg{opacity:0;transform:scale(.6);transition:opacity .2s ease,transform .2s ease}
+.dc-r.on{border-color:#1652F0;background:#F5F8FF}.dc-r.on .dc-b{border-color:#1652F0;background:#1652F0}.dc-r.on .dc-b svg{opacity:1;transform:none}
+.cf-g{display:flex}
+.cf-g .ds-btn{transition:opacity .25s ease,filter .25s ease}
+.cf-g:not(.on) .ds-btn{opacity:.45;filter:saturate(.4);pointer-events:none}
+.cf-g.on .ds-btn{animation:cfIn .5s cubic-bezier(.3,1.4,.5,1)}
+@keyframes cfIn{50%{transform:scale(1.04)}}
+.fx3{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.fx3.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.fx3 div{display:flex;flex-direction:column;gap:3px;padding:12px 14px;border-radius:14px;background:#F7F9FD}
+.fx3 dt{font-size:12px;color:#8A93AD}
+.fx3 dd{margin:0;display:flex;align-items:center;font-size:14.5px;font-weight:600}
+.la2.sm{width:28px;height:28px;font-size:10.5px}
+@keyframes lvP2{0%{box-shadow:0 0 0 0 rgba(224,160,48,.45)}100%{box-shadow:0 0 0 6px rgba(224,160,48,0)}}
+@media (max-width: 960px){
+.utabs{margin:14px -16px 0 -16px;padding:0 16px;gap:20px}
+.ut{height:42px;font-size:13.5px}
+.fx3,.fx3.four{grid-template-columns:minmax(0,1fr);gap:0;padding:2px 14px;border-radius:14px;background:#F7F9FD}
+.fx3 > div{flex-direction:row;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-radius:0;background:none}
+.fx3 > div + div{border-top:1.5px solid #EEF1F7}
+.fx3 dd{font-size:13.5px;text-align:right}
+.ko-card .fx3{background:none;padding:0 2px}
+.wk-a2 .sv-s{order:1;align-items:flex-start;text-align:left;padding:0 4px 4px 4px}
+.wk-a2 .sv-s{font-size:12px}
+}
+.cl-a{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.cl-a svg{transition:transform .2s ease}
+.cl-a:hover svg{transform:translateX(3px)}
+.cl-main .pg-h + .wk,.cl-main .stp + .wk{margin-top:22px}
+.rl{justify-self:start;display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;background:#F1F3F8;color:#3A4566;font-size:12px;font-weight:500;white-space:nowrap}
+.rl.ld{background:#EAF0FF;color:#0E3BB8}
+.ct3{display:flex;flex-direction:column}
+.ct3 .ds-tag{justify-self:start;height:24px;font-size:11.5px}
+.ta3{width:100%;box-sizing:border-box;height:auto;min-height:64px;padding:12px 14px;border-radius:14px;font-family:inherit;font-size:14px;line-height:1.55;resize:vertical}
+.ko-lk{margin-top:14px;display:flex;justify-content:center;gap:22px}
+.ut-n{margin-left:2px;min-width:20px;height:20px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#EEF1F7;color:#3A4566;font-style:normal;font-size:11.5px;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
+.ut.on .ut-n{background:#1652F0;color:#FFFFFF}
+.cl-main .utabs + .wk{margin-top:20px}
+.ds-btn.btn-dz{background:#B42318 !important;color:#FFFFFF !important;box-shadow:0 12px 26px -14px rgba(180,35,24,.7)}
+.ds-btn.btn-dz:hover{background:#912018}
+.rsn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:18px}
+.rsn .ds-opt .o-t{display:flex;flex-direction:column;gap:2px}
+.rsn .ds-opt .o-t span{font-size:12px;font-weight:400;color:#8A5A00}
+.rsn-d{margin:0}
+.stp li span{white-space:nowrap;margin-right:6px}
+.ds-btn.btn-dz .ob-arrow{color:#B42318}
+@media (max-width: 960px){
+.cl-main .pg-h + .wk,.cl-main .stp + .wk{margin-top:16px}
+.cl-main .pg-hr{display:flex;flex-direction:row;gap:8px;width:100%}
+.cl-main .pg-hr .ds-btn{flex:1;width:auto}
+.cl-main .pg-hr .ds-ghost{flex-shrink:0}
+.ko-lk{flex-direction:column;align-items:center;gap:12px}
+.wk-a2 .cf-g{width:100%}
+.wk-a2 .cf-g .ds-btn{width:100%;justify-content:space-between}
+.rsn{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-bottom:14px}
+.rsn .ds-opt{align-items:flex-start;padding:10px 10px 10px 12px;min-height:58px}
+.rsn .ds-opt .o-t b{font-size:13.5px;line-height:1.35}
+.rsn .ds-opt:nth-child(n+5){grid-column:1 / -1;min-height:44px}
+.cl-main .pg-hr{display:flex !important;flex-direction:row;gap:8px;width:100%}
+.cl-main .pg-hr .ds-ghost{padding:0 14px;font-size:13.5px}
+}
+.cl-main .stp{max-width:760px}
+.cl-main .stp + .wk{margin-top:22px}
+.ta3.one{min-height:48px}
+.ta3{field-sizing:content}
+@media (max-width: 960px){
+.cl-main .stp li:not(.on) span{display:none}
+.cl-main .stp li span{white-space:nowrap}
+.cl-main .stp li + li::before{flex-basis:14px;margin-right:6px}
+.cl-main .pg-hr{flex-wrap:wrap}
+.cl-main .pg-hr > .ds-ghost,.cl-main .pg-hr > .ds-btn{flex:1 1 auto;min-width:0;width:auto;justify-content:center;padding:0 14px;font-size:13.5px}
+.cl-main .pg-hr > .ds-btn{justify-content:space-between;padding-left:16px}
+.dl .ta3{min-height:56px}
+.cl-main .wk-a2:not(:has(.sv-s:empty)){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;flex-direction:row}
+.cl-main .wk-a2:not(:has(.sv-s:empty)) .sv-s,.cl-main .wk-a2:not(:has(.sv-s:empty)) .sv-r{display:contents}
+.cl-main .wk-a2:not(:has(.sv-s:empty)) .ds-btn,.cl-main .wk-a2:not(:has(.sv-s:empty)) .cf-g{grid-column:1 / -1;order:-1;width:100%}
+.cl-main .wk-a2 .sv-s > .ds-link{order:1;height:44px;display:flex;align-items:center;justify-content:center;border-radius:999px;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#0B1433;font-size:14px;font-weight:600}
+.cl-main .wk-a2:not(:has(.sv-s:empty)) .ds-ghost{order:2;width:auto;justify-content:center}
+.cl-main .wk-a2:has(.sv-s > .ds-link):has(.sv-r > .ds-ghost + .ds-ghost) .sv-s > .ds-link{grid-column:1 / -1}
+.cl-main .wk-a2:not(:has(.sv-r .ds-ghost)) .sv-s > .ds-link{grid-column:1 / -1}
+}
+.cv6{position:relative;flex-shrink:0;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:12px;font-weight:600;letter-spacing:.02em;overflow:hidden;background:radial-gradient(circle at 80% 18%,rgba(255,255,255,.35),rgba(255,255,255,0) 45%),var(--cv)}
+.cv6.c1{--cv:linear-gradient(140deg,#1652F0,#0B1433)}.cv6.c2{--cv:linear-gradient(140deg,#0F6B45,#0B3A2A)}.cv6.c3{--cv:linear-gradient(140deg,#7048C8,#2A1A5E)}
+.cv6.c4{--cv:linear-gradient(140deg,#C2741A,#5A3300)}.cv6.c5{--cv:linear-gradient(140deg,#4A5578,#1C2340)}.cv6.c6{--cv:linear-gradient(140deg,#B42318,#4A0E0A)}
+.ko.cb .ko-pill{background:#EAF0FF;color:#0E3BB8}
+.mg-main .pg-h + .tb6,.mg-main .pg-h + .utabs{margin-top:20px}
+.tb6{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;border-bottom:1.5px solid #E6EAF3}
+.tb6 .utabs{margin:0;border-bottom:0}
+.sr6{display:flex;align-items:center;gap:8px;width:320px;height:40px;margin-bottom:8px;padding:0 14px;box-sizing:border-box;border-radius:999px;color:#8A93AD}
+.sr6 input{flex:1;min-width:0;border:0;outline:0;background:none;font-family:inherit;font-size:13.5px;color:#0B1433}
+.ic6s{margin-top:18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ic6{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:16px;padding:20px;border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 100ms + 150ms);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.ic6:hover{transform:translateY(-3px);border-color:#C9D7FA;box-shadow:0 24px 44px -32px rgba(22,82,240,.6)}
+.ic6::before{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,#E0A030,#F4C66A)}
+.ic6-t{display:flex;gap:14px}
+.ic6-h{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.ic6-k{display:flex;flex-wrap:wrap;gap:6px}
+.ic6-p,.ic6-y{height:22px;padding:0 9px;border-radius:999px;display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:500}
+.ic6-p{background:#FFF4E0;color:#8A5A00}
+.ic6-p i{width:6px;height:6px;border-radius:50%;background:#E0A030;animation:lvP2 2s ease-out infinite}
+.ic6-y{background:#EAF0FF;color:#0E3BB8}
+.ic6-h > b{font-size:18px;font-weight:600;letter-spacing:-0.01em}
+.ic6-f{display:flex;align-items:center;gap:8px;font-size:13px;color:#5B6582}
+.ic6-f b{color:#0B1433;font-weight:600}
+.ic6-s{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.ic6-r,.ic6-e{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:12px 14px;border-radius:16px;background:#F7F9FD}
+.ic6-r{flex-direction:row;align-items:center;gap:12px}
+.ic6-rg{position:relative;width:52px;height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.ic6-rg .rg{position:absolute;inset:0;width:52px;height:52px}
+.ic6-r b{position:relative;font-size:15px;font-weight:600;color:#1652F0;letter-spacing:-0.02em}
+.ic6-r em,.ic6-e em{font-style:normal;font-size:12px;color:#5B6582}
+.ic6-d{display:flex;gap:3px}
+.ic6-d i{flex:1;height:8px;border-radius:3px;background:#E6EAF3}
+.ic6-d i.on{background:#E0A030;animation:icD .4s ease both}
+.ic6-d i.on:nth-child(1){animation-delay:.3s}.ic6-d i.on:nth-child(2){animation-delay:.36s}.ic6-d i.on:nth-child(3){animation-delay:.42s}.ic6-d i.on:nth-child(4){animation-delay:.48s}.ic6-d i.on:nth-child(5){animation-delay:.54s}.ic6-d i.on:nth-child(6){animation-delay:.6s}
+@keyframes icD{from{transform:scaleY(0)}}
+.ic6-e em{font-size:12.5px;font-weight:600;color:#8A5A00}
+.ic6-a{display:flex;justify-content:flex-end}
+.ic6s + .nt,.it6 + .nt{margin-top:16px}
+.it6{margin-top:18px;padding:4px 20px}
+.it6-r{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,1.2fr) minmax(0,1fr) 60px minmax(0,1.5fr);align-items:center;gap:14px;padding:12px 0;border-top:1.5px solid #F0F2F8;font-size:13.5px;animation:obIn .45s ease both;animation-delay:calc(var(--i,0) * 60ms + 200ms)}
+.it6-hd{border-top:0;font-size:12px;font-weight:500;color:#8A93AD;animation:none}
+.it6-c{display:flex;align-items:center;gap:12px;min-width:0}
+.it6-c b{font-weight:600;font-size:14px}
+.it6-f{display:flex;align-items:center;gap:8px;color:#3A4566}
+.it6-s{font-weight:600}
+.it6-st{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.it6-st .ds-tag{height:24px;font-size:11.5px}
+.it6-r.dim .it6-c,.it6-r.dim .it6-f,.it6-r.dim .it6-s,.it6-r.dim .rl{opacity:.55}
+.em6{margin-top:18px;display:flex;flex-direction:column;align-items:center;gap:8px;padding:36px 24px;text-align:center}
+.em6 b{font-size:18px;font-weight:600}
+.em6 p{margin:0 0 8px 0;font-size:14.5px;color:#5B6582}
+.em6-v{position:relative;width:180px;height:130px;margin-bottom:6px}
+.em6-e{position:absolute;left:50%;top:50%;width:92px;height:64px;margin:-32px 0 0 -46px;border-radius:12px;background:#F5F8FF;border:1.5px solid #C9D7FA;overflow:hidden}
+.em6-e i{position:absolute;left:-2px;right:-2px;top:-34px;height:64px;border:1.5px solid #C9D7FA;background:#EAF0FF;transform:rotate(45deg) scale(.72);transform-origin:center bottom}
+.em6-o{position:absolute;width:34px;height:34px;border-radius:50%;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#1652F0;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 20px -14px rgba(11,20,51,.4);animation:emF 4s ease-in-out infinite}
+.em6-o.o1{left:4px;top:10px}.em6-o.o2{right:2px;top:2px;animation-delay:.8s}.em6-o.o3{right:22px;bottom:0;animation-delay:1.6s}
+@keyframes emF{50%{transform:translateY(-6px)}}
+.bn6{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding:12px 16px;border-radius:16px;border:1.5px solid}
+.bn6.am{background:#FFF8EA;border-color:#F4DDAA;color:#B76E00}
+.bn6 p{margin:0;font-size:14px;line-height:1.5;color:#6B4A00}
+.lt6{padding:22px;display:flex;flex-direction:column;gap:16px;background:linear-gradient(170deg,#F5F8FF,#FFFFFF 40%);border-color:#DCE5FB}
+.lt6-h{display:flex;gap:16px;align-items:flex-start}
+.lt6-k{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:#1652F0}
+.lt6-k .ds-tag{height:22px;font-size:11px}
+.lt6-h p{margin:8px 0 0 0;font-size:16.5px;line-height:1.55;color:#0B1433}
+.lt6-h p b{font-weight:600}
+.kt6s{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.kt6{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:14px 16px;border-radius:16px;background:#FFFFFF;border:1.5px solid #E6EAF3}
+.kt6-i{width:34px;height:34px;margin-bottom:8px;border-radius:11px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.kt6-i .rg{width:34px;height:34px}
+.kt6 b{font-size:20px;font-weight:600;letter-spacing:-0.01em}
+.kt6 em{font-style:normal;font-size:12.5px;color:#5B6582}
+.kt6.cb b{color:#1652F0}
+.kt6.am{background:#FFF8EA;border-color:#F4DDAA}.kt6.am .kt6-i{background:#FFF1D6;color:#B76E00}.kt6.am b{color:#8A5A00}
+.kt6.x{background:#F7F9FD}.kt6.x .kt6-i{background:#EEF1F7;color:#8A93AD}.kt6.x b{color:#5B6582}
+.kt6.cb .kt6-i{background:none}
+.lt6-n{margin:0;display:flex;gap:10px;padding:12px 14px;border-radius:14px;background:#FFFFFF;border:1.5px dashed #DCE5FB;font-size:13.5px;line-height:1.55;color:#3A4566}
+.lt6-n svg{flex-shrink:0;margin-top:2px;color:#1652F0}
+.tm6{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}
+.tm6 > div{display:flex;flex-direction:column;gap:4px;padding:14px 0;border-top:1.5px solid #F0F2F8}
+.tm6 > div:nth-child(-n+2){border-top:0;padding-top:0}
+.tm6 > div.w{grid-column:1 / -1}
+.tm6 > div.w:first-child + div{border-top:1.5px solid #F0F2F8;padding-top:14px}
+.tm6 dt{font-size:12.5px;color:#8A93AD}
+.tm6 dd{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:14.5px;line-height:1.5}
+.fr6{display:flex;flex-direction:column;gap:12px}
+.fr6 .rx-k{margin:0}
+.fr6-p,.fr6-c{display:flex;align-items:center;gap:12px}
+.fr6-p > span:last-child,.fr6-c > span:last-child{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.fr6-p b{font-size:15px;font-weight:600}
+.fr6-c{padding-top:12px;border-top:1.5px solid #F0F2F8}
+.fr6-c b{font-size:14px;font-weight:600}
+.fr6-c em{font-style:normal;font-size:12.5px;color:#5B6582}
+.pt6{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.pt6-i{width:38px;height:38px;border-radius:12px;background:#0B1433;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.pt6 p{margin:0;font-size:13px;line-height:1.55;color:#3A4566}
+.pt6-b{align-self:stretch;display:flex;flex-direction:column;gap:5px;margin-top:4px}
+.pt6-b i{height:8px;border-radius:5px;background:#EEF1F7;filter:blur(1.5px)}
+.pt6-b i:nth-child(1){width:90%}.pt6-b i:nth-child(2){width:70%}.pt6-b i:nth-child(3){width:80%}
+.ac6{padding:22px;display:flex;flex-direction:column;gap:16px}
+.ac6-h{display:flex;gap:16px;align-items:center}
+.ac6-h p{margin:0;font-size:16px;line-height:1.55}
+.ac6-h p b{font-weight:600}
+.ac6-k{display:flex;flex-direction:column;gap:8px}
+.vf6 ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.vf6 li{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:13px;color:#3A4566;animation:obIn .4s ease both;animation-delay:calc(var(--i) * 120ms + 300ms)}
+.vf6-s{position:relative;width:18px;height:18px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;border-top-color:#1652F0;animation:rmSpin 1s linear infinite;animation-delay:calc(var(--i) * 120ms)}
+.vf6 li:nth-child(-n+3) .vf6-s{border:0;background:#E7F5EE;animation:none}
+.vf6 li:nth-child(-n+3) .vf6-s::after{content:'';position:absolute;left:6px;top:3px;width:4px;height:8px;border:solid #0F6B45;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.d6 .ds-opt .o-t span{color:#1652F0}
+.dn6{display:flex;flex-direction:column;gap:12px}
+.dn6-c{display:flex;align-items:center;gap:12px;padding-bottom:12px;border-bottom:1.5px solid #F0F2F8}
+.dn6-c > span:last-child{display:flex;flex-direction:column}
+.dn6-c b{font-size:14px;font-weight:600}
+.dn6-c em{font-style:normal;font-size:12.5px;color:#5B6582}
+.dn6 p{margin:0;font-size:13px;line-height:1.55;color:#3A4566}
+.tj6{margin-top:22px;display:flex;align-items:center;justify-content:center;gap:0}
+.tj6 .av,.tj6 .la2{box-shadow:0 0 0 4px #FFFFFF}
+.tj6-l{position:relative;width:80px;height:2px;background:linear-gradient(90deg,#1652F0,#0F6B45);transform-origin:left;animation:bdG .8s cubic-bezier(.2,.8,.2,1) .6s both}
+.tj6-l i{position:absolute;left:50%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:#0F6B45;box-shadow:0 0 0 4px #F7F9FD;animation:cfIn .5s cubic-bezier(.3,1.4,.5,1) 1.2s both}
+.tj6-l i::after{content:'';position:absolute;left:8px;top:5px;width:4px;height:8px;border:solid #FFFFFF;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.pg6{list-style:none;margin:22px 0 0 0;padding:0;display:flex;align-items:center;justify-content:center;gap:10px}
+.pg6 li{display:flex;align-items:center;gap:7px;height:32px;padding:0 12px 0 6px;border-radius:999px;background:#FFFFFF;border:1.5px solid #E6EAF3;font-size:13px;font-weight:500;color:#8A93AD}
+.pg6 li i{width:20px;height:20px;border-radius:50%;background:#EEF1F7;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.pg6 li.dn{color:#0F6B45;border-color:#CFE8DB}.pg6 li.dn i{background:#0F6B45}
+.pg6 li.on{color:#8A5A00;border-color:#F4DDAA;background:#FFF8EA}.pg6 li.on i{background:#E0A030;animation:rvP 1.8s ease-out infinite}
+.sc6{margin-top:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.sc6-c{display:grid;grid-template-columns:150px minmax(0,1fr);border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3;overflow:hidden;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 100ms + 150ms);transition:transform .25s ease,box-shadow .25s ease}
+.sc6-c:hover{transform:translateY(-3px);box-shadow:0 24px 44px -32px rgba(22,82,240,.6)}
+.sc6-v{position:relative;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#F5F8FF,#EAF0FF)}
+.sc6-v .cv6{width:72px !important;height:72px !important;border-radius:18px;font-size:16px;box-shadow:0 18px 30px -16px rgba(11,20,51,.6)}
+.sc6-g{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 22px,rgba(22,82,240,.06) 22px 23px),repeating-linear-gradient(90deg,transparent 0 22px,rgba(22,82,240,.06) 22px 23px)}
+.sc6-v .cv6{z-index:1}
+.sc6-b{display:flex;flex-direction:column;gap:12px;padding:18px 20px}
+.sc6-t b{font-size:17px;font-weight:600}
+.sc6-f{display:flex;align-items:center;gap:10px}
+.sc6-f > span:last-child{display:flex;flex-direction:column;font-size:13.5px;font-weight:600}
+.sc6-f em,.sc6-m em{font-style:normal;font-size:11.5px;font-weight:500;color:#8A93AD}
+.sc6-m{display:grid;grid-template-columns:auto auto auto;justify-content:start;gap:18px;padding:12px 0;border-top:1.5px solid #F0F2F8;border-bottom:1.5px solid #F0F2F8}
+.sc6-m > span{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.sc6-m b{font-size:16px;font-weight:600;color:#1652F0}
+.sc6-m .ds-tag{height:24px;font-size:11.5px}
+.sc6-o{align-self:flex-start}
+.rs6{margin-top:16px;display:flex;align-items:center;gap:14px;padding:16px 18px;background:linear-gradient(120deg,#F5F8FF,#FFFFFF 60%);border-color:#DCE5FB}
+.rs6-i{width:40px;height:40px;flex-shrink:0;border-radius:13px;background:#0B1433;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.rs6 p{margin:0;font-size:14px;line-height:1.55;color:#3A4566}
+@media (max-width: 1180px){.ic6s,.sc6{grid-template-columns:minmax(0,1fr)}}
+@media (max-width: 960px){
+.mg-main .pg-h + .tb6{margin-top:14px}
+.tb6{flex-direction:column-reverse;align-items:stretch;gap:10px;border:0}
+.tb6 .utabs{border-bottom:1.5px solid #E6EAF3;margin:0 -16px;padding:0 16px}
+.sr6{width:100%;height:44px;margin:0}
+.ic6s{margin-top:14px;gap:12px}
+.ic6{padding:16px;gap:12px;border-radius:20px}
+.ic6-t .cv6{width:48px !important;height:48px !important}
+.ic6-h > b{font-size:16px}
+.ic6-f{align-items:flex-start;font-size:12.5px;line-height:1.45}
+.ic6-f .la2,.ic6-f .av{margin-top:1px}
+.ic6-s{gap:8px}
+.ic6-r,.ic6-e{padding:10px 12px}
+.ic6-rg,.ic6-rg .rg{width:44px;height:44px}
+.ic6-r b{font-size:13px}
+.ic6-r em{font-size:11px;line-height:1.3}
+.ic6-a .ds-btn{width:100%;justify-content:space-between}
+.it6{margin-top:14px;padding:2px 14px}
+.it6-hd{display:none}
+.it6-r{grid-template-columns:auto minmax(0,1fr) auto;gap:6px 10px;padding:12px 0}
+.it6-c{grid-column:1 / 3;grid-row:1}
+.it6-c .cv6{width:32px !important;height:32px !important;border-radius:9px;font-size:10px}
+.it6-r > .it6-s{grid-column:3;grid-row:1;justify-self:end;font-size:15px}
+.it6-f{grid-column:1 / 3;grid-row:2;padding-left:44px;font-size:12.5px}
+.it6-f .la2,.it6-f .av{display:none}
+.it6-r > .rl{grid-column:3;grid-row:2;justify-self:end;height:22px;font-size:11px}
+.it6-st{grid-column:1 / -1;grid-row:3;padding-left:44px}
+.em6{padding:26px 16px}
+.bn6{align-items:flex-start;padding:12px 14px}
+.bn6 p{font-size:13px}
+.lt6{padding:16px;gap:12px}
+.lt6-h{gap:12px}
+.lt6-h .cv6{width:44px !important;height:44px !important}
+.lt6-h p{font-size:14.5px;margin-top:6px}
+.kt6s{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.kt6{padding:10px}
+.kt6-i{width:28px;height:28px;margin-bottom:4px;border-radius:9px}
+.kt6-i svg{width:15px;height:15px}
+.kt6-i .rg{width:28px;height:28px}
+.kt6 b{font-size:15px}
+.kt6 em{font-size:11px}
+.lt6-n{font-size:12.5px;padding:10px 12px}
+.tm6{grid-template-columns:minmax(0,1fr)}
+.tm6 > div{padding:12px 0}
+.tm6 > div:nth-child(2){border-top:1.5px solid #F0F2F8;padding-top:12px}
+.tm6 dd{font-size:14px}
+.wk-r > .fr6{order:3}
+.wk-r > .pt6{order:3;display:grid;grid-template-columns:38px minmax(0,1fr);align-items:center;gap:12px}
+.pt6-b{display:none}
+.ac6{padding:16px;gap:12px}
+.ac6-h{align-items:flex-start;gap:12px}
+.ac6-h .cv6{width:40px !important;height:40px !important}
+.ac6-h p{font-size:14.5px}
+.wk-r > .vf6{order:3}
+.vf6 ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 10px}
+.vf6 li{align-items:flex-start;font-size:12.5px;line-height:1.35;padding:5px 0}
+.vf6-s{width:16px;height:16px}
+.wk-r > .dn6{order:1;padding:14px;gap:10px}
+.wk-r > .dn6 .dn6-c{padding:0;border:0}
+.pg6{flex-wrap:wrap;gap:6px}
+.sc6{margin-top:16px;gap:12px}
+.sc6-c{grid-template-columns:minmax(0,1fr);border-radius:20px}
+.sc6-v{height:90px;justify-content:flex-start;padding-left:16px}
+.sc6-v .cv6{width:56px !important;height:56px !important;border-radius:15px;font-size:13px}
+.sc6-b{padding:14px 16px 16px 16px;gap:10px}
+.sc6-m{grid-template-columns:repeat(3,auto);justify-content:space-between;gap:8px}
+.sc6-o{align-self:stretch;justify-content:space-between}
+.rs6{align-items:flex-start;padding:14px}
+.rs6-i{width:34px;height:34px;border-radius:11px}
+.rs6 p{font-size:13px}
+.cl-main .wk-a2:has(.sv-s:empty){margin-left:0 !important;margin-right:0 !important}
+.rsn.d6{grid-template-columns:minmax(0,1fr) !important;gap:6px}
+.rsn.d6 .ds-opt,.rsn.d6 .ds-opt:nth-child(n+5){grid-column:auto;min-height:44px;align-items:center}
+.it6-r{padding:10px 0;row-gap:4px}
+}
+</style>
+</helmet>
+<div class="ds-root cr-root">
+<sc-if value="{{n_0}}" hint-placeholder-val="{{ true }}"><div class="ds-scrim {{navCls}}" onClick="{{toggleNav}}"></div>
+<nav class="ds-side {{navCls}}" aria-label="Main"><a class="cr-lg" href="#" aria-label="Credalio"><span class="lg-word"></span></a>
+<button type="button" class="ds-icon-btn ds-close" onClick="{{toggleNav}}" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2"></rect></svg><span class="ci-t">Dashboard</span></a><span class="ds-glab">Create</span><a href="MGT-DS-CR.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6.5A2.5 2.5 0 0 1 4 18.5"></path><path d="M8 7h8"></path></svg><span class="ci-t">My Creations</span></a><a href="STU-001.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg><span class="ci-t">Create new</span></a><span class="ds-glab">Collaboration</span><a href="INV-001.dc.html" class="ds-item ds-on" aria-current="page"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg><span class="ci-t">Invitations</span><span class="ds-badge">2</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2.5"></circle><circle cx="18" cy="5" r="2.5"></circle><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"></path></svg><span class="ci-t">Opportunities</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"></path><path d="m13.5 6.5 4 4"></path></svg><span class="ci-t">My Applications</span></a><a href="NAV-002.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M7.5 14h3M7.5 17h6"></path></svg><span class="ci-t">Shared Courses</span></a><span class="ds-glab">Work</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 3.5h6v3H9zM9 12h6M9 16h4"></path></svg><span class="ci-t">Assigned to me</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="ci-t">Validation Centre</span><span class="ds-badge">1</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span class="ci-t">Discussions</span><span class="ds-badge">7</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3.5"></circle><path d="m5.6 5.6 3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"></path></svg><span class="ci-t">Learner support</span><span class="ds-badge">2</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span class="ci-t">Calendar</span></a><span class="ds-glab">Insights</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span class="ci-t">Learners</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M6.5 16v-5M11.5 16V6M16.5 16v-8"></path></svg><span class="ci-t">Analytics</span></a><span class="ds-glab">Economy</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg><span class="ci-t">Earnings & payouts</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg><span class="ci-t">Credit Wallet</span></a><span class="ds-glab">Creator</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z" fill="currentColor" stroke="none"></path></svg><span class="ci-t">Nova · your Copilot</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path></svg><span class="ci-t">Creator Centre</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span class="ci-t">Creator profile</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.3 1.7 2.9-.1.9 2.7 2.3 1.7-.9 2.7.9 2.7-2.3 1.7-.9 2.7-2.9-.1L12 21l-2.3-1.7-2.9.1-.9-2.7L3.6 15l.9-2.7-.9-2.7 2.3-1.7.9-2.7 2.9.1z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="ci-t">Verification & readiness</span></a><span class="ds-glab">Account</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg><span class="ci-t">Settings</span></a></nav></sc-if>
+<sc-if value="{{n_1}}" hint-placeholder-val="{{ false }}"><div class="ds-scrim {{navCls}}" onClick="{{toggleNav}}"></div>
+<nav class="ds-side {{navCls}}" aria-label="Main"><a class="cr-lg" href="#" aria-label="Credalio"><span class="lg-word"></span></a>
+<button type="button" class="ds-icon-btn ds-close" onClick="{{toggleNav}}" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2"></rect></svg><span class="ci-t">Dashboard</span></a><span class="ds-glab">Create</span><a href="MGT-DS-CR.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6.5A2.5 2.5 0 0 1 4 18.5"></path><path d="M8 7h8"></path></svg><span class="ci-t">My Creations</span></a><a href="STU-001.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg><span class="ci-t">Create new</span></a><span class="ds-glab">Collaboration</span><a href="INV-001.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg><span class="ci-t">Invitations</span><span class="ds-badge">2</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2.5"></circle><circle cx="18" cy="5" r="2.5"></circle><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"></path></svg><span class="ci-t">Opportunities</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"></path><path d="m13.5 6.5 4 4"></path></svg><span class="ci-t">My Applications</span></a><a href="NAV-002.dc.html" class="ds-item ds-on" aria-current="page"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M7.5 14h3M7.5 17h6"></path></svg><span class="ci-t">Shared Courses</span></a><span class="ds-glab">Work</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 3.5h6v3H9zM9 12h6M9 16h4"></path></svg><span class="ci-t">Assigned to me</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="ci-t">Validation Centre</span><span class="ds-badge">1</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span class="ci-t">Discussions</span><span class="ds-badge">7</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3.5"></circle><path d="m5.6 5.6 3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"></path></svg><span class="ci-t">Learner support</span><span class="ds-badge">2</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span class="ci-t">Calendar</span></a><span class="ds-glab">Insights</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span class="ci-t">Learners</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M6.5 16v-5M11.5 16V6M16.5 16v-8"></path></svg><span class="ci-t">Analytics</span></a><span class="ds-glab">Economy</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg><span class="ci-t">Earnings & payouts</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg><span class="ci-t">Credit Wallet</span></a><span class="ds-glab">Creator</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z" fill="currentColor" stroke="none"></path></svg><span class="ci-t">Nova · your Copilot</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path></svg><span class="ci-t">Creator Centre</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span class="ci-t">Creator profile</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.3 1.7 2.9-.1.9 2.7 2.3 1.7-.9 2.7.9 2.7-2.3 1.7-.9 2.7-2.9-.1L12 21l-2.3-1.7-2.9.1-.9-2.7L3.6 15l.9-2.7-.9-2.7 2.3-1.7.9-2.7 2.9.1z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="ci-t">Verification & readiness</span></a><span class="ds-glab">Account</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg><span class="ci-t">Settings</span></a></nav></sc-if>
+<div style="min-width: 0; display: flex; flex-direction: column">
+<header class="ds-top">
+<button type="button" class="ds-icon-btn ds-menu" onClick="{{toggleNav}}" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<span class="ds-mlogo"><span class="lg-word"></span></span>
+<label class="ds-search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span class="sr-only">Search</span><input placeholder="Search your learning experiences, learners, discussions..."></label>
+<span style="flex-grow: 1"></span>
+<a href="#" class="ds-tok" aria-label="72,450 Creio"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0; display: block"><defs><linearGradient id="tpa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9A3"></stop><stop offset="0.45" stop-color="#F6C343"></stop><stop offset="1" stop-color="#D08A12"></stop></linearGradient><linearGradient id="tpb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9CF5A"></stop><stop offset="1" stop-color="#E2A024"></stop></linearGradient></defs><circle cx="32" cy="34" r="29" fill="#B8740A" opacity="0.35"></circle><circle cx="32" cy="32" r="29" fill="url(#tpa)"></circle><circle cx="32" cy="32" r="22" fill="url(#tpb)" stroke="#FFF1C2" stroke-opacity="0.7" stroke-width="1.5"></circle><path d="M32 18l2.9 9.3 9.3 2.9-9.3 2.9L32 42.4l-2.9-9.3-9.3-2.9 9.3-2.9z" fill="#FFF8DF"></path><ellipse cx="23" cy="19" rx="9" ry="5" fill="#FFFFFF" opacity="0.35" transform="rotate(-30 23 19)"></ellipse></svg><span>72.4K</span></a>
+<a href="#" class="ds-icon-btn ds-hide-sm" aria-label="Help"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"></path></svg></a>
+<a href="#" class="ds-icon-btn" aria-label="Notifications, 9 new"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16z"></path><path d="M10 21h4"></path></svg><span class="bl-c">9</span></a>
+<a href="#" class="cw-me" aria-label="Your account"><span class="av" style="width: 40px; height: 40px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span></a>
+</header>
+<main class="ds-main mg-main cl-main {{tone}}">
+<sc-if value="{{p_i_pend}}" hint-placeholder-val="{{ true }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Invitations</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">My Invitations</h1><p class="ds-sub">2 pending. Direct invitations and offers from open collaboration appear here.</p></div></header><div class="tb6 ob-in2"><nav class="utabs" aria-label="Invitations"><a href="INV-001.dc.html" class="ut on" aria-current="page">Pending<em class="ut-n">2</em></a><a href="INV-001-ACCEPTED.dc.html" class="ut">Accepted</a><a href="INV-001-DECLINED.dc.html" class="ut">Declined</a><a href="INV-001-ALL.dc.html" class="ut">All</a></nav><label class="ds-in sr6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input placeholder="Search by course, Lead Creator or status" aria-label="Search"></label></div><div class="ic6s ob-in3"><article class="ic6" style="--i: 0"><div class="ic6-t"><span class="cv6 c1" style="width: 56px; height: 56px" aria-hidden="true">SQL</span><div class="ic6-h"><span class="ic6-k"><span class="ic6-p"><i></i>Awaiting response</span><span class="ic6-y">Direct invite</span></span><b>Data Analysis with SQL</b><span class="ic6-f"><span class="la2 h1" style="width: 22px; height: 22px; font-size: 10px">AM</span><span>Invited by <b>Alex Morgan</b> · Lead Creator · Role: Co-Creator</span></span></div></div>
+<div class="ic6-s"><div class="ic6-r"><span class="ic6-rg"><svg class="rg" viewBox="0 0 120 120" width="52" height="52" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#EAF0FF" stroke-width="10"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="#1652F0" stroke-width="10" stroke-linecap="round" stroke-dasharray="62.8 400" style="--d: 62.8" transform="rotate(-90 60 60)"></circle></svg><b>20%</b></span><em>Marketplace + Subscription earnings</em></div><div class="ic6-e"><span class="ic6-d" style="--d: 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span><em>Expires in 5 days</em></div></div>
+<div class="ic6-a"><a class="ds-btn" href="INV-002.dc.html"><span>Review Invitation</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></article><article class="ic6" style="--i: 1"><div class="ic6-t"><span class="cv6 c2" style="width: 56px; height: 56px" aria-hidden="true">FIN</span><div class="ic6-h"><span class="ic6-k"><span class="ic6-p"><i></i>Awaiting response</span><span class="ic6-y">Open collaboration offer</span></span><b>SQL for Finance Teams</b><span class="ic6-f"><span class="la2 h3" style="width: 22px; height: 22px; font-size: 10px">SK</span><span>Invited by <b>Sade Kolawole</b> · Lead Creator · Role: Co-Creator</span></span></div></div>
+<div class="ic6-s"><div class="ic6-r"><span class="ic6-rg"><svg class="rg" viewBox="0 0 120 120" width="52" height="52" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#EAF0FF" stroke-width="10"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="#1652F0" stroke-width="10" stroke-linecap="round" stroke-dasharray="47.1 400" style="--d: 47.1" transform="rotate(-90 60 60)"></circle></svg><b>15%</b></span><em>Marketplace + Subscription earnings</em></div><div class="ic6-e"><span class="ic6-d" style="--d: 6"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></span><em>Expires in 6 days</em></div></div>
+<div class="ic6-a"><a class="ds-btn" href="INV-002.dc.html"><span>Review Invitation</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></article></div><p class="nt"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>A course does not appear under Shared Courses merely because an invitation was received. Expired and withdrawn invitations stay in history.</span></p>
+</sc-if>
+<sc-if value="{{p_i_all}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="INV-001.dc.html">Invitations</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>All</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">My Invitations</h1></div></header><div class="tb6 ob-in2"><nav class="utabs" aria-label="Invitations"><a href="INV-001.dc.html" class="ut">Pending<em class="ut-n">2</em></a><a href="INV-001-ACCEPTED.dc.html" class="ut">Accepted</a><a href="INV-001-DECLINED.dc.html" class="ut">Declined</a><a href="INV-001-ALL.dc.html" class="ut on" aria-current="page">All</a></nav></div><section class="ds-card it6 ob-in3"><div class="it6-r it6-hd"><span>Course</span><span>From</span><span>Role</span><span>Share</span><span>Status</span></div><div class="it6-r" style="--i: 0"><span class="it6-c"><span class="cv6 c1" style="width: 36px; height: 36px" aria-hidden="true">SQL</span><b>Data Analysis with SQL</b></span><span class="it6-f"><span class="la2 h1" style="width: 26px; height: 26px; font-size: 10px">AM</span><span>Alex Morgan</span></span><span class="rl">Co-Creator</span><b class="it6-s">20%</b><span class="it6-st"><span class="ds-tag amber">Pending</span><a class="ds-link sm cl-a" href="INV-002.dc.html">Review<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></span></div><div class="it6-r" style="--i: 1"><span class="it6-c"><span class="cv6 c2" style="width: 36px; height: 36px" aria-hidden="true">FIN</span><b>SQL for Finance Teams</b></span><span class="it6-f"><span class="la2 h3" style="width: 26px; height: 26px; font-size: 10px">SK</span><span>Sade Kolawole</span></span><span class="rl">Co-Creator</span><b class="it6-s">15%</b><span class="it6-st"><span class="ds-tag amber">Pending</span><a class="ds-link sm cl-a" href="INV-002.dc.html">Review<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></span></div><div class="it6-r" style="--i: 2"><span class="it6-c"><span class="cv6 c3" style="width: 36px; height: 36px" aria-hidden="true">PY</span><b>Python for Beginners</b></span><span class="it6-f"><span class="la2 h5" style="width: 26px; height: 26px; font-size: 10px">SY</span><span>Sara Yusuf</span></span><span class="rl">Contributor</span><b class="it6-s">15%</b><span class="it6-st"><span class="ds-tag green">Accepted</span><a class="ds-link sm cl-a" href="#">View<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></span></div><div class="it6-r" style="--i: 3"><span class="it6-c"><span class="cv6 c4" style="width: 36px; height: 36px" aria-hidden="true">XL</span><b>Excel Dashboards</b></span><span class="it6-f"><span class="la2 h2" style="width: 26px; height: 26px; font-size: 10px">MB</span><span>Mercy Bello</span></span><span class="rl">Reviewer</span><b class="it6-s">5%</b><span class="it6-st"><span class="ds-tag">Declined</span><a class="ds-link sm cl-a" href="#">View<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></span></div><div class="it6-r dim" style="--i: 4"><span class="it6-c"><span class="cv6 c5" style="width: 36px; height: 36px" aria-hidden="true">R</span><b>Intro to R</b></span><span class="it6-f"><span class="la2 h4" style="width: 26px; height: 26px; font-size: 10px">TA</span><span>Tunde Ade</span></span><span class="rl">Co-Creator</span><b class="it6-s">10%</b><span class="it6-st"><span class="ds-tag">Expired</span><a class="ds-link sm cl-a" href="INV-002-EXPIRED.dc.html">View<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></span></div><div class="it6-r dim" style="--i: 5"><span class="it6-c"><span class="cv6 c6" style="width: 36px; height: 36px" aria-hidden="true">ST</span><b>Stats Basics</b></span><span class="it6-f"><span class="la2 h5" style="width: 26px; height: 26px; font-size: 10px">RB</span><span>Rita Bako</span></span><span class="rl">Contributor</span><b class="it6-s">8%</b><span class="it6-st"><span class="ds-tag">Withdrawn</span><a class="ds-link sm cl-a" href="INV-002-WITHDRAWN.dc.html">View<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></span></div></section><p class="nt"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>All statuses, including expired and withdrawn, are kept in history.</span></p>
+</sc-if>
+<sc-if value="{{p_i_acc}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="INV-001.dc.html">Invitations</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Accepted</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">My Invitations</h1></div></header><div class="tb6 ob-in2"><nav class="utabs" aria-label="Invitations"><a href="INV-001.dc.html" class="ut">Pending<em class="ut-n">2</em></a><a href="INV-001-ACCEPTED.dc.html" class="ut on" aria-current="page">Accepted</a><a href="INV-001-DECLINED.dc.html" class="ut">Declined</a><a href="INV-001-ALL.dc.html" class="ut">All</a></nav></div><section class="ds-card it6 ob-in3"><div class="it6-r it6-hd"><span>Course</span><span>From</span><span>Role</span><span>Share</span><span>Status</span></div><div class="it6-r" style="--i: 0"><span class="it6-c"><span class="cv6 c3" style="width: 36px; height: 36px" aria-hidden="true">PY</span><b>Python for Beginners</b></span><span class="it6-f"><span class="la2 h5" style="width: 26px; height: 26px; font-size: 10px">SY</span><span>Sara Yusuf</span></span><span class="rl">Content Contributor</span><b class="it6-s">15%</b><span class="it6-st"><span class="ds-tag green">Accepted</span><a class="ds-ghost xs" href="NAV-002.dc.html">Open</a></span></div></section><p class="nt"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Accepted invitations become courses under Shared Courses.</span></p>
+</sc-if>
+<sc-if value="{{p_i_dec}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="INV-001.dc.html">Invitations</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Declined</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">My Invitations</h1></div></header><div class="tb6 ob-in2"><nav class="utabs" aria-label="Invitations"><a href="INV-001.dc.html" class="ut">Pending<em class="ut-n">2</em></a><a href="INV-001-ACCEPTED.dc.html" class="ut">Accepted</a><a href="INV-001-DECLINED.dc.html" class="ut on" aria-current="page">Declined</a><a href="INV-001-ALL.dc.html" class="ut">All</a></nav></div><section class="ds-card it6 ob-in3"><div class="it6-r it6-hd"><span>Course</span><span>From</span><span>Role</span><span>Share</span><span>Status</span></div><div class="it6-r" style="--i: 0"><span class="it6-c"><span class="cv6 c4" style="width: 36px; height: 36px" aria-hidden="true">XL</span><b>Excel Dashboards</b></span><span class="it6-f"><span class="la2 h2" style="width: 26px; height: 26px; font-size: 10px">MB</span><span>Mercy Bello</span></span><span class="rl">Reviewer</span><b class="it6-s">5%</b><span class="it6-st"><span class="ds-tag">Declined · timeline conflict</span></span></div></section><p class="nt"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Declined invitations stay here for your records. The Lead Creator can send a revised offer.</span></p>
+</sc-if>
+<sc-if value="{{p_i_empty}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Invitations</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">My Invitations</h1></div></header><div class="tb6 ob-in2"><nav class="utabs" aria-label="Invitations"><a href="INV-001.dc.html" class="ut on" aria-current="page">Pending<em class="ut-n">0</em></a><a href="INV-001-ACCEPTED.dc.html" class="ut">Accepted</a><a href="INV-001-DECLINED.dc.html" class="ut">Declined</a><a href="INV-001-ALL.dc.html" class="ut">All</a></nav></div><section class="ds-card em6 ob-in3"><div class="em6-v" aria-hidden="true"><span class="em6-e"><i></i></span><span class="em6-o o1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg></span><span class="em6-o o2"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span><span class="em6-o o3"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.5"></circle></svg></span></div>
+<b>You don’t have any invitations yet</b><p>Browse open collaboration to find courses that match your expertise.</p><a class="ds-btn" href="#"><span>Explore Opportunities</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></section>
+</sc-if>
+<sc-if value="{{p_d_pend}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="INV-001.dc.html">Invitations</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Details</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">Collaboration Invitation</h1></div></header><div class="wk"><div class="wk-m"><section class="ds-card lt6 ob-in2"><div class="lt6-h"><span class="cv6 c1" style="width: 64px; height: 64px" aria-hidden="true">SQL</span><div><span class="lt6-k">Collaboration Invitation <span class="ds-tag amber"><i class="lv-d"></i>Pending</span></span><p>You’ve been invited to collaborate on <b>Data Analysis with SQL</b>. Alex Morgan (Lead Creator · Personal course) invited you as <b>Co-Creator</b>.</p></div></div>
+<div class="kt6s"><div class="kt6"><span class="kt6-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg></span><b>Co-Creator</b><em>Your role</em></div><div class="kt6 cb"><span class="kt6-i"><svg class="rg" viewBox="0 0 120 120" width="40" height="40" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#EAF0FF" stroke-width="14"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="#1652F0" stroke-width="14" stroke-linecap="round" stroke-dasharray="62.8 400" style="--d: 62.8" transform="rotate(-90 60 60)"></circle></svg></span><b>20%</b><em>Revenue share</em></div><div class="kt6 am"><span class="kt6-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><b>5 days</b><em>Expires in</em></div></div>
+<p class="lt6-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg><span>20% of eligible distributable course earnings, including subscription-based earnings and Marketplace Credit sales. Continuing royalties after departure: per agreement v3.</span></p></section>
+<section class="ds-card fc ob-in3"><dl class="tm6"><div class=""><dt>Responsibilities</dt><dd>Develop the SQL Joins module, exercises and related assessments.</dd></div><div class=""><dt>Contribution period</dt><dd>8 weeks from 1 Nov 2026</dd></div><div class=""><dt>Edit permissions</dt><dd>Assigned chapters only</dd></div><div class=""><dt>Organization approval</dt><dd>Not required</dd></div><div class="w"><dt>About the course</dt><dd>Intermediate Data Analytics course focused on SQL and business analysis.</dd></div><div class="w"><dt>Agreement &amp; terms</dt><dd>Revenue sharing, content ownership, access, termination and settlement · <a class="ds-link sm cl-a" href="#">View full terms<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></dd></div></dl></section><div class="ds-acts sb sv wk-a2"><span class="sv-s"></span><span class="sv-r"><a class="ds-ghost dz-a" href="INV-004.dc.html">Decline</a><a class="ds-btn" href="INV-003.dc.html"><span>Accept Invitation</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></div></div><aside class="wk-r"><section class="ds-card rx fr6 ob-in3"><span class="rx-k">From</span><div class="fr6-p"><span class="la2 h1" style="width: 44px; height: 44px; font-size: 14px">AM</span><span><b>Alex Morgan</b><span class="rl ld">Lead Creator</span></span></div><div class="fr6-c"><span class="cv6 c1" style="width: 40px; height: 40px" aria-hidden="true">SQL</span><span><b>Data Analysis with SQL</b><em>Personal course</em></span></div></section>
+<section class="ds-card rx pt6 ob-in4"><span class="pt6-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg></span><p>You see a limited course summary only. Protected course materials stay hidden until you are an accepted collaborator.</p><div class="pt6-b" aria-hidden="true"><i></i><i></i><i></i></div></section></aside></div>
+</sc-if>
+<sc-if value="{{p_d_exp}}" hint-placeholder-val="{{ false }}">
+<div class="bn6 am ob-in"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><p>This invitation expired on 20 Oct 2026. Accept is disabled. Ask the Lead Creator to send a new invitation.</p></div><nav class="bc" aria-label="Breadcrumb"><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="INV-001.dc.html">Invitations</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Details</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">Collaboration Invitation</h1></div></header><div class="wk"><div class="wk-m"><section class="ds-card lt6 ob-in2"><div class="lt6-h"><span class="cv6 c1" style="width: 64px; height: 64px" aria-hidden="true">SQL</span><div><span class="lt6-k">Collaboration Invitation <span class="ds-tag">Expired</span></span><p>You’ve been invited to collaborate on <b>Data Analysis with SQL</b>. Alex Morgan (Lead Creator · Personal course) invited you as <b>Co-Creator</b>.</p></div></div>
+<div class="kt6s"><div class="kt6"><span class="kt6-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg></span><b>Co-Creator</b><em>Your role</em></div><div class="kt6 cb"><span class="kt6-i"><svg class="rg" viewBox="0 0 120 120" width="40" height="40" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#EAF0FF" stroke-width="14"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="#1652F0" stroke-width="14" stroke-linecap="round" stroke-dasharray="62.8 400" style="--d: 62.8" transform="rotate(-90 60 60)"></circle></svg></span><b>20%</b><em>Revenue share</em></div><div class="kt6 x"><span class="kt6-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><b>Expired</b><em></em></div></div>
+<p class="lt6-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg><span>20% of eligible distributable course earnings, including subscription-based earnings and Marketplace Credit sales. Continuing royalties after departure: per agreement v3.</span></p></section>
+<section class="ds-card fc ob-in3"><dl class="tm6"><div class=""><dt>Responsibilities</dt><dd>Develop the SQL Joins module, exercises and related assessments.</dd></div><div class=""><dt>Contribution period</dt><dd>8 weeks from 1 Nov 2026</dd></div><div class=""><dt>Edit permissions</dt><dd>Assigned chapters only</dd></div><div class=""><dt>Organization approval</dt><dd>Not required</dd></div><div class="w"><dt>About the course</dt><dd>Intermediate Data Analytics course focused on SQL and business analysis.</dd></div><div class="w"><dt>Agreement &amp; terms</dt><dd>Revenue sharing, content ownership, access, termination and settlement · <a class="ds-link sm cl-a" href="#">View full terms<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></dd></div></dl></section><div class="ds-acts sb sv wk-a2"><span class="sv-s"></span><span class="sv-r"><span class="ds-ghost is-dis" aria-disabled="true">Decline</span><span class="ds-btn is-dis" aria-disabled="true"><span>Accept Invitation</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></span></span></div></div><aside class="wk-r"><section class="ds-card rx fr6 ob-in3"><span class="rx-k">From</span><div class="fr6-p"><span class="la2 h1" style="width: 44px; height: 44px; font-size: 14px">AM</span><span><b>Alex Morgan</b><span class="rl ld">Lead Creator</span></span></div><div class="fr6-c"><span class="cv6 c1" style="width: 40px; height: 40px" aria-hidden="true">SQL</span><span><b>Data Analysis with SQL</b><em>Personal course</em></span></div></section>
+<section class="ds-card rx pt6 ob-in4"><span class="pt6-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg></span><p>You see a limited course summary only. Protected course materials stay hidden until you are an accepted collaborator.</p><div class="pt6-b" aria-hidden="true"><i></i><i></i><i></i></div></section></aside></div>
+</sc-if>
+<sc-if value="{{p_d_wd}}" hint-placeholder-val="{{ false }}">
+<div class="ko-in ob-in"><div class="ko gy"><div class="ko-emb ko-v gy" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></div><span class="ko-pill">Withdrawn</span><h1 class="ko-h1">Collaboration Offer</h1><p class="ko-sub">Ada Ononuju withdrew this offer on 26 Oct 2026. Accept and Decline are no longer available. Your application is closed. You can find other opportunities.</p><section class="ko-card"><dl class="fx3 four"><div><dt>Course</dt><dd>Data Analysis with SQL</dd></div><div><dt>Role</dt><dd>Co-Creator</dd></div><div><dt>Share</dt><dd>15%</dd></div><div><dt>Status</dt><dd>Withdrawn</dd></div></dl></section><div class="ko-acts"><a class="ds-ghost" href="INV-001.dc.html">Back to Invitations</a><a class="ds-btn" href="#"><span>Find other opportunities</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></div>
+</sc-if>
+<sc-if value="{{p_accept}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="INV-001.dc.html">Invitations</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Accept</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">Accept Collaboration Invitation</h1><p class="ds-sub">Review the terms, confirm, and Credalio verifies the offer before activating your access.</p></div></header><ol class="stp" aria-label="Steps"><li class="dn"><i><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Review terms</span></li><li class="on"><i>2</i><span>Confirm</span></li><li class=""><i>3</i><span>Processing</span></li><li class=""><i>4</i><span>Done</span></li></ol><div class="wk"><div class="wk-m"><section class="ds-card ac6 ob-in2"><div class="ac6-h"><span class="cv6 c1" style="width: 52px; height: 52px" aria-hidden="true">SQL</span><p>You’re accepting the role of <b>Co-Creator</b> on <b>Data Analysis with SQL</b>, with a proposed <b>20%</b> share of distributable course earnings.</p></div><dl class="fx3 "><div><dt>Role</dt><dd>Co-Creator</dd></div><div><dt>Revenue share</dt><dd>20%</dd></div><div><dt>Covered earnings</dt><dd>All course channels</dd></div></dl></section>
+<div class="ac6-k ob-in3"><button type="button" class="dc-r {{ct1}}" aria-pressed="{{at1}}" onClick="{{xt1}}"><span class="dc-b"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>I understand my role, responsibilities and contribution requirements.</span></button><button type="button" class="dc-r {{ct2}}" aria-pressed="{{at2}}" onClick="{{xt2}}"><span class="dc-b"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>I have reviewed and agree to the collaboration and revenue-sharing terms.</span></button></div><div class="ds-acts sb sv wk-a2"><span class="sv-s"><a class="ds-link" href="INV-002.dc.html">Back</a></span><span class="sv-r"><span class="cf-g {{ct2}}"><a class="ds-btn" href="INV-005A.dc.html"><span>Confirm Acceptance</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></span></div></div><aside class="wk-r"><section class="ds-card rx vf6 ob-in3"><span class="rx-k">Checked on confirm</span><ul><li style="--i: 0"><span class="vf6-s"></span><span>still pending and not expired</span></li><li style="--i: 1"><span class="vf6-s"></span><span>belongs to you</span></li><li style="--i: 2"><span class="vf6-s"></span><span>terms not superseded</span></li><li style="--i: 3"><span class="vf6-s"></span><span>you remain eligible</span></li><li style="--i: 4"><span class="vf6-s"></span><span>allocation available</span></li><li style="--i: 5"><span class="vf6-s"></span><span>organization approval</span></li><li style="--i: 6"><span class="vf6-s"></span><span>agreement and identity verification complete</span></li></ul></section></aside></div>
+</sc-if>
+<sc-if value="{{p_decline}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="INV-001.dc.html">Invitations</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Decline</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">Decline Collaboration Invitation</h1><p class="ds-sub">Let the Lead Creator know why you’re unable to participate.</p></div></header><div class="wk"><div class="wk-m"><section class="ds-card fc ob-in2"><div class="fc-h"><div><h2>Reason for declining (required)</h2></div></div><div class="rsn d6"><button type="button" class="ds-opt sm {{ct3}}" aria-pressed="{{at3}}" onClick="{{xt3}}"><span class="o-t"><b>I’m not available at this time</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct4}}" aria-pressed="{{at4}}" onClick="{{xt4}}"><span class="o-t"><b>The course isn’t a good match for my expertise</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct5}}" aria-pressed="{{at5}}" onClick="{{xt5}}"><span class="o-t"><b>The proposed revenue share doesn’t meet my expectations</b><span>Lead Creator may send a revised offer</span></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct6}}" aria-pressed="{{at6}}" onClick="{{xt6}}"><span class="o-t"><b>The responsibilities don’t match my interests</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct7}}" aria-pressed="{{at7}}" onClick="{{xt7}}"><span class="o-t"><b>The timeline doesn’t work for me</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct8}}" aria-pressed="{{at8}}" onClick="{{xt8}}"><span class="o-t"><b>Other reason</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div><div class="fl rsn-d"><span class="fl-l">Additional details (optional)</span><textarea class="ds-in ta3" rows="2" aria-label="Additional details">Happy to join at 25%.</textarea></div></section><div class="ds-acts sb sv wk-a2"><span class="sv-s"><a class="ds-link" href="INV-002.dc.html">Cancel</a></span><span class="sv-r"><a class="ds-btn btn-dz" href="INV-005C.dc.html"><span>Confirm Decline</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></div></div><aside class="wk-r"><section class="ds-card rx dn6 ob-in3"><div class="dn6-c"><span class="cv6 c1" style="width: 40px; height: 40px" aria-hidden="true">SQL</span><span><b>Data Analysis with SQL</b><em>Co-Creator · 20%</em></span></div><p>Your selected reason is shared with the Lead Creator. Declining does not affect your Creator Reputation Score. The invitation closes and cannot be accepted afterwards.</p></section></aside></div>
+</sc-if>
+<sc-if value="{{p_o_a}}" hint-placeholder-val="{{ false }}">
+<div class="ko-in ob-in"><div class="ko ok"><div class="ko-emb ko-v" aria-hidden="true"><span class="cf" aria-hidden="true"><i style="--x:271;--y:-84;--f:438;--d:2.82s;--dl:0.34s;--sw:12px;--sd:0.81s;--fd:0.62s;--rx:-0.39;--r:-57deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:61;--y:-94;--f:453;--d:3.38s;--dl:0.38s;--sw:14px;--sd:0.48s;--fd:0.58s;--rx:0.76;--r:73deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:177;--y:-104;--f:399;--d:2.88s;--dl:0.27s;--sw:6px;--sd:0.49s;--fd:1.04s;--rx:-0.19;--r:61deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:132;--y:-105;--f:408;--d:2.68s;--dl:0.43s;--sw:10px;--sd:0.83s;--fd:0.84s;--rx:0.92;--r:-80deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-185;--y:-22;--f:478;--d:3.08s;--dl:0.20s;--sw:12px;--sd:0.80s;--fd:0.75s;--rx:-0.83;--r:5deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:297;--y:-43;--f:404;--d:2.72s;--dl:0.20s;--sw:13px;--sd:0.53s;--fd:0.97s;--rx:-0.11;--r:-32deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#AFC1F5"></s></b></i><i style="--x:-67;--y:-11;--f:466;--d:3.77s;--dl:0.37s;--sw:15px;--sd:0.46s;--fd:0.69s;--rx:0.99;--r:74deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-293;--y:-129;--f:380;--d:3.33s;--dl:0.45s;--sw:9px;--sd:0.48s;--fd:0.71s;--rx:0.27;--r:-77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-82;--y:-86;--f:428;--d:3.29s;--dl:0.46s;--sw:7px;--sd:0.52s;--fd:1.23s;--rx:0.64;--r:-17deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-218;--y:-61;--f:448;--d:3.07s;--dl:0.33s;--sw:6px;--sd:0.47s;--fd:0.63s;--rx:0.02;--r:-15deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:153;--y:-95;--f:470;--d:3.19s;--dl:0.35s;--sw:15px;--sd:0.89s;--fd:0.64s;--rx:-0.04;--r:77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-140;--y:-21;--f:381;--d:2.92s;--dl:0.32s;--sw:6px;--sd:0.53s;--fd:0.83s;--rx:0.14;--r:-47deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-88;--y:-25;--f:445;--d:3.43s;--dl:0.37s;--sw:7px;--sd:0.47s;--fd:0.56s;--rx:0.82;--r:-1deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-306;--y:-60;--f:453;--d:2.98s;--dl:0.50s;--sw:6px;--sd:0.70s;--fd:1.10s;--rx:0.80;--r:-47deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-94;--y:-54;--f:467;--d:3.10s;--dl:0.43s;--sw:14px;--sd:0.71s;--fd:1.02s;--rx:-0.24;--r:69deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:69;--y:-138;--f:479;--d:3.66s;--dl:0.41s;--sw:9px;--sd:0.78s;--fd:0.99s;--rx:-0.12;--r:58deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-121;--y:-137;--f:475;--d:2.74s;--dl:0.43s;--sw:12px;--sd:0.67s;--fd:1.22s;--rx:-0.26;--r:-44deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-100;--y:-19;--f:404;--d:3.09s;--dl:0.26s;--sw:12px;--sd:0.81s;--fd:1.12s;--rx:-0.60;--r:-26deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-179;--y:-21;--f:393;--d:3.02s;--dl:0.47s;--sw:6px;--sd:0.48s;--fd:1.29s;--rx:0.64;--r:-52deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:211;--y:-96;--f:447;--d:3.46s;--dl:0.45s;--sw:12px;--sd:0.59s;--fd:1.17s;--rx:-0.44;--r:75deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:114;--y:-110;--f:444;--d:3.28s;--dl:0.39s;--sw:10px;--sd:0.54s;--fd:1.13s;--rx:-0.47;--r:-44deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:309;--y:-133;--f:433;--d:3.37s;--dl:0.30s;--sw:6px;--sd:0.54s;--fd:1.17s;--rx:-0.49;--r:-78deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-175;--y:-40;--f:474;--d:3.20s;--dl:0.50s;--sw:7px;--sd:0.83s;--fd:1.07s;--rx:-0.55;--r:25deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-236;--y:-86;--f:470;--d:3.05s;--dl:0.36s;--sw:14px;--sd:0.81s;--fd:1.26s;--rx:-0.07;--r:-28deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:142;--y:-35;--f:451;--d:2.86s;--dl:0.47s;--sw:15px;--sd:0.89s;--fd:0.95s;--rx:0.58;--r:2deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#0F6B45"></s></b></i><i style="--x:262;--y:-30;--f:388;--d:3.13s;--dl:0.36s;--sw:13px;--sd:0.67s;--fd:0.57s;--rx:0.62;--r:-64deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:191;--y:-125;--f:458;--d:2.77s;--dl:0.23s;--sw:11px;--sd:0.78s;--fd:1.18s;--rx:0.38;--r:46deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:165;--y:-88;--f:463;--d:3.27s;--dl:0.23s;--sw:11px;--sd:0.86s;--fd:0.74s;--rx:0.34;--r:76deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-125;--y:-130;--f:407;--d:3.20s;--dl:0.31s;--sw:7px;--sd:0.45s;--fd:0.83s;--rx:0.08;--r:-69deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-241;--y:-136;--f:473;--d:3.15s;--dl:0.47s;--sw:14px;--sd:0.63s;--fd:0.73s;--rx:-0.01;--r:6deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#1652F0"></s></b></i><i style="--x:256;--y:-19;--f:432;--d:2.73s;--dl:0.31s;--sw:6px;--sd:0.57s;--fd:1.08s;--rx:0.95;--r:-71deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-220;--y:-148;--f:452;--d:2.89s;--dl:0.34s;--sw:10px;--sd:0.71s;--fd:1.19s;--rx:0.25;--r:-30deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-305;--y:-61;--f:441;--d:3.25s;--dl:0.46s;--sw:11px;--sd:0.55s;--fd:0.71s;--rx:0.09;--r:70deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#AFC1F5"></s></b></i><i style="--x:-171;--y:-46;--f:470;--d:2.98s;--dl:0.28s;--sw:15px;--sd:0.55s;--fd:1.30s;--rx:0.78;--r:-46deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i></span><span class="ko-halo"></span><span class="ko-disc"><svg class="ko-tick" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" pathLength="1"></path></svg></span></div><span class="ko-pill">Accepted</span><h1 class="ko-h1">You’re now part of the course team</h1><p class="ko-sub">You’re now a Co-Creator on Data Analysis with SQL. Your assigned scope opens in a restricted Course Studio.</p><div class="tj6"><span class="la2 h1" style="width: 44px; height: 44px; font-size: 14px">AM</span><span class="tj6-l"><i></i></span><span class="av" style="width: 44px; height: 44px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span></div><div class="ko-acts"><a class="ds-btn" href="STU-020-CO.dc.html"><span>Go to Course Studio</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div><div class="ko-lk"><a class="ds-link" href="NAV-002.dc.html">View My Collaborations</a></div></div></div>
+</sc-if>
+<sc-if value="{{p_o_b}}" hint-placeholder-val="{{ false }}">
+<div class="ko-in ob-in"><div class="ko am"><div class="ko-emb ko-v am" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span></div><span class="ko-pill">Accepted · Activation Pending</span><h1 class="ko-h1">Acceptance recorded, activation pending</h1><p class="ko-sub">Organization approval or verification is still required. You will get access as soon as it completes.</p><ol class="pg6"><li class="dn"><i><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Accepted</li><li class="on"><i></i>Approval &amp; verification</li><li><i></i>Access</li></ol><div class="ko-acts"><a class="ds-btn" href="INV-001.dc.html"><span>View Invitation Status</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></div>
+</sc-if>
+<sc-if value="{{p_o_c}}" hint-placeholder-val="{{ false }}">
+<div class="ko-in ob-in"><div class="ko gy"><div class="ko-emb ko-v gy" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></div><span class="ko-pill">Declined</span><h1 class="ko-h1">Invitation declined</h1><p class="ko-sub">You’ve declined the invitation to collaborate on Data Analysis with SQL. Your response is recorded and the Lead Creator will be notified.</p><div class="ko-acts"><a class="ds-ghost" href="#">Explore Collaboration Opportunities</a><a class="ds-btn" href="INV-001.dc.html"><span>Back to My Invitations</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></div>
+</sc-if>
+<sc-if value="{{p_o_d}}" hint-placeholder-val="{{ false }}">
+<div class="ko-in ob-in"><div class="ko gy"><div class="ko-emb ko-v gy" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span></div><span class="ko-pill">Expired</span><h1 class="ko-h1">This invitation has expired</h1><p class="ko-sub">You can no longer respond. The Lead Creator can send a new invitation.</p><div class="ko-acts"><a class="ds-btn" href="INV-001.dc.html"><span>Back to My Invitations</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></div>
+</sc-if>
+<sc-if value="{{p_o_e}}" hint-placeholder-val="{{ false }}">
+<div class="ko-in ob-in"><div class="ko gy"><div class="ko-emb ko-v gy" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></div><span class="ko-pill">Withdrawn</span><h1 class="ko-h1">The Lead Creator withdrew this invitation</h1><p class="ko-sub">Nothing else is needed from you.</p><div class="ko-acts"><a class="ds-btn" href="INV-001.dc.html"><span>Back to My Invitations</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></div>
+</sc-if>
+<sc-if value="{{p_o_f}}" hint-placeholder-val="{{ false }}">
+<div class="ko-in ob-in"><div class="ko cb"><div class="ko-emb ko-v cb" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></div><span class="ko-pill">Already responded</span><h1 class="ko-h1">You’ve already responded</h1><p class="ko-sub">This invitation was answered on 24 Oct 2026.</p><div class="ko-acts"><a class="ds-btn" href="INV-001-ALL.dc.html"><span>View Decision</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></div>
+</sc-if>
+<sc-if value="{{p_o_g}}" hint-placeholder-val="{{ false }}">
+<div class="ko-in ob-in"><div class="ko am"><div class="ko-emb ko-v am" aria-hidden="true"><span class="ko-halo"></span><span class="ko-disc"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg></span></div><span class="ko-pill">Superseded</span><h1 class="ko-h1">A revised invitation is available</h1><p class="ko-sub">The terms changed, so this offer can’t be accepted. Review the new one.</p><div class="ko-acts"><a class="ds-btn" href="INV-002.dc.html"><span>Review New Invitation</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></div>
+</sc-if>
+<sc-if value="{{p_shared}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Shared Courses</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">Courses</h1><p class="ds-sub">Courses you lead and courses you collaborate on are kept apart.</p></div><div class="pg-hr"><a class="ds-btn" href="STU-001.dc.html"><span>Create New</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></header><div class="sc6 ob-in2"><article class="sc6-c" style="--i: 0"><div class="sc6-v"><span class="cv6 c1" style="width: 64px; height: 64px" aria-hidden="true">SQL</span><span class="sc6-g"></span></div><div class="sc6-b"><span class="sc6-t"><b>Data Analysis with SQL</b></span><span class="sc6-f"><span class="la2 h1" style="width: 28px; height: 28px; font-size: 10px">AM</span><span><em>Lead Creator</em>Alex Morgan</span></span>
+<div class="sc6-m"><span><em>Your role</em><span class="rl">Co-Creator</span></span><span><em>Your share</em><b>20%</b></span><span><em>Status</em><span class="ds-tag green">Active</span></span></div><a class="ds-btn sm2 sc6-o" href="STU-020-CO.dc.html"><span>Open Course Studio</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></article><article class="sc6-c" style="--i: 1"><div class="sc6-v"><span class="cv6 c3" style="width: 64px; height: 64px" aria-hidden="true">PY</span><span class="sc6-g"></span></div><div class="sc6-b"><span class="sc6-t"><b>Python for Beginners</b></span><span class="sc6-f"><span class="la2 h5" style="width: 28px; height: 28px; font-size: 10px">SY</span><span><em>Lead Creator</em>Sara Yusuf</span></span>
+<div class="sc6-m"><span><em>Your role</em><span class="rl">Content Contributor</span></span><span><em>Your share</em><b>15%</b></span><span><em>Status</em><span class="ds-tag green">Active</span></span></div><a class="ds-btn sm2 sc6-o" href="#"><span>Open Course Studio</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></article></div><section class="ds-card rs6 ob-in3"><span class="rs6-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg></span><p>Shared courses open a restricted Course Studio: only your assigned scope is editable. Ownership, pricing, publishing and team controls belong to the Lead Creator.</p></section>
+</sc-if>
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+var T0 = {"t1": true, "t2": true, "t3": false, "t4": false, "t5": true, "t6": false, "t7": false, "t8": false}, G = {"t3": "drs", "t4": "drs", "t5": "drs", "t6": "drs", "t7": "drs", "t8": "drs"};
+function togVals(self) {
+  var t = self.state.t || T0, v = {};
+  Object.keys(T0).forEach(function (k) {
+    v['c'.concat(k)] = t[k] ? 'on' : ''; v['a'.concat(k)] = t[k] ? 'true' : 'false';
+    v['x'.concat(k)] = function () {
+      var n = Object.assign({}, t);
+      if (G[k]) { Object.keys(G).forEach(function (j) { if (G[j] === G[k]) n[j] = false; }); n[k] = true; } else n[k] = !t[k];
+      self.setState({ t: n });
+    };
+  });
+  return v;
+}
+var PG = {"i-pend": "Invitations", "i-all": "Invitations", "i-acc": "Invitations", "i-dec": "Invitations", "i-empty": "Invitations", "d-pend": "Invitations", "d-exp": "Invitations", "d-wd": "Invitations", "accept": "Invitations", "decline": "Invitations", "o-a": "Invitations", "o-b": "Invitations", "o-c": "Invitations", "o-d": "Invitations", "o-e": "Invitations", "o-f": "Invitations", "o-g": "Invitations", "shared": "Shared Courses"}, NV = ["Invitations", "Shared Courses"], TONE = {"o-b": "am", "o-c": "gy", "o-d": "gy", "o-e": "gy", "d-wd": "gy", "d-exp": "am", "o-g": "am", "o-a": "ok"};
+class Component extends DCLogic {
+  renderVals() {
+    var pg = this.props.page || 'i-pend', v = togVals(this), self = this;
+    Object.keys(PG).forEach(function (k) { v['p_'.concat(k.replace('-', '_'))] = k === pg; });
+    NV.forEach(function (n, i) { v['n_'.concat(i)] = PG[pg] === n; });
+    v.tone = 'tn-'.concat(TONE[pg] || 'cb');
+    v.navCls = this.state.nav ? 'ds-open' : '';
+    v.toggleNav = function () { self.setState({ nav: !self.state.nav }); };
+    return v;
+  }
+}
+</script>
+</body>
+</html>

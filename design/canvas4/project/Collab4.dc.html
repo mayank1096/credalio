@@ -136,6 +136,10 @@ a{color:#1652F0}
 .lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/56bd922e46929406f00f4b18fe9b3244) left center/contain no-repeat}
 .av{position:relative;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:#EAF0FF;color:#0E3BB8;font-size:11px;font-weight:600;box-sizing:border-box}
 .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.st{width:18px;height:18px;border-radius:50%;flex-shrink:0;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+.st.ok{background:#E7F5EE;color:#0F6B45}
+.st.pr{border:2px solid #1652F0;background:conic-gradient(#1652F0 0 50%,#FFFFFF 50% 100%)}
+.st.to{border:2px solid #CBD3E6}
 .fl{display:flex;flex-direction:column;gap:8px;min-width:0}
 .fl-l{display:flex;align-items:center;font-size:14px;font-weight:600;color:#0B1433}
 .sel{position:relative;display:block}
@@ -149,6 +153,11 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .ds-btn.sm{height:36px;padding:0 16px;font-size:13.5px}
 .rx{padding:18px;border-radius:20px}
 .rx-k{display:flex;align-items:center;margin-bottom:12px;font-size:12.5px;font-weight:500;color:#8A93AD}
+.lp{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.lp li{display:flex;align-items:center;gap:12px}
+.lp li > span:last-child{display:flex;flex-direction:column;gap:1px}
+.lp b{font-size:14px;font-weight:600}
+.lp em{font-style:normal;font-size:12.5px;color:#5B6582}
 @keyframes rmSpin{to{transform:rotate(360deg)}}
 @media (max-width: 1180px){.wk{grid-template-columns:minmax(0,1fr) 280px;column-gap:20px}}
 @media (max-width: 960px){
@@ -241,6 +250,7 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .ko-h1{margin:14px 0 0 0;font-size:34px;line-height:1.12;font-weight:600;letter-spacing:-0.03em}
 .ko-sub{margin:10px 0 0 0;max-width:540px;font-size:15.5px;line-height:1.55;color:#4A5578}
 .ko-acts{margin-top:24px;display:flex;align-items:center;justify-content:center;gap:12px}
+.br{position:relative}
 @keyframes rvP{0%{box-shadow:0 0 0 0 rgba(22,82,240,.45)}100%{box-shadow:0 0 0 8px rgba(22,82,240,0)}}
 .sb{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:2px;padding:16px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 70ms + 150ms)}
 .sb::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--c)}
@@ -267,6 +277,7 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .ko-acts{flex-direction:column-reverse;width:100%;gap:8px}
 .ko-acts .ds-btn{width:100%;justify-content:space-between}
 .ko-acts .ds-ghost{width:100%}
+.wk-r > .br{order:-1;padding:14px}
 .sb{padding:12px 14px;border-radius:16px}
 .sb b{font-size:22px}
 .sb em{display:none}
@@ -299,11 +310,20 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .cf-g:not(.on) .ds-btn{opacity:.45;filter:saturate(.4);pointer-events:none}
 .cf-g.on .ds-btn{animation:cfIn .5s cubic-bezier(.3,1.4,.5,1)}
 @keyframes cfIn{50%{transform:scale(1.04)}}
+.ct{margin-top:24px;padding:16px 20px 8px 20px}
+.arc{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:22px}
+.arc b{font-size:17px;font-weight:600}
+.arc > p{margin:0;font-size:13.5px;line-height:1.55;color:#3A4566}
+.arc .ds-ghost{margin-top:auto}
 .la2.sm{width:28px;height:28px;font-size:10.5px}
 @keyframes lvP2{0%{box-shadow:0 0 0 0 rgba(224,160,48,.45)}100%{box-shadow:0 0 0 6px rgba(224,160,48,0)}}
 @media (max-width: 960px){
 .utabs{margin:14px -16px 0 -16px;padding:0 16px;gap:20px}
 .ut{height:42px;font-size:13.5px}
+.ct{padding:14px 14px 4px 14px}
+.ct{margin-top:20px}
+.arc{padding:16px}
+.arc .ds-ghost{align-self:stretch;justify-content:center}
 .wk-m > .ack{order:4}
 .wk-a2 .sv-s{order:1;align-items:flex-start;text-align:left;padding:0 4px 4px 4px}
 .wk-a2 .sv-s{font-size:12px}
@@ -824,6 +844,10 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .oc7-sep{display:none}
 .oc7-dl{color:#8A93AD}
 }
+.aur{position:relative;isolation:isolate;overflow:hidden}
+.aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
+.oph.aur::after{display:none}
+.opv-c.aur::after{display:none}
 </style>
 </helmet>
 <div class="ds-root cr-root">
@@ -855,12 +879,12 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 <div class="oc7-f"><span class="oc7-s"><b>10%</b><em>combined, all earnings</em></span><span class="ds-btn sm2"><span>View</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></span></div></a></div><p class="nt"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Recommendations only appear when you meet the mandatory eligibility criteria.</span></p>
 </sc-if>
 <sc-if value="{{p_det}}" hint-placeholder-val="{{ false }}">
-<nav class="bc" aria-label="Breadcrumb"><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-001.dc.html">Opportunities</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Details</span></nav><section class="oph ob-in2"><div class="oph-l"><div class="oph-t"><span class="oph-k">Open for Collaboration</span><span class="oph-b">Intermediate</span><span class="oph-b"><span class="sts2" aria-label="0 of 2 positions filled"><i class=""></i><i class=""></i></span> 2 Positions</span></div>
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-001.dc.html">Opportunities</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Details</span></nav><section class="oph ob-in2 aur"><div class="oph-l"><div class="oph-t"><span class="oph-k">Open for Collaboration</span><span class="oph-b">Intermediate</span><span class="oph-b"><span class="sts2" aria-label="0 of 2 positions filled"><i class=""></i><i class=""></i></span> 2 Positions</span></div>
 <h1>Data Analytics Co-Creators Needed</h1><p class="oph-lc"><span class="la2 h1" style="width: 26px; height: 26px; font-size: 9px">AO</span><span>Lead Creator: <b>Ada Ononuju</b> · <a href="#">View profile</a></span></p><div class="oph-g"><span>Data Analytics</span><span>SQL</span><span>Business Intelligence</span></div></div>
 <div class="oph-r"><div class="oph-s"><b>30%</b><em>combined · final share set in your individual offer</em></div><div class="oph-d"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span><b>30 Nov 2026</b><em>Deadline</em></span></div><a class="ds-btn oph-go" href="OPP-003.dc.html"><span>Apply to Collaborate</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section><section class="ds-card dt7 ob-in3"><div class="dt7-c w" style="--i: 0"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><div><em>Course overview</em><b>Practical SQL and Business Intelligence for aspiring data analysts.</b></div></div><div class="dt7-c " style="--i: 1"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.5"></circle></svg></span><div><em>Skills required</em><b><span class="ds-tag line">SQL</span><span class="ds-tag line">Power BI</span><span class="ds-tag line">Data Visualization</span></b></div></div><div class="dt7-c " style="--i: 2"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg></span><div><em>Responsibilities</em><b>Lessons, exercises, assessments, resources</b></div></div><div class="dt7-c s" style="--i: 3"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><div><em>Contribution period</em><b>8 weeks</b></div></div><div class="dt7-c s" style="--i: 4"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg></span><div><em>Positions</em><b>2</b></div></div><div class="dt7-c " style="--i: 5"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg></span><div><em>Revenue offered</em><b>30% combined · final share set in your individual offer</b></div></div><div class="dt7-c " style="--i: 6"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg></span><div><em>Revenue sources</em><b>Marketplace Credit sales + subscription earnings</b></div></div><div class="dt7-c " style="--i: 7"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><div><em>Eligibility</em><b>Verified Data Analytics expertise · Reputation ≥ 70 preferred</b></div></div><div class="dt7-c " style="--i: 8"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg></span><div><em>Agreement</em><b>Collaboration agreement v3 overview</b></div></div></section><p class="nt"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Applying does not accept a final revenue agreement.</span></p>
 </sc-if>
 <sc-if value="{{p_inel}}" hint-placeholder-val="{{ false }}">
-<nav class="bc" aria-label="Breadcrumb"><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-001.dc.html">Opportunities</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Details</span></nav><section class="oph ob-in2"><div class="oph-l"><div class="oph-t"><span class="oph-k">Open for Collaboration</span><span class="oph-b">Intermediate</span><span class="oph-b"><span class="sts2" aria-label="0 of 2 positions filled"><i class=""></i><i class=""></i></span> 2 Positions</span></div>
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-001.dc.html">Opportunities</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Details</span></nav><section class="oph ob-in2 aur"><div class="oph-l"><div class="oph-t"><span class="oph-k">Open for Collaboration</span><span class="oph-b">Intermediate</span><span class="oph-b"><span class="sts2" aria-label="0 of 2 positions filled"><i class=""></i><i class=""></i></span> 2 Positions</span></div>
 <h1>Data Analytics Co-Creators Needed</h1><p class="oph-lc"><span class="la2 h1" style="width: 26px; height: 26px; font-size: 9px">AO</span><span>Lead Creator: <b>Ada Ononuju</b></span></p><div class="oph-g"><span>Data Analytics</span><span>SQL</span><span>Business Intelligence</span></div></div>
 <div class="oph-r"><div class="oph-s"><b>30%</b><em>combined · final share set in your individual offer</em></div><div class="oph-d"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span><b>30 Nov 2026</b><em>Deadline</em></span></div><span class="ds-btn is-dis oph-cta" aria-disabled="true"><span>Apply to Collaborate</span><span class="ob-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg></span></span></div></section><section class="ds-card ie7 ob-in3"><div class="ie7-v" aria-hidden="true"><span class="ie7-r"></span><span class="ie7-c"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg></span></div>
 <div class="ie7-b"><p>This opportunity requires verified Data Analytics expertise. Add and verify it in Creator Profile to become eligible. (Matching and ranking rules are not shown.)</p>
@@ -869,7 +893,7 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 <sc-if value="{{p_apply}}" hint-placeholder-val="{{ false }}">
 <nav class="bc" aria-label="Breadcrumb"><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-001.dc.html">Opportunities</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Apply</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">Apply to Collaborate</h1><p class="ds-sub">Data Analytics Co-Creators Needed · Intermediate</p></div></header><div class="wk"><div class="wk-m"><section class="ds-card fc ivf ob-in2"><div class="fl"><span class="fl-l">Why are you interested in this course?</span><textarea class="ds-in ta3" rows="2" aria-label="Why are you interested in this course?">I teach SQL to finance teams and want to reach analysts.</textarea></div><div class="iv-2 tx"><div class="fl"><span class="fl-l">Relevant expertise and skills</span><textarea class="ds-in ta3" rows="2" aria-label="Relevant expertise and skills">SQL, Power BI, 8 years in BI.</textarea></div><div class="fl"><span class="fl-l">Relevant published courses or portfolio</span><textarea class="ds-in ta3" rows="2" aria-label="Relevant published courses or portfolio">SQL for Analysts · Dashboards with Power BI</textarea></div></div><div class="iv-2"><div class="fl"><span class="fl-l">Proposed contribution</span><textarea class="ds-in ta3" rows="2" aria-label="Proposed contribution">Joins module and 4 practice sets.</textarea></div><div class="fl"><span class="fl-l">Availability</span><div class="ds-in ic-in"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span>10 hrs/week from 1 Dec</span></div></div></div>
 <div class="fl"><span class="fl-l">Work samples</span><div class="up7"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg><span><b>Upload files</b><em>PDF, slides, video links or repositories</em></span></div></div></section>
-<button type="button" class="dc-r ack {{ct1}}" aria-pressed="{{at1}}" onClick="{{xt1}}"><span class="dc-b"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>I acknowledge the advertised revenue terms (30% combined).<em class="ack-n">The final percentage and responsibilities come in an individual offer.</em></span></button><div class="ds-acts sb sv wk-a2"><span class="sv-s"><a class="ds-link" href="OPP-002.dc.html">Cancel</a></span><span class="sv-r"><span class="cf-g {{ct1}}"><a class="ds-btn" href="OPP-004.dc.html"><span>Submit Application</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></span></div></div><aside class="wk-r"><section class="ds-card rx opv ob-in3" aria-hidden="true"><div class="opv-h"><span class="rx-k">Applying to</span></div><div class="opv-c"><div class="opv-t"><span class="opv-k">Open for Collaboration</span><span class="opv-p"><span class="sts2" aria-label="0 of 2 positions filled"><i class=""></i><i class=""></i></span><span>2 Positions</span></span></div>
+<button type="button" class="dc-r ack {{ct1}}" aria-pressed="{{at1}}" onClick="{{xt1}}"><span class="dc-b"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>I acknowledge the advertised revenue terms (30% combined).<em class="ack-n">The final percentage and responsibilities come in an individual offer.</em></span></button><div class="ds-acts sb sv wk-a2"><span class="sv-s"><a class="ds-link" href="OPP-002.dc.html">Cancel</a></span><span class="sv-r"><span class="cf-g {{ct1}}"><a class="ds-btn" href="OPP-004.dc.html"><span>Submit Application</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></span></div></div><aside class="wk-r"><section class="ds-card rx opv ob-in3" aria-hidden="true"><div class="opv-h"><span class="rx-k">Applying to</span></div><div class="opv-c aur"><div class="opv-t"><span class="opv-k">Open for Collaboration</span><span class="opv-p"><span class="sts2" aria-label="0 of 2 positions filled"><i class=""></i><i class=""></i></span><span>2 Positions</span></span></div>
 <b>Data Analytics Co-Creators Needed</b><div class="opv-g on"><span>Data Analytics</span><span>SQL</span><span>Business Intelligence</span></div><div class="opv-s"><span class="opv-r on"><em>Lead Creator</em><b>Ada Ononuju</b></span><span class="opv-r on"><em>Total proposed share</em><b class="opv-pc">30%</b></span><span class="opv-r on"><em>Application deadline</em><b>30 Nov</b></span></div></div></section><section class="ds-card rx ob-in4"><span class="rx-k">Progress</span><ol class="tr7 v"><li class="on" style="--i: 0"><i></i><span>Applied</span></li><li class="" style="--i: 1"><i></i><span>Under review</span></li><li class="" style="--i: 2"><i></i><span>Shortlisted</span></li><li class="" style="--i: 3"><i></i><span>Offer</span></li><li class="" style="--i: 4"><i></i><span>Accepted</span></li></ol></section></aside></div>
 </sc-if>
 <sc-if value="{{p_a_pend}}" hint-placeholder-val="{{ false }}">
@@ -939,6 +963,113 @@ function togVals(self) {
 }
 var PG = {"list": "Opportunities", "det": "Opportunities", "inel": "Opportunities", "apply": "Opportunities", "a-pend": "My Applications", "a-rev": "My Applications", "a-short": "My Applications", "a-off": "My Applications", "a-acc": "My Applications", "a-dec": "My Applications", "a-wd": "My Applications", "a-wdc": "My Applications", "a-clar": "My Applications", "prof": "Opportunities", "sub": "Opportunities"}, NV = ["My Applications", "Opportunities"], TONE = {"a-dec": "gy", "a-wd": "gy", "a-off": "ok", "a-acc": "ok", "a-pend": "am", "inel": "am"};
 class Component extends DCLogic {
+  componentDidMount() { this.aurScan(); }
+auroraMount(el) {
+    var host = window;
+    try { if (window.top && window.top.document) host = window.top; } catch (e) { host = window; }
+    var R = host.__credAurora;
+    if (!R) {
+      R = host.__credAurora = { items: [], raf: 0, last: 0, cur: 0 };
+      var gc = host.document.createElement('canvas');
+      var gl = gc.getContext('webgl', { premultipliedAlpha: false, antialias: false, preserveDrawingBuffer: true, powerPreference: 'low-power' });
+      R.gl = gl; R.gc = gc;
+      if (gl) {
+        var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+        var fs = [
+          'precision mediump float;uniform vec2 R;uniform float T;uniform float L;uniform vec3 A;uniform vec3 B;uniform vec3 C;uniform vec3 G0;uniform vec3 G1;',
+          'float hp(float s,float k,float b){return fract(sin(s*k)*b)*6.2831853;}',
+          'float h3(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}',
+          'float vn(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);',
+          'float a=mix(mix(h3(i),h3(i+vec3(1,0,0)),f.x),mix(h3(i+vec3(0,1,0)),h3(i+vec3(1,1,0)),f.x),f.y);',
+          'float b=mix(mix(h3(i+vec3(0,0,1)),h3(i+vec3(1,0,1)),f.x),mix(h3(i+vec3(0,1,1)),h3(i+vec3(1,1,1)),f.x),f.y);',
+          'return mix(a,b,f.z)*2.-1.;}',
+          'void main(){vec2 uv=gl_FragCoord.xy/R;float asp=R.x/max(R.y,1.);',
+          'float wav=.6,ray=.25,H=1.1,ins=1.12,bal=mix(2.5,.4,.5),cx=.62,cy=.18;',
+          'float ws=0.,tot=0.;',
+          'for(int i=0;i<4;i++){float fi=float(i);',
+          'float to=fi==0.?0.:fi==1.?3.1:fi==2.?6.7:9.4;float w=fi==0.?1.:fi==1.?.65:fi==2.?.45:.3;',
+          'float ts=T*.06+to;float ls=fi*31.7;float wx=(uv.x-cx)*asp*2.;',
+          'float arc=.15*sin(wx*.7+ts*.4+hp(ls,12.9,4758.5))+.08*sin(wx*1.6+ts*.65+hp(ls,78.2,2847.1))+.04*sin(wx*2.9+ts*.3+hp(ls,41.6,1593.7));',
+          'float nw=vn(vec3(wx*.5,ts*.25,ls*.1));float py=cy+arc*wav+nw*.14*wav;',
+          'float rays=pow(sin((wx+nw*2.5)*mix(6.,20.,ray)*.15+ts*.1+hp(ls,53.7,3847.2))*.5+.5,1.5);',
+          'float lh=H*mix(.4,1.,rays);float d=uv.y-py;float top=lh*(rays*.4+.6);',
+          'float env=smoothstep(-.04,.015,d)*(1.-smoothstep(0.,top,d));',
+          'float ct=clamp(d/(top+.001),0.,1.);float sb=mix(.4,1.,nw*.5+.5);float cd=ct-.2;float cb=exp(cd*cd*-6.)*.3+1.;',
+          'float al=env*rays*sb*cb*w;ws+=ct*al;tot+=al;}',
+          'float av=pow(ws/(tot+.001),bal);vec3 col=mix(mix(A,B,smoothstep(0.,.2,av)),C,smoothstep(.4,.85,av));',
+          'float br=tot*ins;vec3 glow=clamp(col*br,0.,1.);',
+          'vec3 base=mix(G0,G1,smoothstep(0.,1.,uv.y*.7+(1.-uv.x)*.3));',
+          'gl_FragColor=L>.5?vec4(mix(base,col,clamp(br*.42,0.,.62)),1.):vec4(base*(1.-clamp(br*.5,0.,1.)*.35)+glow,1.);}'
+        ].join('');
+        var mk = function (t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
+        var pr = gl.createProgram();
+        gl.attachShader(pr, mk(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, mk(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr);
+        if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { R.gl = null; } else {
+          gl.useProgram(pr);
+          var bf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, bf);
+          gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+          var lp = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
+          var u = function (n) { return gl.getUniformLocation(pr, n); };
+          var hex = function (h) { return [parseInt(h.substr(1, 2), 16) / 255, parseInt(h.substr(3, 2), 16) / 255, parseInt(h.substr(5, 2), 16) / 255]; };
+          R.pal = { dark: [hex('#0E3BB8'), hex('#2E63FF'), hex('#9DB8F7'), hex('#050A20'), hex('#0B1A4D'), 0], light: [hex('#B9CCFF'), hex('#7FA4FF'), hex('#4F80FF'), hex('#F6F9FF'), hex('#E4ECFF'), 1] };
+          R.u = { A: u('A'), B: u('B'), C: u('C'), G0: u('G0'), G1: u('G1'), L: u('L') };
+          R.uR = u('R'); R.uT = u('T');
+        }
+      }
+      R.still = !!(host.matchMedia && host.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      R.t0 = host.performance.now();
+      R.paint = function (it, now) {
+        var g = R.gl, w = it.cv.width, h = it.cv.height;
+        if (R.gc.width !== w || R.gc.height !== h) { R.gc.width = w; R.gc.height = h; }
+        var pl = R.pal[it.light ? 'light' : 'dark']; g.uniform3fv(R.u.A, pl[0]); g.uniform3fv(R.u.B, pl[1]); g.uniform3fv(R.u.C, pl[2]); g.uniform3fv(R.u.G0, pl[3]); g.uniform3fv(R.u.G1, pl[4]); g.uniform1f(R.u.L, pl[5]);
+        g.viewport(0, 0, w, h); g.uniform2f(R.uR, w, h); g.uniform1f(R.uT, it.seed + (R.still ? 0 : (now - R.t0) / 1000));
+        g.drawArrays(g.TRIANGLE_STRIP, 0, 4);
+        it.ctx.drawImage(R.gc, 0, 0);
+      };
+      R.size = function (it) {
+        var cw = it.el.clientWidth, ch = it.el.clientHeight;
+        if (!cw || !ch) return false;
+        var s = Math.min(0.4, 320 / cw), w = Math.max(16, Math.round(cw * s)), h = Math.max(16, Math.round(ch * s));
+        if (it.cv.width !== w || it.cv.height !== h) { it.cv.width = w; it.cv.height = h; it.fresh = true; }
+        return true;
+      };
+      R.tick = function (now) {
+        R.raf = 0;
+        if (now - R.last > 33) {
+          R.last = now;
+          R.items = R.items.filter(function (it) { return it.el.isConnected; });
+          var n = R.items.length, st = host.performance.now();
+          for (var k = 0; k < n; k++) {
+            var it = R.items[(R.cur + k) % n];
+            if ((it.vis || it.fresh) && R.size(it)) { R.paint(it, now); it.fresh = false; }
+            if (host.performance.now() - st > 6) { R.cur = (R.cur + k + 1) % n; break; }
+          }
+        }
+        if (!R.still && R.items.some(function (it) { return it.vis; })) R.raf = host.requestAnimationFrame(R.tick);
+      };
+      R.wake = function () { if (!R.raf) R.raf = host.requestAnimationFrame(R.tick); };
+    }
+    if (!R.gl) { el.classList.add(el.classList.contains('aur-lt') ? 'aur-off-lt' : 'aur-off'); return function () {}; }
+    var cv = el.ownerDocument.createElement('canvas');
+    cv.className = 'aur-c';
+    cv.setAttribute('aria-hidden', 'true');
+    el.insertBefore(cv, el.firstChild);
+    el.__aurC = cv;
+    var it = { el: el, cv: cv, ctx: cv.getContext('2d'), seed: Math.random() * 40, vis: true, fresh: true, light: el.classList.contains('aur-lt') };
+    R.items.push(it);
+    var view = el.ownerDocument.defaultView || window;
+    var io = view.IntersectionObserver ? new view.IntersectionObserver(function (e) { it.vis = e[0].isIntersecting; if (it.vis) R.wake(); }) : null;
+    if (io) io.observe(el);
+    R.wake();
+    return function () { if (io) io.disconnect(); R.items = R.items.filter(function (x) { return x !== it; }); };
+  }
+  aurScan() {
+    var self = this, q = 0;
+    var go = function () { q = 0; document.querySelectorAll('.aur').forEach(function (el) { if (!el.__aurC || el.__aurC.parentNode !== el) { if (el.__aur) el.__aur(); el.__aur = self.auroraMount(el); } }); };
+    go();
+    if (!this._aurMo && window.MutationObserver) { this._aurMo = new MutationObserver(function () { if (!q) q = requestAnimationFrame(go); }); this._aurMo.observe(document.body, { childList: true, subtree: true }); }
+  }
+
   renderVals() {
     var pg = this.props.page || 'list', v = togVals(this), self = this;
     Object.keys(PG).forEach(function (k) { v['p_'.concat(k.replace('-', '_'))] = k === pg; });

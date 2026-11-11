@@ -167,6 +167,10 @@ a{color:#1652F0}
 .lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/56bd922e46929406f00f4b18fe9b3244) left center/contain no-repeat}
 .av{position:relative;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:#EAF0FF;color:#0E3BB8;font-size:11px;font-weight:600;box-sizing:border-box}
 .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.st{width:18px;height:18px;border-radius:50%;flex-shrink:0;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+.st.ok{background:#E7F5EE;color:#0F6B45}
+.st.pr{border:2px solid #1652F0;background:conic-gradient(#1652F0 0 50%,#FFFFFF 50% 100%)}
+.st.to{border:2px solid #CBD3E6}
 .sel{position:relative;display:block}
 .sel select{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:pointer}
 .sel svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:#5B6582;pointer-events:none}
@@ -188,6 +192,11 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .pv-cv em:nth-of-type(3){top:48px;width:70px}
 .pv-c b{display:block;padding:8px 14px 0 14px;font-size:15px;font-weight:600}
 .pv-c p{margin:4px 0 0 0;padding:0 14px;font-size:13px;line-height:1.5;color:#5B6582}
+.lp{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.lp li{display:flex;align-items:center;gap:12px}
+.lp li > span:last-child{display:flex;flex-direction:column;gap:1px}
+.lp b{font-size:14px;font-weight:600}
+.lp em{font-style:normal;font-size:12.5px;color:#5B6582}
 @keyframes rmSpin{to{transform:rotate(360deg)}}
 .rg-a{animation:rgDraw 1.4s cubic-bezier(.2,.8,.2,1) .25s both}
 @keyframes rgDraw{from{stroke-dasharray:0 400}}
@@ -962,6 +971,8 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .wk .cst2{margin-top:0}
 .bk-r{padding:8px 0}
 }
+.aur{position:relative;isolation:isolate;overflow:hidden}
+.aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
 </style>
 </helmet>
 <div class="ds-root cr-root">
@@ -996,7 +1007,7 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 <div class="ch2"><div class="ch2-r"><span class="aa-i gold"><span class="dlp-c" aria-hidden="true"></span></span><span><b>Subscription DLP Access</b><em>Allow new eligible learners to consume the course using DLP.</em></span><button type="button" class="tgl {{ct8}}" aria-pressed="{{at8}}" onClick="{{xt8}}" aria-label="Toggle"><i></i></button></div>
 <div class="ch2-r"><span class="aa-i blue"><i class="cr-c" aria-hidden="true">C</i></span><span><b>Marketplace Lifetime Access</b><em>Allow new learners to purchase lifetime access using Credits.</em></span><button type="button" class="tgl {{ct9}}" aria-pressed="{{at9}}" onClick="{{xt9}}" aria-label="Toggle"><i></i></button></div></div>
 <p class="pe-w"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17h.01"></path></svg><span>If both channels are disabled, you’ll be guided to Pause Enrollments or Unpublish Course rather than publishing a course no learner can access.</span></p></section>
-<section class="ds-card fc ob-in4"><div class="fc-h"><div><h2>Reason for change</h2></div></div><div class="rs3"><button type="button" class="ds-opt sm {{ct10}}" aria-pressed="{{at10}}" onClick="{{xt10}}"><span class="o-t"><b>Pricing or commercial adjustment</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct11}}" aria-pressed="{{at11}}" onClick="{{xt11}}"><span class="o-t"><b>Promotional pricing change</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct12}}" aria-pressed="{{at12}}" onClick="{{xt12}}"><span class="o-t"><b>Changing future access availability</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct13}}" aria-pressed="{{at13}}" onClick="{{xt13}}"><span class="o-t"><b>Other</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div></section><div class="ds-acts sb sv wk-a2"><span class="sv-s"><a class="ds-link" href="MGT-004.dc.html">Cancel</a></span><span class="sv-r"><a class="ds-btn" href="MGT-004-E.dc.html"><span>Review Changes</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></div></div><aside class="wk-r"><section class="ds-card rx pe-lk ob-in3"><div class="pe-h"><span class="pe-i gold"><span class="dlp-c dlp-lg" aria-hidden="true"></span></span><div><h2>Subscription DLP</h2><span class="ds-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg> Locked</span></div><b class="pe-v">1,800 <small>DLP</small></b></div><p class="pe-n">This requirement was established through the approved learning experience. Update course content through Course Studio if recalculation is needed.</p></section><section class="ds-card rx pv3 ob-in3"><span class="rx-k">Learners will see</span><article class="pv-c"><span class="pv-cv"><i>SQL</i><em></em><em></em><em></em></span><b>Data Analysis with SQL</b><span class="pv3-p"><span><span class="dlp-c" aria-hidden="true"></span><b>1,800</b> DLP</span><span class="pv3-n"><i class="cr-c" aria-hidden="true">C</i><b>420</b> Credits</span></span></article></section><section class="ds-card rx pr2 ob-in3"><span class="pr2-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><b>Existing Learners Are Protected</b><p>Changes to pricing and future access options do not retroactively change completed purchases or existing learner entitlements.</p></section></aside></div>
+<section class="ds-card fc ob-in4"><div class="fc-h"><div><h2>Reason for change</h2></div></div><div class="rs3"><button type="button" class="ds-opt sm {{ct10}}" aria-pressed="{{at10}}" onClick="{{xt10}}"><span class="o-t"><b>Pricing or commercial adjustment</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct11}}" aria-pressed="{{at11}}" onClick="{{xt11}}"><span class="o-t"><b>Promotional pricing change</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct12}}" aria-pressed="{{at12}}" onClick="{{xt12}}"><span class="o-t"><b>Changing future access availability</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button><button type="button" class="ds-opt sm {{ct13}}" aria-pressed="{{at13}}" onClick="{{xt13}}"><span class="o-t"><b>Other</b></span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></div></section><div class="ds-acts sb sv wk-a2"><span class="sv-s"><a class="ds-link" href="MGT-004.dc.html">Cancel</a></span><span class="sv-r"><a class="ds-btn" href="MGT-004-E.dc.html"><span>Review Changes</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></div></div><aside class="wk-r"><section class="ds-card rx pe-lk ob-in3"><div class="pe-h"><span class="pe-i gold"><span class="dlp-c dlp-lg" aria-hidden="true"></span></span><div><h2>Subscription DLP</h2><span class="ds-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg> Locked</span></div><b class="pe-v">1,800 <small>DLP</small></b></div><p class="pe-n">This requirement was established through the approved learning experience. Update course content through Course Studio if recalculation is needed.</p></section><section class="ds-card rx pv3 ob-in3"><span class="rx-k">Learners will see</span><article class="pv-c"><span class="pv-cv aur"><i>SQL</i><em></em><em></em><em></em></span><b>Data Analysis with SQL</b><span class="pv3-p"><span><span class="dlp-c" aria-hidden="true"></span><b>1,800</b> DLP</span><span class="pv3-n"><i class="cr-c" aria-hidden="true">C</i><b>420</b> Credits</span></span></article></section><section class="ds-card rx pr2 ob-in3"><span class="pr2-i"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><b>Existing Learners Are Protected</b><p>Changes to pricing and future access options do not retroactively change completed purchases or existing learner entitlements.</p></section></aside></div>
 </sc-if>
 <sc-if value="{{p_p_review}}" hint-placeholder-val="{{ false }}">
 <nav class="bc" aria-label="Breadcrumb"><a href="MGT-001.dc.html">Manage Course</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="MGT-004.dc.html">Pricing & Access</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Review Changes</span></nav><header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="MGT-001.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Manage Course</span></a><h1 class="ds-h1">Review Pricing Changes</h1><p class="ds-sub">Compare your current settings against the proposed update before confirming.</p></div></header><ol class="stp" aria-label="Steps"><li class="dn"><i><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Edit settings</span></li><li class="on"><i>2</i><span>Review changes</span></li><li class=""><i>3</i><span>Done</span></li></ol><div class="wk"><div class="wk-m"><section class="ds-card cmp ob-in2"><div class="cmp-r cmp-hd"><span>Setting comparison</span><span>Current</span><span></span><span>Proposed</span></div><div class="cmp-r"><span>DLP requirement</span><span class="cmp-o">1,800 DLP</span><span class="cmp-a"></span><b class="cmp-n">1,800 DLP</b></div><div class="cmp-r ch"><span>Marketplace price</span><span class="cmp-o">420 Credits</span><span class="cmp-a"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span><b class="cmp-n">480 Credits</b></div><div class="cmp-r"><span>Subscription access</span><span class="cmp-o">Enabled</span><span class="cmp-a"></span><b class="cmp-n">Enabled</b></div><div class="cmp-r"><span>Lifetime purchases</span><span class="cmp-o">Enabled</span><span class="cmp-a"></span><b class="cmp-n">Enabled</b></div><div class="cmp-r"><span>Publication status</span><span class="cmp-o">Published</span><span class="cmp-a"></span><b class="cmp-n">Published</b></div></section>
@@ -1114,6 +1125,113 @@ function togVals(self) {
 }
 var PG = ["p-a", "p-edit", "p-review", "p-done", "p-pending", "p-invalid", "p-hist", "v-a", "v-none", "v-create", "v-compare", "v-ready", "v-val", "v-chg", "v-act", "v-hist", "l-a", "l-empty", "l-detail", "l-assign", "l-impact", "l-unpub"], TONE = {"p-done": "ok", "p-pending": "am", "p-invalid": "rd", "v-chg": "am", "v-act": "ok", "l-unpub": "gy"};
 class Component extends DCLogic {
+  componentDidMount() { this.aurScan(); }
+auroraMount(el) {
+    var host = window;
+    try { if (window.top && window.top.document) host = window.top; } catch (e) { host = window; }
+    var R = host.__credAurora;
+    if (!R) {
+      R = host.__credAurora = { items: [], raf: 0, last: 0, cur: 0 };
+      var gc = host.document.createElement('canvas');
+      var gl = gc.getContext('webgl', { premultipliedAlpha: false, antialias: false, preserveDrawingBuffer: true, powerPreference: 'low-power' });
+      R.gl = gl; R.gc = gc;
+      if (gl) {
+        var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+        var fs = [
+          'precision mediump float;uniform vec2 R;uniform float T;uniform float L;uniform vec3 A;uniform vec3 B;uniform vec3 C;uniform vec3 G0;uniform vec3 G1;',
+          'float hp(float s,float k,float b){return fract(sin(s*k)*b)*6.2831853;}',
+          'float h3(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}',
+          'float vn(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);',
+          'float a=mix(mix(h3(i),h3(i+vec3(1,0,0)),f.x),mix(h3(i+vec3(0,1,0)),h3(i+vec3(1,1,0)),f.x),f.y);',
+          'float b=mix(mix(h3(i+vec3(0,0,1)),h3(i+vec3(1,0,1)),f.x),mix(h3(i+vec3(0,1,1)),h3(i+vec3(1,1,1)),f.x),f.y);',
+          'return mix(a,b,f.z)*2.-1.;}',
+          'void main(){vec2 uv=gl_FragCoord.xy/R;float asp=R.x/max(R.y,1.);',
+          'float wav=.6,ray=.25,H=1.1,ins=1.12,bal=mix(2.5,.4,.5),cx=.62,cy=.18;',
+          'float ws=0.,tot=0.;',
+          'for(int i=0;i<4;i++){float fi=float(i);',
+          'float to=fi==0.?0.:fi==1.?3.1:fi==2.?6.7:9.4;float w=fi==0.?1.:fi==1.?.65:fi==2.?.45:.3;',
+          'float ts=T*.06+to;float ls=fi*31.7;float wx=(uv.x-cx)*asp*2.;',
+          'float arc=.15*sin(wx*.7+ts*.4+hp(ls,12.9,4758.5))+.08*sin(wx*1.6+ts*.65+hp(ls,78.2,2847.1))+.04*sin(wx*2.9+ts*.3+hp(ls,41.6,1593.7));',
+          'float nw=vn(vec3(wx*.5,ts*.25,ls*.1));float py=cy+arc*wav+nw*.14*wav;',
+          'float rays=pow(sin((wx+nw*2.5)*mix(6.,20.,ray)*.15+ts*.1+hp(ls,53.7,3847.2))*.5+.5,1.5);',
+          'float lh=H*mix(.4,1.,rays);float d=uv.y-py;float top=lh*(rays*.4+.6);',
+          'float env=smoothstep(-.04,.015,d)*(1.-smoothstep(0.,top,d));',
+          'float ct=clamp(d/(top+.001),0.,1.);float sb=mix(.4,1.,nw*.5+.5);float cd=ct-.2;float cb=exp(cd*cd*-6.)*.3+1.;',
+          'float al=env*rays*sb*cb*w;ws+=ct*al;tot+=al;}',
+          'float av=pow(ws/(tot+.001),bal);vec3 col=mix(mix(A,B,smoothstep(0.,.2,av)),C,smoothstep(.4,.85,av));',
+          'float br=tot*ins;vec3 glow=clamp(col*br,0.,1.);',
+          'vec3 base=mix(G0,G1,smoothstep(0.,1.,uv.y*.7+(1.-uv.x)*.3));',
+          'gl_FragColor=L>.5?vec4(mix(base,col,clamp(br*.42,0.,.62)),1.):vec4(base*(1.-clamp(br*.5,0.,1.)*.35)+glow,1.);}'
+        ].join('');
+        var mk = function (t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
+        var pr = gl.createProgram();
+        gl.attachShader(pr, mk(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, mk(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr);
+        if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { R.gl = null; } else {
+          gl.useProgram(pr);
+          var bf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, bf);
+          gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+          var lp = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
+          var u = function (n) { return gl.getUniformLocation(pr, n); };
+          var hex = function (h) { return [parseInt(h.substr(1, 2), 16) / 255, parseInt(h.substr(3, 2), 16) / 255, parseInt(h.substr(5, 2), 16) / 255]; };
+          R.pal = { dark: [hex('#0E3BB8'), hex('#2E63FF'), hex('#9DB8F7'), hex('#050A20'), hex('#0B1A4D'), 0], light: [hex('#B9CCFF'), hex('#7FA4FF'), hex('#4F80FF'), hex('#F6F9FF'), hex('#E4ECFF'), 1] };
+          R.u = { A: u('A'), B: u('B'), C: u('C'), G0: u('G0'), G1: u('G1'), L: u('L') };
+          R.uR = u('R'); R.uT = u('T');
+        }
+      }
+      R.still = !!(host.matchMedia && host.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      R.t0 = host.performance.now();
+      R.paint = function (it, now) {
+        var g = R.gl, w = it.cv.width, h = it.cv.height;
+        if (R.gc.width !== w || R.gc.height !== h) { R.gc.width = w; R.gc.height = h; }
+        var pl = R.pal[it.light ? 'light' : 'dark']; g.uniform3fv(R.u.A, pl[0]); g.uniform3fv(R.u.B, pl[1]); g.uniform3fv(R.u.C, pl[2]); g.uniform3fv(R.u.G0, pl[3]); g.uniform3fv(R.u.G1, pl[4]); g.uniform1f(R.u.L, pl[5]);
+        g.viewport(0, 0, w, h); g.uniform2f(R.uR, w, h); g.uniform1f(R.uT, it.seed + (R.still ? 0 : (now - R.t0) / 1000));
+        g.drawArrays(g.TRIANGLE_STRIP, 0, 4);
+        it.ctx.drawImage(R.gc, 0, 0);
+      };
+      R.size = function (it) {
+        var cw = it.el.clientWidth, ch = it.el.clientHeight;
+        if (!cw || !ch) return false;
+        var s = Math.min(0.4, 320 / cw), w = Math.max(16, Math.round(cw * s)), h = Math.max(16, Math.round(ch * s));
+        if (it.cv.width !== w || it.cv.height !== h) { it.cv.width = w; it.cv.height = h; it.fresh = true; }
+        return true;
+      };
+      R.tick = function (now) {
+        R.raf = 0;
+        if (now - R.last > 33) {
+          R.last = now;
+          R.items = R.items.filter(function (it) { return it.el.isConnected; });
+          var n = R.items.length, st = host.performance.now();
+          for (var k = 0; k < n; k++) {
+            var it = R.items[(R.cur + k) % n];
+            if ((it.vis || it.fresh) && R.size(it)) { R.paint(it, now); it.fresh = false; }
+            if (host.performance.now() - st > 6) { R.cur = (R.cur + k + 1) % n; break; }
+          }
+        }
+        if (!R.still && R.items.some(function (it) { return it.vis; })) R.raf = host.requestAnimationFrame(R.tick);
+      };
+      R.wake = function () { if (!R.raf) R.raf = host.requestAnimationFrame(R.tick); };
+    }
+    if (!R.gl) { el.classList.add(el.classList.contains('aur-lt') ? 'aur-off-lt' : 'aur-off'); return function () {}; }
+    var cv = el.ownerDocument.createElement('canvas');
+    cv.className = 'aur-c';
+    cv.setAttribute('aria-hidden', 'true');
+    el.insertBefore(cv, el.firstChild);
+    el.__aurC = cv;
+    var it = { el: el, cv: cv, ctx: cv.getContext('2d'), seed: Math.random() * 40, vis: true, fresh: true, light: el.classList.contains('aur-lt') };
+    R.items.push(it);
+    var view = el.ownerDocument.defaultView || window;
+    var io = view.IntersectionObserver ? new view.IntersectionObserver(function (e) { it.vis = e[0].isIntersecting; if (it.vis) R.wake(); }) : null;
+    if (io) io.observe(el);
+    R.wake();
+    return function () { if (io) io.disconnect(); R.items = R.items.filter(function (x) { return x !== it; }); };
+  }
+  aurScan() {
+    var self = this, q = 0;
+    var go = function () { q = 0; document.querySelectorAll('.aur').forEach(function (el) { if (!el.__aurC || el.__aurC.parentNode !== el) { if (el.__aur) el.__aur(); el.__aur = self.auroraMount(el); } }); };
+    go();
+    if (!this._aurMo && window.MutationObserver) { this._aurMo = new MutationObserver(function () { if (!q) q = requestAnimationFrame(go); }); this._aurMo.observe(document.body, { childList: true, subtree: true }); }
+  }
+
   renderVals() {
     var pg = this.props.page || 'p-a', v = togVals(this), self = this;
     PG.forEach(function (k) { v['p_'.concat(k.replace('-', '_'))] = k === pg; });

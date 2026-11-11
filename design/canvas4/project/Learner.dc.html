@@ -53,8 +53,17 @@ a{color:#1652F0}
 .lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/56bd922e46929406f00f4b18fe9b3244) left center/contain no-repeat}
 .av{position:relative;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:#EAF0FF;color:#0E3BB8;font-size:11px;font-weight:600;box-sizing:border-box}
 .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.st{width:18px;height:18px;border-radius:50%;flex-shrink:0;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+.st.ok{background:#E7F5EE;color:#0F6B45}
+.st.pr{border:2px solid #1652F0;background:conic-gradient(#1652F0 0 50%,#FFFFFF 50% 100%)}
+.st.to{border:2px solid #CBD3E6}
 .ds-btn.sm{height:36px;padding:0 16px;font-size:13.5px}
 .rx{padding:18px;border-radius:20px}
+.lp{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.lp li{display:flex;align-items:center;gap:12px}
+.lp li > span:last-child{display:flex;flex-direction:column;gap:1px}
+.lp b{font-size:14px;font-weight:600}
+.lp em{font-style:normal;font-size:12.5px;color:#5B6582}
 .rg-a{animation:rgDraw 1.4s cubic-bezier(.2,.8,.2,1) .25s both}
 @keyframes rgDraw{from{stroke-dasharray:0 400}}
 @media (prefers-reduced-motion: reduce){.rg-a{animation:none}}
@@ -119,15 +128,124 @@ body{background:#F7F9FD}
 .lc2-p b{font-size:17px}
 .lc2-x{padding:10px 12px}
 }
+.aur{position:relative;isolation:isolate;overflow:hidden}
+.aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
 </style>
 </helmet>
 <div class="la">
 <header class="lh"><a class="lh-lg" href="#" aria-label="Credalio"><span class="lg-word"></span></a><nav class="lh-n"><a href="#">Browse</a><a href="#">Certifications</a><a href="#">Career Paths</a><a href="#" class="on">My Learning</a></nav><span style="flex-grow: 1"></span><span class="lh-tag">Learner app</span><span class="av" style="width: 36px; height: 36px">JM</span></header>
 <main class="la-m"><span class="pg-e">My Learning</span><h1 class="ds-h1">My Learning — course-access states after unpublish</h1><p class="ds-sub">Three distinct learner-facing states, shown side by side for comparison.</p>
-<div class="lc3"><article class="lc2 ok" style="--i: 0"><span class="lc2-cv"><i>SQL</i><em></em><em></em><span class="lc2-s"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Active entitlement</span></span></span><div class="lc2-b"><b>Data Analysis with SQL</b><div class="lc2-p"><svg class="rg" viewBox="0 0 120 120" width="52" height="52" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#EAF0FF" stroke-width="12"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="#1652F0" stroke-width="12" stroke-linecap="round" stroke-dasharray="194.8 400" style="--d: 194.8" transform="rotate(-90 60 60)"></circle></svg><span><b>62%</b><em>62% complete · DLP access active</em></span></div><div class="lc2-a"><a class="ds-btn sm2" href="#"><span>Continue Learning</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></article><article class="lc2 am" style="--i: 1"><span class="lc2-cv"><i>SQL</i><em></em><em></em><span class="lc2-s"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span>Entitlement expired</span></span></span><div class="lc2-b"><b>Data Analysis with SQL</b><div class="lc2-x"><b>Access Ended</b><p>Your DLP access period has ended. Renew to continue.</p></div><div class="lc2-a"><a class="ds-ghost sm" href="#">Renew Access</a></div></div></article><article class="lc2 gy" style="--i: 2"><span class="lc2-cv"><i>SQL</i><em></em><em></em><span class="lc2-s"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg><span>Special withdrawal</span></span></span><div class="lc2-b"><b>Data Analysis with SQL</b><div class="lc2-x"><b>Access Restricted</b><p>A special access review applies to your enrollment.</p></div><div class="lc2-a"><a class="ds-ghost sm" href="#">View Details</a></div></div></article></div></main></div>
+<div class="lc3"><article class="lc2 ok" style="--i: 0"><span class="lc2-cv aur"><i>SQL</i><em></em><em></em><span class="lc2-s"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Active entitlement</span></span></span><div class="lc2-b"><b>Data Analysis with SQL</b><div class="lc2-p"><svg class="rg" viewBox="0 0 120 120" width="52" height="52" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#EAF0FF" stroke-width="12"></circle><circle class="rg-a" cx="60" cy="60" r="50" fill="none" stroke="#1652F0" stroke-width="12" stroke-linecap="round" stroke-dasharray="194.8 400" style="--d: 194.8" transform="rotate(-90 60 60)"></circle></svg><span><b>62%</b><em>62% complete · DLP access active</em></span></div><div class="lc2-a"><a class="ds-btn sm2" href="#"><span>Continue Learning</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></article><article class="lc2 am" style="--i: 1"><span class="lc2-cv aur"><i>SQL</i><em></em><em></em><span class="lc2-s"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span>Entitlement expired</span></span></span><div class="lc2-b"><b>Data Analysis with SQL</b><div class="lc2-x"><b>Access Ended</b><p>Your DLP access period has ended. Renew to continue.</p></div><div class="lc2-a"><a class="ds-ghost sm" href="#">Renew Access</a></div></div></article><article class="lc2 gy" style="--i: 2"><span class="lc2-cv aur"><i>SQL</i><em></em><em></em><span class="lc2-s"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg><span>Special withdrawal</span></span></span><div class="lc2-b"><b>Data Analysis with SQL</b><div class="lc2-x"><b>Access Restricted</b><p>A special access review applies to your enrollment.</p></div><div class="lc2-a"><a class="ds-ghost sm" href="#">View Details</a></div></div></article></div></main></div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
 class Component extends DCLogic {
+  componentDidMount() { this.aurScan(); }
+auroraMount(el) {
+    var host = window;
+    try { if (window.top && window.top.document) host = window.top; } catch (e) { host = window; }
+    var R = host.__credAurora;
+    if (!R) {
+      R = host.__credAurora = { items: [], raf: 0, last: 0, cur: 0 };
+      var gc = host.document.createElement('canvas');
+      var gl = gc.getContext('webgl', { premultipliedAlpha: false, antialias: false, preserveDrawingBuffer: true, powerPreference: 'low-power' });
+      R.gl = gl; R.gc = gc;
+      if (gl) {
+        var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+        var fs = [
+          'precision mediump float;uniform vec2 R;uniform float T;uniform float L;uniform vec3 A;uniform vec3 B;uniform vec3 C;uniform vec3 G0;uniform vec3 G1;',
+          'float hp(float s,float k,float b){return fract(sin(s*k)*b)*6.2831853;}',
+          'float h3(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}',
+          'float vn(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);',
+          'float a=mix(mix(h3(i),h3(i+vec3(1,0,0)),f.x),mix(h3(i+vec3(0,1,0)),h3(i+vec3(1,1,0)),f.x),f.y);',
+          'float b=mix(mix(h3(i+vec3(0,0,1)),h3(i+vec3(1,0,1)),f.x),mix(h3(i+vec3(0,1,1)),h3(i+vec3(1,1,1)),f.x),f.y);',
+          'return mix(a,b,f.z)*2.-1.;}',
+          'void main(){vec2 uv=gl_FragCoord.xy/R;float asp=R.x/max(R.y,1.);',
+          'float wav=.6,ray=.25,H=1.1,ins=1.12,bal=mix(2.5,.4,.5),cx=.62,cy=.18;',
+          'float ws=0.,tot=0.;',
+          'for(int i=0;i<4;i++){float fi=float(i);',
+          'float to=fi==0.?0.:fi==1.?3.1:fi==2.?6.7:9.4;float w=fi==0.?1.:fi==1.?.65:fi==2.?.45:.3;',
+          'float ts=T*.06+to;float ls=fi*31.7;float wx=(uv.x-cx)*asp*2.;',
+          'float arc=.15*sin(wx*.7+ts*.4+hp(ls,12.9,4758.5))+.08*sin(wx*1.6+ts*.65+hp(ls,78.2,2847.1))+.04*sin(wx*2.9+ts*.3+hp(ls,41.6,1593.7));',
+          'float nw=vn(vec3(wx*.5,ts*.25,ls*.1));float py=cy+arc*wav+nw*.14*wav;',
+          'float rays=pow(sin((wx+nw*2.5)*mix(6.,20.,ray)*.15+ts*.1+hp(ls,53.7,3847.2))*.5+.5,1.5);',
+          'float lh=H*mix(.4,1.,rays);float d=uv.y-py;float top=lh*(rays*.4+.6);',
+          'float env=smoothstep(-.04,.015,d)*(1.-smoothstep(0.,top,d));',
+          'float ct=clamp(d/(top+.001),0.,1.);float sb=mix(.4,1.,nw*.5+.5);float cd=ct-.2;float cb=exp(cd*cd*-6.)*.3+1.;',
+          'float al=env*rays*sb*cb*w;ws+=ct*al;tot+=al;}',
+          'float av=pow(ws/(tot+.001),bal);vec3 col=mix(mix(A,B,smoothstep(0.,.2,av)),C,smoothstep(.4,.85,av));',
+          'float br=tot*ins;vec3 glow=clamp(col*br,0.,1.);',
+          'vec3 base=mix(G0,G1,smoothstep(0.,1.,uv.y*.7+(1.-uv.x)*.3));',
+          'gl_FragColor=L>.5?vec4(mix(base,col,clamp(br*.42,0.,.62)),1.):vec4(base*(1.-clamp(br*.5,0.,1.)*.35)+glow,1.);}'
+        ].join('');
+        var mk = function (t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
+        var pr = gl.createProgram();
+        gl.attachShader(pr, mk(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, mk(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr);
+        if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { R.gl = null; } else {
+          gl.useProgram(pr);
+          var bf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, bf);
+          gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+          var lp = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
+          var u = function (n) { return gl.getUniformLocation(pr, n); };
+          var hex = function (h) { return [parseInt(h.substr(1, 2), 16) / 255, parseInt(h.substr(3, 2), 16) / 255, parseInt(h.substr(5, 2), 16) / 255]; };
+          R.pal = { dark: [hex('#0E3BB8'), hex('#2E63FF'), hex('#9DB8F7'), hex('#050A20'), hex('#0B1A4D'), 0], light: [hex('#B9CCFF'), hex('#7FA4FF'), hex('#4F80FF'), hex('#F6F9FF'), hex('#E4ECFF'), 1] };
+          R.u = { A: u('A'), B: u('B'), C: u('C'), G0: u('G0'), G1: u('G1'), L: u('L') };
+          R.uR = u('R'); R.uT = u('T');
+        }
+      }
+      R.still = !!(host.matchMedia && host.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      R.t0 = host.performance.now();
+      R.paint = function (it, now) {
+        var g = R.gl, w = it.cv.width, h = it.cv.height;
+        if (R.gc.width !== w || R.gc.height !== h) { R.gc.width = w; R.gc.height = h; }
+        var pl = R.pal[it.light ? 'light' : 'dark']; g.uniform3fv(R.u.A, pl[0]); g.uniform3fv(R.u.B, pl[1]); g.uniform3fv(R.u.C, pl[2]); g.uniform3fv(R.u.G0, pl[3]); g.uniform3fv(R.u.G1, pl[4]); g.uniform1f(R.u.L, pl[5]);
+        g.viewport(0, 0, w, h); g.uniform2f(R.uR, w, h); g.uniform1f(R.uT, it.seed + (R.still ? 0 : (now - R.t0) / 1000));
+        g.drawArrays(g.TRIANGLE_STRIP, 0, 4);
+        it.ctx.drawImage(R.gc, 0, 0);
+      };
+      R.size = function (it) {
+        var cw = it.el.clientWidth, ch = it.el.clientHeight;
+        if (!cw || !ch) return false;
+        var s = Math.min(0.4, 320 / cw), w = Math.max(16, Math.round(cw * s)), h = Math.max(16, Math.round(ch * s));
+        if (it.cv.width !== w || it.cv.height !== h) { it.cv.width = w; it.cv.height = h; it.fresh = true; }
+        return true;
+      };
+      R.tick = function (now) {
+        R.raf = 0;
+        if (now - R.last > 33) {
+          R.last = now;
+          R.items = R.items.filter(function (it) { return it.el.isConnected; });
+          var n = R.items.length, st = host.performance.now();
+          for (var k = 0; k < n; k++) {
+            var it = R.items[(R.cur + k) % n];
+            if ((it.vis || it.fresh) && R.size(it)) { R.paint(it, now); it.fresh = false; }
+            if (host.performance.now() - st > 6) { R.cur = (R.cur + k + 1) % n; break; }
+          }
+        }
+        if (!R.still && R.items.some(function (it) { return it.vis; })) R.raf = host.requestAnimationFrame(R.tick);
+      };
+      R.wake = function () { if (!R.raf) R.raf = host.requestAnimationFrame(R.tick); };
+    }
+    if (!R.gl) { el.classList.add(el.classList.contains('aur-lt') ? 'aur-off-lt' : 'aur-off'); return function () {}; }
+    var cv = el.ownerDocument.createElement('canvas');
+    cv.className = 'aur-c';
+    cv.setAttribute('aria-hidden', 'true');
+    el.insertBefore(cv, el.firstChild);
+    el.__aurC = cv;
+    var it = { el: el, cv: cv, ctx: cv.getContext('2d'), seed: Math.random() * 40, vis: true, fresh: true, light: el.classList.contains('aur-lt') };
+    R.items.push(it);
+    var view = el.ownerDocument.defaultView || window;
+    var io = view.IntersectionObserver ? new view.IntersectionObserver(function (e) { it.vis = e[0].isIntersecting; if (it.vis) R.wake(); }) : null;
+    if (io) io.observe(el);
+    R.wake();
+    return function () { if (io) io.disconnect(); R.items = R.items.filter(function (x) { return x !== it; }); };
+  }
+  aurScan() {
+    var self = this, q = 0;
+    var go = function () { q = 0; document.querySelectorAll('.aur').forEach(function (el) { if (!el.__aurC || el.__aurC.parentNode !== el) { if (el.__aur) el.__aur(); el.__aur = self.auroraMount(el); } }); };
+    go();
+    if (!this._aurMo && window.MutationObserver) { this._aurMo = new MutationObserver(function () { if (!q) q = requestAnimationFrame(go); }); this._aurMo.observe(document.body, { childList: true, subtree: true }); }
+  }
+
   renderVals() { return {}; }
 }
 </script>

@@ -193,11 +193,10 @@ a.ct3-r + a.ct3-r{box-shadow:0 -1.5px 0 #F0F2F8}
 .cd3-a .ds-ghost{gap:7px}
 .cd3-a .dz-a{margin-left:auto}
 .wd3{width:500px}
-.wd3 .dl-h{align-items:center}
-.wd3-v{position:relative;flex:1;display:flex}
+.wd3-v{position:relative;display:flex}
 .wd3-x{position:absolute;left:34px;top:30px;width:22px;height:22px;border-radius:50%;background:#B42318;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #FFFFFF;animation:cfIn .5s cubic-bezier(.3,1.4,.5,1) .3s both}
-.wd3-h{margin:0;font-size:21px;line-height:1.3;font-weight:600;letter-spacing:-0.015em}
-.wd3-m{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:13px;color:#5B6582}
+.wd3-h{margin:0;text-align:center;font-size:21px;line-height:1.3;font-weight:600;letter-spacing:-0.015em}
+.wd3-m{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 14px;font-size:13px;color:#5B6582}
 .wd3-m > span{display:inline-flex;align-items:center;gap:5px}
 .ds-btn.btn-dz{background:#B42318 !important;color:#FFFFFF !important;box-shadow:0 12px 26px -14px rgba(180,35,24,.7)}
 .ds-btn.btn-dz:hover{background:#912018}

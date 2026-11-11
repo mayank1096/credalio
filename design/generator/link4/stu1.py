@@ -411,10 +411,10 @@ P('basics', 'basics', page_head('Design', 'Basics', 'Start with the course itsel
     field('Primary category', sel('Technology', 'Primary category')), field('Topic', sel('Data Analytics', 'Topic')),
     field('Subtopic', sel('SQL', 'Subtopic')), field('Language', sel('English', 'Language')),
     tip('Saved to your course profile so you won’t be asked again at validation.'),
-    '<div class="q"><span class="q-n">1</span><div class="q-b"><b>Does this course require learners to use external software?</b>%s<span class="fl-sub">Which?</span><div class="chips">%s%s%s%s</div></div></div>' % (
+    '<div class="qz"><span class="qz-n">1</span><div class="qz-b"><b>Does this course require learners to use external software?</b>%s<span class="fl-sub">Which?</span><div class="chips">%s%s%s%s</div></div></div>' % (
         W.seg(['Yes', 'No'], 0), W.chip('SQL Server', False, cls='sm'), W.chip('MySQL', False, cls='sm'), W.chip('PostgreSQL', True, cls='sm'), W.chip('Other', False, cls='sm')),
-    '<div class="q"><span class="q-n">2</span><div class="q-b"><b>Will learners work with real or simulated data?</b>%s</div></div>' % W.seg(['Real', 'Simulated', 'Both', 'Neither'], 1),
-    '<div class="q"><span class="q-n">3</span><div class="q-b"><b>Does this course involve AI?</b><div class="chips">%s%s%s%s%s</div></div></div>' % (
+    '<div class="qz"><span class="qz-n">2</span><div class="qz-b"><b>Will learners work with real or simulated data?</b>%s</div></div>' % W.seg(['Real', 'Simulated', 'Both', 'Neither'], 1),
+    '<div class="qz"><span class="qz-n">3</span><div class="qz-b"><b>Does this course involve AI?</b><div class="chips">%s%s%s%s%s</div></div></div>' % (
         W.chip('No', True, 'ai'), W.chip('Learners use AI tools', False, 'ai'), W.chip('AI is taught as a subject', False, 'ai'), W.chip('AI-generated outputs are assessed', False, 'ai'), W.chip('Other', False, 'ai'))),
 acts('STU-011.dc.html'),
 nova_rail('I’ll help with wording. You approve every change.', nchip('Improve title') + nchip('Suggest skills')) +

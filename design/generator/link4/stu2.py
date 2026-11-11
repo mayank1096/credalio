@@ -660,11 +660,6 @@ ED['assess'] = layout(
         '<div class="qg">%s<span>Nova drafts; you review and approve every question.</span></div>' % (
             ''.join('<button type="button" class="ds-chip sm">%s<span>%s</span></button>' % (ic('plus', 13, 2.4), q) for q in QTYPES), nchip('Generate draft questions')),
         right='<span class="ec-sub">10 questions · 13 points</span>') +
-    card('C · Scoring configuration', '<div class="fg">%s%s%s</div><p class="ec-p">Total points: 13 · set on each question in D%s</p>' % (
-        field('Will this activity carry points?', '<div class="opt2">%s%s</div>' % (E.opt('<span class="o-t"><b>Yes · Scored</b></span>', True, 'sc', 'sm'), E.opt('<span class="o-t"><b>No · Practice / self-check</b></span>', False, 'sc', 'sm'))),
-        field('Point allocation', E.seg(['Points per question', 'Total score'], 0)),
-        field('Passing score (%)', '<input class="ds-in pct" value="70" aria-label="Passing score (%)">'),
-        tip('Unscored knowledge checks are never blocked for missing points. Changing points alone does not change DLP.'))) +
     card('E · Delivery settings', '<div class="fg"><div class="fg fg2">%s%s</div>%s<div class="tgs">%s%s%s%s%s</div>%s</div>' % (
         field('Attempts', '<label class="sel"><span class="sr-only">Attempts</span><select class="ds-in"><option>2</option><option>1</option><option>3</option><option>5</option><option>Unlimited</option></select>%s</label>' % ic('down', 16, 2)),
         field('Time limit', '<label class="sel"><span class="sr-only">Time limit</span><select class="ds-in"><option>15 minutes</option><option>No limit</option><option>30 minutes</option><option>45 minutes</option><option>60 minutes</option><option>90 minutes</option></select>%s</label>' % ic('down', 16, 2)),
@@ -672,7 +667,7 @@ ED['assess'] = layout(
         tog('Randomise question order', True), tog('Randomise answer order', True), tog('Show explanations', True),
         tog('Draw from a question bank', False, 'Each attempt draws a different set'), tog('Required for course completion', True),
         field('Completion', '%s<span class="fl-h" style="margin-top: 6px">Required · Pass ≥ 70%%</span>' % E.seg(['Submit assessment', 'Pass assessment'], 1)))) +
-    resources() + comments(),
+    '',
     ('<section class="ds-card dlpc"><div class="dlpc-h"><span class="pg-e">F · DLP readiness</span>%s</div><div class="dlpc-n">%s<b>25</b><span>DLP</span></div>'
      '<div class="dlpc-r"><span>Estimated learning time</span><b>15m</b></div><p class="dlpc-s">10 questions · about 15 min%s</p><ul class="rd">%s</ul>'
      '<p class="ec-p">DLP is calculated from saved, valid questions, never from a typed question count.%s</p></section>') % (
@@ -680,11 +675,20 @@ ED['assess'] = layout(
         ''.join('<li class="%s"><span>%s</span>%s</li>' % (k, ck(10) if k == 'ok' else '!', t) for k, t in READY),
         tip('The approved value on the live version is kept until a new version is activated. Not ready states: add the required questions, answers and scoring before DLP can be calculated.', 'r')) +
     nova_sg('I can draft questions. You review and approve each one before it’s added.', nchip('Generate draft questions'), cls='side-nv') +
-    card('B · Assessment difficulty *', '<p class="ec-p">Overall tier of this assessment. It feeds the DLP estimate. Question-level difficulty is separate and set on each question in D.</p>%s'
-         '<div class="qd"><span>Question-level difficulty (supported for this subtype)</span><b>4 Easy · 5 Medium · 1 Hard · 0 not set</b></div><p class="lockl">%s<span>DLP Complexity Weight: 1.15× [TO CONFIRM]</span>%s</p>' % (
-             E.seg(['Beginner', 'Intermediate', 'Advanced', 'Expert'], 1), ic('lock', 13, 2),
-             tip('Read-only. Assigned by Credalio pricing rules for the selected tier. Final DLP remains subject to content analysis and validation.', 'r')), 'side') +
-    settings(None, None, {0}, {0}, ['Submit', 'Achieve ≥ 70% (recommended)'], 1, 'Uses this quiz’s passing score.'))
+    card('B · Assessment difficulty *', '<div class="tq">%s</div>'
+         '<div class="qd2"><span class="qd2-l">Question-level difficulty <em>(supported for this subtype)</em></span><span class="qd2-b" aria-hidden="true"><i class="e" style="flex: 4"></i><i class="m" style="flex: 5"></i><i class="h" style="flex: 1"></i></span>'
+         '<span class="qd2-k"><span class="e"><i></i>4 Easy</span><span class="m"><i></i>5 Medium</span><span class="h"><i></i>1 Hard</span><span class="n">0 not set</span></span></div>'
+         '<p class="lockl">%s<span>DLP Complexity Weight: 1.15× [TO CONFIRM]</span>%s</p>' % (
+             ''.join(E.opt('<span class="o-t"><b>%s</b></span><span class="tq-d" aria-hidden="true">%s</span>' % (t, ''.join('<i class="%s"></i>' % ('on' if j <= i else '') for j in range(4))), i == 1, 'tier', 'sm tq-o') for i, t in enumerate(['Beginner', 'Intermediate', 'Advanced', 'Expert'])),
+             ic('lock', 13, 2),
+             tip('Read-only. Assigned by Credalio pricing rules for the selected tier. Final DLP remains subject to content analysis and validation.', 'r')), 'side',
+         t='Overall tier of this assessment. It feeds the DLP estimate. Question-level difficulty is separate and set on each question in D.') +
+    card('C · Scoring configuration', '<div class="fg">%s%s%s</div><p class="ec-p">Total points: 13 · set on each question in D%s</p>' % (
+        field('Will this activity carry points?', '<div class="opt2">%s%s</div>' % (E.opt('<span class="o-t"><b>Yes · Scored</b></span>', True, 'sc', 'sm'), E.opt('<span class="o-t"><b>No · Practice / self-check</b></span>', False, 'sc', 'sm'))),
+        field('Point allocation', E.seg(['Points per question', 'Total score'], 0)),
+        field('Passing score (%)', '<input class="ds-in pct" value="70" aria-label="Passing score (%)">'),
+        tip('Unscored knowledge checks are never blocked for missing points. Changing points alone does not change DLP.')), 'side') +
+    settings(None, None, {0}, {0}, ['Submit', 'Achieve ≥ 70% (recommended)'], 1, 'Uses this quiz’s passing score.') + resources() + comments())
 
 # ---------- applied learning (project)
 RUB = [('Query correctness', '40'), ('Analysis quality', '30'), ('Communication of findings', '30')]
@@ -867,6 +871,9 @@ textarea.ds-in.sm{min-height:76px}
 .qg{margin-top:14px;display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;background:#F5F8FF;font-size:13px;color:#3A4566}
 .pct{max-width:140px}
 .tgs{display:flex;flex-direction:column}
+.ed-s .opt2{grid-template-columns:minmax(0,1fr) !important;display:grid;gap:6px}
+.ed-s .ds-seg button{padding:0 8px;font-size:12.5px}
+@media (min-width: 961px){.ed-m .tgs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}.ed-m .tgs .tg:last-child:nth-child(odd){grid-column:1 / -1}}
 .tg{display:flex;align-items:center;gap:14px;width:100%;padding:12px 0;border:0;border-bottom:1.5px solid #F0F2F8;background:none;font-family:inherit;text-align:left;cursor:pointer;color:#0B1433}
 .tg:last-child{border-bottom:0}
 .tg-t{flex:1;display:flex;flex-direction:column;gap:2px}
@@ -882,6 +889,25 @@ textarea.ds-in.sm{min-height:76px}
 .rd li > span{width:18px;height:18px;flex-shrink:0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
 .rd li.ok > span{background:#E7F5EE;color:#0F6B45}
 .rd li.w > span{background:#FFF4E0;color:#8A5A00}
+.tq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.ds-opt.tq-o{flex-direction:column;align-items:flex-start;gap:6px;padding:10px 12px;min-height:0}
+.ds-opt.tq-o .ds-opt-ck{display:none}
+.ds-opt.tq-o .o-t b{font-size:13px}
+.tq-d{display:flex;gap:3px}
+.tq-d i{width:12px;height:4px;border-radius:3px;background:#E1E7F4}
+.tq-d i.on{background:#AFC1F5}
+.ds-opt.tq-o.on .tq-d i.on{background:#1652F0}
+.qd2{margin-top:14px;padding-top:12px;border-top:1.5px solid #F0F2F8;display:flex;flex-direction:column;gap:8px}
+.qd2-l{font-size:12.5px;font-weight:500;color:#3A4566}
+.qd2-l em{font-style:normal;color:#8A93AD;font-weight:400}
+.qd2-b{display:flex;gap:2px;height:8px;border-radius:5px;overflow:hidden}
+.qd2-b i{transform-origin:left;animation:bdG .8s cubic-bezier(.2,.8,.2,1) both}
+.qd2-b .e{background:#34C38F}.qd2-b .m{background:#F4B860;animation-delay:.15s}.qd2-b .h{background:#E5675B;animation-delay:.3s}
+.qd2-k{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:#3A4566}
+.qd2-k > span{display:inline-flex;align-items:center;gap:5px}
+.qd2-k i{width:8px;height:8px;border-radius:2px}
+.qd2-k .e i{background:#34C38F}.qd2-k .m i{background:#F4B860}.qd2-k .h i{background:#E5675B}
+.qd2-k .n{color:#8A93AD}
 .qd{margin-top:12px;display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:12px;background:#F7F9FD;font-size:12.5px;color:#5B6582}
 .qd b{font-size:13.5px;font-weight:600;color:#0B1433}
 .rb{margin-top:4px}

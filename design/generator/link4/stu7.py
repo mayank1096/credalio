@@ -25,8 +25,8 @@ def head(section, h1, sub, back=('Back to Manage Course', 'MGT-001.dc.html'), ri
     return (crumbs(c) + '<header class="pg-h ob-in"><div class="pg-hl"><a class="ds-back" href="%s">%s<span>%s</span></a><h1 class="ds-h1">%s</h1>%s</div>%s</header>' % (
         back[1], ICON(I['back'], 15, 2), back[0], h1, ('<p class="ds-sub">%s</p>' % sub) if sub else '', ('<div class="pg-hr">%s</div>' % right) if right else ''))
 def strip(meta, status='Published', tone='green', extra=''):
-    return ('<section class="ds-card cst2 ob-in2">%s<div class="cst-b"><b>Data Analysis with SQL</b><span class="cst-t"><span class="ds-tag %s">%s</span>%s</span><span class="cst-p">%s</span></div>%s</section>') % (
-        COV, tone, status, GB, meta, extra)
+    return ('<section class="ds-card cst2 ob-in2">%s<div class="cst-b"><b>Data Analysis with SQL</b><span class="cst-t"><span class="ds-tag %s">%s</span>%s</span></div><div class="cst-m">%s</div>%s</section>') % (
+        COV, tone, status, GB, ''.join('<span>%s</span>' % m for m in meta.split(' · ')), extra)
 def wk(main, rail):
     return '<div class="wk"><div class="wk-m">%s</div><aside class="wk-r">%s</aside></div>' % (main, rail)
 def steps(cur, labels):
@@ -294,8 +294,13 @@ class Component extends DCLogic {
 
 CSS = stu6.MANAGE_CSS + r'''.cst2{display:flex;align-items:center;gap:16px;padding:16px 18px}
 .cst2 .cv-t{width:52px;height:52px;border-radius:14px}
-.cst2 .cst-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
-.cst2 .cst-b > b{font-size:16.5px;font-weight:600}
+.cst2 .cst-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px}
+.cst2 .cst-b > b{font-size:17px;font-weight:600}
+.cst-m{display:flex;align-items:center;flex-shrink:0;margin-left:auto}
+.cst-m > span{display:inline-flex;align-items:center;gap:7px;padding:8px 22px;font-size:14px;font-weight:600;color:#0B1433;white-space:nowrap}
+.cst-m > span + span{border-left:1.5px solid #EEF1F7}
+.cst-m > span:last-child{padding-right:6px}
+.cst-m .dlp-c,.cst-m .cr-c{width:18px;height:18px;font-size:10px}
 .wk-m{gap:16px}
 .wk-m > section,.wk-m > div{margin-top:0}
 .wk-m .sh{margin:6px 0 10px 0}
@@ -773,10 +778,12 @@ CSS = stu6.MANAGE_CSS + r'''.cst2{display:flex;align-items:center;gap:16px;paddi
 .stp li + li::before{flex:1 1 auto;margin-right:6px}
 .stp li.on span{display:block;position:absolute;left:0;bottom:0;font-size:13px;font-weight:600;color:#0B1433;white-space:nowrap}
 .stp li.on span::before{content:'Step ' counter(stp) ' · ';font-weight:500;color:#8A93AD}
-.cst2{padding:14px;gap:12px}
+.cst2{flex-wrap:wrap;padding:16px;gap:12px}
 .cst2 .cv-t{width:44px;height:44px;border-radius:12px}
 .cst2 .cst-b > b{font-size:15px}
-.cst2 .cst-p{font-size:12.5px}
+.cst-m{width:100%;flex-wrap:wrap;row-gap:6px;margin:2px 0 0 0;padding-top:12px;border-top:1.5px solid #EEF1F7}
+.cst-m > span{padding:2px 12px;font-size:13px}
+.cst-m > span:first-child{padding-left:0}
 .wk-m{gap:14px}
 .ds-acts.wk-a2{position:sticky;margin:6px -16px 0 -16px;padding:12px 16px 14px 16px;border-radius:0;border:0;border-top:1.5px solid #EEF1F7;box-shadow:none;flex-direction:column-reverse;align-items:stretch;gap:8px}
 .wk-a2 .sv-r{flex-direction:column-reverse;align-items:stretch;gap:6px;margin:0;width:100%}

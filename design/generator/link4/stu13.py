@@ -189,7 +189,7 @@ class Component extends DCLogic {
   }
 }''' % (json.dumps({k: n for k, n, _ in PAGES}), json.dumps(NAVS), json.dumps(TONE))
 
-CSS = stu12.CSS.replace('.wk:has(.rv5) .wk-r > .opv{display:none}', '') + open(__file__.replace('stu13.py', 'stu13.css')).read()
+CSS = __import__('re').sub(r'[^{}]*\.pg-hr > \.stp[^{]*\{[^}]*\}\n?', '', stu12.CSS).replace('.wk:has(.rv5) .wk-r > .opv{display:none}', '') + open(__file__.replace('stu13.py', 'stu13.css')).read()
 write('Collab4.dc.html', doc('Collaboration · opportunities, applications, creator profile · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + WK_CSS + CSS, body(), JS))
 
 BOARDS = [

@@ -5,13 +5,13 @@ Each row: title note, then desktop + mobile pairs left to right. Shared sources 
 """
 import json, os, sys
 from l4kit import OUT
-import stu1, stu2, stu3, stu4, stu5, stu6, stu7, stu8, stu10, stu11, stu12
+import stu1, stu2, stu3, stu4, stu5, stu6, stu7, stu8, stu10, stu11, stu12, stu13
 
 PAIR, GAP, ROWGAP = 1440 + 80 + 390, 160, 420
 H = {}
 for f in sys.argv[1:]:
     H.update(json.load(open(f)))
-T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS + stu4.BOARDS + stu5.BOARDS + stu6.BOARDS + stu7.BOARDS + stu8.BOARDS + stu10.BOARDS + stu11.BOARDS + stu12.BOARDS}
+T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS + stu4.BOARDS + stu5.BOARDS + stu6.BOARDS + stu7.BOARDS + stu8.BOARDS + stu10.BOARDS + stu11.BOARDS + stu12.BOARDS + stu13.BOARDS}
 
 ROWS = [
     ('b1-setup', 'Batch 1 · Course setup: learning experience, delivery type, setup review, how you’ll create it, Studio welcome', ['STU-001', 'STU-002', 'STU-003', 'STU-004', 'STU-008']),
@@ -46,6 +46,8 @@ ROWS = [
     ('b11-manage', 'Batch 11 · Make an offer · Opportunity management: open, no applications, paused, filled, closed, withdraw', ['COL-009', 'COL-010', 'COL-010-EMPTY', 'COL-010-PAUSED', 'COL-010-FILLED', 'COL-010-CLOSED', 'COL-010-WITHDRAW']),
     ('b12-invites', 'Batch 12 · My Invitations: pending, accepted, declined, all, empty · details (pending, expired, withdrawn) · accept · decline · Shared Courses', ['INV-001', 'INV-001-ACCEPTED', 'INV-001-DECLINED', 'INV-001-ALL', 'INV-001-EMPTY', 'INV-002', 'INV-002-EXPIRED', 'INV-002-WITHDRAWN', 'INV-003', 'INV-004', 'NAV-002']),
     ('b12-outcomes', 'Batch 12 · Invitation outcomes: accepted, activation pending, declined, expired, withdrawn, already responded, superseded', ['INV-005A', 'INV-005B', 'INV-005C', 'INV-005D', 'INV-005E', 'INV-005F', 'INV-005G']),
+    ('b13-opps', 'Batch 13 · Opportunities, details (eligible / not eligible), apply, update Creator Profile, submitted for verification', ['OPP-001', 'OPP-002', 'OPP-002-INELIGIBLE', 'OPP-003', 'OPP-005', 'OPP-005-SUBMITTED']),
+    ('b13-apps', 'Batch 13 · My Applications: pending, under review, shortlisted, offer received, accepted, declined, withdrawn, withdraw, reply to clarification', ['OPP-004', 'OPP-004-REVIEW', 'OPP-004-SHORTLISTED', 'OPP-004-OFFER', 'OPP-004-ACCEPTED', 'OPP-004-DECLINED', 'OPP-004-WITHDRAWN', 'OPP-004-WITHDRAW', 'OPP-004-CLARIFY']),
 ]
 SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html', 'Course Studio · shared source'),
            ('Builder.dc.html', 'Curriculum Builder · shared source'), ('Editor.dc.html', 'Learning item editors · shared source'),
@@ -57,7 +59,8 @@ SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html'
            ('Manage3.dc.html', 'Manage Published Course (validation, archive, insights) · shared source'),
            ('Collab.dc.html', 'Course collaboration (invite, permissions, manage, remove) · shared source'),
            ('Collab2.dc.html', 'Open collaboration (setup, applications, offers, manage opportunity) · shared source'),
-           ('Collab3.dc.html', 'Collaboration, creator side (my invitations, shared courses) · shared source')]
+           ('Collab3.dc.html', 'Collaboration, creator side (my invitations, shared courses) · shared source'),
+           ('Collab4.dc.html', 'Collaboration, creator side (opportunities, applications, creator profile) · shared source')]
 
 boards, order, notes = {}, [], {}
 y = 300

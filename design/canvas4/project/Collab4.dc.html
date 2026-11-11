@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Collaboration · opportunities, applications, creator profile · shared source</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-btn.sm{height:44px;padding:0 5px 0 18px;font-size:14.5px;gap:10px}
+.ds-btn.sm .ob-arrow{width:34px;height:34px}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-family:inherit;font-weight:600;font-size:14.5px;text-decoration:none;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}
+.ds-link:hover{color:#0E3BB8}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-link.off{opacity:.45;pointer-events:none}
+.ds-tag{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;box-sizing:border-box;border-radius:999px;font-size:12px;font-weight:500;line-height:1;white-space:nowrap;background:#F1F3F8;color:#3A4566}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-tag.line{background:#FFFFFF;box-shadow:inset 0 0 0 1px #E6EAF3}
+.ds-in{height:48px;width:100%;box-sizing:border-box;padding:0 14px;border-radius:12px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;font-size:15px;color:#0B1433;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.ds-in::placeholder{color:#8A93AD}
+.ds-in:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.ds-x{width:44px;height:44px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;text-decoration:none;transition:border-color .2s ease}
+.ds-x:hover{border-color:#1652F0}
+.ds-acts{display:flex;align-items:center;justify-content:flex-end;gap:20px;margin-top:32px}
+.ds-acts.c{justify-content:center}
+.ds-acts.sb{justify-content:space-between}
+.ko-v.am{--k:#B97A10;--kb:#FFF4E0}
+.ko-v.cb{--k:#1652F0;--kb:#EAF0FF}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.ds-x:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.ko-v{--k:#0F6B45;--kb:#E7F5EE}
+.ko-emb{position:relative;width:84px;height:84px;display:flex;align-items:center;justify-content:center}
+.ko-halo{position:absolute;inset:0;border-radius:50%;background:var(--kb);z-index:1}
+.ko-disc{position:relative;z-index:1;width:58px;height:58px;border-radius:50%;background:var(--k);color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(11,20,51,.16)}
+.ko-tick path{stroke-dasharray:1;stroke-dashoffset:1;animation:koDraw .6s ease .3s forwards}
+@keyframes koDraw{to{stroke-dashoffset:0}}
+.ko-pill{margin-top:14px;display:inline-flex;align-items:center;height:30px;padding:0 13px;border-radius:999px;background:var(--kb);color:var(--k);font-size:13px;font-weight:500}
+.cf{position:absolute;left:50%;top:50%;width:0;height:0;pointer-events:none;z-index:0;--k:1}
+.cf i{position:absolute;left:0;top:0;display:block;opacity:0;animation:cfPath var(--d) var(--dl) both}
+.cf b{display:block;animation:cfSway var(--sd) ease-in-out infinite alternate}
+.cf s{display:block;transform:rotate(var(--r));animation:cfFlip var(--fd) linear infinite}
+@keyframes cfPath{0%{opacity:0;transform:translate(-50%,-50%);animation-timing-function:cubic-bezier(.1,.7,.25,1)}5%{opacity:1}24%{transform:translate(calc(var(--x) * var(--k) * 1px - 50%),calc(var(--y) * 1px - 50%));animation-timing-function:cubic-bezier(.42,.08,.7,.92)}86%{opacity:1}100%{opacity:0;transform:translate(calc(var(--x) * var(--k) * 1.22px - 50%),calc((var(--y) + var(--f)) * 1px))}}
+@keyframes cfSway{from{transform:translateX(calc(var(--sw) * -1)) rotate(-12deg)}to{transform:translateX(var(--sw)) rotate(12deg)}}
+@keyframes cfFlip{from{transform:rotate(var(--r)) rotate3d(var(--rx),1,0,0deg)}to{transform:rotate(var(--r)) rotate3d(var(--rx),1,0,360deg)}}
+@media (max-width: 960px){
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-btn.sm{height:42px;font-size:14px}
+.ds-btn.sm .ob-arrow{width:32px;height:32px}
+.ds-ghost{height:44px;font-size:14.5px}
+.cf{--k:.56}
+}
+@media (max-width: 760px){
+.ds-x{width:40px;height:40px}
+.ds-acts{display:flex;flex-direction:column-reverse;align-items:stretch;gap:4px;position:sticky;bottom:0;z-index:20;margin:28px -20px 0;padding:12px 16px;background:#FFFFFF;border-top:1.5px solid #EEF1F7}
+.ds-acts .ds-btn{width:100%;justify-content:space-between}
+.ds-acts .ds-link{justify-content:center;min-height:40px}
+.ko-emb{width:72px;height:72px}
+.ko-disc{width:48px;height:48px}
+.ko-disc svg{width:24px;height:24px}
+}
+@media (prefers-reduced-motion: reduce){.cf{display:none}.ko-tick path{animation:none;stroke-dashoffset:0}}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}.ob-in3{animation:obIn .5s ease .16s both}.ob-in4{animation:obIn .5s ease .24s both}
+.ds-root{display:grid;grid-template-columns:264px minmax(0,1fr);min-height:100vh;background:#F7F9FD;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
+.ds-side{position:sticky;top:0;height:100vh;overflow-y:auto;box-sizing:border-box;padding:22px 14px 24px 14px;background:#FFFFFF;border-right:1.5px solid #E6EAF3;display:flex;flex-direction:column;gap:2px;z-index:20}
+.ds-glab{display:block;margin:16px 12px 6px 12px;font-size:12px;font-weight:600;color:#8A93AD}
+.ds-item{display:flex;align-items:center;gap:12px;min-height:40px;padding:0 12px;border-radius:12px;color:#3A4566;font-size:14.5px;font-weight:500;text-decoration:none;transition:background .2s ease,color .2s ease}
+.ds-item svg{flex-shrink:0;color:#5B6582}
+.ds-item:hover{background:#F5F8FF;color:#0B1433}
+.ds-on{background:#EAF0FF !important;color:#0E3BB8 !important;font-weight:600}
+.ds-on svg{color:#1652F0}
+.ds-badge{min-width:22px;height:22px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.ds-top{position:sticky;top:0;z-index:10;height:72px;box-sizing:border-box;padding:0 clamp(20px,3vw,40px);display:flex;align-items:center;gap:12px;background:rgba(247,249,253,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.ds-search{flex:1 1 auto;max-width:440px;height:44px;box-sizing:border-box;display:flex;align-items:center;gap:10px;padding:0 16px;border-radius:999px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#8A93AD;font-size:14px}
+.ds-search input{border:0;outline:none;background:transparent;font-family:inherit;font-size:14px;color:#0B1433;flex-grow:1;min-width:0}
+.ds-search input::placeholder{color:#8A93AD}
+.ds-icon-btn{width:44px;height:44px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#3A4566;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;text-decoration:none}
+.ds-icon-btn:hover{border-color:#AFC1F5}
+.ds-tok{height:44px;flex-shrink:0;box-sizing:border-box;display:flex;align-items:center;gap:7px;padding:0 14px 0 7px;border-radius:999px;background:linear-gradient(135deg,#FFFAEB,#FFF1CF);border:1.5px solid #F4D98E;font-size:14.5px;font-weight:600;color:#4A3300;text-decoration:none;box-shadow:0 6px 16px rgba(214,150,30,.12);transition:box-shadow .2s ease}
+.ds-tok:hover{box-shadow:0 8px 20px rgba(214,150,30,.24)}
+.ds-main{box-sizing:border-box;width:100%;max-width:1200px;padding:12px clamp(20px,3vw,40px) 56px clamp(20px,3vw,40px)}
+.ds-h1{margin:0;font-size:clamp(28px,2.5vw,36px);line-height:1.15;font-weight:600;letter-spacing:-0.03em;color:#0B1433}
+.ds-sub{margin:8px 0 0 0;font-size:16px;line-height:1.55;color:#4A5578}
+.ds-card{background:#FFFFFF;border:1.5px solid #E6EAF3;border-radius:20px;box-shadow:0 1px 2px rgba(11,20,51,.03)}
+.ds-btn{display:inline-flex;align-items:center;gap:14px;height:52px;padding:0 6px 0 24px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-family:inherit;font-size:15.5px;font-weight:600;text-decoration:none;white-space:nowrap;border:0;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 10px 24px rgba(22,82,240,.24);transition:background .2s ease,transform .2s ease}
+.ds-btn:hover{background:#0E3BB8;color:#FFFFFF;transform:translateY(-1px)}
+.ds-btn .ob-arrow{width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.ds-btn:hover .ob-arrow{transform:translateX(3px)}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-link{display:inline-flex;align-items:center;gap:6px;color:#1652F0;font-weight:600;font-size:14.5px;text-decoration:none}
+.ds-link:hover{color:#0E3BB8}
+.ds-menu,.ds-scrim,.ds-mlogo,.ds-close{display:none}
+.ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-item:focus-visible,.ds-icon-btn:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){.ob-in,.ob-in2,.ob-in3,.ob-in4{animation:none}}
+@media (max-width: 1180px){.ds-root{grid-template-columns:232px minmax(0,1fr)}}
+@media (max-width: 960px){
+.ds-root{grid-template-columns:minmax(0,1fr)}
+.ds-side{position:fixed;left:0;top:0;width:288px;max-width:86vw;transform:translateX(-102%);transition:transform .3s cubic-bezier(.2,.8,.2,1);box-shadow:0 24px 64px rgba(11,20,51,.18)}
+.ds-side.ds-open{transform:none}
+.ds-scrim.ds-open{display:block;position:fixed;inset:0;background:rgba(11,20,51,.32);z-index:15}
+.ds-menu,.ds-mlogo{display:flex}
+.ds-close{display:flex;position:absolute;right:12px;top:16px}
+.ds-top{height:64px;padding:0 16px;gap:8px}
+.ds-search,.ds-hide-sm{display:none !important}
+.ds-tok{padding:0 12px 0 6px;height:40px}
+.ds-icon-btn{width:40px;height:40px}
+.ds-h1{font-size:24px !important;line-height:1.2}
+.ds-sub{font-size:14.5px;margin-top:6px}
+.ds-btn{height:48px;font-size:15px}
+.ds-btn .ob-arrow{width:36px;height:36px}
+.ds-ghost{height:44px;font-size:14.5px}
+.ds-root{overflow-x:hidden}
+.ds-main{padding:12px 16px 32px 16px}
+.ds-btn{justify-content:space-between}
+}
+body{margin:0;background:#F7F9FD}
+a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/56bd922e46929406f00f4b18fe9b3244) left center/contain no-repeat}
+.av{position:relative;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:#EAF0FF;color:#0E3BB8;font-size:11px;font-weight:600;box-sizing:border-box}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fl{display:flex;flex-direction:column;gap:8px;min-width:0}
+.fl-l{display:flex;align-items:center;font-size:14px;font-weight:600;color:#0B1433}
+.sel{position:relative;display:block}
+.sel select{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:pointer}
+.sel svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:#5B6582;pointer-events:none}
+textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;resize:vertical}
+.wk{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr) 312px;grid-template-rows:auto 1fr;grid-template-areas:"m r" "a r";column-gap:24px;align-items:start}
+.wk-m{grid-area:m;min-width:0;display:flex;flex-direction:column;gap:16px}
+.wk-m > .fc,.wk-m > .fc + .fc{margin-top:0}
+.wk-r{grid-area:r;min-width:0;position:sticky;top:92px;display:flex;flex-direction:column;gap:14px}
+.ds-btn.sm{height:36px;padding:0 16px;font-size:13.5px}
+.rx{padding:18px;border-radius:20px}
+.rx-k{display:flex;align-items:center;margin-bottom:12px;font-size:12.5px;font-weight:500;color:#8A93AD}
+@keyframes rmSpin{to{transform:rotate(360deg)}}
+@media (max-width: 1180px){.wk{grid-template-columns:minmax(0,1fr) 280px;column-gap:20px}}
+@media (max-width: 960px){
+.wk{display:flex;flex-direction:column;align-items:stretch;gap:16px;margin-top:20px}
+.wk-m{display:contents}
+.wk-r{display:contents}
+.wk-m > *{order:2}
+.wk-r > .rx{order:3}
+.rx{padding:18px 16px;border-radius:18px}
+}
+.lv-d{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 0 0 currentColor;animation:lvP 2s ease-out infinite}
+@keyframes lvP{0%{box-shadow:0 0 0 0 rgba(15,107,69,.5)}100%{box-shadow:0 0 0 7px rgba(15,107,69,0)}}
+.ds-btn.sm2{height:44px;font-size:14.5px;padding-left:20px;gap:12px}
+.ds-btn.sm2 .ob-arrow{width:34px;height:34px}
+.cr-root{grid-template-columns:264px minmax(0,1fr)}
+.cr-lg{display:block;padding:4px 10px 16px 10px}
+.cr-lg .lg-word{height:24px}
+.ci-t{flex-grow:1;min-width:0}
+.ds-mlogo{flex-grow:1}
+.ds-mlogo .lg-word{height:20px}
+.fc{padding:24px 26px 26px 26px}
+.fc-h{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+.fc-h h2{margin:0;display:flex;align-items:center;font-size:17px;font-weight:600;letter-spacing:-0.01em}
+.bl-c{position:absolute;right:-3px;top:-3px;min-width:18px;height:18px;padding:0 4px;box-sizing:border-box;border-radius:999px;background:#E5484D;color:#FFFFFF;font-size:10.5px;font-weight:600;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px #F7F9FD}
+.cw-me{display:flex;border-radius:50%}
+.mg-main{position:relative;isolation:isolate;max-width:1240px}
+.mg-main::before{content:'';position:absolute;z-index:-1;left:0;right:0;top:-80px;height:300px;pointer-events:none;background:radial-gradient(60% 100% at 30% 0,rgba(22,82,240,.07),transparent 70%)}
+.bc{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin:4px 0 14px 0;font-size:13px;color:#8A93AD}
+.bc a{color:#5B6582;text-decoration:none}
+.bc a:hover{color:#1652F0}
+.bc svg{color:#AEB6CC}
+.bc span{color:#0B1433;font-weight:500}
+.pg-h{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+.pg-hl{min-width:0}
+.pg-hr{flex-shrink:0;display:flex;align-items:center;gap:8px}
+.ds-ghost.sm{height:42px;padding:0 16px;font-size:14px;gap:7px}
+.ds-link.sm{font-size:13.5px}
+.wk{margin-top:18px}
+.dz-a{color:#B42318;border-color:#F5C2BD}
+.dz-a:hover{border-color:#B42318;background:#FFF5F4;color:#912018}
+.ov-scrim{position:fixed;inset:0;z-index:1000;background:rgba(11,20,51,.38);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.dl{position:fixed;z-index:1001;left:50%;top:50%;transform:translate(-50%,-50%);width:560px;max-width:calc(100vw - 32px);max-height:calc(100vh - 48px);overflow-y:auto;box-sizing:border-box;border-radius:24px;background:#FFFFFF;box-shadow:0 40px 90px -30px rgba(11,20,51,.5);animation:dlIn .45s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes dlIn{from{opacity:0;transform:translate(-50%,-46%) scale(.97)}}
+.dl-h{display:flex;align-items:flex-start;gap:14px;padding:24px 24px 0 24px}
+.dl-h h2{margin:4px 0 0 0;font-size:21px;line-height:1.3;font-weight:600;letter-spacing:-0.015em}
+.ds-x.sm{width:36px;height:36px;border-color:transparent;color:#5B6582}
+.dl-b{padding:14px 24px 4px 24px;display:flex;flex-direction:column;gap:8px}
+.dl-p{margin:0 0 4px 0;font-size:14.5px;line-height:1.55;color:#3A4566}
+.dl-n{margin:8px 0 0 0;display:flex;gap:10px;padding:12px 14px;border-radius:14px;background:#F7F9FD;font-size:13.5px;line-height:1.5;color:#3A4566}
+.dl-n svg{flex-shrink:0;margin-top:2px;color:#1652F0}
+.dl-n b{font-weight:600;margin-right:4px;color:#0B1433}
+.dl-f{display:flex;justify-content:flex-end;gap:10px;padding:20px 24px 24px 24px}
+@media (max-width: 960px){
+.cr-root{grid-template-columns:minmax(0,1fr)}
+.bc{margin-bottom:10px;font-size:12px}
+.pg-h{flex-direction:column;align-items:flex-start;gap:12px}
+.fc{padding:18px 16px 20px 16px;border-radius:18px}
+.pg-hr{width:calc(100% + 32px);margin:0 -16px;padding:0 16px 2px 16px;overflow-x:auto;scrollbar-width:none}
+.pg-hr::-webkit-scrollbar{display:none}
+.pg-hr > *{flex-shrink:0}
+.ds-ghost.sm{height:38px;font-size:13.5px;padding:0 14px}
+.dz-a{width:100%}
+.dl{top:auto;bottom:0;left:0;right:0;transform:none;width:100%;max-width:none;max-height:92vh;border-radius:24px 24px 0 0;animation:dlUp .45s cubic-bezier(.2,.9,.3,1) both}
+@keyframes dlUp{from{transform:translateY(40px);opacity:0}}
+.dl-h{padding:20px 16px 0 16px}
+.dl-b{padding:12px 16px 4px 16px}
+.dl-f{padding:16px;flex-direction:column-reverse}
+.dl-f .ds-btn{justify-content:space-between}
+}
+@media (max-width: 960px){
+.dz-a{grid-column:1 / -1;margin-top:10px}
+}
+.wk-m{gap:16px}
+.wk-m > section,.wk-m > div{margin-top:0}
+.fc-h p{margin:4px 0 0 0;font-size:14px;line-height:1.55;color:#5B6582}
+.ds-acts.wk-a2{position:sticky;bottom:0;z-index:5;margin:4px 0 0 0;padding:12px 12px 12px 22px;border-radius:999px;background:rgba(255,255,255,.94);border:1.5px solid #E6EAF3;box-shadow:0 18px 40px -24px rgba(11,20,51,.35);display:flex;align-items:center;justify-content:space-between;gap:16px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.ds-acts.wk-a2{flex-direction:row}
+.wk-a2 .sv-s .ds-link{min-height:0}
+.ds-acts.wk-a2:has(.sv-s:empty){align-self:flex-end;width:max-content;padding-left:12px}
+.wk-m:has(> .wk-a2:has(.sv-s:empty)) .wk-a2{margin-left:auto}
+.wk-a2 .sv-s{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:#5B6582}
+.wk-a2 .sv-r{display:inline-flex;align-items:center;gap:14px;margin-left:auto}
+.ds-btn.is-dis{background:#C9D2E6;box-shadow:none;cursor:not-allowed}.ds-btn.is-dis:hover{background:#C9D2E6;transform:none}.ds-btn.is-dis .ob-arrow{color:#8A93AD}
+.ko-in{display:flex;justify-content:center;padding:30px 0 20px 0}
+.ko{width:min(640px,100%);display:flex;flex-direction:column;align-items:center;text-align:center;--k:#0F6B45;--kb:#E7F5EE}
+.ko-v.am{--k:#B97A10;--kb:#FFF4E0}
+.ko.am .ko-pill{background:#FFF4E0;color:#8A5A00}
+.ko-h1{margin:14px 0 0 0;font-size:34px;line-height:1.12;font-weight:600;letter-spacing:-0.03em}
+.ko-sub{margin:10px 0 0 0;max-width:540px;font-size:15.5px;line-height:1.55;color:#4A5578}
+.ko-acts{margin-top:24px;display:flex;align-items:center;justify-content:center;gap:12px}
+@keyframes rvP{0%{box-shadow:0 0 0 0 rgba(22,82,240,.45)}100%{box-shadow:0 0 0 8px rgba(22,82,240,0)}}
+.sb{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:2px;padding:16px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 70ms + 150ms)}
+.sb::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--c)}
+.sb.all{--c:#0B1433}.sb.cb{--c:#1652F0}.sb.ok{--c:#0F6B45}
+.sb b{font-size:28px;font-weight:600;letter-spacing:-0.03em}
+.sb span{font-size:13.5px;font-weight:600}
+.sb em{font-style:normal;font-size:12px;color:#5B6582}
+.la2{width:36px;height:36px;flex-shrink:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#FFFFFF}
+.h1{background:linear-gradient(135deg,#5C86FF,#1652F0)}.h2{background:linear-gradient(135deg,#34C38F,#0F6B45)}.h3{background:linear-gradient(135deg,#F4B860,#B76E00)}.h4{background:linear-gradient(135deg,#8A93AD,#3A4566)}
+@keyframes rmSpin{to{transform:rotate(360deg)}}
+@media (max-width: 960px){
+.wk-m{gap:14px}
+.ds-acts.wk-a2{position:sticky;margin:6px -16px 0 -16px;padding:12px 16px 14px 16px;border-radius:0;border:0;border-top:1.5px solid #EEF1F7;box-shadow:none;flex-direction:column-reverse;align-items:stretch;gap:8px}
+.wk-a2 .sv-r{flex-direction:column-reverse;align-items:stretch;gap:6px;margin:0;width:100%}
+.wk-a2 .sv-r .ds-btn{width:100%;justify-content:space-between}
+.wk-a2 .sv-r .ds-link,.wk-a2 .sv-r .ds-ghost,.wk-a2 .sv-s .ds-link,.wk-a2 .sv-s .ds-ghost{justify-content:center;min-height:40px}
+.wk-a2 .sv-s{display:flex;justify-content:center;font-size:12.5px;text-align:center}
+.wk-a2 .sv-s:empty{display:none}
+.ds-acts.wk-a2:has(.sv-s:empty){width:auto;align-self:stretch;padding-left:16px}
+.wk-a2:has(.sv-s .ds-link){flex-direction:column-reverse}
+.ko-in{padding:16px 0 8px 0}
+.ko-h1{font-size:26px}
+.ko-sub{font-size:14.5px}
+.ko-acts{flex-direction:column-reverse;width:100%;gap:8px}
+.ko-acts .ds-btn{width:100%;justify-content:space-between}
+.ko-acts .ds-ghost{width:100%}
+.sb{padding:12px 14px;border-radius:16px}
+.sb b{font-size:22px}
+.sb em{display:none}
+.wk-m > .wk-a2{order:6}
+.pg-hr:has(.ds-btn){display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100% !important;margin:0 !important;padding:0 !important;overflow:visible !important}
+.pg-hr:has(.ds-btn) .ds-btn{order:-1;grid-column:1 / -1;justify-content:space-between}
+.pg-hr:has(.ds-btn) .ds-ghost{justify-content:center;font-size:12.5px;padding:0 8px}
+.wk-a2 .sv-r .ds-ghost{width:100%}
+}
+.ds-acts.wk-a2:has(.sv-s:empty){background:none;border:0;box-shadow:none;padding:0;backdrop-filter:none;-webkit-backdrop-filter:none}
+.wk-a2 .sv-s{display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.45;color:#5B6582}
+.wk-a2 .sv-s svg{flex-shrink:0;width:15px;height:15px;color:#8A93AD}
+.wk-a2 .sv-r{flex-shrink:0;display:flex;align-items:center;gap:10px}
+.utabs{margin-top:20px;display:flex;gap:26px;border-bottom:1.5px solid #E6EAF3;overflow-x:auto;scrollbar-width:none}
+.utabs::-webkit-scrollbar{display:none}
+.ut{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;height:46px;margin-bottom:-1.5px;border-bottom:2.5px solid transparent;color:#5B6582;font-size:14.5px;font-weight:500;text-decoration:none;white-space:nowrap}
+.ut:hover{color:#0B1433}
+.ut.on{color:#0B1433;font-weight:600;border-bottom-color:#1652F0}
+.utabs + .wk{margin-top:20px}
+.ko-v.gy{--k:#5B6582;--kb:#EEF1F7}
+.ko.gy .ko-pill{background:#EEF1F7;color:#3A4566}
+.nt{margin:14px 0 0 0;display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.5;color:#8A93AD}
+.nt svg{flex-shrink:0;margin-top:2px;width:14px;height:14px}
+.dc-r{width:100%;display:flex;align-items:flex-start;gap:12px;padding:13px 14px;border-radius:14px;border:1.5px solid #E6EAF3;background:#FFFFFF;font-family:inherit;font-size:14px;line-height:1.5;color:#0B1433;text-align:left;cursor:pointer}
+.dc-b{width:20px;height:20px;flex-shrink:0;margin-top:1px;box-sizing:border-box;border-radius:6px;border:1.5px solid #CBD3E6;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.dc-b svg{opacity:0;transform:scale(.6);transition:opacity .2s ease,transform .2s ease}
+.dc-r.on{border-color:#1652F0;background:#F5F8FF}.dc-r.on .dc-b{border-color:#1652F0;background:#1652F0}.dc-r.on .dc-b svg{opacity:1;transform:none}
+.cf-g{display:flex}
+.cf-g .ds-btn{transition:opacity .25s ease,filter .25s ease}
+.cf-g:not(.on) .ds-btn{opacity:.45;filter:saturate(.4);pointer-events:none}
+.cf-g.on .ds-btn{animation:cfIn .5s cubic-bezier(.3,1.4,.5,1)}
+@keyframes cfIn{50%{transform:scale(1.04)}}
+.la2.sm{width:28px;height:28px;font-size:10.5px}
+@keyframes lvP2{0%{box-shadow:0 0 0 0 rgba(224,160,48,.45)}100%{box-shadow:0 0 0 6px rgba(224,160,48,0)}}
+@media (max-width: 960px){
+.utabs{margin:14px -16px 0 -16px;padding:0 16px;gap:20px}
+.ut{height:42px;font-size:13.5px}
+.wk-m > .ack{order:4}
+.wk-a2 .sv-s{order:1;align-items:flex-start;text-align:left;padding:0 4px 4px 4px}
+.wk-a2 .sv-s{font-size:12px}
+}
+.cl-main .pg-h + .wk{margin-top:22px}
+.ivf{display:flex;flex-direction:column;gap:18px}
+.ivf .fl{margin:0}
+.iv-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ds-in.ic-in{display:flex;align-items:center;gap:10px}
+.ds-in.ic-in svg{color:#8A93AD}
+.ta3{width:100%;box-sizing:border-box;height:auto;min-height:64px;padding:12px 14px;border-radius:14px;font-family:inherit;font-size:14px;line-height:1.55;resize:vertical}
+.pm-m{margin:0;display:flex;gap:10px;padding:13px 16px;border-radius:16px;background:#F5F8FF;border:1.5px solid #DCE5FB;font-size:13.5px;line-height:1.55;color:#3A4566}
+.pm-m svg{flex-shrink:0;margin-top:2px;color:#1652F0}
+.pm-m.am{background:#FFF8EA;border-color:#F4DDAA;color:#6B4A00}
+.pm-m.am svg{color:#B76E00}
+.ko-lk{margin-top:14px;display:flex;justify-content:center;gap:22px}
+.ut-n{margin-left:2px;min-width:20px;height:20px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#EEF1F7;color:#3A4566;font-style:normal;font-size:11.5px;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
+.ut.on .ut-n{background:#1652F0;color:#FFFFFF}
+.cl-main .utabs + .wk{margin-top:20px}
+.wd3{width:500px}
+.wd3 .dl-h{align-items:center}
+.wd3-v{position:relative;flex:1;display:flex}
+.wd3-x{position:absolute;left:34px;top:30px;width:22px;height:22px;border-radius:50%;background:#B42318;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #FFFFFF;animation:cfIn .5s cubic-bezier(.3,1.4,.5,1) .3s both}
+.wd3-h{margin:0;font-size:21px;line-height:1.3;font-weight:600;letter-spacing:-0.015em}
+.ds-btn.btn-dz{background:#B42318 !important;color:#FFFFFF !important;box-shadow:0 12px 26px -14px rgba(180,35,24,.7)}
+.ds-btn.btn-dz:hover{background:#912018}
+.ds-btn.btn-dz .ob-arrow{color:#B42318}
+.iv-3{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,1.3fr);gap:16px;align-items:start}
+.iv-3 .fl,.iv-2 .fl{margin:0}
+.iv-2.tx .ta3{min-height:76px}
+@media (max-width: 960px){
+.cl-main .pg-h + .wk{margin-top:16px}
+.ivf{gap:14px}
+.iv-2{grid-template-columns:minmax(0,1fr);gap:14px}
+.cl-main .pg-hr{display:flex;flex-direction:row;gap:8px;width:100%}
+.cl-main .pg-hr .ds-btn{flex:1;width:auto}
+.cl-main .pg-hr .ds-ghost{flex-shrink:0}
+.ko-lk{flex-direction:column;align-items:center;gap:12px}
+.wd3{width:100%}
+.wd3-h{font-size:19px}
+.wk-m > .ack{order:4}
+.wk-a2 .cf-g{width:100%}
+.wk-a2 .cf-g .ds-btn{width:100%;justify-content:space-between}
+.cl-main .pg-hr{display:flex !important;flex-direction:row;gap:8px;width:100%}
+.cl-main .pg-hr .ds-ghost{padding:0 14px;font-size:13.5px}
+.iv-3{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.iv-3 > .fl:nth-child(3){grid-column:1 / -1}
+.iv-2.tx{grid-template-columns:minmax(0,1fr)}
+.iv-2.tx .ta3{min-height:60px}
+}
+.sts2{display:inline-flex;gap:4px;vertical-align:middle}
+.sts2 i{width:14px;height:14px;box-sizing:border-box;border-radius:50%;border:2px dashed #AFC1F5;animation:stsP 2.4s ease-in-out infinite}
+.sts2 i:nth-child(2){animation-delay:.4s}
+.sts2 i.on{border:0;background:#0F6B45;animation:none}
+@keyframes stsP{50%{border-color:#1652F0}}
+.thr{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+.ivf .fl{margin:0}
+.opv{position:sticky;top:92px}
+.opv-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.opv-h .rx-k{margin:0}
+.opv-c{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:8px;padding:16px;border-radius:16px;background:linear-gradient(160deg,#0B1433,#13296E 70%,#1A45C7);color:#FFFFFF}
+.opv-c::after{content:'';position:absolute;right:-60px;top:-70px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(92,134,255,.45),rgba(92,134,255,0) 65%)}
+.opv-t{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:8px;white-space:nowrap}
+.opv-k{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9DB8F7}
+.opv-p{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:rgba(255,255,255,.75)}
+.opv-p .sts2{display:none}
+.opv-p .sts2 i{width:11px;height:11px;border-width:1.5px;border-color:rgba(157,184,247,.8)}
+.opv-c > b{position:relative;z-index:1;font-size:16px;font-weight:600;line-height:1.3}
+.opv-c > p{position:relative;z-index:1;margin:0;font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.72)}
+.opv-g{display:flex;flex-wrap:wrap;gap:5px}
+.opv-g span{height:22px;padding:0 8px;border-radius:999px;background:rgba(255,255,255,.12);font-size:11px;font-weight:500;display:inline-flex;align-items:center}
+.opv-g:not(.on) span,.opv-r:not(.on) b{color:transparent;background:rgba(255,255,255,.08);border-radius:6px}
+.opv-g.on span,.opv-r.on b{animation:opvIn .6s ease both}
+@keyframes opvIn{from{opacity:0;transform:translateY(4px)}}
+.opv-s{display:flex;flex-direction:column;gap:6px;margin-top:4px;padding-top:10px;border-top:1px solid rgba(255,255,255,.14)}
+.opv-r{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.opv-r em{font-style:normal;font-size:11.5px;color:rgba(255,255,255,.6)}
+.opv-r b{font-size:12.5px;font-weight:600;text-align:right}
+.opv-r b.opv-pc{font-size:16px;color:#F7D98B}
+.ivf .ta3{min-height:60px}
+.pm-m b{color:#0B1433;font-weight:600;margin-right:4px}
+.ko-tg{margin-top:20px;display:flex;justify-content:center;gap:8px}
+.ko-tg .ds-tag{height:28px}
+.oph{margin-top:18px;position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:36px;align-items:center;padding:34px 36px;border-radius:24px;background:linear-gradient(150deg,#0B1433,#13296E 65%,#1A45C7);color:#FFFFFF}
+.oph::after{content:'';position:absolute;right:-120px;top:-160px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(92,134,255,.42),rgba(92,134,255,0) 65%)}
+.oph > *{position:relative;z-index:1}
+.oph-t{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.oph-k,.oph-b{height:26px;padding:0 11px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:500}
+.oph-k{background:#1652F0;box-shadow:0 0 0 0 rgba(92,134,255,.6);animation:ophP 2.4s ease-out infinite}
+@keyframes ophP{0%{box-shadow:0 0 0 0 rgba(92,134,255,.6)}100%{box-shadow:0 0 0 10px rgba(92,134,255,0)}}
+.oph-b{background:rgba(255,255,255,.12)}
+.oph-b .sts2 i{width:11px;height:11px;border-width:1.5px;border-color:rgba(157,184,247,.9)}
+.oph h1{margin:0;font-size:32px;line-height:1.15;font-weight:600;letter-spacing:-0.025em}
+.oph-l > p{margin:10px 0 0 0;font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.76)}
+.oph-g{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
+.oph-g span{height:28px;padding:0 12px;border-radius:999px;border:1px solid rgba(255,255,255,.22);font-size:12.5px;font-weight:500;display:inline-flex;align-items:center}
+.oph-r{display:flex;flex-direction:column;gap:12px;padding:20px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(8px)}
+.oph-s b{display:block;font-size:44px;font-weight:600;letter-spacing:-0.03em;line-height:1;color:#F7D98B}
+.oph-s em{display:block;margin-top:6px;font-style:normal;font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.7)}
+.oph-d{display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid rgba(255,255,255,.14);color:#9DB8F7}
+.oph-d > span{display:flex;flex-direction:column}
+.oph-d b{font-size:16px;font-weight:600;color:#FFFFFF}
+.oph-d em{font-style:normal;font-size:12px;color:rgba(255,255,255,.6)}
+.oph-cta{justify-content:space-between;background:rgba(255,255,255,.14) !important;color:#FFFFFF !important;opacity:1 !important;filter:none !important;box-shadow:none !important;cursor:default}
+.oph-cta .ob-arrow{background:rgba(255,255,255,.9);color:#1652F0}
+.sk5{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.sk5 span{height:28px;padding:0 11px;border-radius:999px;background:#F1F3F8;font-size:12.5px;font-weight:500;display:inline-flex;align-items:center;gap:6px}
+.sk5 .vf{background:#E7F5EE;color:#0F6B45}
+.th5{padding:22px;display:flex;flex-direction:column;gap:18px}
+.th5-m{display:flex;align-items:flex-end;gap:10px;max-width:78%;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 400ms + 200ms)}
+.th5-m.mine{align-self:flex-end;flex-direction:row}
+.th5-b{display:flex;flex-direction:column;gap:6px;padding:14px 16px;border-radius:18px 18px 18px 6px;background:#F1F3F8}
+.th5-m.mine .th5-b{border-radius:18px 18px 6px 18px;background:#1652F0;color:#FFFFFF}
+.th5-b em{font-style:normal;font-size:11.5px;font-weight:500;opacity:.7}
+.th5-b p{margin:0;font-size:14.5px;line-height:1.55}
+.th5-f{margin-top:4px;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#0B1433;text-decoration:none}
+.th5-f > span:nth-child(2){flex:1;display:flex;flex-direction:column}
+.th5-f b{font-size:13px;font-weight:600}
+.th5-f em{opacity:1;color:#8A93AD}
+.th5-f > svg{color:#1652F0}
+.th5-fi{width:36px;height:40px;border-radius:8px;background:#FEF3F2;color:#B42318;font-size:10.5px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.wd3 .fl{margin:0}
+.ta3{field-sizing:content}
+.opv-c::before{content:'';position:absolute;z-index:2;top:0;bottom:0;left:-60%;width:50%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.14),transparent);animation:opvSw 4s ease-in-out 1s infinite;pointer-events:none}
+@keyframes opvSw{40%,100%{left:120%}}
+@media (max-width: 960px){
+.thr{grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important}
+.thr > .fl:last-child{grid-column:1 / -1}
+.wk-r > .opv{order:1;position:static}
+.opv{padding:12px}
+.opv-c{padding:14px}
+.opv-c > p{display:none}
+.oph{grid-template-columns:minmax(0,1fr);gap:20px;padding:22px 18px;border-radius:20px}
+.oph h1{font-size:24px}
+.oph-l > p{font-size:14.5px}
+.oph-s b{font-size:36px}
+.oph-r{padding:16px}
+.cl-main .pg-hr{flex-wrap:wrap}
+.cl-main .pg-hr > .ds-ghost,.cl-main .pg-hr > .ds-btn{flex:1 1 auto;min-width:0;width:auto;justify-content:center;padding:0 14px;font-size:13.5px}
+.cl-main .pg-hr > .ds-btn{justify-content:space-between;padding-left:16px}
+.dl .ta3{min-height:56px}
+.wd3 .dl-h{padding-top:18px}
+.wd3 .wd3-v .la2,.wd3 .wd3-v .av{width:40px !important;height:40px !important}
+.wd3 .wd3-x{left:26px;top:24px;width:20px;height:20px}
+.th5{padding:14px}
+.th5-m{max-width:92%}
+.wk-r > .opv{padding:0;border:0;background:none;box-shadow:none}
+.wk-r > .opv .opv-h{display:none}
+.opv-c{gap:6px;padding:12px 14px}
+.opv-c > b{font-size:15px}
+.opv-g{display:none}
+.opv-s{flex-direction:row;justify-content:space-between;gap:8px;margin-top:2px;padding-top:8px}
+.opv-r{flex-direction:column;align-items:flex-start;gap:0}
+.opv-r:first-child{display:none}
+.opv-r em{font-size:11px}
+.opv-r b{text-align:left}
+.thr{align-items:end}
+.iv-2.tx{grid-template-columns:minmax(0,1fr)}
+.cl-main .wk-a2:not(:has(.sv-s:empty)){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;flex-direction:row}
+.cl-main .wk-a2:not(:has(.sv-s:empty)) .sv-s,.cl-main .wk-a2:not(:has(.sv-s:empty)) .sv-r{display:contents}
+.cl-main .wk-a2:not(:has(.sv-s:empty)) .ds-btn,.cl-main .wk-a2:not(:has(.sv-s:empty)) .cf-g{grid-column:1 / -1;order:-1;width:100%}
+.cl-main .wk-a2 .sv-s > .ds-link{order:1;height:44px;display:flex;align-items:center;justify-content:center;border-radius:999px;border:1.5px solid #E6EAF3;background:#FFFFFF;color:#0B1433;font-size:14px;font-weight:600}
+.cl-main .wk-a2:not(:has(.sv-s:empty)) .ds-ghost{order:2;width:auto;justify-content:center}
+.cl-main .wk-a2:has(.sv-s > .ds-link):has(.sv-r > .ds-ghost + .ds-ghost) .sv-s > .ds-link{grid-column:1 / -1}
+.cl-main .wk-a2:not(:has(.sv-r .ds-ghost)) .sv-s > .ds-link{grid-column:1 / -1}
+.oph-r{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px 16px}
+.oph-s{display:contents}
+.oph-s b{grid-row:1;font-size:34px}
+.oph-s em{grid-row:2;grid-column:1 / -1;margin:0}
+.oph-d{grid-row:1;grid-column:2;padding:0;border:0;justify-self:end}
+.oph-cta{grid-column:1 / -1}
+.oph-l > p{font-size:14px}
+.oph{padding:20px 16px}
+.oph-t{margin-bottom:10px}
+.oph-g{margin-top:12px}
+.ivf .iv-3:not(.thr){grid-template-columns:repeat(2,minmax(0,1fr));align-items:end}
+.ivf .iv-3:not(.thr) > .fl:nth-child(3){grid-column:1 / -1}
+}
+.cv6{position:relative;flex-shrink:0;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:12px;font-weight:600;letter-spacing:.02em;overflow:hidden;background:radial-gradient(circle at 80% 18%,rgba(255,255,255,.35),rgba(255,255,255,0) 45%),var(--cv)}
+.cv6.c1{--cv:linear-gradient(140deg,#1652F0,#0B1433)}.cv6.c2{--cv:linear-gradient(140deg,#0F6B45,#0B3A2A)}.cv6.c3{--cv:linear-gradient(140deg,#7048C8,#2A1A5E)}
+.cv6.c4{--cv:linear-gradient(140deg,#C2741A,#5A3300)}.cv6.c5{--cv:linear-gradient(140deg,#4A5578,#1C2340)}.cv6.c6{--cv:linear-gradient(140deg,#B42318,#4A0E0A)}
+.ko.cb .ko-pill{background:#EAF0FF;color:#0E3BB8}
+.mg-main .pg-h + .utabs{margin-top:20px}
+.sr6{display:flex;align-items:center;gap:8px;width:320px;height:40px;margin-bottom:8px;padding:0 14px;box-sizing:border-box;border-radius:999px;color:#8A93AD}
+.sr6 input{flex:1;min-width:0;border:0;outline:0;background:none;font-family:inherit;font-size:13.5px;color:#0B1433}
+.ic6-f{display:flex;align-items:center;gap:8px;font-size:13px;color:#5B6582}
+.ic6-f b{color:#0B1433;font-weight:600}
+.bn6{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding:12px 16px;border-radius:16px;border:1.5px solid}
+.bn6.am{background:#FFF8EA;border-color:#F4DDAA;color:#B76E00}
+.bn6 p{margin:0;font-size:14px;line-height:1.5;color:#6B4A00}
+.rc6{margin-top:18px;position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.4fr) auto;grid-template-rows:auto auto;align-items:center;column-gap:28px;padding:20px 24px;border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3}
+.rc6::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:#0F6B45}
+.rc6.gy::before{background:#AEB6CC}
+.rc6.ok{background:linear-gradient(100deg,#F2FAF5,#FFFFFF 40%)}
+.rc6-m{display:flex;align-items:center;gap:16px;min-width:0}
+.rc6-h{display:flex;flex-direction:column;gap:6px;min-width:0}
+.rc6-h > b{font-size:18px;font-weight:600}
+.rc6-k{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:28px}
+.rc6-k > span{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.rc6-k em{font-style:normal;font-size:11.5px;font-weight:500;color:#8A93AD}
+.rc6-k .ds-tag{height:26px}
+.rc6-a{justify-self:end}
+.rc6-n{grid-column:1 / -1;margin:18px 0 0 0;padding-top:14px;border-top:1.5px solid #F0F2F8;display:flex;align-items:center;gap:10px;font-size:13.5px;color:#5B6582}
+.rc6-n svg{flex-shrink:0;width:16px;height:16px;color:#1652F0}
+.rc6.gy .rc6-n svg{color:#8A93AD}
+@media (max-width: 960px){
+.sr6{width:100%;height:44px;margin:0}
+.ic6-f{align-items:flex-start;font-size:12.5px;line-height:1.45}
+.ic6-f .la2,.ic6-f .av{margin-top:1px}
+.bn6{align-items:flex-start;padding:12px 14px}
+.bn6 p{font-size:13px}
+.cl-main .wk-a2:has(.sv-s:empty){margin-left:0 !important;margin-right:0 !important}
+.rc6{margin-top:14px;grid-template-columns:minmax(0,1fr);row-gap:14px;padding:16px 16px 14px 18px}
+.rc6-m{gap:12px}
+.rc6-m .cv6{width:48px !important;height:48px !important}
+.rc6-h > b{font-size:16px}
+.rc6-k{grid-template-columns:auto auto auto;justify-content:space-between;gap:10px;padding:12px;border-radius:14px;background:#F7F9FD}
+.rc6-a{justify-self:stretch}
+.rc6-a .ds-btn{width:100%;justify-content:space-between}
+.rc6-n{margin:0;padding-top:12px;font-size:12.5px;align-items:flex-start}
+}
+.fl7{margin-top:20px;display:flex;align-items:flex-end;gap:12px}
+.fl7 .sr6{flex:1;width:auto;height:48px;margin:0}
+.fl7-s{display:grid;grid-template-columns:repeat(2,200px);gap:12px}
+.fl7-s .fl{margin:0}
+.oc7s{margin-top:18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.oc7{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px;padding:20px;border-radius:22px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#0B1433;text-decoration:none;animation:obIn .5s ease both;animation-delay:calc(var(--i) * 100ms + 150ms);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.oc7::after{content:'';position:absolute;right:-70px;top:-90px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(92,134,255,.12),rgba(92,134,255,0) 65%);transition:transform .4s ease}
+.oc7:hover{transform:translateY(-3px);border-color:#C9D7FA;box-shadow:0 24px 44px -32px rgba(22,82,240,.6)}
+.oc7:hover::after{transform:scale(1.2)}
+.oc7:hover .ob-arrow svg{transform:translateX(2px)}
+.oc7-h{position:relative;z-index:1;display:flex;gap:14px}
+.oc7-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.oc7-k{display:flex;flex-wrap:wrap;gap:6px}
+.oc7-k > span{height:22px;padding:0 9px;border-radius:999px;background:#F1F3F8;color:#3A4566;display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:500}
+.oc7-k .oc7-o{background:#E7F5EE;color:#0F6B45}
+.oc7-o i{width:6px;height:6px;border-radius:50%;background:#0F6B45;animation:lvP2 2s ease-out infinite}
+.oc7-k .oc7-p .sts2 i{width:10px;height:10px;border-width:1.5px}
+.oc7-t > b{font-size:18px;font-weight:600;letter-spacing:-0.01em}
+.oc7-l{display:flex;align-items:center;gap:8px;font-size:13px;color:#5B6582}
+.oc7-l b{color:#0B1433;font-weight:600}
+.oc7-w{position:relative;z-index:1;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;background:#F5F8FF;font-size:13.5px;color:#0B1433}
+.oc7-wi{width:28px;height:28px;flex-shrink:0;border-radius:9px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.oc7-w em{font-style:normal;color:#5B6582}
+.oc7-w mark{background:linear-gradient(transparent 60%,#C9D7FA 60%);color:#0B1433;font-weight:600;padding:0 1px}
+.oc7-f{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;border-top:1.5px solid #F0F2F8}
+.oc7-s{display:flex;align-items:baseline;gap:8px}
+.oc7-s b{font-size:26px;font-weight:600;letter-spacing:-0.02em;color:#B07A12}
+.oc7-s em{font-style:normal;font-size:12.5px;color:#5B6582}
+.oc7s + .nt{margin-top:16px}
+.bc + .oph{margin-top:6px}
+.oph-lc{display:flex;align-items:center;gap:10px;margin:10px 0 0 0 !important;font-size:14.5px !important}
+.oph-lc b{color:#FFFFFF;font-weight:600}
+.oph-lc a{color:#9DB8F7;text-decoration:underline;text-underline-offset:3px}
+.oph-lc .la2{box-shadow:0 0 0 2px rgba(255,255,255,.3)}
+.oph-go{justify-content:space-between;background:#FFFFFF !important;color:#0B1433 !important;box-shadow:0 14px 30px -14px rgba(0,0,0,.6)}
+.oph-go .ob-arrow{background:#1652F0;color:#FFFFFF}
+.dt7{margin-top:16px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:8px}
+.dt7-c{display:flex;align-items:flex-start;gap:12px;padding:14px;border-radius:16px;background:#F7F9FD;animation:obIn .45s ease both;animation-delay:calc(var(--i) * 50ms + 250ms);transition:background .2s ease}
+.dt7-c:hover{background:#F0F4FE}
+.dt7-c.w{grid-column:1 / -1;background:linear-gradient(100deg,#F5F8FF,#FFFFFF);border:1.5px solid #EEF1F7}
+.dt7-i{width:32px;height:32px;flex-shrink:0;border-radius:10px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.dt7-c > div{display:flex;flex-direction:column;gap:4px;min-width:0}
+.dt7-c em{font-style:normal;font-size:12px;color:#8A93AD}
+.dt7-c b{display:flex;flex-wrap:wrap;gap:5px;font-size:14px;font-weight:500;line-height:1.45}
+.dt7-c b .ds-tag{height:24px;font-size:12px;background:#FFFFFF}
+.dt7 + .nt{margin-top:14px}
+.ie7{margin-top:16px;display:flex;align-items:center;gap:22px;padding:20px 22px;background:linear-gradient(110deg,#FFF8EA,#FFFFFF 55%);border-color:#F4DDAA}
+.ie7-v{position:relative;width:76px;height:76px;flex-shrink:0}
+.ie7-r{position:absolute;inset:0;border-radius:50%;border:2px dashed #F0D08A;animation:rmSpin 16s linear infinite}
+.ie7-c{position:absolute;inset:12px;border-radius:50%;background:#FFF1D6;color:#B76E00;display:flex;align-items:center;justify-content:center}
+.ie7-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:14px}
+.ie7-b > p{margin:0;font-size:14.5px;line-height:1.55;color:#3A4566}
+.ie7-g{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) auto;gap:10px;align-items:stretch}
+.ie7-g > div{display:flex;flex-direction:column;justify-content:center;gap:3px;padding:10px 14px;border-radius:14px;background:#FFFFFF;border:1.5px solid #F4E9C8}
+.ie7-g em{font-style:normal;font-size:11.5px;color:#8A93AD}
+.ie7-g b{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600}
+.ie7-g .am b{color:#8A5A00}
+.ie7-g .nx{border:0;background:none;padding:0}
+.ie7-g .nx{gap:4px}
+.up7{display:flex;align-items:center;gap:14px;padding:16px;border-radius:16px;border:1.5px dashed #C9D7FA;background:#F5F8FF;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.up7:hover{border-color:#1652F0;background:#EAF0FF}
+.up7 > svg{width:40px;height:40px;padding:10px;box-sizing:border-box;flex-shrink:0;border-radius:12px;background:#FFFFFF;color:#1652F0}
+.up7 > span{display:flex;flex-direction:column;gap:2px}
+.up7 b{font-size:14px;font-weight:600;color:#0E3BB8}
+.up7 em{font-style:normal;font-size:12.5px;color:#5B6582}
+.up7.ev b{color:#0B1433;font-weight:500;font-size:13.5px}
+.iv-3.thr.ex7{grid-template-columns:minmax(0,1.7fr) minmax(0,.8fr) minmax(0,1fr) !important}
+.ack-n{display:block;margin-top:3px;font-style:normal;font-size:12.5px;color:#5B6582}
+.ap7{grid-template-rows:auto auto auto}
+.ap7.am::before{background:#E0A030}.ap7.cb::before{background:#1652F0}
+.ap7.am{background:linear-gradient(100deg,#FFFAF0,#FFFFFF 40%)}.ap7.cb{background:linear-gradient(100deg,#F5F8FF,#FFFFFF 40%)}
+.ap7 .rc6-k{grid-template-columns:repeat(2,auto)}
+.ap7-d{font-size:15px;font-weight:600}
+.ap7-x{color:#AEB6CC;font-size:18px}
+.ap7 .rc6-a .ds-ghost,.ap7 .rc6-a .ds-btn{white-space:nowrap}
+.tr7{grid-column:1 / -1;list-style:none;margin:18px 0 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:relative}
+.tr7.end{grid-template-columns:repeat(2,minmax(0,1fr));max-width:420px}
+.tr7 li{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12px;font-weight:500;color:#8A93AD;text-align:center}
+.tr7 li + li::before{content:'';position:absolute;top:10px;right:calc(50% + 14px);left:calc(-50% + 14px);height:2px;background:#E6EAF3}
+.tr7 li.dn + li::before{background:linear-gradient(90deg,#0F6B45,#1652F0)}
+.tr7 li.dn + li.dn::before{background:#0F6B45}
+.tr7 li i{position:relative;z-index:1;width:22px;height:22px;box-sizing:border-box;border-radius:50%;border:2px solid #D6DDEE;background:#FFFFFF;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.tr7 li.dn{color:#0F6B45}.tr7 li.dn i{background:#0F6B45;border-color:#0F6B45}
+.tr7 li.on{color:#0B1433;font-weight:600}.tr7 li.on i{border-color:#1652F0;background:#1652F0;animation:rvP 1.8s ease-out infinite}
+.ap7.am .tr7 li.on i{border-color:#E0A030;background:#E0A030}
+.tr7 li.x{color:#5B6582}.tr7 li.x i{background:#AEB6CC;border-color:#AEB6CC}
+.ap7 .rc6-n{margin-top:16px}
+.tr7.v{grid-template-columns:minmax(0,1fr);margin:8px 0 0 0;gap:0}
+.tr7.v li{flex-direction:row;gap:10px;height:34px;text-align:left}
+.tr7.v li + li::before{top:-12px;left:10px;right:auto;width:2px;height:14px}
+.cl7{gap:16px}
+.cl7 .th5-m{max-width:88%}
+.cl7-r{display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:1.5px solid #F0F2F8}
+.cl7-c{border-radius:16px;border:1.5px solid #C9D7FA;background:#FFFFFF;overflow:hidden;box-shadow:0 0 0 4px rgba(22,82,240,.06)}
+.cl7-c .ta3{border:0;border-radius:0;box-shadow:none;min-height:80px}
+.cl7-t{display:flex;align-items:center;gap:8px;padding:8px 10px;border-top:1.5px solid #F0F2F8;background:#F7F9FD}
+.cl7-f{margin:0;padding:6px 10px;background:#FFFFFF}
+.cl7-f > svg{color:#8A93AD}
+.cl7-f em{font-style:normal}
+.cl7 .nt{margin:0}
+.aw7{display:flex;flex-direction:column;gap:10px}
+.aw7 .rx-k{margin:0}
+.aw7 > div{display:flex;flex-direction:column;gap:3px;padding:10px 12px;border-radius:12px;background:#F7F9FD}
+.aw7 em{font-style:normal;font-size:12px;color:#8A93AD}
+.aw7 b{font-size:13.5px;font-weight:500;line-height:1.45}
+.bn6.cb{background:#F5F8FF;border-color:#DCE5FB;color:#1652F0}
+.bn6.cb p{color:#3A4566}
+.bn6 + .pg-h{margin-top:0}
+.rq7{display:flex;flex-direction:column;gap:12px}
+.rq7 .rx-k{margin:0}
+.rq7 ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.rq7 li{display:grid;grid-template-columns:22px minmax(0,1fr);align-items:center;gap:6px 10px;padding:10px 12px;border-radius:14px;background:#F7F9FD;font-size:13.5px;font-weight:500}
+.rq7 li > svg{width:22px;height:22px;padding:5px;box-sizing:border-box;border-radius:50%;background:#E7F5EE;color:#0F6B45}
+.rq7 li.miss{background:#FFF8EA}
+.rq7 li.miss > svg{background:#FFE7B8;color:#8A5A00}
+.rq7 li .ds-tag{grid-column:2;justify-self:start;height:22px;font-size:11px}
+.rq7-y{padding-top:12px;border-top:1.5px solid #F0F2F8}
+.rq7-y .sk5{margin-top:8px}
+.sk5 .nwx{background:#FFFFFF;border:1.5px dashed #F0D08A;color:#8A5A00;animation:nwP 2.4s ease-in-out infinite}
+@keyframes nwP{50%{border-color:#E0A030}}
+@media (max-width: 1180px){.oc7s{grid-template-columns:minmax(0,1fr)}.dt7{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width: 960px){
+.fl7{margin-top:14px;flex-direction:column;align-items:stretch;gap:10px}
+.fl7 .sr6{height:44px}
+.fl7-s{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.oc7s{margin-top:14px;gap:12px}
+.oc7{padding:16px;gap:12px;border-radius:20px}
+.oc7-h .cv6{width:44px !important;height:44px !important}
+.oc7-t > b{font-size:16px}
+.oc7-l{align-items:flex-start;font-size:12.5px;line-height:1.45}
+.oc7-w{font-size:12.5px;align-items:flex-start}
+.oc7-s b{font-size:22px}
+.oc7-s em{font-size:11.5px}
+.oph-lc{font-size:13px !important;flex-wrap:wrap}
+.oph-go{width:100%}
+.dt7{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:6px}
+.dt7-c{grid-column:1 / -1;padding:11px 12px;gap:10px}
+.dt7-c.s{grid-column:auto}
+.dt7-i{width:28px;height:28px;border-radius:9px}
+.dt7-i svg{width:14px;height:14px}
+.dt7-c b{font-size:13.5px}
+.oph-go{grid-column:1 / -1}
+.oph-d b,.oph-d em{white-space:nowrap}
+.fl7 .sr6{flex:none;min-height:44px}
+.oc7-k .oc7-o{width:22px;padding:0;justify-content:center;font-size:0;gap:0}
+.ie7{flex-direction:column;align-items:flex-start;gap:12px;padding:16px}
+.ie7-v{width:56px;height:56px}
+.ie7-c{inset:9px}
+.ie7-b > p{font-size:13.5px}
+.ie7-g{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ie7-g .nx{grid-column:1 / -1}
+.ie7-g .nx .ds-btn{width:100%;justify-content:space-between}
+.up7{padding:12px}
+.ap7 .rc6-k{grid-template-columns:repeat(2,auto);justify-content:start;gap:24px}
+.tr7{margin-top:4px;padding:10px 0 2px 0;border-top:1.5px solid #F0F2F8}
+.tr7 li{font-size:10.5px;gap:5px}
+.tr7 li i{width:18px;height:18px}
+.tr7 li + li::before{top:8px;right:calc(50% + 11px);left:calc(-50% + 11px)}
+.tr7.v li{font-size:12.5px}
+.ap7 .rc6-n{margin-top:0}
+.cl7 .th5-m{max-width:100%}
+.wk-r > .aw7{order:3}
+.aw7{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr))}
+.aw7 .rx-k{grid-column:1 / -1}
+.tr7.v{grid-template-columns:repeat(5,minmax(0,1fr))}
+.tr7.v li{flex-direction:column;height:auto;gap:5px;text-align:center}
+.tr7.v li + li::before{top:8px;right:calc(50% + 11px);left:calc(-50% + 11px);width:auto;height:2px}
+.bn6.cb{margin-bottom:12px}
+.wk-r > .rq7{order:1}
+.wk:has(.rq7) .wk-r > .rx:not(.rq7){order:3}
+.ivf .ta3{min-height:48px}
+.ap7{grid-template-columns:minmax(0,1fr) auto}
+.ap7 .rc6-m{grid-column:1 / -1}
+.ap7 .rc6-k{grid-column:1;padding:0;background:none;gap:18px}
+.ap7 .rc6-a{grid-column:2;justify-self:end;align-self:end}
+.ap7 .rc6-a:has(.ds-btn),.ap7 .rc6-a:has(.ds-ghost:not(.dz-a)){grid-column:1 / -1;justify-self:stretch}
+.ap7 .rc6-a .ds-btn,.ap7 .rc6-a .ds-ghost:not(.dz-a){width:100%;justify-content:space-between}
+.ap7 .rc6-a .ds-ghost:not(.dz-a){justify-content:center;height:42px}
+.ap7 .tr7,.ap7 .rc6-n{grid-column:1 / -1}
+.ap7 .rc6-k .ds-tag{height:24px}
+.iv-3.thr.ex7{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.iv-3.thr.ex7 > .fl:first-child{grid-column:1 / -1}
+.iv-3.thr.ex7 > .fl:last-child{grid-column:auto}
+.rq7 li{grid-template-columns:22px minmax(0,1fr) auto}
+.rq7 li .ds-tag{grid-column:3;grid-row:1}
+}
+</style>
+</helmet>
+<div class="ds-root cr-root">
+<sc-if value="{{n_0}}" hint-placeholder-val="{{ false }}"><div class="ds-scrim {{navCls}}" onClick="{{toggleNav}}"></div>
+<nav class="ds-side {{navCls}}" aria-label="Main"><a class="cr-lg" href="#" aria-label="Credalio"><span class="lg-word"></span></a>
+<button type="button" class="ds-icon-btn ds-close" onClick="{{toggleNav}}" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2"></rect></svg><span class="ci-t">Dashboard</span></a><span class="ds-glab">Create</span><a href="MGT-DS-CR.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6.5A2.5 2.5 0 0 1 4 18.5"></path><path d="M8 7h8"></path></svg><span class="ci-t">My Creations</span></a><a href="STU-001.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg><span class="ci-t">Create new</span></a><span class="ds-glab">Collaboration</span><a href="INV-001.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg><span class="ci-t">Invitations</span><span class="ds-badge">2</span></a><a href="OPP-001.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2.5"></circle><circle cx="18" cy="5" r="2.5"></circle><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"></path></svg><span class="ci-t">Opportunities</span></a><a href="OPP-004.dc.html" class="ds-item ds-on" aria-current="page"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"></path><path d="m13.5 6.5 4 4"></path></svg><span class="ci-t">My Applications</span></a><a href="NAV-002.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M7.5 14h3M7.5 17h6"></path></svg><span class="ci-t">Shared Courses</span></a><span class="ds-glab">Work</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 3.5h6v3H9zM9 12h6M9 16h4"></path></svg><span class="ci-t">Assigned to me</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="ci-t">Validation Centre</span><span class="ds-badge">1</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span class="ci-t">Discussions</span><span class="ds-badge">7</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3.5"></circle><path d="m5.6 5.6 3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"></path></svg><span class="ci-t">Learner support</span><span class="ds-badge">2</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span class="ci-t">Calendar</span></a><span class="ds-glab">Insights</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span class="ci-t">Learners</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M6.5 16v-5M11.5 16V6M16.5 16v-8"></path></svg><span class="ci-t">Analytics</span></a><span class="ds-glab">Economy</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg><span class="ci-t">Earnings & payouts</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg><span class="ci-t">Credit Wallet</span></a><span class="ds-glab">Creator</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z" fill="currentColor" stroke="none"></path></svg><span class="ci-t">Nova · your Copilot</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path></svg><span class="ci-t">Creator Centre</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span class="ci-t">Creator profile</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.3 1.7 2.9-.1.9 2.7 2.3 1.7-.9 2.7.9 2.7-2.3 1.7-.9 2.7-2.9-.1L12 21l-2.3-1.7-2.9.1-.9-2.7L3.6 15l.9-2.7-.9-2.7 2.3-1.7.9-2.7 2.9.1z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="ci-t">Verification & readiness</span></a><span class="ds-glab">Account</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg><span class="ci-t">Settings</span></a></nav></sc-if>
+<sc-if value="{{n_1}}" hint-placeholder-val="{{ true }}"><div class="ds-scrim {{navCls}}" onClick="{{toggleNav}}"></div>
+<nav class="ds-side {{navCls}}" aria-label="Main"><a class="cr-lg" href="#" aria-label="Credalio"><span class="lg-word"></span></a>
+<button type="button" class="ds-icon-btn ds-close" onClick="{{toggleNav}}" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="3.5" width="7" height="7" rx="2"></rect><rect x="3.5" y="13.5" width="7" height="7" rx="2"></rect><rect x="13.5" y="13.5" width="7" height="7" rx="2"></rect></svg><span class="ci-t">Dashboard</span></a><span class="ds-glab">Create</span><a href="MGT-DS-CR.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v18H6.5A2.5 2.5 0 0 1 4 18.5"></path><path d="M8 7h8"></path></svg><span class="ci-t">My Creations</span></a><a href="STU-001.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg><span class="ci-t">Create new</span></a><span class="ds-glab">Collaboration</span><a href="INV-001.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg><span class="ci-t">Invitations</span><span class="ds-badge">2</span></a><a href="OPP-001.dc.html" class="ds-item ds-on" aria-current="page"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2.5"></circle><circle cx="18" cy="5" r="2.5"></circle><path d="M8.5 19H16a3.5 3.5 0 0 0 0-7H8a3.5 3.5 0 0 1 0-7h7.5"></path></svg><span class="ci-t">Opportunities</span></a><a href="OPP-004.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"></path><path d="m13.5 6.5 4 4"></path></svg><span class="ci-t">My Applications</span></a><a href="NAV-002.dc.html" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4M7.5 14h3M7.5 17h6"></path></svg><span class="ci-t">Shared Courses</span></a><span class="ds-glab">Work</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 3.5h6v3H9zM9 12h6M9 16h4"></path></svg><span class="ci-t">Assigned to me</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="ci-t">Validation Centre</span><span class="ds-badge">1</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span class="ci-t">Discussions</span><span class="ds-badge">7</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3.5"></circle><path d="m5.6 5.6 3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"></path></svg><span class="ci-t">Learner support</span><span class="ds-badge">2</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span class="ci-t">Calendar</span></a><span class="ds-glab">Insights</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span class="ci-t">Learners</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M6.5 16v-5M11.5 16V6M16.5 16v-8"></path></svg><span class="ci-t">Analytics</span></a><span class="ds-glab">Economy</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg><span class="ci-t">Earnings & payouts</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg><span class="ci-t">Credit Wallet</span></a><span class="ds-glab">Creator</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z" fill="currentColor" stroke="none"></path></svg><span class="ci-t">Nova · your Copilot</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 9 10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"></path></svg><span class="ci-t">Creator Centre</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span class="ci-t">Creator profile</span></a><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.3 1.7 2.9-.1.9 2.7 2.3 1.7-.9 2.7.9 2.7-2.3 1.7-.9 2.7-2.9-.1L12 21l-2.3-1.7-2.9.1-.9-2.7L3.6 15l.9-2.7-.9-2.7 2.3-1.7.9-2.7 2.9.1z"></path><path d="m9 12 2 2 4-4"></path></svg><span class="ci-t">Verification & readiness</span></a><span class="ds-glab">Account</span><a href="#" class="ds-item"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg><span class="ci-t">Settings</span></a></nav></sc-if>
+<div style="min-width: 0; display: flex; flex-direction: column">
+<header class="ds-top">
+<button type="button" class="ds-icon-btn ds-menu" onClick="{{toggleNav}}" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<span class="ds-mlogo"><span class="lg-word"></span></span>
+<label class="ds-search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><span class="sr-only">Search</span><input placeholder="Search your learning experiences, learners, discussions..."></label>
+<span style="flex-grow: 1"></span>
+<a href="#" class="ds-tok" aria-label="72,450 Creio"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0; display: block"><defs><linearGradient id="tpa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9A3"></stop><stop offset="0.45" stop-color="#F6C343"></stop><stop offset="1" stop-color="#D08A12"></stop></linearGradient><linearGradient id="tpb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9CF5A"></stop><stop offset="1" stop-color="#E2A024"></stop></linearGradient></defs><circle cx="32" cy="34" r="29" fill="#B8740A" opacity="0.35"></circle><circle cx="32" cy="32" r="29" fill="url(#tpa)"></circle><circle cx="32" cy="32" r="22" fill="url(#tpb)" stroke="#FFF1C2" stroke-opacity="0.7" stroke-width="1.5"></circle><path d="M32 18l2.9 9.3 9.3 2.9-9.3 2.9L32 42.4l-2.9-9.3-9.3-2.9 9.3-2.9z" fill="#FFF8DF"></path><ellipse cx="23" cy="19" rx="9" ry="5" fill="#FFFFFF" opacity="0.35" transform="rotate(-30 23 19)"></ellipse></svg><span>72.4K</span></a>
+<a href="#" class="ds-icon-btn ds-hide-sm" aria-label="Help"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"></path></svg></a>
+<a href="#" class="ds-icon-btn" aria-label="Notifications, 9 new"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16z"></path><path d="M10 21h4"></path></svg><span class="bl-c">9</span></a>
+<a href="#" class="cw-me" aria-label="Your account"><span class="av" style="width: 40px; height: 40px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span></a>
+</header>
+<main class="ds-main mg-main cl-main {{tone}}">
+<sc-if value="{{p_list}}" hint-placeholder-val="{{ true }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Opportunities</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">Opportunities</h1><p class="ds-sub">Recommended for your expertise. Not every opportunity is visible to every creator.</p></div></header><div class="fl7 ob-in2"><label class="ds-in sr6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg><input placeholder="Search opportunities" aria-label="Search"></label><div class="fl7-s"><div class="fl"><span class="fl-l">Category</span><label class="sel"><span class="sr-only">Category</span><select class="ds-in"><option>Data Analytics</option></select><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></label></div><div class="fl"><span class="fl-l">Roles</span><label class="sel"><span class="sr-only">Roles</span><select class="ds-in"><option>Any</option></select><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></label></div></div></div><div class="oc7s ob-in3"><a class="oc7" href="OPP-002" style="--i: 0"><div class="oc7-h"><span class="cv6 c1" style="width: 52px; height: 52px" aria-hidden="true">SQL</span><div class="oc7-t"><span class="oc7-k"><span class="oc7-o"><i></i>Open</span><span>Data Analytics</span><span>Intermediate</span><span class="oc7-p"><span class="sts2" aria-label="0 of 2 positions filled"><i class=""></i><i class=""></i></span> 2 positions</span></span><b>Data Analytics Co-Creators Needed</b>
+<span class="oc7-l"><span class="la2 h1" style="width: 22px; height: 22px; font-size: 9px">AO</span><span>Lead Creator: <b>Ada Ononuju</b> · Deadline 30 Nov</span></span></div></div>
+<div class="oc7-w"><span class="oc7-wi"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.5"></circle></svg></span><span><em>Why you match:</em> Data Analytics › <mark>SQL</mark>, <mark>Business Intelligence</mark></span></div>
+<div class="oc7-f"><span class="oc7-s"><b>30%</b><em>combined, all earnings</em></span><span class="ds-btn sm2"><span>View</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></span></div></a><a class="oc7" href="#" style="--i: 1"><div class="oc7-h"><span class="cv6 c4" style="width: 52px; height: 52px" aria-hidden="true">XL</span><div class="oc7-t"><span class="oc7-k"><span class="oc7-o"><i></i>Open</span><span>Finance</span><span>Advanced</span><span class="oc7-p"><span class="sts2" aria-label="0 of 1 positions filled"><i class=""></i></span> 1 position</span></span><b>Excel Modelling Content Contributor</b>
+<span class="oc7-l"><span class="la2 h2" style="width: 22px; height: 22px; font-size: 9px">MB</span><span>Lead Creator: <b>Mercy Bello</b> · Deadline 12 Dec</span></span></div></div>
+<div class="oc7-w"><span class="oc7-wi"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.5"></circle></svg></span><span><em>Why you match:</em> Finance › <mark>Modelling</mark></span></div>
+<div class="oc7-f"><span class="oc7-s"><b>10%</b><em>combined, all earnings</em></span><span class="ds-btn sm2"><span>View</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></span></div></a></div><p class="nt"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Recommendations only appear when you meet the mandatory eligibility criteria.</span></p>
+</sc-if>
+<sc-if value="{{p_det}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-001.dc.html">Opportunities</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Details</span></nav><section class="oph ob-in2"><div class="oph-l"><div class="oph-t"><span class="oph-k">Open for Collaboration</span><span class="oph-b">Intermediate</span><span class="oph-b"><span class="sts2" aria-label="0 of 2 positions filled"><i class=""></i><i class=""></i></span> 2 Positions</span></div>
+<h1>Data Analytics Co-Creators Needed</h1><p class="oph-lc"><span class="la2 h1" style="width: 26px; height: 26px; font-size: 9px">AO</span><span>Lead Creator: <b>Ada Ononuju</b> · <a href="#">View profile</a></span></p><div class="oph-g"><span>Data Analytics</span><span>SQL</span><span>Business Intelligence</span></div></div>
+<div class="oph-r"><div class="oph-s"><b>30%</b><em>combined · final share set in your individual offer</em></div><div class="oph-d"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span><b>30 Nov 2026</b><em>Deadline</em></span></div><a class="ds-btn oph-go" href="OPP-003.dc.html"><span>Apply to Collaborate</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></section><section class="ds-card dt7 ob-in3"><div class="dt7-c w" style="--i: 0"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><div><em>Course overview</em><b>Practical SQL and Business Intelligence for aspiring data analysts.</b></div></div><div class="dt7-c " style="--i: 1"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.5"></circle></svg></span><div><em>Skills required</em><b><span class="ds-tag line">SQL</span><span class="ds-tag line">Power BI</span><span class="ds-tag line">Data Visualization</span></b></div></div><div class="dt7-c " style="--i: 2"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg></span><div><em>Responsibilities</em><b>Lessons, exercises, assessments, resources</b></div></div><div class="dt7-c s" style="--i: 3"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><div><em>Contribution period</em><b>8 weeks</b></div></div><div class="dt7-c s" style="--i: 4"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg></span><div><em>Positions</em><b>2</b></div></div><div class="dt7-c " style="--i: 5"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg></span><div><em>Revenue offered</em><b>30% combined · final share set in your individual offer</b></div></div><div class="dt7-c " style="--i: 6"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"></rect><path d="M3 10h18M16 15h2"></path></svg></span><div><em>Revenue sources</em><b>Marketplace Credit sales + subscription earnings</b></div></div><div class="dt7-c " style="--i: 7"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><div><em>Eligibility</em><b>Verified Data Analytics expertise · Reputation ≥ 70 preferred</b></div></div><div class="dt7-c " style="--i: 8"><span class="dt7-i"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg></span><div><em>Agreement</em><b>Collaboration agreement v3 overview</b></div></div></section><p class="nt"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Applying does not accept a final revenue agreement.</span></p>
+</sc-if>
+<sc-if value="{{p_inel}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-001.dc.html">Opportunities</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Details</span></nav><section class="oph ob-in2"><div class="oph-l"><div class="oph-t"><span class="oph-k">Open for Collaboration</span><span class="oph-b">Intermediate</span><span class="oph-b"><span class="sts2" aria-label="0 of 2 positions filled"><i class=""></i><i class=""></i></span> 2 Positions</span></div>
+<h1>Data Analytics Co-Creators Needed</h1><p class="oph-lc"><span class="la2 h1" style="width: 26px; height: 26px; font-size: 9px">AO</span><span>Lead Creator: <b>Ada Ononuju</b></span></p><div class="oph-g"><span>Data Analytics</span><span>SQL</span><span>Business Intelligence</span></div></div>
+<div class="oph-r"><div class="oph-s"><b>30%</b><em>combined · final share set in your individual offer</em></div><div class="oph-d"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg><span><b>30 Nov 2026</b><em>Deadline</em></span></div><span class="ds-btn is-dis oph-cta" aria-disabled="true"><span>Apply to Collaborate</span><span class="ob-arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg></span></span></div></section><section class="ds-card ie7 ob-in3"><div class="ie7-v" aria-hidden="true"><span class="ie7-r"></span><span class="ie7-c"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg></span></div>
+<div class="ie7-b"><p>This opportunity requires verified Data Analytics expertise. Add and verify it in Creator Profile to become eligible. (Matching and ranking rules are not shown.)</p>
+<div class="ie7-g"><div><em>Eligibility</em><b>Verified Data Analytics expertise</b></div><div class="am"><em>Your status</em><b><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg> Not yet verified</b></div><div class="nx"><em>Next step</em><a class="ds-btn sm2" href="OPP-005.dc.html"><span>Update Creator Profile</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></div></div></section>
+</sc-if>
+<sc-if value="{{p_apply}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-001.dc.html">Opportunities</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Apply</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">Apply to Collaborate</h1><p class="ds-sub">Data Analytics Co-Creators Needed · Intermediate</p></div></header><div class="wk"><div class="wk-m"><section class="ds-card fc ivf ob-in2"><div class="fl"><span class="fl-l">Why are you interested in this course?</span><textarea class="ds-in ta3" rows="2" aria-label="Why are you interested in this course?">I teach SQL to finance teams and want to reach analysts.</textarea></div><div class="iv-2 tx"><div class="fl"><span class="fl-l">Relevant expertise and skills</span><textarea class="ds-in ta3" rows="2" aria-label="Relevant expertise and skills">SQL, Power BI, 8 years in BI.</textarea></div><div class="fl"><span class="fl-l">Relevant published courses or portfolio</span><textarea class="ds-in ta3" rows="2" aria-label="Relevant published courses or portfolio">SQL for Analysts · Dashboards with Power BI</textarea></div></div><div class="iv-2"><div class="fl"><span class="fl-l">Proposed contribution</span><textarea class="ds-in ta3" rows="2" aria-label="Proposed contribution">Joins module and 4 practice sets.</textarea></div><div class="fl"><span class="fl-l">Availability</span><div class="ds-in ic-in"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span>10 hrs/week from 1 Dec</span></div></div></div>
+<div class="fl"><span class="fl-l">Work samples</span><div class="up7"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg><span><b>Upload files</b><em>PDF, slides, video links or repositories</em></span></div></div></section>
+<button type="button" class="dc-r ack {{ct1}}" aria-pressed="{{at1}}" onClick="{{xt1}}"><span class="dc-b"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>I acknowledge the advertised revenue terms (30% combined).<em class="ack-n">The final percentage and responsibilities come in an individual offer.</em></span></button><div class="ds-acts sb sv wk-a2"><span class="sv-s"><a class="ds-link" href="OPP-002.dc.html">Cancel</a></span><span class="sv-r"><span class="cf-g {{ct1}}"><a class="ds-btn" href="OPP-004.dc.html"><span>Submit Application</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></span></div></div><aside class="wk-r"><section class="ds-card rx opv ob-in3" aria-hidden="true"><div class="opv-h"><span class="rx-k">Applying to</span></div><div class="opv-c"><div class="opv-t"><span class="opv-k">Open for Collaboration</span><span class="opv-p"><span class="sts2" aria-label="0 of 2 positions filled"><i class=""></i><i class=""></i></span><span>2 Positions</span></span></div>
+<b>Data Analytics Co-Creators Needed</b><div class="opv-g on"><span>Data Analytics</span><span>SQL</span><span>Business Intelligence</span></div><div class="opv-s"><span class="opv-r on"><em>Lead Creator</em><b>Ada Ononuju</b></span><span class="opv-r on"><em>Total proposed share</em><b class="opv-pc">30%</b></span><span class="opv-r on"><em>Application deadline</em><b>30 Nov</b></span></div></div></section><section class="ds-card rx ob-in4"><span class="rx-k">Progress</span><ol class="tr7 v"><li class="on" style="--i: 0"><i></i><span>Applied</span></li><li class="" style="--i: 1"><i></i><span>Under review</span></li><li class="" style="--i: 2"><i></i><span>Shortlisted</span></li><li class="" style="--i: 3"><i></i><span>Offer</span></li><li class="" style="--i: 4"><i></i><span>Accepted</span></li></ol></section></aside></div>
+</sc-if>
+<sc-if value="{{p_a_pend}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-004.dc.html">My Applications</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Pending</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">My Applications</h1><p class="ds-sub">Every application you have sent, by status.</p></div></header><nav class="utabs ob-in2" aria-label="My Applications"><a href="OPP-004.dc.html" class="ut on" aria-current="page">Pending<em class="ut-n">1</em></a><a href="OPP-004-REVIEW.dc.html" class="ut">Under Review<em class="ut-n">1</em></a><a href="OPP-004-SHORTLISTED.dc.html" class="ut">Shortlisted<em class="ut-n">1</em></a><a href="OPP-004-OFFER.dc.html" class="ut">Offer Received<em class="ut-n">1</em></a><a href="OPP-004-ACCEPTED.dc.html" class="ut">Accepted<em class="ut-n">1</em></a><a href="OPP-004-DECLINED.dc.html" class="ut">Declined<em class="ut-n">1</em></a><a href="OPP-004-WITHDRAWN.dc.html" class="ut">Withdrawn<em class="ut-n">1</em></a></nav><article class="rc6 ap7 am ob-in3"><div class="rc6-m"><span class="cv6 c4" style="width: 60px; height: 60px" aria-hidden="true">XL</span><div class="rc6-h"><b>Excel Modelling Contributor</b><span class="ic6-f"><span class="la2 h2" style="width: 22px; height: 22px; font-size: 9px">MB</span><span>Lead Creator <b>Mercy Bello</b></span></span></div></div>
+<div class="rc6-k"><span><em>Applied</em><b class="ap7-d">22 Oct</b></span><span><em>Status</em><span class="ds-tag amber">Pending</span></span></div><div class="rc6-a"><a class="ds-ghost dz-a sm" href="OPP-004-WITHDRAW.dc.html">Withdraw</a></div><ol class="tr7"><li class="on" style="--i: 0"><i></i><span>Applied</span></li><li class="" style="--i: 1"><i></i><span>Under review</span></li><li class="" style="--i: 2"><i></i><span>Shortlisted</span></li><li class="" style="--i: 3"><i></i><span>Offer</span></li><li class="" style="--i: 4"><i></i><span>Accepted</span></li></ol><p class="rc6-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Pending: submitted, not opened by the Lead Creator yet. You can withdraw.</span></p></article>
+</sc-if>
+<sc-if value="{{p_a_rev}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-004.dc.html">My Applications</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Under Review</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">My Applications</h1><p class="ds-sub">Every application you have sent, by status.</p></div></header><nav class="utabs ob-in2" aria-label="My Applications"><a href="OPP-004.dc.html" class="ut">Pending<em class="ut-n">1</em></a><a href="OPP-004-REVIEW.dc.html" class="ut on" aria-current="page">Under Review<em class="ut-n">1</em></a><a href="OPP-004-SHORTLISTED.dc.html" class="ut">Shortlisted<em class="ut-n">1</em></a><a href="OPP-004-OFFER.dc.html" class="ut">Offer Received<em class="ut-n">1</em></a><a href="OPP-004-ACCEPTED.dc.html" class="ut">Accepted<em class="ut-n">1</em></a><a href="OPP-004-DECLINED.dc.html" class="ut">Declined<em class="ut-n">1</em></a><a href="OPP-004-WITHDRAWN.dc.html" class="ut">Withdrawn<em class="ut-n">1</em></a></nav><article class="rc6 ap7 cb ob-in3"><div class="rc6-m"><span class="cv6 c1" style="width: 60px; height: 60px" aria-hidden="true">SQL</span><div class="rc6-h"><b>Data Analytics Co-Creators Needed</b><span class="ic6-f"><span class="la2 h1" style="width: 22px; height: 22px; font-size: 9px">AO</span><span>Lead Creator <b>Ada Ononuju</b></span></span></div></div>
+<div class="rc6-k"><span><em>Applied</em><b class="ap7-d">18 Oct</b></span><span><em>Status</em><span class="ds-tag blue">Under review</span></span></div><div class="rc6-a"><a class="ds-ghost sm" href="OPP-004-CLARIFY.dc.html">View application</a></div><ol class="tr7"><li class="dn" style="--i: 0"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Applied</span></li><li class="on" style="--i: 1"><i></i><span>Under review</span></li><li class="" style="--i: 2"><i></i><span>Shortlisted</span></li><li class="" style="--i: 3"><i></i><span>Offer</span></li><li class="" style="--i: 4"><i></i><span>Accepted</span></li></ol><p class="rc6-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Under review: the Lead Creator is reading your application. If they ask a question you answer it here.</span></p></article>
+</sc-if>
+<sc-if value="{{p_a_short}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-004.dc.html">My Applications</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Shortlisted</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">My Applications</h1><p class="ds-sub">Every application you have sent, by status.</p></div></header><nav class="utabs ob-in2" aria-label="My Applications"><a href="OPP-004.dc.html" class="ut">Pending<em class="ut-n">1</em></a><a href="OPP-004-REVIEW.dc.html" class="ut">Under Review<em class="ut-n">1</em></a><a href="OPP-004-SHORTLISTED.dc.html" class="ut on" aria-current="page">Shortlisted<em class="ut-n">1</em></a><a href="OPP-004-OFFER.dc.html" class="ut">Offer Received<em class="ut-n">1</em></a><a href="OPP-004-ACCEPTED.dc.html" class="ut">Accepted<em class="ut-n">1</em></a><a href="OPP-004-DECLINED.dc.html" class="ut">Declined<em class="ut-n">1</em></a><a href="OPP-004-WITHDRAWN.dc.html" class="ut">Withdrawn<em class="ut-n">1</em></a></nav><article class="rc6 ap7 cb ob-in3"><div class="rc6-m"><span class="cv6 c3" style="width: 60px; height: 60px" aria-hidden="true">PY</span><div class="rc6-h"><b>Python Data Cleaning Contributor</b><span class="ic6-f"><span class="la2 h4" style="width: 22px; height: 22px; font-size: 9px">TA</span><span>Lead Creator <b>Tunde Ade</b></span></span></div></div>
+<div class="rc6-k"><span><em>Applied</em><b class="ap7-d">12 Oct</b></span><span><em>Status</em><span class="ds-tag blue">Shortlisted</span></span></div><div class="rc6-a"><a class="ds-ghost sm" href="OPP-004-CLARIFY.dc.html">View application</a></div><ol class="tr7"><li class="dn" style="--i: 0"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Applied</span></li><li class="dn" style="--i: 1"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Under review</span></li><li class="on" style="--i: 2"><i></i><span>Shortlisted</span></li><li class="" style="--i: 3"><i></i><span>Offer</span></li><li class="" style="--i: 4"><i></i><span>Accepted</span></li></ol><p class="rc6-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Shortlisted: you are in the final group. An individual offer comes next, if you are chosen.</span></p></article>
+</sc-if>
+<sc-if value="{{p_a_off}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-004.dc.html">My Applications</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Offer Received</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">My Applications</h1><p class="ds-sub">Every application you have sent, by status.</p></div></header><nav class="utabs ob-in2" aria-label="My Applications"><a href="OPP-004.dc.html" class="ut">Pending<em class="ut-n">1</em></a><a href="OPP-004-REVIEW.dc.html" class="ut">Under Review<em class="ut-n">1</em></a><a href="OPP-004-SHORTLISTED.dc.html" class="ut">Shortlisted<em class="ut-n">1</em></a><a href="OPP-004-OFFER.dc.html" class="ut on" aria-current="page">Offer Received<em class="ut-n">1</em></a><a href="OPP-004-ACCEPTED.dc.html" class="ut">Accepted<em class="ut-n">1</em></a><a href="OPP-004-DECLINED.dc.html" class="ut">Declined<em class="ut-n">1</em></a><a href="OPP-004-WITHDRAWN.dc.html" class="ut">Withdrawn<em class="ut-n">1</em></a></nav><article class="rc6 ap7 ok ob-in3"><div class="rc6-m"><span class="cv6 c2" style="width: 60px; height: 60px" aria-hidden="true">FIN</span><div class="rc6-h"><b>SQL for Finance Teams</b><span class="ic6-f"><span class="la2 h3" style="width: 22px; height: 22px; font-size: 9px">SK</span><span>Lead Creator <b>Sade Kolawole</b></span></span></div></div>
+<div class="rc6-k"><span><em>Applied</em><b class="ap7-d">8 Oct</b></span><span><em>Status</em><span class="ds-tag green">Offer received · 15%</span></span></div><div class="rc6-a"><a class="ds-btn sm2" href="INV-002.dc.html"><span>Open offer</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div><ol class="tr7"><li class="dn" style="--i: 0"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Applied</span></li><li class="dn" style="--i: 1"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Under review</span></li><li class="dn" style="--i: 2"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Shortlisted</span></li><li class="on" style="--i: 3"><i></i><span>Offer</span></li><li class="" style="--i: 4"><i></i><span>Accepted</span></li></ol><p class="rc6-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Offer received: the final percentage and responsibilities are in the offer. It opens under Invitations, where you accept or decline.</span></p></article>
+</sc-if>
+<sc-if value="{{p_a_acc}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-004.dc.html">My Applications</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Accepted</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">My Applications</h1><p class="ds-sub">Every application you have sent, by status.</p></div></header><nav class="utabs ob-in2" aria-label="My Applications"><a href="OPP-004.dc.html" class="ut">Pending<em class="ut-n">1</em></a><a href="OPP-004-REVIEW.dc.html" class="ut">Under Review<em class="ut-n">1</em></a><a href="OPP-004-SHORTLISTED.dc.html" class="ut">Shortlisted<em class="ut-n">1</em></a><a href="OPP-004-OFFER.dc.html" class="ut">Offer Received<em class="ut-n">1</em></a><a href="OPP-004-ACCEPTED.dc.html" class="ut on" aria-current="page">Accepted<em class="ut-n">1</em></a><a href="OPP-004-DECLINED.dc.html" class="ut">Declined<em class="ut-n">1</em></a><a href="OPP-004-WITHDRAWN.dc.html" class="ut">Withdrawn<em class="ut-n">1</em></a></nav><article class="rc6 ap7 ok ob-in3"><div class="rc6-m"><span class="cv6 c2" style="width: 60px; height: 60px" aria-hidden="true">BI</span><div class="rc6-h"><b>Dashboard Design with Power BI</b><span class="ic6-f"><span class="la2 h2" style="width: 22px; height: 22px; font-size: 9px">LM</span><span>Lead Creator <b>Lena Moyo</b></span></span></div></div>
+<div class="rc6-k"><span><em>Applied</em><b class="ap7-d">1 Oct</b></span><span><em>Status</em><span class="ds-tag green">Accepted</span></span></div><div class="rc6-a"><a class="ds-btn sm2" href="STU-020-CO.dc.html"><span>Go to Course Studio</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div><ol class="tr7"><li class="dn" style="--i: 0"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Applied</span></li><li class="dn" style="--i: 1"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Under review</span></li><li class="dn" style="--i: 2"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Shortlisted</span></li><li class="dn" style="--i: 3"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Offer</span></li><li class="dn" style="--i: 4"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Accepted</span></li></ol><p class="rc6-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Accepted: you are a collaborator. The course now appears under Shared Courses.</span></p></article>
+</sc-if>
+<sc-if value="{{p_a_dec}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-004.dc.html">My Applications</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Declined</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">My Applications</h1><p class="ds-sub">Every application you have sent, by status.</p></div></header><nav class="utabs ob-in2" aria-label="My Applications"><a href="OPP-004.dc.html" class="ut">Pending<em class="ut-n">1</em></a><a href="OPP-004-REVIEW.dc.html" class="ut">Under Review<em class="ut-n">1</em></a><a href="OPP-004-SHORTLISTED.dc.html" class="ut">Shortlisted<em class="ut-n">1</em></a><a href="OPP-004-OFFER.dc.html" class="ut">Offer Received<em class="ut-n">1</em></a><a href="OPP-004-ACCEPTED.dc.html" class="ut">Accepted<em class="ut-n">1</em></a><a href="OPP-004-DECLINED.dc.html" class="ut on" aria-current="page">Declined<em class="ut-n">1</em></a><a href="OPP-004-WITHDRAWN.dc.html" class="ut">Withdrawn<em class="ut-n">1</em></a></nav><article class="rc6 ap7 gy ob-in3"><div class="rc6-m"><span class="cv6 c6" style="width: 60px; height: 60px" aria-hidden="true">ST</span><div class="rc6-h"><b>Statistics Refresher Co-Creator</b><span class="ic6-f"><span class="la2 h4" style="width: 22px; height: 22px; font-size: 9px">CO</span><span>Lead Creator <b>Chidi Obi</b></span></span></div></div>
+<div class="rc6-k"><span><em>Applied</em><b class="ap7-d">28 Sep</b></span><span><em>Status</em><span class="ds-tag">Not selected</span></span></div><div class="rc6-a"><a class="ds-ghost sm" href="OPP-001.dc.html">Find other opportunities</a></div><ol class="tr7 end"><li class="dn"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Applied</span></li><li class="x"><i><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></i><span>Not selected</span></li></ol><p class="rc6-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Declined: the Lead Creator chose someone else. This does not affect your Creator Reputation Score.</span></p></article>
+</sc-if>
+<sc-if value="{{p_a_wd}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-004.dc.html">My Applications</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Withdrawn</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">My Applications</h1><p class="ds-sub">Every application you have sent, by status.</p></div></header><nav class="utabs ob-in2" aria-label="My Applications"><a href="OPP-004.dc.html" class="ut">Pending<em class="ut-n">1</em></a><a href="OPP-004-REVIEW.dc.html" class="ut">Under Review<em class="ut-n">1</em></a><a href="OPP-004-SHORTLISTED.dc.html" class="ut">Shortlisted<em class="ut-n">1</em></a><a href="OPP-004-OFFER.dc.html" class="ut">Offer Received<em class="ut-n">1</em></a><a href="OPP-004-ACCEPTED.dc.html" class="ut">Accepted<em class="ut-n">1</em></a><a href="OPP-004-DECLINED.dc.html" class="ut">Declined<em class="ut-n">1</em></a><a href="OPP-004-WITHDRAWN.dc.html" class="ut on" aria-current="page">Withdrawn<em class="ut-n">1</em></a></nav><article class="rc6 ap7 gy ob-in3"><div class="rc6-m"><span class="cv6 c5" style="width: 60px; height: 60px" aria-hidden="true">FM</span><div class="rc6-h"><b>Finance Modelling Reviewer</b><span class="ic6-f"><span class="la2 h2" style="width: 22px; height: 22px; font-size: 9px">MB</span><span>Lead Creator <b>Mercy Bello</b></span></span></div></div>
+<div class="rc6-k"><span><em>Applied</em><b class="ap7-d">20 Sep</b></span><span><em>Status</em><span class="ds-tag">Withdrawn by you</span></span></div><div class="rc6-a"><span class="ap7-x">—</span></div><ol class="tr7 end"><li class="dn"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Applied</span></li><li class="x"><i><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></i><span>Withdrawn</span></li></ol><p class="rc6-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Withdrawn: you cancelled this application. You can apply again while the opportunity is still open.</span></p></article>
+</sc-if>
+<sc-if value="{{p_a_wdc}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>My Applications</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">My Applications</h1><p class="ds-sub">Every application you have sent, by status.</p></div></header><nav class="utabs ob-in2" aria-label="My Applications"><a href="OPP-004.dc.html" class="ut on" aria-current="page">Pending<em class="ut-n">1</em></a><a href="OPP-004-REVIEW.dc.html" class="ut">Under Review<em class="ut-n">1</em></a><a href="OPP-004-SHORTLISTED.dc.html" class="ut">Shortlisted<em class="ut-n">1</em></a><a href="OPP-004-OFFER.dc.html" class="ut">Offer Received<em class="ut-n">1</em></a><a href="OPP-004-ACCEPTED.dc.html" class="ut">Accepted<em class="ut-n">1</em></a><a href="OPP-004-DECLINED.dc.html" class="ut">Declined<em class="ut-n">1</em></a><a href="OPP-004-WITHDRAWN.dc.html" class="ut">Withdrawn<em class="ut-n">1</em></a></nav><article class="rc6 ap7 am ob-in3"><div class="rc6-m"><span class="cv6 c4" style="width: 60px; height: 60px" aria-hidden="true">XL</span><div class="rc6-h"><b>Excel Modelling Contributor</b><span class="ic6-f"><span class="la2 h2" style="width: 22px; height: 22px; font-size: 9px">MB</span><span>Lead Creator <b>Mercy Bello</b></span></span></div></div>
+<div class="rc6-k"><span><em>Applied</em><b class="ap7-d">22 Oct</b></span><span><em>Status</em><span class="ds-tag amber">Pending</span></span></div><div class="rc6-a"><a class="ds-ghost dz-a sm" href="OPP-004-WITHDRAW.dc.html">Withdraw</a></div><ol class="tr7"><li class="on" style="--i: 0"><i></i><span>Applied</span></li><li class="" style="--i: 1"><i></i><span>Under review</span></li><li class="" style="--i: 2"><i></i><span>Shortlisted</span></li><li class="" style="--i: 3"><i></i><span>Offer</span></li><li class="" style="--i: 4"><i></i><span>Accepted</span></li></ol><p class="rc6-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>Pending: submitted, not opened by the Lead Creator yet. You can withdraw.</span></p></article><a class="ov-scrim" href="OPP-004.dc.html" aria-label="Close"></a><div class="dl wd3" role="dialog" aria-modal="true" aria-label="Withdraw your application?"><header class="dl-h"><span class="wd3-v"><span class="cv6 c4" style="width: 44px; height: 44px" aria-hidden="true">XL</span><span class="wd3-x"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></span><a class="ds-x sm" href="OPP-004.dc.html" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></a></header><div class="dl-b"><h2 class="wd3-h">Withdraw your application?</h2><p class="dl-p">Excel Modelling Contributor · Mercy Bello</p><div class="fl"><span class="fl-l">Reason (optional, shown to the Lead Creator)</span><textarea class="ds-in ta3" rows="2" aria-label="Reason">I am no longer available during this period.</textarea></div><p class="dl-n"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span>The Lead Creator is told you withdrew. You can apply again while the opportunity is still open.</span></p></div><footer class="dl-f"><a class="ds-ghost" href="OPP-004.dc.html">Keep application</a><a class="ds-btn btn-dz" href="OPP-004-WITHDRAWN.dc.html"><span>Withdraw application</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></footer></div>
+</sc-if>
+<sc-if value="{{p_a_clar}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Creator Studio</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-004.dc.html">My Applications</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Application</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">Your application</h1><p class="ds-sub">Data Analytics Co-Creators Needed · Ada Ononuju</p></div><div class="pg-hr"><span class="ds-tag blue">Shortlisted</span></div></header><div class="wk"><div class="wk-m"><section class="ds-card th5 cl7 ob-in2"><div class="th5-m" style="--i: 0"><span class="la2 h1" style="width: 34px; height: 34px; font-size: 11px">AO</span><div class="th5-b"><em>Question from the Lead Creator · reply by 28 Oct</em><p>Can you confirm you can start on 1 Dec and share a sample practice set you have written before?</p></div></div>
+<div class="cl7-r"><span class="fl-l">Your reply</span><div class="cl7-c"><textarea class="ds-in ta3" rows="3" aria-label="Your reply">Yes, I can start on 1 Dec and give 10 hrs a week. Attached is a sample practice set.</textarea><div class="cl7-t"><span class="th5-f cl7-f"><span class="th5-fi">PDF</span><span><b>SQL-joins-practice-set.pdf</b><em>Attach file</em></span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></div></div></div>
+<p class="nt"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg><span>Your reply goes only to the Lead Creator. It is not an acceptance of anything.</span></p></section><div class="ds-acts sb sv wk-a2"><span class="sv-s"><a class="ds-link" href="OPP-004-SHORTLISTED.dc.html">Back</a></span><span class="sv-r"><a class="ds-btn" href="OPP-004-SHORTLISTED.dc.html"><span>Send reply</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></div></div><aside class="wk-r"><section class="ds-card rx aw7 ob-in3"><span class="rx-k">What you applied with</span><div><em>Proposed contribution</em><b>Joins module and 4 practice sets.</b></div><div><em>Availability</em><b>10 hrs/week from 1 Dec.</b></div></section>
+<section class="ds-card rx ob-in4"><span class="rx-k">Progress</span><ol class="tr7 v"><li class="dn" style="--i: 0"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Applied</span></li><li class="dn" style="--i: 1"><i><svg class="ck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i><span>Under review</span></li><li class="on" style="--i: 2"><i></i><span>Shortlisted</span></li><li class="" style="--i: 3"><i></i><span>Offer</span></li><li class="" style="--i: 4"><i></i><span>Accepted</span></li></ol></section></aside></div>
+</sc-if>
+<sc-if value="{{p_prof}}" hint-placeholder-val="{{ false }}">
+<nav class="bc" aria-label="Breadcrumb"><a href="#">Collaboration</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-001.dc.html">Opportunities</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><a href="OPP-002.dc.html">Details</a><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg><span>Update Creator Profile</span></nav><header class="pg-h ob-in"><div class="pg-hl"><h1 class="ds-h1">Update your Creator Profile</h1><p class="ds-sub">To apply for “Data Analytics Co-Creators Needed” you need verified Data Analytics expertise.</p></div></header><div class="bn6 cb ob-in"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><p>Why you are here: the Lead Creator requires verified Data Analytics expertise. Matching and ranking rules are not shown.</p></div><div class="wk"><div class="wk-m"><section class="ds-card fc ivf ob-in2"><div class="fc-h"><div><h2>Add expertise</h2></div></div><div class="iv-3 thr ex7"><div class="fl"><span class="fl-l">Expertise area</span><label class="sel"><span class="sr-only">Expertise area</span><select class="ds-in"><option>Technology › Data Analytics</option></select><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></label></div><div class="fl"><span class="fl-l">Years of experience</span><label class="sel"><span class="sr-only">Years of experience</span><select class="ds-in"><option>3</option></select><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></label></div><div class="fl"><span class="fl-l">Level</span><label class="sel"><span class="sr-only">Level</span><select class="ds-in"><option>Intermediate</option></select><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></label></div></div><div class="fl"><span class="fl-l">Evidence</span><div class="up7 ev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg><span><b>Link to a certificate, course, portfolio or employer letter.</b><em>Our team reviews it before the expertise shows as verified.</em></span></div></div></section>
+<button type="button" class="dc-r ack {{ct2}}" aria-pressed="{{at2}}" onClick="{{xt2}}"><span class="dc-b"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>I confirm this evidence is mine and accurate.</span></button>
+<p class="pm-m"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><span>Verification usually takes 2 business days. You will be notified in Creator Studio, and Apply to Collaborate switches on once you are verified.</span></p><div class="ds-acts sb sv wk-a2"><span class="sv-s"><a class="ds-link" href="OPP-002-INELIGIBLE.dc.html">Cancel</a></span><span class="sv-r"><span class="cf-g {{ct2}}"><a class="ds-btn" href="OPP-005-SUBMITTED.dc.html"><span>Submit for verification</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></span></div></div><aside class="wk-r"><section class="ds-card rx rq7 ob-in3"><span class="rx-k">Requirements for this opportunity</span><ul><li class="miss"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg><span>Verified Data Analytics expertise</span><span class="ds-tag amber">Missing</span></li><li><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Published course or verified sales</span><span class="ds-tag">Not required</span></li></ul>
+<div class="rq7-y"><span class="rx-k">Your verified expertise</span><div class="sk5"><span class="vf"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg> Python</span><span class="vf"><svg class="ck" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg> Excel</span><span class="nwx"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg> Data Analytics</span></div></div></section></aside></div>
+</sc-if>
+<sc-if value="{{p_sub}}" hint-placeholder-val="{{ false }}">
+<div class="ko-in ob-in"><div class="ko ok"><div class="ko-emb ko-v" aria-hidden="true"><span class="cf" aria-hidden="true"><i style="--x:271;--y:-84;--f:438;--d:2.82s;--dl:0.34s;--sw:12px;--sd:0.81s;--fd:0.62s;--rx:-0.39;--r:-57deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:61;--y:-94;--f:453;--d:3.38s;--dl:0.38s;--sw:14px;--sd:0.48s;--fd:0.58s;--rx:0.76;--r:73deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:177;--y:-104;--f:399;--d:2.88s;--dl:0.27s;--sw:6px;--sd:0.49s;--fd:1.04s;--rx:-0.19;--r:61deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:132;--y:-105;--f:408;--d:2.68s;--dl:0.43s;--sw:10px;--sd:0.83s;--fd:0.84s;--rx:0.92;--r:-80deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-185;--y:-22;--f:478;--d:3.08s;--dl:0.20s;--sw:12px;--sd:0.80s;--fd:0.75s;--rx:-0.83;--r:5deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:297;--y:-43;--f:404;--d:2.72s;--dl:0.20s;--sw:13px;--sd:0.53s;--fd:0.97s;--rx:-0.11;--r:-32deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#AFC1F5"></s></b></i><i style="--x:-67;--y:-11;--f:466;--d:3.77s;--dl:0.37s;--sw:15px;--sd:0.46s;--fd:0.69s;--rx:0.99;--r:74deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-293;--y:-129;--f:380;--d:3.33s;--dl:0.45s;--sw:9px;--sd:0.48s;--fd:0.71s;--rx:0.27;--r:-77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-82;--y:-86;--f:428;--d:3.29s;--dl:0.46s;--sw:7px;--sd:0.52s;--fd:1.23s;--rx:0.64;--r:-17deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-218;--y:-61;--f:448;--d:3.07s;--dl:0.33s;--sw:6px;--sd:0.47s;--fd:0.63s;--rx:0.02;--r:-15deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:153;--y:-95;--f:470;--d:3.19s;--dl:0.35s;--sw:15px;--sd:0.89s;--fd:0.64s;--rx:-0.04;--r:77deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-140;--y:-21;--f:381;--d:2.92s;--dl:0.32s;--sw:6px;--sd:0.53s;--fd:0.83s;--rx:0.14;--r:-47deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#6E96FF"></s></b></i><i style="--x:-88;--y:-25;--f:445;--d:3.43s;--dl:0.37s;--sw:7px;--sd:0.47s;--fd:0.56s;--rx:0.82;--r:-1deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-306;--y:-60;--f:453;--d:2.98s;--dl:0.50s;--sw:6px;--sd:0.70s;--fd:1.10s;--rx:0.80;--r:-47deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#3BB273"></s></b></i><i style="--x:-94;--y:-54;--f:467;--d:3.10s;--dl:0.43s;--sw:14px;--sd:0.71s;--fd:1.02s;--rx:-0.24;--r:69deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:69;--y:-138;--f:479;--d:3.66s;--dl:0.41s;--sw:9px;--sd:0.78s;--fd:0.99s;--rx:-0.12;--r:58deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:-121;--y:-137;--f:475;--d:2.74s;--dl:0.43s;--sw:12px;--sd:0.67s;--fd:1.22s;--rx:-0.26;--r:-44deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-100;--y:-19;--f:404;--d:3.09s;--dl:0.26s;--sw:12px;--sd:0.81s;--fd:1.12s;--rx:-0.60;--r:-26deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-179;--y:-21;--f:393;--d:3.02s;--dl:0.47s;--sw:6px;--sd:0.48s;--fd:1.29s;--rx:0.64;--r:-52deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:211;--y:-96;--f:447;--d:3.46s;--dl:0.45s;--sw:12px;--sd:0.59s;--fd:1.17s;--rx:-0.44;--r:75deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:114;--y:-110;--f:444;--d:3.28s;--dl:0.39s;--sw:10px;--sd:0.54s;--fd:1.13s;--rx:-0.47;--r:-44deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:309;--y:-133;--f:433;--d:3.37s;--dl:0.30s;--sw:6px;--sd:0.54s;--fd:1.17s;--rx:-0.49;--r:-78deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#F6C343"></s></b></i><i style="--x:-175;--y:-40;--f:474;--d:3.20s;--dl:0.50s;--sw:7px;--sd:0.83s;--fd:1.07s;--rx:-0.55;--r:25deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-236;--y:-86;--f:470;--d:3.05s;--dl:0.36s;--sw:14px;--sd:0.81s;--fd:1.26s;--rx:-0.07;--r:-28deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:142;--y:-35;--f:451;--d:2.86s;--dl:0.47s;--sw:15px;--sd:0.89s;--fd:0.95s;--rx:0.58;--r:2deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#0F6B45"></s></b></i><i style="--x:262;--y:-30;--f:388;--d:3.13s;--dl:0.36s;--sw:13px;--sd:0.67s;--fd:0.57s;--rx:0.62;--r:-64deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:191;--y:-125;--f:458;--d:2.77s;--dl:0.23s;--sw:11px;--sd:0.78s;--fd:1.18s;--rx:0.38;--r:46deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#6E96FF"></s></b></i><i style="--x:165;--y:-88;--f:463;--d:3.27s;--dl:0.23s;--sw:11px;--sd:0.86s;--fd:0.74s;--rx:0.34;--r:76deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-125;--y:-130;--f:407;--d:3.20s;--dl:0.31s;--sw:7px;--sd:0.45s;--fd:0.83s;--rx:0.08;--r:-69deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-241;--y:-136;--f:473;--d:3.15s;--dl:0.47s;--sw:14px;--sd:0.63s;--fd:0.73s;--rx:-0.01;--r:6deg"><b><s style="width:7px;height:7px;border-radius:50%;background:#1652F0"></s></b></i><i style="--x:256;--y:-19;--f:432;--d:2.73s;--dl:0.31s;--sw:6px;--sd:0.57s;--fd:1.08s;--rx:0.95;--r:-71deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i><i style="--x:-220;--y:-148;--f:452;--d:2.89s;--dl:0.34s;--sw:10px;--sd:0.71s;--fd:1.19s;--rx:0.25;--r:-30deg"><b><s style="width:5px;height:12px;border-radius:1.5px;background:#1652F0"></s></b></i><i style="--x:-305;--y:-61;--f:441;--d:3.25s;--dl:0.46s;--sw:11px;--sd:0.55s;--fd:0.71s;--rx:0.09;--r:70deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#AFC1F5"></s></b></i><i style="--x:-171;--y:-46;--f:470;--d:2.98s;--dl:0.28s;--sw:15px;--sd:0.55s;--fd:1.30s;--rx:0.78;--r:-46deg"><b><s style="width:8px;height:10px;border-radius:1.5px;background:#F6C343"></s></b></i></span><span class="ko-halo"></span><span class="ko-disc"><svg class="ko-tick" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5" pathLength="1"></path></svg></span></div><span class="ko-pill">Under review</span><h1 class="ko-h1">Submitted for verification</h1><p class="ko-sub">Data Analytics (3 years, Intermediate) is under review. We will notify you when it is verified, usually within 2 business days.</p><div class="ko-tg"><span class="ds-tag amber"><i class="lv-d"></i>Under review</span><span class="ds-tag"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"></path></svg> Apply is off until verified</span></div><div class="ko-acts"><a class="ds-ghost" href="OPP-001.dc.html">Find other opportunities</a><a class="ds-btn" href="OPP-002.dc.html"><span>Back to opportunity</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div><div class="ko-lk"><a class="ds-link" href="OPP-002.dc.html">Next state: verified, can apply</a></div></div></div>
+</sc-if>
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+var T0 = {"t1": true, "t2": true}, G = {};
+function togVals(self) {
+  var t = self.state.t || T0, v = {};
+  Object.keys(T0).forEach(function (k) {
+    v['c'.concat(k)] = t[k] ? 'on' : ''; v['a'.concat(k)] = t[k] ? 'true' : 'false';
+    v['x'.concat(k)] = function () {
+      var n = Object.assign({}, t);
+      if (G[k]) { Object.keys(G).forEach(function (j) { if (G[j] === G[k]) n[j] = false; }); n[k] = true; } else n[k] = !t[k];
+      self.setState({ t: n });
+    };
+  });
+  return v;
+}
+var PG = {"list": "Opportunities", "det": "Opportunities", "inel": "Opportunities", "apply": "Opportunities", "a-pend": "My Applications", "a-rev": "My Applications", "a-short": "My Applications", "a-off": "My Applications", "a-acc": "My Applications", "a-dec": "My Applications", "a-wd": "My Applications", "a-wdc": "My Applications", "a-clar": "My Applications", "prof": "Opportunities", "sub": "Opportunities"}, NV = ["My Applications", "Opportunities"], TONE = {"a-dec": "gy", "a-wd": "gy", "a-off": "ok", "a-acc": "ok", "a-pend": "am", "inel": "am"};
+class Component extends DCLogic {
+  renderVals() {
+    var pg = this.props.page || 'list', v = togVals(this), self = this;
+    Object.keys(PG).forEach(function (k) { v['p_'.concat(k.replace('-', '_'))] = k === pg; });
+    NV.forEach(function (n, i) { v['n_'.concat(i)] = PG[pg] === n; });
+    v.tone = 'tn-'.concat(TONE[pg] || 'cb');
+    v.navCls = this.state.nav ? 'ds-open' : '';
+    v.toggleNav = function () { self.setState({ nav: !self.state.nav }); };
+    return v;
+  }
+}
+</script>
+</body>
+</html>

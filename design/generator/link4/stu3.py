@@ -365,25 +365,26 @@ def pcard(kind, eyebrow, title, rng_label, rng_val, vals, sel, unit, calc=None, 
             '<div class="pc-sel"><span>Selected%s</span><div>%s</div></div></header>'
             '<div class="pc-r"><span>%s</span><b>%s</b></div>%s%s</section>') % (
         kind, big, eyebrow, title, title_tip, selv, rng_label, rng_val, stops(vals, sel, coin_html, calc), extra)
-def pricing(update):
+def pricing(update, sub=False):
     s_dlp, s_cr = ('700', '150') if update else (None, None)
     banner = ''
     if update:
         banner = ('<div class="bn bn-amb ob-in2"><span class="bn-i amb">%s</span><p><b>Pricing update required</b> Your course’s learning structure has changed significantly since pricing was selected. Previous DLP range: 500–700 DLP · Updated range: <b class="in">700–900 DLP</b>. Your price hasn’t been changed.</p>'
                   '<div class="bn-a"><a class="ds-ghost sm" href="#">Review Pricing</a></div></div>') % ic('warn', 18, 2)
     why = ('<details class="ds-card why"%s><summary><span class="why-i">%s</span><b>Why this range?</b>%s</summary><div class="why-b"><span class="fl-l">Based on:</span><ul>%s</ul><p>Credalio doesn’t publish its internal coefficients.</p><a class="ds-link sm" href="#">Learn about Credalio Pricing [link TO CONFIRM]</a></div></details>' % (
-        '' if update else ' open', ic('bulb', 18, 2), ic('down', 15, 2.2), ''.join('<li>%s%s</li>' % (ck(10), w) for w in WHY)))
+        '' if update or sub else ' open', ic('bulb', 18, 2), ic('down', 15, 2.2), ''.join('<li>%s%s</li>' % (ck(10), w) for w in WHY)))
     note = '<section class="ds-card pn"><span class="pn-eq"><b>DLP estimate</b><i>≠</i><b>creator price</b></span><p>Calculated DLP is Credalio’s assessment of learning consumption. The permitted range comes from it, and you choose your price within that range.</p></section>'
     return (page_head('Experience', 'Course Pricing', 'Choose your price from the range Credalio permits for this course. Pricing is provisional now and confirmed before publication.') + banner +
             '<div class="pr-g ob-in3"><div class="pr-main">%s%s</div><aside class="pr-side">%s%s</aside></div>' % (
                 pcard('gold', 'Subscription access', 'Calculated course DLP: 795 DLP', 'Credalio DLP range:', '700–900 DLP', ['700', '800', '900'], s_dlp, 'DLP', calc=795),
-                pcard('blue', 'Lifetime marketplace access', '<a class="mbl" href="STU-033.dc.html">Maintenance burden: Medium %s</a>' % ic('chev', 14, 2.2),
+                '' if sub else pcard('blue', 'Lifetime marketplace access', '<a class="mbl" href="STU-033.dc.html">Maintenance burden: Medium %s</a>' % ic('chev', 14, 2.2),
                       'Allowed Marketplace range:', '130–210 Credits', ['130', '150', '170', '190', '210'], s_cr, 'Credits',
                       title_tip=tip('Marketplace Credits purchase lifetime access to this course under Credalio’s marketplace terms.', 'r')),
                 why, note) +
             acts('STU-035.dc.html', 'Continue to summary'))
 P('pricing', 'price', 'Experience', pricing(False))
 P('pricingupd', 'price', 'Experience', pricing(True))
+P('pricingsub', 'price', 'Experience', pricing(False, True))
 
 # ---------------------------------------------------------------- CR-STU-035 Access & Pricing Summary
 P('psum', 'price', 'Experience', page_head('Experience', 'Access & Pricing Summary', 'What learners will be offered, pending validation.') +
@@ -1105,6 +1106,7 @@ BOARDS = [
     ('STU-033', 'Course', {'page': 'maint'}, 'CR-STU-033 · Maintenance Burden'),
     ('STU-034', 'Course', {'page': 'pricing'}, 'CR-STU-034 · Course Pricing'),
     ('STU-034b', 'Course', {'page': 'pricingupd'}, 'CR-STU-034 · Pricing update required'),
+    ('STU-SUB', 'Course', {'page': 'pricingsub'}, 'CR-STU-034 · Pricing: subscription-only model'),
     ('STU-035', 'Course', {'page': 'psum'}, 'CR-STU-035 · Access & Pricing Summary'),
 ]
 

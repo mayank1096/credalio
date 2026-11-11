@@ -34,12 +34,20 @@
 .ds-opt-ck .ck{display:none}
 .ds-opt.on .ds-opt-ck{background:#1652F0;border-color:#1652F0}
 .ds-opt.on .ds-opt-ck .ck{display:block}
+.ds-in{height:48px;width:100%;box-sizing:border-box;padding:0 14px;border-radius:12px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;font-size:15px;color:#0B1433;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.ds-in.lg{height:56px;padding:0 18px;border-radius:14px;font-size:17px}
+.ds-in::placeholder{color:#8A93AD}
+.ds-in:focus{border-color:#1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
 .ds-x{width:44px;height:44px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;text-decoration:none;transition:border-color .2s ease}
 .ds-x:hover{border-color:#1652F0}
 .cr-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
 .cr-c{background:#1652F0}
 .cr-c.lg{width:26px;height:26px;font-size:13px}
 .ds-btn:focus-visible,.ds-ghost:focus-visible,.ds-link:focus-visible,.ds-opt:focus-visible,.ds-x:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.lg{width:56px;height:56px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
+.nv-av.sm{width:28px;height:28px}
 .dlp-c{position:relative;display:inline-block;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(0,0,0,0) 61%,rgba(150,96,0,.5) 64%,rgba(0,0,0,0) 69%),radial-gradient(circle at 34% 28%,#FFF6CF 0%,#F9DC7A 30%,#EAB534 62%,#C38712 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),inset 0 -1.5px 1px rgba(130,80,0,.35),0 1.5px 0 #A86F06,0 3px 5px -2px rgba(110,70,0,.55);vertical-align:-3px;animation:dlpFlip 6s ease-in-out infinite}
 .dlp-c::before{content:"D";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Google Sans',system-ui,sans-serif;font-size:10px;font-weight:700;line-height:1;transform:translateY(.6px);box-sizing:border-box;color:#8A5A00;text-shadow:0 1px 0 rgba(255,246,207,.85)}
 .dlp-c::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.75) 48%,rgba(255,255,255,0) 60%);background-size:250% 100%;background-position:120% 0;animation:dlpShine 6s ease-in-out infinite;pointer-events:none}
@@ -123,13 +131,32 @@ a{color:#1652F0}
 .lg-word{display:block;height:26px;aspect-ratio:292/56;background:url(/_blob/56bd922e46929406f00f4b18fe9b3244) left center/contain no-repeat}
 .av{position:relative;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:#EAF0FF;color:#0E3BB8;font-size:11px;font-weight:600;box-sizing:border-box}
 .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.st{width:18px;height:18px;border-radius:50%;flex-shrink:0;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+.st.ok{background:#E7F5EE;color:#0F6B45}
+.st.pr{border:2px solid #1652F0;background:conic-gradient(#1652F0 0 50%,#FFFFFF 50% 100%)}
+.st.to{border:2px solid #CBD3E6}
+.fl-l{display:flex;align-items:center;font-size:14px;font-weight:600;color:#0B1433}
+textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;resize:vertical}
 .wk{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr) 312px;grid-template-rows:auto 1fr;grid-template-areas:"m r" "a r";column-gap:24px;align-items:start}
 .wk-m{grid-area:m;min-width:0;display:flex;flex-direction:column;gap:16px}
+.wk-m > .fc,.wk-m > .fc + .fc{margin-top:0}
 .wk-r{grid-area:r;min-width:0;position:sticky;top:92px;display:flex;flex-direction:column;gap:14px}
 .ds-btn.sm{height:36px;padding:0 16px;font-size:13.5px}
 .rx{padding:18px;border-radius:20px}
 .rx-k{display:flex;align-items:center;margin-bottom:12px;font-size:12.5px;font-weight:500;color:#8A93AD}
 .rx-p{margin:12px 0 0 0;font-size:13px;line-height:1.5;color:#5B6582}
+.lp{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.lp li{display:flex;align-items:center;gap:12px}
+.lp li > span:last-child{display:flex;flex-direction:column;gap:1px}
+.lp b{font-size:14px;font-weight:600}
+.lp em{font-style:normal;font-size:12.5px;color:#5B6582}
+.rf{padding:8px}
+.rf ol{list-style:none;margin:0;padding:0}
+.rf li{position:relative}
+.rf li + li::before{content:'';position:absolute;left:20.25px;top:-11px;width:1.5px;height:22px;background:#D6DDEE}
+.rf a{position:relative;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 10px;border-radius:12px;color:#3A4566;font-size:13.5px;font-weight:500;text-decoration:none}
+.rf a:hover{background:#F7F9FD;color:#0B1433}
+.rf li.on a{background:#F5F8FF;color:#0B1433;font-weight:600}
 @media (max-width: 1180px){.wk{grid-template-columns:minmax(0,1fr) 280px;column-gap:20px}}
 @media (max-width: 960px){
 .wk{display:flex;flex-direction:column;align-items:stretch;gap:16px;margin-top:20px}
@@ -137,6 +164,7 @@ a{color:#1652F0}
 .wk-r{display:contents}
 .wk-m > *{order:2}
 .wk-r > .rx{order:3}
+.wk-r > .rf{display:none}
 .rx{padding:18px 16px;border-radius:18px}
 }
 .cv-t{position:relative;display:block;width:64px;height:64px;flex-shrink:0;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 85% 15%,rgba(92,134,255,.85),rgba(92,134,255,0) 60%),linear-gradient(140deg,#1652F0,#0B1433);box-shadow:0 12px 24px -14px rgba(22,82,240,.8)}
@@ -157,6 +185,9 @@ a{color:#1652F0}
 .ci-t{flex-grow:1;min-width:0}
 .ds-mlogo{flex-grow:1}
 .ds-mlogo .lg-word{height:20px}
+.fc{padding:24px 26px 26px 26px}
+.fc-h{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+.fc-h h2{margin:0;display:flex;align-items:center;font-size:17px;font-weight:600;letter-spacing:-0.01em}
 .bl-c{position:absolute;right:-3px;top:-3px;min-width:18px;height:18px;padding:0 4px;box-sizing:border-box;border-radius:999px;background:#E5484D;color:#FFFFFF;font-size:10.5px;font-weight:600;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px #F7F9FD}
 .cw-me{display:flex;border-radius:50%}
 .mg-main{position:relative;isolation:isolate;max-width:1240px}
@@ -375,6 +406,7 @@ a{color:#1652F0}
 .pg-h{flex-direction:column;align-items:flex-start;gap:12px}
 .pg-h.row{flex-direction:row;align-items:center;justify-content:space-between}
 .pg-h.row .pg-hr{width:auto;margin:0;padding:0}
+.fc{padding:18px 16px 20px 16px;border-radius:18px}
 .pg-hr{width:calc(100% + 32px);margin:0 -16px;padding:0 16px 2px 16px;overflow-x:auto;scrollbar-width:none}
 .pg-hr::-webkit-scrollbar{display:none}
 .pg-hr > *{flex-shrink:0}
@@ -528,6 +560,125 @@ a{color:#1652F0}
 .mc-d{position:static;order:2;flex-shrink:0}
 .mc::after{display:none}
 }
+.ovh-i.lv{background:linear-gradient(140deg,#1652F0,#0B1433)}
+.mg-go{display:inline-flex;align-items:center;gap:4px;margin-left:6px;font-size:14.5px;font-weight:600}
+.sh8{margin-top:26px}
+.sh8-h{display:flex;flex-direction:column;gap:6px}
+.sh8-k,.fl8-k{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#0F6B45}
+.sh8-k::before,.fl8-k::before{content:'';width:7px;height:7px;border-radius:50%;background:#0F6B45;animation:lvP 2s ease-out infinite}
+.sh8-h h2{margin:0;font-size:24px;font-weight:600;letter-spacing:-0.02em}
+.sh8-h p{margin:0;font-size:15px;color:#4A5578}
+.sh8-g{margin-top:18px;display:flex;flex-direction:column;gap:16px}
+.sh8-l{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:0 24px}
+.sl{display:flex;gap:14px;padding:22px 0}
+.sl + .sl{padding-left:24px;margin-left:24px;border-left:1.5px solid #EEF1F7}
+.sl-i{width:40px;height:40px;flex-shrink:0;border-radius:12px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.sl.rf .sl-i{background:#E7F5EE;color:#0F6B45}
+.sl-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.sl-b > b{font-size:15px;font-weight:600}
+.sl-b > em{font-style:normal;font-size:13px;line-height:1.5;color:#5B6582}
+.sl-u{margin-top:10px;display:flex;align-items:center;gap:8px}
+.sl-v{flex:1;min-width:0;height:44px;box-sizing:border-box;display:flex;align-items:center;gap:8px;padding:0 14px;border-radius:12px;background:#F7F9FD;border:1.5px solid #E6EAF3;font-size:13.5px;color:#0B1433}
+.sl-v svg{flex-shrink:0;color:#8A93AD}
+.sl-v span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sl-c{flex-shrink:0;gap:6px;height:44px}
+.sh8-p{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:auto 1fr;gap:14px 24px;padding:22px 24px 24px 24px}
+.sh8-ph{grid-column:1 / -1}
+.sh8-t{grid-row:2}
+.sh8-pr{grid-row:2;display:flex;flex-direction:column;gap:14px}
+.sh8-ph{display:flex;align-items:center;gap:12px}
+.sh8-ph .nv-av{width:36px;height:36px}
+.sh8-ph > span:last-child{display:flex;flex-direction:column;gap:1px}
+.sh8-ph b{font-size:15px;font-weight:600}
+.sh8-ph em{font-style:normal;font-size:12.5px;color:#1652F0}
+.sh8-t{height:100%;min-height:150px;padding:12px 14px;border-radius:14px;font-family:inherit;font-size:14.5px;line-height:1.6;resize:vertical}
+.sh8-lp{display:grid;grid-template-columns:112px minmax(0,1fr);border-radius:14px;border:1.5px solid #E6EAF3;overflow:hidden;text-decoration:none;color:#0B1433;transition:border-color .2s ease}
+.sh8-lp:hover{border-color:#9DB8F7}
+.sh8-cv{position:relative;min-height:84px;background:linear-gradient(140deg,#1652F0,#0B1433);color:#FFFFFF}
+.sh8-cv i{position:absolute;left:12px;bottom:8px;font-style:normal;font-size:22px;font-weight:600;letter-spacing:-0.03em}
+.sh8-cv .gb{position:absolute;left:10px;top:9px;transform:scale(.86);transform-origin:left top}
+.sh8-lt{display:flex;flex-direction:column;gap:2px;padding:10px 14px}
+.sh8-lt em{font-style:normal;font-size:11.5px;color:#8A93AD}
+.sh8-lt b{font-size:14px;font-weight:600}
+.sh8-lt span{font-size:12.5px;line-height:1.45;color:#5B6582;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.sh8-po{display:flex;flex-direction:column;gap:10px}
+.sh8-ch{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.sh8-b{height:44px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;font-size:13.5px;font-weight:600;color:#0B1433;cursor:pointer;transition:border-color .2s ease,background .2s ease,transform .2s ease}
+.sh8-b:hover{border-color:#1652F0;background:#F5F8FF;transform:translateY(-1px)}
+.sh8-bi{width:22px;height:22px;flex-shrink:0;border-radius:7px;background:#0B1433;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.sh8-bi i{font-style:normal;font-size:11px;font-weight:600}
+.sh8-b.in .sh8-bi{background:#1652F0}
+.sh8-b.wa .sh8-bi{background:#0F6B45}
+.sh8-b.em .sh8-bi{background:#EAF0FF;color:#1652F0}
+.fl8{margin-top:24px;display:grid;grid-template-columns:200px minmax(0,1fr);grid-template-rows:auto auto;column-gap:28px;align-items:center;padding:26px 28px;background:linear-gradient(120deg,#F3FAF6,#FFFFFF 55%)}
+.fl8-v{grid-row:1 / span 2;position:relative;width:200px;height:200px;display:flex;align-items:center;justify-content:center}
+.fl8-r{position:absolute;inset:30px;border-radius:50%;border:1.5px dashed #9FD3B8;animation:flR 3s ease-out infinite}
+.fl8-r.b{inset:10px;animation-delay:1s;opacity:.7}
+.fl8-r.c{inset:-6px;animation-delay:2s;opacity:.45}
+@keyframes flR{0%{transform:scale(.85);opacity:0}30%{opacity:1}100%{transform:scale(1.04);opacity:0}}
+.fl8-o{position:relative;z-index:1;width:72px;height:72px;border-radius:50%;background:#FFFFFF;border:1.5px solid #CDE9DA;box-shadow:0 14px 30px -12px rgba(15,107,69,.35);color:#0F6B45;display:flex;align-items:center;justify-content:center}
+.fl8-d{position:absolute;width:10px;height:10px;border-radius:50%;background:#1652F0;box-shadow:0 0 0 4px #EAF0FF;animation:flD 4s ease-in-out infinite}
+.fl8-d.d1{top:34px;right:40px}
+.fl8-d.d2{bottom:44px;left:26px;background:#5C86FF;animation-delay:-1.3s}
+.fl8-d.d3{top:56px;left:30px;width:8px;height:8px;background:#9DB8F7;animation-delay:-2.6s}
+@keyframes flD{50%{transform:translate(4px,-6px)}}
+.fl8-b{display:flex;flex-direction:column;gap:8px}
+.fl8-b h2{margin:0;font-size:24px;line-height:1.25;font-weight:600;letter-spacing:-0.02em}
+.fl8-b p{margin:0;max-width:640px;font-size:15px;line-height:1.6;color:#3A4566}
+.fl8 > .fl8-s{margin-top:20px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-radius:16px;background:#FFFFFF;border:1.5px solid #E6EAF3;overflow:hidden}
+.fl8-k2{display:flex;flex-direction:column;gap:4px;padding:14px 16px;animation:obIn .45s ease both;animation-delay:calc(var(--i) * 80ms + 250ms)}
+.fl8-k2 + .fl8-k2{border-left:1.5px solid #EEF1F7}
+.fl8-ki{color:#8A93AD;display:flex}
+.fl8-k2 b{font-size:24px;font-weight:600;letter-spacing:-0.02em;color:#8A93AD}
+.fl8-k2.up b{color:#1652F0}
+.fl8-k2.up .fl8-ki{color:#1652F0}
+.fl8-k2 em{font-style:normal;font-size:12.5px;color:#5B6582}
+.fl8-g{margin-top:16px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px;align-items:stretch}
+.fl8-w{display:flex;flex-direction:column}
+.fl8-n{font-size:13px;font-weight:500;color:#0F6B45}
+.fl8-l{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.fl8-l li{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1.5px solid #EEF1F7;animation:obIn .4s ease both;animation-delay:calc(var(--i) * 60ms + 300ms)}
+.fl8-l li:first-child{border-top:0;padding-top:2px}
+.fl8-li{width:22px;height:22px;flex-shrink:0;box-sizing:border-box;border-radius:50%;border:2px solid #CBD3E6;display:flex;align-items:center;justify-content:center}
+.fl8-l li.ok .fl8-li{border:0;background:#0F6B45;color:#FFFFFF}
+.fl8-lt{flex:1;min-width:0;font-size:14.5px;line-height:1.45;color:#0B1433}
+.fl8-l li.ok .fl8-lt{color:#5B6582}
+.fl8-w p{margin:0;font-size:14.5px;line-height:1.6;color:#3A4566}
+.fl8-t{margin-top:auto;padding-top:18px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.fl8-t > span{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 0;border-radius:12px;background:#F7F9FD;color:#AEB6CC;animation:flT 2.4s ease-in-out infinite;animation-delay:calc(var(--i) * 160ms)}
+.fl8-t em{width:60%;height:5px;border-radius:5px;background:#E6EAF3}
+@keyframes flT{50%{background:#EEF2FA}}
+@media (prefers-reduced-motion: reduce){.fl8-r,.fl8-d,.fl8-t > span{animation:none}}
+@media (max-width: 960px){
+.ovh-a .mg-go{order:3;width:100%;justify-content:center;height:44px;margin:0}
+.sh8{margin-top:22px}
+.sh8-h h2{font-size:21px}
+.sh8-h p{font-size:14px}
+.sh8-g{grid-template-columns:minmax(0,1fr);gap:14px}
+.sh8-l{grid-template-columns:minmax(0,1fr);padding:2px 18px}
+.sl{padding:18px 0}
+.sl + .sl{padding-left:0;margin-left:0;border-left:0;border-top:1.5px solid #EEF1F7}
+.sl-i{width:36px;height:36px}
+.sl-u{margin-left:-50px;margin-top:12px}
+.sh8-p{grid-template-columns:minmax(0,1fr);padding:18px}
+.sh8-pr{grid-row:auto}
+.sh8-t{grid-row:auto;min-height:150px}
+.sh8-ch{grid-template-columns:repeat(2,minmax(0,1fr))}
+.fl8{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center;padding:22px 18px;row-gap:4px}
+.fl8-v{grid-row:auto;width:150px;height:150px}
+.fl8-o{width:60px;height:60px}
+.fl8-b{align-items:center}
+.fl8-b h2{font-size:20px}
+.fl8-b p{font-size:14px}
+.fl8 > .fl8-s{width:100%;grid-template-columns:repeat(2,minmax(0,1fr));text-align:left}
+.fl8-k2:nth-child(3){border-left:0}
+.fl8-k2:nth-child(n+3){border-top:1.5px solid #EEF1F7}
+.fl8-k2 b{font-size:21px}
+.fl8-g{grid-template-columns:minmax(0,1fr);gap:14px}
+.fl8-t{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+.aur{position:relative;isolation:isolate;overflow:hidden}
+.aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
 </style>
 </helmet>
 <div class="ds-root cr-root">
@@ -641,6 +792,25 @@ a{color:#1652F0}
 <nav class="ft2 ob-in2" aria-label="Type"><a class="on" href="#">Courses</a><a href="#">Certifications</a><a href="#">Career Paths</a><a href="#">Learning Programs</a></nav>
 <section class="ds-card mcl ob-in2"><div class="mcl-r mcl-hd"><span>Courses</span><span>Status</span><span>Validation</span><span></span></div><div class="mcl-r un"><span class="mcl-n"><span class="mcl-i"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><b>Data Analysis with SQL</b></span><span class="ds-tag">Unpublished</span><span class="mcl-v"><span class="gb sm"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold · v1.0</span></span></span><span class="mcl-a"><a class="ds-ghost xs" href="MGT-DS-OV.dc.html">View Overview</a><a class="ds-ghost xs" href="MGT-001.dc.html">Manage</a><a class="ds-link sm" href="STU-009.dc.html">Edit</a></span></div><div class="mcl-r"><span class="mcl-n"><span class="mcl-i"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><b>Python for Beginners</b></span><span class="ds-tag green">Published</span><span class="mcl-v"><span class="mcl-dash">—</span></span><span class="mcl-a"><a class="ds-ghost xs" href="#">Open</a></span></div><div class="mcl-r"><span class="mcl-n"><span class="mcl-i"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><b>Business Intelligence Basics</b></span><span class="ds-tag green">Published</span><span class="mcl-v"><span class="mcl-dash">—</span></span><span class="mcl-a"><a class="ds-ghost xs" href="#">Open</a></span></div></section>
 </sc-if>
+<sc-if value="{{p_share}}" hint-placeholder-val="{{ false }}">
+<a class="ds-back ob-in" href="MGT-DS-CR.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>My Creations</span></a>
+<header class="ovh ob-in"><span class="ovh-i lv"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><div class="ovh-t"><h1 class="ds-h1">Data Analysis with SQL</h1><span class="cst-t"><span class="ds-tag green"><i class="lv-d"></i>Live</span><span class="gb"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold Validated</span></span><span class="ovh-v">Version 1.0 · Published today</span></span></div>
+<div class="ovh-a"><a class="ds-ghost sm" href="STU-067.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Back to Overview</span></a><a class="ds-link mg-go" href="MGT-001.dc.html">Go to Manage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></div></header><section class="sh8 ob-in2"><div class="sh8-h"><span class="sh8-k">Live · Share &amp; promote</span><h2>Share your course</h2><p>Your first learners usually come from your own network.</p></div>
+<div class="sh8-g"><section class="ds-card sh8-l"><div class="sl "><span class="sl-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"></path><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg></span><div class="sl-b"><b>Course link</b><em>Public marketplace page</em><div class="sl-u"><span class="sl-v"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3z"></path></svg><span>credalio.com/c/data-analysis-with-sql</span></span><button type="button" class="ds-ghost sm sl-c"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path></svg><span>Copy</span></button></div></div></div><div class="sl rf"><span class="sl-i"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"></path><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg></span><div class="sl-b"><b>Referral link</b><em>Tracks learners you bring in [TO CONFIRM referral programme]</em><div class="sl-u"><span class="sl-v"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3z"></path></svg><span>credalio.com/c/data-analysis-with-sql?ref=ada</span></span><button type="button" class="ds-ghost sm sl-c"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"></path></svg><span>Copy</span></button></div></div></div></section>
+<section class="ds-card sh8-p"><div class="sh8-ph"><span class="nv-av" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span><span><b>Suggested post</b><em>Drafted by Nova · edit freely</em></span></div>
+<textarea class="ds-in sh8-t" rows="4" aria-label="Suggested post">I’ve just published "Data Analysis with SQL" on Credalio, independently validated Gold. If you want to go from your first SQL query to a finished business analysis, this is for you: credalio.com/c/data-analysis-with-sql</textarea>
+<div class="sh8-pr"><a class="sh8-lp" href="STU-PRV.dc.html"><span class="sh8-cv aur"><i>SQL</i><span class="gb"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold</span></span></span><span class="sh8-lt"><em>credalio.com</em><b>Data Analysis with SQL</b><span>Write SQL to answer real business questions, from first query to a finished analysis.</span></span></a>
+<div class="sh8-po"><span class="fl-l">Post it</span><div class="sh8-ch"><button type="button" class="sh8-b in"><span class="sh8-bi"><i>in</i></span><span>LinkedIn</span></button><button type="button" class="sh8-b x"><span class="sh8-bi"><i>X</i></span><span>X</span></button><button type="button" class="sh8-b wa"><span class="sh8-bi"><i>W</i></span><span>WhatsApp</span></button><button type="button" class="sh8-b em"><span class="sh8-bi"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span><span>Email</span></button></div></div></div></section></div></section>
+</sc-if>
+<sc-if value="{{p_first}}" hint-placeholder-val="{{ false }}">
+<a class="ds-back ob-in" href="MGT-DS-CR.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>My Creations</span></a>
+<header class="ovh ob-in"><span class="ovh-i lv"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><div class="ovh-t"><h1 class="ds-h1">Data Analysis with SQL</h1><span class="cst-t"><span class="ds-tag green"><i class="lv-d"></i>Live</span><span class="gb"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Gold Validated</span></span><span class="ovh-v">Version 1.0 · Published today</span></span></div>
+<div class="ovh-a"><a class="ds-ghost sm" href="STU-PRV.dc.html">Preview as Learner</a><a class="ds-ghost sm" href="MGT-001.dc.html">Manage</a><a class="ds-btn sm2" href="STU-066.dc.html"><span>Share Course</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></div></header><section class="ds-card fl8 ob-in2"><div class="fl8-v" aria-hidden="true"><span class="fl8-r"></span><span class="fl8-r b"></span><span class="fl8-r c"></span><span class="fl8-o"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg></span><i class="fl8-d d1"></i><i class="fl8-d d2"></i><i class="fl8-d d3"></i></div>
+<div class="fl8-b"><span class="fl8-k">Live · Data Analysis with SQL</span><h2>Your course is live. We’re waiting for your first learner.</h2><p>Most courses get their first learner from the creator’s own network. Sharing now is the fastest way to start.</p></div>
+<div class="fl8-s"><div class="fl8-k2 " style="--i: 0"><span class="fl8-ki"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg></span><b>0</b><em>Learners</em></div><div class="fl8-k2 up" style="--i: 1"><span class="fl8-ki"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><b>14</b><em>Marketplace views</em></div><div class="fl8-k2 " style="--i: 2"><span class="fl8-ki"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg></span><b>0</b><em>Questions</em></div><div class="fl8-k2 " style="--i: 3"><span class="fl8-ki"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg></span><b>0</b><em>Earnings</em></div></div></section>
+<div class="fl8-g ob-in3"><section class="ds-card fc fl8-c"><div class="fc-h"><div><h2>Get your first learners</h2></div><span class="fl8-n">2 of 4 done</span></div><ol class="fl8-l"><li class="" style="--i: 0"><span class="fl8-li"></span><span class="fl8-lt">Share the course link with your network</span><a class="ds-ghost xs" href="STU-066.dc.html">Share</a></li><li class="" style="--i: 1"><span class="fl8-li"></span><span class="fl8-lt">Post in communities where your learners are</span><a class="ds-ghost xs" href="STU-066.dc.html">Get post</a></li><li class="ok" style="--i: 2"><span class="fl8-li"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="fl8-lt">Your creator profile lists this course</span></li><li class="ok" style="--i: 3"><span class="fl8-li"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span class="fl8-lt">Course discussion is open for early learners</span></li></ol></section>
+<section class="ds-card fc fl8-w"><div class="fc-h"><div><h2>What you’ll see here</h2></div></div><p>Once learners join, this space fills with learner progress, outcome performance, assessment analytics, questions and support, reviews, earnings and content health.</p><div class="fl8-t" aria-hidden="true"><span style="--i: 0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M6.5 16v-5M11.5 16V6M16.5 16v-8"></path></svg><em></em></span><span style="--i: 1"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.5"></circle></svg><em></em></span><span style="--i: 2"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8M8 12h5M8 16h3"></path></svg><em></em></span><span style="--i: 3"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3.5"></circle><path d="m5.6 5.6 3.9 3.9M14.5 14.5l3.9 3.9M18.4 5.6l-3.9 3.9M9.5 14.5l-3.9 3.9"></path></svg><em></em></span><span style="--i: 4"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><em></em></span><span style="--i: 5"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6v2M12 16v2"></path></svg><em></em></span><span style="--i: 6"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg><em></em></span></div></section></div>
+</sc-if>
 </main>
 </div>
 </div>
@@ -659,8 +829,115 @@ function togVals(self) {
   });
   return v;
 }
-var PG = ["hub", "a", "b", "c", "d", "e", "f", "g", "edit", "review", "notice", "ds-ov", "ds-cr"], TONE = {"b": "ok", "c": "ok", "e": "rd", "f": "am", "g": "rd", "notice": "rd", "d": "gy", "ds-ov": "gy"};
+var PG = ["hub", "a", "b", "c", "d", "e", "f", "g", "edit", "review", "notice", "ds-ov", "ds-cr", "share", "first"], TONE = {"b": "ok", "c": "ok", "e": "rd", "f": "am", "g": "rd", "notice": "rd", "d": "gy", "ds-ov": "gy", "first": "ok"};
 class Component extends DCLogic {
+  componentDidMount() { this.aurScan(); }
+auroraMount(el) {
+    var host = window;
+    try { if (window.top && window.top.document) host = window.top; } catch (e) { host = window; }
+    var R = host.__credAurora;
+    if (!R) {
+      R = host.__credAurora = { items: [], raf: 0, last: 0, cur: 0 };
+      var gc = host.document.createElement('canvas');
+      var gl = gc.getContext('webgl', { premultipliedAlpha: false, antialias: false, preserveDrawingBuffer: true, powerPreference: 'low-power' });
+      R.gl = gl; R.gc = gc;
+      if (gl) {
+        var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+        var fs = [
+          'precision mediump float;uniform vec2 R;uniform float T;uniform float L;uniform vec3 A;uniform vec3 B;uniform vec3 C;uniform vec3 G0;uniform vec3 G1;',
+          'float hp(float s,float k,float b){return fract(sin(s*k)*b)*6.2831853;}',
+          'float h3(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}',
+          'float vn(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);',
+          'float a=mix(mix(h3(i),h3(i+vec3(1,0,0)),f.x),mix(h3(i+vec3(0,1,0)),h3(i+vec3(1,1,0)),f.x),f.y);',
+          'float b=mix(mix(h3(i+vec3(0,0,1)),h3(i+vec3(1,0,1)),f.x),mix(h3(i+vec3(0,1,1)),h3(i+vec3(1,1,1)),f.x),f.y);',
+          'return mix(a,b,f.z)*2.-1.;}',
+          'void main(){vec2 uv=gl_FragCoord.xy/R;float asp=R.x/max(R.y,1.);',
+          'float wav=.6,ray=.25,H=1.1,ins=1.12,bal=mix(2.5,.4,.5),cx=.62,cy=.18;',
+          'float ws=0.,tot=0.;',
+          'for(int i=0;i<4;i++){float fi=float(i);',
+          'float to=fi==0.?0.:fi==1.?3.1:fi==2.?6.7:9.4;float w=fi==0.?1.:fi==1.?.65:fi==2.?.45:.3;',
+          'float ts=T*.06+to;float ls=fi*31.7;float wx=(uv.x-cx)*asp*2.;',
+          'float arc=.15*sin(wx*.7+ts*.4+hp(ls,12.9,4758.5))+.08*sin(wx*1.6+ts*.65+hp(ls,78.2,2847.1))+.04*sin(wx*2.9+ts*.3+hp(ls,41.6,1593.7));',
+          'float nw=vn(vec3(wx*.5,ts*.25,ls*.1));float py=cy+arc*wav+nw*.14*wav;',
+          'float rays=pow(sin((wx+nw*2.5)*mix(6.,20.,ray)*.15+ts*.1+hp(ls,53.7,3847.2))*.5+.5,1.5);',
+          'float lh=H*mix(.4,1.,rays);float d=uv.y-py;float top=lh*(rays*.4+.6);',
+          'float env=smoothstep(-.04,.015,d)*(1.-smoothstep(0.,top,d));',
+          'float ct=clamp(d/(top+.001),0.,1.);float sb=mix(.4,1.,nw*.5+.5);float cd=ct-.2;float cb=exp(cd*cd*-6.)*.3+1.;',
+          'float al=env*rays*sb*cb*w;ws+=ct*al;tot+=al;}',
+          'float av=pow(ws/(tot+.001),bal);vec3 col=mix(mix(A,B,smoothstep(0.,.2,av)),C,smoothstep(.4,.85,av));',
+          'float br=tot*ins;vec3 glow=clamp(col*br,0.,1.);',
+          'vec3 base=mix(G0,G1,smoothstep(0.,1.,uv.y*.7+(1.-uv.x)*.3));',
+          'gl_FragColor=L>.5?vec4(mix(base,col,clamp(br*.42,0.,.62)),1.):vec4(base*(1.-clamp(br*.5,0.,1.)*.35)+glow,1.);}'
+        ].join('');
+        var mk = function (t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
+        var pr = gl.createProgram();
+        gl.attachShader(pr, mk(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, mk(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr);
+        if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { R.gl = null; } else {
+          gl.useProgram(pr);
+          var bf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, bf);
+          gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+          var lp = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
+          var u = function (n) { return gl.getUniformLocation(pr, n); };
+          var hex = function (h) { return [parseInt(h.substr(1, 2), 16) / 255, parseInt(h.substr(3, 2), 16) / 255, parseInt(h.substr(5, 2), 16) / 255]; };
+          R.pal = { dark: [hex('#0E3BB8'), hex('#2E63FF'), hex('#9DB8F7'), hex('#050A20'), hex('#0B1A4D'), 0], light: [hex('#B9CCFF'), hex('#7FA4FF'), hex('#4F80FF'), hex('#F6F9FF'), hex('#E4ECFF'), 1] };
+          R.u = { A: u('A'), B: u('B'), C: u('C'), G0: u('G0'), G1: u('G1'), L: u('L') };
+          R.uR = u('R'); R.uT = u('T');
+        }
+      }
+      R.still = !!(host.matchMedia && host.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      R.t0 = host.performance.now();
+      R.paint = function (it, now) {
+        var g = R.gl, w = it.cv.width, h = it.cv.height;
+        if (R.gc.width !== w || R.gc.height !== h) { R.gc.width = w; R.gc.height = h; }
+        var pl = R.pal[it.light ? 'light' : 'dark']; g.uniform3fv(R.u.A, pl[0]); g.uniform3fv(R.u.B, pl[1]); g.uniform3fv(R.u.C, pl[2]); g.uniform3fv(R.u.G0, pl[3]); g.uniform3fv(R.u.G1, pl[4]); g.uniform1f(R.u.L, pl[5]);
+        g.viewport(0, 0, w, h); g.uniform2f(R.uR, w, h); g.uniform1f(R.uT, it.seed + (R.still ? 0 : (now - R.t0) / 1000));
+        g.drawArrays(g.TRIANGLE_STRIP, 0, 4);
+        it.ctx.drawImage(R.gc, 0, 0);
+      };
+      R.size = function (it) {
+        var cw = it.el.clientWidth, ch = it.el.clientHeight;
+        if (!cw || !ch) return false;
+        var s = Math.min(0.4, 320 / cw), w = Math.max(16, Math.round(cw * s)), h = Math.max(16, Math.round(ch * s));
+        if (it.cv.width !== w || it.cv.height !== h) { it.cv.width = w; it.cv.height = h; it.fresh = true; }
+        return true;
+      };
+      R.tick = function (now) {
+        R.raf = 0;
+        if (now - R.last > 33) {
+          R.last = now;
+          R.items = R.items.filter(function (it) { return it.el.isConnected; });
+          var n = R.items.length, st = host.performance.now();
+          for (var k = 0; k < n; k++) {
+            var it = R.items[(R.cur + k) % n];
+            if ((it.vis || it.fresh) && R.size(it)) { R.paint(it, now); it.fresh = false; }
+            if (host.performance.now() - st > 6) { R.cur = (R.cur + k + 1) % n; break; }
+          }
+        }
+        if (!R.still && R.items.some(function (it) { return it.vis; })) R.raf = host.requestAnimationFrame(R.tick);
+      };
+      R.wake = function () { if (!R.raf) R.raf = host.requestAnimationFrame(R.tick); };
+    }
+    if (!R.gl) { el.classList.add(el.classList.contains('aur-lt') ? 'aur-off-lt' : 'aur-off'); return function () {}; }
+    var cv = el.ownerDocument.createElement('canvas');
+    cv.className = 'aur-c';
+    cv.setAttribute('aria-hidden', 'true');
+    el.insertBefore(cv, el.firstChild);
+    el.__aurC = cv;
+    var it = { el: el, cv: cv, ctx: cv.getContext('2d'), seed: Math.random() * 40, vis: true, fresh: true, light: el.classList.contains('aur-lt') };
+    R.items.push(it);
+    var view = el.ownerDocument.defaultView || window;
+    var io = view.IntersectionObserver ? new view.IntersectionObserver(function (e) { it.vis = e[0].isIntersecting; if (it.vis) R.wake(); }) : null;
+    if (io) io.observe(el);
+    R.wake();
+    return function () { if (io) io.disconnect(); R.items = R.items.filter(function (x) { return x !== it; }); };
+  }
+  aurScan() {
+    var self = this, q = 0;
+    var go = function () { q = 0; document.querySelectorAll('.aur').forEach(function (el) { if (!el.__aurC || el.__aurC.parentNode !== el) { if (el.__aur) el.__aur(); el.__aur = self.auroraMount(el); } }); };
+    go();
+    if (!this._aurMo && window.MutationObserver) { this._aurMo = new MutationObserver(function () { if (!q) q = requestAnimationFrame(go); }); this._aurMo.observe(document.body, { childList: true, subtree: true }); }
+  }
+
   renderVals() {
     var pg = this.props.page || 'hub', v = togVals(this), self = this;
     PG.forEach(function (k) { v['p_'.concat(k.replace('-', '_'))] = k === pg; });

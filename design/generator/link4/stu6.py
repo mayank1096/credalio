@@ -210,6 +210,47 @@ P('ds-cr', 'My Creations',
           ' un' if u else '', ic('course', 17, 2), n, tag(s, t), ('<span class="gb sm">%s<span>%s</span></span>' % (ic('badge', 11, 2.2), v)) if v else '<span class="mcl-dash">—</span>',
           ('<a class="ds-ghost xs" href="MGT-DS-OV.dc.html">View Overview</a><a class="ds-ghost xs" href="MGT-001.dc.html">Manage</a><a class="ds-link sm" href="STU-009.dc.html">Edit</a>') if u else '<a class="ds-ghost xs" href="#">Open</a>') for n, s, t, v, u in ROWS)))
 
+# ---------------------------------------------------------------- CR-STU-066 Share & promote · CR-STU-067 First learner state (live, Course Overview layout)
+def live_head(right):
+    return ('''<a class="ds-back ob-in" href="MGT-DS-CR.dc.html">%s<span>My Creations</span></a>
+<header class="ovh ob-in"><span class="ovh-i lv">%s</span><div class="ovh-t"><h1 class="ds-h1">Data Analysis with SQL</h1><span class="cst-t"><span class="ds-tag green"><i class="lv-d"></i>Live</span><span class="gb">%s<span>Gold Validated</span></span><span class="ovh-v">Version 1.0 · Published today</span></span></div>
+<div class="ovh-a">%s</div></header>''') % (ICON(I['back'], 15, 2), ic('course', 26, 1.8), ic('badge', 12, 2.2), right)
+URL = 'credalio.com/c/data-analysis-with-sql'
+def lrow(t, d, url, cls=''):
+    return ('<div class="sl %s"><span class="sl-i">%s</span><div class="sl-b"><b>%s</b><em>%s</em><div class="sl-u"><span class="sl-v">%s<span>%s</span></span>'
+            '<button type="button" class="ds-ghost sm sl-c">%s<span>Copy</span></button></div></div></div>') % (cls, ic('link', 18, 2), t, d, ic('globe', 14, 2), url, ic('copy', 15, 2))
+CH = [('in', 'LinkedIn'), ('x', 'X'), ('wa', 'WhatsApp'), ('em', 'Email')]
+POST = 'I’ve just published "Data Analysis with SQL" on Credalio, independently validated Gold. If you want to go from your first SQL query to a finished business analysis, this is for you: credalio.com/c/data-analysis-with-sql'
+P('share', 'My Creations',
+  live_head('<a class="ds-ghost sm" href="STU-067.dc.html">%s<span>Back to Overview</span></a><a class="ds-link mg-go" href="MGT-001.dc.html">Go to Manage%s</a>' % (ICON(I['back'], 15, 2), ic('arrowr', 14, 2.2))) +
+  '''<section class="sh8 ob-in2"><div class="sh8-h"><span class="sh8-k">Live · Share &amp; promote</span><h2>Share your course</h2><p>Your first learners usually come from your own network.</p></div>
+<div class="sh8-g"><section class="ds-card sh8-l">%s%s</section>
+<section class="ds-card sh8-p"><div class="sh8-ph">%s<span><b>Suggested post</b><em>Drafted by Nova · edit freely</em></span></div>
+<textarea class="ds-in sh8-t" rows="4" aria-label="Suggested post">%s</textarea>
+<div class="sh8-pr"><a class="sh8-lp" href="STU-PRV.dc.html"><span class="sh8-cv"><i>SQL</i><span class="gb">%s<span>Gold</span></span></span><span class="sh8-lt"><em>credalio.com</em><b>Data Analysis with SQL</b><span>Write SQL to answer real business questions, from first query to a finished analysis.</span></span></a>
+<div class="sh8-po"><span class="fl-l">Post it</span><div class="sh8-ch">%s</div></div></div></section></div></section>''' % (
+      lrow('Course link', 'Public marketplace page', URL), lrow('Referral link', 'Tracks learners you bring in [TO CONFIRM referral programme]', URL + '?ref=ada', 'rf'),
+      nova_av(), POST, ic('badge', 11, 2.2),
+      ''.join('<button type="button" class="sh8-b %s"><span class="sh8-bi">%s</span><span>%s</span></button>' % (k, ic('send', 15, 2) if k == 'em' else '<i>%s</i>' % {'in': 'in', 'x': 'X', 'wa': 'W'}[k], l) for k, l in CH)))
+
+KPI = [('Learners', '0', 'users', ''), ('Marketplace views', '14', 'eye', 'up'), ('Questions', '0', 'chat', ''), ('Earnings', '0', 'earn', '')]
+FIRST = [(False, 'Share the course link with your network', 'Share', 'STU-066.dc.html'), (False, 'Post in communities where your learners are', 'Get post', 'STU-066.dc.html'),
+         (True, 'Your creator profile lists this course', '', ''), (True, 'Course discussion is open for early learners', '', '')]
+SOON = [('analytics', 'Learner progress'), ('target', 'Outcome performance'), ('quiz', 'Assessment analytics'), ('support', 'Questions and support'), ('chat', 'Reviews'), ('earn', 'Earnings'), ('valid', 'Content health')]
+P('first', 'My Creations',
+  live_head('<a class="ds-ghost sm" href="STU-PRV.dc.html">Preview as Learner</a><a class="ds-ghost sm" href="MGT-001.dc.html">Manage</a>%s' % btn('Share Course', 'STU-066.dc.html', 'sm2')) +
+  '''<section class="ds-card fl8 ob-in2"><div class="fl8-v" aria-hidden="true"><span class="fl8-r"></span><span class="fl8-r b"></span><span class="fl8-r c"></span><span class="fl8-o">%s</span><i class="fl8-d d1"></i><i class="fl8-d d2"></i><i class="fl8-d d3"></i></div>
+<div class="fl8-b"><span class="fl8-k">Live · Data Analysis with SQL</span><h2>Your course is live. We’re waiting for your first learner.</h2><p>Most courses get their first learner from the creator’s own network. Sharing now is the fastest way to start.</p></div>
+<div class="fl8-s">%s</div></section>
+<div class="fl8-g ob-in3"><section class="ds-card fc fl8-c"><div class="fc-h"><div><h2>Get your first learners</h2></div><span class="fl8-n">2 of 4 done</span></div><ol class="fl8-l">%s</ol></section>
+<section class="ds-card fc fl8-w"><div class="fc-h"><div><h2>What you’ll see here</h2></div></div><p>Once learners join, this space fills with learner progress, outcome performance, assessment analytics, questions and support, reviews, earnings and content health.</p><div class="fl8-t" aria-hidden="true">%s</div></section></div>''' % (
+      ic('users', 26, 1.8),
+      ''.join('<div class="fl8-k2 %s" style="--i: %d"><span class="fl8-ki">%s</span><b>%s</b><em>%s</em></div>' % (k, i, ic(icn, 16, 2), v, l) for i, (l, v, icn, k) in enumerate(KPI)),
+      ''.join('<li class="%s" style="--i: %d"><span class="fl8-li">%s</span><span class="fl8-lt">%s</span>%s</li>' % (
+          'ok' if ok else '', i, ck(11) if ok else '', t, ('<a class="ds-ghost xs" href="%s">%s</a>' % (h, a)) if a else '') for i, (ok, t, a, h) in enumerate(FIRST)),
+      ''.join('<span style="--i: %d">%s<em></em></span>' % (i, ic(icn, 15, 2)) for i, (icn, l) in enumerate(SOON))))
+
+
 def manage_body():
     blocks = []
     for key, active, body in PAGES:
@@ -223,7 +264,7 @@ def manage_body():
 </main>
 </div>
 </div>''' % (cr_side('My Creations'), CR_TOP, '\n'.join(blocks))
-TONE = {'b': 'ok', 'c': 'ok', 'e': 'rd', 'f': 'am', 'g': 'rd', 'notice': 'rd', 'd': 'gy', 'ds-ov': 'gy'}
+TONE = {'b': 'ok', 'c': 'ok', 'e': 'rd', 'f': 'am', 'g': 'rd', 'notice': 'rd', 'd': 'gy', 'ds-ov': 'gy', 'first': 'ok'}
 MANAGE_JS = W.js() + '''var PG = %s, TONE = %s;
 class Component extends DCLogic {
   renderVals() {
@@ -963,7 +1004,7 @@ LEARN_CSS = SHARED + r'''body{background:#F7F9FD}
 }
 '''
 
-write('Manage.dc.html', doc('Manage Published Course · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + WK_CSS + MANAGE_CSS, manage_body(), MANAGE_JS))
+write('Manage.dc.html', doc('Manage Published Course · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + WK_CSS + MANAGE_CSS + open(os.path.join(HERE, 'stu14m.css')).read(), manage_body(), MANAGE_JS))
 write('Unpublish.dc.html', doc('Unpublish course · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + UN_CSS, un_body(), UN_JS))
 write('Learner.dc.html', doc('Learner app · My Learning · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + WK_CSS + LEARN_CSS, LEARN,
                              'class Component extends DCLogic {\n  renderVals() { return {}; }\n}'))
@@ -986,6 +1027,8 @@ BOARDS = [
     ('MGT-003D', 'Unpublish', {'step': 'done'}, 'CR-COURSE-MGT-003D · Unpublish — Success'),
     ('MGT-003E', 'Unpublish', {'step': 'blocked'}, 'CR-COURSE-MGT-003E · Unpublish — Restricted / Approval Required'),
     ('MGT-DS-OV', 'Manage', {'page': 'ds-ov'}, 'Downstream · Course Overview — Unpublished state'),
+    ('STU-066', 'Manage', {'page': 'share'}, 'CR-STU-066 · Share &amp; promote'),
+    ('STU-067', 'Manage', {'page': 'first'}, 'CR-STU-067 · First learner state'),
     ('MGT-DS-CR', 'Manage', {'page': 'ds-cr'}, 'Downstream · My Creations — Unpublished card state'),
     ('MGT-DS-ML', 'Learner', {}, 'Downstream · My Learning — learner access states (learner app)'),
 ]

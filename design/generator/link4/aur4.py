@@ -10,7 +10,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, '..', 'landing3'))
 from kit import AURORA_JS  # noqa: E402
 
-DARK = ['oph', 'opv-c', 'lc-hero', 'pn', 'cpv-h', 'lv-hero', 'hm-next', 'pv-cv', 'lv-cv', 'lc2-cv', 'lc-bv', 'lpv']
+DARK = ['oph', 'opv-c', 'lc-hero', 'pn', 'cpv-h', 'lv-hero', 'hm-next', 'pv-cv', 'lv-cv', 'lc2-cv', 'lc-bv', 'lpv', 'sh8-cv']
 GLOW = ['oph', 'opv-c', 'lc-hero', 'cpv-h', 'lv-hero']  # their old ::after glow sits on top of the aurora
 BASE = ('.aur{position:relative;isolation:isolate;overflow:hidden}\n'
         '.aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}\n')

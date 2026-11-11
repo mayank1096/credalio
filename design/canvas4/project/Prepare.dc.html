@@ -592,6 +592,9 @@ a{color:#1652F0}
 .lvt button{white-space:nowrap;padding:0 10px;font-size:13px}
 .is-sv .sv-s{display:flex;justify-content:center;font-size:13px}
 }
+.aur{position:relative;isolation:isolate;overflow:hidden}
+.aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
+.lv-hero.aur::after{display:none}
 </style>
 </helmet>
 <div class="ds-root">
@@ -667,10 +670,10 @@ a{color:#1652F0}
 <sc-if value="{{p_review}}" hint-placeholder-val="{{ true }}">
 <header class="pg-h ob-in"><div class="pg-hl"><span class="pg-e">Prepare</span><h1 class="ds-h1">Course Review</h1><p class="ds-sub">Experience the course exactly as a learner will, or switch to Creator View to see the structure behind it.</p></div><div class="pg-hr"><div class="ds-seg lvt"><button type="button" class="{{cLv}}" onClick="{{showLearner}}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg><span>Learner Preview</span></button><button type="button" class="{{cCv}}" onClick="{{showCreator}}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"></path><path d="m3 13 9 5 9-5"></path></svg><span>Creator View</span></button></div></div></header><div class="wk"><div class="wk-m"><sc-if value="{{isLearner}}" hint-placeholder-val="{{ true }}"><section class="ds-card lv ob-in2" aria-label="Learner Preview">
 <div class="lv-bar"><span class="lv-dots"><i></i><i></i><i></i></span><span class="lv-url">credalio.com · course</span><a class="lv-full" href="STU-PRV.dc.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg><span>Preview as Learner</span></a></div>
-<div class="lv-hero">
+<div class="lv-hero aur">
 <div class="lv-hl"><span class="lv-k">Technology · Data Analytics · Intermediate</span><h2>Data Analysis with SQL</h2><p>Write SQL to answer real business questions, from first query to a finished analysis.</p>
 <span class="lv-by"><span class="avs"><span class="av" style="width: 26px; height: 26px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><span class="av" style="width: 26px; height: 26px">JA<img src="/_blob/cbfe3f2bbb89728d8777e425b59db736" alt=""></span><span class="av org" style="width: 26px; height: 26px">AB</span></span><span>By Ada Ononuju with Dr. John Adeyemi, ABC Institute · 8h 5m · Hybrid</span></span></div>
-<span class="lv-cv" aria-hidden="true"><i>SQL</i><em></em><em></em><em></em></span>
+<span class="lv-cv aur" aria-hidden="true"><i>SQL</i><em></em><em></em><em></em></span>
 </div>
 <div class="lv-ph"><span class="lv-p"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m8.5 13.8-1.5 7.2 5-3 5 3-1.5-7.2"></path></svg><span>Validation tier appears here after validation</span></span><span class="lv-p"><span class="dlp-c" aria-hidden="true"></span><span>DLP / Lifetime Credits access set at publication</span></span><span class="lv-p ok"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M7 9h10M7 12h6"></path><path d="m14 17 1 4 2-1.2L19 21l1-4"></path></svg><span>Credential: Course Completion Certificate</span></span></div>
 <div class="lv-g">
@@ -687,7 +690,7 @@ a{color:#1652F0}
 </sc-if>
 <sc-if value="{{p_market}}" hint-placeholder-val="{{ false }}">
 <header class="pg-h ob-in"><div class="pg-hl"><span class="pg-e">Prepare</span><h1 class="ds-h1">Marketplace Preview</h1><p class="ds-sub">How your course will appear to learners browsing Credalio. Dashed items fill in after validation and publication.</p></div></header><nav class="mst" aria-label="Prepare"><a href="STU-040.dc.html" class="mst-i"><span class="mst-n">1</span><span>Learner Preview</span></a><a href="STU-040M.dc.html" class="mst-i on" aria-current="page"><span class="mst-n">2</span><span>Marketplace Preview</span></a><a href="STU-041.dc.html" class="mst-i"><span class="mst-n">3</span><span>Intelligence Profile</span></a><a href="STU-042.dc.html" class="mst-i"><span class="mst-n">4</span><span>Nova Review</span></a><a href="STU-043.dc.html" class="mst-i"><span class="mst-n">5</span><span>Validation Readiness</span></a></nav><div class="wk"><div class="wk-m"><section class="ds-card mk ob-in2"><div class="mk-h"><span class="rx-k">In search &amp; browse</span><span class="ds-tag amber">Pending validation</span></div>
-<div class="mk-row"><div class="mk-g" aria-hidden="true"><span class="mk-gc"></span><span class="mk-gl"></span><span class="mk-gl s"></span><span class="mk-gl t"></span></div><article class="pv-c mk-c"><span class="pv-cv"><i>SQL</i><em></em><em></em><em></em></span>
+<div class="mk-row"><div class="mk-g" aria-hidden="true"><span class="mk-gc"></span><span class="mk-gl"></span><span class="mk-gl s"></span><span class="mk-gl t"></span></div><article class="pv-c mk-c"><span class="pv-cv aur"><i>SQL</i><em></em><em></em><em></em></span>
 <span class="mk-k">Data Analytics · Intermediate · Hybrid</span><b>Data Analysis with SQL</b><p class="mk-by"><span class="avs"><span class="av" style="width: 22px; height: 22px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><span class="av" style="width: 22px; height: 22px">JA<img src="/_blob/cbfe3f2bbb89728d8777e425b59db736" alt=""></span><span class="av org" style="width: 22px; height: 22px">AB</span></span><span>By Ada Ononuju, Dr. John Adeyemi, ABC Institute</span></p>
 <span class="pv-sk"><i>SQL</i><i>Data Analysis</i><i>Data Cleaning</i><i>+1</i></span>
 <span class="mk-f"><span class="mk-d">CEI · after validation</span><span class="mk-d"><span class="dlp-c" aria-hidden="true"></span>DLP · Credits at publication</span></span></article><div class="mk-g" aria-hidden="true"><span class="mk-gc"></span><span class="mk-gl"></span><span class="mk-gl s"></span><span class="mk-gl t"></span></div></div></section>
@@ -739,7 +742,113 @@ function togVals(self) {
 }
 var NAV = {"review": "lprev", "market": "mprev", "profile": "lip", "nova": "nrev", "ready": "ready", "issues": "ready"};
 class Component extends DCLogic {
-  componentDidMount() {
+auroraMount(el) {
+    var host = window;
+    try { if (window.top && window.top.document) host = window.top; } catch (e) { host = window; }
+    var R = host.__credAurora;
+    if (!R) {
+      R = host.__credAurora = { items: [], raf: 0, last: 0, cur: 0 };
+      var gc = host.document.createElement('canvas');
+      var gl = gc.getContext('webgl', { premultipliedAlpha: false, antialias: false, preserveDrawingBuffer: true, powerPreference: 'low-power' });
+      R.gl = gl; R.gc = gc;
+      if (gl) {
+        var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+        var fs = [
+          'precision mediump float;uniform vec2 R;uniform float T;uniform float L;uniform vec3 A;uniform vec3 B;uniform vec3 C;uniform vec3 G0;uniform vec3 G1;',
+          'float hp(float s,float k,float b){return fract(sin(s*k)*b)*6.2831853;}',
+          'float h3(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}',
+          'float vn(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);',
+          'float a=mix(mix(h3(i),h3(i+vec3(1,0,0)),f.x),mix(h3(i+vec3(0,1,0)),h3(i+vec3(1,1,0)),f.x),f.y);',
+          'float b=mix(mix(h3(i+vec3(0,0,1)),h3(i+vec3(1,0,1)),f.x),mix(h3(i+vec3(0,1,1)),h3(i+vec3(1,1,1)),f.x),f.y);',
+          'return mix(a,b,f.z)*2.-1.;}',
+          'void main(){vec2 uv=gl_FragCoord.xy/R;float asp=R.x/max(R.y,1.);',
+          'float wav=.6,ray=.25,H=1.1,ins=1.12,bal=mix(2.5,.4,.5),cx=.62,cy=.18;',
+          'float ws=0.,tot=0.;',
+          'for(int i=0;i<4;i++){float fi=float(i);',
+          'float to=fi==0.?0.:fi==1.?3.1:fi==2.?6.7:9.4;float w=fi==0.?1.:fi==1.?.65:fi==2.?.45:.3;',
+          'float ts=T*.06+to;float ls=fi*31.7;float wx=(uv.x-cx)*asp*2.;',
+          'float arc=.15*sin(wx*.7+ts*.4+hp(ls,12.9,4758.5))+.08*sin(wx*1.6+ts*.65+hp(ls,78.2,2847.1))+.04*sin(wx*2.9+ts*.3+hp(ls,41.6,1593.7));',
+          'float nw=vn(vec3(wx*.5,ts*.25,ls*.1));float py=cy+arc*wav+nw*.14*wav;',
+          'float rays=pow(sin((wx+nw*2.5)*mix(6.,20.,ray)*.15+ts*.1+hp(ls,53.7,3847.2))*.5+.5,1.5);',
+          'float lh=H*mix(.4,1.,rays);float d=uv.y-py;float top=lh*(rays*.4+.6);',
+          'float env=smoothstep(-.04,.015,d)*(1.-smoothstep(0.,top,d));',
+          'float ct=clamp(d/(top+.001),0.,1.);float sb=mix(.4,1.,nw*.5+.5);float cd=ct-.2;float cb=exp(cd*cd*-6.)*.3+1.;',
+          'float al=env*rays*sb*cb*w;ws+=ct*al;tot+=al;}',
+          'float av=pow(ws/(tot+.001),bal);vec3 col=mix(mix(A,B,smoothstep(0.,.2,av)),C,smoothstep(.4,.85,av));',
+          'float br=tot*ins;vec3 glow=clamp(col*br,0.,1.);',
+          'vec3 base=mix(G0,G1,smoothstep(0.,1.,uv.y*.7+(1.-uv.x)*.3));',
+          'gl_FragColor=L>.5?vec4(mix(base,col,clamp(br*.42,0.,.62)),1.):vec4(base*(1.-clamp(br*.5,0.,1.)*.35)+glow,1.);}'
+        ].join('');
+        var mk = function (t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
+        var pr = gl.createProgram();
+        gl.attachShader(pr, mk(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, mk(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr);
+        if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { R.gl = null; } else {
+          gl.useProgram(pr);
+          var bf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, bf);
+          gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+          var lp = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
+          var u = function (n) { return gl.getUniformLocation(pr, n); };
+          var hex = function (h) { return [parseInt(h.substr(1, 2), 16) / 255, parseInt(h.substr(3, 2), 16) / 255, parseInt(h.substr(5, 2), 16) / 255]; };
+          R.pal = { dark: [hex('#0E3BB8'), hex('#2E63FF'), hex('#9DB8F7'), hex('#050A20'), hex('#0B1A4D'), 0], light: [hex('#B9CCFF'), hex('#7FA4FF'), hex('#4F80FF'), hex('#F6F9FF'), hex('#E4ECFF'), 1] };
+          R.u = { A: u('A'), B: u('B'), C: u('C'), G0: u('G0'), G1: u('G1'), L: u('L') };
+          R.uR = u('R'); R.uT = u('T');
+        }
+      }
+      R.still = !!(host.matchMedia && host.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      R.t0 = host.performance.now();
+      R.paint = function (it, now) {
+        var g = R.gl, w = it.cv.width, h = it.cv.height;
+        if (R.gc.width !== w || R.gc.height !== h) { R.gc.width = w; R.gc.height = h; }
+        var pl = R.pal[it.light ? 'light' : 'dark']; g.uniform3fv(R.u.A, pl[0]); g.uniform3fv(R.u.B, pl[1]); g.uniform3fv(R.u.C, pl[2]); g.uniform3fv(R.u.G0, pl[3]); g.uniform3fv(R.u.G1, pl[4]); g.uniform1f(R.u.L, pl[5]);
+        g.viewport(0, 0, w, h); g.uniform2f(R.uR, w, h); g.uniform1f(R.uT, it.seed + (R.still ? 0 : (now - R.t0) / 1000));
+        g.drawArrays(g.TRIANGLE_STRIP, 0, 4);
+        it.ctx.drawImage(R.gc, 0, 0);
+      };
+      R.size = function (it) {
+        var cw = it.el.clientWidth, ch = it.el.clientHeight;
+        if (!cw || !ch) return false;
+        var s = Math.min(0.4, 320 / cw), w = Math.max(16, Math.round(cw * s)), h = Math.max(16, Math.round(ch * s));
+        if (it.cv.width !== w || it.cv.height !== h) { it.cv.width = w; it.cv.height = h; it.fresh = true; }
+        return true;
+      };
+      R.tick = function (now) {
+        R.raf = 0;
+        if (now - R.last > 33) {
+          R.last = now;
+          R.items = R.items.filter(function (it) { return it.el.isConnected; });
+          var n = R.items.length, st = host.performance.now();
+          for (var k = 0; k < n; k++) {
+            var it = R.items[(R.cur + k) % n];
+            if ((it.vis || it.fresh) && R.size(it)) { R.paint(it, now); it.fresh = false; }
+            if (host.performance.now() - st > 6) { R.cur = (R.cur + k + 1) % n; break; }
+          }
+        }
+        if (!R.still && R.items.some(function (it) { return it.vis; })) R.raf = host.requestAnimationFrame(R.tick);
+      };
+      R.wake = function () { if (!R.raf) R.raf = host.requestAnimationFrame(R.tick); };
+    }
+    if (!R.gl) { el.classList.add(el.classList.contains('aur-lt') ? 'aur-off-lt' : 'aur-off'); return function () {}; }
+    var cv = el.ownerDocument.createElement('canvas');
+    cv.className = 'aur-c';
+    cv.setAttribute('aria-hidden', 'true');
+    el.insertBefore(cv, el.firstChild);
+    el.__aurC = cv;
+    var it = { el: el, cv: cv, ctx: cv.getContext('2d'), seed: Math.random() * 40, vis: true, fresh: true, light: el.classList.contains('aur-lt') };
+    R.items.push(it);
+    var view = el.ownerDocument.defaultView || window;
+    var io = view.IntersectionObserver ? new view.IntersectionObserver(function (e) { it.vis = e[0].isIntersecting; if (it.vis) R.wake(); }) : null;
+    if (io) io.observe(el);
+    R.wake();
+    return function () { if (io) io.disconnect(); R.items = R.items.filter(function (x) { return x !== it; }); };
+  }
+  aurScan() {
+    var self = this, q = 0;
+    var go = function () { q = 0; document.querySelectorAll('.aur').forEach(function (el) { if (!el.__aurC || el.__aurC.parentNode !== el) { if (el.__aur) el.__aur(); el.__aur = self.auroraMount(el); } }); };
+    go();
+    if (!this._aurMo && window.MutationObserver) { this._aurMo = new MutationObserver(function () { if (!q) q = requestAnimationFrame(go); }); this._aurMo.observe(document.body, { childList: true, subtree: true }); }
+  }
+
+  componentDidMount() { this.aurScan();
     try { var m = document.querySelector('.mst .on'); if (m && m.parentElement) { m.parentElement.scrollLeft = m.offsetLeft - 16; } } catch (e) {}
   }
   renderVals() {

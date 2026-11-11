@@ -313,6 +313,7 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .cov-t{flex:1;min-width:0;display:flex;flex-direction:column}
 .cov-t b{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cov-t span{font-size:12.5px;color:#5B6582}
+.ds-chip.add{border-style:dashed;color:#3A4566}
 .ds-x.sm{width:36px;height:36px;border-color:transparent;color:#5B6582}
 .ds-x.sm:hover{border-color:#D6DDEE;color:#0B1433}
 .ds-ghost.sm{height:40px;padding:0 16px;font-size:14px}
@@ -757,6 +758,8 @@ textarea.ds-in.lo-in{font-size:15px}
 .ds-opt.as:not(.awc) .as-i{width:36px;height:36px;border-radius:11px}
 .ds-opt.as:not(.awc) .o-t b{font-size:14.5px}
 }
+.aur{position:relative;isolation:isolate;overflow:hidden}
+.aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
 </style>
 </helmet>
 <div class="ds-root">
@@ -846,7 +849,7 @@ textarea.ds-in.lo-in{font-size:15px}
 </header>
 <main class="ds-main">
 <sc-if value="{{p_home}}" hint-placeholder-val="{{ true }}">
-<header class="pg-h ob-in"><div class="pg-hl"><span class="pg-e">Studio Home</span><h1 class="ds-h1">Data Analysis with SQL</h1><p class="ds-sub">Course · Hybrid · Draft</p></div></header><section class="hm-next ob-in2" aria-label="Recommended next step">
+<header class="pg-h ob-in"><div class="pg-hl"><span class="pg-e">Studio Home</span><h1 class="ds-h1">Data Analysis with SQL</h1><p class="ds-sub">Course · Hybrid · Draft</p></div></header><section class="hm-next ob-in2 aur" aria-label="Recommended next step">
 <div class="hm-nl"><span class="pg-e">Recommended next step</span><h2>Define who this course is for and where it leads</h2><p>Set the career role, stage and relevance for the Become Engine.</p>
 <div class="hm-seg" role="img" aria-label="Course Design: 4 of 9 sections complete"><i class="dn"></i><i class="dn"></i><i class="dn"></i><i class="dn"></i><i class="nx"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><span class="hm-sl">4 of 9 sections complete</span></div>
 <div class="hm-na"><a class="ds-btn wh" href="STU-012.dc.html"><span>Continue Building</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><span class="hm-pk">Picks up where you left off.</span></div></div>
@@ -860,7 +863,7 @@ textarea.ds-in.lo-in{font-size:15px}
 <div class="fg">
 <div class="fl"><span class="fl-l">Course title</span><div class="in-ai"><input class="ds-in lg" value="Data Analysis with SQL" aria-label="Course title"><button type="button" class="nv-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg><span>Improve title</span></button></div></div>
 <div class="fl"><span class="fl-l">Short description (marketplace card)</span><input class="ds-in" value="Write SQL to answer real business questions, from first query to a finished analysis." aria-label="Short description (marketplace card)"><span class="fl-f"><span class="in-help"><button type="button" class="nv-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg><span>Generate suggestion</span></button></span><span class="cnt">85 / 140</span></span></div>
-<div class="fg fg2 cv2"><div class="fl"><span class="fl-l">Course cover</span><div class="cov"><span class="cov-i" aria-hidden="true">SQL</span><span class="cov-t"><b>sql-course-cover.png</b></span><a class="ds-link" href="#">Replace</a></div></div><div class="fl"><span class="fl-l">Skills</span><div class="chips"><button type="button" class="ds-chip {{ct1}}" aria-pressed="{{at1}}" onClick="{{xt1}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>SQL</span></button><button type="button" class="ds-chip {{ct2}}" aria-pressed="{{at2}}" onClick="{{xt2}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Data Cleaning</span></button><button type="button" class="ds-chip {{ct3}}" aria-pressed="{{at3}}" onClick="{{xt3}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Data Analysis</span></button><button type="button" class="ds-chip {{ct4}}" aria-pressed="{{at4}}" onClick="{{xt4}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Relational Databases</span></button></div><span class="in-help"><button type="button" class="nv-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg><span>Suggest skills from description</span></button></span></div></div>
+<div class="fg fg2 cv2"><div class="fl"><span class="fl-l">Course cover</span><div class="cov"><span class="cov-i aur" aria-hidden="true">SQL</span><span class="cov-t"><b>sql-course-cover.png</b></span><a class="ds-link" href="#">Replace</a></div></div><div class="fl"><span class="fl-l">Skills</span><div class="chips"><button type="button" class="ds-chip {{ct1}}" aria-pressed="{{at1}}" onClick="{{xt1}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>SQL</span></button><button type="button" class="ds-chip {{ct2}}" aria-pressed="{{at2}}" onClick="{{xt2}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Data Cleaning</span></button><button type="button" class="ds-chip {{ct3}}" aria-pressed="{{at3}}" onClick="{{xt3}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Data Analysis</span></button><button type="button" class="ds-chip {{ct4}}" aria-pressed="{{at4}}" onClick="{{xt4}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Relational Databases</span></button></div><span class="in-help"><button type="button" class="nv-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg><span>Suggest skills from description</span></button></span></div></div>
 <div class="fl"><span class="fl-l">Full description</span><textarea class="ds-in" aria-label="Full description">A hybrid course for career changers and analysts. Learn SQL step by step, practise on realistic business data, join a live analysis clinic and finish with a portfolio project.</textarea><span class="in-help"><button type="button" class="nv-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg><span>Help me write this</span></button></span></div>
 <div class="fg fg2 keep"><div class="fl"><span class="fl-l">Primary category</span><label class="sel"><span class="sr-only">Primary category</span><select class="ds-in"><option>Technology</option></select><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></label></div><div class="fl"><span class="fl-l">Topic</span><label class="sel"><span class="sr-only">Topic</span><select class="ds-in"><option>Data Analytics</option></select><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></label></div><div class="fl"><span class="fl-l">Subtopic</span><label class="sel"><span class="sr-only">Subtopic</span><select class="ds-in"><option>SQL</option></select><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></label></div><div class="fl"><span class="fl-l">Language</span><label class="sel"><span class="sr-only">Language</span><select class="ds-in"><option>English</option></select><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></label></div></div>
 </div>
@@ -871,7 +874,7 @@ textarea.ds-in.lo-in{font-size:15px}
 <div class="qz"><span class="qz-n">1</span><div class="qz-b"><b>Does this course require learners to use external software?</b><div class="ds-seg"><button type="button" class="{{ct5}}" aria-pressed="{{at5}}" onClick="{{xt5}}">Yes</button><button type="button" class="{{ct6}}" aria-pressed="{{at6}}" onClick="{{xt6}}">No</button></div><span class="fl-sub">Which?</span><div class="chips"><button type="button" class="ds-chip sm {{ct7}}" aria-pressed="{{at7}}" onClick="{{xt7}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>SQL Server</span></button><button type="button" class="ds-chip sm {{ct8}}" aria-pressed="{{at8}}" onClick="{{xt8}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>MySQL</span></button><button type="button" class="ds-chip sm {{ct9}}" aria-pressed="{{at9}}" onClick="{{xt9}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>PostgreSQL</span></button><button type="button" class="ds-chip sm {{ct10}}" aria-pressed="{{at10}}" onClick="{{xt10}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Other</span></button></div></div></div><div class="qz"><span class="qz-n">2</span><div class="qz-b"><b>Will learners work with real or simulated data?</b><div class="ds-seg"><button type="button" class="{{ct11}}" aria-pressed="{{at11}}" onClick="{{xt11}}">Real</button><button type="button" class="{{ct12}}" aria-pressed="{{at12}}" onClick="{{xt12}}">Simulated</button><button type="button" class="{{ct13}}" aria-pressed="{{at13}}" onClick="{{xt13}}">Both</button><button type="button" class="{{ct14}}" aria-pressed="{{at14}}" onClick="{{xt14}}">Neither</button></div></div></div><div class="qz"><span class="qz-n">3</span><div class="qz-b"><b>Does this course involve AI?</b><div class="chips"><button type="button" class="ds-chip {{ct15}}" aria-pressed="{{at15}}" onClick="{{xt15}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>No</span></button><button type="button" class="ds-chip {{ct16}}" aria-pressed="{{at16}}" onClick="{{xt16}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Learners use AI tools</span></button><button type="button" class="ds-chip {{ct17}}" aria-pressed="{{at17}}" onClick="{{xt17}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>AI is taught as a subject</span></button><button type="button" class="ds-chip {{ct18}}" aria-pressed="{{at18}}" onClick="{{xt18}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>AI-generated outputs are assessed</span></button><button type="button" class="ds-chip {{ct19}}" aria-pressed="{{at19}}" onClick="{{xt19}}"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg><span>Other</span></button></div></div></div>
 </div>
 </section></div><div class="ds-acts sb sv wk-a"><span class="sv-s"></span><span class="sv-r"><a class="ds-btn" href="STU-011.dc.html"><span>Save & continue</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a></span></div><aside class="wk-r"><section class="rn nova-card"><header class="rn-h"><span class="nv-av" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span><span><b>Nova</b><em>Creator Copilot · Data Analysis with SQL</em></span></header><p>I’ll help with wording. You approve every change.</p><div class="rn-a"><button type="button" class="nv-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg><span>Improve title</span></button><button type="button" class="nv-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z"></path></svg><span>Suggest skills</span></button></div><footer><b>Nova</b> proposes. You approve every change.</footer></section><section class="ds-card rx pv"><span class="rx-k">Short description (marketplace card)</span>
-<div class="pv-c"><span class="pv-cv"><i>SQL</i><em></em><em></em><em></em></span><span class="pv-tg"><span class="ds-tag line">Course</span><span class="ds-tag line">Hybrid</span></span><b>Data Analysis with SQL</b><p>Write SQL to answer real business questions, from first query to a finished analysis.</p><span class="pv-sk"><i>SQL</i><i>Data Cleaning</i><i>Data Analysis</i><i>Relational Databases</i></span></div></section></aside></div>
+<div class="pv-c"><span class="pv-cv aur"><i>SQL</i><em></em><em></em><em></em></span><span class="pv-tg"><span class="ds-tag line">Course</span><span class="ds-tag line">Hybrid</span></span><b>Data Analysis with SQL</b><p>Write SQL to answer real business questions, from first query to a finished analysis.</p><span class="pv-sk"><i>SQL</i><i>Data Cleaning</i><i>Data Analysis</i><i>Relational Databases</i></span></div></section></aside></div>
 </sc-if>
 <sc-if value="{{p_audience}}" hint-placeholder-val="{{ false }}">
 <header class="pg-h ob-in"><div class="pg-hl"><span class="pg-e">Design</span><h1 class="ds-h1">Audience & Prerequisites</h1><p class="ds-sub">Who is this for, and what should they already know? Credalio stores this in a form it can match against learners.</p></div></header><nav class="mst" aria-label="Design sections"><a href="STU-010.dc.html" class="mst-i"><span class="st ok" aria-label="Done"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>Basics</span></a><a href="STU-011.dc.html" class="mst-i on" aria-current="page"><span class="st ok" aria-label="Done"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span>Audience & Prerequisites</span></a><a href="STU-012.dc.html" class="mst-i"><span class="st pr" aria-label="In progress"></span><span>Career & Skills</span></a><a href="STU-014.dc.html" class="mst-i"><span class="st pr" aria-label="In progress"></span><span>Learning Outcomes</span></a><a href="STU-017.dc.html" class="mst-i"><span class="st to"></span><span>Learning Design</span></a></nav><div class="wk"><div class="wk-m"><section class="ds-card fc ob-in2">
@@ -995,7 +998,113 @@ function togVals(self) {
 }
 var NAV = {"home": "home", "basics": "basics", "audience": "audience", "career": "career", "careercert": "career", "skills": "career", "outcomes": "outcomes", "skillmap": "outcomes", "evidence": "outcomes", "design": "design", "effort": "design", "summary": "design"};
 class Component extends DCLogic {
-  componentDidMount() {
+auroraMount(el) {
+    var host = window;
+    try { if (window.top && window.top.document) host = window.top; } catch (e) { host = window; }
+    var R = host.__credAurora;
+    if (!R) {
+      R = host.__credAurora = { items: [], raf: 0, last: 0, cur: 0 };
+      var gc = host.document.createElement('canvas');
+      var gl = gc.getContext('webgl', { premultipliedAlpha: false, antialias: false, preserveDrawingBuffer: true, powerPreference: 'low-power' });
+      R.gl = gl; R.gc = gc;
+      if (gl) {
+        var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+        var fs = [
+          'precision mediump float;uniform vec2 R;uniform float T;uniform float L;uniform vec3 A;uniform vec3 B;uniform vec3 C;uniform vec3 G0;uniform vec3 G1;',
+          'float hp(float s,float k,float b){return fract(sin(s*k)*b)*6.2831853;}',
+          'float h3(vec3 p){return fract(sin(dot(p,vec3(127.1,311.7,74.7)))*43758.5453);}',
+          'float vn(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);',
+          'float a=mix(mix(h3(i),h3(i+vec3(1,0,0)),f.x),mix(h3(i+vec3(0,1,0)),h3(i+vec3(1,1,0)),f.x),f.y);',
+          'float b=mix(mix(h3(i+vec3(0,0,1)),h3(i+vec3(1,0,1)),f.x),mix(h3(i+vec3(0,1,1)),h3(i+vec3(1,1,1)),f.x),f.y);',
+          'return mix(a,b,f.z)*2.-1.;}',
+          'void main(){vec2 uv=gl_FragCoord.xy/R;float asp=R.x/max(R.y,1.);',
+          'float wav=.6,ray=.25,H=1.1,ins=1.12,bal=mix(2.5,.4,.5),cx=.62,cy=.18;',
+          'float ws=0.,tot=0.;',
+          'for(int i=0;i<4;i++){float fi=float(i);',
+          'float to=fi==0.?0.:fi==1.?3.1:fi==2.?6.7:9.4;float w=fi==0.?1.:fi==1.?.65:fi==2.?.45:.3;',
+          'float ts=T*.06+to;float ls=fi*31.7;float wx=(uv.x-cx)*asp*2.;',
+          'float arc=.15*sin(wx*.7+ts*.4+hp(ls,12.9,4758.5))+.08*sin(wx*1.6+ts*.65+hp(ls,78.2,2847.1))+.04*sin(wx*2.9+ts*.3+hp(ls,41.6,1593.7));',
+          'float nw=vn(vec3(wx*.5,ts*.25,ls*.1));float py=cy+arc*wav+nw*.14*wav;',
+          'float rays=pow(sin((wx+nw*2.5)*mix(6.,20.,ray)*.15+ts*.1+hp(ls,53.7,3847.2))*.5+.5,1.5);',
+          'float lh=H*mix(.4,1.,rays);float d=uv.y-py;float top=lh*(rays*.4+.6);',
+          'float env=smoothstep(-.04,.015,d)*(1.-smoothstep(0.,top,d));',
+          'float ct=clamp(d/(top+.001),0.,1.);float sb=mix(.4,1.,nw*.5+.5);float cd=ct-.2;float cb=exp(cd*cd*-6.)*.3+1.;',
+          'float al=env*rays*sb*cb*w;ws+=ct*al;tot+=al;}',
+          'float av=pow(ws/(tot+.001),bal);vec3 col=mix(mix(A,B,smoothstep(0.,.2,av)),C,smoothstep(.4,.85,av));',
+          'float br=tot*ins;vec3 glow=clamp(col*br,0.,1.);',
+          'vec3 base=mix(G0,G1,smoothstep(0.,1.,uv.y*.7+(1.-uv.x)*.3));',
+          'gl_FragColor=L>.5?vec4(mix(base,col,clamp(br*.42,0.,.62)),1.):vec4(base*(1.-clamp(br*.5,0.,1.)*.35)+glow,1.);}'
+        ].join('');
+        var mk = function (t, s) { var o = gl.createShader(t); gl.shaderSource(o, s); gl.compileShader(o); return o; };
+        var pr = gl.createProgram();
+        gl.attachShader(pr, mk(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, mk(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr);
+        if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { R.gl = null; } else {
+          gl.useProgram(pr);
+          var bf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, bf);
+          gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+          var lp = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
+          var u = function (n) { return gl.getUniformLocation(pr, n); };
+          var hex = function (h) { return [parseInt(h.substr(1, 2), 16) / 255, parseInt(h.substr(3, 2), 16) / 255, parseInt(h.substr(5, 2), 16) / 255]; };
+          R.pal = { dark: [hex('#0E3BB8'), hex('#2E63FF'), hex('#9DB8F7'), hex('#050A20'), hex('#0B1A4D'), 0], light: [hex('#B9CCFF'), hex('#7FA4FF'), hex('#4F80FF'), hex('#F6F9FF'), hex('#E4ECFF'), 1] };
+          R.u = { A: u('A'), B: u('B'), C: u('C'), G0: u('G0'), G1: u('G1'), L: u('L') };
+          R.uR = u('R'); R.uT = u('T');
+        }
+      }
+      R.still = !!(host.matchMedia && host.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      R.t0 = host.performance.now();
+      R.paint = function (it, now) {
+        var g = R.gl, w = it.cv.width, h = it.cv.height;
+        if (R.gc.width !== w || R.gc.height !== h) { R.gc.width = w; R.gc.height = h; }
+        var pl = R.pal[it.light ? 'light' : 'dark']; g.uniform3fv(R.u.A, pl[0]); g.uniform3fv(R.u.B, pl[1]); g.uniform3fv(R.u.C, pl[2]); g.uniform3fv(R.u.G0, pl[3]); g.uniform3fv(R.u.G1, pl[4]); g.uniform1f(R.u.L, pl[5]);
+        g.viewport(0, 0, w, h); g.uniform2f(R.uR, w, h); g.uniform1f(R.uT, it.seed + (R.still ? 0 : (now - R.t0) / 1000));
+        g.drawArrays(g.TRIANGLE_STRIP, 0, 4);
+        it.ctx.drawImage(R.gc, 0, 0);
+      };
+      R.size = function (it) {
+        var cw = it.el.clientWidth, ch = it.el.clientHeight;
+        if (!cw || !ch) return false;
+        var s = Math.min(0.4, 320 / cw), w = Math.max(16, Math.round(cw * s)), h = Math.max(16, Math.round(ch * s));
+        if (it.cv.width !== w || it.cv.height !== h) { it.cv.width = w; it.cv.height = h; it.fresh = true; }
+        return true;
+      };
+      R.tick = function (now) {
+        R.raf = 0;
+        if (now - R.last > 33) {
+          R.last = now;
+          R.items = R.items.filter(function (it) { return it.el.isConnected; });
+          var n = R.items.length, st = host.performance.now();
+          for (var k = 0; k < n; k++) {
+            var it = R.items[(R.cur + k) % n];
+            if ((it.vis || it.fresh) && R.size(it)) { R.paint(it, now); it.fresh = false; }
+            if (host.performance.now() - st > 6) { R.cur = (R.cur + k + 1) % n; break; }
+          }
+        }
+        if (!R.still && R.items.some(function (it) { return it.vis; })) R.raf = host.requestAnimationFrame(R.tick);
+      };
+      R.wake = function () { if (!R.raf) R.raf = host.requestAnimationFrame(R.tick); };
+    }
+    if (!R.gl) { el.classList.add(el.classList.contains('aur-lt') ? 'aur-off-lt' : 'aur-off'); return function () {}; }
+    var cv = el.ownerDocument.createElement('canvas');
+    cv.className = 'aur-c';
+    cv.setAttribute('aria-hidden', 'true');
+    el.insertBefore(cv, el.firstChild);
+    el.__aurC = cv;
+    var it = { el: el, cv: cv, ctx: cv.getContext('2d'), seed: Math.random() * 40, vis: true, fresh: true, light: el.classList.contains('aur-lt') };
+    R.items.push(it);
+    var view = el.ownerDocument.defaultView || window;
+    var io = view.IntersectionObserver ? new view.IntersectionObserver(function (e) { it.vis = e[0].isIntersecting; if (it.vis) R.wake(); }) : null;
+    if (io) io.observe(el);
+    R.wake();
+    return function () { if (io) io.disconnect(); R.items = R.items.filter(function (x) { return x !== it; }); };
+  }
+  aurScan() {
+    var self = this, q = 0;
+    var go = function () { q = 0; document.querySelectorAll('.aur').forEach(function (el) { if (!el.__aurC || el.__aurC.parentNode !== el) { if (el.__aur) el.__aur(); el.__aur = self.auroraMount(el); } }); };
+    go();
+    if (!this._aurMo && window.MutationObserver) { this._aurMo = new MutationObserver(function () { if (!q) q = requestAnimationFrame(go); }); this._aurMo.observe(document.body, { childList: true, subtree: true }); }
+  }
+
+  componentDidMount() { this.aurScan();
     try { var m = document.querySelector('.mst .on'); if (m && m.parentElement) { m.parentElement.scrollLeft = m.offsetLeft - 16; } } catch (e) {}
   }
   renderVals() {

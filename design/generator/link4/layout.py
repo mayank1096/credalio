@@ -96,4 +96,6 @@ c = {'v': 3, 'createdOnFiles': old.get('createdOnFiles', {'v': 1, 'at': '2026-11
      'notes': notes, 'noteOrder': list(notes), 'designSystems': []}
 if 'attachments' in old: c['attachments'] = old['attachments']
 json.dump(c, open(p, 'w'), ensure_ascii=False, indent=2)
+import aur4
+aur4.run(OUT)
 print(len(boards), 'boards')

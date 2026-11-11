@@ -259,11 +259,13 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .h1{background:linear-gradient(135deg,#5C86FF,#1652F0)}.h2{background:linear-gradient(135deg,#34C38F,#0F6B45)}.h3{background:linear-gradient(135deg,#F4B860,#B76E00)}.h4{background:linear-gradient(135deg,#8A93AD,#3A4566)}.h5{background:linear-gradient(135deg,#C49BF5,#6B3FC2)}
 @keyframes rmSpin{to{transform:rotate(360deg)}}
 @media (max-width: 960px){
-.stp{margin-top:14px;max-width:none}
-.stp li{flex:none;font-size:12px}
+.stp{position:relative;margin-top:14px;max-width:none;padding-bottom:26px;counter-reset:stp}
+.stp li{flex:1 1 0;min-width:0;position:static;font-size:12px;counter-increment:stp}
+.stp li:first-child{flex:0 0 auto}
 .stp li span{display:none}
-.stp li.on span{display:inline}
-.stp li + li::before{flex-basis:22px}
+.stp li + li::before{flex:1 1 auto;margin-right:6px}
+.stp li.on span{display:block;position:absolute;left:0;bottom:0;font-size:13px;font-weight:600;color:#0B1433;white-space:nowrap}
+.stp li.on span::before{content:'Step ' counter(stp) ' · ';font-weight:500;color:#8A93AD}
 .wk-m{gap:14px}
 .ds-acts.wk-a2{position:sticky;margin:6px -16px 0 -16px;padding:12px 16px 14px 16px;border-radius:0;border:0;border-top:1.5px solid #EEF1F7;box-shadow:none;flex-direction:column-reverse;align-items:stretch;gap:8px}
 .wk-a2 .sv-r{flex-direction:column-reverse;align-items:stretch;gap:6px;margin:0;width:100%}
@@ -372,9 +374,6 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .ta3.one{min-height:48px}
 .ta3{field-sizing:content}
 @media (max-width: 960px){
-.cl-main .stp li:not(.on) span{display:none}
-.cl-main .stp li span{white-space:nowrap}
-.cl-main .stp li + li::before{flex-basis:14px;margin-right:6px}
 .cl-main .pg-hr{flex-wrap:wrap}
 .cl-main .pg-hr > .ds-ghost,.cl-main .pg-hr > .ds-btn{flex:1 1 auto;min-width:0;width:auto;justify-content:center;padding:0 14px;font-size:13.5px}
 .cl-main .pg-hr > .ds-btn{justify-content:space-between;padding-left:16px}
@@ -737,7 +736,8 @@ a.it6-r{margin:0 -8px;padding:12px 8px}
 .kt6-i{margin-bottom:6px !important}
 .lt6-n{margin:0;border:0;border-top:1.5px solid #EEF1F7;border-radius:0;padding:14px 18px !important;background:#FAFBFE;font-size:13px;line-height:1.6}
 .tm6 > div{padding:14px 0}
-.pg-hr > .stp{padding:10px 12px;margin-top:4px;width:100%;box-sizing:border-box}
+.pg-hr > .stp{padding:12px 16px 36px 16px;margin-top:4px;width:100%;box-sizing:border-box;border-radius:20px}
+.pg-hr > .stp li.on span{left:16px;bottom:12px}
 }
 </style>
 </helmet>

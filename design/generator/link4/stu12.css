@@ -350,5 +350,6 @@ a.it6-r{margin:0 -8px;padding:12px 8px}
 .kt6-i{margin-bottom:6px !important}
 .lt6-n{margin:0;border:0;border-top:1.5px solid #EEF1F7;border-radius:0;padding:14px 18px !important;background:#FAFBFE;font-size:13px;line-height:1.6}
 .tm6 > div{padding:14px 0}
-.pg-hr > .stp{padding:10px 12px;margin-top:4px;width:100%;box-sizing:border-box}
+.pg-hr > .stp{padding:12px 16px 36px 16px;margin-top:4px;width:100%;box-sizing:border-box;border-radius:20px}
+.pg-hr > .stp li.on span{left:16px;bottom:12px}
 }

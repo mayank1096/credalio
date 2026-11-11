@@ -517,4 +517,7 @@ a.ap-r + a.ap-r{box-shadow:0 -1.5px 0 #E6EAF3}
 .ap-r.pick{box-shadow:inset 3px 0 0 #1652F0 !important}
 .sb5{margin-top:18px;padding:14px;gap:12px}
 .sb5 + .nt{margin-top:16px}
+.ap-r > .ap-s{display:none}
+.ap-r,.ap3.part .ap-r{grid-template-columns:0 minmax(0,1.15fr) minmax(0,1fr) auto;padding:16px 12px}
+.ap-r.pick{box-shadow:none !important;background:#F5F8FF}
 }

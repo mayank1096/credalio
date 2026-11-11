@@ -414,13 +414,12 @@ CSS = stu7.CSS + r'''.cr9{padding:6px 22px}
 .cw9 dt{font-size:12px;font-weight:500;color:#8A93AD}
 .cw9 dd{margin:0;font-size:13px;line-height:1.5;color:#0B1433}
 .ak{width:520px}
-.ak .dl-h{align-items:center}
-.ak-v{flex:1;display:inline-flex}
+.ak-v{display:inline-flex}
 .ak-v .la2{width:40px;height:40px;margin-left:-10px;box-shadow:0 0 0 3px #FFFFFF}
 .ak-v .la2:first-child{margin-left:0}
 .ak-n{position:relative;outline:2px dashed #1652F0;outline-offset:3px;animation:akP 2.4s ease-in-out infinite}
 @keyframes akP{50%{outline-offset:6px;outline-color:rgba(22,82,240,.35)}}
-.ak-h{margin:0;font-size:21px;line-height:1.3;font-weight:600;letter-spacing:-0.015em}
+.ak-h{margin:0;text-align:center;font-size:21px;line-height:1.3;font-weight:600;letter-spacing:-0.015em}
 .ak-w{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;background:#F7F9FD}
 .ak-w > span:nth-child(2){flex:1;display:flex;flex-direction:column;gap:1px}
 .ak-w b{font-size:14.5px;font-weight:600}
@@ -1011,7 +1010,7 @@ a.ct-r{margin:0 -8px;padding:12px 8px}
 .cw9 dl div,.cw9 dl div:first-child{flex:0 0 68%;box-sizing:border-box;scroll-snap-align:start;scroll-margin-left:16px;padding:12px 14px;border:0;border-radius:14px;background:#F7F9FD}
 .wk-a2 .sv-s{font-size:12px}
 .ak .dl-b{padding:6px 16px 4px 16px}
-.ak .dl-h{padding:18px 16px 0 16px}
+.ak .dl-h{padding:22px 52px 0 52px}
 .ak-h{font-size:19px}
 .dl.ak{width:100%}
 }

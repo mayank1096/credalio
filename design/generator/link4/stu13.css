@@ -250,17 +250,8 @@
 .wk-r > .prg7{order:0;margin:-4px 0 2px 0;padding:0;border:0;border-radius:0;background:none;box-shadow:none}
 .wk-r > .prg7 .rx-k{display:none}
 .wk-r > .prg7 .tr7.v{margin:0;padding:4px 0 14px 0;border-bottom:1.5px solid #E6EAF3;border-top:0}
-.oph{gap:0;padding:24px 20px 20px 20px}
-.oph-t{margin-bottom:18px}
-.oph h1{line-height:1.22}
 .oph-lc{margin-top:12px !important}
-.oph-g{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}
-.oph-r{display:flex !important;flex-direction:column;align-items:stretch;gap:0;margin-top:20px;padding:0;border-radius:18px;overflow:hidden}
-.oph-s{display:flex !important;flex-direction:column;gap:6px;padding:18px 18px 16px 18px}
-.oph-s b{grid-row:auto;font-size:38px}
-.oph-s em{grid-row:auto;grid-column:auto;margin:0;font-size:13px}
-.oph-d{justify-self:auto;padding:14px 18px !important;border-top:1px solid rgba(255,255,255,.14) !important}
-.oph-cta,.oph-go{margin:0 14px 14px 14px;width:auto !important}
+.oph-go{margin:0 14px 14px 14px;width:auto !important}
 .oc7{padding:0;gap:0;border-radius:20px}
 .oc7-h{padding:20px 18px 18px 18px;gap:14px}
 .oc7-h .cv6{width:48px !important;height:48px !important}

@@ -5,13 +5,13 @@ Each row: title note, then desktop + mobile pairs left to right. Shared sources 
 """
 import json, os, sys
 from l4kit import OUT
-import stu1, stu2, stu3, stu4, stu5, stu6, stu7, stu8, stu10, stu11, stu12, stu13
+import stu1, stu2, stu3, stu4, stu5, stu6, stu7, stu8, stu10, stu11, stu12, stu13, stu15
 
 PAIR, GAP, ROWGAP = 1440 + 80 + 390, 160, 420
 H = {}
 for f in sys.argv[1:]:
     H.update(json.load(open(f)))
-T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS + stu4.BOARDS + stu5.BOARDS + stu6.BOARDS + stu7.BOARDS + stu8.BOARDS + stu10.BOARDS + stu11.BOARDS + stu12.BOARDS + stu13.BOARDS}
+T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS + stu4.BOARDS + stu5.BOARDS + stu6.BOARDS + stu7.BOARDS + stu8.BOARDS + stu10.BOARDS + stu11.BOARDS + stu12.BOARDS + stu13.BOARDS + stu15.BOARDS}
 
 ROWS = [
     ('b1-setup', 'Batch 1 · Course setup: learning experience, delivery type, setup review, how you’ll create it, Studio welcome', ['STU-001', 'STU-002', 'STU-003', 'STU-004', 'STU-008']),
@@ -49,6 +49,7 @@ ROWS = [
     ('b13-opps', 'Batch 13 · Opportunities, details (eligible / not eligible), apply, update Creator Profile, submitted for verification', ['OPP-001', 'OPP-002', 'OPP-002-INELIGIBLE', 'OPP-003', 'OPP-005', 'OPP-005-SUBMITTED']),
     ('b13-apps', 'Batch 13 · My Applications: pending, under review, shortlisted, offer received, accepted, declined, withdrawn, withdraw, reply to clarification', ['OPP-004', 'OPP-004-REVIEW', 'OPP-004-SHORTLISTED', 'OPP-004-OFFER', 'OPP-004-ACCEPTED', 'OPP-004-DECLINED', 'OPP-004-WITHDRAWN', 'OPP-004-WITHDRAW', 'OPP-004-CLARIFY']),
     ('b14-launch', 'Batch 14 · Launch: full validation report, subscription-only pricing, publish confirmation, share & promote, first learner state', ['STU-RPT', 'STU-SUB', 'STU-064', 'STU-066', 'STU-067']),
+    ('b15-ai', 'Batch 15 · Creio in the Studio (running low, none left, estimate before a large action), account menu, message pop-ups with quick reply', ['STU-AI-1', 'STU-AI-2', 'STU-AI-3', 'STU-AI-4', 'STU-MSG-1', 'STU-MSG-2', 'STU-MSG-3']),
 ]
 SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html', 'Course Studio · shared source'),
            ('Builder.dc.html', 'Curriculum Builder · shared source'), ('Editor.dc.html', 'Learning item editors · shared source'),
@@ -99,4 +100,6 @@ if 'attachments' in old: c['attachments'] = old['attachments']
 json.dump(c, open(p, 'w'), ensure_ascii=False, indent=2)
 import aur4
 aur4.run(OUT)
+import ov15
+ov15.run(OUT)
 print(len(boards), 'boards')

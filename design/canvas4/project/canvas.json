@@ -4675,9 +4675,149 @@
       "is_interactive": true,
       "expand": "fill"
     },
-    "Setup.dc.html": {
+    "STU-AI-1.dc.html": {
       "x": 0,
       "y": 89431,
+      "w": 1440,
+      "h": 900,
+      "title": "STU-AI-1 · Creio running low (18.2K) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-AI-1-Mobile.dc.html": {
+      "x": 1520,
+      "y": 89431,
+      "w": 390,
+      "h": 844,
+      "title": "STU-AI-1 · Creio running low (18.2K) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-AI-2.dc.html": {
+      "x": 2070,
+      "y": 89431,
+      "w": 1440,
+      "h": 900,
+      "title": "STU-AI-2 · AI action with no Creio left (Generate from course goal) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-AI-2-Mobile.dc.html": {
+      "x": 3590,
+      "y": 89431,
+      "w": 390,
+      "h": 844,
+      "title": "STU-AI-2 · AI action with no Creio left (Generate from course goal) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-AI-3.dc.html": {
+      "x": 4140,
+      "y": 89431,
+      "w": 1440,
+      "h": 900,
+      "title": "STU-AI-3 · Nova Course Review: estimate before a full review · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-AI-3-Mobile.dc.html": {
+      "x": 5660,
+      "y": 89431,
+      "w": 390,
+      "h": 844,
+      "title": "STU-AI-3 · Nova Course Review: estimate before a full review · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-AI-4.dc.html": {
+      "x": 6210,
+      "y": 89431,
+      "w": 1440,
+      "h": 900,
+      "title": "STU-AI-4 · Account menu in the Studio · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-AI-4-Mobile.dc.html": {
+      "x": 7730,
+      "y": 89431,
+      "w": 390,
+      "h": 844,
+      "title": "STU-AI-4 · Account menu in the Studio · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-MSG-1.dc.html": {
+      "x": 8280,
+      "y": 89431,
+      "w": 1440,
+      "h": 900,
+      "title": "STU-MSG-1 · Message pop-ups in the Studio (learner, team, validator) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-MSG-1-Mobile.dc.html": {
+      "x": 9800,
+      "y": 89431,
+      "w": 390,
+      "h": 844,
+      "title": "STU-MSG-1 · Message pop-ups in the Studio (learner, team, validator) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-MSG-2.dc.html": {
+      "x": 10350,
+      "y": 89431,
+      "w": 1440,
+      "h": 900,
+      "title": "STU-MSG-2 · Quick reply to a learner without leaving the Studio · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-MSG-2-Mobile.dc.html": {
+      "x": 11870,
+      "y": 89431,
+      "w": 390,
+      "h": 844,
+      "title": "STU-MSG-2 · Quick reply to a learner without leaving the Studio · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-MSG-3.dc.html": {
+      "x": 12420,
+      "y": 89431,
+      "w": 1440,
+      "h": 900,
+      "title": "STU-MSG-3 · Quick reply sent · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-MSG-3-Mobile.dc.html": {
+      "x": 13940,
+      "y": 89431,
+      "w": 390,
+      "h": 844,
+      "title": "STU-MSG-3 · Quick reply sent · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Setup.dc.html": {
+      "x": 0,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -4687,7 +4827,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -4697,7 +4837,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -4707,7 +4847,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -4717,7 +4857,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -4727,7 +4867,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -4737,7 +4877,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -4747,7 +4887,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -4757,7 +4897,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -4767,7 +4907,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -4777,7 +4917,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -4787,7 +4927,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -4797,7 +4937,7 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
@@ -4807,7 +4947,7 @@
     },
     "Manage2.dc.html": {
       "x": 20800,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (pricing, versions, learners) · shared source",
@@ -4817,7 +4957,7 @@
     },
     "Manage3.dc.html": {
       "x": 22400,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (validation, archive, insights) · shared source",
@@ -4827,7 +4967,7 @@
     },
     "Collab.dc.html": {
       "x": 24000,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Course collaboration (invite, permissions, manage, remove) · shared source",
@@ -4837,7 +4977,7 @@
     },
     "Collab2.dc.html": {
       "x": 25600,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Open collaboration (setup, applications, offers, manage opportunity) · shared source",
@@ -4847,7 +4987,7 @@
     },
     "Collab3.dc.html": {
       "x": 27200,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Collaboration, creator side (my invitations, shared courses) · shared source",
@@ -4857,7 +4997,7 @@
     },
     "Collab4.dc.html": {
       "x": 28800,
-      "y": 89431,
+      "y": 90751,
       "w": 1440,
       "h": 900,
       "title": "Collaboration, creator side (opportunities, applications, creator profile) · shared source",
@@ -5333,6 +5473,20 @@
     "STU-066-Mobile.dc.html",
     "STU-067.dc.html",
     "STU-067-Mobile.dc.html",
+    "STU-AI-1.dc.html",
+    "STU-AI-1-Mobile.dc.html",
+    "STU-AI-2.dc.html",
+    "STU-AI-2-Mobile.dc.html",
+    "STU-AI-3.dc.html",
+    "STU-AI-3-Mobile.dc.html",
+    "STU-AI-4.dc.html",
+    "STU-AI-4-Mobile.dc.html",
+    "STU-MSG-1.dc.html",
+    "STU-MSG-1-Mobile.dc.html",
+    "STU-MSG-2.dc.html",
+    "STU-MSG-2-Mobile.dc.html",
+    "STU-MSG-3.dc.html",
+    "STU-MSG-3-Mobile.dc.html",
     "Setup.dc.html",
     "Studio.dc.html",
     "Builder.dc.html",
@@ -5900,13 +6054,28 @@
       "w": 260,
       "fill": "pink"
     },
+    "b15-ai": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 15 · Creio in the Studio (running low, none left, estimate before a large action), account menu, message pop-ups with quick reply",
+      "w": 240,
+      "x": 0,
+      "y": 89131
+    },
+    "b15-ai-new": {
+      "x": 0,
+      "y": 89281,
+      "text": "NEW · batch 15",
+      "w": 260,
+      "fill": "pink"
+    },
     "sources": {
       "kind": "title1",
       "maxW": 3200,
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 89131
+      "y": 90451
     }
   },
   "noteOrder": [
@@ -5983,6 +6152,8 @@
     "b13-apps-new",
     "b14-launch",
     "b14-launch-new",
+    "b15-ai",
+    "b15-ai-new",
     "sources"
   ],
   "designSystems": [],

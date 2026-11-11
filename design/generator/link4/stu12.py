@@ -69,7 +69,7 @@ def acts_all(t, st):
     return '<span class="ds-link sm cl-a">%s%s</span>' % ('Review' if st == 'Pending' else 'View', ARR)
 P('i-all', 'Invitations', ph(INV_PATH + ['All'], 'My Invitations', '') + itabs('all') + itable(ALL, acts_all) + note('All statuses, including expired and withdrawn, are kept in history.'))
 def rcard(t, k, r, pct, st, kind, act, nt, nicon):
-    return '''<article class="rc6 %s ob-in3"><div class="rc6-m">%s<div class="rc6-h"><b>%s</b><span class="ic6-f">%s<span>From <b>%s</b></span></span></div></div>
+    return '''<article class="rc6 rcx %s ob-in3"><div class="rc6-m">%s<div class="rc6-h"><b>%s</b><span class="ic6-f">%s<span>From <b>%s</b></span></span></div></div>
 <div class="rc6-k"><span><em>Role</em>%s</span><span><em>Share</em><span class="rc6-rg">%s<b>%d%%</b></span></span><span><em>Status</em>%s</span></div>
 <div class="rc6-a">%s</div><p class="rc6-n">%s<span>%s</span></p></article>''' % (kind, cov(t, 60), t, pa(k, 22), PPL[k][1], role(r), ring(pct, 40, 12, track='#EEF1F7', color='#0F6B45' if kind == 'ok' else '#AEB6CC'), pct, tag(st, STC[st]), act, nicon, nt)
 P('i-acc', 'Invitations', ph(INV_PATH + ['Accepted'], 'My Invitations', '') + itabs('acc') +
@@ -113,8 +113,8 @@ k1, k2 = W.new(True), W.new(True)
 def chk(k, t):
     return '<button type="button" class="dc-r {{c%s}}" aria-pressed="{{a%s}}" onClick="{{x%s}}"><span class="dc-b">%s</span><span>%s</span></button>' % (k, k, k, ck(12), t)
 VER = ['still pending and not expired', 'belongs to you', 'terms not superseded', 'you remain eligible', 'allocation available', 'organization approval', 'agreement and identity verification complete']
-P('accept', 'Invitations', ph(DET_PATH + ['Accept'], 'Accept Collaboration Invitation', 'Review the terms, confirm, and Credalio verifies the offer before activating your access.') +
-  steps(1, ['Review terms', 'Confirm', 'Processing', 'Done']) +
+P('accept', 'Invitations', ph(DET_PATH + ['Accept'], 'Accept Collaboration Invitation', 'Review the terms, confirm, and Credalio verifies the offer before activating your access.',
+                             right=steps(1, ['Review terms', 'Confirm', 'Processing', 'Done'])) +
   wk('''<section class="ds-card ac6 ob-in2"><div class="ac6-h">%s<p>You’re accepting the role of <b>Co-Creator</b> on <b>Data Analysis with SQL</b>, with a proposed <b>20%%</b> share of distributable course earnings.</p></div>%s</section>
 <div class="ac6-k ob-in3">%s%s</div>''' % (cov('Data Analysis with SQL', 52), facts([('Role', 'Co-Creator'), ('Revenue share', '20%'), ('Covered earnings', 'All course channels')]),
           chk(k1, 'I understand my role, responsibilities and contribution requirements.'), chk(k2, 'I have reviewed and agree to the collaboration and revenue-sharing terms.')) +

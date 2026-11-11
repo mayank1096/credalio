@@ -250,4 +250,37 @@
 .wk-r > .prg7{order:0;margin:-4px 0 2px 0;padding:0;border:0;border-radius:0;background:none;box-shadow:none}
 .wk-r > .prg7 .rx-k{display:none}
 .wk-r > .prg7 .tr7.v{margin:0;padding:4px 0 14px 0;border-bottom:1.5px solid #E6EAF3;border-top:0}
+.oph{gap:0;padding:24px 20px 20px 20px}
+.oph-t{margin-bottom:18px}
+.oph h1{line-height:1.22}
+.oph-lc{margin-top:12px !important}
+.oph-g{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}
+.oph-r{display:flex !important;flex-direction:column;align-items:stretch;gap:0;margin-top:20px;padding:0;border-radius:18px;overflow:hidden}
+.oph-s{display:flex !important;flex-direction:column;gap:6px;padding:18px 18px 16px 18px}
+.oph-s b{grid-row:auto;font-size:38px}
+.oph-s em{grid-row:auto;grid-column:auto;margin:0;font-size:13px}
+.oph-d{justify-self:auto;padding:14px 18px !important;border-top:1px solid rgba(255,255,255,.14) !important}
+.oph-cta,.oph-go{margin:0 14px 14px 14px;width:auto !important}
+.oc7{padding:0;gap:0;border-radius:20px}
+.oc7-h{padding:20px 18px 18px 18px;gap:14px}
+.oc7-h .cv6{width:48px !important;height:48px !important}
+.oc7-t{gap:8px}
+.oc7-t > b{font-size:17px;line-height:1.3}
+.oc7-w{margin:0;padding:14px 18px;border-radius:0;background:#F7F9FD;border-top:1.5px solid #EEF1F7;font-size:13px;line-height:1.5}
+.oc7-f{padding:16px 18px 18px 18px;border-top:1.5px solid #EEF1F7}
+.oc7s{gap:16px}
+.ie7{display:flex;flex-direction:column;gap:0;padding:0;border-radius:20px;overflow:hidden}
+.ie7-v{display:none}
+.ie7-b{display:flex;flex-direction:column;gap:0}
+.ie7-b > p{padding:18px;font-size:14px;line-height:1.6}
+.ie7-g{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1.5px solid #F4E9C8}
+.ie7-g > div{border:0;border-radius:0;background:none;padding:14px 18px;gap:6px}
+.ie7-g > div:nth-child(2){border-left:1.5px solid #F4E9C8}
+.ie7-g .nx{grid-column:1 / -1;padding:16px 18px 18px 18px;border-top:1.5px solid #F4E9C8}
+.oc7-l{align-items:flex-start}
+.oc7-l > span{display:block;line-height:1.45}
+.oc7-dl{display:block;margin-top:2px}
+.oc7-l > .la2{flex-shrink:0;margin-top:1px}
+.oc7-sep{display:none}
+.oc7-dl{color:#8A93AD}
 }

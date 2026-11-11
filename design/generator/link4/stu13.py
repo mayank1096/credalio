@@ -41,7 +41,7 @@ def ocard(i, o):
     t, cat, lvl, pos, lead, dl, why, pct, h, hits = o
     w = why.split(' › ')
     return '''<a class="oc7" href="%s" style="--i: %d"><div class="oc7-h">%s<div class="oc7-t"><span class="oc7-k"><span class="oc7-o"><i></i>Open</span><span>%s</span><span>%s</span><span class="oc7-p">%s %d position%s</span></span><b>%s</b>
-<span class="oc7-l">%s<span>Lead Creator: <b>%s</b><span class="oc7-dl"> · Deadline %s</span></span></span></div></div>
+<span class="oc7-l">%s<span>Lead Creator: <b>%s</b><span class="oc7-dl"><span class="oc7-sep"> · </span>Deadline %s</span></span></span></div></div>
 <div class="oc7-w"><span class="oc7-wi">%s</span><span><em>Why you match:</em> %s › %s</span></div>
 <div class="oc7-f"><span class="oc7-s"><b>%d%%</b><em>combined, all earnings</em></span><span class="ds-btn sm2"><span>View</span><span class="ob-arrow">%s</span></span></div></a>''' % (
         h if h != '#' else '#', i, cov(t, 52), cat, lvl, seats(0, pos), pos, '' if pos == 1 else 's', t, lav(lead, 22), lead, dl, ic('target', 15, 2),

@@ -50,6 +50,7 @@
 .tip:hover,.tip:focus{color:#1652F0}
 .tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
 .tip-b.r{left:auto;right:-12px}
+.tip-b.dn{bottom:auto;top:calc(100% + 10px)}
 .tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
 .nova-card{background:#FFFFFF url(/_blob/2201db898f778e583c1885b56e2d9c62) center / cover no-repeat}
 .nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
@@ -81,6 +82,7 @@
 }
 body{margin:0;background:#F7F9FD}
 a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @keyframes obIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .ob-in{animation:obIn .5s ease both}.ob-in2{animation:obIn .5s ease .08s both}.ob-in3{animation:obIn .5s ease .16s both}.ob-in4{animation:obIn .5s ease .24s both}
 .ds-root{display:grid;grid-template-columns:264px minmax(0,1fr);min-height:100vh;background:#F7F9FD;font-family:'Google Sans','Google Sans Text','Helvetica Neue',system-ui,sans-serif;color:#0B1433}
@@ -134,6 +136,7 @@ a{color:#1652F0}
 }
 body{margin:0;background:#F7F9FD}
 a{color:#1652F0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .av{position:relative;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;overflow:hidden;background:#EAF0FF;color:#0E3BB8;font-size:11px;font-weight:600;box-sizing:border-box}
 .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .av.org{background:#0B1433;color:#FFFFFF;font-size:10.5px;letter-spacing:.02em}
@@ -595,9 +598,138 @@ a{color:#1652F0}
 .aur{position:relative;isolation:isolate;overflow:hidden}
 .aur > .aur-c{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;border-radius:inherit}
 .lv-hero.aur::after{display:none}
+.ds-tok.tp-on{box-shadow:0 0 0 4px rgba(244,217,142,.45)}
+.cw-me.pm-on{box-shadow:0 0 0 4px rgba(22,82,240,.18);border-radius:50%}
+.tk-low{display:inline-flex;align-items:center;height:22px;margin-left:2px;padding:0 8px;border-radius:999px;background:#FFF3DC;border:1px solid #F0C774;color:#8A5300;font-size:12px;font-weight:500}
+.tk-low.emp{background:#FDECEA;border-color:#F3B8B2;color:#B42318}
+.tp-scrim,.pm-scrim{position:fixed;inset:0;z-index:90;background:rgba(11,20,51,.06);pointer-events:none}
+.ov-r1,.ov-r2{position:fixed;top:78px;z-index:91;box-sizing:border-box;text-align:left;animation:ovIn .35s cubic-bezier(.2,.8,.2,1) both}
+.ov-r1{right:20px}
+.ov-r2{right:32px}
+@keyframes ovIn{from{opacity:0;transform:translateY(-6px) scale(.98)}}
+.tp-p{width:340px;padding:22px 22px 18px 22px;border-radius:20px;background:linear-gradient(170deg,#FFFAEB 0%,#FFFFFF 48%);border:1.5px solid #F4D98E;box-shadow:0 24px 60px rgba(11,20,51,.16);display:flex;flex-direction:column;align-items:flex-start}
+.tp-lab{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:#8A93AD}
+.tp-big{margin-top:10px;display:flex;align-items:center;gap:10px;font-size:34px;font-weight:600;letter-spacing:-0.03em;color:#4A3300}
+.tp-coin{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#FFE9A3,#F6C343 45%,#D08A12);box-shadow:inset 0 0 0 3px rgba(255,241,194,.6)}
+.tp-warn{margin:16px 0 0 0;width:100%;box-sizing:border-box;display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border-radius:14px;background:#FFF3DC;font-size:13.5px;line-height:1.45;color:#5C3B00}
+.tp-i{width:20px;height:20px;flex-shrink:0;border-radius:50%;background:#B26A00;color:#FFFFFF;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.tp-f{margin-top:20px;width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tp-go,.ac-go{height:44px;padding:0 20px;font-size:14.5px}
+.tp-u{font-size:14px}
+.ac{padding:18px 18px 16px 18px;border-radius:20px;border:1.5px solid #D6DDEE;background:#FFFFFF;box-shadow:0 24px 60px rgba(11,20,51,.16)}
+.ov-p{width:360px}
+.ns{border-color:#F0C774;background:linear-gradient(170deg,#FFF8EA 0%,#FFFFFF 55%)}
+.ns-h{display:flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;letter-spacing:.02em;color:#5C3B00}
+.ov-h{display:block;margin-top:10px;font-size:17px;line-height:1.35;font-weight:600;letter-spacing:-0.01em;color:#0B1433}
+.ns-d{margin:14px 0 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ns-d.one{grid-template-columns:1fr}
+.ns-d div{padding:10px 12px;border-radius:12px;background:#FFFFFF;border:1.5px solid #F3E6C4}
+.ns-d dt{font-size:12.5px;color:#8A93AD}
+.ns-d dd{margin:4px 0 0 0;display:flex;align-items:center;gap:7px;font-size:17px;font-weight:600;color:#4A3300;font-variant-numeric:tabular-nums}
+.ns-c{width:16px;height:16px;flex-shrink:0;border-radius:50%;background:linear-gradient(135deg,#FFE9A3,#F6C343 45%,#D08A12)}
+.ns-p{margin:12px 0 0 0;font-size:13.5px;line-height:1.5;color:#4A5578}
+.ns.est{border-color:#C9D7FB;background:linear-gradient(170deg,#F5F8FF 0%,#FFFFFF 55%)}
+.est .ns-h{color:#1652F0}
+.est .tp-i{background:#1652F0}
+.est .ns-d div{border-color:#E1E9FF}
+.ac-f{margin-top:16px;padding-top:14px;border-top:1.5px solid #F0F2F8;display:flex;align-items:center;gap:6px}
+.ac-x{height:42px;padding:0 14px;display:inline-flex;align-items:center;border-radius:999px;font-size:14.5px;font-weight:600;color:#3A4566;text-decoration:none}
+.ac-x:hover{background:#F1F3F8}
+.pm-p{width:340px;padding:8px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 24px 60px rgba(11,20,51,.16);font-size:14px;color:#0B1433}
+.pm-me{display:flex;align-items:center;gap:12px;padding:12px 12px 14px 12px}
+.pm-a{position:relative;width:42px;height:42px;flex-shrink:0;border-radius:50%;background:#0B1433;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
+.pm-dot{position:absolute;right:0;bottom:1px;width:11px;height:11px;border-radius:50%;background:#0F6B45;border:2px solid #FFFFFF}
+.pm-me > span:last-child{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0}
+.pm-me b{font-size:15.5px;font-weight:600}
+.pm-me > span > span{font-size:13px;color:#5B6582}
+.pm-me .pm-tg{margin-top:4px}
+.pm-sec{padding:12px;border-top:1.5px solid #F0F2F8}
+.pm-lab{display:flex;align-items:center;font-size:12.5px;font-weight:500;color:#8A93AD}
+.pm-st{margin-top:10px;display:flex;gap:6px}
+.pm-st button{flex:1;height:36px;padding:0 8px;border-radius:999px;border:1.5px solid #E6EAF3;background:#FFFFFF;font-family:inherit;font-size:13px;font-weight:500;color:#3A4566;display:inline-flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;white-space:nowrap}
+.pm-st button.on{background:#F5F8FF;border-color:#1652F0;color:#0E3BB8}
+.pm-st i{width:8px;height:8px;border-radius:50%;background:#0F6B45}
+.pm-st .aw i{background:#D98A00}
+.pm-st .dn i{background:#8A93AD}
+.pm-rl{margin-top:8px;display:flex;flex-direction:column;gap:2px}
+.pm-r{display:flex;align-items:center;gap:12px;padding:8px;border-radius:14px;text-decoration:none;color:#0B1433}
+a.pm-r:hover{background:#F5F8FF}
+.pm-ri{width:36px;height:36px;flex-shrink:0;border-radius:11px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.pm-r.cur{background:#F5F8FF}
+.pm-r.cur .pm-ri{background:#1652F0;color:#FFFFFF}
+.pm-r > span:nth-child(2){flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.pm-r b{font-size:14.5px;font-weight:600}
+.pm-r > span > span{font-size:13px;color:#5B6582}
+.pm-ck{color:#1652F0;display:flex}
+.pm-bd{min-width:22px;height:22px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#D92D20;color:#FFFFFF;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center}
+.pm-l{padding:6px 4px;border-top:1.5px solid #F0F2F8;display:flex;flex-direction:column}
+.pm-l a{display:flex;align-items:center;gap:12px;min-height:42px;padding:0 8px;border-radius:12px;font-size:14.5px;font-weight:500;color:#3A4566;text-decoration:none}
+.pm-l a svg{color:#5B6582}
+.pm-l a:hover{background:#F5F8FF;color:#0B1433}
+.pm-l a.pm-out,.pm-l a.pm-out svg{color:#B42318}
+.mg{position:fixed;right:24px;bottom:24px;z-index:92;width:384px;display:flex;flex-direction:column;gap:10px}
+.mg-c{box-sizing:border-box;padding:14px 14px 12px 14px;border-radius:18px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 18px 44px rgba(11,20,51,.14);text-align:left;color:#0B1433;font-size:14px;animation:ovIn .4s ease both}
+.mg-c.m2{animation-delay:.08s}
+.mg-c.m3{animation-delay:.16s}
+.mg-h{display:flex;align-items:flex-start;gap:12px}
+.mg-a{width:38px;height:38px;flex-shrink:0;border-radius:50%;background:#EAF0FF;color:#0E3BB8;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
+.mg-c.m2 .mg-a{background:#E7F5EE;color:#0F6B45}
+.mg-c.m3 .mg-a{background:#FFF1CF;color:#8A5A00}
+.mg-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.mg-n{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600}
+.mg-n .mg-rl{height:22px;padding:0 8px;font-size:11.5px}
+.mg-n em{font-style:normal;font-size:12px;font-weight:400;color:#8A93AD;margin-left:auto}
+.mg-x{font-size:12.5px;color:#8A93AD;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mg-ib{width:28px;height:28px;flex-shrink:0;border-radius:50%;border:0;background:transparent;color:#8A93AD;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.mg-ib:hover{background:#F1F3F8;color:#0B1433}
+.mg-p{margin:10px 0 0 50px;font-size:14px;line-height:1.5;color:#3A4566;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mg-f{margin:10px 0 0 50px;display:flex;align-items:center;gap:6px}
+.mg-b{height:34px;padding:0 14px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;font-family:inherit;font-size:13.5px;font-weight:600;color:#0B1433;display:inline-flex;align-items:center;cursor:pointer;text-decoration:none}
+.mg-b:hover{border-color:#1652F0;color:#1652F0}
+.mg-o{height:34px;padding:0 10px;display:inline-flex;align-items:center;font-size:13.5px;font-weight:600;color:#1652F0;text-decoration:none}
+.mg-w{margin-left:auto;font-size:12.5px;color:#8A93AD}
+.mg-in{margin:10px 0 0 50px;display:flex;align-items:center;gap:6px;height:44px;padding:0 5px 0 14px;border-radius:999px;border:1.5px solid #1652F0;box-shadow:0 0 0 4px rgba(22,82,240,.12)}
+.mg-in input{flex:1;min-width:0;border:0;outline:none;background:none;font-family:inherit;font-size:14px;color:#0B1433}
+.mg-go{width:34px;height:34px;flex-shrink:0;border-radius:50%;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center}
+.mg-ok{margin:10px 0 0 50px;display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:500;color:#0F6B45}
+.mg-ok i{width:20px;height:20px;border-radius:50%;background:#E7F5EE;display:flex;align-items:center;justify-content:center}
+.mg-more{box-sizing:border-box;height:44px;padding:0 16px;border-radius:999px;background:#0B1433;color:#FFFFFF;display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 14px 34px rgba(11,20,51,.2)}
+.mg-more b{font-weight:600}
+.mg-m{display:none}
+@media (prefers-reduced-motion: reduce){.ov-r1,.ov-r2,.mg-c{animation:none}}
+@media (max-width: 960px){
+.tp-scrim,.pm-scrim{background:rgba(11,20,51,.28)}
+.ov-r1,.ov-r2{left:8px;right:8px;top:68px;width:auto}
+.tp-f{flex-direction:column;align-items:stretch;gap:6px}
+.tp-go,.ac-go{justify-content:center}
+.tp-u{align-self:center;padding:10px 0}
+.ac-f{flex-direction:column;align-items:stretch}
+.ac-x{justify-content:center}
+.mg{left:8px;right:8px;top:70px;bottom:auto;width:auto}
+.mg-c ~ .mg-c{display:none}
+.mg-m{display:flex}
+.mg-p,.mg-f,.mg-in,.mg-ok{margin-left:0}
+}
 </style>
 </helmet>
 <div class="ds-root">
+<sc-if value="{{ov_low}}" hint-placeholder-val="{{ false }}"><div class="tp-scrim" aria-hidden="true"></div><section class="tp-p ov-r2" role="dialog" aria-label="Creio">
+<span class="tp-lab">Creio</span><span class="tp-big"><span class="tp-coin" aria-hidden="true"></span>18,240</span>
+<p class="tp-warn"><span class="tp-i"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17h.01"></path></svg></span><span>Your balance is running low.</span></p>
+<div class="tp-f"><a href="#" class="ds-btn tp-go"><span>Buy Creio</span></a><a href="#" class="ds-link tp-u">View usage</a></div></section></sc-if><sc-if value="{{ov_empty}}" hint-placeholder-val="{{ false }}"><div class="tp-scrim" aria-hidden="true"></div><section class="ac ns ov-p ov-r2" role="dialog" aria-label="Not enough Creio">
+<span class="ns-h"><span class="tp-i"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"></path><path d="M12 10v4M12 17h.01"></path></svg></span>Not enough Creio</span><b class="ov-h">You don’t have enough Creio to complete this AI action.</b>
+<dl class="ns-d one"><div><dt>Current balance</dt><dd><span class="ns-c" aria-hidden="true"></span>0 Creio</dd></div></dl>
+<p class="ns-p">You can keep working by hand: editing, uploading, building and submitting all still work.</p>
+<div class="ac-f"><a href="#" class="ds-btn ac-go"><span>Buy Creio</span></a><a href="STU-014.dc.html" class="ac-x">Continue manually</a></div></section></sc-if><sc-if value="{{ov_est}}" hint-placeholder-val="{{ false }}"><div class="tp-scrim" aria-hidden="true"></div><section class="ac ns est ov-p ov-r2" role="dialog" aria-label="Large AI action estimate">
+<span class="ns-h"><span class="tp-i"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l1.9 6.1L20 10l-6.1 1.9L12 18l-1.9-6.1L4 10l6.1-1.9z" fill="currentColor" stroke="none"></path></svg></span>Large AI action · estimate</span><b class="ov-h">Nova will review your complete course: structure, content and assessments.</b>
+<dl class="ns-d"><div><dt>Estimated usage</dt><dd><span class="ns-c" aria-hidden="true"></span>~8,000–12,000</dd></div><div><dt>Available</dt><dd><span class="ns-c" aria-hidden="true"></span>72,450</dd></div></dl>
+<p class="ns-p">Everyday Copilot help doesn’t ask first. Only large actions like this show an estimate.</p>
+<div class="ac-f"><a href="STU-042.dc.html" class="ds-btn ac-go"><span>Run Review</span></a><a href="STU-042.dc.html" class="ac-x">Cancel</a></div></section></sc-if><sc-if value="{{ov_menu}}" hint-placeholder-val="{{ false }}"><div class="pm-scrim" aria-hidden="true"></div><section class="pm-p ov-r1" role="dialog" aria-label="Account menu">
+<div class="pm-me"><span class="pm-a">AO<span class="pm-dot"></span></span><span><b>Ada Ononuju</b><span>ada.ononuju@example.com</span><span class="ds-tag blue pm-tg">Creator</span></span></div>
+<div class="pm-sec"><span class="pm-lab">Status</span><div class="pm-st" role="radiogroup" aria-label="Status"><button type="button" role="radio" aria-checked="true" class="on"><i></i>Online</button><button type="button" role="radio" aria-checked="false" class="aw"><i></i>Away</button><button type="button" role="radio" aria-checked="false" class="dn"><i></i>Appear offline</button></div></div>
+<nav class="pm-l" aria-label="Profile"><a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span>View public profile</span></a><a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"></path><path d="m13.5 6.5 4 4"></path></svg><span>Edit Creator Profile</span></a></nav>
+<div class="pm-sec"><span class="pm-lab">Switch role</span><div class="pm-rl"><a href="#" class="pm-r"><span class="pm-ri"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5.5C5 4 8.5 4 12 6c3.5-2 7-2 9.5-.5V19c-2.5-1.5-6-1.5-9.5.5-3.5-2-7-2-9.5-.5z"></path><path d="M12 6v13.5"></path></svg></span><span><b>Learner</b><span>Your courses, programs and progress</span></span></a><div class="pm-r cur" aria-current="true"><span class="pm-ri"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"></path><path d="m13.5 6.5 4 4"></path></svg></span><span><b>Creator</b><span>You’re here</span></span><span class="pm-ck"><svg class="ck" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></div><a href="#" class="pm-r"><span class="pm-ri"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><span><b>Validator</b><span>2 review requests waiting</span></span><span class="pm-bd">2</span></a></div></div>
+<nav class="pm-l" aria-label="Account"><a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"></path></svg><span>Settings</span></a><a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17h.01"></path></svg><span>Help &amp; Support</span></a><a href="#" class="pm-out"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg><span>Sign out</span></a></nav></section></sc-if><sc-if value="{{ov_msg}}" hint-placeholder-val="{{ false }}"><div class="mg" aria-live="polite"><section class="mg-c " role="status" aria-label="New message from Mary O."><div class="mg-h"><span class="mg-a" aria-hidden="true">MO</span><span class="mg-t"><span class="mg-n">Mary O.<span class="ds-tag line mg-rl">Learner</span><em>now</em></span><span class="mg-x">Learner Support · Data Analysis with SQL · a lesson</span></span><button type="button" class="mg-ib" aria-label="Dismiss"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div><p class="mg-p">I tried your hint but my answer still doesn’t match. Can you check my approach?</p><div class="mg-f"><a href="STU-MSG-2.dc.html" class="mg-b">Reply</a><a href="#" class="mg-o">Open conversation</a></div></section><section class="mg-c m2" role="status" aria-label="New message from John Adeyemi"><div class="mg-h"><span class="mg-a" aria-hidden="true">JA</span><span class="mg-t"><span class="mg-n">John Adeyemi<span class="ds-tag line mg-rl">Co-Creator</span><em>1 min</em></span><span class="mg-x">Team Chat · Data Analysis with SQL</span></span><button type="button" class="mg-ib" aria-label="Dismiss"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div><p class="mg-p">I’ve uploaded the case study. Can you check the numbers before Friday?</p><div class="mg-f"><a href="#" class="mg-b">Reply</a><a href="#" class="mg-o">Open Team Chat</a></div></section><section class="mg-c m3" role="status" aria-label="New message from Dr. Amina Bello"><div class="mg-h"><span class="mg-a" aria-hidden="true">AB</span><span class="mg-t"><span class="mg-n">Dr. Amina Bello<span class="ds-tag line mg-rl">Validator</span><em>3 min</em></span><span class="mg-x">Validation · Data Analysis with SQL · Request #16</span></span><button type="button" class="mg-ib" aria-label="Dismiss"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div><p class="mg-p">Please share the source data so I can check the results.</p><div class="mg-f"><a href="STU-055A.dc.html" class="mg-o">Open request</a><span class="mg-w">Respond in the workspace</span></div></section><a href="#" class="mg-more mg-m"><span><b>3 new messages</b></span><span>View all</span></a></div></sc-if><sc-if value="{{ov_reply}}" hint-placeholder-val="{{ false }}"><div class="mg" aria-live="polite"><section class="mg-c " role="status" aria-label="New message from Mary O."><div class="mg-h"><span class="mg-a" aria-hidden="true">MO</span><span class="mg-t"><span class="mg-n">Mary O.<span class="ds-tag line mg-rl">Learner</span><em>now</em></span><span class="mg-x">Learner Support · Data Analysis with SQL · a lesson</span></span><button type="button" class="mg-ib" aria-label="Dismiss"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div><p class="mg-p">I tried your hint but my answer still doesn’t match. Can you check my approach?</p><label class="mg-in"><span class="sr-only">Reply to Mary O.</span><input value="Yes, add city to the GROUP BY as well." aria-label="Reply to Mary O."><a href="STU-MSG-3.dc.html" class="mg-go" aria-label="Send"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a></label><div class="mg-f"><a href="#" class="mg-o">Open conversation</a><a href="STU-MSG-1.dc.html" class="mg-b">Cancel</a></div></section><section class="mg-c m2" role="status" aria-label="New message from John Adeyemi"><div class="mg-h"><span class="mg-a" aria-hidden="true">JA</span><span class="mg-t"><span class="mg-n">John Adeyemi<span class="ds-tag line mg-rl">Co-Creator</span><em>1 min</em></span><span class="mg-x">Team Chat · Data Analysis with SQL</span></span><button type="button" class="mg-ib" aria-label="Dismiss"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div><p class="mg-p">I’ve uploaded the case study. Can you check the numbers before Friday?</p><div class="mg-f"><a href="#" class="mg-b">Reply</a><a href="#" class="mg-o">Open Team Chat</a></div></section><section class="mg-c m3" role="status" aria-label="New message from Dr. Amina Bello"><div class="mg-h"><span class="mg-a" aria-hidden="true">AB</span><span class="mg-t"><span class="mg-n">Dr. Amina Bello<span class="ds-tag line mg-rl">Validator</span><em>3 min</em></span><span class="mg-x">Validation · Data Analysis with SQL · Request #16</span></span><button type="button" class="mg-ib" aria-label="Dismiss"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div><p class="mg-p">Please share the source data so I can check the results.</p><div class="mg-f"><a href="STU-055A.dc.html" class="mg-o">Open request</a><span class="mg-w">Respond in the workspace</span></div></section><a href="#" class="mg-more mg-m"><span><b>3 new messages</b></span><span>View all</span></a></div></sc-if><sc-if value="{{ov_sent}}" hint-placeholder-val="{{ false }}"><div class="mg" aria-live="polite"><section class="mg-c " role="status" aria-label="New message from Mary O."><div class="mg-h"><span class="mg-a" aria-hidden="true">MO</span><span class="mg-t"><span class="mg-n">Mary O.<span class="ds-tag line mg-rl">Learner</span><em>now</em></span><span class="mg-x">Learner Support · Data Analysis with SQL · a lesson</span></span><button type="button" class="mg-ib" aria-label="Dismiss"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div><p class="mg-p">I tried your hint but my answer still doesn’t match. Can you check my approach?</p><span class="mg-ok"><i><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></i>Sent to Mary. It’s in the conversation.</span><div class="mg-f"><a href="#" class="mg-o">Open conversation</a></div></section><section class="mg-c m2" role="status" aria-label="New message from John Adeyemi"><div class="mg-h"><span class="mg-a" aria-hidden="true">JA</span><span class="mg-t"><span class="mg-n">John Adeyemi<span class="ds-tag line mg-rl">Co-Creator</span><em>1 min</em></span><span class="mg-x">Team Chat · Data Analysis with SQL</span></span><button type="button" class="mg-ib" aria-label="Dismiss"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div><p class="mg-p">I’ve uploaded the case study. Can you check the numbers before Friday?</p><div class="mg-f"><a href="#" class="mg-b">Reply</a><a href="#" class="mg-o">Open Team Chat</a></div></section><section class="mg-c m3" role="status" aria-label="New message from Dr. Amina Bello"><div class="mg-h"><span class="mg-a" aria-hidden="true">AB</span><span class="mg-t"><span class="mg-n">Dr. Amina Bello<span class="ds-tag line mg-rl">Validator</span><em>3 min</em></span><span class="mg-x">Validation · Data Analysis with SQL · Request #16</span></span><button type="button" class="mg-ib" aria-label="Dismiss"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></div><p class="mg-p">Please share the source data so I can check the results.</p><div class="mg-f"><a href="STU-055A.dc.html" class="mg-o">Open request</a><span class="mg-w">Respond in the workspace</span></div></section><a href="#" class="mg-more mg-m"><span><b>3 new messages</b></span><span>View all</span></a></div></sc-if>
 <sc-if value="{{n_lip}}" hint-placeholder-val="{{ false }}"><div class="ds-scrim {{navCls}}" onClick="{{toggleNav}}"></div>
 <nav class="ds-side cw-side {{navCls}}" aria-label="Course">
 <button type="button" class="ds-icon-btn ds-close" onClick="{{toggleNav}}" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
@@ -663,8 +795,8 @@ a{color:#1652F0}
 <a href="STU-009.dc.html" class="cw-hp ds-hide-sm"><span>Course Health</span><b>31%</b></a>
 <a href="#" class="cw-team ds-hide-sm" aria-label="Team Chat"><span class="avs"><span class="av" style="width: 30px; height: 30px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span><span class="av" style="width: 30px; height: 30px">JA<img src="/_blob/cbfe3f2bbb89728d8777e425b59db736" alt=""></span><span class="av org" style="width: 30px; height: 30px">AB</span></span><span class="cw-chat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg><span>Team Chat</span></span></a>
 <a href="#" class="cw-nova ds-hide-sm"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/7768558e9a167cb4198a0461f26bc891" alt=""></span><span>Nova</span></a>
-<a href="#" class="ds-tok" aria-label="72,450 Creio"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0; display: block"><defs><linearGradient id="tpa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9A3"></stop><stop offset="0.45" stop-color="#F6C343"></stop><stop offset="1" stop-color="#D08A12"></stop></linearGradient><linearGradient id="tpb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9CF5A"></stop><stop offset="1" stop-color="#E2A024"></stop></linearGradient></defs><circle cx="32" cy="34" r="29" fill="#B8740A" opacity="0.35"></circle><circle cx="32" cy="32" r="29" fill="url(#tpa)"></circle><circle cx="32" cy="32" r="22" fill="url(#tpb)" stroke="#FFF1C2" stroke-opacity="0.7" stroke-width="1.5"></circle><path d="M32 18l2.9 9.3 9.3 2.9-9.3 2.9L32 42.4l-2.9-9.3-9.3-2.9 9.3-2.9z" fill="#FFF8DF"></path><ellipse cx="23" cy="19" rx="9" ry="5" fill="#FFFFFF" opacity="0.35" transform="rotate(-30 23 19)"></ellipse></svg><span>72.4K</span></a>
-<a href="#" class="cw-me" aria-label="Your account"><span class="av" style="width: 40px; height: 40px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span></a>
+<a href="#" class="ds-tok {{tokOn}}" aria-label="72,450 Creio"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" style="flex-shrink: 0; display: block"><defs><linearGradient id="tpa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE9A3"></stop><stop offset="0.45" stop-color="#F6C343"></stop><stop offset="1" stop-color="#D08A12"></stop></linearGradient><linearGradient id="tpb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F9CF5A"></stop><stop offset="1" stop-color="#E2A024"></stop></linearGradient></defs><circle cx="32" cy="34" r="29" fill="#B8740A" opacity="0.35"></circle><circle cx="32" cy="32" r="29" fill="url(#tpa)"></circle><circle cx="32" cy="32" r="22" fill="url(#tpb)" stroke="#FFF1C2" stroke-opacity="0.7" stroke-width="1.5"></circle><path d="M32 18l2.9 9.3 9.3 2.9-9.3 2.9L32 42.4l-2.9-9.3-9.3-2.9 9.3-2.9z" fill="#FFF8DF"></path><ellipse cx="23" cy="19" rx="9" ry="5" fill="#FFFFFF" opacity="0.35" transform="rotate(-30 23 19)"></ellipse></svg><span>{{tokT}}</span><sc-if value="{{ov_low}}" hint-placeholder-val="{{ false }}"><span class="tk-low">Low</span></sc-if><sc-if value="{{ov_empty}}" hint-placeholder-val="{{ false }}"><span class="tk-low emp">Empty</span></sc-if></a>
+<a href="#" class="cw-me {{meOn}}" aria-label="Your account"><span class="av" style="width: 40px; height: 40px">AO<img src="/_blob/579b7da5420994a2a08f63fa37cbbf9f" alt=""></span></a>
 </header>
 <main class="ds-main pp-main">
 <sc-if value="{{p_review}}" hint-placeholder-val="{{ true }}">
@@ -742,6 +874,14 @@ function togVals(self) {
 }
 var NAV = {"review": "lprev", "market": "mprev", "profile": "lip", "nova": "nrev", "ready": "ready", "issues": "ready"};
 class Component extends DCLogic {
+  renderVals() {
+    var v = this._rv15(), o = (this.props && this.props.ov) || '';
+    ["low", "empty", "est", "menu", "msg", "reply", "sent"].forEach(function (k) { v['ov_'.concat(k)] = o === k; });
+    v.tokT = o === 'low' ? '18.2K' : (o === 'empty' ? '0' : '72.4K');
+    v.tokOn = o === 'low' || o === 'empty' || o === 'est' ? 'tp-on' : '';
+    v.meOn = o === 'menu' ? 'pm-on' : '';
+    return v;
+  }
 auroraMount(el) {
     var host = window;
     try { if (window.top && window.top.document) host = window.top; } catch (e) { host = window; }
@@ -851,7 +991,7 @@ auroraMount(el) {
   componentDidMount() { this.aurScan();
     try { var m = document.querySelector('.mst .on'); if (m && m.parentElement) { m.parentElement.scrollLeft = m.offsetLeft - 16; } } catch (e) {}
   }
-  renderVals() {
+  _rv15() {
     var pg = this.props.page || 'review';
     var v = togVals(this), self = this;
     Object.keys(NAV).forEach(function (k) { v['p_'.concat(k)] = k === pg; });

@@ -138,10 +138,11 @@ def area(i, a):
             t, h, go, ic('arrowr', 14, 2.2), k, k, k, ck(12))
     return '<section class="nr-a" style="--i: %d"><header><span class="nr-i">%s</span><b>%s</b>%s</header><ul>%s</ul></section>' % (i, ic(icon, 16, 2), name, tag('%d to consider' % len(items), 'amber'), rows)
 P('nova', 'nrev', page_head('Prepare', 'Nova Course Review', 'Nova reviews your course like an experienced instructional designer would.', nchip('Run review again')),
-  '''<section class="crv ob-in2"><span class="crv-c">%s</span><div><b>A full review is a large AI action</b><p>It uses about 8,000–12,000 Creio. Nova shows the estimate before it runs. Last run used 9,800 Creio.</p></div><button type="button" class="ds-ghost sm">%s<span>Run full review</span></button></section>
-<div class="wn info nr-w ob-in2">%s<span><b>Nova review is not validation.</b> Advisory only. This isn’t validation and doesn’t affect your validation outcome. Independent validators make that decision. Act on what’s useful.</span></div>
+  '''<section class="crv ob-in2"><div class="crv-t"><span class="crv-c">%s</span><div class="crv-b"><b>A full review is a large AI action</b><p>Nova shows the estimate before it runs.</p></div><button type="button" class="ds-ghost sm">%s<span>Run full review</span></button></div>
+<dl class="crv-s"><div><dt>It uses about</dt><dd>%s8,000–12,000 Creio</dd></div><div><dt>Last run used</dt><dd>%s9,800 Creio</dd></div></dl>
+<p class="crv-n">%s<span><b>Nova review is not validation.</b> Advisory only. This isn’t validation and doesn’t affect your validation outcome. Independent validators make that decision. Act on what’s useful.</span></p></section>
 <div class="nr-s ob-in3"><b>9 suggestions across 6 areas</b><span>review #1</span></div>
-<div class="nr ob-in3">%s</div>''' % (coin(True), SPARK, ic('lock', 16, 2), ''.join(area(i, a) for i, a in enumerate(AREAS))),
+<div class="nr ob-in3">%s</div>''' % (COIN('crv', 40), SPARK, COIN('crva', 18), COIN('crvb', 18), ic('lock', 16, 2), ''.join(area(i, a) for i, a in enumerate(AREAS))),
   acts('STU-043.dc.html', 'Continue', back_href='STU-041.dc.html'),
   nova_rail('These are suggestions, not validation. Mark what you’ve considered.') +
   '''<section class="ds-card rx nr-sum ob-in3"><span class="rx-k">9 suggestions across 6 areas</span><ul>%s</ul></section>''' % ''.join(
@@ -576,14 +577,22 @@ PREP_CSS = r'''.pp-main .pg-h .ds-seg{flex-shrink:0}
 .lp-ok svg{display:none}
 .lp-ok.on{background:#E7F5EE;border-color:#BFE3CF;color:#0F6B45}
 .lp-ok.on svg{display:block}
-.crv{display:flex;align-items:center;gap:16px;padding:16px 18px;border-radius:20px;background:linear-gradient(160deg,#FFF1CF,#FFFAEB);border:1.5px solid #F4D98E}
-.crv > div{flex:1;min-width:0}
-.crv b{font-size:15px;font-weight:600;color:#5A3B00}
-.crv p{margin:3px 0 0 0;font-size:13.5px;line-height:1.5;color:#6B4A00}
+.crv{display:flex;flex-direction:column;overflow:hidden;border-radius:20px;background:#FFFFFF;border:1.5px solid #F4D98E}
+.crv-t{display:flex;align-items:center;gap:16px;padding:18px 20px;background:linear-gradient(160deg,#FFF1CF,#FFFAEB)}
+.crv-c{display:flex;flex-shrink:0}
+.crv-b{flex:1;min-width:0}
+.crv-b b{font-size:16px;font-weight:600;color:#5A3B00}
+.crv-b p{margin:3px 0 0 0;font-size:13.5px;line-height:1.5;color:#6B4A00}
 .crv .ds-ghost{background:#FFFFFF;border-color:#F0D08A;color:#5A3B00;gap:7px}
 .crv .ds-ghost svg{color:#C08A1E}
-.nr-w{margin:0 !important}
-.nr-w b{margin-right:4px}
+.crv-s{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1.5px solid #F3E6C4;background:#FFFCF3}
+.crv-s div{padding:14px 20px}
+.crv-s div + div{border-left:1.5px solid #F3E6C4}
+.crv-s dt{font-size:12.5px;color:#8A6A2A}
+.crv-s dd{margin:4px 0 0 0;display:flex;align-items:center;gap:8px;font-size:17px;font-weight:600;color:#4A3300;font-variant-numeric:tabular-nums}
+.crv-n{margin:0;display:flex;align-items:flex-start;gap:10px;padding:14px 20px;border-top:1.5px solid #EEF1F7;background:#FAFBFE;font-size:13.5px;line-height:1.6;color:#3A4566}
+.crv-n svg{flex-shrink:0;margin-top:3px;color:#5B6582}
+.crv-n b{margin-right:4px;font-weight:600;color:#0B1433}
 .nr-s{display:flex;align-items:baseline;gap:10px;margin-top:4px}
 .nr-s b{font-size:17px;font-weight:600}
 .nr-s span{font-size:13px;color:#8A93AD}
@@ -708,8 +717,11 @@ PREP_CSS = r'''.pp-main .pg-h .ds-seg{flex-shrink:0}
 .lp-v{grid-column:1 / -1}
 .lp-a{grid-column:1 / -1}
 .lp-r.inf::before{left:-16px}
-.crv{flex-wrap:wrap;padding:14px}
-.crv .ds-ghost{width:100%}
+.crv-t{flex-wrap:wrap;padding:16px}
+.crv-t .ds-ghost{width:100%;justify-content:center}
+.crv-s div{padding:12px 16px}
+.crv-s dd{font-size:15px}
+.crv-n{padding:14px 16px}
 .nr-a{padding:14px 14px 4px 14px}
 .rd-h{grid-template-columns:auto minmax(0,1fr);gap:16px;padding:18px 16px}
 .rd-r,.rd-r svg{width:84px;height:84px}

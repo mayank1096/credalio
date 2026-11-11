@@ -180,8 +180,9 @@ textarea.ds-in.lo-in{field-sizing:content}
 .ce-m .ce-s svg{flex-shrink:0}
 .opt3.v .ds-opt{align-items:flex-start}
 .lo{position:relative;gap:14px}
-.lo::before{content:'';position:absolute;left:17px;top:18px;bottom:40px;width:2px;border-radius:2px;background:linear-gradient(180deg,#1652F0,#AFC1F5 75%,#F4DDAA)}
-.lo-r{grid-template-columns:36px minmax(0,1fr);gap:14px}
+.lo-r{position:relative;grid-template-columns:36px minmax(0,1fr);gap:14px}
+.lo-r:not(:last-child)::before{content:'';position:absolute;left:17px;top:38px;bottom:-16px;width:2px;border-radius:2px;background:linear-gradient(180deg,#1652F0,#AFC1F5)}
+.lo-r:has(+ .lo-r.warn)::before{background:linear-gradient(180deg,#AFC1F5,#F4DDAA)}
 .lo-n{position:relative;z-index:1;margin-top:2px;box-shadow:0 0 0 5px #FFFFFF}
 .lo-r:not(.warn) .lo-n{background:#1652F0;color:#FFFFFF}
 .lo-b{min-width:0;padding:12px 12px 14px 16px;border-radius:16px;border:1.5px solid #E6EAF3;background:#FFFFFF;transition:border-color .2s ease,box-shadow .2s ease}
@@ -264,7 +265,7 @@ textarea.ds-in.lo-in:focus{outline:none;box-shadow:none}
 .ce-m{grid-column:2 / -1;grid-row:2;margin:0;flex-direction:row;flex-wrap:wrap;align-items:center;gap:6px 10px}
 .ce-m .ce-s{margin-left:0;flex-basis:auto}
 .wk-a:not(:has(.sv-s:not(:empty))){justify-self:stretch;padding-left:16px}
-.lo::before{left:13px;top:14px}
+.lo-r:not(:last-child)::before{left:13px;top:30px}
 .lo-r{grid-template-columns:28px minmax(0,1fr);gap:10px}
 .lo-n{display:flex;width:28px;height:28px;font-size:12.5px;box-shadow:0 0 0 4px #FFFFFF}
 .lo-b{padding:10px 8px 12px 14px;border-radius:14px}

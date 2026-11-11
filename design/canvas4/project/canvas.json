@@ -4289,7 +4289,7 @@
       "x": 1520,
       "y": 83796,
       "w": 390,
-      "h": 1005,
+      "h": 949,
       "title": "CR-OPP-001 · Opportunities · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -4309,7 +4309,7 @@
       "x": 3590,
       "y": 83796,
       "w": 390,
-      "h": 1242,
+      "h": 1181,
       "title": "CR-OPP-002 · Opportunity details · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -4329,7 +4329,7 @@
       "x": 5660,
       "y": 83796,
       "w": 390,
-      "h": 931,
+      "h": 844,
       "title": "CR-OPP-002 · Opportunity details (not eligible) · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -4349,7 +4349,7 @@
       "x": 7730,
       "y": 83796,
       "w": 390,
-      "h": 1394,
+      "h": 1244,
       "title": "CR-OPP-003 · Apply to Collaborate · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -4369,7 +4369,7 @@
       "x": 9800,
       "y": 83796,
       "w": 390,
-      "h": 1331,
+      "h": 1054,
       "title": "CR-OPP-005 · Update Creator Profile · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -4397,7 +4397,7 @@
     },
     "OPP-004.dc.html": {
       "x": 0,
-      "y": 85610,
+      "y": 85460,
       "w": 1440,
       "h": 900,
       "title": "CR-OPP-004 · My Applications (pending) · Desktop",
@@ -4407,7 +4407,7 @@
     },
     "OPP-004-Mobile.dc.html": {
       "x": 1520,
-      "y": 85610,
+      "y": 85460,
       "w": 390,
       "h": 844,
       "title": "CR-OPP-004 · My Applications (pending) · Mobile",
@@ -4417,7 +4417,7 @@
     },
     "OPP-004-REVIEW.dc.html": {
       "x": 2070,
-      "y": 85610,
+      "y": 85460,
       "w": 1440,
       "h": 900,
       "title": "CR-OPP-004 · My Applications (under review) · Desktop",
@@ -4427,7 +4427,7 @@
     },
     "OPP-004-REVIEW-Mobile.dc.html": {
       "x": 3590,
-      "y": 85610,
+      "y": 85460,
       "w": 390,
       "h": 844,
       "title": "CR-OPP-004 · My Applications (under review) · Mobile",
@@ -4437,7 +4437,7 @@
     },
     "OPP-004-SHORTLISTED.dc.html": {
       "x": 4140,
-      "y": 85610,
+      "y": 85460,
       "w": 1440,
       "h": 900,
       "title": "CR-OPP-004 · My Applications (shortlisted) · Desktop",
@@ -4447,7 +4447,7 @@
     },
     "OPP-004-SHORTLISTED-Mobile.dc.html": {
       "x": 5660,
-      "y": 85610,
+      "y": 85460,
       "w": 390,
       "h": 844,
       "title": "CR-OPP-004 · My Applications (shortlisted) · Mobile",
@@ -4457,7 +4457,7 @@
     },
     "OPP-004-OFFER.dc.html": {
       "x": 6210,
-      "y": 85610,
+      "y": 85460,
       "w": 1440,
       "h": 900,
       "title": "CR-OPP-004 · My Applications (offer received) · Desktop",
@@ -4467,7 +4467,7 @@
     },
     "OPP-004-OFFER-Mobile.dc.html": {
       "x": 7730,
-      "y": 85610,
+      "y": 85460,
       "w": 390,
       "h": 844,
       "title": "CR-OPP-004 · My Applications (offer received) · Mobile",
@@ -4477,7 +4477,7 @@
     },
     "OPP-004-ACCEPTED.dc.html": {
       "x": 8280,
-      "y": 85610,
+      "y": 85460,
       "w": 1440,
       "h": 900,
       "title": "CR-OPP-004 · My Applications (accepted) · Desktop",
@@ -4487,7 +4487,7 @@
     },
     "OPP-004-ACCEPTED-Mobile.dc.html": {
       "x": 9800,
-      "y": 85610,
+      "y": 85460,
       "w": 390,
       "h": 844,
       "title": "CR-OPP-004 · My Applications (accepted) · Mobile",
@@ -4497,7 +4497,7 @@
     },
     "OPP-004-DECLINED.dc.html": {
       "x": 10350,
-      "y": 85610,
+      "y": 85460,
       "w": 1440,
       "h": 900,
       "title": "CR-OPP-004 · My Applications (declined) · Desktop",
@@ -4507,7 +4507,7 @@
     },
     "OPP-004-DECLINED-Mobile.dc.html": {
       "x": 11870,
-      "y": 85610,
+      "y": 85460,
       "w": 390,
       "h": 844,
       "title": "CR-OPP-004 · My Applications (declined) · Mobile",
@@ -4517,7 +4517,7 @@
     },
     "OPP-004-WITHDRAWN.dc.html": {
       "x": 12420,
-      "y": 85610,
+      "y": 85460,
       "w": 1440,
       "h": 900,
       "title": "CR-OPP-004 · My Applications (withdrawn) · Desktop",
@@ -4527,7 +4527,7 @@
     },
     "OPP-004-WITHDRAWN-Mobile.dc.html": {
       "x": 13940,
-      "y": 85610,
+      "y": 85460,
       "w": 390,
       "h": 844,
       "title": "CR-OPP-004 · My Applications (withdrawn) · Mobile",
@@ -4537,7 +4537,7 @@
     },
     "OPP-004-WITHDRAW.dc.html": {
       "x": 14490,
-      "y": 85610,
+      "y": 85460,
       "w": 1440,
       "h": 900,
       "title": "CR-OPP-004 · Withdraw application · Desktop",
@@ -4547,7 +4547,7 @@
     },
     "OPP-004-WITHDRAW-Mobile.dc.html": {
       "x": 16010,
-      "y": 85610,
+      "y": 85460,
       "w": 390,
       "h": 844,
       "title": "CR-OPP-004 · Withdraw application · Mobile",
@@ -4557,7 +4557,7 @@
     },
     "OPP-004-CLARIFY.dc.html": {
       "x": 16560,
-      "y": 85610,
+      "y": 85460,
       "w": 1440,
       "h": 900,
       "title": "CR-OPP-004 · Reply to clarification · Desktop",
@@ -4567,7 +4567,7 @@
     },
     "OPP-004-CLARIFY-Mobile.dc.html": {
       "x": 18080,
-      "y": 85610,
+      "y": 85460,
       "w": 390,
       "h": 1166,
       "title": "CR-OPP-004 · Reply to clarification · Mobile",
@@ -4577,7 +4577,7 @@
     },
     "Setup.dc.html": {
       "x": 0,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -4587,7 +4587,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -4597,7 +4597,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -4607,7 +4607,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -4617,7 +4617,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -4627,7 +4627,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -4637,7 +4637,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -4647,7 +4647,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -4657,7 +4657,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -4667,7 +4667,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -4677,7 +4677,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -4687,7 +4687,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -4697,7 +4697,7 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
@@ -4707,7 +4707,7 @@
     },
     "Manage2.dc.html": {
       "x": 20800,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (pricing, versions, learners) · shared source",
@@ -4717,7 +4717,7 @@
     },
     "Manage3.dc.html": {
       "x": 22400,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (validation, archive, insights) · shared source",
@@ -4727,7 +4727,7 @@
     },
     "Collab.dc.html": {
       "x": 24000,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Course collaboration (invite, permissions, manage, remove) · shared source",
@@ -4737,7 +4737,7 @@
     },
     "Collab2.dc.html": {
       "x": 25600,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Open collaboration (setup, applications, offers, manage opportunity) · shared source",
@@ -4747,7 +4747,7 @@
     },
     "Collab3.dc.html": {
       "x": 27200,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Collaboration, creator side (my invitations, shared courses) · shared source",
@@ -4757,7 +4757,7 @@
     },
     "Collab4.dc.html": {
       "x": 28800,
-      "y": 87196,
+      "y": 87046,
       "w": 1440,
       "h": 900,
       "title": "Collaboration, creator side (opportunities, applications, creator profile) · shared source",
@@ -5766,11 +5766,11 @@
       "text": "Batch 13 · My Applications: pending, under review, shortlisted, offer received, accepted, declined, withdrawn, withdraw, reply to clarification",
       "w": 240,
       "x": 0,
-      "y": 85310
+      "y": 85160
     },
     "b13-apps-new": {
       "x": 0,
-      "y": 85460,
+      "y": 85310,
       "text": "NEW · batch 13",
       "w": 260,
       "fill": "pink"
@@ -5781,7 +5781,7 @@
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 86896
+      "y": 86746
     }
   },
   "noteOrder": [

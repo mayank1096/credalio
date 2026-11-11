@@ -4275,9 +4275,309 @@
       "is_interactive": true,
       "expand": "fill"
     },
-    "Setup.dc.html": {
+    "OPP-001.dc.html": {
       "x": 0,
       "y": 83796,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-OPP-001 · Opportunities · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-001-Mobile.dc.html": {
+      "x": 1520,
+      "y": 83796,
+      "w": 390,
+      "h": 1005,
+      "title": "CR-OPP-001 · Opportunities · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-002.dc.html": {
+      "x": 2070,
+      "y": 83796,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-OPP-002 · Opportunity details · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-002-Mobile.dc.html": {
+      "x": 3590,
+      "y": 83796,
+      "w": 390,
+      "h": 1242,
+      "title": "CR-OPP-002 · Opportunity details · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-002-INELIGIBLE.dc.html": {
+      "x": 4140,
+      "y": 83796,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-OPP-002 · Opportunity details (not eligible) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-002-INELIGIBLE-Mobile.dc.html": {
+      "x": 5660,
+      "y": 83796,
+      "w": 390,
+      "h": 931,
+      "title": "CR-OPP-002 · Opportunity details (not eligible) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-003.dc.html": {
+      "x": 6210,
+      "y": 83796,
+      "w": 1440,
+      "h": 944,
+      "title": "CR-OPP-003 · Apply to Collaborate · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-003-Mobile.dc.html": {
+      "x": 7730,
+      "y": 83796,
+      "w": 390,
+      "h": 1394,
+      "title": "CR-OPP-003 · Apply to Collaborate · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-005.dc.html": {
+      "x": 8280,
+      "y": 83796,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-OPP-005 · Update Creator Profile · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-005-Mobile.dc.html": {
+      "x": 9800,
+      "y": 83796,
+      "w": 390,
+      "h": 1331,
+      "title": "CR-OPP-005 · Update Creator Profile · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-005-SUBMITTED.dc.html": {
+      "x": 10350,
+      "y": 83796,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-OPP-005 · Submitted for verification · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-005-SUBMITTED-Mobile.dc.html": {
+      "x": 11870,
+      "y": 83796,
+      "w": 390,
+      "h": 844,
+      "title": "CR-OPP-005 · Submitted for verification · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004.dc.html": {
+      "x": 0,
+      "y": 85610,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-OPP-004 · My Applications (pending) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-Mobile.dc.html": {
+      "x": 1520,
+      "y": 85610,
+      "w": 390,
+      "h": 844,
+      "title": "CR-OPP-004 · My Applications (pending) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-REVIEW.dc.html": {
+      "x": 2070,
+      "y": 85610,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-OPP-004 · My Applications (under review) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-REVIEW-Mobile.dc.html": {
+      "x": 3590,
+      "y": 85610,
+      "w": 390,
+      "h": 844,
+      "title": "CR-OPP-004 · My Applications (under review) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-SHORTLISTED.dc.html": {
+      "x": 4140,
+      "y": 85610,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-OPP-004 · My Applications (shortlisted) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-SHORTLISTED-Mobile.dc.html": {
+      "x": 5660,
+      "y": 85610,
+      "w": 390,
+      "h": 844,
+      "title": "CR-OPP-004 · My Applications (shortlisted) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-OFFER.dc.html": {
+      "x": 6210,
+      "y": 85610,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-OPP-004 · My Applications (offer received) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-OFFER-Mobile.dc.html": {
+      "x": 7730,
+      "y": 85610,
+      "w": 390,
+      "h": 844,
+      "title": "CR-OPP-004 · My Applications (offer received) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-ACCEPTED.dc.html": {
+      "x": 8280,
+      "y": 85610,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-OPP-004 · My Applications (accepted) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-ACCEPTED-Mobile.dc.html": {
+      "x": 9800,
+      "y": 85610,
+      "w": 390,
+      "h": 844,
+      "title": "CR-OPP-004 · My Applications (accepted) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-DECLINED.dc.html": {
+      "x": 10350,
+      "y": 85610,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-OPP-004 · My Applications (declined) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-DECLINED-Mobile.dc.html": {
+      "x": 11870,
+      "y": 85610,
+      "w": 390,
+      "h": 844,
+      "title": "CR-OPP-004 · My Applications (declined) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-WITHDRAWN.dc.html": {
+      "x": 12420,
+      "y": 85610,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-OPP-004 · My Applications (withdrawn) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-WITHDRAWN-Mobile.dc.html": {
+      "x": 13940,
+      "y": 85610,
+      "w": 390,
+      "h": 844,
+      "title": "CR-OPP-004 · My Applications (withdrawn) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-WITHDRAW.dc.html": {
+      "x": 14490,
+      "y": 85610,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-OPP-004 · Withdraw application · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-WITHDRAW-Mobile.dc.html": {
+      "x": 16010,
+      "y": 85610,
+      "w": 390,
+      "h": 844,
+      "title": "CR-OPP-004 · Withdraw application · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-CLARIFY.dc.html": {
+      "x": 16560,
+      "y": 85610,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-OPP-004 · Reply to clarification · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "OPP-004-CLARIFY-Mobile.dc.html": {
+      "x": 18080,
+      "y": 85610,
+      "w": 390,
+      "h": 1166,
+      "title": "CR-OPP-004 · Reply to clarification · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Setup.dc.html": {
+      "x": 0,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -4287,7 +4587,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -4297,7 +4597,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -4307,7 +4607,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -4317,7 +4617,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -4327,7 +4627,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -4337,7 +4637,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -4347,7 +4647,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -4357,7 +4657,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -4367,7 +4667,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -4377,7 +4677,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -4387,7 +4687,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -4397,7 +4697,7 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
@@ -4407,7 +4707,7 @@
     },
     "Manage2.dc.html": {
       "x": 20800,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (pricing, versions, learners) · shared source",
@@ -4417,7 +4717,7 @@
     },
     "Manage3.dc.html": {
       "x": 22400,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (validation, archive, insights) · shared source",
@@ -4427,7 +4727,7 @@
     },
     "Collab.dc.html": {
       "x": 24000,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Course collaboration (invite, permissions, manage, remove) · shared source",
@@ -4437,7 +4737,7 @@
     },
     "Collab2.dc.html": {
       "x": 25600,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Open collaboration (setup, applications, offers, manage opportunity) · shared source",
@@ -4447,10 +4747,20 @@
     },
     "Collab3.dc.html": {
       "x": 27200,
-      "y": 83796,
+      "y": 87196,
       "w": 1440,
       "h": 900,
       "title": "Collaboration, creator side (my invitations, shared courses) · shared source",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Collab4.dc.html": {
+      "x": 28800,
+      "y": 87196,
+      "w": 1440,
+      "h": 900,
+      "title": "Collaboration, creator side (opportunities, applications, creator profile) · shared source",
       "page": "main",
       "is_interactive": true,
       "expand": "fill"
@@ -4883,6 +5193,36 @@
     "INV-005F-Mobile.dc.html",
     "INV-005G.dc.html",
     "INV-005G-Mobile.dc.html",
+    "OPP-001.dc.html",
+    "OPP-001-Mobile.dc.html",
+    "OPP-002.dc.html",
+    "OPP-002-Mobile.dc.html",
+    "OPP-002-INELIGIBLE.dc.html",
+    "OPP-002-INELIGIBLE-Mobile.dc.html",
+    "OPP-003.dc.html",
+    "OPP-003-Mobile.dc.html",
+    "OPP-005.dc.html",
+    "OPP-005-Mobile.dc.html",
+    "OPP-005-SUBMITTED.dc.html",
+    "OPP-005-SUBMITTED-Mobile.dc.html",
+    "OPP-004.dc.html",
+    "OPP-004-Mobile.dc.html",
+    "OPP-004-REVIEW.dc.html",
+    "OPP-004-REVIEW-Mobile.dc.html",
+    "OPP-004-SHORTLISTED.dc.html",
+    "OPP-004-SHORTLISTED-Mobile.dc.html",
+    "OPP-004-OFFER.dc.html",
+    "OPP-004-OFFER-Mobile.dc.html",
+    "OPP-004-ACCEPTED.dc.html",
+    "OPP-004-ACCEPTED-Mobile.dc.html",
+    "OPP-004-DECLINED.dc.html",
+    "OPP-004-DECLINED-Mobile.dc.html",
+    "OPP-004-WITHDRAWN.dc.html",
+    "OPP-004-WITHDRAWN-Mobile.dc.html",
+    "OPP-004-WITHDRAW.dc.html",
+    "OPP-004-WITHDRAW-Mobile.dc.html",
+    "OPP-004-CLARIFY.dc.html",
+    "OPP-004-CLARIFY-Mobile.dc.html",
     "Setup.dc.html",
     "Studio.dc.html",
     "Builder.dc.html",
@@ -4900,7 +5240,8 @@
     "Manage3.dc.html",
     "Collab.dc.html",
     "Collab2.dc.html",
-    "Collab3.dc.html"
+    "Collab3.dc.html",
+    "Collab4.dc.html"
   ],
   "notes": {
     "b1-setup": {
@@ -5404,13 +5745,43 @@
       "w": 260,
       "fill": "pink"
     },
+    "b13-opps": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 13 · Opportunities, details (eligible / not eligible), apply, update Creator Profile, submitted for verification",
+      "w": 240,
+      "x": 0,
+      "y": 83496
+    },
+    "b13-opps-new": {
+      "x": 0,
+      "y": 83646,
+      "text": "NEW · batch 13",
+      "w": 260,
+      "fill": "pink"
+    },
+    "b13-apps": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 13 · My Applications: pending, under review, shortlisted, offer received, accepted, declined, withdrawn, withdraw, reply to clarification",
+      "w": 240,
+      "x": 0,
+      "y": 85310
+    },
+    "b13-apps-new": {
+      "x": 0,
+      "y": 85460,
+      "text": "NEW · batch 13",
+      "w": 260,
+      "fill": "pink"
+    },
     "sources": {
       "kind": "title1",
       "maxW": 3200,
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 83496
+      "y": 86896
     }
   },
   "noteOrder": [
@@ -5481,6 +5852,10 @@
     "b12-invites-new",
     "b12-outcomes",
     "b12-outcomes-new",
+    "b13-opps",
+    "b13-opps-new",
+    "b13-apps",
+    "b13-apps-new",
     "sources"
   ],
   "designSystems": [],

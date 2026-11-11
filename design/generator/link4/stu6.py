@@ -19,7 +19,7 @@ PRICE = 'Version 1.0 · %s1,800 DLP · %s420 Credits' % (coin(), credit())
 # ---------------------------------------------------------------- creator dashboard shell (same nav as Links 1/2)
 CNAV = [('', [('dash', 'Dashboard', '#')]),
         ('Create', [('exp', 'My Creations', 'MGT-DS-CR.dc.html'), ('new', 'Create new', 'STU-001.dc.html')]),
-        ('Collaboration', [('send', 'Invitations', 'INV-001.dc.html'), ('path', 'Opportunities', '#'), ('pencil', 'My Applications', '#'), ('program', 'Shared Courses', 'NAV-002.dc.html')]),
+        ('Collaboration', [('send', 'Invitations', 'INV-001.dc.html'), ('path', 'Opportunities', 'OPP-001.dc.html'), ('pencil', 'My Applications', 'OPP-004.dc.html'), ('program', 'Shared Courses', 'NAV-002.dc.html')]),
         ('Work', [('assigned', 'Assigned to me', '#'), ('valid', 'Validation Centre', '#'), ('disc', 'Discussions', '#'), ('support', 'Learner support', '#'), ('cal', 'Calendar', '#')]),
         ('Insights', [('learners', 'Learners', '#'), ('analytics', 'Analytics', '#')]),
         ('Economy', [('earn', 'Earnings & payouts', '#'), ('wallet', 'Credit Wallet', '#')]),

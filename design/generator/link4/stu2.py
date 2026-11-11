@@ -424,12 +424,7 @@ BUILDER_CSS += WK_CSS + r'''.bw{margin-top:22px}
 .bw .ch-add.big{margin-left:56px}
 .bw .ch-k{display:none}
 .bw .ch-h h2{margin-top:0}
-.it .ud{display:none}
-.it:hover .ud,.it:focus-within .ud{display:inline-flex}
-.it .ib{opacity:.0;transition:opacity .2s ease}
-.it:hover .ib,.it:focus-within .ib{opacity:1}
-.ch-tools .ud,.ch-tools .del{opacity:0;transition:opacity .2s ease}
-.ch:hover .ch-tools .ud,.ch:hover .ch-tools .del,.ch:focus-within .ch-tools .ud,.ch:focus-within .ch-tools .del{opacity:1}
+.ch-tools .ud{margin-left:auto}
 .it-r .ds-tag{height:22px;padding:0 8px;font-size:11px;letter-spacing:.03em}
 .cs2-t{display:block;font-size:17px;font-weight:600;letter-spacing:-0.01em;line-height:1.3}
 .cs2-r{margin-top:16px;display:flex;align-items:center;gap:14px}
@@ -470,7 +465,6 @@ BUILDER_CSS += WK_CSS + r'''.bw{margin-top:22px}
 .bw .it-act{margin-left:auto}
 .bw .it .ud,.bw .it .ib{display:none}
 .bw .it-act .ds-ghost{margin:0;min-width:0}
-.ch-tools .ud,.ch-tools .del{opacity:1}
 .cs2-r{margin-top:12px}
 .cs2-q{flex-direction:row;overflow-x:auto;margin:14px -16px 0 -16px;padding:14px 16px 0 16px;gap:8px;scrollbar-width:none}
 .cs2-q::-webkit-scrollbar{display:none}

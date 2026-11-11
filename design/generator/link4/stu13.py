@@ -141,7 +141,7 @@ P('a-clar', 'My Applications', ph(['Creator Studio', 'Collaboration', 'My Applic
       lav('Ada Ononuju', 34), ta('Yes, I can start on 1 Dec and give 10 hrs a week. Attached is a sample practice set.', 'Your reply', 3), ic('x', 14, 2.2), ic('lock', 14, 2)) +
      bar('<a class="ds-link" href="OPP-004-SHORTLISTED.dc.html">Back</a>', btn('Send reply', 'OPP-004-SHORTLISTED.dc.html')),
      '''<section class="ds-card rx aw7 ob-in3"><span class="rx-k">What you applied with</span><div><em>Proposed contribution</em><b>Joins module and 4 practice sets.</b></div><div><em>Availability</em><b>10 hrs/week from 1 Dec.</b></div></section>
-<section class="ds-card rx ob-in4"><span class="rx-k">Progress</span>%s</section>''' % track(2).replace('class="tr7"', 'class="tr7 v"')))
+<section class="ds-card rx prg7 ob-in4"><span class="rx-k">Progress</span>%s</section>''' % track(2).replace('class="tr7"', 'class="tr7 v"')))
 
 # ======================================================================= CR-OPP-005 update profile (+ submitted)
 kc = W.new(True)

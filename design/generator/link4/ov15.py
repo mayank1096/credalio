@@ -64,7 +64,7 @@ def mcard(i, m, mode):
             '<span class="mg-x">%s</span></span><button type="button" class="mg-ib" aria-label="Dismiss">%s</button></div><p class="mg-p">%s</p>%s</section>') % (
         cls, n, ini, n, role, t, ctx, ic('x', 14, 2.2), body, foot)
 def mstack(mode):
-    return ('<sc-if value="{{ov_%s}}" hint-placeholder-val="{{ false }}"><div class="mg" aria-live="polite">%s<a href="#" class="mg-more mg-m"><span><b>3 new messages</b></span><span>View all</span></a></div></sc-if>') % (
+    return ('<sc-if value="{{ov_%s}}" hint-placeholder-val="{{ false }}"><div class="mg-scrim" aria-hidden="true"></div><div class="mg" aria-live="polite">%s<a href="#" class="mg-more mg-m"><span><b>3 new messages</b></span><span>View all</span></a></div></sc-if>') % (
         mode, ''.join(mcard(i, m, mode) for i, m in enumerate(MSG)))
 
 OVERLAY = LOW + EMPTY + EST + MENU + mstack('msg') + mstack('reply') + mstack('sent')

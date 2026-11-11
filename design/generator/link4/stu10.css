@@ -172,7 +172,7 @@ a.ct3-r + a.ct3-r{box-shadow:0 -1.5px 0 #F0F2F8}
 .mt3-x svg{color:#8A93AD}
 .mt3-y{color:#3A4566;line-height:1.45}
 .ps3 .mt3-r{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr) minmax(0,.9fr) minmax(0,.7fr) minmax(0,1.4fr)}
-.mt3-r.pick{margin:0 -12px;padding:14px 12px;border-radius:14px;border-top-color:transparent;background:#F5F8FF;box-shadow:inset 3px 0 0 #1652F0}
+.mt3-r.pick{margin:0 -12px;padding:14px 12px;border-radius:14px;border-top-color:transparent;background:#F5F8FF}
 .mt3-r.pick + .mt3-r{border-top-color:transparent}
 .dz-l{color:#B42318 !important}
 .ah3{padding:20px 22px}

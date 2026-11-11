@@ -152,9 +152,9 @@ def app_tbl(rows, full, sel_):
     for i, (k, st, app) in enumerate(rows):
         d = APPS[k]
         mid = ('<span class="ap-f">%s</span><span class="ap-h">%s</span>' % (('<b>%s</b>%s' % (d[3].split(' ')[0], ('<em>%s</em>' % d[3].split(' ', 1)[1]) if ' ' in d[3] else '')) if d[3] != 'n/a' else '<span class="nil">n/a</span>', d[4])) if full else '<span class="ap-a">%s</span>' % app
-        h += '<a class="ap-r%s" href="COL-008-DETAIL.dc.html" style="--i: %d"><span class="ap-s" aria-hidden="true"></span>%s%s%s%s%s</a>' % (
+        h += '<a class="ap-r%s" href="COL-008-DETAIL.dc.html" style="--i: %d">%s%s%s%s%s</a>' % (
             ' pick' if k == sel_ else '', i, who(k, sub=d[0]), mt(d[1]), rep(d[2]), mid, tag(st, STAT[st]))
-    return '<section class="ds-card ap3 %s ob-in3"><div class="ap-r ap-hd"><span></span>%s</div>%s</section>' % ('full' if full else 'part', hd, h)
+    return '<section class="ds-card ap3 %s ob-in3"><div class="ap-r ap-hd">%s</div>%s</section>' % ('full' if full else 'part', hd, h)
 def selbar(k, acts):
     return '<div class="sb5 ob-in4"><span class="sb5-w">%s<span><em>Selected</em><b>%s</b></span></span><span class="sb5-a">%s</span></div>' % (pa(k, 32), PPL[k][1], acts)
 OPEN_SH_DEC = ghost('Open applicant', 'COL-008-DETAIL.dc.html', 'sm') + ghost('Shortlist', 'COL-008-SHORTLISTED.dc.html', 'sm') + '<a class="ds-link sm dz-l" href="COL-008-DECLINE-APP.dc.html">Decline</a>'

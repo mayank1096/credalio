@@ -269,7 +269,7 @@ BUILDER_CSS = r'''.ds-ghost.sm{height:40px;padding:0 16px;font-size:14px;gap:7px
 .ch-as .avs .av + .av{margin-left:-6px}
 .ch-tools{margin:14px 0 6px 0;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;padding-bottom:14px;border-bottom:1.5px solid #F0F2F8}
 .ud{display:inline-flex;gap:2px}
-.ib{width:30px;height:30px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;color:#5B6582;text-decoration:none}
+.ib{width:30px;height:30px;padding:0;border:0;border-radius:9px;background:none;display:inline-flex;align-items:center;justify-content:center;color:#5B6582;text-decoration:none;cursor:pointer}
 .ib:hover{background:#F1F3F8;color:#0B1433}
 .ib.del:hover{background:#FDECEA;color:#B42318}
 .ch-items{display:flex;flex-direction:column}

@@ -375,13 +375,12 @@ def pricing(update, sub=False):
         '' if update or sub else ' open', ic('bulb', 18, 2), ic('down', 15, 2.2), ''.join('<li>%s%s</li>' % (ck(10), w) for w in WHY)))
     note = '<section class="ds-card pn"><span class="pn-eq"><b>DLP estimate</b><i>≠</i><b>creator price</b></span><p>Calculated DLP is Credalio’s assessment of learning consumption. The permitted range comes from it, and you choose your price within that range.</p></section>'
     return (page_head('Experience', 'Course Pricing', 'Choose your price from the range Credalio permits for this course. Pricing is provisional now and confirmed before publication.') + banner +
-            '<div class="pr-g ob-in3"><div class="pr-main">%s%s</div><aside class="pr-side">%s%s</aside></div>' % (
+            '<div class="pr-g ob-in3"><div class="pr-main">%s%s%s</div><aside class="pr-side">%s%s</aside></div>' % (
                 pcard('gold', 'Subscription access', 'Calculated course DLP: 795 DLP', 'Credalio DLP range:', '700–900 DLP', ['700', '800', '900'], s_dlp, 'DLP', calc=795),
                 '' if sub else pcard('blue', 'Lifetime marketplace access', '<a class="mbl" href="STU-033.dc.html">Maintenance burden: Medium %s</a>' % ic('chev', 14, 2.2),
                       'Allowed Marketplace range:', '130–210 Credits', ['130', '150', '170', '190', '210'], s_cr, 'Credits',
                       title_tip=tip('Marketplace Credits purchase lifetime access to this course under Credalio’s marketplace terms.', 'r')),
-                why, note) +
-            acts('STU-035.dc.html', 'Continue to summary'))
+                acts('STU-035.dc.html', 'Continue to summary'), why, note))
 P('pricing', 'price', 'Experience', pricing(False))
 P('pricingupd', 'price', 'Experience', pricing(True))
 P('pricingsub', 'price', 'Experience', pricing(False, True))
@@ -791,7 +790,10 @@ button.ch-add{background:none;font-family:inherit;cursor:pointer}
 .ax-pr ol::before{left:17px;right:auto;top:18px;bottom:18px;width:2px;height:auto;background:repeating-linear-gradient(180deg,#9DB8F7 0 6px,transparent 6px 11px)}
 .ax-pr li,.ax-pr li:first-child,.ax-pr li:last-child{flex-direction:row;align-items:center;text-align:left}
 .ax-pr{padding:18px 16px}
-.pr-g{grid-template-columns:minmax(0,1fr)}
+.pr-g{display:flex;flex-direction:column;align-items:stretch}
+.pr-main{display:contents}
+.pr-side{order:2}
+.pr-main > .ds-acts{order:3}
 .pr-side{position:static}
 .pcd{padding:20px 16px}
 .pc-h{flex-wrap:wrap}

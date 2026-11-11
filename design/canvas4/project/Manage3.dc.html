@@ -396,11 +396,13 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .bn2 .ds-ghost{align-self:center;flex-shrink:0}
 @media (max-width: 1180px){.st4b{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width: 960px){
-.stp{margin-top:14px;max-width:none}
-.stp li{flex:none;font-size:12px}
+.stp{position:relative;margin-top:14px;max-width:none;padding-bottom:26px;counter-reset:stp}
+.stp li{flex:1 1 0;min-width:0;position:static;font-size:12px;counter-increment:stp}
+.stp li:first-child{flex:0 0 auto}
 .stp li span{display:none}
-.stp li.on span{display:inline}
-.stp li + li::before{flex-basis:22px}
+.stp li + li::before{flex:1 1 auto;margin-right:6px}
+.stp li.on span{display:block;position:absolute;left:0;bottom:0;font-size:13px;font-weight:600;color:#0B1433;white-space:nowrap}
+.stp li.on span::before{content:'Step ' counter(stp) ' · ';font-weight:500;color:#8A93AD}
 .cst2{padding:14px;gap:12px}
 .cst2 .cv-t{width:44px;height:44px;border-radius:12px}
 .cst2 .cst-b > b{font-size:15px}

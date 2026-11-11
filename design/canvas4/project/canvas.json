@@ -4569,7 +4569,7 @@
       "x": 18080,
       "y": 85255,
       "w": 390,
-      "h": 1166,
+      "h": 1104,
       "title": "CR-OPP-004 · Reply to clarification · Mobile",
       "page": "main",
       "is_interactive": true,
@@ -4577,7 +4577,7 @@
     },
     "Setup.dc.html": {
       "x": 0,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -4587,7 +4587,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -4597,7 +4597,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -4607,7 +4607,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -4617,7 +4617,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -4627,7 +4627,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -4637,7 +4637,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -4647,7 +4647,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -4657,7 +4657,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -4667,7 +4667,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -4677,7 +4677,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -4687,7 +4687,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -4697,7 +4697,7 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
@@ -4707,7 +4707,7 @@
     },
     "Manage2.dc.html": {
       "x": 20800,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (pricing, versions, learners) · shared source",
@@ -4717,7 +4717,7 @@
     },
     "Manage3.dc.html": {
       "x": 22400,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (validation, archive, insights) · shared source",
@@ -4727,7 +4727,7 @@
     },
     "Collab.dc.html": {
       "x": 24000,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Course collaboration (invite, permissions, manage, remove) · shared source",
@@ -4737,7 +4737,7 @@
     },
     "Collab2.dc.html": {
       "x": 25600,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Open collaboration (setup, applications, offers, manage opportunity) · shared source",
@@ -4747,7 +4747,7 @@
     },
     "Collab3.dc.html": {
       "x": 27200,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Collaboration, creator side (my invitations, shared courses) · shared source",
@@ -4757,7 +4757,7 @@
     },
     "Collab4.dc.html": {
       "x": 28800,
-      "y": 86841,
+      "y": 86779,
       "w": 1440,
       "h": 900,
       "title": "Collaboration, creator side (opportunities, applications, creator profile) · shared source",
@@ -5781,7 +5781,7 @@
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 86541
+      "y": 86479
     }
   },
   "noteOrder": [

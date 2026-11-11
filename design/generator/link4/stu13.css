@@ -247,4 +247,7 @@
 .ap7 .rc6-a .ds-btn{justify-content:space-between}
 .ap7 .rc6-a:has(.ap7-x){display:none}
 .ap7 .tr7.end{align-self:stretch;width:auto;padding:18px 36px 16px 36px}
+.wk-r > .prg7{order:0;margin:-4px 0 2px 0;padding:0;border:0;border-radius:0;background:none;box-shadow:none}
+.wk-r > .prg7 .rx-k{display:none}
+.wk-r > .prg7 .tr7.v{margin:0;padding:4px 0 14px 0;border-bottom:1.5px solid #E6EAF3;border-top:0}
 }

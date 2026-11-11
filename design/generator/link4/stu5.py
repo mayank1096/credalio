@@ -220,14 +220,17 @@ P('resub', page_head('Validate', 'Resubmission', 'Show validators what changed. 
       '<div><dt>%s</dt><dd>%s</dd></div>' % r for r in [('Scope', 'Minor Revalidation · SV-006'), ('Rechecked', 'Only the findings listed here'), ('Version', 'v1.0 → v1.1'), ('Fee', '[TO CONFIRM: revalidation fee rules]')]))
 
 # ---------------------------------------------------------------- CR-STU-059 Decision: passed
-P('passed', '',
+def passed(op):
+  return ('',
   '''<div class="ko-in ob-in"><div class="ko">%s<span class="ko-pill gold">%s<span>Gold Validated</span></span><h1 class="ko-h1">Your course has passed validation</h1><p class="ko-sub">VAL-2026-00482 · decision issued 3 Oct · tier calculated under the final validation rules</p></div>
-<div class="dg"><section class="ds-card fc vrp"><div class="fc-h"><div><h2>Validation report</h2></div><a class="ds-link sm" href="#">View full validation report</a></div>
+<div class="dg"><section class="ds-card fc vrp"><div class="fc-h"><div><h2>Validation report</h2></div>%s</div>
 <div class="vrp-r"><span class="vr-i sm">%s</span><span class="vrp-t"><b>Educational Validator</b><em>Learning design, outcomes, assessment alignment</em></span>%s</div>
 <div class="vrp-r"><span class="vr-i sm">%s</span><span class="vrp-t"><b>Subject Matter Validator · %s</b><em>Accuracy, currency, evidence quality</em></span>%s</div>
-<div class="vrp-f"><span>Findings</span><b>0 Critical · 2 Major (resolved in v1.1) · 4 Minor</b></div></section>
+<div class="vrp-f"><span>Findings</span><b>0 Critical · 2 Major (resolved in v1.1) · 4 Minor</b></div>%s</section>
 <section class="ds-card fc wm"><div class="fc-h"><div><h2>What this means</h2></div></div><ul>%s</ul></section></div></div>''' % (
-      emblem(), ic('badge', 14, 2), ic('cap', 18, 2), tag('%s Meets standard' % ck(10), 'green'), ic('target', 18, 2), LEAD, tag('%s Meets standard' % ck(10), 'green'),
+      emblem(), ic('badge', 14, 2), ('<a class="ds-link sm vrp-tg on" href="STU-059.dc.html">Hide report details%s</a>' if op else '<a class="ds-link sm vrp-tg" href="STU-RPT.dc.html">View full validation report%s</a>') % ic('down', 14, 2.2),
+      ic('cap', 18, 2), tag('%s Meets standard' % ck(10), 'green'), ic('target', 18, 2), LEAD, tag('%s Meets standard' % ck(10), 'green'),
+      ('<div class="vrp-x"><span class="vrp-xi">%s</span><p>The full report lists every finding, its severity, how it was resolved and which validator role raised it. It stays attached to the course and is referenced if the course is revalidated.</p></div>' % ic('file', 16, 2)) if op else '',
       ''.join('<li><span class="wm-i">%s</span><span><b>%s</b><em>%s</em></span></li>' % (ic(i, 17, 2), t, d) for i, t, d in [
           ('badge', 'Gold Validated badge', 'Shown on your course page and marketplace card once you publish.'),
           ('analytics', 'Creator Evidence Index (CEI)', 'Validation is how this course counts toward your CEI. The contribution follows the CEI rules [TO CONFIRM].'),
@@ -235,6 +238,8 @@ P('passed', '',
           ('rocket', 'Next step', 'Set marketplace access and pricing, then publish.')])),
   acts('STU-060.dc.html', 'Continue to Publication'),
   '')
+P('passed', *passed(False))
+P('report', *passed(True))
 
 def val_body():
     blocks = []
@@ -250,7 +255,7 @@ def val_body():
 </main>
 </div>
 </div>''' % (sidebar_val('val'), topbar(phase='Validate'), '\n'.join(blocks))
-TONE = {'wait': 'cb', 'assigned': 'cb', 'ws': 'am', 'req': 'am', 'ev': 'am', 'meet': 'am', 'find': 'am', 'improve': 'am', 'revise': 'am', 'resub': 'am', 'passed': 'ok'}
+TONE = {'wait': 'cb', 'assigned': 'cb', 'ws': 'am', 'req': 'am', 'ev': 'am', 'meet': 'am', 'find': 'am', 'improve': 'am', 'revise': 'am', 'resub': 'am', 'passed': 'ok', 'report': 'ok'}
 VAL_JS = W.js() + '''var PG = %s, TONE = %s;
 class Component extends DCLogic {
   renderVals() {
@@ -267,8 +272,8 @@ class Component extends DCLogic {
 U = Toggles()
 PSTEPS = ['Final pricing', 'Revenue', 'Listing', 'Preview', 'Publish']
 GOLD = '<span class="gb">%s<span>Gold Validated</span></span>' % ic('badge', 14, 2)
-def pside(step, extra):
-    li = ''.join('<li class="%s"><i></i><span>%s</span></li>' % ('dn' if i < step or (i in (1, 2) and step == 0) or (i == 2 and step == 1) or (i == 1 and step == 2) else ('on' if i == step else ''), s) for i, s in enumerate(PSTEPS))
+def pside(step, extra, done=None):
+    li = ''.join('<li class="%s"><i></i><span>%s</span></li>' % (('dn' if i in done else ('on' if i == step else '')) if done is not None else ('dn' if i < step or (i in (1, 2) and step == 0) or (i == 2 and step == 1) or (i == 1 and step == 2) else ('on' if i == step else '')), s) for i, s in enumerate(PSTEPS))
     return ('<aside class="cl-side ob-in"><span class="pb-k">Publish · Step %d of 5</span><h1 class="cl-h1">Data Analysis with SQL</h1><div class="cl-meta">%s<span>VAL-2026-00482</span></div><ol class="cl-steps">%s</ol>%s</aside>') % (step + 1, GOLD, li, extra)
 def ppanel(h, p, body, foot):
     return '<section class="cl-panel ob-in2"><h2 class="cl-ph">%s</h2>%s%s<div class="cl-foot">%s</div></section>' % (h, ('<p class="cl-pp">%s</p>' % p) if p else '', body, foot)
@@ -339,9 +344,33 @@ NEXT = [('search', 'Learners can find it in the marketplace', 'Search and browse
 PUB['live'] = '''<div class="ko-wrap ob-in"><div class="ko">%s<span class="ko-pill">Public Marketplace</span><h1 class="ko-h1">Your course is live</h1><p class="ko-sub">Data Analysis with SQL</p>
 <div class="lv-s">%s<span class="lv-cei"><b>CEI 92</b></span><span class="lv-pr">850 DLP · 500 Credits lifetime</span></div>
 <section class="ko-card"><span class="ko-cl">What happens now</span><ul class="ko-nx">%s</ul></section>
-<div class="ko-acts">%s<span class="ko-2"><a class="ds-ghost" href="#">Go to Manage</a><a class="ds-link" href="STU-001.dc.html">Create Another Experience</a></span></div></div></div>''' % (
+<div class="ko-acts">%s<span class="ko-2"><a class="ds-ghost" href="STU-067.dc.html">Go to Manage</a><a class="ds-link" href="STU-001.dc.html">Create Another Experience</a></span></div></div></div>''' % (
     emblem(), GOLD, ''.join('<li><span class="ko-ni">%s</span><span><b>%s</b><em>%s</em></span></li>' % (ic(i, 17, 2) if i in EXTRA or i in I else '', t, d) for i, t, d in NEXT),
-    btn('Share &amp; Promote', '#'))
+    btn('Share &amp; Promote', 'STU-066.dc.html'))
+
+# ---------------------------------------------------------------- CR-STU-064 Publish confirmation (incl. visibility & launch)
+READY = [(True, 'Validation decision', 'Gold Validated · VAL-2026-00482', '', ''), (True, 'Visibility and launch', 'Public Marketplace · publish now', '', ''),
+         (False, 'Final pricing', 'Not confirmed yet', 'Confirm pricing', 'STU-060.dc.html'), (False, 'Revenue agreement', 'Waiting for collaborators to accept', 'Open', 'STU-061.dc.html'),
+         (True, 'Marketplace listing', 'Title, description, thumbnail and categories set', '', ''), (False, 'Final learner preview', 'Not reviewed yet', 'Review', 'STU-PRV.dc.html'),
+         (True, 'Payouts', 'Payout method verified', '', ''), (True, 'Creator verification', 'Identity, credentials and policies complete', '', '')]
+NOK = sum(1 for r in READY if r[0])
+def rdy_ring():
+    c = 2 * 3.14159 * 50; d = c * NOK / len(READY)
+    return ('<svg class="rdy-g" viewBox="0 0 120 120" width="112" height="112" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="none" stroke="#FFF1D6" stroke-width="12"></circle>'
+            '<circle class="rdy-a" cx="60" cy="60" r="50" fill="none" stroke="#0F6B45" stroke-width="12" stroke-linecap="round" stroke-dasharray="%.1f 400" transform="rotate(-90 60 60)"></circle></svg>') % d
+VIS = [('globe', 'Public Marketplace'), ('lock', 'Private'), ('users', 'Institution Only'), ('link', 'Unlisted')]
+PUB['confirm'] = pside(4, '''<div class="cl-nx rdy"><span>Ready to publish</span><div class="rdy-v">%s<span class="rdy-c"><b>%d<em>/%d</em></b></span></div><p><b>%d item(s) still need attention.</b> Everything below must be green to publish.</p></div>''' % (
+        rdy_ring(), NOK, len(READY), len(READY) - NOK), done={2}) + ppanel('Publish Confirmation', 'Last check. Everything below must be green to go live.',
+    '''<ol class="rd8">%s</ol>
+<div class="vz"><span class="fl-l">Visibility</span><div class="vz-o">%s</div><p class="vz-d">%s<span>Anyone browsing Credalio can find and join it.</span></p></div>
+<div class="vz"><span class="fl-l">Launch</span><div class="vz-o two">%s</div></div>
+<label class="tc"><input type="checkbox" aria-label="Accept the Credalio Marketplace Terms"><span class="tc-b">%s</span><span>I accept the Credalio Marketplace Terms for this course, including learner access, refunds and revalidation obligations.</span></label>''' % (
+        ''.join('<li class="%s" style="--i: %d"><span class="rd8-i">%s</span><span class="rd8-t"><b>%s</b><em>%s</em></span>%s</li>' % (
+            'ok' if ok else 'am', i, ck(11) if ok else '', t, d, ('<a class="ds-link sm" href="%s">%s%s</a>' % (h, a, ic('arrowr', 13, 2.2))) if a else '') for i, (ok, t, d, a, h) in enumerate(READY)),
+        ''.join(U.opt('%s<b>%s</b>' % (ic(i, 17, 2), l), j == 0, 'vis', 'vzo') for j, (i, l) in enumerate(VIS)), ic('globe', 14, 2.2),
+        ''.join(U.opt('%s<b>%s</b>' % (ic(i, 17, 2), l), j == 0, 'launch', 'vzo') for j, (i, l) in enumerate([('rocket', 'Publish now'), ('cal', 'Schedule for later')])), ck(11)),
+    bk('STU-PRV.dc.html') + '<span class="cl-wt">%s<span>%d item(s) still need attention.</span></span>' % (ic('warn', 15, 2.2), len(READY) - NOK) +
+    btn('Publish Course', cls='is-dis cl-go', extra='aria-disabled="true" disabled', tag='button'))
 
 def pub_body():
     blocks = []
@@ -979,8 +1008,8 @@ PUB_CSS = open(os.path.join(HERE, 'submit_base.css')).read() + r'''
 }
 '''
 
-write('Validate.dc.html', doc('Course Studio · Validate · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + CW_CSS + WK_CSS + VAL_CSS, val_body(), VAL_JS))
-write('Publish.dc.html', doc('Publish your course · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + PUB_CSS, pub_body(), PUB_JS))
+write('Validate.dc.html', doc('Course Studio · Validate · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + CW_CSS + WK_CSS + VAL_CSS + open(os.path.join(HERE, 'stu14v.css')).read(), val_body(), VAL_JS))
+write('Publish.dc.html', doc('Publish your course · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + PUB_CSS + open(os.path.join(HERE, 'stu14p.css')).read(), pub_body(), PUB_JS))
 
 BOARDS = [
     ('STU-053', 'Validate', {'page': 'wait'}, 'CR-STU-053 · Awaiting assignment'),
@@ -994,10 +1023,12 @@ BOARDS = [
     ('STU-057', 'Validate', {'page': 'revise'}, 'CR-STU-057 · Course revision (findings in context)'),
     ('STU-058', 'Validate', {'page': 'resub'}, 'CR-STU-058 · Resubmission'),
     ('STU-059', 'Validate', {'page': 'passed'}, 'CR-STU-059 · Validation decision'),
+    ('STU-RPT', 'Validate', {'page': 'report'}, 'CR-STU-059 · Validation decision: full report open'),
     ('STU-060', 'Publish', {'step': 'price'}, 'CR-STU-060 · Final Pricing Confirmation'),
     ('STU-060b', 'Publish', {'step': 'priceout'}, 'CR-STU-060 · Final pricing: provisional price now outside the range'),
     ('STU-061', 'Publish', {'step': 'revenue'}, 'CR-STU-061 · Revenue share confirmation (1 pending)'),
     ('STU-062', 'Publish', {'step': 'listing'}, 'CR-STU-062 · Marketplace listing'),
+    ('STU-064', 'Publish', {'step': 'confirm'}, 'CR-STU-064 · Publish confirmation (incl. visibility & launch)'),
     ('STU-065', 'Publish', {'step': 'live'}, 'CR-STU-065 · Published success'),
 ]
 

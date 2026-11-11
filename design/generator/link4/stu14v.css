@@ -1,0 +1,9 @@
+.vrp-tg{display:inline-flex;align-items:center;gap:4px}
+.vrp-tg svg{transition:transform .25s ease}
+.vrp-tg.on svg{transform:rotate(180deg)}
+.vrp-x{margin-top:10px;display:flex;gap:12px;padding:14px 16px;border-radius:14px;background:#F5F8FF;border:1.5px solid #DCE5FB;animation:obIn .45s ease both .2s}
+.vrp-xi{width:32px;height:32px;flex-shrink:0;border-radius:10px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.vrp-x p{margin:0;font-size:13.5px;line-height:1.6;color:#3A4566}
+@media (max-width: 960px){
+.vrp-x{padding:14px}
+}

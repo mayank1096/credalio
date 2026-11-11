@@ -48,6 +48,7 @@ ROWS = [
     ('b12-outcomes', 'Batch 12 · Invitation outcomes: accepted, activation pending, declined, expired, withdrawn, already responded, superseded', ['INV-005A', 'INV-005B', 'INV-005C', 'INV-005D', 'INV-005E', 'INV-005F', 'INV-005G']),
     ('b13-opps', 'Batch 13 · Opportunities, details (eligible / not eligible), apply, update Creator Profile, submitted for verification', ['OPP-001', 'OPP-002', 'OPP-002-INELIGIBLE', 'OPP-003', 'OPP-005', 'OPP-005-SUBMITTED']),
     ('b13-apps', 'Batch 13 · My Applications: pending, under review, shortlisted, offer received, accepted, declined, withdrawn, withdraw, reply to clarification', ['OPP-004', 'OPP-004-REVIEW', 'OPP-004-SHORTLISTED', 'OPP-004-OFFER', 'OPP-004-ACCEPTED', 'OPP-004-DECLINED', 'OPP-004-WITHDRAWN', 'OPP-004-WITHDRAW', 'OPP-004-CLARIFY']),
+    ('b14-launch', 'Batch 14 · Launch: full validation report, subscription-only pricing, publish confirmation, share & promote, first learner state', ['STU-RPT', 'STU-SUB', 'STU-064', 'STU-066', 'STU-067']),
 ]
 SOURCES = [('Setup.dc.html', 'Course setup · shared source'), ('Studio.dc.html', 'Course Studio · shared source'),
            ('Builder.dc.html', 'Curriculum Builder · shared source'), ('Editor.dc.html', 'Learning item editors · shared source'),

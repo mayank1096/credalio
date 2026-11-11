@@ -4575,9 +4575,109 @@
       "is_interactive": true,
       "expand": "fill"
     },
-    "Setup.dc.html": {
+    "STU-RPT.dc.html": {
       "x": 0,
       "y": 87246,
+      "w": 1440,
+      "h": 929,
+      "title": "CR-STU-059 · Validation decision: full report open · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-RPT-Mobile.dc.html": {
+      "x": 1520,
+      "y": 87246,
+      "w": 390,
+      "h": 1398,
+      "title": "CR-STU-059 · Validation decision: full report open · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-SUB.dc.html": {
+      "x": 2070,
+      "y": 87246,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-034 · Pricing: subscription-only model · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-SUB-Mobile.dc.html": {
+      "x": 3590,
+      "y": 87246,
+      "w": 390,
+      "h": 952,
+      "title": "CR-STU-034 · Pricing: subscription-only model · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-064.dc.html": {
+      "x": 4140,
+      "y": 87246,
+      "w": 1440,
+      "h": 1064,
+      "title": "CR-STU-064 · Publish confirmation (incl. visibility & launch) · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-064-Mobile.dc.html": {
+      "x": 5660,
+      "y": 87246,
+      "w": 390,
+      "h": 1765,
+      "title": "CR-STU-064 · Publish confirmation (incl. visibility & launch) · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-066.dc.html": {
+      "x": 6210,
+      "y": 87246,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-066 · Share &amp; promote · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-066-Mobile.dc.html": {
+      "x": 7730,
+      "y": 87246,
+      "w": 390,
+      "h": 1222,
+      "title": "CR-STU-066 · Share &amp; promote · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-067.dc.html": {
+      "x": 8280,
+      "y": 87246,
+      "w": 1440,
+      "h": 900,
+      "title": "CR-STU-067 · First learner state · Desktop",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "STU-067-Mobile.dc.html": {
+      "x": 9800,
+      "y": 87246,
+      "w": 390,
+      "h": 1570,
+      "title": "CR-STU-067 · First learner state · Mobile",
+      "page": "main",
+      "is_interactive": true,
+      "expand": "fill"
+    },
+    "Setup.dc.html": {
+      "x": 0,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Course setup · shared source",
@@ -4587,7 +4687,7 @@
     },
     "Studio.dc.html": {
       "x": 1600,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Course Studio · shared source",
@@ -4597,7 +4697,7 @@
     },
     "Builder.dc.html": {
       "x": 3200,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Curriculum Builder · shared source",
@@ -4607,7 +4707,7 @@
     },
     "Editor.dc.html": {
       "x": 4800,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Learning item editors · shared source",
@@ -4617,7 +4717,7 @@
     },
     "Course.dc.html": {
       "x": 6400,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Course set-up · shared source",
@@ -4627,7 +4727,7 @@
     },
     "Prepare.dc.html": {
       "x": 8000,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Prepare · shared source",
@@ -4637,7 +4737,7 @@
     },
     "Submit.dc.html": {
       "x": 9600,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Submit for validation · shared source",
@@ -4647,7 +4747,7 @@
     },
     "Preview.dc.html": {
       "x": 11200,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Creator Preview · shared source",
@@ -4657,7 +4757,7 @@
     },
     "Validate.dc.html": {
       "x": 12800,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Validate · shared source",
@@ -4667,7 +4767,7 @@
     },
     "Publish.dc.html": {
       "x": 14400,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Publish · shared source",
@@ -4677,7 +4777,7 @@
     },
     "Manage.dc.html": {
       "x": 16000,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course · shared source",
@@ -4687,7 +4787,7 @@
     },
     "Unpublish.dc.html": {
       "x": 17600,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Unpublish · shared source",
@@ -4697,7 +4797,7 @@
     },
     "Learner.dc.html": {
       "x": 19200,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Learner app · shared source",
@@ -4707,7 +4807,7 @@
     },
     "Manage2.dc.html": {
       "x": 20800,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (pricing, versions, learners) · shared source",
@@ -4717,7 +4817,7 @@
     },
     "Manage3.dc.html": {
       "x": 22400,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Manage Published Course (validation, archive, insights) · shared source",
@@ -4727,7 +4827,7 @@
     },
     "Collab.dc.html": {
       "x": 24000,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Course collaboration (invite, permissions, manage, remove) · shared source",
@@ -4737,7 +4837,7 @@
     },
     "Collab2.dc.html": {
       "x": 25600,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Open collaboration (setup, applications, offers, manage opportunity) · shared source",
@@ -4747,7 +4847,7 @@
     },
     "Collab3.dc.html": {
       "x": 27200,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Collaboration, creator side (my invitations, shared courses) · shared source",
@@ -4757,7 +4857,7 @@
     },
     "Collab4.dc.html": {
       "x": 28800,
-      "y": 87246,
+      "y": 89431,
       "w": 1440,
       "h": 900,
       "title": "Collaboration, creator side (opportunities, applications, creator profile) · shared source",
@@ -5223,6 +5323,16 @@
     "OPP-004-WITHDRAW-Mobile.dc.html",
     "OPP-004-CLARIFY.dc.html",
     "OPP-004-CLARIFY-Mobile.dc.html",
+    "STU-RPT.dc.html",
+    "STU-RPT-Mobile.dc.html",
+    "STU-SUB.dc.html",
+    "STU-SUB-Mobile.dc.html",
+    "STU-064.dc.html",
+    "STU-064-Mobile.dc.html",
+    "STU-066.dc.html",
+    "STU-066-Mobile.dc.html",
+    "STU-067.dc.html",
+    "STU-067-Mobile.dc.html",
     "Setup.dc.html",
     "Studio.dc.html",
     "Builder.dc.html",
@@ -5775,13 +5885,28 @@
       "w": 260,
       "fill": "pink"
     },
+    "b14-launch": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Batch 14 · Launch: full validation report, subscription-only pricing, publish confirmation, share & promote, first learner state",
+      "w": 240,
+      "x": 0,
+      "y": 86946
+    },
+    "b14-launch-new": {
+      "x": 0,
+      "y": 87096,
+      "text": "NEW · batch 14",
+      "w": 260,
+      "fill": "pink"
+    },
     "sources": {
       "kind": "title1",
       "maxW": 3200,
       "text": "Shared sources (code the boards above import, not screens)",
       "w": 240,
       "x": 0,
-      "y": 86946
+      "y": 89131
     }
   },
   "noteOrder": [
@@ -5856,6 +5981,8 @@
     "b13-opps-new",
     "b13-apps",
     "b13-apps-new",
+    "b14-launch",
+    "b14-launch-new",
     "sources"
   ],
   "designSystems": [],

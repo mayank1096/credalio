@@ -6,7 +6,7 @@ import os, re
 BLOB = '/_blob/7aeeb145ff0fc4be2a74ed8f5683de98'
 # source: (pages, left offset of the content column on desktop)
 PAGES = {
-    'Collab': (['sent', 'rm-done'], 264), 'Collab2': (['a-sent'], 264), 'Collab3': (['o-a'], 264), 'Collab4': (['sub'], 264),
+    'Collab': (['sent', 'rm-done', 'rm-review'], 264), 'Collab2': (['a-sent'], 264), 'Collab3': (['o-a'], 264), 'Collab4': (['sub'], 264),
     'Manage2': (['p-done'], 264), 'Manage3': (['a-done'], 264),
     'Unpublish': (['done'], 0), 'Publish': (['live'], 0),
 }

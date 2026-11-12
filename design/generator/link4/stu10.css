@@ -374,10 +374,9 @@ a.ct3-r + a.ct3-r{box-shadow:0 -1.5px 0 #F0F2F8}
 .wk-r > .rmc .rmc-s b{font-size:22px;color:#1652F0}
 .wk-a2 .cf-g{width:100%}
 .wk-a2 .cf-g .ds-btn{width:100%;justify-content:space-between}
-.rsn{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-bottom:14px}
-.rsn .ds-opt{align-items:flex-start;padding:10px 10px 10px 12px;min-height:58px}
+.rsn{grid-template-columns:minmax(0,1fr);gap:8px;margin-bottom:16px}
+.rsn .ds-opt{align-items:center;padding:12px 14px;min-height:50px}
 .rsn .ds-opt .o-t b{font-size:13.5px;line-height:1.35}
-.rsn .ds-opt:nth-child(n+5){grid-column:1 / -1;min-height:44px}
 .cl-main .pg-hr{display:flex !important;flex-direction:row;gap:8px;width:100%}
 .cl-main .pg-hr .ds-ghost{padding:0 14px;font-size:13.5px}
 .tmh{margin-top:16px;grid-template-columns:minmax(0,1fr);padding:0;overflow:hidden}
@@ -433,9 +432,21 @@ a.ct3-r + a.ct3-r{box-shadow:0 -1.5px 0 #F0F2F8}
 .rv3 dl > div,.rv3 dl > div:first-child{grid-column:1 / -1;padding:12px 0}
 .rv3 dl > div.s{grid-column:span 1;margin:0 0 8px 0;padding:10px 12px}
 .rv3 dl > div:nth-child(5),.rv3 dl > div:nth-child(6){margin-top:6px}
-.pmg{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
-.pmt{align-items:flex-start;min-height:58px;padding:10px;gap:8px;font-size:13px;line-height:1.35}
+.pmg{grid-template-columns:minmax(0,1fr);gap:8px}
+.pmt{align-items:center;min-height:50px;padding:12px 14px;gap:12px;font-size:14px;line-height:1.35}
 .pmt-b{width:20px;height:20px;border-radius:6px}
 .pm-r{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:12px}
 .pm-r .fl-l{margin:0}
+}
+@media (max-width: 960px){
+.wk-m > .fc{padding:22px 18px}
+.wk-m > .fc > .fc-h{margin:0;padding-bottom:18px;border-bottom:1.5px solid #EEF1F7}
+.wk-m > .fc .fl{gap:10px}
+.ivf{gap:0}
+.ivf > .iv-2{display:contents}
+.ivf .fl,.ivf > .thr{padding:18px 0;border-top:1.5px solid #EEF1F7}
+.ivf > .iv-2:first-child > .fl:first-child,.ivf > .fl:first-child{padding-top:0;border-top:0}
+.ivf > .fc-h + .thr{border-top:0}
+.ivf > .thr{gap:18px 12px;padding-bottom:0}
+.ivf > .thr .fl{padding:0;border:0}
 }

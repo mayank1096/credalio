@@ -310,8 +310,6 @@ CSS = stu6.MANAGE_CSS + r'''.cst2{display:flex;align-items:center;gap:16px;paddi
 .ds-acts.wk-a2{position:sticky;bottom:0;z-index:5;margin:4px 0 0 0;padding:12px 12px 12px 22px;border-radius:999px;background:rgba(255,255,255,.94);border:1.5px solid #E6EAF3;box-shadow:0 18px 40px -24px rgba(11,20,51,.35);display:flex;align-items:center;justify-content:space-between;gap:16px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .ds-acts.wk-a2{flex-direction:row}
 .wk-a2 .sv-s .ds-link{min-height:0}
-.ds-acts.wk-a2:has(.sv-s:empty){align-self:flex-end;width:max-content;padding-left:12px}
-.wk-m:has(> .wk-a2:has(.sv-s:empty)) .wk-a2{margin-left:auto}
 .ar .ds-opt:last-child:nth-child(odd){grid-column:1 / -1}
 .wk-a2 .sv-s{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:#5B6582}
 .wk-a2 .sv-r{display:inline-flex;align-items:center;gap:14px;margin-left:auto}
@@ -949,7 +947,6 @@ CSS = stu6.MANAGE_CSS + r'''.cst2{display:flex;align-items:center;gap:16px;paddi
 .bn2{flex-wrap:wrap}
 .bn2 .ds-ghost{width:100%}
 }
-.ds-acts.wk-a2:has(.sv-s:empty){background:none;border:0;box-shadow:none;padding:0;backdrop-filter:none;-webkit-backdrop-filter:none}
 .wk-r .pe-lk .pe-h{flex-wrap:wrap;gap:10px 12px}
 .wk-r .pe-lk .pe-i{width:40px;height:40px;border-radius:13px}
 .wk-r .pe-lk h2{font-size:15px}

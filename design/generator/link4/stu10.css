@@ -444,9 +444,6 @@ a.ct3-r + a.ct3-r{box-shadow:0 -1.5px 0 #F0F2F8}
 .wk-m > .fc .fl{gap:10px}
 .ivf{gap:0}
 .ivf > .iv-2{display:contents}
-.ivf .fl,.ivf > .thr{padding:18px 0;border-top:1.5px solid #EEF1F7}
+.ivf .fl{padding:18px 0;border-top:1.5px solid #EEF1F7}
 .ivf > .iv-2:first-child > .fl:first-child,.ivf > .fl:first-child{padding-top:0;border-top:0}
-.ivf > .fc-h + .thr{border-top:0}
-.ivf > .thr{gap:18px 12px;padding-bottom:0}
-.ivf > .thr .fl{padding:0;border:0}
 }

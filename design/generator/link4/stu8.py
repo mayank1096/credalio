@@ -126,8 +126,7 @@ P('a-confirm', AR_H('Confirm Course Archive', 'Tell us why you’re archiving th
 
 P('a-done', outcome('gy', 'layers', 'Archived', 'Course Archived', 'Data Analysis with SQL has been moved to Archived Courses. Existing learner entitlements and required records remain protected.',
                     '<div class="ko4">%s</div>' % ''.join('<span class="%s"><em>%s</em><b>%s</b></span>' % (k, l, v) for l, v, k in [('Course status', 'Archived', ''), ('Public listing', 'Hidden', ''), ('New enrollment', 'Closed', ''), ('Existing access', 'Protected', 'ok')]),
-                    '<a class="ds-ghost" href="#">View Archived Courses</a>' + btn('View Archived Course', 'MGT-008D.dc.html')) +
-  '<div class="ko-scene" aria-hidden="true"></div>')
+                    '<a class="ds-ghost" href="#">View Archived Courses</a>' + btn('View Archived Course', 'MGT-008D.dc.html')))
 
 RECS = [('course', 'Course Overview', 'MGT-DS-OV.dc.html'), ('users', 'Learner Access & Enrollment', 'MGT-006.dc.html'), ('valid', 'Validation History', 'MGT-007.dc.html'),
         ('layers', 'Version History', 'MGT-005-HISTORY.dc.html'), ('wallet', 'Pricing & Order History', 'MGT-004-I.dc.html')]
@@ -688,8 +687,6 @@ a.ct-r:hover{background:#F7F9FD}
 .kp-c.rd b{color:#B42318}.kp-c.rd em{background:#FDECEA;color:#B42318}
 .kp-c.ok b{color:#0F6B45}.kp-c.ok em{background:#E7F5EE;color:#0F6B45}
 .kp-c.cb b{color:#1652F0}.kp-c.cb em{background:#EAF0FF;color:#0E3BB8}
-.ko-scene{position:fixed;left:264px;right:0;bottom:0;z-index:-1;height:min(40vh,320px);background:url(/_blob/7aeeb145ff0fc4be2a74ed8f5683de98) 50% 100% / cover no-repeat;mix-blend-mode:multiply;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent,#000 30%);mask-image:linear-gradient(180deg,transparent,#000 30%);animation:obIn .8s ease .3s both}
-@media (max-width: 960px){.ko-scene{left:0;height:180px}}
 @media (min-width: 961px){.kp-c{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;column-gap:10px;row-gap:2px}.kp-c b{grid-column:1;grid-row:1}.kp-c em{grid-column:2;grid-row:1;margin-top:0;justify-self:start}.kp-c span{grid-column:1 / -1;grid-row:2}}
 .g9{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
 .g9 .fc{margin:0;display:flex;flex-direction:column}

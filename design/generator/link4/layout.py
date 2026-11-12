@@ -102,4 +102,6 @@ import aur4
 aur4.run(OUT)
 import ov15
 ov15.run(OUT)
+import scene
+scene.run(OUT)
 print(len(boards), 'boards')

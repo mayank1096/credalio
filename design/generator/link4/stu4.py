@@ -691,7 +691,7 @@ PREP_CSS = r'''.pp-main .pg-h .ds-seg{flex-shrink:0}
 .lv-hero h2{font-size:22px}
 .lv-hero p{font-size:14px}
 .lv-by{align-items:flex-start}
-.lv-ph{padding:14px 16px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.lv-ph{padding:14px 16px;flex-wrap:nowrap;overflow-x:auto;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);scrollbar-width:none}
 .lv-ph::-webkit-scrollbar{display:none}
 .lv-p{flex-shrink:0;white-space:nowrap}
 .lv-g{grid-template-columns:minmax(0,1fr);gap:22px;padding:18px 16px 20px 16px}
@@ -863,7 +863,7 @@ SUBMIT_CSS = open(os.path.join(HERE, 'submit_base.css')).read() + r'''
 .cl-steps{gap:4px}
 .cl-steps li span{display:none}
 .cl-steps li.on span{display:block;white-space:nowrap}
-.cl{display:flex;flex-direction:column}
+.cl{display:flex;flex-direction:column;align-items:stretch}
 .cl-side{display:contents}
 .cl-side > *{order:0}
 .cl-panel{order:1}
@@ -1130,7 +1130,7 @@ PREVIEW_CSS = r'''body{background:#FFFFFF}
 .lc-sh h2{font-size:19px}
 .lc-ol{grid-template-columns:minmax(0,1fr);gap:8px}
 .lc-ol li{padding:12px 14px;font-size:14px}
-.lc-sk{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px;padding:0 16px;scrollbar-width:none}
+.lc-sk{flex-wrap:nowrap;overflow-x:auto;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);margin:0 -16px;padding:0 16px;scrollbar-width:none}
 .lc-sk::-webkit-scrollbar{display:none}
 .lc-sk span{flex-shrink:0}
 .lc-2{grid-template-columns:minmax(0,1fr);gap:0}

@@ -969,7 +969,7 @@ PUB_CSS = open(os.path.join(HERE, 'submit_base.css')).read() + r'''
 .ko-acts{margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:14px}
 .ko-2{display:flex;align-items:center;gap:18px}
 @media (max-width: 960px){
-.cl{display:flex;flex-direction:column;gap:0}
+.cl{display:flex;flex-direction:column;gap:0;align-items:stretch}
 .cl-side{display:contents}
 .cl-side > *{order:0}
 .cl-h1{margin-top:6px}

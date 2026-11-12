@@ -825,7 +825,7 @@ a.ct-r:hover{background:#F7F9FD}
 @media (max-width: 960px){
 .cf-g{width:100%}
 .cf-g .ds-btn{width:100%;justify-content:space-between}
-.utabs{margin:14px -16px 0 -16px;padding:0 16px;gap:20px}
+.utabs{margin:14px -16px 0 -16px;padding:0 16px;gap:20px;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);}
 .ut{height:42px;font-size:13.5px}
 .fx3:not(.col),.fx3.five,.fx3.four,.vr3 .fx3.five{grid-template-columns:minmax(0,1fr);gap:0;padding:2px 14px;border-radius:14px;background:#F7F9FD}
 .fx3:not(.col) > div{flex-direction:row;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-radius:0;background:none}
@@ -1008,7 +1008,7 @@ a.ct-r{margin:0 -8px;padding:12px 8px}
 .wk-r > .cpv{order:1}
 .wk-r > .cw9{order:3;padding:16px 0 12px 0}
 .wk-r > .cw9 .rx-k{margin:0 16px 10px 16px}
-.cw9 dl{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px 4px 16px;scrollbar-width:none}
+.cw9 dl{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 16px 4px 16px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);}
 .cw9 dl::-webkit-scrollbar{display:none}
 .cw9 dl div,.cw9 dl div:first-child{flex:0 0 68%;box-sizing:border-box;scroll-snap-align:start;scroll-margin-left:16px;padding:12px 14px;border:0;border-radius:14px;background:#F7F9FD}
 .wk-a2 .sv-s{font-size:12px}

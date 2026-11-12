@@ -363,7 +363,7 @@ BUILDER_CSS = r'''.ds-ghost.sm{height:40px;padding:0 16px;font-size:14px;gap:7px
 @media (max-width: 1180px){.cs{grid-template-columns:minmax(0,1fr)}.cs-st{justify-content:flex-start}}
 @media (max-width: 960px){
 .pg-h{gap:18px}
-.pg-hr{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;width:calc(100% + 32px);box-sizing:border-box;margin:0 -16px;padding:2px 16px 6px 16px;gap:8px;scrollbar-width:none}
+.pg-hr{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);width:calc(100% + 32px);box-sizing:border-box;margin:0 -16px;padding:2px 16px 6px 16px;gap:8px;scrollbar-width:none}
 .pg-hr::-webkit-scrollbar,.nv-st::-webkit-scrollbar,.ch-tools::-webkit-scrollbar{display:none}
 .pg-hr > *{flex-shrink:0}
 .cs{margin-top:22px;padding:20px 18px;gap:18px}
@@ -373,7 +373,7 @@ BUILDER_CSS = r'''.ds-ghost.sm{height:40px;padding:0 16px;font-size:14px;gap:7px
 .chs{margin-top:28px;gap:20px}
 .ch-h{gap:14px}
 .ch-m{margin-top:8px}
-.ch-tools{flex-wrap:nowrap;overflow-x:auto;margin:16px -14px 6px -14px;padding:0 14px 16px 14px;gap:20px;scrollbar-width:none}
+.ch-tools{flex-wrap:nowrap;overflow-x:auto;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);margin:16px -14px 6px -14px;padding:0 14px 16px 14px;gap:20px;scrollbar-width:none}
 .ch-tools > *{flex-shrink:0}
 .it + .it{box-shadow:0 -1.5px 0 #F0F2F8}
 .cs-st{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}

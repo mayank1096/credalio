@@ -270,3 +270,4 @@ and *-000 architecture pages are references for flow and rules, not screens.
 - 2026-11-12 Audit 11 (v75): MGT-004…006 reviewed. Mobile: Enrollment Directory filters on a clean 2-col grid (export beside search, no clipped select), left-side ghost actions and Version Assignments button full width; heights MGT-005-COMPARE/-CHANGES, MGT-006-IMPACT.
 - 2026-11-12 Audit 12 (v77): MGT-007/008 reviewed. Findings cards equal height; mobile Confirm Archive full width.
 - 2026-11-12 Audit 13 (v78): Insights MGT-009…F, Credits, Learn-creators reviewed. Mobile swipe fades on Insights tabs and How credits work.
+- 2026-11-12 Audit 14 (v79): launch (STU-RPT/SUB/064/066/067) + Creio/menu/message overlays reviewed. Studio top bar gap tightens when the Low/Empty Creio label shows so the avatar stays in view. All audits (1–14) complete.

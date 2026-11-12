@@ -454,7 +454,7 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .sb b{font-size:22px}
 .sb em{display:none}
 .dr-t{flex-wrap:wrap}
-.dr-f{flex:1;width:auto}
+.dr-f{width:auto}
 .dr-t .ds-ghost{flex-shrink:0}
 .wk-m > .wk-a2{order:6}
 .pg-hr:has(.ds-btn){display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100% !important;margin:0 !important;padding:0 !important;overflow:visible !important}
@@ -463,6 +463,12 @@ textarea.ds-in{height:auto;min-height:110px;padding:12px 14px;line-height:1.55;r
 .dr-t .ds-ghost span{display:none}
 .dr-t .ds-ghost{width:40px;padding:0;height:40px;border-radius:50%}
 .wk-a2 .sv-r .ds-ghost{width:100%}
+.wk-a2 .sv-s:has(.ds-ghost){width:100%}
+.wk-a2 .sv-s .ds-ghost{width:100%;justify-content:center}
+.dr-t{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.dr-t > .ds-ghost{grid-row:1;grid-column:2;justify-self:end}
+.dr-f{min-width:0}
+.dr-f .ds-in{padding-right:28px}
 .bn2{flex-wrap:wrap}
 .bn2 .ds-ghost{width:100%}
 }

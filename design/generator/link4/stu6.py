@@ -18,7 +18,7 @@ PRICE = 'Version 1.0 · %s1,800 DLP · %s420 Credits' % (coin(), credit())
 
 # ---------------------------------------------------------------- creator dashboard shell (same nav as Links 1/2)
 CNAV = [('', [('dash', 'Dashboard', '#')]),
-        ('Create', [('exp', 'My Creations', 'MGT-DS-CR.dc.html'), ('new', 'Create new', 'STU-001.dc.html')]),
+        ('Create', [('exp', 'My Creations', 'MGT-DS-CR.dc.html'), ('new', 'Create new', 'CREATE-NEW.dc.html')]),
         ('Collaboration', [('send', 'Invitations', 'INV-001.dc.html'), ('path', 'Opportunities', 'OPP-001.dc.html'), ('pencil', 'My Applications', 'OPP-004.dc.html'), ('program', 'Shared Courses', 'NAV-002.dc.html')]),
         ('Work', [('assigned', 'Assigned to me', '#'), ('valid', 'Validation Centre', '#'), ('disc', 'Discussions', '#'), ('support', 'Learner support', '#'), ('cal', 'Calendar', '#')]),
         ('Insights', [('learners', 'Learners', '#'), ('analytics', 'Analytics', '#')]),
@@ -199,13 +199,33 @@ P('ds-ov', 'My Creations',
           ('Marketplace', 'Hidden', 'eye', 'gy'), ('New enrollments', 'Closed', 'lock', 'gy'), ('Existing entitlements', 'Preserved', 'check', 'ok'), ('Validation', 'Gold · VAL-00928', 'badge', 'gold')]),
       ICON(I['back'], 14, 2)))
 
+# ---------------------------------------------------------------- Create new (same design as Link 1 CR-HOME-NEW): entry to the Studio setup flow
+FMTS = [('course', 'Course', 'One skill, learned step by step.', 'STU-002.dc.html'), ('cert', 'Professional certification', 'Assess and verify skills.', '#'),
+        ('path', 'Career path', 'A guided journey into a new role.', '#'), ('program', 'Learning program', 'Group learning over several weeks.', '#')]
+P('new', 'Create new',
+  """<div class="hp-head ob-in"><div><h1 class="ds-h1">Create something new</h1></div></div>
+<div class="nw-opt nw-opt-n ob-in2" role="group" aria-labelledby="nw-o1">
+<div class="nw-oh"><span class="nw-num" aria-hidden="true">1</span><span class="nw-ot"><h2 class="nw-h2" id="nw-o1">Create with Nova</h2><span class="nw-os">Describe your idea. Nova drafts it with you.</span></span></div>
+<section class="ds-card nw-c" aria-label="Option 1: describe your idea">
+<label for="nw-i" class="sr-only">Describe your idea</label>
+<div class="nw-row"><span class="nw-nv" title="Nova">%s</span><textarea id="nw-i" maxLength="250" rows="2" placeholder="For example: ‘Python for analysts who know SQL’" style="flex: 1 1 auto; min-width: 0"></textarea><a class="nw-go" href="STU-002-NOVA.dc.html" aria-label="Continue with Nova">%s</a></div>
+<span class="nw-cnt">30–250 chars</span>
+</section>
+</div>
+<div class="nw-div ob-in3" aria-hidden="true"><span>or</span></div>
+<div class="nw-opt ob-in3" role="group" aria-labelledby="nw-o2">
+<div class="nw-oh"><span class="nw-num" aria-hidden="true">2</span><span class="nw-ot"><h2 class="nw-h2" id="nw-o2">Create on your own</h2><span class="nw-os">Pick a format and build it step by step.</span></span></div>
+<div class="nw-g" role="list" aria-label="Option 2: pick a format">%s</div>
+</div>""" % (nova_av(), ic('arrowr', 18, 2.4),
+      ''.join('<a class="nw-f" role="listitem" href="%s"><span class="nw-fi">%s</span><b>%s</b><span class="nw-fd">%s</span></a>' % (h, ic(i, 22), l, d) for i, l, d, h in FMTS)))
+
 # ---------------------------------------------------------------- Downstream · My Creations (unpublished card) — CR-HOME-EXP design
 ROWS = [('Data Analysis with SQL', 'Unpublished', '', 'Gold · v1.0', True), ('Python for Beginners', 'Published', 'green', '', False), ('Business Intelligence Basics', 'Published', 'green', '', False)]
 P('ds-cr', 'My Creations',
   '''<header class="pg-h row ob-in"><div class="pg-hl"><h1 class="ds-h1">My Creations</h1></div><div class="pg-hr">%s</div></header>
 <nav class="ft2 ob-in2" aria-label="Type"><a class="on" href="#">Courses</a><a href="#">Certifications</a><a href="#">Career Paths</a><a href="#">Learning Programs</a></nav>
 <section class="ds-card mcl ob-in2"><div class="mcl-r mcl-hd"><span>Courses</span><span>Status</span><span>Validation</span><span></span></div>%s</section>''' % (
-      btn('Create new', 'STU-001.dc.html', 'sm2'),
+      btn('Create new', 'CREATE-NEW.dc.html', 'sm2'),
       ''.join('<div class="mcl-r%s"><span class="mcl-n"><span class="mcl-i">%s</span><b>%s</b></span>%s<span class="mcl-v">%s</span><span class="mcl-a">%s</span></div>' % (
           ' un' if u else '', ic('course', 17, 2), n, tag(s, t), ('<span class="gb sm">%s<span>%s</span></span>' % (ic('badge', 11, 2.2), v)) if v else '<span class="mcl-dash">—</span>',
           ('<a class="ds-ghost xs" href="MGT-DS-OV.dc.html">View Overview</a><a class="ds-ghost xs" href="MGT-001.dc.html">Manage</a><a class="ds-link sm" href="STU-009.dc.html">Edit</a>') if u else '<a class="ds-ghost xs" href="#">Open</a>') for n, s, t, v, u in ROWS)))
@@ -263,7 +283,7 @@ def manage_body():
 %s
 </main>
 </div>
-</div>''' % (cr_side('My Creations'), CR_TOP, '\n'.join(blocks))
+</div>''' % (cr_side('My Creations').replace('href="MGT-DS-CR.dc.html" class="ds-item ds-on" aria-current="page"', 'href="MGT-DS-CR.dc.html" class="ds-item {{onCr}}"').replace('href="CREATE-NEW.dc.html" class="ds-item"', 'href="CREATE-NEW.dc.html" class="ds-item {{onNew}}"'), CR_TOP, '\n'.join(blocks))
 TONE = {'b': 'ok', 'c': 'ok', 'e': 'rd', 'f': 'am', 'g': 'rd', 'notice': 'rd', 'd': 'gy', 'ds-ov': 'gy', 'first': 'ok'}
 MANAGE_JS = W.js() + '''var PG = %s, TONE = %s;
 class Component extends DCLogic {
@@ -271,6 +291,7 @@ class Component extends DCLogic {
     var pg = this.props.page || 'hub', v = togVals(this), self = this;
     PG.forEach(function (k) { v['p_'.concat(k.replace('-', '_'))] = k === pg; });
     v.tone = 'tn-'.concat(TONE[pg] || 'cb');
+    v.onNew = pg === 'new' ? 'ds-on' : ''; v.onCr = pg === 'new' ? '' : 'ds-on';
     v.navCls = this.state.nav ? 'ds-open' : '';
     v.toggleNav = function () { self.setState({ nav: !self.state.nav }); };
     return v;
@@ -1002,12 +1023,13 @@ LEARN_CSS = SHARED + r'''body{background:#F7F9FD}
 }
 '''
 
-write('Manage.dc.html', doc('Manage Published Course · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + WK_CSS + MANAGE_CSS + open(os.path.join(HERE, 'stu14m.css')).read(), manage_body(), MANAGE_JS))
+write('Manage.dc.html', doc('Manage Published Course · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + WK_CSS + MANAGE_CSS + open(os.path.join(HERE, 'stu14m.css')).read() + open(os.path.join(HERE, 'cnew.css')).read(), manage_body(), MANAGE_JS))
 write('Unpublish.dc.html', doc('Unpublish course · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + UN_CSS, un_body(), UN_JS))
 write('Learner.dc.html', doc('Learner app · My Learning · shared source', kit.KIT_CSS + '\n' + dash.DASH_CSS + BASE_CSS + WK_CSS + LEARN_CSS, LEARN,
                              'class Component extends DCLogic {\n  renderVals() { return {}; }\n}'))
 
 BOARDS = [
+    ('CREATE-NEW', 'Manage', {'page': 'new'}, 'Create new · entry to the Course Studio setup (same design as Link 1 CR-HOME-NEW)'),
     ('MGT-001', 'Manage', {'page': 'hub'}, 'CR-COURSE-MGT-001 · Manage Course Hub'),
     ('MGT-002', 'Manage', {'page': 'a'}, 'CR-COURSE-MGT-002-A · Publishing & Visibility (default)'),
     ('MGT-002-EDIT', 'Manage', {'page': 'edit'}, 'MGT-002 · Manage Availability — Step 2 of 4'),

@@ -24,11 +24,11 @@ S_TYPE = '''<div class="fx-col">
 <div class="nw-g ob-in3">%s</div>
 <div class="fx-nova ob-in4">%s<span class="fx-nl"><b>Not sure? Tell Nova</b> what you want learners to achieve.</span><label class="sr-only" for="fxq">What should learners achieve?</label><input id="fxq" placeholder="What should learners achieve?">%s</div>
 </div>''' % (
-    fmt_card('course', 'Course', 'Course', 'Teach a focused subject or skill.', ['Individual skills', 'Knowledge development', 'Self-paced or instructor-led learning'], 'Create Course', 'STU-002.dc.html') +
-    fmt_card('cert', 'Professional Certification', 'Professional Certification', 'Assess and verify professional competence.', ['Professional standards', 'Competency verification', 'Formal assessment', 'Recognised proof'], 'Create Certification', '#') +
-    fmt_card('path', 'Career Path', 'Career Path', 'Build a journey toward a role or career outcome.', ['Multiple connected skills', 'Career transitions', 'Courses + practice + credentials', 'Portfolio development'], 'Create Career Path', '#') +
-    fmt_card('program', 'Learning Program', 'Learning Program', 'Deliver structured learning over time.', ['Cohorts', 'Institutions', 'Multi-course programs', 'Guided learning'], 'Create Learning Program', '#'),
-    nova_av('sm'), nchip('Help Me Choose'))
+    fmt_card('course', 'Course', 'Course', 'Teach a focused subject or skill.', ['Individual skills', 'Knowledge development', 'Self-paced or instructor-led learning'], 'Create course', 'STU-002.dc.html') +
+    fmt_card('cert', 'Professional certification', 'Professional certification', 'Assess and verify professional competence.', ['Professional standards', 'Competency verification', 'Formal assessment', 'Recognised proof'], 'Create certification', '#') +
+    fmt_card('path', 'Career path', 'Career path', 'Build a journey toward a role or career outcome.', ['Multiple connected skills', 'Career transitions', 'Courses + practice + credentials', 'Portfolio development'], 'Create career path', '#') +
+    fmt_card('program', 'Learning program', 'Learning program', 'Deliver structured learning over time.', ['Cohorts', 'Institutions', 'Multi-course programs', 'Guided learning'], 'Create learning program', '#'),
+    nova_av('sm'), nchip('Help me choose'))
 
 VIDEO = '<span class="vz-vid"><span class="vz-play"></span><span class="vz-pb"><i></i></span></span>'
 def lrows(n=3):
@@ -47,16 +47,18 @@ def deliv(vis, title, desc, feats, on):
     return T.opt(inner, on, 'dlv', 'dv')
 
 S_DELIV = """<div class="fx-col">
-<a class="fx-back" href="STU-001.dc.html">%s<span>Back</span></a>
+<a class="fx-back" href="CREATE-NEW.dc.html">%s<span>Back</span></a>
+<sc-if value="{{fromNew}}" hint-placeholder-val="{{ true }}"><div class="og ob-in"><span class="og-i">%s</span><span class="og-t"><em>From Create new</em><b>Course</b><span>One skill, learned step by step.</span></span><a class="ds-link og-c" href="CREATE-NEW.dc.html">Change</a></div></sc-if>
+<sc-if value="{{fromNova}}" hint-placeholder-val="{{ false }}"><div class="og nv nova-card ob-in"><span class="og-i">%s</span><span class="og-t"><em>Nova’s draft</em><b>“SQL for analysts new to coding”</b><span class="og-k"><span class="ds-tag blue">Course · Nova’s pick</span><span class="ds-tag line">SQL</span><span class="ds-tag line">Data analysis</span></span></span><a class="ds-link og-c" href="CREATE-NEW.dc.html">Change</a></div></sc-if>
 <h1 class="fx-h1 ob-in">How will learners experience this course?</h1>
 <p class="fx-sub ob-in2">Self-paced courses can use video, audio, text, documents, interactive activities, projects and assessments.</p>
 <div class="dv-g ob-in3" role="group" aria-label="Delivery type">%s</div>
 <div class="ob-in4" style="margin-top: 18px">%s</div>
 <div class="fx-acts">%s</div>
 </div>""" % (
-    ICON(I['back'], 16, 2),
-    deliv('self', 'Self-Paced', 'Learners progress through lessons and activities at their own pace.', ['Video, audio, text, documents', 'Interactive activities', 'Projects and assessments'], False) +
-    deliv('live', 'Live Instructor-Led', 'Learning happens primarily through scheduled live sessions.', ['Live classes and scheduled sessions', 'Attendance', 'Resources and assignments'], False) +
+    ICON(I['back'], 16, 2), ic('course', 22, 1.9), ic('nova', 20, 2.2),
+    deliv('self', 'Self-paced', 'Learners progress through lessons and activities at their own pace.', ['Video, audio, text, documents', 'Interactive activities', 'Projects and assessments'], False) +
+    deliv('live', 'Live instructor-led', 'Learning happens primarily through scheduled live sessions.', ['Live classes and scheduled sessions', 'Attendance', 'Resources and assignments'], False) +
     deliv('hyb', 'Hybrid', 'Combine self-paced learning with scheduled live sessions.', ['Content lessons + live classes', 'Assignments and practice', 'Assessments'], True),
     nova_sg('Hybrid selected. I’ll help you structure which parts should be self-paced and which benefit from live instruction.'),
     btn('Continue', 'STU-003.dc.html'))
@@ -73,7 +75,7 @@ S_REVIEW = """<div class="fx-col n">
 <div class="rs-c"><em>Status</em><span class="rs-v"><span class="rs-st"><i></i>Draft</span></span></div>
 </div>
 </div>
-<div class="fx-acts"><a class="ds-ghost" href="STU-001.dc.html">Change Setup</a>%s</div>
+<div class="fx-acts"><a class="ds-ghost" href="STU-002.dc.html">Change setup</a>%s</div>
 </div>""" % (
     ICON(I['back'], 16, 2), ic('course', 30, 1.7), VIS['hyb'], av(ME, 'AO', 40),
     btn('Continue', 'STU-004.dc.html'))
@@ -93,9 +95,9 @@ S_HOW = '''<div class="fx-col">
 <div class="fx-acts"><span class="fx-note">You can change this later from Collaborators in Course Studio.</span>%s</div>
 </div>''' % (
     ICON(I['back'], 16, 2),
-    how(V_SOLO, 'Solo', 'Create Solo', 'You are the primary and only creator. Go straight to building your course.', 'Next: Curriculum Builder', False) +
-    how(V_CO, 'Co-Creators', 'Create with Co-Creators', 'Invite a specific person by name or email to contribute to this course.', 'Next: Invite Co-Creator', True) +
-    how(V_OPEN, 'Open', 'Open to Collaboration', 'Make this opportunity discoverable to approved Credalio creators. Different from inviting someone directly.', 'Next: Open collaboration setup', False),
+    how(V_SOLO, 'Solo', 'Create solo', 'You are the primary and only creator. Go straight to building your course.', 'Next: Curriculum Builder', False) +
+    how(V_CO, 'Co-Creators', 'Create with co-creators', 'Invite a specific person by name or email to contribute to this course.', 'Next: Invite Co-Creator', True) +
+    how(V_OPEN, 'Open', 'Open to collaboration', 'Make this opportunity discoverable to approved Credalio creators. Different from inviting someone directly.', 'Next: Open collaboration setup', False),
     btn('Continue', 'COL-002.dc.html'))
 
 PLAN = [('Define', 'Tell us what you’re teaching and who it’s for.', 'Design'), ('Design', 'Define skills, outcomes and evidence.', 'Design'),
@@ -110,22 +112,23 @@ S_WELCOME = '''<div class="fx-col n wl">
 <div class="xb-rh"><span class="xb-rn">Your Studio is a workspace, not a wizard.%s</span></div>
 <ol class="xb-steps">%s</ol>
 </div>
-<div class="xb-acts ob-in4">%s<span class="wl-alt"><a class="ds-link" href="#">%s<span>Import Existing Course</span></a><span aria-hidden="true">·</span><a class="ds-link" href="STU-009.dc.html">Go to Studio Home</a></span></div>
+<div class="xb-acts ob-in4">%s<span class="wl-alt"><a class="ds-link" href="#">%s<span>Import existing course</span></a><span aria-hidden="true">·</span><a class="ds-link" href="STU-009.dc.html">Go to Studio Home</a></span></div>
 </div>''' % (
     nova_av('lg'), tag('Course', 'line'), tag('Hybrid', 'line'), stack(TEAM, 18),
     tip('Work in any order and come back whenever you like: everything saves as you go, and Studio Home always shows your next step. Only submitting for validation and publishing have requirements.', 'r'),
     ''.join('<li class="xb-s%s"><span class="xb-sn">%d</span><span class="xb-sl"><b>%s</b><span>%s</span><em>%s</em></span></li>' % (' xb-first' if i == 0 else '', i + 1, a, b, c) for i, (a, b, c) in enumerate(PLAN)),
-    btn('Start Building', 'STU-010.dc.html', 'xb-go'), ic('import', 16, 2))
+    btn('Start building', 'STU-010.dc.html', 'xb-go'), ic('import', 16, 2))
 
-STEPS = [('type', 'Step 1 of 4', 25, S_TYPE), ('delivery', 'Step 2 of 4', 50, S_DELIV), ('review', 'Step 3 of 4', 75, S_REVIEW),
-         ('how', 'Step 4 of 4', 100, S_HOW), ('welcome', '', 100, S_WELCOME)]
+STEPS = [('type', '', 0, S_TYPE), ('delivery', 'Step 1 of 3', 33, S_DELIV), ('review', 'Step 2 of 3', 66, S_REVIEW),
+         ('how', 'Step 3 of 3', 100, S_HOW), ('welcome', '', 100, S_WELCOME)]
 
 SETUP_BODY = '''<div class="fx-root">
 <header class="fx-top">
 <a href="#" class="fx-x fx-xm" aria-label="Save &amp; exit">%s</a>
-<div class="fx-title"><span class="fx-t1">Creator Studio</span></div>
+<div class="fx-title"><span class="fx-t1">{{t1}}</span><span class="fx-t2">{{t2}}</span></div>
 <span style="flex-grow: 1"></span>
 <span class="fx-step">{{stepLabel}}</span>
+<a href="#" class="cw-nova ds-hide-sm">%s<span>Nova</span></a>
 <a href="#" class="ds-tok" aria-label="72,450 Creio">%s<span>72.4K</span></a>
 <a href="#" class="ds-ghost fx-exit">Save &amp; exit</a>
 <span class="fx-bar" style="width: {{barW}}"></span>
@@ -133,9 +136,21 @@ SETUP_BODY = '''<div class="fx-root">
 <main class="fx-main">
 %s
 </main>
-</div>''' % (ic('x', 20, 2), COIN('fc', 26), '\n'.join('<sc-if value="{{s_%s}}" hint-placeholder-val="{{ %s }}">%s</sc-if>' % (k, 'true' if k == 'type' else 'false', html) for k, _, _, html in STEPS))
+</div>''' % (ic('x', 20, 2), nova_av('sm'), COIN('fc', 26), '\n'.join('<sc-if value="{{s_%s}}" hint-placeholder-val="{{ %s }}">%s</sc-if>' % (k, 'true' if k == 'type' else 'false', html) for k, _, _, html in STEPS))
 
-SETUP_CSS = r'''.nw-g{margin-top:32px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+SETUP_CSS = r'''.cw-nova{display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 16px 0 6px;box-sizing:border-box;border-radius:999px;border:1.5px solid #CBD7F5;background:#FFFFFF;color:#0E3BB8;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap}
+.cw-nova:hover{border-color:#1652F0;background:#F5F8FF}
+.fx-top .cw-nova{height:40px;padding-right:14px;margin-right:2px}
+.og{margin:0 0 24px 0;display:flex;align-items:center;gap:14px;max-width:760px;box-sizing:border-box;padding:14px 18px 14px 14px;border-radius:18px;border:1.5px solid #E6EAF3;background:#F7F9FD}
+.og-i{width:46px;height:46px;flex-shrink:0;border-radius:14px;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 22px -12px rgba(22,82,240,.7)}
+.og-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.og-t em{font-style:normal;font-size:12px;font-weight:500;color:#8A93AD}
+.og-t b{font-size:16px;font-weight:600;color:#0B1433}
+.og-t > span{font-size:13.5px;color:#4A5578}
+.og-k{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.og-c{flex-shrink:0;margin-left:auto}
+.og.nv{border-color:#DCE5FB}
+.nw-g{margin-top:32px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 .nw-f{position:relative;display:flex;flex-direction:column;padding:20px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;color:#0B1433;font-family:inherit;text-align:left;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
 .nw-f:hover{border-color:#CBD7F5;box-shadow:0 14px 34px rgba(22,82,240,.08);transform:translateY(-2px)}
 .nw-fi{width:46px;height:46px;border-radius:14px;background:#F5F8FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
@@ -327,6 +342,10 @@ SETUP_CSS = r'''.nw-g{margin-top:32px;display:grid;grid-template-columns:repeat(
 .xb-go{justify-content:space-between}
 .wl-alt{flex-direction:column;gap:6px}
 .wl-alt > span[aria-hidden]{display:none}
+.og{margin-bottom:18px;padding:12px 14px 12px 12px;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.og-i{width:40px;height:40px;border-radius:12px}
+.og-t b{font-size:15px}
+.og-c{align-self:center}
 }
 '''
 
@@ -337,6 +356,10 @@ SETUP_JS = T.js() + '''class Component extends DCLogic {
     var cur = S[st] || S.type;
     var v = togVals(this);
     v.stepLabel = cur[0]; v.barW = String(cur[1]).concat('%%');
+    var nova = this.props.from === 'nova';
+    v.fromNova = nova; v.fromNew = !nova;
+    v.t1 = st === 'type' ? 'Creator Studio' : 'New course';
+    v.t2 = st === 'type' ? '' : (nova ? 'With Nova' : 'From scratch');
     Object.keys(S).forEach(function (k) { v['s_'.concat(k)] = k === st; });
     return v;
   }
@@ -984,10 +1007,11 @@ write('Studio.dc.html', doc('Course Studio · shared source', kit.KIT_CSS + '\n'
 
 # ======================================================================= boards
 BOARDS = [
-    ('STU-001', 'Setup', {'step': 'type'}, 'CR-STU-001 · Choose learning experience'),
-    ('STU-002', 'Setup', {'step': 'delivery'}, 'CR-STU-002 · Delivery type'),
-    ('STU-003', 'Setup', {'step': 'review'}, 'CR-STU-003 · Setup review'),
-    ('STU-004', 'Setup', {'step': 'how'}, 'CR-STU-004 · How will you create this course?'),
+    ('STU-001', 'Setup', {'step': 'type'}, 'CR-STU-001 · Fallback: only when the Studio opens without a chosen format'),
+    ('STU-002', 'Setup', {'step': 'delivery'}, 'CR-STU-002 · Step 1 of 3 · Delivery (format carried over from Create new)'),
+    ('STU-002-NOVA', 'Setup', {'step': 'delivery', 'from': 'nova'}, 'CR-STU-002 · Step 1 of 3 · Delivery, coming from Nova (Nova’s draft on top)'),
+    ('STU-003', 'Setup', {'step': 'review'}, 'CR-STU-003 · Step 2 of 3 · Setup review'),
+    ('STU-004', 'Setup', {'step': 'how'}, 'CR-STU-004 · Step 3 of 3 · How will you create this course?'),
     ('STU-008', 'Setup', {'step': 'welcome'}, 'CR-STU-008 · Studio welcome'),
     ('STU-009', 'Studio', {'page': 'home'}, 'CR-STU-009 · Studio home'),
     ('STU-010', 'Studio', {'page': 'basics'}, 'CR-STU-010 · Basics'),

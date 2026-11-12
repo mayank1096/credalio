@@ -147,7 +147,7 @@ P('o-g', 'Invitations', outcome('am', 'layers', 'Superseded', 'A revised invitat
 
 # ======================================================================= CR-NAV-002 Shared Courses
 SHARED = [('Data Analysis with SQL', 'AM', 'Co-Creator', 20, 'Chapters 2–3'), ('Python for Beginners', 'SY', 'Content Contributor', 15, '')]
-P('shared', 'Shared Courses', ph(['Creator Studio', 'Collaboration', 'Shared Courses'], 'Courses', 'Courses you lead and courses you collaborate on are kept apart.', right=btn('Create New', 'STU-001.dc.html')) +
+P('shared', 'Shared Courses', ph(['Creator Studio', 'Collaboration', 'Shared Courses'], 'Courses', 'Courses you lead and courses you collaborate on are kept apart.', right=btn('Create New', 'CREATE-NEW.dc.html')) +
   '<div class="sc6 ob-in2">%s</div>' % ''.join(
       '''<article class="sc6-c" style="--i: %d"><div class="sc6-v">%s<span class="sc6-g"></span></div><div class="sc6-b"><span class="sc6-t"><span class="sc6-mc">%s</span><b>%s</b></span><span class="sc6-f">%s<span><em>Lead Creator</em>%s</span></span>
 <div class="sc6-m"><span><em>Your role</em>%s</span><span><em>Your share</em><b>%d%%</b></span><span><em>Status</em>%s</span></div><a class="ds-ghost sc6-o" href="%s"><span>Open Course Studio</span>%s</a></div></article>''' % (

@@ -905,8 +905,7 @@ CSS = stu6.MANAGE_CSS + r'''.cst2{display:flex;align-items:center;gap:16px;paddi
 .sb em{display:none}
 .dr2{padding:14px 14px 4px 14px}
 .dr-t{flex-wrap:wrap}
-.dr-s{flex-basis:100%}
-.dr-f{flex:1;width:auto}
+.dr-f{width:auto}
 .dr-t .ds-ghost{flex-shrink:0}
 .lr-hd{display:none}
 .lr{grid-template-columns:minmax(0,1fr) auto;gap:6px 10px}
@@ -929,6 +928,13 @@ CSS = stu6.MANAGE_CSS + r'''.cst2{display:flex;align-items:center;gap:16px;paddi
 .dr-t .ds-ghost span{display:none}
 .dr-t .ds-ghost{width:40px;padding:0;height:40px;border-radius:50%}
 .wk-a2 .sv-r .ds-ghost{width:100%}
+.wk-a2 .sv-s:has(.ds-ghost){width:100%}
+.wk-a2 .sv-s .ds-ghost,.va-c > .ds-ghost{width:100%;justify-content:center}
+.dr-t{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.dr-s{grid-row:1;grid-column:1 / -1;margin-right:48px}
+.dr-t > .ds-ghost{grid-row:1;grid-column:2;justify-self:end}
+.dr-f{min-width:0}
+.dr-f .ds-in{padding-right:28px}
 .vl-d{display:none}
 .emp2{padding:28px 18px}
 .dw{width:100%;top:auto;max-height:90vh;border-radius:24px 24px 0 0;padding:18px 16px;animation:dwUp .5s cubic-bezier(.2,.8,.2,1) both}

@@ -428,7 +428,7 @@ VAL_CSS = r'''.wn{margin-top:14px;display:flex;align-items:center;gap:10px;paddi
 .vt .on{color:#0B1433;font-weight:600}.vt .on i{border:6px solid #1652F0;animation:koPulse 1.8s ease-out infinite}
 .vt.am .on i{border-color:#D99A1E;animation-name:amP}
 @keyframes koPulse{0%{box-shadow:0 0 0 0 rgba(22,82,240,.35)}100%{box-shadow:0 0 0 9px rgba(22,82,240,0)}}
-.vtabs{gap:24px;overflow-x:auto;scrollbar-width:none}
+.vtabs{gap:24px;overflow-x:auto;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);scrollbar-width:none}
 .vtabs::-webkit-scrollbar{display:none}
 .vtabs .ut i{font-style:normal;min-width:20px;height:20px;padding:0 6px;box-sizing:border-box;border-radius:999px;background:#FFF4E0;color:#8A5A00;font-size:11.5px;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
 .vtabs + .wk{margin-top:20px}
@@ -707,7 +707,7 @@ a.ft-r:hover{background:#F7F9FD}
 .vt{grid-template-columns:repeat(4,minmax(0,1fr))}
 .vt::before,.vt::after{left:11px}
 .vtabs{margin:16px -16px 0 -16px;padding:0 16px;gap:20px}
-.vs3{display:flex;overflow-x:auto;margin:0 -16px;padding:0 16px 4px 16px;gap:10px;scrollbar-width:none}
+.vs3{display:flex;overflow-x:auto;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);margin:0 -16px;padding:0 16px 4px 16px;gap:10px;scrollbar-width:none}
 .vs3::-webkit-scrollbar{display:none}
 .vs-t{flex:0 0 76%;box-sizing:border-box}
 .na li{flex-wrap:wrap}
@@ -742,7 +742,7 @@ a.ft-r{margin:0 -8px;padding:14px 8px}
 .ap li .ds-ghost{grid-column:2;justify-self:start}
 .pg-hr:has(.rv-p){width:100%}
 .rvw{grid-template-columns:minmax(0,1fr);gap:14px}
-.rvl{position:static;flex-direction:row;overflow-x:auto;margin:0 -16px;padding:0 16px 2px 16px;scrollbar-width:none}
+.rvl{position:static;flex-direction:row;overflow-x:auto;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);margin:0 -16px;padding:0 16px 2px 16px;scrollbar-width:none}
 .rvl::-webkit-scrollbar{display:none}
 .rvl-i{flex:0 0 72%;box-sizing:border-box}
 .vf,.ac{padding:16px}
@@ -802,7 +802,7 @@ a.ft-r{margin:0 -8px;padding:14px 8px}
 .vtabs{margin-top:14px}
 .hq-b{padding:16px}
 .ok-n{padding:16px}
-.vrs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 8px 16px;gap:12px;scrollbar-width:none}
+.vrs{display:flex;overflow-x:auto;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);scroll-snap-type:x mandatory;margin:0 -16px;padding:2px 16px 8px 16px;gap:12px;scrollbar-width:none}
 .vrs::-webkit-scrollbar{display:none}
 .vr{flex:0 0 80%;box-sizing:border-box;scroll-snap-align:start;padding:18px}
 .idp{order:2}
@@ -829,7 +829,7 @@ a.ft-r{margin:0 -8px;padding:14px 8px}
 .fs ul{flex-direction:row;justify-content:space-between;margin-top:10px}
 .fs li{gap:6px;font-size:12.5px}
 .fs li span{flex:none}
-.ff{flex-direction:row;flex-wrap:nowrap;overflow-x:auto;margin:0 -16px;padding:0 16px;scrollbar-width:none}
+.ff{flex-direction:row;flex-wrap:nowrap;overflow-x:auto;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);margin:0 -16px;padding:0 16px;scrollbar-width:none}
 .ff::-webkit-scrollbar{display:none}
 .ff .ds-seg{flex-shrink:0;-webkit-mask-image:none;mask-image:none;overflow:visible}
 .ff-l{flex-shrink:0}

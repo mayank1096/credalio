@@ -29,7 +29,8 @@ WK_CSS = r'''.wk{margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr
 .wk-m{grid-area:m;min-width:0;display:flex;flex-direction:column;gap:16px}
 .wk-m > .fc,.wk-m > .fc + .fc,.wk-m > .hm-list,.wk-m > .hm-det{margin-top:0}
 .wk-a{grid-area:a;align-self:start}
-.wk-a:not(:has(.sv-s:not(:empty))){justify-self:end;padding-left:14px}
+.wk-a:not(:has(.sv-s:not(:empty))){justify-self:stretch;padding-left:22px}
+@media (min-width: 961px){.wk-a:not(:has(.sv-s:not(:empty))) .sv-r{flex:1;display:flex;align-items:center}.wk-a:not(:has(.sv-s:not(:empty))) .sv-r > .ds-link{margin-right:auto}}
 .wk-r .hm-det{padding:18px 14px 14px 14px;margin:0}
 .wk-r .hm-det .rx-k{margin:0 4px 12px 4px}
 .wk-r .hm-dg{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding:0}

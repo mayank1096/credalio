@@ -344,7 +344,7 @@ NEXT = [('search', 'Learners can find it in the marketplace', 'Search and browse
 PUB['live'] = '''<div class="ko-wrap ob-in"><div class="ko">%s<span class="ko-pill">Public Marketplace</span><h1 class="ko-h1">Your course is live</h1><p class="ko-sub">Data Analysis with SQL</p>
 <div class="lv-s">%s<span class="lv-cei"><b>CEI 92</b></span><span class="lv-pr">850 DLP · 500 Credits lifetime</span></div>
 <section class="ko-card"><span class="ko-cl">What happens now</span><ul class="ko-nx">%s</ul></section>
-<div class="ko-acts">%s<span class="ko-2"><a class="ds-ghost" href="STU-067.dc.html">Go to Manage</a><a class="ds-link" href="STU-001.dc.html">Create Another Experience</a></span></div></div></div>''' % (
+<div class="ko-acts">%s<span class="ko-2"><a class="ds-ghost" href="STU-067.dc.html">Go to Manage</a><a class="ds-link" href="CREATE-NEW.dc.html">Create Another Experience</a></span></div></div></div>''' % (
     emblem(), GOLD, ''.join('<li><span class="ko-ni">%s</span><span><b>%s</b><em>%s</em></span></li>' % (ic(i, 17, 2) if i in EXTRA or i in I else '', t, d) for i, t, d in NEXT),
     btn('Share &amp; Promote', 'STU-066.dc.html'))
 

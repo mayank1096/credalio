@@ -14,7 +14,7 @@ for f in sys.argv[1:]:
 T = {c: t for c, _, _, t in stu1.BOARDS + stu2.BOARDS + stu3.BOARDS + stu4.BOARDS + stu5.BOARDS + stu6.BOARDS + stu7.BOARDS + stu8.BOARDS + stu10.BOARDS + stu11.BOARDS + stu12.BOARDS + stu13.BOARDS + stu15.BOARDS}
 
 ROWS = [
-    ('b1-setup', 'Batch 1 · Course setup: learning experience, delivery type, setup review, how you’ll create it, Studio welcome', ['STU-001', 'STU-002', 'STU-003', 'STU-004', 'STU-008']),
+    ('b1-setup', 'Batch 1 · Create new → Course Studio, one connected flow: Create new, Delivery (from Create new / from Nova), setup review, how you’ll create it, Studio welcome · STU-001 fallback', ['CREATE-NEW', 'STU-002', 'STU-002-NOVA', 'STU-003', 'STU-004', 'STU-008', 'STU-001']),
     ('b1-design-a', 'Batch 1 · Course design: Studio home, basics, audience, career & skills', ['STU-009', 'STU-010', 'STU-011', 'STU-012', 'STU-012b', 'STU-013']),
     ('b1-design-b', 'Batch 1 · Course design: outcomes, skills map, evidence, assessment & award, effort, summary', ['STU-014', 'STU-015', 'STU-016', 'STU-017', 'STU-018', 'STU-019']),
     ('b2-builder', 'Batch 2 · Curriculum Builder: team, solo, open for collaboration, invited co-creator', ['STU-020', 'STU-020-SOLO', 'STU-020-OPEN', 'STU-020-CO']),
@@ -74,7 +74,7 @@ for nid, text, codes in ROWS:
     if nid == 'b10-invite':
         notes['b10-missing'] = {'x': 300, 'y': y - 150, 'text': 'Not built yet: CR-COL-001-SOLO (collaboration centre, solo empty state). The client file refuses to open this board.', 'w': 900, 'fill': 'yellow'}
     if nid == 'b1-setup':
-        notes['b1-format'] = {'x': 300, 'y': y - 150, 'text': 'CR-STU-001 uses the same format-card design as Link 1 Create new (CR-HOME-NEW): one design for the format picker.', 'w': 900, 'fill': 'blue'}
+        notes['b1-format'] = {'x': 300, 'y': y - 150, 'text': 'The format is chosen once on Create new (same design as Link 1 CR-HOME-NEW) and carries into Delivery, Step 1 of 3. CR-STU-001 is only a fallback, for when the Studio opens without a chosen format.', 'w': 1400, 'fill': 'blue'}
     x, mh = 0, 0
     for c in codes:
         hd, hm = H[c]

@@ -154,7 +154,6 @@
 .oph-go{grid-column:1 / -1}
 .oph-d b,.oph-d em{white-space:nowrap}
 .fl7 .sr6{flex:none;min-height:44px}
-.oc7-k .oc7-o{width:22px;padding:0;justify-content:center;font-size:0;gap:0}
 .ie7{flex-direction:column;align-items:flex-start;gap:12px;padding:16px}
 .ie7-v{width:56px;height:56px}
 .ie7-c{inset:9px}
@@ -201,12 +200,6 @@
 .fl7-s .fl-l{font-size:12px}
 .fl7-s .sel .ds-in{min-width:0;padding-left:8px;font-size:14px}
 .fl7-s .sel{flex:1;min-width:0}
-.oc7-k{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-16px;padding-right:16px;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
-.oc7-k::-webkit-scrollbar{display:none}
-.oc7-k > span{flex-shrink:0}
-.oph-t{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-16px;padding-right:16px}
-.oph-t::-webkit-scrollbar{display:none}
-.oph-t > span{flex-shrink:0}
 .oph h1{font-size:23px}
 .dt7{gap:0;padding:4px 14px}
 .dt7-c,.dt7-c.w,.dt7-c.s{padding:12px 0;border-radius:0;background:none;border:0;border-top:1.5px solid #F0F2F8}
@@ -275,3 +268,6 @@
 .oc7-sep{display:none}
 .oc7-dl{color:#8A93AD}
 }
+.oc7-v{gap:8px;border-color:#1652F0;color:#1652F0}
+.oc7-v svg{transition:transform .25s ease}
+a:hover .oc7-v svg{transform:translateX(3px)}

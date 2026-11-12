@@ -49,7 +49,7 @@ def icard(i, c):
     return '''<article class="ic6" style="--i: %d"><div class="ic6-t">%s<div class="ic6-h"><span class="ic6-k"><span class="ic6-p"><i></i><span>Awaiting response</span></span><span class="ic6-y%s">%s</span></span><b>%s</b><span class="ic6-f">%s<span>Invited by <b>%s</b> · Lead Creator · Role: %s</span></span></div></div>
 <div class="ic6-s"><div class="ic6-r"><span class="ic6-rg">%s<b>%d%%</b></span><em>Marketplace + Subscription earnings</em></div><div class="ic6-e"><span class="ic6-d" style="--d: %d">%s</span><em>%s</em></div><div class="ic6-a">%s</div></div>
 </article>''' % (
-        i, cov(t, 56), ' oc' if 'open' in kind else '', kind, t, pa(k, 22), PPL[k][1], r, ring(pct, 52, 10), pct, days, ''.join('<i class="%s"></i>' % ('on' if j < days else '') for j in range(14)), exp, btn('Review Invitation', h + '.dc.html'))
+        i, cov(t, 56), ' oc' if 'open' in kind else '', kind, t, pa(k, 22), PPL[k][1], r, ring(pct, 52, 10), pct, days, ''.join('<i class="%s"></i>' % ('on' if j < days else '') for j in range(14)), exp, '<a class="ds-ghost ic6-g" href="%s.dc.html"><span>Review Invitation</span>%s</a>' % (h, ic('arrowr', 16, 2.2)))
 P('i-pend', 'Invitations', ph(INV_PATH, 'My Invitations', '2 pending. Direct invitations and offers from open collaboration appear here.') + itabs('pend', search=True) +
   '<div class="ic6s ob-in3">%s</div>' % ''.join(icard(i, c) for i, c in enumerate(PENDING)) +
   note('A course does not appear under Shared Courses merely because an invitation was received. Expired and withdrawn invitations stay in history.'))
@@ -150,7 +150,7 @@ SHARED = [('Data Analysis with SQL', 'AM', 'Co-Creator', 20, 'Chapters 2–3'), 
 P('shared', 'Shared Courses', ph(['Creator Studio', 'Collaboration', 'Shared Courses'], 'Courses', 'Courses you lead and courses you collaborate on are kept apart.', right=btn('Create New', 'STU-001.dc.html')) +
   '<div class="sc6 ob-in2">%s</div>' % ''.join(
       '''<article class="sc6-c" style="--i: %d"><div class="sc6-v">%s<span class="sc6-g"></span></div><div class="sc6-b"><span class="sc6-t"><span class="sc6-mc">%s</span><b>%s</b></span><span class="sc6-f">%s<span><em>Lead Creator</em>%s</span></span>
-<div class="sc6-m"><span><em>Your role</em>%s</span><span><em>Your share</em><b>%d%%</b></span><span><em>Status</em>%s</span></div><a class="ds-btn sm2 sc6-o" href="%s"><span>Open Course Studio</span><span class="ob-arrow">%s</span></a></div></article>''' % (
+<div class="sc6-m"><span><em>Your role</em>%s</span><span><em>Your share</em><b>%d%%</b></span><span><em>Status</em>%s</span></div><a class="ds-ghost sc6-o" href="%s"><span>Open Course Studio</span>%s</a></div></article>''' % (
           i, cov(t, 64), cov(t, 44), t, pa(k, 28), PPL[k][1], role(r), p, tag('Active', 'green'), 'STU-020-CO.dc.html' if i == 0 else '#', ARROW) for i, (t, k, r, p, sc) in enumerate(SHARED)) +
   '<section class="ds-card rs6 ob-in3"><span class="rs6-i">%s</span><p>Shared courses open a restricted Course Studio: only your assigned scope is editable. Ownership, pricing, publishing and team controls belong to the Lead Creator.</p></section>' % ic('lock', 18, 2))
 

@@ -129,7 +129,7 @@ SC = '''<section class="pc-sec cx-sec" aria-label="Structure and credentials">
 
 # ---------- validation: same track as Creators ----------
 VSTEPS = [('Create', 'Your team builds the program.'), ('Submit', 'Send applicable learning for review.'), ('Validators assigned', 'Qualified, independent experts.'), ('Review', 'Questions and clarifications in one place.'), ('Validated', 'A clear decision and a public record.'), ('Visible status', 'Learners see the seal on your program.')]
-VAL = cregen.VAL.replace('cx-va', 'in-va').replace('Build it. Then prove the quality behind it.', 'Quality you can demonstrate.').replace('Independent experts review your work. Validated learning carries the Credalio seal, linked to a public Validation Record.', 'Submit applicable programs for independent validation. Validated programs carry the Credalio seal and a public Validation Record.')
+VAL = cregen.VAL.replace('cx-va', 'in-va').replace('Create with confidence. Build trust through validation.', 'Quality you can demonstrate.').replace('Independent experts review your learning content, helping you demonstrate quality and earn Credalio’s validation seal.', 'Submit applicable programs for independent validation. Validated programs carry the Credalio seal and a public Validation Record.')
 ol = re.search(r'<ol class="ko-path cx-path">.*?</ol>', VAL, re.S).group(0)
 VAL = VAL.replace(ol, '<ol class="ko-path cx-path">' + ''.join('<li%s><span class="ko-dot">%s</span><span><b>%s</b><span>%s</span></span></li>' % (' class="cx-ok"' if i == 4 else '', cregen.SEAL.replace('width="11" height="11"', 'width="28" height="28"') if i == 4 else str(i + 1), t, d) for i, (t, d) in enumerate(VSTEPS)) + '</ol>')
 

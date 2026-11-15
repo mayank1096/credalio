@@ -36,7 +36,7 @@ for a, b in [
     ('<section aria-labelledby="tx-h"', '<section class="vx-hero" aria-labelledby="tx-h"'),
     ('padding: 112px 48px;', 'padding: 48px 48px 72px;'),
     ('>Trusted learning</span>', '>Credalio Validation</span>'),
-    ('<h2 id="tx-h" class="tx-h2 tx-o1">Know the quality before you commit your time.</h2>', '<h1 id="tx-h" class="tx-h2 tx-o1">See what stands behind the learning.</h1>'),
+    ('<h2 id="tx-h" class="tx-h2 tx-o1">Know the quality before you commit your time.</h2>', '<h1 id="tx-h" class="tx-h2 tx-o1">Learning you can trust. Quality you can verify.</h1>'),
     ('Independent experts can take a course apart and check every layer before it earns the seal.', 'Qualified validators review learning independently, each in their own area, before a decision is made. You see the result on every course.'),
 ]:
     assert TX.count(a) == 1, a
@@ -45,9 +45,9 @@ TX = re.sub(r'<a class="ds-ghost tx-link" href="[^"]*">How validation works<svg.
 assert 'vx-acts' in TX
 
 # ---------- statuses: the hero pill states ----------
-STAT = [('green', OKI, 'Credalio Validated', 'Reviewed and approved', 'The validation process is complete for the version you see. Only this status carries the seal.'),
-        ('blue', '<span class="tx-spin"></span>', 'Review in progress', 'Submitted, being reviewed', 'Validators are reviewing it now. It isn’t validated yet.'),
-        ('line', '<span class="vx-ring"></span>', 'Not yet validated', 'No completed review', 'You can still learn from it. It just hasn’t been through a validator review.')]
+STAT = [('green', OKI, 'Credalio Validated', 'Reviewed and approved', 'Reviewed, approved, and verified for this version.'),
+        ('blue', '<span class="tx-spin"></span>', 'Review in progress', 'Submitted, being reviewed', 'Independent experts are reviewing this learning.'),
+        ('line', '<span class="vx-ring"></span>', 'Not yet validated', 'No completed review', 'This learning hasn’t completed validation.')]
 STATS = '''<section class="pc-sec cx-sec" aria-labelledby="vx-st">
 <div class="pc-sh"><div><span class="pc-k">Validation status</span><h2 id="vx-st" class="pc-h2">Only one status carries the seal.</h2></div></div>
 <div class="vx-stats">''' + ''.join('<div class="vx-s%s">%s<span class="ds-tag lg %s">%s%s</span><b>%s</b><p>%s</p></div>' % (' vx-s-ok' if i == 0 else '', ('<span class="vx-seal">' + seal('a', 72) + '</span>') if i == 0 else '', c, ico, t, sub, d) for i, (c, ico, t, sub, d) in enumerate(STAT)) + '''</div>
@@ -57,13 +57,13 @@ STATS = '''<section class="pc-sec cx-sec" aria-labelledby="vx-st">
 I_EDU = '<path d="M3 9l9-5 9 5-9 5z"></path><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"></path>'
 I_ACC = '<circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path><path d="m8 11 2 2 4-4"></path>'
 I_ASM = '<path d="M9 4h6v3H9z"></path><path d="M7 5H5v16h14V5h-2"></path><path d="m9 14 2 2 4-4"></path>'
-ROLES = [(I_EDU, 'Educational Validator', 'Educational quality', ['Clear learning outcomes', 'Lessons match the outcomes', 'Activities build understanding', 'Progression makes sense'], 'Subject accuracy outside their expertise.'),
-         (I_ACC, 'Subject Matter Validator', 'Subject accuracy', ['Facts and technical detail', 'Relevance and depth', 'Current material', 'Practical relevance'], 'Whether the learning design or assessments work.'),
-         (I_ASM, 'Assessment Validator', 'Assessment quality', ['Aligned with the outcomes', 'Measures real competence', 'Right difficulty', 'Fair, defensible scoring'], 'Subject accuracy of the content.')]
+ROLES = [(I_EDU, 'Educational Validator', 'Educational quality', ['Clear learning outcomes', 'Well-structured lessons', 'Meaningful activities', 'Logical progression'], 'Subject accuracy outside their expertise.'),
+         (I_ACC, 'Subject Matter Validator', 'Subject accuracy', ['Accurate information', 'Relevant expertise', 'Up-to-date content', 'Practical relevance'], 'Whether the learning design or assessments work.'),
+         (I_ASM, 'Assessment Validator', 'Assessment quality', ['Aligned with outcomes', 'Measures real skills', 'Appropriate difficulty', 'Fair scoring'], 'Subject accuracy of the content.')]
 COND = [('AI Validator', 'Where the learning uses AI features.'), ('Security & Privacy Validator', 'Where it handles personal data or connected systems.')]
 CK11 = ck(11, 3.4)
 REV = '''<section class="pc-sec cx-sec" aria-labelledby="vx-rv">
-<div class="pc-sh"><div><span class="pc-k">What gets reviewed</span><h2 id="vx-rv" class="pc-h2">Different experts look at different things.</h2><p class="pc-p">No single validator checks everything. Each one reviews only their own area.</p></div></div>
+<div class="pc-sh"><div><span class="pc-k">What gets reviewed</span><h2 id="vx-rv" class="pc-h2">Every detail deserves the right expertise.</h2><p class="pc-p">Qualified experts review content, learning design, and assessments.</p></div></div>
 <div class="vx-roles">''' + ''.join('<div class="ds-card vx-r"><span class="cx-ui">' + ic(i, 20) + '</span><span class="vx-rk">' + k + '</span><h3>' + t + tip('Doesn’t decide: ' + no, 'r') + '</h3><ul class="cx-ticks">' + ''.join('<li><i>' + CK11 + '</i>' + x + '</li>' for x in L4) + '</ul></div>' for i, k, t, L4, no in ROLES) + '''</div>
 <div class="vx-cond">''' + ''.join('<div class="vx-c"><span class="ds-tag">When needed</span><b>' + t + '</b><small>' + d + '</small></div>' for t, d in COND) + '''</div>
 </section>'''
@@ -71,14 +71,14 @@ REV = '''<section class="pc-sec cx-sec" aria-labelledby="vx-rv">
 # ---------- the journey: Creators tab list + window ----------
 G, B, A, N = 'green', 'blue', 'amber', ''
 J = [
-    ('Submit', 'The creator asks for validation.', 'Submission', [('Experience', 'Data Foundations: Spreadsheets to SQL', None), ('Version', 'v2.1', None), ('Submitted', '2 September 2026', None)], None),
-    ('Scope', 'Credalio works out which reviews apply.', 'Standard course · required reviews', [('Educational', 'Required', G), ('Subject matter', 'Required', G), ('Assessment', 'Where applicable', G), ('AI · Security & Privacy', 'Added where needed', N)], None),
-    ('Assign', 'Qualified validators are matched.', 'Review team', None, [('EV', 'Educational Validator', 'Learning design'), ('SM', 'Subject Matter Validator', 'Data analytics'), ('AV', 'Assessment Validator', 'Assessment design')]),
-    ('Review', 'Each validator reviews their own area.', 'Example checklist', [('Learning outcomes are clear', 'Meets standard', G), ('Module 3 benchmark is sourced', 'Clarification required', B), ('Practice activity difficulty', 'Revision required', A), ('Final assessment matches outcomes', 'Meets standard', G)], None),
-    ('Clarify', 'Findings are answered with evidence.', 'Finding #3', [('Clarification requested', 'Evidence requested', B), ('Creator response', 'Source attached', N), ('Validator review', 'Finding resolved', G)], None),
-    ('Decide', 'A decision once everything is met.', 'Possible outcomes', [('All requirements met', 'Credalio Validated', G), ('Requirements outstanding', 'Revisions first', A)], None),
-    ('Publish', 'The seal and record go live.', 'Published', [('Validation ID', 'VAL-CRD-004821', None), ('Version validated', 'v2.1', None), ('Seal', 'Credalio Validated', G), ('Record', 'Public', None)], None),
-    ('Revalidate', 'Major updates are reviewed again.', 'Version status', [('v2.1', 'Validated', G), ('v3.0 · major update', 'Revalidation required', A)], None),
+    ('Submit', 'Send your learning for review.', 'Submission', [('Experience', 'Data Foundations: Spreadsheets to SQL', None), ('Version', 'v2.1', None), ('Submitted', '2 September 2026', None)], None),
+    ('Scope', 'Identify the reviews required.', 'Standard course · required reviews', [('Educational', 'Required', G), ('Subject matter', 'Required', G), ('Assessment', 'Where applicable', G), ('AI · Security & Privacy', 'Added where needed', N)], None),
+    ('Assign', 'Match qualified validators.', 'Review team', None, [('EV', 'Educational Validator', 'Learning design'), ('SM', 'Subject Matter Validator', 'Data analytics'), ('AV', 'Assessment Validator', 'Assessment design')]),
+    ('Review', 'Experts assess their assigned areas.', 'Example checklist', [('Learning outcomes are clear', 'Meets standard', G), ('Module 3 benchmark is sourced', 'Clarification required', B), ('Practice activity difficulty', 'Revision required', A), ('Final assessment matches outcomes', 'Meets standard', G)], None),
+    ('Clarify', 'Respond to findings with evidence.', 'Finding #3', [('Clarification requested', 'Evidence requested', B), ('Creator response', 'Source attached', N), ('Validator review', 'Finding resolved', G)], None),
+    ('Decide', 'Determine whether standards are met.', 'Possible outcomes', [('All requirements met', 'Credalio Validated', G), ('Requirements outstanding', 'Revisions first', A)], None),
+    ('Publish', 'Approved learning earns its seal.', 'Published', [('Validation ID', 'VAL-CRD-004821', None), ('Version validated', 'v2.1', None), ('Seal', 'Credalio Validated', G), ('Record', 'Public', None)], None),
+    ('Revalidate', 'Review major updates again.', 'Version status', [('v2.1', 'Validated', G), ('v3.0 · major update', 'Revalidation required', A)], None),
 ]
 STEPS = '<div class="tx-steps cx-steps in-steps vx-steps" role="tablist" aria-label="The validation journey">' + ''.join(
     '<button type="button" role="tab" class="tx-step {{jv.s%d.cls}}" aria-selected="{{jv.s%d.sel}}" onClick="{{jv.s%d.pick}}"><span class="tx-num">%d</span><span style="display: flex; flex-direction: column; gap: 2px"><span class="tx-st">%s</span><span class="tx-sd">%s</span></span></button>' % (i, i, i, i + 1, a[0], a[1])
@@ -105,7 +105,7 @@ JOUR = '''<section class="pc-sec cx-sec" aria-labelledby="vx-jh">
 PDF = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path></svg>'
 CLAR = '''<section class="pc-sec cx-sec" aria-labelledby="vx-cl">
 <div class="in-ai vx-cl">
-<div><span class="pc-k">Clarification & revision</span><h2 id="vx-cl" class="pc-h2">Validation isn’t just a checkbox.</h2><p class="pc-p">Findings are raised, answered with evidence and resolved on the record. Nobody simply presses Approve.</p><a class="ds-link vx-sr" href="Record.dc.html">See a published record''' + dashgen.ARR_S + '''</a></div>
+<div><span class="pc-k">Clarification & revision</span><h2 id="vx-cl" class="pc-h2">Validation isn’t just a checkbox.</h2><p class="pc-p">Every finding is reviewed, addressed, and backed by evidence.</p><a class="ds-link vx-sr" href="Record.dc.html">See a published record''' + dashgen.ARR_S + '''</a></div>
 <div class="ds-card vx-th">
 <div class="vx-thh"><span class="ds-tag">Finding #3 · Subject matter</span><span class="ds-tag green">Resolved</span></div>
 <div class="rq-thread">
@@ -123,15 +123,15 @@ DEC = '''<section class="pc-sec cx-sec" aria-label="Decision and versioning">
 <div class="in-sc">
 <div class="ds-card in-card vx-dec">
 <div class="vx-dh">''' + seal('b', 64) + '''<div><span class="pc-k">The decision</span><h2 class="pc-h2">Credalio Validated</h2></div></div>
-<p class="pc-p">Given when every applicable requirement is met.</p>
+<p class="pc-p">Awarded when all validation standards are met.</p>
 <dl class="vx-dl"><div><dt>Validation ID</dt><dd>VAL-CRD-004821</dd></div><div><dt>Experience</dt><dd>Data Foundations</dd></div><div><dt>Version reviewed</dt><dd>v2.1</dd></div><div><dt>Validated</dt><dd>24 September 2026</dd></div></dl>
 <div class="vx-sc"><span class="vx-k">Scope</span><span class="ds-tag">Educational quality</span><span class="ds-tag">Subject matter</span><span class="ds-tag">Assessment</span></div>
 <a class="ds-link" href="Record.dc.html">View Validation Record''' + dashgen.ARR_S + '''</a>
 </div>
 <div class="ds-card in-card vx-ver">
 <span class="pc-k">Versioning</span>
-<h2 class="pc-h2">Validation belongs to the version reviewed.''' + tip('A course can’t be validated once, then rewritten under the same seal. Each validated version gets its own entry on the public record.', 'r') + '''</h2>
-<p class="pc-p">When a creator publishes a major update, the new version is reviewed again.</p>
+<h2 class="pc-h2">Every version earns its own trust.''' + tip('A course can’t be validated once, then rewritten under the same seal. Each validated version gets its own entry on the public record.', 'r') + '''</h2>
+<p class="pc-p">Major updates require a fresh review to keep validation current.</p>
 <ol class="ko-path vx-vp">''' + ''.join('<li class="vx-v-%s"><span class="ko-dot">%s</span><span><b>%s</b><span class="ds-tag %s">%s</span></span></li>' % (c, CK11 if c == 'green' else '!', v, c, s) for v, s, c in VERS) + '''</ol>
 <div class="vx-vn"><span>Major update published</span><span>Validator review</span></div>
 </div>
@@ -143,13 +143,13 @@ DEC = '''<section class="pc-sec cx-sec" aria-label="Decision and versioning">
 DOORS = block(L, '<div class="ci-doors"', 'div')
 for a, b in [
     ('<span class="ci-k">For creators and experts</span>', '<span class="ci-k">For creators</span>'),
-    ('<span class="ci-t">Share what you know.<br class="ci-br"> Earn from it.</span>', '<span class="ci-t">Built something worth trusting?</span>'),
-    ('Build courses, certifications and career paths with AI help, get them validated, and earn when people learn.', 'Submit your learning for independent review and give learners a clearer signal.'),
+    ('<span class="ci-t">Share what you know.<br class="ci-br"> Earn from it.</span>', '<span class="ci-t">Give your learning the trust it deserves.</span>'),
+    ('Build courses, certifications and career paths with AI help, get them validated, and earn when people learn.', 'Submit your work for independent review and build learner confidence.'),
     ('aria-label="For creators and experts: start creating"', 'aria-label="For creators: start creating"'),
     ('<a class="ci-door ci-in" href="Institutions.dc.html" aria-label="For institutions: partner with Credalio">', '<a class="ci-door ci-in" href="#" aria-label="For validators: become a validator">'),
     ('<span class="ci-k" style="color: #1652F0; opacity: 1">For institutions</span>', '<span class="ci-k" style="color: #1652F0; opacity: 1">For validators</span>'),
-    ('<span class="ci-t">Bring your programs to Credalio.</span>', '<span class="ci-t">Help raise the quality of learning.</span>'),
-    ('Deliver programs, manage learners and educators, and issue verifiable credentials at scale.', 'Qualified professionals review learning in their own area of expertise.'),
+    ('<span class="ci-t">Bring your programs to Credalio.</span>', '<span class="ci-t">Your expertise can make learning better.</span>'),
+    ('Deliver programs, manage learners and educators, and issue verifiable credentials at scale.', 'Review learning in your field and help uphold quality.'),
     ('Partner with Credalio<svg', 'Become a validator<svg'),
     ('Verifiable credentials</span><span style="font-size: 15px; font-weight: 600">186 issued</span>', 'Review submitted</span><span style="font-size: 15px; font-weight: 600">Data Foundations v2.1</span>'),
 ]:

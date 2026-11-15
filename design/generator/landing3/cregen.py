@@ -34,7 +34,7 @@ HERO = '''<section class="cx-top" aria-labelledby="cx-h">
 <div class="ci-door ci-cr aur cx-hero">
 <div class="ci-copy">
 <h1 id="cx-h" class="ci-t">Share what you know.<br class="cx-br"> Earn from it.</h1>
-<p class="ci-d">Create with AI, get validated, and reach learners across Credalio.</p>
+<p class="ci-d">Create with AI, build trust through validation, and reach learners worldwide.</p>
 <div class="cx-acts">''' + btn('Start creating', 'OnbWelcome.dc.html', 'ci-btn wh') + '''<a class="cx-wl" href="#cx-make">See what you can create</a></div>
 </div>
 <div class="cx-vis" aria-hidden="true">
@@ -65,7 +65,7 @@ GC = block(L, '<section aria-labelledby="gc-h"')
 for a, b in [
     ('Choose how you want to grow', 'What you can create'),
     ('Not just courses. Learning shaped around the outcome you want.', 'Four ways to share what you know.'),
-    ('Each format is built for a different kind of progress. Use one, or combine them into a single plan.', 'The same formats learners find on Credalio, built from your side of the studio.'),
+    ('Each format is built for a different kind of progress. Use one, or combine them into a single plan.', 'Turn what you know into learning experiences.'),
     ('Not sure? Ask Nova, your AI Coach', 'Not sure where to start? Ask Nova'),
     ('<a class="ds-ghost nova-card gc-coach" href="#">', '<a class="ds-ghost nova-card gc-coach" href="OnbWelcome.dc.html">'),
     ('<section aria-labelledby="gc-h"', '<section id="cx-make" aria-labelledby="gc-h"'),
@@ -78,10 +78,10 @@ for a, b in [
     ('For proof employers trust', 'For proof of competence'),
     ('For moving into a new role', 'For a whole new role'),
     ('For learning with others', 'For learning over time'),
-    ('Focused learning that builds one specific skill, at your own pace.', 'Lessons, activities, quizzes and projects built around one skill.'),
-    ('Assessed programs that confirm you meet a professional standard.', 'Set the competencies, assessments and criteria someone must meet.'),
-    ('A sequenced route of learning, practice and credentials toward a role.', 'Combine learning, practice and credentials into a route toward a role.'),
-    ('Structured, cohort-based learning led by experts or institutions.', 'Run cohort-based or guided learning with schedules and instructors.'),
+    ('Focused learning that builds one specific skill, at your own pace.', 'Teach skills through lessons and practice.'),
+    ('Assessed programs that confirm you meet a professional standard.', 'Assess skills and recognize competence.'),
+    ('A sequenced route of learning, practice and credentials toward a role.', 'Guide learners toward new careers.'),
+    ('Structured, cohort-based learning led by experts or institutions.', 'Deliver structured, guided learning.'),
     ('Self-paced<span class="gc-sep" aria-hidden="true"></span>Short lessons', 'Create a course'),
     ('Assessed<span class="gc-sep" aria-hidden="true"></span>Verifiable', 'Create a certification'),
     ('Goal-led<span class="gc-sep" aria-hidden="true"></span>Step by step', 'Create a career path'),
@@ -147,7 +147,7 @@ STUDIO = '''<section class="pc-sec cx-sec" aria-labelledby="cx-st">
 <div class="cx-studio">
 <div class="cx-sl">
 <span class="pc-k">Creator Studio</span>
-<h2 id="cx-st" class="pc-h2">Everything you need to build great learning.</h2>
+<h2 id="cx-st" class="pc-h2">Your expertise. Your vision. Our tools.</h2>
 ''' + STEPS + '''
 </div>
 ''' + WIN + '''
@@ -155,22 +155,22 @@ STUDIO = '''<section class="pc-sec cx-sec" aria-labelledby="cx-st">
 </section>'''
 
 # ---------- validation: Link 2 step track ----------
-VSTEPS = [('Pre-check', 'Fix gaps before anyone else sees them.'), ('Submit', 'The cost is shown before anything is charged.'), ('Expert review', 'Independent validators check content, design and assessment.'), ('Resolve findings', 'Answer questions and update your work in the Studio.'), ('Validated', 'Your work earns the seal and a public record.'), ('Publish', 'Learners find it across Credalio.')]
+VSTEPS = [('Pre-check', 'Spot gaps and improve your content.'), ('Submit', 'Review the validation cost before paying.'), ('Expert review', 'Independent experts assess your learning content.'), ('Resolve findings', 'Respond to feedback and make improvements.'), ('Validated', 'Earn a validation seal and public record.'), ('Publish', 'Make your learning available on Credalio.')]
 VAL = '''<section class="pc-sec cx-sec" aria-labelledby="cx-va">
-<div class="pc-sh cx-vh"><div><span class="pc-k">Validation</span><h2 id="cx-va" class="pc-h2">Build it. Then prove the quality behind it.</h2><p class="pc-p">Independent experts review your work. Validated learning carries the Credalio seal, linked to a public Validation Record.</p></div></div>
+<div class="pc-sh cx-vh"><div><span class="pc-k">Validation</span><h2 id="cx-va" class="pc-h2">Create with confidence. Build trust through validation.</h2><p class="pc-p">Independent experts review your learning content, helping you demonstrate quality and earn Credalio’s validation seal.</p></div></div>
 <ol class="ko-path cx-path">''' + ''.join('<li%s><span class="ko-dot">%s</span><span><b>%s</b><span>%s</span></span></li>' % (' class="cx-ok"' if i == 4 else '', SEAL.replace('width="11" height="11"', 'width="28" height="28"') if i == 4 else str(i + 1), t, d) for i, (t, d) in enumerate(VSTEPS)) + '''</ol>
 <div class="cx-vb"><a class="ds-ghost" href="Validation.dc.html">How validation works''' + ARR.replace('currentColor', '#1652F0').replace('18', '16') + '''</a></div>
 </section>'''
 
 # ---------- earnings + creator services ----------
-WAYS = [('wallet', 'Marketplace sales', 'Earn when learners buy your eligible learning.', ''),
-        ('prog', 'Organizations', 'Offer your learning to institutions and teams, where eligible.', ''),
-        ('send', 'Referrals', 'Introduce learners to your learning, or other eligible learning.', ''),
-        ('reward', 'Creator rewards', 'Take part in Credalio’s creator reward economy.', 'Open to eligible creators, based on qualified contribution and platform rules.')]
+WAYS = [('wallet', 'Course sales', 'Earn when learners purchase your content.', ''),
+        ('prog', 'Institutional opportunities', 'Offer your learning to organizations and teams.', ''),
+        ('send', 'Referral earnings', 'Earn from eligible learner referrals.', ''),
+        ('reward', 'Creator rewards', 'Get rewarded for qualified learning engagement.', 'Open to eligible creators, based on qualified contribution and platform rules.')]
 EARN = '''<section class="pc-sec cx-sec" aria-label="Earnings and creator services">
 <div class="cx-ec">
 <div class="ds-card cx-earn">
-<div class="cx-eh"><div><span class="pc-k">Creator economics</span><h2 class="pc-h2">Build knowledge. Create value.</h2></div>
+<div class="cx-eh"><div><span class="pc-k">Creator economics</span><h2 class="pc-h2">More ways to earn.</h2></div>
 <div class="ci-float cx-ef">''' + re.search(r'<div class="ci-bars">.*?</div>', FLOAT, re.S).group(0) + '''<span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; color: #8A93AD">This month</span><span style="font-size: 15px; font-weight: 600">$1,240 earned</span></span></div></div>
 <div class="pc-units">''' + ''.join('<div class="pc-u"><span class="cx-ui">' + ic(dashgen.I[k], 20) + '</span><div><b>' + t + (tip(x, 'r') if x else '') + '</b><small>' + d + '</small></div></div>' for k, t, d, x in WAYS) + '''</div>
 <a class="ds-link" href="#">How creator earnings work''' + dashgen.ARR_S + '''</a>
@@ -178,7 +178,7 @@ EARN = '''<section class="pc-sec cx-sec" aria-label="Earnings and creator servic
 <div class="pc-scale cx-svc">
 <span class="pc-k">Creator services</span>
 <h2 class="pc-h2">No monthly creator subscription.</h2>
-<p class="pc-p">Add Credits only when you need a paid service, like validation or some AI tools.</p>
+<p class="pc-p">Start free. Pay only for the services you use.</p>
 <span class="pc-rate">$1 <span>=</span> ''' + credit(True) + '''10 Credits''' + tip('Creator Service Credits are your creator wallet. They are separate from learner DLP.', 'r') + '''</span>
 <ul class="cx-ticks">
 <li><i>''' + ck(11, 3.4) + '''</i>Pay only for the services you use</li>
@@ -190,7 +190,7 @@ EARN = '''<section class="pc-sec cx-sec" aria-label="Earnings and creator servic
 </section>'''
 
 # ---------- who can create ----------
-WHO = [('skill', 'Independent experts', 'Share professional expertise.'), ('learn', 'Educators', 'Turn experience into structured digital learning.'), ('proj', 'Industry professionals', 'Pass on practical, current skills.'), ('comm', 'Teams', 'Co-create learning together.'), ('prog', 'Institutions', 'Publish under your institution’s name.')]
+WHO = [('skill', 'Independent experts', 'Turn your expertise into learning.'), ('learn', 'Educators', 'Teach beyond the classroom.'), ('proj', 'Industry professionals', 'Share your real-world experience.'), ('comm', 'Teams', 'Create learning together.'), ('prog', 'Institutions', 'Build and manage learning programs.')]
 WHOS = '''<section class="pc-sec cx-sec" aria-labelledby="cx-wh">
 <div class="pc-sh"><div><span class="pc-k">Who can create</span><h2 id="cx-wh" class="pc-h2">Expertise comes in many forms.</h2></div></div>
 <div class="cx-who">''' + ''.join('<div class="cx-wt2"><span class="cx-ui">' + ic(dashgen.I[k], 20) + '</span><b>' + t + '</b><small>' + d + '</small></div>' for k, t, d in WHO) + '''</div>

@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from kit import ck, ARROW, tip
 D = sys.argv[1]; P = os.path.join(D, 'CareerPaths.dc.html'); s = open(P).read()
 assert 'cp4-lay' not in s, 'already patched'
-FILT = open('/tmp/claude-0/-home-user-credalio/5129fafc-9b09-5b10-ba39-f1d832483495/scratchpad/csfilt.css').read() if os.path.exists('/tmp/claude-0/-home-user-credalio/5129fafc-9b09-5b10-ba39-f1d832483495/scratchpad/csfilt.css') else ''
+FILT = open(os.path.join(HERE, 'csfilt.css')).read()
 def rep(a, b):
     global s
     assert s.count(a) == 1, (a[:90], s.count(a)); s = s.replace(a, b)

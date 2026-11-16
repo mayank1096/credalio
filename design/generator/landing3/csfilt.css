@@ -1,0 +1,31 @@
+.cs-side{position:sticky;top:20px;display:flex;flex-direction:column;gap:4px}
+.cs-sh{display:flex;align-items:center;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid #EEF1F7}
+.cs-sh b{font-size:16px;font-weight:600;color:#0B1433}
+.cs-grp{display:flex;flex-direction:column;gap:2px;padding:16px 0;border-bottom:1px solid #EEF1F7}
+.cs-cw{display:flex;flex-wrap:wrap;gap:6px}
+.cs-side .ds-link.off{color:#B5BDD3;pointer-events:none}
+.cs-fbtn{display:none !important}
+.cs-go2{display:none !important}
+.cs-gl{display:flex;align-items:center;margin-bottom:10px;font-size:12px;font-weight:600;letter-spacing:.8px;color:#8A93AD}
+.cs-card:focus-visible,.cs-heart:focus-visible,.cs-sel:focus-visible{outline:3px solid rgba(22,82,240,.45);outline-offset:2px}
+.cs-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:-20px}
+.cs-count{font-size:15px;color:#3A4566}
+.cs-count b{font-weight:600;color:#0B1433}
+.cs-chips{display:flex;flex-wrap:wrap;gap:8px}
+.cs-sortw{display:flex;align-items:center;gap:8px;font-size:14px;color:#5B6582}
+.cs-sel{height:40px;padding:0 34px 0 14px;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;-webkit-appearance:none;appearance:none;font-family:'Google Sans',system-ui,sans-serif;font-size:14px;font-weight:500;color:#0B1433;cursor:pointer}
+.cs-selw{position:relative;display:inline-flex}
+.cs-selw svg{position:absolute;right:12px;top:50%;margin-top:-7px;pointer-events:none;color:#5B6582}
+.cs-sheetbg{display:none}
+@media (max-width: 960px){
+.cs-side{display:none;position:fixed;left:0;right:0;bottom:0;top:auto;z-index:60;max-height:82%;overflow-y:auto;padding:8px 20px 20px;background:#FFFFFF;border-radius:22px 22px 0 0;box-shadow:0 -30px 60px -20px rgba(11,20,51,.35)}
+.cs-side-open{display:flex}
+.cs-sheetbg-on{display:block;position:fixed;inset:0;z-index:55;background:rgba(11,20,51,.38)}
+.cs-sheetx{display:flex !important}
+.cs-go2{display:flex !important;position:sticky;bottom:0;margin:8px 0 0;width:100%;justify-content:space-between;flex-shrink:0;box-shadow:0 -16px 20px 4px #FFFFFF}
+.cs-fbtn{display:inline-flex !important}
+}
+@media (max-width: 760px){
+.cs-bar{margin-bottom:-16px;gap:10px}
+.cs-sortw > span{display:none}
+}

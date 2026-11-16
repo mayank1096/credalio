@@ -25,7 +25,7 @@
       "x": 0,
       "y": 10160,
       "w": 1440,
-      "h": 2909,
+      "h": 2973,
       "title": "EXP-001 Explore Learning · Desktop",
       "page": "main",
       "expand": "fill",
@@ -35,7 +35,7 @@
       "x": 1520,
       "y": 10160,
       "w": 390,
-      "h": 2776,
+      "h": 2954,
       "title": "EXP-001 Explore Learning · Mobile",
       "page": "main",
       "is_interactive": true
@@ -2402,6 +2402,446 @@
       "page": "main",
       "expand": "fill",
       "is_interactive": true
+    },
+    "Explore-Filters.dc.html": {
+      "x": 0,
+      "y": 74617,
+      "w": 1440,
+      "h": 1910,
+      "title": "EXP-001 Explore · Filters open (Courses, Beginner, own with Credits) · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Explore-Filters-Mobile.dc.html": {
+      "x": 1520,
+      "y": 74617,
+      "w": 390,
+      "h": 2269,
+      "title": "EXP-001 Explore · Filters open (Courses, Beginner, own with Credits) · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Explore-Loading.dc.html": {
+      "x": 2150,
+      "y": 74617,
+      "w": 1440,
+      "h": 1604,
+      "title": "EXP-001 Explore · Loading · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Explore-Loading-Mobile.dc.html": {
+      "x": 3670,
+      "y": 74617,
+      "w": 390,
+      "h": 1397,
+      "title": "EXP-001 Explore · Loading · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Explore-NoResults.dc.html": {
+      "x": 4300,
+      "y": 74617,
+      "w": 1440,
+      "h": 1554,
+      "title": "EXP-001 Explore · No results · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Explore-NoResults-Mobile.dc.html": {
+      "x": 5820,
+      "y": 74617,
+      "w": 390,
+      "h": 1595,
+      "title": "EXP-001 Explore · No results · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Explore-Error.dc.html": {
+      "x": 6450,
+      "y": 74617,
+      "w": 1440,
+      "h": 1477,
+      "title": "EXP-001 Explore · Couldn’t load · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Explore-Error-Mobile.dc.html": {
+      "x": 7970,
+      "y": 74617,
+      "w": 390,
+      "h": 1528,
+      "title": "EXP-001 Explore · Couldn’t load · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "CareerPaths-Loading.dc.html": {
+      "x": 8600,
+      "y": 74617,
+      "w": 1440,
+      "h": 2757,
+      "title": "PATH-001 Career Paths · Loading · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "CareerPaths-Loading-Mobile.dc.html": {
+      "x": 10120,
+      "y": 74617,
+      "w": 390,
+      "h": 2141,
+      "title": "PATH-001 Career Paths · Loading · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "CareerPaths-Empty.dc.html": {
+      "x": 10750,
+      "y": 74617,
+      "w": 1440,
+      "h": 2757,
+      "title": "PATH-001 Career Paths · Nothing published yet · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "CareerPaths-Empty-Mobile.dc.html": {
+      "x": 12270,
+      "y": 74617,
+      "w": 390,
+      "h": 2247,
+      "title": "PATH-001 Career Paths · Nothing published yet · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "CareerPaths-NoResults.dc.html": {
+      "x": 12900,
+      "y": 74617,
+      "w": 1440,
+      "h": 2757,
+      "title": "PATH-001 Career Paths · No results · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "CareerPaths-NoResults-Mobile.dc.html": {
+      "x": 14420,
+      "y": 74617,
+      "w": 390,
+      "h": 2364,
+      "title": "PATH-001 Career Paths · No results · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "CareerPaths-Error.dc.html": {
+      "x": 15050,
+      "y": 74617,
+      "w": 1440,
+      "h": 2757,
+      "title": "PATH-001 Career Paths · Couldn’t load · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "CareerPaths-Error-Mobile.dc.html": {
+      "x": 16570,
+      "y": 74617,
+      "w": 390,
+      "h": 2247,
+      "title": "PATH-001 Career Paths · Couldn’t load · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Certifications-Loading.dc.html": {
+      "x": 17200,
+      "y": 74617,
+      "w": 1440,
+      "h": 2223,
+      "title": "CERT-001 Certifications · Loading · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Certifications-Loading-Mobile.dc.html": {
+      "x": 18720,
+      "y": 74617,
+      "w": 390,
+      "h": 2005,
+      "title": "CERT-001 Certifications · Loading · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Certifications-Empty.dc.html": {
+      "x": 19350,
+      "y": 74617,
+      "w": 1440,
+      "h": 2223,
+      "title": "CERT-001 Certifications · Nothing published yet · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Certifications-Empty-Mobile.dc.html": {
+      "x": 20870,
+      "y": 74617,
+      "w": 390,
+      "h": 2111,
+      "title": "CERT-001 Certifications · Nothing published yet · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Certifications-NoResults.dc.html": {
+      "x": 21500,
+      "y": 74617,
+      "w": 1440,
+      "h": 2223,
+      "title": "CERT-001 Certifications · No results · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Certifications-NoResults-Mobile.dc.html": {
+      "x": 23020,
+      "y": 74617,
+      "w": 390,
+      "h": 2228,
+      "title": "CERT-001 Certifications · No results · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Certifications-Error.dc.html": {
+      "x": 23650,
+      "y": 74617,
+      "w": 1440,
+      "h": 2223,
+      "title": "CERT-001 Certifications · Couldn’t load · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Certifications-Error-Mobile.dc.html": {
+      "x": 25170,
+      "y": 74617,
+      "w": 390,
+      "h": 2111,
+      "title": "CERT-001 Certifications · Couldn’t load · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Programs-Loading.dc.html": {
+      "x": 25800,
+      "y": 74617,
+      "w": 1440,
+      "h": 2232,
+      "title": "PROG-001 Learning Programs · Loading · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Programs-Loading-Mobile.dc.html": {
+      "x": 27320,
+      "y": 74617,
+      "w": 390,
+      "h": 1210,
+      "title": "PROG-001 Learning Programs · Loading · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Programs-Empty.dc.html": {
+      "x": 27950,
+      "y": 74617,
+      "w": 1440,
+      "h": 2232,
+      "title": "PROG-001 Learning Programs · None open · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Programs-Empty-Mobile.dc.html": {
+      "x": 29470,
+      "y": 74617,
+      "w": 390,
+      "h": 1316,
+      "title": "PROG-001 Learning Programs · None open · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Programs-NoResults.dc.html": {
+      "x": 30100,
+      "y": 74617,
+      "w": 1440,
+      "h": 2232,
+      "title": "PROG-001 Learning Programs · No results · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Programs-NoResults-Mobile.dc.html": {
+      "x": 31620,
+      "y": 74617,
+      "w": 390,
+      "h": 1411,
+      "title": "PROG-001 Learning Programs · No results · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Programs-Error.dc.html": {
+      "x": 32250,
+      "y": 74617,
+      "w": 1440,
+      "h": 2232,
+      "title": "PROG-001 Learning Programs · Couldn’t load · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Programs-Error-Mobile.dc.html": {
+      "x": 33770,
+      "y": 74617,
+      "w": 390,
+      "h": 1316,
+      "title": "PROG-001 Learning Programs · Couldn’t load · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Certifications-Learner.dc.html": {
+      "x": 34400,
+      "y": 74617,
+      "w": 1440,
+      "h": 2648,
+      "title": "CERT-001 Certifications · Signed in · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Certifications-Learner-Mobile.dc.html": {
+      "x": 35920,
+      "y": 74617,
+      "w": 390,
+      "h": 4250,
+      "title": "CERT-001 Certifications · Signed in · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "CertDetail-Learner.dc.html": {
+      "x": 36550,
+      "y": 74617,
+      "w": 1440,
+      "h": 4711,
+      "title": "CERT-002 Certification Detail · Signed in · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "CertDetail-Learner-Mobile.dc.html": {
+      "x": 38070,
+      "y": 74617,
+      "w": 390,
+      "h": 7014,
+      "title": "CERT-002 Certification Detail · Signed in · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Programs-Learner.dc.html": {
+      "x": 38700,
+      "y": 74617,
+      "w": 1440,
+      "h": 2495,
+      "title": "PROG-001 Learning Programs · Signed in · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Programs-Learner-Mobile.dc.html": {
+      "x": 40220,
+      "y": 74617,
+      "w": 390,
+      "h": 3058,
+      "title": "PROG-001 Learning Programs · Signed in · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Learner.dc.html": {
+      "x": 40850,
+      "y": 74617,
+      "w": 1440,
+      "h": 5899,
+      "title": "PROG-002 Program Detail · Signed in · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Learner-Mobile.dc.html": {
+      "x": 42370,
+      "y": 74617,
+      "w": 390,
+      "h": 8802,
+      "title": "PROG-002 Program Detail · Signed in · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Enrolled.dc.html": {
+      "x": 43000,
+      "y": 74617,
+      "w": 1440,
+      "h": 5995,
+      "title": "PROG-002 Program Detail · Enrolled, in progress · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Enrolled-Mobile.dc.html": {
+      "x": 44520,
+      "y": 74617,
+      "w": 390,
+      "h": 9237,
+      "title": "PROG-002 Program Detail · Enrolled, in progress · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Done.dc.html": {
+      "x": 45150,
+      "y": 74617,
+      "w": 1440,
+      "h": 5995,
+      "title": "PROG-002 Program Detail · Completed · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Done-Mobile.dc.html": {
+      "x": 46670,
+      "y": 74617,
+      "w": 390,
+      "h": 9241,
+      "title": "PROG-002 Program Detail · Completed · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -2453,7 +2893,8 @@
     "row-b29",
     "row-b30",
     "row-b31",
-    "row-b32"
+    "row-b32",
+    "row-b33"
   ],
   "notes": {
     "new-hero": {
@@ -2784,6 +3225,14 @@
       "kind": "title1",
       "maxW": 21500,
       "page": "main"
+    },
+    "row-b33": {
+      "x": 0,
+      "y": 74317,
+      "text": "Batch 33 · Explore filters, listing states (loading, empty, no results, error) and signed-in views for certifications and programs",
+      "kind": "title1",
+      "maxW": 47300,
+      "page": "main"
     }
   },
   "order": [
@@ -3036,7 +3485,51 @@
     "Programs-Compare.dc.html",
     "Programs-Compare-Mobile.dc.html",
     "Programs-NoSchedule.dc.html",
-    "Programs-NoSchedule-Mobile.dc.html"
+    "Programs-NoSchedule-Mobile.dc.html",
+    "Explore-Filters.dc.html",
+    "Explore-Filters-Mobile.dc.html",
+    "Explore-Loading.dc.html",
+    "Explore-Loading-Mobile.dc.html",
+    "Explore-NoResults.dc.html",
+    "Explore-NoResults-Mobile.dc.html",
+    "Explore-Error.dc.html",
+    "Explore-Error-Mobile.dc.html",
+    "CareerPaths-Loading.dc.html",
+    "CareerPaths-Loading-Mobile.dc.html",
+    "CareerPaths-Empty.dc.html",
+    "CareerPaths-Empty-Mobile.dc.html",
+    "CareerPaths-NoResults.dc.html",
+    "CareerPaths-NoResults-Mobile.dc.html",
+    "CareerPaths-Error.dc.html",
+    "CareerPaths-Error-Mobile.dc.html",
+    "Certifications-Loading.dc.html",
+    "Certifications-Loading-Mobile.dc.html",
+    "Certifications-Empty.dc.html",
+    "Certifications-Empty-Mobile.dc.html",
+    "Certifications-NoResults.dc.html",
+    "Certifications-NoResults-Mobile.dc.html",
+    "Certifications-Error.dc.html",
+    "Certifications-Error-Mobile.dc.html",
+    "Programs-Loading.dc.html",
+    "Programs-Loading-Mobile.dc.html",
+    "Programs-Empty.dc.html",
+    "Programs-Empty-Mobile.dc.html",
+    "Programs-NoResults.dc.html",
+    "Programs-NoResults-Mobile.dc.html",
+    "Programs-Error.dc.html",
+    "Programs-Error-Mobile.dc.html",
+    "Certifications-Learner.dc.html",
+    "Certifications-Learner-Mobile.dc.html",
+    "CertDetail-Learner.dc.html",
+    "CertDetail-Learner-Mobile.dc.html",
+    "Programs-Learner.dc.html",
+    "Programs-Learner-Mobile.dc.html",
+    "ProgramDetail-Learner.dc.html",
+    "ProgramDetail-Learner-Mobile.dc.html",
+    "ProgramDetail-Enrolled.dc.html",
+    "ProgramDetail-Enrolled-Mobile.dc.html",
+    "ProgramDetail-Done.dc.html",
+    "ProgramDetail-Done-Mobile.dc.html"
   ],
   "pages": [
     {

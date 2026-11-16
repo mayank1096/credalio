@@ -299,7 +299,7 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 .aur-off{background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat}
 .pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
 .pav-h{position:relative !important;overflow:hidden !important}
-@media (min-width: 1301px){.sx-links{gap:2px}.sx-links .sx-link{padding:0 10px;font-size:14.5px}.lh-links .lh-link{padding:0 10px !important;font-size:14.5px !important}}
+@media (min-width: 1301px){.sx-links{gap:2px}.sx-links .sx-link{padding:0 10px;font-size:14.5px}}
 .sx-dd{position:relative;display:none}
 .sx-dd > summary{list-style:none;cursor:pointer}
 .sx-dd > summary::-webkit-details-marker{display:none}
@@ -314,10 +314,9 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 .sx-dl-on{background:#EAF0FF;color:#0E3BB8}
 .sx-dn-sep{height:1.5px;background:#EEF1F7;margin:6px 4px}
 .sx-dn-cta{margin-top:6px;justify-content:center}
-@media (max-width: 1300px){.sx-links{display:none}.sx-menu{display:flex}.lh-links{display:none !important}.lh-menu{display:flex !important}.sx-dd{display:block}}
-.cr-c,.mf-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
+@media (max-width: 1300px){.sx-links{display:none}.sx-menu{display:flex}.sx-dd{display:block}}
+.cr-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
 .cr-c{background:#1652F0}
-.cr-c.lg,.mf-c.lg{width:26px;height:26px;font-size:13px}
 .mx{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
 .mx-r{display:inline-flex;align-items:center;gap:4px;font-size:13px;color:#5B6582;margin-right:2px}
 .mx-r b{font-weight:600;color:#0B1433}
@@ -335,6 +334,48 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 .pg-row{grid-template-columns:72px minmax(0,1fr) 170px 170px 40px}
 .pg-rx{margin-top:8px}
 @media (max-width: 760px){.pg-row{grid-template-columns:56px minmax(0,1fr) auto;row-gap:10px}.pg-date{grid-row:1 / span 2;align-self:start}.pg-row > span:nth-child(2){grid-column:2 / -1}.pg-row > .mx-p{grid-column:2;grid-row:2;margin:0}.pg-row > .pg-stat{grid-column:3;grid-row:2;margin:0;justify-self:end}.pg-rx{margin-top:6px}.pg-rx .ds-tag + .ds-tag{display:none}}
+.sx-dlp{height:36px;padding:0 12px 0 8px;border-radius:999px;background:#F5F8FF;border:1px solid #DCE5FB;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#0B1433;text-decoration:none;white-space:nowrap}
+.sx-av{width:40px;height:40px;border-radius:999px;background:#DCE5FB;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
+.pav-h{position:relative !important;overflow:hidden !important}
+.pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
+@media (max-width: 520px){.sx-dlp b span{display:none}}
+.st7{grid-column:1 / -1}
+.st7-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.st7-load{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.st7-sk{display:flex;flex-direction:column;gap:12px;padding:22px;border-radius:20px;border:1.5px solid #EEF1F7;background:#FFFFFF}
+.st7-b{display:block;height:14px;border-radius:8px;background:linear-gradient(90deg,#EEF1F7 0%,#F7F9FD 50%,#EEF1F7 100%);background-size:200% 100%;animation:st7Sh 1.4s ease-in-out infinite}
+.st7-b1{width:44px;height:44px;border-radius:14px}
+.st7-b2{width:70%;height:20px}
+.st7-b3{width:90%}
+.st7-b4{width:45%;margin-top:18px}
+@keyframes st7Sh{0%{background-position:100% 0}100%{background-position:-100% 0}}
+@media (prefers-reduced-motion: reduce){.st7-b{animation:none}}
+.st7-msg{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:44px 28px;border-radius:22px;border:1.5px dashed #CBD7F5;background:#FAFBFF}
+.st7-i{width:56px;height:56px;border-radius:50%;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center}
+.st7-err{background:#FFFBF2;border-color:#F0C774}
+.st7-err .st7-i{background:#FFF1D6;color:#8A5A00}
+.st7-msg > b{font-size:20px;font-weight:600;color:#0B1433}
+.st7-d{max-width:480px;font-size:14.5px;line-height:1.55;color:#5B6582}
+.st7-a{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:6px}
+.st7-sug{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:10px;font-size:13px;color:#8A93AD}
+.st7-sug .ds-chip{text-decoration:none;color:#0B1433}
+.ex-body:has(.st7) .ex-sec,.ex-body:has(.st7) .ex-note{display:none}
+@media (max-width: 760px){.st7-load{grid-template-columns:minmax(0,1fr);gap:10px}.st7-sk:nth-child(n+3){display:none}.st7-msg{padding:32px 18px}.st7-a{flex-direction:column;align-items:stretch;gap:10px}.st7-a .ds-btn{justify-content:space-between}}
+.ex7-fb{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.ex7-fb .ds-chip i{font-style:normal;min-width:18px;height:18px;padding:0 5px;box-sizing:border-box;border-radius:999px;background:#1652F0;color:#FFFFFF;font-size:11px;display:inline-flex;align-items:center;justify-content:center}
+.ex7-n{margin-left:auto;font-size:14px;color:#5B6582}
+.ex7-fp{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px 24px;padding:20px 22px;border-radius:20px;border:1.5px solid #E6EAF3;background:#FFFFFF;box-shadow:0 22px 44px -36px rgba(11,20,51,.45);margin-bottom:10px}
+.ex7-g{display:flex;flex-direction:column;gap:2px}
+.ex7-g .cs-gl{display:flex;align-items:center;margin-bottom:10px;font-size:12px;font-weight:600;letter-spacing:.8px;color:#8A93AD}
+.ex7-g .cs-cw{display:flex;flex-wrap:wrap;gap:6px}
+.ex7-g .ds-chip i{font-style:normal;font-size:12px;color:#8A93AD}
+.ex7-g.ex7-t{padding-left:22px;border-left:1.5px solid #EEF1F7}
+.ex7-g.ex7-t .cs-gl{color:#1652F0}
+.ex7-note{grid-column:1 / -1;margin:0;padding-top:12px;border-top:1px solid #EEF1F7;font-size:13px;color:#8A93AD}
+@media (max-width: 1180px){.ex7-fp{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width: 760px){.ex7-fp{grid-template-columns:minmax(0,1fr);gap:16px;padding:16px}.ex7-g.ex7-t{padding-left:0;border-left:0;padding-top:16px;border-top:1px solid #EEF1F7}.ex7-n{flex-basis:100%;margin:2px 0 0}}
+.ex-body:has(.st7) .ex7-n{display:none}
+a.sx-av{text-decoration:none}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
@@ -352,8 +393,14 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 <a class="sx-link" href="Institutions.dc.html">For institutions</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
+<sc-if value="{{st7Guest}}" hint-placeholder-val="{{ true }}">
 <a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
 <a class="ds-btn sm np" href="OnbWelcome.dc.html">Create account</a>
+</sc-if>
+<sc-if value="{{st7Learner}}" hint-placeholder-val="{{ false }}">
+<a class="sx-dlp" href="Usage.dc.html" aria-label="1,460 DLP available. View usage"><span class="dlp-c"></span><b style="font-weight: 600">1,460<span style="font-weight: 500; color: #5B6582"> available</span></b></a>
+<a class="sx-av pav-h" href="Dashboard.dc.html" aria-label="Your account">AO<img class="pav" src="/_blob/9112077cc7e3c1c839edc7e609d87954" alt=""></a>
+</sc-if>
 <details class="sx-dd"><summary class="sx-menu" aria-label="Open menu"><span class="sx-dd-o"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></span><span class="sx-dd-x"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></summary><nav class="sx-dn" aria-label="Menu"><a class="sx-dl sx-dl-on" href="Explore.dc.html" aria-current="page">Explore learning</a><a class="sx-dl" href="Courses.dc.html">Courses</a><a class="sx-dl" href="CareerPaths.dc.html">Career paths</a><a class="sx-dl" href="Certifications.dc.html">Certifications</a><a class="sx-dl" href="Programs.dc.html">Learning programs</a><a class="sx-dl" href="Pricing.dc.html">Pricing</a><a class="sx-dl" href="Creators.dc.html">For creators</a><a class="sx-dl" href="Institutions.dc.html">For institutions</a><span class="sx-dn-sep"></span><a class="sx-dl" href="#">Log in</a><a class="ds-btn sx-dn-cta" href="OnbWelcome.dc.html"><span>Create account</span></a></nav></details>
 </div>
 </header>
@@ -382,6 +429,21 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 </div>
 
 <div class="ex-body">
+
+<div class="ex7-fb">
+<button class="ds-chip sm {{f7Cls}}" type="button" aria-expanded="{{f7Exp}}" onClick="{{f7Toggle}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"></path></svg><span>Filters</span><sc-if value="{{f7Has}}" hint-placeholder-val="{{ false }}"><i>{{f7N}}</i></sc-if></button>
+<sc-for list="{{f7Active}}" as="a" hint-placeholder-count="2"><button class="ds-chip sm on" type="button" onClick="{{a.drop}}" aria-label="Remove filter {{a.label}}">{{a.label}}<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button></sc-for>
+<sc-if value="{{f7Has}}" hint-placeholder-val="{{ false }}"><button class="ds-link" type="button" onClick="{{f7Clear}}">Clear all</button></sc-if>
+<span class="ex7-n">{{f7Count}}</span>
+</div>
+<sc-if value="{{f7Open}}" hint-placeholder-val="{{ false }}"><div class="ex7-fp" role="group" aria-label="Filters">
+<sc-for list="{{f7Groups}}" as="g" hint-placeholder-count="5"><div class="ex7-g {{g.cls}}"><span class="cs-gl">{{g.label}}</span><div class="cs-cw"><sc-for list="{{g.opts}}" as="o" hint-placeholder-count="3"><button class="ds-chip sm {{o.cls}}" type="button" role="checkbox" aria-checked="{{o.on}}" onClick="{{o.pick}}"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg>{{o.label}}<i>{{o.n}}</i></button></sc-for></div></div></sc-for>
+<p class="ex7-note">{{f7Note}}</p>
+</div></sc-if>
+
+<sc-if value="{{st7Loading}}" hint-placeholder-val="{{ false }}"><div class="st7 st7-load" aria-busy="true" aria-live="polite"><span class="st7-sr">Loading learning…</span><div class="st7-sk"><i class="st7-b st7-b1"></i><i class="st7-b st7-b2"></i><i class="st7-b st7-b3"></i><i class="st7-b st7-b4"></i></div><div class="st7-sk"><i class="st7-b st7-b1"></i><i class="st7-b st7-b2"></i><i class="st7-b st7-b3"></i><i class="st7-b st7-b4"></i></div><div class="st7-sk"><i class="st7-b st7-b1"></i><i class="st7-b st7-b2"></i><i class="st7-b st7-b3"></i><i class="st7-b st7-b4"></i></div><div class="st7-sk"><i class="st7-b st7-b1"></i><i class="st7-b st7-b2"></i><i class="st7-b st7-b3"></i><i class="st7-b st7-b4"></i></div></div></sc-if>
+<sc-if value="{{st7Msg}}" hint-placeholder-val="{{ false }}"><div class="st7 st7-msg {{st7Cls}}" role="status"><span class="st7-i"><sc-if value="{{st7IsErr}}" hint-placeholder-val="{{ false }}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4 2.5 20h19z"></path><path d="M12 10v4M12 17v.2"></path></svg></sc-if><sc-if value="{{st7IsEmpty}}" hint-placeholder-val="{{ false }}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8l8-4 8 4v8l-8 4-8-4z"></path><path d="M4 8l8 4 8-4M12 12v8"></path></svg></sc-if><sc-if value="{{st7IsNo}}" hint-placeholder-val="{{ false }}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5M8.5 11h5"></path></svg></sc-if></span><b>{{st7T}}</b><span class="st7-d">{{st7D}}</span><div class="st7-a"><button class="ds-btn sm" type="button"><span>{{st7Cta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button><a class="ds-link" href="{{st7AltHref}}">{{st7Alt}}</a></div><sc-if value="{{st7HasSug}}" hint-placeholder-val="{{ false }}"><div class="st7-sug"><span>Try instead</span><sc-for list="{{st7Sug}}" as="g" hint-placeholder-count="3"><a class="ds-chip sm" href="{{g.h}}">{{g.t}}</a></sc-for></div></sc-if></div></sc-if>
+
 <sc-if value="{{hasTopic}}" hint-placeholder-val="{{ false }}">
 <div class="ex-note" aria-live="polite">Showing learning in <b>{{topic}}</b><span aria-hidden="true">·</span><button class="ds-link" type="button" onClick="{{clearTopic}}">Clear</button></div>
 </sc-if>
@@ -505,7 +567,7 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2909}}'>
+<script type="text/x-dc" data-dc-script data-props='{"viewer":{"editor":"enum","options":["guest","learner"],"default":"guest"},"state":{"editor":"enum","options":["","loading","empty","noresults","error"],"default":""},"view":{"editor":"enum","options":["","filters"],"default":""},"$preview":{"width":1440,"height":2973}}'>
 var AVP = {"DR": "/_blob/6940b199369f0ef8a87915557d16027b", "TA": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "TH": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "TR": "/_blob/6940b199369f0ef8a87915557d16027b", "PN": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "GA": "/_blob/9112077cc7e3c1c839edc7e609d87954", "ML": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "HC": "/_blob/9112077cc7e3c1c839edc7e609d87954", "LF": "/_blob/9112077cc7e3c1c839edc7e609d87954", "PS": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "LO": "/_blob/9112077cc7e3c1c839edc7e609d87954", "MR": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "SA": "/_blob/9112077cc7e3c1c839edc7e609d87954", "SM": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "KB": "/_blob/6940b199369f0ef8a87915557d16027b", "JM": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "SL": "/_blob/9112077cc7e3c1c839edc7e609d87954", "AK": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "MS": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "PL": "/_blob/6940b199369f0ef8a87915557d16027b", "SR": "/_blob/6940b199369f0ef8a87915557d16027b", "JL": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "ME": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "MO": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "KA": "/_blob/6940b199369f0ef8a87915557d16027b", "IN": "/_blob/9112077cc7e3c1c839edc7e609d87954", "DA": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "DM": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "ÉL": "/_blob/9112077cc7e3c1c839edc7e609d87954", "EL": "/_blob/9112077cc7e3c1c839edc7e609d87954", "SF": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "TB": "/_blob/6940b199369f0ef8a87915557d16027b", "RP": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "NB": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "LK": "/_blob/9112077cc7e3c1c839edc7e609d87954", "JC": "/_blob/6940b199369f0ef8a87915557d16027b", "DK": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2"};
 AVP.AO = "/_blob/84f08b38fbe9b11d8aa477ac10398bfe";
 function PIC(i) { return AVP[i] || ""; }
@@ -515,6 +577,33 @@ var TIER_ = { gold: ['Gold Validated', '#C8961E'], silver: ['Silver Validated', 
 var TC_ = {"Data Analysis": ["4.8", "860", "gold", 93, "150"], "Product Design": ["4.7", "410", "silver", 88, "180"], "Security Operations": ["4.8", "520", "gold", 91, "220"], "Project Management": ["4.6", "690", "silver", 84, "120"], "Applied AI Practitioner": ["4.6", "48", "rev", 89, "160"], "Financial Analysis": ["4.7", "330", "silver", 87, "200"]};
 var TG_ = {"Applied Project Leadership": ["4.7", "210", "silver", 86, "900"], "AI & Data Analytics Accelerator": ["4.9", "340", "gold", 94, "1,200"], "Frontend Engineering Bootcamp": ["4.7", "520", "silver", 85, "1,600"], "Product Design Cohort": ["4.8", "180", "gold", 88, "950"], "AI for Business Leaders": ["4.6", "160", "silver", 90, "1,100"], "Clinical Data Program": ["4.8", "95", "gold", 92, "1,800"], "Executive Leadership in the AI Era": ["4.6", "140", "silver", 89, "1,100"], "Cloud & Security Pathway": ["4.5", "230", "bronze", 81, "700"]};
 class Component extends DCLogic {
+  renderVals() {
+    var v = this._rv7(), st = this.props.state || '', me = this.props.viewer === 'learner';
+    v.st7Guest = !me; v.st7Learner = me;
+    var M = {"empty": ["Nothing published in this topic yet", "Try another topic, or ask Nova to plan a route from what’s available.", "Ask Nova", "See all topics", "Explore.dc.html"], "noresults": ["Nothing matches “astrophysics”", "Try a role, a skill or a broader word. Nova can also plan a route from your goal.", "Clear the search", "Ask Nova", "#", [["Data analysis", "Courses.dc.html"], ["Product design", "Courses.dc.html"], ["Become a Data Analyst", "PathDetail.dc.html"]]], "error": ["We couldn’t load learning right now", "Check your connection and try again. Your search is kept.", "Try again", "Browse courses", "Courses.dc.html"]};
+    v.st7Loading = st === 'loading'; v.st7Msg = !!M[st]; var m = M[st];
+    v.st7IsErr = st === 'error'; v.st7IsEmpty = st === 'empty'; v.st7IsNo = st === 'noresults'; v.st7Cls = st === 'error' ? 'st7-err' : '';
+    if (m) { v.st7T = m[0]; v.st7D = m[1]; v.st7Cta = m[2]; v.st7Alt = m[3]; v.st7AltHref = m[4]; v.st7HasSug = !!m[5]; v.st7Sug = (m[5] || []).map(function (g) { return { t: g[0], h: g[1] }; }); }
+    if (st === 'noresults') { v.q = 'astrophysics'; v.hasQ = false; }
+    return v;
+  }
+
+  f7(x, k) {
+    var S = this.state, f = S.f7 || {}, self = this;
+    var LV = { Foundation: 'Beginner', Professional: 'Intermediate' }, TN = { gold: 'Gold', silver: 'Silver', bronze: 'Bronze', rev: 'In review' };
+    var v = this.f7v(x, k);
+    return Object.keys(f).every(function (g) { var on = f[g] || []; return !on.length || on.some(function (o) { return (v[g] || []).indexOf(o) > -1; }); });
+  }
+  f7v(x, k) {
+    var LV = { Foundation: 'Beginner', Professional: 'Intermediate' }, TN = { gold: 'Gold', silver: 'Silver', bronze: 'Bronze', rev: 'In review' };
+    var GX = { 'Applied Project Leadership': ['Intermediate', 'Hybrid'], 'AI for Business Leaders': ['Advanced', 'In person'], 'Frontend Engineering Bootcamp': ['Beginner', 'Live online'], 'Clinical Data Program': ['Intermediate', 'Hybrid'] };
+    if (k === 'p') { var mo = parseInt((x.time.split('–')[1] || x.time)); return { lvl: [x.lvl.split(' ')[0]], tier: [TN[TP_[x.t][2]]], acc: ['Subscription (DLP)', 'Own with Credits'], lang: ['English'], len: [mo <= 8 ? 'Up to 8 months' : 'Over 8 months'] }; }
+    if (k === 'c') return { lvl: [x.lvl], tier: [TN[x.tier]], acc: x.free ? ['Free'] : (x.life > 0 ? ['Subscription (DLP)', 'Own with Credits'] : ['Subscription (DLP)']), lang: [x.t.indexOf('Introduction à') === 0 ? 'French' : 'English'], dur: [x.hrs < 5 ? 'Under 5 hrs' : (x.hrs <= 10 ? '5–10 hrs' : 'Over 10 hrs')] };
+    if (k === 'ce') return { lvl: [LV[x.level] || x.level], tier: [TN[TC_[x.short][2]]], acc: ['Own with Credits'], lang: ['English'], fmt: ['Exam', 'Practical', 'Portfolio'].filter(function (f) { var s = x.format.toLowerCase(); return s.indexOf(f.toLowerCase()) > -1 || (f === 'Practical' && /case|lab|simulation|build/.test(s)); }) };
+    var g = GX[x.t] || ['Intermediate', 'Live online'];
+    return { lvl: [g[0]], tier: [TN[TG_[x.t][2]]], acc: ['Own with Credits'], lang: ['English'], pfmt: [g[1]] };
+  }
+
   auroraMount(el) {
     var host = window;
     try { if (window.top && window.top.document) host = window.top; } catch (e) { host = window; }
@@ -627,7 +716,8 @@ class Component extends DCLogic {
   componentDidMount() { this.aurScan(); }
   constructor(props) {
     super(props);
-    this.state = { q: '', tab: 'you', topic: 'All', wish: {} };
+    var fv = props && props.view === 'filters';
+    this.state = { q: '', tab: fv ? 'courses' : 'you', topic: 'All', wish: {}, f7open: fv, f7: fv ? { lvl: ['Beginner'], acc: ['Own with Credits'] } : {} };
     this.P = [
       { t: 'Data Analyst', topic: 'Data', d: 'Turn raw data into decisions using spreadsheets, SQL and visualisation.', lvl: 'Beginner → Job-ready', time: '6–8 months', courses: 8, proj: '4 projects', skills: ['SQL', 'Excel', 'Power BI', 'Statistics'], ico: 0 },
       { t: 'Product Designer', topic: 'Design', d: 'Research, design and test digital products people love to use.', lvl: 'Beginner → Job-ready', time: '7–9 months', courses: 7, proj: '4 projects', skills: ['Figma', 'User research', 'Prototyping', 'Design systems'], ico: 1 },
@@ -643,7 +733,8 @@ class Component extends DCLogic {
       C('Financial Modelling Essentials', 'Finance', 'Harbour School of Finance', 'Intermediate', 'silver', 88, '4.8', '620', 14, 1800, 2800),
       C('Stakeholder Communication', 'Business', 'Grace Adeyemi', 'Beginner', 'silver', 83, '4.7', '890', 3, 300, 0),
       C('Digital Health Essentials', 'Health', 'Dr Sara Ali', 'Beginner', 'gold', 89, '4.8', '520', 7, 500, 1000),
-      C('Leading Remote Teams', 'Leadership', 'Tom Hughes', 'Intermediate', 'silver', 84, '4.7', '460', 5, 600, 1200)
+      C('Leading Remote Teams', 'Leadership', 'Tom Hughes', 'Intermediate', 'silver', 84, '4.7', '460', 5, 600, 1200),
+      C('Introduction à l’analyse de données', 'Data', 'Élise Laurent', 'Beginner', 'gold', 90, '4.9', '410', 7, 600, 1200)
     ];
     this.CE = [
       { t: 'Professional Certificate in Data Analysis', short: 'Data Analysis', topic: 'Data', issuer: 'Northgate University', level: 'Professional', time: '3–4 months', format: 'Timed exam + case study', pre: 'Recommended first: Data Foundations or equivalent. Nova can check what you already know.', ok: true },
@@ -674,17 +765,34 @@ class Component extends DCLogic {
     for (var i = 0; i < 7; i++) v['i' + i] = tn[3] === i ? 'inline' : 'none';
     return v;
   }
-  renderVals() {
+  _rv7() {
     var self = this, S = this.state, set = function (p) { self.setState(p); };
     var inTopic = function (x) { return S.topic === 'All' || x.topic === S.topic; };
     var inQ = function (x) { if (!S.q) return true; var q = S.q.toLowerCase(); return (x.t + ' ' + (x.by || '') + ' ' + (x.d || '') + ' ' + x.topic).toLowerCase().indexOf(q) >= 0; };
     var ok = function (x) { return inTopic(x) && inQ(x); };
     var show = function (tab, list) { return (S.tab === 'you' || S.tab === tab) && list.length > 0 ? '' : 'ex-hide'; };
     var nP = S.tab === 'paths' ? 4 : 2, nC = 4, nCe = 3, nG = 3;
-    var paths = this.P.filter(ok).slice(0, nP), courses = this.C.filter(ok).slice(0, S.tab === 'courses' ? 8 : nC), certs = this.CE.filter(ok).slice(0, nCe), progs = this.G.filter(ok).slice(0, nG);
+    var paths = this.P.filter(function (x) { return ok(x) && self.f7(x, 'p'); }).slice(0, nP), courses = this.C.filter(function (x) { return ok(x) && self.f7(x, 'c'); }).slice(0, S.tab === 'courses' ? 8 : nC), certs = this.CE.filter(function (x) { return ok(x) && self.f7(x, 'ce'); }).slice(0, nCe), progs = this.G.filter(function (x) { return ok(x) && self.f7(x, 'g'); }).slice(0, nG);
+    var f7 = S.f7 || {}, tab = S.tab;
+    var T7 = { courses: ['dur', 'Duration', ['Under 5 hrs', '5–10 hrs', 'Over 10 hrs'], 'c'], certs: ['fmt', 'Assessment', ['Exam', 'Practical', 'Portfolio'], 'ce'], paths: ['len', 'Length', ['Up to 8 months', 'Over 8 months'], 'p'], programs: ['pfmt', 'Format', ['Live online', 'In person', 'Hybrid'], 'g'] };
+    var srcs = [['p', this.P, 'paths'], ['c', this.C, 'courses'], ['ce', this.CE, 'certs'], ['g', this.G, 'programs']].filter(function (s) { return tab === 'you' || tab === s[2]; });
+    var base = function (x) { return (S.topic === 'All' || x.topic === S.topic) && (!S.q || (x.t + ' ' + (x.by || '') + ' ' + (x.d || '') + ' ' + x.topic).toLowerCase().indexOf(S.q.toLowerCase()) >= 0); };
+    var cnt = function (g, o) { var n = 0; srcs.forEach(function (s) { s[1].forEach(function (x) { if (!base(x)) return; var v = self.f7v(x, s[0]); if ((v[g] || []).indexOf(o) < 0) return; var ff = Object.assign({}, f7); delete ff[g]; var ok = Object.keys(ff).every(function (k) { var on = ff[k] || []; return !on.length || on.some(function (q) { return (v[k] || []).indexOf(q) > -1; }); }); if (ok) n++; }); }); return n; };
+    var tg = function (g, o) { var f = Object.assign({}, f7), l = (f[g] || []).slice(), i = l.indexOf(o); if (i > -1) l.splice(i, 1); else l.push(o); f[g] = l; self.setState({ f7: f }); };
+    var G7 = [['lvl', 'Level', ['Beginner', 'Intermediate', 'Advanced'], ''], ['tier', 'Validation', ['Gold', 'Silver', 'Bronze'], ''], ['acc', 'Access', ['Free', 'Subscription (DLP)', 'Own with Credits'], ''], ['lang', 'Language', ['English', 'French'], '']];
+    if (T7[tab]) G7.push([T7[tab][0], T7[tab][1], T7[tab][2], 'ex7-t']);
+    var act = []; Object.keys(f7).forEach(function (g) { (f7[g] || []).forEach(function (o) { act.push({ label: o, drop: function () { tg(g, o); } }); }); });
+    var shown = 0; srcs.forEach(function (s) { s[1].forEach(function (x) { if (base(x) && self.f7(x, s[0])) shown++; }); });
+
     var tabs = [['you', 'For you'], ['courses', 'Courses'], ['certs', 'Certifications'], ['paths', 'Career Paths'], ['programs', 'Learning Programs']];
     var topics = ['All', 'Data', 'Design', 'Business', 'Cybersecurity', 'Software', 'Finance', 'Health', 'Leadership'];
     return {
+
+      f7Open: !!S.f7open, f7Exp: S.f7open ? 'true' : 'false', f7Cls: S.f7open || act.length ? 'on' : '', f7Toggle: function () { self.setState({ f7open: !S.f7open }); },
+      f7Has: act.length > 0, f7N: act.length, f7Active: act, f7Clear: function () { self.setState({ f7: {} }); },
+      f7Count: shown + (shown === 1 ? ' result' : ' results') + (tab === 'you' ? ' across all types' : ''),
+      f7Note: T7[tab] ? 'Level, validation, access and language apply to every type. ' + T7[tab][1] + ' is only for ' + ({ courses: 'courses', certs: 'certifications', paths: 'career paths', programs: 'learning programs' })[tab] + '.' : 'Pick a type above for more filters, like course length or assessment format.',
+      f7Groups: G7.map(function (g) { return { label: g[1].toUpperCase(), cls: g[3], opts: g[2].map(function (o) { var on = (f7[g[0]] || []).indexOf(o) > -1; return { label: o, n: cnt(g[0], o), on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { tg(g[0], o); } }; }) }; }),
       q: S.q, hasQ: !!S.q, onQ: function (e) { set({ q: e.target.value }); }, onSubmit: function (e) { e.preventDefault(); },
       tabs: tabs.map(function (t) { var on = S.tab === t[0]; return { label: t[1], on: on ? 'true' : 'false', cls: on ? 'ex-tab-on' : '', pick: function () { set({ tab: t[0] }); } }; }),
       topics: topics.map(function (t) { var on = S.topic === t; return { label: t === 'All' ? 'All topics' : t, on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { set({ topic: t }); } }; }),

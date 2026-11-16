@@ -35,7 +35,6 @@ body{margin:0;background:#FFFFFF}
 .tip:hover,.tip:focus{color:#1652F0}
 .tip-b{position:absolute;bottom:calc(100% + 10px);left:-12px;width:250px;padding:12px 14px;border-radius:12px;background:#0B1433;color:#FFFFFF;font-size:13px;font-weight:400;line-height:1.45;letter-spacing:0;text-align:left;white-space:normal;box-shadow:0 14px 34px rgba(11,20,51,.22);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .15s ease,transform .15s ease;z-index:30;pointer-events:none}
 .tip-b.r{left:auto;right:-12px}
-.tip-b.dn{bottom:auto;top:calc(100% + 10px)}
 .tip:hover .tip-b,.tip:focus .tip-b{opacity:1;visibility:visible;transform:none}
 .nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
 .nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
@@ -170,7 +169,6 @@ p{text-wrap:balance}
 .dt-bar > div > span{font-size:12px;color:#5B6582}
 .dt-bar .ds-btn{width:auto}
 }
-.ce-seal{width:16px;height:16px}
 .ce-comp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .ce-cp{display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:16px;background:#F5F8FF}
 .ce-ci{width:34px;height:34px;border-radius:10px;background:#FFFFFF;color:#1652F0;display:flex;align-items:center;justify-content:center;margin-bottom:4px}
@@ -206,11 +204,6 @@ p{text-wrap:balance}
 .ce-cl ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
 .ce-cl li{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.5;color:#3A4566}
 .ce-ck{width:20px;height:20px;border-radius:999px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.ce-prog{display:flex;flex-direction:column;gap:8px}
-.ce-pb{height:8px;border-radius:9px;background:#E6EAF3;overflow:hidden}
-.ce-pb span{display:block;height:100%;width:8%;border-radius:9px;background:#1652F0}
-.ce-pl{display:flex;justify-content:space-between;font-size:13px;color:#5B6582}
-.ce-pl b{font-weight:600;color:#0B1433}
 @media (max-width: 1180px){
 .ce-comp{grid-template-columns:repeat(2,minmax(0,1fr))}
 .ce-cs{grid-template-columns:minmax(0,1fr)}
@@ -240,7 +233,7 @@ p{text-wrap:balance}
 .tip .tip-b{width:190px}
 .ce-cl .tip-b{left:auto;right:-30px}
 }
-@media (min-width: 1301px){.sx-links{gap:2px}.sx-links .sx-link{padding:0 10px;font-size:14.5px}.lh-links .lh-link{padding:0 10px !important;font-size:14.5px !important}}
+@media (min-width: 1301px){.sx-links{gap:2px}.sx-links .sx-link{padding:0 10px;font-size:14.5px}}
 .sx-dd{position:relative;display:none}
 .sx-dd > summary{list-style:none;cursor:pointer}
 .sx-dd > summary::-webkit-details-marker{display:none}
@@ -255,10 +248,10 @@ p{text-wrap:balance}
 .sx-dl-on{background:#EAF0FF;color:#0E3BB8}
 .sx-dn-sep{height:1.5px;background:#EEF1F7;margin:6px 4px}
 .sx-dn-cta{margin-top:6px;justify-content:center}
-@media (max-width: 1300px){.sx-links{display:none}.sx-menu{display:flex}.lh-links{display:none !important}.lh-menu{display:flex !important}.sx-dd{display:block}}
-.cr-c,.mf-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
+@media (max-width: 1300px){.sx-links{display:none}.sx-menu{display:flex}.sx-dd{display:block}}
+.cr-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
 .cr-c{background:#1652F0}
-.cr-c.lg,.mf-c.lg{width:26px;height:26px;font-size:13px}
+.cr-c.lg{width:26px;height:26px;font-size:13px}
 .dt-amt{align-items:center}
 .dt-amt .cr-c{align-self:center}
 .ds-tag.green{background:#E7F5EE;color:#0F6B45}
@@ -389,6 +382,12 @@ p{text-wrap:balance}
 .c5-rl .ds-tag{margin-left:40px}
 .dt-tabs{-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
 }
+.sx-dlp{height:36px;padding:0 12px 0 8px;border-radius:999px;background:#F5F8FF;border:1px solid #DCE5FB;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#0B1433;text-decoration:none;white-space:nowrap}
+.sx-av{width:40px;height:40px;border-radius:999px;background:#DCE5FB;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
+.pav-h{position:relative !important;overflow:hidden !important}
+.pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
+@media (max-width: 520px){.sx-dlp b span{display:none}}
+a.sx-av{text-decoration:none}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
@@ -407,8 +406,14 @@ p{text-wrap:balance}
 <a class="sx-link" href="Institutions.dc.html">For institutions</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
+<sc-if value="{{st7Guest}}" hint-placeholder-val="{{ true }}">
 <a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
 <a class="ds-btn sm np" href="OnbWelcome.dc.html">Create account</a>
+</sc-if>
+<sc-if value="{{st7Learner}}" hint-placeholder-val="{{ false }}">
+<a class="sx-dlp" href="Usage.dc.html" aria-label="1,460 DLP available. View usage"><span class="dlp-c"></span><b style="font-weight: 600">1,460<span style="font-weight: 500; color: #5B6582"> available</span></b></a>
+<a class="sx-av pav-h" href="Dashboard.dc.html" aria-label="Your account">AO<img class="pav" src="/_blob/9112077cc7e3c1c839edc7e609d87954" alt=""></a>
+</sc-if>
 <details class="sx-dd"><summary class="sx-menu" aria-label="Open menu"><span class="sx-dd-o"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></span><span class="sx-dd-x"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></summary><nav class="sx-dn" aria-label="Menu"><a class="sx-dl" href="Explore.dc.html">Explore learning</a><a class="sx-dl" href="Courses.dc.html">Courses</a><a class="sx-dl" href="CareerPaths.dc.html">Career paths</a><a class="sx-dl sx-dl-on" href="Certifications.dc.html" aria-current="page">Certifications</a><a class="sx-dl" href="Programs.dc.html">Learning programs</a><a class="sx-dl" href="Pricing.dc.html">Pricing</a><a class="sx-dl" href="Creators.dc.html">For creators</a><a class="sx-dl" href="Institutions.dc.html">For institutions</a><span class="sx-dn-sep"></span><a class="sx-dl" href="#">Log in</a><a class="ds-btn sx-dn-cta" href="OnbWelcome.dc.html"><span>Create account</span></a></nav></details>
 </div>
 </header>
@@ -582,8 +587,14 @@ p{text-wrap:balance}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"elig":{"editor":"enum","options":["","meets","needs","not","enrolled","done"],"default":""},"$preview":{"width":1440,"height":4711}}'>
+<script type="text/x-dc" data-dc-script data-props='{"viewer":{"editor":"enum","options":["guest","learner"],"default":"guest"},"elig":{"editor":"enum","options":["","meets","needs","not","enrolled","done"],"default":""},"$preview":{"width":1440,"height":4711}}'>
 class Component extends DCLogic {
+  renderVals() {
+    var v = this._rv7(), st = this.props.state || '', me = this.props.viewer === 'learner' || !!this.props.elig;
+    v.st7Guest = !me; v.st7Learner = me;
+    return v;
+  }
+
   constructor(props) {
     super(props);
     var e = (props && props.elig) || '';
@@ -596,7 +607,7 @@ class Component extends DCLogic {
     ['Overview', 'Who it’s for', 'Competencies', 'Requirements', 'Assessment', 'Credential', 'Issuer', 'Cost', 'FAQ'].forEach(function (k) { self.R[k] = self.mk(k); });
     this.F = [["Do I have to take the four courses?", "Only if you need them. Nova compares what you already know with each competency, and finished courses are never charged again."], ["What if I don’t pass first time?", "One retake of each assessment is included. After that, wait 14 days and retake for 40 Credits. You get written feedback either way."], ["Can my employer pay?", "Yes. The assessment fee can be sponsored by an employer or institution. Choose sponsorship at checkout."], ["Is this the same as finishing the Data Analyst path?", "No. The path builds the skills. This certification is assessed separately against a published standard."], ["How long is it valid?", "Three years. Renew with a short review of recent work."]];
   }
-  renderVals() {
+  _rv7() {
     var self = this, S = this.state, e = this.props.elig || '';
     var names = ['Overview', 'Who it’s for', 'Competencies', 'Requirements', 'Assessment', 'Credential', 'Issuer', 'Cost', 'FAQ'];
     var Q = [['q1', 'Are you 18 or older?', [['y', 'Yes'], ['n', 'No']]], ['q2', 'Have you done Data Foundations?', [['cred', 'Yes, on Credalio'], ['eq', 'An equivalent qualification'], ['none', 'Not yet']]],

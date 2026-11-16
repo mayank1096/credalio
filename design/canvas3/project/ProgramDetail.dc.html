@@ -280,7 +280,7 @@ p{text-wrap:balance}
 }
 .pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
 .pav-h{position:relative !important;overflow:hidden !important}
-@media (min-width: 1301px){.sx-links{gap:2px}.sx-links .sx-link{padding:0 10px;font-size:14.5px}.lh-links .lh-link{padding:0 10px !important;font-size:14.5px !important}}
+@media (min-width: 1301px){.sx-links{gap:2px}.sx-links .sx-link{padding:0 10px;font-size:14.5px}}
 .sx-dd{position:relative;display:none}
 .sx-dd > summary{list-style:none;cursor:pointer}
 .sx-dd > summary::-webkit-details-marker{display:none}
@@ -295,17 +295,15 @@ p{text-wrap:balance}
 .sx-dl-on{background:#EAF0FF;color:#0E3BB8}
 .sx-dn-sep{height:1.5px;background:#EEF1F7;margin:6px 4px}
 .sx-dn-cta{margin-top:6px;justify-content:center}
-@media (max-width: 1300px){.sx-links{display:none}.sx-menu{display:flex}.lh-links{display:none !important}.lh-menu{display:flex !important}.sx-dd{display:block}}
-.cr-c,.mf-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
+@media (max-width: 1300px){.sx-links{display:none}.sx-menu{display:flex}.sx-dd{display:block}}
+.cr-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
 .cr-c{background:#1652F0}
-.cr-c.lg,.mf-c.lg{width:26px;height:26px;font-size:13px}
+.cr-c.lg{width:26px;height:26px;font-size:13px}
 .dt-amt{align-items:center}
 .dt-amt .cr-c{align-self:center}
 .ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
 .ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
 .ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
-.ds-ghost.dk{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.32);color:#FFFFFF}
-.ds-ghost.dk:hover{background:rgba(255,255,255,.18);border-color:#FFFFFF}
 .ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
 .ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
 .ds-tag.green{background:#E7F5EE;color:#0F6B45}
@@ -461,6 +459,12 @@ p{text-wrap:balance}
 .dt-tabs{-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
 .p6-t{min-width:640px}
 }
+.sx-dlp{height:36px;padding:0 12px 0 8px;border-radius:999px;background:#F5F8FF;border:1px solid #DCE5FB;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#0B1433;text-decoration:none;white-space:nowrap}
+.sx-av{width:40px;height:40px;border-radius:999px;background:#DCE5FB;color:#1652F0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600}
+.pav-h{position:relative !important;overflow:hidden !important}
+.pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
+@media (max-width: 520px){.sx-dlp b span{display:none}}
+a.sx-av{text-decoration:none}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
@@ -479,8 +483,14 @@ p{text-wrap:balance}
 <a class="sx-link" href="Institutions.dc.html">For institutions</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
+<sc-if value="{{st7Guest}}" hint-placeholder-val="{{ true }}">
 <a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
 <a class="ds-btn sm np" href="OnbWelcome.dc.html">Create account</a>
+</sc-if>
+<sc-if value="{{st7Learner}}" hint-placeholder-val="{{ false }}">
+<a class="sx-dlp" href="Usage.dc.html" aria-label="1,460 DLP available. View usage"><span class="dlp-c"></span><b style="font-weight: 600">1,460<span style="font-weight: 500; color: #5B6582"> available</span></b></a>
+<a class="sx-av pav-h" href="Dashboard.dc.html" aria-label="Your account">AO<img class="pav" src="/_blob/9112077cc7e3c1c839edc7e609d87954" alt=""></a>
+</sc-if>
 <details class="sx-dd"><summary class="sx-menu" aria-label="Open menu"><span class="sx-dd-o"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></span><span class="sx-dd-x"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></summary><nav class="sx-dn" aria-label="Menu"><a class="sx-dl" href="Explore.dc.html">Explore learning</a><a class="sx-dl" href="Courses.dc.html">Courses</a><a class="sx-dl" href="CareerPaths.dc.html">Career paths</a><a class="sx-dl" href="Certifications.dc.html">Certifications</a><a class="sx-dl sx-dl-on" href="Programs.dc.html" aria-current="page">Learning programs</a><a class="sx-dl" href="Pricing.dc.html">Pricing</a><a class="sx-dl" href="Creators.dc.html">For creators</a><a class="sx-dl" href="Institutions.dc.html">For institutions</a><span class="sx-dn-sep"></span><a class="sx-dl" href="#">Log in</a><a class="ds-btn sx-dn-cta" href="OnbWelcome.dc.html"><span>Create account</span></a></nav></details>
 </div>
 </header>
@@ -666,8 +676,14 @@ p{text-wrap:balance}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"app":{"editor":"enum","options":["","draft","submitted","review","accepted","waitlisted","payment","full","closed"],"default":""},"$preview":{"width":1440,"height":5899}}'>
+<script type="text/x-dc" data-dc-script data-props='{"viewer":{"editor":"enum","options":["guest","learner"],"default":"guest"},"app":{"editor":"enum","options":["","draft","submitted","review","accepted","waitlisted","payment","full","closed","enrolled","done"],"default":""},"$preview":{"width":1440,"height":5899}}'>
 class Component extends DCLogic {
+  renderVals() {
+    var v = this._rv7(), st = this.props.state || '', me = this.props.viewer === 'learner' || !!this.props.app;
+    v.st7Guest = !me; v.st7Learner = me;
+    return v;
+  }
+
   constructor(props) {
     super(props);
     this.state = { coh: 0, saved: false, tab: 'Overview', faq: 0, stage: 'idle', fName: '', fEmail: '', fWhy: '', err: '', bad: '' };
@@ -678,10 +694,10 @@ class Component extends DCLogic {
     this.R = {}; ['Overview', 'Who it’s for', 'Requirements', 'Curriculum', 'Your week', 'Cohorts', 'People', 'Applying', 'FAQ'].forEach(function (k) { self.R[k] = self.mk(k); });
     this.F = [['Do I need a technical background?', 'No coding is needed, but you should be comfortable with spreadsheets. The readiness check tells you where you’d start.'], ['What time zone are the sessions in?', 'GMT (UTC+0). Signed in, every time shows in your own time zone. All sessions are recorded.'], ['What if the cohort is full?', 'Join the waitlist. If a place opens before the start date, we offer it in order. You can also apply to a later cohort.'], ['What if I miss a live session?', 'Every session is recorded, and mentors help you catch up in their weekly hours.'], ['Can my employer pay?', 'Yes. Choose employer invoicing when you accept your place.']];
   }
-  renderVals() {
+  _rv7() {
     var self = this, S = this.state;
     var names = ['Overview', 'Who it’s for', 'Requirements', 'Curriculum', 'Your week', 'Cohorts', 'People', 'Applying', 'FAQ'];
-    var A = this.props.app || '', COH = [["18", "JAN", "January 2027", "12 Jan – 6 Apr · Tue 18:00 GMT", "Places available", "green", "Apply by 8 January · 9 places left"], ["12", "APR", "April 2027", "12 Apr – 5 Jul · Tue 18:00 GMT", "Applications open", "blue", "Apply by 2 April · 40 places"], ["13", "SEP", "September 2027", "13 Sep – 6 Dec · Wed 12:30 GMT", "Opens in June", "line", "Get notified when applications open"]], STX = {"draft": ["blue", "Draft saved", "Your application is half done", "2 of 4 sections complete · saved 14 Nov", "Continue application", "#", "50%", "", "cb"], "submitted": ["blue", "Submitted", "Application sent", "Expect a decision by 21 Nov. We’ll email you.", "View application", "#", "", "Withdraw application", "cb"], "review": ["line", "Under review", "An admissions tutor is reading it", "Readiness check done. Decision due by 21 Nov.", "View application", "#", "", "", "gy"], "accepted": ["green", "Accepted", "You have a place in the January cohort", "Pay by 22 Nov to confirm it. Your place is held for 7 days.", "Accept and pay", "Chk-001.dc.html", "", "Decline the offer", "ok"], "waitlisted": ["amber", "Waitlisted", "You’re 4th on the waitlist", "We’ll email you if a place opens before 8 January. Or apply to the April cohort.", "Apply to April instead", "#", "", "Leave the waitlist", "am"], "payment": ["amber", "Payment pending", "Your place is held until 22 Nov", "First payment of 400 Credits due. Pay in full or in 3 parts.", "Complete payment", "Chk-001.dc.html", "", "", "am"], "full": ["line", "Cohort full", "January is full", "Join the waitlist, or apply to the April cohort, which has places.", "Join the waitlist", "#", "", "Apply to April instead", "gy"], "closed": ["line", "Applications closed", "January applications closed on 8 January", "The April cohort is open. Applications close 2 April.", "Apply to April", "#", "", "", "gy"]}, BANX = {"draft": ["cb", "Application draft saved", "Finish it before 8 January"], "submitted": ["cb", "Application submitted", "Decision by 21 November"], "review": ["gy", "Application under review", "Decision by 21 November"], "accepted": ["ok", "You’re accepted", "Pay by 22 November to confirm your place"], "waitlisted": ["am", "You’re on the waitlist", "Position 4 for the January cohort"], "payment": ["am", "Payment pending", "Your place is held until 22 November"], "full": ["gy", "January cohort is full", "The April cohort has places"], "closed": ["gy", "Applications closed for January", "The April cohort is open"]}, x = STX[A], c = COH[S.coh];
+    var A = this.props.app || '', COH = [["18", "JAN", "January 2027", "12 Jan – 6 Apr · Tue 18:00 GMT", "Places available", "green", "Apply by 8 January · 9 places left"], ["12", "APR", "April 2027", "12 Apr – 5 Jul · Tue 18:00 GMT", "Applications open", "blue", "Apply by 2 April · 40 places"], ["13", "SEP", "September 2027", "13 Sep – 6 Dec · Wed 12:30 GMT", "Opens in June", "line", "Get notified when applications open"]], STX = {"enrolled": ["green", "Enrolled", "You’re in the January cohort", "Week 5 of 12 · next live session Tue 18:00 GMT", "Continue learning", "#", "42%", "Open the cohort space", "cb"], "done": ["green", "Completed", "You completed the program", "Completed 6 Apr 2027 · certificate in your Digital Backpack", "View certificate", "#", "", "Share your capstone", "ok"], "draft": ["blue", "Draft saved", "Your application is half done", "2 of 4 sections complete · saved 14 Nov", "Continue application", "#", "50%", "", "cb"], "submitted": ["blue", "Submitted", "Application sent", "Expect a decision by 21 Nov. We’ll email you.", "View application", "#", "", "Withdraw application", "cb"], "review": ["line", "Under review", "An admissions tutor is reading it", "Readiness check done. Decision due by 21 Nov.", "View application", "#", "", "", "gy"], "accepted": ["green", "Accepted", "You have a place in the January cohort", "Pay by 22 Nov to confirm it. Your place is held for 7 days.", "Accept and pay", "Chk-001.dc.html", "", "Decline the offer", "ok"], "waitlisted": ["amber", "Waitlisted", "You’re 4th on the waitlist", "We’ll email you if a place opens before 8 January. Or apply to the April cohort.", "Apply to April instead", "#", "", "Leave the waitlist", "am"], "payment": ["amber", "Payment pending", "Your place is held until 22 Nov", "First payment of 400 Credits due. Pay in full or in 3 parts.", "Complete payment", "Chk-001.dc.html", "", "", "am"], "full": ["line", "Cohort full", "January is full", "Join the waitlist, or apply to the April cohort, which has places.", "Join the waitlist", "#", "", "Apply to April instead", "gy"], "closed": ["line", "Applications closed", "January applications closed on 8 January", "The April cohort is open. Applications close 2 April.", "Apply to April", "#", "", "", "gy"]}, BANX = {"enrolled": ["cb", "Enrolled · week 5 of 12", "Next live session Tue 18:00 GMT"], "done": ["ok", "Completed 6 Apr 2027", "Your certificate is in your Digital Backpack"], "draft": ["cb", "Application draft saved", "Finish it before 8 January"], "submitted": ["cb", "Application submitted", "Decision by 21 November"], "review": ["gy", "Application under review", "Decision by 21 November"], "accepted": ["ok", "You’re accepted", "Pay by 22 November to confirm your place"], "waitlisted": ["am", "You’re on the waitlist", "Position 4 for the January cohort"], "payment": ["am", "Payment pending", "Your place is held until 22 November"], "full": ["gy", "January cohort is full", "The April cohort has places"], "closed": ["gy", "Applications closed for January", "The April cohort is open"]}, x = STX[A], c = COH[S.coh];
     var openForm = function () { if (S.stage === 'idle') self.setState({ stage: 'form' }); if (self.secs.card && self.secs.card.scrollIntoView) self.secs.card.scrollIntoView({ block: 'center' }); };
     return {
       tabs: names.map(function (n) { var on = S.tab === n; return { label: n, on: on ? 'true' : 'false', cls: on ? 'dt-tab-on' : '', go: function () { self.setState({ tab: n }); var el = self.secs[n]; if (el && el.scrollIntoView) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }; }),

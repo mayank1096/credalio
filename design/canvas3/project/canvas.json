@@ -120,7 +120,7 @@
       "x": 4300,
       "y": 13982,
       "w": 1440,
-      "h": 1571,
+      "h": 2795,
       "title": "PATH-001 Career Paths · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -130,7 +130,7 @@
       "x": 5820,
       "y": 13982,
       "w": 390,
-      "h": 2812,
+      "h": 4245,
       "title": "PATH-001 Career Paths · Mobile",
       "page": "main",
       "is_interactive": true
@@ -139,7 +139,7 @@
       "x": 6450,
       "y": 13982,
       "w": 1440,
-      "h": 2217,
+      "h": 6030,
       "title": "PATH-002 Career Path Detail · Guest · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -149,7 +149,7 @@
       "x": 7970,
       "y": 13982,
       "w": 390,
-      "h": 2727,
+      "h": 8490,
       "title": "PATH-002 Career Path Detail · Guest · Mobile",
       "page": "main",
       "is_interactive": true
@@ -158,7 +158,7 @@
       "x": 8600,
       "y": 13982,
       "w": 1440,
-      "h": 2217,
+      "h": 6030,
       "title": "PATH-002 Career Path Detail · Signed in (1,460 DLP) · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -168,14 +168,14 @@
       "x": 10120,
       "y": 13982,
       "w": 390,
-      "h": 2717,
+      "h": 8479,
       "title": "PATH-002 Career Path Detail · Signed in (1,460 DLP) · Mobile",
       "page": "main",
       "is_interactive": true
     },
     "Certifications.dc.html": {
       "x": 0,
-      "y": 22241,
+      "y": 29145,
       "w": 1440,
       "h": 1552,
       "title": "CERT-001 Certifications · Desktop",
@@ -185,7 +185,7 @@
     },
     "Certifications-Mobile.dc.html": {
       "x": 1520,
-      "y": 22241,
+      "y": 29145,
       "w": 390,
       "h": 2651,
       "title": "CERT-001 Certifications · Mobile",
@@ -194,7 +194,7 @@
     },
     "CertDetail.dc.html": {
       "x": 2150,
-      "y": 22241,
+      "y": 29145,
       "w": 1440,
       "h": 2488,
       "title": "CERT-002 Certification Detail · Desktop",
@@ -204,7 +204,7 @@
     },
     "CertDetail-Mobile.dc.html": {
       "x": 3670,
-      "y": 22241,
+      "y": 29145,
       "w": 390,
       "h": 2885,
       "title": "CERT-002 Certification Detail · Mobile",
@@ -213,7 +213,7 @@
     },
     "Programs.dc.html": {
       "x": 4300,
-      "y": 22241,
+      "y": 29145,
       "w": 1440,
       "h": 2008,
       "title": "PROG-001 Learning Programs · Desktop",
@@ -223,7 +223,7 @@
     },
     "Programs-Mobile.dc.html": {
       "x": 5820,
-      "y": 22241,
+      "y": 29145,
       "w": 390,
       "h": 2285,
       "title": "PROG-001 Learning Programs · Mobile",
@@ -232,7 +232,7 @@
     },
     "ProgramDetail.dc.html": {
       "x": 6450,
-      "y": 22241,
+      "y": 29145,
       "w": 1440,
       "h": 1900,
       "title": "PROG-002 Program Detail · Desktop",
@@ -242,7 +242,7 @@
     },
     "ProgramDetail-Mobile.dc.html": {
       "x": 7970,
-      "y": 22241,
+      "y": 29145,
       "w": 390,
       "h": 2419,
       "title": "PROG-002 Program Detail · Mobile",
@@ -707,7 +707,7 @@
     },
     "InstCode.dc.html": {
       "x": 12510,
-      "y": 16168,
+      "y": 23072,
       "w": 1440,
       "h": 820,
       "title": "INST-001 Joining through your institution (= ONB-002, code variant) · Desktop",
@@ -717,7 +717,7 @@
     },
     "InstCode-Mobile.dc.html": {
       "x": 14030,
-      "y": 16168,
+      "y": 23072,
       "w": 390,
       "h": 844,
       "title": "INST-001 Joining through your institution (= ONB-002, code variant) · Mobile",
@@ -726,7 +726,7 @@
     },
     "InstInvite.dc.html": {
       "x": 14660,
-      "y": 16168,
+      "y": 23072,
       "w": 1440,
       "h": 820,
       "title": "INST-002 You’ve been invited · Desktop",
@@ -736,7 +736,7 @@
     },
     "InstInvite-Mobile.dc.html": {
       "x": 16180,
-      "y": 16168,
+      "y": 23072,
       "w": 390,
       "h": 844,
       "title": "INST-002 You’ve been invited · Mobile",
@@ -745,7 +745,7 @@
     },
     "InstAccount.dc.html": {
       "x": 16810,
-      "y": 16168,
+      "y": 23072,
       "w": 1440,
       "h": 820,
       "title": "INST-002b Create your account (= ONB-002, invite variant) · Desktop",
@@ -755,7 +755,7 @@
     },
     "InstAccount-Mobile.dc.html": {
       "x": 18330,
-      "y": 16168,
+      "y": 23072,
       "w": 390,
       "h": 980,
       "title": "INST-002b Create your account (= ONB-002, invite variant) · Mobile",
@@ -764,7 +764,7 @@
     },
     "InstDone.dc.html": {
       "x": 18960,
-      "y": 16168,
+      "y": 23072,
       "w": 1440,
       "h": 820,
       "title": "INST-003 You’re in, linked to your institution · Desktop",
@@ -774,7 +774,7 @@
     },
     "InstDone-Mobile.dc.html": {
       "x": 20480,
-      "y": 16168,
+      "y": 23072,
       "w": 390,
       "h": 844,
       "title": "INST-003 You’re in, linked to your institution · Mobile",
@@ -973,7 +973,7 @@
     },
     "Dash-I.dc.html": {
       "x": 25020,
-      "y": 17481,
+      "y": 24385,
       "w": 1440,
       "h": 2852,
       "title": "LRN-I Returning learner (9 days away) · Desktop",
@@ -983,7 +983,7 @@
     },
     "Dash-I-Mobile.dc.html": {
       "x": 26540,
-      "y": 17481,
+      "y": 24385,
       "w": 390,
       "h": 3332,
       "title": "LRN-I Returning learner (9 days away) · Mobile",
@@ -992,7 +992,7 @@
     },
     "Dash-E-Nova.dc.html": {
       "x": 27170,
-      "y": 17481,
+      "y": 24385,
       "w": 1440,
       "h": 900,
       "title": "LRN-E Ask Nova: Do I have enough DLP to finish my path? · Desktop",
@@ -1002,7 +1002,7 @@
     },
     "Dash-E-Nova-Mobile.dc.html": {
       "x": 28690,
-      "y": 17481,
+      "y": 24385,
       "w": 390,
       "h": 844,
       "title": "LRN-E Ask Nova: Do I have enough DLP to finish my path? · Mobile",
@@ -1011,7 +1011,7 @@
     },
     "Usage.dc.html": {
       "x": 25020,
-      "y": 25744,
+      "y": 32648,
       "w": 1440,
       "h": 900,
       "title": "DLP usage · My learning allowance · Desktop",
@@ -1021,7 +1021,7 @@
     },
     "Usage-Mobile.dc.html": {
       "x": 26540,
-      "y": 25744,
+      "y": 32648,
       "w": 390,
       "h": 1100,
       "title": "DLP usage · My learning allowance · Mobile",
@@ -1030,7 +1030,7 @@
     },
     "Dash-E-Wallets.dc.html": {
       "x": 27170,
-      "y": 25744,
+      "y": 32648,
       "w": 1440,
       "h": 900,
       "title": "LRN-E Wallets open: DLP, Marketplace Credits, MFORGE · Desktop",
@@ -1040,7 +1040,7 @@
     },
     "Dash-E-Wallets-Mobile.dc.html": {
       "x": 28690,
-      "y": 25744,
+      "y": 32648,
       "w": 390,
       "h": 844,
       "title": "LRN-E Wallets open: DLP, Marketplace Credits, MFORGE · Mobile",
@@ -1049,7 +1049,7 @@
     },
     "Dash-E-LAS.dc.html": {
       "x": 29320,
-      "y": 25744,
+      "y": 32648,
       "w": 1440,
       "h": 900,
       "title": "LRN-E LAS breakdown · Desktop",
@@ -1059,7 +1059,7 @@
     },
     "Dash-E-LAS-Mobile.dc.html": {
       "x": 30840,
-      "y": 25744,
+      "y": 32648,
       "w": 390,
       "h": 844,
       "title": "LRN-E LAS breakdown · Mobile",
@@ -1068,7 +1068,7 @@
     },
     "Dash-S2.dc.html": {
       "x": 31470,
-      "y": 25744,
+      "y": 32648,
       "w": 1440,
       "h": 2836,
       "title": "LRN-S2 Season closed: calculating rewards · Desktop",
@@ -1078,7 +1078,7 @@
     },
     "Dash-S2-Mobile.dc.html": {
       "x": 32990,
-      "y": 25744,
+      "y": 32648,
       "w": 390,
       "h": 3333,
       "title": "LRN-S2 Season closed: calculating rewards · Mobile",
@@ -1087,7 +1087,7 @@
     },
     "Dash-S3.dc.html": {
       "x": 33620,
-      "y": 25744,
+      "y": 32648,
       "w": 1440,
       "h": 2850,
       "title": "LRN-S3 Season rewards ready · Desktop",
@@ -1097,7 +1097,7 @@
     },
     "Dash-S3-Mobile.dc.html": {
       "x": 35140,
-      "y": 25744,
+      "y": 32648,
       "w": 390,
       "h": 3354,
       "title": "LRN-S3 Season rewards ready · Mobile",
@@ -1106,7 +1106,7 @@
     },
     "Dash-M.dc.html": {
       "x": 35770,
-      "y": 25744,
+      "y": 32648,
       "w": 1440,
       "h": 2889,
       "title": "LRN-M MFORGE not yet eligible (3 of 4) · Desktop",
@@ -1116,7 +1116,7 @@
     },
     "Dash-M-Mobile.dc.html": {
       "x": 37290,
-      "y": 25744,
+      "y": 32648,
       "w": 390,
       "h": 3393,
       "title": "LRN-M MFORGE not yet eligible (3 of 4) · Mobile",
@@ -1125,7 +1125,7 @@
     },
     "Dash-W.dc.html": {
       "x": 25020,
-      "y": 30368,
+      "y": 37272,
       "w": 1440,
       "h": 2975,
       "title": "LRN-W Running low on DLP · Desktop",
@@ -1135,7 +1135,7 @@
     },
     "Dash-W-Mobile.dc.html": {
       "x": 26540,
-      "y": 30368,
+      "y": 37272,
       "w": 390,
       "h": 3534,
       "title": "LRN-W Running low on DLP · Mobile",
@@ -1144,7 +1144,7 @@
     },
     "Dash-L.dc.html": {
       "x": 27170,
-      "y": 30368,
+      "y": 37272,
       "w": 1440,
       "h": 1786,
       "title": "LRN-L Allowance used: ready for the next step · Desktop",
@@ -1154,7 +1154,7 @@
     },
     "Dash-L-Mobile.dc.html": {
       "x": 28690,
-      "y": 30368,
+      "y": 37272,
       "w": 390,
       "h": 2201,
       "title": "LRN-L Allowance used: ready for the next step · Mobile",
@@ -1163,7 +1163,7 @@
     },
     "Acc-Free.dc.html": {
       "x": 29320,
-      "y": 30368,
+      "y": 37272,
       "w": 1440,
       "h": 900,
       "title": "ACC-001 Course needs more DLP (Free learner) · Desktop",
@@ -1173,7 +1173,7 @@
     },
     "Acc-Free-Mobile.dc.html": {
       "x": 30840,
-      "y": 30368,
+      "y": 37272,
       "w": 390,
       "h": 980,
       "title": "ACC-001 Course needs more DLP (Free learner) · Mobile",
@@ -1182,7 +1182,7 @@
     },
     "Acc-Pro.dc.html": {
       "x": 31470,
-      "y": 30368,
+      "y": 37272,
       "w": 1440,
       "h": 900,
       "title": "ACC-002 Course needs more DLP (Pro learner: top up, not upgrade) · Desktop",
@@ -1192,7 +1192,7 @@
     },
     "Acc-Pro-Mobile.dc.html": {
       "x": 32990,
-      "y": 30368,
+      "y": 37272,
       "w": 390,
       "h": 980,
       "title": "ACC-002 Course needs more DLP (Pro learner: top up, not upgrade) · Mobile",
@@ -1201,7 +1201,7 @@
     },
     "Acc-Zero.dc.html": {
       "x": 33620,
-      "y": 30368,
+      "y": 37272,
       "w": 1440,
       "h": 900,
       "title": "ACC-003 Zero DLP: you’re ready for the next step · Desktop",
@@ -1211,7 +1211,7 @@
     },
     "Acc-Zero-Mobile.dc.html": {
       "x": 35140,
-      "y": 30368,
+      "y": 37272,
       "w": 390,
       "h": 970,
       "title": "ACC-003 Zero DLP: you’re ready for the next step · Mobile",
@@ -1220,7 +1220,7 @@
     },
     "Acc-Low.dc.html": {
       "x": 35770,
-      "y": 30368,
+      "y": 37272,
       "w": 1440,
       "h": 900,
       "title": "ACC-004 Low DLP during a lesson (non-blocking) · Desktop",
@@ -1230,7 +1230,7 @@
     },
     "Acc-Low-Mobile.dc.html": {
       "x": 37290,
-      "y": 30368,
+      "y": 37272,
       "w": 390,
       "h": 844,
       "title": "ACC-004 Low DLP during a lesson (non-blocking) · Mobile",
@@ -1885,7 +1885,7 @@
     },
     "CourseDetail-Short.dc.html": {
       "x": 0,
-      "y": 34602,
+      "y": 41506,
       "w": 1440,
       "h": 5647,
       "title": "COURSES-002 Course Detail · Not enough DLP (120 DLP) · Desktop",
@@ -1895,7 +1895,7 @@
     },
     "CourseDetail-Short-Mobile.dc.html": {
       "x": 1520,
-      "y": 34602,
+      "y": 41506,
       "w": 390,
       "h": 7494,
       "title": "COURSES-002 Course Detail · Not enough DLP (120 DLP) · Mobile",
@@ -1905,7 +1905,7 @@
     },
     "CourseDetail-SubOnly.dc.html": {
       "x": 2150,
-      "y": 34602,
+      "y": 41506,
       "w": 1440,
       "h": 5647,
       "title": "COURSES-002 Course Detail · Subscription only (no Credits route) · Desktop",
@@ -1915,7 +1915,7 @@
     },
     "CourseDetail-SubOnly-Mobile.dc.html": {
       "x": 3670,
-      "y": 34602,
+      "y": 41506,
       "w": 390,
       "h": 7494,
       "title": "COURSES-002 Course Detail · Subscription only (no Credits route) · Mobile",
@@ -1925,7 +1925,7 @@
     },
     "CourseDetail-Progress.dc.html": {
       "x": 4300,
-      "y": 34602,
+      "y": 41506,
       "w": 1440,
       "h": 5744,
       "title": "COURSES-002 Course Detail · In progress (subscription access) · Desktop",
@@ -1935,7 +1935,7 @@
     },
     "CourseDetail-Progress-Mobile.dc.html": {
       "x": 5820,
-      "y": 34602,
+      "y": 41506,
       "w": 390,
       "h": 7591,
       "title": "COURSES-002 Course Detail · In progress (subscription access) · Mobile",
@@ -1945,7 +1945,7 @@
     },
     "CourseDetail-Owned.dc.html": {
       "x": 6450,
-      "y": 34602,
+      "y": 41506,
       "w": 1440,
       "h": 5744,
       "title": "COURSES-002 Course Detail · Owned with Credits · Desktop",
@@ -1955,7 +1955,7 @@
     },
     "CourseDetail-Owned-Mobile.dc.html": {
       "x": 7970,
-      "y": 34602,
+      "y": 41506,
       "w": 390,
       "h": 7591,
       "title": "COURSES-002 Course Detail · Owned with Credits · Mobile",
@@ -1965,7 +1965,7 @@
     },
     "CourseDetail-Temp.dc.html": {
       "x": 8600,
-      "y": 34602,
+      "y": 41506,
       "w": 1440,
       "h": 5744,
       "title": "COURSES-002 Course Detail · Temporary access (institution) · Desktop",
@@ -1975,7 +1975,7 @@
     },
     "CourseDetail-Temp-Mobile.dc.html": {
       "x": 10120,
-      "y": 34602,
+      "y": 41506,
       "w": 390,
       "h": 7591,
       "title": "COURSES-002 Course Detail · Temporary access (institution) · Mobile",
@@ -1985,7 +1985,7 @@
     },
     "CourseDetail-Done.dc.html": {
       "x": 10750,
-      "y": 34602,
+      "y": 41506,
       "w": 1440,
       "h": 5744,
       "title": "COURSES-002 Course Detail · Completed, revision period ended · Desktop",
@@ -1995,7 +1995,7 @@
     },
     "CourseDetail-Done-Mobile.dc.html": {
       "x": 12270,
-      "y": 34602,
+      "y": 41506,
       "w": 390,
       "h": 7591,
       "title": "COURSES-002 Course Detail · Completed, revision period ended · Mobile",
@@ -2005,7 +2005,7 @@
     },
     "CourseDetail-Closed.dc.html": {
       "x": 12900,
-      "y": 34602,
+      "y": 41506,
       "w": 1440,
       "h": 5744,
       "title": "COURSES-002 Course Detail · Closed to new learners · Desktop",
@@ -2015,7 +2015,7 @@
     },
     "CourseDetail-Closed-Mobile.dc.html": {
       "x": 14420,
-      "y": 34602,
+      "y": 41506,
       "w": 390,
       "h": 7591,
       "title": "COURSES-002 Course Detail · Closed to new learners · Mobile",
@@ -2025,7 +2025,7 @@
     },
     "LessonPreview.dc.html": {
       "x": 15050,
-      "y": 34602,
+      "y": 41506,
       "w": 1440,
       "h": 1155,
       "title": "COURSES-003 Lesson preview · Video lesson (free) · Desktop",
@@ -2035,7 +2035,7 @@
     },
     "LessonPreview-Mobile.dc.html": {
       "x": 16570,
-      "y": 34602,
+      "y": 41506,
       "w": 390,
       "h": 1770,
       "title": "COURSES-003 Lesson preview · Video lesson (free) · Mobile",
@@ -2045,7 +2045,7 @@
     },
     "LessonPreview-Reading.dc.html": {
       "x": 17200,
-      "y": 34602,
+      "y": 41506,
       "w": 1440,
       "h": 933,
       "title": "COURSES-003 Lesson preview · Reading lesson (free) · Desktop",
@@ -2055,10 +2055,30 @@
     },
     "LessonPreview-Reading-Mobile.dc.html": {
       "x": 18720,
-      "y": 34602,
+      "y": 41506,
       "w": 390,
       "h": 1867,
       "title": "COURSES-003 Lesson preview · Reading lesson (free) · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "CareerPaths-Compare.dc.html": {
+      "x": 0,
+      "y": 49797,
+      "w": 1440,
+      "h": 3359,
+      "title": "PATH-001 Career Paths · Comparing two paths",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "CareerPaths-Compare-Mobile.dc.html": {
+      "x": 1520,
+      "y": 49797,
+      "w": 390,
+      "h": 4999,
+      "title": "PATH-001 Career Paths · Comparing two paths · Mobile",
       "page": "main",
       "expand": "fill",
       "is_interactive": true
@@ -2110,7 +2130,8 @@
     "row-b28",
     "wow-holo",
     "wow-vault",
-    "row-b29"
+    "row-b29",
+    "row-b30"
   ],
   "notes": {
     "new-hero": {
@@ -2148,7 +2169,7 @@
     },
     "row-b3": {
       "x": 0,
-      "y": 21941,
+      "y": 28845,
       "text": "Batch 3 · Certifications and Learning Programs",
       "kind": "title1",
       "maxW": 1910,
@@ -2204,7 +2225,7 @@
     },
     "row-b10": {
       "x": 12510,
-      "y": 15868,
+      "y": 22772,
       "text": "Batch 10 · Institution invite: code, invitation, create account, linked",
       "kind": "title1",
       "maxW": 1910,
@@ -2244,7 +2265,7 @@
     },
     "row-b15": {
       "x": 25020,
-      "y": 17181,
+      "y": 24085,
       "text": "Batch 15 · Learner dashboard: returning learner, Ask Nova (DLP answer)",
       "kind": "title1",
       "maxW": 1910,
@@ -2252,7 +2273,7 @@
     },
     "row-b16": {
       "x": 25020,
-      "y": 25444,
+      "y": 32348,
       "text": "Batch 16 · Season and usage: wallets, LAS breakdown, season calculating / rewards ready, MFORGE not yet eligible, DLP usage",
       "kind": "title1",
       "maxW": 1910,
@@ -2260,7 +2281,7 @@
     },
     "row-b17": {
       "x": 25020,
-      "y": 30068,
+      "y": 36972,
       "text": "Batch 17 · Allowance shortfall: running low, allowance used, course needs more DLP (Free / Pro), zero DLP, low DLP in a lesson",
       "kind": "title1",
       "maxW": 1910,
@@ -2412,10 +2433,18 @@
     },
     "row-b29": {
       "x": 0,
-      "y": 34302,
+      "y": 41206,
       "text": "Batch 29 · Course detail: access states and the free lesson preview",
       "kind": "title1",
       "maxW": 8000,
+      "page": "main"
+    },
+    "row-b30": {
+      "x": 0,
+      "y": 49497,
+      "text": "Batch 30 · Career paths: comparing two paths",
+      "kind": "title1",
+      "maxW": 2000,
       "page": "main"
     }
   },
@@ -2635,7 +2664,9 @@
     "LessonPreview.dc.html",
     "LessonPreview-Mobile.dc.html",
     "LessonPreview-Reading.dc.html",
-    "LessonPreview-Reading-Mobile.dc.html"
+    "LessonPreview-Reading-Mobile.dc.html",
+    "CareerPaths-Compare.dc.html",
+    "CareerPaths-Compare-Mobile.dc.html"
   ],
   "pages": [
     {

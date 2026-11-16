@@ -664,25 +664,43 @@ h1,h2,h3,p{text-wrap:pretty}
 }
 .pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
 .pav-h{position:relative !important;overflow:hidden !important}
+@media (min-width: 1301px){.sx-links{gap:2px}.sx-links .sx-link{padding:0 10px;font-size:14.5px}.lh-links .lh-link{padding:0 10px !important;font-size:14.5px !important}}
+.sx-dd{position:relative;display:none}
+.sx-dd > summary{list-style:none;cursor:pointer}
+.sx-dd > summary::-webkit-details-marker{display:none}
+.sx-dd .sx-dd-x{display:none}
+.sx-dd[open] .sx-dd-o{display:none}
+.sx-dd[open] .sx-dd-x{display:flex}
+.sx-dd-o,.sx-dd-x{align-items:center;justify-content:center}
+.sx-dd-o{display:flex}
+.sx-dn{position:fixed;right:16px;top:68px;z-index:60;max-height:calc(100vh - 84px);overflow:auto;width:min(320px,calc(100vw - 32px));box-sizing:border-box;padding:10px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 24px 60px -20px rgba(11,20,51,.28);display:flex;flex-direction:column;gap:2px}
+.sx-dl{display:flex;align-items:center;min-height:46px;padding:0 14px;border-radius:12px;font-size:15.5px;font-weight:500;color:#0B1433;text-decoration:none}
+.sx-dl:hover{background:#F5F8FF}
+.sx-dl-on{background:#EAF0FF;color:#0E3BB8}
+.sx-dn-sep{height:1.5px;background:#EEF1F7;margin:6px 4px}
+.sx-dn-cta{margin-top:6px;justify-content:center}
+@media (max-width: 1300px){.sx-links{display:none}.sx-menu{display:flex}.lh-links{display:none !important}.lh-menu{display:flex !important}.sx-dd{display:block}}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
 <section class="cx-top" aria-labelledby="cx-h">
 <div class="ci-door ci-cr aur cx-hero">
 <header class="sx-nav sx-in sx-dk">
-<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<a class="sx-logo" href="Landing.dc.html" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
 <nav class="sx-links" aria-label="Main">
-<a class="sx-link" href="#">Explore learning</a>
-<a class="sx-link" href="#">Career paths</a>
-<a class="sx-link" href="#">Certifications</a>
-<a class="sx-link" href="#">Pricing</a>
+<a class="sx-link" href="Explore.dc.html">Explore learning</a>
+<a class="sx-link" href="Courses.dc.html">Courses</a>
+<a class="sx-link" href="CareerPaths.dc.html">Career paths</a>
+<a class="sx-link" href="Certifications.dc.html">Certifications</a>
+<a class="sx-link" href="Programs.dc.html">Learning programs</a>
+<a class="sx-link" href="Pricing.dc.html">Pricing</a>
 <a class="sx-link sx-link-on" href="Creators.dc.html" aria-current="page">For creators</a>
 <a class="sx-link" href="Institutions.dc.html">For institutions</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
 <a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
 <a class="sx-cta" href="OnbWelcome.dc.html">Create account</a>
-<button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<details class="sx-dd"><summary class="sx-menu" aria-label="Open menu"><span class="sx-dd-o"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></span><span class="sx-dd-x"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></summary><nav class="sx-dn" aria-label="Menu"><a class="sx-dl" href="Explore.dc.html">Explore learning</a><a class="sx-dl" href="Courses.dc.html">Courses</a><a class="sx-dl" href="CareerPaths.dc.html">Career paths</a><a class="sx-dl" href="Certifications.dc.html">Certifications</a><a class="sx-dl" href="Programs.dc.html">Learning programs</a><a class="sx-dl" href="Pricing.dc.html">Pricing</a><a class="sx-dl sx-dl-on" href="Creators.dc.html" aria-current="page">For creators</a><a class="sx-dl" href="Institutions.dc.html">For institutions</a><span class="sx-dn-sep"></span><a class="sx-dl" href="#">Log in</a><a class="ds-btn sx-dn-cta" href="OnbWelcome.dc.html"><span>Create account</span></a></nav></details>
 </div>
 </header>
 <div class="ci-copy">
@@ -926,10 +944,10 @@ Not sure where to start? Ask Nova
 <footer class="lh-eng ft" aria-label="Footer">
 <div class="ft-top">
 <div class="ft-brand">
-<a href="#" aria-label="Credalio home" style="display: flex; align-items: center; gap: 8px; text-decoration: none"><span class="lh-mark" aria-hidden="true"></span><span class="lh-word" aria-hidden="true"></span></a>
+<a href="Landing.dc.html" aria-label="Credalio home" style="display: flex; align-items: center; gap: 8px; text-decoration: none"><span class="lh-mark" aria-hidden="true"></span><span class="lh-word" aria-hidden="true"></span></a>
 <p style="margin: 0; max-width: 340px; font-size: 15px; line-height: 1.6; color: #4A5578">Helping you become who you want to be next.</p>
 </div>
-<nav class="ft-col" aria-label="Learn"><span class="ft-h">Learn</span><a class="ft-a" href="#">Courses</a><a class="ft-a" href="#">Professional Certifications</a><a class="ft-a" href="#">Career Paths</a><a class="ft-a" href="#">Learning Programs</a></nav><nav class="ft-col" aria-label="Create"><span class="ft-h">Create</span><a class="ft-a" href="Creators.dc.html">For Creators</a><a class="ft-a" href="Institutions.dc.html">For Institutions</a><a class="ft-a" href="#">Become a Validator</a></nav><nav class="ft-col" aria-label="Company"><span class="ft-h">Company</span><a class="ft-a" href="#">Pricing</a><a class="ft-a" href="#">About magnummeta</a><a class="ft-a" href="#">Ecosystem</a><a class="ft-a" href="#">Contact</a></nav>
+<nav class="ft-col" aria-label="Learn"><span class="ft-h">Learn</span><a class="ft-a" href="Explore.dc.html">Explore learning</a><a class="ft-a" href="Courses.dc.html">Courses</a><a class="ft-a" href="Certifications.dc.html">Professional Certifications</a><a class="ft-a" href="CareerPaths.dc.html">Career Paths</a><a class="ft-a" href="Programs.dc.html">Learning Programs</a><a class="ft-a" href="Validation.dc.html">How validation works</a></nav><nav class="ft-col" aria-label="Create"><span class="ft-h">Create</span><a class="ft-a" href="Creators.dc.html">For Creators</a><a class="ft-a" href="Institutions.dc.html">For Institutions</a><a class="ft-a" href="Validation.dc.html">Become a Validator</a></nav><nav class="ft-col" aria-label="Company"><span class="ft-h">Company</span><a class="ft-a" href="Pricing.dc.html">Pricing</a><a class="ft-a" href="#">About magnummeta</a><a class="ft-a" href="#">Ecosystem</a><a class="ft-a" href="#">Contact</a></nav>
 <div class="ft-news">
 <span class="ft-h">Stay in the loop</span>
 <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #4A5578">New courses, career paths and stories from people becoming who they want to be.</p>
@@ -947,7 +965,7 @@ Not sure where to start? Ask Nova
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4406}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":4461}}'>
 var AREAS = ["Shape it with AI", "Build rich learning", "Create together", "Check before you submit"];
 class Component extends DCLogic {
 auroraMount(el) {

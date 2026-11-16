@@ -240,31 +240,54 @@ p{text-wrap:balance}
 .tip .tip-b{width:190px}
 .ce-cl .tip-b{left:auto;right:-30px}
 }
+@media (min-width: 1301px){.sx-links{gap:2px}.sx-links .sx-link{padding:0 10px;font-size:14.5px}.lh-links .lh-link{padding:0 10px !important;font-size:14.5px !important}}
+.sx-dd{position:relative;display:none}
+.sx-dd > summary{list-style:none;cursor:pointer}
+.sx-dd > summary::-webkit-details-marker{display:none}
+.sx-dd .sx-dd-x{display:none}
+.sx-dd[open] .sx-dd-o{display:none}
+.sx-dd[open] .sx-dd-x{display:flex}
+.sx-dd-o,.sx-dd-x{align-items:center;justify-content:center}
+.sx-dd-o{display:flex}
+.sx-dn{position:fixed;right:16px;top:68px;z-index:60;max-height:calc(100vh - 84px);overflow:auto;width:min(320px,calc(100vw - 32px));box-sizing:border-box;padding:10px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 24px 60px -20px rgba(11,20,51,.28);display:flex;flex-direction:column;gap:2px}
+.sx-dl{display:flex;align-items:center;min-height:46px;padding:0 14px;border-radius:12px;font-size:15.5px;font-weight:500;color:#0B1433;text-decoration:none}
+.sx-dl:hover{background:#F5F8FF}
+.sx-dl-on{background:#EAF0FF;color:#0E3BB8}
+.sx-dn-sep{height:1.5px;background:#EEF1F7;margin:6px 4px}
+.sx-dn-cta{margin-top:6px;justify-content:center}
+@media (max-width: 1300px){.sx-links{display:none}.sx-menu{display:flex}.lh-links{display:none !important}.lh-menu{display:flex !important}.sx-dd{display:block}}
+.cr-c,.mf-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
+.cr-c{background:#1652F0}
+.cr-c.lg,.mf-c.lg{width:26px;height:26px;font-size:13px}
+.dt-amt{align-items:center}
+.dt-amt .cr-c{align-self:center}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
 
 <div class="dt-top">
 <header class="sx-nav">
-<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<a class="sx-logo" href="Landing.dc.html" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
 <nav class="sx-links" aria-label="Main">
-<a class="sx-link" href="#">Explore learning</a>
-<a class="sx-link" href="#">Career paths</a>
-<a class="sx-link sx-link-on" href="#" aria-current="page">Certifications</a>
-<a class="sx-link" href="#">Pricing</a>
+<a class="sx-link" href="Explore.dc.html">Explore learning</a>
+<a class="sx-link" href="Courses.dc.html">Courses</a>
+<a class="sx-link" href="CareerPaths.dc.html">Career paths</a>
+<a class="sx-link sx-link-on" href="Certifications.dc.html" aria-current="page">Certifications</a>
+<a class="sx-link" href="Programs.dc.html">Learning programs</a>
+<a class="sx-link" href="Pricing.dc.html">Pricing</a>
 <a class="sx-link" href="Creators.dc.html">For creators</a>
 <a class="sx-link" href="Institutions.dc.html">For institutions</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
 <a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
 <a class="ds-btn sm np" href="OnbWelcome.dc.html">Create account</a>
-<button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<details class="sx-dd"><summary class="sx-menu" aria-label="Open menu"><span class="sx-dd-o"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></span><span class="sx-dd-x"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></summary><nav class="sx-dn" aria-label="Menu"><a class="sx-dl" href="Explore.dc.html">Explore learning</a><a class="sx-dl" href="Courses.dc.html">Courses</a><a class="sx-dl" href="CareerPaths.dc.html">Career paths</a><a class="sx-dl sx-dl-on" href="Certifications.dc.html" aria-current="page">Certifications</a><a class="sx-dl" href="Programs.dc.html">Learning programs</a><a class="sx-dl" href="Pricing.dc.html">Pricing</a><a class="sx-dl" href="Creators.dc.html">For creators</a><a class="sx-dl" href="Institutions.dc.html">For institutions</a><span class="sx-dn-sep"></span><a class="sx-dl" href="#">Log in</a><a class="ds-btn sx-dn-cta" href="OnbWelcome.dc.html"><span>Create account</span></a></nav></details>
 </div>
 </header>
 <div class="dt-grid">
 <div class="dt-main">
 <div class="dt-hero">
-<nav class="dt-crumb" aria-label="Breadcrumb"><a href="#">Certifications</a><span aria-hidden="true">/</span><span>Data</span></nav>
+<nav class="dt-crumb" aria-label="Breadcrumb"><a href="Certifications.dc.html">Certifications</a><span aria-hidden="true">/</span><span>Data</span></nav>
 <div class="dt-tags">
 <span class="ds-tag blue lg"><svg class="ce-seal" viewBox="0 0 100 100" aria-hidden="true"><path d="M56.5 9.0 Q64.2 6.3 68.8 13.0 Q77.0 12.8 79.3 20.7 Q87.2 23.0 87.0 31.2 Q93.7 35.8 91.0 43.5 Q96.0 50.0 91.0 56.5 Q93.7 64.2 87.0 68.8 Q87.2 77.0 79.3 79.3 Q77.0 87.2 68.8 87.0 Q64.2 93.7 56.5 91.0 Q50.0 96.0 43.5 91.0 Q35.8 93.7 31.2 87.0 Q23.0 87.2 20.7 79.3 Q12.8 77.0 13.0 68.8 Q6.3 64.2 9.0 56.5 Q4.0 50.0 9.0 43.5 Q6.3 35.8 13.0 31.2 Q12.8 23.0 20.7 20.7 Q23.0 12.8 31.2 13.0 Q35.8 6.3 43.5 9.0 Q50.0 4.0 56.5 9.0Z" fill="#1652F0"></path><path d="M33 51l11 11 23-24" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"></path></svg> Credalio Validated</span>
 <span class="ds-tag line lg">Professional</span>
@@ -300,8 +323,8 @@ p{text-wrap:balance}
 <h2 id="ce-e" class="dt-h2">How you earn it</h2>
 <div class="ce-steps">
 <div class="ce-st"><span class="ce-num" aria-hidden="true">1</span><div class="ce-sc">
-<div class="ce-shd"><div><div class="ce-sn">Required learning<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Already know some of this? Nova, your AI Coach, checks equivalent learning so you don’t repeat it.</span></span></div><div class="ce-sd">Four validated courses that cover every competency.</div></div><span class="ds-tag ce-pm">36 hrs</span></div>
-<ul class="ce-cs"><li>Data Foundations: Spreadsheets to SQL<span>12 hrs</span></li><li>SQL for Data Analysis<span>10 hrs</span></li><li>Data Visualisation with Power BI<span>6 hrs</span></li><li>Statistics Essentials<span>8 hrs</span></li></ul>
+<div class="ce-shd"><div><div class="ce-sn">Required learning<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Already know some of this? Nova, your AI Coach, checks equivalent learning so you don’t repeat it.</span></span></div><div class="ce-sd">Four validated courses that cover every competency.</div></div><span class="ds-tag ce-pm">38 hrs</span></div>
+<ul class="ce-cs"><li>Data Foundations: Spreadsheets to SQL<span>12 hrs</span></li><li>SQL for Data Analysis<span>10 hrs</span></li><li>Data Visualisation with Power BI<span>6 hrs</span></li><li>Statistics Essentials<span>10 hrs</span></li></ul>
 </div></div>
 <div class="ce-st"><span class="ce-num" aria-hidden="true">2</span><div class="ce-sc"><div class="ce-shd"><div><div class="ce-sn">Core knowledge exam</div><div class="ce-sd">Timed, 60 questions on the six competencies.</div></div><span class="ds-tag ce-pm">Pass mark 70%</span></div></div></div>
 <div class="ce-st"><span class="ce-num" aria-hidden="true">3</span><div class="ce-sc"><div class="ce-shd"><div><div class="ce-sn">Practical case study</div><div class="ce-sd">Clean a real dataset, analyse it, build a dashboard and recommend what to do. An assessor reviews it.</div></div><span class="ds-tag ce-pm">Pass mark 70%</span></div></div></div>
@@ -338,8 +361,8 @@ p{text-wrap:balance}
 <aside class="dt-side {{sideCls}}" aria-label="Start this certification">
 <div class="dt-card">
 <div class="dt-cbody">
-<span class="dt-lab">Certification fee<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r dn" role="tooltip">Includes every assessment, the practical review, your credential and one resit. Courses use your DLP as usual. Blockchain-anchored certificate: optional $10 add-on on Pro.</span></span></span>
-<div class="dt-amt"><b>$149</b><span>one time</span></div>
+<span class="dt-lab">Certification fee<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r dn" role="tooltip">Includes every assessment, the practical review, your credential and one resit. Courses use your DLP as usual. Blockchain-anchored certificate: optional 10 Credits add-on on Pro.</span></span></span>
+<div class="dt-amt"><i class="cr-c lg" aria-hidden="true">C</i><b>150</b><span>Credits, one time</span></div>
 <sc-if value="{{notStarted}}" hint-placeholder-val="{{ true }}">
 <button class="ds-btn dt-cta" type="button" onClick="{{start}}"><span>Start certification</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button>
 </sc-if>
@@ -353,21 +376,21 @@ p{text-wrap:balance}
 </aside>
 
 <div class="ds-mbar dt-bar">
-<div><b>$149</b><span>One time</span></div>
+<div><b>150 Credits</b><span>One time</span></div>
 <button class="ds-btn" type="button" onClick="{{start}}"><span>{{barCta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button>
 </div>
 </div>
 </div>
 <footer class="sx-foot">
 <div class="sx-fin">
-<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
-<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="Creators.dc.html">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+<a class="sx-logo" href="Landing.dc.html" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav aria-label="Footer"><a href="Courses.dc.html">Courses</a><a href="CareerPaths.dc.html">Career Paths</a><a href="Certifications.dc.html">Certifications</a><a href="Programs.dc.html">Learning Programs</a><a href="Pricing.dc.html">Pricing</a><a href="Creators.dc.html">For Creators</a><a href="Institutions.dc.html">For Institutions</a><a href="Validation.dc.html">How validation works</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
 <span>© 2026 magnummeta. All rights reserved.</span>
 </div>
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2447}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2488}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);

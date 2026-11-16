@@ -159,24 +159,71 @@ p{text-wrap:balance}
 .tip:hover .tip-b,.tip:focus .tip-b{display:block}
 .ct-sub .tip-b,.ct-meta .tip-b{width:200px}
 }
+@media (min-width: 1301px){.sx-links{gap:2px}.sx-links .sx-link{padding:0 10px;font-size:14.5px}.lh-links .lh-link{padding:0 10px !important;font-size:14.5px !important}}
+.sx-dd{position:relative;display:none}
+.sx-dd > summary{list-style:none;cursor:pointer}
+.sx-dd > summary::-webkit-details-marker{display:none}
+.sx-dd .sx-dd-x{display:none}
+.sx-dd[open] .sx-dd-o{display:none}
+.sx-dd[open] .sx-dd-x{display:flex}
+.sx-dd-o,.sx-dd-x{align-items:center;justify-content:center}
+.sx-dd-o{display:flex}
+.sx-dn{position:fixed;right:16px;top:68px;z-index:60;max-height:calc(100vh - 84px);overflow:auto;width:min(320px,calc(100vw - 32px));box-sizing:border-box;padding:10px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 24px 60px -20px rgba(11,20,51,.28);display:flex;flex-direction:column;gap:2px}
+.sx-dl{display:flex;align-items:center;min-height:46px;padding:0 14px;border-radius:12px;font-size:15.5px;font-weight:500;color:#0B1433;text-decoration:none}
+.sx-dl:hover{background:#F5F8FF}
+.sx-dl-on{background:#EAF0FF;color:#0E3BB8}
+.sx-dn-sep{height:1.5px;background:#EEF1F7;margin:6px 4px}
+.sx-dn-cta{margin-top:6px;justify-content:center}
+@media (max-width: 1300px){.sx-links{display:none}.sx-menu{display:flex}.lh-links{display:none !important}.lh-menu{display:flex !important}.sx-dd{display:block}}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.line{background:#FFFFFF;box-shadow:inset 0 0 0 1px #E6EAF3}
+.ds-tag.glass{background:rgba(255,255,255,.14);color:#FFFFFF;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.cr-c,.mf-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
+.cr-c{background:#1652F0}
+.cr-c.lg,.mf-c.lg{width:26px;height:26px;font-size:13px}
+.dlp-c{position:relative;display:inline-block;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(0,0,0,0) 61%,rgba(150,96,0,.5) 64%,rgba(0,0,0,0) 69%),radial-gradient(circle at 34% 28%,#FFF6CF 0%,#F9DC7A 30%,#EAB534 62%,#C38712 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),inset 0 -1.5px 1px rgba(130,80,0,.35),0 1.5px 0 #A86F06,0 3px 5px -2px rgba(110,70,0,.55);vertical-align:-3px;animation:dlpFlip 6s ease-in-out infinite}
+.dlp-c::before{content:"D";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Google Sans',system-ui,sans-serif;font-size:10px;font-weight:700;line-height:1;transform:translateY(.6px);box-sizing:border-box;color:#8A5A00;text-shadow:0 1px 0 rgba(255,246,207,.85)}
+.dlp-c::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.75) 48%,rgba(255,255,255,0) 60%);background-size:250% 100%;background-position:120% 0;animation:dlpShine 6s ease-in-out infinite;pointer-events:none}
+.dlp-c,.dlp-c::after{animation:none}
+@keyframes dlpFlip{0%,70%{transform:rotateY(0)}82%{transform:rotateY(180deg)}94%,100%{transform:rotateY(360deg)}}
+@keyframes dlpShine{0%,30%{background-position:120% 0}48%,100%{background-position:-20% 0}}
+.mx{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.mx-r{display:inline-flex;align-items:center;gap:4px;font-size:13px;color:#5B6582;margin-right:2px}
+.mx-r b{font-weight:600;color:#0B1433}
+.mx-s{color:#E3A008}
+.mx-d{width:7px;height:7px;border-radius:50%;flex-shrink:0;font-style:normal}
+.mx-p{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:13px;color:#5B6582;min-width:0}
+.mx-p b{font-size:15px;font-weight:600;color:#0B1433;white-space:nowrap}
+.mx-p em{font-style:normal;white-space:nowrap}
+.mx-p .cr-c,.mx-life .cr-c{width:16px;height:16px;font-size:9.5px}
+.mx-life{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#5B6582}
+.cp-feat .mx-r,.cp-feat .mx-p,.cp-feat .mx-p em{color:rgba(255,255,255,.72)}
+.cp-feat .mx-r b,.cp-feat .mx-p b{color:#FFFFFF}
+.cp-foot{justify-content:space-between}
+.ct-fmt{font-size:13px;color:#5B6582;margin-top:-6px}
+.pg-row{grid-template-columns:72px minmax(0,1fr) 170px 170px 40px}
+.pg-rx{margin-top:8px}
+@media (max-width: 760px){.pg-row{grid-template-columns:56px minmax(0,1fr) auto;row-gap:10px}.pg-date{grid-row:1 / span 2;align-self:start}.pg-row > span:nth-child(2){grid-column:2 / -1}.pg-row > .mx-p{grid-column:2;grid-row:2;margin:0}.pg-row > .pg-stat{grid-column:3;grid-row:2;margin:0;justify-self:end}.pg-rx{margin-top:6px}.pg-rx .ds-tag + .ds-tag{display:none}}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
 <div class="ct-hero">
 <header class="sx-nav">
-<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<a class="sx-logo" href="Landing.dc.html" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
 <nav class="sx-links" aria-label="Main">
-<a class="sx-link" href="#">Explore learning</a>
-<a class="sx-link" href="#">Career paths</a>
-<a class="sx-link sx-link-on" href="#" aria-current="page">Certifications</a>
-<a class="sx-link" href="#">Pricing</a>
+<a class="sx-link" href="Explore.dc.html">Explore learning</a>
+<a class="sx-link" href="Courses.dc.html">Courses</a>
+<a class="sx-link" href="CareerPaths.dc.html">Career paths</a>
+<a class="sx-link sx-link-on" href="Certifications.dc.html" aria-current="page">Certifications</a>
+<a class="sx-link" href="Programs.dc.html">Learning programs</a>
+<a class="sx-link" href="Pricing.dc.html">Pricing</a>
 <a class="sx-link" href="Creators.dc.html">For creators</a>
 <a class="sx-link" href="Institutions.dc.html">For institutions</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
 <a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
 <a class="ds-btn sm np" href="OnbWelcome.dc.html">Create account</a>
-<button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<details class="sx-dd"><summary class="sx-menu" aria-label="Open menu"><span class="sx-dd-o"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></span><span class="sx-dd-x"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></summary><nav class="sx-dn" aria-label="Menu"><a class="sx-dl" href="Explore.dc.html">Explore learning</a><a class="sx-dl" href="Courses.dc.html">Courses</a><a class="sx-dl" href="CareerPaths.dc.html">Career paths</a><a class="sx-dl sx-dl-on" href="Certifications.dc.html" aria-current="page">Certifications</a><a class="sx-dl" href="Programs.dc.html">Learning programs</a><a class="sx-dl" href="Pricing.dc.html">Pricing</a><a class="sx-dl" href="Creators.dc.html">For creators</a><a class="sx-dl" href="Institutions.dc.html">For institutions</a><span class="sx-dn-sep"></span><a class="sx-dl" href="#">Log in</a><a class="ds-btn sx-dn-cta" href="OnbWelcome.dc.html"><span>Create account</span></a></nav></details>
 </div>
 </header>
 <div class="ct-hin">
@@ -198,7 +245,7 @@ p{text-wrap:balance}
 </div>
 <div class="ct-grid">
 <sc-for list="{{certs}}" as="c" hint-placeholder-count="6">
-<a class="ct-card" href="#">
+<a class="ct-card" href="CertDetail.dc.html">
 <div class="ct-paper">
 <span class="ct-pl">PROFESSIONAL CERTIFICATE</span>
 <span class="ct-pn">{{c.short}}</span>
@@ -208,7 +255,9 @@ p{text-wrap:balance}
 </div>
 <div class="ct-cb">
 <span class="ct-meta"><b>{{c.level}}</b><span aria-hidden="true">·</span>{{c.time}}<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">{{c.pre}}</span></span></span>
-<span class="ct-foot"><span>{{c.format}}</span><span class="ds-link">View →</span></span>
+<span class="ct-fmt">{{c.format}}</span>
+<span class="mx"><span class="mx-r"><span class="mx-s" aria-hidden="true">★</span><b>{{c.rating}}</b><span>({{c.reviews}})</span></span><span class="ds-tag {{c.tagA}}"><i class="mx-d" style="background: {{c.tierDot}}"></i>{{c.tierLabel}}</span><span class="ds-tag {{c.tagB}}">CEI {{c.cei}}</span></span>
+<span class="ct-foot"><span class="mx-p"><i class="cr-c" aria-hidden="true">C</i><b>{{c.fee}} Credits</b><em>assessment</em></span><span class="ds-link">View →</span></span>
 </div>
 </a>
 </sc-for>
@@ -221,14 +270,16 @@ p{text-wrap:balance}
 </div>
 <footer class="sx-foot">
 <div class="sx-fin">
-<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
-<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="Creators.dc.html">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+<a class="sx-logo" href="Landing.dc.html" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav aria-label="Footer"><a href="Courses.dc.html">Courses</a><a href="CareerPaths.dc.html">Career Paths</a><a href="Certifications.dc.html">Certifications</a><a href="Programs.dc.html">Learning Programs</a><a href="Pricing.dc.html">Pricing</a><a href="Creators.dc.html">For Creators</a><a href="Institutions.dc.html">For Institutions</a><a href="Validation.dc.html">How validation works</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
 <span>© 2026 magnummeta. All rights reserved.</span>
 </div>
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1389}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1552}}'>
+var TC_ = {"Data Analysis": ["4.8", "860", "gold", 93, "150"], "Product Design": ["4.7", "410", "silver", 88, "180"], "Security Operations": ["4.8", "520", "gold", 91, "220"], "Project Management": ["4.6", "690", "silver", 84, "120"], "Applied AI Practitioner": ["4.6", "48", "rev", 89, "160"], "Financial Analysis": ["4.7", "330", "silver", 87, "200"]};
+var TIER_ = { gold: ['Gold Validated', '#C8961E'], silver: ['Silver Validated', '#8E9BB0'], bronze: ['Bronze Validated', '#A8683A'], rev: ['Validation in review', '#8A93AD'] };
 class Component extends DCLogic {
   constructor(props) {
     super(props);
@@ -249,7 +300,7 @@ class Component extends DCLogic {
     return {
       q: S.q, onQ: function (e) { self.setState({ q: e.target.value }); }, onSubmit: function (e) { e.preventDefault(); },
       fields: ['All', 'Data', 'Design', 'Cybersecurity', 'Business', 'AI', 'Finance'].map(function (f) { var on = S.field === f; return { label: f === 'All' ? 'All fields' : f, on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { self.setState({ field: f }); } }; }),
-      certs: list.map(function (c) { return { short: c.short, issuer: c.issuer, level: c.level, time: c.time, format: c.format, pre: c.pre, ok: c.ok, rev: !c.ok }; }),
+      certs: list.map(function (c) { var t = TC_[c.short]; return { rating: t[0], reviews: t[1], tierLabel: TIER_[t[2]][0], tierDot: TIER_[t[2]][1], cei: t[3], fee: t[4], tagA: c.ok ? 'blue' : 'line', tagB: 'line', short: c.short, issuer: c.issuer, level: c.level, time: c.time, format: c.format, pre: c.pre, ok: c.ok, rev: !c.ok }; }),
       none: list.length === 0
     };
   }

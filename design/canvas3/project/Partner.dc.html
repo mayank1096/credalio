@@ -194,23 +194,41 @@ p{text-wrap:balance}
 .pt-cta{align-self:stretch;justify-content:space-between}
 .pt-again::after{content:'';position:absolute;inset:-12px -8px}
 }
+@media (min-width: 1301px){.sx-links{gap:2px}.sx-links .sx-link{padding:0 10px;font-size:14.5px}.lh-links .lh-link{padding:0 10px !important;font-size:14.5px !important}}
+.sx-dd{position:relative;display:none}
+.sx-dd > summary{list-style:none;cursor:pointer}
+.sx-dd > summary::-webkit-details-marker{display:none}
+.sx-dd .sx-dd-x{display:none}
+.sx-dd[open] .sx-dd-o{display:none}
+.sx-dd[open] .sx-dd-x{display:flex}
+.sx-dd-o,.sx-dd-x{align-items:center;justify-content:center}
+.sx-dd-o{display:flex}
+.sx-dn{position:fixed;right:16px;top:68px;z-index:60;max-height:calc(100vh - 84px);overflow:auto;width:min(320px,calc(100vw - 32px));box-sizing:border-box;padding:10px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 24px 60px -20px rgba(11,20,51,.28);display:flex;flex-direction:column;gap:2px}
+.sx-dl{display:flex;align-items:center;min-height:46px;padding:0 14px;border-radius:12px;font-size:15.5px;font-weight:500;color:#0B1433;text-decoration:none}
+.sx-dl:hover{background:#F5F8FF}
+.sx-dl-on{background:#EAF0FF;color:#0E3BB8}
+.sx-dn-sep{height:1.5px;background:#EEF1F7;margin:6px 4px}
+.sx-dn-cta{margin-top:6px;justify-content:center}
+@media (max-width: 1300px){.sx-links{display:none}.sx-menu{display:flex}.lh-links{display:none !important}.lh-menu{display:flex !important}.sx-dd{display:block}}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF; min-height: 100%">
 <header class="sx-nav">
-<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<a class="sx-logo" href="Landing.dc.html" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
 <nav class="sx-links" aria-label="Main">
-<a class="sx-link" href="#">Explore learning</a>
-<a class="sx-link" href="#">Career paths</a>
-<a class="sx-link" href="#">Certifications</a>
-<a class="sx-link" href="#">Pricing</a>
+<a class="sx-link" href="Explore.dc.html">Explore learning</a>
+<a class="sx-link" href="Courses.dc.html">Courses</a>
+<a class="sx-link" href="CareerPaths.dc.html">Career paths</a>
+<a class="sx-link" href="Certifications.dc.html">Certifications</a>
+<a class="sx-link" href="Programs.dc.html">Learning programs</a>
+<a class="sx-link" href="Pricing.dc.html">Pricing</a>
 <a class="sx-link" href="Creators.dc.html">For creators</a>
 <a class="sx-link sx-link-on" href="Institutions.dc.html" aria-current="page">For institutions</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
 <a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
 <a class="sx-cta" href="OnbWelcome.dc.html">Create account</a>
-<button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<details class="sx-dd"><summary class="sx-menu" aria-label="Open menu"><span class="sx-dd-o"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></span><span class="sx-dd-x"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></summary><nav class="sx-dn" aria-label="Menu"><a class="sx-dl" href="Explore.dc.html">Explore learning</a><a class="sx-dl" href="Courses.dc.html">Courses</a><a class="sx-dl" href="CareerPaths.dc.html">Career paths</a><a class="sx-dl" href="Certifications.dc.html">Certifications</a><a class="sx-dl" href="Programs.dc.html">Learning programs</a><a class="sx-dl" href="Pricing.dc.html">Pricing</a><a class="sx-dl" href="Creators.dc.html">For creators</a><a class="sx-dl sx-dl-on" href="Institutions.dc.html" aria-current="page">For institutions</a><span class="sx-dn-sep"></span><a class="sx-dl" href="#">Log in</a><a class="ds-btn sx-dn-cta" href="OnbWelcome.dc.html"><span>Create account</span></a></nav></details>
 </div>
 </header>
 <main class="pt-m">
@@ -265,14 +283,14 @@ p{text-wrap:balance}
 </main>
 <footer class="sx-foot">
 <div class="sx-fin">
-<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
-<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="Creators.dc.html">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+<a class="sx-logo" href="Landing.dc.html" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav aria-label="Footer"><a href="Courses.dc.html">Courses</a><a href="CareerPaths.dc.html">Career Paths</a><a href="Certifications.dc.html">Certifications</a><a href="Programs.dc.html">Learning Programs</a><a href="Pricing.dc.html">Pricing</a><a href="Creators.dc.html">For Creators</a><a href="Institutions.dc.html">For Institutions</a><a href="Validation.dc.html">How validation works</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
 <span>© 2026 magnummeta. All rights reserved.</span>
 </div>
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"step":{"editor":"enum","options":["form","error","done"],"default":"form"},"$preview":{"width":1440,"height":1740}}'>
+<script type="text/x-dc" data-dc-script data-props='{"step":{"editor":"enum","options":["form","error","done"],"default":"form"},"$preview":{"width":1440,"height":1781}}'>
 var LISTS = {"type": ["University", "Company", "Training provider", "Professional body", "Government", "Other"], "size": ["Up to 100", "101–1,000", "1,001–10,000", "10,000+"], "goals": ["Deliver learning", "Create learning", "Upskill employees", "Issue credentials", "Use Credalio AI", "Validate learning", "Manage cohorts", "Other"], "content": ["Yes", "Some", "Not yet"]};
 var MSG = { inst: 'Enter your institution’s name.', type: 'Choose your institution type.', size: 'Choose roughly how many learners.', goals: 'Choose at least one.', content: 'Tell us if you have content already.', name: 'Enter your name.', email: 'Enter a valid work email.', role: 'Enter your role.' };
 class Component extends DCLogic {

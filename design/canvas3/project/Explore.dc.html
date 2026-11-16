@@ -299,24 +299,62 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 .aur-off{background:#0B1433 url(/_blob/3d4d999db1912d0cb0084365c58434d3) center / cover no-repeat}
 .pav{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block;pointer-events:none}
 .pav-h{position:relative !important;overflow:hidden !important}
+@media (min-width: 1301px){.sx-links{gap:2px}.sx-links .sx-link{padding:0 10px;font-size:14.5px}.lh-links .lh-link{padding:0 10px !important;font-size:14.5px !important}}
+.sx-dd{position:relative;display:none}
+.sx-dd > summary{list-style:none;cursor:pointer}
+.sx-dd > summary::-webkit-details-marker{display:none}
+.sx-dd .sx-dd-x{display:none}
+.sx-dd[open] .sx-dd-o{display:none}
+.sx-dd[open] .sx-dd-x{display:flex}
+.sx-dd-o,.sx-dd-x{align-items:center;justify-content:center}
+.sx-dd-o{display:flex}
+.sx-dn{position:fixed;right:16px;top:68px;z-index:60;max-height:calc(100vh - 84px);overflow:auto;width:min(320px,calc(100vw - 32px));box-sizing:border-box;padding:10px;border-radius:20px;background:#FFFFFF;border:1.5px solid #E6EAF3;box-shadow:0 24px 60px -20px rgba(11,20,51,.28);display:flex;flex-direction:column;gap:2px}
+.sx-dl{display:flex;align-items:center;min-height:46px;padding:0 14px;border-radius:12px;font-size:15.5px;font-weight:500;color:#0B1433;text-decoration:none}
+.sx-dl:hover{background:#F5F8FF}
+.sx-dl-on{background:#EAF0FF;color:#0E3BB8}
+.sx-dn-sep{height:1.5px;background:#EEF1F7;margin:6px 4px}
+.sx-dn-cta{margin-top:6px;justify-content:center}
+@media (max-width: 1300px){.sx-links{display:none}.sx-menu{display:flex}.lh-links{display:none !important}.lh-menu{display:flex !important}.sx-dd{display:block}}
+.cr-c,.mf-c{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;color:#FFFFFF;font-style:normal;font-size:10.5px;font-weight:700;line-height:1;box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.35)}
+.cr-c{background:#1652F0}
+.cr-c.lg,.mf-c.lg{width:26px;height:26px;font-size:13px}
+.mx{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.mx-r{display:inline-flex;align-items:center;gap:4px;font-size:13px;color:#5B6582;margin-right:2px}
+.mx-r b{font-weight:600;color:#0B1433}
+.mx-s{color:#E3A008}
+.mx-d{width:7px;height:7px;border-radius:50%;flex-shrink:0;font-style:normal}
+.mx-p{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:13px;color:#5B6582;min-width:0}
+.mx-p b{font-size:15px;font-weight:600;color:#0B1433;white-space:nowrap}
+.mx-p em{font-style:normal;white-space:nowrap}
+.mx-p .cr-c,.mx-life .cr-c{width:16px;height:16px;font-size:9.5px}
+.mx-life{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:#5B6582}
+.cp-feat .mx-r,.cp-feat .mx-p,.cp-feat .mx-p em{color:rgba(255,255,255,.72)}
+.cp-feat .mx-r b,.cp-feat .mx-p b{color:#FFFFFF}
+.cp-foot{justify-content:space-between}
+.ct-fmt{font-size:13px;color:#5B6582;margin-top:-6px}
+.pg-row{grid-template-columns:72px minmax(0,1fr) 170px 170px 40px}
+.pg-rx{margin-top:8px}
+@media (max-width: 760px){.pg-row{grid-template-columns:56px minmax(0,1fr) auto;row-gap:10px}.pg-date{grid-row:1 / span 2;align-self:start}.pg-row > span:nth-child(2){grid-column:2 / -1}.pg-row > .mx-p{grid-column:2;grid-row:2;margin:0}.pg-row > .pg-stat{grid-column:3;grid-row:2;margin:0;justify-self:end}.pg-rx{margin-top:6px}.pg-rx .ds-tag + .ds-tag{display:none}}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
 <div class="ex-hero">
 <header class="sx-nav">
-<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<a class="sx-logo" href="Landing.dc.html" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
 <nav class="sx-links" aria-label="Main">
-<a class="sx-link sx-link-on" href="#" aria-current="page">Explore learning</a>
-<a class="sx-link" href="#">Career paths</a>
-<a class="sx-link" href="#">Certifications</a>
-<a class="sx-link" href="#">Pricing</a>
+<a class="sx-link sx-link-on" href="Explore.dc.html" aria-current="page">Explore learning</a>
+<a class="sx-link" href="Courses.dc.html">Courses</a>
+<a class="sx-link" href="CareerPaths.dc.html">Career paths</a>
+<a class="sx-link" href="Certifications.dc.html">Certifications</a>
+<a class="sx-link" href="Programs.dc.html">Learning programs</a>
+<a class="sx-link" href="Pricing.dc.html">Pricing</a>
 <a class="sx-link" href="Creators.dc.html">For creators</a>
 <a class="sx-link" href="Institutions.dc.html">For institutions</a>
 </nav>
 <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0">
 <a class="sx-link sx-login" href="#" style="font-weight: 600; color: #0B1433">Log in</a>
 <a class="ds-btn sm np" href="OnbWelcome.dc.html">Create account</a>
-<button class="sx-menu" type="button" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<details class="sx-dd"><summary class="sx-menu" aria-label="Open menu"><span class="sx-dd-o"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></span><span class="sx-dd-x"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></span></summary><nav class="sx-dn" aria-label="Menu"><a class="sx-dl sx-dl-on" href="Explore.dc.html" aria-current="page">Explore learning</a><a class="sx-dl" href="Courses.dc.html">Courses</a><a class="sx-dl" href="CareerPaths.dc.html">Career paths</a><a class="sx-dl" href="Certifications.dc.html">Certifications</a><a class="sx-dl" href="Programs.dc.html">Learning programs</a><a class="sx-dl" href="Pricing.dc.html">Pricing</a><a class="sx-dl" href="Creators.dc.html">For creators</a><a class="sx-dl" href="Institutions.dc.html">For institutions</a><span class="sx-dn-sep"></span><a class="sx-dl" href="#">Log in</a><a class="ds-btn sx-dn-cta" href="OnbWelcome.dc.html"><span>Create account</span></a></nav></details>
 </div>
 </header>
 <div class="ex-hin">
@@ -349,10 +387,10 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 </sc-if>
 
 <section class="ex-sec {{pathsCls}}" aria-labelledby="ex-p">
-<div class="ex-sh"><div><div id="ex-p" class="ex-st">Popular Career Paths<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">A sequenced route of learning, practice and proof toward a role.</span></span></div></div><a class="ds-link" href="#">View all</a></div>
+<div class="ex-sh"><div><div id="ex-p" class="ex-st">Popular Career Paths<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">A sequenced route of learning, practice and proof toward a role.</span></span></div></div><a class="ds-link" href="CareerPaths.dc.html">View all</a></div>
 <div class="ex-g2">
 <sc-for list="{{paths}}" as="p" hint-placeholder-count="4">
-<a class="cp-card {{p.cls}}" href="#">
+<a class="cp-card {{p.cls}}" href="PathDetail.dc.html">
 <span class="cp-top">
 <span class="cp-ico" style="background: {{p.icoBg}}; color: {{p.icoFg}}" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20" style="display: {{p.i0}}"></path><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" style="display: {{p.i1}}"></path><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" style="display: {{p.i2}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{p.i3}}"></path><path d="M9 4h6M4 8h16v12H4zM9 12h6" style="display: {{p.i4}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{p.i5}}"></path></svg></span>
 <sc-if value="{{p.feat}}" hint-placeholder-val="{{ false }}"><span class="ds-tag glass">Most chosen</span></sc-if>
@@ -368,17 +406,18 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 <span class="cp-step"><span class="cp-node cp-node-end"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>Portfolio</span>
 </span>
 <span class="cp-skills"><sc-for list="{{p.skills}}" as="s" hint-placeholder-count="4"><span class="ds-tag {{p.tag}}">{{s}}</span></sc-for></span>
-<span class="cp-foot"><span class="ds-link">Explore path →</span></span>
+<span class="mx"><span class="mx-r"><span class="mx-s" aria-hidden="true">★</span><b>{{p.rating}}</b><span>({{p.reviews}})</span></span><span class="ds-tag {{p.tagA}}"><i class="mx-d" style="background: {{p.tierDot}}"></i>{{p.tierLabel}}</span><span class="ds-tag {{p.tagB}}">CEI {{p.cei}}</span></span>
+<span class="cp-foot"><span class="mx-p"><span class="dlp-c" aria-hidden="true"></span><b>{{p.dlp}} DLP</b><em>or {{p.cr}} Credits</em></span><span class="ds-link">Explore path →</span></span>
 </a>
 </sc-for>
 </div>
 </section>
 
 <section class="ex-sec {{coursesCls}}" aria-labelledby="ex-c">
-<div class="ex-sh"><div><div id="ex-c" class="ex-st">Courses<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Focused learning that builds one skill, at your own pace.</span></span></div></div><a class="ds-link" href="#">View all</a></div>
+<div class="ex-sh"><div><div id="ex-c" class="ex-st">Courses<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Focused learning that builds one skill, at your own pace.</span></span></div></div><a class="ds-link" href="Courses.dc.html">View all</a></div>
 <div class="ex-g4">
 <sc-for list="{{courses}}" as="c" hint-placeholder-count="4">
-<a class="cs-card" href="#" aria-label="{{c.t}}">
+<a class="cs-card" href="CourseDetail.dc.html" aria-label="{{c.t}}">
 <div class="cs-th {{c.light}}" style="background: {{c.bg}}">
 <svg class="cs-ico" viewBox="0 0 24 24" fill="none" stroke="{{c.icoC}}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M2 20h20" style="display: {{c.i0}}"></path><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" style="display: {{c.i1}}"></path><path d="M8 6l-6 6 6 6M16 6l6 6-6 6" style="display: {{c.i2}}"></path><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{c.i3}}"></path><path d="M3 7h18v13H3zM8 7V4h8v3" style="display: {{c.i4}}"></path><path d="M12 3v18M17 7H9.5a3 3 0 0 0 0 6h5a3 3 0 0 1 0 6H6" style="display: {{c.i5}}"></path><path d="M7 7h10v10H7zM10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4" style="display: {{c.i6}}"></path></svg>
 <button class="cs-heart {{c.heartCls}}" type="button" aria-pressed="{{c.wished}}" aria-label="{{c.heartLabel}}" onClick="{{c.wish}}"><svg width="17" height="17" viewBox="0 0 24 24" fill="{{c.heartFill}}" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></button>
@@ -389,7 +428,8 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 <span class="cs-meta"><span class="cs-star" aria-hidden="true">★</span><b>{{c.rating}}</b><span>({{c.reviews}})</span><span class="cs-dot"></span><span>{{c.lvl}}</span><span class="cs-dot"></span><span>{{c.hrs}}</span></span>
 <span class="cs-tags"><span class="ds-tag blue"><span class="cs-tdot" style="background: {{c.tierDot}}"></span>{{c.tierLabel}}</span><span class="ds-tag line">CEI {{c.cei}}<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">Creator Expertise Index: the creator’s validated subject knowledge, experience and recognition, out of 100.</span></span></span></span>
 <div class="cs-acc">
-<span class="cs-ar"><b class="{{c.accCls}}"><sc-if value="{{c.paid}}" hint-placeholder-val="{{ true }}"><span class="dlp-c"></span></sc-if>{{c.accV}}<sc-if value="{{c.hasLife}}" hint-placeholder-val="{{ false }}"><span class="tip" tabindex="0" onClick="{{c.stop}}" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">{{c.lifeTip}}</span></span></sc-if></b></span>
+<span class="cs-ar"><b class="{{c.accCls}}"><sc-if value="{{c.paid}}" hint-placeholder-val="{{ true }}"><span class="dlp-c"></span></sc-if>{{c.accV}}</b></span>
+<sc-if value="{{c.hasLife}}" hint-placeholder-val="{{ false }}"><span class="mx-life"><i class="cr-c" aria-hidden="true">C</i>or {{c.lifeV}} Credits for lifetime access</span></sc-if>
 <sc-if value="{{c.showFit}}" hint-placeholder-val="{{ false }}"><span class="ds-tag {{c.fitCls}}" style="align-self: flex-start">{{c.fit}}</span></sc-if>
 </div>
 </div>
@@ -399,10 +439,10 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 </section>
 
 <section class="ex-sec {{certsCls}}" aria-labelledby="ex-ce">
-<div class="ex-sh"><div><div id="ex-ce" class="ex-st">Professional Certifications<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Assessed proof that you meet a professional standard. Earned certifications go straight to your Digital Backpack.</span></span></div></div><a class="ds-link" href="#">View all</a></div>
+<div class="ex-sh"><div><div id="ex-ce" class="ex-st">Professional Certifications<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Assessed proof that you meet a professional standard. Earned certifications go straight to your Digital Backpack.</span></span></div></div><a class="ds-link" href="Certifications.dc.html">View all</a></div>
 <div class="ex-g3">
 <sc-for list="{{certs}}" as="c" hint-placeholder-count="3">
-<a class="ct-card" href="#">
+<a class="ct-card" href="CertDetail.dc.html">
 <div class="ct-paper">
 <span class="ct-pl">PROFESSIONAL CERTIFICATE</span>
 <span class="ct-pn">{{c.short}}</span>
@@ -412,7 +452,9 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 </div>
 <div class="ct-cb">
 <span class="ct-meta"><b>{{c.level}}</b><span aria-hidden="true">·</span>{{c.time}}<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r" role="tooltip">{{c.pre}}</span></span></span>
-<span class="ct-foot"><span>{{c.format}}</span><span class="ds-link">View →</span></span>
+<span class="ct-fmt">{{c.format}}</span>
+<span class="mx"><span class="mx-r"><span class="mx-s" aria-hidden="true">★</span><b>{{c.rating}}</b><span>({{c.reviews}})</span></span><span class="ds-tag {{c.tagA}}"><i class="mx-d" style="background: {{c.tierDot}}"></i>{{c.tierLabel}}</span><span class="ds-tag {{c.tagB}}">CEI {{c.cei}}</span></span>
+<span class="ct-foot"><span class="mx-p"><i class="cr-c" aria-hidden="true">C</i><b>{{c.fee}} Credits</b><em>assessment</em></span><span class="ds-link">View →</span></span>
 </div>
 </a>
 </sc-for>
@@ -420,12 +462,13 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 </section>
 
 <section class="ex-sec {{progsCls}}" aria-labelledby="ex-pr">
-<div class="ex-sh"><div><div id="ex-pr" class="ex-st">Learning Programs<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Deep, guided learning with experts and a cohort.</span></span></div></div><a class="ds-link" href="#">View all</a></div>
+<div class="ex-sh"><div><div id="ex-pr" class="ex-st">Learning Programs<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Deep, guided learning with experts and a cohort.</span></span></div></div><a class="ds-link" href="Programs.dc.html">View all</a></div>
 <div class="pg-list">
 <sc-for list="{{progs}}" as="p" hint-placeholder-count="3">
-<a class="pg-row" href="#">
+<a class="pg-row" href="ProgramDetail.dc.html">
 <span class="pg-date {{p.dcls}}" aria-label="{{p.when}}"><b>{{p.d}}</b><span>{{p.m}}</span></span>
-<span><span class="pg-rt" style="display: block">{{p.t}}</span><span class="pg-rm" style="display: block">{{p.meta}}<span class="pg-by"> · {{p.by}}</span></span></span>
+<span><span class="pg-rt" style="display: block">{{p.t}}</span><span class="pg-rm" style="display: block">{{p.meta}}<span class="pg-by"> · {{p.by}}</span></span><span class="mx pg-rx"><span class="mx-r"><span class="mx-s" aria-hidden="true">★</span><b>{{p.rating}}</b><span>({{p.reviews}})</span></span><span class="ds-tag {{p.tagA}}"><i class="mx-d" style="background: {{p.tierDot}}"></i>{{p.tierLabel}}</span><span class="ds-tag {{p.tagB}}">CEI {{p.cei}}</span></span></span>
+<span class="mx-p"><i class="cr-c" aria-hidden="true">C</i><b>{{p.fee}} Credits</b></span>
 <span class="ds-tag pg-stat {{p.sc}}">{{p.status}}</span>
 <span class="pg-go" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
 </a>
@@ -455,18 +498,22 @@ p,.ex-nm,.ex-cp{text-wrap:balance}
 
 <footer class="sx-foot">
 <div class="sx-fin">
-<a class="sx-logo" href="#" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
-<nav aria-label="Footer"><a href="#">Courses</a><a href="#">Career Paths</a><a href="#">Certifications</a><a href="#">Pricing</a><a href="Creators.dc.html">For Creators</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
+<a class="sx-logo" href="Landing.dc.html" aria-label="Credalio home"><span class="sx-mark" aria-hidden="true"></span><span class="sx-word" aria-hidden="true"></span></a>
+<nav aria-label="Footer"><a href="Courses.dc.html">Courses</a><a href="CareerPaths.dc.html">Career Paths</a><a href="Certifications.dc.html">Certifications</a><a href="Programs.dc.html">Learning Programs</a><a href="Pricing.dc.html">Pricing</a><a href="Creators.dc.html">For Creators</a><a href="Institutions.dc.html">For Institutions</a><a href="Validation.dc.html">How validation works</a><a href="#">Privacy</a><a href="#">Terms</a></nav>
 <span>© 2026 magnummeta. All rights reserved.</span>
 </div>
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2722}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2909}}'>
 var AVP = {"DR": "/_blob/6940b199369f0ef8a87915557d16027b", "TA": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "TH": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "TR": "/_blob/6940b199369f0ef8a87915557d16027b", "PN": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "GA": "/_blob/9112077cc7e3c1c839edc7e609d87954", "ML": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "HC": "/_blob/9112077cc7e3c1c839edc7e609d87954", "LF": "/_blob/9112077cc7e3c1c839edc7e609d87954", "PS": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "LO": "/_blob/9112077cc7e3c1c839edc7e609d87954", "MR": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "SA": "/_blob/9112077cc7e3c1c839edc7e609d87954", "SM": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "KB": "/_blob/6940b199369f0ef8a87915557d16027b", "JM": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "SL": "/_blob/9112077cc7e3c1c839edc7e609d87954", "AK": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "MS": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "PL": "/_blob/6940b199369f0ef8a87915557d16027b", "SR": "/_blob/6940b199369f0ef8a87915557d16027b", "JL": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "ME": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "MO": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "KA": "/_blob/6940b199369f0ef8a87915557d16027b", "IN": "/_blob/9112077cc7e3c1c839edc7e609d87954", "DA": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "DM": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "ÉL": "/_blob/9112077cc7e3c1c839edc7e609d87954", "EL": "/_blob/9112077cc7e3c1c839edc7e609d87954", "SF": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "TB": "/_blob/6940b199369f0ef8a87915557d16027b", "RP": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2", "NB": "/_blob/84f08b38fbe9b11d8aa477ac10398bfe", "LK": "/_blob/9112077cc7e3c1c839edc7e609d87954", "JC": "/_blob/6940b199369f0ef8a87915557d16027b", "DK": "/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2"};
 AVP.AO = "/_blob/84f08b38fbe9b11d8aa477ac10398bfe";
 function PIC(i) { return AVP[i] || ""; }
 
+var TP_ = {"Data Analyst": ["4.8", "2.4k", "gold", 92, "3,800", "7,600"], "Product Designer": ["4.7", "1.1k", "silver", 87, "3,400", "6,800"], "AI Engineer": ["4.8", "980", "gold", 90, "4,600", "9,200"], "Cybersecurity Analyst": ["4.6", "760", "silver", 85, "4,200", "8,400"], "Project Manager": ["4.6", "640", "bronze", 80, "2,600", "5,200"], "Frontend Developer": ["4.7", "1.3k", "silver", 86, "3,900", "7,800"]};
+var TIER_ = { gold: ['Gold Validated', '#C8961E'], silver: ['Silver Validated', '#8E9BB0'], bronze: ['Bronze Validated', '#A8683A'], rev: ['Validation in review', '#8A93AD'] };
+var TC_ = {"Data Analysis": ["4.8", "860", "gold", 93, "150"], "Product Design": ["4.7", "410", "silver", 88, "180"], "Security Operations": ["4.8", "520", "gold", 91, "220"], "Project Management": ["4.6", "690", "silver", 84, "120"], "Applied AI Practitioner": ["4.6", "48", "rev", 89, "160"], "Financial Analysis": ["4.7", "330", "silver", 87, "200"]};
+var TG_ = {"Applied Project Leadership": ["4.7", "210", "silver", 86, "900"], "AI & Data Analytics Accelerator": ["4.9", "340", "gold", 94, "1,200"], "Frontend Engineering Bootcamp": ["4.7", "520", "silver", 85, "1,600"], "Product Design Cohort": ["4.8", "180", "gold", 88, "950"], "AI for Business Leaders": ["4.6", "160", "silver", 90, "1,100"], "Clinical Data Program": ["4.8", "95", "gold", 92, "1,800"], "Executive Leadership in the AI Era": ["4.6", "140", "silver", 89, "1,100"], "Cloud & Security Pathway": ["4.5", "230", "bronze", 81, "700"]};
 class Component extends DCLogic {
   auroraMount(el) {
     var host = window;
@@ -599,10 +646,10 @@ class Component extends DCLogic {
       C('Leading Remote Teams', 'Leadership', 'Tom Hughes', 'Intermediate', 'silver', 84, '4.7', '460', 5, 600, 1200)
     ];
     this.CE = [
-      { t: 'Professional Certificate in Data Analysis', short: 'Data Analysis', topic: 'Data', issuer: 'Northgate University', level: 'Professional', time: '30 hrs', format: '1 practical exam', pre: 'Recommended first: Data Foundations or equivalent. Nova can check what you already know.', ok: true },
-      { t: 'Professional Certificate in Product Design', short: 'Product Design', topic: 'Design', issuer: 'Lena Fischer', level: 'Professional', time: '34 hrs', format: 'Portfolio review', pre: 'Recommended first: UX and Product Design Foundations.', ok: true },
-      { t: 'Professional Certification in Security Operations', short: 'Security Operations', topic: 'Cybersecurity', issuer: 'Westbridge Institute', level: 'Professional', time: '40 hrs', format: 'Simulation exam', pre: 'Recommended first: Networking and Security Fundamentals.', ok: true },
-      { t: 'Professional Certificate in Financial Analysis', short: 'Financial Analysis', topic: 'Finance', issuer: 'Harbour School of Finance', level: 'Professional', time: '32 hrs', format: '1 practical exam', pre: 'Recommended first: Financial Modelling Essentials.', ok: true }
+      { t: 'Professional Certificate in Data Analysis', short: 'Data Analysis', topic: 'Data', issuer: 'Northgate University', level: 'Professional', time: '3–4 months', format: 'Timed exam + case study', pre: 'Recommended first: Data Foundations or equivalent. Nova can check what you already know.', ok: true },
+      { t: 'Professional Certificate in Product Design', short: 'Product Design', topic: 'Design', issuer: 'Lena Fischer', level: 'Professional', time: '4–5 months', format: 'Portfolio review + design challenge', pre: 'Recommended first: UX and Product Design Foundations.', ok: true },
+      { t: 'Professional Certification in Security Operations', short: 'Security Operations', topic: 'Cybersecurity', issuer: 'Westbridge Institute', level: 'Professional', time: '4–6 months', format: 'Simulation lab + exam', pre: 'Recommended first: Networking and Security Fundamentals.', ok: true },
+      { t: 'Professional Certificate in Financial Analysis', short: 'Financial Analysis', topic: 'Finance', issuer: 'Harbour School of Finance', level: 'Professional', time: '3–4 months', format: 'Timed exam + modelling case', pre: 'Recommended first: Financial Modelling Essentials.', ok: true }
     ];
     this.G = [
       { t: 'Applied Project Leadership', topic: 'Leadership', by: 'Westbridge Institute', type: 'Institution', len: '10 weeks', d: '12', m: 'JAN', st: 'apps' },
@@ -620,7 +667,7 @@ class Component extends DCLogic {
     var v = { t: c.t, by: c.by, lvl: c.lvl, rating: c.rating, reviews: c.reviews, hrs: c.hrs + (c.hrs === 1 ? ' hr' : ' hrs'), cei: c.cei, ini: ini, pic: PIC(ini),
       bg: tn[0], icoC: tn[1], light: tn[2], tierLabel: this.TIER[c.tier][0], tierDot: this.TIER[c.tier][1],
       accV: c.free ? 'Free to learn' : c.dlp.toLocaleString('en-GB') + ' DLP', accCls: c.free ? 'cs-free' : '', paid: !c.free,
-      hasLife: c.life > 0, lifeTip: 'Or keep it for life: ' + c.life.toLocaleString('en-GB') + ' credits, one-off.', stop: function (e) { e.preventDefault(); e.stopPropagation(); },
+      hasLife: c.life > 0, lifeV: c.life.toLocaleString('en-GB'), stop: function (e) { e.preventDefault(); e.stopPropagation(); },
       showFit: false, fit: '', fitCls: '',
       wished: w ? 'true' : 'false', heartCls: w ? 'cs-heart-on' : '', heartFill: w ? 'currentColor' : 'none', heartLabel: w ? 'Remove from wishlist' : 'Add to wishlist',
       wish: function (e) { e.preventDefault(); e.stopPropagation(); var o = Object.assign({}, self.state.wish); o[c.t] = !o[c.t]; self.setState({ wish: o }); } };
@@ -645,14 +692,15 @@ class Component extends DCLogic {
       pathsCls: show('paths', paths), coursesCls: show('courses', courses), certsCls: show('certs', certs), progsCls: show('programs', progs),
       paths: paths.map(function (p, k) {
         var feat = k === 0;
-        var v = { t: p.t, lvl: p.lvl, time: p.time, courses: p.courses, proj: p.proj, skills: p.skills.slice(0, 3), feat: feat, cls: feat ? 'cp-feat aur' : '', tag: feat ? 'glass' : '', icoBg: '#EAF0FF', icoFg: '#1652F0',
+        var t = TP_[p.t];
+        var v = { t: p.t, rating: t[0], reviews: t[1], tierLabel: TIER_[t[2]][0], tierDot: TIER_[t[2]][1], cei: t[3], dlp: t[4], cr: t[5], tagA: feat ? 'glass' : 'blue', tagB: feat ? 'glass' : 'line', lvl: p.lvl, time: p.time, courses: p.courses, proj: p.proj, skills: p.skills.slice(0, 3), feat: feat, cls: feat ? 'cp-feat aur' : '', tag: feat ? 'glass' : '', icoBg: '#EAF0FF', icoFg: '#1652F0',
           aria: p.courses + ' courses, ' + p.proj + ', a professional certification and a portfolio' };
         for (var i = 0; i < 6; i++) v['i' + i] = p.ico === i ? 'inline' : 'none';
         return v;
       }),
       courses: courses.map(function (c) { return self.card(c); }),
-      certs: certs.map(function (c) { return { short: c.short, issuer: c.issuer, level: c.level, time: c.time, format: c.format, pre: c.pre, ok: c.ok, rev: !c.ok }; }),
-      progs: progs.map(function (p) { var st = self.ST[p.st]; return { t: p.t, meta: self.NAMES[p.type] + ' · ' + p.len, by: p.by, d: p.d || 'Any', m: p.m || 'TIME', dcls: p.d ? '' : 'pg-any', when: p.d ? 'Starts ' + p.d + ' ' + p.m : 'Start any time', status: st[0], sc: st[1] }; })
+      certs: certs.map(function (c) { var t = TC_[c.short]; return { rating: t[0], reviews: t[1], tierLabel: TIER_[t[2]][0], tierDot: TIER_[t[2]][1], cei: t[3], fee: t[4], tagA: c.ok ? 'blue' : 'line', tagB: 'line', short: c.short, issuer: c.issuer, level: c.level, time: c.time, format: c.format, pre: c.pre, ok: c.ok, rev: !c.ok }; }),
+      progs: progs.map(function (p) { var st = self.ST[p.st]; var t = TG_[p.t]; return { rating: t[0], reviews: t[1], tierLabel: TIER_[t[2]][0], tierDot: TIER_[t[2]][1], cei: t[3], fee: t[4], tagA: 'blue', tagB: 'line', t: p.t, meta: self.NAMES[p.type] + ' · ' + p.len, by: p.by, d: p.d || 'Any', m: p.m || 'TIME', dcls: p.d ? '' : 'pg-any', when: p.d ? 'Starts ' + p.d + ' ' + p.m : 'Start any time', status: st[0], sc: st[1] }; })
     };
   }
 }

@@ -595,6 +595,11 @@ class Component extends DCLogic {
     return Object.keys(f).every(function (g) { var on = f[g] || []; return !on.length || on.some(function (o) { return (v[g] || []).indexOf(o) > -1; }); });
   }
   f7v(x, k) {
+    var r = this._f7v8(x, k), h = (x.t + ' ' + (x.skills || []).join(' ') + ' ' + (x.topic || x.area || '')).toLowerCase();
+    r.sk = [['Data analysis', /data|sql|analy|statist|power bi|excel/], ['AI', /\bai\b|machine|llm|prompt/], ['Design', /design|ux|figma/], ['Leadership', /lead|manag|project/], ['Security', /secur|cyber/], ['Software', /python|javascript|frontend|software|react|cloud/]].filter(function (p) { return p[1].test(h); }).map(function (p) { return p[0]; });
+    return r;
+  }
+  _f7v8(x, k) {
     var LV = { Foundation: 'Beginner', Professional: 'Intermediate' }, TN = { gold: 'Gold', silver: 'Silver', bronze: 'Bronze', rev: 'In review' };
     var GX = { 'Applied Project Leadership': ['Intermediate', 'Hybrid'], 'AI for Business Leaders': ['Advanced', 'In person'], 'Frontend Engineering Bootcamp': ['Beginner', 'Live online'], 'Clinical Data Program': ['Intermediate', 'Hybrid'] };
     if (k === 'p') { var mo = parseInt((x.time.split('–')[1] || x.time)); return { lvl: [x.lvl.split(' ')[0]], tier: [TN[TP_[x.t][2]]], acc: ['Subscription (DLP)', 'Own with Credits'], lang: ['English'], len: [mo <= 8 ? 'Up to 8 months' : 'Over 8 months'] }; }
@@ -737,10 +742,10 @@ class Component extends DCLogic {
       C('Introduction à l’analyse de données', 'Data', 'Élise Laurent', 'Beginner', 'gold', 90, '4.9', '410', 7, 600, 1200)
     ];
     this.CE = [
-      { t: 'Professional Certificate in Data Analysis', short: 'Data Analysis', topic: 'Data', issuer: 'Northgate University', level: 'Professional', time: '3–4 months', format: 'Timed exam + case study', pre: 'Recommended first: Data Foundations or equivalent. Nova can check what you already know.', ok: true },
-      { t: 'Professional Certificate in Product Design', short: 'Product Design', topic: 'Design', issuer: 'Lena Fischer', level: 'Professional', time: '4–5 months', format: 'Portfolio review + design challenge', pre: 'Recommended first: UX and Product Design Foundations.', ok: true },
-      { t: 'Professional Certification in Security Operations', short: 'Security Operations', topic: 'Cybersecurity', issuer: 'Westbridge Institute', level: 'Professional', time: '4–6 months', format: 'Simulation lab + exam', pre: 'Recommended first: Networking and Security Fundamentals.', ok: true },
-      { t: 'Professional Certificate in Financial Analysis', short: 'Financial Analysis', topic: 'Finance', issuer: 'Harbour School of Finance', level: 'Professional', time: '3–4 months', format: 'Timed exam + modelling case', pre: 'Recommended first: Financial Modelling Essentials.', ok: true }
+      { t: 'Professional Certificate in Data Analysis', short: 'Data Analysis', topic: 'Data', issuer: 'Northgate University', level: 'Intermediate', time: '3–4 months', format: 'Timed exam + case study', pre: 'Recommended first: Data Foundations or equivalent. Nova can check what you already know.', ok: true },
+      { t: 'Professional Certificate in Product Design', short: 'Product Design', topic: 'Design', issuer: 'Lena Fischer', level: 'Intermediate', time: '4–5 months', format: 'Portfolio review + design challenge', pre: 'Recommended first: UX and Product Design Foundations.', ok: true },
+      { t: 'Professional Certification in Security Operations', short: 'Security Operations', topic: 'Cybersecurity', issuer: 'Westbridge Institute', level: 'Advanced', time: '4–6 months', format: 'Simulation lab + exam', pre: 'Recommended first: Networking and Security Fundamentals.', ok: true },
+      { t: 'Professional Certificate in Financial Analysis', short: 'Financial Analysis', topic: 'Finance', issuer: 'Harbour School of Finance', level: 'Advanced', time: '3–4 months', format: 'Timed exam + modelling case', pre: 'Recommended first: Financial Modelling Essentials.', ok: true }
     ];
     this.G = [
       { t: 'Applied Project Leadership', topic: 'Leadership', by: 'Westbridge Institute', type: 'Institution', len: '10 weeks', d: '12', m: 'JAN', st: 'apps' },
@@ -779,7 +784,7 @@ class Component extends DCLogic {
     var base = function (x) { return (S.topic === 'All' || x.topic === S.topic) && (!S.q || (x.t + ' ' + (x.by || '') + ' ' + (x.d || '') + ' ' + x.topic).toLowerCase().indexOf(S.q.toLowerCase()) >= 0); };
     var cnt = function (g, o) { var n = 0; srcs.forEach(function (s) { s[1].forEach(function (x) { if (!base(x)) return; var v = self.f7v(x, s[0]); if ((v[g] || []).indexOf(o) < 0) return; var ff = Object.assign({}, f7); delete ff[g]; var ok = Object.keys(ff).every(function (k) { var on = ff[k] || []; return !on.length || on.some(function (q) { return (v[k] || []).indexOf(q) > -1; }); }); if (ok) n++; }); }); return n; };
     var tg = function (g, o) { var f = Object.assign({}, f7), l = (f[g] || []).slice(), i = l.indexOf(o); if (i > -1) l.splice(i, 1); else l.push(o); f[g] = l; self.setState({ f7: f }); };
-    var G7 = [['lvl', 'Level', ['Beginner', 'Intermediate', 'Advanced'], ''], ['tier', 'Validation', ['Gold', 'Silver', 'Bronze'], ''], ['acc', 'Access', ['Free', 'Subscription (DLP)', 'Own with Credits'], ''], ['lang', 'Language', ['English', 'French'], '']];
+    var G7 = [['lvl', 'Level', ['Beginner', 'Intermediate', 'Advanced'], ''], ['tier', 'Validation', ['Gold', 'Silver', 'Bronze'], ''], ['acc', 'Access', ['Free', 'Subscription (DLP)', 'Own with Credits'], ''], ['lang', 'Language', ['English', 'French'], ''], ['sk', 'Skills', ['Data analysis', 'AI', 'Design', 'Leadership', 'Security', 'Software'], '']];
     if (T7[tab]) G7.push([T7[tab][0], T7[tab][1], T7[tab][2], 'ex7-t']);
     var act = []; Object.keys(f7).forEach(function (g) { (f7[g] || []).forEach(function (o) { act.push({ label: o, drop: function () { tg(g, o); } }); }); });
     var shown = 0; srcs.forEach(function (s) { s[1].forEach(function (x) { if (base(x) && self.f7(x, s[0])) shown++; }); });
@@ -791,7 +796,7 @@ class Component extends DCLogic {
       f7Open: !!S.f7open, f7Exp: S.f7open ? 'true' : 'false', f7Cls: S.f7open || act.length ? 'on' : '', f7Toggle: function () { self.setState({ f7open: !S.f7open }); },
       f7Has: act.length > 0, f7N: act.length, f7Active: act, f7Clear: function () { self.setState({ f7: {} }); },
       f7Count: shown + (shown === 1 ? ' result' : ' results') + (tab === 'you' ? ' across all types' : ''),
-      f7Note: T7[tab] ? 'Level, validation, access and language apply to every type. ' + T7[tab][1] + ' is only for ' + ({ courses: 'courses', certs: 'certifications', paths: 'career paths', programs: 'learning programs' })[tab] + '.' : 'Pick a type above for more filters, like course length or assessment format.',
+      f7Note: T7[tab] ? 'Level, validation, access, language and skills apply to every type. ' + T7[tab][1] + ' is only for ' + ({ courses: 'courses', certs: 'certifications', paths: 'career paths', programs: 'learning programs' })[tab] + '.' : 'Pick a type above for more filters, like course length or assessment format.',
       f7Groups: G7.map(function (g) { return { label: g[1].toUpperCase(), cls: g[3], opts: g[2].map(function (o) { var on = (f7[g[0]] || []).indexOf(o) > -1; return { label: o, n: cnt(g[0], o), on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { tg(g[0], o); } }; }) }; }),
       q: S.q, hasQ: !!S.q, onQ: function (e) { set({ q: e.target.value }); }, onSubmit: function (e) { e.preventDefault(); },
       tabs: tabs.map(function (t) { var on = S.tab === t[0]; return { label: t[1], on: on ? 'true' : 'false', cls: on ? 'ex-tab-on' : '', pick: function () { set({ tab: t[0] }); } }; }),

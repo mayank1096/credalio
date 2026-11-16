@@ -215,7 +215,7 @@
       "x": 4300,
       "y": 29345,
       "w": 1440,
-      "h": 2008,
+      "h": 2495,
       "title": "PROG-001 Learning Programs · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -225,7 +225,7 @@
       "x": 5820,
       "y": 29345,
       "w": 390,
-      "h": 2285,
+      "h": 3058,
       "title": "PROG-001 Learning Programs · Mobile",
       "page": "main",
       "is_interactive": true
@@ -234,7 +234,7 @@
       "x": 6450,
       "y": 29345,
       "w": 1440,
-      "h": 1900,
+      "h": 5899,
       "title": "PROG-002 Program Detail · Desktop",
       "page": "main",
       "is_interactive": true,
@@ -244,7 +244,7 @@
       "x": 7970,
       "y": 29345,
       "w": 390,
-      "h": 2419,
+      "h": 8802,
       "title": "PROG-002 Program Detail · Mobile",
       "page": "main",
       "is_interactive": true
@@ -2202,6 +2202,206 @@
       "page": "main",
       "expand": "fill",
       "is_interactive": true
+    },
+    "ProgramDetail-Draft.dc.html": {
+      "x": 0,
+      "y": 64655,
+      "w": 1440,
+      "h": 5995,
+      "title": "PROG-002 Program Detail · Application draft · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Draft-Mobile.dc.html": {
+      "x": 1520,
+      "y": 64655,
+      "w": 390,
+      "h": 9179,
+      "title": "PROG-002 Program Detail · Application draft · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Submitted.dc.html": {
+      "x": 2150,
+      "y": 64655,
+      "w": 1440,
+      "h": 5995,
+      "title": "PROG-002 Program Detail · Application submitted · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Submitted-Mobile.dc.html": {
+      "x": 3670,
+      "y": 64655,
+      "w": 390,
+      "h": 9221,
+      "title": "PROG-002 Program Detail · Application submitted · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Review.dc.html": {
+      "x": 4300,
+      "y": 64655,
+      "w": 1440,
+      "h": 5995,
+      "title": "PROG-002 Program Detail · Under review · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Review-Mobile.dc.html": {
+      "x": 5820,
+      "y": 64655,
+      "w": 390,
+      "h": 9183,
+      "title": "PROG-002 Program Detail · Under review · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Accepted.dc.html": {
+      "x": 6450,
+      "y": 64655,
+      "w": 1440,
+      "h": 5995,
+      "title": "PROG-002 Program Detail · Accepted · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Accepted-Mobile.dc.html": {
+      "x": 7970,
+      "y": 64655,
+      "w": 390,
+      "h": 9262,
+      "title": "PROG-002 Program Detail · Accepted · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Waitlisted.dc.html": {
+      "x": 8600,
+      "y": 64655,
+      "w": 1440,
+      "h": 5995,
+      "title": "PROG-002 Program Detail · Waitlisted · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Waitlisted-Mobile.dc.html": {
+      "x": 10120,
+      "y": 64655,
+      "w": 390,
+      "h": 9241,
+      "title": "PROG-002 Program Detail · Waitlisted · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Payment.dc.html": {
+      "x": 10750,
+      "y": 64655,
+      "w": 1440,
+      "h": 5995,
+      "title": "PROG-002 Program Detail · Payment pending · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Payment-Mobile.dc.html": {
+      "x": 12270,
+      "y": 64655,
+      "w": 390,
+      "h": 9183,
+      "title": "PROG-002 Program Detail · Payment pending · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Full.dc.html": {
+      "x": 12900,
+      "y": 64655,
+      "w": 1440,
+      "h": 5995,
+      "title": "PROG-002 Program Detail · Cohort full · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Full-Mobile.dc.html": {
+      "x": 14420,
+      "y": 64655,
+      "w": 390,
+      "h": 9241,
+      "title": "PROG-002 Program Detail · Cohort full · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Closed.dc.html": {
+      "x": 15050,
+      "y": 64655,
+      "w": 1440,
+      "h": 5995,
+      "title": "PROG-002 Program Detail · Applications closed · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "ProgramDetail-Closed-Mobile.dc.html": {
+      "x": 16570,
+      "y": 64655,
+      "w": 390,
+      "h": 9204,
+      "title": "PROG-002 Program Detail · Applications closed · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Programs-Compare.dc.html": {
+      "x": 17200,
+      "y": 64655,
+      "w": 1440,
+      "h": 2896,
+      "title": "PROG-001 Learning Programs · Comparing two programs · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Programs-Compare-Mobile.dc.html": {
+      "x": 18720,
+      "y": 64655,
+      "w": 390,
+      "h": 3832,
+      "title": "PROG-001 Learning Programs · Comparing two programs · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Programs-NoSchedule.dc.html": {
+      "x": 19350,
+      "y": 64655,
+      "w": 1440,
+      "h": 2272,
+      "title": "PROG-001 Learning Programs · No cohorts match your schedule · Desktop",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    "Programs-NoSchedule-Mobile.dc.html": {
+      "x": 20870,
+      "y": 64655,
+      "w": 390,
+      "h": 1660,
+      "title": "PROG-001 Learning Programs · No cohorts match your schedule · Mobile",
+      "page": "main",
+      "expand": "fill",
+      "is_interactive": true
     }
   },
   "createdOnFiles": {
@@ -2252,7 +2452,8 @@
     "wow-vault",
     "row-b29",
     "row-b30",
-    "row-b31"
+    "row-b31",
+    "row-b32"
   ],
   "notes": {
     "new-hero": {
@@ -2575,6 +2776,14 @@
       "kind": "title1",
       "maxW": 10000,
       "page": "main"
+    },
+    "row-b32": {
+      "x": 0,
+      "y": 64355,
+      "text": "Batch 32 · Learning programs: application states (draft, submitted, under review, accepted, waitlisted, payment pending, full, closed), comparing, no cohorts match",
+      "kind": "title1",
+      "maxW": 21500,
+      "page": "main"
     }
   },
   "order": [
@@ -2807,7 +3016,27 @@
     "CertDetail-Done.dc.html",
     "CertDetail-Done-Mobile.dc.html",
     "Certifications-Compare.dc.html",
-    "Certifications-Compare-Mobile.dc.html"
+    "Certifications-Compare-Mobile.dc.html",
+    "ProgramDetail-Draft.dc.html",
+    "ProgramDetail-Draft-Mobile.dc.html",
+    "ProgramDetail-Submitted.dc.html",
+    "ProgramDetail-Submitted-Mobile.dc.html",
+    "ProgramDetail-Review.dc.html",
+    "ProgramDetail-Review-Mobile.dc.html",
+    "ProgramDetail-Accepted.dc.html",
+    "ProgramDetail-Accepted-Mobile.dc.html",
+    "ProgramDetail-Waitlisted.dc.html",
+    "ProgramDetail-Waitlisted-Mobile.dc.html",
+    "ProgramDetail-Payment.dc.html",
+    "ProgramDetail-Payment-Mobile.dc.html",
+    "ProgramDetail-Full.dc.html",
+    "ProgramDetail-Full-Mobile.dc.html",
+    "ProgramDetail-Closed.dc.html",
+    "ProgramDetail-Closed-Mobile.dc.html",
+    "Programs-Compare.dc.html",
+    "Programs-Compare-Mobile.dc.html",
+    "Programs-NoSchedule.dc.html",
+    "Programs-NoSchedule-Mobile.dc.html"
   ],
   "pages": [
     {

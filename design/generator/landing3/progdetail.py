@@ -110,7 +110,7 @@ top='''<div class="dt-top">
 </div>
 <div class="pd2-leave">
 <div class="pd2-lv"><span class="pd2-lvi">%(cert)s</span><div><b>Program certificate</b><span>In your Digital Backpack</span></div></div>
-<div class="pd2-lv"><span class="pd2-lvi">%(path)s</span><div><b>Counts toward</b><span>Professional Certificate in Data Analysis</span></div></div>
+<div class="pd2-lv"><span class="pd2-lvi">%(path)s</span><div><b>Prepares you for</b><span>Professional Certificate in Data Analysis</span></div></div>
 </div>
 </section>
 

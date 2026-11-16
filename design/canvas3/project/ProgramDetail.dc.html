@@ -301,6 +301,166 @@ p{text-wrap:balance}
 .cr-c.lg,.mf-c.lg{width:26px;height:26px;font-size:13px}
 .dt-amt{align-items:center}
 .dt-amt .cr-c{align-self:center}
+.ds-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 20px;box-sizing:border-box;border-radius:999px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-ghost:hover{border-color:#1652F0;background:#F5F8FF;color:#0B1433}
+.ds-ghost.sm{height:44px;padding:0 18px;font-size:14.5px}
+.ds-ghost.dk{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.32);color:#FFFFFF}
+.ds-ghost.dk:hover{background:rgba(255,255,255,.18);border-color:#FFFFFF}
+.ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.ds-tag.blue{background:#EAF0FF;color:#0E3BB8}
+.ds-tag.green{background:#E7F5EE;color:#0F6B45}
+.ds-tag.amber{background:#FFF4E0;color:#8A5A00}
+.ds-tag.line{background:#FFFFFF;box-shadow:inset 0 0 0 1px #E6EAF3}
+.ds-tag.lg{height:30px;padding:0 12px;font-size:13px}
+.ds-opt{position:relative;display:flex;align-items:center;gap:14px;width:100%;box-sizing:border-box;padding:16px 18px;border-radius:14px;border:1.5px solid #D6DDEE;background:#FFFFFF;color:#0B1433;font-family:inherit;text-align:left;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.ds-opt:hover{border-color:#9DB8F7}
+.ds-opt.on{background:#EAF0FF;border-color:#1652F0}
+.ds-opt-ck{width:22px;height:22px;border-radius:999px;border:1.5px solid #CBD3E6;background:#FFFFFF;box-sizing:border-box;flex-shrink:0;margin-left:auto;display:flex;align-items:center;justify-content:center;color:#FFFFFF}
+.ds-opt-ck .ck{display:none}
+.ds-opt.on .ds-opt-ck{background:#1652F0;border-color:#1652F0}
+.ds-opt.on .ds-opt-ck .ck{display:block}
+.nv-av{position:relative;flex-shrink:0;width:36px;height:36px;border-radius:50%;overflow:hidden;background:#EAF0FF;display:block}
+.nv-av img{position:absolute;left:-87.5%;top:-57.81%;width:294.06%;max-width:none;height:auto;mix-blend-mode:multiply}
+.nv-av.lg{width:56px;height:56px;box-shadow:0 0 0 3px #FFFFFF,0 0 0 4.5px #D6DDEE}
+.nv-av.sm{width:28px;height:28px}
+.ds-ghost{height:44px;font-size:14.5px}
+.dlp-c{position:relative;display:inline-block;flex-shrink:0;align-self:center;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(0,0,0,0) 61%,rgba(150,96,0,.5) 64%,rgba(0,0,0,0) 69%),radial-gradient(circle at 34% 28%,#FFF6CF 0%,#F9DC7A 30%,#EAB534 62%,#C38712 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.5),inset 0 -1.5px 1px rgba(130,80,0,.35),0 1.5px 0 #A86F06,0 3px 5px -2px rgba(110,70,0,.55);vertical-align:-3px;animation:dlpFlip 6s ease-in-out infinite}
+.dlp-c::before{content:"D";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Google Sans',system-ui,sans-serif;font-size:10px;font-weight:700;line-height:1;transform:translateY(.6px);box-sizing:border-box;color:#8A5A00;text-shadow:0 1px 0 rgba(255,246,207,.85)}
+.dlp-c::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,rgba(255,255,255,0) 35%,rgba(255,255,255,.75) 48%,rgba(255,255,255,0) 60%);background-size:250% 100%;background-position:120% 0;animation:dlpShine 6s ease-in-out infinite;pointer-events:none}
+.dlp-c,.dlp-c::after{animation:none}
+@keyframes dlpFlip{0%,70%{transform:rotateY(0)}82%{transform:rotateY(180deg)}94%,100%{transform:rotateY(360deg)}}
+@keyframes dlpShine{0%,30%{background-position:120% 0}48%,100%{background-position:-20% 0}}
+.nova-card{background:#FFFFFF url(/_blob/0b29db2e4cd6f4a89dc7ba8f12e59c8d) center / cover no-repeat}
+.p6-dot{width:8px;height:8px;border-radius:50%;background:#C8961E;font-style:normal}
+.p6-rt{font-size:14px;color:#5B6582;margin-left:4px}
+.p6-rt b{font-weight:600;color:#0B1433}
+.p6-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.p6-acts .ds-ghost{height:40px;padding:0 16px;font-size:14px}
+.p6-acts .ds-ghost.on{background:#EAF0FF;border-color:#1652F0;color:#0E3BB8}
+.p6-ban{display:flex;align-items:flex-start;gap:12px;margin-top:10px;padding:14px 16px;border-radius:16px;font-size:14px;line-height:1.45}
+.p6-ban > span{display:flex;flex-direction:column;gap:2px}
+.p6-ban b{font-weight:600}
+.p6-ban span span{color:#3A4566}
+.p6-bd{width:10px;height:10px;border-radius:50%;margin-top:5px;flex-shrink:0;font-style:normal;background:currentColor}
+.p6-ban-ok{background:#E7F5EE;color:#0F6B45}
+.p6-ban-cb{background:#EAF0FF;color:#0E3BB8}
+.p6-ban-am{background:#FFF4E0;color:#8A5A00}
+.p6-ban-gy{background:#F2F4F9;color:#3A4566}
+.p6-k{font-size:12px;font-weight:500;color:#8A93AD}
+.p6-sm{font-size:14px;color:#5B6582}
+.p6-sh{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.p6-p{margin:0;max-width:720px;font-size:16px;line-height:1.65;color:#3A4566}
+.p6-fine{margin:0;font-size:13px;line-height:1.5;color:#8A93AD}
+.p6-gl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0 0 8px;border:1.5px solid #E6EAF3;border-radius:20px;overflow:hidden}
+.p6-gl div{padding:16px 20px;border-right:1px solid #EEF1F7;border-bottom:1px solid #EEF1F7}
+.p6-gl div:nth-child(3n){border-right:0}
+.p6-gl div:nth-last-child(-n+3){border-bottom:0}
+.p6-gl dt{font-size:12px;font-weight:500;color:#8A93AD}
+.p6-gl dd{margin:4px 0 0;font-size:15px;font-weight:500;color:#0B1433}
+.p6-g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.p6-g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.p6-c{display:flex;flex-direction:column;gap:6px;padding:18px 20px;border-radius:18px;border:1.5px solid #E6EAF3;background:#FFFFFF}
+.p6-c b{font-size:15.5px;font-weight:600;color:#0B1433}
+.p6-c > span:last-child{font-size:13.5px;line-height:1.5;color:#5B6582}
+.p6-ck{width:22px;height:22px;border-radius:50%;background:#1652F0;color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.p6-c .p6-ck{margin-bottom:4px}
+.p6-ic{width:36px;height:36px;border-radius:11px;background:#EAF0FF;color:#1652F0;display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+.p6-rs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:18px 20px;border-radius:18px;background:#F5F8FF}
+.p6-rs > div{display:flex;flex-direction:column;gap:10px}
+.p6-chips{display:flex;flex-wrap:wrap;gap:6px}
+.p6-req{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.p6-req > div{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:18px 20px;border-radius:18px;border:1.5px solid #E6EAF3}
+.p6-req b{font-size:15px;font-weight:500;line-height:1.45;color:#0B1433}
+.p6-must{background:#0B1433;color:#FFFFFF}
+.p6-rdy{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:20px;border:1.5px solid #DCE5FB}
+.p6-rdy p{margin:0;flex:1;font-size:14.5px;line-height:1.5;color:#3A4566}
+.p6-rdy p b{font-weight:600;color:#0B1433}
+.p6-rdy .ds-ghost{flex-shrink:0}
+.p6-out{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px}
+.p6-out li{display:flex;gap:12px}
+.p6-out li > span:last-child{display:flex;flex-direction:column;gap:2px}
+.p6-out b{font-size:15px;font-weight:500;color:#0B1433}
+.p6-out em{font-style:normal;font-size:12.5px;color:#0E3BB8}
+.p6-cos{display:flex;flex-direction:column;gap:10px}
+.p6-co{padding:12px 16px 12px 12px}
+.p6-co .pd2-cal{flex-shrink:0}
+.p6-cot{flex:1;display:flex;flex-direction:column;gap:2px;min-width:0}
+.p6-cot b{font-size:16px;font-weight:600;color:#0B1433}
+.p6-cot em{font-style:normal;font-size:13.5px;color:#5B6582}
+.p6-co .ds-tag{margin-left:auto}
+.p6-co .ds-opt-ck{margin-left:12px}
+.p6-tw{overflow-x:auto;border:1.5px solid #E6EAF3;border-radius:20px}
+.p6-t{width:100%;border-collapse:collapse;font-size:14px}
+.p6-t th,.p6-t td{text-align:left;padding:13px 16px;border-top:1px solid #EEF1F7;vertical-align:top;color:#0B1433}
+.p6-t thead th{border-top:none;font-size:12px;font-weight:500;color:#8A93AD;background:#F7F9FD}
+.p6-t tbody th{font-weight:600}
+.p6-cmp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.p6-cmp ul{margin:0;padding:20px 22px;list-style:none;display:flex;flex-direction:column;gap:12px;border-radius:18px;border:1.5px solid #E6EAF3}
+.p6-cmp li{display:flex;align-items:center;gap:12px;font-size:15px;color:#0B1433}
+.p6-cmp > div{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:20px 22px;border-radius:18px;background:#F5F8FF}
+.p6-cmp > div b{font-size:16px;font-weight:600}
+.p6-cmp > div > span{font-size:14px;line-height:1.55;color:#5B6582}
+.p6-steps{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.p6-steps li{display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:18px;background:#F5F8FF}
+.p6-sn{width:28px;height:28px;border-radius:50%;background:#FFFFFF;border:1.5px solid #C9D7FA;color:#1652F0;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+.p6-steps b{font-size:15px;font-weight:600;color:#0B1433}
+.p6-steps li > span:last-child{font-size:13.5px;line-height:1.45;color:#5B6582}
+.p6-pay{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.p6-pc{display:flex;flex-direction:column;gap:8px;padding:20px 22px;border-radius:20px;border:1.5px solid #E6EAF3}
+.p6-pc:first-child{border-color:#1652F0;background:linear-gradient(180deg,#F5F8FF,#FFFFFF)}
+.p6-pc > span:last-child{font-size:14px;line-height:1.55;color:#5B6582}
+.p6-pv{display:flex;align-items:center;gap:8px}
+.p6-pv b{font-size:24px;font-weight:600;letter-spacing:-.5px;color:#0B1433}
+.p6-pv .dlp-c,.p6-pv .cr-c{width:24px;height:24px;font-size:12px}
+.p6-revs{display:grid;grid-template-columns:220px minmax(0,1fr) minmax(0,1fr);gap:12px}
+.p6-score{display:flex;flex-direction:column;gap:4px;padding:20px;border-radius:18px;background:#F5F8FF}
+.p6-score b{font-size:40px;font-weight:600;letter-spacing:-1px;line-height:1}
+.p6-stars{color:#E3A008;letter-spacing:2px}
+.p6-score span:last-of-type{font-size:13px;color:#5B6582}
+.p6-score em{margin-top:6px;font-style:normal;font-size:12px;line-height:1.4;color:#8A93AD}
+.p6-rev{margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:12px;padding:20px;border-radius:18px;border:1.5px solid #E6EAF3}
+.p6-rev blockquote{margin:0;font-size:14.5px;line-height:1.55;color:#0B1433}
+.p6-rev figcaption{font-size:13px;color:#5B6582}
+.p6-rev b{font-weight:600;color:#0B1433}
+.p6-prov{display:flex;gap:16px;padding:20px 22px;border-radius:20px;border:1.5px solid #E6EAF3}
+.p6-prov > div{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.p6-prov b{font-size:17px;font-weight:600;color:#0B1433}
+.p6-prov > div > span:not(.p6-k){font-size:14px;line-height:1.5;color:#5B6582}
+.p6-av{width:52px;height:52px;border-radius:16px;background:#EAF0FF;color:#0E3BB8;font-size:16px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.p6-alt{display:flex;align-items:center;gap:8px;margin-top:-6px;font-size:13px;color:#5B6582}
+.p6-st{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:16px;border-radius:16px}
+.p6-st b{font-size:16px;font-weight:600;color:#0B1433;line-height:1.3}
+.p6-st > span:not(.ds-tag){font-size:13.5px;line-height:1.5;color:#3A4566}
+.p6-st-ok{background:#E7F5EE}
+.p6-st-cb{background:#EAF0FF}
+.p6-st-am{background:#FFF8EB}
+.p6-st-gy{background:#F2F4F9}
+.cd-pb{display:block;align-self:stretch;height:6px;border-radius:3px;background:rgba(22,82,240,.15);overflow:hidden;margin-top:4px}
+.cd-pb i{display:block;height:100%;border-radius:3px;background:#1652F0}
+.dt-tabs{overflow-x:auto;scrollbar-width:none}
+.dt-tabs::-webkit-scrollbar{display:none}
+@media (max-width: 1180px){.p6-g4,.p6-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.p6-revs{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.p6-score{grid-column:1 / -1}}
+@media (max-width: 760px){
+.p6-p{font-size:15px}
+.p6-gl{grid-template-columns:repeat(2,minmax(0,1fr))}
+.p6-gl div{padding:12px 14px;border-right:1px solid #EEF1F7 !important;border-bottom:1px solid #EEF1F7 !important}
+.p6-gl div:nth-child(2n){border-right:0 !important}
+.p6-gl div:nth-last-child(-n+2){border-bottom:0 !important}
+.p6-gl dd{font-size:14px}
+.p6-g3,.p6-g4,.p6-req,.p6-pay,.p6-cmp,.p6-rs,.p6-steps,.p6-out{grid-template-columns:minmax(0,1fr);gap:10px}
+.p6-rdy{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start}
+.p6-rdy .ds-ghost{grid-column:1 / -1}
+.p6-co{flex-wrap:wrap;padding:12px 44px 12px 12px}
+.p6-co .ds-tag{margin-left:68px}
+.p6-co .ds-opt-ck{position:absolute;right:14px;top:50%;transform:translateY(-50%);margin:0}
+.p6-steps li{display:grid;grid-template-columns:28px minmax(0,1fr);column-gap:12px;padding:14px 16px}
+.p6-sn{grid-row:span 2;margin:0}
+.p6-revs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:0 20px 4px;scroll-padding:0 20px;scrollbar-width:none}
+.p6-revs > *{flex:0 0 82%;scroll-snap-align:start;box-sizing:border-box}
+.p6-prov{flex-direction:column;gap:12px}
+.dt-tabs{-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+.p6-t{min-width:640px}
+}
 </style>
 </helmet>
 <div style="font-family: 'Google Sans', system-ui, sans-serif; color: #0B1433; background: #FFFFFF">
@@ -328,15 +488,17 @@ p{text-wrap:balance}
 <div class="dt-main">
 <div class="dt-hero">
 <nav class="dt-crumb" aria-label="Breadcrumb"><a href="Programs.dc.html">Learning programs</a><span aria-hidden="true">/</span><span>Accelerator</span></nav>
-<div class="dt-tags"><span class="ds-tag green lg">Places available</span><span class="ds-tag line lg">Accelerator</span></div>
+<div class="dt-tags"><span class="ds-tag blue lg"><i class="p6-dot"></i>Gold Validated</span><span class="ds-tag line lg">CEI 94<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Credalio Excellence Index: how well this program is built, scored by independent validators out of 100.</span></span></span><span class="ds-tag line lg">Accelerator</span><span class="p6-rt"><b>★ 4.9</b> (340)</span></div>
 <h1 class="dt-h1">AI &amp; Data Analytics Accelerator</h1>
 <p class="dt-sub">Twelve weeks of live, mentored learning, from data basics to applied AI, ending with a capstone you can show employers.</p>
 <div class="dt-by">
 <span class="dt-who"><span class="dt-av" aria-hidden="true">NU</span><span><b>Northgate University</b></span></span>
 <span class="dt-sep" aria-hidden="true"></span>
 <span class="dt-fact"><b>12 weeks</b></span>
-<span class="dt-fact"><b>About 8 hrs a week</b></span>
+<span class="dt-fact"><b>6 hrs a week</b></span><span class="dt-fact"><b>Live online</b></span><span class="dt-fact"><b>Intermediate</b></span>
 </div>
+<div class="p6-acts"><button class="ds-ghost sm {{saveCls}}" type="button" aria-pressed="{{saveOn}}" onClick="{{toggleSave}}"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg><span>{{saveLabel}}</span></button><button class="ds-ghost sm" type="button"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M8 8l4-4 4 4"></path><path d="M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"></path></svg><span>Share</span></button></div>
+<sc-if value="{{hasBan}}" hint-placeholder-val="{{ false }}"><div class="p6-ban {{banCls}}" role="status"><i class="p6-bd" aria-hidden="true"></i><span><b>{{banT}}</b><span>{{banD}}</span></span></div></sc-if>
 <a class="ds-link dt-askm" href="#"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span>Ask Nova if it’s right for me →</a>
 </div>
 <div class="dt-tabs" role="tablist" aria-label="Sections">
@@ -344,6 +506,35 @@ p{text-wrap:balance}
 <button class="dt-tab {{t.cls}}" type="button" role="tab" aria-selected="{{t.on}}" onClick="{{t.go}}">{{t.label}}</button>
 </sc-for>
 </div>
+<section class="dt-sec" ref="{{refOverview}}" aria-labelledby="p6-ab">
+<dl class="p6-gl"><div><dt>Format</dt><dd>Live online</dd></div><div><dt>Live sessions</dt><dd>Tue 18:00–19:30 GMT</dd></div><div><dt>Mentor hours</dt><dd>Thu 12:30–13:30 GMT</dd></div><div><dt>Cohort size</dt><dd>Up to 40</dd></div><div><dt>Language</dt><dd>English</dd></div><div><dt>Assessment</dt><dd>3 projects + capstone</dd></div></dl>
+<h2 id="p6-ab" class="dt-h2">About this program</h2>
+<p class="p6-p">Many people can read a report but can’t yet build one or question it. This 12-week accelerator closes that gap. Each week pairs a live session with practice on real business data, so ideas are used within days. You work in small peer groups, get written feedback from instructors, and finish with a capstone you present to the cohort.</p>
+</section>
+
+<section class="dt-sec" ref="{{refWho}}" aria-labelledby="p6-wh">
+<h2 id="p6-wh" class="dt-h2">Who it’s for</h2>
+<div class="p6-g3"><div class="p6-c"><span class="p6-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><b>Career switchers</b><span>Moving into a data role from another field.</span></div><div class="p6-c"><span class="p6-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><b>Working professionals</b><span>Using data and AI in the job you already have.</span></div><div class="p6-c"><span class="p6-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><b>Recent graduates</b><span>Wanting structured, practical work for a portfolio.</span></div></div>
+<p class="p6-fine">Not designed for complete beginners. If spreadsheets are new to you, start with Data Foundations.</p>
+<div class="p6-rs"><div><span class="p6-k">Relevant roles</span><div class="p6-chips"><span class="ds-tag line lg">Junior Data Analyst</span><span class="ds-tag line lg">Business Analyst</span><span class="ds-tag line lg">Reporting Analyst</span><span class="ds-tag line lg">AI Operations Associate</span></div></div><div><span class="p6-k">Sectors</span><div class="p6-chips"><span class="ds-tag line lg">Retail</span><span class="ds-tag line lg">Financial services</span><span class="ds-tag line lg">Healthcare</span><span class="ds-tag line lg">Public sector</span><span class="ds-tag line lg">Logistics</span></div></div></div>
+<p class="p6-fine">The program builds skills used in these roles and sectors. It doesn’t guarantee a job in them.</p>
+</section>
+
+<section class="dt-sec" ref="{{refReq}}" aria-labelledby="p6-rq">
+<h2 id="p6-rq" class="dt-h2">Before you join</h2>
+<div class="p6-req">
+<div><span class="ds-tag p6-must">Required</span><b>Basic spreadsheet skills, a computer and time for the live sessions</b></div>
+<div><span class="ds-tag line">Recommended</span><b>Some familiarity with business reporting or basic statistics</b></div>
+<div><span class="ds-tag line">Admission</span><b>A short application and a 15-minute readiness check</b></div>
+</div>
+<div class="p6-rdy nova-card"><span class="nv-av" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span><p><b>Not sure you’re ready?</b> Nova, your AI Coach, checks your answers against the entry requirements and suggests what to prepare. Admission follows the program’s published rules.</p><a class="ds-ghost sm" href="#">Check my readiness</a></div>
+</section>
+
+<section class="dt-sec" aria-labelledby="p6-oc">
+<h2 id="p6-oc" class="dt-h2">What you’ll be able to do</h2>
+<ul class="p6-out"><li><span class="p6-ck"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Prepare and query business data with SQL</b><em>Assessed in: Weeks 1–6 assignments</em></span></li><li><span class="p6-ck"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Build dashboards decision-makers trust</b><em>Assessed in: Sales dashboard project</em></span></li><li><span class="p6-ck"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Use AI tools responsibly to speed up analysis</b><em>Assessed in: Customer insights project</em></span></li><li><span class="p6-ck"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span><span><b>Present a data-backed recommendation</b><em>Assessed in: Capstone presentation</em></span></li></ul>
+</section>
+
 <section class="dt-sec" ref="{{refCurriculum}}" aria-labelledby="pr-c">
 <h2 id="pr-c" class="dt-h2">Twelve weeks, four phases</h2>
 <div class="pd2-ph">
@@ -354,18 +545,41 @@ p{text-wrap:balance}
 </div>
 <div class="pd2-leave">
 <div class="pd2-lv"><span class="pd2-lvi"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span><div><b>Program certificate</b><span>In your Digital Backpack</span></div></div>
-<div class="pd2-lv"><span class="pd2-lvi"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2.5"></circle><circle cx="18" cy="6" r="2.5"></circle><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"></path></svg></span><div><b>Counts toward</b><span>Professional Certificate in Data Analysis</span></div></div>
+<div class="pd2-lv"><span class="pd2-lvi"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2.5"></circle><circle cx="18" cy="6" r="2.5"></circle><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"></path></svg></span><div><b>Prepares you for</b><span>Professional Certificate in Data Analysis</span></div></div>
 </div>
 </section>
 
 <section class="dt-sec" ref="{{refWeek}}" aria-labelledby="pr-w">
-<h2 id="pr-w" class="dt-h2">Your week<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Times are shown in your time zone. Every live session is recorded.</span></span></h2>
+<div class="p6-sh"><h2 id="pr-w" class="dt-h2">Your week<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b" role="tooltip">Times are shown in your time zone. Every live session is recorded.</span></span></h2><span class="p6-sm">About 6 hours · times in GMT (UTC+0)</span></div>
 <div class="pd2-week">
-<div class="pd2-day pd2-day-k"><span class="pd2-dn">TUESDAY</span><span class="pd2-dt">Live session</span><span class="pd2-dd">90 minutes</span></div>
-<div class="pd2-day"><span class="pd2-dn">THURSDAY</span><span class="pd2-dt">Mentor hours</span><span class="pd2-dd">60 minutes</span></div>
-<div class="pd2-day"><span class="pd2-dn">YOUR TIME</span><span class="pd2-dt">Self-paced lessons</span><span class="pd2-dd">About 4 hours</span></div>
-<div class="pd2-day"><span class="pd2-dn">SATURDAY</span><span class="pd2-dt">Project clinic</span><span class="pd2-dd">Optional</span></div>
+<div class="pd2-day pd2-day-k"><span class="pd2-dn">TUESDAY</span><span class="pd2-dt">Live session</span><span class="pd2-dd">18:00–19:30 GMT · online</span></div>
+<div class="pd2-day"><span class="pd2-dn">THURSDAY</span><span class="pd2-dt">Mentor hours</span><span class="pd2-dd">12:30–13:30 GMT · drop in</span></div>
+<div class="pd2-day"><span class="pd2-dn">YOUR TIME</span><span class="pd2-dt">Self-paced lessons</span><span class="pd2-dd">About 3 hours</span></div>
+<div class="pd2-day"><span class="pd2-dn">SATURDAY</span><span class="pd2-dt">Project clinic</span><span class="pd2-dd">10:00–11:00 GMT · optional</span></div>
 </div>
+<p class="p6-fine">All live sessions are online, on video. Attend at least 80% of them; recordings stay up for 14 days. Signed in, times show in your own time zone.</p>
+</section>
+
+<section class="dt-sec" ref="{{refCohorts}}" aria-labelledby="p6-co">
+<div class="p6-sh"><h2 id="p6-co" class="dt-h2">Upcoming cohorts</h2><span class="p6-sm">Pick the one that fits your diary</span></div>
+<div class="p6-cos" role="radiogroup" aria-label="Cohort"><sc-for list="{{cohorts}}" as="c" hint-placeholder-count="3"><button class="ds-opt p6-co {{c.cls}}" type="button" role="radio" aria-checked="{{c.on}}" onClick="{{c.pick}}">
+<span class="pd2-cal" aria-hidden="true"><b>{{c.d}}</b><span>{{c.m}}</span></span><span class="p6-cot"><b>{{c.t}}</b><em>{{c.sub}}</em></span><span class="ds-tag {{c.tag}}">{{c.st}}</span><span class="ds-opt-ck"><svg class="ck" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span></button></sc-for></div>
+<p class="p6-fine">Places are shown when they can be counted reliably. Each cohort has its own instructors and dates.</p>
+</section>
+
+<section class="dt-sec" aria-labelledby="p6-pj">
+<h2 id="p6-pj" class="dt-h2">Projects and assessments</h2>
+<div class="p6-tw"><table class="p6-t"><thead><tr><th scope="col">What</th><th scope="col">You hand in</th><th scope="col">Format</th><th scope="col">How it’s marked</th><th scope="col">Counts toward completion</th></tr></thead><tbody><tr><th scope="row">Weekly assignments</th><td>Notebook or short write-up</td><td>Individual</td><td>Instructor feedback</td><td>Yes, 80% submitted</td></tr><tr><th scope="row">Sales dashboard</th><td>Interactive dashboard</td><td>Peer group of 5</td><td>Rubric, instructor-marked</td><td>Yes, pass</td></tr><tr><th scope="row">Customer insights</th><td>Analysis + AI workflow</td><td>Individual</td><td>Rubric, instructor-marked</td><td>Yes, pass</td></tr><tr><th scope="row">Capstone</th><td>Recommendation + 10-min presentation</td><td>Individual</td><td>Panel of 2 instructors</td><td>Yes, pass</td></tr></tbody></table></div>
+</section>
+
+<section class="dt-sec" aria-labelledby="p6-su">
+<h2 id="p6-su" class="dt-h2">Support and community</h2>
+<div class="p6-g4"><div class="p6-c"><span class="p6-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c.8-3.6 3.6-5.5 7-5.5s6.2 1.9 7 5.5"></path></svg></span><b>Mentor hours</b><span>A weekly drop-in with Tom’s mentor team.</span></div><div class="p6-c"><span class="p6-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.5"></circle><path d="M3.5 19c.6-3 2.8-4.6 5.5-4.6s4.9 1.6 5.5 4.6M15 14.6c2.3.2 4 1.6 4.5 4.4"></path></svg></span><b>Peer group of five</b><span>Your study group for the whole program.</span></div><div class="p6-c"><span class="p6-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14v10H9l-4 4z"></path></svg></span><b>Cohort space</b><span>Questions, notes and announcements. Opens when you enrol.</span></div><div class="p6-c"><span class="p6-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5-9 5z"></path><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"></path></svg></span><b>Alumni network</b><span>Stay in touch with past cohorts after you finish.</span></div></div>
+</section>
+
+<section class="dt-sec" aria-labelledby="p6-cp">
+<h2 id="p6-cp" class="dt-h2">What you need to complete it</h2>
+<div class="p6-cmp"><ul><li><span class="p6-ck"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Attend at least 80% of live sessions</li><li><span class="p6-ck"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Submit 80% of weekly assignments</li><li><span class="p6-ck"><svg class="ck" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"></path></svg></span>Pass the two projects and the capstone</li></ul><div><b>Program certificate</b><span>Saved to your Digital Backpack. It isn’t a professional certification: the Professional Certificate in Data Analysis is assessed separately, with its own 150 Credits fee.</span><a class="ds-link" href="CertDetail.dc.html">See the certification →</a></div></div>
 </section>
 
 <section class="dt-sec" ref="{{refPeople}}" aria-labelledby="pr-p">
@@ -376,6 +590,26 @@ p{text-wrap:balance}
 <div class="pd2-pp"><span class="pd2-av pav-h" aria-hidden="true">TH<img class="pav" src="/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2" alt=""></span><div><b>Tom Hughes</b><span>Mentor lead</span></div></div>
 </div>
 <div class="pd2-cohort"><span class="pd2-avs" aria-hidden="true"><span style="background: #DCE5FB; color: #1652F0" class="pav-h">AK<img class="pav" src="/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2" alt=""></span><span style="background: #1652F0; color: #FFFFFF" class="pav-h">MS<img class="pav" src="/_blob/84f08b38fbe9b11d8aa477ac10398bfe" alt=""></span><span style="background: #0B1433; color: #FFFFFF" class="pav-h">JL<img class="pav" src="/_blob/54e6db3b8b5f0875ac9ee0cfd0aef3d2" alt=""></span><span style="background: #EAF0FF; color: #1652F0">+37</span></span><span>A cohort of <b>40 learners</b> in peer groups of five, with a shared community space and an alumni network after.</span></div>
+</section>
+
+<section class="dt-sec" ref="{{refApply}}" aria-labelledby="p6-ap">
+<h2 id="p6-ap" class="dt-h2">How applying works</h2>
+<ol class="p6-steps"><li><span class="p6-sn">1</span><b>Apply</b><span>A short form about your goal and experience. About 10 minutes.</span></li><li><span class="p6-sn">2</span><b>Readiness check</b><span>15 minutes, online. It shows where you’d start, not a pass or fail.</span></li><li><span class="p6-sn">3</span><b>Decision</b><span>Within 5 working days. Full cohorts go to the waitlist.</span></li><li><span class="p6-sn">4</span><b>Pay and enrol</b><span>Your place is held for 7 days while you pay.</span></li></ol>
+<div class="p6-pay">
+<div class="p6-pc"><span class="p6-k">Pay with Credits</span><span class="p6-pv"><i class="cr-c" aria-hidden="true">C</i><b>1,200 Credits</b></span><span>Or 3 monthly payments of 400. Buys your place in the selected cohort and its recordings.</span></div>
+<div class="p6-pc"><span class="p6-k">Use your plan</span><span class="p6-pv"><span class="dlp-c" aria-hidden="true"></span><b>6,000 DLP</b></span><span>On Pro, the self-paced parts and live sessions use DLP from your plan over the 12 weeks.</span></div>
+</div>
+<p class="p6-fine">DLP and Credits are separate routes, not one price converted. Credits buy this cohort only, not future cohorts. Up to 10 places per cohort are half-price scholarships.</p>
+</section>
+
+<section class="dt-sec" aria-labelledby="p6-rv">
+<h2 id="p6-rv" class="dt-h2">What past learners say</h2>
+<div class="p6-revs"><div class="p6-score"><b>4.9</b><span class="p6-stars" aria-label="4.9 out of 5">★★★★★</span><span>340 reviews from earlier cohorts</span><em>Instructors and schedules can differ for your cohort.</em></div><figure class="p6-rev"><blockquote>“The live sessions were the difference. Asking a question and seeing someone work through it on real data taught me more than any video.”</blockquote><figcaption><b>Ngozi A.</b> · September 2026 cohort</figcaption></figure><figure class="p6-rev"><blockquote>“My capstone became the case study I talked through in my interview. I start as a reporting analyst next month.”</blockquote><figcaption><b>Marcus T.</b> · April 2026 cohort</figcaption></figure></div>
+</section>
+
+<section class="dt-sec" aria-labelledby="p6-pv2">
+<h2 id="p6-pv2" class="dt-h2">Who runs it</h2>
+<div class="p6-prov"><span class="p6-av">NU</span><div><span class="p6-k">Provider · verified institution</span><b>Northgate University</b><span>Runs this program and issues its certificate. 6 learning experiences on Credalio, including the Professional Certificate in Data Analysis.</span><a class="ds-link" href="#">View institution profile →</a></div></div>
 </section>
 
 <section class="dt-sec" ref="{{refFaq}}" aria-labelledby="pr-f">
@@ -390,11 +624,13 @@ p{text-wrap:balance}
 
 <aside class="dt-side {{sideCls}}" aria-label="Apply to this program">
 <div class="dt-card" ref="{{refCard}}">
-<div class="pd2-when"><span class="pd2-cal" aria-hidden="true"><b>18</b><span>JAN</span></span><div><b>Cohort starts 18 January</b><span>Applications close 8 January</span></div></div>
+<div class="pd2-when"><span class="pd2-cal" aria-hidden="true"><b>{{selD}}</b><span>{{selM}}</span></span><div><b>{{selT}}</b><span>{{selSub}}</span></div></div>
 <div class="dt-cbody">
 <span class="dt-lab">Program fee<span class="tip" tabindex="0" aria-label="More info"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.6v.2"></path></svg><span class="tip-b r dn" role="tooltip">Pay in full or in three monthly instalments. Scholarships cover up to half the fee for 10 learners per cohort. Placeholder figures to confirm.</span></span></span>
 <div class="dt-amt"><i class="cr-c lg" aria-hidden="true">C</i><b>1,200</b><span>Credits, or 3 × 400</span></div>
-<sc-if value="{{idle}}" hint-placeholder-val="{{ true }}">
+<span class="p6-alt"><span class="dlp-c" aria-hidden="true"></span>Or 6,000 DLP with Pro</span>
+<sc-if value="{{hasSt}}" hint-placeholder-val="{{ false }}"><div class="p6-st {{stCls}}" role="status"><span class="ds-tag {{stTag}}">{{stChip}}</span><b>{{stT}}</b><span>{{stD}}</span><sc-if value="{{hasSteps}}" hint-placeholder-val="{{ false }}"><span class="cd-pb" aria-hidden="true"><i style="width: {{stPct}}"></i></span></sc-if></div><a class="ds-btn dt-cta {{stDis}}" href="{{stHref}}"><span>{{stCta}}</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></a><sc-if value="{{hasSecond}}" hint-placeholder-val="{{ false }}"><a class="ds-ghost sm" href="#">{{second}}</a></sc-if></sc-if>
+<sc-if value="{{idleOpen}}" hint-placeholder-val="{{ true }}">
 <button class="ds-btn dt-cta" type="button" onClick="{{openForm}}"><span>Apply</span><span class="ob-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></span></button>
 <a class="ds-ghost sm" href="#"><span class="nv-av sm" aria-hidden="true"><img src="/_blob/398ca91d2832bb0ab6b0af61319676f4" alt=""></span><span>Ask Nova if it’s right for me</span></a>
 </sc-if>
@@ -430,28 +666,34 @@ p{text-wrap:balance}
 </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1900}}'>
+<script type="text/x-dc" data-dc-script data-props='{"app":{"editor":"enum","options":["","draft","submitted","review","accepted","waitlisted","payment","full","closed"],"default":""},"$preview":{"width":1440,"height":5899}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { tab: 'Curriculum', faq: 0, stage: 'idle', fName: '', fEmail: '', fWhy: '', err: '', bad: '' };
+    this.state = { coh: 0, saved: false, tab: 'Overview', faq: 0, stage: 'idle', fName: '', fEmail: '', fWhy: '', err: '', bad: '' };
     var self = this;
     this.secs = {};
     this.mk = function (k) { return function (e) { self.secs[k] = e; }; };
     this.cardRef = this.mk('card');
-    this.R = { Curriculum: this.mk('Curriculum'), 'Your week': this.mk('Your week'), People: this.mk('People'), Questions: this.mk('Questions') };
-    this.F = [['Do I need a technical background?', 'No. You need to be comfortable with spreadsheets. Everything else is taught from the start.'], ['What if I miss a live session?', 'Every session is recorded, and mentors help you catch up in their weekly hours.'], ['Can my employer pay?', 'Yes. Choose employer invoicing when you accept your place.']];
+    this.R = {}; ['Overview', 'Who it’s for', 'Requirements', 'Curriculum', 'Your week', 'Cohorts', 'People', 'Applying', 'FAQ'].forEach(function (k) { self.R[k] = self.mk(k); });
+    this.F = [['Do I need a technical background?', 'No coding is needed, but you should be comfortable with spreadsheets. The readiness check tells you where you’d start.'], ['What time zone are the sessions in?', 'GMT (UTC+0). Signed in, every time shows in your own time zone. All sessions are recorded.'], ['What if the cohort is full?', 'Join the waitlist. If a place opens before the start date, we offer it in order. You can also apply to a later cohort.'], ['What if I miss a live session?', 'Every session is recorded, and mentors help you catch up in their weekly hours.'], ['Can my employer pay?', 'Yes. Choose employer invoicing when you accept your place.']];
   }
   renderVals() {
     var self = this, S = this.state;
-    var names = ['Curriculum', 'Your week', 'People', 'Questions'];
+    var names = ['Overview', 'Who it’s for', 'Requirements', 'Curriculum', 'Your week', 'Cohorts', 'People', 'Applying', 'FAQ'];
+    var A = this.props.app || '', COH = [["18", "JAN", "January 2027", "12 Jan – 6 Apr · Tue 18:00 GMT", "Places available", "green", "Apply by 8 January · 9 places left"], ["12", "APR", "April 2027", "12 Apr – 5 Jul · Tue 18:00 GMT", "Applications open", "blue", "Apply by 2 April · 40 places"], ["13", "SEP", "September 2027", "13 Sep – 6 Dec · Wed 12:30 GMT", "Opens in June", "line", "Get notified when applications open"]], STX = {"draft": ["blue", "Draft saved", "Your application is half done", "2 of 4 sections complete · saved 14 Nov", "Continue application", "#", "50%", "", "cb"], "submitted": ["blue", "Submitted", "Application sent", "Expect a decision by 21 Nov. We’ll email you.", "View application", "#", "", "Withdraw application", "cb"], "review": ["line", "Under review", "An admissions tutor is reading it", "Readiness check done. Decision due by 21 Nov.", "View application", "#", "", "", "gy"], "accepted": ["green", "Accepted", "You have a place in the January cohort", "Pay by 22 Nov to confirm it. Your place is held for 7 days.", "Accept and pay", "Chk-001.dc.html", "", "Decline the offer", "ok"], "waitlisted": ["amber", "Waitlisted", "You’re 4th on the waitlist", "We’ll email you if a place opens before 8 January. Or apply to the April cohort.", "Apply to April instead", "#", "", "Leave the waitlist", "am"], "payment": ["amber", "Payment pending", "Your place is held until 22 Nov", "First payment of 400 Credits due. Pay in full or in 3 parts.", "Complete payment", "Chk-001.dc.html", "", "", "am"], "full": ["line", "Cohort full", "January is full", "Join the waitlist, or apply to the April cohort, which has places.", "Join the waitlist", "#", "", "Apply to April instead", "gy"], "closed": ["line", "Applications closed", "January applications closed on 8 January", "The April cohort is open. Applications close 2 April.", "Apply to April", "#", "", "", "gy"]}, BANX = {"draft": ["cb", "Application draft saved", "Finish it before 8 January"], "submitted": ["cb", "Application submitted", "Decision by 21 November"], "review": ["gy", "Application under review", "Decision by 21 November"], "accepted": ["ok", "You’re accepted", "Pay by 22 November to confirm your place"], "waitlisted": ["am", "You’re on the waitlist", "Position 4 for the January cohort"], "payment": ["am", "Payment pending", "Your place is held until 22 November"], "full": ["gy", "January cohort is full", "The April cohort has places"], "closed": ["gy", "Applications closed for January", "The April cohort is open"]}, x = STX[A], c = COH[S.coh];
     var openForm = function () { if (S.stage === 'idle') self.setState({ stage: 'form' }); if (self.secs.card && self.secs.card.scrollIntoView) self.secs.card.scrollIntoView({ block: 'center' }); };
     return {
       tabs: names.map(function (n) { var on = S.tab === n; return { label: n, on: on ? 'true' : 'false', cls: on ? 'dt-tab-on' : '', go: function () { self.setState({ tab: n }); var el = self.secs[n]; if (el && el.scrollIntoView) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }; }),
-      refCurriculum: this.R.Curriculum, refWeek: this.R['Your week'], refPeople: this.R.People, refFaq: this.R.Questions, refCard: this.cardRef,
+      refOverview: this.R.Overview, refWho: this.R['Who it’s for'], refReq: this.R.Requirements, refCurriculum: this.R.Curriculum, refWeek: this.R['Your week'], refCohorts: this.R.Cohorts, refPeople: this.R.People, refApply: this.R.Applying, refFaq: this.R.FAQ,
+      cohorts: COH.map(function (k, i) { var on = S.coh === i; return { d: k[0], m: k[1], t: k[2], sub: k[3], st: k[4], tag: k[5], on: on ? 'true' : 'false', cls: on ? 'on' : '', pick: function () { self.setState({ coh: i }); } }; }),
+      selD: c[0], selM: c[1], selT: c[2] + ' cohort', selSub: c[6],
+      hasSt: !!x, stCls: x ? 'p6-st-' + x[8] : '', stTag: x ? x[0] : '', stChip: x ? x[1] : '', stT: x ? x[2] : '', stD: x ? x[3] : '', stCta: x ? x[4] : '', stHref: x ? x[5] : '#', hasSteps: !!(x && x[6]), stPct: x && x[6] ? x[6] : '0%', hasSecond: !!(x && x[7]), second: x ? x[7] : '', stDis: '',
+      hasBan: !!BANX[A], banCls: BANX[A] ? 'p6-ban-' + BANX[A][0] : '', banT: BANX[A] ? BANX[A][1] : '', banD: BANX[A] ? BANX[A][2] : '',
+      idleOpen: !x && S.stage === 'idle', saveOn: S.saved ? 'true' : 'false', saveCls: S.saved ? 'on' : '', saveLabel: S.saved ? 'Saved' : 'Save', toggleSave: function () { self.setState({ saved: !S.saved }); }, refCard: this.cardRef,
       faqs: this.F.map(function (f, i) { var open = S.faq === i; return { q: f[0], a: f[1], open: open, exp: open ? 'true' : 'false', cls: open ? 'dt-fq-open' : '', toggle: function () { self.setState({ faq: open ? -1 : i }); } }; }),
-      sideCls: S.stage === 'idle' ? '' : 'dt-side-show', idle: S.stage === 'idle', form: S.stage === 'form', done: S.stage === 'done',
-      barCta: 'Apply', barCls: S.stage === 'idle' ? '' : 'dt-bar-off',
+      sideCls: S.stage === 'idle' && !x ? '' : 'dt-side-show', idle: S.stage === 'idle', form: S.stage === 'form', done: S.stage === 'done',
+      barCta: x ? x[4] : 'Apply', barCls: S.stage === 'idle' && !x ? '' : 'dt-bar-off',
       openForm: openForm, cancel: function () { self.setState({ stage: 'idle', err: '', bad: '' }); },
       fName: S.fName, fEmail: S.fEmail, fWhy: S.fWhy, err: S.err, hasErr: !!S.err,
       nameBad: S.bad === 'name' ? 'pd2-fi-bad' : '', emailBad: S.bad === 'email' ? 'pd2-fi-bad' : '', whyBad: S.bad === 'why' ? 'pd2-fi-bad' : '',

@@ -1,0 +1,11 @@
+{"row": "row-b32", "title": "Batch 32 · Learning programs: application states (draft, submitted, under review, accepted, waitlisted, payment pending, full, closed), comparing, no cohorts match",
+ "boards": [["ProgramDetail-Draft", "ProgramDetail", " app=\"draft\"", "PROG-002 Program Detail · Application draft"],
+  ["ProgramDetail-Submitted", "ProgramDetail", " app=\"submitted\"", "PROG-002 Program Detail · Application submitted"],
+  ["ProgramDetail-Review", "ProgramDetail", " app=\"review\"", "PROG-002 Program Detail · Under review"],
+  ["ProgramDetail-Accepted", "ProgramDetail", " app=\"accepted\"", "PROG-002 Program Detail · Accepted"],
+  ["ProgramDetail-Waitlisted", "ProgramDetail", " app=\"waitlisted\"", "PROG-002 Program Detail · Waitlisted"],
+  ["ProgramDetail-Payment", "ProgramDetail", " app=\"payment\"", "PROG-002 Program Detail · Payment pending"],
+  ["ProgramDetail-Full", "ProgramDetail", " app=\"full\"", "PROG-002 Program Detail · Cohort full"],
+  ["ProgramDetail-Closed", "ProgramDetail", " app=\"closed\"", "PROG-002 Program Detail · Applications closed"],
+  ["Programs-Compare", "Programs", " view=\"compare\"", "PROG-001 Learning Programs · Comparing two programs"],
+  ["Programs-NoSchedule", "Programs", " view=\"noschedule\"", "PROG-001 Learning Programs · No cohorts match your schedule"]]}

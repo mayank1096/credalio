@@ -25,6 +25,7 @@ for(const r of rows){for(const [file,w,h,lab] of [[r.desk,1440,820,'Desktop'],[r
  for(let y=0;y<H;y+=CHUNK){const ch=Math.min(CHUNK,H-y);const f=path.join(tmp,'c'+chunks.length+'.png');await p.screenshot({path:f,fullPage:true,clip:{x:0,y,width:w,height:ch}});chunks.push(f)}
  if(story){// story frames with animations on: one frame per stage ("Stage N of M" label), sampled along the track
    const q=await b.newPage({viewport:{width:w,height:h},deviceScaleFactor:dpr});await q.goto('http://localhost:8798/screens/'+file);await q.waitForTimeout(1500);let last=null;
+   await q.evaluate(()=>document.querySelectorAll('[style*="overflow: hidden"]').forEach(e=>{if(e.offsetHeight>2000)e.style.overflow='visible'}));  // a board wrapper clips, which stops the story pinning
    for(let k=0;k<=SAMPLES;k++){const s=story.top+Math.round(k*(story.h-h)/SAMPLES);await q.evaluate(s=>window.scrollTo(0,s),s);await q.waitForTimeout(400);
     const st=await q.evaluate(()=>{const m=[...document.querySelectorAll('section')].find(e=>getComputedStyle(e).position==='sticky'&&getComputedStyle(e).top==='0px');const x=m&&m.innerText.match(/Stage (\d+) of (\d+)/);return x?x[1]:String(Math.random())});
     if(st===last)continue;last=st;await q.waitForTimeout(1200);const f=path.join(tmp,'f'+frames.length+'.png');await q.screenshot({path:f});frames.push(f)}

@@ -10,12 +10,13 @@ for x in L:
     if x['lab'] == 'Desktop': cur = {'d': x, 'm': None, 'sec': x['sec'], 'title': x['title']}; pairs.append(cur)
     else: cur['m'] = x
 MW, MH, MMW = 176, 150, 72  # mm: desktop box, row height, mobile box
-def parts(name, n):
-    """Split a screenshot into n equal horizontal parts; return the relative paths."""
-    if n == 1: return ['%s-screenshots/%s' % (NAME, name)]
-    im = Image.open(SH + name).convert('RGB'); w, h = im.size; step = math.ceil(h / n); out = []
+def parts(name, n, maxw):
+    """Split a screenshot into n equal horizontal parts, scaled to print size; return the relative paths."""
+    im = Image.open(SH + name).convert('RGB'); w, h = im.size
+    if w > maxw: im = im.resize((maxw, round(h * maxw / w)), Image.LANCZOS); w, h = im.size
+    step = math.ceil(h / n); out = []
     for i in range(n):
-        p = '%s.p%d.jpg' % (name[:-4], i + 1); im.crop((0, i * step, w, min(h, (i + 1) * step))).save(PART + p, quality=84); out.append('parts/' + p)
+        p = '%s.p%d.jpg' % (name[:-4], i + 1); im.crop((0, i * step, w, min(h, (i + 1) * step))).save(PART + p, quality=72, optimize=True); out.append('parts/' + p)
     return out
 def fit(path, maxw, maxh):
     w, h = Image.open(S + '/shots/' + path).size; s = min(maxw / w, maxh / h); return w * s, h * s
@@ -23,7 +24,7 @@ pages = []
 for p in pairs:
     dw, dh = Image.open(SH + p['d']['name']).size
     n = max(1, math.ceil((dh / dw) / (MH / MW * 1.25)))  # allow up to 25% shrink before splitting
-    dp = parts(p['d']['name'], n); mp = parts(p['m']['name'], n) if p['m'] else [None] * n
+    dp = parts(p['d']['name'], n, 1200); mp = parts(p['m']['name'], n, 480) if p['m'] else [None] * n
     for i in range(n): pages.append((p['sec'], p['title'] + ('' if n == 1 else '  ·  part %d of %d' % (i + 1, n)), dp[i], mp[i]))
 secs = []
 for i, pg in enumerate(pages):

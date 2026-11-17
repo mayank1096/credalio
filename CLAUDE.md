@@ -22,6 +22,7 @@
 - **Link 2 · Creator Studio is DELIVERED** (2026-10-23): `design/handoff/link2/` (README, tokens, assets, developer package zip, screenshots zip, screen book PDF, developer guide PDF, illustrations zip). Build steps: `design/tools/link2/README.md`.
 - **Link 2 work history:** built in the Studio canvas https://claude.ai/artifact/CzyHQrVg4MbHzgqsSeZwY9 (local `design/canvas2/project/`, plan log `docs/link3-plan.md`, map `docs/link3-map.md`; client prototype Mg8o83iNa9x4ov1FxivdEW). Out of scope there: the PRG/COH cohort screens and the retired manual payouts.
 - **Landing handoff DELIVERED-READY** (2026-11-17): `design/handoff/landing/` (README, tokens, assets, developer package zip, screenshots zip, screen book PDF, developer guide PDF). Build steps: `design/tools/landing/README.md`.
+- **Link 4 handoff DELIVERED-READY** (2026-11-17): `design/handoff/link4/` (same set as Landing). Missing 4 boards (STU-023, STU-020B solo + team, COL-001-SOLO) follow separately. Build steps: `design/tools/link4/README.md`.
 - **NOW: new project (started 2026-10-27), two client links. Landing link FIRST, then Link 4. Read `docs/next-project.md` first.**
   - **Link 4** = Course Studio + Manage Published Course: https://claude.ai/artifact/3RdUuYV5KDmaKATNxvRqyJ
   - **Landing link** = landing page, learners, pricing, creators, validators: https://claude.ai/artifact/W174uLihc1ZtqgMRojf3M2

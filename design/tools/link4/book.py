@@ -1,4 +1,4 @@
-# book.py <dir with shots/> : builds shots/book.html (A4 landscape screen book) for the Landing handoff.
+# book.py <dir with shots/> : builds shots/book.html (A4 landscape screen book) for the Link 4 handoff.
 # Very tall pages are split into parts so every part stays readable.
 import json, html, os, sys, math
 from PIL import Image
@@ -40,7 +40,7 @@ h2{font-size:15pt;font-weight:600;margin:0 0 6mm}.toc{columns:2;column-gap:14mm;
 .dk img,.mb img{display:block;width:100%;height:auto}.cap{font-size:7.5pt;color:#8A93AD;margin-top:2mm}
 .ft{position:absolute;left:16mm;right:16mm;bottom:8mm;display:flex;justify-content:space-between;font-size:7.5pt;color:#8A93AD}'''
 out = ['<!doctype html><html><head><meta charset="utf-8"><style>%s</style></head><body>' % CSS]
-out.append('<div class="pg cov"><img src="credalio-wordmark.png"><h1>Landing, learners &amp; pricing · Screen book</h1><p>The landing page, discovery and course, path, certificate and program pages, the journey builder, learner onboarding, the learner dashboard, checkout and pricing, and the pages for creators, institutions and validation.<br>%d screens, each shown on desktop (1440) and mobile (390), in flow order. Long pages are split into parts. Design handoff · November 2026.</p></div>' % len(pairs))
+out.append('<div class="pg cov"><img src="credalio-wordmark.png"><h1>Link 4 · Course Studio · Screen book</h1><p>Course Studio: create new, course setup and design, Curriculum Builder and editors, build tools, access and pricing, prepare, submit, validation and publish. Manage Published Course: publishing, pricing, versions, learners, validation history, archive, insights and course credits. Collaboration for lead creators and invited creators.<br>%d screens, each shown on desktop (1440) and mobile (390), in flow order. Long pages are split into parts. Design handoff · November 2026.</p></div>' % len(pairs))
 toc = ''.join('<div><span>%s</span><span>%d</span></div>' % (html.escape(s), p) for s, p in secs)
 out.append('<div class="pg"><h2>Contents</h2><div class="toc">%s</div><div class="ft"><span>%s</span><span>2</span></div></div>' % (toc, LABEL))
 for i, (sec, title, d, m) in enumerate(pages):

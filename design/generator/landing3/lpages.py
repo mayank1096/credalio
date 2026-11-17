@@ -73,7 +73,7 @@ def pages(I, av):
 <section class="ds-card bk-tv" aria-labelledby="bk-tvh"><span class="bk-tvi">''' + ic(I_TV, 22) + '''</span><div class="bk-tvt"><b id="bk-tvh">Secure your Backpack with TruVault''' + tip('TruVault manages eligible verifiable credentials, your ecosystem identity and supported digital assets. It’s optional: your credentials are already safe here.') + '''</b><span>Optional. Your credentials are already safe here.</span></div>
 <div class="bk-tva"><button type="button" class="ds-link" onClick="{{tvLater}}">Later</button>''' + btn('{{tvCta}}', '#', 'sm bk-go {{tvBusyCls}}', 'onClick="{{tvConnect}}"', 'button') + '''</div></section>
 </sc-if>
-<sc-if value="{{tvDone}}" hint-placeholder-val="{{ false }}"><div class="bk-ok" role="status"><i>''' + CK + '''</i><span>TruVault connected. Your eligible credentials are secured.</span><a class="ds-link" href="Dash-TV-Set.dc.html">Manage</a></div></sc-if>
+<sc-if value="{{tvDone}}" hint-placeholder-val="{{ false }}"><div class="bk-ok" role="status"><i>''' + CK + '''</i><span>TruVault connected. Your eligible credentials are secured.</span><a class="ds-link" href="Dash-Settings.dc.html">Manage</a></div></sc-if>
 <div class="lr-pfs bk-pfs"><div class="lr-pf lr-pf-sum"><span class="lr-pf-n">3</span><b>verified achievements</b><small>From Data Foundations<br>and its project</small></div>''' + tiles + '''</div>
 <sc-if value="{{tvModal}}" hint-placeholder-val="{{ false }}">
 <div class="dl-ov" onClick="{{tvLater}}"></div>

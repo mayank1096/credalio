@@ -792,6 +792,7 @@ a:hover{color:#0E3BB8}
 .ec-l2{width:93%}
 .ec-ico{width:36px;height:36px;border-radius:11px}
 .ec-ico svg,.ec-ico img{transform:scale(.85)}
+.ec-ico img.ec-logo{width:28px;height:28px;object-fit:contain;transform:none}
 .ec-n{font-size:15px}
 .ec-d{display:none}
 .ec-here{height:22px;font-size:11px;padding:0 8px}
@@ -1730,6 +1731,7 @@ Not sure? Ask Nova, your AI Coach
 <div class="ec-slab {{l.cls}}" role="listitem" ref="{{l.ref}}" onMouseEnter="{{l.enter}}" onMouseLeave="{{l.leave}}">
 <span class="ec-ico" style="background: {{l.icoBg}}" aria-hidden="true">
 <sc-if value="{{l.mark}}" hint-placeholder-val="{{ false }}"><img src="/_blob/f81e36d31295a0d0737959589ec1abd4" alt="" width="26" height="26"></sc-if>
+<sc-if value="{{l.logo}}" hint-placeholder-val="{{ false }}"><img src="{{l.logoSrc}}" alt="" class="ec-logo" width="28" height="28" style="width: 28px; height: 28px; object-fit: contain"></sc-if>
 <sc-if value="{{l.svg}}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="{{l.icoFg}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" style="display: {{l.i1}}"></path><path d="M10 12.5l1.5 1.5 3-3" style="display: {{l.i1}}"></path><path d="M12 5v4M12 15v4M5 12h4M15 12h4M6.5 6.5l2.5 2.5M15 15l2.5 2.5M17.5 6.5L15 9M9 15l-2.5 2.5" style="display: {{l.i2}}"></path><circle cx="12" cy="12" r="2.2" style="display: {{l.i2}}"></circle><path d="M12 2l8.5 5v10L12 22l-8.5-5V7z" style="display: {{l.i3}}"></path><path d="M12 8l3.5 2v4L12 16l-3.5-2v-4z" style="display: {{l.i3}}"></path></svg></sc-if>
 </span>
 <span style="display: flex; flex-direction: column; gap: 1px; min-width: 0"><span style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap"><span class="ec-n">{{l.n}}</span><span class="ec-r">{{l.r}}</span></span><span class="ec-d">{{l.d}}</span></span>
@@ -2436,15 +2438,15 @@ class EcoPart extends Part {
     var self = this, S = this.state, on = S.hover >= 0 ? S.hover : S.on;
     var L = [
       { n: 'Credalio', r: 'Learning', d: 'Where you learn, practise and prove what you can do.', here: true, mark: true, icoBg: '#EAF0FF' },
-      { n: 'TruVault', r: 'Identity & Access', d: 'Keeps your identity and access secure, and in your control.', i: 1, icoBg: '#FFFFFF', icoFg: '#1652F0' },
-      { n: 'MagNode', r: 'Infrastructure', d: 'The network that delivers learning reliably, closer to where you are.', i: 2, icoBg: '#FFFFFF', icoFg: '#1652F0' },
+      { n: 'TruVault', r: 'Identity & Access', d: 'Keeps your identity and access secure, and in your control.', logo: '/_blob/5ce45db4addc7872080ca9a3881cfa4f', icoBg: '#FFFFFF' },
+      { n: 'Magnode', r: 'Infrastructure', d: 'The network that delivers learning reliably, closer to where you are.', logo: '/_blob/94d4cd797217fc2759dc5707951592db', icoBg: '#FFFFFF' },
       { n: 'MFORGE', r: 'Ecosystem utility', d: 'Connects and rewards participation across the ecosystem.', i: 3, icoBg: 'rgba(255,255,255,.12)', icoFg: '#FFFFFF' }
     ];
     return {
       rootRef: this.setRoot, stackRef: this.setStack,
       pulseTop: S.top + 'px', pulseOp: S.hover >= 0 ? 0 : 1,
       layers: L.map(function (l, k) {
-        return { n: l.n, r: l.r, d: l.d, here: !!l.here, mark: !!l.mark, svg: !l.mark, icoBg: l.icoBg, icoFg: l.icoFg || '#1652F0',
+        return { n: l.n, r: l.r, d: l.d, here: !!l.here, mark: !!l.mark, logo: !!l.logo, logoSrc: l.logo || '', svg: !l.mark && !l.logo, icoBg: l.icoBg, icoFg: l.icoFg || '#1652F0',
           i1: l.i === 1 ? 'inline' : 'none', i2: l.i === 2 ? 'inline' : 'none', i3: l.i === 3 ? 'inline' : 'none',
           cls: 'ec-l' + k + (k === 3 ? ' aur' : '') + (k === on ? ' ec-slab-on' : ''), ref: self.refs4[k],
           enter: function () { self.setState({ hover: k }); }, leave: function () { self.setState({ hover: -1 }); } };
